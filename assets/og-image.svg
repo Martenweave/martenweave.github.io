@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0v42" fill="none" stroke="#dfd0ba" stroke-width="1"/>
+      <path d="M0 21h42M21 0v42" stroke="#efe3d1" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#1f241f" flood-opacity=".13"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#f5efe4"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity=".72"/>
+  <circle cx="1050" cy="70" r="230" fill="#0f6b5f" opacity=".11"/>
+  <circle cx="130" cy="580" r="260" fill="#d99a3e" opacity=".16"/>
+  <g transform="translate(82 80)">
+    <rect width="82" height="82" rx="20" fill="#183f38"/>
+    <path d="M19 52c15-23 27 14 44-10" fill="none" stroke="#fffaf2" stroke-width="6" stroke-linecap="round"/>
+    <path d="M19 32c15 23 27-14 44 10" fill="none" stroke="#d99a3e" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="190" y="134" fill="#183f38" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="800">Martenweave</text>
+  <text x="82" y="255" fill="#183f38" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="850">AI-assisted MDM</text>
+  <text x="82" y="338" fill="#183f38" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="850">model registry</text>
+  <text x="84" y="424" fill="#4f594f" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500">Traceable, validated model truth for migration,</text>
+  <text x="84" y="468" fill="#4f594f" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500">governance, MDM, data quality, and AMS teams.</text>
+  <g filter="url(#shadow)">
+    <rect x="785" y="170" width="285" height="110" rx="16" fill="#fffaf2" stroke="#cdb99d"/>
+    <rect x="828" y="320" width="245" height="110" rx="16" fill="#fffaf2" stroke="#cdb99d"/>
+    <rect x="735" y="458" width="285" height="86" rx="16" fill="#183f38"/>
+    <path d="M720 230C810 170 890 340 1090 245" fill="none" stroke="#0f6b5f" stroke-width="8" stroke-linecap="round"/>
+    <path d="M708 510C840 410 900 560 1085 460" fill="none" stroke="#b46a35" stroke-width="8" stroke-linecap="round"/>
+    <text x="815" y="236" fill="#b46a35" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">AI proposes</text>
+    <text x="858" y="386" fill="#b46a35" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800">Validators verify</text>
+    <text x="773" y="513" fill="#fffaf2" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Humans approve</text>
+  </g>
+</svg>
