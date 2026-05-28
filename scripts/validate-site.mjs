@@ -11,9 +11,17 @@ const requiredFiles = [
   "index.html",
   "styles.css",
   "script.js",
+  "assets/logo.png",
   "assets/favicon.svg",
   "assets/martenweave-mark.svg",
   "assets/og-image.svg",
+  "llms.txt",
+  "llms-full.txt",
+  "ai.txt",
+  "ai.json",
+  "robots.txt",
+  "sitemap.xml",
+  "site.webmanifest",
   ".nojekyll",
 ];
 
@@ -35,7 +43,9 @@ for (const match of anchorMatches) {
 }
 
 const rootAssetMatches = [
-  ...html.matchAll(/\s(?:href|src|content)="(\/assets\/[^"]+|\/styles\.css|\/script\.js)"/g),
+  ...html.matchAll(
+    /\s(?:href|src|content)="(\/assets\/[^"]+|\/styles\.css|\/script\.js|\/site\.webmanifest|\/llms\.txt|\/ai\.txt)"/g,
+  ),
 ];
 
 for (const match of rootAssetMatches) {
@@ -73,6 +83,17 @@ if (!html.includes('href="https://github.com/metalhatscats/martenweave-core"')) 
 
 if (!html.includes('href="https://github.com/Martenweave/martenweave.github.io"')) {
   errors.push("Missing website GitHub link.");
+}
+
+const aiContext = readFileSync(join(root, "llms.txt"), "utf8");
+const aiJson = JSON.parse(readFileSync(join(root, "ai.json"), "utf8"));
+
+if (!aiContext.includes("AI proposes. Validators verify. Humans approve.")) {
+  errors.push("llms.txt is missing the AI governance principle.");
+}
+
+if (aiJson.url !== "https://martenweave.github.io/") {
+  errors.push("ai.json must identify the production root URL.");
 }
 
 if (errors.length > 0) {

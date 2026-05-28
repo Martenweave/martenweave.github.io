@@ -6,22 +6,65 @@
     <title>Martenweave - AI-assisted MDM model registry</title>
     <meta
       name="description"
-      content="Martenweave turns Excel mappings, tickets, validation reports, datasets, and SAP context into a traceable, validated, AI-ready model layer for MDM, migration, governance, and AMS teams."
+      content="Martenweave turns Excel mappings, tickets, validation reports, datasets, decisions, and SAP context into a traceable, validated, AI-ready model layer for MDM, migration, governance, and AMS teams."
     />
-    <meta name="theme-color" content="#f5efe4" />
+    <meta name="theme-color" content="#f7efe2" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Martenweave" />
+    <meta name="application-name" content="Martenweave" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://martenweave.github.io/" />
+    <meta property="og:site_name" content="Martenweave" />
     <meta property="og:title" content="Martenweave - AI-assisted MDM model registry" />
     <meta
       property="og:description"
-      content="A backend-first model truth layer for migration, governance, data quality, and support teams."
+      content="A backend-first model truth layer for SAP migration, MDM, governance, data quality, and AMS teams."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave - AI-assisted MDM model registry" />
+    <meta
+      name="twitter:description"
+      content="Validated model truth for teams tired of Excel archaeology and mystery mappings."
+    />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/og-image.svg" />
     <link rel="canonical" href="https://martenweave.github.io/" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
     <link rel="preload" href="/styles.css" as="style" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Martenweave",
+        "alternateName": "Martenweave Core",
+        "url": "https://martenweave.github.io/",
+        "codeRepository": "https://github.com/metalhatscats/martenweave-core",
+        "programmingLanguage": "Python",
+        "runtimePlatform": "Python 3.11+",
+        "applicationCategory": "Data governance, MDM, SAP migration, model registry",
+        "description": "Martenweave is a backend-first, AI-assisted MDM model registry that turns scattered model knowledge into a traceable, validated, AI-ready model truth layer.",
+        "keywords": [
+          "MDM",
+          "SAP migration",
+          "data governance",
+          "data quality",
+          "AMS",
+          "model registry",
+          "lineage",
+          "AI-assisted data modeling"
+        ],
+        "isAccessibleForFree": true,
+        "sameAs": [
+          "https://github.com/metalhatscats/martenweave-core",
+          "https://github.com/Martenweave/martenweave.github.io"
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -29,7 +72,7 @@
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="/" aria-label="Martenweave home">
-          <img src="/assets/martenweave-mark.svg" alt="" width="42" height="42" />
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
           <span>Martenweave</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
@@ -38,6 +81,7 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="#product">Product</a>
+          <a href="#registry">Registry</a>
           <a href="#use-cases">Use cases</a>
           <a href="#architecture">Architecture</a>
           <a href="#roadmap">Roadmap</a>
@@ -51,15 +95,15 @@
     <main id="main">
       <section class="hero" id="product" aria-labelledby="hero-title">
         <div class="hero-grid">
-          <div class="hero-copy reveal">
-            <p class="brand-line">Martenweave</p>
+          <div class="hero-copy">
+            <p class="system-label">model truth layer / backend-first / human-approved</p>
             <h1 id="hero-title">
-              AI-assisted MDM model registry for migration, governance, and support teams
+              Martenweave is the data-model brain between Excel chaos and AI help.
             </h1>
             <p class="hero-subhead">
-              Turn Excel mappings, tickets, validation reports, datasets, decisions, and SAP
-              context into a traceable model layer that humans can trust and AI can safely work
-              with.
+              AI-assisted MDM model registry for migration, governance, and support teams. Turn
+              Excel mappings, tickets, validation reports, datasets, decisions, and SAP context into
+              a traceable model layer that humans can trust and AI can safely work with.
             </p>
             <div class="hero-actions" aria-label="Hero actions">
               <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">
@@ -70,72 +114,35 @@
             <p class="trust-line">Backend-first. Human-approved. Built for real data model work.</p>
           </div>
 
-          <div class="loom-panel reveal" aria-label="Traceability loom illustration">
-            <svg class="loom-svg" viewBox="0 0 760 620" role="img" aria-labelledby="loom-title">
-              <title id="loom-title">Woven model threads become validated model truth</title>
-              <defs>
-                <pattern id="woven-grid" width="34" height="34" patternUnits="userSpaceOnUse">
-                  <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#d8cab6" stroke-width="1" />
-                  <path d="M 0 17 H 34 M 17 0 V 34" stroke="#efe4d3" stroke-width="1" />
-                </pattern>
-                <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#2d332e" flood-opacity=".14" />
-                </filter>
-              </defs>
-              <rect x="18" y="18" width="724" height="584" rx="32" fill="url(#woven-grid)" />
-              <path
-                class="thread thread-a"
-                d="M 68 115 C 182 64, 239 196, 344 138 S 525 77, 684 134"
-                fill="none"
-                stroke="#0f6b5f"
-                stroke-width="8"
-                stroke-linecap="round"
-              />
-              <path
-                class="thread thread-b"
-                d="M 64 475 C 185 384, 238 515, 350 421 S 521 366, 698 452"
-                fill="none"
-                stroke="#b46a35"
-                stroke-width="7"
-                stroke-linecap="round"
-              />
-              <path
-                class="thread thread-c"
-                d="M 122 304 C 240 220, 314 363, 426 288 S 572 253, 650 306"
-                fill="none"
-                stroke="#183f38"
-                stroke-width="5"
-                stroke-linecap="round"
-                stroke-dasharray="2 18"
-              />
-
-              <g class="model-card card-a" filter="url(#soft-shadow)">
-                <rect x="88" y="172" width="192" height="132" rx="18" fill="#fffaf2" stroke="#d5c3aa" />
-                <text x="112" y="210" class="card-label">canonical file</text>
-                <text x="112" y="246" class="card-title">ATTR-CUST-</text>
-                <text x="112" y="274" class="card-title">SALES-GROUP</text>
-              </g>
-              <g class="model-card card-b" filter="url(#soft-shadow)">
-                <rect x="318" y="240" width="190" height="142" rx="18" fill="#fffaf2" stroke="#d5c3aa" />
-                <text x="342" y="278" class="card-label">validator</text>
-                <text x="342" y="315" class="card-title">references</text>
-                <text x="342" y="344" class="card-title">checked</text>
-                <circle cx="468" cy="282" r="17" fill="#0f6b5f" />
-                <path d="M459 282 l7 7 13 -16" fill="none" stroke="#fffaf2" stroke-width="4" stroke-linecap="round" />
-              </g>
-              <g class="model-card card-c" filter="url(#soft-shadow)">
-                <rect x="532" y="148" width="150" height="158" rx="18" fill="#183f38" stroke="#183f38" />
-                <text x="558" y="190" class="card-label dark">patch</text>
-                <text x="558" y="228" class="card-title dark">AI</text>
-                <text x="558" y="256" class="card-title dark">proposes</text>
-              </g>
-              <g class="trail" fill="#b46a35">
-                <circle cx="172" cy="404" r="7" />
-                <circle cx="209" cy="389" r="6" />
-                <circle cx="247" cy="399" r="5" />
-                <circle cx="284" cy="376" r="6" />
-                <path d="M 594 422 q 22 -30 54 -8 q -28 7 -31 36 q -17 -18 -23 -28 z" fill="#183f38" />
-              </g>
+          <div class="hero-system" aria-label="Martenweave model graph illustration">
+            <div class="logo-orbit">
+              <img src="/assets/logo.png" alt="Martenweave logo" width="280" height="280" />
+              <span class="orbit-dot dot-a"></span>
+              <span class="orbit-dot dot-b"></span>
+              <span class="orbit-dot dot-c"></span>
+            </div>
+            <div class="graph-node node-a">
+              <span>ATTR</span>
+              <strong>Customer Group</strong>
+              <code>ATTR-CUST-SALES-GROUP</code>
+            </div>
+            <div class="graph-node node-b">
+              <span>FEP</span>
+              <strong>SAP field endpoint</strong>
+              <code>FEP-S4-KNVV-KDGRP</code>
+            </div>
+            <div class="graph-node node-c">
+              <span>PATCH</span>
+              <strong>AI proposes</strong>
+              <code>status: review</code>
+            </div>
+            <svg class="graph-lines" viewBox="0 0 720 580" aria-hidden="true">
+              <path d="M132 158 C268 86 360 216 508 126" />
+              <path d="M142 426 C282 514 380 360 586 434" />
+              <path d="M182 282 C290 268 410 302 548 250" />
+              <path d="M360 104 V488" class="thread-amber" />
+              <path d="M238 116 V458" />
+              <path d="M482 96 V470" />
             </svg>
           </div>
         </div>
@@ -144,89 +151,141 @@
       <section class="problem section" aria-labelledby="problem-title">
         <div class="section-grid">
           <div class="section-kicker">The problem</div>
-          <div class="section-body reveal">
+          <div class="section-body">
             <h2 id="problem-title">Model knowledge has a habit of escaping containment.</h2>
             <p class="lead">
               Most model knowledge does not live in one system. It leaks across Excel files,
               tickets, validation reports, migration notes, Slack decisions, and the heads of tired
               consultants. Martenweave gives that knowledge a spine.
             </p>
-            <ul class="pain-list">
-              <li>Excel mappings scattered across folders and local drives.</li>
-              <li>Model decisions buried in tickets, comments, and meeting notes.</li>
-              <li>Validation reports that are not linked back to model rules.</li>
-              <li>Project knowledge that evaporates after handover.</li>
-              <li>Unclear field ownership and mystery mappings with no evidence trail.</li>
-              <li>SAP migration teams arguing over which file is true.</li>
-              <li>AI stuck summarizing fragments because the model layer is not structured.</li>
-            </ul>
+            <div class="pain-matrix" aria-label="Common model knowledge problems">
+              <span>final_v9_really_final.xlsx</span>
+              <span>ticket decision without field context</span>
+              <span>validation PDF with no model rule link</span>
+              <span>owner: ask Anna, unless she left</span>
+              <span>mapping mystery from mock load 2</span>
+              <span>AI prompt with zero structured truth</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section registry" id="registry" aria-labelledby="registry-title">
+        <div class="section-heading">
+          <p class="section-kicker">Registry core</p>
+          <h2 id="registry-title">Not a chatbot. Not a vague catalog. A registry of model truth.</h2>
+          <p>
+            Martenweave stores canonical model objects as files, validates them deterministically,
+            builds disposable indexes, and gives humans a reviewable path for change.
+          </p>
+        </div>
+        <div class="terminal-grid">
+          <div class="terminal-panel" aria-label="Martenweave CLI example">
+            <div class="terminal-top">
+              <span></span><span></span><span></span>
+              <strong>modelops</strong>
+            </div>
+            <pre><code>$ modelops validate --repo ./customer-bp
+Layer 1  schema objects        OK
+Layer 2  references            OK
+Layer 3  SAP context           OK
+
+$ modelops impact FEP-S4-KNVV-KDGRP
+ATTR-CUST-SALES-GROUP
+  -> USAGE-CUST-SALES-KDGRP
+  -> MAP-LEGACY-CUST-GROUP-S4
+  -> ISSUE-MOCK2-MISSING-KDGRP
+
+$ modelops propose-patch --from note.md
+PatchProposal created. Awaiting human review.</code></pre>
+          </div>
+          <div class="registry-facts" aria-label="Martenweave product facts">
+            <article>
+              <span>source</span>
+              <strong>Markdown + YAML</strong>
+              <p>Canonical files are the model truth. Generated artifacts are rebuildable.</p>
+            </article>
+            <article>
+              <span>index</span>
+              <strong>SQLite + JSONL</strong>
+              <p>Search, lineage, audit, and reports come from validated model state.</p>
+            </article>
+            <article>
+              <span>gate</span>
+              <strong>validators</strong>
+              <p>IDs, types, references, and SAP context rules are checked before indexing.</p>
+            </article>
+            <article>
+              <span>AI</span>
+              <strong>patch proposals</strong>
+              <p>AI drafts changes. Humans approve. No silent mutation.</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="section product-section" aria-labelledby="does-title">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="section-kicker">What it does</p>
           <h2 id="does-title">A canonical model layer from scattered project artifacts.</h2>
-          <p>
-            Martenweave treats model truth as structured, reviewable files. Generated indexes,
-            reports, search documents, and lineage views are rebuilt from that truth.
-          </p>
         </div>
         <div class="feature-grid">
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Canonical model files</h3>
             <p>Markdown and YAML frontmatter objects become the durable source of truth.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Deterministic validation</h3>
             <p>Objects, IDs, types, SAP context, and references are checked before indexing.</p>
           </article>
-          <article class="feature-card reveal">
-            <h3>Object/reference consistency</h3>
+          <article class="feature-card">
+            <h3>Object/reference checks</h3>
             <p>Broken links, duplicate IDs, and wrong reference types are surfaced early.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Generated model index</h3>
             <p>SQLite, search JSONL, and lineage outputs are disposable and rebuildable.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Dataset/model gap detection</h3>
-            <p>Compare sample datasets with the model before mock loads become meeting fuel.</p>
+            <p>Compare sample datasets with expected endpoints before mock-load drama.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Impact analysis</h3>
             <p>Trace field and attribute consequences across mappings, usage, and lineage.</p>
           </article>
-          <article class="feature-card reveal">
-            <h3>Evidence and lineage tracking</h3>
+          <article class="feature-card">
+            <h3>Evidence and lineage</h3>
             <p>Keep decisions, validation findings, fields, and mappings connected.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Patch proposal workflow</h3>
             <p>AI drafts reviewable changes instead of quietly rewriting model truth.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>Human approval gates</h3>
             <p>Approved changes become change requests. The model does not mutate in the dark.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card">
             <h3>GitHub issue integration</h3>
             <p>Use issues for review, change tracking, and scenario feedback where it fits.</p>
           </article>
-          <article class="feature-card reveal">
+          <article class="feature-card feature-card-wide">
             <h3>AI-ready model context</h3>
-            <p>Give AI structured context it can reason over without pretending to be truth.</p>
+            <p>
+              Give AI structured context it can reason over without pretending to be the source of
+              truth.
+            </p>
           </article>
         </div>
       </section>
 
       <section class="section flow-section" id="how-it-works" aria-labelledby="flow-title">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="section-kicker">How it works</p>
-          <h2 id="flow-title">From artifacts to trusted model evolution.</h2>
+          <h2 id="flow-title">The operating loop is boring in the best possible way.</h2>
         </div>
-        <ol class="flow reveal" aria-label="Martenweave workflow">
+        <ol class="flow" aria-label="Martenweave workflow">
           <li><span>01</span>Input artifacts</li>
           <li><span>02</span>Canonical model files</li>
           <li><span>03</span>Validation</li>
@@ -239,61 +298,61 @@
       </section>
 
       <section class="section use-cases" id="use-cases" aria-labelledby="use-title">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="section-kicker">Use cases</p>
-          <h2 id="use-title">Built for teams who need traceability before the next escalation.</h2>
+          <h2 id="use-title">For teams who need traceability before the next escalation.</h2>
         </div>
         <div class="use-case-grid">
-          <article class="use-card reveal">
+          <article class="use-card">
             <h3>SAP migration model registry</h3>
-            <p><strong>Problem:</strong> Migration scope, fields, and rules drift across files.</p>
-            <p><strong>Helps:</strong> Canonical objects connect domains, contexts, fields, and mappings.</p>
+            <p><strong>Problem:</strong> Scope, fields, and rules drift across files.</p>
+            <p><strong>Helps:</strong> Domains, contexts, fields, and mappings stay connected.</p>
             <p><strong>Value:</strong> Fewer truth disputes during mock loads and cutover planning.</p>
           </article>
-          <article class="use-card reveal">
+          <article class="use-card">
             <h3>MDM rule and ownership layer</h3>
-            <p><strong>Problem:</strong> Ownership is known socially, not operationally.</p>
-            <p><strong>Helps:</strong> Rules, attributes, and decisions become referenceable objects.</p>
-            <p><strong>Value:</strong> Governance teams can discuss changes with evidence.</p>
+            <p><strong>Problem:</strong> Ownership is social, not operational.</p>
+            <p><strong>Helps:</strong> Rules, attributes, and decisions become referenceable.</p>
+            <p><strong>Value:</strong> Governance teams discuss change with evidence.</p>
           </article>
-          <article class="use-card reveal">
-            <h3>Customer / Business Partner mapping control</h3>
-            <p><strong>Problem:</strong> Customer field behavior differs by context and system.</p>
-            <p><strong>Helps:</strong> Attribute usage and SAP context rules keep field meaning explicit.</p>
-            <p><strong>Value:</strong> Better mapping control without spreadsheet archaeology.</p>
+          <article class="use-card">
+            <h3>Customer / BP mapping control</h3>
+            <p><strong>Problem:</strong> Field behavior differs by context and system.</p>
+            <p><strong>Helps:</strong> Attribute usage and SAP context rules stay explicit.</p>
+            <p><strong>Value:</strong> Cleaner mapping control without spreadsheet archaeology.</p>
           </article>
-          <article class="use-card reveal">
+          <article class="use-card">
             <h3>Supplier / Vendor model control</h3>
-            <p><strong>Problem:</strong> Supplier and vendor terms blur across source and target models.</p>
-            <p><strong>Helps:</strong> Model objects separate business meaning from physical fields.</p>
-            <p><strong>Value:</strong> Cleaner handoffs between process, data, and migration teams.</p>
+            <p><strong>Problem:</strong> Supplier and vendor terms blur across systems.</p>
+            <p><strong>Helps:</strong> Business meaning is separated from physical fields.</p>
+            <p><strong>Value:</strong> Better handoffs between process, data, and migration teams.</p>
           </article>
-          <article class="use-card reveal">
-            <h3>Dataset gap detection before mock load</h3>
+          <article class="use-card">
+            <h3>Dataset gaps before mock load</h3>
             <p><strong>Problem:</strong> Missing fields appear late, usually with calendar drama.</p>
-            <p><strong>Helps:</strong> Compare profiled datasets with expected model endpoints.</p>
+            <p><strong>Helps:</strong> Profiled datasets are compared with expected endpoints.</p>
             <p><strong>Value:</strong> Earlier remediation and less validation ping-pong.</p>
           </article>
-          <article class="use-card reveal">
+          <article class="use-card">
             <h3>Validation report triage</h3>
             <p><strong>Problem:</strong> Reports show failures without model context.</p>
             <p><strong>Helps:</strong> Findings link back to fields, rules, mappings, and decisions.</p>
             <p><strong>Value:</strong> Triage becomes evidence-led, not inbox-led.</p>
           </article>
-          <article class="use-card reveal">
-            <h3>AMS support knowledge continuity</h3>
+          <article class="use-card">
+            <h3>AMS knowledge continuity</h3>
             <p><strong>Problem:</strong> Support inherits decisions but not the reasoning.</p>
-            <p><strong>Helps:</strong> Canonical model history keeps context available after go-live.</p>
-            <p><strong>Value:</strong> Less tribal knowledge loss between delivery and support.</p>
+            <p><strong>Helps:</strong> Canonical history keeps context after go-live.</p>
+            <p><strong>Value:</strong> Less knowledge loss between delivery and support.</p>
           </article>
-          <article class="use-card reveal">
-            <h3>Data governance impact analysis</h3>
-            <p><strong>Problem:</strong> Small field changes can affect reporting, load, and ownership.</p>
+          <article class="use-card">
+            <h3>Governance impact analysis</h3>
+            <p><strong>Problem:</strong> Small field changes can ripple downstream.</p>
             <p><strong>Helps:</strong> Impact traversal shows connected objects and lineage.</p>
             <p><strong>Value:</strong> Better change decisions before downstream teams discover them.</p>
           </article>
-          <article class="use-card reveal">
-            <h3>AI-assisted model maintenance</h3>
+          <article class="use-card">
+            <h3>AI-assisted maintenance</h3>
             <p><strong>Problem:</strong> AI can help, but unchecked changes are not governance.</p>
             <p><strong>Helps:</strong> AI proposes patches that validators and humans review.</p>
             <p><strong>Value:</strong> Faster maintenance without surrendering control.</p>
@@ -304,7 +363,7 @@
       <section class="section comparison" aria-labelledby="compare-title">
         <div class="section-grid">
           <div class="section-kicker">Why not just...</div>
-          <div class="section-body reveal">
+          <div class="section-body">
             <h2 id="compare-title">Excel, Confluence, tickets, and ChatGPT still have jobs. This is a different job.</h2>
             <div class="comparison-grid">
               <div>
@@ -313,7 +372,7 @@
               </div>
               <div>
                 <h3>Confluence</h3>
-                <p>Stores explanations. Helpful, but rarely validates references or field context.</p>
+                <p>Stores explanations. Helpful, but it does not validate model references.</p>
               </div>
               <div>
                 <h3>Tickets</h3>
@@ -321,7 +380,7 @@
               </div>
               <div>
                 <h3>ChatGPT</h3>
-                <p>Can summarize and draft. It should not be asked to quietly redefine truth.</p>
+                <p>Can summarize and draft. It should not quietly redefine truth.</p>
               </div>
               <div class="comparison-answer">
                 <h3>Martenweave</h3>
@@ -336,12 +395,12 @@
       </section>
 
       <section class="section ai-section" aria-labelledby="ai-title">
-        <div class="ai-principle reveal">
+        <div class="ai-principle">
           <p>AI proposes.</p>
           <p>Validators verify.</p>
           <p>Humans approve.</p>
         </div>
-        <div class="section-body reveal">
+        <div class="section-body">
           <p class="section-kicker">AI philosophy</p>
           <h2 id="ai-title">AI is useful. Silent mutation is not.</h2>
           <p class="lead">
@@ -360,49 +419,45 @@
       </section>
 
       <section class="section architecture" id="architecture" aria-labelledby="architecture-title">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="section-kicker">Architecture</p>
-          <h2 id="architecture-title">Backend-first because model truth should survive the interface fashion cycle.</h2>
+          <h2 id="architecture-title">Backend-first because model truth should survive interface fashion.</h2>
           <p>
             The canonical model files are the truth. Generated indexes are acceleration. Reports are
             evidence. Proposals are reviewable. Nothing important changes silently.
           </p>
         </div>
-        <div class="architecture-rail reveal">
+        <div class="architecture-rail">
           <div>
-            <span>Source</span>
+            <span>source</span>
             <h3>Canonical files</h3>
             <p>Markdown and YAML objects in a repository.</p>
           </div>
           <div>
-            <span>Gate</span>
+            <span>gate</span>
             <h3>Deterministic validation</h3>
             <p>IDs, types, references, and SAP context rules.</p>
           </div>
           <div>
-            <span>Acceleration</span>
+            <span>acceleration</span>
             <h3>Disposable indexes</h3>
             <p>SQLite, JSONL search documents, and lineage exports.</p>
           </div>
           <div>
-            <span>Value</span>
+            <span>value</span>
             <h3>Reports and workflows</h3>
             <p>Health, gaps, impact, audit, issues, and review queues.</p>
           </div>
         </div>
-        <p class="architecture-note reveal">
-          CLI/API first. UI later, only where it helps. GitHub issues can support review and change
-          workflows without becoming the model database.
-        </p>
       </section>
 
       <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
-        <div class="section-heading reveal">
+        <div class="section-heading">
           <p class="section-kicker">Roadmap</p>
-          <h2 id="roadmap-title">A practical path, not a giant platform-shaped fog bank.</h2>
+          <h2 id="roadmap-title">A practical roadmap, not platform-shaped fog.</h2>
         </div>
         <div class="timeline">
-          <article class="roadmap-item reveal">
+          <article class="roadmap-item">
             <span>Phase 1</span>
             <h3>Core registry</h3>
             <ul>
@@ -412,7 +467,7 @@
               <li>Build generated index</li>
             </ul>
           </article>
-          <article class="roadmap-item reveal">
+          <article class="roadmap-item">
             <span>Phase 2</span>
             <h3>Model intelligence</h3>
             <ul>
@@ -422,7 +477,7 @@
               <li>Validation report linking</li>
             </ul>
           </article>
-          <article class="roadmap-item reveal">
+          <article class="roadmap-item">
             <span>Phase 3</span>
             <h3>AI-assisted workflows</h3>
             <ul>
@@ -432,7 +487,7 @@
               <li>Human approval gates</li>
             </ul>
           </article>
-          <article class="roadmap-item reveal">
+          <article class="roadmap-item">
             <span>Phase 4</span>
             <h3>Starter packs</h3>
             <ul>
@@ -442,7 +497,7 @@
               <li>AMS knowledge continuity scenarios</li>
             </ul>
           </article>
-          <article class="roadmap-item reveal">
+          <article class="roadmap-item">
             <span>Phase 5</span>
             <h3>Workbench</h3>
             <ul>
@@ -456,24 +511,27 @@
       </section>
 
       <section class="section contribution" id="github" aria-labelledby="contribute-title">
-        <div class="contribution-box reveal">
-          <p class="section-kicker">Open source</p>
-          <h2 id="contribute-title">Bring scenarios, issues, and inconvenient truths.</h2>
-          <p>
-            Martenweave is early and intentionally backend-first. Feedback is most useful when it
-            comes with real migration, MDM, data quality, governance, or AMS scenarios.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">
-              Product/core repo
-            </a>
-            <a class="button secondary" href="https://github.com/Martenweave/martenweave.github.io">
-              Website repo
-            </a>
+        <div class="contribution-box">
+          <img src="/assets/logo.png" alt="" width="120" height="120" />
+          <div>
+            <p class="section-kicker">Open source</p>
+            <h2 id="contribute-title">Bring scenarios, issues, and inconvenient truths.</h2>
+            <p>
+              Martenweave is early and intentionally backend-first. Feedback is most useful when it
+              comes with real migration, MDM, data quality, governance, or AMS scenarios.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">
+                Product/core repo
+              </a>
+              <a class="button secondary" href="https://github.com/Martenweave/martenweave.github.io">
+                Website repo
+              </a>
+            </div>
+            <p class="horror-line">
+              Have a migration horror story? Open an issue. We collect those professionally.
+            </p>
           </div>
-          <p class="horror-line">
-            Have a migration horror story? Open an issue. We collect those professionally.
-          </p>
         </div>
       </section>
     </main>
@@ -481,12 +539,14 @@
     <footer class="footer">
       <div>
         <a class="brand footer-brand" href="/" aria-label="Martenweave home">
-          <img src="/assets/martenweave-mark.svg" alt="" width="34" height="34" />
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
         <p>AI-assisted MDM model registry.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/ai.txt">AI context</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
         <a href="https://github.com/Martenweave/martenweave.github.io">Website GitHub</a>
       </div>
