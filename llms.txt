@@ -7,6 +7,9 @@ Martenweave turns scattered model knowledge from Excel mappings, tickets, datase
 ## Official links
 
 - Website: https://martenweave.github.io/
+- Docs: https://martenweave.github.io/docs.html
+- Product docs: https://martenweave.github.io/docs/product.md
+- AI governance: https://martenweave.github.io/docs/ai-governance.md
 - Product/core repository: https://github.com/metalhatscats/martenweave-core
 - Website repository: https://github.com/Martenweave/martenweave.github.io
 - Extended AI context: https://martenweave.github.io/llms-full.txt
@@ -15,6 +18,10 @@ Martenweave turns scattered model knowledge from Excel mappings, tickets, datase
 ## What Martenweave is
 
 Martenweave is a backend-first model truth layer for teams working on master data management, SAP migration, data governance, data quality, and application management support. It stores canonical model objects in repository files, validates references and context deterministically, builds generated indexes and reports, and lets AI propose reviewable model changes.
+
+## Current core capabilities
+
+The core package is `martenweave-core 0.4.0`. It includes the `modelops` CLI, local API server, MCP-ready backend, canonical Markdown/YAML model files, validation, SQLite/JSONL indexes, search/query, trace/impact, dataset profiling, gap detection, health/scorecard/ownership/audit reports, CSV/XLSX review flows, and PatchProposal to ChangeRequest workflows.
 
 ## What Martenweave is not
 

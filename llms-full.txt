@@ -6,11 +6,13 @@ This file is for AI search, answer engines, assistants, crawlers, and developer 
 
 Martenweave is a backend-first, AI-assisted MDM and data model registry product. It is designed for SAP migration, master data management, data governance, data quality, and AMS/support teams that need a validated model truth layer.
 
-Martenweave's public website is https://martenweave.github.io/.
+Public website: https://martenweave.github.io/
 
-The core product repository is https://github.com/metalhatscats/martenweave-core.
+Public docs: https://martenweave.github.io/docs.html
 
-The website repository is https://github.com/Martenweave/martenweave.github.io.
+Core repository: https://github.com/metalhatscats/martenweave-core
+
+Website repository: https://github.com/Martenweave/martenweave.github.io
 
 ## North star
 
@@ -27,7 +29,7 @@ Martenweave is written for serious delivery and decision makers:
 - Enterprise architects
 - Data quality managers
 - Consulting delivery managers
-- Teams tired of Excel chaos, unclear ownership, validation disputes, and mystery mappings
+- Technical decision makers evaluating whether an AI-assisted model workflow is real or just noise
 
 ## Positioning
 
@@ -35,13 +37,56 @@ Martenweave is not a chatbot, not a vague data catalog, and not a workflow monst
 
 Excel stores fragments. Confluence stores explanations. Tickets store disputes and approvals. ChatGPT can summarize and draft. Martenweave stores validated model truth and makes it operational.
 
+SAP migration is a strong starter scenario and domain-pack context. Martenweave should not be described as SAP-certified, SAP-affiliated, or an official SAP partner.
+
+## Current core package
+
+The core package is `martenweave-core 0.4.0`.
+
+Current capabilities include:
+
+- `modelops` CLI
+- local API server
+- MCP-ready backend
+- canonical Markdown + YAML model files
+- deterministic validation
+- generated SQLite and JSONL indexes
+- search and structured query
+- trace and impact analysis
+- dataset profiling
+- dataset/model gap detection
+- health reports
+- analysis reports
+- governance scorecards
+- ownership reports
+- audit and usage reports
+- CSV and XLSX export/import review flows
+- PatchProposal to ChangeRequest lifecycle
+- approval gates
+- issue drafts
+- GitHub-ready change bundles
+- example packs for Customer / Business Partner, Supplier / Vendor, simple product, and generic product models
+
+## Command families
+
+Important `modelops` command families include:
+
+- setup: `init`
+- validation/indexing: `validate`, `build-index`, `index-fresh`
+- model intelligence: `health`, `scorecard`, `gap-report`, `gaps`, `owners`, `analyze`
+- navigation: `trace`, `impact`, `search`, `query`, `diff`
+- proposals and changes: `propose-patch`, `proposal`, `change-request`, `decisions`
+- import/export: `profile-dataset`, `infer-model`, `export-model`, `import-model-sheet`
+- collaboration: `issue-draft`, `git-bundle`, `publish-issue`, `publish-pr`, `notifications`
+- runtime: `serve`, `mcp`
+
 ## Product model
 
 Martenweave uses canonical files as source of truth. Generated indexes are disposable and rebuilt from those files.
 
-Canonical objects include model concepts such as domains, migration objects, business entities, entity contexts, attributes, attribute usages, field endpoints, mappings, value lists, value mappings, issues, decisions, change requests, and patch proposals.
+Canonical objects include model concepts such as domains, migration objects, business entities, entity contexts, attributes, attribute usages, field endpoints, mappings, value lists, value mappings, validation rules, issues, evidence, decisions, change requests, and patch proposals.
 
-Generated artifacts can include SQLite indexes, search documents, lineage exports, and audit reports.
+Generated artifacts can include SQLite indexes, search documents, lineage exports, audit events, and usage events.
 
 ## Validation
 
@@ -55,7 +100,8 @@ Validation checks include:
 - Duplicate IDs
 - Broken references
 - Reference type mismatches
-- SAP context rules for target scenarios such as Business Partner / Customer
+- ownership and value-list coverage
+- SAP context rules for starter scenarios such as Business Partner / Customer
 
 ## AI philosophy
 
@@ -65,8 +111,9 @@ AI can:
 
 - Suggest patch proposals
 - Extract evidence from notes or validation reports
-- Draft issues
+- Draft GitHub issues
 - Explain impact from structured model context
+- Prepare validation or review checklists
 
 AI must not silently mutate canonical model truth. The intended loop is:
 
@@ -83,6 +130,19 @@ AI proposes. Validators verify. Humans approve.
 - AMS support knowledge continuity
 - Data governance change impact analysis
 - AI-assisted model maintenance with approval gates
+
+## Public docs
+
+- Product: https://martenweave.github.io/docs/product.md
+- Use cases: https://martenweave.github.io/docs/use-cases.md
+- Architecture: https://martenweave.github.io/docs/architecture.md
+- AI governance: https://martenweave.github.io/docs/ai-governance.md
+- Roadmap: https://martenweave.github.io/docs/roadmap.md
+- Contributing scenarios: https://martenweave.github.io/docs/contributing-scenarios.md
+
+## Roadmap summary
+
+The public roadmap emphasizes core registry, model intelligence, AI-assisted workflows, starter packs/domain packs, optional workbench, and backend integrations such as API/MCP/GitHub/Sheets/import-export paths.
 
 ## Claims to avoid
 

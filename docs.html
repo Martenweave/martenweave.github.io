@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave Docs - Product, architecture, and AI governance</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for product positioning, use cases, architecture, AI governance, roadmap, and scenario contributions."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://martenweave.github.io/docs.html" />
+    <meta property="og:title" content="Martenweave Docs" />
+    <meta
+      property="og:description"
+      content="Read how Martenweave stores validated model truth, controls AI changes, and supports MDM, migration, governance, and AMS teams."
+    />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.svg" />
+    <link rel="canonical" href="https://martenweave.github.io/docs.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero docs-hero" aria-labelledby="docs-title">
+        <div class="section-heading">
+          <p class="system-label">public docs / AI governance</p>
+          <h1 id="docs-title">Martenweave docs for people evaluating the model layer.</h1>
+          <p class="hero-subhead">
+            A compact guide to what Martenweave is, what exists now, how the architecture works,
+            and how to contribute useful scenarios without turning the project into generic AI soup.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="/docs/product.md">Start with product docs</a>
+            <a class="button secondary" href="https://github.com/metalhatscats/martenweave-core">
+              Open core repo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="docs-index-title">
+        <div class="section-heading">
+          <p class="section-kicker">Documentation map</p>
+          <h2 id="docs-index-title">Read this when the landing page is too small for the real story.</h2>
+        </div>
+        <div class="docs-grid">
+          <a class="docs-card" href="/docs/product.md">
+            <span>product</span>
+            <strong>What Martenweave is</strong>
+            <p>Positioning, audience, problem, current maturity, and what it is not.</p>
+            <em>Read product docs</em>
+          </a>
+          <a class="docs-card" href="/docs/use-cases.md">
+            <span>use cases</span>
+            <strong>Where it helps</strong>
+            <p>Migration, MDM, governance, validation, AMS, impact, and AI maintenance scenarios.</p>
+            <em>Read use cases</em>
+          </a>
+          <a class="docs-card" href="/docs/architecture.md">
+            <span>architecture</span>
+            <strong>How the model layer works</strong>
+            <p>Canonical files, validation, generated indexes, lineage, reports, and approval flow.</p>
+            <em>Read architecture</em>
+          </a>
+          <a class="docs-card" href="/docs/ai-governance.md">
+            <span>AI governance</span>
+            <strong>AI proposes. Humans approve.</strong>
+            <p>Evidence extraction, patch proposals, issue drafts, impact explanations, and gates.</p>
+            <em>Read AI rules</em>
+          </a>
+          <a class="docs-card" href="/docs/roadmap.md">
+            <span>roadmap</span>
+            <strong>What exists and what comes next</strong>
+            <p>Core registry, model intelligence, AI workflows, starter packs, and optional workbench.</p>
+            <em>Read roadmap</em>
+          </a>
+          <a class="docs-card" href="/docs/contributing-scenarios.md">
+            <span>contribute</span>
+            <strong>Bring useful pain</strong>
+            <p>How to report scenarios, validation pain, starter pack needs, and migration stories.</p>
+            <em>Read contribution guide</em>
+          </a>
+        </div>
+        <p class="docs-note">
+          Deep implementation docs live in
+          <a href="https://github.com/metalhatscats/martenweave-core/tree/main/docs">
+            the core repository docs
+          </a>.
+          These website docs stay intentionally short and decision-maker friendly.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>AI-assisted MDM model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/product.md">Product docs</a>
+        <a href="/docs/ai-governance.md">AI governance</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceability over folklore.</p>
+    </footer>
+  </body>
+</html>

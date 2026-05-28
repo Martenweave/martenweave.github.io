@@ -1,10 +1,17 @@
 {
   "name": "Martenweave",
   "url": "https://martenweave.github.io/",
+  "docs": "https://martenweave.github.io/docs.html",
   "type": "AI-assisted MDM model registry",
   "positioning": "Backend-first model truth layer for SAP migration, MDM, data governance, data quality, and AMS/support teams.",
   "coreRepository": "https://github.com/metalhatscats/martenweave-core",
   "websiteRepository": "https://github.com/Martenweave/martenweave.github.io",
+  "corePackage": {
+    "name": "martenweave-core",
+    "version": "0.4.0",
+    "cli": "modelops",
+    "language": "Python 3.11+"
+  },
   "shortDescription": "Martenweave turns scattered model knowledge into traceable, validated, AI-ready model truth.",
   "audiences": [
     "Heads of Data Governance",
@@ -13,7 +20,47 @@
     "SAP AMS/support leads",
     "Enterprise architects",
     "Data quality managers",
-    "Consulting delivery managers"
+    "Consulting delivery managers",
+    "Technical decision makers"
+  ],
+  "currentCapabilities": [
+    "canonical Markdown and YAML model files",
+    "deterministic validation",
+    "SQLite and JSONL generated indexes",
+    "search and structured query",
+    "trace and impact analysis",
+    "dataset profiling",
+    "dataset/model gap detection",
+    "health, analysis, scorecard, ownership, audit, and usage reports",
+    "CSV and XLSX import/export review flows",
+    "PatchProposal to ChangeRequest lifecycle",
+    "approval gates",
+    "issue drafts",
+    "GitHub-ready change bundles",
+    "local API server",
+    "MCP-ready backend"
+  ],
+  "examples": [
+    "Customer / Business Partner",
+    "Supplier / Vendor",
+    "Generic Product",
+    "Simple Product"
+  ],
+  "publicDocs": [
+    "https://martenweave.github.io/docs/product.md",
+    "https://martenweave.github.io/docs/use-cases.md",
+    "https://martenweave.github.io/docs/architecture.md",
+    "https://martenweave.github.io/docs/ai-governance.md",
+    "https://martenweave.github.io/docs/roadmap.md",
+    "https://martenweave.github.io/docs/contributing-scenarios.md"
+  ],
+  "roadmap": [
+    "Core registry",
+    "Model intelligence",
+    "AI-assisted workflows",
+    "Domain packs and starter scenarios",
+    "Optional workbench",
+    "Backend integrations and agent interfaces"
   ],
   "principles": [
     "Integrations bring input",
@@ -25,7 +72,13 @@
   ],
   "aiPolicy": {
     "summary": "AI proposes. Validators verify. Humans approve.",
-    "silentMutationAllowed": false
+    "silentMutationAllowed": false,
+    "deterministicValidatorsRemainGate": true
+  },
+  "affiliationPolicy": {
+    "sapMayBeMentionedAsScenario": true,
+    "officialSapPartnershipClaim": false,
+    "sapCertificationClaim": false
   },
   "avoidClaims": [
     "official SAP partnership",

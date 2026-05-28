@@ -1,10 +1,8 @@
 # Martenweave Website
 
-This repository contains the public GitHub Pages product website for Martenweave.
-It is a one-page product site plus AI/search discovery files that explain the product identity,
-positioning, repositories, and AI governance stance.
+This repository contains the public GitHub Pages website for Martenweave.
 
-Production target:
+Production URL:
 
 https://martenweave.github.io
 
@@ -16,15 +14,29 @@ Product/core repository:
 
 https://github.com/metalhatscats/martenweave-core
 
+## What This Site Is
+
+This is the public product entry point for Martenweave: a backend-first, AI-assisted MDM model registry for SAP migration, MDM, data governance, data quality, and AMS/support teams.
+
+The site explains:
+
+- what Martenweave is
+- what pain it solves
+- what exists in the core package today
+- why it is not a chatbot
+- how AI is controlled
+- where to read docs
+- how to contribute scenarios
+
 ## Stack
 
-The site is plain static HTML, CSS, SVG/PNG assets, and a small JavaScript file. There is no
-application framework, no backend, and no build output directory. GitHub Pages serves the repository
-root.
+The site is plain static HTML, CSS, SVG/PNG assets, Markdown docs, and a small JavaScript file.
 
-## Local development
+There is no application framework, no backend, no login/auth, and no build output directory. GitHub Pages serves the repository root.
 
-Install the empty npm project metadata and run validation:
+## Local Development
+
+Install npm metadata and run validation:
 
 ```bash
 npm install
@@ -41,9 +53,9 @@ Then open:
 
 http://localhost:4173
 
-## Build
+## Build And Validation
 
-There is no compilation step. The build command runs the static validation script:
+There is no compilation step. The build command runs the static validator:
 
 ```bash
 npm run build
@@ -52,42 +64,82 @@ npm run build
 The validator checks:
 
 - required files
-- root-relative asset paths
-- internal anchor links
-- required positioning copy
-- GitHub links
-- AI discovery files
+- root-relative paths
+- internal anchors
+- docs files
+- sitemap entries
+- required product positioning
+- required GitHub links
+- required AI/search files
 - absence of forbidden project-page subpaths
 
 ## Deployment
 
-GitHub Pages is configured to serve from the `main` branch root (`/`). This is an organization
-Pages repository, so the production URL is:
+This is an organization GitHub Pages repository. GitHub Pages must serve from:
 
-https://martenweave.github.io
+- branch: `main`
+- path: `/`
+- URL: `https://martenweave.github.io`
 
-Do not configure a custom domain. Do not move the site under `/docs`, `/site`, or any project-page
-subpath.
+Rules:
 
-## Updating content
+- Do not configure a custom domain.
+- Do not deploy under `/martenweave`, `/martenweave.github.io`, `/site`, or another project-page subpath.
+- Keep internal assets root-relative, for example `/assets/logo.png`.
+- Keep `.nojekyll` so GitHub Pages serves static files directly.
 
-Most content lives in `index.html`. Visual styling lives in `styles.css`. The primary logo is
-`assets/logo.png`. The favicon and OpenGraph image are in `assets/`.
+## Documentation Structure
 
-AI/search discovery content lives in:
+Public docs live in:
 
-- `llms.txt`
-- `llms-full.txt`
-- `ai.txt`
-- `ai.json`
-- `robots.txt`
-- `sitemap.xml`
+- `docs.html` — visual docs index
+- `docs/README.md` — docs map
+- `docs/product.md` — product positioning and maturity
+- `docs/use-cases.md` — practical use cases
+- `docs/architecture.md` — public architecture overview
+- `docs/ai-governance.md` — AI safety and approval model
+- `docs/roadmap.md` — public roadmap
+- `docs/contributing-scenarios.md` — how to contribute useful scenarios
 
-When changing content:
+Deep implementation documentation lives in the core repository:
 
-1. Edit `index.html`.
-2. Keep internal links as root or hash links.
-3. Keep assets root-relative, for example `/assets/favicon.svg`.
-4. Update `llms.txt` / `llms-full.txt` / `ai.json` if positioning changes.
-5. Run `npm run validate`.
-6. Commit and push to `main`.
+https://github.com/metalhatscats/martenweave-core/tree/main/docs
+
+## AI/Search Discovery Files
+
+These files help AI systems and search crawlers understand Martenweave accurately:
+
+- `llms.txt` — short authoritative summary
+- `llms-full.txt` — fuller AI-readable product context
+- `ai.txt` — concise identity and “do not misdescribe” rules
+- `ai.json` — machine-readable product identity
+- `robots.txt` — crawler policy
+- `sitemap.xml` — public routes and discovery files
+- `site.webmanifest` — app/site metadata
+
+When positioning changes, update the homepage, docs, `llms-full.txt`, and `ai.json` together.
+
+## Safe Content Rules
+
+Do not add:
+
+- fake customers
+- fake testimonials
+- fake pricing
+- SAP certification claims
+- SAP partnership claims
+- login/auth flows
+- backend logic
+- claims that AI silently mutates model truth
+
+SAP may be mentioned as a migration scenario and domain-pack context, not as official affiliation.
+
+## Updating Content
+
+1. Edit `index.html` for homepage changes.
+2. Edit `styles.css` for visual changes.
+3. Edit Markdown files in `docs/` for public docs.
+4. Update `llms.txt`, `llms-full.txt`, `ai.txt`, and `ai.json` when the product story changes.
+5. Keep all root deployment links and assets root-relative.
+6. Run `npm run validate`.
+7. Commit and push to `main`.

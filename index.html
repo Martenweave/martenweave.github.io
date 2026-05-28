@@ -82,6 +82,7 @@
         <div class="nav-links" id="nav-links">
           <a href="#product">Product</a>
           <a href="#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
           <a href="#use-cases">Use cases</a>
           <a href="#architecture">Architecture</a>
           <a href="#roadmap">Roadmap</a>
@@ -107,9 +108,15 @@
             </p>
             <div class="hero-actions" aria-label="Hero actions">
               <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">
-                View on GitHub
+                View core on GitHub
               </a>
-              <a class="button secondary" href="#how-it-works">See how it works</a>
+              <a class="button secondary" href="/docs.html">Read docs</a>
+              <a
+                class="text-link"
+                href="https://github.com/metalhatscats/martenweave-core/issues/new"
+              >
+                Open a scenario issue
+              </a>
             </div>
             <p class="trust-line">Backend-first. Human-approved. Built for real data model work.</p>
           </div>
@@ -145,6 +152,15 @@
               <path d="M482 96 V470" />
             </svg>
           </div>
+        </div>
+      </section>
+
+      <section class="quick-read" aria-label="Decision-maker quick read">
+        <div class="quick-read-grid">
+          <p>Use it when model truth is scattered.</p>
+          <p>Use it before mock loads.</p>
+          <p>Use it when AI needs structure.</p>
+          <p>Use it for AMS continuity.</p>
         </div>
       </section>
 
@@ -221,6 +237,49 @@ PatchProposal created. Awaiting human review.</code></pre>
               <p>AI drafts changes. Humans approve. No silent mutation.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section today-section" id="today" aria-labelledby="today-title">
+        <div class="section-heading">
+          <p class="section-kicker">What exists today</p>
+          <h2 id="today-title">The core is already more than a landing-page promise.</h2>
+          <p>
+            `martenweave-core` is a Python backend and CLI package at version 0.4.0. It is
+            local-first, file-based, and built for serious model work before any UI gets involved.
+          </p>
+        </div>
+        <div class="today-grid">
+          <article>
+            <span>runtime</span>
+            <h3>CLI, local API, MCP-ready backend</h3>
+            <p>Use `modelops` from terminals, pipelines, local tooling, and agent workflows.</p>
+          </article>
+          <article>
+            <span>truth</span>
+            <h3>Canonical Markdown + YAML</h3>
+            <p>Model objects are Git-friendly files; generated indexes are disposable.</p>
+          </article>
+          <article>
+            <span>analysis</span>
+            <h3>Validate, index, search, query, trace, impact</h3>
+            <p>Run deterministic checks and inspect relationships across model objects.</p>
+          </article>
+          <article>
+            <span>readiness</span>
+            <h3>Profiling, gaps, scorecard, ownership, audit</h3>
+            <p>Move from raw datasets and validation noise to governed model readiness.</p>
+          </article>
+          <article>
+            <span>change</span>
+            <h3>PatchProposal to ChangeRequest</h3>
+            <p>AI-assisted or imported changes stay reviewable before canonical files change.</p>
+          </article>
+          <article>
+            <span>examples</span>
+            <h3>Customer BP, Supplier Vendor, Generic Product</h3>
+            <p>SAP scenarios are starter packs and demos, not the product boundary.</p>
+          </article>
         </div>
       </section>
 
@@ -386,7 +445,8 @@ PatchProposal created. Awaiting human review.</code></pre>
                 <h3>Martenweave</h3>
                 <p>
                   Stores validated model truth and makes it operational through checks, indexes,
-                  reports, lineage, and reviewable changes.
+                  reports, lineage, and reviewable changes. It is not SAP-certified or SAP-affiliated;
+                  SAP is a target scenario and domain-pack context, not an official partnership claim.
                 </p>
               </div>
             </div>
@@ -545,6 +605,9 @@ PatchProposal created. Awaiting human review.</code></pre>
         <p>AI-assisted MDM model registry.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
+        <a href="/docs.html">Docs</a>
+        <a href="/docs/product.md">Product docs</a>
+        <a href="/docs/ai-governance.md">AI governance</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="/ai.txt">AI context</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
