@@ -44,6 +44,7 @@ Status: active examples exist.
 
 - SAP Business Partner / Customer starter pack
 - Supplier / Vendor starter pack
+- simple product example
 - generic product model example
 - data governance templates
 - AMS knowledge continuity scenarios

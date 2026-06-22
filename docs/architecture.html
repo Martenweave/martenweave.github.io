@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave Architecture - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for Martenweave Architecture."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/architecture.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html" aria-current="page">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="martenweave-architecture">Martenweave Architecture</h1>
+<p>Martenweave is backend-first and local-first. The core design is intentionally simple: canonical files are truth, generated artifacts are acceleration, and changes are reviewable.</p>
+<h2 id="architecture-loop">Architecture Loop</h2>
+<pre><code class="language-text">Input artifacts
+  -&gt; canonical model files
+  -&gt; deterministic validation
+  -&gt; generated index
+  -&gt; gap / impact / health reports
+  -&gt; AI patch proposals
+  -&gt; human approval
+  -&gt; trusted model evolution</code></pre>
+<h2 id="canonical-files">Canonical Files</h2>
+<p>Canonical model objects are stored as Markdown files with YAML frontmatter.</p>
+<p>Examples of object concepts:</p>
+<ul>
+<li>MasterDataDomain</li>
+<li>MigrationObject</li>
+<li>BusinessEntity</li>
+<li>EntityContext</li>
+<li>Attribute</li>
+<li>AttributeUsage</li>
+<li>FieldEndpoint</li>
+<li>Mapping</li>
+<li>ValueList</li>
+<li>ValueMapping</li>
+<li>ValidationRule</li>
+<li>Issue</li>
+<li>Decision</li>
+<li>Evidence</li>
+<li>PatchProposal</li>
+<li>ChangeRequest</li>
+</ul>
+<p>These files are human-readable, Git-friendly, and safe to inspect without a product UI.</p>
+<h2 id="generated-indexes">Generated Indexes</h2>
+<p>Generated artifacts are disposable.</p>
+<p>They can include:</p>
+<ul>
+<li>SQLite index</li>
+<li>search JSONL</li>
+<li>lineage JSONL</li>
+<li>audit logs</li>
+<li>usage and AI usage events</li>
+<li>export files</li>
+</ul>
+<p>If generated artifacts disagree with canonical files, canonical files win.</p>
+<h2 id="deterministic-validation">Deterministic Validation</h2>
+<p>Validation runs before trusted indexing and reporting.</p>
+<p>Checks include:</p>
+<ul>
+<li>object ID format</li>
+<li>required fields</li>
+<li>registered object types</li>
+<li>duplicate IDs</li>
+<li>broken references</li>
+<li>reference type mismatches</li>
+<li>ownership/value-list/domain-pack rules</li>
+<li>SAP context rules for starter SAP scenarios</li>
+</ul>
+<h2 id="reports-and-model-intelligence">Reports And Model Intelligence</h2>
+<p>Martenweave can produce practical outputs from the model:</p>
+<ul>
+<li>health reports</li>
+<li>governance scorecards</li>
+<li>gap reports</li>
+<li>ownership reports</li>
+<li>impact reports</li>
+<li>trace outputs</li>
+<li>search/query results</li>
+<li>issue drafts</li>
+<li>GitHub-ready change bundles</li>
+</ul>
+<h2 id="ai-proposal-flow">AI Proposal Flow</h2>
+<p>AI does not own the model.</p>
+<p>AI can help convert unstructured evidence into a structured PatchProposal. The proposal is validated, reviewed, and approved before canonical files change.</p>
+<pre><code class="language-text">note / ticket / validation finding
+  -&gt; evidence summary
+  -&gt; PatchProposal
+  -&gt; deterministic validation
+  -&gt; diff / impact review
+  -&gt; human approval
+  -&gt; ChangeRequest
+  -&gt; canonical update</code></pre>
+<h2 id="interfaces">Interfaces</h2>
+<p>The current core is CLI/backend-first:</p>
+<ul>
+<li><code>modelops</code> CLI</li>
+<li>local API server</li>
+<li>MCP-ready backend</li>
+<li>Git-friendly repository files</li>
+<li>CSV/XLSX import/export paths</li>
+</ul>
+<p>A UI can be useful later, but the model truth should not depend on the UI.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>

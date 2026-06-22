@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Source and Contribution Path - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for Open Source and Contribution Path."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/open-source.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html" aria-current="page">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="open-source-and-contribution-path">Open Source and Contribution Path</h1>
+<p>Martenweave is early open-source infrastructure for governed data model work. The most useful contributions are concrete, reproducible, and grounded in real model-registry workflows.</p>
+<h2 id="where-to-contribute">Where to Contribute</h2>
+<ul>
+<li>Core/product issues: https://github.com/metalhatscats/martenweave-core</li>
+<li>Website/docs issues: https://github.com/Martenweave/martenweave.github.io</li>
+</ul>
+<h2 id="useful-contributions">Useful Contributions</h2>
+<ul>
+<li>reproducible CLI bugs</li>
+<li>failing validation cases with synthetic canonical files</li>
+<li>example-model improvements</li>
+<li>domain-pack scenarios for migration, MDM, governance, data quality, or AMS teams</li>
+<li>documentation corrections for commands that exist today</li>
+<li>tests that protect canonical/generated boundaries</li>
+<li>issue drafts with goal, scope, acceptance criteria, and validation command</li>
+</ul>
+<h2 id="contribution-guardrails">Contribution Guardrails</h2>
+<p>Do not contribute:</p>
+<ul>
+<li>real client data</li>
+<li>credentials, <code>.env</code> files, private keys, or tokens</li>
+<li>generated indexes unless maintainers explicitly request them</li>
+<li>claims about customers, SAP certification, or SAP partnership</li>
+<li>UI/platform rewrites that bypass the backend-first product boundary</li>
+<li>AI flows that mutate canonical files without PatchProposal and human approval</li>
+</ul>
+<h2 id="development-checks">Development Checks</h2>
+<pre><code class="language-bash">.venv/bin/python -m ruff check .
+.venv/bin/python -m ruff format --check .
+.venv/bin/python -m pytest
+bash scripts/release_smoke.sh</code></pre>
+<h2 id="issue-format">Issue Format</h2>
+<p>Good issues include:</p>
+<ul>
+<li>Goal</li>
+<li>Scope</li>
+<li>Acceptance criteria</li>
+<li>Validation command</li>
+<li>Reproduction steps for bugs</li>
+<li>Out-of-scope notes when the boundary matters</li>
+</ul>
+<p>This structure keeps the project useful for maintainers and AI coding agents without turning the repository into a vague backlog.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>

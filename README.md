@@ -93,13 +93,9 @@ Rules:
 Public docs live in:
 
 - `docs.html` — visual docs index
-- `docs/README.md` — docs map
-- `docs/product.md` — product positioning and maturity
-- `docs/use-cases.md` — practical use cases
-- `docs/architecture.md` — public architecture overview
-- `docs/ai-governance.md` — AI safety and approval model
-- `docs/roadmap.md` — public roadmap
-- `docs/contributing-scenarios.md` — how to contribute useful scenarios
+- `docs/*.md` — editable documentation source
+- `docs/*.html` — generated browser-readable documentation pages
+- `scripts/build-docs.mjs` — lightweight static docs generator with no frontend framework
 
 Deep implementation documentation lives in the core repository:
 
@@ -139,7 +135,8 @@ SAP may be mentioned as a migration scenario and domain-pack context, not as off
 1. Edit `index.html` for homepage changes.
 2. Edit `styles.css` for visual changes.
 3. Edit Markdown files in `docs/` for public docs.
-4. Update `llms.txt`, `llms-full.txt`, `ai.txt`, and `ai.json` when the product story changes.
-5. Keep all root deployment links and assets root-relative.
-6. Run `npm run validate`.
-7. Commit and push to `main`.
+4. Run `npm run build:docs` to regenerate browser-readable docs pages.
+5. Update `llms.txt`, `llms-full.txt`, `ai.txt`, and `ai.json` when the product story changes.
+6. Keep all root deployment links and assets root-relative.
+7. Run `npm run validate`.
+8. Commit and push to `main`.

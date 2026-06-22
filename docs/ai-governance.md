@@ -8,7 +8,7 @@ Validators verify.
 Humans approve.
 ```
 
-This is not a slogan. It is the safety model.
+This is the safety model.
 
 ## What AI May Do
 

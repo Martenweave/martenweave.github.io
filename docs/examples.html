@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave Examples - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for Martenweave Examples."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/examples.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/examples.html" aria-current="page">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="martenweave-examples">Martenweave Examples</h1>
+<p>The core repository includes examples that can be validated and indexed locally. They are small enough to inspect, but realistic enough to demonstrate the registry workflow.</p>
+<p>Core repository:</p>
+<p>https://github.com/metalhatscats/martenweave-core/tree/main/examples</p>
+<h2 id="customer-business-partner">Customer / Business Partner</h2>
+<p>Path:</p>
+<pre><code class="language-text">examples/customer_bp_model</code></pre>
+<p>Best for:</p>
+<ul>
+<li>SAP Business Partner to Customer migration context</li>
+<li>customer sales area and customer group examples</li>
+<li>SAP table/field context such as <code>KNVV-KDGRP</code></li>
+<li>decisions, issues, mappings, value lists, validation rules, and impact analysis</li>
+</ul>
+<p>Run:</p>
+<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/customer_bp_model
+.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
+<h2 id="supplier-vendor">Supplier / Vendor</h2>
+<p>Path:</p>
+<pre><code class="language-text">examples/supplier_vendor_model</code></pre>
+<p>Best for:</p>
+<ul>
+<li>SAP supplier/vendor master-data patterns</li>
+<li>LFA1, LFB1, and LFM1 field endpoint examples</li>
+<li>gap-to-proposal workflow using a synthetic vendor extract</li>
+</ul>
+<p>Run:</p>
+<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/supplier_vendor_model
+.venv/bin/modelops build-index --repo examples/supplier_vendor_model --jsonl
+.venv/bin/modelops gaps \
+  examples/supplier_vendor_model/data/samples/vendor_extract.csv \
+  --repo examples/supplier_vendor_model \
+  --check-model</code></pre>
+<h2 id="simple-product">Simple Product</h2>
+<p>Path:</p>
+<pre><code class="language-text">examples/simple_product_model</code></pre>
+<p>Best for:</p>
+<ul>
+<li>first-time onboarding</li>
+<li>simple table mode</li>
+<li>small product CSV profiling</li>
+<li>understanding domains, entities, attributes, field endpoints, and value lists</li>
+</ul>
+<p>Run:</p>
+<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/simple_product_model
+.venv/bin/modelops build-index --repo examples/simple_product_model --jsonl
+.venv/bin/modelops search &quot;product&quot; --repo examples/simple_product_model</code></pre>
+<h2 id="generic-product">Generic Product</h2>
+<p>Path:</p>
+<pre><code class="language-text">examples/generic_product_model</code></pre>
+<p>Best for:</p>
+<ul>
+<li>non-SAP model registry use cases</li>
+<li>generic product data model examples</li>
+<li>system lineage and integration-flow examples</li>
+</ul>
+<p>Run:</p>
+<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/generic_product_model
+.venv/bin/modelops build-index --repo examples/generic_product_model --jsonl
+.venv/bin/modelops scorecard --repo examples/generic_product_model</code></pre>
+<h2 id="what-examples-are-not">What Examples Are Not</h2>
+<ul>
+<li>They are not SAP-certified content.</li>
+<li>They are not customer implementations.</li>
+<li>They are not generated indexes to preserve by hand.</li>
+<li>They are not proof of a hosted SaaS workflow.</li>
+</ul>
+<p>They are starter models for testing, learning, and contributing better scenarios.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>

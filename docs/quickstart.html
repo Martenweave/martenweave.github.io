@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave Quickstart - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for Martenweave Quickstart."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/quickstart.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/quickstart.html" aria-current="page">Quickstart</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="martenweave-quickstart">Martenweave Quickstart</h1>
+<p>This quickstart proves the core workflow from a fresh clone. It uses the bundled Customer / Business Partner example and does not require an AI provider key.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Python 3.11+</li>
+<li>Git</li>
+<li><code>jq</code> for the release smoke script</li>
+</ul>
+<h2 id="install-locally">Install Locally</h2>
+<pre><code class="language-bash">git clone https://github.com/metalhatscats/martenweave-core.git
+cd martenweave-core
+python -m venv .venv
+.venv/bin/python -m pip install -e &quot;.[dev]&quot;
+.venv/bin/modelops --version</code></pre>
+<h2 id="validate-and-index-an-example">Validate and Index an Example</h2>
+<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/customer_bp_model
+.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/modelops index-fresh --repo examples/customer_bp_model</code></pre>
+<p>The generated SQLite and JSONL files are rebuildable. Canonical Markdown/YAML files remain the source of truth.</p>
+<h2 id="search-trace-and-impact">Search, Trace, and Impact</h2>
+<pre><code class="language-bash">.venv/bin/modelops search &quot;Customer Group&quot; --repo examples/customer_bp_model
+.venv/bin/modelops query --type Attribute --repo examples/customer_bp_model
+.venv/bin/modelops trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
+.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
+<h2 id="health-scorecard-and-gaps">Health, Scorecard, and Gaps</h2>
+<pre><code class="language-bash">.venv/bin/modelops health --repo examples/customer_bp_model
+.venv/bin/modelops scorecard --repo examples/customer_bp_model
+.venv/bin/modelops gap-report --repo examples/customer_bp_model
+.venv/bin/modelops gaps \
+  examples/customer_bp_model/data/samples/customer_sales_area_sample.csv \
+  --repo examples/customer_bp_model \
+  --check-model</code></pre>
+<h2 id="proposal-first-ai-flow">Proposal-First AI Flow</h2>
+<pre><code class="language-bash">cat &gt;/tmp/martenweave-note.md &lt;&lt;'NOTE'
+Update CUSTOMER GROUP mapping for KNVV-KDGRP based on the CH01-A17 decision.
+Keep the change as a reviewable PatchProposal.
+NOTE
+
+.venv/bin/modelops propose-patch \
+  --from /tmp/martenweave-note.md \
+  --repo examples/customer_bp_model \
+  --dry-run</code></pre>
+<p>The default adapter is deterministic and makes no external AI call. Provider-backed AI is optional, and AI output must remain reviewable.</p>
+<h2 id="one-command-verification">One-Command Verification</h2>
+<pre><code class="language-bash">bash scripts/release_smoke.sh</code></pre>
+<p>This runs validation, indexing, health, scorecards, search, query, trace, impact, gaps, gap report, and dry-run proposal checks across bundled examples.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>

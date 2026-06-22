@@ -65,4 +65,4 @@ Do not include:
 - fake customer testimonials
 - claims of certification or partnership
 
-Have a migration horror story? Open an issue. We collect those professionally.
+Have a difficult migration or governance scenario? Open an issue with synthetic examples and clear validation evidence.

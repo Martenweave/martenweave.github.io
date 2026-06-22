@@ -1,6 +1,6 @@
 # What Martenweave Is
 
-Martenweave is a backend-first, AI-assisted MDM model registry.
+Martenweave is a backend-first agentic data model registry.
 
 It helps SAP migration, master data management, data governance, data quality, and AMS/support teams turn scattered model knowledge into a traceable, validated, AI-ready model layer.
 
@@ -36,8 +36,8 @@ Martenweave is:
 Martenweave is not:
 
 - a chatbot
-- a vague data catalog
-- a workflow monster
+- a generic data catalog
+- a workflow engine
 - a SaaS tenant platform
 - a replacement for SAP MDG, SAP S/4HANA, Jira, Confluence, or enterprise catalogs
 - an official SAP-certified or SAP-affiliated product
@@ -84,3 +84,5 @@ Reports create business value.
 - Product/core repo: https://github.com/metalhatscats/martenweave-core
 - Website repo: https://github.com/Martenweave/martenweave.github.io
 - Docs index: https://martenweave.github.io/docs.html
+- Quickstart: https://martenweave.github.io/docs/quickstart.html
+- Examples: https://martenweave.github.io/docs/examples.html

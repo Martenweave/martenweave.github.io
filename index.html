@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave - AI-assisted MDM model registry</title>
+    <title>Martenweave - backend-first data model registry</title>
     <meta
       name="description"
-      content="Martenweave turns Excel mappings, tickets, validation reports, datasets, decisions, and SAP context into a traceable, validated, AI-ready model layer for MDM, migration, governance, and AMS teams."
+      content="Martenweave is a backend-first agentic data model registry for SAP migration, MDM, data governance, data quality, and AMS teams."
     />
-    <meta name="theme-color" content="#f7efe2" />
+    <meta name="theme-color" content="#f5f7f4" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Martenweave" />
     <meta name="application-name" content="Martenweave" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://martenweave.github.io/" />
     <meta property="og:site_name" content="Martenweave" />
-    <meta property="og:title" content="Martenweave - AI-assisted MDM model registry" />
+    <meta property="og:title" content="Martenweave - backend-first data model registry" />
     <meta
       property="og:description"
       content="A backend-first model truth layer for SAP migration, MDM, governance, data quality, and AMS teams."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Martenweave - AI-assisted MDM model registry" />
+    <meta name="twitter:title" content="Martenweave - backend-first data model registry" />
     <meta
       name="twitter:description"
-      content="Validated model truth for teams tired of Excel archaeology and mystery mappings."
+      content="Canonical model files, deterministic validation, generated indexes, and human-approved AI proposals."
     />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/og-image.svg" />
     <link rel="canonical" href="https://martenweave.github.io/" />
@@ -47,7 +47,7 @@
         "programmingLanguage": "Python",
         "runtimePlatform": "Python 3.11+",
         "applicationCategory": "Data governance, MDM, SAP migration, model registry",
-        "description": "Martenweave is a backend-first, AI-assisted MDM model registry that turns scattered model knowledge into a traceable, validated, AI-ready model truth layer.",
+        "description": "Martenweave is a backend-first agentic data model registry that turns scattered model knowledge into a traceable, validated, AI-ready model truth layer.",
         "keywords": [
           "MDM",
           "SAP migration",
@@ -82,6 +82,7 @@
         <div class="nav-links" id="nav-links">
           <a href="#product">Product</a>
           <a href="#registry">Registry</a>
+          <a href="#quickstart">Quickstart</a>
           <a href="/docs.html">Docs</a>
           <a href="#use-cases">Use cases</a>
           <a href="#architecture">Architecture</a>
@@ -97,14 +98,14 @@
       <section class="hero" id="product" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="system-label">model truth layer / backend-first / human-approved</p>
+            <p class="system-label">canonical files / deterministic validation / human-approved AI</p>
             <h1 id="hero-title">
-              Martenweave is the data-model brain between Excel chaos and AI help.
+              Martenweave is the backend-first registry for governed data model truth.
             </h1>
             <p class="hero-subhead">
-              AI-assisted MDM model registry for migration, governance, and support teams. Turn
-              Excel mappings, tickets, validation reports, datasets, decisions, and SAP context into
-              a traceable model layer that humans can trust and AI can safely work with.
+              Martenweave is a backend-first model registry that converts scattered model knowledge
+              into validated, traceable, AI-ready model truth for migration, MDM, data governance,
+              and support teams.
             </p>
             <div class="hero-actions" aria-label="Hero actions">
               <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">
@@ -157,10 +158,10 @@
 
       <section class="quick-read" aria-label="Decision-maker quick read">
         <div class="quick-read-grid">
-          <p>Use it when model truth is scattered.</p>
-          <p>Use it before mock loads.</p>
-          <p>Use it when AI needs structure.</p>
-          <p>Use it for AMS continuity.</p>
+          <p>Use it when mappings drift across files.</p>
+          <p>Use it before mock loads and cutover checks.</p>
+          <p>Use it when AI needs validated context.</p>
+          <p>Use it for AMS knowledge continuity.</p>
         </div>
       </section>
 
@@ -168,19 +169,19 @@
         <div class="section-grid">
           <div class="section-kicker">The problem</div>
           <div class="section-body">
-            <h2 id="problem-title">Model knowledge has a habit of escaping containment.</h2>
+            <h2 id="problem-title">Model knowledge becomes useful when it is structured and validated.</h2>
             <p class="lead">
-              Most model knowledge does not live in one system. It leaks across Excel files,
-              tickets, validation reports, migration notes, Slack decisions, and the heads of tired
-              consultants. Martenweave gives that knowledge a spine.
+              Migration and governance teams work across spreadsheets, tickets, validation reports,
+              datasets, decisions, and SAP context. Martenweave turns that scattered evidence into a
+              canonical model layer that can be checked, searched, traced, and reviewed.
             </p>
             <div class="pain-matrix" aria-label="Common model knowledge problems">
-              <span>final_v9_really_final.xlsx</span>
+              <span>mapping workbook with unclear ownership</span>
               <span>ticket decision without field context</span>
-              <span>validation PDF with no model rule link</span>
-              <span>owner: ask Anna, unless she left</span>
-              <span>mapping mystery from mock load 2</span>
-              <span>AI prompt with zero structured truth</span>
+              <span>validation report with no rule link</span>
+              <span>handover note without model references</span>
+              <span>mock-load finding disconnected from mappings</span>
+              <span>AI prompt without structured truth</span>
             </div>
           </div>
         </div>
@@ -189,7 +190,7 @@
       <section class="section registry" id="registry" aria-labelledby="registry-title">
         <div class="section-heading">
           <p class="section-kicker">Registry core</p>
-          <h2 id="registry-title">Not a chatbot. Not a vague catalog. A registry of model truth.</h2>
+          <h2 id="registry-title">A file-backed registry of model truth, not a chatbot or workflow platform.</h2>
           <p>
             Martenweave stores canonical model objects as files, validates them deterministically,
             builds disposable indexes, and gives humans a reviewable path for change.
@@ -201,19 +202,12 @@
               <span></span><span></span><span></span>
               <strong>modelops</strong>
             </div>
-            <pre><code>$ modelops validate --repo ./customer-bp
-Layer 1  schema objects        OK
-Layer 2  references            OK
-Layer 3  SAP context           OK
-
-$ modelops impact FEP-S4-KNVV-KDGRP
-ATTR-CUST-SALES-GROUP
-  -> USAGE-CUST-SALES-KDGRP
-  -> MAP-LEGACY-CUST-GROUP-S4
-  -> ISSUE-MOCK2-MISSING-KDGRP
-
-$ modelops propose-patch --from note.md
-PatchProposal created. Awaiting human review.</code></pre>
+            <pre><code>$ modelops validate --repo examples/customer_bp_model
+$ modelops build-index --repo examples/customer_bp_model --jsonl
+$ modelops search "Customer Group" --repo examples/customer_bp_model
+$ modelops trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
+$ modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
+$ modelops propose-patch --from note.md --repo examples/customer_bp_model --dry-run</code></pre>
           </div>
           <div class="registry-facts" aria-label="Martenweave product facts">
             <article>
@@ -245,7 +239,7 @@ PatchProposal created. Awaiting human review.</code></pre>
           <p class="section-kicker">What exists today</p>
           <h2 id="today-title">The core is already more than a landing-page promise.</h2>
           <p>
-            `martenweave-core` is a Python backend and CLI package at version 0.4.0. It is
+            <code>martenweave-core</code> is a Python backend and CLI package at version 0.4.0. It is
             local-first, file-based, and built for serious model work before any UI gets involved.
           </p>
         </div>
@@ -280,6 +274,37 @@ PatchProposal created. Awaiting human review.</code></pre>
             <h3>Customer BP, Supplier Vendor, Generic Product</h3>
             <p>SAP scenarios are starter packs and demos, not the product boundary.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section quickstart-section" id="quickstart" aria-labelledby="quickstart-title">
+        <div class="section-heading">
+          <p class="section-kicker">Quickstart</p>
+          <h2 id="quickstart-title">Clone, install, validate, index, inspect.</h2>
+          <p>
+            The core demo runs locally with Python 3.11+ and the bundled Customer / Business Partner
+            example. No provider key or hosted service is required.
+          </p>
+        </div>
+        <div class="quickstart-layout">
+          <pre><code>python -m venv .venv
+.venv/bin/python -m pip install -e ".[dev]"
+.venv/bin/modelops validate --repo examples/customer_bp_model
+.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/modelops health --repo examples/customer_bp_model
+.venv/bin/modelops search "Customer Group" --repo examples/customer_bp_model
+.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
+bash scripts/release_smoke.sh</code></pre>
+          <div class="quickstart-notes">
+            <h3>What this proves</h3>
+            <ul class="check-list">
+              <li>Canonical files parse and validate.</li>
+              <li>SQLite, search JSONL, and lineage JSONL rebuild from source files.</li>
+              <li>Search, trace, impact, health, gaps, and scorecards run on examples.</li>
+              <li>Patch proposals can be generated as dry-run review artifacts.</li>
+            </ul>
+            <a class="button secondary" href="/docs/quickstart.html">Read the full quickstart</a>
+          </div>
         </div>
       </section>
 
@@ -342,7 +367,7 @@ PatchProposal created. Awaiting human review.</code></pre>
       <section class="section flow-section" id="how-it-works" aria-labelledby="flow-title">
         <div class="section-heading">
           <p class="section-kicker">How it works</p>
-          <h2 id="flow-title">The operating loop is boring in the best possible way.</h2>
+          <h2 id="flow-title">The operating loop is explicit by design.</h2>
         </div>
         <ol class="flow" aria-label="Martenweave workflow">
           <li><span>01</span>Input artifacts</li>
@@ -359,7 +384,7 @@ PatchProposal created. Awaiting human review.</code></pre>
       <section class="section use-cases" id="use-cases" aria-labelledby="use-title">
         <div class="section-heading">
           <p class="section-kicker">Use cases</p>
-          <h2 id="use-title">For teams who need traceability before the next escalation.</h2>
+          <h2 id="use-title">For teams who need traceability before decisions become expensive.</h2>
         </div>
         <div class="use-case-grid">
           <article class="use-card">
@@ -388,7 +413,7 @@ PatchProposal created. Awaiting human review.</code></pre>
           </article>
           <article class="use-card">
             <h3>Dataset gaps before mock load</h3>
-            <p><strong>Problem:</strong> Missing fields appear late, usually with calendar drama.</p>
+            <p><strong>Problem:</strong> Missing fields appear late, after load planning has begun.</p>
             <p><strong>Helps:</strong> Profiled datasets are compared with expected endpoints.</p>
             <p><strong>Value:</strong> Earlier remediation and less validation ping-pong.</p>
           </article>
@@ -423,11 +448,11 @@ PatchProposal created. Awaiting human review.</code></pre>
         <div class="section-grid">
           <div class="section-kicker">Why not just...</div>
           <div class="section-body">
-            <h2 id="compare-title">Excel, Confluence, tickets, and ChatGPT still have jobs. This is a different job.</h2>
+            <h2 id="compare-title">Excel, Confluence, tickets, and AI assistants still have jobs. This is a different job.</h2>
             <div class="comparison-grid">
               <div>
                 <h3>Excel</h3>
-                <p>Stores fragments. Useful fragments, often named like a cry for help.</p>
+                <p>Stores fragments. Useful fragments, but weak as governed model truth.</p>
               </div>
               <div>
                 <h3>Confluence</h3>
@@ -435,10 +460,10 @@ PatchProposal created. Awaiting human review.</code></pre>
               </div>
               <div>
                 <h3>Tickets</h3>
-                <p>Store disputes, approvals, and archaeology. They are not a model layer.</p>
+                <p>Store disputes, approvals, and delivery history. They are not a model layer.</p>
               </div>
               <div>
-                <h3>ChatGPT</h3>
+                <h3>AI assistants</h3>
                 <p>Can summarize and draft. It should not quietly redefine truth.</p>
               </div>
               <div class="comparison-answer">
@@ -465,8 +490,8 @@ PatchProposal created. Awaiting human review.</code></pre>
           <h2 id="ai-title">AI is useful. Silent mutation is not.</h2>
           <p class="lead">
             Martenweave does not ask AI to be the source of truth. That would be brave in the same
-            way deploying directly to production on Friday is brave. AI proposes changes. Validators
-            check them. Humans approve them.
+            way any unreviewed model change is risky. AI proposes changes. Validators check them.
+            Humans approve them.
           </p>
           <ul class="check-list">
             <li>Suggest patches from notes, reports, and issue context.</li>
@@ -481,7 +506,7 @@ PatchProposal created. Awaiting human review.</code></pre>
       <section class="section architecture" id="architecture" aria-labelledby="architecture-title">
         <div class="section-heading">
           <p class="section-kicker">Architecture</p>
-          <h2 id="architecture-title">Backend-first because model truth should survive interface fashion.</h2>
+          <h2 id="architecture-title">Backend-first so model truth is independent of any one interface.</h2>
           <p>
             The canonical model files are the truth. Generated indexes are acceleration. Reports are
             evidence. Proposals are reviewable. Nothing important changes silently.
@@ -514,7 +539,7 @@ PatchProposal created. Awaiting human review.</code></pre>
       <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
         <div class="section-heading">
           <p class="section-kicker">Roadmap</p>
-          <h2 id="roadmap-title">A practical roadmap, not platform-shaped fog.</h2>
+          <h2 id="roadmap-title">A practical roadmap for a trustworthy model layer.</h2>
         </div>
         <div class="timeline">
           <article class="roadmap-item">
@@ -575,7 +600,7 @@ PatchProposal created. Awaiting human review.</code></pre>
           <img src="/assets/logo.png" alt="" width="120" height="120" />
           <div>
             <p class="section-kicker">Open source</p>
-            <h2 id="contribute-title">Bring scenarios, issues, and inconvenient truths.</h2>
+            <h2 id="contribute-title">Contribute real scenarios and focused issues.</h2>
             <p>
               Martenweave is early and intentionally backend-first. Feedback is most useful when it
               comes with real migration, MDM, data quality, governance, or AMS scenarios.
@@ -588,8 +613,9 @@ PatchProposal created. Awaiting human review.</code></pre>
                 Website repo
               </a>
             </div>
-            <p class="horror-line">
-              Have a migration horror story? Open an issue. We collect those professionally.
+            <p class="support-line">
+              Useful contributions include synthetic examples, failing commands, validation gaps,
+              and domain-pack scenarios.
             </p>
           </div>
         </div>
@@ -602,18 +628,21 @@ PatchProposal created. Awaiting human review.</code></pre>
           <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
-        <p>AI-assisted MDM model registry.</p>
+        <p>Backend-first data model registry.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="/docs.html">Docs</a>
-        <a href="/docs/product.md">Product docs</a>
-        <a href="/docs/ai-governance.md">AI governance</a>
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="/ai.txt">AI context</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
         <a href="https://github.com/Martenweave/martenweave.github.io">Website GitHub</a>
       </div>
-      <p class="footer-line">Traceability over folklore.</p>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
     </footer>
   </body>
 </html>

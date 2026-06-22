@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contributing Scenarios - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for Contributing Scenarios."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/contributing-scenarios.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html" aria-current="page">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="contributing-scenarios">Contributing Scenarios</h1>
+<p>Martenweave benefits most from real model-work pain, described clearly.</p>
+<p>You do not need to write code to contribute useful input.</p>
+<h2 id="good-contributions">Good Contributions</h2>
+<p>Open an issue when you can describe:</p>
+<ul>
+<li>a migration mapping problem</li>
+<li>a validation report that was hard to triage</li>
+<li>an ownership dispute</li>
+<li>a dataset/model gap that appeared too late</li>
+<li>a starter pack need</li>
+<li>a domain-specific validation rule</li>
+<li>an AMS handover problem</li>
+<li>an AI-assisted workflow that would be useful if controlled properly</li>
+</ul>
+<h2 id="what-to-include">What To Include</h2>
+<p>Useful scenario reports include:</p>
+<ul>
+<li>domain area, for example Customer, Supplier, Product, Finance, or Material</li>
+<li>systems involved, if safe to share</li>
+<li>artifact types involved, for example Excel, ticket, dataset, report, decision log</li>
+<li>the model object that was unclear</li>
+<li>the business impact</li>
+<li>what evidence would have helped</li>
+<li>what a good output should look like</li>
+</ul>
+<p>Sanitize client names, proprietary field lists, and sensitive records.</p>
+<h2 id="example-issue-shape">Example Issue Shape</h2>
+<pre><code class="language-text">Title: Validation report has no link back to customer group mapping rule
+
+Context:
+During mock load 2, KNVV-KDGRP failed validation for multiple customer sales areas.
+
+Artifacts:
+- mapping workbook
+- validation report
+- data steward comments
+- target value list
+
+Problem:
+The report showed invalid values but did not connect the failure to the allowed value list,
+mapping rule, owner, or prior decision.
+
+What Martenweave should help with:
+Link the validation finding to FieldEndpoint, Attribute, ValueList, ValueMapping, owner,
+Decision, and Issue objects.</code></pre>
+<h2 id="what-not-to-include">What Not To Include</h2>
+<p>Do not include:</p>
+<ul>
+<li>client-confidential data</li>
+<li>credentials</li>
+<li>raw production records</li>
+<li>proprietary SAP screenshots</li>
+<li>fake customer testimonials</li>
+<li>claims of certification or partnership</li>
+</ul>
+<p>Have a difficult migration or governance scenario? Open an issue with synthetic examples and clear validation evidence.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>

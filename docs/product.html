@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What Martenweave Is - Martenweave Docs</title>
+    <meta
+      name="description"
+      content="Public Martenweave documentation for What Martenweave Is."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/product.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <span>Martenweave</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">Product</a>
+          <a href="/#registry">Registry</a>
+          <a href="/docs.html">Docs</a>
+          <a href="/#use-cases">Use cases</a>
+          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
+            GitHub
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs/index.html">Docs home</a>
+<a href="/docs/product.html" aria-current="page">Product</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+      </aside>
+      <article class="doc-content">
+        <p class="section-kicker">Public docs</p>
+<h1 id="what-martenweave-is">What Martenweave Is</h1>
+<p>Martenweave is a backend-first agentic data model registry.</p>
+<p>It helps SAP migration, master data management, data governance, data quality, and AMS/support teams turn scattered model knowledge into a traceable, validated, AI-ready model layer.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>Real model knowledge rarely lives in one clean system.</p>
+<p>It usually leaks across:</p>
+<ul>
+<li>Excel mappings</li>
+<li>ticket threads</li>
+<li>validation reports</li>
+<li>datasets</li>
+<li>migration notes</li>
+<li>decisions</li>
+<li>SAP context</li>
+<li>project history</li>
+<li>tribal knowledge</li>
+</ul>
+<p>That makes ownership unclear, validation disputes slow, handover painful, and AI assistance risky because the model truth is not structured.</p>
+<h2 id="the-product-boundary">The Product Boundary</h2>
+<p>Martenweave is:</p>
+<ul>
+<li>a model truth layer</li>
+<li>a canonical file store</li>
+<li>a deterministic validator</li>
+<li>a generated index and reporting layer</li>
+<li>an AI-assisted proposal workflow</li>
+<li>a local-first CLI/backend library</li>
+</ul>
+<p>Martenweave is not:</p>
+<ul>
+<li>a chatbot</li>
+<li>a generic data catalog</li>
+<li>a workflow engine</li>
+<li>a SaaS tenant platform</li>
+<li>a replacement for SAP MDG, SAP S/4HANA, Jira, Confluence, or enterprise catalogs</li>
+<li>an official SAP-certified or SAP-affiliated product</li>
+</ul>
+<p>SAP migration is a strong starter scenario and domain context. It is not the whole product boundary.</p>
+<h2 id="what-exists-now">What Exists Now</h2>
+<p>The core repository is <code>martenweave-core</code> version <code>0.4.0</code>.</p>
+<p>Current public capabilities include:</p>
+<ul>
+<li><code>modelops</code> CLI</li>
+<li>local API server</li>
+<li>MCP-ready backend</li>
+<li>canonical Markdown + YAML model files</li>
+<li>deterministic validation</li>
+<li>SQLite and JSONL generated indexes</li>
+<li>search and structured query</li>
+<li>trace and impact analysis</li>
+<li>dataset profiling and gap detection</li>
+<li>health, analysis, scorecard, ownership, audit, and usage reports</li>
+<li>export/import workflows for CSV and XLSX review</li>
+<li>PatchProposal to ChangeRequest lifecycle</li>
+<li>issue drafts and GitHub-ready change bundles</li>
+<li>example packs for Customer / Business Partner, Supplier / Vendor, and generic product models</li>
+</ul>
+<h2 id="core-principle">Core Principle</h2>
+<p>Integrations bring input.</p>
+<p>Martenweave stores model truth.</p>
+<p>Validators check consistency.</p>
+<p>AI proposes changes.</p>
+<p>Humans approve.</p>
+<p>Reports create business value.</p>
+<h2 id="where-to-go-next">Where To Go Next</h2>
+<ul>
+<li>Product/core repo: https://github.com/metalhatscats/martenweave-core</li>
+<li>Website repo: https://github.com/Martenweave/martenweave.github.io</li>
+<li>Docs index: https://martenweave.github.io/docs.html</li>
+<li>Quickstart: https://martenweave.github.io/docs/quickstart.html</li>
+<li>Examples: https://martenweave.github.io/docs/examples.html</li>
+</ul>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <p>Backend-first data model registry.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="/docs/quickstart.html">Quickstart</a>
+        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/examples.html">Examples</a>
+        <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/open-source.html">Open source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
+      </div>
+      <p class="footer-line">Traceable model truth for governed data work.</p>
+    </footer>
+  </body>
+</html>
