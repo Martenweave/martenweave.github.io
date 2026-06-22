@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Governance - Martenweave Docs</title>
+    <title>Release Proof - Martenweave Docs</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for AI Governance."
+      content="Public Martenweave documentation for Release Proof."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://martenweave.github.io/docs/ai-governance.html" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/release-proof.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
@@ -46,71 +46,25 @@
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html">Use cases</a>
 <a href="/docs/architecture.html">Architecture</a>
-<a href="/docs/ai-governance.html" aria-current="page">AI governance</a>
-<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/release-proof.html" aria-current="page">Release proof</a>
 <a href="/docs/roadmap.html">Roadmap</a>
 <a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
 <a href="/docs/open-source.html">Open source</a>
       </aside>
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
-<h1 id="ai-governance">AI Governance</h1>
-<p>Martenweave has a simple AI rule:</p>
-<pre><code class="language-text">AI proposes.
-Validators verify.
-Humans approve.</code></pre>
-<p>This is the safety model.</p>
-<h2 id="what-ai-may-do">What AI May Do</h2>
-<p>AI may help with:</p>
-<ul>
-<li>extracting evidence from notes, tickets, validation reports, and workshop summaries</li>
-<li>drafting PatchProposals</li>
-<li>drafting GitHub issues</li>
-<li>suggesting affected model objects</li>
-<li>explaining impact from structured model context</li>
-<li>preparing validation or review checklists</li>
-<li>summarizing handover context for AMS/support teams</li>
-</ul>
-<h2 id="what-ai-must-not-do">What AI Must Not Do</h2>
-<p>AI must not:</p>
-<ul>
-<li>silently mutate canonical model files</li>
-<li>bypass deterministic validation</li>
-<li>mark a finding as validated without evidence</li>
-<li>invent SAP technical facts</li>
-<li>delete approved objects without explicit review</li>
-<li>treat raw datasets as model truth</li>
-<li>send raw client datasets to an external provider by default</li>
-</ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>AI is useful at turning messy project evidence into draft structure.</p>
-<p>AI is not a reliable source of model truth by itself.</p>
-<p>Martenweave keeps AI inside a controlled change workflow:</p>
-<ol>
-<li>Start from bounded context or evidence.</li>
-<li>Create a structured PatchProposal.</li>
-<li>Validate IDs, types, references, and domain rules.</li>
-<li>Review impact and diff.</li>
-<li>Approve or reject as a human action.</li>
-<li>Apply only approved changes.</li>
-<li>Record the change trail.</li>
-</ol>
-<h2 id="good-ai-outputs">Good AI Outputs</h2>
-<p>Good outputs are reviewable:</p>
-<ul>
-<li>“This note appears to affect <code>ATTR-CUST-SALES-CUSTOMER-GROUP</code>.”</li>
-<li>“Create a draft issue for missing mapping evidence.”</li>
-<li>“Propose a value-list update, status <code>review</code>.”</li>
-<li>“Explain downstream impact for <code>FEP-S4-KNVV-KDGRP</code>.”</li>
-</ul>
-<p>Bad outputs pretend to be truth:</p>
-<ul>
-<li>“I updated the model.”</li>
-<li>“This SAP mapping is correct” without evidence.</li>
-<li>“Delete these canonical files.”</li>
-<li>“Validation passed” without deterministic validation.</li>
-</ul>
-<p>Martenweave is built for the first category.</p>
+<h1 id="release-proof">Release Proof</h1>
+<p>These screenshots were captured from the local static site during the first public release-candidate pass.</p>
+<p>The in-app Browser path rejected the localhost URL under its URL policy, so the screenshots were captured with a documented Playwright CLI fallback. The site itself was served locally and validated with <code>npm run validate</code> before capture.</p>
+<h2 id="homepage-desktop">Homepage Desktop</h2>
+<p><img src="/assets/screenshots/homepage-desktop.png" alt="Homepage desktop screenshot" /></p>
+<h2 id="homepage-mobile">Homepage Mobile</h2>
+<p><img src="/assets/screenshots/homepage-mobile.png" alt="Homepage mobile screenshot" /></p>
+<h2 id="docs-index">Docs Index</h2>
+<p><img src="/assets/screenshots/docs-index-desktop.png" alt="Docs index desktop screenshot" /></p>
+<h2 id="quickstart-docs-page">Quickstart Docs Page</h2>
+<p><img src="/assets/screenshots/docs-quickstart-desktop.png" alt="Quickstart docs desktop screenshot" /></p>
       </article>
     </main>
 

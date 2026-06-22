@@ -14,6 +14,7 @@ const docRoutes = [
   { source: "use-cases.md", output: "use-cases.html", label: "Use cases" },
   { source: "architecture.md", output: "architecture.html", label: "Architecture" },
   { source: "ai-governance.md", output: "ai-governance.html", label: "AI governance" },
+  { source: "release-proof.md", output: "release-proof.html", label: "Release proof" },
   { source: "roadmap.md", output: "roadmap.html", label: "Roadmap" },
   {
     source: "contributing-scenarios.md",
@@ -53,6 +54,9 @@ function normalizeHref(href) {
 
 function renderInline(value) {
   return escapeHtml(value)
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt, src) => {
+      return `<img src="${escapeAttribute(normalizeHref(src))}" alt="${alt}" />`;
+    })
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text, href) => {
       return `<a href="${escapeAttribute(normalizeHref(href))}">${text}</a>`;
     })
