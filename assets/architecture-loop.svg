@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" role="img" aria-labelledby="title desc">
+  <title id="title">Martenweave architecture loop</title>
+  <desc id="desc">Input artifacts flow into canonical model files, validation, generated indexes, model intelligence, AI patch proposals, and human approval.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2l7 4-7 4z" fill="#bc6a17"/>
+    </marker>
+    <filter id="soft-shadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#171a18" flood-opacity=".12"/>
+    </filter>
+    <style>
+      .bg { fill: #f8faf6; }
+      .thread { fill: none; stroke: #bc6a17; stroke-width: 5; marker-end: url(#arrow); }
+      .card { fill: #ffffff; stroke: rgba(24, 61, 58, .22); stroke-width: 2; filter: url(#soft-shadow); }
+      .card-dark { fill: #183d3a; stroke: #183d3a; }
+      .label { fill: #bc6a17; font: 800 20px Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+      .title { fill: #171a18; font: 900 27px Arial, sans-serif; }
+      .detail { fill: #5b625f; font: 500 21px Arial, sans-serif; }
+      .dark-title { fill: #fffaf1; font: 900 27px Arial, sans-serif; }
+      .dark-detail { fill: #d8e2dd; font: 500 21px Arial, sans-serif; }
+      .mark-bg { fill: #321136; }
+      .mark-light { fill: #fffaf1; }
+      .mark-amber { fill: #d98d12; }
+    </style>
+  </defs>
+  <rect class="bg" width="1280" height="620" rx="28"/>
+  <path d="M100 315C100 166 236 78 430 78h420c212 0 330 86 330 232s-128 232-330 232H430C235 542 100 464 100 315z" fill="none" stroke="#d7e0db" stroke-width="2" stroke-dasharray="10 12"/>
+  <g transform="translate(88 80)">
+    <rect class="card" width="256" height="138" rx="18"/>
+    <text class="label" x="28" y="42">Input artifacts</text>
+    <text class="title" x="28" y="78">Excel / CSV</text>
+    <text class="detail" x="28" y="111">tickets / reports / decisions</text>
+  </g>
+  <path class="thread" d="M348 149h84"/>
+  <g transform="translate(440 80)">
+    <rect class="card" width="256" height="138" rx="18"/>
+    <text class="label" x="28" y="42">Canonical model</text>
+    <text class="title" x="28" y="78">Markdown + YAML</text>
+    <text class="detail" x="28" y="111">source-controlled model truth</text>
+  </g>
+  <path class="thread" d="M700 149h84"/>
+  <g transform="translate(792 80)">
+    <rect class="card" width="318" height="138" rx="18"/>
+    <text class="label" x="28" y="42">Deterministic validation</text>
+    <text class="title" x="28" y="78">IDs / references</text>
+    <text class="detail" x="28" y="111">SAP context / rules</text>
+  </g>
+  <path class="thread" d="M1108 176c70 30 98 74 98 134s-30 106-98 136"/>
+  <g transform="translate(812 402)">
+    <rect class="card" width="298" height="138" rx="18"/>
+    <text class="label" x="28" y="42">Generated index</text>
+    <text class="title" x="28" y="78">SQLite / JSONL</text>
+    <text class="detail" x="28" y="111">lineage / search exports</text>
+  </g>
+  <path class="thread" d="M804 471h-84"/>
+  <g transform="translate(440 402)">
+    <rect class="card" width="280" height="138" rx="18"/>
+    <text class="label" x="28" y="42">Model intelligence</text>
+    <text class="title" x="28" y="78">search / trace</text>
+    <text class="detail" x="28" y="111">impact / gaps / scorecards</text>
+  </g>
+  <path class="thread" d="M432 471h-84"/>
+  <g transform="translate(88 402)">
+    <rect class="card" width="256" height="138" rx="18"/>
+    <text class="label" x="28" y="42">AI PatchProposal</text>
+    <text class="title" x="28" y="78">reviewable changes</text>
+    <text class="detail" x="28" y="111">AI proposes only</text>
+  </g>
+  <path class="thread" d="M142 398c-42-42-42-134 0-176"/>
+  <g transform="translate(458 246)">
+    <rect class="card card-dark" width="364" height="128" rx="20"/>
+    <g transform="translate(30 24) scale(.58)">
+      <rect class="mark-bg" width="96" height="96" rx="22"/>
+      <path class="mark-light" d="M23 29h39l15 12v32H35L17 62V38z"/>
+      <path class="mark-amber" d="M32 38h16l9 7v20H40L28 54V40z"/>
+      <path class="mark-bg" d="M18 62h26l15 10H34z"/>
+      <path class="mark-bg" d="M59 48h15v13H59z"/>
+      <circle class="mark-amber" cx="18" cy="62" r="4"/>
+      <circle class="mark-amber" cx="34" cy="73" r="4"/>
+      <circle class="mark-amber" cx="78" cy="42" r="4"/>
+    </g>
+    <text class="dark-title" x="108" y="54">Human approval</text>
+    <text class="dark-detail" x="108" y="88">ChangeRequest / approved model update</text>
+  </g>
+</svg>

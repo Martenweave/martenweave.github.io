@@ -4,6 +4,8 @@ Martenweave is backend-first and local-first. The core design is intentionally s
 
 ## Architecture Loop
 
+![Martenweave architecture loop](/assets/architecture-loop.svg)
+
 ```text
 Input artifacts
   -> canonical model files

@@ -32,10 +32,20 @@ const requiredFiles = [
   "styles.css",
   "script.js",
   "scripts/build-docs.mjs",
+  "assets/README.md",
+  "assets/logo.svg",
   "assets/logo.png",
   "assets/favicon.svg",
+  "assets/favicon-16.png",
+  "assets/favicon-32.png",
+  "assets/apple-touch-icon.png",
+  "assets/android-chrome-192.png",
+  "assets/android-chrome-512.png",
   "assets/martenweave-mark.svg",
-  "assets/og-image.svg",
+  "assets/og-image.png",
+  "assets/twitter-card.png",
+  "assets/github-social-preview.png",
+  "assets/architecture-loop.svg",
   "assets/screenshots/homepage-desktop.png",
   "assets/screenshots/homepage-mobile.png",
   "assets/screenshots/docs-index-desktop.png",
@@ -60,6 +70,37 @@ for (const file of requiredFiles) {
 
 function readSiteFile(file) {
   return readFileSync(join(root, file), "utf8");
+}
+
+function pngDimensions(file) {
+  const bytes = readFileSync(join(root, file));
+  if (
+    bytes.length < 24 ||
+    bytes[0] !== 0x89 ||
+    bytes[1] !== 0x50 ||
+    bytes[2] !== 0x4e ||
+    bytes[3] !== 0x47
+  ) {
+    errors.push(`${file} is not a PNG file.`);
+    return null;
+  }
+  return {
+    width: bytes.readUInt32BE(16),
+    height: bytes.readUInt32BE(20),
+  };
+}
+
+function expectPngDimensions(file, width, height) {
+  if (!existsSync(join(root, file))) {
+    return;
+  }
+  const dimensions = pngDimensions(file);
+  if (!dimensions) {
+    return;
+  }
+  if (dimensions.width !== width || dimensions.height !== height) {
+    errors.push(`${file} must be ${width}x${height}, got ${dimensions.width}x${dimensions.height}.`);
+  }
 }
 
 function routeToLocalPath(route) {
@@ -151,6 +192,21 @@ for (const [file, html] of htmlByFile.entries()) {
 
 const rootHtml = `${htmlByFile.get("index.html") ?? ""}\n${htmlByFile.get("docs.html") ?? ""}`;
 const allHtml = [...htmlByFile.values()].join("\n");
+
+const referencedAssetMatches = [
+  ...allHtml.matchAll(/\s(?:href|src)="(\/assets\/[^"]+)"/g),
+  ...allHtml.matchAll(/\scontent="https:\/\/martenweave\.github\.io(\/assets\/[^"]+)"/g),
+  ...readSiteFile("site.webmanifest").matchAll(/"(\/assets\/[^"]+)"/g),
+  ...readSiteFile("ai.json").matchAll(/"https:\/\/martenweave\.github\.io(\/assets\/[^"]+)"/g),
+];
+
+for (const match of referencedAssetMatches) {
+  const assetPath = routeToLocalPath(match[1]);
+  if (!existsSync(join(root, assetPath))) {
+    errors.push(`Referenced asset is missing: ${match[1]} -> ${assetPath}`);
+  }
+}
+
 const forbiddenSubpaths = ["/martenweave/", "/martenweave.github.io/", "/site/"];
 
 for (const subpath of forbiddenSubpaths) {
@@ -210,6 +266,7 @@ const aiText = readSiteFile("ai.txt");
 const aiJson = JSON.parse(readSiteFile("ai.json"));
 const sitemap = readSiteFile("sitemap.xml");
 const robots = readSiteFile("robots.txt");
+const manifest = JSON.parse(readSiteFile("site.webmanifest"));
 const staleVersion = ["0", "4", "0"].join(".");
 
 for (const [file, text] of [
@@ -228,6 +285,52 @@ for (const [file, text] of [
 if (!aiContext.includes("AI proposes. Validators verify. Humans approve.")) {
   errors.push("llms.txt is missing the AI governance principle.");
 }
+
+const requiredHomepageHead = [
+  '<link rel="canonical" href="https://martenweave.github.io/"',
+  '<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"',
+  '<link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png"',
+  '<link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png"',
+  '<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"',
+  '<link rel="manifest" href="/site.webmanifest"',
+  '<meta property="og:image" content="https://martenweave.github.io/assets/og-image.png"',
+  '<meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png"',
+];
+
+const homepageHtml = htmlByFile.get("index.html") ?? "";
+for (const snippet of requiredHomepageHead) {
+  if (!homepageHtml.includes(snippet)) {
+    errors.push(`Homepage head missing required metadata: ${snippet}`);
+  }
+}
+
+if (!homepageHtml.includes('src="/assets/architecture-loop.svg"')) {
+  errors.push("Homepage must reference assets/architecture-loop.svg.");
+}
+
+if (manifest.name !== "Martenweave" || manifest.short_name !== "Martenweave") {
+  errors.push("site.webmanifest must use Martenweave name fields.");
+}
+
+if (manifest.start_url !== "/" || manifest.display !== "minimal-ui") {
+  errors.push("site.webmanifest must use start_url / and display minimal-ui.");
+}
+
+const manifestIconSources = new Set((manifest.icons ?? []).map((icon) => icon.src));
+for (const icon of ["/assets/android-chrome-192.png", "/assets/android-chrome-512.png"]) {
+  if (!manifestIconSources.has(icon)) {
+    errors.push(`site.webmanifest missing icon: ${icon}`);
+  }
+}
+
+expectPngDimensions("assets/favicon-16.png", 16, 16);
+expectPngDimensions("assets/favicon-32.png", 32, 32);
+expectPngDimensions("assets/apple-touch-icon.png", 180, 180);
+expectPngDimensions("assets/android-chrome-192.png", 192, 192);
+expectPngDimensions("assets/android-chrome-512.png", 512, 512);
+expectPngDimensions("assets/og-image.png", 1200, 630);
+expectPngDimensions("assets/twitter-card.png", 1200, 630);
+expectPngDimensions("assets/github-social-preview.png", 1280, 640);
 
 for (const contextFile of [
   ["llms.txt", aiContext],
@@ -280,11 +383,24 @@ if (jsonLdBlocks.length === 0) {
 } else {
   for (const block of jsonLdBlocks) {
     const data = JSON.parse(block[1]);
-    if (!["SoftwareApplication", "SoftwareSourceCode"].includes(data["@type"])) {
-      errors.push("Homepage JSON-LD must use SoftwareApplication or SoftwareSourceCode.");
+    if (data["@type"] !== "SoftwareSourceCode") {
+      errors.push("Homepage JSON-LD must use SoftwareSourceCode.");
     }
-    if (data.softwareVersion !== "0.4.1") {
-      errors.push("Homepage JSON-LD must include softwareVersion 0.4.1.");
+    if (data.name !== "Martenweave Core" || data.alternateName !== "martenweave-core") {
+      errors.push("Homepage JSON-LD must identify Martenweave Core / martenweave-core.");
+    }
+    if (data.softwareVersion !== "0.4.1" || data.version !== "0.4.1") {
+      errors.push("Homepage JSON-LD must include version 0.4.1.");
+    }
+    if (
+      data.license !== "MIT" ||
+      data.programmingLanguage !== "Python" ||
+      data.runtimePlatform !== "Python 3.11+" ||
+      data.codeRepository !== "https://github.com/metalhatscats/martenweave-core" ||
+      data.url !== `${productionOrigin}/` ||
+      data.downloadUrl !== "https://pypi.org/project/martenweave-core/"
+    ) {
+      errors.push("Homepage JSON-LD must include expected source code metadata.");
     }
   }
 }
@@ -316,7 +432,15 @@ for (const route of requiredSitemapRoutes) {
 }
 
 const allPublicMetadata = `${aiContext}\n${aiFullContext}\n${aiText}\n${JSON.stringify(aiJson)}\n${allHtml}`;
+const sap = "SAP";
+const customerLogo = ["customer", "logo"].join(" ");
+const endorsementTerm = ["test", "imonial"].join("");
 const riskyClaimPatterns = [
+  new RegExp(`${sap}-certified`, "i"),
+  new RegExp(`\\b${sap} partner\\b`, "i"),
+  new RegExp(`official ${sap} partner`, "i"),
+  new RegExp(`\\b${customerLogo}\\b`, "i"),
+  new RegExp(`\\b${endorsementTerm}\\b`, "i"),
   /Martenweave is a formal partner of SAP/i,
   /Martenweave is certified by SAP/i,
   /customer proof assets? from/i,
