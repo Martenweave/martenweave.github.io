@@ -40,7 +40,7 @@ Martenweave is not:
 - a workflow engine
 - a SaaS tenant platform
 - a replacement for SAP MDG, SAP S/4HANA, Jira, Confluence, or enterprise catalogs
-- an official SAP-certified or SAP-affiliated product
+- a product certified by SAP or affiliated with SAP
 
 SAP migration is a strong starter scenario and domain context. It is not the whole product boundary.
 

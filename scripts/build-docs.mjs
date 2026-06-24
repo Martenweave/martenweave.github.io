@@ -14,6 +14,7 @@ const docRoutes = [
   { source: "use-cases.md", output: "use-cases.html", label: "Use cases" },
   { source: "architecture.md", output: "architecture.html", label: "Architecture" },
   { source: "ai-governance.md", output: "ai-governance.html", label: "AI governance" },
+  { source: "faq.md", output: "faq.html", label: "FAQ" },
   { source: "release-proof.md", output: "release-proof.html", label: "Release proof" },
   { source: "roadmap.md", output: "roadmap.html", label: "Roadmap" },
   {
@@ -267,6 +268,7 @@ ${body}
         <a href="/docs/product.html">Product docs</a>
         <a href="/docs/examples.html">Examples</a>
         <a href="/docs/ai-governance.html">AI governance</a>
+        <a href="/docs/faq.html">FAQ</a>
         <a href="/docs/open-source.html">Open source</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>

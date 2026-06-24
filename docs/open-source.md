@@ -32,7 +32,7 @@ Do not contribute:
 - real client data
 - credentials, `.env` files, private keys, or tokens
 - generated indexes unless maintainers explicitly request them
-- claims about customers, SAP certification, or SAP partnership
+- claims about customers, SAP certification, or formal SAP relationship
 - UI/platform rewrites that bypass the backend-first product boundary
 - AI flows that mutate canonical files without PatchProposal and human approval
 

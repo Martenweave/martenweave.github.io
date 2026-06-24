@@ -101,7 +101,7 @@ Run:
 
 ## What Examples Are Not
 
-- They are not SAP-certified content.
+- The example content is not certified by SAP.
 - They are not customer implementations.
 - They are not generated indexes to preserve by hand.
 - They are not proof of a hosted SaaS workflow.

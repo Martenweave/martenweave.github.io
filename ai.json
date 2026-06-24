@@ -2,10 +2,14 @@
   "name": "Martenweave",
   "url": "https://martenweave.github.io/",
   "docs": "https://martenweave.github.io/docs.html",
-  "type": "Backend-first agentic data model registry",
-  "positioning": "Backend-first model truth layer for SAP migration, MDM, data governance, data quality, and AMS/support teams.",
+  "type": "Backend-first data model truth registry",
+  "description": "Martenweave turns scattered SAP migration, MDM, governance, data quality, and AMS model knowledge into validated, traceable, AI-ready model truth.",
   "coreRepository": "https://github.com/metalhatscats/martenweave-core",
   "websiteRepository": "https://github.com/Martenweave/martenweave.github.io",
+  "packageName": "martenweave-core",
+  "packageVersion": "0.4.1",
+  "license": "MIT",
+  "pypiUrl": "https://pypi.org/project/martenweave-core/",
   "corePackage": {
     "name": "martenweave-core",
     "version": "0.4.1",
@@ -15,8 +19,92 @@
     "license": "MIT",
     "commercialUseAllowed": true
   },
+  "audiences": [
+    "SAP migration leads",
+    "MDM leads",
+    "data governance teams",
+    "data quality teams",
+    "SAP AMS/support teams",
+    "enterprise architects",
+    "consulting delivery managers",
+    "technical evaluators"
+  ],
+  "useCases": [
+    "SAP migration model registry",
+    "MDM rule and ownership layer",
+    "Customer / Business Partner field mapping control",
+    "Supplier / Vendor model control",
+    "dataset gap detection before mock load",
+    "validation report triage",
+    "AMS support knowledge continuity",
+    "governance change impact analysis",
+    "AI-assisted model maintenance with approval gates"
+  ],
+  "capabilities": [
+    "canonical Markdown and YAML model files",
+    "deterministic validation",
+    "SQLite and JSONL generated indexes",
+    "search and structured query",
+    "trace and impact analysis",
+    "dataset profiling",
+    "dataset/model gap detection",
+    "health reports",
+    "governance scorecards",
+    "ownership reports",
+    "audit and usage reports",
+    "CSV and XLSX import/export review flows",
+    "AI PatchProposal workflow",
+    "PatchProposal to ChangeRequest lifecycle",
+    "human approval gates",
+    "issue drafts",
+    "GitHub-ready change bundles",
+    "local API server",
+    "MCP-ready backend"
+  ],
+  "currentCapabilities": [
+    "canonical Markdown and YAML model files",
+    "deterministic validation",
+    "SQLite and JSONL generated indexes",
+    "search and structured query",
+    "trace and impact analysis",
+    "dataset/model gap detection",
+    "AI PatchProposal workflow",
+    "human approval gates"
+  ],
+  "principles": [
+    "Integrations bring input",
+    "Martenweave stores model truth",
+    "Validators check consistency",
+    "AI proposes changes",
+    "Humans approve",
+    "Reports create business value"
+  ],
+  "notA": [
+    "chatbot",
+    "SaaS tenant platform",
+    "workflow engine",
+    "generic data catalog",
+    "SAP product",
+    "tool certified by SAP",
+    "SAP-affiliated product"
+  ],
+  "avoidClaims": [
+    "formal relationship with SAP",
+    "certification by SAP",
+    "named customers",
+    "customer proof assets",
+    "endorsements",
+    "paid-plan details",
+    "AI autonomous mutation of model truth"
+  ],
+  "aiPolicy": {
+    "summary": "AI proposes. Validators verify. Humans approve.",
+    "silentMutationAllowed": false,
+    "deterministicValidatorsRemainGate": true
+  },
   "commercialUse": {
     "coreLicense": "MIT",
+    "commercialUseAllowed": true,
     "possibleOfferings": [
       "implementation support",
       "private SAP/MDM domain packs",
@@ -27,39 +115,25 @@
     ],
     "separateCommercialTermsPossibleForFutureExtensions": true
   },
-  "shortDescription": "Martenweave is a backend-first model registry that converts scattered model knowledge into validated, traceable, AI-ready model truth for migration, MDM, data governance, and support teams.",
-  "audiences": [
-    "Heads of Data Governance",
-    "MDM leads",
-    "SAP migration leads",
-    "SAP AMS/support leads",
-    "Enterprise architects",
-    "Data quality managers",
-    "Consulting delivery managers",
-    "Technical decision makers"
+  "sameAs": [
+    "https://github.com/metalhatscats/martenweave-core",
+    "https://github.com/Martenweave/martenweave.github.io",
+    "https://pypi.org/project/martenweave-core/",
+    "https://martenweave.github.io/llms.txt",
+    "https://martenweave.github.io/llms-full.txt"
   ],
-  "currentCapabilities": [
-    "canonical Markdown and YAML model files",
+  "keywords": [
+    "data model registry",
+    "model truth",
+    "SAP migration",
+    "MDM",
+    "data governance",
+    "data quality",
+    "AMS support",
+    "traceability",
     "deterministic validation",
-    "SQLite and JSONL generated indexes",
-    "search and structured query",
-    "trace and impact analysis",
-    "dataset profiling",
-    "dataset/model gap detection",
-    "health, analysis, scorecard, ownership, audit, and usage reports",
-    "CSV and XLSX import/export review flows",
-    "PatchProposal to ChangeRequest lifecycle",
-    "approval gates",
-    "issue drafts",
-    "GitHub-ready change bundles",
-    "local API server",
-    "MCP-ready backend"
-  ],
-  "examples": [
-    "Customer / Business Partner",
-    "Supplier / Vendor",
-    "Generic Product",
-    "Simple Product"
+    "AI PatchProposal",
+    "human approval"
   ],
   "publicDocs": [
     "https://martenweave.github.io/docs/quickstart.html",
@@ -68,43 +142,10 @@
     "https://martenweave.github.io/docs/use-cases.html",
     "https://martenweave.github.io/docs/architecture.html",
     "https://martenweave.github.io/docs/ai-governance.html",
+    "https://martenweave.github.io/docs/faq.html",
     "https://martenweave.github.io/docs/release-proof.html",
     "https://martenweave.github.io/docs/roadmap.html",
     "https://martenweave.github.io/docs/contributing-scenarios.html",
     "https://martenweave.github.io/docs/open-source.html"
-  ],
-  "roadmap": [
-    "Core registry",
-    "Model intelligence",
-    "AI-assisted workflows",
-    "Domain packs and starter scenarios",
-    "Optional workbench",
-    "Backend integrations and agent interfaces"
-  ],
-  "principles": [
-    "Integrations bring input",
-    "Martenweave stores model truth",
-    "Validators check consistency",
-    "AI proposes changes",
-    "Humans approve",
-    "Reports create business value"
-  ],
-  "aiPolicy": {
-    "summary": "AI proposes. Validators verify. Humans approve.",
-    "silentMutationAllowed": false,
-    "deterministicValidatorsRemainGate": true
-  },
-  "affiliationPolicy": {
-    "sapMayBeMentionedAsScenario": true,
-    "officialSapPartnershipClaim": false,
-    "sapCertificationClaim": false
-  },
-  "avoidClaims": [
-    "official SAP partnership",
-    "SAP certification",
-    "customers or testimonials",
-    "pricing",
-    "login-based SaaS",
-    "chatbot"
   ]
 }

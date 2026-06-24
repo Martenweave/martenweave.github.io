@@ -62,7 +62,7 @@ Do not include:
 - credentials
 - raw production records
 - proprietary SAP screenshots
-- fake customer testimonials
+- fake customer endorsements
 - claims of certification or partnership
 
 Have a difficult migration or governance scenario? Open an issue with synthetic examples and clear validation evidence.

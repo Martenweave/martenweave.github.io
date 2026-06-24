@@ -120,10 +120,10 @@ When positioning changes, update the homepage, docs, `llms-full.txt`, and `ai.js
 Do not add:
 
 - fake customers
-- fake testimonials
-- fake pricing
+- fake endorsements
+- fake paid-plan details
 - SAP certification claims
-- SAP partnership claims
+- formal SAP relationship claims
 - login/auth flows
 - backend logic
 - claims that AI silently mutates model truth

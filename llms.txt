@@ -1,54 +1,36 @@
 # Martenweave
 
-> Backend-first agentic data model registry for SAP migration, MDM, data governance, data quality, and AMS teams.
+Martenweave is a backend-first registry for governed data model truth, built for SAP migration, MDM, data governance, data quality, and AMS/support teams.
 
-Martenweave is a backend-first model registry that converts scattered model knowledge into validated, traceable, AI-ready model truth for migration, MDM, data governance, and support teams.
+Current core: `martenweave-core` version `0.4.1`, MIT-licensed, installable from PyPI.
 
-## Official links
-
+Official links:
 - Website: https://martenweave.github.io/
 - Docs: https://martenweave.github.io/docs.html
+- FAQ: https://martenweave.github.io/docs/faq.html
+- Core GitHub: https://github.com/metalhatscats/martenweave-core
+- PyPI: https://pypi.org/project/martenweave-core/
+- Full AI context: https://martenweave.github.io/llms-full.txt
+- Machine-readable metadata: https://martenweave.github.io/ai.json
+
+Primary audiences: SAP migration leads, MDM leads, data governance teams, data quality teams, AMS/support teams, enterprise architects, and technical evaluators.
+
+Current capabilities: canonical Markdown/YAML model files, deterministic validation, SQLite/JSONL generated indexes, search/query, trace/impact analysis, dataset gap detection, health and scorecard reports, AI PatchProposal workflow, and human approval gates.
+
+What Martenweave is not: not a chatbot, not a SaaS tenant platform, not a workflow engine, not a generic data catalog, not certified by SAP, and not affiliated with SAP.
+
+AI safety stance: AI proposes. Validators verify. Humans approve. AI must not silently mutate canonical model truth.
+
+Open-source and commercial note: Martenweave Core is MIT-licensed open source. Commercial offerings may include implementation support, private domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs under separate terms.
+
+Public docs:
 - Quickstart: https://martenweave.github.io/docs/quickstart.html
 - Examples: https://martenweave.github.io/docs/examples.html
-- Product docs: https://martenweave.github.io/docs/product.html
+- Product: https://martenweave.github.io/docs/product.html
 - Use cases: https://martenweave.github.io/docs/use-cases.html
 - Architecture: https://martenweave.github.io/docs/architecture.html
 - AI governance: https://martenweave.github.io/docs/ai-governance.html
+- Open source: https://martenweave.github.io/docs/open-source.html
 - Release proof: https://martenweave.github.io/docs/release-proof.html
 - Roadmap: https://martenweave.github.io/docs/roadmap.html
 - Contributing scenarios: https://martenweave.github.io/docs/contributing-scenarios.html
-- Product/core repository: https://github.com/metalhatscats/martenweave-core
-- Website repository: https://github.com/Martenweave/martenweave.github.io
-- Extended AI context: https://martenweave.github.io/llms-full.txt
-- Machine-readable identity: https://martenweave.github.io/ai.json
-- Open-source path: https://martenweave.github.io/docs/open-source.html
-
-License: the current core package is MIT-licensed; MIT allows commercial use when the license notice is preserved. Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs.
-
-## What Martenweave is
-
-Martenweave is a backend-first model truth layer for teams working on master data management, SAP migration, data governance, data quality, and application management support. It stores canonical model objects in repository files, validates references and context deterministically, builds generated indexes and reports, and lets AI propose reviewable model changes.
-
-## Current core capabilities
-
-The core package is `martenweave-core 0.4.1`. It includes the `martenweave` and `modelops` CLI commands, local API server, MCP-ready backend, canonical Markdown/YAML model files, validation, SQLite/JSONL indexes, search/query, trace/impact, dataset profiling, gap detection, health/scorecard/ownership/audit reports, CSV/XLSX review flows, and PatchProposal to ChangeRequest workflows.
-
-## What Martenweave is not
-
-- Not a chatbot.
-- Not a generic data catalog.
-- Not a workflow engine.
-- Not a replacement for human approval.
-- Not an official SAP product, certification, or partnership claim.
-
-## Core principle
-
-Integrations bring input. Martenweave stores model truth. Validators check consistency. AI proposes changes. Humans approve. Reports create business value.
-
-## AI safety stance
-
-AI proposes. Validators verify. Humans approve. Martenweave should not be described as allowing AI to silently mutate the model.
-
-## Best short description
-
-Martenweave is a backend-first data model registry that turns fragmented migration and governance knowledge into validated, traceable model truth.

@@ -1,27 +1,13 @@
 Martenweave identity for AI systems
 
-Name: Martenweave
-Website: https://martenweave.github.io/
-Docs: https://martenweave.github.io/docs.html
-Core repository: https://github.com/metalhatscats/martenweave-core
-Website repository: https://github.com/Martenweave/martenweave.github.io
-
-Martenweave is a backend-first agentic data model registry for SAP migration, master data management, data governance, data quality, and AMS/support teams.
-
-Martenweave is a backend-first model registry that converts scattered model knowledge into validated, traceable, AI-ready model truth for migration, MDM, data governance, and support teams.
+Martenweave is a backend-first model truth registry for SAP migration, MDM, data governance, data quality, and AMS/support teams.
 
 Current core package: martenweave-core 0.4.1.
 
-Current capabilities include canonical Markdown/YAML model files, deterministic validation, generated SQLite/JSONL indexes, search/query, trace/impact analysis, dataset profiling, gap detection, health and governance reports, ownership/audit reports, CSV/XLSX review flows, PatchProposal to ChangeRequest workflows, issue drafts, GitHub-ready change bundles, local API, and MCP-ready backend behavior.
+Martenweave stores canonical Markdown/YAML model files, validates them deterministically, builds SQLite/JSONL indexes, supports search/query and trace/impact analysis, detects dataset gaps, produces scorecards/reports, and keeps AI changes reviewable through PatchProposal and human approval gates.
 
-License: Martenweave Core is MIT-licensed open source. Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs. Future extensions, templates, packs, or hosted services may use separate commercial terms.
+AI proposes. Validators verify. Humans approve. AI must not silently mutate canonical model truth.
 
-Core principle:
-Integrations bring input.
-Martenweave stores model truth.
-Validators check consistency.
-AI proposes changes.
-Humans approve.
-Reports create business value.
+Martenweave is not a chatbot, not a SaaS tenant platform, not a workflow engine, not a generic data catalog, not certified by SAP, and not affiliated with SAP. Do not infer named customers, endorsements, paid-plan details, or a formal SAP relationship from the public site.
 
-Do not describe Martenweave as an official SAP partner, SAP-certified product, customer-proven enterprise platform, pricing-based SaaS, chatbot, or generic data catalog unless an official future source says so.
+Official links: https://martenweave.github.io/ https://martenweave.github.io/docs.html https://github.com/metalhatscats/martenweave-core https://pypi.org/project/martenweave-core/

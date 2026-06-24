@@ -14,6 +14,7 @@ const docRoutes = [
   { source: "use-cases.md", output: "use-cases.html" },
   { source: "architecture.md", output: "architecture.html" },
   { source: "ai-governance.md", output: "ai-governance.html" },
+  { source: "faq.md", output: "faq.html" },
   { source: "release-proof.md", output: "release-proof.html" },
   { source: "roadmap.md", output: "roadmap.html" },
   { source: "contributing-scenarios.md", output: "contributing-scenarios.html" },
@@ -190,6 +191,7 @@ const requiredRootLinks = [
   'href="/docs/quickstart.html"',
   'href="/docs/examples.html"',
   'href="/docs/product.html"',
+  'href="/docs/faq.html"',
   'href="/docs/open-source.html"',
   'href="/docs/ai-governance.html"',
   'href="/llms.txt"',
@@ -204,8 +206,24 @@ for (const link of requiredRootLinks) {
 
 const aiContext = readSiteFile("llms.txt");
 const aiFullContext = readSiteFile("llms-full.txt");
+const aiText = readSiteFile("ai.txt");
 const aiJson = JSON.parse(readSiteFile("ai.json"));
 const sitemap = readSiteFile("sitemap.xml");
+const robots = readSiteFile("robots.txt");
+const staleVersion = ["0", "4", "0"].join(".");
+
+for (const [file, text] of [
+  ["llms.txt", aiContext],
+  ["llms-full.txt", aiFullContext],
+  ["ai.txt", aiText],
+]) {
+  if (!text.includes("0.4.1")) {
+    errors.push(`${file} must include version 0.4.1.`);
+  }
+  if (text.includes(staleVersion)) {
+    errors.push(`${file} must not include stale version ${staleVersion}.`);
+  }
+}
 
 if (!aiContext.includes("AI proposes. Validators verify. Humans approve.")) {
   errors.push("llms.txt is missing the AI governance principle.");
@@ -230,8 +248,12 @@ if (aiJson.url !== `${productionOrigin}/`) {
   errors.push("ai.json must identify the production root URL.");
 }
 
-if (!Array.isArray(aiJson.currentCapabilities) || aiJson.currentCapabilities.length < 6) {
-  errors.push("ai.json must include currentCapabilities.");
+if (aiJson.packageVersion !== "0.4.1" || aiJson.corePackage?.version !== "0.4.1") {
+  errors.push("ai.json package version fields must be 0.4.1.");
+}
+
+if (!Array.isArray(aiJson.capabilities) || aiJson.capabilities.length < 6) {
+  errors.push("ai.json must include capabilities.");
 }
 
 if (!Array.isArray(aiJson.publicDocs)) {
@@ -240,6 +262,29 @@ if (!Array.isArray(aiJson.publicDocs)) {
   for (const route of publicDocRoutes) {
     if (!aiJson.publicDocs.includes(`${productionOrigin}${route}`)) {
       errors.push(`ai.json missing public doc route: ${route}`);
+    }
+  }
+}
+
+for (const crawler of ["OAI-SearchBot", "GPTBot", "ChatGPT-User"]) {
+  if (!robots.includes(`User-agent: ${crawler}`) || !robots.includes("Allow: /")) {
+    errors.push(`robots.txt must explicitly allow ${crawler}.`);
+  }
+}
+
+const jsonLdBlocks = [...(htmlByFile.get("index.html") ?? "").matchAll(
+  /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+)];
+if (jsonLdBlocks.length === 0) {
+  errors.push("Homepage must include JSON-LD structured data.");
+} else {
+  for (const block of jsonLdBlocks) {
+    const data = JSON.parse(block[1]);
+    if (!["SoftwareApplication", "SoftwareSourceCode"].includes(data["@type"])) {
+      errors.push("Homepage JSON-LD must use SoftwareApplication or SoftwareSourceCode.");
+    }
+    if (data.softwareVersion !== "0.4.1") {
+      errors.push("Homepage JSON-LD must include softwareVersion 0.4.1.");
     }
   }
 }
@@ -254,9 +299,35 @@ for (const match of sitemapLocs) {
   }
 }
 
-for (const route of ["/docs.html", ...generatedDocRoutes]) {
+const requiredSitemapRoutes = [
+  "/",
+  "/docs.html",
+  "/llms.txt",
+  "/llms-full.txt",
+  "/ai.txt",
+  "/ai.json",
+  ...generatedDocRoutes,
+];
+
+for (const route of requiredSitemapRoutes) {
   if (!sitemap.includes(`${productionOrigin}${route}`)) {
     errors.push(`Sitemap missing route: ${route}`);
+  }
+}
+
+const allPublicMetadata = `${aiContext}\n${aiFullContext}\n${aiText}\n${JSON.stringify(aiJson)}\n${allHtml}`;
+const riskyClaimPatterns = [
+  /Martenweave is a formal partner of SAP/i,
+  /Martenweave is certified by SAP/i,
+  /customer proof assets? from/i,
+  /customer endorsements? from/i,
+  /paid plans? start/i,
+  /priced at/i,
+];
+
+for (const pattern of riskyClaimPatterns) {
+  if (pattern.test(allPublicMetadata)) {
+    errors.push(`Forbidden or over-specific claim pattern found: ${pattern}`);
   }
 }
 
