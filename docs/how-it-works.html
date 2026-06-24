@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave Architecture - Martenweave Docs</title>
+    <title>How Martenweave Works - Martenweave Docs</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for Martenweave Architecture."
+      content="Public Martenweave documentation for How Martenweave Works."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://martenweave.github.io/docs/architecture.html" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/how-it-works.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
@@ -47,13 +47,13 @@
       <aside class="doc-sidebar" aria-label="Documentation navigation">
 <a href="/docs/index.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
-<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/how-it-works.html" aria-current="page">How it works</a>
 <a href="/docs/import-export.html">Import/export</a>
 <a href="/docs/governance.html">Governance</a>
 <a href="/docs/quickstart.html">Quickstart</a>
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html">Use cases</a>
-<a href="/docs/architecture.html" aria-current="page">Architecture</a>
+<a href="/docs/architecture.html">Architecture</a>
 <a href="/docs/ai-governance.html">AI governance</a>
 <a href="/docs/faq.html">FAQ</a>
 <a href="/docs/release-proof.html">Release proof</a>
@@ -63,100 +63,106 @@
       </aside>
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
-<h1 id="martenweave-architecture">Martenweave Architecture</h1>
-<p>Martenweave is backend-first and local-first. Canonical files are the source of record, generated artifacts are rebuildable, and changes are reviewable.</p>
-<h2 id="architecture-loop">Architecture Loop</h2>
-<p><img src="/assets/architecture-loop.svg" alt="Martenweave architecture loop" /></p>
-<pre><code class="language-text">Input artifacts
-  -&gt; canonical model files
-  -&gt; deterministic validation
-  -&gt; generated index
-  -&gt; gap / impact / health reports
-  -&gt; AI patch proposals
-  -&gt; human approval
-  -&gt; trusted model evolution</code></pre>
-<h2 id="canonical-files">Canonical Files</h2>
-<p>Canonical model objects are stored as Markdown files with YAML frontmatter.</p>
-<p>Examples of object concepts:</p>
+<h1 id="how-martenweave-works">How Martenweave Works</h1>
+<p>Martenweave turns scattered model knowledge into checked, searchable model context.</p>
+<p>The workflow is deliberately explicit so humans can inspect each step.</p>
+<h2 id="1-bring-inputs">1. Bring Inputs</h2>
+<p>Inputs can include:</p>
 <ul>
-<li>MasterDataDomain</li>
-<li>MigrationObject</li>
-<li>BusinessEntity</li>
-<li>EntityContext</li>
-<li>Attribute</li>
-<li>AttributeUsage</li>
-<li>FieldEndpoint</li>
-<li>Mapping</li>
-<li>ValueList</li>
-<li>ValueMapping</li>
-<li>ValidationRule</li>
-<li>Issue</li>
-<li>Decision</li>
-<li>Evidence</li>
-<li>PatchProposal</li>
-<li>ChangeRequest</li>
+<li>Excel mappings</li>
+<li>CSV or XLSX datasets</li>
+<li>ticket notes</li>
+<li>validation reports</li>
+<li>decision logs</li>
+<li>SAP table and field context</li>
+<li>source-system extracts</li>
+<li>steward comments</li>
 </ul>
-<p>These files are human-readable, Git-friendly, and inspectable without a product UI.</p>
-<h2 id="generated-indexes">Generated Indexes</h2>
-<p>Generated artifacts are disposable.</p>
-<p>They can include:</p>
+<p>Raw inputs are not treated as truth. They provide evidence.</p>
+<h2 id="2-normalize-into-model-objects">2. Normalize Into Model Objects</h2>
+<p>Martenweave represents model knowledge as canonical objects such as:</p>
 <ul>
-<li>SQLite index</li>
-<li>search JSONL</li>
-<li>lineage JSONL</li>
-<li>audit logs</li>
-<li>usage and AI usage events</li>
-<li>export files</li>
+<li>domains</li>
+<li>business entities</li>
+<li>entity contexts</li>
+<li>attributes</li>
+<li>attribute usages</li>
+<li>field endpoints</li>
+<li>mappings</li>
+<li>value lists</li>
+<li>validation rules</li>
+<li>issues</li>
+<li>decisions</li>
+<li>evidence</li>
+<li>patch proposals</li>
+<li>change requests</li>
 </ul>
-<p>If generated artifacts disagree with canonical files, canonical files win.</p>
-<h2 id="deterministic-validation">Deterministic Validation</h2>
-<p>Validation runs before trusted indexing and reporting.</p>
+<p>The canonical files are Markdown and YAML. They are readable in Git and can be reviewed without a hosted UI.</p>
+<h2 id="3-validate-consistency">3. Validate Consistency</h2>
+<p>Validation checks object structure and references before trusted indexing.</p>
 <p>Checks include:</p>
 <ul>
-<li>object ID format</li>
+<li>ID format</li>
 <li>required fields</li>
 <li>registered object types</li>
 <li>duplicate IDs</li>
 <li>broken references</li>
 <li>reference type mismatches</li>
 <li>ownership and readiness rules</li>
-<li>SAP context rules for starter SAP scenarios</li>
+<li>SAP context rules for SAP starter scenarios</li>
 </ul>
-<h2 id="reports-and-model-intelligence">Reports And Model Intelligence</h2>
-<p>Martenweave can produce practical outputs from the model:</p>
+<h2 id="4-build-the-index">4. Build The Index</h2>
+<p>Generated outputs are rebuildable.</p>
+<p>They can include:</p>
 <ul>
-<li>health reports</li>
-<li>governance scorecards</li>
+<li>SQLite index</li>
+<li>search JSONL</li>
+<li>lineage JSONL</li>
+<li>audit logs</li>
+<li>reports</li>
+<li>exports</li>
+</ul>
+<p>If generated files disagree with canonical files, canonical files win.</p>
+<h2 id="5-analyze-gaps-and-impact">5. Analyze Gaps And Impact</h2>
+<p>Once the model is indexed, teams can ask practical questions:</p>
+<ul>
+<li>Which dataset columns are missing expected model endpoints?</li>
+<li>Which attributes lack source evidence?</li>
+<li>Which field endpoints depend on a changed rule?</li>
+<li>Which mappings, owners, issues, and decisions are affected?</li>
+<li>What should be reviewed before a migration load or support handover?</li>
+</ul>
+<h2 id="6-propose-changes">6. Propose Changes</h2>
+<p>AI and import workflows create PatchProposal objects instead of silently changing canonical files.</p>
+<p>A good proposal records:</p>
+<ul>
+<li>what evidence triggered the proposal</li>
+<li>which objects are affected</li>
+<li>what operations are proposed</li>
+<li>what assumptions were made</li>
+<li>what validation and impact checks should run</li>
+</ul>
+<h2 id="7-human-approval">7. Human Approval</h2>
+<p>Humans approve, reject, or revise proposals.</p>
+<p>Approved changes become ChangeRequests and then canonical updates. This keeps the change trail visible.</p>
+<h2 id="8-export-reports-and-context">8. Export Reports And Context</h2>
+<p>Martenweave can export model context for review, analysis, automation, and AI-assisted work.</p>
+<p>Examples include:</p>
+<ul>
+<li>search documents</li>
+<li>lineage exports</li>
+<li>model CSV or XLSX files</li>
+<li>JSON Schema</li>
 <li>gap reports</li>
-<li>ownership reports</li>
 <li>impact reports</li>
-<li>trace outputs</li>
-<li>search/query results</li>
-<li>issue drafts</li>
-<li>GitHub-ready change bundles</li>
+<li>GitHub-ready issue or change bundles</li>
 </ul>
-<h2 id="ai-proposal-flow">AI Proposal Flow</h2>
-<p>AI does not own the model.</p>
-<p>AI can help convert unstructured evidence into a structured PatchProposal. The proposal is validated, reviewed, and approved before canonical files change.</p>
-<pre><code class="language-text">note / ticket / validation finding
-  -&gt; evidence summary
-  -&gt; PatchProposal
-  -&gt; deterministic validation
-  -&gt; diff / impact review
-  -&gt; human approval
-  -&gt; ChangeRequest
-  -&gt; canonical update</code></pre>
-<h2 id="interfaces">Interfaces</h2>
-<p>The current core is CLI/backend-first:</p>
-<ul>
-<li><code>martenweave</code> CLI</li>
-<li>compatibility <code>modelops</code> CLI</li>
-<li>local API server</li>
-<li>MCP-ready backend</li>
-<li>Git-friendly repository files</li>
-<li>CSV/XLSX import and export review paths</li>
-</ul>
-<p>A UI can be useful later, but the model registry should not depend on a hosted UI.</p>
+<h2 id="summary">Summary</h2>
+<p>Inputs bring evidence.</p>
+<p>Model objects create structure.</p>
+<p>Validators create trust.</p>
+<p>Indexes create search and analysis.</p>
+<p>Patch proposals keep AI and imports reviewable.</p>
       </article>
     </main>
 

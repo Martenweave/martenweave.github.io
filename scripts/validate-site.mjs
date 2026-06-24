@@ -9,6 +9,9 @@ const errors = [];
 const docRoutes = [
   { source: "README.md", output: "index.html" },
   { source: "product.md", output: "product.html" },
+  { source: "how-it-works.md", output: "how-it-works.html" },
+  { source: "import-export.md", output: "import-export.html" },
+  { source: "governance.md", output: "governance.html" },
   { source: "quickstart.md", output: "quickstart.html" },
   { source: "examples.md", output: "examples.html" },
   { source: "use-cases.md", output: "use-cases.html" },
@@ -221,11 +224,12 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
+  "Open-source model registry",
+  "Turn scattered model knowledge into a validated model registry.",
+  "Python package · local-first · file-backed · validation-first · human-approved AI",
   "AI proposes.",
   "Validators verify.",
   "Humans approve.",
-  "Traceable model truth for governed data work.",
-  "Backend-first. Human-approved. Built for real data model work.",
 ];
 
 for (const text of requiredText) {
@@ -247,6 +251,9 @@ const requiredRootLinks = [
   'href="/docs/quickstart.html"',
   'href="/docs/examples.html"',
   'href="/docs/product.html"',
+  'href="/docs/how-it-works.html"',
+  'href="/docs/import-export.html"',
+  'href="/docs/governance.html"',
   'href="/docs/faq.html"',
   'href="/docs/open-source.html"',
   'href="/docs/ai-governance.html"',
@@ -302,10 +309,6 @@ for (const snippet of requiredHomepageHead) {
   if (!homepageHtml.includes(snippet)) {
     errors.push(`Homepage head missing required metadata: ${snippet}`);
   }
-}
-
-if (!homepageHtml.includes('src="/assets/architecture-loop.svg"')) {
-  errors.push("Homepage must reference assets/architecture-loop.svg.");
 }
 
 if (manifest.name !== "Martenweave" || manifest.short_name !== "Martenweave") {

@@ -1,75 +1,75 @@
 # Martenweave Use Cases
 
-Martenweave is useful when a team needs model truth to survive beyond a meeting, a spreadsheet, or one heroic consultant.
+Martenweave helps when teams need traceability before decisions become expensive.
 
-## SAP Migration Model Registry
+## SAP Migration Model Control
 
-**Problem:** Migration scope, fields, and rules drift across files.
+Problem: migration scope, fields, and rules drift across files.
 
-**How Martenweave helps:** Domains, contexts, attributes, field endpoints, mappings, value lists, issues, and decisions stay connected.
+Martenweave helps by connecting domains, contexts, attributes, field endpoints, mappings, value lists, issues, and decisions.
 
-**Business value:** Fewer truth disputes during mock loads, validation cycles, and cutover planning.
+Business value: fewer truth disputes during mock loads, validation cycles, and cutover planning.
 
 ## MDM Rule And Ownership Layer
 
-**Problem:** Ownership is known socially, not operationally.
+Problem: ownership is known socially, not operationally.
 
-**How Martenweave helps:** Attributes, rules, owners, data stewards, and decisions become referenceable model objects.
+Martenweave helps by making attributes, rules, owners, stewards, and decisions referenceable model objects.
 
-**Business value:** Governance teams can discuss changes with evidence instead of memory.
+Business value: governance teams discuss changes with evidence instead of memory.
 
-## Customer / Business Partner Mapping Control
+## Customer / Business Partner Mapping
 
-**Problem:** Customer field behavior changes by context, table, source system, and migration path.
+Problem: customer field behavior changes by context, table, source system, and migration path.
 
-**How Martenweave helps:** Attribute usage, entity context, SAP table/field endpoints, mappings, and value lists stay explicit.
+Martenweave helps by keeping attribute usage, entity context, SAP table/field endpoints, mappings, and value lists explicit.
 
-**Business value:** Better control of Business Partner / Customer migration knowledge without spreadsheet archaeology.
+Business value: better control of Business Partner / Customer migration knowledge without spreadsheet archaeology.
 
 ## Supplier / Vendor Model Control
 
-**Problem:** Supplier and vendor meanings blur across central, company-code, and purchasing contexts.
+Problem: supplier and vendor meanings blur across central, company-code, and purchasing contexts.
 
-**How Martenweave helps:** Business meaning is separated from physical fields and system-specific endpoints.
+Martenweave helps by separating business meaning from physical fields and system-specific endpoints.
 
-**Business value:** Cleaner handoffs between process, data, migration, and support teams.
+Business value: cleaner handoffs between process, data, migration, and support teams.
 
-## Dataset Gap Detection Before Mock Load
+## Dataset Gaps Before Mock Load
 
-**Problem:** Missing fields appear late, usually when the calendar is least amused.
+Problem: missing fields appear late, usually when the calendar is least forgiving.
 
-**How Martenweave helps:** Profiled datasets can be compared with expected model endpoints and coverage expectations.
+Martenweave helps by comparing profiled datasets with expected model endpoints and coverage expectations.
 
-**Business value:** Earlier remediation and less validation ping-pong.
+Business value: earlier remediation and less validation ping-pong.
 
 ## Validation Report Triage
 
-**Problem:** Reports show failures without enough model context.
+Problem: reports show failures without enough model context.
 
-**How Martenweave helps:** Findings can link back to fields, rules, mappings, owners, issues, and decisions.
+Martenweave helps by linking findings back to fields, rules, mappings, owners, issues, and decisions.
 
-**Business value:** Triage becomes evidence-led, not inbox-led.
+Business value: triage becomes evidence-led, not inbox-led.
 
-## AMS Support Knowledge Continuity
+## AMS Knowledge Continuity
 
-**Problem:** Support inherits decisions but not the reasoning.
+Problem: support inherits decisions but not the reasoning.
 
-**How Martenweave helps:** Canonical files preserve model context, decisions, issues, and traceability after go-live.
+Martenweave helps by preserving model context, decisions, issues, and traceability after go-live.
 
-**Business value:** Less knowledge loss between delivery and support.
+Business value: less knowledge loss between delivery and support.
 
 ## Governance Impact Analysis
 
-**Problem:** A small field change can affect reports, mappings, validation rules, owners, and downstream teams.
+Problem: a small field change can affect reports, mappings, validation rules, owners, and downstream teams.
 
-**How Martenweave helps:** Trace and impact analysis show connected model objects and lineage.
+Martenweave helps by tracing connected model objects and lineage.
 
-**Business value:** Better change decisions before downstream teams discover the change the hard way.
+Business value: better change decisions before downstream teams discover the change later.
 
-## AI-Assisted Model Maintenance
+## AI-Assisted Governance Context
 
-**Problem:** AI can help with extraction and drafting, but unchecked AI changes are not governance.
+Problem: AI can help with extraction and drafting, but unchecked AI changes are not governance.
 
-**How Martenweave helps:** AI creates reviewable PatchProposals. Validators and humans remain the gate.
+Martenweave helps by creating reviewable PatchProposals that validators and humans review.
 
-**Business value:** Faster maintenance without surrendering model control.
+Business value: faster maintenance without surrendering model control.

@@ -1,6 +1,6 @@
 # Martenweave Architecture
 
-Martenweave is backend-first and local-first. The core design is intentionally simple: canonical files are truth, generated artifacts are acceleration, and changes are reviewable.
+Martenweave is backend-first and local-first. Canonical files are the source of record, generated artifacts are rebuildable, and changes are reviewable.
 
 ## Architecture Loop
 
@@ -40,7 +40,7 @@ Examples of object concepts:
 - PatchProposal
 - ChangeRequest
 
-These files are human-readable, Git-friendly, and safe to inspect without a product UI.
+These files are human-readable, Git-friendly, and inspectable without a product UI.
 
 ## Generated Indexes
 
@@ -69,7 +69,7 @@ Checks include:
 - duplicate IDs
 - broken references
 - reference type mismatches
-- ownership/value-list/domain-pack rules
+- ownership and readiness rules
 - SAP context rules for starter SAP scenarios
 
 ## Reports And Model Intelligence
@@ -107,10 +107,11 @@ note / ticket / validation finding
 
 The current core is CLI/backend-first:
 
-- `modelops` CLI
+- `martenweave` CLI
+- compatibility `modelops` CLI
 - local API server
 - MCP-ready backend
 - Git-friendly repository files
-- CSV/XLSX import/export paths
+- CSV/XLSX import and export review paths
 
-A UI can be useful later, but the model truth should not depend on the UI.
+A UI can be useful later, but the model registry should not depend on a hosted UI.

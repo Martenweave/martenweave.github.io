@@ -2,8 +2,8 @@
   "name": "Martenweave",
   "url": "https://martenweave.github.io/",
   "docs": "https://martenweave.github.io/docs.html",
-  "type": "Backend-first data model truth registry",
-  "description": "Martenweave turns scattered SAP migration, MDM, governance, data quality, and AMS model knowledge into validated, traceable, AI-ready model truth.",
+  "type": "Open-source lightweight model registry",
+  "description": "Martenweave turns scattered model knowledge from Excel, datasets, tickets, validation reports, decisions, and SAP context into a validated, searchable model registry for migration, MDM, governance, AMS, and AI-assisted data work.",
   "coreRepository": "https://github.com/metalhatscats/martenweave-core",
   "websiteRepository": "https://github.com/Martenweave/martenweave.github.io",
   "packageName": "martenweave-core",
@@ -32,11 +32,12 @@
     "data quality teams",
     "SAP AMS/support teams",
     "enterprise architects",
+    "data stewards",
     "consulting delivery managers",
     "technical evaluators"
   ],
   "useCases": [
-    "SAP migration model registry",
+    "SAP migration model control",
     "MDM rule and ownership layer",
     "Customer / Business Partner field mapping control",
     "Supplier / Vendor model control",
@@ -58,7 +59,9 @@
     "governance scorecards",
     "ownership reports",
     "audit and usage reports",
-    "CSV and XLSX import/export review flows",
+    "CSV and XLSX model review import/export flows",
+    "JSON Schema export",
+    "Google Sheets and Drive-oriented import/export commands",
     "AI PatchProposal workflow",
     "PatchProposal to ChangeRequest lifecycle",
     "human approval gates",
@@ -74,34 +77,61 @@
     "search and structured query",
     "trace and impact analysis",
     "dataset/model gap detection",
+    "CSV and XLSX review import/export flows",
     "AI PatchProposal workflow",
     "human approval gates"
   ],
   "principles": [
-    "Integrations bring input",
-    "Martenweave stores model truth",
+    "Inputs bring evidence",
+    "Martenweave stores model objects",
     "Validators check consistency",
     "AI proposes changes",
     "Humans approve",
     "Reports create business value"
   ],
+  "maturity": {
+    "availableNow": [
+      "Python package and CLI",
+      "canonical model files",
+      "deterministic validators",
+      "generated SQLite and JSONL indexes",
+      "gap and impact commands",
+      "reports and scorecards",
+      "PatchProposal review flow"
+    ],
+    "supportedByExamplesOrManualWorkflow": [
+      "mapping spreadsheet review",
+      "dataset coverage checks",
+      "steward review workbooks",
+      "GitHub issue drafts"
+    ],
+    "plannedOrIntegrationDirection": [
+      "hosted workbench review queues",
+      "broader connector packs",
+      "automated bidirectional MDM sync",
+      "turnkey ticketing or wiki synchronization"
+    ]
+  },
   "notA": [
     "chatbot",
     "SaaS tenant platform",
+    "full enterprise MDM replacement",
     "workflow engine",
     "generic data catalog",
     "SAP product",
     "tool certified by SAP",
-    "SAP-affiliated product"
+    "SAP-affiliated product",
+    "official DAMA product or certification"
   ],
   "avoidClaims": [
     "formal relationship with SAP",
     "certification by SAP",
+    "official DAMA certification or endorsement",
     "named customers",
     "customer proof assets",
     "endorsements",
     "paid-plan details",
-    "AI autonomous mutation of model truth"
+    "AI autonomous mutation of canonical model files"
   ],
   "aiPolicy": {
     "summary": "AI proposes. Validators verify. Humans approve.",
@@ -113,7 +143,7 @@
     "commercialUseAllowed": true,
     "possibleOfferings": [
       "implementation support",
-      "private SAP/MDM domain packs",
+      "private domain packs",
       "enterprise validation packs",
       "hosted workbench",
       "custom integrations",
@@ -129,22 +159,26 @@
     "https://martenweave.github.io/llms-full.txt"
   ],
   "keywords": [
+    "open-source model registry",
     "data model registry",
-    "model truth",
-    "SAP migration",
     "MDM",
+    "SAP migration",
     "data governance",
     "data quality",
     "AMS support",
+    "field mappings",
     "traceability",
     "deterministic validation",
     "AI PatchProposal",
     "human approval"
   ],
   "publicDocs": [
+    "https://martenweave.github.io/docs/product.html",
+    "https://martenweave.github.io/docs/how-it-works.html",
+    "https://martenweave.github.io/docs/import-export.html",
+    "https://martenweave.github.io/docs/governance.html",
     "https://martenweave.github.io/docs/quickstart.html",
     "https://martenweave.github.io/docs/examples.html",
-    "https://martenweave.github.io/docs/product.html",
     "https://martenweave.github.io/docs/use-cases.html",
     "https://martenweave.github.io/docs/architecture.html",
     "https://martenweave.github.io/docs/ai-governance.html",

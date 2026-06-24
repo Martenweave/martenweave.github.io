@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave Website Docs - Martenweave Docs</title>
+    <title>Governance Notes - Martenweave Docs</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for Martenweave Website Docs."
+      content="Public Martenweave documentation for Governance Notes."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://martenweave.github.io/docs/index.html" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/governance.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
@@ -45,11 +45,11 @@
 
     <main id="main" class="doc-shell">
       <aside class="doc-sidebar" aria-label="Documentation navigation">
-<a href="/docs/index.html" aria-current="page">Docs home</a>
+<a href="/docs/index.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
 <a href="/docs/how-it-works.html">How it works</a>
 <a href="/docs/import-export.html">Import/export</a>
-<a href="/docs/governance.html">Governance</a>
+<a href="/docs/governance.html" aria-current="page">Governance</a>
 <a href="/docs/quickstart.html">Quickstart</a>
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html">Use cases</a>
@@ -63,29 +63,76 @@
       </aside>
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
-<h1 id="martenweave-website-docs">Martenweave Website Docs</h1>
-<p>These are the public-facing Martenweave docs for decision makers, technical evaluators, contributors, and AI/search systems.</p>
-<p>Start here:</p>
+<h1 id="governance-notes">Governance Notes</h1>
+<p>Martenweave is built around practical data management principles.</p>
+<p>It supports common governance work such as definitions, ownership, metadata, lineage, quality checks, stewardship, change control, and evidence-based decisions.</p>
+<p>It is not an official DAMA product, certification, or endorsement.</p>
+<h2 id="definitions">Definitions</h2>
+<p>Model objects make definitions explicit.</p>
+<p>Examples:</p>
 <ul>
-<li><a href="product.html">Product</a> - what Martenweave is, who it is for, what exists now, and what it is not.</li>
-<li><a href="how-it-works.html">How it works</a> - the input to registry to output workflow.</li>
-<li><a href="import-export.html">Import/export</a> - available import/export paths, supported manual workflows, and planned integrations.</li>
-<li><a href="governance.html">Governance</a> - practical governance mapping for definitions, ownership, lineage, quality, stewardship, and change control.</li>
-<li><a href="quickstart.html">Quickstart</a> - local install and command flow from validation to proposal dry-run.</li>
-<li><a href="examples.html">Examples</a> - which bundled model to use and what each one proves.</li>
-<li><a href="use-cases.html">Use cases</a> - practical scenarios for migration, MDM, governance, validation, AMS, and AI-assisted maintenance.</li>
-<li><a href="architecture.html">Architecture</a> - canonical files, validation, generated indexes, lineage, reports, and approval flow.</li>
-<li><a href="ai-governance.html">AI governance</a> - the controlled AI stance: AI proposes, validators verify, humans approve.</li>
-<li><a href="faq.html">FAQ</a> - concise answers for evaluators and answer engines.</li>
-<li><a href="release-proof.html">Release proof</a> - rendered screenshot proof from the release-candidate site pass.</li>
-<li><a href="roadmap.html">Roadmap</a> - honest public roadmap and maturity notes.</li>
-<li><a href="contributing-scenarios.html">Contributing scenarios</a> - how to share useful pain, examples, starter-pack needs, and issue reports.</li>
-<li><a href="open-source.html">Open source</a> - contribution path and public-claim guardrails.</li>
+<li>what an attribute means</li>
+<li>where a field appears physically</li>
+<li>which context changes field behavior</li>
+<li>which value list applies</li>
+<li>which decision explains a rule</li>
 </ul>
-<p>For deep implementation details, see the core repository docs:</p>
-<p>https://github.com/metalhatscats/martenweave-core/tree/main/docs</p>
-<p>Production site:</p>
-<p>https://martenweave.github.io/</p>
+<h2 id="ownership">Ownership</h2>
+<p>Ownership needs to be referenceable, not only remembered.</p>
+<p>Martenweave can link model objects to owners, stewards, issues, decisions, and review status so teams can see where accountability is missing.</p>
+<h2 id="metadata">Metadata</h2>
+<p>Metadata becomes more useful when it is connected.</p>
+<p>Martenweave connects:</p>
+<ul>
+<li>business meaning</li>
+<li>physical endpoints</li>
+<li>source systems</li>
+<li>mappings</li>
+<li>validation rules</li>
+<li>decisions</li>
+<li>evidence</li>
+<li>change proposals</li>
+</ul>
+<h2 id="lineage-and-impact">Lineage And Impact</h2>
+<p>Lineage and impact analysis help teams understand change consequences.</p>
+<p>Useful questions include:</p>
+<ul>
+<li>What depends on this field?</li>
+<li>Which mappings use this attribute?</li>
+<li>Which decisions explain this rule?</li>
+<li>Which issues or owners are affected?</li>
+<li>Which reports should be reviewed before approval?</li>
+</ul>
+<h2 id="quality-checks">Quality Checks</h2>
+<p>Validation is deterministic before it is AI-assisted.</p>
+<p>Checks can include:</p>
+<ul>
+<li>ID and type validity</li>
+<li>missing required fields</li>
+<li>broken references</li>
+<li>reference type mismatches</li>
+<li>ownership and readiness gaps</li>
+<li>SAP context rules for starter SAP scenarios</li>
+</ul>
+<h2 id="stewardship">Stewardship</h2>
+<p>Stewardship work becomes easier when model facts are inspectable.</p>
+<p>Martenweave helps stewards review:</p>
+<ul>
+<li>definitions</li>
+<li>owners</li>
+<li>source coverage</li>
+<li>validation gaps</li>
+<li>evidence</li>
+<li>change requests</li>
+</ul>
+<h2 id="change-control">Change Control</h2>
+<p>AI and imports create PatchProposal objects.</p>
+<p>Humans approve or reject changes.</p>
+<p>Approved changes become ChangeRequests and then canonical updates.</p>
+<p>This keeps the review trail visible and prevents silent mutation.</p>
+<h2 id="practical-governance-boundary">Practical Governance Boundary</h2>
+<p>Martenweave is a lightweight model registry and validation layer.</p>
+<p>It is not a full enterprise governance suite, enterprise MDM product, ticketing system, or official methodology certification. It can sit beside those tools by making model knowledge structured and validated earlier.</p>
       </article>
     </main>
 

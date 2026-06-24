@@ -20,7 +20,7 @@ AI may help with:
 - suggesting affected model objects
 - explaining impact from structured model context
 - preparing validation or review checklists
-- summarizing handover context for AMS/support teams
+- summarizing handover context for AMS and support teams
 
 ## What AI Must Not Do
 
@@ -54,16 +54,16 @@ Martenweave keeps AI inside a controlled change workflow:
 
 Good outputs are reviewable:
 
-- “This note appears to affect `ATTR-CUST-SALES-CUSTOMER-GROUP`.”
-- “Create a draft issue for missing mapping evidence.”
-- “Propose a value-list update, status `review`.”
-- “Explain downstream impact for `FEP-S4-KNVV-KDGRP`.”
+- "This note appears to affect `ATTR-CUST-SALES-CUSTOMER-GROUP`."
+- "Create a draft issue for missing mapping evidence."
+- "Propose a value-list update with status `review`."
+- "Explain downstream impact for `FEP-S4-KNVV-KDGRP`."
 
 Bad outputs pretend to be truth:
 
-- “I updated the model.”
-- “This SAP mapping is correct” without evidence.
-- “Delete these canonical files.”
-- “Validation passed” without deterministic validation.
+- "I updated the model."
+- "This SAP mapping is correct" without evidence.
+- "Delete these canonical files."
+- "Validation passed" without deterministic validation.
 
 Martenweave is built for the first category.

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Governance - Martenweave Docs</title>
+    <title>Import and Export - Martenweave Docs</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for AI Governance."
+      content="Public Martenweave documentation for Import and Export."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://martenweave.github.io/docs/ai-governance.html" />
+    <link rel="canonical" href="https://martenweave.github.io/docs/import-export.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
@@ -48,13 +48,13 @@
 <a href="/docs/index.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
 <a href="/docs/how-it-works.html">How it works</a>
-<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/import-export.html" aria-current="page">Import/export</a>
 <a href="/docs/governance.html">Governance</a>
 <a href="/docs/quickstart.html">Quickstart</a>
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html">Use cases</a>
 <a href="/docs/architecture.html">Architecture</a>
-<a href="/docs/ai-governance.html" aria-current="page">AI governance</a>
+<a href="/docs/ai-governance.html">AI governance</a>
 <a href="/docs/faq.html">FAQ</a>
 <a href="/docs/release-proof.html">Release proof</a>
 <a href="/docs/roadmap.html">Roadmap</a>
@@ -63,63 +63,79 @@
       </aside>
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
-<h1 id="ai-governance">AI Governance</h1>
-<p>Martenweave has a simple AI rule:</p>
-<pre><code class="language-text">AI proposes.
-Validators verify.
-Humans approve.</code></pre>
-<p>This is the safety model.</p>
-<h2 id="what-ai-may-do">What AI May Do</h2>
-<p>AI may help with:</p>
+<h1 id="import-and-export">Import and Export</h1>
+<p>Martenweave treats import and export as model review workflows, not hidden synchronization.</p>
+<p>The core rule is simple: imports should create evidence, profiles, or PatchProposals. Exports should produce reviewable files, reports, schemas, or context. Canonical model changes still go through validation and approval.</p>
+<h2 id="available-now">Available Now</h2>
+<p>The current core includes commands and services for:</p>
 <ul>
-<li>extracting evidence from notes, tickets, validation reports, and workshop summaries</li>
-<li>drafting PatchProposals</li>
-<li>drafting GitHub issues</li>
-<li>suggesting affected model objects</li>
-<li>explaining impact from structured model context</li>
-<li>preparing validation or review checklists</li>
-<li>summarizing handover context for AMS and support teams</li>
+<li>profiling CSV and XLSX datasets</li>
+<li>detecting dataset-to-model gaps</li>
+<li>importing Google Drive files for profiling</li>
+<li>importing Google Sheets as PatchProposals</li>
+<li>importing spreadsheet edits as PatchProposals</li>
+<li>exporting canonical model objects to CSV or XLSX</li>
+<li>exporting JSON Schema for canonical object types</li>
+<li>exporting canonical model objects to Google Sheets</li>
+<li>generating search and lineage JSONL exports</li>
+<li>generating GitHub-ready change bundles</li>
+<li>publishing issue drafts and pull request bundles through review workflows</li>
 </ul>
-<h2 id="what-ai-must-not-do">What AI Must Not Do</h2>
-<p>AI must not:</p>
+<p>The exact command names and options are documented in the core repository and CLI help.</p>
+<h2 id="supported-by-examples-or-manual-workflow">Supported By Examples Or Manual Workflow</h2>
+<p>These workflows are practical today, but may still require manual setup, local files, or review steps:</p>
 <ul>
-<li>silently mutate canonical model files</li>
-<li>bypass deterministic validation</li>
-<li>mark a finding as validated without evidence</li>
-<li>invent SAP technical facts</li>
-<li>delete approved objects without explicit review</li>
-<li>treat raw datasets as model truth</li>
-<li>send raw client datasets to an external provider by default</li>
+<li>mapping spreadsheet review</li>
+<li>dataset profiling before mock load</li>
+<li>source-to-target field coverage checks</li>
+<li>export of model objects for steward review</li>
+<li>import of reviewed sheet edits as PatchProposals</li>
+<li>GitHub issue drafts for model gaps</li>
+<li>local automation around generated reports and JSONL files</li>
 </ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>AI is useful at turning messy project evidence into draft structure.</p>
-<p>AI is not a reliable source of model truth by itself.</p>
-<p>Martenweave keeps AI inside a controlled change workflow:</p>
-<ol>
-<li>Start from bounded context or evidence.</li>
-<li>Create a structured PatchProposal.</li>
-<li>Validate IDs, types, references, and domain rules.</li>
-<li>Review impact and diff.</li>
-<li>Approve or reject as a human action.</li>
-<li>Apply only approved changes.</li>
-<li>Record the change trail.</li>
-</ol>
-<h2 id="good-ai-outputs">Good AI Outputs</h2>
-<p>Good outputs are reviewable:</p>
+<h2 id="planned-or-integration-direction">Planned Or Integration Direction</h2>
+<p>These are directionally aligned with the product, but should not be described as fully implemented hosted integrations:</p>
 <ul>
-<li>&quot;This note appears to affect <code>ATTR-CUST-SALES-CUSTOMER-GROUP</code>.&quot;</li>
-<li>&quot;Create a draft issue for missing mapping evidence.&quot;</li>
-<li>&quot;Propose a value-list update with status <code>review</code>.&quot;</li>
-<li>&quot;Explain downstream impact for <code>FEP-S4-KNVV-KDGRP</code>.&quot;</li>
+<li>hosted workbench review queues</li>
+<li>enterprise connector marketplace</li>
+<li>automated bidirectional sync with MDM platforms</li>
+<li>direct SAP customizing extraction packs</li>
+<li>large-scale catalog or lineage platform replacement</li>
+<li>turnkey Jira, ServiceNow, or Confluence sync</li>
 </ul>
-<p>Bad outputs pretend to be truth:</p>
+<p>Martenweave can grow toward these paths, but the current open-source core is a local-first package and CLI.</p>
+<h2 id="import-safety-model">Import Safety Model</h2>
+<p>Raw files are not model truth.</p>
+<p>Good import behavior:</p>
 <ul>
-<li>&quot;I updated the model.&quot;</li>
-<li>&quot;This SAP mapping is correct&quot; without evidence.</li>
-<li>&quot;Delete these canonical files.&quot;</li>
-<li>&quot;Validation passed&quot; without deterministic validation.</li>
+<li>profile the source</li>
+<li>record evidence</li>
+<li>infer draft model objects only when appropriate</li>
+<li>create PatchProposal objects for review</li>
+<li>validate proposed references and types</li>
+<li>let humans approve changes</li>
 </ul>
-<p>Martenweave is built for the first category.</p>
+<p>Bad import behavior:</p>
+<ul>
+<li>silently overwrite canonical files</li>
+<li>treat source spreadsheets as always correct</li>
+<li>bypass validation</li>
+<li>hide assumptions</li>
+<li>create unreviewed AI changes</li>
+</ul>
+<h2 id="export-safety-model">Export Safety Model</h2>
+<p>Exports should be reproducible from canonical model state.</p>
+<p>Useful exports include:</p>
+<ul>
+<li>steward review workbooks</li>
+<li>search documents for retrieval</li>
+<li>lineage edges for analysis</li>
+<li>gap summaries</li>
+<li>impact reports</li>
+<li>schemas for integration</li>
+<li>AI context files</li>
+</ul>
+<p>Generated files are disposable. Canonical model files remain the source of record.</p>
       </article>
     </main>
 

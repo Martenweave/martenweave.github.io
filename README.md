@@ -16,14 +16,16 @@ https://github.com/metalhatscats/martenweave-core
 
 ## What This Site Is
 
-This is the public product entry point for Martenweave: a backend-first, AI-assisted MDM model registry for SAP migration, MDM, data governance, data quality, and AMS/support teams.
+This is the public product entry point for Martenweave: an open-source lightweight model registry for migration, MDM, data governance, data quality, and AMS/support teams.
 
 The site explains:
 
 - what Martenweave is
 - what pain it solves
+- how scattered model knowledge becomes a validated registry
 - what exists in the core package today
-- why it is not a chatbot
+- what import/export paths are available now versus planned
+- why it is not a chatbot or full enterprise MDM replacement
 - how AI is controlled
 - where to read docs
 - how to contribute scenarios
@@ -55,7 +57,7 @@ http://localhost:4173
 
 ## Build And Validation
 
-There is no compilation step. The build command runs the static validator:
+There is no compilation step. The build command regenerates static docs and runs the static validator:
 
 ```bash
 npm run build
@@ -92,10 +94,10 @@ Rules:
 
 Public docs live in:
 
-- `docs.html` — visual docs index
-- `docs/*.md` — editable documentation source
-- `docs/*.html` — generated browser-readable documentation pages
-- `scripts/build-docs.mjs` — lightweight static docs generator with no frontend framework
+- `docs.html` - visual docs index
+- `docs/*.md` - editable documentation source
+- `docs/*.html` - generated browser-readable documentation pages
+- `scripts/build-docs.mjs` - lightweight static docs generator with no frontend framework
 
 Deep implementation documentation lives in the core repository:
 
@@ -105,13 +107,13 @@ https://github.com/metalhatscats/martenweave-core/tree/main/docs
 
 These files help AI systems and search crawlers understand Martenweave accurately:
 
-- `llms.txt` — short authoritative summary
-- `llms-full.txt` — fuller AI-readable product context
-- `ai.txt` — concise identity and “do not misdescribe” rules
-- `ai.json` — machine-readable product identity
-- `robots.txt` — crawler policy
-- `sitemap.xml` — public routes and discovery files
-- `site.webmanifest` — app/site metadata
+- `llms.txt` - short authoritative summary
+- `llms-full.txt` - fuller AI-readable product context
+- `ai.txt` - concise identity and "do not misdescribe" rules
+- `ai.json` - machine-readable product identity
+- `robots.txt` - crawler policy
+- `sitemap.xml` - public routes and discovery files
+- `site.webmanifest` - app/site metadata
 
 When positioning changes, update the homepage, docs, `llms-full.txt`, and `ai.json` together.
 
@@ -124,9 +126,11 @@ Do not add:
 - fake paid-plan details
 - SAP certification claims
 - formal SAP relationship claims
+- official DAMA certification or endorsement claims
 - login/auth flows
 - backend logic
-- claims that AI silently mutates model truth
+- claims that AI silently mutates canonical model files
+- claims that Martenweave replaces full enterprise MDM platforms
 
 SAP may be mentioned as a migration scenario and domain-pack context, not as official affiliation.
 

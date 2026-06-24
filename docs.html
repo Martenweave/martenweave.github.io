@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave Docs - Product, architecture, and AI governance</title>
+    <title>Martenweave Docs - Product, workflow, governance, and AI safety</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for product positioning, use cases, architecture, AI governance, roadmap, and scenario contributions."
+      content="Business-readable Martenweave docs for product positioning, workflow, import/export maturity, governance practices, use cases, architecture, and AI governance."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="Martenweave Docs" />
     <meta
       property="og:description"
-      content="Read how Martenweave stores validated model truth, controls AI changes, and supports MDM, migration, governance, and AMS teams."
+      content="Read how Martenweave turns scattered model knowledge into a validated model registry for migration, MDM, governance, AMS, and AI-assisted data work."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -44,9 +44,10 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="/">Product</a>
-          <a href="/#registry">Registry</a>
-          <a href="/docs.html">Docs</a>
+          <a href="/#how-it-works">How it works</a>
           <a href="/#use-cases">Use cases</a>
+          <a href="/docs/examples.html">Examples</a>
+          <a href="/docs.html">Docs</a>
           <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
             GitHub
           </a>
@@ -57,15 +58,15 @@
     <main id="main">
       <section class="hero docs-hero" aria-labelledby="docs-title">
         <div class="section-heading">
-          <p class="system-label">public docs / AI governance</p>
-          <h1 id="docs-title">Martenweave docs for people evaluating the model layer.</h1>
+          <p class="product-label">Public docs</p>
+          <h1 id="docs-title">Short docs for evaluating the model registry.</h1>
           <p class="hero-subhead">
-            A compact guide to what Martenweave is, what exists now, how the architecture works,
-            and how to contribute useful scenarios without turning the project into a generic AI tool.
+            Start with the product explanation, then go deeper into workflow, import/export
+            maturity, governance practices, architecture, examples, and AI approval gates.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="/docs/product.html">Start with product docs</a>
-            <a class="button secondary" href="/docs/quickstart.html">Run the quickstart</a>
+            <a class="button secondary" href="/docs/quickstart.html">Run quickstart</a>
             <a class="button secondary" href="https://github.com/metalhatscats/martenweave-core">
               Open core repo
             </a>
@@ -76,14 +77,32 @@
       <section class="section" aria-labelledby="docs-index-title">
         <div class="section-heading">
           <p class="section-kicker">Documentation map</p>
-          <h2 id="docs-index-title">Read this when the landing page is too small for the real story.</h2>
+          <h2 id="docs-index-title">The homepage gives the overview. These pages hold the detail.</h2>
         </div>
         <div class="docs-grid">
           <a class="docs-card" href="/docs/product.html">
             <span>product</span>
             <strong>What Martenweave is</strong>
-            <p>Positioning, audience, problem, current maturity, and what it is not.</p>
+            <p>Plain-English positioning, audience, maturity, and what it is not.</p>
             <em>Read product docs</em>
+          </a>
+          <a class="docs-card" href="/docs/how-it-works.html">
+            <span>workflow</span>
+            <strong>How it works</strong>
+            <p>Input artifacts, model objects, validation, indexing, gaps, impact, and approval.</p>
+            <em>Follow the workflow</em>
+          </a>
+          <a class="docs-card" href="/docs/import-export.html">
+            <span>import/export</span>
+            <strong>Available now vs planned</strong>
+            <p>Honest notes on dataset profiling, sheet review flows, exports, and integration direction.</p>
+            <em>Read maturity notes</em>
+          </a>
+          <a class="docs-card" href="/docs/governance.html">
+            <span>governance</span>
+            <strong>Practical data management principles</strong>
+            <p>Definitions, ownership, metadata, lineage, quality, stewardship, and change control.</p>
+            <em>Read governance notes</em>
           </a>
           <a class="docs-card" href="/docs/quickstart.html">
             <span>quickstart</span>
@@ -100,12 +119,12 @@
           <a class="docs-card" href="/docs/use-cases.html">
             <span>use cases</span>
             <strong>Where it helps</strong>
-            <p>Migration, MDM, governance, validation, AMS, impact, and AI maintenance scenarios.</p>
+            <p>Migration, MDM, governance, validation, AMS, and AI-assisted maintenance scenarios.</p>
             <em>Read use cases</em>
           </a>
           <a class="docs-card" href="/docs/architecture.html">
             <span>architecture</span>
-            <strong>How the model layer works</strong>
+            <strong>How the backend layer works</strong>
             <p>Canonical files, validation, generated indexes, lineage, reports, and approval flow.</p>
             <em>Read architecture</em>
           </a>
@@ -118,26 +137,8 @@
           <a class="docs-card" href="/docs/faq.html">
             <span>FAQ</span>
             <strong>Short answers for evaluators</strong>
-            <p>What Martenweave is, who it is for, what AI does, and what claims to avoid.</p>
+            <p>MDM, Excel, SAP scope, import/export, AI behavior, users, and open-source boundaries.</p>
             <em>Read FAQ</em>
-          </a>
-          <a class="docs-card" href="/docs/release-proof.html">
-            <span>proof</span>
-            <strong>Rendered site screenshots</strong>
-            <p>Desktop, mobile, docs index, and quickstart screenshots from the release-candidate pass.</p>
-            <em>Review proof</em>
-          </a>
-          <a class="docs-card" href="/docs/roadmap.html">
-            <span>roadmap</span>
-            <strong>What exists and what comes next</strong>
-            <p>Core registry, model intelligence, AI workflows, starter packs, and optional workbench.</p>
-            <em>Read roadmap</em>
-          </a>
-          <a class="docs-card" href="/docs/contributing-scenarios.html">
-            <span>contribute</span>
-            <strong>Bring useful pain</strong>
-            <p>How to report scenarios, validation pain, starter pack needs, and migration stories.</p>
-            <em>Read contribution guide</em>
           </a>
           <a class="docs-card" href="/docs/open-source.html">
             <span>open source</span>
@@ -145,13 +146,19 @@
             <p>What to contribute, what not to claim, and how to keep issues useful.</p>
             <em>Read open-source guide</em>
           </a>
+          <a class="docs-card" href="/docs/roadmap.html">
+            <span>roadmap</span>
+            <strong>What exists and what comes next</strong>
+            <p>Core registry, model intelligence, AI workflows, starter packs, and optional workbench.</p>
+            <em>Read roadmap</em>
+          </a>
         </div>
         <p class="docs-note">
           Deep implementation docs live in
           <a href="https://github.com/metalhatscats/martenweave-core/tree/main/docs">
             the core repository docs
           </a>.
-          These website docs stay intentionally short and decision-maker friendly.
+          These website docs stay decision-maker friendly.
         </p>
       </section>
     </main>
@@ -162,20 +169,22 @@
           <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
-        <p>Backend-first data model registry.</p>
+        <p>Open-source model registry for migration, MDM, and data governance.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="/docs/quickstart.html">Quickstart</a>
-        <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/product.html">Product</a>
+        <a href="/docs/how-it-works.html">How it works</a>
+        <a href="/docs/import-export.html">Import/export</a>
+        <a href="/docs/governance.html">Governance</a>
         <a href="/docs/examples.html">Examples</a>
         <a href="/docs/ai-governance.html">AI governance</a>
         <a href="/docs/faq.html">FAQ</a>
-        <a href="/docs/release-proof.html">Release proof</a>
         <a href="/docs/open-source.html">Open source</a>
         <a href="/llms.txt">llms.txt</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
       </div>
-      <p class="footer-line">Traceable model truth for governed data work.</p>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
     </footer>
   </body>
 </html>

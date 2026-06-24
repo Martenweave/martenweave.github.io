@@ -32,9 +32,10 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="/">Product</a>
-          <a href="/#registry">Registry</a>
-          <a href="/docs.html">Docs</a>
+          <a href="/#how-it-works">How it works</a>
           <a href="/#use-cases">Use cases</a>
+          <a href="/docs/examples.html">Examples</a>
+          <a href="/docs.html">Docs</a>
           <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
             GitHub
           </a>
@@ -46,6 +47,9 @@
       <aside class="doc-sidebar" aria-label="Documentation navigation">
 <a href="/docs/index.html">Docs home</a>
 <a href="/docs/product.html" aria-current="page">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
 <a href="/docs/quickstart.html">Quickstart</a>
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html">Use cases</a>
@@ -60,65 +64,81 @@
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
 <h1 id="what-martenweave-is">What Martenweave Is</h1>
-<p>Martenweave is a backend-first agentic data model registry.</p>
-<p>It helps SAP migration, master data management, data governance, data quality, and AMS/support teams turn scattered model knowledge into a traceable, validated, AI-ready model layer.</p>
+<p>Martenweave is an open-source lightweight model registry for migration, MDM, data governance, and AMS teams.</p>
+<p>It turns scattered model knowledge from spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into structured model objects that can be validated, searched, traced, reviewed, and exported.</p>
 <h2 id="the-problem">The Problem</h2>
 <p>Real model knowledge rarely lives in one clean system.</p>
-<p>It usually leaks across:</p>
+<p>It usually lives across:</p>
 <ul>
 <li>Excel mappings</li>
+<li>dataset extracts</li>
 <li>ticket threads</li>
 <li>validation reports</li>
-<li>datasets</li>
 <li>migration notes</li>
 <li>decisions</li>
 <li>SAP context</li>
 <li>project history</li>
-<li>tribal knowledge</li>
 </ul>
-<p>That makes ownership unclear, validation disputes slow, handover painful, and AI assistance risky because the model truth is not structured.</p>
-<h2 id="the-product-boundary">The Product Boundary</h2>
-<p>Martenweave is:</p>
+<p>That makes ownership unclear, validation disputes slow, handover painful, and AI assistance risky because there is no trusted structured context.</p>
+<h2 id="the-product-idea">The Product Idea</h2>
+<p>Martenweave gives teams a practical model control layer.</p>
+<p>It helps them:</p>
 <ul>
-<li>a model truth layer</li>
-<li>a canonical file store</li>
-<li>a deterministic validator</li>
-<li>a generated index and reporting layer</li>
-<li>an AI-assisted proposal workflow</li>
-<li>a local-first CLI/backend library</li>
+<li>capture model knowledge as structured objects</li>
+<li>connect fields, attributes, rules, owners, issues, and decisions</li>
+<li>validate references before indexing</li>
+<li>detect dataset and model gaps</li>
+<li>trace impact across model relationships</li>
+<li>export reports and context</li>
+<li>let AI propose changes only through reviewable PatchProposals</li>
 </ul>
-<p>Martenweave is not:</p>
+<p>SAP migration and master data are proof domains and starter scenarios. They are not the whole product boundary.</p>
+<h2 id="who-it-is-for">Who It Is For</h2>
+<p>Martenweave is for:</p>
 <ul>
-<li>a chatbot</li>
-<li>a generic data catalog</li>
-<li>a workflow engine</li>
-<li>a SaaS tenant platform</li>
-<li>a replacement for SAP MDG, SAP S/4HANA, Jira, Confluence, or enterprise catalogs</li>
-<li>a product certified by SAP or affiliated with SAP</li>
+<li>SAP migration teams</li>
+<li>MDM teams</li>
+<li>data governance teams</li>
+<li>data quality teams</li>
+<li>AMS and support teams</li>
+<li>data architects</li>
+<li>data stewards</li>
+<li>consultants working with Customer, Supplier, Product, Material, or similar models</li>
 </ul>
-<p>SAP migration is a strong starter scenario and domain context. It is not the whole product boundary.</p>
 <h2 id="what-exists-now">What Exists Now</h2>
-<p>The core repository is <code>martenweave-core</code> version <code>0.4.1</code>.</p>
-<p>Current public capabilities include:</p>
+<p>The current open-source core is <code>martenweave-core</code> version <code>0.4.1</code>.</p>
+<p>Available now:</p>
 <ul>
-<li><code>martenweave</code> and <code>modelops</code> CLI commands</li>
+<li><code>martenweave</code> CLI and compatibility <code>modelops</code> CLI</li>
 <li>local API server</li>
 <li>MCP-ready backend</li>
-<li>canonical Markdown + YAML model files</li>
+<li>canonical Markdown and YAML model files</li>
 <li>deterministic validation</li>
-<li>SQLite and JSONL generated indexes</li>
+<li>generated SQLite and JSONL indexes</li>
 <li>search and structured query</li>
 <li>trace and impact analysis</li>
 <li>dataset profiling and gap detection</li>
 <li>health, analysis, scorecard, ownership, audit, and usage reports</li>
-<li>export/import workflows for CSV and XLSX review</li>
+<li>CSV and XLSX model review import/export flows</li>
 <li>PatchProposal to ChangeRequest lifecycle</li>
 <li>issue drafts and GitHub-ready change bundles</li>
-<li>example packs for Customer / Business Partner, Supplier / Vendor, and generic product models</li>
+<li>example packs for Customer / Business Partner, Supplier / Vendor, simple product, and generic product models</li>
 </ul>
+<h2 id="what-it-is-not">What It Is Not</h2>
+<p>Martenweave is not:</p>
+<ul>
+<li>a chatbot</li>
+<li>a SaaS tenant platform</li>
+<li>a full enterprise MDM replacement</li>
+<li>a workflow engine</li>
+<li>a generic data catalog</li>
+<li>a product certified by SAP or affiliated with SAP</li>
+<li>a replacement for SAP MDG, SAP S/4HANA, Jira, Confluence, or enterprise catalog tools</li>
+</ul>
+<p>It can work beside those tools by giving teams a validated model registry that starts locally and can grow into integrations.</p>
 <h2 id="core-principle">Core Principle</h2>
 <p>Integrations bring input.</p>
-<p>Martenweave stores model truth.</p>
+<p>Martenweave stores model knowledge.</p>
 <p>Validators check consistency.</p>
 <p>AI proposes changes.</p>
 <p>Humans approve.</p>
@@ -127,9 +147,9 @@
 <ul>
 <li>Product/core repo: https://github.com/metalhatscats/martenweave-core</li>
 <li>Website repo: https://github.com/Martenweave/martenweave.github.io</li>
-<li>Docs index: https://martenweave.github.io/docs.html</li>
 <li>Quickstart: https://martenweave.github.io/docs/quickstart.html</li>
-<li>Examples: https://martenweave.github.io/docs/examples.html</li>
+<li>How it works: https://martenweave.github.io/docs/how-it-works.html</li>
+<li>Import/export notes: https://martenweave.github.io/docs/import-export.html</li>
 </ul>
       </article>
     </main>
@@ -140,11 +160,14 @@
           <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
-        <p>Backend-first data model registry.</p>
+        <p>Open-source model registry for migration, MDM, and data governance.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="/docs/quickstart.html">Quickstart</a>
         <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/how-it-works.html">How it works</a>
+        <a href="/docs/import-export.html">Import/export</a>
+        <a href="/docs/governance.html">Governance</a>
         <a href="/docs/examples.html">Examples</a>
         <a href="/docs/ai-governance.html">AI governance</a>
         <a href="/docs/faq.html">FAQ</a>
@@ -152,7 +175,7 @@
         <a href="/llms.txt">llms.txt</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
       </div>
-      <p class="footer-line">Traceable model truth for governed data work.</p>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
     </footer>
   </body>
 </html>

@@ -2,13 +2,17 @@
 
 ## What is Martenweave?
 
-Martenweave is a backend-first registry for governed data model truth. It turns scattered model knowledge into canonical Markdown/YAML files, deterministic validation results, generated indexes, reports, and reviewable change proposals.
+Martenweave is an open-source lightweight model registry for migration, MDM, data governance, and AMS teams. It turns scattered model knowledge into canonical files, deterministic validation results, generated indexes, reports, and reviewable change proposals.
 
-## Who is it for?
+## Is this an MDM system?
 
-It is for SAP migration, master data management, data governance, data quality, and AMS/support teams that need traceable model knowledge instead of disconnected spreadsheets, tickets, reports, and notes.
+No. Martenweave is MDM-adjacent infrastructure: a model registry and validation layer. It can support MDM work, but it is not a full enterprise MDM platform or a replacement for tools such as SAP MDG.
 
-## Is it SAP-specific?
+## Is this a replacement for Excel?
+
+No. Excel remains useful for working tables, review files, and steward feedback. Martenweave gives teams a validated model registry so spreadsheet knowledge can become structured, traceable, and reviewable.
+
+## Is this only for SAP?
 
 No. SAP migration and master data scenarios are proof domains and starter packs. The core model registry is designed for broader governed data model work.
 
@@ -16,33 +20,31 @@ No. SAP migration and master data scenarios are proof domains and starter packs.
 
 No. Martenweave is not certified by SAP and is not affiliated with SAP. SAP context appears as a practical migration and MDM scenario.
 
-## Is it a chatbot?
+## Can it import and export?
 
-No. Martenweave is not a chatbot. It stores structured model truth, validates it, indexes it, and supports reviewable AI-assisted change proposals.
+Yes, with current local-first boundaries. The core supports dataset profiling, CSV/XLSX model review exports, spreadsheet review imports as PatchProposals, JSON Schema export, generated JSONL outputs, and Google Sheets/Drive-oriented commands. See the import/export page for what is available now versus planned.
 
-## Is it a workflow engine?
+## Can AI change the model automatically?
 
-No. Martenweave includes approval-aware model change objects, but it is not a general workflow engine or ticketing system.
+No. AI can draft PatchProposal objects, extract evidence from notes, and help explain impact from structured model context. AI does not silently mutate canonical model files.
 
-## What does AI do?
+## Who should use it?
 
-AI can draft PatchProposal objects, extract evidence from notes, and help explain impact from structured model context. AI does not silently mutate canonical model truth.
+SAP migration teams, MDM teams, data governance teams, AMS/support teams, data architects, data stewards, and consultants working with field mappings, rules, ownership, lineage, and validation evidence.
 
-## What does deterministic validation do?
-
-Validation checks object IDs, object types, required fields, duplicates, broken references, reference type mismatches, ownership/readiness coverage, and domain-specific context rules before indexing or trusted reporting.
-
-## What is open source?
+## What is free/open-source?
 
 The open-source core is the Python package `martenweave-core`, version `0.4.1`, licensed under MIT.
 
 ## Can companies use it commercially?
 
-Yes. The MIT-licensed core allows commercial use when the license notice is preserved. Separate commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs.
+Yes. The MIT-licensed core allows commercial use when the license notice is preserved. Separate commercial offerings may include implementation support, private domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs.
 
-## What is the current version?
+## What exists now versus planned?
 
-The current public core package version is `0.4.1`.
+Available now: CLI package, canonical files, validation, generated indexes, search/query, trace/impact, dataset gap detection, reports, examples, and PatchProposal review flows.
+
+Planned or future-facing: hosted workbench experiences, broader connector packs, richer review UI, and enterprise integration layers.
 
 ## Where is the source code?
 

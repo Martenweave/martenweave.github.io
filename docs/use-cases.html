@@ -32,9 +32,10 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="/">Product</a>
-          <a href="/#registry">Registry</a>
-          <a href="/docs.html">Docs</a>
+          <a href="/#how-it-works">How it works</a>
           <a href="/#use-cases">Use cases</a>
+          <a href="/docs/examples.html">Examples</a>
+          <a href="/docs.html">Docs</a>
           <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
             GitHub
           </a>
@@ -46,6 +47,9 @@
       <aside class="doc-sidebar" aria-label="Documentation navigation">
 <a href="/docs/index.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
 <a href="/docs/quickstart.html">Quickstart</a>
 <a href="/docs/examples.html">Examples</a>
 <a href="/docs/use-cases.html" aria-current="page">Use cases</a>
@@ -60,43 +64,43 @@
       <article class="doc-content">
         <p class="section-kicker">Public docs</p>
 <h1 id="martenweave-use-cases">Martenweave Use Cases</h1>
-<p>Martenweave is useful when a team needs model truth to survive beyond a meeting, a spreadsheet, or one heroic consultant.</p>
-<h2 id="sap-migration-model-registry">SAP Migration Model Registry</h2>
-<p><strong>Problem:</strong> Migration scope, fields, and rules drift across files.</p>
-<p><strong>How Martenweave helps:</strong> Domains, contexts, attributes, field endpoints, mappings, value lists, issues, and decisions stay connected.</p>
-<p><strong>Business value:</strong> Fewer truth disputes during mock loads, validation cycles, and cutover planning.</p>
+<p>Martenweave helps when teams need traceability before decisions become expensive.</p>
+<h2 id="sap-migration-model-control">SAP Migration Model Control</h2>
+<p>Problem: migration scope, fields, and rules drift across files.</p>
+<p>Martenweave helps by connecting domains, contexts, attributes, field endpoints, mappings, value lists, issues, and decisions.</p>
+<p>Business value: fewer truth disputes during mock loads, validation cycles, and cutover planning.</p>
 <h2 id="mdm-rule-and-ownership-layer">MDM Rule And Ownership Layer</h2>
-<p><strong>Problem:</strong> Ownership is known socially, not operationally.</p>
-<p><strong>How Martenweave helps:</strong> Attributes, rules, owners, data stewards, and decisions become referenceable model objects.</p>
-<p><strong>Business value:</strong> Governance teams can discuss changes with evidence instead of memory.</p>
-<h2 id="customer-business-partner-mapping-control">Customer / Business Partner Mapping Control</h2>
-<p><strong>Problem:</strong> Customer field behavior changes by context, table, source system, and migration path.</p>
-<p><strong>How Martenweave helps:</strong> Attribute usage, entity context, SAP table/field endpoints, mappings, and value lists stay explicit.</p>
-<p><strong>Business value:</strong> Better control of Business Partner / Customer migration knowledge without spreadsheet archaeology.</p>
+<p>Problem: ownership is known socially, not operationally.</p>
+<p>Martenweave helps by making attributes, rules, owners, stewards, and decisions referenceable model objects.</p>
+<p>Business value: governance teams discuss changes with evidence instead of memory.</p>
+<h2 id="customer-business-partner-mapping">Customer / Business Partner Mapping</h2>
+<p>Problem: customer field behavior changes by context, table, source system, and migration path.</p>
+<p>Martenweave helps by keeping attribute usage, entity context, SAP table/field endpoints, mappings, and value lists explicit.</p>
+<p>Business value: better control of Business Partner / Customer migration knowledge without spreadsheet archaeology.</p>
 <h2 id="supplier-vendor-model-control">Supplier / Vendor Model Control</h2>
-<p><strong>Problem:</strong> Supplier and vendor meanings blur across central, company-code, and purchasing contexts.</p>
-<p><strong>How Martenweave helps:</strong> Business meaning is separated from physical fields and system-specific endpoints.</p>
-<p><strong>Business value:</strong> Cleaner handoffs between process, data, migration, and support teams.</p>
-<h2 id="dataset-gap-detection-before-mock-load">Dataset Gap Detection Before Mock Load</h2>
-<p><strong>Problem:</strong> Missing fields appear late, usually when the calendar is least amused.</p>
-<p><strong>How Martenweave helps:</strong> Profiled datasets can be compared with expected model endpoints and coverage expectations.</p>
-<p><strong>Business value:</strong> Earlier remediation and less validation ping-pong.</p>
+<p>Problem: supplier and vendor meanings blur across central, company-code, and purchasing contexts.</p>
+<p>Martenweave helps by separating business meaning from physical fields and system-specific endpoints.</p>
+<p>Business value: cleaner handoffs between process, data, migration, and support teams.</p>
+<h2 id="dataset-gaps-before-mock-load">Dataset Gaps Before Mock Load</h2>
+<p>Problem: missing fields appear late, usually when the calendar is least forgiving.</p>
+<p>Martenweave helps by comparing profiled datasets with expected model endpoints and coverage expectations.</p>
+<p>Business value: earlier remediation and less validation ping-pong.</p>
 <h2 id="validation-report-triage">Validation Report Triage</h2>
-<p><strong>Problem:</strong> Reports show failures without enough model context.</p>
-<p><strong>How Martenweave helps:</strong> Findings can link back to fields, rules, mappings, owners, issues, and decisions.</p>
-<p><strong>Business value:</strong> Triage becomes evidence-led, not inbox-led.</p>
-<h2 id="ams-support-knowledge-continuity">AMS Support Knowledge Continuity</h2>
-<p><strong>Problem:</strong> Support inherits decisions but not the reasoning.</p>
-<p><strong>How Martenweave helps:</strong> Canonical files preserve model context, decisions, issues, and traceability after go-live.</p>
-<p><strong>Business value:</strong> Less knowledge loss between delivery and support.</p>
+<p>Problem: reports show failures without enough model context.</p>
+<p>Martenweave helps by linking findings back to fields, rules, mappings, owners, issues, and decisions.</p>
+<p>Business value: triage becomes evidence-led, not inbox-led.</p>
+<h2 id="ams-knowledge-continuity">AMS Knowledge Continuity</h2>
+<p>Problem: support inherits decisions but not the reasoning.</p>
+<p>Martenweave helps by preserving model context, decisions, issues, and traceability after go-live.</p>
+<p>Business value: less knowledge loss between delivery and support.</p>
 <h2 id="governance-impact-analysis">Governance Impact Analysis</h2>
-<p><strong>Problem:</strong> A small field change can affect reports, mappings, validation rules, owners, and downstream teams.</p>
-<p><strong>How Martenweave helps:</strong> Trace and impact analysis show connected model objects and lineage.</p>
-<p><strong>Business value:</strong> Better change decisions before downstream teams discover the change the hard way.</p>
-<h2 id="ai-assisted-model-maintenance">AI-Assisted Model Maintenance</h2>
-<p><strong>Problem:</strong> AI can help with extraction and drafting, but unchecked AI changes are not governance.</p>
-<p><strong>How Martenweave helps:</strong> AI creates reviewable PatchProposals. Validators and humans remain the gate.</p>
-<p><strong>Business value:</strong> Faster maintenance without surrendering model control.</p>
+<p>Problem: a small field change can affect reports, mappings, validation rules, owners, and downstream teams.</p>
+<p>Martenweave helps by tracing connected model objects and lineage.</p>
+<p>Business value: better change decisions before downstream teams discover the change later.</p>
+<h2 id="ai-assisted-governance-context">AI-Assisted Governance Context</h2>
+<p>Problem: AI can help with extraction and drafting, but unchecked AI changes are not governance.</p>
+<p>Martenweave helps by creating reviewable PatchProposals that validators and humans review.</p>
+<p>Business value: faster maintenance without surrendering model control.</p>
       </article>
     </main>
 
@@ -106,11 +110,14 @@
           <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
-        <p>Backend-first data model registry.</p>
+        <p>Open-source model registry for migration, MDM, and data governance.</p>
       </div>
       <div class="footer-links" aria-label="Footer links">
         <a href="/docs/quickstart.html">Quickstart</a>
         <a href="/docs/product.html">Product docs</a>
+        <a href="/docs/how-it-works.html">How it works</a>
+        <a href="/docs/import-export.html">Import/export</a>
+        <a href="/docs/governance.html">Governance</a>
         <a href="/docs/examples.html">Examples</a>
         <a href="/docs/ai-governance.html">AI governance</a>
         <a href="/docs/faq.html">FAQ</a>
@@ -118,7 +125,7 @@
         <a href="/llms.txt">llms.txt</a>
         <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
       </div>
-      <p class="footer-line">Traceable model truth for governed data work.</p>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
     </footer>
   </body>
 </html>
