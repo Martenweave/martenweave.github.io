@@ -200,14 +200,14 @@
           <div class="terminal-panel" aria-label="Martenweave CLI example">
             <div class="terminal-top">
               <span></span><span></span><span></span>
-              <strong>modelops</strong>
+              <strong>martenweave</strong>
             </div>
-            <pre><code>$ modelops validate --repo examples/customer_bp_model
-$ modelops build-index --repo examples/customer_bp_model --jsonl
-$ modelops search "Customer Group" --repo examples/customer_bp_model
-$ modelops trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
-$ modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
-$ modelops propose-patch --from note.md --repo examples/customer_bp_model --dry-run</code></pre>
+            <pre><code>$ martenweave validate --repo examples/customer_bp_model
+$ martenweave build-index --repo examples/customer_bp_model --jsonl
+$ martenweave search "Customer Group" --repo examples/customer_bp_model
+$ martenweave trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
+$ martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
+$ martenweave propose-patch --from note.md --repo examples/customer_bp_model --dry-run</code></pre>
           </div>
           <div class="registry-facts" aria-label="Martenweave product facts">
             <article>
@@ -239,7 +239,7 @@ $ modelops propose-patch --from note.md --repo examples/customer_bp_model --dry-
           <p class="section-kicker">What exists today</p>
           <h2 id="today-title">The core is already more than a landing-page promise.</h2>
           <p>
-            <code>martenweave-core</code> is a Python backend and CLI package at version 0.4.0. It is
+            <code>martenweave-core</code> is a Python backend and CLI package at version 0.4.1. It is
             local-first, file-based, and built for serious model work before any UI gets involved.
           </p>
         </div>
@@ -247,7 +247,10 @@ $ modelops propose-patch --from note.md --repo examples/customer_bp_model --dry-
           <article>
             <span>runtime</span>
             <h3>CLI, local API, MCP-ready backend</h3>
-            <p>Use `modelops` from terminals, pipelines, local tooling, and agent workflows.</p>
+            <p>
+              Use <code>martenweave</code> from terminals, pipelines, local tooling, and agent
+              workflows. <code>modelops</code> remains supported for compatibility.
+            </p>
           </article>
           <article>
             <span>truth</span>
@@ -287,13 +290,15 @@ $ modelops propose-patch --from note.md --repo examples/customer_bp_model --dry-
           </p>
         </div>
         <div class="quickstart-layout">
-          <pre><code>python -m venv .venv
-.venv/bin/python -m pip install -e ".[dev]"
-.venv/bin/modelops validate --repo examples/customer_bp_model
-.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
-.venv/bin/modelops health --repo examples/customer_bp_model
-.venv/bin/modelops search "Customer Group" --repo examples/customer_bp_model
-.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
+          <pre><code>git clone https://github.com/metalhatscats/martenweave-core.git
+cd martenweave-core
+python -m venv .venv
+.venv/bin/python -m pip install martenweave-core
+.venv/bin/martenweave validate --repo examples/customer_bp_model
+.venv/bin/martenweave build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/martenweave health --repo examples/customer_bp_model
+.venv/bin/martenweave search "Customer Group" --repo examples/customer_bp_model
+.venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
 bash scripts/release_smoke.sh</code></pre>
           <div class="quickstart-notes">
             <h3>What this proves</h3>
@@ -604,6 +609,11 @@ bash scripts/release_smoke.sh</code></pre>
             <p>
               Martenweave is early and intentionally backend-first. Feedback is most useful when it
               comes with real migration, MDM, data quality, governance, or AMS scenarios.
+            </p>
+            <p>
+              The core is MIT-licensed open source. Commercial offerings may include implementation
+              support, private SAP/MDM domain packs, enterprise validation packs, hosted workbench
+              work, custom integrations, and support SLAs.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="https://github.com/metalhatscats/martenweave-core">

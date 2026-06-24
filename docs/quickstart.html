@@ -66,23 +66,24 @@
 <pre><code class="language-bash">git clone https://github.com/metalhatscats/martenweave-core.git
 cd martenweave-core
 python -m venv .venv
-.venv/bin/python -m pip install -e &quot;.[dev]&quot;
-.venv/bin/modelops --version</code></pre>
+.venv/bin/python -m pip install martenweave-core
+.venv/bin/martenweave --version</code></pre>
+<p>The clone provides the bundled example repositories used below. Contributors can install from source with <code>.venv/bin/python -m pip install -e &quot;.[dev]&quot;</code>.</p>
 <h2 id="validate-and-index-an-example">Validate and Index an Example</h2>
-<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/customer_bp_model
-.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
-.venv/bin/modelops index-fresh --repo examples/customer_bp_model</code></pre>
+<pre><code class="language-bash">.venv/bin/martenweave validate --repo examples/customer_bp_model
+.venv/bin/martenweave build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/martenweave index-fresh --repo examples/customer_bp_model</code></pre>
 <p>The generated SQLite and JSONL files are rebuildable. Canonical Markdown/YAML files remain the source of truth.</p>
 <h2 id="search-trace-and-impact">Search, Trace, and Impact</h2>
-<pre><code class="language-bash">.venv/bin/modelops search &quot;Customer Group&quot; --repo examples/customer_bp_model
-.venv/bin/modelops query --type Attribute --repo examples/customer_bp_model
-.venv/bin/modelops trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
-.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
+<pre><code class="language-bash">.venv/bin/martenweave search &quot;Customer Group&quot; --repo examples/customer_bp_model
+.venv/bin/martenweave query --type Attribute --repo examples/customer_bp_model
+.venv/bin/martenweave trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo examples/customer_bp_model
+.venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
 <h2 id="health-scorecard-and-gaps">Health, Scorecard, and Gaps</h2>
-<pre><code class="language-bash">.venv/bin/modelops health --repo examples/customer_bp_model
-.venv/bin/modelops scorecard --repo examples/customer_bp_model
-.venv/bin/modelops gap-report --repo examples/customer_bp_model
-.venv/bin/modelops gaps \
+<pre><code class="language-bash">.venv/bin/martenweave health --repo examples/customer_bp_model
+.venv/bin/martenweave scorecard --repo examples/customer_bp_model
+.venv/bin/martenweave gap-report --repo examples/customer_bp_model
+.venv/bin/martenweave gaps \
   examples/customer_bp_model/data/samples/customer_sales_area_sample.csv \
   --repo examples/customer_bp_model \
   --check-model</code></pre>
@@ -92,7 +93,7 @@ Update CUSTOMER GROUP mapping for KNVV-KDGRP based on the CH01-A17 decision.
 Keep the change as a reviewable PatchProposal.
 NOTE
 
-.venv/bin/modelops propose-patch \
+.venv/bin/martenweave propose-patch \
   --from /tmp/martenweave-note.md \
   --repo examples/customer_bp_model \
   --dry-run</code></pre>

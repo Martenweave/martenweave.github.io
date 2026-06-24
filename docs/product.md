@@ -46,11 +46,11 @@ SAP migration is a strong starter scenario and domain context. It is not the who
 
 ## What Exists Now
 
-The core repository is `martenweave-core` version `0.4.0`.
+The core repository is `martenweave-core` version `0.4.1`.
 
 Current public capabilities include:
 
-- `modelops` CLI
+- `martenweave` and `modelops` CLI commands
 - local API server
 - MCP-ready backend
 - canonical Markdown + YAML model files

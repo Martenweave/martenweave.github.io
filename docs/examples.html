@@ -69,9 +69,9 @@
 <li>decisions, issues, mappings, value lists, validation rules, and impact analysis</li>
 </ul>
 <p>Run:</p>
-<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/customer_bp_model
-.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
-.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
+<pre><code class="language-bash">.venv/bin/martenweave validate --repo examples/customer_bp_model
+.venv/bin/martenweave build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model</code></pre>
 <h2 id="supplier-vendor">Supplier / Vendor</h2>
 <p>Path:</p>
 <pre><code class="language-text">examples/supplier_vendor_model</code></pre>
@@ -82,9 +82,9 @@
 <li>gap-to-proposal workflow using a synthetic vendor extract</li>
 </ul>
 <p>Run:</p>
-<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/supplier_vendor_model
-.venv/bin/modelops build-index --repo examples/supplier_vendor_model --jsonl
-.venv/bin/modelops gaps \
+<pre><code class="language-bash">.venv/bin/martenweave validate --repo examples/supplier_vendor_model
+.venv/bin/martenweave build-index --repo examples/supplier_vendor_model --jsonl
+.venv/bin/martenweave gaps \
   examples/supplier_vendor_model/data/samples/vendor_extract.csv \
   --repo examples/supplier_vendor_model \
   --check-model</code></pre>
@@ -99,9 +99,9 @@
 <li>understanding domains, entities, attributes, field endpoints, and value lists</li>
 </ul>
 <p>Run:</p>
-<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/simple_product_model
-.venv/bin/modelops build-index --repo examples/simple_product_model --jsonl
-.venv/bin/modelops search &quot;product&quot; --repo examples/simple_product_model</code></pre>
+<pre><code class="language-bash">.venv/bin/martenweave validate --repo examples/simple_product_model
+.venv/bin/martenweave build-index --repo examples/simple_product_model --jsonl
+.venv/bin/martenweave search &quot;product&quot; --repo examples/simple_product_model</code></pre>
 <h2 id="generic-product">Generic Product</h2>
 <p>Path:</p>
 <pre><code class="language-text">examples/generic_product_model</code></pre>
@@ -112,9 +112,9 @@
 <li>system lineage and integration-flow examples</li>
 </ul>
 <p>Run:</p>
-<pre><code class="language-bash">.venv/bin/modelops validate --repo examples/generic_product_model
-.venv/bin/modelops build-index --repo examples/generic_product_model --jsonl
-.venv/bin/modelops scorecard --repo examples/generic_product_model</code></pre>
+<pre><code class="language-bash">.venv/bin/martenweave validate --repo examples/generic_product_model
+.venv/bin/martenweave build-index --repo examples/generic_product_model --jsonl
+.venv/bin/martenweave scorecard --repo examples/generic_product_model</code></pre>
 <h2 id="what-examples-are-not">What Examples Are Not</h2>
 <ul>
 <li>They are not SAP-certified content.</li>

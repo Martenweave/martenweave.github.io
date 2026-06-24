@@ -8,11 +8,24 @@
   "websiteRepository": "https://github.com/Martenweave/martenweave.github.io",
   "corePackage": {
     "name": "martenweave-core",
-    "version": "0.4.0",
-    "cli": "modelops",
+    "version": "0.4.1",
+    "cli": "martenweave",
+    "compatibilityCli": "modelops",
     "language": "Python 3.11+",
     "license": "MIT",
     "commercialUseAllowed": true
+  },
+  "commercialUse": {
+    "coreLicense": "MIT",
+    "possibleOfferings": [
+      "implementation support",
+      "private SAP/MDM domain packs",
+      "enterprise validation packs",
+      "hosted workbench",
+      "custom integrations",
+      "support SLAs"
+    ],
+    "separateCommercialTermsPossibleForFutureExtensions": true
   },
   "shortDescription": "Martenweave is a backend-first model registry that converts scattered model knowledge into validated, traceable, AI-ready model truth for migration, MDM, data governance, and support teams.",
   "audiences": [

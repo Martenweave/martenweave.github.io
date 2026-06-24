@@ -24,9 +24,9 @@ Best for:
 Run:
 
 ```bash
-.venv/bin/modelops validate --repo examples/customer_bp_model
-.venv/bin/modelops build-index --repo examples/customer_bp_model --jsonl
-.venv/bin/modelops impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
+.venv/bin/martenweave validate --repo examples/customer_bp_model
+.venv/bin/martenweave build-index --repo examples/customer_bp_model --jsonl
+.venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
 ```
 
 ## Supplier / Vendor
@@ -46,9 +46,9 @@ Best for:
 Run:
 
 ```bash
-.venv/bin/modelops validate --repo examples/supplier_vendor_model
-.venv/bin/modelops build-index --repo examples/supplier_vendor_model --jsonl
-.venv/bin/modelops gaps \
+.venv/bin/martenweave validate --repo examples/supplier_vendor_model
+.venv/bin/martenweave build-index --repo examples/supplier_vendor_model --jsonl
+.venv/bin/martenweave gaps \
   examples/supplier_vendor_model/data/samples/vendor_extract.csv \
   --repo examples/supplier_vendor_model \
   --check-model
@@ -72,9 +72,9 @@ Best for:
 Run:
 
 ```bash
-.venv/bin/modelops validate --repo examples/simple_product_model
-.venv/bin/modelops build-index --repo examples/simple_product_model --jsonl
-.venv/bin/modelops search "product" --repo examples/simple_product_model
+.venv/bin/martenweave validate --repo examples/simple_product_model
+.venv/bin/martenweave build-index --repo examples/simple_product_model --jsonl
+.venv/bin/martenweave search "product" --repo examples/simple_product_model
 ```
 
 ## Generic Product
@@ -94,9 +94,9 @@ Best for:
 Run:
 
 ```bash
-.venv/bin/modelops validate --repo examples/generic_product_model
-.venv/bin/modelops build-index --repo examples/generic_product_model --jsonl
-.venv/bin/modelops scorecard --repo examples/generic_product_model
+.venv/bin/martenweave validate --repo examples/generic_product_model
+.venv/bin/martenweave build-index --repo examples/generic_product_model --jsonl
+.venv/bin/martenweave scorecard --repo examples/generic_product_model
 ```
 
 ## What Examples Are Not

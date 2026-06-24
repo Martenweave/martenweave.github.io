@@ -6,7 +6,9 @@ Martenweave is early open-source infrastructure for governed data model work. Th
 
 The current core package is MIT-licensed. MIT allows commercial use, copying, modification, distribution, sublicensing, and sale when the license notice is preserved.
 
-Paid pilot, support, template, or future workspace conversations are optional services or future products. They are not a claim that the current MIT core requires a paid commercial license.
+Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, a hosted workbench, custom integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be distributed under separate commercial terms. They are not a claim that the current MIT core requires a paid commercial license.
+
+By contributing to Martenweave Core, contributors agree their contribution is licensed under the same MIT License as the project.
 
 ## Where to Contribute
 
