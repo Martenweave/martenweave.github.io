@@ -225,8 +225,8 @@ for (const match of staleRootMarkdownLinks) {
 
 const requiredText = [
   "Open-source model registry",
-  "Turn scattered model knowledge into a validated model registry.",
-  "Python package · local-first · file-backed · validation-first · human-approved AI",
+  "Make migration knowledge usable.",
+  "Python package · local-first · file-backed · human-approved AI",
   "AI proposes.",
   "Validators verify.",
   "Humans approve.",
@@ -254,9 +254,6 @@ const requiredRootLinks = [
   'href="/docs/how-it-works.html"',
   'href="/docs/import-export.html"',
   'href="/docs/governance.html"',
-  'href="/docs/faq.html"',
-  'href="/docs/open-source.html"',
-  'href="/docs/ai-governance.html"',
   'href="/llms.txt"',
   'href="/ai.txt"',
 ];

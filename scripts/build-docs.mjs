@@ -242,8 +242,8 @@ function renderPage(route) {
         </button>
         <div class="nav-links" id="nav-links">
           <a href="/">Product</a>
-          <a href="/#how-it-works">How it works</a>
-          <a href="/#use-cases">Use cases</a>
+          <a href="/#value">Value</a>
+          <a href="/#loop">How it works</a>
           <a href="/docs/examples.html">Examples</a>
           <a href="/docs.html">Docs</a>
           <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
