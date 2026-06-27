@@ -16,7 +16,9 @@ https://github.com/metalhatscats/martenweave-core
 
 ## What This Site Is
 
-This is the public product entry point for Martenweave: an open-source lightweight model registry for migration, MDM, data governance, data quality, and AMS/support teams.
+This is the public product entry point for Martenweave: an open-source, backend-first model
+registry and lightweight model truth layer for migration, MDM, data governance, data quality, and
+AMS/support teams.
 
 The site explains:
 

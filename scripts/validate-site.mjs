@@ -224,9 +224,11 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Open-source model registry",
-  "Make migration knowledge usable.",
-  "Python package · local-first · file-backed · human-approved AI",
+  "Validated model truth for migration, MDM, and governance teams.",
+  "Open source",
+  "Canonical files",
+  "Deterministic validation",
+  "Human-approved AI",
   "AI proposes.",
   "Validators verify.",
   "Humans approve.",

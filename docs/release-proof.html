@@ -23,22 +23,13 @@
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="/" aria-label="Martenweave home">
-          <img src="/assets/logo.png" alt="" width="42" height="42" />
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
           <span>Martenweave</span>
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-          <span class="sr-only">Toggle navigation</span>
-          <span aria-hidden="true"></span>
-        </button>
-        <div class="nav-links" id="nav-links">
-          <a href="/">Product</a>
-          <a href="/#value">Value</a>
-          <a href="/#loop">How it works</a>
-          <a href="/docs/examples.html">Examples</a>
+        <div class="nav-links">
           <a href="/docs.html">Docs</a>
-          <a class="nav-github" href="https://github.com/metalhatscats/martenweave-core">
-            GitHub
-          </a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
         </div>
       </nav>
     </header>
@@ -73,8 +64,8 @@
 </ul>
 <p>The core remains backend-first: a Python package, CLI, local API, MCP-ready backend, canonical Markdown/YAML files, validation, generated indexes, and reviewable PatchProposal workflows. There is no hosted UI in the core release.</p>
 <p>Martenweave Core is MIT-licensed open source. Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, a hosted workbench, custom integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be distributed under separate commercial terms.</p>
-<p>These screenshots were captured from the local static site during the first public release pass.</p>
-<p>The in-app Browser path rejected the localhost URL under its URL policy, so the screenshots were captured with a documented Playwright CLI fallback. The site itself was served locally and validated with <code>npm run validate</code> before capture.</p>
+<p>These screenshots were refreshed from the local static site during the compact landing-page redesign.</p>
+<p>The site was served locally and checked in the in-app Browser at desktop, tablet, and mobile widths. The screenshots below were captured after <code>npm run build</code> and the static site validator passed.</p>
 <h2 id="homepage-desktop">Homepage Desktop</h2>
 <p><img src="/assets/screenshots/homepage-desktop.png" alt="Homepage desktop screenshot" /></p>
 <h2 id="homepage-mobile">Homepage Mobile</h2>
@@ -87,26 +78,21 @@
     </main>
 
     <footer class="footer">
-      <div>
-        <a class="brand footer-brand" href="/" aria-label="Martenweave home">
-          <img src="/assets/logo.png" alt="" width="34" height="34" />
-          <span>Martenweave</span>
-        </a>
-        <p>Open-source model registry for migration, MDM, and data governance.</p>
-      </div>
-      <div class="footer-links" aria-label="Footer links">
-        <a href="/docs/quickstart.html">Quickstart</a>
-        <a href="/docs/product.html">Product docs</a>
-        <a href="/docs/how-it-works.html">How it works</a>
-        <a href="/docs/import-export.html">Import/export</a>
-        <a href="/docs/governance.html">Governance</a>
-        <a href="/docs/examples.html">Examples</a>
-        <a href="/docs/ai-governance.html">AI governance</a>
-        <a href="/docs/faq.html">FAQ</a>
-        <a href="/docs/open-source.html">Open source</a>
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
-        <a href="https://github.com/metalhatscats/martenweave-core">Core GitHub</a>
-      </div>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
       <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
     </footer>
   </body>

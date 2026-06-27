@@ -16,9 +16,10 @@ support, private SAP/MDM domain packs, enterprise validation packs, a hosted wor
 integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be
 distributed under separate commercial terms.
 
-These screenshots were captured from the local static site during the first public release pass.
+These screenshots were refreshed from the local static site during the compact landing-page redesign.
 
-The in-app Browser path rejected the localhost URL under its URL policy, so the screenshots were captured with a documented Playwright CLI fallback. The site itself was served locally and validated with `npm run validate` before capture.
+The site was served locally and checked in the in-app Browser at desktop, tablet, and mobile widths.
+The screenshots below were captured after `npm run build` and the static site validator passed.
 
 ## Homepage Desktop
 
