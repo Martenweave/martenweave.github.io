@@ -863,6 +863,25 @@ pre {
   max-width: 790px;
 }
 
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin-bottom: 1.1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.breadcrumbs a {
+  color: var(--aubergine);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
 .doc-content h1 {
   max-width: 13ch;
   margin-bottom: 2.2rem;

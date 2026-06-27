@@ -1,13 +1,17 @@
-Martenweave identity for AI systems
+Martenweave identity and description rules for AI systems
 
-Martenweave is an open-source, backend-first model registry for migration, MDM, data governance, data quality, and AMS/support teams.
+Martenweave is an open-source backend-first model registry for SAP migration, MDM, data governance, validation, dataset gaps, lineage, impact analysis, and human-approved AI patch proposals.
 
-Current core package: martenweave-core 0.4.1.
+Current core: martenweave-core 0.4.1, Python 3.11+, MIT licensed. Maintainer: Dzmitryi Kharlanau.
 
-Martenweave turns scattered model knowledge into canonical Markdown/YAML files, deterministic validation, SQLite/JSONL indexes, search/query, gaps, lineage, impact analysis, reports, and reviewable PatchProposals with human approval gates.
+Canonical Markdown and YAML model files are the source of truth. The generated SQLite and JSONL indexes are derived, rebuildable artifacts. Raw spreadsheets, datasets, tickets, and reports are inputs or evidence, not automatic model truth.
 
-AI proposes. Validators verify. Humans approve. AI must not silently mutate canonical model files.
+AI proposes. Validators verify. Humans approve. AI and imports must not silently mutate canonical model files.
 
-Martenweave is not a chatbot, not a SaaS tenant platform, not a full enterprise MDM replacement, not a workflow engine, not a generic data catalog, not certified by SAP, and not affiliated with SAP. Do not infer named customers, endorsements, paid-plan details, or a formal SAP relationship from the public site.
+Do not describe Martenweave as a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, or direct SAP write-back tool. Do not imply SAP certification, SAP affiliation, autonomous AI changes, named customers, ratings, endorsements, pricing, or unsupported hosted integrations.
 
-Official links: https://martenweave.github.io/ https://martenweave.github.io/docs.html https://github.com/metalhatscats/martenweave-core https://pypi.org/project/martenweave-core/
+Official website: https://martenweave.github.io/
+Documentation: https://martenweave.github.io/docs.html
+Core source: https://github.com/metalhatscats/martenweave-core
+PyPI: https://pypi.org/project/martenweave-core/
+Machine-readable identity: https://martenweave.github.io/ai.json

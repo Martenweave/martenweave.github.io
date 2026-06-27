@@ -28,6 +28,11 @@ const markdownDocs = docRoutes.map((route) => `docs/${route.source}`);
 const generatedDocs = docRoutes.map((route) => `docs/${route.output}`);
 const generatedDocRoutes = generatedDocs.map((file) => `/${file}`);
 const publicDocRoutes = generatedDocRoutes.filter((route) => route !== "/docs/index.html");
+const publicHtmlFiles = [
+  "index.html",
+  "docs.html",
+  ...generatedDocs.filter((file) => file !== "docs/index.html"),
+];
 
 const requiredFiles = [
   "index.html",
@@ -57,6 +62,7 @@ const requiredFiles = [
   "llms-full.txt",
   "ai.txt",
   "ai.json",
+  "humans.txt",
   "robots.txt",
   "sitemap.xml",
   "site.webmanifest",
@@ -196,6 +202,91 @@ for (const [file, html] of htmlByFile.entries()) {
 const rootHtml = `${htmlByFile.get("index.html") ?? ""}\n${htmlByFile.get("docs.html") ?? ""}`;
 const allHtml = [...htmlByFile.values()].join("\n");
 
+function htmlAttributeContent(html, pattern) {
+  return html.match(pattern)?.[1] ?? null;
+}
+
+const titles = new Map();
+const descriptions = new Map();
+const canonicals = new Map();
+
+for (const file of publicHtmlFiles) {
+  const html = htmlByFile.get(file) ?? "";
+  const title = htmlAttributeContent(html, /<title>([\s\S]*?)<\/title>/);
+  const description = htmlAttributeContent(
+    html,
+    /<meta\s+name="description"\s+content="([^"]+)"/,
+  );
+  const canonical = htmlAttributeContent(html, /<link rel="canonical" href="([^"]+)"/);
+
+  for (const [label, value, collection] of [
+    ["title", title, titles],
+    ["description", description, descriptions],
+    ["canonical", canonical, canonicals],
+  ]) {
+    if (!value) {
+      errors.push(`${file} is missing a ${label}.`);
+      continue;
+    }
+    if (collection.has(value)) {
+      errors.push(`${file} duplicates ${label} from ${collection.get(value)}: ${value}`);
+    } else {
+      collection.set(value, file);
+    }
+  }
+
+  const requiredMetadata = [
+    'name="robots" content="index, follow, max-image-preview:large"',
+    'name="author" content="Dzmitryi Kharlanau"',
+    'name="application-name" content="Martenweave"',
+    'name="theme-color" content="#321136"',
+    'property="og:locale" content="en_US"',
+    'property="og:site_name" content="Martenweave"',
+    'property="og:image:alt" content="Martenweave open-source model registry"',
+    'name="twitter:card" content="summary_large_image"',
+    'name="twitter:image:alt" content="Martenweave open-source model registry"',
+    'rel="alternate" type="text/plain" href="/llms.txt"',
+    'rel="alternate" type="text/plain"',
+    'href="/llms-full.txt"',
+    'rel="alternate" type="application/json" href="/ai.json"',
+  ];
+
+  for (const metadata of requiredMetadata) {
+    if (!html.includes(metadata)) {
+      errors.push(`${file} is missing required metadata: ${metadata}`);
+    }
+  }
+
+  for (const property of [
+    "og:url",
+    "og:title",
+    "og:description",
+    "og:image",
+    "og:image:width",
+    "og:image:height",
+  ]) {
+    if (!html.includes(`property="${property}"`)) {
+      errors.push(`${file} is missing Open Graph property: ${property}`);
+    }
+  }
+
+  for (const name of ["twitter:title", "twitter:description", "twitter:image"]) {
+    if (!html.includes(`name="${name}"`)) {
+      errors.push(`${file} is missing Twitter metadata: ${name}`);
+    }
+  }
+}
+
+const duplicateDocsIndex = htmlByFile.get("docs/index.html") ?? "";
+if (
+  !duplicateDocsIndex.includes('name="robots" content="noindex, follow"') ||
+  !duplicateDocsIndex.includes(
+    '<link rel="canonical" href="https://martenweave.github.io/docs.html"',
+  )
+) {
+  errors.push("docs/index.html must be noindex and canonicalize to /docs.html.");
+}
+
 const referencedAssetMatches = [
   ...allHtml.matchAll(/\s(?:href|src)="(\/assets\/[^"]+)"/g),
   ...allHtml.matchAll(/\scontent="https:\/\/martenweave\.github\.io(\/assets\/[^"]+)"/g),
@@ -270,6 +361,7 @@ const aiContext = readSiteFile("llms.txt");
 const aiFullContext = readSiteFile("llms-full.txt");
 const aiText = readSiteFile("ai.txt");
 const aiJson = JSON.parse(readSiteFile("ai.json"));
+const humans = readSiteFile("humans.txt");
 const sitemap = readSiteFile("sitemap.xml");
 const robots = readSiteFile("robots.txt");
 const manifest = JSON.parse(readSiteFile("site.webmanifest"));
@@ -290,6 +382,29 @@ for (const [file, text] of [
 
 if (!aiContext.includes("AI proposes. Validators verify. Humans approve.")) {
   errors.push("llms.txt is missing the AI governance principle.");
+}
+
+for (const [file, text] of [
+  ["llms.txt", aiContext],
+  ["llms-full.txt", aiFullContext],
+  ["ai.txt", aiText],
+  ["ai.json", JSON.stringify(aiJson)],
+]) {
+  for (const requiredPhrase of [
+    "canonical",
+    "generated",
+    "AI proposes",
+    "direct SAP write-back",
+    "chatbot",
+  ]) {
+    if (!text.includes(requiredPhrase)) {
+      errors.push(`${file} is missing required identity language: ${requiredPhrase}`);
+    }
+  }
+}
+
+if (!humans.includes("Dzmitryi Kharlanau") || !humans.includes("https://github.com/Martenweave")) {
+  errors.push("humans.txt must identify the maintainer and Martenweave organization.");
 }
 
 const requiredHomepageHead = [
@@ -318,6 +433,13 @@ if (manifest.start_url !== "/" || manifest.display !== "minimal-ui") {
   errors.push("site.webmanifest must use start_url / and display minimal-ui.");
 }
 
+if (
+  manifest.description !==
+  "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work."
+) {
+  errors.push("site.webmanifest must use the approved short product description.");
+}
+
 const manifestIconSources = new Set((manifest.icons ?? []).map((icon) => icon.src));
 for (const icon of ["/assets/android-chrome-192.png", "/assets/android-chrome-512.png"]) {
   if (!manifestIconSources.has(icon)) {
@@ -333,6 +455,16 @@ expectPngDimensions("assets/android-chrome-512.png", 512, 512);
 expectPngDimensions("assets/og-image.png", 1200, 630);
 expectPngDimensions("assets/twitter-card.png", 1200, 630);
 expectPngDimensions("assets/github-social-preview.png", 1280, 640);
+
+for (const file of [
+  "assets/og-image.png",
+  "assets/twitter-card.png",
+  "assets/github-social-preview.png",
+]) {
+  if (existsSync(join(root, file)) && readFileSync(join(root, file)).length > 500_000) {
+    errors.push(`${file} must remain below 500 KB.`);
+  }
+}
 
 for (const contextFile of [
   ["llms.txt", aiContext],
@@ -377,34 +509,65 @@ for (const crawler of ["OAI-SearchBot", "GPTBot", "ChatGPT-User"]) {
   }
 }
 
-const jsonLdBlocks = [...(htmlByFile.get("index.html") ?? "").matchAll(
-  /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
-)];
-if (jsonLdBlocks.length === 0) {
-  errors.push("Homepage must include JSON-LD structured data.");
-} else {
-  for (const block of jsonLdBlocks) {
+for (const file of publicHtmlFiles) {
+  const blocks = [
+    ...(htmlByFile.get(file) ?? "").matchAll(
+      /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+    ),
+  ];
+  if (blocks.length === 0) {
+    errors.push(`${file} must include JSON-LD structured data.`);
+    continue;
+  }
+  for (const block of blocks) {
     const data = JSON.parse(block[1]);
-    if (data["@type"] !== "SoftwareSourceCode") {
-      errors.push("Homepage JSON-LD must use SoftwareSourceCode.");
-    }
-    if (data.name !== "Martenweave Core" || data.alternateName !== "martenweave-core") {
-      errors.push("Homepage JSON-LD must identify Martenweave Core / martenweave-core.");
-    }
-    if (data.softwareVersion !== "0.4.1" || data.version !== "0.4.1") {
-      errors.push("Homepage JSON-LD must include version 0.4.1.");
-    }
-    if (
-      data.license !== "MIT" ||
-      data.programmingLanguage !== "Python" ||
-      data.runtimePlatform !== "Python 3.11+" ||
-      data.codeRepository !== "https://github.com/metalhatscats/martenweave-core" ||
-      data.url !== `${productionOrigin}/` ||
-      data.downloadUrl !== "https://pypi.org/project/martenweave-core/"
-    ) {
-      errors.push("Homepage JSON-LD must include expected source code metadata.");
+    const graph = data["@graph"] ?? [data];
+    if (!graph.some((entity) => ["WebPage", "CollectionPage"].includes(entity["@type"]))) {
+      errors.push(`${file} JSON-LD must identify its page type.`);
     }
   }
+}
+
+const homepageJsonLd = JSON.parse(
+  [...(htmlByFile.get("index.html") ?? "").matchAll(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+  )][0]?.[1] ?? "{}",
+);
+const homepageGraph = homepageJsonLd["@graph"] ?? [];
+for (const type of [
+  "WebSite",
+  "Organization",
+  "Person",
+  "WebPage",
+  "SoftwareSourceCode",
+  "SoftwareApplication",
+]) {
+  if (!homepageGraph.some((entity) => entity["@type"] === type)) {
+    errors.push(`Homepage JSON-LD graph is missing ${type}.`);
+  }
+}
+
+const sourceCode = homepageGraph.find((entity) => entity["@type"] === "SoftwareSourceCode");
+if (
+  sourceCode?.name !== "Martenweave Core" ||
+  sourceCode?.alternateName !== "martenweave-core" ||
+  sourceCode?.softwareVersion !== "0.4.1" ||
+  sourceCode?.version !== "0.4.1" ||
+  sourceCode?.programmingLanguage !== "Python" ||
+  sourceCode?.runtimePlatform !== "Python 3.11+" ||
+  sourceCode?.codeRepository !== "https://github.com/metalhatscats/martenweave-core"
+) {
+  errors.push("Homepage SoftwareSourceCode JSON-LD is incomplete.");
+}
+
+const faqHtml = htmlByFile.get("docs/faq.html") ?? "";
+const faqData = JSON.parse(
+  [...faqHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)][0]?.[1] ??
+    "{}",
+);
+const faqEntity = (faqData["@graph"] ?? []).find((entity) => entity["@type"] === "FAQPage");
+if (!Array.isArray(faqEntity?.mainEntity) || faqEntity.mainEntity.length < 5) {
+  errors.push("FAQ JSON-LD must contain the real FAQ questions and answers.");
 }
 
 const sitemapLocs = [...sitemap.matchAll(/<loc>https:\/\/martenweave\.github\.io(\/[^<]*)<\/loc>/g)];
@@ -424,12 +587,46 @@ const requiredSitemapRoutes = [
   "/llms-full.txt",
   "/ai.txt",
   "/ai.json",
-  ...generatedDocRoutes,
+  "/humans.txt",
+  ...publicDocRoutes,
 ];
 
 for (const route of requiredSitemapRoutes) {
   if (!sitemap.includes(`${productionOrigin}${route}`)) {
     errors.push(`Sitemap missing route: ${route}`);
+  }
+}
+
+if (
+  sitemap.includes(`${productionOrigin}/docs/index.html`) ||
+  sitemap.includes("<priority>") ||
+  sitemap.includes("<changefreq>")
+) {
+  errors.push("Sitemap must omit the duplicate docs index and artificial priority/changefreq.");
+}
+
+const sitemapRoutes = sitemapLocs.map((match) => match[1]);
+if (new Set(sitemapRoutes).size !== sitemapRoutes.length) {
+  errors.push("Sitemap contains duplicate URLs.");
+}
+
+if (!robots.includes(`Sitemap: ${productionOrigin}/sitemap.xml`) || /Disallow:\s*\//.test(robots)) {
+  errors.push("robots.txt must allow public crawling and reference the production sitemap.");
+}
+
+const publicText = [
+  ...htmlByFile.values(),
+  aiContext,
+  aiFullContext,
+  aiText,
+  JSON.stringify(aiJson),
+  sitemap,
+  robots,
+  humans,
+].join("\n");
+for (const privatePath of ["/Users/", "/home/", "C:\\Users\\", "file://"]) {
+  if (publicText.includes(privatePath)) {
+    errors.push(`Public files contain a private or local path: ${privatePath}`);
   }
 }
 

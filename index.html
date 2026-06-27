@@ -3,21 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Validated model truth for migration, MDM, and governance | Martenweave</title>
+    <title>Open-Source Model Registry for SAP Migration | Martenweave</title>
     <meta
       name="description"
-      content="Martenweave is an open-source model registry that turns scattered model knowledge into canonical files, deterministic validation, gaps, lineage, impact, and human-approved AI changes."
+      content="Open-source backend-first model registry for SAP migration and MDM, with canonical files, validation, gaps, lineage, impact, and human-approved AI proposals."
     />
-    <meta name="theme-color" content="#fbfbfa" />
+    <meta name="theme-color" content="#321136" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="author" content="Martenweave" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
     <meta name="application-name" content="Martenweave" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://martenweave.github.io/" />
     <meta property="og:site_name" content="Martenweave" />
     <meta
       property="og:title"
-      content="Validated model truth for migration, MDM, and governance"
+      content="Open-source model registry for SAP migration"
     />
     <meta
       property="og:description"
@@ -26,16 +27,18 @@
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source model registry" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Validated model truth for migration, MDM, and governance"
+      content="Open-source model registry for SAP migration"
     />
     <meta
       name="twitter:description"
-      content="An open-source, backend-first model truth layer for migration, MDM, governance, and AI-assisted data work."
+      content="Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work."
     />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source model registry" />
     <link rel="canonical" href="https://martenweave.github.io/" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
@@ -43,46 +46,146 @@
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
     <link rel="preload" href="/styles.css" as="style" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareSourceCode",
-        "name": "Martenweave Core",
-        "alternateName": "martenweave-core",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "OS Independent",
-        "url": "https://martenweave.github.io/",
-        "codeRepository": "https://github.com/metalhatscats/martenweave-core",
-        "downloadUrl": "https://pypi.org/project/martenweave-core/",
-        "installUrl": "https://pypi.org/project/martenweave-core/",
-        "image": "https://martenweave.github.io/assets/og-image.png",
-        "thumbnailUrl": "https://martenweave.github.io/assets/logo.png",
-        "programmingLanguage": "Python",
-        "runtimePlatform": "Python 3.11+",
-        "version": "0.4.1",
-        "softwareVersion": "0.4.1",
-        "license": "MIT",
-        "description": "Martenweave is an open-source model registry that turns scattered model knowledge into canonical files, deterministic validation, generated indexes, gaps, lineage, impact analysis, and human-approved AI changes.",
-        "keywords": [
-          "open-source model registry",
-          "MDM",
-          "SAP migration",
-          "data governance",
-          "data quality",
-          "AMS",
-          "field mapping",
-          "lineage",
-          "impact analysis",
-          "human-approved AI"
-        ],
-        "isAccessibleForFree": true,
-        "sameAs": [
-          "https://github.com/metalhatscats/martenweave-core",
-          "https://github.com/Martenweave/martenweave.github.io",
-          "https://pypi.org/project/martenweave-core/"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://martenweave.github.io/#website",
+            "name": "Martenweave",
+            "alternateName": "Martenweave model registry",
+            "description": "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work.",
+            "url": "https://martenweave.github.io/",
+            "publisher": {
+              "@id": "https://martenweave.github.io/#organization"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://martenweave.github.io/#organization",
+            "name": "Martenweave",
+            "url": "https://martenweave.github.io/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://martenweave.github.io/assets/logo.png"
+            },
+            "sameAs": [
+              "https://github.com/Martenweave"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://martenweave.github.io/#person",
+            "name": "Dzmitryi Kharlanau",
+            "url": "https://www.linkedin.com/in/dkharlanau/",
+            "sameAs": [
+              "https://www.linkedin.com/in/dkharlanau/"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://martenweave.github.io/#webpage",
+            "name": "Open-Source Model Registry for SAP Migration",
+            "description": "Open-source backend-first model registry for SAP migration and MDM, with canonical files, validation, gaps, lineage, impact, and human-approved AI proposals.",
+            "url": "https://martenweave.github.io/",
+            "isPartOf": {
+              "@id": "https://martenweave.github.io/#website"
+            },
+            "about": {
+              "@id": "https://martenweave.github.io/#software"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://martenweave.github.io/assets/og-image.png",
+              "width": 1200,
+              "height": 630
+            },
+            "author": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "@id": "https://martenweave.github.io/#source",
+            "name": "Martenweave Core",
+            "alternateName": "martenweave-core",
+            "description": "Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.",
+            "url": "https://martenweave.github.io/",
+            "codeRepository": "https://github.com/metalhatscats/martenweave-core",
+            "programmingLanguage": "Python",
+            "runtimePlatform": "Python 3.11+",
+            "license": "https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE",
+            "version": "0.4.1",
+            "softwareVersion": "0.4.1",
+            "author": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "creator": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "publisher": {
+              "@id": "https://martenweave.github.io/#organization"
+            },
+            "keywords": [
+              "open-source model registry",
+              "SAP migration model registry",
+              "SAP MDM data governance",
+              "data model validation",
+              "canonical model files",
+              "dataset gap detection",
+              "lineage for migration",
+              "impact analysis",
+              "AI patch proposals",
+              "human-approved AI changes"
+            ],
+            "inLanguage": "en",
+            "sameAs": [
+              "https://github.com/metalhatscats/martenweave-core",
+              "https://pypi.org/project/martenweave-core/"
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://martenweave.github.io/#software",
+            "name": "Martenweave Core",
+            "alternateName": "martenweave-core",
+            "description": "An open-source backend-first model registry for migration, MDM, data governance, deterministic validation, dataset gaps, lineage, impact analysis, and human-approved AI patch proposals.",
+            "url": "https://martenweave.github.io/",
+            "applicationCategory": "DeveloperApplication",
+            "applicationSubCategory": "Data model registry",
+            "operatingSystem": "Cross-platform",
+            "softwareVersion": "0.4.1",
+            "downloadUrl": "https://pypi.org/project/martenweave-core/",
+            "installUrl": "https://pypi.org/project/martenweave-core/",
+            "isAccessibleForFree": true,
+            "license": "https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE",
+            "author": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "creator": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "publisher": {
+              "@id": "https://martenweave.github.io/#organization"
+            },
+            "sameAs": [
+              "https://github.com/metalhatscats/martenweave-core",
+              "https://pypi.org/project/martenweave-core/"
+            ]
+          }
         ]
       }
     </script>
@@ -319,6 +422,7 @@
         <a href="/ai.txt">AI disclosure</a>
         <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
         <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
           Website source
         </a>

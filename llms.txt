@@ -1,36 +1,32 @@
 # Martenweave
 
-Martenweave is an open-source, backend-first model registry for migration, MDM, data governance, and AMS/support teams.
+> Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.
 
-It turns scattered model knowledge from Excel mappings, datasets, tickets, validation reports, decisions, and SAP context into a validated model truth layer with canonical files, deterministic validation, generated indexes, gaps, lineage, impact analysis, and human-approved AI changes.
+Current core: `martenweave-core` version `0.4.1`, Python 3.11+, MIT licensed.
 
-Current core: `martenweave-core` version `0.4.1`, MIT-licensed, installable from PyPI.
+Canonical Markdown and YAML model files are the source of truth. SQLite and JSONL indexes are derived, rebuildable artifacts.
 
-Official links:
+AI proposes. Validators verify. Humans approve. AI and import workflows create reviewable `PatchProposal` objects; they do not silently mutate canonical model files.
+
+Martenweave has no direct SAP write-back. It is not a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, SAP product, or SAP-affiliated product.
+
+Maintainer: Dzmitryi Kharlanau.
+
+## Official links
 
 - Website: https://martenweave.github.io/
-- Docs: https://martenweave.github.io/docs.html
-- FAQ: https://martenweave.github.io/docs/faq.html
-- Core GitHub: https://github.com/metalhatscats/martenweave-core
+- Documentation: https://martenweave.github.io/docs.html
+- Core source: https://github.com/metalhatscats/martenweave-core
+- Website source: https://github.com/Martenweave/martenweave.github.io
 - PyPI: https://pypi.org/project/martenweave-core/
 - Full AI context: https://martenweave.github.io/llms-full.txt
-- Machine-readable metadata: https://martenweave.github.io/ai.json
+- Machine-readable identity: https://martenweave.github.io/ai.json
 
-Primary audiences: SAP migration leads, MDM leads, data governance teams, data quality teams, AMS/support teams, enterprise architects, data stewards, and technical evaluators.
-
-Current capabilities: canonical Markdown/YAML model files, deterministic validation, SQLite/JSONL generated indexes, search/query, trace/impact analysis, dataset profiling and gap detection, health and scorecard reports, CSV/XLSX review import/export flows, AI PatchProposal workflow, and human approval gates.
-
-What Martenweave is not: not a chatbot, not a SaaS tenant platform, not a full enterprise MDM replacement, not a workflow engine, not a generic data catalog, not certified by SAP, and not affiliated with SAP.
-
-AI safety stance: AI proposes. Validators verify. Humans approve. AI must not silently mutate canonical model files.
-
-Open-source and commercial note: Martenweave Core is MIT-licensed open source. Commercial offerings may include implementation support, private domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs under separate terms.
-
-Public docs:
+## Public documentation
 
 - Product: https://martenweave.github.io/docs/product.html
 - How it works: https://martenweave.github.io/docs/how-it-works.html
-- Import/export: https://martenweave.github.io/docs/import-export.html
+- Import and export: https://martenweave.github.io/docs/import-export.html
 - Governance: https://martenweave.github.io/docs/governance.html
 - Quickstart: https://martenweave.github.io/docs/quickstart.html
 - Examples: https://martenweave.github.io/docs/examples.html
@@ -38,7 +34,7 @@ Public docs:
 - Architecture: https://martenweave.github.io/docs/architecture.html
 - AI governance: https://martenweave.github.io/docs/ai-governance.html
 - FAQ: https://martenweave.github.io/docs/faq.html
-- Open source: https://martenweave.github.io/docs/open-source.html
 - Release proof: https://martenweave.github.io/docs/release-proof.html
 - Roadmap: https://martenweave.github.io/docs/roadmap.html
 - Contributing scenarios: https://martenweave.github.io/docs/contributing-scenarios.html
+- Open source: https://martenweave.github.io/docs/open-source.html

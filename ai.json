@@ -1,177 +1,130 @@
 {
+  "schemaVersion": "1.0",
   "name": "Martenweave",
+  "alternateName": "Martenweave model registry",
+  "type": "open-source backend-first model registry",
   "url": "https://martenweave.github.io/",
-  "docs": "https://martenweave.github.io/docs.html",
-  "type": "Open-source lightweight model registry",
-  "description": "Martenweave turns scattered model knowledge from Excel, datasets, tickets, validation reports, decisions, and SAP context into a traceable, validated, AI-ready model layer for migration, MDM, governance, AMS, and AI-assisted data work.",
+  "description": "Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.",
+  "shortDescription": "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work.",
+  "inLanguage": "en",
+  "organization": {
+    "name": "Martenweave",
+    "url": "https://martenweave.github.io/",
+    "github": "https://github.com/Martenweave"
+  },
+  "maintainer": {
+    "name": "Dzmitryi Kharlanau",
+    "url": "https://www.linkedin.com/in/dkharlanau/"
+  },
   "coreRepository": "https://github.com/metalhatscats/martenweave-core",
   "websiteRepository": "https://github.com/Martenweave/martenweave.github.io",
+  "docs": "https://martenweave.github.io/docs.html",
+  "pypiUrl": "https://pypi.org/project/martenweave-core/",
   "packageName": "martenweave-core",
   "packageVersion": "0.4.1",
   "license": "MIT",
-  "pypiUrl": "https://pypi.org/project/martenweave-core/",
-  "brandAssets": {
-    "logo": "https://martenweave.github.io/assets/logo.svg",
-    "openGraphImage": "https://martenweave.github.io/assets/og-image.png",
-    "twitterCard": "https://martenweave.github.io/assets/twitter-card.png",
-    "architectureLoop": "https://martenweave.github.io/assets/architecture-loop.svg"
-  },
+  "licenseUrl": "https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE",
   "corePackage": {
     "name": "martenweave-core",
     "version": "0.4.1",
-    "cli": "martenweave",
+    "pythonModule": "modelops_core",
+    "primaryCli": "martenweave",
     "compatibilityCli": "modelops",
-    "language": "Python 3.11+",
-    "license": "MIT",
-    "commercialUseAllowed": true
+    "programmingLanguage": "Python",
+    "runtimePlatform": "Python 3.11+"
   },
-  "audiences": [
-    "SAP migration leads",
-    "MDM leads",
-    "data governance teams",
-    "data quality teams",
-    "SAP AMS/support teams",
-    "enterprise architects",
-    "data stewards",
-    "consulting delivery managers",
-    "technical evaluators"
-  ],
-  "useCases": [
-    "SAP migration model control",
-    "MDM rule and ownership layer",
-    "Customer / Business Partner field mapping control",
-    "Supplier / Vendor model control",
-    "dataset gap detection before mock load",
-    "validation report triage",
-    "AMS support knowledge continuity",
-    "governance change impact analysis",
-    "AI-assisted model maintenance with approval gates"
-  ],
+  "sourceOfTruth": {
+    "format": "Markdown and YAML canonical model files",
+    "canonicalFilesAreAuthoritative": true,
+    "generatedIndexesAreDerived": true,
+    "generatedArtifacts": [
+      "SQLite index",
+      "search JSONL",
+      "lineage JSONL",
+      "reports",
+      "review exports"
+    ]
+  },
   "capabilities": [
-    "canonical Markdown and YAML model files",
-    "deterministic validation",
-    "SQLite and JSONL generated indexes",
+    "canonical model files",
+    "deterministic data model validation",
+    "generated SQLite and JSONL indexes",
     "search and structured query",
     "trace and impact analysis",
     "dataset profiling",
-    "dataset/model gap detection",
-    "health reports",
-    "governance scorecards",
-    "ownership reports",
-    "audit and usage reports",
-    "CSV and XLSX model review import/export flows",
+    "dataset gap detection",
+    "lineage for migration",
+    "health and governance reports",
+    "CSV and XLSX model review workflows",
     "JSON Schema export",
-    "Google Sheets and Drive-oriented import/export commands",
     "AI PatchProposal workflow",
     "PatchProposal to ChangeRequest lifecycle",
     "human approval gates",
-    "issue drafts",
-    "GitHub-ready change bundles",
-    "local API server",
-    "MCP-ready backend"
+    "local API and MCP integration surfaces"
   ],
-  "currentCapabilities": [
-    "canonical Markdown and YAML model files",
-    "deterministic validation",
-    "SQLite and JSONL generated indexes",
-    "search and structured query",
-    "trace and impact analysis",
-    "dataset/model gap detection",
-    "CSV and XLSX review import/export flows",
-    "AI PatchProposal workflow",
-    "human approval gates"
+  "audiences": [
+    "SAP migration teams",
+    "MDM teams",
+    "data governance teams",
+    "data quality teams",
+    "AMS and support teams",
+    "data architects",
+    "data stewards",
+    "technical evaluators"
   ],
-  "principles": [
-    "Inputs bring evidence",
-    "Martenweave stores model objects",
-    "Validators check consistency",
-    "AI proposes changes",
-    "Humans approve",
-    "Reports create business value"
-  ],
-  "maturity": {
-    "availableNow": [
-      "Python package and CLI",
-      "canonical model files",
-      "deterministic validators",
-      "generated SQLite and JSONL indexes",
-      "gap and impact commands",
-      "reports and scorecards",
-      "PatchProposal review flow"
-    ],
-    "supportedByExamplesOrManualWorkflow": [
-      "mapping spreadsheet review",
-      "dataset coverage checks",
-      "steward review workbooks",
-      "GitHub issue drafts"
-    ],
-    "plannedOrIntegrationDirection": [
-      "hosted workbench review queues",
-      "broader connector packs",
-      "automated bidirectional MDM sync",
-      "turnkey ticketing or wiki synchronization"
-    ]
-  },
-  "notA": [
-    "chatbot",
-    "SaaS tenant platform",
-    "full enterprise MDM replacement",
-    "workflow engine",
-    "generic data catalog",
-    "SAP product",
-    "tool certified by SAP",
-    "SAP-affiliated product",
-    "official DAMA product or certification"
-  ],
-  "avoidClaims": [
-    "formal relationship with SAP",
-    "certification by SAP",
-    "official DAMA certification or endorsement",
-    "named customers",
-    "customer proof assets",
-    "endorsements",
-    "paid-plan details",
-    "AI autonomous mutation of canonical model files"
+  "useCases": [
+    "SAP migration model registry",
+    "SAP MDM data governance",
+    "Business Partner model governance",
+    "Customer and Vendor data migration",
+    "field mapping validation",
+    "migration data quality",
+    "dataset gap detection",
+    "lineage and impact analysis",
+    "AMS knowledge reuse",
+    "human-approved AI patch proposals"
   ],
   "aiPolicy": {
     "summary": "AI proposes. Validators verify. Humans approve.",
-    "silentMutationAllowed": false,
-    "deterministicValidatorsRemainGate": true
+    "silentCanonicalMutationAllowed": false,
+    "deterministicValidationRequired": true,
+    "humanApprovalRequired": true
   },
-  "commercialUse": {
-    "coreLicense": "MIT",
-    "commercialUseAllowed": true,
-    "possibleOfferings": [
-      "implementation support",
-      "private domain packs",
-      "enterprise validation packs",
-      "hosted workbench",
-      "custom integrations",
-      "support SLAs"
-    ],
-    "separateCommercialTermsPossibleForFutureExtensions": true
+  "integrationBoundaries": {
+    "localFirst": true,
+    "directSapWriteBack": false,
+    "autonomousMdmSynchronization": false,
+    "hostedUserInterfaceInCore": false
   },
-  "sameAs": [
-    "https://github.com/metalhatscats/martenweave-core",
-    "https://github.com/Martenweave/martenweave.github.io",
-    "https://pypi.org/project/martenweave-core/",
-    "https://martenweave.github.io/llms.txt",
-    "https://martenweave.github.io/llms-full.txt"
+  "notA": [
+    "chatbot",
+    "generic SaaS dashboard",
+    "SaaS tenant platform",
+    "enterprise MDM replacement",
+    "workflow engine",
+    "generic data catalog",
+    "direct SAP write-back tool",
+    "SAP product",
+    "product certified by SAP",
+    "SAP-affiliated product"
   ],
-  "keywords": [
-    "open-source model registry",
-    "data model registry",
-    "MDM",
-    "SAP migration",
-    "data governance",
-    "data quality",
-    "AMS support",
-    "field mappings",
-    "traceability",
-    "deterministic validation",
-    "AI PatchProposal",
-    "human approval"
+  "avoidClaims": [
+    "autonomous AI mutation of canonical model files",
+    "formal relationship with SAP",
+    "SAP certification",
+    "named customers",
+    "ratings or reviews",
+    "awards",
+    "download counts",
+    "pricing",
+    "endorsements",
+    "future integrations described as available today"
   ],
+  "brandAssets": {
+    "logo": "https://martenweave.github.io/assets/logo.svg",
+    "openGraphImage": "https://martenweave.github.io/assets/og-image.png",
+    "twitterCard": "https://martenweave.github.io/assets/twitter-card.png"
+  },
   "publicDocs": [
     "https://martenweave.github.io/docs/product.html",
     "https://martenweave.github.io/docs/how-it-works.html",
@@ -187,5 +140,35 @@
     "https://martenweave.github.io/docs/roadmap.html",
     "https://martenweave.github.io/docs/contributing-scenarios.html",
     "https://martenweave.github.io/docs/open-source.html"
+  ],
+  "discovery": {
+    "llms": "https://martenweave.github.io/llms.txt",
+    "llmsFull": "https://martenweave.github.io/llms-full.txt",
+    "aiText": "https://martenweave.github.io/ai.txt",
+    "sitemap": "https://martenweave.github.io/sitemap.xml"
+  },
+  "sameAs": [
+    "https://github.com/Martenweave",
+    "https://github.com/metalhatscats/martenweave-core",
+    "https://github.com/Martenweave/martenweave.github.io",
+    "https://pypi.org/project/martenweave-core/",
+    "https://www.linkedin.com/in/dkharlanau/"
+  ],
+  "keywords": [
+    "open-source model registry",
+    "SAP migration model registry",
+    "SAP MDM data governance",
+    "data model validation",
+    "canonical model files",
+    "dataset gap detection",
+    "impact analysis",
+    "lineage for migration",
+    "AI patch proposals",
+    "human-approved AI changes",
+    "migration data quality",
+    "AMS knowledge reuse",
+    "Business Partner model governance",
+    "Customer and Vendor data migration",
+    "field mapping validation"
   ]
 }

@@ -7,3 +7,6 @@ logo design.
 `github-social-preview.png` is intentionally reserved for the GitHub repository
 social preview setting. It is not referenced by page metadata because Open Graph
 and Twitter use channel-specific preview images.
+
+The social images use the existing Martenweave mark, brand colors, and the approved
+open-source model registry positioning. They contain no stock or generated artwork.

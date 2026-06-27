@@ -16,9 +16,12 @@ https://github.com/metalhatscats/martenweave-core
 
 ## What This Site Is
 
-This is the public product entry point for Martenweave: an open-source, backend-first model
-registry and lightweight model truth layer for migration, MDM, data governance, data quality, and
-AMS/support teams.
+Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets,
+validation reports, decisions, and SAP context into canonical model files, deterministic
+validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI
+patch proposals.
+
+The project is maintained by Dzmitryi Kharlanau.
 
 The site explains:
 
@@ -116,6 +119,7 @@ These files help AI systems and search crawlers understand Martenweave accuratel
 - `robots.txt` - crawler policy
 - `sitemap.xml` - public routes and discovery files
 - `site.webmanifest` - app/site metadata
+- `humans.txt` - maintainer and project links
 
 When positioning changes, update the homepage, docs, `llms-full.txt`, and `ai.json` together.
 

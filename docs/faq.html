@@ -3,20 +3,250 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave FAQ - Martenweave Docs</title>
+    <title>Martenweave FAQ | Model Registry, SAP, MDM, and AI</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for Martenweave FAQ."
+      content="Answers about Martenweave, its open-source model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity."
     />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/docs/faq.html" />
+    <meta property="og:title" content="Martenweave FAQ | Model Registry, SAP, MDM, and AI" />
+    <meta property="og:description" content="Answers about Martenweave, its open-source model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave FAQ | Model Registry, SAP, MDM, and AI" />
+    <meta name="twitter:description" content="Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source model registry" />
     <link rel="canonical" href="https://martenweave.github.io/docs/faq.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/docs/faq.html#webpage",
+                        "url": "https://martenweave.github.io/docs/faq.html",
+                        "name": "Martenweave FAQ | Model Registry, SAP, MDM, and AI",
+                        "description": "Answers about Martenweave, its open-source model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/docs/faq.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/docs/faq.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Martenweave FAQ",
+                                    "item": "https://martenweave.github.io/docs/faq.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "FAQPage",
+                        "@id": "https://martenweave.github.io/docs/faq.html#content",
+                        "headline": "Martenweave FAQ",
+                        "name": "Martenweave FAQ",
+                        "description": "Answers about Martenweave, its open-source model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity.",
+                        "url": "https://martenweave.github.io/docs/faq.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/docs/faq.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "mainEntity": [
+                              {
+                                    "@type": "Question",
+                                    "name": "What is Martenweave?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "Martenweave is an open-source lightweight model registry for migration, MDM, data governance, and AMS teams. It turns scattered model knowledge into canonical files, deterministic validation results, generated indexes, reports, and reviewable change proposals."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Is this an MDM system?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "No. Martenweave is MDM-adjacent infrastructure: a model registry and validation layer. It can support MDM work, but it is not a full enterprise MDM platform or a replacement for tools such as SAP MDG."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Is this a replacement for Excel?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "No. Excel remains useful for working tables, review files, and steward feedback. Martenweave gives teams a validated model registry so spreadsheet knowledge can become structured, traceable, and reviewable."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Is this only for SAP?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "No. SAP migration and master data scenarios are proof domains and starter packs. The core model registry is designed for broader governed data model work."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Is it certified by SAP or affiliated with SAP?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "No. Martenweave is not certified by SAP and is not affiliated with SAP. SAP context appears as a practical migration and MDM scenario."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Can it import and export?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "Yes, with current local-first boundaries. The core supports dataset profiling, CSV/XLSX model review exports, spreadsheet review imports as PatchProposals, JSON Schema export, generated JSONL outputs, and Google Sheets/Drive-oriented commands. See the import/export page for what is available now versus planned."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Can AI change the model automatically?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "No. AI can draft PatchProposal objects, extract evidence from notes, and help explain impact from structured model context. AI does not silently mutate canonical model files."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Who should use it?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "SAP migration teams, MDM teams, data governance teams, AMS/support teams, data architects, data stewards, and consultants working with field mappings, rules, ownership, lineage, and validation evidence."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "What is free/open-source?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "The open-source core is the Python package martenweave-core , version 0.4.1 , licensed under MIT."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Can companies use it commercially?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "Yes. The MIT-licensed core allows commercial use when the license notice is preserved. Separate commercial offerings may include implementation support, private domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "What exists now versus planned?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "Available now: CLI package, canonical files, validation, generated indexes, search/query, trace/impact, dataset gap detection, reports, examples, and PatchProposal review flows. Planned or future-facing: hosted workbench experiences, broader connector packs, richer review UI, and enterprise integration layers."
+                                    }
+                              },
+                              {
+                                    "@type": "Question",
+                                    "name": "Where is the source code?",
+                                    "acceptedAnswer": {
+                                          "@type": "Answer",
+                                          "text": "The core repository is https://github.com/metalhatscats/martenweave-core. The website repository is https://github.com/Martenweave/martenweave.github.io."
+                                    }
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
   </head>
   <body class="docs-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,7 +266,7 @@
 
     <main id="main" class="doc-shell">
       <aside class="doc-sidebar" aria-label="Documentation navigation">
-<a href="/docs/index.html">Docs home</a>
+<a href="/docs.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
 <a href="/docs/how-it-works.html">How it works</a>
 <a href="/docs/import-export.html">Import/export</a>
@@ -53,6 +283,13 @@
 <a href="/docs/open-source.html">Open source</a>
       </aside>
       <article class="doc-content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/docs.html">Docs</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Martenweave FAQ</span>
+        </nav>
         <p class="section-kicker">Public docs</p>
 <h1 id="martenweave-faq">Martenweave FAQ</h1>
 <h2 id="what-is-martenweave">What is Martenweave?</h2>
@@ -95,6 +332,7 @@
         <a href="/ai.txt">AI disclosure</a>
         <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
         <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
           Website source
         </a>

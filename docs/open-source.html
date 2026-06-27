@@ -3,20 +3,152 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Open Source and Contribution Path - Martenweave Docs</title>
+    <title>Martenweave Open Source and Contribution Guide</title>
     <meta
       name="description"
-      content="Public Martenweave documentation for Open Source and Contribution Path."
+      content="Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions."
     />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/docs/open-source.html" />
+    <meta property="og:title" content="Martenweave Open Source and Contribution Guide" />
+    <meta property="og:description" content="Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave Open Source and Contribution Guide" />
+    <meta name="twitter:description" content="Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source model registry" />
     <link rel="canonical" href="https://martenweave.github.io/docs/open-source.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/docs/open-source.html#webpage",
+                        "url": "https://martenweave.github.io/docs/open-source.html",
+                        "name": "Martenweave Open Source and Contribution Guide",
+                        "description": "Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/docs/open-source.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/docs/open-source.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Open Source and Contribution Path",
+                                    "item": "https://martenweave.github.io/docs/open-source.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "TechArticle",
+                        "@id": "https://martenweave.github.io/docs/open-source.html#content",
+                        "headline": "Open Source and Contribution Path",
+                        "name": "Open Source and Contribution Path",
+                        "description": "Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions.",
+                        "url": "https://martenweave.github.io/docs/open-source.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/docs/open-source.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
   </head>
   <body class="docs-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,7 +168,7 @@
 
     <main id="main" class="doc-shell">
       <aside class="doc-sidebar" aria-label="Documentation navigation">
-<a href="/docs/index.html">Docs home</a>
+<a href="/docs.html">Docs home</a>
 <a href="/docs/product.html">Product</a>
 <a href="/docs/how-it-works.html">How it works</a>
 <a href="/docs/import-export.html">Import/export</a>
@@ -53,6 +185,13 @@
 <a href="/docs/open-source.html" aria-current="page">Open source</a>
       </aside>
       <article class="doc-content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/docs.html">Docs</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Open Source and Contribution Path</span>
+        </nav>
         <p class="section-kicker">Public docs</p>
 <h1 id="open-source-and-contribution-path">Open Source and Contribution Path</h1>
 <p>Martenweave is early open-source infrastructure for governed data model work. The most useful contributions are concrete, reproducible, and grounded in real model-registry workflows.</p>
@@ -116,6 +255,7 @@ bash scripts/release_smoke.sh</code></pre>
         <a href="/ai.txt">AI disclosure</a>
         <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
         <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
           Website source
         </a>

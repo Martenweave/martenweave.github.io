@@ -3,32 +3,122 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Martenweave Docs - Product, workflow, governance, and AI safety</title>
+    <title>Martenweave Docs | Model Registry, SAP Migration, and MDM</title>
     <meta
       name="description"
-      content="Business-readable Martenweave docs for product positioning, workflow, import/export maturity, governance practices, use cases, architecture, and AI governance."
+      content="Explore Martenweave docs for canonical model files, SAP migration and MDM, validation, dataset gaps, lineage, impact analysis, and controlled AI changes."
     />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
     <meta property="og:url" content="https://martenweave.github.io/docs.html" />
-    <meta property="og:title" content="Martenweave Docs" />
+    <meta property="og:title" content="Martenweave model registry documentation" />
     <meta
       property="og:description"
-      content="Read how Martenweave turns scattered model knowledge into a validated model registry for migration, MDM, governance, AMS, and AI-assisted data work."
+      content="Canonical model files, deterministic validation, SAP migration and MDM use cases, gaps, lineage, impact analysis, and human-approved AI changes."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source model registry" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave model registry documentation" />
+    <meta
+      name="twitter:description"
+      content="Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work."
+    />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source model registry" />
     <link rel="canonical" href="https://martenweave.github.io/docs.html" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
     <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://martenweave.github.io/docs.html#webpage",
+            "name": "Martenweave Documentation",
+            "description": "Documentation for canonical model files, deterministic validation, SAP migration and MDM use cases, dataset gaps, lineage, impact analysis, and human-approved AI changes.",
+            "url": "https://martenweave.github.io/docs.html",
+            "isPartOf": {
+              "@id": "https://martenweave.github.io/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://martenweave.github.io/docs.html#breadcrumb"
+            },
+            "author": {
+              "@id": "https://martenweave.github.io/#person"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://martenweave.github.io/docs.html#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://martenweave.github.io/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Docs",
+                "item": "https://martenweave.github.io/docs.html"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://martenweave.github.io/#website",
+            "name": "Martenweave",
+            "url": "https://martenweave.github.io/",
+            "publisher": {
+              "@id": "https://martenweave.github.io/#organization"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://martenweave.github.io/#organization",
+            "name": "Martenweave",
+            "url": "https://martenweave.github.io/",
+            "sameAs": [
+              "https://github.com/Martenweave"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://martenweave.github.io/#person",
+            "name": "Dzmitryi Kharlanau",
+            "url": "https://www.linkedin.com/in/dkharlanau/",
+            "sameAs": [
+              "https://www.linkedin.com/in/dkharlanau/"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -166,6 +256,7 @@
         <a href="/ai.txt">AI disclosure</a>
         <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
         <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
           Website source
         </a>
