@@ -4,6 +4,8 @@ Martenweave helps when teams need traceability before decisions become expensive
 
 ## SAP Migration Model Control
 
+See the [SAP migration use case](/docs/use-cases/sap-migration.html) for a focused walkthrough.
+
 Problem: migration scope, fields, and rules drift across files.
 
 Martenweave helps by connecting domains, contexts, attributes, field endpoints, mappings, value lists, issues, and decisions.

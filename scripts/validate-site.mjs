@@ -16,6 +16,7 @@ const docRoutes = [
   { source: "local-viewer.md", output: "local-viewer.html" },
   { source: "examples.md", output: "examples.html" },
   { source: "use-cases.md", output: "use-cases.html" },
+  { source: "use-cases/sap-migration.md", output: "use-cases/sap-migration.html" },
   { source: "architecture.md", output: "architecture.html" },
   { source: "ai-governance.md", output: "ai-governance.html" },
   { source: "faq.md", output: "faq.html" },
@@ -39,6 +40,8 @@ const requiredFiles = [
   "index.html",
   "docs.html",
   "styles.css",
+  "home.css",
+  "home.js",
   "script.js",
   "scripts/build-docs.mjs",
   "assets/README.md",
@@ -68,6 +71,7 @@ const requiredFiles = [
   "sitemap.xml",
   "site.webmanifest",
   ".nojekyll",
+  "docs/search-index.json",
   ...markdownDocs,
   ...generatedDocs,
 ];
@@ -243,9 +247,9 @@ for (const file of publicHtmlFiles) {
     'name="theme-color" content="#321136"',
     'property="og:locale" content="en_US"',
     'property="og:site_name" content="Martenweave"',
-    'property="og:image:alt" content="Martenweave open-source model registry"',
+    'property="og:image:alt" content="Martenweave open-source data model registry"',
     'name="twitter:card" content="summary_large_image"',
-    'name="twitter:image:alt" content="Martenweave open-source model registry"',
+    'name="twitter:image:alt" content="Martenweave open-source data model registry"',
     'rel="alternate" type="text/plain" href="/llms.txt"',
     'rel="alternate" type="text/plain"',
     'href="/llms-full.txt"',
@@ -316,7 +320,8 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Validated model truth for migration, MDM, and governance teams.",
+  "Open-source data model registry for SAP migration and MDM.",
+  "Model truth for migration, MDM, and governance teams",
   "Open source",
   "Canonical files",
   "Deterministic validation",
@@ -436,7 +441,7 @@ if (manifest.start_url !== "/" || manifest.display !== "minimal-ui") {
 
 if (
   manifest.description !==
-  "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work."
+  "Model truth for migration, MDM, and governance teams."
 ) {
   errors.push("site.webmanifest must use the approved short product description.");
 }

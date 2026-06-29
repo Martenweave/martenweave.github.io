@@ -8,7 +8,7 @@ const checkOnly = process.argv.includes("--check");
 const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
 const socialDescription =
-  "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work.";
+  "Model truth for migration, MDM, and governance teams.";
 
 const docRoutes = [
   {
@@ -19,7 +19,7 @@ const docRoutes = [
     indexable: false,
     seoTitle: "Martenweave Documentation",
     description:
-      "Browse Martenweave documentation for the open-source model registry, including validation, dataset gaps, lineage, impact analysis, and AI governance.",
+      "Browse Martenweave documentation for the open-source data model registry, including validation, dataset gaps, lineage, impact analysis, and AI governance.",
   },
   {
     source: "product.md",
@@ -86,6 +86,14 @@ const docRoutes = [
       "Explore Martenweave use cases for SAP migration, Business Partner governance, field mapping validation, dataset gaps, AMS knowledge reuse, lineage, and impact.",
   },
   {
+    source: "use-cases/sap-migration.md",
+    output: "use-cases/sap-migration.html",
+    label: "SAP migration",
+    seoTitle: "SAP Migration Use Case | Martenweave Data Model Registry",
+    description:
+      "Use Martenweave as an open-source data model registry for SAP migration: canonical mappings, validation, dataset gap detection, lineage, impact analysis, and approved AI proposals.",
+  },
+  {
     source: "architecture.md",
     output: "architecture.html",
     label: "Architecture",
@@ -107,7 +115,7 @@ const docRoutes = [
     label: "FAQ",
     seoTitle: "Martenweave FAQ | Model Registry, SAP, MDM, and AI",
     description:
-      "Answers about Martenweave, its open-source model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity.",
+      "Answers about Martenweave, its open-source data model registry, SAP and MDM scope, import and export workflows, human-approved AI changes, and current maturity.",
     schemaType: "FAQPage",
   },
   {
@@ -132,7 +140,7 @@ const docRoutes = [
     label: "Contributing scenarios",
     seoTitle: "Contribute Migration and Governance Scenarios | Martenweave",
     description:
-      "Contribute reproducible migration, MDM, validation, data quality, governance, and AMS scenarios to improve the Martenweave open-source model registry.",
+      "Contribute reproducible migration, MDM, validation, data quality, governance, and AMS scenarios to improve the Martenweave open-source data model registry.",
   },
   {
     source: "open-source.md",
@@ -489,13 +497,13 @@ function renderPage(route) {
     <meta property="og:image" content="${productionOrigin}/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Martenweave open-source model registry" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
     <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttribute(route.seoTitle)}" />
     <meta name="twitter:description" content="${escapeAttribute(socialDescription)}" />
     <meta name="twitter:image" content="${productionOrigin}/assets/twitter-card.png" />
-    <meta name="twitter:image:alt" content="Martenweave open-source model registry" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
     <link rel="canonical" href="${canonicalUrl}" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
@@ -593,6 +601,47 @@ for (const route of docRoutes) {
   writeFileSync(outputPath, rendered, "utf8");
 }
 
+function buildSearchIndex() {
+  const index = [
+    {
+      url: "/",
+      title: "Martenweave",
+      category: "Home",
+      excerpt:
+        "Open-source data model registry for SAP migration, MDM, and data governance. Canonical files, validation, gap detection, lineage, impact, and human-approved AI proposals.",
+    },
+    ...docRoutes
+      .filter((route) => route.indexable !== false)
+      .map((route) => {
+        const canonicalPath = route.canonical ?? `/docs/${route.output}`;
+        return {
+          url: canonicalPath,
+          title: route.seoTitle,
+          category: route.label,
+          excerpt: route.description,
+        };
+      }),
+  ];
+
+  return JSON.stringify(index, null, 2);
+}
+
+const searchIndexPath = join(docsDir, "search-index.json");
+const searchIndex = buildSearchIndex();
+
+if (checkOnly) {
+  if (!existsSync(searchIndexPath)) {
+    staleFiles.push("Missing generated file: docs/search-index.json");
+  } else {
+    const existing = readFileSync(searchIndexPath, "utf8");
+    if (existing !== searchIndex) {
+      staleFiles.push("Stale generated file: docs/search-index.json");
+    }
+  }
+} else {
+  writeFileSync(searchIndexPath, searchIndex, "utf8");
+}
+
 if (staleFiles.length > 0) {
   console.error(staleFiles.join("\n"));
   console.error("Run: npm run build:docs");
@@ -602,5 +651,5 @@ if (staleFiles.length > 0) {
 console.log(
   checkOnly
     ? `Generated docs are current: ${docRoutes.length} routes checked.`
-    : `Generated docs: ${docRoutes.length} static HTML routes.`,
+    : `Generated docs: ${docRoutes.length} static HTML routes. Search index: docs/search-index.json.`,
 );
