@@ -4,7 +4,7 @@
   "alternateName": "Martenweave model registry",
   "type": "open-source backend-first model registry",
   "url": "https://martenweave.github.io/",
-  "description": "Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.",
+  "description": "Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, local generated read-only viewer artifacts, gap detection, lineage, impact analysis, and human-approved AI patch proposals.",
   "shortDescription": "Open-source model truth for SAP migration, MDM, governance, and AI-assisted data work.",
   "inLanguage": "en",
   "organization": {
@@ -42,13 +42,15 @@
       "search JSONL",
       "lineage JSONL",
       "reports",
-      "review exports"
+      "review exports",
+      "local generated read-only viewer"
     ]
   },
   "capabilities": [
     "canonical model files",
     "deterministic data model validation",
     "generated SQLite and JSONL indexes",
+    "local generated read-only viewer",
     "search and structured query",
     "trace and impact analysis",
     "dataset profiling",
@@ -94,7 +96,11 @@
     "localFirst": true,
     "directSapWriteBack": false,
     "autonomousMdmSynchronization": false,
-    "hostedUserInterfaceInCore": false
+    "hostedUserInterfaceInCore": false,
+    "localGeneratedReadOnlyViewer": true,
+    "viewerEditing": false,
+    "viewerAuthentication": false,
+    "viewerSapWriteBack": false
   },
   "notA": [
     "chatbot",
@@ -131,6 +137,7 @@
     "https://martenweave.github.io/docs/import-export.html",
     "https://martenweave.github.io/docs/governance.html",
     "https://martenweave.github.io/docs/quickstart.html",
+    "https://martenweave.github.io/docs/local-viewer.html",
     "https://martenweave.github.io/docs/examples.html",
     "https://martenweave.github.io/docs/use-cases.html",
     "https://martenweave.github.io/docs/architecture.html",
@@ -160,6 +167,7 @@
     "SAP MDM data governance",
     "data model validation",
     "canonical model files",
+    "local generated read-only viewer",
     "dataset gap detection",
     "impact analysis",
     "lineage for migration",

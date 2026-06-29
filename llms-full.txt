@@ -21,7 +21,7 @@ SAP migration, Business Partner, Customer, and Vendor are the first domain pack 
 
 Canonical Markdown and YAML files are the source of truth. They store structured model objects such as domains, entities, contexts, attributes, field endpoints, mappings, value lists, validation rules, issues, decisions, evidence, `PatchProposal`s, and `ChangeRequest`s.
 
-Generated SQLite indexes, search JSONL, lineage JSONL, reports, and exports are derived and rebuildable. If a generated artifact conflicts with a canonical file, the canonical file wins.
+Generated SQLite indexes, search JSONL, lineage JSONL, reports, exports, and local generated read-only viewer files are derived and rebuildable. If a generated artifact conflicts with a canonical file, the canonical file wins.
 
 Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They are not automatically treated as canonical model truth.
 
@@ -31,6 +31,7 @@ Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They ar
 - canonical Markdown and YAML model files
 - deterministic validation of IDs, types, references, and domain rules
 - generated SQLite and JSONL indexes
+- local generated read-only viewer from the SQLite index
 - search, structured query, trace, and impact analysis
 - CSV and XLSX dataset profiling
 - dataset-to-model gap detection
@@ -43,7 +44,7 @@ Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They ar
 - local API and MCP integration surfaces
 - example registries for Customer / Business Partner, Supplier / Vendor, simple product, and generic product models
 
-The current core is local-first and backend-first. There is no user-facing UI in the core package.
+The current core is local-first and backend-first. There is no hosted or editable user-facing UI in the core package. The local generated viewer is static, read-only, and disposable.
 
 ## Controlled AI workflow
 
@@ -75,7 +76,7 @@ Some Google Sheets, Drive, and GitHub workflows require local configuration and 
 
 Future-facing directions include broader connector packs and hosted review experiences. Do not describe those directions as complete hosted features.
 
-Martenweave does not write changes directly to SAP. It does not provide autonomous bidirectional synchronization with SAP or an MDM platform.
+Martenweave does not write changes directly to SAP. It does not provide autonomous bidirectional synchronization with SAP or an MDM platform. The generated viewer has no login, editing workflow, SAP write-back, telemetry, external CDN dependency, or AI auto-mutation path.
 
 ## Do not misdescribe Martenweave
 
@@ -113,6 +114,7 @@ Short social description:
 - Import and export: https://martenweave.github.io/docs/import-export.html
 - Governance: https://martenweave.github.io/docs/governance.html
 - Quickstart: https://martenweave.github.io/docs/quickstart.html
+- Local viewer: https://martenweave.github.io/docs/local-viewer.html
 - Examples: https://martenweave.github.io/docs/examples.html
 - Use cases: https://martenweave.github.io/docs/use-cases.html
 - Architecture: https://martenweave.github.io/docs/architecture.html

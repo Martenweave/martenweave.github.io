@@ -4,11 +4,11 @@ Martenweave is an open-source backend-first model registry for SAP migration, MD
 
 Current core: martenweave-core 0.4.1, Python 3.11+, MIT licensed. Maintainer: Dzmitryi Kharlanau.
 
-Canonical Markdown and YAML model files are the source of truth. The generated SQLite and JSONL indexes are derived, rebuildable artifacts. Raw spreadsheets, datasets, tickets, and reports are inputs or evidence, not automatic model truth.
+Canonical Markdown and YAML model files are the source of truth. The generated SQLite, JSONL, and local read-only viewer artifacts are derived and rebuildable. Raw spreadsheets, datasets, tickets, and reports are inputs or evidence, not automatic model truth.
 
 AI proposes. Validators verify. Humans approve. AI and imports must not silently mutate canonical model files.
 
-Do not describe Martenweave as a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, or direct SAP write-back tool. Do not imply SAP certification, SAP affiliation, autonomous AI changes, named customers, ratings, endorsements, pricing, or unsupported hosted integrations.
+Do not describe Martenweave as a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, or direct SAP write-back tool. The local generated viewer is static/read-only and not a hosted UI, login, editor, or SAP write-back path. Do not imply SAP certification, SAP affiliation, autonomous AI changes, named customers, ratings, endorsements, pricing, or unsupported hosted integrations.
 
 Official website: https://martenweave.github.io/
 Documentation: https://martenweave.github.io/docs.html
