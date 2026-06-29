@@ -13,6 +13,7 @@ const docRoutes = [
   { source: "import-export.md", output: "import-export.html" },
   { source: "governance.md", output: "governance.html" },
   { source: "quickstart.md", output: "quickstart.html" },
+  { source: "local-viewer.md", output: "local-viewer.html" },
   { source: "examples.md", output: "examples.html" },
   { source: "use-cases.md", output: "use-cases.html" },
   { source: "architecture.md", output: "architecture.html" },

@@ -4,11 +4,11 @@
 
 Current core: `martenweave-core` version `0.4.1`, Python 3.11+, MIT licensed.
 
-Canonical Markdown and YAML model files are the source of truth. SQLite and JSONL indexes are derived, rebuildable artifacts.
+Canonical Markdown and YAML model files are the source of truth. SQLite, JSONL, and local generated read-only viewer artifacts are derived and rebuildable.
 
 AI proposes. Validators verify. Humans approve. AI and import workflows create reviewable `PatchProposal` objects; they do not silently mutate canonical model files.
 
-Martenweave has no direct SAP write-back. It is not a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, SAP product, or SAP-affiliated product.
+Martenweave has no direct SAP write-back. The generated viewer is local/static/read-only and not a hosted UI, login surface, editor, or SAP write-back path. Martenweave is not a chatbot, generic SaaS dashboard, enterprise MDM replacement, workflow engine, generic data catalog, SAP product, or SAP-affiliated product.
 
 Maintainer: Dzmitryi Kharlanau.
 
@@ -29,6 +29,7 @@ Maintainer: Dzmitryi Kharlanau.
 - Import and export: https://martenweave.github.io/docs/import-export.html
 - Governance: https://martenweave.github.io/docs/governance.html
 - Quickstart: https://martenweave.github.io/docs/quickstart.html
+- Local viewer: https://martenweave.github.io/docs/local-viewer.html
 - Examples: https://martenweave.github.io/docs/examples.html
 - Use cases: https://martenweave.github.io/docs/use-cases.html
 - Architecture: https://martenweave.github.io/docs/architecture.html

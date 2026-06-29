@@ -62,6 +62,14 @@ const docRoutes = [
       "Install martenweave-core and run deterministic validation, generated indexing, search, trace, impact analysis, dataset gap checks, and a proposal dry run.",
   },
   {
+    source: "local-viewer.md",
+    output: "local-viewer.html",
+    label: "Local viewer",
+    seoTitle: "Local Static Viewer | Martenweave",
+    description:
+      "Generate a local static read-only Martenweave viewer from the SQLite index, with searchable objects, gaps, decisions, owners, and manifest metadata.",
+  },
+  {
     source: "examples.md",
     output: "examples.html",
     label: "Examples",
