@@ -320,15 +320,16 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Open-source data model registry for SAP migration and MDM.",
-  "Model truth for migration, MDM, and governance teams",
+  "Open-source model governance pipeline for SAP migration and MDM.",
+  "Model governance pipeline",
   "Open source",
   "Canonical files",
   "Deterministic validation",
   "Human-approved AI",
-  "AI proposes.",
+  "Agents propose.",
   "Validators verify.",
   "Humans approve.",
+  "Git records.",
 ];
 
 for (const text of requiredText) {
@@ -386,7 +387,7 @@ for (const [file, text] of [
   }
 }
 
-if (!aiContext.includes("AI proposes. Validators verify. Humans approve.")) {
+if (!aiContext.includes("Agents propose. Validators verify. Humans approve. Git records.")) {
   errors.push("llms.txt is missing the AI governance principle.");
 }
 
@@ -399,7 +400,7 @@ for (const [file, text] of [
   for (const requiredPhrase of [
     "canonical",
     "generated",
-    "AI proposes",
+    "Agents propose",
     "direct SAP write-back",
     "chatbot",
   ]) {

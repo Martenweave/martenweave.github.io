@@ -2,7 +2,7 @@
 
 ## Identity
 
-Martenweave is an open-source data model registry for SAP migration, MDM, and data governance. It turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.
+Martenweave is an open-source model governance pipeline for SAP migration, MDM, and data governance. It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals. The registry is the source-of-truth layer inside the pipeline.
 
 Martenweave is maintained by Dzmitryi Kharlanau. The current open-source core is `martenweave-core` version `0.4.1`, requires Python 3.11 or newer, and uses the MIT license.
 
@@ -48,7 +48,7 @@ The current core is local-first and backend-first. There is no hosted or editabl
 
 ## Controlled AI workflow
 
-AI proposes. Validators verify. Humans approve.
+Agents propose. Validators verify. Humans approve. Git records.
 
 AI can extract bounded evidence, draft a `PatchProposal`, suggest affected model objects, explain structured impact, and prepare review material. Deterministic validation and human review remain gates.
 
@@ -56,8 +56,8 @@ AI does not silently mutate canonical model files. Imports also produce evidence
 
 ## Supported use cases
 
-- open-source data model registry
-- SAP migration model registry
+- open-source model governance pipeline
+- SAP migration model governance
 - SAP data migration
 - SAP MDM data governance
 - Business Partner, Customer, and Vendor model governance
@@ -85,6 +85,7 @@ Martenweave is not:
 
 - a chatbot
 - a generic SaaS dashboard or tenant platform
+- a generic AI workflow builder or n8n/Zapier/Dify competitor
 - a full enterprise MDM replacement
 - a workflow engine
 - a generic data catalog
@@ -100,7 +101,7 @@ Do not claim that AI autonomously changes models or that future integrations are
 
 Use:
 
-“Martenweave is an open-source data model registry for SAP migration, MDM, and data governance. It turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.”
+“Martenweave is an open-source model governance pipeline for SAP migration, MDM, and data governance. It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.”
 
 Short social description:
 

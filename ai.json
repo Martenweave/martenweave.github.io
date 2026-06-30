@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
   "name": "Martenweave",
-  "alternateName": "Martenweave data model registry",
-  "type": "open-source data model registry (backend-first)",
+  "alternateName": "Martenweave model governance pipeline",
+  "type": "open-source model governance pipeline (backend-first)",
   "url": "https://martenweave.github.io/",
-  "description": "Martenweave is an open-source data model registry for SAP migration, MDM, and data governance. It turns Excel, tickets, datasets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.",
+  "description": "Martenweave is an open-source model governance pipeline for SAP migration, MDM, and data governance. It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals. The registry is its source-of-truth layer.",
   "shortDescription": "Model truth for migration, MDM, and governance teams.",
   "inLanguage": "en",
   "organization": {
@@ -75,7 +75,7 @@
     "technical evaluators"
   ],
   "useCases": [
-    "SAP migration model registry",
+    "SAP migration model governance",
     "SAP data migration",
     "SAP MDM data governance",
     "Business Partner model governance",
@@ -88,7 +88,7 @@
     "human-approved AI patch proposals"
   ],
   "aiPolicy": {
-    "summary": "AI proposes. Validators verify. Humans approve.",
+    "summary": "Agents propose. Validators verify. Humans approve. Git records.",
     "silentCanonicalMutationAllowed": false,
     "deterministicValidationRequired": true,
     "humanApprovalRequired": true
@@ -107,6 +107,8 @@
     "chatbot",
     "generic SaaS dashboard",
     "SaaS tenant platform",
+    "generic AI workflow builder",
+    "n8n/Zapier/Dify competitor",
     "enterprise MDM replacement",
     "workflow engine",
     "generic data catalog",
@@ -164,8 +166,8 @@
     "https://www.linkedin.com/in/dkharlanau/"
   ],
   "keywords": [
+    "model governance pipeline",
     "data model registry",
-    "open source model registry",
     "SAP migration",
     "SAP data migration",
     "MDM",

@@ -16,10 +16,11 @@ https://github.com/metalhatscats/martenweave-core
 
 ## What This Site Is
 
-Martenweave is an open-source backend-first model registry that turns Excel, tickets, datasets,
-validation reports, decisions, and SAP context into canonical model files, deterministic
-validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI
-patch proposals.
+Martenweave is an open-source, backend-first model governance pipeline for SAP migration and MDM.
+It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into
+canonical model files, deterministic validation, dataset gap reports, lineage, impact analysis,
+and human-approved AI patch proposals. The registry is the source-of-truth layer inside the
+pipeline.
 
 The project is maintained by Dzmitryi Kharlanau.
 
@@ -27,7 +28,7 @@ The site explains:
 
 - what Martenweave is
 - what pain it solves
-- how scattered model knowledge becomes a validated registry
+- how scattered model knowledge moves through a controlled governance pipeline
 - what exists in the core package today
 - what import/export paths are available now versus planned
 - why it is not a chatbot or full enterprise MDM replacement
