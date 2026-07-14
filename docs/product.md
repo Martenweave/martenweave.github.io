@@ -1,6 +1,6 @@
 # What Martenweave Is
 
-Martenweave is an open-source lightweight model registry for migration, MDM, data governance, and AMS teams.
+Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.
 
 It turns scattered model knowledge from spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into structured model objects that can be validated, searched, traced, reviewed, and exported.
 
@@ -52,7 +52,7 @@ Martenweave is for:
 
 ## What Exists Now
 
-The current open-source core is `martenweave-core` version `0.4.1`.
+The current open-source core is `martenweave-core` version `0.5.0`, licensed under Apache License 2.0.
 
 Available now:
 

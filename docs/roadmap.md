@@ -4,7 +4,7 @@ Martenweave is intentionally backend-first. The roadmap favors a useful, trustwo
 
 ## Phase 1 — Core Registry
 
-Status: largely present in `martenweave-core 0.4.1`.
+Status: largely present in `martenweave-core 0.5.0`.
 
 - initialize model repositories
 - store canonical Markdown + YAML model files

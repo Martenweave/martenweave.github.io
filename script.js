@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 const header = document.querySelector("[data-header]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

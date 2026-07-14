@@ -16,7 +16,8 @@ https://github.com/metalhatscats/martenweave-core
 
 ## What This Site Is
 
-Martenweave is an open-source, backend-first model governance pipeline for SAP migration and MDM.
+Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration,
+MDM, data governance, and AMS.
 It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into
 canonical model files, deterministic validation, dataset gap reports, lineage, impact analysis,
 and human-approved AI patch proposals. The registry is the source-of-truth layer inside the
@@ -151,3 +152,7 @@ SAP may be mentioned as a migration scenario and domain-pack context, not as off
 6. Keep all root deployment links and assets root-relative.
 7. Run `npm run validate`.
 8. Commit and push to `main`.
+
+## License
+
+The website source is licensed under Apache License 2.0, the same license used by Martenweave Core.

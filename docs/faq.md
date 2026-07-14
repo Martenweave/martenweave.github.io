@@ -34,11 +34,11 @@ SAP migration teams, MDM teams, data governance teams, AMS/support teams, data a
 
 ## What is free/open-source?
 
-The open-source core is the Python package `martenweave-core`, version `0.4.1`, licensed under MIT.
+The open-source Core is the Python package `martenweave-core`, version `0.5.0`, licensed under Apache License 2.0.
 
 ## Can companies use it commercially?
 
-Yes. The MIT-licensed core allows commercial use when the license notice is preserved. Separate commercial offerings may include implementation support, private domain packs, enterprise validation packs, hosted workbench work, custom integrations, and support SLAs.
+Yes. Apache License 2.0 permits internal, production, consulting, client-project, modification, embedding, and redistribution use, including commercial use, subject to its terms. Organizations may separately engage the Martenweave team for implementation, SAP/MDM domain modelling, validation packs, integrations, assessments, support, training, and design-partner engagements.
 
 ## What exists now versus planned?
 

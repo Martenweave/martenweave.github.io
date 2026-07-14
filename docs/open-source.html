@@ -6,7 +6,7 @@
     <title>Martenweave Open Source and Contribution Guide</title>
     <meta
       name="description"
-      content="Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions."
+      content="Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services."
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Dzmitryi Kharlanau" />
@@ -17,7 +17,7 @@
     <meta property="og:site_name" content="Martenweave" />
     <meta property="og:url" content="https://martenweave.github.io/docs/open-source.html" />
     <meta property="og:title" content="Martenweave Open Source and Contribution Guide" />
-    <meta property="og:description" content="Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions." />
+    <meta property="og:description" content="Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services." />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -53,7 +53,7 @@
                         "@id": "https://martenweave.github.io/docs/open-source.html#webpage",
                         "url": "https://martenweave.github.io/docs/open-source.html",
                         "name": "Martenweave Open Source and Contribution Guide",
-                        "description": "Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions.",
+                        "description": "Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services.",
                         "isPartOf": {
                               "@id": "https://martenweave.github.io/#website"
                         },
@@ -97,7 +97,7 @@
                         "@id": "https://martenweave.github.io/docs/open-source.html#content",
                         "headline": "Open Source and Contribution Path",
                         "name": "Open Source and Contribution Path",
-                        "description": "Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions.",
+                        "description": "Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services.",
                         "url": "https://martenweave.github.io/docs/open-source.html",
                         "mainEntityOfPage": {
                               "@id": "https://martenweave.github.io/docs/open-source.html#webpage"
@@ -196,52 +196,37 @@
         </nav>
         <p class="section-kicker">Public docs</p>
 <h1 id="open-source-and-contribution-path">Open Source and Contribution Path</h1>
-<p>Martenweave is early open-source infrastructure for governed data model work. The most useful contributions are concrete, reproducible, and grounded in real model-registry workflows.</p>
-<h2 id="license-reality">License Reality</h2>
-<p>The current core package is MIT-licensed. MIT allows commercial use, copying, modification, distribution, sublicensing, and sale when the license notice is preserved.</p>
-<p>Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, a hosted workbench, custom integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be distributed under separate commercial terms. They are not a claim that the current MIT core requires a paid commercial license.</p>
-<p>By contributing to Martenweave Core, contributors agree their contribution is licensed under the same MIT License as the project.</p>
+<p>Martenweave Core is open-source software licensed under <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">Apache License 2.0</a>.</p>
+<h2 id="license">License</h2>
+<p>The Core may be used, modified, embedded, and distributed, including for internal and commercial purposes, subject to Apache License 2.0. The license includes an explicit patent grant from contributors. The repository <code>LICENSE</code> and <code>NOTICE</code> files are authoritative.</p>
+<h2 id="optional-commercial-services">Optional Commercial Services</h2>
+<p>Organizations may deploy and extend the Core themselves. They may also engage the Martenweave team for implementation, SAP/MDM domain modelling, validation packs, integrations, assessments, support, training, design-partner engagements, and future hosted services. These services are optional and do not limit the open-source license.</p>
+<h2 id="contributions">Contributions</h2>
+<p>Unless explicitly stated otherwise, contributions intentionally submitted for inclusion are provided under Apache License 2.0, consistent with Section 5. Contributors must have the right to submit their work and must preserve required third-party licensing and attribution information. No contributor license agreement is currently required.</p>
+<h2 id="historical-note">Historical Note</h2>
+<p>Version 0.4.1 was originally distributed under MIT. The current supported release and all active development are licensed under Apache License 2.0.</p>
 <h2 id="where-to-contribute">Where to Contribute</h2>
 <ul>
 <li>Core/product issues: https://github.com/metalhatscats/martenweave-core</li>
 <li>Website/docs issues: https://github.com/Martenweave/martenweave.github.io</li>
 </ul>
+<p>See the Core repository <a href="https://github.com/metalhatscats/martenweave-core/blob/main/CONTRIBUTING.md">contribution guide</a> for validation and pull-request expectations.</p>
 <h2 id="useful-contributions">Useful Contributions</h2>
 <ul>
-<li>reproducible CLI bugs</li>
-<li>failing validation cases with synthetic canonical files</li>
-<li>example-model improvements</li>
-<li>domain-pack scenarios for migration, MDM, governance, data quality, or AMS teams</li>
-<li>documentation corrections for commands that exist today</li>
-<li>tests that protect canonical/generated boundaries</li>
-<li>issue drafts with goal, scope, acceptance criteria, and validation command</li>
+<li>reproducible CLI bugs;</li>
+<li>failing validation cases with synthetic canonical files;</li>
+<li>example-model and domain-pack improvements without private customer data;</li>
+<li>documentation corrections for commands that exist today;</li>
+<li>tests that protect canonical/generated boundaries;</li>
+<li>focused issue drafts with a goal, scope, acceptance criteria, and validation command.</li>
 </ul>
 <h2 id="contribution-guardrails">Contribution Guardrails</h2>
-<p>Do not contribute:</p>
-<ul>
-<li>real client data</li>
-<li>credentials, <code>.env</code> files, private keys, or tokens</li>
-<li>generated indexes unless maintainers explicitly request them</li>
-<li>claims about customers, SAP certification, or formal SAP relationship</li>
-<li>UI/platform rewrites that bypass the backend-first product boundary</li>
-<li>AI flows that mutate canonical files without PatchProposal and human approval</li>
-</ul>
+<p>Do not contribute real client data, credentials, generated indexes unless requested, unsupported customer or SAP-relationship claims, UI rewrites that bypass Core, or AI flows that mutate canonical files without a PatchProposal and human approval.</p>
 <h2 id="development-checks">Development Checks</h2>
 <pre><code class="language-bash">.venv/bin/python -m ruff check .
 .venv/bin/python -m ruff format --check .
 .venv/bin/python -m pytest
 bash scripts/release_smoke.sh</code></pre>
-<h2 id="issue-format">Issue Format</h2>
-<p>Good issues include:</p>
-<ul>
-<li>Goal</li>
-<li>Scope</li>
-<li>Acceptance criteria</li>
-<li>Validation command</li>
-<li>Reproduction steps for bugs</li>
-<li>Out-of-scope notes when the boundary matters</li>
-</ul>
-<p>This structure keeps the project useful for maintainers and AI coding agents without turning the repository into a vague backlog.</p>
       </article>
     </main>
 
