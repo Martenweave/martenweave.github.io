@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -122,9 +124,9 @@ const docRoutes = [
     source: "release-proof.md",
     output: "release-proof.html",
     label: "Release proof",
-    seoTitle: "Martenweave Core 0.4.1 Release Proof",
+    seoTitle: "Martenweave Core 0.5.0 Release Proof",
     description:
-      "Review the public release evidence for martenweave-core 0.4.1, including package links, backend-first boundaries, local validation, and rendered site checks.",
+      "Review the Apache-licensed martenweave-core 0.5.0 release, including package links, backend-first boundaries, validation, and rendered site checks.",
   },
   {
     source: "roadmap.md",
@@ -148,7 +150,7 @@ const docRoutes = [
     label: "Open source",
     seoTitle: "Martenweave Open Source and Contribution Guide",
     description:
-      "Understand the MIT-licensed Martenweave core, contribution paths, development checks, safe public examples, and boundaries for commercial extensions.",
+      "Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services.",
   },
 ];
 

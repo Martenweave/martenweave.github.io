@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.4.1` is the current public source and PyPI release.
+Martenweave Core `v0.5.0` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.4.1`
-- PyPI package: `martenweave-core 0.4.1`
+- GitHub Release: `v0.5.0`
+- PyPI package: `martenweave-core 0.5.0`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -11,10 +11,10 @@ The core remains backend-first: a Python package, CLI, local API, MCP-ready back
 Markdown/YAML files, validation, generated indexes, and reviewable PatchProposal workflows. There
 is no hosted UI in the core release.
 
-Martenweave Core is MIT-licensed open source. Commercial offerings may include implementation
-support, private SAP/MDM domain packs, enterprise validation packs, a hosted workbench, custom
-integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be
-distributed under separate commercial terms.
+Martenweave Core is open-source software licensed under Apache License 2.0. It may be used,
+modified, embedded, and distributed, including for internal and commercial purposes, subject to
+the license terms. Optional commercial services include implementation, private SAP/MDM domain
+packs, enterprise validation packs, integrations, training, hosted Workbench work, and support.
 
 These screenshots were refreshed from the local static site during the compact landing-page redesign.
 

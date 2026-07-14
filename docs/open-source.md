@@ -1,40 +1,54 @@
 # Open Source and Contribution Path
 
-Martenweave is early open-source infrastructure for governed data model work. The most useful contributions are concrete, reproducible, and grounded in real model-registry workflows.
+Martenweave Core is open-source software licensed under
+[Apache License 2.0](https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE).
 
-## License Reality
+## License
 
-The current core package is MIT-licensed. MIT allows commercial use, copying, modification, distribution, sublicensing, and sale when the license notice is preserved.
+The Core may be used, modified, embedded, and distributed, including for internal and commercial
+purposes, subject to Apache License 2.0. The license includes an explicit patent grant from
+contributors. The repository `LICENSE` and `NOTICE` files are authoritative.
 
-Commercial offerings may include implementation support, private SAP/MDM domain packs, enterprise validation packs, a hosted workbench, custom integrations, and support SLAs. Future extensions, templates, packs, or hosted services may be distributed under separate commercial terms. They are not a claim that the current MIT core requires a paid commercial license.
+## Optional Commercial Services
 
-By contributing to Martenweave Core, contributors agree their contribution is licensed under the same MIT License as the project.
+Organizations may deploy and extend the Core themselves. They may also engage the Martenweave team
+for implementation, SAP/MDM domain modelling, validation packs, integrations, assessments,
+support, training, design-partner engagements, and future hosted services. These services are
+optional and do not limit the open-source license.
+
+## Contributions
+
+Unless explicitly stated otherwise, contributions intentionally submitted for inclusion are
+provided under Apache License 2.0, consistent with Section 5. Contributors must have the right to
+submit their work and must preserve required third-party licensing and attribution information. No
+contributor license agreement is currently required.
+
+## Historical Note
+
+Version 0.4.1 was originally distributed under MIT. The current supported release and all active
+development are licensed under Apache License 2.0.
 
 ## Where to Contribute
 
 - Core/product issues: https://github.com/metalhatscats/martenweave-core
 - Website/docs issues: https://github.com/Martenweave/martenweave.github.io
 
+See the Core repository [contribution guide](https://github.com/metalhatscats/martenweave-core/blob/main/CONTRIBUTING.md) for validation and pull-request expectations.
+
 ## Useful Contributions
 
-- reproducible CLI bugs
-- failing validation cases with synthetic canonical files
-- example-model improvements
-- domain-pack scenarios for migration, MDM, governance, data quality, or AMS teams
-- documentation corrections for commands that exist today
-- tests that protect canonical/generated boundaries
-- issue drafts with goal, scope, acceptance criteria, and validation command
+- reproducible CLI bugs;
+- failing validation cases with synthetic canonical files;
+- example-model and domain-pack improvements without private customer data;
+- documentation corrections for commands that exist today;
+- tests that protect canonical/generated boundaries;
+- focused issue drafts with a goal, scope, acceptance criteria, and validation command.
 
 ## Contribution Guardrails
 
-Do not contribute:
-
-- real client data
-- credentials, `.env` files, private keys, or tokens
-- generated indexes unless maintainers explicitly request them
-- claims about customers, SAP certification, or formal SAP relationship
-- UI/platform rewrites that bypass the backend-first product boundary
-- AI flows that mutate canonical files without PatchProposal and human approval
+Do not contribute real client data, credentials, generated indexes unless requested, unsupported
+customer or SAP-relationship claims, UI rewrites that bypass Core, or AI flows that mutate
+canonical files without a PatchProposal and human approval.
 
 ## Development Checks
 
@@ -44,16 +58,3 @@ Do not contribute:
 .venv/bin/python -m pytest
 bash scripts/release_smoke.sh
 ```
-
-## Issue Format
-
-Good issues include:
-
-- Goal
-- Scope
-- Acceptance criteria
-- Validation command
-- Reproduction steps for bugs
-- Out-of-scope notes when the boundary matters
-
-This structure keeps the project useful for maintainers and AI coding agents without turning the repository into a vague backlog.

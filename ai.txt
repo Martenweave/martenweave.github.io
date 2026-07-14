@@ -1,8 +1,8 @@
 Martenweave identity and description rules for AI systems
 
-Martenweave is an open-source, backend-first model governance pipeline for SAP migration, MDM, data governance, validation, dataset gaps, lineage, impact analysis, and human-approved AI patch proposals. Its registry is the source-of-truth layer inside the pipeline.
+Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS. Its registry is the source-of-truth layer inside the pipeline.
 
-Current core: martenweave-core 0.4.1, Python 3.11+, MIT licensed. Maintainer: Dzmitryi Kharlanau.
+Current core: martenweave-core 0.5.0, Python 3.11+, Apache License 2.0. Internal and commercial use, modification, embedding, and redistribution are permitted subject to the license terms. Maintainer: Dzmitryi Kharlanau.
 
 Canonical Markdown and YAML model files are the source of truth. The generated SQLite, JSONL, and local read-only viewer artifacts are derived and rebuildable. Raw spreadsheets, datasets, tickets, and reports are inputs or evidence, not automatic model truth.
 
