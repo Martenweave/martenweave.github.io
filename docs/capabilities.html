@@ -210,10 +210,10 @@
 <li><strong>Deterministic validation:</strong> identity, schema, cross-object references, and supported SAP context checks run before indexing.</li>
 <li><strong>Derived access layers:</strong> SQLite and JSONL indexes, search, structured query, trace, impact analysis, reports, and a local read-only viewer can be rebuilt from canonical files.</li>
 <li><strong>Evidence and readiness work:</strong> profile CSV/XLSX data, initialize a proposal-only pilot from a</li>
-<p>mapping workbook, detect dataset-to-model gaps, compare typed assessment runs through the local API, prepare readiness and review outputs, and retain evidence separately from canonical truth.</p>
+<p>mapping workbook, detect dataset-to-model gaps, compare typed assessment runs through the local API, prepare readiness and review outputs, and retain evidence separately from canonical truth. Connected assessment findings retain stable IDs and detection provenance; any human review state remains separate from that generated evidence.</p>
 <li><strong>Controlled changes:</strong> AI and import flows—including deterministic evidence ingestion from notes</li>
 <p>and validation reports—create reviewable PatchProposals. Validators verify; humans approve; approved changes are recorded through ChangeRequests and Git-oriented bundles.</p>
-<li><strong>Local integration:</strong> the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services. The Workbench labels connected, read-only, stale-index, and demo states instead of implying a hosted production environment or user account.</li>
+<li><strong>Local integration:</strong> the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services. The Workbench exposes local search, evidence-backed findings, reports, and repository activity when the bound API supports them, and labels connected, read-only, stale-index, and demo states instead of implying a hosted production environment or user account.</li>
 </ul>
 <h2 id="practical-use-cases">Practical use cases</h2>
 <h3 id="sap-migration">SAP migration</h3>

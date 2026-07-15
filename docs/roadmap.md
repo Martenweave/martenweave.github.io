@@ -52,13 +52,14 @@ Status: active examples exist.
 
 ## Phase 5 — Optional Workbench
 
-Status: intentionally later.
+Status: a focused local Workbench is available as an official Core integration surface. It remains
+local-first and is deliberately not a hosted tenant platform.
 
-- lightweight review UI
-- review queues
-- impact explorer
-- model health dashboard
-- graph visualization where useful
+- connected model search and inspection
+- evidence-backed gap and assessment-finding views
+- reports, repository activity, and workspace capability states
+- impact and lineage exploration
+- controlled proposal and review workflows, which continue to expand
 
 The UI should support model truth, not replace it.
 
