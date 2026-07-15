@@ -13,7 +13,7 @@ Martenweave Core is a local-first, backend-first model governance layer. It turn
 - **Controlled changes:** AI and import flows—including deterministic evidence ingestion from notes
   and validation reports—create reviewable PatchProposals. Validators verify; humans approve;
   approved changes are recorded through ChangeRequests and Git-oriented bundles.
-- **Local integration:** the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services.
+- **Local integration:** the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services. The Workbench labels connected, read-only, stale-index, and demo states instead of implying a hosted production environment or user account.
 
 ## Practical use cases
 
