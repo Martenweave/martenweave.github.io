@@ -31,6 +31,24 @@ with `.venv/bin/python -m pip install -e ".[dev]"`.
 
 The generated SQLite and JSONL files are rebuildable. Canonical Markdown/YAML files remain the source of truth.
 
+## Start from an Existing Mapping Workbook
+
+For a new pilot, create a separate empty local repository from a source-to-target `.xlsx` workbook.
+Martenweave profiles the workbook and writes a deterministic draft proposal and bootstrap report; it
+does not apply inferred model objects.
+
+```bash
+.venv/bin/martenweave bootstrap-assessment \
+  --mapping ./sap-customer-mapping.xlsx \
+  --name "SAP Customer Pilot" \
+  --out-repo ./sap-customer-pilot
+
+.venv/bin/martenweave validate --repo ./sap-customer-pilot
+```
+
+Review the generated `PatchProposal` before creating any canonical model object. An unsupported
+workbook leaves a safe diagnostic report and no proposal.
+
 ## Search, Trace, and Impact
 
 ```bash

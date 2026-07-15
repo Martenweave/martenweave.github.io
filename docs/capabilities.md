@@ -7,7 +7,9 @@ Martenweave Core is a local-first, backend-first model governance layer. It turn
 - **Canonical model files:** domains, entities, attributes, contexts, field endpoints, mappings, value lists, issues, decisions, ChangeRequests, and PatchProposals.
 - **Deterministic validation:** identity, schema, cross-object references, and supported SAP context checks run before indexing.
 - **Derived access layers:** SQLite and JSONL indexes, search, structured query, trace, impact analysis, reports, and a local read-only viewer can be rebuilt from canonical files.
-- **Evidence and readiness work:** profile CSV/XLSX data, detect dataset-to-model gaps, prepare readiness and review outputs, and retain evidence separately from canonical truth.
+- **Evidence and readiness work:** profile CSV/XLSX data, initialize a proposal-only pilot from a
+  mapping workbook, detect dataset-to-model gaps, prepare readiness and review outputs, and retain
+  evidence separately from canonical truth.
 - **Controlled changes:** AI and import flows create reviewable PatchProposals. Validators verify; humans approve; approved changes are recorded through ChangeRequests and Git-oriented bundles.
 - **Local integration:** the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services.
 

@@ -30,6 +30,14 @@ The scope should be small enough to validate in weeks, yet real enough to contai
 - an agreed boundary for confidential information; and
 - a short review cadence for findings and proposed changes.
 
+## Beginning with a mapping workbook
+
+If an approved source-to-target workbook is the starting point, the local Core can initialize an
+empty pilot repository with `bootstrap-assessment`. It profiles the `.xlsx` evidence, creates a
+deterministic draft `PatchProposal`, and writes a bootstrap report for review. It does not convert
+inference into canonical truth automatically. Optional CSV/XLSX extracts can be profiled alongside
+the workbook without becoming model truth.
+
 ## Safe by design
 
 Pilot inputs remain inputs. Martenweave does not write back to SAP, and AI-assisted work produces proposals for review rather than direct canonical changes. The pilot can run entirely locally.

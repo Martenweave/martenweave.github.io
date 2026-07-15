@@ -222,6 +222,15 @@ python -m venv .venv
 .venv/bin/martenweave build-index --repo examples/customer_bp_model --jsonl
 .venv/bin/martenweave index-fresh --repo examples/customer_bp_model</code></pre>
 <p>The generated SQLite and JSONL files are rebuildable. Canonical Markdown/YAML files remain the source of truth.</p>
+<h2 id="start-from-an-existing-mapping-workbook">Start from an Existing Mapping Workbook</h2>
+<p>For a new pilot, create a separate empty local repository from a source-to-target <code>.xlsx</code> workbook. Martenweave profiles the workbook and writes a deterministic draft proposal and bootstrap report; it does not apply inferred model objects.</p>
+<pre><code class="language-bash">.venv/bin/martenweave bootstrap-assessment \
+  --mapping ./sap-customer-mapping.xlsx \
+  --name &quot;SAP Customer Pilot&quot; \
+  --out-repo ./sap-customer-pilot
+
+.venv/bin/martenweave validate --repo ./sap-customer-pilot</code></pre>
+<p>Review the generated <code>PatchProposal</code> before creating any canonical model object. An unsupported workbook leaves a safe diagnostic report and no proposal.</p>
 <h2 id="search-trace-and-impact">Search, Trace, and Impact</h2>
 <pre><code class="language-bash">.venv/bin/martenweave search &quot;Customer Group&quot; --repo examples/customer_bp_model
 .venv/bin/martenweave query --type Attribute --repo examples/customer_bp_model

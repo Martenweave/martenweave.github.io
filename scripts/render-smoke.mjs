@@ -4,7 +4,12 @@ import { once } from "node:events";
 import { chromium } from "playwright";
 
 const output = "output/render-smoke";
-const server = spawn("python3", ["-m", "http.server", "4173"], { stdio: "pipe" });
+const port = 4187;
+const server = spawn("python3", ["-m", "http.server", String(port)], { stdio: "pipe" });
+let serverExited = false;
+server.once("exit", () => {
+  serverExited = true;
+});
 const pages = ["/", "/docs.html"];
 const viewports = [
   { name: "desktop", width: 1440, height: 900 },
@@ -14,7 +19,8 @@ const viewports = [
 async function waitForServer() {
   for (let attempt = 0; attempt < 30; attempt += 1) {
     try {
-      const response = await fetch("http://127.0.0.1:4173/");
+      if (serverExited) throw new Error("Static preview exited before it became available.");
+      const response = await fetch(`http://127.0.0.1:${port}/`);
       if (response.ok) return;
     } catch {
       // The server is still starting.
@@ -39,7 +45,7 @@ try {
     });
     page.on("pageerror", (error) => consoleErrors.push(error.message));
     for (const route of pages) {
-      const response = await page.goto(`http://127.0.0.1:4173${route}`, { waitUntil: "networkidle" });
+      const response = await page.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: "networkidle" });
       const label = `${viewport.name}-${route === "/" ? "home" : "docs"}`;
       const screenshot = `${output}/${label}.png`;
       await page.screenshot({ path: screenshot, fullPage: true });
@@ -56,6 +62,8 @@ try {
   rmSync(output, { recursive: true, force: true });
   console.log("Rendered site smoke check passed.");
 } finally {
-  server.kill();
-  await once(server, "exit").catch(() => undefined);
+  if (!serverExited) {
+    server.kill();
+    await once(server, "exit").catch(() => undefined);
+  }
 }
