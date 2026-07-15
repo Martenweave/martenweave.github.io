@@ -2,6 +2,12 @@
 
 Martenweave helps when teams need traceability before decisions become expensive.
 
+- [SAP migration](/docs/use-cases/sap-migration.html)
+- [Master Data Management (MDM)](/docs/use-cases/mdm.html)
+- [SAP Master Data Governance (MDG)](/docs/use-cases/mdg.html)
+- [Data governance](/docs/use-cases/data-governance.html)
+- [Application management services (AMS)](/docs/use-cases/ams.html)
+
 ## SAP Migration Model Control
 
 See the [SAP migration use case](/docs/use-cases/sap-migration.html) for a focused walkthrough.

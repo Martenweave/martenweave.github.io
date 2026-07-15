@@ -96,6 +96,38 @@ const docRoutes = [
       "Use Martenweave as an open-source data model registry for SAP migration: canonical mappings, validation, dataset gap detection, lineage, impact analysis, and approved AI proposals.",
   },
   {
+    source: "use-cases/mdm.md",
+    output: "use-cases/mdm.html",
+    label: "MDM",
+    seoTitle: "MDM Use Case | Martenweave Data Model Registry",
+    description:
+      "Use Martenweave to govern master data definitions, ownership, global/local rules, value lists, lineage, and impact across MDM programs.",
+  },
+  {
+    source: "use-cases/mdg.md",
+    output: "use-cases/mdg.html",
+    label: "SAP MDG",
+    seoTitle: "SAP MDG Use Case | Martenweave Data Model Registry",
+    description:
+      "Use Martenweave to keep SAP MDG implementation knowledge traceable, validated, and aligned with an independent canonical model specification.",
+  },
+  {
+    source: "use-cases/data-governance.md",
+    output: "use-cases/data-governance.html",
+    label: "Data governance",
+    seoTitle: "Data Governance Use Case | Martenweave Data Model Registry",
+    description:
+      "Use Martenweave to make data governance policies, ownership, exceptions, lineage, and decisions operational and auditable.",
+  },
+  {
+    source: "use-cases/ams.md",
+    output: "use-cases/ams.html",
+    label: "AMS",
+    seoTitle: "AMS Use Case | Martenweave Data Model Registry",
+    description:
+      "Use Martenweave to preserve SAP migration and MDM knowledge for AMS teams and trace incidents to canonical model objects.",
+  },
+  {
     source: "architecture.md",
     output: "architecture.html",
     label: "Architecture",
@@ -124,9 +156,9 @@ const docRoutes = [
     source: "release-proof.md",
     output: "release-proof.html",
     label: "Release proof",
-    seoTitle: "Martenweave Core 0.5.0 Release Proof",
+    seoTitle: "Martenweave Core 0.6.0 Release Proof",
     description:
-      "Review the Apache-licensed martenweave-core 0.5.0 release, including package links, backend-first boundaries, validation, and rendered site checks.",
+      "Review the Apache-licensed martenweave-core 0.6.0 release, including package links, backend-first boundaries, validation, and rendered site checks.",
   },
   {
     source: "roadmap.md",
