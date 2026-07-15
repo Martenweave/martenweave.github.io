@@ -402,6 +402,14 @@ function markdownToHtml(markdown) {
       continue;
     }
 
+    const quoteMatch = line.match(/^>\s+(.+)$/);
+    if (quoteMatch) {
+      flushParagraph();
+      closeList();
+      html.push(`<blockquote>${renderInline(quoteMatch[1])}</blockquote>`);
+      continue;
+    }
+
     const unorderedMatch = line.match(/^\s*-\s+(.+)$/);
     if (unorderedMatch) {
       flushParagraph();
@@ -443,6 +451,31 @@ function textFromMarkdown(value) {
     .replace(/[`*_>#]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function reviewedDate(markdown) {
+  return markdown.match(/\*\*Reviewed:\s*([^*]+)\*\*/)?.[1]?.trim() ?? null;
+}
+
+function publicationDate(markdown) {
+  const reviewed = reviewedDate(markdown);
+  if (!reviewed) return null;
+  const date = new Date(reviewed);
+  return Number.isNaN(date.valueOf()) ? null : date.toISOString().slice(0, 10);
+}
+
+function readingTime(markdown) {
+  return Math.max(1, Math.ceil(textFromMarkdown(markdown).split(/\s+/).length / 220));
+}
+
+function contentsNavigation(body) {
+  const items = [...body.matchAll(/<h[1-3] id="([^"]+)">([\s\S]*?)<\/h[1-3]>/g)]
+    .map((match) => ({ id: match[1], text: textFromMarkdown(match[2]) }))
+    .slice(1, 15);
+  if (items.length < 2) return "";
+  return `<nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol>${items
+    .map((item) => `<li><a href="#${item.id}">${escapeHtml(item.text)}</a></li>`)
+    .join("")}</ol></nav>`;
 }
 
 function extractFaqEntities(markdown) {
@@ -490,10 +523,14 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
   };
 
   if (route.blog) {
-    const reviewed = markdown.match(/\*\*Reviewed:\s*([^*]+)\*\*/)?.[1]?.trim();
-    if (reviewed) contentEntity.dateModified = reviewed;
+    const date = publicationDate(markdown);
+    if (date) {
+      contentEntity.datePublished = date;
+      contentEntity.dateModified = date;
+    }
     contentEntity.articleSection = route.topic;
     contentEntity.keywords = route.topic;
+    contentEntity.timeRequired = `PT${readingTime(markdown)}M`;
   }
 
   if (articleType === "FAQPage") {
@@ -528,8 +565,8 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Docs",
-            item: `${productionOrigin}/docs.html`,
+            name: route.blog ? "Blog" : "Docs",
+            item: route.blog ? `${productionOrigin}/blog/` : `${productionOrigin}/docs.html`,
           },
           {
             "@type": "ListItem",
@@ -593,21 +630,36 @@ function renderPage(route) {
   const sourcePath = join(docsDir, route.source);
   const markdown = readFileSync(sourcePath, "utf8");
   const title = extractTitle(markdown);
+  const pageRoute = route.blog ? { ...route, seoTitle: `${title} | Martenweave` } : route;
   const body = markdownToHtml(markdown);
-  const canonicalPath = route.canonical ?? `/docs/${route.output}`;
+  const canonicalPath = pageRoute.canonical ?? `/docs/${pageRoute.output}`;
   const canonicalUrl = `${productionOrigin}${canonicalPath}`;
-  const robots = route.indexable === false ? "noindex, follow" : "index, follow, max-image-preview:large";
-  const jsonLd = renderJsonLd(route, markdown, title, canonicalUrl);
+  const robots = pageRoute.indexable === false ? "noindex, follow" : "index, follow, max-image-preview:large";
+  const jsonLd = renderJsonLd(pageRoute, markdown, title, canonicalUrl);
+  const published = publicationDate(markdown);
+  const blogIntro = pageRoute.blog
+    ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown))}</time>` : ""} · ${readingTime(markdown)} min read</p>${contentsNavigation(body)}</header>`
+    : `<p class="section-kicker">Public docs</p>`;
+  const related = pageRoute.blog
+    ? blogArticles
+        .filter((article) => article.topic === pageRoute.topic && article.slug !== pageRoute.slug)
+        .slice(0, 3)
+        .map((article) => `<li><a href="/blog/${article.slug}.html">${escapeHtml(article.description)}</a></li>`)
+        .join("")
+    : "";
+  const blogFooter = pageRoute.blog
+    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}`
+    : "";
 
   return `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${escapeHtml(route.seoTitle)}</title>
+    <title>${escapeHtml(pageRoute.seoTitle)}</title>
     <meta
       name="description"
-      content="${escapeAttribute(route.description)}"
+      content="${escapeAttribute(pageRoute.description)}"
     />
     <meta name="robots" content="${robots}" />
     <meta name="author" content="${authorName}" />
@@ -617,13 +669,14 @@ function renderPage(route) {
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Martenweave" />
     <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${escapeAttribute(route.seoTitle)}" />
-    <meta property="og:description" content="${escapeAttribute(route.description)}" />
+    <meta property="og:title" content="${escapeAttribute(pageRoute.seoTitle)}" />
+    <meta property="og:description" content="${escapeAttribute(pageRoute.description)}" />
     <meta property="og:image" content="${productionOrigin}/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Martenweave open-source data model registry" />
     <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+${pageRoute.blog && published ? `    <meta property="article:published_time" content="${published}" />\n    <meta property="article:modified_time" content="${published}" />` : ""}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttribute(route.seoTitle)}" />
     <meta name="twitter:description" content="${escapeAttribute(socialDescription)}" />
@@ -667,16 +720,17 @@ ${jsonLd}  </head>
       <aside class="doc-sidebar" aria-label="Documentation navigation">
 ${renderNav(route.output)}
       </aside>
-      <article class="doc-content${route.blog ? " blog-article" : ""}">
+      <article class="doc-content${pageRoute.blog ? " blog-article" : ""}">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <span aria-hidden="true">/</span>
-          <a href="${route.blog ? "/blog/" : "/docs.html"}">${route.blog ? "Blog" : "Docs"}</a>
+          <a href="${pageRoute.blog ? "/blog/" : "/docs.html"}">${pageRoute.blog ? "Blog" : "Docs"}</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">${escapeHtml(title)}</span>
         </nav>
-        <p class="section-kicker">Public docs</p>
+${blogIntro}
 ${body}
+${blogFooter}
       </article>
     </main>
 

@@ -950,6 +950,47 @@ pre {
   border-radius: var(--radius);
 }
 
+.blog-header {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.blog-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.article-contents,
+.blog-cta,
+.related-articles {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+}
+
+.article-contents ol {
+  margin-bottom: 0;
+}
+
+.blog-cta {
+  background: var(--paper);
+}
+
+.blog-cta p {
+  margin: 0.5rem 0;
+}
+
+.doc-content blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
