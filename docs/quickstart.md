@@ -49,6 +49,23 @@ does not apply inferred model objects.
 Review the generated `PatchProposal` before creating any canonical model object. An unsupported
 workbook leaves a safe diagnostic report and no proposal.
 
+## Turn Local Evidence into a Review Proposal
+
+Use a Markdown review note or CSV/XLSX validation report to create a source-hashed proposal for
+human review. The command writes the proposal to the explicit path you choose; it does not alter
+the active repository’s canonical model files.
+
+```bash
+.venv/bin/martenweave evidence ingest \
+  --repo examples/customer_bp_model \
+  --from ./validation-report.csv \
+  --out /tmp/evidence-proposal.md
+
+.venv/bin/martenweave proposal validate \
+  --repo examples/customer_bp_model \
+  --proposal /tmp/evidence-proposal.md
+```
+
 ## Search, Trace, and Impact
 
 ```bash
