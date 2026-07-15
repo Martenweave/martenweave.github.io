@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sap migration mapping spreadsheets | Martenweave</title>
+    <meta
+      name="description"
+      content="Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html" />
+    <meta property="og:title" content="sap migration mapping spreadsheets | Martenweave" />
+    <meta property="og:description" content="Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sap migration mapping spreadsheets | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html#webpage",
+                        "url": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html",
+                        "name": "sap migration mapping spreadsheets | Martenweave",
+                        "description": "Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why SAP Migration Mapping Spreadsheets Break Down",
+                                    "item": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html#content",
+                        "headline": "Why SAP Migration Mapping Spreadsheets Break Down",
+                        "name": "Why SAP Migration Mapping Spreadsheets Break Down",
+                        "description": "Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation.",
+                        "url": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/sap-migration-mapping-spreadsheets.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why SAP Migration Mapping Spreadsheets Break Down</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="why-sap-migration-mapping-spreadsheets-break-down">Why SAP Migration Mapping Spreadsheets Break Down</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>Most SAP migration programmes begin with a mapping spreadsheet.</p>
+<p>This is not a mistake.</p>
+<p>A spreadsheet is quick to create, familiar to business and technical teams, easy to filter and simple to exchange with an implementation partner. During early discovery, it may be the most practical place to record legacy columns, SAP target fields, transformation notes and open questions.</p>
+<p>The problem begins when the spreadsheet quietly becomes more than a working document.</p>
+<p>It becomes the model specification, decision log, issue register, value-mapping repository, test catalogue, migration status report and historical record of the programme—all at the same time.</p>
+<p>At that point, the team is no longer managing a spreadsheet. It is trying to operate a model-governance system through rows, comments, colours and file versions.</p>
+<p>We have seen the pattern repeatedly: the workbook continues to look structured while the knowledge behind it becomes increasingly difficult to validate, trace and change safely.</p>
+<p>The issue is not Excel itself. The issue is the amount of responsibility assigned to a document that was never designed to carry the complete implementation model.</p>
+<h2 id="a-mapping-workbook-usually-starts-well">A mapping workbook usually starts well</h2>
+<p>At the beginning of a migration, the task appears straightforward.</p>
+<p>For every source field, the team records:</p>
+<ul>
+<li>the source system;</li>
+<li>the source table or file;</li>
+<li>the source column;</li>
+<li>the target SAP object;</li>
+<li>the target field;</li>
+<li>a transformation rule;</li>
+<li>perhaps an owner and a status.</li>
+</ul>
+<p>For a small domain, this may work perfectly well.</p>
+<p>A workbook with 40 fields, one source system and one target context can remain understandable throughout the project. The team knows each other. Decisions are made quickly. Most exceptions can be explained in a short note.</p>
+<p>This is why we do not argue that every spreadsheet should immediately be replaced by a platform.</p>
+<p>The operating model changes when the programme introduces:</p>
+<ul>
+<li>several source systems;</li>
+<li>several countries;</li>
+<li>global and local requirements;</li>
+<li>different SAP organisational contexts;</li>
+<li>repeated migration waves;</li>
+<li>evolving target design;</li>
+<li>value mappings;</li>
+<li>conditional mandatory fields;</li>
+<li>data-quality rules;</li>
+<li>several consulting teams;</li>
+<li>formal approvals;</li>
+<li>testing evidence;</li>
+<li>post-go-live support requirements.</li>
+</ul>
+<p>The workbook grows, but the problem grows faster than the number of rows.</p>
+<h2 id="one-row-begins-carrying-several-different-meanings">One row begins carrying several different meanings</h2>
+<p>A typical migration row may appear to describe one mapping:</p>
+<pre><code class="language-text">Legacy customer class → SAP customer group</code></pre>
+<p>In practice, that row can contain several separate model decisions:</p>
+<ul>
+<li>the business meaning of customer classification;</li>
+<li>the legacy system in which it exists;</li>
+<li>the physical source column;</li>
+<li>the applicable country;</li>
+<li>the applicable sales area;</li>
+<li>the SAP target field;</li>
+<li>the transformation rule;</li>
+<li>the value mapping;</li>
+<li>the defaulting behaviour;</li>
+<li>the treatment of blank values;</li>
+<li>the responsible business owner;</li>
+<li>the approval decision;</li>
+<li>the validation rule;</li>
+<li>the migration-wave status.</li>
+</ul>
+<p>These elements have different lifecycles.</p>
+<p>The business definition may remain stable while the source column changes. The SAP endpoint may remain stable while the value mapping changes. One country may approve a local exception while the global definition remains untouched.</p>
+<p>A spreadsheet row tends to compress these separate objects into one visual unit. That makes the document easy to read initially, but difficult to maintain precisely.</p>
+<p>When one part changes, the team has to determine manually which other parts of the row still remain valid.</p>
+<h2 id="context-is-usually-stored-as-prose">Context is usually stored as prose</h2>
+<p>SAP master data is highly contextual.</p>
+<p>A customer attribute may apply:</p>
+<ul>
+<li>centrally;</li>
+<li>by company code;</li>
+<li>by sales area;</li>
+<li>by partner function;</li>
+<li>by country;</li>
+<li>by business process.</li>
+</ul>
+<p>A supplier attribute may vary by purchasing organisation or company code. A material attribute may apply at basic-data, plant, storage-location, sales or valuation level.</p>
+<p>The mapping workbook often represents this through:</p>
+<ul>
+<li>a free-text context column;</li>
+<li>comments;</li>
+<li>different worksheet tabs;</li>
+<li>repeated rows;</li>
+<li>colour coding;</li>
+<li>naming conventions understood by the current team.</li>
+</ul>
+<p>That works until someone needs to answer a precise question:</p>
+<p>&gt; Does this rule apply to every sales area, only to one country, or only to records created through a particular process?</p>
+<p>If the context is not represented as a structured relationship, the answer depends on interpretation.</p>
+<p>This creates two common errors.</p>
+<p>First, genuinely different requirements are combined because they use the same field name.</p>
+<p>Second, identical requirements are duplicated because they appear in different tabs or project streams.</p>
+<p>Both errors increase review effort and make later impact analysis unreliable.</p>
+<h2 id="field-names-are-not-stable-identifiers">Field names are not stable identifiers</h2>
+<p>Most mapping workbooks identify objects by labels:</p>
+<ul>
+<li>Customer Group;</li>
+<li>Tax Number;</li>
+<li>Partner Function;</li>
+<li>Payment Terms;</li>
+<li>Material Status.</li>
+</ul>
+<p>Labels are useful for people. They are weak identifiers for a model.</p>
+<p>The same label may refer to different contexts. Different labels may refer to the same business concept. A name may change after a design workshop while the underlying attribute remains the same.</p>
+<p>Physical fields create another problem.</p>
+<p>A target such as <code>KNVV-KDGRP</code> may be unambiguous to an SAP specialist, but the business meaning still depends on context and intended use. The same business attribute may also appear in an interface model, an MDG entity, a migration template and a validation report under different names.</p>
+<p>Without stable object identifiers, relationships are maintained through text matching and team memory.</p>
+<p>This makes automated validation difficult. It also makes it harder to connect mappings to tickets, decisions, datasets and test evidence.</p>
+<h2 id="the-workbook-describes-the-expected-data-not-necessarily-the-available-data">The workbook describes the expected data, not necessarily the available data</h2>
+<p>A mapping workbook is usually design-driven.</p>
+<p>It describes what the source-to-target transformation is supposed to be.</p>
+<p>The actual migration dataset may tell a different story:</p>
+<ul>
+<li>the expected column is absent;</li>
+<li>the column uses a different name;</li>
+<li>the data type differs;</li>
+<li>mandatory values are blank;</li>
+<li>unexpected codes appear;</li>
+<li>a reference value has no mapping;</li>
+<li>a field exists only for some countries;</li>
+<li>the source extract contains columns not represented in the model.</li>
+</ul>
+<p>These gaps are often discovered manually during file reviews or during mock-load preparation.</p>
+<p>SAP itself recommends curating master data early, before an S/4HANA implementation, because the value of the target processes depends heavily on clean and correct master data.</p>
+<p>However, a spreadsheet does not automatically prove that the current dataset matches the approved model.</p>
+<p>A mapping row can be marked “complete” while:</p>
+<ul>
+<li>the source field is unavailable;</li>
+<li>the transformation has never been tested;</li>
+<li>the value mapping covers only part of the data;</li>
+<li>the target requirement has changed;</li>
+<li>the relevant source extract belongs to another wave.</li>
+</ul>
+<p>This is one reason mapping completion and migration readiness should not be treated as the same metric.</p>
+<h2 id="status-columns-create-an-illusion-of-control">Status columns create an illusion of control</h2>
+<p>Most programmes eventually add a status column:</p>
+<ul>
+<li>Open;</li>
+<li>In progress;</li>
+<li>Mapped;</li>
+<li>Approved;</li>
+<li>Tested;</li>
+<li>Complete.</li>
+</ul>
+<p>The status appears objective, but its meaning is often unclear.</p>
+<p>What does “Approved” mean?</p>
+<ul>
+<li>The business definition was approved?</li>
+<li>The target field was approved?</li>
+<li>The transformation was approved?</li>
+<li>The value mapping was approved?</li>
+<li>The migration dataset was checked?</li>
+<li>The rule was configured in MDG?</li>
+<li>The scenario passed testing?</li>
+</ul>
+<p>A single status cannot reliably represent several independent states.</p>
+<p>This leads to false progress reporting.</p>
+<p>A workbook may show 95% completion while many rows still contain:</p>
+<ul>
+<li>unresolved local requirements;</li>
+<li>incomplete value mappings;</li>
+<li>missing source data;</li>
+<li>untested default logic;</li>
+<li>undocumented exceptions;</li>
+<li>decisions awaiting confirmation.</li>
+</ul>
+<p>The percentage is mathematically correct according to the selected column. It is operationally misleading.</p>
+<h2 id="decisions-are-separated-from-the-objects-they-affect">Decisions are separated from the objects they affect</h2>
+<p>Important mapping decisions are rarely made inside the spreadsheet alone.</p>
+<p>They emerge from:</p>
+<ul>
+<li>design workshops;</li>
+<li>emails;</li>
+<li>Jira discussions;</li>
+<li>defect analysis;</li>
+<li>calls with local business teams;</li>
+<li>data profiling;</li>
+<li>MDG configuration reviews;</li>
+<li>migration test results.</li>
+</ul>
+<p>The workbook usually preserves only the final instruction:</p>
+<p>&gt; Map value A to value B.</p>
+<p>It may not preserve:</p>
+<ul>
+<li>why the decision was made;</li>
+<li>who approved it;</li>
+<li>which alternatives were rejected;</li>
+<li>which evidence supported it;</li>
+<li>whether it is temporary;</li>
+<li>which countries or systems it applies to;</li>
+<li>which downstream objects depend on it.</li>
+</ul>
+<p>A comment such as “confirmed with business” is not a durable decision record.</p>
+<p>Six months later, a new architect may see the rule and reasonably question it. The team then repeats part of the original analysis because the decision cannot be reconstructed confidently.</p>
+<p>This is expensive not because the question is complex, but because the evidence has become detached from the model.</p>
+<h2 id="version-control-becomes-social-rather-than-technical">Version control becomes social rather than technical</h2>
+<p>Mapping workbooks often acquire names such as:</p>
+<pre><code class="language-text">Customer_Mapping_Final_v7_Approved_Updated.xlsx</code></pre>
+<p>The file name is doing work that should be handled by a controlled change process.</p>
+<p>Teams try to manage this through SharePoint, Teams or document repositories. These tools can preserve file versions, but they do not necessarily explain the model-level difference between two versions.</p>
+<p>A document history may tell us that a file changed on Tuesday.</p>
+<p>It may not tell us:</p>
+<ul>
+<li>which mapping objects changed;</li>
+<li>which fields were added;</li>
+<li>which transformation rules were removed;</li>
+<li>whether a value list changed;</li>
+<li>which dependencies are now affected;</li>
+<li>which approval is required.</li>
+</ul>
+<p>The result is a manual comparison exercise.</p>
+<p>People compare worksheets, highlight cells and send summaries through email. That process works until several teams modify the workbook in parallel.</p>
+<p>At that point, version control becomes a negotiation between people:</p>
+<ul>
+<li>Which copy is current?</li>
+<li>Whose updates should be retained?</li>
+<li>Was the local-country version merged?</li>
+<li>Did the approved rule survive the latest update?</li>
+<li>Was the test team using the same version?</li>
+</ul>
+<h2 id="impact-analysis-becomes-a-meeting">Impact analysis becomes a meeting</h2>
+<p>Suppose the project changes one SAP target attribute.</p>
+<p>The team needs to identify:</p>
+<ul>
+<li>source fields feeding it;</li>
+<li>transformation logic;</li>
+<li>value mappings;</li>
+<li>country variants;</li>
+<li>migration datasets;</li>
+<li>validation rules;</li>
+<li>test cases;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>related decisions;</li>
+<li>affected owners.</li>
+</ul>
+<p>In a spreadsheet-based model, these relationships may exist implicitly across multiple tabs and documents.</p>
+<p>The impact analysis therefore takes the form of:</p>
+<ol>
+<li>searching the workbook;</li>
+<li>asking subject-matter experts;</li>
+<li>checking Jira;</li>
+<li>reviewing design documents;</li>
+<li>comparing test cases;</li>
+<li>contacting local teams;</li>
+<li>preparing another spreadsheet with the results.</li>
+</ol>
+<p>The team may eventually produce the correct answer. The process remains slow and difficult to reproduce.</p>
+<p>For critical changes, meetings are appropriate. The problem is when the meeting is required simply to reconstruct relationships the project already knew.</p>
+<h2 id="multiple-workbooks-create-multiple-truths">Multiple workbooks create multiple truths</h2>
+<p>Large programmes rarely have only one mapping workbook.</p>
+<p>They may have separate files for:</p>
+<ul>
+<li>Customer;</li>
+<li>Supplier;</li>
+<li>Business Partner;</li>
+<li>Material;</li>
+<li>Finance;</li>
+<li>countries;</li>
+<li>migration waves;</li>
+<li>interfaces;</li>
+<li>value mappings;</li>
+<li>validation rules;</li>
+<li>defects.</li>
+</ul>
+<p>The files may share concepts without sharing structure.</p>
+<p>A country workbook may override a global rule. A value-mapping file may use different target labels. A defect workbook may introduce a workaround that never reaches the main mapping.</p>
+<p>This is where the phrase “single source of truth” becomes misleading.</p>
+<p>The organisation may have designated one file as the official source. Operationally, the real truth is distributed across all the places where decisions continue to be made.</p>
+<p>Declaring one workbook authoritative does not make all other knowledge disappear.</p>
+<p>The task is to connect the knowledge and control how approved changes enter the model.</p>
+<h2 id="testing-exposes-the-limitations-late">Testing exposes the limitations late</h2>
+<p>During testing, the project starts asking questions the mapping workbook was not built to answer:</p>
+<ul>
+<li>Which rules have test coverage?</li>
+<li>Which attributes were tested with representative data?</li>
+<li>Which country exceptions remain untested?</li>
+<li>Which failed tests indicate a data problem?</li>
+<li>Which failures indicate a model problem?</li>
+<li>Which defects changed an approved mapping?</li>
+<li>Which dataset version was used?</li>
+<li>Which evidence supports cutover approval?</li>
+</ul>
+<p>Teams often add more columns or create new worksheets.</p>
+<p>This increases the amount of information but not necessarily the quality of the relationships.</p>
+<p>A test case number in a cell does not prove that the test covers the intended rule. A defect number does not reveal which other mappings may be affected by the correction.</p>
+<p>The workbook continues to expand because every new project concern is represented as another column.</p>
+<p>Eventually, it becomes difficult to distinguish between:</p>
+<ul>
+<li>model structure;</li>
+<li>delivery status;</li>
+<li>historical notes;</li>
+<li>temporary analysis;</li>
+<li>operational evidence.</li>
+</ul>
+<h2 id="handover-is-where-the-real-cost-becomes-visible">Handover is where the real cost becomes visible</h2>
+<p>While the original team is present, fragmented knowledge can remain usable.</p>
+<p>People know:</p>
+<ul>
+<li>which tabs matter;</li>
+<li>which comments are obsolete;</li>
+<li>which exceptions are intentional;</li>
+<li>which business owner approved a workaround;</li>
+<li>which file should be ignored;</li>
+<li>which transformation was implemented differently from the specification.</li>
+</ul>
+<p>After go-live, that context starts disappearing.</p>
+<p>The AMS team receives the files but not always the mental model required to interpret them.</p>
+<p>The team may know that a field is mapped. It may not know:</p>
+<ul>
+<li>why;</li>
+<li>under which conditions;</li>
+<li>based on whose decision;</li>
+<li>against which source data;</li>
+<li>with what downstream impact.</li>
+</ul>
+<p>At this point, the organisation begins paying to reconstruct knowledge that it already paid to create during the implementation.</p>
+<h2 id="the-answer-is-not-to-ban-spreadsheets">The answer is not to ban spreadsheets</h2>
+<p>We do not recommend removing Excel from SAP migration programmes.</p>
+<p>Spreadsheets remain useful for:</p>
+<ul>
+<li>initial inventories;</li>
+<li>business review;</li>
+<li>bulk editing;</li>
+<li>data analysis;</li>
+<li>offline collaboration;</li>
+<li>import and export;</li>
+<li>familiar review formats.</li>
+</ul>
+<p>The better distinction is:</p>
+<p>&gt; A spreadsheet can be an input and review surface without being the only source of model truth.</p>
+<p>This allows teams to retain the practical value of Excel while moving critical relationships into a structure that can be validated and traced.</p>
+<h2 id="what-a-governed-mapping-model-requires">What a governed mapping model requires</h2>
+<p>A stronger operating model separates the concerns compressed into workbook rows.</p>
+<h3 id="business-attributes">Business attributes</h3>
+<p>The business concept should exist independently from any physical source or target field.</p>
+<h3 id="source-and-target-endpoints">Source and target endpoints</h3>
+<p>Legacy columns, files, SAP fields and interface attributes should be represented explicitly.</p>
+<h3 id="context">Context</h3>
+<p>Country, company code, sales area, purchasing organisation and other relevant contexts should be structured rather than stored only in prose.</p>
+<h3 id="mappings-and-transformations">Mappings and transformations</h3>
+<p>The connection between source and target should be its own object, with status, ownership and evidence.</p>
+<h3 id="value-lists-and-value-mappings">Value lists and value mappings</h3>
+<p>Code translations should be separately reviewable and testable.</p>
+<h3 id="validation-rules">Validation rules</h3>
+<p>A model should state what must be checked and under which context.</p>
+<h3 id="decisions-and-issues">Decisions and issues</h3>
+<p>Approved choices, unresolved gaps and exceptions should be linked to the affected model objects.</p>
+<h3 id="datasets">Datasets</h3>
+<p>The expected model should be compared with actual source extracts.</p>
+<h3 id="change-proposals">Change proposals</h3>
+<p>Changes should be reviewed as identifiable differences rather than passed through revised file copies.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave around this separation.</p>
+<p>Martenweave stores canonical model objects for domains, entities, attributes, relationships, field endpoints, mappings, value lists, rules, evidence, decisions and change proposals.</p>
+<p>Its purpose is not to remove the project’s existing tools.</p>
+<p>Instead, it provides a model-control layer between them:</p>
+<pre><code class="language-text">Excel, datasets, tickets, reports and decisions
+                         ↓
+                   Martenweave
+     validated model objects and relationships
+                         ↓
+         migration, MDG, testing and AMS</code></pre>
+<p>The current Martenweave core supports canonical Markdown and YAML model files, deterministic validation, generated SQLite and JSONL indexes, search, trace and impact analysis, dataset profiling, gap detection, reports and reviewable patch proposals.</p>
+<p>For SAP migration, it can connect legacy source columns to SAP field endpoints, represent organisational context, compare datasets with the expected model and trace dependencies before a rule changes.</p>
+<p>We deliberately do not position this as a replacement for SAP MDG.</p>
+<p>SAP MDG provides operational master-data governance, including governed models, golden records, matching, consolidation, workflows, quality monitoring and auditability.</p>
+<p>Martenweave addresses the implementation knowledge surrounding that platform:</p>
+<ul>
+<li>what the team intends to build;</li>
+<li>how legacy data maps into it;</li>
+<li>what evidence supports the design;</li>
+<li>what remains incomplete;</li>
+<li>what a change will affect;</li>
+<li>what needs to survive into support.</li>
+</ul>
+<h2 id="a-practical-transition-from-a-mapping-workbook">A practical transition from a mapping workbook</h2>
+<p>A programme does not need to convert every cell immediately.</p>
+<p>We recommend beginning with one critical domain and a limited set of objects.</p>
+<h3 id="step-1-profile-the-workbook">Step 1: Profile the workbook</h3>
+<p>Identify which columns represent:</p>
+<ul>
+<li>business definitions;</li>
+<li>source fields;</li>
+<li>targets;</li>
+<li>transformations;</li>
+<li>contexts;</li>
+<li>owners;</li>
+<li>statuses;</li>
+<li>decisions;</li>
+<li>unresolved issues.</li>
+</ul>
+<p>The objective is to understand what the workbook is already trying to model.</p>
+<h3 id="step-2-assign-stable-identifiers">Step 2: Assign stable identifiers</h3>
+<p>Create identifiers for the business attributes, source fields, SAP endpoints and mappings.</p>
+<p>This allows other project artefacts to refer to the same objects reliably.</p>
+<h3 id="step-3-separate-context-from-comments">Step 3: Separate context from comments</h3>
+<p>Move repeated organisational and country conditions into explicit model relationships.</p>
+<p>Keep free text for explanation, not for the basic structure.</p>
+<h3 id="step-4-connect-the-current-dataset">Step 4: Connect the current dataset</h3>
+<p>Profile an actual migration extract and compare it with the expected endpoints.</p>
+<p>This usually reveals gaps that cannot be seen from the mapping workbook alone.</p>
+<h3 id="step-5-validate-references-and-completeness">Step 5: Validate references and completeness</h3>
+<p>Check for:</p>
+<ul>
+<li>missing targets;</li>
+<li>broken references;</li>
+<li>duplicate IDs;</li>
+<li>mappings without owners;</li>
+<li>unresolved transformations;</li>
+<li>expected fields absent from the dataset.</li>
+</ul>
+<h3 id="step-6-produce-a-reviewable-report">Step 6: Produce a reviewable report</h3>
+<p>Do not ask stakeholders to inspect the entire model repository.</p>
+<p>Export the information into formats appropriate for each role:</p>
+<ul>
+<li>a workbook for business review;</li>
+<li>a gap report for migration;</li>
+<li>an impact report for architects;</li>
+<li>a readiness summary for management;</li>
+<li>a change proposal for approval.</li>
+</ul>
+<p>The governed model should improve collaboration, not force every stakeholder to work like a developer.</p>
+<h2 id="what-managers-should-ask-about-a-mapping-workbook">What managers should ask about a mapping workbook</h2>
+<p>A manager does not need to review thousands of mapping rows.</p>
+<p>A smaller set of questions is more useful:</p>
+<ol>
+<li>Does every critical mapping have a clear owner?</li>
+<li>Can we distinguish business approval from technical completion?</li>
+<li>Are country and organisational contexts represented explicitly?</li>
+<li>Has the current dataset been compared with the approved model?</li>
+<li>Can we identify mappings with unresolved transformations?</li>
+<li>Can we identify missing value mappings?</li>
+<li>Can we trace a rule back to its decision and evidence?</li>
+<li>Can we assess the impact of a target-field change?</li>
+<li>Can we compare changes between two approved versions?</li>
+<li>Will the AMS team understand the mappings after the project ends?</li>
+</ol>
+<p>If these questions require manual reconciliation across several files and several people, the programme has outgrown a spreadsheet-only operating model.</p>
+<h2 id="when-a-spreadsheet-is-still-enough">When a spreadsheet is still enough</h2>
+<p>We should also be clear about the opposite case.</p>
+<p>A dedicated model registry may be unnecessary when:</p>
+<ul>
+<li>the domain is small;</li>
+<li>there is one source and one target;</li>
+<li>context differences are limited;</li>
+<li>the team is stable;</li>
+<li>the project is short;</li>
+<li>mappings rarely change;</li>
+<li>formal lineage and impact analysis are not required;</li>
+<li>the knowledge will not need to be reused.</li>
+</ul>
+<p>In that situation, introducing additional structure may create more overhead than value.</p>
+<p>The need for a governed model increases with complexity, duration, number of teams and cost of change.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Mapping spreadsheets do not fail because teams use them badly.</p>
+<p>They fail because successful programmes keep asking them to carry more kinds of knowledge:</p>
+<ul>
+<li>model definitions;</li>
+<li>technical mappings;</li>
+<li>local exceptions;</li>
+<li>evidence;</li>
+<li>decisions;</li>
+<li>quality rules;</li>
+<li>dataset readiness;</li>
+<li>test coverage;</li>
+<li>change history.</li>
+</ul>
+<p>Eventually, a document designed for flexible tabular work becomes the informal database of the implementation.</p>
+<p>We prefer a different division of responsibility.</p>
+<p>Spreadsheets remain valuable for collection, analysis and review. The approved model, its relationships and its change history should live in a structure that can be validated, traced and compared.</p>
+<p>That is the role we designed Martenweave to support.</p>
+<p>The objective is not to produce a more sophisticated mapping document.</p>
+<p>The objective is to help the team know what has been agreed, what remains incomplete, what the current data can support and what will be affected by the next change.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>We are Metalhatscats, the team behind Martenweave.</p>
+<p>We work on practical approaches to SAP migration, MDM, model governance and agent-assisted enterprise delivery. Our focus is not to replace every platform already used by a programme. We focus on the model knowledge that often remains fragmented between those platforms—and on making that knowledge easier to validate, review and hand over.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a central governance layer supporting governed models, golden records, matching and consolidation, collaborative workflows, data-quality monitoring and audit trails. SAP also recommends curating master data early, before an S/4HANA implementation.</p>
+<p>Martenweave product scope, current capabilities and intended users are documented in the public product materials.</p>
+<p>The Martenweave SAP migration scenario documents field-level mappings, contextual modelling, deterministic validation, dataset gap detection, lineage, impact analysis and human-reviewed change proposals.</p>
+<p>SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates. Martenweave is an independent project and is not affiliated with or endorsed by SAP.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

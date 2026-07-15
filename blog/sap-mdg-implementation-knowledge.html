@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sap mdg implementation knowledge | Martenweave</title>
+    <meta
+      name="description"
+      content="Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html" />
+    <meta property="og:title" content="sap mdg implementation knowledge | Martenweave" />
+    <meta property="og:description" content="Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sap mdg implementation knowledge | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html#webpage",
+                        "url": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html",
+                        "name": "sap mdg implementation knowledge | Martenweave",
+                        "description": "Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "SAP MDG Manages Master Data. Who Manages the Implementation Knowledge?",
+                                    "item": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html#content",
+                        "headline": "SAP MDG Manages Master Data. Who Manages the Implementation Knowledge?",
+                        "name": "SAP MDG Manages Master Data. Who Manages the Implementation Knowledge?",
+                        "description": "Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change.",
+                        "url": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">SAP MDG Manages Master Data. Who Manages the Implementation Knowledge?</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="sap-mdg-manages-master-data-who-manages-the-implementation-knowledge">SAP MDG Manages Master Data. Who Manages the Implementation Knowledge?</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</p>
+<p>It does not automatically manage every assumption, mapping decision, unresolved question, source-data limitation and design compromise that shaped the implementation.</p>
+<p>That distinction matters.</p>
+<p>An SAP MDG programme can have a working system, approved workflows and a documented architecture while still depending heavily on spreadsheets, ticket histories and the memory of a few consultants. The platform may know the current value of an attribute. The project team may still struggle to explain why that attribute exists, where its definition came from, which legacy fields feed it and what will be affected if it changes.</p>
+<p>This is the implementation-knowledge problem.</p>
+<p>It is rarely treated as a separate workstream. It usually becomes visible late: during migration testing, a design review, a country rollout, an audit request or the handover to application support.</p>
+<p>By then, reconstructing the reasoning is expensive.</p>
+<h2 id="sap-mdg-solves-an-important-operational-problem">SAP MDG solves an important operational problem</h2>
+<p>SAP positions Master Data Governance as a central hub for master data management and governance. Its current capabilities include governed models, golden records, matching and consolidation, change-request workflows, data-quality monitoring, mass processing and auditable changes.</p>
+<p>That is substantial scope.</p>
+<p>An organisation may use SAP MDG to govern customers, suppliers, products, financial objects or other master-data domains. Data stewards can participate in approval workflows. Business rules can be applied and monitored. Changes can be recorded and distributed into a wider SAP and non-SAP landscape.</p>
+<p>When implemented properly, MDG becomes part of the operational data-management architecture.</p>
+<p>But an implementation programme produces another kind of asset alongside the system itself: the accumulated knowledge used to design and deliver it.</p>
+<p>That knowledge includes much more than the final configuration.</p>
+<p>It includes:</p>
+<ul>
+<li>competing definitions collected from business units;</li>
+<li>differences between legacy systems;</li>
+<li>field mappings and transformation logic;</li>
+<li>rejected alternatives;</li>
+<li>country-specific exceptions;</li>
+<li>unresolved ownership questions;</li>
+<li>source-data limitations;</li>
+<li>test evidence;</li>
+<li>migration defects;</li>
+<li>reasons behind validation rules;</li>
+<li>decisions made during workshops;</li>
+<li>temporary assumptions that later became permanent;</li>
+<li>relationships between requirements, mappings, configuration and datasets.</li>
+</ul>
+<p>Some of this may eventually appear in MDG configuration. Much of it will not.</p>
+<h2 id="the-implementation-knows-more-than-the-platform">The implementation knows more than the platform</h2>
+<p>Consider a relatively ordinary attribute such as a customer classification, tax identifier or purchasing block.</p>
+<p>The operational system may know:</p>
+<ul>
+<li>the current value;</li>
+<li>the allowed values;</li>
+<li>who approved a change;</li>
+<li>when the change became active.</li>
+</ul>
+<p>The implementation team may also need to know:</p>
+<ul>
+<li>which legacy columns supplied the value;</li>
+<li>whether different source systems used different meanings;</li>
+<li>which company codes or sales areas require it;</li>
+<li>whether blank is technically accepted but operationally unsafe;</li>
+<li>which value mappings were agreed for each country;</li>
+<li>which migration wave introduced an exception;</li>
+<li>which defect caused the current validation rule;</li>
+<li>which downstream interfaces consume the value;</li>
+<li>whether changing the definition affects historical loads;</li>
+<li>who has the authority to revisit the decision.</li>
+</ul>
+<p>These are related questions, but they are not the same problem.</p>
+<p>MDG governs the operational object. The programme still needs a controlled way to govern the knowledge surrounding the object.</p>
+<p>Without that layer, important reasoning remains distributed across the delivery environment.</p>
+<h2 id="where-the-knowledge-usually-ends-up">Where the knowledge usually ends up</h2>
+<p>Most programmes already have tools for documentation and collaboration. The problem is not a complete lack of repositories.</p>
+<p>The problem is fragmentation.</p>
+<p>A typical implementation may use:</p>
+<ul>
+<li>Excel for source-to-target mappings;</li>
+<li>Jira or Azure DevOps for requirements and defects;</li>
+<li>Confluence or SharePoint for design documents;</li>
+<li>PowerPoint for governance decisions;</li>
+<li>email and Teams for clarifications;</li>
+<li>test tools for evidence;</li>
+<li>local files for data analysis;</li>
+<li>SAP configuration for the implemented result;</li>
+<li>consultants’ memory for the connections between them.</li>
+</ul>
+<p>Each tool may be appropriate for its own purpose. Together, however, they rarely form a coherent model of the programme.</p>
+<p>A ticket can describe a missing rule without identifying every affected attribute. A mapping workbook can show a source and target field without preserving the decision that justified the transformation. A design document can describe the target model without reflecting later migration exceptions. Test evidence may prove that a scenario worked without showing which part of the model it actually covered.</p>
+<p>The missing element is not another document.</p>
+<p>It is a reliable set of relationships between the documents, data, model objects, rules, decisions and changes.</p>
+<h2 id="this-becomes-a-delivery-risk">This becomes a delivery risk</h2>
+<p>Implementation knowledge may sound like a documentation concern. In practice, it affects schedule, cost and quality.</p>
+<h3 id="changes-take-longer-to-analyse">Changes take longer to analyse</h3>
+<p>A field change that appears small may affect mappings, value lists, datasets, validations, interfaces, reports and country variants.</p>
+<p>When those relationships are not explicit, impact analysis becomes a search exercise. Architects organise meetings. Consultants inspect old workbooks. Teams ask who remembers the original decision.</p>
+<p>The technical change may require a day. Establishing what the change means may require a week.</p>
+<h3 id="gaps-are-discovered-during-testing-instead-of-design">Gaps are discovered during testing instead of design</h3>
+<p>A model can appear complete when viewed as a list of attributes.</p>
+<p>The gaps often sit between artefacts:</p>
+<ul>
+<li>the model expects a field that the source dataset does not contain;</li>
+<li>the mapping exists, but the transformation rule is unresolved;</li>
+<li>a country requirement was recorded in a ticket but never added to the model;</li>
+<li>an MDG validation exists, but the migration team has no corresponding data-quality check;</li>
+<li>a value list is approved, but the legacy values have not been mapped.</li>
+</ul>
+<p>These are not isolated documentation errors. They produce failed loads, manual corrections and late design changes.</p>
+<h3 id="the-programme-becomes-dependent-on-individuals">The programme becomes dependent on individuals</h3>
+<p>The person who understands why a mapping works may not be the person who configured MDG.</p>
+<p>The architect who approved an exception may leave before cutover.</p>
+<p>A migration consultant may maintain a local workbook that no one else can interpret confidently.</p>
+<p>As long as those people remain available, the programme may appear controlled. Their absence exposes the actual operating model.</p>
+<h3 id="handover-transfers-files-instead-of-understanding">Handover transfers files instead of understanding</h3>
+<p>A typical handover package can contain hundreds of documents and still leave the AMS team unable to answer basic questions:</p>
+<ul>
+<li>Why does this rule exist?</li>
+<li>Which source requirement created it?</li>
+<li>Is the behaviour global or country-specific?</li>
+<li>Which mappings depend on it?</li>
+<li>Which tests prove it works?</li>
+<li>What should be reviewed before changing it?</li>
+</ul>
+<p>Document volume should not be confused with knowledge continuity.</p>
+<h2 id="who-should-manage-implementation-knowledge">Who should manage implementation knowledge?</h2>
+<p>The obvious answer is “the project team.” That is not sufficient.</p>
+<p>When ownership is shared across everyone, it is usually enforced by no one.</p>
+<p>The responsibility sits between several roles:</p>
+<ul>
+<li>the solution architect owns the coherence of the design;</li>
+<li>the data architect owns model structure and semantics;</li>
+<li>the migration lead owns source-to-target readiness;</li>
+<li>the MDG lead owns platform design and configuration;</li>
+<li>business owners approve definitions and policies;</li>
+<li>data stewards own operational governance;</li>
+<li>testing teams produce evidence;</li>
+<li>project management tracks scope, risks and decisions;</li>
+<li>AMS eventually inherits the result.</li>
+</ul>
+<p>None of these roles alone has the complete picture.</p>
+<p>The practical answer is therefore not to appoint one person as the keeper of every detail. It is to establish a model-control approach in which the relevant artefacts can be connected and validated.</p>
+<p>Ownership remains distributed. The model of the work becomes shared.</p>
+<h2 id="what-the-control-layer-should-contain">What the control layer should contain</h2>
+<p>A useful implementation-knowledge layer does not need to reproduce the entire MDG system.</p>
+<p>It should capture the parts of the programme that must remain explainable.</p>
+<p>At minimum, that means:</p>
+<h3 id="stable-model-objects">Stable model objects</h3>
+<p>Domains, entities, attributes, relationships, source fields, target endpoints, rules, value lists and mappings need stable identifiers.</p>
+<p>Names alone are not enough. Names change, repeat and become ambiguous.</p>
+<p>A stable identifier allows a ticket, test case, dataset gap or decision to refer to the same model object even when the label evolves.</p>
+<h3 id="explicit-context">Explicit context</h3>
+<p>The same business attribute may behave differently by company code, sales area, purchasing organisation, country or business process.</p>
+<p>The context should be part of the model, not buried in a comment column.</p>
+<p>Without explicit context, teams create apparently duplicate rules that are actually different requirements—or combine requirements that should remain separate.</p>
+<h3 id="decisions-and-evidence">Decisions and evidence</h3>
+<p>A model should show not only the approved result but also the relevant reason and supporting evidence.</p>
+<p>That does not mean preserving every meeting transcript. It means retaining the decisions that another architect or support team would need to understand or safely change the model.</p>
+<h3 id="dataset-relationships">Dataset relationships</h3>
+<p>The target model and the actual source data should be compared continuously.</p>
+<p>A model that is internally consistent can still be impossible to populate from the available datasets.</p>
+<p>Dataset profiling and model-gap detection expose this mismatch before it becomes a load defect.</p>
+<h3 id="change-impact">Change impact</h3>
+<p>Before a mapping, attribute or rule is changed, the team should be able to identify affected objects.</p>
+<p>Impact analysis does not eliminate architectural judgement. It gives the architect a defensible starting point.</p>
+<h3 id="controlled-proposals">Controlled proposals</h3>
+<p>Changes should move through a reviewable process.</p>
+<p>This becomes especially important when AI is used to extract information from tickets, propose mappings or draft model updates. AI can accelerate analysis, but it should not silently rewrite the approved model.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave is designed for this control layer.</p>
+<p>It turns information from spreadsheets, datasets, tickets, validation reports, decisions and SAP context into structured model objects. These objects can be validated, searched, traced, reviewed and exported.</p>
+<p>For SAP migration and MDG programmes, that means the team can represent:</p>
+<ul>
+<li>source and target fields;</li>
+<li>business attributes;</li>
+<li>organisational context;</li>
+<li>mappings and transformations;</li>
+<li>value lists and translations;</li>
+<li>validation rules;</li>
+<li>ownership;</li>
+<li>issues and decisions;</li>
+<li>change requests;</li>
+<li>datasets and detected gaps;</li>
+<li>relationships used for lineage and impact analysis.</li>
+</ul>
+<p>The current Martenweave approach uses canonical model files as the source of truth, deterministic validation before indexing, generated search and SQLite indexes, dataset profiling, gap detection, impact analysis and human-reviewed patch proposals.</p>
+<p>This is intentionally narrower than SAP MDG.</p>
+<p>Martenweave does not create or distribute operational golden records. It does not replace stewardship workflows, mass processing or central master-data maintenance. The project documentation explicitly positions it beside SAP MDG and enterprise tools rather than as their replacement.</p>
+<p>The two layers have different responsibilities:</p>
+<p>| SAP MDG | Martenweave | |---|---| | Governs operational master data | Governs implementation model knowledge | | Runs change-request workflows | Connects design, mapping, evidence and impact | | Creates and maintains governed records | Maintains a validated specification of the model | | Supports stewardship and data quality | Detects model and dataset gaps | | Records operational changes | Preserves design and delivery reasoning | | Distributes or integrates master data | Prepares reviewable changes and implementation context |</p>
+<p>The boundary will vary by organisation. The principle is more important than the exact tool split.</p>
+<p>The operational platform should not be forced to become the complete memory of the implementation. The project repository should not pretend to be an operational MDM system.</p>
+<h2 id="how-this-works-across-the-programme-lifecycle">How this works across the programme lifecycle</h2>
+<h3 id="discovery">Discovery</h3>
+<p>The team collects existing models, source datasets, mapping workbooks, business definitions and unresolved questions.</p>
+<p>Instead of treating discovery as a document-production phase, the programme begins building structured model objects.</p>
+<p>Conflicts become visible early:</p>
+<ul>
+<li>two definitions for the same attribute;</li>
+<li>multiple owners;</li>
+<li>different country requirements;</li>
+<li>missing relationships;</li>
+<li>unsupported source fields;</li>
+<li>unclear transformation logic.</li>
+</ul>
+<h3 id="design">Design</h3>
+<p>Architects define the target domains, entities, attributes, relationships and rules.</p>
+<p>Business definitions can be separated from physical SAP fields while still being connected to them.</p>
+<p>Decisions are attached to the affected objects rather than stored only in meeting notes.</p>
+<h3 id="build">Build</h3>
+<p>As MDG configuration progresses, the team can compare implementation scope with the approved model.</p>
+<p>Unimplemented rules and attributes remain visible. Changes can be assessed against related mappings, datasets and decisions.</p>
+<h3 id="migration">Migration</h3>
+<p>Source datasets are profiled and compared with expected model endpoints.</p>
+<p>Martenweave’s SAP migration scenario is designed to link legacy columns to SAP field endpoints, validate context, detect dataset gaps and trace relationships through mappings and attributes.</p>
+<p>This is where the model stops being a static design artefact and becomes a practical readiness control.</p>
+<h3 id="testing">Testing</h3>
+<p>Tests and defects can be connected back to the model objects they cover.</p>
+<p>The programme can distinguish between:</p>
+<ul>
+<li>a workflow that has been tested;</li>
+<li>an attribute that has been tested;</li>
+<li>a rule that has been tested;</li>
+<li>a country scenario that has been tested;</li>
+<li>a mapping that has been tested with representative data.</li>
+</ul>
+<p>This gives managers a more useful view than a single overall test-completion percentage.</p>
+<h3 id="handover">Handover</h3>
+<p>The AMS team receives more than a document archive.</p>
+<p>It receives a navigable model showing fields, rules, ownership, decisions, mappings, dependencies and change history.</p>
+<p>That does not remove the need for training or proper operational documentation. It reduces the amount of knowledge that has to be reconstructed after the project team leaves.</p>
+<h2 id="what-this-changes-for-managers">What this changes for managers</h2>
+<p>The value is not primarily “better documentation.”</p>
+<p>The value is more controlled delivery.</p>
+<p>A programme manager should expect the approach to improve several practical questions:</p>
+<ul>
+<li>Can we prove why a critical rule exists?</li>
+<li>Can we see which mappings are still unresolved?</li>
+<li>Can we compare the model with the actual migration dataset?</li>
+<li>Can we identify what a proposed change will affect?</li>
+<li>Can we separate approved design from assumptions?</li>
+<li>Can we show which model areas have test evidence?</li>
+<li>Can a new architect understand the model without interviewing the original team?</li>
+<li>Can AMS assess a change without reopening the implementation project?</li>
+</ul>
+<p>None of these guarantees a successful programme. They reduce avoidable uncertainty.</p>
+<h2 id="a-small-example">A small example</h2>
+<p>Suppose a global Business Partner programme introduces a harmonised customer-group attribute.</p>
+<p>The initial design looks straightforward. One global value list will replace several local classifications.</p>
+<p>During discovery, the team finds that:</p>
+<ul>
+<li>one country uses the field for pricing;</li>
+<li>another uses it only for reporting;</li>
+<li>one legacy system stores two separate classifications;</li>
+<li>several records have no value;</li>
+<li>an interface still expects the old local code;</li>
+<li>the migration workbook contains a temporary mapping agreed six months earlier;</li>
+<li>the MDG design document describes only the global definition.</li>
+</ul>
+<p>Without a connected model, these facts remain separate.</p>
+<p>A controlled model would connect:</p>
+<ul>
+<li>the business attribute;</li>
+<li>each local usage;</li>
+<li>the SAP target field;</li>
+<li>the legacy source fields;</li>
+<li>the transformation and value mappings;</li>
+<li>the affected interface;</li>
+<li>the decision approving the global definition;</li>
+<li>the exception for the pricing country;</li>
+<li>the dataset gap for missing values;</li>
+<li>the tests covering each scenario.</li>
+</ul>
+<p>The complexity already exists. The model does not create it.</p>
+<p>The model makes it visible early enough to manage.</p>
+<h2 id="what-martenweave-does-not-solve">What Martenweave does not solve</h2>
+<p>A model-control layer should not become another oversized platform initiative.</p>
+<p>Martenweave will not compensate for:</p>
+<ul>
+<li>missing business ownership;</li>
+<li>a weak governance operating model;</li>
+<li>unqualified architecture decisions;</li>
+<li>poor source-data remediation;</li>
+<li>unclear programme accountability;</li>
+<li>insufficient MDG expertise;</li>
+<li>inadequate testing;</li>
+<li>political disagreement between business units.</li>
+</ul>
+<p>It can expose these problems and preserve their consequences. It cannot resolve organisational conflict by itself.</p>
+<p>It also should not be used to duplicate every detail already governed reliably elsewhere. The objective is not to copy Jira, SAP MDG, a test tool and a data catalogue into one repository.</p>
+<p>The objective is to preserve the relationships required to understand and control the model.</p>
+<h2 id="questions-to-ask-on-an-sap-mdg-programme">Questions to ask on an SAP MDG programme</h2>
+<p>Managers and architects do not need to begin by selecting another tool. They can begin with a few direct questions:</p>
+<ol>
+<li>Where is the approved model stored?</li>
+<li>Can it be validated automatically?</li>
+<li>How are business attributes linked to SAP fields?</li>
+<li>How are mappings linked to source datasets?</li>
+<li>Where are country-specific exceptions represented?</li>
+<li>Can we identify model objects without relying on names?</li>
+<li>Where are design decisions and their evidence recorded?</li>
+<li>Can we trace a defect back to the affected rule or mapping?</li>
+<li>Can we see what will be affected before approving a change?</li>
+<li>Can the AMS team answer these questions after the project team leaves?</li>
+</ol>
+<p>If the answers depend on several people manually reconciling several tools, the programme has an implementation-knowledge risk.</p>
+<h2 id="the-practical-conclusion">The practical conclusion</h2>
+<p>SAP MDG can become the operational governance system for critical master data.</p>
+<p>It should not be expected to serve as the complete record of how the programme discovered, debated, mapped, tested and justified the model.</p>
+<p>That knowledge needs its own disciplined treatment.</p>
+<p>For some organisations, a well-maintained set of repositories and strict delivery standards may be enough. For others, especially multi-country migrations and complex MDM programmes, a validated model registry provides a clearer control point.</p>
+<p>Martenweave was created for that role: not to compete with SAP MDG, but to help architects and delivery teams design it more carefully, connect it to migration reality, control changes and preserve the knowledge needed to operate it later.</p>
+<p>The question is therefore not whether SAP MDG manages master data.</p>
+<p>It does.</p>
+<p>The question is whether the programme can still explain its own model when the original project team is no longer in the room.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is developed by Metalhatscats, an independent engineering team working on practical model governance, SAP migration, MDM and agent-assisted enterprise workflows.</p>
+<p>The team’s focus is straightforward: make complex model knowledge easier to validate, trace, review and hand over without turning every problem into another large platform implementation.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<ul>
+<li>SAP Master Data Governance product overview and current capability description: golden records, matching and consolidation, workflows, data quality, audit trails and mass processing.</li>
+<li>Martenweave product model and intended users.</li>
+<li>Martenweave product boundaries and complementary relationship with SAP MDG.</li>
+<li>Martenweave SAP migration scenario, including mappings, context validation, dataset gap detection, lineage and impact analysis.</li>
+</ul>
+<p>SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates. Martenweave is an independent project and is not affiliated with or endorsed by SAP.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

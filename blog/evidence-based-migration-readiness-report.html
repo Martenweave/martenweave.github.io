@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>evidence based migration readiness report | Martenweave</title>
+    <meta
+      name="description"
+      content="How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html" />
+    <meta property="og:title" content="evidence based migration readiness report | Martenweave" />
+    <meta property="og:description" content="How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="evidence based migration readiness report | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html#webpage",
+                        "url": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html",
+                        "name": "evidence based migration readiness report | Martenweave",
+                        "description": "How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build an Evidence-Based Migration Readiness Report",
+                                    "item": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html#content",
+                        "headline": "How to Build an Evidence-Based Migration Readiness Report",
+                        "name": "How to Build an Evidence-Based Migration Readiness Report",
+                        "description": "How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.",
+                        "url": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build an Evidence-Based Migration Readiness Report</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="how-to-build-an-evidence-based-migration-readiness-report">How to Build an Evidence-Based Migration Readiness Report</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The steering committee sees a green dashboard.</p>
+<p>Mapping completion is 96%.</p>
+<p>Data cleansing is 91%.</p>
+<p>Testing is on track.</p>
+<p>Only a few critical issues remain open.</p>
+<p>The programme concludes that the next mock load is ready to begin.</p>
+<p>Three days later, the load is delayed.</p>
+<p>Several mandatory target fields have no reliable source. A value mapping marked complete does not cover codes found in the current extract. One country’s dataset was profiled against an older mapping version. A temporary default has no business approval. Several closed issues still require changes to migration logic.</p>
+<p>None of these facts is visible in the headline percentages.</p>
+<p>The dashboard was not necessarily false.</p>
+<p>It measured activity rather than readiness.</p>
+<p>A mapping row can be marked complete because someone filled in the target column.</p>
+<p>A data-cleansing task can be closed because a report was produced.</p>
+<p>A test can pass against a small synthetic sample.</p>
+<p>An issue can be closed before the model, code and dataset are reconciled.</p>
+<p>The programme has status.</p>
+<p>It does not yet have evidence.</p>
+<p>This is the difference an evidence-based migration readiness report should make.</p>
+<p>&gt; A readiness report should not state that the migration is ready. It should show the evidence supporting that conclusion, the conditions under which it is true and the unresolved risks that could invalidate it.</p>
+<p>Readiness is not one percentage.</p>
+<p>It is a defensible judgement assembled from several connected forms of evidence.</p>
+<h2 id="a-readiness-report-is-a-decision-instrument">A readiness report is a decision instrument</h2>
+<p>Many migration reports are treated as progress summaries.</p>
+<p>They answer:</p>
+<ul>
+<li>How many mappings are complete?</li>
+<li>How many defects are open?</li>
+<li>How many records passed validation?</li>
+<li>How many test cases were executed?</li>
+<li>How many cleansing tasks were closed?</li>
+</ul>
+<p>These metrics are useful.</p>
+<p>They do not answer the decision the programme actually needs to make:</p>
+<p>&gt; Is the current model, dataset, transformation logic and target implementation sufficiently complete and controlled to proceed to the next migration stage?</p>
+<p>That decision may concern:</p>
+<ul>
+<li>starting a mock load;</li>
+<li>entering UAT;</li>
+<li>freezing mappings;</li>
+<li>beginning cutover preparation;</li>
+<li>approving production migration;</li>
+<li>accepting a controlled exception.</li>
+</ul>
+<p>A readiness report should be designed around the decision, not around the reporting tool.</p>
+<h2 id="readiness-is-always-readiness-for-something">Readiness is always readiness for something</h2>
+<p>“Migration ready” is too broad.</p>
+<p>A dataset may be ready for profiling but not for loading.</p>
+<p>A mapping may be ready for technical build but not for business approval.</p>
+<p>A mock load may be ready to start even though the programme is not ready for cutover.</p>
+<p>The report should state the exact decision point.</p>
+<p>Examples:</p>
+<p>```text id=&quot;readiness-01&quot; Readiness decision: Proceed with Mock Load 2 for German Customer and Supplier data.</p>
+<pre><code>
+```text id=&quot;readiness-02&quot;
+Readiness decision:
+Freeze Business Partner mappings for UAT Cycle 1.</code></pre>
+<p>```text id=&quot;readiness-03&quot; Readiness decision: Approve production cutover load for active suppliers.</p>
+<pre><code>
+The required evidence changes by stage.
+
+A mock load can tolerate known issues that would be unacceptable at production cutover.
+
+## Green does not mean complete
+
+A useful report should separate three conditions.
+
+### Ready
+
+The evidence meets the agreed criteria.
+
+### Ready with controlled conditions
+
+Known limitations exist, but they are understood, owned and acceptable for this stage.
+
+### Not ready
+
+One or more blockers invalidate the planned migration decision.
+
+This is better than forcing every workstream into red, amber or green independently.
+
+A workstream can be green while the overall migration is not ready.
+
+For example:
+
+- extraction completed successfully;
+- mappings signed off;
+- target configuration available;
+- but required source values are missing for a material population.
+
+The individual activities are complete.
+
+The migration outcome is still at risk.
+
+## Begin with an explicit readiness contract
+
+Before producing the report, define what evidence is required.
+
+We call this the readiness contract.
+
+It should specify:
+
+- migration scope;
+- target milestone;
+- model baseline;
+- dataset versions;
+- target-system baseline;
+- required controls;
+- blocking thresholds;
+- acceptable exceptions;
+- decision owners.
+
+For example:
+
+```text id=&quot;readiness-04&quot;
+Scope:
+Active German suppliers in Wave 2.
+
+Model baseline:
+Supplier Model 1.8.
+
+Source dataset:
+ERP_A extract dated 10 July 2026.
+
+Target baseline:
+QAS release R3 candidate 2.
+
+Decision:
+Proceed with Mock Load 2.
+
+Critical criteria:
+- all mandatory target attributes have approved treatment;
+- all observed critical source values have mapping coverage;
+- no unresolved key or relationship blockers;
+- approved deviations have owners and expiry dates;
+- target validation is available for test.</code></pre>
+<p>Without this contract, the report can be assembled selectively after the results are known.</p>
+<h2 id="the-readiness-report-should-be-baseline-specific">The readiness report should be baseline-specific</h2>
+<p>Evidence is meaningful only when tied to identifiable versions.</p>
+<p>At minimum, record:</p>
+<ul>
+<li>canonical model version;</li>
+<li>mapping version;</li>
+<li>dataset extraction date;</li>
+<li>transformation build;</li>
+<li>target-system release;</li>
+<li>validation-rules version;</li>
+<li>test cycle.</li>
+</ul>
+<p>Suppose the report states:</p>
+<p>&gt; All customer mappings are approved.</p>
+<p>The programme must be able to answer:</p>
+<ul>
+<li>Approved against which target model?</li>
+<li>Using which source extract?</li>
+<li>Before or after the latest value-list update?</li>
+<li>Is the implemented code based on the same mapping?</li>
+<li>Did testing use that version?</li>
+</ul>
+<p>A readiness report without baselines is a current opinion about moving artefacts.</p>
+<p>It is not reproducible evidence.</p>
+<h2 id="the-report-needs-several-evidence-layers">The report needs several evidence layers</h2>
+<p>We use seven main evidence layers.</p>
+<p>```text id=&quot;readiness-05&quot;</p>
+<ol>
+<li>Scope evidence</li>
+<li>Model evidence</li>
+<li>Mapping evidence</li>
+<li>Dataset evidence</li>
+<li>Target implementation evidence</li>
+<li>Test and reconciliation evidence</li>
+<li>Ownership and exception evidence</li>
+</ol>
+<pre><code>
+A programme may add others, such as security or cutover infrastructure.
+
+These seven form the core model-and-data readiness view.
+
+## 1. Scope evidence
+
+The report should define exactly what is being migrated.
+
+Include:
+
+- business domain;
+- source systems;
+- target objects;
+- countries;
+- organisational units;
+- record populations;
+- inclusion and exclusion rules;
+- historical-data scope;
+- migration wave.
+
+Readiness percentages become misleading when scope is unstable.
+
+For example:
+
+```text id=&quot;readiness-06&quot;
+Mapping completion:
+98%</code></pre>
+<p>may mean little if 20 new fields were added to scope yesterday but not yet included in the denominator.</p>
+<p>The report should show:</p>
+<ul>
+<li>baseline scope;</li>
+<li>changes since the previous report;</li>
+<li>newly added or removed objects;</li>
+<li>impact of scope changes on evidence.</li>
+</ul>
+<h2 id="2-model-evidence">2. Model evidence</h2>
+<p>The target model should be sufficiently defined for the migration stage.</p>
+<p>Evidence should cover:</p>
+<ul>
+<li>approved entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>contexts;</li>
+<li>value lists;</li>
+<li>rules;</li>
+<li>ownership;</li>
+<li>local variations;</li>
+<li>lifecycle state.</li>
+</ul>
+<p>Useful checks include:</p>
+<ul>
+<li>every critical target attribute has a stable identifier;</li>
+<li>mandatory conditions are explicit;</li>
+<li>organisational context is defined;</li>
+<li>active value lists are known;</li>
+<li>unresolved model decisions are visible;</li>
+<li>local exceptions reference global objects;</li>
+<li>retired endpoints are not used by active mappings.</li>
+</ul>
+<p>Martenweave’s current public documentation describes structured model objects connecting fields, attributes, rules, owners, issues and decisions, with deterministic validation before indexing.</p>
+<p>That is the type of structure needed to make model readiness testable rather than narrative.</p>
+<h2 id="3-mapping-evidence">3. Mapping evidence</h2>
+<p>Mapping completion should not be measured only by populated rows.</p>
+<p>For every critical mapping, the report should show whether the following exist:</p>
+<ul>
+<li>source endpoint;</li>
+<li>business attribute;</li>
+<li>target endpoint;</li>
+<li>applicable context;</li>
+<li>transformation;</li>
+<li>value mapping;</li>
+<li>owner;</li>
+<li>approval;</li>
+<li>implementation reference;</li>
+<li>test evidence where required.</li>
+</ul>
+<p>A practical mapping lifecycle may be:</p>
+<p>```text id=&quot;readiness-07&quot; Identified → Defined → Business approved → Dataset validated → Implemented → Tested</p>
+<pre><code>
+Only mappings at the required lifecycle stage should count toward readiness.
+
+For a mock load, `Implemented` may be sufficient for selected low-risk fields.
+
+For cutover, critical mappings should usually be tested against representative data.
+
+## Mapping completeness and mapping validity are different
+
+A mapping can be complete but invalid.
+
+Example:
+
+```text id=&quot;readiness-08&quot;
+Source:
+LEGACY_VENDOR.PAY_TERM
+
+Target:
+SAP Supplier Payment Terms
+
+Transformation:
+Direct mapping
+
+Status:
+Complete</code></pre>
+<p>The current dataset contains descriptive text rather than SAP-compatible codes.</p>
+<p>The mapping row is complete.</p>
+<p>The transformation is not operationally sufficient.</p>
+<p>The report should therefore distinguish:</p>
+<ul>
+<li>documentation completeness;</li>
+<li>structural validity;</li>
+<li>dataset coverage;</li>
+<li>business approval;</li>
+<li>implementation;</li>
+<li>test result.</li>
+</ul>
+<h2 id="4-dataset-evidence">4. Dataset evidence</h2>
+<p>The report should use the actual dataset planned for the migration stage, or a clearly comparable representative dataset.</p>
+<p>Evidence should include:</p>
+<ul>
+<li>extraction date;</li>
+<li>source system;</li>
+<li>record count;</li>
+<li>filters;</li>
+<li>file or table structure;</li>
+<li>keys;</li>
+<li>scope;</li>
+<li>profile results.</li>
+</ul>
+<p>For critical fields, report:</p>
+<ul>
+<li>column presence;</li>
+<li>completeness;</li>
+<li>observed values;</li>
+<li>format validity;</li>
+<li>uniqueness;</li>
+<li>reference integrity;</li>
+<li>mapping coverage;</li>
+<li>contextual coverage.</li>
+</ul>
+<p>SAP states that automated S/4HANA processes rely heavily on clean and correct master data and recommends curating master data early, before implementation.</p>
+<p>A readiness report should turn that general principle into measurable evidence against the actual target model.</p>
+<h2 id="dataset-evidence-should-be-model-aware">Dataset evidence should be model-aware</h2>
+<p>A generic profile may state:</p>
+<p>```text id=&quot;readiness-09&quot; CUSTOMER_TYPE: 92% complete</p>
+<pre><code>
+A model-aware report adds:
+
+```text id=&quot;readiness-10&quot;
+Target attribute:
+Customer Group
+
+Required population:
+Active B2B customers
+
+Relevant completeness:
+78%
+
+Observed values covered by approved mapping:
+96%
+
+Unmapped critical values:
+STRAT, KEY
+
+Affected records:
+4,620</code></pre>
+<p>The second view supports a migration decision.</p>
+<p>The first is only a descriptive statistic.</p>
+<h2 id="measure-the-applicable-population">Measure the applicable population</h2>
+<p>Global averages can hide concentrated failure.</p>
+<p>Suppose a tax field is:</p>
+<ul>
+<li>96% complete globally;</li>
+<li>99% complete for Germany;</li>
+<li>84% complete for Portugal;</li>
+<li>38% complete for one legacy source.</li>
+</ul>
+<p>The relevant readiness conclusion depends on the migration scope.</p>
+<p>The report should preserve:</p>
+<ul>
+<li>country;</li>
+<li>source system;</li>
+<li>organisational context;</li>
+<li>record status;</li>
+<li>migration wave.</li>
+</ul>
+<p>A field may be ready for one wave and not ready for another.</p>
+<h2 id="report-observed-value-coverage">Report observed value coverage</h2>
+<p>For categorical fields, completeness is not enough.</p>
+<p>The source may be fully populated while the transformation covers only part of the values.</p>
+<p>Report:</p>
+<ul>
+<li>distinct values observed;</li>
+<li>record frequency;</li>
+<li>mapped values;</li>
+<li>unmapped values;</li>
+<li>invalid values;</li>
+<li>obsolete values;</li>
+<li>defaulted values;</li>
+<li>ambiguous values.</li>
+</ul>
+<p>Example:</p>
+<p>| Source value | Records | Treatment | Status | |---|---:|---|---| | A1 | 48,120 | Maps to 01 | Approved | | A2 | 9,881 | Maps to 01 | Approved | | B1 | 7,104 | Maps to 02 | Approved | | STRAT | 1,442 | No approved treatment | Blocker | | UNKNOWN | 963 | Proposed temporary value | Pending decision |</p>
+<p>This makes the risk visible in business terms.</p>
+<h2 id="report-key-and-relationship-readiness">Report key and relationship readiness</h2>
+<p>Master-data migration is not only field population.</p>
+<p>The report should examine:</p>
+<ul>
+<li>source keys;</li>
+<li>target identifiers;</li>
+<li>duplicate keys;</li>
+<li>cross-reference tables;</li>
+<li>parent-child relationships;</li>
+<li>organisational extensions;</li>
+<li>role dependencies;</li>
+<li>partner relationships;</li>
+<li>referential integrity.</li>
+</ul>
+<p>Examples of blockers include:</p>
+<ul>
+<li>supplier company-code records without a central supplier;</li>
+<li>customer sales-area records with unknown sales organisations;</li>
+<li>contact persons without valid parent Business Partners;</li>
+<li>product hierarchies with missing parents;</li>
+<li>legacy keys duplicated across source systems.</li>
+</ul>
+<p>A dataset can have high field completeness and still be impossible to load coherently.</p>
+<h2 id="5-target-implementation-evidence">5. Target implementation evidence</h2>
+<p>The target system must be able to receive and govern the intended data.</p>
+<p>Evidence may include:</p>
+<ul>
+<li>required target attributes exist;</li>
+<li>value lists are configured;</li>
+<li>validation rules are available;</li>
+<li>derivations behave as approved;</li>
+<li>migration objects or interfaces include required fields;</li>
+<li>workflow behaviour is understood;</li>
+<li>replication supports critical attributes;</li>
+<li>relevant environment and release are identified.</li>
+</ul>
+<p>SAP currently positions MDG around governed models, validated values, monitored business rules, collaborative workflow and auditability.</p>
+<p>A readiness report should not merely state that MDG is available. It should show that the configured target behaviour required for this migration scope exists and has been verified.</p>
+<h2 id="distinguish-target-design-from-target-availability">Distinguish target design from target availability</h2>
+<p>A target field may be approved in the model but unavailable in the current environment.</p>
+<p>Possible causes include:</p>
+<ul>
+<li>pending transport;</li>
+<li>incomplete extension;</li>
+<li>wrong release;</li>
+<li>missing value list;</li>
+<li>interface not updated;</li>
+<li>role configuration incomplete.</li>
+</ul>
+<p>The report should distinguish:</p>
+<p>```text id=&quot;readiness-11&quot; Target model approved</p>
+<pre><code>
+from:
+
+```text id=&quot;readiness-12&quot;
+Target implementation available in the test environment</code></pre>
+<p>Both may be required before a meaningful mock load.</p>
+<h2 id="6-test-and-reconciliation-evidence">6. Test and reconciliation evidence</h2>
+<p>A migration load is not proven by successful technical execution alone.</p>
+<p>The report should include:</p>
+<ul>
+<li>records extracted;</li>
+<li>records transformed;</li>
+<li>records loaded;</li>
+<li>records rejected;</li>
+<li>records activated;</li>
+<li>records reconciled;</li>
+<li>critical field comparison;</li>
+<li>relationship comparison;</li>
+<li>financial or operational reconciliation where relevant.</li>
+</ul>
+<p>For each stage, explain the denominator.</p>
+<p>Example:</p>
+<p>```text id=&quot;readiness-13&quot; Source records: 100,000</p>
+<p>Records in migration scope: 92,000</p>
+<p>Records transformed: 92,000</p>
+<p>Records loaded: 90,800</p>
+<p>Expected exclusions: 700</p>
+<p>Unexpected failures: 500</p>
+<p>Successfully reconciled: 90,600</p>
+<pre><code>
+A headline “98.7% load success” hides whether the remaining records are harmless historical exclusions or active high-value suppliers.
+
+## Reconciliation should be risk-based
+
+Not every field requires the same level of evidence.
+
+Prioritise:
+
+- identifiers;
+- legal names;
+- tax data;
+- bank details;
+- organisational assignments;
+- payment terms;
+- critical classifications;
+- status;
+- relationships;
+- fields driving workflow, pricing or compliance.
+
+For critical fields, evidence may require:
+
+- source-to-target value comparison;
+- aggregate counts;
+- sample review;
+- exception analysis;
+- owner sign-off.
+
+## Link test evidence to mappings and rules
+
+A test case should identify what it proves.
+
+For example:
+
+```text id=&quot;readiness-14&quot;
+Test:
+TC-SUP-118
+
+Proves:
+- MAP-ERP-A-SUPPLIER-RISK
+- RULE-SUPPLIER-RISK-REQUIRED
+- VLIST-SUPPLIER-RISK
+- QAS release R3 candidate 2
+- dataset ERP_A_2026_07_10</code></pre>
+<p>When a mapping or rule changes, the report can identify which evidence is stale.</p>
+<p>Without this link, the programme may count a previously passed test after the underlying model changed.</p>
+<h2 id="7-ownership-and-exception-evidence">7. Ownership and exception evidence</h2>
+<p>Every material gap should have:</p>
+<ul>
+<li>owner;</li>
+<li>decision status;</li>
+<li>treatment;</li>
+<li>due date;</li>
+<li>affected population;</li>
+<li>business impact.</li>
+</ul>
+<p>An issue is not controlled merely because it exists in Jira.</p>
+<p>The report should show whether the issue has a credible path to resolution.</p>
+<p>For example:</p>
+<p>```text id=&quot;readiness-15&quot; Gap: 1,442 active suppliers have source value STRAT with no approved target mapping.</p>
+<p>Owner: Global Procurement Data Owner</p>
+<p>Decision due: 18 July</p>
+<p>Migration impact: Blocks Supplier Classification for Mock Load 2</p>
+<p>Current status: Not ready</p>
+<pre><code>
+Compare that with:
+
+```text id=&quot;readiness-16&quot;
+Gap:
+963 inactive historical suppliers use temporary value MIGRATION_REVIEW.
+
+Approval:
+Accepted for Mock Load 2
+
+Owner:
+Migration Data Lead
+
+Expiry:
+Must be remediated before production cutover.
+
+Current status:
+Ready with controlled condition</code></pre>
+<p>The difference is governance, not only defect count.</p>
+<h2 id="accepted-exceptions-need-evidence">Accepted exceptions need evidence</h2>
+<p>A readiness report should not hide exceptions to produce a green result.</p>
+<p>It should show:</p>
+<ul>
+<li>what criterion is not met;</li>
+<li>why proceeding is acceptable;</li>
+<li>which population is affected;</li>
+<li>what controls reduce risk;</li>
+<li>who approved the exception;</li>
+<li>when it expires;</li>
+<li>what happens if it is not resolved.</li>
+</ul>
+<p>Useful exception categories include:</p>
+<ul>
+<li>known low-risk data gap;</li>
+<li>temporary migration default;</li>
+<li>deferred inactive population;</li>
+<li>unavailable non-critical field;</li>
+<li>planned later enrichment;</li>
+<li>environment limitation;</li>
+<li>accepted manual reconciliation.</li>
+</ul>
+<p>A waived blocker without ownership and expiry is not a controlled exception.</p>
+<h2 id="build-the-report-from-traceable-evidence">Build the report from traceable evidence</h2>
+<p>Every major readiness claim should point to supporting evidence.</p>
+<p>Claim:</p>
+<p>&gt; All critical target fields have approved source treatment.</p>
+<p>Evidence:</p>
+<ul>
+<li>model baseline;</li>
+<li>mapping report;</li>
+<li>list of critical attributes;</li>
+<li>validation result;</li>
+<li>accepted exceptions.</li>
+</ul>
+<p>Claim:</p>
+<p>&gt; Current dataset values are covered.</p>
+<p>Evidence:</p>
+<ul>
+<li>dataset version;</li>
+<li>profile result;</li>
+<li>value-mapping coverage;</li>
+<li>uncovered values;</li>
+<li>execution timestamp.</li>
+</ul>
+<p>Claim:</p>
+<p>&gt; Target validation is ready.</p>
+<p>Evidence:</p>
+<ul>
+<li>rule reference;</li>
+<li>environment;</li>
+<li>test case;</li>
+<li>observed result.</li>
+</ul>
+<p>The report should allow a reviewer to move from summary to evidence without asking the author to reconstruct the analysis.</p>
+<h2 id="evidence-should-be-reproducible">Evidence should be reproducible</h2>
+<p>A reviewer should be able to rerun or independently verify the important checks.</p>
+<p>Record:</p>
+<ul>
+<li>command or procedure;</li>
+<li>input versions;</li>
+<li>ruleset;</li>
+<li>result;</li>
+<li>timestamp;</li>
+<li>responsible owner.</li>
+</ul>
+<p>For deterministic model validation, this might include:</p>
+<p>```text id=&quot;readiness-17&quot; Model commit: abc123</p>
+<p>Validator version: 0.4.1</p>
+<p>Validation command: martenweave validate</p>
+<p>Result: 0 errors 3 accepted warnings</p>
+<pre><code>
+For dataset profiling:
+
+```text id=&quot;readiness-18&quot;
+Dataset:
+supplier_erp_a_2026-07-10.csv
+
+Profile rules:
+Supplier readiness ruleset 1.8
+
+Result:
+2 blockers
+5 warnings</code></pre>
+<p>Reproducibility improves trust and reduces debate over manually prepared percentages.</p>
+<h2 id="use-thresholds-carefully">Use thresholds carefully</h2>
+<p>Thresholds are useful when tied to business consequence.</p>
+<p>Weak criterion:</p>
+<p>```text id=&quot;readiness-19&quot; Data completeness must exceed 95%.</p>
+<pre><code>
+Stronger criterion:
+
+```text id=&quot;readiness-20&quot;
+Legal Name and Country:
+100% for active suppliers.
+
+Payment Terms:
+99.5% for suppliers with open purchasing relationships.
+
+Secondary phone:
+No blocking threshold.</code></pre>
+<p>One universal percentage creates false precision.</p>
+<p>A missing tax identifier and a missing secondary phone number should not contribute equally to readiness.</p>
+<h2 id="use-weighted-readiness-only-as-a-summary">Use weighted readiness only as a summary</h2>
+<p>A score can help management compare trends.</p>
+<p>It should not replace blocker logic.</p>
+<p>For example:</p>
+<p>```text id=&quot;readiness-21&quot; Overall readiness score: 92%</p>
+<pre><code>
+The report must still show:
+
+```text id=&quot;readiness-22&quot;
+Decision:
+Not ready
+
+Reason:
+No approved identifier treatment for 8% of active suppliers.</code></pre>
+<p>A high weighted score cannot neutralise a critical blocker.</p>
+<p>We prefer:</p>
+<ul>
+<li>hard blockers;</li>
+<li>controlled conditions;</li>
+<li>weighted supporting indicators.</li>
+</ul>
+<h2 id="a-practical-readiness-scorecard">A practical readiness scorecard</h2>
+<p>A useful high-level scorecard might contain:</p>
+<p>| Dimension | Status | Evidence | Main concern | |---|---|---|---| | Scope stability | Ready | Scope baseline 1.8 | None | | Model completeness | Ready with condition | 2 approved deviations | Local ownership pending | | Mapping readiness | Not ready | 97% critical mappings dataset-validated | 3 mandatory attributes lack treatment | | Dataset readiness | Not ready | Profile dated 10 July | Unmapped supplier classifications | | Target readiness | Ready | QAS R3 candidate 2 | None | | Test readiness | Ready with condition | 88% critical tests passed | 4 stale cases | | Ownership | Ready | All blockers assigned | One decision overdue |</p>
+<p>This is more informative than a single green percentage.</p>
+<h2 id="separate-blocker-risk-and-action">Separate blocker, risk and action</h2>
+<p>Reports often mix these concepts.</p>
+<h3 id="blocker">Blocker</h3>
+<p>A condition that prevents the migration decision.</p>
+<p>Example:</p>
+<p>&gt; Required target key cannot be generated for 12% of records.</p>
+<h3 id="risk">Risk</h3>
+<p>A possible adverse outcome that does not necessarily block the current stage.</p>
+<p>Example:</p>
+<p>&gt; Temporary supplier classification may increase post-load remediation effort.</p>
+<h3 id="action">Action</h3>
+<p>Work required to remove a blocker or reduce a risk.</p>
+<p>Example:</p>
+<p>&gt; Procurement owner to approve treatment for STRAT values by 18 July.</p>
+<p>Keeping these separate improves decision clarity.</p>
+<h2 id="include-what-changed-since-the-previous-report">Include what changed since the previous report</h2>
+<p>Readiness is a movement over time.</p>
+<p>The report should show:</p>
+<ul>
+<li>new blockers;</li>
+<li>resolved blockers;</li>
+<li>changed scope;</li>
+<li>mapping changes;</li>
+<li>new dataset findings;</li>
+<li>expired exceptions;</li>
+<li>tests invalidated;</li>
+<li>target release changes.</li>
+</ul>
+<p>For example:</p>
+<p>```text id=&quot;readiness-23&quot; Since previous readiness review:</p>
+<p>Resolved:</p>
+<ul>
+<li>Missing Payment Terms mapping for ERP_A</li>
+<li>Target value 09 configured in QAS</li>
+</ul>
+<p>New:</p>
+<ul>
+<li>ERP_B extract removed CUSTOMER_CLASS column</li>
+<li>Decision DEC-0082 changed Tax ID rule</li>
+<li>6 related test cases now require rerun</li>
+</ul>
+<pre><code>
+This prevents the steering committee from seeing only the current colour without understanding the direction and volatility.
+
+## Report evidence freshness
+
+Old evidence may no longer prove the current state.
+
+For each evidence item, assess:
+
+- model version;
+- dataset version;
+- target release;
+- test date;
+- relevant changes since execution.
+
+Useful freshness states include:
+
+- current;
+- potentially stale;
+- invalidated;
+- historical only.
+
+A test is invalidated when its mapping, rule, context or target implementation changes materially.
+
+It should not remain counted as passed.
+
+## A worked example: supplier migration readiness
+
+The programme wants to proceed with Mock Load 2 for 80,000 active suppliers.
+
+### Scope
+
+- ERP_A and ERP_B;
+- three countries;
+- central and company-code data;
+- bank details excluded from this cycle.
+
+Status: Ready.
+
+### Model
+
+- 74 critical attributes;
+- 72 approved;
+- two under controlled temporary decisions.
+
+Status: Ready with conditions.
+
+### Mappings
+
+- 74 critical attributes;
+- 71 dataset-validated;
+- three mandatory attributes have no approved ERP_B treatment.
+
+Status: Not ready.
+
+### Dataset
+
+- all required columns present in ERP_A;
+- one required column absent in ERP_B;
+- six uncovered classification values;
+- 430 duplicate source keys;
+- 97 supplier-company-code records have no central parent.
+
+Status: Not ready.
+
+### Target
+
+- required attributes and value lists available in QAS;
+- one local validation transport pending.
+
+Status: Ready with condition.
+
+### Testing
+
+- technical load executed for ERP_A sample;
+- ERP_B not yet tested against current mapping;
+- four critical test cases refer to model baseline 1.7 rather than 1.8.
+
+Status: Not ready.
+
+### Ownership
+
+- all gaps assigned;
+- two decisions due after planned load start.
+
+Status: Not ready.
+
+### Decision
+
+Do not begin the full Mock Load 2.
+
+Proceed only with a controlled ERP_A technical subset while ERP_B mapping and relationship blockers are resolved.
+
+This conclusion is more useful than stating that the programme is “92% ready.”
+
+## Another example: ready with controlled conditions
+
+A customer migration has one known issue:
+
+- 1.2% of inactive historical customers lack a non-critical classification;
+- records are not used in active processing;
+- an approved temporary value exists;
+- the population can be identified;
+- remediation is assigned before archive conversion;
+- no critical interface consumes the value.
+
+The report may conclude:
+
+```text id=&quot;readiness-24&quot;
+Ready with controlled condition.</code></pre>
+<p>The exception should remain visible.</p>
+<p>This is not the same as pretending the data is complete.</p>
+<h2 id="the-readiness-report-should-support-different-readers">The readiness report should support different readers</h2>
+<p>One report can have several layers.</p>
+<h2 id="steering-view">Steering view</h2>
+<p>Contains:</p>
+<ul>
+<li>decision requested;</li>
+<li>overall conclusion;</li>
+<li>blockers;</li>
+<li>accepted conditions;</li>
+<li>business impact;</li>
+<li>required management decisions.</li>
+</ul>
+<h2 id="delivery-view">Delivery view</h2>
+<p>Contains:</p>
+<ul>
+<li>evidence by dimension;</li>
+<li>owners;</li>
+<li>due dates;</li>
+<li>dependencies;</li>
+<li>changed status.</li>
+</ul>
+<h2 id="technical-evidence">Technical evidence</h2>
+<p>Contains:</p>
+<ul>
+<li>validation results;</li>
+<li>dataset profiles;</li>
+<li>object identifiers;</li>
+<li>commands;</li>
+<li>model versions;</li>
+<li>detailed findings.</li>
+</ul>
+<p>This avoids forcing executives to review field-level detail while preserving traceability for specialists.</p>
+<h2 id="avoid-narrative-optimism">Avoid narrative optimism</h2>
+<p>Readiness reports often use language such as:</p>
+<ul>
+<li>largely complete;</li>
+<li>mostly aligned;</li>
+<li>minor issues remain;</li>
+<li>no major concern expected;</li>
+<li>work is progressing.</li>
+</ul>
+<p>These phrases should be backed by defined evidence.</p>
+<p>For example:</p>
+<p>Instead of:</p>
+<p>&gt; Value mapping is largely complete.</p>
+<p>Use:</p>
+<p>&gt; Approved mappings cover 99.2% of in-scope records. The remaining 0.8% consists of two unapproved values affecting 640 active customers and remains a blocker.</p>
+<p>Specificity improves decisions.</p>
+<h2 id="do-not-hide-uncertainty">Do not hide uncertainty</h2>
+<p>The report may contain areas where evidence is insufficient.</p>
+<p>Examples:</p>
+<ul>
+<li>source definition unclear;</li>
+<li>dataset not representative;</li>
+<li>target transport pending;</li>
+<li>ownership disputed;</li>
+<li>test result unavailable.</li>
+</ul>
+<p>Mark these as unknown.</p>
+<p>Unknown is not the same as failed.</p>
+<p>It is not ready evidence either.</p>
+<p>A programme takes risk when it converts unknown into assumed green.</p>
+<h2 id="use-evidence-confidence-carefully">Use evidence confidence carefully</h2>
+<p>Confidence can describe the strength of available evidence.</p>
+<p>Example levels:</p>
+<h3 id="high">High</h3>
+<p>Current deterministic result, verified against the stated baseline.</p>
+<h3 id="medium">Medium</h3>
+<p>Representative evidence exists, but scope or freshness is limited.</p>
+<h3 id="low">Low</h3>
+<p>Conclusion relies on expert judgement or incomplete artefacts.</p>
+<h3 id="unknown">Unknown</h3>
+<p>No reliable evidence exists.</p>
+<p>Confidence should not replace readiness status.</p>
+<p>A critical field with low-confidence evidence may be a blocker even when the team expects it to work.</p>
+<h2 id="make-readiness-criteria-visible-before-teams-report-status">Make readiness criteria visible before teams report status</h2>
+<p>Teams should know how their work will be evaluated.</p>
+<p>For example, mapping readiness requires:</p>
+<ul>
+<li>valid endpoints;</li>
+<li>approved context;</li>
+<li>transformation;</li>
+<li>dataset coverage;</li>
+<li>owner;</li>
+<li>implementation;</li>
+<li>required test.</li>
+</ul>
+<p>This prevents last-minute disputes about whether a mapping marked complete is genuinely ready.</p>
+<p>The criterion should be simple enough to use during delivery.</p>
+<h2 id="generate-issues-directly-from-evidence-gaps">Generate issues directly from evidence gaps</h2>
+<p>A readiness finding should be actionable.</p>
+<p>For example:</p>
+<p>```text id=&quot;readiness-25&quot; Finding: Observed source value STRAT has no approved target treatment.</p>
+<p>Affected object: MAP-SUPPLIER-CLASS-ERP-B</p>
+<p>Affected records: 1,442</p>
+<p>Severity: Blocker</p>
+<p>Required action: Business owner approves mapping, remediation or exclusion.</p>
+<p>Validation: Rerun value-coverage check against current dataset.</p>
+<pre><code>
+This can become a well-scoped Jira issue.
+
+The issue should remain linked to the model object and readiness finding.
+
+Closing the issue should require new evidence, not only a status update.
+
+## Readiness should be recalculated after material changes
+
+Trigger a new readiness assessment when:
+
+- scope changes;
+- model baseline changes;
+- dataset changes;
+- mappings change;
+- target release changes;
+- critical rules change;
+- accepted exceptions expire;
+- major defects are fixed.
+
+A readiness result is not transferable automatically to another model or dataset version.
+
+## The role of deterministic validation
+
+Deterministic checks provide the foundation for evidence-based reporting.
+
+They can verify:
+
+- unique identities;
+- valid references;
+- active mappings using active endpoints;
+- required ownership;
+- complete contextual links;
+- valid value-list references;
+- missing dataset columns;
+- uncovered source values;
+- expired deviations.
+
+These findings are repeatable.
+
+They should be included directly in the report rather than manually reinterpreted into optimistic status.
+
+## The role of human judgement
+
+Not every readiness question can be automated.
+
+People must decide:
+
+- whether a source field preserves the correct meaning;
+- whether a default is acceptable;
+- whether a local exception is justified;
+- whether an unresolved population can proceed;
+- whether a test sample is representative;
+- whether the remaining risk is acceptable for the milestone.
+
+The report should make those decisions explicit.
+
+It should not hide them behind automated scores.
+
+## Where Martenweave fits
+
+Martenweave is designed to turn scattered model knowledge into structured, validated and traceable objects.
+
+Its current public product description includes:
+
+- connections between fields, attributes, rules, owners, issues and decisions;
+- reference validation;
+- dataset and model gap detection;
+- impact analysis;
+- reviewable PatchProposals.
+
+The current core includes:
+
+- canonical Markdown and YAML model files;
+- deterministic validation;
+- generated SQLite and JSONL indexes;
+- search and structured query;
+- trace and impact analysis;
+- dataset profiling and gap detection;
+- health, analysis, ownership, audit and scorecard reports;
+- CSV and XLSX review flows;
+- PatchProposal-to-ChangeRequest lifecycle;
+- GitHub-ready issue and change bundles.
+
+These capabilities support an evidence-based readiness process because the report can be generated from connected objects rather than assembled manually from unrelated status updates.
+
+## A Martenweave readiness flow
+
+```text id=&quot;readiness-26&quot;
+Approved model baseline
+        ↓
+Current dataset profile
+        ↓
+Deterministic validation
+        ↓
+Mapping and value coverage
+        ↓
+Target and test evidence
+        ↓
+Gap and ownership analysis
+        ↓
+Readiness scorecard
+        ↓
+Issue or PatchProposal
+        ↓
+Human readiness decision</code></pre>
+<p>Martenweave should prepare the evidence.</p>
+<p>It should not make the final business decision automatically.</p>
+<h2 id="a-minimum-martenweave-based-report">A minimum Martenweave-based report</h2>
+<p>A practical first report can contain:</p>
+<ol>
+<li>Decision and scope.</li>
+<li>Model and dataset baselines.</li>
+<li>Structural validation result.</li>
+<li>Critical-attribute coverage.</li>
+<li>Source-to-target mapping status.</li>
+<li>Dataset completeness by applicable population.</li>
+<li>Value-mapping coverage.</li>
+<li>Key and relationship integrity.</li>
+<li>Target implementation readiness.</li>
+<li>Current test evidence.</li>
+<li>Open blockers and controlled conditions.</li>
+<li>Ownership and due dates.</li>
+<li>Changes since previous baseline.</li>
+<li>Final recommendation requiring human approval.</li>
+</ol>
+<p>This is enough to improve decision quality without building a large programme dashboard.</p>
+<h2 id="how-ai-can-help">How AI can help</h2>
+<p>AI can assist by:</p>
+<ul>
+<li>summarising validation findings;</li>
+<li>grouping related gaps;</li>
+<li>drafting the executive narrative;</li>
+<li>identifying contradictory status claims;</li>
+<li>proposing likely affected objects;</li>
+<li>creating issue drafts;</li>
+<li>explaining technical findings in business language;</li>
+<li>comparing the current report with the previous baseline.</li>
+</ul>
+<p>AI should not convert missing evidence into a positive readiness judgement.</p>
+<p>It should not decide:</p>
+<ul>
+<li>whether an exception is acceptable;</li>
+<li>whether a dataset is representative;</li>
+<li>whether business risk is tolerable;</li>
+<li>whether production migration should proceed.</li>
+</ul>
+<p>The safe pattern is:</p>
+<p>```text id=&quot;readiness-27&quot; Tools produce evidence. AI organises and explains it. Responsible owners decide.</p>
+<pre><code>
+## Readiness anti-patterns
+
+### One overall percentage
+
+It hides critical blockers and different evidence quality.
+
+### Counting completed mapping rows
+
+A row can be complete without being valid, implemented or tested.
+
+### Using the previous dataset profile
+
+Readiness must refer to the current extract or a justified equivalent.
+
+### Counting stale tests
+
+Evidence is invalidated by material model and implementation changes.
+
+### Reporting issue status as evidence
+
+Closed does not mean the underlying model or data changed correctly.
+
+### Hiding accepted exceptions
+
+Controlled conditions should remain visible.
+
+### Treating unknown as green
+
+Missing evidence is not positive evidence.
+
+### Using global averages
+
+They can hide local or source-specific failure.
+
+### Reporting only data quality
+
+Model, mapping, target and ownership readiness also matter.
+
+### Producing a report with no explicit decision
+
+The reader should know exactly what approval is being requested.
+
+## What managers should ask
+
+1. What exact migration decision does this report support?
+2. Which model, dataset and target versions were assessed?
+3. What are the hard blockers?
+4. Which conditions are accepted, by whom and until when?
+5. Do mandatory target fields have approved source treatment?
+6. Are observed source values covered by current mappings?
+7. Are key and relationship structures valid?
+8. Is the current target environment able to receive the data?
+9. Which tests prove the current baseline?
+10. Which evidence is stale or missing?
+11. What changed since the previous readiness review?
+12. Which result is based on judgement rather than deterministic evidence?
+13. Can the critical findings be reproduced?
+14. What happens if the programme proceeds despite each blocker?
+
+If the report cannot answer these questions, it is primarily a status report.
+
+## When a lightweight report is sufficient
+
+A small migration may use a controlled spreadsheet containing:
+
+- readiness criteria;
+- dataset version;
+- critical mappings;
+- profile results;
+- blockers;
+- ownership;
+- decision.
+
+This may be enough when:
+
+- one source system is involved;
+- scope is stable;
+- mappings are simple;
+- the team is small;
+- local variation is limited.
+
+A registry-based report becomes more valuable when:
+
+- several sources and countries are involved;
+- model versions change frequently;
+- datasets arrive repeatedly;
+- mappings and rules are highly connected;
+- multiple partners report status separately;
+- evidence must support audit or handover;
+- AI agents use the model context.
+
+## Our conclusion
+
+An evidence-based migration readiness report should not reward the programme for completing activities.
+
+It should help responsible people decide whether the current migration state is safe enough for a defined next step.
+
+That requires evidence across:
+
+- scope;
+- model;
+- mappings;
+- datasets;
+- target implementation;
+- tests;
+- ownership;
+- exceptions.
+
+The report should be:
+
+- baseline-specific;
+- reproducible;
+- risk-based;
+- contextual;
+- explicit about uncertainty;
+- traceable to model objects and evidence.
+
+The practical test is:
+
+&gt; Can every green or ready statement be traced to current evidence, and can every exception be traced to an accountable decision?
+
+When the answer is yes, the report supports governance.
+
+When the answer is no, the programme has a visually convincing dashboard built on assumptions.
+
+The purpose of readiness reporting is not to make the programme look ready.
+
+It is to make the decision to proceed explainable.
+
+## About the authors
+
+We are Metalhatscats, the team behind Martenweave.
+
+We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is designed to connect model baselines, mappings, datasets, rules, decisions and ownership so that migration readiness can be supported by evidence rather than manually assembled status.
+
+## Sources and notes
+
+This article was reviewed on 14 July 2026.
+
+SAP currently describes SAP Master Data Governance as a central governance layer supporting governed models, validated values, centrally managed business rules, collaborative workflow, data-quality monitoring and auditable data changes. SAP also recommends curating clean and correct master data early before an SAP S/4HANA implementation.
+
+Martenweave’s current public documentation describes structured model objects, deterministic validation, dataset and model gap detection, trace and impact analysis, reporting, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.
+
+Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
+
+</code></pre>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

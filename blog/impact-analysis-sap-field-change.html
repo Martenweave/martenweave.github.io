@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>impact analysis sap field change | Martenweave</title>
+    <meta
+      name="description"
+      content="A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/impact-analysis-sap-field-change.html" />
+    <meta property="og:title" content="impact analysis sap field change | Martenweave" />
+    <meta property="og:description" content="A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="impact analysis sap field change | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/impact-analysis-sap-field-change.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html#webpage",
+                        "url": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html",
+                        "name": "impact analysis sap field change | Martenweave",
+                        "description": "A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Perform Impact Analysis for an SAP Field Change",
+                                    "item": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html#content",
+                        "headline": "How to Perform Impact Analysis for an SAP Field Change",
+                        "name": "How to Perform Impact Analysis for an SAP Field Change",
+                        "description": "A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list.",
+                        "url": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/impact-analysis-sap-field-change.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Perform Impact Analysis for an SAP Field Change</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="how-to-perform-impact-analysis-for-an-sap-field-change">How to Perform Impact Analysis for an SAP Field Change</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>On Monday, a country team asks for one SAP field to become mandatory.</p>
+<p>The request looks small. The field already exists. No new entity is required. The change can probably be configured quickly.</p>
+<p>By Thursday, the programme has discovered that the field is missing from two legacy systems, populated differently in three countries, used by an outbound interface and defaulted by the migration team. One test case assumes that blanks are valid. A local value list contains codes that the global team has never reviewed. The AMS team does not know why the field was optional in the first place.</p>
+<p>The technical change is still small.</p>
+<p>The impact is not.</p>
+<p>This is how many model changes behave in SAP, MDG and migration programmes. A request is described as a change to one field, but the field sits inside a network of definitions, mappings, rules, datasets, organisational contexts and operational processes.</p>
+<p>If those relationships are not visible, impact analysis becomes a sequence of meetings and searches:</p>
+<ul>
+<li>Who owns this field?</li>
+<li>Which systems populate it?</li>
+<li>Which countries use it?</li>
+<li>Does migration already apply a default?</li>
+<li>Will MDG validation reject existing records?</li>
+<li>Which interface consumes it?</li>
+<li>Which tests need to be repeated?</li>
+<li>What happens to records already in production?</li>
+</ul>
+<p>We perform impact analysis to answer these questions before the change becomes configuration, code or a cutover problem.</p>
+<p>The objective is not to predict every possible consequence.</p>
+<p>The objective is to identify enough of the affected model that responsible people can make a controlled decision.</p>
+<h2 id="it-is-only-one-field-is-usually-the-wrong-unit-of-analysis">“It is only one field” is usually the wrong unit of analysis</h2>
+<p>A physical SAP field is only one representation of a wider business concept.</p>
+<p>Consider a field such as:</p>
+<ul>
+<li>Customer Group;</li>
+<li>Payment Terms;</li>
+<li>Tax Number;</li>
+<li>Supplier Account Group;</li>
+<li>Material Status;</li>
+<li>Purchasing Group;</li>
+<li>Product Hierarchy;</li>
+<li>Partner Function.</li>
+</ul>
+<p>The field may participate in:</p>
+<ul>
+<li>a business definition;</li>
+<li>one or more organisational contexts;</li>
+<li>source-to-target mappings;</li>
+<li>value mappings;</li>
+<li>validation and derivation rules;</li>
+<li>workflows;</li>
+<li>matching logic;</li>
+<li>migration routines;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>authorisations;</li>
+<li>tests;</li>
+<li>local exceptions;</li>
+<li>support procedures.</li>
+</ul>
+<p>Changing the field may mean changing only one technical property.</p>
+<p>It may also mean changing the behaviour of the business concept across several systems.</p>
+<p>We therefore begin with a simple distinction:</p>
+<p>&gt; A field change is a technical event. Its impact is a model question.</p>
+<p>If the programme analyses only the technical object, it can miss most of the work.</p>
+<h2 id="what-counts-as-a-field-change">What counts as a field change?</h2>
+<p>Impact analysis should not be limited to adding or deleting fields.</p>
+<p>We treat all of the following as field changes:</p>
+<ul>
+<li>making a field mandatory or optional;</li>
+<li>changing its definition;</li>
+<li>changing its owner;</li>
+<li>changing allowed values;</li>
+<li>changing its organisational context;</li>
+<li>changing its source;</li>
+<li>changing its target endpoint;</li>
+<li>introducing a default;</li>
+<li>removing a default;</li>
+<li>modifying a transformation;</li>
+<li>changing validation severity;</li>
+<li>adding a local exception;</li>
+<li>changing effective dates;</li>
+<li>changing data type or length;</li>
+<li>replacing one field with another;</li>
+<li>deprecating the attribute;</li>
+<li>changing how it is distributed;</li>
+<li>changing how it participates in matching or derivation.</li>
+</ul>
+<p>Some changes are technically minor but semantically significant.</p>
+<p>Changing a description may have little impact. Changing the meaning of a code without changing the field structure may affect migration, reporting and operations across several systems.</p>
+<p>The impact depends on meaning and use, not only on the size of the configuration task.</p>
+<h2 id="why-impact-analysis-often-starts-too-late">Why impact analysis often starts too late</h2>
+<p>In many programmes, impact analysis begins after someone has already decided that the change should happen.</p>
+<p>The sequence looks like this:</p>
+<pre><code class="language-text">Business request
+      ↓
+Configuration or development estimate
+      ↓
+Change implemented
+      ↓
+Migration, integration and testing teams informed
+      ↓
+Unexpected consequences discovered</code></pre>
+<p>The team is then no longer analysing a proposal. It is managing the consequences of an implementation direction that already has momentum.</p>
+<p>We prefer another sequence:</p>
+<pre><code class="language-text">Change proposal
+      ↓
+Affected model objects identified
+      ↓
+Data, process and system impact assessed
+      ↓
+Decision and conditions agreed
+      ↓
+Implementation
+      ↓
+Verification</code></pre>
+<p>This does not mean every field change needs an architecture board.</p>
+<p>The level of analysis should match the risk.</p>
+<p>But the programme should know what it is changing before configuration becomes the decision.</p>
+<h2 id="start-with-the-reason-for-the-change">Start with the reason for the change</h2>
+<p>Before tracing technical dependencies, we ask why the change is being requested.</p>
+<p>Typical reasons include:</p>
+<ul>
+<li>a legal requirement;</li>
+<li>a new business process;</li>
+<li>a migration gap;</li>
+<li>a data-quality defect;</li>
+<li>a country rollout;</li>
+<li>a reporting need;</li>
+<li>an interface requirement;</li>
+<li>an audit finding;</li>
+<li>a harmonisation initiative;</li>
+<li>an operational workaround;</li>
+<li>an SAP design constraint;</li>
+<li>a request to simplify the model.</li>
+</ul>
+<p>The reason affects how the impact should be evaluated.</p>
+<p>A legal requirement may justify local variation.</p>
+<p>A migration gap may indicate that the source data is insufficient rather than that the target model should change.</p>
+<p>A reporting request may be better solved outside the governed master-data model.</p>
+<p>A request to make a field mandatory may hide a process problem: users are not maintaining the data because ownership is unclear.</p>
+<p>We therefore record:</p>
+<ul>
+<li>the problem;</li>
+<li>the requested outcome;</li>
+<li>the affected population;</li>
+<li>the urgency;</li>
+<li>the evidence;</li>
+<li>the requester;</li>
+<li>the decision deadline.</li>
+</ul>
+<p>Without this information, the programme can perform a detailed impact analysis on a poorly framed solution.</p>
+<h2 id="identify-the-business-attribute-before-the-technical-field">Identify the business attribute before the technical field</h2>
+<p>The first object we look for is the business attribute behind the field.</p>
+<p>For example:</p>
+<pre><code class="language-text">Physical field: KNVV-KDGRP
+Business attribute: Customer group for sales processing
+Context: Sales area</code></pre>
+<p>The distinction matters because the business attribute may also be represented in:</p>
+<ul>
+<li>another SAP table;</li>
+<li>an MDG entity;</li>
+<li>a legacy source field;</li>
+<li>a migration template;</li>
+<li>an interface;</li>
+<li>a reporting model;</li>
+<li>a local application.</li>
+</ul>
+<p>If the programme starts and ends with <code>KNVV-KDGRP</code>, it may miss every dependency that does not use the same technical name.</p>
+<p>The impact analysis should therefore ask:</p>
+<ol>
+<li>What business concept does the field represent?</li>
+<li>Does the concept have one meaning or several?</li>
+<li>At which organisational level does it apply?</li>
+<li>Where else is the concept represented?</li>
+<li>Who owns its definition?</li>
+</ol>
+<p>This gives the analysis a stable centre.</p>
+<h2 id="the-eight-impact-areas">The eight impact areas</h2>
+<p>We use eight main areas to structure field-level impact analysis.</p>
+<h1 id="1-model-impact">1. Model impact</h1>
+<p>The first question is how the proposed change affects the governed model.</p>
+<p>Check:</p>
+<ul>
+<li>Does the business definition change?</li>
+<li>Does the attribute remain the same object?</li>
+<li>Is the scope becoming broader or narrower?</li>
+<li>Does the organisational context change?</li>
+<li>Are relationships affected?</li>
+<li>Does the field replace another attribute?</li>
+<li>Does the status change from optional to required?</li>
+<li>Does the change create a new local variant?</li>
+<li>Are any existing model objects now obsolete?</li>
+</ul>
+<p>A technical change may require no model change.</p>
+<p>For example, increasing the physical field length while preserving meaning may be mostly technical.</p>
+<p>Making a sales-area field globally mandatory changes the model and should be treated accordingly.</p>
+<h2 id="definition-changes-are-especially-dangerous">Definition changes are especially dangerous</h2>
+<p>A field can retain the same name and technical endpoint while its meaning changes.</p>
+<p>Suppose “Customer Group” previously represented a sales classification and is now expected to represent customer profitability.</p>
+<p>The target field still accepts the same type of code.</p>
+<p>Existing mappings and reports may still run.</p>
+<p>The model is no longer coherent.</p>
+<p>Definition changes require review of every use of the attribute, not only the target field.</p>
+<h1 id="2-source-data-impact">2. Source-data impact</h1>
+<p>The programme must determine whether the relevant source systems can support the proposed state.</p>
+<p>Check:</p>
+<ul>
+<li>Which source systems provide the attribute?</li>
+<li>Is the source column present?</li>
+<li>How complete is it?</li>
+<li>Is completeness different by country or business unit?</li>
+<li>Are values reliable?</li>
+<li>Does the source use the same definition?</li>
+<li>Can missing values be derived?</li>
+<li>Does enrichment require manual work?</li>
+<li>Will the next extract include the field?</li>
+<li>Are historical records affected?</li>
+</ul>
+<p>If a field becomes mandatory, source-data profiling should happen before approval.</p>
+<p>The target requirement may be reasonable. The programme still needs to know the cost of reaching it.</p>
+<p>A field that is 98% complete globally may be only 40% complete in the country requesting the change.</p>
+<p>Global averages are not sufficient.</p>
+<h1 id="3-mapping-and-transformation-impact">3. Mapping and transformation impact</h1>
+<p>Every mapping connected to the field should be reviewed.</p>
+<p>Check:</p>
+<ul>
+<li>Which source fields map to it?</li>
+<li>Are there different mappings by source system?</li>
+<li>Are there country-specific transformations?</li>
+<li>Are defaults used?</li>
+<li>Are values derived from other attributes?</li>
+<li>Are several source fields combined?</li>
+<li>Does the mapping change business meaning?</li>
+<li>Are value mappings affected?</li>
+<li>Does load sequence matter?</li>
+<li>Is the rule implemented in one place or several?</li>
+</ul>
+<p>A change from optional to mandatory may require:</p>
+<ul>
+<li>a new source;</li>
+<li>a new derivation;</li>
+<li>a controlled default;</li>
+<li>manual enrichment;</li>
+<li>rejection of incomplete records;</li>
+<li>reduced migration scope.</li>
+</ul>
+<p>Each option has different cost and risk.</p>
+<p>The change request should not be approved before the treatment is understood.</p>
+<h1 id="4-value-list-impact">4. Value-list impact</h1>
+<p>Field changes often affect values rather than structure.</p>
+<p>Check:</p>
+<ul>
+<li>Does the target value list change?</li>
+<li>Are new codes being introduced?</li>
+<li>Are existing codes being retired?</li>
+<li>Do local code lists still map correctly?</li>
+<li>Will many source values collapse into one target value?</li>
+<li>Do downstream systems understand the new values?</li>
+<li>Are defaults still valid?</li>
+<li>Are inactive values present in current data?</li>
+<li>Are effective dates required?</li>
+</ul>
+<p>A new target code may appear harmless.</p>
+<p>It can require updates to:</p>
+<ul>
+<li>migration mappings;</li>
+<li>MDG validations;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>analytics;</li>
+<li>local applications;</li>
+<li>test cases;</li>
+<li>training materials.</li>
+</ul>
+<p>The field has not changed physically. Its usable domain has.</p>
+<h1 id="5-rule-and-workflow-impact">5. Rule and workflow impact</h1>
+<p>SAP MDG can govern validated values, business rules, change processes, quality monitoring and auditable data changes. A field change may therefore affect more than the model structure.</p>
+<p>Check:</p>
+<ul>
+<li>Is the field used in validation?</li>
+<li>Is it derived?</li>
+<li>Does it influence workflow routing?</li>
+<li>Does it determine an approver?</li>
+<li>Is it used in duplicate detection or matching?</li>
+<li>Does it affect data-quality measurement?</li>
+<li>Does it trigger a warning or error?</li>
+<li>Is the same rule implemented during migration?</li>
+<li>Are emergency or mass-change processes affected?</li>
+</ul>
+<p>Making a field mandatory can produce different behaviour depending on where the rule is enforced:</p>
+<ul>
+<li>user interface;</li>
+<li>MDG validation;</li>
+<li>migration staging;</li>
+<li>API;</li>
+<li>interface;</li>
+<li>downstream system.</li>
+</ul>
+<p>The programme needs one approved business rule and a clear view of its technical implementations.</p>
+<p>Otherwise, different channels can accept different versions of the same record.</p>
+<h1 id="6-integration-and-downstream-impact">6. Integration and downstream impact</h1>
+<p>A field may be consumed outside SAP MDG or S/4HANA.</p>
+<p>Check:</p>
+<ul>
+<li>Which interfaces distribute it?</li>
+<li>Is it included in IDocs, APIs or middleware mappings?</li>
+<li>Do downstream systems require the current value set?</li>
+<li>Is it used in reporting?</li>
+<li>Is it used in analytics or segmentation?</li>
+<li>Is it part of an external regulatory feed?</li>
+<li>Is it copied into transactional documents?</li>
+<li>Will existing consumers ignore, reject or misinterpret the new value?</li>
+</ul>
+<p>This analysis cannot depend only on a list of interfaces containing the physical field name.</p>
+<p>The same business attribute may be renamed or transformed across systems.</p>
+<p>The impact model should connect business meaning to physical endpoints.</p>
+<h2 id="the-consumer-does-not-use-the-field-needs-evidence">“The consumer does not use the field” needs evidence</h2>
+<p>This statement is often based on memory.</p>
+<p>We prefer evidence such as:</p>
+<ul>
+<li>interface mapping;</li>
+<li>data lineage;</li>
+<li>report definition;</li>
+<li>API contract;</li>
+<li>consumer owner confirmation;</li>
+<li>usage analysis.</li>
+</ul>
+<p>An undocumented assumption that no one uses the field is not a safe basis for removal.</p>
+<h1 id="7-testing-impact">7. Testing impact</h1>
+<p>A field change creates a test obligation.</p>
+<p>Check:</p>
+<ul>
+<li>Which existing test cases cover the field?</li>
+<li>Do they cover all contexts?</li>
+<li>Are country variants tested?</li>
+<li>Are negative cases included?</li>
+<li>Are migration and operational scenarios both covered?</li>
+<li>Are interfaces included?</li>
+<li>Does regression testing need to expand?</li>
+<li>Which existing evidence becomes obsolete?</li>
+<li>Which test datasets need updating?</li>
+</ul>
+<p>The programme should distinguish between:</p>
+<ul>
+<li>testing that the field can be populated;</li>
+<li>testing that the rule behaves correctly;</li>
+<li>testing that downstream systems understand it;</li>
+<li>testing that existing records remain valid;</li>
+<li>testing that stewards can maintain it after go-live.</li>
+</ul>
+<p>A successful technical update does not prove that the complete business behaviour remains correct.</p>
+<h1 id="8-operational-and-ams-impact">8. Operational and AMS impact</h1>
+<p>Every model change eventually becomes an operational responsibility.</p>
+<p>Check:</p>
+<ul>
+<li>Who owns the field after go-live?</li>
+<li>Do data stewards understand the new rule?</li>
+<li>Will existing records need remediation?</li>
+<li>Are support procedures affected?</li>
+<li>Will monitoring detect invalid values?</li>
+<li>Are quality thresholds changing?</li>
+<li>Will training or user guidance change?</li>
+<li>Can AMS explain why the change was made?</li>
+<li>Is rollback possible?</li>
+<li>Does the change create a temporary exception population?</li>
+</ul>
+<p>This area is frequently omitted because AMS is consulted after implementation.</p>
+<p>That is too late.</p>
+<p>A field can be easy to configure and expensive to operate.</p>
+<h2 id="assess-the-existing-population">Assess the existing population</h2>
+<p>A model change does not affect only future records.</p>
+<p>The programme must decide what happens to existing data.</p>
+<p>For example, when a field becomes mandatory:</p>
+<ul>
+<li>Are existing blanks grandfathered?</li>
+<li>Must all records be remediated?</li>
+<li>Will only changed records be validated?</li>
+<li>Will a mass update be required?</li>
+<li>Can values be derived?</li>
+<li>Does remediation happen before or after deployment?</li>
+<li>What happens to interfaces during the transition?</li>
+<li>How is progress measured?</li>
+</ul>
+<p>SAP currently describes MDG capabilities including mass processing, validation, quality monitoring and governed change workflows. Those capabilities can support operational treatment, but the programme still has to define which records are affected and what outcome is acceptable.</p>
+<p>The impact analysis should quantify the population.</p>
+<p>“Some records are blank” is not enough.</p>
+<p>A better statement is:</p>
+<p>&gt; 18,420 active customer sales-area records are blank. Of those, 12,700 belong to countries where the proposed rule would apply. Reliable derivation exists for 8,100 records. The remaining 4,600 require enrichment or an approved exception.</p>
+<p>This allows management to make an informed decision.</p>
+<h2 id="distinguish-design-impact-from-implementation-effort">Distinguish design impact from implementation effort</h2>
+<p>Two measures should be reported separately.</p>
+<h3 id="design-impact">Design impact</h3>
+<p>How many parts of the model and operating process are affected?</p>
+<h3 id="implementation-effort">Implementation effort</h3>
+<p>How much work is required to implement the approved change?</p>
+<p>A change can have broad design impact but low technical effort.</p>
+<p>For example, adding one allowed value may require minimal configuration but affect many reports, mappings and interfaces.</p>
+<p>Another change can have narrow design impact but high implementation effort.</p>
+<p>For example, changing one physical integration field may require difficult middleware development while leaving the business model unchanged.</p>
+<p>Combining impact and effort into one estimate hides this distinction.</p>
+<h2 id="use-impact-tiers">Use impact tiers</h2>
+<p>Not every change requires the same process.</p>
+<p>We use a practical tier model.</p>
+<h3 id="tier-1-local-technical-change">Tier 1: Local technical change</h3>
+<p>Examples:</p>
+<ul>
+<li>description correction;</li>
+<li>non-functional metadata update;</li>
+<li>technical length adjustment with no semantic effect;</li>
+<li>internal implementation correction.</li>
+</ul>
+<p>Expected review:</p>
+<ul>
+<li>technical owner;</li>
+<li>basic regression check;</li>
+<li>model record updated where relevant.</li>
+</ul>
+<h3 id="tier-2-controlled-model-change">Tier 2: Controlled model change</h3>
+<p>Examples:</p>
+<ul>
+<li>value-list update;</li>
+<li>transformation change;</li>
+<li>ownership change;</li>
+<li>optionality change for a limited context;</li>
+<li>new local mapping.</li>
+</ul>
+<p>Expected review:</p>
+<ul>
+<li>business owner;</li>
+<li>model or MDG architect;</li>
+<li>migration and test impact;</li>
+<li>affected consumers.</li>
+</ul>
+<h3 id="tier-3-cross-programme-change">Tier 3: Cross-programme change</h3>
+<p>Examples:</p>
+<ul>
+<li>global definition change;</li>
+<li>identifier strategy change;</li>
+<li>mandatory-field change across countries;</li>
+<li>removal of an attribute;</li>
+<li>change affecting matching, workflow or multiple interfaces.</li>
+</ul>
+<p>Expected review:</p>
+<ul>
+<li>formal architecture and governance decision;</li>
+<li>quantified data impact;</li>
+<li>migration, integration and AMS plans;</li>
+<li>explicit rollout and remediation approach.</li>
+</ul>
+<p>This prevents a heavy process for trivial corrections while protecting changes with broad consequences.</p>
+<h2 id="a-practical-impact-analysis-method">A practical impact-analysis method</h2>
+<p>We use the following sequence.</p>
+<h1 id="step-1-register-the-proposal">Step 1: Register the proposal</h1>
+<p>Record:</p>
+<ul>
+<li>requested change;</li>
+<li>current state;</li>
+<li>proposed state;</li>
+<li>reason;</li>
+<li>requester;</li>
+<li>affected scope;</li>
+<li>evidence;</li>
+<li>required date.</li>
+</ul>
+<p>Avoid vague requests such as “update field logic.”</p>
+<h1 id="step-2-identify-the-model-object">Step 2: Identify the model object</h1>
+<p>Find:</p>
+<ul>
+<li>business attribute;</li>
+<li>physical endpoints;</li>
+<li>relevant contexts;</li>
+<li>owner;</li>
+<li>lifecycle status.</li>
+</ul>
+<p>If no stable model object exists, create or clarify it before continuing.</p>
+<h1 id="step-3-traverse-direct-dependencies">Step 3: Traverse direct dependencies</h1>
+<p>Identify directly connected:</p>
+<ul>
+<li>source fields;</li>
+<li>target fields;</li>
+<li>mappings;</li>
+<li>transformations;</li>
+<li>value lists;</li>
+<li>rules;</li>
+<li>contexts;</li>
+<li>owners.</li>
+</ul>
+<p>This produces the first impact boundary.</p>
+<h1 id="step-4-traverse-downstream-relationships">Step 4: Traverse downstream relationships</h1>
+<p>Identify:</p>
+<ul>
+<li>datasets;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>tests;</li>
+<li>related entities;</li>
+<li>decisions;</li>
+<li>defects;</li>
+<li>support procedures.</li>
+</ul>
+<p>Not every possible link needs to be followed indefinitely.</p>
+<p>Stop when additional relationships are unlikely to affect the decision.</p>
+<h1 id="step-5-profile-the-affected-data">Step 5: Profile the affected data</h1>
+<p>Use current data to determine:</p>
+<ul>
+<li>population size;</li>
+<li>completeness;</li>
+<li>value distributions;</li>
+<li>source coverage;</li>
+<li>country or organisational variation;</li>
+<li>invalid and exceptional populations.</li>
+</ul>
+<p>This prevents the impact assessment from remaining theoretical.</p>
+<h1 id="step-6-classify-consequences">Step 6: Classify consequences</h1>
+<p>For each impact, classify:</p>
+<ul>
+<li>model;</li>
+<li>data;</li>
+<li>mapping;</li>
+<li>rule;</li>
+<li>workflow;</li>
+<li>integration;</li>
+<li>test;</li>
+<li>operational;</li>
+<li>compliance;</li>
+<li>cost or schedule.</li>
+</ul>
+<p>Assign severity and owner.</p>
+<h1 id="step-7-define-treatment-options">Step 7: Define treatment options</h1>
+<p>Do not present only one implementation path.</p>
+<p>Possible options may include:</p>
+<ul>
+<li>implement globally;</li>
+<li>implement for selected contexts;</li>
+<li>introduce a local extension;</li>
+<li>derive the value;</li>
+<li>enrich data;</li>
+<li>retain optionality;</li>
+<li>create a warning instead of an error;</li>
+<li>postpone the change;</li>
+<li>solve the requirement downstream;</li>
+<li>reject the proposal.</li>
+</ul>
+<p>The impact analysis should help decision-makers compare options.</p>
+<h1 id="step-8-record-the-decision">Step 8: Record the decision</h1>
+<p>Capture:</p>
+<ul>
+<li>selected option;</li>
+<li>rationale;</li>
+<li>approvers;</li>
+<li>rejected alternatives;</li>
+<li>conditions;</li>
+<li>effective date;</li>
+<li>remediation obligations;</li>
+<li>review trigger.</li>
+</ul>
+<h1 id="step-9-implement-and-verify">Step 9: Implement and verify</h1>
+<p>After implementation, confirm that:</p>
+<ul>
+<li>the approved model was updated;</li>
+<li>configuration matches the decision;</li>
+<li>mappings were updated;</li>
+<li>value lists align;</li>
+<li>datasets were revalidated;</li>
+<li>tests passed;</li>
+<li>downstream consumers were informed;</li>
+<li>AMS received the context.</li>
+</ul>
+<p>The analysis is not complete when the decision is approved.</p>
+<p>It is complete when the affected system of work is aligned again.</p>
+<h2 id="a-worked-example-making-customer-group-mandatory">A worked example: making Customer Group mandatory</h2>
+<p>A regional manager requests mandatory Customer Group maintenance for every customer.</p>
+<p>The stated reason is reporting consistency.</p>
+<p>At first, this appears to be one validation change.</p>
+<p>Our impact analysis finds the following.</p>
+<h3 id="model">Model</h3>
+<p>Customer Group is currently defined at sales-area level, not centrally.</p>
+<p>The request uses the word “customer” globally but applies only to selected sales organisations.</p>
+<h3 id="source-data">Source data</h3>
+<p>Two legacy systems supply a classification.</p>
+<p>One system has no equivalent field.</p>
+<p>Completeness varies from 30% to 99% by country.</p>
+<h3 id="mapping">Mapping</h3>
+<p>Some countries map local segments directly.</p>
+<p>Others derive the value from sales channel and market segment.</p>
+<p>One country uses a default value.</p>
+<h3 id="value-list">Value list</h3>
+<p>The global target list contains eight codes.</p>
+<p>The current data contains 23 source codes and several free-text values.</p>
+<h3 id="rules">Rules</h3>
+<p>MDG currently issues a warning in selected contexts.</p>
+<p>The proposal requests a blocking error for all sales areas.</p>
+<h3 id="integration">Integration</h3>
+<p>A reporting platform consumes the target code.</p>
+<p>A pricing interface also reads it for one country, which was not mentioned in the request.</p>
+<h3 id="testing">Testing</h3>
+<p>Existing tests cover record creation with a value.</p>
+<p>They do not cover changes to old records where the field is blank.</p>
+<h3 id="operations">Operations</h3>
+<p>Approximately 14,000 existing records would fail the proposed rule when edited.</p>
+<p>No remediation owner has been assigned.</p>
+<p>The change is no longer “make one field mandatory.”</p>
+<p>The programme now has several options:</p>
+<ol>
+<li>Make it mandatory only for new records in selected sales areas.</li>
+<li>Introduce a warning while historical remediation proceeds.</li>
+<li>Derive the value where reliable source logic exists.</li>
+<li>Separate reporting classification from pricing use.</li>
+<li>Retain optionality until the global definition is harmonised.</li>
+</ol>
+<p>The impact analysis does not choose automatically.</p>
+<p>It makes the trade-offs visible before the change is implemented.</p>
+<h2 id="impact-analysis-should-include-non-change">Impact analysis should include non-change</h2>
+<p>Sometimes the right decision is to make no change.</p>
+<p>A request may be rejected because:</p>
+<ul>
+<li>the business problem belongs to reporting rather than master data;</li>
+<li>the source cannot support the requirement;</li>
+<li>the field already has a different governed meaning;</li>
+<li>the proposed value duplicates another attribute;</li>
+<li>implementation cost exceeds expected value;</li>
+<li>a local exception would damage the global model;</li>
+<li>the requirement is temporary;</li>
+<li>an existing process already provides sufficient control.</li>
+</ul>
+<p>A recorded non-change decision is valuable.</p>
+<p>It prevents the same request from being analysed repeatedly without reference to the previous reasoning.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave to make field-level impact analysis possible without manually searching every project repository.</p>
+<p>The current model can connect:</p>
+<ul>
+<li>business attributes;</li>
+<li>entity contexts;</li>
+<li>source and target field endpoints;</li>
+<li>mappings;</li>
+<li>value lists and value mappings;</li>
+<li>validation rules;</li>
+<li>owners;</li>
+<li>issues;</li>
+<li>decisions;</li>
+<li>change requests;</li>
+<li>datasets.</li>
+</ul>
+<p>The SAP migration scenario specifically supports tracing a legacy column through mappings, attributes and contexts to SAP field endpoints, together with impact analysis before changing a rule.</p>
+<p>The current core also provides deterministic validation, generated indexes, structured queries, trace and impact commands, dataset profiling, reports and a reviewable PatchProposal-to-ChangeRequest lifecycle.</p>
+<p>A practical Martenweave flow looks like this:</p>
+<pre><code class="language-text">Proposed field change
+        ↓
+Affected model object identified
+        ↓
+Relationships traversed
+        ↓
+Datasets and current values profiled
+        ↓
+Impact report generated
+        ↓
+Patch proposal reviewed
+        ↓
+Human approval
+        ↓
+Model and implementation updated</code></pre>
+<p>Martenweave does not decide whether a change is good.</p>
+<p>It gives the architect and responsible owners a more complete view of what the change touches.</p>
+<h2 id="why-deterministic-relationships-matter">Why deterministic relationships matter</h2>
+<p>AI can read tickets and suggest likely impacts.</p>
+<p>It may notice that a field appears in several documents or infer that a value-list change affects a mapping.</p>
+<p>This is useful.</p>
+<p>It is not enough for approval.</p>
+<p>Impact analysis needs deterministic relationships where possible:</p>
+<ul>
+<li>this mapping references this endpoint;</li>
+<li>this rule references this attribute;</li>
+<li>this dataset contains this source field;</li>
+<li>this value mapping belongs to this list;</li>
+<li>this decision changed this object.</li>
+</ul>
+<p>AI can propose additional relationships or identify missing evidence.</p>
+<p>Validators and people should confirm them.</p>
+<p>Our rule is the same across Martenweave:</p>
+<p>&gt; AI proposes. Validators verify. Humans approve.</p>
+<h2 id="what-management-should-receive">What management should receive</h2>
+<p>A manager does not need a diagram containing every relationship.</p>
+<p>A useful impact summary should contain:</p>
+<h3 id="the-request">The request</h3>
+<p>What is changing and why?</p>
+<h3 id="affected-scope">Affected scope</h3>
+<p>Which domains, countries, organisations and systems are involved?</p>
+<h3 id="current-data-impact">Current-data impact</h3>
+<p>How many records are affected? Which populations have gaps?</p>
+<h3 id="delivery-impact">Delivery impact</h3>
+<p>Which mappings, rules, interfaces and tests require changes?</p>
+<h3 id="operational-impact">Operational impact</h3>
+<p>What remediation, training or support changes are required?</p>
+<h3 id="options">Options</h3>
+<p>What realistic implementation choices exist?</p>
+<h3 id="recommendation">Recommendation</h3>
+<p>Which option does the architecture and delivery team recommend, and why?</p>
+<h3 id="decision-conditions">Decision conditions</h3>
+<p>What must be completed before implementation or activation?</p>
+<p>This is enough for informed governance without forcing management into field-level detail.</p>
+<h2 id="common-impact-analysis-failures">Common impact-analysis failures</h2>
+<h3 id="searching-only-for-the-sap-field-name">Searching only for the SAP field name</h3>
+<p>Dependencies may use business names, aliases or transformed endpoints.</p>
+<p>Start from the business attribute.</p>
+<h3 id="asking-only-the-configuration-team">Asking only the configuration team</h3>
+<p>Configuration is one part of the impact.</p>
+<p>Migration, integration, testing, business ownership and AMS may see different consequences.</p>
+<h3 id="using-outdated-datasets">Using outdated datasets</h3>
+<p>Impact should be quantified against the current population.</p>
+<h3 id="treating-all-countries-as-one-context">Treating all countries as one context</h3>
+<p>Global attributes often have local use and completeness differences.</p>
+<h3 id="counting-dependencies-without-assessing-severity">Counting dependencies without assessing severity</h3>
+<p>Ten trivial references may matter less than one critical regulatory interface.</p>
+<h3 id="ignoring-existing-records">Ignoring existing records</h3>
+<p>A rule for future creation may still affect old records when they are changed.</p>
+<h3 id="implementing-first-and-documenting-later">Implementing first and documenting later</h3>
+<p>This turns the implemented solution into the decision.</p>
+<h3 id="recording-only-the-selected-option">Recording only the selected option</h3>
+<p>Rejected alternatives and rationale help future teams avoid repeating the same analysis.</p>
+<h3 id="closing-the-change-after-transport">Closing the change after transport</h3>
+<p>Mappings, tests, datasets, reports and AMS knowledge may still be misaligned.</p>
+<h2 id="when-lightweight-analysis-is-enough">When lightweight analysis is enough</h2>
+<p>Not every field change needs a large assessment.</p>
+<p>A short review may be sufficient when:</p>
+<ul>
+<li>the business meaning does not change;</li>
+<li>the field has no known downstream use;</li>
+<li>no current data requires remediation;</li>
+<li>no mapping or value list is affected;</li>
+<li>the change is limited to one controlled context;</li>
+<li>rollback is easy;</li>
+<li>regression testing is small.</li>
+</ul>
+<p>The important point is that these conditions should be checked, not assumed.</p>
+<p>A five-minute dependency query can justify a lightweight path.</p>
+<p>Without the query, “low impact” may simply mean “we did not look.”</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>A field change rarely stays inside one field.</p>
+<p>It can affect:</p>
+<ul>
+<li>business meaning;</li>
+<li>source-data availability;</li>
+<li>migration mappings;</li>
+<li>target validations;</li>
+<li>workflows;</li>
+<li>value lists;</li>
+<li>interfaces;</li>
+<li>test evidence;</li>
+<li>historical records;</li>
+<li>operational ownership.</li>
+</ul>
+<p>The purpose of impact analysis is not to slow the programme with another approval process.</p>
+<p>It is to prevent a small request from becoming a large surprise.</p>
+<p>We start from the business attribute, identify direct and downstream relationships, examine the current data and present decision-makers with realistic options.</p>
+<p>The most important question is not:</p>
+<p>&gt; How quickly can we configure this field?</p>
+<p>It is:</p>
+<p>&gt; What else becomes true, invalid or incomplete if we make this change?</p>
+<p>When the programme can answer that question before implementation, changes move faster because teams spend less time repairing consequences they could have seen.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>We are Metalhatscats, the team behind Martenweave.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping architects and delivery teams understand the real impact of model changes, connect decisions to evidence and reduce the rework caused by changes made in isolation.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer supporting governed models, golden records, matching and consolidation, collaborative workflows, validated values, data-quality monitoring, audit trails and mass changes.</p>
+<p>Martenweave’s public SAP migration documentation describes field-level mappings, contextual model objects, deterministic validation, dataset gap detection, lineage, impact analysis and human-reviewed change proposals.</p>
+<p>The current Martenweave product documentation lists canonical model files, generated indexes, structured search, trace and impact analysis, dataset profiling, reports and the PatchProposal-to-ChangeRequest lifecycle.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

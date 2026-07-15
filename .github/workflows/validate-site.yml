@@ -24,3 +24,18 @@ jobs:
 
       - name: Validate static site
         run: npm run validate
+
+      - name: Checkout Core metadata
+        uses: actions/checkout@v4
+        with:
+          repository: metalhatscats/martenweave-core
+          path: martenweave-core
+
+      - name: Check Core version copy
+        run: python3 scripts/check-core-version-copy.py martenweave-core/pyproject.toml
+
+      - name: Install browser for rendered smoke checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Rendered site smoke check
+        run: npm run test:render

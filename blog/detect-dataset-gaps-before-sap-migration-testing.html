@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>detect dataset gaps before sap migration testing | Martenweave</title>
+    <meta
+      name="description"
+      content="How to compare representative datasets with an approved model before SAP migration testing begins."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html" />
+    <meta property="og:title" content="detect dataset gaps before sap migration testing | Martenweave" />
+    <meta property="og:description" content="How to compare representative datasets with an approved model before SAP migration testing begins." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="detect dataset gaps before sap migration testing | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html#webpage",
+                        "url": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html",
+                        "name": "detect dataset gaps before sap migration testing | Martenweave",
+                        "description": "How to compare representative datasets with an approved model before SAP migration testing begins.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Detect Dataset Gaps Before SAP Migration Testing",
+                                    "item": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html#content",
+                        "headline": "How to Detect Dataset Gaps Before SAP Migration Testing",
+                        "name": "How to Detect Dataset Gaps Before SAP Migration Testing",
+                        "description": "How to compare representative datasets with an approved model before SAP migration testing begins.",
+                        "url": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/detect-dataset-gaps-before-sap-migration-testing.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Detect Dataset Gaps Before SAP Migration Testing</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="how-to-detect-dataset-gaps-before-sap-migration-testing">How to Detect Dataset Gaps Before SAP Migration Testing</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</p>
+<p>The target structure is designed. Mappings are documented. Transformation routines are built. A migration file is prepared and sent into the first mock load.</p>
+<p>Only then does the programme discover that:</p>
+<ul>
+<li>required columns are missing;</li>
+<li>source values do not fit the target code lists;</li>
+<li>relationships cannot be reconstructed;</li>
+<li>mandatory attributes are empty for important populations;</li>
+<li>the same field means different things across countries;</li>
+<li>extraction logic does not match the mapping specification;</li>
+<li>records that looked complete in Excel fail under actual SAP or MDG rules.</li>
+</ul>
+<p>These findings are often recorded as testing defects.</p>
+<p>Many of them are not testing defects.</p>
+<p>They are dataset-to-model gaps that existed before testing began.</p>
+<p>The load did not create the problem. It only made the problem visible.</p>
+<p>Our approach is to compare representative datasets with the approved model before formal migration testing. The goal is not to predict every possible load error. It is to remove avoidable uncertainty before the programme starts spending test cycles on problems that can be detected directly from the data and model.</p>
+<p>&gt; Migration testing should verify implemented behaviour. It should not be the first time the programme checks whether the required data exists.</p>
+<h2 id="what-we-mean-by-a-dataset-gap">What we mean by a dataset gap</h2>
+<p>A dataset gap is a difference between what the approved migration model expects and what the current dataset can provide or prove.</p>
+<p>This definition is broader than a missing column.</p>
+<p>A dataset can contain every expected column and still have serious gaps.</p>
+<p>For example:</p>
+<ul>
+<li>the column exists but is empty for one country;</li>
+<li>values use codes not represented in the approved mapping;</li>
+<li>the required parent record is missing;</li>
+<li>the field contains several business concepts combined into one string;</li>
+<li>the mapping expects one value per record, but the source contains several;</li>
+<li>a date field contains ambiguous free text;</li>
+<li>an organisational assignment exists in the source but not in the target scope;</li>
+<li>a relationship cannot be linked because identifiers are inconsistent;</li>
+<li>values meet the technical format but not the agreed business definition.</li>
+</ul>
+<p>We therefore treat dataset gaps as a family of problems rather than one technical check.</p>
+<h2 id="why-these-gaps-are-found-too-late">Why these gaps are found too late</h2>
+<p>The information needed to identify many gaps exists early in the programme.</p>
+<p>The target team knows which attributes and relationships are expected.</p>
+<p>The migration team has mapping workbooks.</p>
+<p>Source owners can usually provide representative extracts.</p>
+<p>Business teams know the most important local variations.</p>
+<p>The problem is that these inputs are often reviewed separately.</p>
+<p>The target model is reviewed as a design.</p>
+<p>The mapping is reviewed as a document.</p>
+<p>The source extract is profiled as a data-quality exercise.</p>
+<p>No controlled comparison proves that all three remain aligned.</p>
+<p>This separation creates a familiar sequence:</p>
+<p>```text id=&quot;dsgap1&quot; Target model approved ↓ Mappings completed ↓ Migration routines built ↓ Mock load executed ↓ Dataset gaps discovered</p>
+<pre><code>
+We prefer a different sequence:
+
+```text id=&quot;dsgap2&quot;
+Target model defined
+        ↓
+Representative dataset profiled
+        ↓
+Model and dataset compared
+        ↓
+Gaps assigned and resolved
+        ↓
+Mappings and routines implemented
+        ↓
+Mock load verifies behaviour</code></pre>
+<p>The second approach does not eliminate defects.</p>
+<p>It improves the quality of the defects reaching testing.</p>
+<p>Instead of discovering that a required source field does not exist, the programme can spend the test cycle on whether the agreed treatment works correctly.</p>
+<h2 id="a-model-is-an-expectation">A model is an expectation</h2>
+<p>A migration model expresses expectations about the data.</p>
+<p>It may state that a Business Partner requires:</p>
+<ul>
+<li>a name;</li>
+<li>an address;</li>
+<li>a country;</li>
+<li>one or more roles;</li>
+<li>organisational assignments;</li>
+<li>tax information in defined contexts;</li>
+<li>relationships to other parties;</li>
+<li>controlled code values;</li>
+<li>stable source identifiers.</li>
+</ul>
+<p>The dataset provides evidence about whether those expectations can be met.</p>
+<p>The two should be compared explicitly.</p>
+<p>This sounds obvious, but many mapping processes compare fields only at design time:</p>
+<p>```text id=&quot;dsgap3&quot; Expected source field → Target field</p>
+<pre><code>
+The programme also needs to compare the current data:
+
+```text id=&quot;dsgap4&quot;
+Expected field
+        ↕
+Actual column presence
+Actual completeness
+Actual values
+Actual formats
+Actual relationships
+Actual population coverage</code></pre>
+<p>A mapping tells us what should happen.</p>
+<p>A profile tells us whether the current population supports it.</p>
+<h2 id="the-major-types-of-dataset-gaps">The major types of dataset gaps</h2>
+<p>We use several categories because each type requires a different response.</p>
+<h1 id="1-structural-gaps">1. Structural gaps</h1>
+<p>A structural gap exists when the dataset does not contain the columns, files or relationships expected by the model.</p>
+<p>Examples include:</p>
+<ul>
+<li>an expected column is absent;</li>
+<li>a column has been renamed;</li>
+<li>a relationship is supplied in a separate file that was not included;</li>
+<li>a target attribute has no identified source;</li>
+<li>the extract contains a flattened structure while the target requires repeating records;</li>
+<li>the mapping expects several source columns that were combined during extraction;</li>
+<li>the expected key is not included.</li>
+</ul>
+<p>Structural checks are the simplest to automate and should happen immediately when a new extract arrives.</p>
+<p>They answer questions such as:</p>
+<ul>
+<li>Are all required columns present?</li>
+<li>Are unexpected columns present?</li>
+<li>Does the file structure match the agreed interface?</li>
+<li>Are required keys available?</li>
+<li>Can related files be joined?</li>
+<li>Has the extraction structure changed since the previous version?</li>
+</ul>
+<p>A mock load should not be the mechanism used to discover that a required file was omitted.</p>
+<h1 id="2-completeness-gaps">2. Completeness gaps</h1>
+<p>A column can exist while providing insufficient data.</p>
+<p>Completeness must be measured against the relevant population and context.</p>
+<p>For example:</p>
+<ul>
+<li>Tax Number is 92% complete globally but 20% complete for one country.</li>
+<li>Purchasing Organisation is populated for active suppliers but absent from blocked suppliers that must still be migrated.</li>
+<li>Customer Group is complete for one source system and largely blank in another.</li>
+<li>A plant-level material attribute exists only for selected plants.</li>
+</ul>
+<p>An overall completeness percentage can conceal the operational gap.</p>
+<p>We therefore profile completeness by dimensions such as:</p>
+<ul>
+<li>source system;</li>
+<li>country;</li>
+<li>company code;</li>
+<li>sales organisation;</li>
+<li>purchasing organisation;</li>
+<li>plant;</li>
+<li>record type;</li>
+<li>status;</li>
+<li>migration wave;</li>
+<li>business unit.</li>
+</ul>
+<p>The relevant question is not:</p>
+<p>&gt; How complete is this column?</p>
+<p>It is:</p>
+<p>&gt; Is this column complete enough for the population and context we intend to migrate?</p>
+<h1 id="3-value-domain-gaps">3. Value-domain gaps</h1>
+<p>A value-domain gap exists when the dataset contains values that are not covered by the approved target list or value mapping.</p>
+<p>Examples include:</p>
+<ul>
+<li>unexpected codes;</li>
+<li>inactive codes still used by current records;</li>
+<li>local codes not included in the global design;</li>
+<li>values differing only by spacing or case;</li>
+<li>blank, zero and “unknown” used inconsistently;</li>
+<li>one source value mapping to several possible target values;</li>
+<li>several source values being merged without business approval.</li>
+</ul>
+<p>A value-mapping workbook may appear complete because every expected source code has a target.</p>
+<p>The real dataset may contain additional values that were never included in the workbook.</p>
+<p>This is why we calculate value coverage against actual data:</p>
+<p>```text id=&quot;dsgap5&quot; Observed source values ↓ Normalisation ↓ Mapped values Unmapped values Ambiguous values Deprecated values</p>
+<pre><code>
+The programme then decides whether unmatched values should be:
+
+- added to the mapping;
+- corrected in the source;
+- normalised;
+- rejected;
+- defaulted;
+- excluded;
+- reviewed manually.
+
+That decision should happen before the load routine encounters the value.
+
+# 4. Format and representation gaps
+
+Some values contain the right information in a form that does not match the target expectation.
+
+Examples include:
+
+- dates stored in several formats;
+- leading zeros removed from identifiers;
+- decimal separators varying by country;
+- multiple values combined in one field;
+- names and addresses stored in unstructured text;
+- country codes mixed between ISO forms and local abbreviations;
+- boolean values represented as `Y/N`, `1/0`, `true/false` and blanks;
+- units stored inside numeric fields;
+- invalid character encoding;
+- text truncated by the extraction format.
+
+These problems are often described as technical cleansing.
+
+Some are technical. Others require business interpretation.
+
+Removing spaces from a tax identifier may be straightforward. Deciding which of two values in one field is authoritative is not.
+
+We distinguish between:
+
+- syntactic normalisation;
+- semantic transformation;
+- business decision.
+
+Only the first category should be treated as automatically safe.
+
+# 5. Context gaps
+
+A value can be present but attached to the wrong or incomplete business context.
+
+This is especially important in SAP master data.
+
+Examples include:
+
+- a customer attribute available centrally but required by sales area;
+- supplier data available generally but missing by purchasing organisation;
+- material data complete at basic level but absent for one plant;
+- a local field included without the country or company-code condition that explains it;
+- the same source value meaning different things in different organisational units.
+
+A flat dataset may hide these distinctions.
+
+The programme should compare data at the same level at which the target model expects it.
+
+For example:
+
+```text id=&quot;dsgap6&quot;
+Customer
+ ├── Central data
+ ├── Company code A
+ ├── Company code B
+ ├── Sales area 1
+ └── Sales area 2</code></pre>
+<p>A customer record is not complete merely because the central row exists.</p>
+<p>If the go-live scope includes Sales Area 2, the required organisational data must also be present.</p>
+<h1 id="6-relationship-gaps">6. Relationship gaps</h1>
+<p>Enterprise master data is not a collection of independent rows.</p>
+<p>Important meaning exists in relationships:</p>
+<ul>
+<li>Business Partner roles;</li>
+<li>customer and supplier links;</li>
+<li>parent and child organisations;</li>
+<li>partner functions;</li>
+<li>material hierarchies;</li>
+<li>product classifications;</li>
+<li>bank details linked to an owner;</li>
+<li>addresses linked to a usage;</li>
+<li>organisational assignments;</li>
+<li>contact relationships.</li>
+</ul>
+<p>A relationship gap exists when:</p>
+<ul>
+<li>a child record has no parent;</li>
+<li>a referenced identifier does not exist;</li>
+<li>keys differ between files;</li>
+<li>the relationship type is unknown;</li>
+<li>duplicate records create ambiguous links;</li>
+<li>the source stores the relationship indirectly;</li>
+<li>one part of the relationship is outside the migration scope.</li>
+</ul>
+<p>Relationship gaps are frequently discovered late because teams profile files column by column.</p>
+<p>We also need cross-file and cross-object checks.</p>
+<p>For example:</p>
+<ul>
+<li>Does every sales-area record have a valid customer parent?</li>
+<li>Does every partner function reference a Business Partner included in scope?</li>
+<li>Does every classification value exist in the reference dataset?</li>
+<li>Can every legacy supplier bank record be linked to one supplier?</li>
+<li>Do hierarchy nodes have valid parents?</li>
+</ul>
+<p>A file can be internally clean and still be unusable as part of the full model.</p>
+<h1 id="7-identifier-gaps">7. Identifier gaps</h1>
+<p>Identifiers hold the migration together.</p>
+<p>A dataset gap exists when identifiers are:</p>
+<ul>
+<li>missing;</li>
+<li>duplicated unexpectedly;</li>
+<li>unstable between extracts;</li>
+<li>formatted inconsistently;</li>
+<li>reused for different business objects;</li>
+<li>changed without preserving legacy references;</li>
+<li>insufficient to join related datasets.</li>
+</ul>
+<p>Identifier problems affect more than loading.</p>
+<p>They affect:</p>
+<ul>
+<li>deduplication;</li>
+<li>key mapping;</li>
+<li>reconciliation;</li>
+<li>relationship creation;</li>
+<li>downstream integration;</li>
+<li>auditability;</li>
+<li>post-go-live investigation.</li>
+</ul>
+<p>Before testing, the programme should prove that each record can be identified consistently across:</p>
+<ul>
+<li>source extracts;</li>
+<li>mapping logic;</li>
+<li>staging;</li>
+<li>target loading;</li>
+<li>error reports;</li>
+<li>reconciliation;</li>
+<li>key-mapping tables.</li>
+</ul>
+<p>If the programme cannot trace a rejected target record back to its source record, the migration process is not operationally ready.</p>
+<h1 id="8-rule-coverage-gaps">8. Rule-coverage gaps</h1>
+<p>A dataset may contain values, but the programme may not know whether they satisfy the approved rules.</p>
+<p>Examples include:</p>
+<ul>
+<li>a mandatory field is populated with a placeholder;</li>
+<li>a date is syntactically valid but outside an allowed range;</li>
+<li>a code is valid globally but invalid for one country;</li>
+<li>two fields contain an inconsistent combination;</li>
+<li>a required relationship exists only for part of the population;</li>
+<li>a bank record passes format checks but lacks required ownership evidence.</li>
+</ul>
+<p>Rule-coverage analysis compares the dataset with business and target rules before the full migration routine is executed.</p>
+<p>Useful checks include:</p>
+<ul>
+<li>conditional mandatory rules;</li>
+<li>cross-field consistency;</li>
+<li>reference integrity;</li>
+<li>context-specific value restrictions;</li>
+<li>duplicate indicators;</li>
+<li>required relationship presence;</li>
+<li>mutually exclusive values;</li>
+<li>valid date and status combinations.</li>
+</ul>
+<p>This is not intended to recreate the full SAP or MDG validation engine.</p>
+<p>It identifies whether the dataset contains populations likely to conflict with known rules.</p>
+<h1 id="9-scope-gaps">9. Scope gaps</h1>
+<p>A dataset may be high quality but incomplete relative to the migration scope.</p>
+<p>Examples include:</p>
+<ul>
+<li>one country was omitted;</li>
+<li>blocked records were excluded without approval;</li>
+<li>records from a recently acquired business unit are missing;</li>
+<li>one legacy system was not included;</li>
+<li>inactive records required for historical relationships were filtered out;</li>
+<li>the extract contains only header data, while organisational extensions are expected.</li>
+</ul>
+<p>Scope gaps are difficult to detect through field profiling alone.</p>
+<p>The programme needs population expectations:</p>
+<ul>
+<li>expected record counts;</li>
+<li>expected organisations;</li>
+<li>expected source systems;</li>
+<li>expected statuses;</li>
+<li>expected countries;</li>
+<li>expected relationships;</li>
+<li>expected date ranges.</li>
+</ul>
+<p>We compare actual coverage with those expectations.</p>
+<p>A dataset of 100,000 technically valid records may still be incomplete if 20,000 in-scope records were never extracted.</p>
+<h1 id="10-temporal-gaps">10. Temporal gaps</h1>
+<p>Data changes during the programme.</p>
+<p>A profile from three months ago does not prove that the current extract is ready.</p>
+<p>Temporal gaps include:</p>
+<ul>
+<li>new source values appearing;</li>
+<li>previously complete fields becoming less complete;</li>
+<li>extraction logic changing;</li>
+<li>source cleansing altering relationships;</li>
+<li>new records added after the profiling date;</li>
+<li>target rules changing without rechecking the data;</li>
+<li>local scope expanding;</li>
+<li>reference data becoming obsolete.</li>
+</ul>
+<p>Every material dataset version should therefore be compared with:</p>
+<ol>
+<li>the current approved model; and  </li>
+<li>the previous relevant dataset version.</li>
+</ol>
+<p>The first comparison finds model gaps.</p>
+<p>The second finds change.</p>
+<h2 id="what-to-profile-before-migration-testing">What to profile before migration testing</h2>
+<p>A useful pre-test profile should provide more than row counts.</p>
+<p>For each dataset, we recommend capturing:</p>
+<ul>
+<li>dataset identifier and version;</li>
+<li>extraction date;</li>
+<li>source system;</li>
+<li>scope and filtering criteria;</li>
+<li>row count;</li>
+<li>column list;</li>
+<li>inferred or declared data types;</li>
+<li>blank counts and rates;</li>
+<li>distinct values;</li>
+<li>minimum and maximum values where useful;</li>
+<li>length distributions;</li>
+<li>pattern distributions;</li>
+<li>duplicate indicators;</li>
+<li>key uniqueness;</li>
+<li>invalid references;</li>
+<li>join coverage;</li>
+<li>unexpected values;</li>
+<li>context-level completeness;</li>
+<li>differences from the previous extract.</li>
+</ul>
+<p>Not every field requires the same depth.</p>
+<p>Critical and high-risk attributes deserve more detailed analysis.</p>
+<p>Examples include:</p>
+<ul>
+<li>identifiers;</li>
+<li>tax information;</li>
+<li>organisational assignments;</li>
+<li>bank data;</li>
+<li>classification fields;</li>
+<li>status fields;</li>
+<li>reference codes;</li>
+<li>relationship keys;</li>
+<li>attributes driving pricing, compliance or workflow.</li>
+</ul>
+<p>The profiling strategy should be risk-based rather than mechanically identical for every column.</p>
+<h2 id="the-model-must-be-precise-enough-to-compare">The model must be precise enough to compare</h2>
+<p>Automated gap detection is only as good as the model.</p>
+<p>The model should tell us:</p>
+<ul>
+<li>which fields are expected;</li>
+<li>which are required;</li>
+<li>in which context they are required;</li>
+<li>what values are allowed;</li>
+<li>which source endpoint is expected;</li>
+<li>which relationships must exist;</li>
+<li>which rule applies;</li>
+<li>which population is in scope.</li>
+</ul>
+<p>If the target model is only a list of field names, the comparison will be shallow.</p>
+<p>For example, this requirement is difficult to validate:</p>
+<p>```text id=&quot;dsgap7&quot; Tax Number — mandatory</p>
+<pre><code>
+A more useful model states:
+
+```text id=&quot;dsgap8&quot;
+Attribute: Tax Number
+Context: Business Partner tax category DE1
+Population: Organisations registered in Germany
+Requirement: Mandatory unless an approved exemption applies
+Source: LEGACY_BP.DE_TAX_ID
+Normalisation: Remove spaces, uppercase letters
+Invalid treatment: Reject for review
+Owner: German Tax Data Owner</code></pre>
+<p>The second representation allows the programme to profile the relevant population and classify gaps meaningfully.</p>
+<h2 id="do-not-confuse-detection-with-resolution">Do not confuse detection with resolution</h2>
+<p>A gap report does not decide automatically what the programme should do.</p>
+<p>Suppose 15% of supplier records lack a required classification.</p>
+<p>The correct response could be:</p>
+<ul>
+<li>source remediation;</li>
+<li>business enrichment;</li>
+<li>approved derivation;</li>
+<li>temporary default;</li>
+<li>target-model change;</li>
+<li>exclusion from scope;</li>
+<li>accepted post-go-live remediation.</li>
+</ul>
+<p>The tool can identify the population and affected model objects.</p>
+<p>The programme must make the decision.</p>
+<p>We deliberately separate:</p>
+<p>```text id=&quot;dsgap9&quot; Detection → Classification → Ownership → Decision → Implementation → Verification</p>
+<pre><code>
+Skipping classification creates a defect backlog filled with different kinds of problems.
+
+Skipping ownership creates reports that nobody acts on.
+
+Skipping verification allows the same gap to return in the next extract.
+
+## How to classify gaps
+
+We use a practical classification model.
+
+### Source gap
+
+The required data is absent or unreliable in the source.
+
+### Extraction gap
+
+The source contains the data, but the extract does not.
+
+### Model gap
+
+The approved model does not adequately represent the business requirement or source reality.
+
+### Mapping gap
+
+The source and target exist, but the transformation is missing or ambiguous.
+
+### Value-mapping gap
+
+Observed source values are not covered.
+
+### Context gap
+
+The rule or value cannot be interpreted without missing organisational or business context.
+
+### Relationship gap
+
+Required links between records cannot be constructed.
+
+### Governance gap
+
+A technical treatment is possible, but no owner has approved it.
+
+### Test-evidence gap
+
+The rule is defined and implemented but has not been verified with representative data.
+
+This classification helps management understand whether the migration team can resolve the issue alone.
+
+Often it cannot.
+
+## A practical pre-testing process
+
+We recommend a repeatable cycle rather than a one-time data-quality assessment.
+
+# Step 1: Freeze a model baseline
+
+Identify the approved model version against which the dataset will be checked.
+
+The baseline should include:
+
+- target attributes;
+- required contexts;
+- source expectations;
+- value lists;
+- mappings;
+- relevant rules;
+- scope.
+
+Without a baseline, gap results cannot be interpreted consistently.
+
+# Step 2: Register the dataset
+
+Record:
+
+- source;
+- extraction date;
+- filters;
+- included populations;
+- file structure;
+- responsible owner;
+- intended migration wave.
+
+A file called `Customer_Final.xlsx` is not sufficient dataset identity.
+
+# Step 3: Run structural checks
+
+Check:
+
+- expected columns;
+- unexpected columns;
+- data types;
+- required keys;
+- duplicate column names;
+- related-file availability;
+- join fields.
+
+These checks should produce immediate blockers where appropriate.
+
+# Step 4: Profile critical values
+
+Measure:
+
+- completeness;
+- uniqueness;
+- distributions;
+- patterns;
+- lengths;
+- invalid references;
+- context variation;
+- observed source codes.
+
+Do not wait until every field is perfectly modelled. Start with the fields carrying the greatest risk.
+
+# Step 5: Compare the profile with the model
+
+Identify:
+
+- missing expected fields;
+- uncovered values;
+- insufficient completeness;
+- invalid relationships;
+- context mismatches;
+- source assumptions contradicted by the data;
+- target requirements unsupported by the source.
+
+# Step 6: Classify and assign gaps
+
+Each material gap receives:
+
+- type;
+- affected model objects;
+- affected population;
+- severity;
+- evidence;
+- owner;
+- proposed treatment;
+- required decision date.
+
+# Step 7: Review with the correct roles
+
+Not every gap needs a programme-wide meeting.
+
+Route gaps appropriately:
+
+- source owners for extract and quality issues;
+- business owners for definitions and acceptable treatments;
+- MDG architects for target-model and validation questions;
+- migration architects for transformations;
+- programme management for scope and accepted risk.
+
+# Step 8: Update the model or treatment
+
+If the gap reveals that the model assumption was wrong, update the model through controlled review.
+
+Do not hide the discovery inside migration code.
+
+# Step 9: Re-profile the next dataset
+
+A resolved gap should be verified against a new extract or corrected population.
+
+Closing the ticket is not evidence that the data changed.
+
+## A worked example: Business Partner roles
+
+Suppose the target design requires every migrated organisation to receive one or more Business Partner roles.
+
+The mapping workbook identifies legacy customer and supplier indicators.
+
+The first dataset profile finds:
+
+- 70% of records contain a clear customer indicator;
+- 20% contain both customer and supplier indicators;
+- 5% contain neither;
+- 3% contain values not included in the mapping;
+- 2% have conflicting indicators across source files.
+
+Before testing, the programme already has several questions:
+
+- Are records without indicators in scope?
+- Can roles be derived from transaction history?
+- Should records with both indicators receive both roles?
+- Which source is authoritative when indicators conflict?
+- Are unexpected values data errors or legitimate local codes?
+- Does the target workflow support the resulting roles?
+- Will duplicate detection treat the role combinations correctly?
+
+A mock load could expose these questions through failures and unexpected records.
+
+A pre-test gap analysis exposes them as model and governance decisions.
+
+The programme can then test an approved rule rather than improvise during defect triage.
+
+## Another example: customer sales-area data
+
+The central customer dataset contains 50,000 records.
+
+All required central fields are present.
+
+The programme reports good data readiness.
+
+A separate analysis of sales-area assignments shows:
+
+- 12,000 customers lack an expected sales-area record;
+- 4,000 use sales organisations outside the target scope;
+- 2,500 have incomplete distribution-channel data;
+- several legacy systems use a composite key not included in the extract.
+
+The central dataset is structurally complete.
+
+The operational business object is not.
+
+This is why dataset readiness must follow the model structure, including organisational extensions and relationships.
+
+## How early gap detection changes testing
+
+When gaps are detected before testing, the first mock load becomes more useful.
+
+Instead of spending the cycle on basic surprises, the programme can verify:
+
+- transformation correctness;
+- SAP and MDG validation behaviour;
+- load sequencing;
+- matching and duplicate handling;
+- key mapping;
+- relationship creation;
+- workflow behaviour after load;
+- replication;
+- reconciliation;
+- performance and volume.
+
+Testing becomes evidence about the implemented migration process.
+
+It no longer carries the full burden of discovering what the source data contains.
+
+## What managers should ask before approving a mock load
+
+Managers do not need to inspect field-level profiles.
+
+They should ask:
+
+1. Which approved model baseline was used for the comparison?
+2. Which representative datasets were profiled?
+3. Are all countries and source systems in the wave represented?
+4. Which required fields are absent from the extract?
+5. Which critical fields have insufficient completeness?
+6. Which observed values are not covered by approved mappings?
+7. Which relationships cannot be constructed?
+8. Which target requirements are unsupported by source data?
+9. Which gaps still require business or architecture decisions?
+10. Which accepted gaps will deliberately enter testing?
+11. Who owns each unresolved population?
+12. Will the next extract prove that agreed corrections were made?
+
+A mock load may proceed with known gaps.
+
+The point is that the gaps should be known, owned and intentionally included—not discovered accidentally.
+
+## Severity should reflect business impact
+
+Not every unexpected value should block testing.
+
+We use severity based on questions such as:
+
+- Does the gap prevent loading?
+- Does it create an incorrect business meaning?
+- Does it affect a critical process?
+- Does it create regulatory or compliance exposure?
+- Does it break relationships?
+- Does it affect a large population?
+- Can it be corrected after go-live?
+- Is the treatment reversible?
+- Does it hide behind a valid-looking default?
+
+A missing optional description is not equivalent to a missing legal identifier.
+
+An unmapped value affecting three obsolete records is not equivalent to an unmapped classification used by half the active customer population.
+
+Gap counts without severity and population context can mislead management.
+
+## Avoid the “clean data” target
+
+Programmes sometimes state that the dataset must be clean before testing.
+
+This sounds responsible but is too vague to govern delivery.
+
+No large legacy dataset is perfectly clean.
+
+We prefer explicit readiness rules:
+
+- all required columns must be present;
+- no critical reference relationships may be broken;
+- mandatory attributes must meet an agreed completeness threshold;
+- all observed critical codes must have an approved treatment;
+- unresolved high-severity gaps must have an owner and decision;
+- accepted exceptions must be identifiable in the dataset;
+- the loaded population must be reconcilable to the source.
+
+These criteria can be reviewed and evidenced.
+
+“Clean enough” cannot.
+
+## Where Martenweave fits
+
+We built Martenweave to compare dataset reality with model expectations before the programme reaches migration testing.
+
+The current SAP migration scenario supports:
+
+- explicit source and target field endpoints;
+- contextual attribute definitions;
+- source-to-target mappings;
+- deterministic model validation;
+- CSV and XLSX profiling;
+- dataset-to-model gap detection;
+- lineage and impact analysis;
+- issues, decisions and controlled change proposals.
+
+The broader product model includes canonical Markdown and YAML files, generated SQLite and JSONL indexes, structured queries, ownership and health reports, review exports and a PatchProposal-to-ChangeRequest lifecycle.
+
+A Martenweave workflow can operate as follows:
+
+```text id=&quot;dsgap10&quot;
+Canonical model
+      +
+Registered dataset
+      ↓
+Structural and profile analysis
+      ↓
+Dataset-to-model comparison
+      ↓
+Gap objects linked to affected fields and rules
+      ↓
+Owner review and decision
+      ↓
+Model patch or data remediation
+      ↓
+Repeatable validation</code></pre>
+<p>The dataset does not become the source of model truth.</p>
+<p>The model does not pretend that source data is cleaner than it is.</p>
+<p>The comparison between them creates the evidence.</p>
+<h2 id="why-canonical-model-files-matter-here">Why canonical model files matter here</h2>
+<p>A repeatable gap check requires a stable model baseline.</p>
+<p>If expectations live only in workbook comments, the programme cannot reliably compare one dataset version with another.</p>
+<p>Canonical model objects make it possible to state:</p>
+<ul>
+<li>which field was expected;</li>
+<li>why it was expected;</li>
+<li>in which context;</li>
+<li>against which source endpoint;</li>
+<li>under which rule;</li>
+<li>for which model version.</li>
+</ul>
+<p>The generated profile and gap results can be rebuilt when:</p>
+<ul>
+<li>the dataset changes;</li>
+<li>the model changes;</li>
+<li>the scope changes;</li>
+<li>a new country joins;</li>
+<li>a mapping is approved.</li>
+</ul>
+<p>This is more useful than a static data-quality report whose assumptions are no longer clear.</p>
+<h2 id="ai-can-assist-but-it-should-not-decide">AI can assist, but it should not decide</h2>
+<p>AI may help with:</p>
+<ul>
+<li>suggesting possible matches between unexpected and known columns;</li>
+<li>grouping similar source values;</li>
+<li>identifying likely code translations;</li>
+<li>summarising gap populations;</li>
+<li>extracting potential rules from project documents;</li>
+<li>drafting issue descriptions;</li>
+<li>suggesting which model objects may be affected.</li>
+</ul>
+<p>These are proposals.</p>
+<p>An unexpected source value may look similar to a target code and still have a different business meaning.</p>
+<p>A missing field may appear derivable but require business approval.</p>
+<p>A relationship may look inferable statistically but be unsafe to create automatically.</p>
+<p>Our rule remains:</p>
+<p>&gt; AI may propose a treatment. Deterministic checks verify structure. Responsible people approve changes to the model or migration rule.</p>
+<h2 id="what-martenweave-does-not-replace">What Martenweave does not replace</h2>
+<p>Martenweave does not replace:</p>
+<ul>
+<li>source-system analysis;</li>
+<li>enterprise data-quality platforms;</li>
+<li>migration execution tooling;</li>
+<li>SAP Migration Cockpit or other loading mechanisms;</li>
+<li>SAP MDG validations;</li>
+<li>business ownership;</li>
+<li>specialist cleansing work;</li>
+<li>formal migration testing.</li>
+</ul>
+<p>Its role is narrower.</p>
+<p>It connects the approved model with representative datasets so gaps can be found, classified and traced earlier.</p>
+<p>For small migrations, a profiling script and disciplined workbook may be sufficient.</p>
+<p>The need for a model-driven gap layer grows when the programme has:</p>
+<ul>
+<li>several source systems;</li>
+<li>several countries;</li>
+<li>complex organisational contexts;</li>
+<li>many relationships;</li>
+<li>changing target requirements;</li>
+<li>repeated migration waves;</li>
+<li>several delivery partners;</li>
+<li>strict handover or audit requirements.</li>
+</ul>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="profiling-without-a-model">Profiling without a model</h3>
+<p>The team produces distributions and completeness percentages but cannot say whether the results are acceptable.</p>
+<p>A profile becomes useful when it is compared with explicit expectations.</p>
+<h3 id="comparing-only-column-names">Comparing only column names</h3>
+<p>Presence does not prove completeness, valid values, correct context or relationship coverage.</p>
+<h3 id="profiling-only-once">Profiling only once</h3>
+<p>Every significant extract should be checked against the current model.</p>
+<h3 id="reviewing-global-averages">Reviewing global averages</h3>
+<p>Gaps should be analysed by the populations that matter operationally.</p>
+<h3 id="closing-gaps-through-undocumented-code">Closing gaps through undocumented code</h3>
+<p>If a transformation changes the treatment, the model and decision record should be updated.</p>
+<h3 id="treating-every-anomaly-as-a-defect">Treating every anomaly as a defect</h3>
+<p>Some anomalies are valid exceptions. They still need classification and evidence.</p>
+<h3 id="using-defaults-to-hide-missing-data">Using defaults to hide missing data</h3>
+<p>A populated target field may remain semantically empty.</p>
+<h3 id="sending-all-gaps-to-the-migration-team">Sending all gaps to the migration team</h3>
+<p>Many gaps require business, source-system, architecture or governance decisions.</p>
+<h3 id="starting-formal-testing-with-unknown-data-scope">Starting formal testing with unknown data scope</h3>
+<p>The programme should know which populations the dataset represents before interpreting test results.</p>
+<h2 id="a-minimum-pre-test-gate">A minimum pre-test gate</h2>
+<p>Before formal migration testing, we recommend confirming:</p>
+<h3 id="dataset-identity">Dataset identity</h3>
+<ul>
+<li>source system known;</li>
+<li>extraction date known;</li>
+<li>filtering criteria recorded;</li>
+<li>migration wave identified;</li>
+<li>expected population defined.</li>
+</ul>
+<h3 id="structure">Structure</h3>
+<ul>
+<li>required files present;</li>
+<li>required columns present;</li>
+<li>required keys available;</li>
+<li>related datasets can be joined.</li>
+</ul>
+<h3 id="content">Content</h3>
+<ul>
+<li>critical completeness measured;</li>
+<li>actual code values reviewed;</li>
+<li>invalid formats identified;</li>
+<li>duplicate indicators understood;</li>
+<li>unexpected values classified.</li>
+</ul>
+<h3 id="relationships">Relationships</h3>
+<ul>
+<li>parent-child integrity checked;</li>
+<li>reference values available;</li>
+<li>organisational assignments covered;</li>
+<li>missing links quantified.</li>
+</ul>
+<h3 id="model-alignment">Model alignment</h3>
+<ul>
+<li>current target baseline used;</li>
+<li>mappings refer to current endpoints;</li>
+<li>required contexts included;</li>
+<li>known validation rules considered.</li>
+</ul>
+<h3 id="governance">Governance</h3>
+<ul>
+<li>significant gaps have owners;</li>
+<li>treatments are approved or pending visibly;</li>
+<li>accepted exceptions are identifiable;</li>
+<li>revalidation is planned.</li>
+</ul>
+<p>A dataset does not need to be perfect to pass the gate.</p>
+<p>It needs to be understood well enough that testing results can be interpreted reliably.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Dataset gaps should not be treated as surprises produced by migration testing.</p>
+<p>Many can be detected earlier by comparing three things that the programme already has:</p>
+<ul>
+<li>the approved model;</li>
+<li>the expected mappings;</li>
+<li>representative source data.</li>
+</ul>
+<p>The comparison needs to go beyond column presence.</p>
+<p>It should examine:</p>
+<ul>
+<li>completeness;</li>
+<li>value coverage;</li>
+<li>formats;</li>
+<li>organisational context;</li>
+<li>identifiers;</li>
+<li>relationships;</li>
+<li>scope;</li>
+<li>rule coverage;</li>
+<li>change between dataset versions.</li>
+</ul>
+<p>Our position is straightforward:</p>
+<p>&gt; Testing should confirm that the agreed migration treatment works. It should not be the first point at which the programme discovers that the treatment is impossible.</p>
+<p>Finding gaps early does not make difficult decisions disappear.</p>
+<p>It gives the correct people time to make them before technical defects, cutover pressure and programme deadlines narrow the available options.</p>
+<p>That is how earlier gap detection saves time.</p>
+<p>Not by producing fewer reports, but by preventing the programme from building and testing assumptions that the data could have disproved weeks earlier.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>We are Metalhatscats, the team behind Martenweave.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. Our focus is helping architects and delivery teams compare model expectations with actual data, identify gaps before they become load defects and preserve the evidence needed to make controlled decisions.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as supporting governed master-data models, validated values, quality monitoring, matching and consolidation, workflow-based changes and auditability. These capabilities provide the operational governance context into which migrated master data must fit.</p>
+<p>Martenweave’s SAP migration documentation describes contextual model objects, source-to-target mappings, deterministic validation, CSV and XLSX profiling, dataset gap detection, lineage, impact analysis and human-reviewed model proposals.</p>
+<p>The current Martenweave product documentation lists canonical model files, generated indexes, dataset profiling, health and analysis reports, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

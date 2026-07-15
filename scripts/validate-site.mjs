@@ -24,16 +24,34 @@ const docRoutes = [
   { source: "roadmap.md", output: "roadmap.html" },
   { source: "contributing-scenarios.md", output: "contributing-scenarios.html" },
   { source: "open-source.md", output: "open-source.html" },
+  { source: "capabilities.md", output: "capabilities.html" },
+  { source: "pilot-projects.md", output: "pilot-projects.html" },
+  { source: "consulting.md", output: "consulting.html" },
+  { source: "engagement.md", output: "engagement.html" },
+  { source: "contact.md", output: "contact.html" },
 ];
 
 const markdownDocs = docRoutes.map((route) => `docs/${route.source}`);
 const generatedDocs = docRoutes.map((route) => `docs/${route.output}`);
 const generatedDocRoutes = generatedDocs.map((file) => `/${file}`);
 const publicDocRoutes = generatedDocRoutes.filter((route) => route !== "/docs/index.html");
+const publicBlogRoutes = [
+  "/blog/",
+  "/blog/sap-mdg-implementation-knowledge.html",
+  "/blog/sap-migration-mapping-spreadsheets.html",
+  "/blog/detect-dataset-gaps-before-sap-migration-testing.html",
+  "/blog/impact-analysis-sap-field-change.html",
+  "/blog/trace-legacy-field-to-sap-target.html",
+  "/blog/deterministic-validation-migration-risk.html",
+  "/blog/evidence-based-migration-readiness-report.html",
+  "/blog/how-deterministic-model-validation-works.html",
+];
+const publicContentRoutes = [...publicDocRoutes, "/blog/"];
 const publicHtmlFiles = [
   "index.html",
   "docs.html",
   ...generatedDocs.filter((file) => file !== "docs/index.html"),
+  ...publicBlogRoutes.map((route) => (route === "/blog/" ? "blog/index.html" : route.slice(1))),
 ];
 
 const requiredFiles = [
@@ -158,7 +176,7 @@ function idsForHtml(html) {
   return new Set([...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));
 }
 
-const htmlFiles = ["index.html", "docs.html", ...generatedDocs];
+const htmlFiles = ["index.html", "docs.html", ...generatedDocs, ...publicHtmlFiles.filter((file) => file.startsWith("blog/"))];
 const htmlByFile = new Map();
 const idsByFile = new Map();
 
@@ -481,7 +499,7 @@ for (const contextFile of [
   if (/https:\/\/martenweave\.github\.io\/docs\/[^)\s]+\.md/.test(text)) {
     errors.push(`${file} still points a public doc route at Markdown.`);
   }
-  for (const route of publicDocRoutes) {
+  for (const route of publicContentRoutes) {
     if (!text.includes(`${productionOrigin}${route}`)) {
       errors.push(`${file} missing public doc route: ${route}`);
     }
@@ -503,7 +521,7 @@ if (!Array.isArray(aiJson.capabilities) || aiJson.capabilities.length < 6) {
 if (!Array.isArray(aiJson.publicDocs)) {
   errors.push("ai.json must include publicDocs.");
 } else {
-  for (const route of publicDocRoutes) {
+  for (const route of publicContentRoutes) {
     if (!aiJson.publicDocs.includes(`${productionOrigin}${route}`)) {
       errors.push(`ai.json missing public doc route: ${route}`);
     }
@@ -595,7 +613,7 @@ const requiredSitemapRoutes = [
   "/ai.txt",
   "/ai.json",
   "/humans.txt",
-  ...publicDocRoutes,
+  ...publicContentRoutes,
 ];
 
 for (const route of requiredSitemapRoutes) {

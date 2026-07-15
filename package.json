@@ -8,7 +8,10 @@
     "build": "npm run build:docs && npm run validate",
     "build:docs": "node scripts/build-docs.mjs",
     "validate": "node scripts/build-docs.mjs --check && node scripts/validate-site.mjs",
-    "preview": "python3 -m http.server 4173"
+    "preview": "python3 -m http.server 4173",
+    "test:render": "node scripts/render-smoke.mjs"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
 }

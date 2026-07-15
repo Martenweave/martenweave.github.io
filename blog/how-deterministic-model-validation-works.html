@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>how deterministic model validation works | Martenweave</title>
+    <meta
+      name="description"
+      content="How deterministic model validation works and why semantic authority must remain explicit and reviewable."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-deterministic-model-validation-works.html" />
+    <meta property="og:title" content="how deterministic model validation works | Martenweave" />
+    <meta property="og:description" content="How deterministic model validation works and why semantic authority must remain explicit and reviewable." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="how deterministic model validation works | Martenweave" />
+    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-deterministic-model-validation-works.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html",
+                        "name": "how deterministic model validation works | Martenweave",
+                        "description": "How deterministic model validation works and why semantic authority must remain explicit and reviewable.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Docs",
+                                    "item": "https://martenweave.github.io/docs.html"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Deterministic Model Validation Works",
+                                    "item": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html#content",
+                        "headline": "How Deterministic Model Validation Works",
+                        "name": "How Deterministic Model Validation Works",
+                        "description": "How deterministic model validation works and why semantic authority must remain explicit and reviewable.",
+                        "url": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-deterministic-model-validation-works.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "dateModified": "14 July 2026",
+                        "articleSection": "Validation and governance",
+                        "keywords": "Validation and governance"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="docs-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="doc-shell">
+      <aside class="doc-sidebar" aria-label="Documentation navigation">
+<a href="/docs.html">Docs home</a>
+<a href="/docs/product.html">Product</a>
+<a href="/docs/how-it-works.html">How it works</a>
+<a href="/docs/import-export.html">Import/export</a>
+<a href="/docs/governance.html">Governance</a>
+<a href="/docs/quickstart.html">Quickstart</a>
+<a href="/docs/local-viewer.html">Local viewer</a>
+<a href="/docs/examples.html">Examples</a>
+<a href="/docs/use-cases.html">Use cases</a>
+<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
+<a href="/docs/architecture.html">Architecture</a>
+<a href="/docs/ai-governance.html">AI governance</a>
+<a href="/docs/faq.html">FAQ</a>
+<a href="/docs/release-proof.html">Release proof</a>
+<a href="/docs/roadmap.html">Roadmap</a>
+<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
+<a href="/docs/open-source.html">Open source</a>
+<a href="/docs/capabilities.html">Capabilities</a>
+<a href="/docs/pilot-projects.html">Pilot projects</a>
+<a href="/docs/consulting.html">Consulting</a>
+<a href="/docs/engagement.html">Engagement</a>
+<a href="/docs/contact.html">Contact</a>
+      </aside>
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Deterministic Model Validation Works</span>
+        </nav>
+        <p class="section-kicker">Public docs</p>
+<h1 id="how-deterministic-model-validation-works">How Deterministic Model Validation Works</h1>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration analyst adds a new mapping:</p>
+<pre><code class="language-yaml">id: MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+type: Mapping
+source: ATTR-CRM-SEGMENT
+target: ATTR-CUSTOMER-GROUP
+decision: DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>The file looks reasonable.</p>
+<p>The names are plausible. The YAML parses. The source and target appear related.</p>
+<p>But the repository contains several problems:</p>
+<ul>
+<li><code>ATTR-CRM-SEGMENT</code> does not exist;</li>
+<li>the actual source object is a physical field endpoint, not a business attribute;</li>
+<li>the referenced decision was rejected;</li>
+<li>the target attribute belongs to a sales-area entity, while the proposed source is central;</li>
+<li>another active mapping already covers the same target population;</li>
+<li>the proposal contains no transformation or applicability context.</li>
+</ul>
+<p>A text editor may show no problem.</p>
+<p>A generic YAML parser may show no problem.</p>
+<p>A search index may happily ingest the file.</p>
+<p>The failure becomes visible only when the migration team tries to use the mapping.</p>
+<p>Deterministic validation exists to catch as much of this as possible before invalid model state becomes searchable, reviewable or executable.</p>
+<p>&gt; A deterministic model validator evaluates declared model state against explicit, repeatable rules and produces the same logical result for the same input and validation version.</p>
+<p>It does not ask an AI whether the mapping “looks right.”</p>
+<p>It does not rely on who authored the file.</p>
+<p>It does not assume that plausible terminology proves semantic equivalence.</p>
+<p>It applies known checks to known structures.</p>
+<p>Martenweave currently places deterministic validation before indexing. Its public product principles state that objects are checked for IDs, types, references and domain-context rules before generated indexes are built.</p>
+<p>That makes validation the gate between human-readable model files and the operational model index.</p>
+<p>---</p>
+<h1 id="deterministic-does-not-mean-simplistic">Deterministic does not mean simplistic</h1>
+<p>The word “deterministic” is sometimes interpreted as:</p>
+<p>&gt; Check whether required fields are present.</p>
+<p>That is only the first layer.</p>
+<p>A useful enterprise model validator needs to reason across several scopes:</p>
+<ol>
+<li>file syntax;</li>
+<li>individual fields;</li>
+<li>complete object structure;</li>
+<li>identity across the repository;</li>
+<li>references between objects;</li>
+<li>lifecycle and status;</li>
+<li>domain-specific constraints;</li>
+<li>repository-wide consistency;</li>
+<li>proposal and change safety;</li>
+<li>generated-artifact readiness.</li>
+</ol>
+<p>Each layer answers a different question.</p>
+<p>A file may pass one layer and fail another.</p>
+<p>For example:</p>
+<pre><code class="language-yaml">id: ATTR-SUPPLIER-RISK
+type: Attribute
+name: Supplier Risk
+status: approved</code></pre>
+<p>This may be valid YAML.</p>
+<p>It may satisfy a minimal Attribute schema.</p>
+<p>It may still fail repository validation because:</p>
+<ul>
+<li>its entity does not exist;</li>
+<li>no domain is declared;</li>
+<li>another object uses the same ID;</li>
+<li><code>approved</code> objects require an owner;</li>
+<li>an active rule references an older retired version.</li>
+</ul>
+<p>Validation should therefore be understood as a pipeline, not one schema check.</p>
+<p>---</p>
+<h1 id="layer-1-can-the-file-be-parsed">Layer 1: Can the file be parsed?</h1>
+<p>The first question is purely structural:</p>
+<p>&gt; Can the system read the file as the expected document format?</p>
+<p>Possible failures include:</p>
+<ul>
+<li>malformed YAML frontmatter;</li>
+<li>missing frontmatter delimiters;</li>
+<li>invalid indentation;</li>
+<li>duplicate or malformed keys;</li>
+<li>unsupported text encoding;</li>
+<li>frontmatter that is not a mapping;</li>
+<li>an unreadable file.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">---
+id: ATTR-CUSTOMER-GROUP
+type Attribute
+name: Customer Group
+---</code></pre>
+<p>The missing colon after <code>type</code> prevents correct YAML parsing.</p>
+<p>This is not a business-model error.</p>
+<p>It is a document-format error.</p>
+<p>The validator should report:</p>
+<ul>
+<li>file path;</li>
+<li>approximate location;</li>
+<li>error class;</li>
+<li>useful message;</li>
+<li>whether further checks were skipped.</li>
+</ul>
+<p>YAML itself is a data-serialization language with mappings, sequences and scalar values. Correct YAML syntax only proves that the content can be represented as YAML; it does not prove that the resulting keys and values form a valid Martenweave object.</p>
+<p>That distinction matters:</p>
+<pre><code class="language-text">Valid YAML
+does not imply
+valid model object.</code></pre>
+<p>---</p>
+<h1 id="layer-2-does-the-object-match-its-declared-type">Layer 2: Does the object match its declared type?</h1>
+<p>Once parsed, the object can be checked against a typed structure.</p>
+<p>An Attribute may require fields such as:</p>
+<ul>
+<li>ID;</li>
+<li>name;</li>
+<li>entity;</li>
+<li>domain;</li>
+<li>status.</li>
+</ul>
+<p>A Mapping may require:</p>
+<ul>
+<li>source;</li>
+<li>target;</li>
+<li>mapping status;</li>
+<li>applicable context.</li>
+</ul>
+<p>A Decision may require:</p>
+<ul>
+<li>question;</li>
+<li>outcome;</li>
+<li>authority;</li>
+<li>affected objects.</li>
+</ul>
+<p>The exact Martenweave object schemas can evolve. The principle remains:</p>
+<p>&gt; The declared object type determines which fields, value types and constraints are allowed or required.</p>
+<p>Typical checks include:</p>
+<ul>
+<li>required field present;</li>
+<li>string where string is expected;</li>
+<li>list where list is expected;</li>
+<li>valid enumeration value;</li>
+<li>correct date format;</li>
+<li>non-empty identifier;</li>
+<li>prohibited field combination;</li>
+<li>unexpected field handling.</li>
+</ul>
+<p>Martenweave Core currently declares Pydantic as a core dependency. Pydantic supports typed model validation and allows custom checks at both field and whole-model levels.</p>
+<p>A typed validation layer might reject:</p>
+<pre><code class="language-yaml">owners: ROLE-CUSTOMER-OWNER</code></pre>
+<p>when <code>owners</code> must be a list:</p>
+<pre><code class="language-yaml">owners:
+  - ROLE-CUSTOMER-OWNER</code></pre>
+<p>It may also reject:</p>
+<pre><code class="language-yaml">status: complete</code></pre>
+<p>when the permitted lifecycle states are:</p>
+<pre><code class="language-text">draft
+pending_review
+approved
+rejected
+retired</code></pre>
+<p>These checks are deterministic because the accepted structure is declared in code or schema.</p>
+<p>---</p>
+<h1 id="layer-3-is-the-individual-object-internally-coherent">Layer 3: Is the individual object internally coherent?</h1>
+<p>Field validation checks values separately.</p>
+<p>Object validation checks whether they make sense together.</p>
+<p>Consider:</p>
+<pre><code class="language-yaml">type: Decision
+status: approved
+approved_by: []</code></pre>
+<p>Each field may have a valid data type.</p>
+<p>The object is internally inconsistent.</p>
+<p>Other examples include:</p>
+<ul>
+<li>retired object without retirement date;</li>
+<li>approved proposal without reviewer;</li>
+<li>local override without context;</li>
+<li>temporary deviation without expiry;</li>
+<li>Mapping whose source and target are identical;</li>
+<li>object marked both current and superseded;</li>
+<li>Attribute declaring a value list and free-text-only datatype simultaneously;</li>
+<li>Decision that claims to supersede itself.</li>
+</ul>
+<p>These checks require seeing the complete object.</p>
+<p>Pydantic’s current validation model distinguishes field-level validators from model-level validators that can evaluate the complete model state.</p>
+<p>For Martenweave, the practical distinction is:</p>
+<pre><code class="language-text">Field validation:
+Is this value allowed here?
+
+Object validation:
+Can these values coexist in this object?</code></pre>
+<p>---</p>
+<h1 id="layer-4-is-every-object-identity-valid-and-unique">Layer 4: Is every object identity valid and unique?</h1>
+<p>Stable identity is fundamental to a registry.</p>
+<p>The validator should check:</p>
+<ul>
+<li>every canonical object has an ID;</li>
+<li>the ID follows the supported pattern;</li>
+<li>no two active files define the same object ID;</li>
+<li>object identity is not silently derived from the filename;</li>
+<li>reserved prefixes are used consistently where required;</li>
+<li>references use IDs rather than ambiguous labels.</li>
+</ul>
+<p>Duplicate identity is particularly dangerous.</p>
+<p>Suppose two files define:</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP</code></pre>
+<p>One describes a central attribute.</p>
+<p>The other describes a sales-area attribute.</p>
+<p>A search index could:</p>
+<ul>
+<li>overwrite one row;</li>
+<li>retain both unpredictably;</li>
+<li>attach relationships to the wrong object;</li>
+<li>produce unstable results depending on load order.</li>
+</ul>
+<p>The validator should stop the build before such ambiguity enters generated state.</p>
+<p>The error should identify both files:</p>
+<pre><code class="language-text">Duplicate object ID: ATTR-CUSTOMER-GROUP
+
+Defined in:
+- model/attributes/customer-group.md
+- model/attributes/sales-area-customer-group.md</code></pre>
+<p>This is more useful than reporting only the second occurrence.</p>
+<p>---</p>
+<h1 id="layer-5-do-references-resolve">Layer 5: Do references resolve?</h1>
+<p>Canonical model objects form a graph.</p>
+<p>A Mapping references Attributes or FieldEndpoints.</p>
+<p>A Rule references an Attribute.</p>
+<p>Evidence supports a Finding.</p>
+<p>A Decision affects several objects.</p>
+<p>A proposal modifies approved objects.</p>
+<p>Every declared reference should be checked.</p>
+<p>Basic reference validation asks:</p>
+<p>&gt; Does the referenced ID exist?</p>
+<p>Example:</p>
+<pre><code class="language-yaml">target: FEP-S4-KNVV-KDGRP</code></pre>
+<p>If no object with that ID exists, the mapping is incomplete.</p>
+<p>But existence alone is insufficient.</p>
+<p>The next question is:</p>
+<p>&gt; Is the referenced object of an allowed type?</p>
+<p>A Mapping source may allow:</p>
+<ul>
+<li>Attribute;</li>
+<li>FieldEndpoint;</li>
+<li>DatasetField.</li>
+</ul>
+<p>It should not normally accept:</p>
+<ul>
+<li>Decision;</li>
+<li>Owner;</li>
+<li>PatchProposal.</li>
+</ul>
+<p>Therefore, this may still be invalid even when the ID exists:</p>
+<pre><code class="language-yaml">target: DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>Reference validation may also check:</p>
+<ul>
+<li>reference lifecycle;</li>
+<li>domain compatibility;</li>
+<li>direction;</li>
+<li>allowed cardinality;</li>
+<li>circularity where prohibited.</li>
+</ul>
+<p>Martenweave’s current product principles explicitly include validation of object references before indexing.</p>
+<p>---</p>
+<h1 id="broken-references-are-not-all-equivalent">Broken references are not all equivalent</h1>
+<p>A useful validator should distinguish several cases.</p>
+<h2 id="missing-reference">Missing reference</h2>
+<p>No object with the ID exists.</p>
+<pre><code class="language-text">MAP-001 references unknown target FEP-S4-KNVV-KDGRP.</code></pre>
+<h2 id="wrong-type-reference">Wrong-type reference</h2>
+<p>The ID exists but represents an incompatible object.</p>
+<pre><code class="language-text">Mapping target must be Attribute or FieldEndpoint,
+but DEC-017 is a Decision.</code></pre>
+<h2 id="inactive-reference">Inactive reference</h2>
+<p>The object exists but has been retired or rejected.</p>
+<pre><code class="language-text">MAP-001 references retired endpoint FEP-LEGACY-KDGRP.</code></pre>
+<h2 id="ambiguous-lifecycle-reference">Ambiguous lifecycle reference</h2>
+<p>The reference points to a proposal rather than approved state.</p>
+<pre><code class="language-text">Approved Mapping cannot depend on pending PatchProposal PATCH-004.</code></pre>
+<h2 id="missing-reciprocal-or-required-relationship">Missing reciprocal or required relationship</h2>
+<p>An Entity lists an Attribute, but the Attribute points to another Entity.</p>
+<p>Each case has a different remedy.</p>
+<p>Clear error codes make automated handling and testing easier.</p>
+<p>---</p>
+<h1 id="layer-6-does-the-lifecycle-make-sense">Layer 6: Does the lifecycle make sense?</h1>
+<p>Model objects change over time.</p>
+<p>A validator should enforce allowed lifecycle transitions and dependencies where they are represented.</p>
+<p>Possible states include:</p>
+<ul>
+<li>draft;</li>
+<li>pending review;</li>
+<li>approved;</li>
+<li>rejected;</li>
+<li>superseded;</li>
+<li>retired.</li>
+</ul>
+<p>The validator can detect impossible combinations such as:</p>
+<pre><code class="language-yaml">status: approved
+rejection_reason: &quot;Semantics not accepted&quot;</code></pre>
+<p>or:</p>
+<pre><code class="language-yaml">status: retired
+effective_to: null</code></pre>
+<p>More importantly, it can validate cross-object lifecycle relationships.</p>
+<p>Examples:</p>
+<ul>
+<li>an approved Mapping must not depend on a rejected Decision;</li>
+<li>a current Rule should not reference a retired Attribute;</li>
+<li>a superseding Decision must reference the Decision it replaces;</li>
+<li>an approved proposal should have a resulting change or application state;</li>
+<li>a retired value should not appear in an active rule without an explicit historical context.</li>
+</ul>
+<p>Lifecycle validation prevents obsolete objects from remaining operational merely because their IDs still exist.</p>
+<p>---</p>
+<h1 id="layer-7-are-domain-and-context-rules-satisfied">Layer 7: Are domain and context rules satisfied?</h1>
+<p>Generic schemas cannot express every business-model constraint.</p>
+<p>Martenweave therefore distinguishes basic structure from domain-context rules.</p>
+<p>A generic validator may know:</p>
+<ul>
+<li>a Rule has an affected attribute;</li>
+<li>a Mapping has a source and target;</li>
+<li>an override has a context.</li>
+</ul>
+<p>A domain validator may know:</p>
+<ul>
+<li>Customer Group belongs to a sales-area context;</li>
+<li>Supplier Risk should not use workflow states as final classifications;</li>
+<li>an SAP field endpoint must declare its system and physical locator;</li>
+<li>a local override must identify its parent global object;</li>
+<li>an activation rule must declare a lifecycle stage.</li>
+</ul>
+<p>The current README explicitly states that validation covers domain-context rules in addition to IDs, types and references.</p>
+<p>This is where deterministic validation becomes more valuable than a generic JSON or YAML schema.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">id: RULE-CUSTOMER-GROUP-REQUIRED
+type: Rule
+attribute: ATTR-CUSTOMER-GROUP
+scope: global</code></pre>
+<p>The object may be structurally valid.</p>
+<p>But if Customer Group is organisational and requires sales-area context, a domain rule may warn or fail because the rule does not specify the organisational key.</p>
+<p>---</p>
+<h1 id="generic-validation-and-domain-validation-should-remain-separate">Generic validation and domain validation should remain separate</h1>
+<p>Mixing every SAP-specific rule into the generic object schema creates a rigid product.</p>
+<p>A better architecture separates:</p>
+<h2 id="core-invariants">Core invariants</h2>
+<p>Applicable to every domain:</p>
+<ul>
+<li>unique ID;</li>
+<li>valid type;</li>
+<li>valid status;</li>
+<li>resolvable references;</li>
+<li>correct lifecycle;</li>
+<li>valid ownership reference.</li>
+</ul>
+<h2 id="domain-pack-rules">Domain-pack rules</h2>
+<p>Applicable only to selected domains:</p>
+<ul>
+<li>SAP Business Partner role relationships;</li>
+<li>Customer sales-area context;</li>
+<li>Supplier purchasing-organisation context;</li>
+<li>field-endpoint naming;</li>
+<li>required migration mappings;</li>
+<li>global/local inheritance.</li>
+</ul>
+<p>This reflects Martenweave’s current positioning: SAP migration and MDM are the first domain pack and proof case, not the product boundary.</p>
+<p>A generic data-model repository should not fail because it lacks an SAP table name.</p>
+<p>An SAP-specific repository should receive stronger checks where SAP context is declared.</p>
+<p>---</p>
+<h1 id="layer-8-is-the-repository-consistent-as-a-whole">Layer 8: Is the repository consistent as a whole?</h1>
+<p>Some errors can be detected only after every object has been loaded.</p>
+<p>Examples include:</p>
+<ul>
+<li>duplicate IDs;</li>
+<li>circular relationships;</li>
+<li>two active mappings claiming exclusive authority for the same context;</li>
+<li>object without any owner;</li>
+<li>entity referencing an attribute that references another entity;</li>
+<li>approved rule with no applicable endpoint;</li>
+<li>proposal modifying an unknown object;</li>
+<li>global object with conflicting local overrides;</li>
+<li>several active decisions claiming to supersede the same baseline.</li>
+</ul>
+<p>This is repository-level validation.</p>
+<p>It needs a complete registry in memory or an equivalent intermediate representation.</p>
+<p>The order is important:</p>
+<pre><code class="language-text">Parse every candidate object
+→ validate object structures
+→ build identity registry
+→ resolve references
+→ run repository-wide rules</code></pre>
+<p>Running repository rules while files are loaded one by one can produce order-dependent results.</p>
+<p>Order dependence weakens determinism.</p>
+<p>---</p>
+<h1 id="determinism-requires-stable-input-ordering">Determinism requires stable input ordering</h1>
+<p>Suppose two invalid objects create the same conflicting relationship.</p>
+<p>If filesystem order changes, the validator should not report a different “winner.”</p>
+<p>Useful practices include:</p>
+<ul>
+<li>sort discovered file paths;</li>
+<li>sort object IDs before repository checks;</li>
+<li>sort diagnostics by file, object and error code;</li>
+<li>avoid first-loaded-object authority;</li>
+<li>make duplicate reports symmetrical;</li>
+<li>avoid timestamps in semantic results.</li>
+</ul>
+<p>This improves:</p>
+<ul>
+<li>test stability;</li>
+<li>CI output;</li>
+<li>comparison across environments;</li>
+<li>agent interpretation;</li>
+<li>developer trust.</li>
+</ul>
+<p>A deterministic validator should not merely find the same number of errors.</p>
+<p>It should provide predictably ordered and identifiable diagnostics.</p>
+<p>---</p>
+<h1 id="validation-output-needs-stable-error-codes">Validation output needs stable error codes</h1>
+<p>Human-readable messages are essential.</p>
+<p>Stable codes make validation operational.</p>
+<p>Example:</p>
+<pre><code class="language-text">MW-ID-001
+Duplicate object ID
+
+MW-REF-002
+Referenced object does not exist
+
+MW-REF-004
+Referenced object has incompatible type
+
+MW-LIFE-003
+Approved object depends on rejected object
+
+MW-CTX-SAP-007
+Sales-area attribute lacks organisational context</code></pre>
+<p>Stable codes allow:</p>
+<ul>
+<li>tests to assert specific failures;</li>
+<li>CI to classify results;</li>
+<li>documentation to explain remedies;</li>
+<li>integrations to display targeted guidance;</li>
+<li>agents to propose narrow corrections;</li>
+<li>teams to track recurring model-quality problems.</li>
+</ul>
+<p>Messages may improve over time.</p>
+<p>The meaning of an error code should remain controlled.</p>
+<p>---</p>
+<h1 id="error-warning-and-information-are-different">Error, warning and information are different</h1>
+<p>Not every finding should block the build.</p>
+<p>A useful severity model may include:</p>
+<h2 id="error">Error</h2>
+<p>Canonical or generated state would be structurally unsafe.</p>
+<p>Examples:</p>
+<ul>
+<li>duplicate ID;</li>
+<li>malformed object;</li>
+<li>missing required reference;</li>
+<li>approved object depends on rejected object.</li>
+</ul>
+<h2 id="warning">Warning</h2>
+<p>The model is valid enough to process but carries a governance or methodology risk.</p>
+<p>Examples:</p>
+<ul>
+<li>approved Attribute has no owner;</li>
+<li>evidence is stale;</li>
+<li>mapping has no transformation rationale;</li>
+<li>an expected enrichment remains unresolved.</li>
+</ul>
+<h2 id="information">Information</h2>
+<p>A useful observation that requires no immediate correction.</p>
+<p>Examples:</p>
+<ul>
+<li>optional description omitted;</li>
+<li>object has no downstream references;</li>
+<li>proposal affects no currently indexed implementation.</li>
+</ul>
+<p>The current Martenweave demo expects zero validation errors while allowing methodology warnings because the bundled example intentionally retains certain enrichment gaps for demonstration.</p>
+<p>That is a useful distinction.</p>
+<p>A repository may be technically valid but not operationally ready.</p>
+<p>---</p>
+<h1 id="warnings-should-not-become-ignorable-noise">Warnings should not become ignorable noise</h1>
+<p>Warnings are often introduced because a team does not want to block delivery.</p>
+<p>Over time, hundreds accumulate.</p>
+<p>Users stop reading them.</p>
+<p>A warning should therefore have:</p>
+<ul>
+<li>code;</li>
+<li>object;</li>
+<li>explanation;</li>
+<li>likely consequence;</li>
+<li>remediation;</li>
+<li>suppression policy where justified.</li>
+</ul>
+<p>A repository-level scorecard can track warning trends.</p>
+<p>For example:</p>
+<pre><code class="language-text">Unowned approved attributes: 7
+Mappings without supporting decision: 3
+Temporary deviations nearing expiry: 2
+Stale evidence references: 11</code></pre>
+<p>The goal is not zero warnings in every pilot.</p>
+<p>The goal is to prevent accepted incompleteness from becoming invisible.</p>
+<p>Martenweave’s current command set separates validation from health, scorecard and broader analysis commands, which supports this distinction between structural errors and governance readiness.</p>
+<p>---</p>
+<h1 id="validation-should-not-silently-repair-canonical-truth">Validation should not silently repair canonical truth</h1>
+<p>Some validation frameworks can coerce values.</p>
+<p>For example:</p>
+<pre><code class="language-yaml">owners: ROLE-OWNER</code></pre>
+<p>might be automatically transformed into:</p>
+<pre><code class="language-yaml">owners:
+  - ROLE-OWNER</code></pre>
+<p>Coercion can improve usability.</p>
+<p>It can also hide errors.</p>
+<p>The validator should distinguish:</p>
+<ul>
+<li>harmless normalisation;</li>
+<li>potentially semantic transformation.</li>
+</ul>
+<p>Safe normalisation may include:</p>
+<ul>
+<li>trimming surrounding whitespace;</li>
+<li>normalising line endings;</li>
+<li>standardising a date representation after valid parsing.</li>
+</ul>
+<p>Risky coercion includes:</p>
+<ul>
+<li>converting one owner into several;</li>
+<li>interpreting a string as an object reference;</li>
+<li>changing status aliases;</li>
+<li>inventing missing context;</li>
+<li>replacing an unknown value with a default.</li>
+</ul>
+<p>Pydantic supports validators that can check or transform values, including before, after and whole-model validators.</p>
+<p>Martenweave should use this capability conservatively for canonical model truth.</p>
+<p>Validation should report semantic ambiguity rather than silently resolve it.</p>
+<p>---</p>
+<h1 id="strict-input-is-especially-important-for-ids">Strict input is especially important for IDs</h1>
+<p>Consider:</p>
+<pre><code class="language-yaml">id: 10001</code></pre>
+<p>A permissive parser might convert the number into a string.</p>
+<p>But object IDs may follow a controlled namespace:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>Accepting arbitrary coercion weakens identity rules.</p>
+<p>The same concern applies to:</p>
+<ul>
+<li>booleans represented as strings;</li>
+<li>dates parsed differently by environments;</li>
+<li>scalar values accidentally interpreted as numbers;</li>
+<li>identifiers with leading zeros.</li>
+</ul>
+<p>YAML supports several scalar forms, so typed model validation should define what Martenweave accepts rather than relying only on a parser’s implicit interpretation.</p>
+<p>---</p>
+<h1 id="validation-should-be-side-effect-free">Validation should be side-effect free</h1>
+<p>Running validation should not:</p>
+<ul>
+<li>modify canonical files;</li>
+<li>create approved objects;</li>
+<li>change statuses;</li>
+<li>call SAP;</li>
+<li>write tickets;</li>
+<li>apply proposals;</li>
+<li>repair references silently.</li>
+</ul>
+<p>The command may generate:</p>
+<ul>
+<li>console diagnostics;</li>
+<li>structured JSON output;</li>
+<li>temporary analysis state;</li>
+<li>validation reports.</li>
+</ul>
+<p>But the same repository should remain unchanged after validation.</p>
+<p>This property matters for:</p>
+<ul>
+<li>CI;</li>
+<li>local experimentation;</li>
+<li>agent workflows;</li>
+<li>pull-request review;</li>
+<li>reproducibility.</li>
+</ul>
+<p>A validator is a gate and diagnostic tool.</p>
+<p>It is not an autonomous remediation engine.</p>
+<p>---</p>
+<h1 id="validation-and-model-inference-are-different-operations">Validation and model inference are different operations</h1>
+<p>A dataset may contain a column:</p>
+<pre><code class="language-text">SUPPLIER_REVIEW_STATUS</code></pre>
+<p>An inference tool may propose an Attribute.</p>
+<p>A validator can check whether the resulting proposal has:</p>
+<ul>
+<li>valid ID;</li>
+<li>valid type;</li>
+<li>domain;</li>
+<li>references;</li>
+<li>status;</li>
+<li>required metadata.</li>
+</ul>
+<p>It cannot prove merely from the column that the proposed business concept is correct.</p>
+<p>Inference asks:</p>
+<p>&gt; What model might explain this evidence?</p>
+<p>Validation asks:</p>
+<p>&gt; Does this declared model satisfy explicit constraints?</p>
+<p>The distinction is critical for AI-assisted workflows.</p>
+<p>---</p>
+<h1 id="validation-and-data-quality-checking-are-also-different">Validation and data-quality checking are also different</h1>
+<p>Model validation checks canonical model structure.</p>
+<p>Dataset validation checks records against expectations.</p>
+<p>Examples:</p>
+<h2 id="model-validation">Model validation</h2>
+<ul>
+<li>Rule references a valid Attribute.</li>
+<li>Mapping source exists.</li>
+<li>Attribute has an owner.</li>
+<li>local override has a parent.</li>
+</ul>
+<h2 id="dataset-validation">Dataset validation</h2>
+<ul>
+<li>required column exists;</li>
+<li>values conform to allowed codes;</li>
+<li>completeness meets the stated condition;</li>
+<li>records satisfy a rule.</li>
+</ul>
+<p>The two interact.</p>
+<p>A dataset-readiness run first needs a valid model against which the dataset can be compared.</p>
+<p>Martenweave’s current one-command readiness flow combines repository validation, index generation, dataset profiling, gap detection and report creation.</p>
+<p>The sequence matters:</p>
+<pre><code class="language-text">Validate model
+before
+judging dataset against model.</code></pre>
+<p>---</p>
+<h1 id="proposal-validation-should-be-stricter-than-draft-validation">Proposal validation should be stricter than draft validation</h1>
+<p>A draft object may be incomplete.</p>
+<p>A proposal submitted for review should meet a higher standard.</p>
+<p>An approved change should meet a higher standard again.</p>
+<p>Possible validation profiles include:</p>
+<h2 id="draft-profile">Draft profile</h2>
+<p>Allows:</p>
+<ul>
+<li>missing owner;</li>
+<li>unresolved reference placeholder;</li>
+<li>incomplete rationale.</li>
+</ul>
+<h2 id="review-profile">Review profile</h2>
+<p>Requires:</p>
+<ul>
+<li>affected objects;</li>
+<li>evidence;</li>
+<li>proposed change;</li>
+<li>accountable reviewer;</li>
+<li>valid references.</li>
+</ul>
+<h2 id="approval-profile">Approval profile</h2>
+<p>Requires:</p>
+<ul>
+<li>no blocking errors;</li>
+<li>resolved critical impact;</li>
+<li>approved authority;</li>
+<li>valid target state;</li>
+<li>closure of incompatible decisions.</li>
+</ul>
+<p>This avoids one of two extremes:</p>
+<ul>
+<li>rejecting early drafts before they can be discussed;</li>
+<li>allowing incomplete proposals to reach approval.</li>
+</ul>
+<p>Validation should therefore consider both object type and lifecycle stage.</p>
+<p>---</p>
+<h1 id="a-patchproposal-must-not-validate-only-as-a-document">A PatchProposal must not validate only as a document</h1>
+<p>A proposal may contain valid metadata and still be unsafe.</p>
+<p>Proposal validation should ask:</p>
+<ul>
+<li>Do target objects exist?</li>
+<li>Does the proposal add, modify, retire or replace them?</li>
+<li>Are proposed IDs unique?</li>
+<li>Does it reference evidence?</li>
+<li>Does it reference current baseline state?</li>
+<li>Would it create broken references?</li>
+<li>Would it leave active dependants pointing to a retired object?</li>
+<li>Does the reviewer have the required authority?</li>
+<li>Does it conflict with another pending proposal?</li>
+</ul>
+<p>The current Martenweave workflow promotes generated findings into <code>PatchProposal</code> objects in <code>pending_review</code> status and keeps them subject to human review.</p>
+<p>A proposal-first architecture becomes useful only when proposals are validated as prospective model changes, not just well-formed files.</p>
+<p>---</p>
+<h1 id="prospective-validation-is-more-valuable-than-post-change-validation">Prospective validation is more valuable than post-change validation</h1>
+<p>Ordinary validation checks the repository as it exists now.</p>
+<p>Prospective validation checks:</p>
+<p>&gt; What would the repository look like if this proposal were applied?</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Current canonical state
++
+proposed patch
+=
+candidate state
+
+Validate candidate state
+before merge.</code></pre>
+<p>This can reveal:</p>
+<ul>
+<li>references broken by retirement;</li>
+<li>duplicate IDs introduced by addition;</li>
+<li>ownership gaps;</li>
+<li>overlapping rules;</li>
+<li>invalid lifecycle transitions;</li>
+<li>incompatible context changes.</li>
+</ul>
+<p>The proposal can fail before it modifies approved state.</p>
+<p>This is one of the strongest uses of deterministic validation in an agentic system.</p>
+<p>---</p>
+<h1 id="change-validation-should-consider-impact-boundaries">Change validation should consider impact boundaries</h1>
+<p>A one-line change may be structurally valid:</p>
+<pre><code class="language-diff">- required: false
++ required: true</code></pre>
+<p>But validation may require accompanying objects or evidence.</p>
+<p>For example, making a field mandatory could require:</p>
+<ul>
+<li>an active rule;</li>
+<li>applicable lifecycle stage;</li>
+<li>source capability;</li>
+<li>test evidence;</li>
+<li>approved decision;</li>
+<li>exception treatment.</li>
+</ul>
+<p>Not all these conditions should be hard-coded universally.</p>
+<p>Domain packs can define change-policy checks such as:</p>
+<pre><code class="language-text">A mandatory SAP target attribute must have:
+- at least one governed source or enrichment path;
+- a defined applicability context;
+- an accountable owner;
+- a linked approved decision.</code></pre>
+<p>This turns validation into a delivery-risk control without pretending that it proves implementation readiness completely.</p>
+<p>---</p>
+<h1 id="a-worked-example-missing-source-reference">A worked example: missing source reference</h1>
+<p>Proposed Mapping:</p>
+<pre><code class="language-yaml">id: MAP-ERP-B-RISK-TO-S4
+type: Mapping
+source: FEP-ERP-B-SUPPLIER-RISK
+target: FEP-S4-SUPPLIER-RISK
+status: approved</code></pre>
+<p>Repository state:</p>
+<ul>
+<li>target exists;</li>
+<li>source does not exist.</li>
+</ul>
+<p>Validation result:</p>
+<pre><code class="language-text">ERROR MW-REF-002
+
+Object:
+MAP-ERP-B-RISK-TO-S4
+
+Field:
+source
+
+Reference:
+FEP-ERP-B-SUPPLIER-RISK
+
+Reason:
+Referenced object does not exist.</code></pre>
+<p>The validator does not guess that another similarly named field was intended.</p>
+<p>The author must:</p>
+<ul>
+<li>add the missing source endpoint;</li>
+<li>correct the ID;</li>
+<li>reject the Mapping.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-example-semantically-suspicious-but-structurally-valid">A worked example: semantically suspicious but structurally valid</h1>
+<p>Attribute:</p>
+<pre><code class="language-yaml">id: ATTR-SUPPLIER-RISK
+type: Attribute
+allowed_values:
+  - LOW
+  - STANDARD
+  - HIGH
+  - UNDER_REVIEW</code></pre>
+<p>Basic schema:</p>
+<ul>
+<li>valid.</li>
+</ul>
+<p>Reference checks:</p>
+<ul>
+<li>valid.</li>
+</ul>
+<p>Possible domain rule:</p>
+<pre><code class="language-text">WARNING MW-DOMAIN-011
+
+Value UNDER_REVIEW appears to represent lifecycle state
+inside a classification attribute.
+
+Review whether Supplier Review Status should be modelled separately.</code></pre>
+<p>The validator should not automatically split the Attribute.</p>
+<p>It identifies a declared anti-pattern and routes it to human review.</p>
+<p>---</p>
+<h1 id="a-worked-example-approved-mapping-depends-on-rejected-decision">A worked example: approved mapping depends on rejected decision</h1>
+<p>Mapping:</p>
+<pre><code class="language-yaml">id: MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+type: Mapping
+status: approved
+decision:
+  - DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>Decision:</p>
+<pre><code class="language-yaml">id: DEC-CUSTOMER-GROUP-SOURCE-017
+type: Decision
+status: rejected</code></pre>
+<p>Validation:</p>
+<pre><code class="language-text">ERROR MW-LIFE-006
+
+Approved Mapping depends on rejected Decision
+DEC-CUSTOMER-GROUP-SOURCE-017.</code></pre>
+<p>The objects are individually parseable.</p>
+<p>The repository is inconsistent.</p>
+<p>---</p>
+<h1 id="a-worked-example-local-override-without-global-parent">A worked example: local override without global parent</h1>
+<p>Rule:</p>
+<pre><code class="language-yaml">id: RULE-PT-TAX-IDENTIFIER
+type: Rule
+scope: local
+country: PT
+overrides: RULE-GLOBAL-TAX-IDENTIFIER</code></pre>
+<p>No global rule with that ID exists.</p>
+<p>Possible result:</p>
+<pre><code class="language-text">ERROR MW-REF-002
+Unknown override target.
+
+ERROR MW-CTX-LOCAL-003
+Local override requires a valid global parent.</code></pre>
+<p>One missing reference creates two meaningful diagnostics:</p>
+<ul>
+<li>the direct reference is broken;</li>
+<li>the global/local governance structure is incomplete.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-example-warning-rather-than-failure">A worked example: warning rather than failure</h1>
+<p>Approved Attribute:</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP
+type: Attribute
+status: approved
+owners: []</code></pre>
+<p>The repository can still be indexed.</p>
+<p>But governance is weak.</p>
+<p>Possible result:</p>
+<pre><code class="language-text">WARNING MW-OWN-001
+
+Approved Attribute has no accountable owner.</code></pre>
+<p>Whether this blocks publication depends on the selected validation profile and organisational policy.</p>
+<p>A pilot may permit it.</p>
+<p>A production governance baseline may not.</p>
+<p>---</p>
+<h1 id="configuration-should-control-policy-without-changing-meaning">Configuration should control policy without changing meaning</h1>
+<p>Useful configuration may define:</p>
+<ul>
+<li>which warnings become errors;</li>
+<li>which domain packs are active;</li>
+<li>permitted ID patterns;</li>
+<li>repository size thresholds;</li>
+<li>required fields by lifecycle;</li>
+<li>ignored paths;</li>
+<li>output format.</li>
+</ul>
+<p>The same repository validated under a stricter profile may produce more blocking findings.</p>
+<p>That does not violate determinism when the validation profile is part of the declared input.</p>
+<p>The complete deterministic input is:</p>
+<pre><code class="language-text">canonical repository
++
+validator version
++
+schema version
++
+validation profile
++
+domain-pack version</code></pre>
+<p>If any of these change, results may legitimately change.</p>
+<p>---</p>
+<h1 id="versioning-validation-rules-is-essential">Versioning validation rules is essential</h1>
+<p>A repository that passed validation last year may fail under a newer validator.</p>
+<p>Possible reasons:</p>
+<ul>
+<li>new inconsistency check;</li>
+<li>deprecated status;</li>
+<li>stricter ownership requirement;</li>
+<li>corrected schema;</li>
+<li>new domain rule.</li>
+</ul>
+<p>This is not necessarily a product defect.</p>
+<p>But the change must be controlled.</p>
+<p>A validation release should explain:</p>
+<ul>
+<li>new rules;</li>
+<li>changed severities;</li>
+<li>deprecated fields;</li>
+<li>migration path;</li>
+<li>compatibility impact.</li>
+</ul>
+<p>Otherwise, teams experience validation as arbitrary.</p>
+<p>The current Martenweave source identifies its package version and exposes release-grade smoke testing against bundled examples.</p>
+<p>Stable examples help detect unintentional changes in validation behaviour.</p>
+<p>---</p>
+<h1 id="validation-should-work-locally-and-in-ci">Validation should work locally and in CI</h1>
+<p>A strong workflow runs the same validator in several places.</p>
+<h2 id="local-authoring">Local authoring</h2>
+<p>The analyst validates before committing.</p>
+<h2 id="pull-request">Pull request</h2>
+<p>CI validates the proposed branch.</p>
+<h2 id="release-build">Release build</h2>
+<p>The accepted repository is validated before indexes and artefacts are published.</p>
+<h2 id="agent-workflow">Agent workflow</h2>
+<p>An agent validates a draft proposal before presenting it.</p>
+<h2 id="scheduled-health-check">Scheduled health check</h2>
+<p>The repository is revalidated after tool or domain-pack updates.</p>
+<p>The command should remain consistent:</p>
+<pre><code class="language-bash">martenweave validate --repo ./model</code></pre>
+<p>The current public demo begins with this validation step and expects zero blocking errors before index generation.</p>
+<p>---</p>
+<h1 id="structured-output-matters-for-automation">Structured output matters for automation</h1>
+<p>Human-readable console output is useful.</p>
+<p>Machines need structured results.</p>
+<p>A validation result can conceptually contain:</p>
+<pre><code class="language-json">{
+  &quot;valid&quot;: false,
+  &quot;errors&quot;: 2,
+  &quot;warnings&quot;: 1,
+  &quot;diagnostics&quot;: [
+    {
+      &quot;code&quot;: &quot;MW-REF-002&quot;,
+      &quot;severity&quot;: &quot;error&quot;,
+      &quot;object_id&quot;: &quot;MAP-ERP-B-RISK-TO-S4&quot;,
+      &quot;field&quot;: &quot;source&quot;,
+      &quot;reference&quot;: &quot;FEP-ERP-B-SUPPLIER-RISK&quot;
+    }
+  ]
+}</code></pre>
+<p>The exact schema is a product contract that should be versioned when exposed publicly.</p>
+<p>Structured output enables:</p>
+<ul>
+<li>CI annotations;</li>
+<li>IDE integration;</li>
+<li>API responses;</li>
+<li>issue generation;</li>
+<li>agent remediation proposals;</li>
+<li>governance dashboards.</li>
+</ul>
+<p>It should not omit the human explanation.</p>
+<p>---</p>
+<h1 id="validation-should-fail-safely">Validation should fail safely</h1>
+<p>When one file cannot be parsed, the validator has a choice:</p>
+<ul>
+<li>stop immediately;</li>
+<li>continue checking independent files;</li>
+<li>skip repository checks that require complete state.</li>
+</ul>
+<p>A useful result may report:</p>
+<pre><code class="language-text">1 parsing error
+3 object errors
+Repository-wide reference validation incomplete</code></pre>
+<p>This is more informative than stopping at the first error.</p>
+<p>But it must not claim complete repository validity when some objects could not be loaded.</p>
+<p>The report should distinguish:</p>
+<ul>
+<li>checks executed;</li>
+<li>checks skipped;</li>
+<li>checks incomplete;</li>
+<li>overall reliability of the result.</li>
+</ul>
+<p>---</p>
+<h1 id="what-deterministic-validation-cannot-prove">What deterministic validation cannot prove</h1>
+<p>This boundary must remain explicit.</p>
+<p>A validator cannot prove that:</p>
+<ul>
+<li>the business definition is correct;</li>
+<li>two fields are genuinely semantically equivalent;</li>
+<li>an owner has enough organisational authority;</li>
+<li>a source will provide complete data;</li>
+<li>a proposed default is ethically or commercially acceptable;</li>
+<li>an SAP configuration actually matches the model;</li>
+<li>a local legal interpretation is correct;</li>
+<li>a decision was politically legitimate;</li>
+<li>a Markdown explanation is truthful.</li>
+</ul>
+<p>It can validate only what has been formalised.</p>
+<p>For example:</p>
+<pre><code class="language-yaml">source_equivalent_to_target: true</code></pre>
+<p>may be structurally valid.</p>
+<p>The validator cannot know that the claim is true unless supporting rules and evidence have been encoded in a checkable form.</p>
+<p>This is why deterministic validation and human approval are complementary.</p>
+<p>---</p>
+<h1 id="more-rules-do-not-always-mean-better-validation">More rules do not always mean better validation</h1>
+<p>A validator can become unusable when it attempts to encode every methodological preference as a hard error.</p>
+<p>Consequences include:</p>
+<ul>
+<li>teams bypass validation;</li>
+<li>drafts become difficult to create;</li>
+<li>local legitimate variation is rejected;</li>
+<li>warnings become overwhelming;</li>
+<li>the schema becomes coupled to one programme.</li>
+</ul>
+<p>A good rule should satisfy several conditions:</p>
+<ul>
+<li>it detects a meaningful failure;</li>
+<li>the condition is objectively testable;</li>
+<li>the remediation is understandable;</li>
+<li>false positives are limited;</li>
+<li>scope is clear;</li>
+<li>severity is proportionate.</li>
+</ul>
+<p>When a rule depends heavily on judgement, it may be better represented as:</p>
+<ul>
+<li>warning;</li>
+<li>review checklist;</li>
+<li>scorecard signal;</li>
+<li>evidence prompt.</li>
+</ul>
+<p>---</p>
+<h1 id="the-validator-should-explain-not-merely-reject">The validator should explain, not merely reject</h1>
+<p>Weak diagnostic:</p>
+<pre><code class="language-text">Invalid object.</code></pre>
+<p>Stronger diagnostic:</p>
+<pre><code class="language-text">Approved local Rule RULE-PT-TAX-IDENTIFIER
+references missing global parent RULE-GLOBAL-TAX-IDENTIFIER.
+
+Add the parent reference, change the rule scope,
+or keep the rule in draft status.</code></pre>
+<p>A useful diagnostic tells the author:</p>
+<ul>
+<li>what failed;</li>
+<li>where;</li>
+<li>why it matters;</li>
+<li>likely correction paths.</li>
+</ul>
+<p>This is especially important for business-facing contributors who may encounter validation through an imported spreadsheet or UI rather than in source code.</p>
+<p>---</p>
+<h1 id="auto-fix-should-remain-narrow">Auto-fix should remain narrow</h1>
+<p>Some failures can be corrected mechanically:</p>
+<ul>
+<li>trailing whitespace;</li>
+<li>known field-name migration;</li>
+<li>deterministic ordering;</li>
+<li>missing final newline;</li>
+<li>deprecated but unambiguous status alias.</li>
+</ul>
+<p>Other corrections require judgement:</p>
+<ul>
+<li>selecting an owner;</li>
+<li>choosing a source;</li>
+<li>splitting an attribute;</li>
+<li>resolving a rule conflict;</li>
+<li>changing scope.</li>
+</ul>
+<p>A safe auto-fix policy is:</p>
+<pre><code class="language-text">Auto-fix presentation and unambiguous syntax.
+
+Propose semantic changes.
+
+Never silently approve them.</code></pre>
+<p>An agent can draft the correction.</p>
+<p>The resulting change should still enter the proposal and review path.</p>
+<p>---</p>
+<h1 id="validation-is-the-safety-boundary-for-ai">Validation is the safety boundary for AI</h1>
+<p>AI can create plausible but structurally invalid objects.</p>
+<p>Typical failures include:</p>
+<ul>
+<li>invented IDs;</li>
+<li>references to non-existent rules;</li>
+<li>wrong object types;</li>
+<li>unsupported statuses;</li>
+<li>local overrides without parents;</li>
+<li>duplicate attributes;</li>
+<li>proposals based on rejected decisions.</li>
+</ul>
+<p>Deterministic validation catches these failures without needing another AI judgement.</p>
+<p>The safe sequence is:</p>
+<pre><code class="language-text">AI extracts or proposes
+→ deterministic validator checks
+→ impact analysis runs
+→ human reviews meaning
+→ approved change is recorded</code></pre>
+<p>The current Martenweave principle is explicit:</p>
+<p>&gt; Agents propose. Validators verify. Humans approve. Git records.</p>
+<p>The validator does not make AI trustworthy by itself.</p>
+<p>It narrows the space of structurally permitted output.</p>
+<p>---</p>
+<h1 id="validation-also-protects-humans-from-humans">Validation also protects humans from humans</h1>
+<p>Many model inconsistencies are not caused by AI.</p>
+<p>They come from:</p>
+<ul>
+<li>copy-and-paste;</li>
+<li>stale Excel imports;</li>
+<li>renamed files;</li>
+<li>mistyped IDs;</li>
+<li>forgotten dependencies;</li>
+<li>emergency edits;</li>
+<li>parallel teams;</li>
+<li>local changes;</li>
+<li>incomplete handovers.</li>
+</ul>
+<p>Deterministic validation provides the same gate regardless of author.</p>
+<p>That neutrality is valuable.</p>
+<p>A senior architect’s file should fail for the same broken reference as an agent-generated file.</p>
+<p>---</p>
+<h1 id="validation-should-precede-every-generated-view">Validation should precede every generated view</h1>
+<p>Martenweave can generate:</p>
+<ul>
+<li>SQLite index;</li>
+<li>search documents;</li>
+<li>lineage edges;</li>
+<li>readiness reports;</li>
+<li>static viewer;</li>
+<li>issue drafts;</li>
+<li>proposal outputs.</li>
+</ul>
+<p>Each generated view can amplify invalid state.</p>
+<p>Therefore, the default workflow should remain:</p>
+<pre><code class="language-text">canonical files
+→ validation
+→ generated artefacts</code></pre>
+<p>The public demo follows exactly this order: validate first, then build <code>modelops.db</code>, search documents and lineage edges.</p>
+<p>A development override may allow inspection of invalid state.</p>
+<p>It should be explicit and clearly marked.</p>
+<p>---</p>
+<h1 id="validation-and-health-should-not-be-collapsed">Validation and health should not be collapsed</h1>
+<p>A repository can be valid but unhealthy.</p>
+<p>Valid:</p>
+<ul>
+<li>all IDs unique;</li>
+<li>references resolve;</li>
+<li>schemas pass.</li>
+</ul>
+<p>Unhealthy:</p>
+<ul>
+<li>many objects lack owners;</li>
+<li>evidence is stale;</li>
+<li>mappings are incomplete;</li>
+<li>decisions remain pending;</li>
+<li>temporary deviations are expiring;</li>
+<li>dataset coverage is weak.</li>
+</ul>
+<p>Martenweave exposes separate commands for:</p>
+<ul>
+<li><code>validate</code>;</li>
+<li><code>health</code>;</li>
+<li><code>scorecard</code>;</li>
+<li><code>owners</code>;</li>
+<li><code>analyze</code>;</li>
+<li><code>gap-report</code>.</li>
+</ul>
+<p>This is the correct distinction.</p>
+<p>Validation answers:</p>
+<p>&gt; Is declared model state internally processable and consistent?</p>
+<p>Health answers:</p>
+<p>&gt; Is the model sufficiently complete, governed and ready for its purpose?</p>
+<p>---</p>
+<h1 id="a-practical-validation-ladder">A practical validation ladder</h1>
+<p>A team adopting Martenweave can increase strictness gradually.</p>
+<h2 id="level-1-parse-and-identity">Level 1: Parse and identity</h2>
+<ul>
+<li>every file parses;</li>
+<li>every object has a unique ID;</li>
+<li>object type is supported.</li>
+</ul>
+<h2 id="level-2-typed-objects">Level 2: Typed objects</h2>
+<ul>
+<li>required fields;</li>
+<li>allowed values;</li>
+<li>correct field types;</li>
+<li>internal object consistency.</li>
+</ul>
+<h2 id="level-3-references">Level 3: References</h2>
+<ul>
+<li>all links resolve;</li>
+<li>referenced types are compatible;</li>
+<li>lifecycle references are valid.</li>
+</ul>
+<h2 id="level-4-governance">Level 4: Governance</h2>
+<ul>
+<li>approved objects have owners;</li>
+<li>decisions have authority;</li>
+<li>exceptions have scope;</li>
+<li>deviations have expiry.</li>
+</ul>
+<h2 id="level-5-domain-rules">Level 5: Domain rules</h2>
+<ul>
+<li>SAP context;</li>
+<li>global/local inheritance;</li>
+<li>lifecycle applicability;</li>
+<li>mapping granularity;</li>
+<li>endpoint requirements.</li>
+</ul>
+<h2 id="level-6-change-safety">Level 6: Change safety</h2>
+<ul>
+<li>proposals validate against candidate state;</li>
+<li>retirements do not break dependants;</li>
+<li>breaking changes require impact evidence.</li>
+</ul>
+<p>This ladder allows a pilot to begin without pretending it already has enterprise-grade model completeness.</p>
+<p>---</p>
+<h1 id="acceptance-criteria-for-deterministic-validation">Acceptance criteria for deterministic validation</h1>
+<p>A trustworthy validator should be:</p>
+<h2 id="repeatable">Repeatable</h2>
+<p>The same declared input produces the same logical diagnostics.</p>
+<h2 id="explainable">Explainable</h2>
+<p>Every result refers to a rule and affected object.</p>
+<h2 id="side-effect-free">Side-effect free</h2>
+<p>Validation does not mutate canonical truth.</p>
+<h2 id="layered">Layered</h2>
+<p>Syntax, object, references, repository and domain checks remain distinguishable.</p>
+<h2 id="versioned">Versioned</h2>
+<p>Rule changes are tied to validator and schema versions.</p>
+<h2 id="automatable">Automatable</h2>
+<p>Results can be consumed by CI, APIs and agents.</p>
+<h2 id="human-readable">Human-readable</h2>
+<p>Authors can understand and correct failures.</p>
+<h2 id="conservative">Conservative</h2>
+<p>It does not invent missing business meaning.</p>
+<h2 id="extensible">Extensible</h2>
+<p>Domain packs can add rules without corrupting the generic core.</p>
+<h2 id="proportionate">Proportionate</h2>
+<p>Hard errors are reserved for conditions that should block publication or generation.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Deterministic validation is not a claim that enterprise data models can be reduced to code.</p>
+<p>It is a claim that many expensive model failures are objectively detectable.</p>
+<p>A machine can reliably detect:</p>
+<ul>
+<li>malformed files;</li>
+<li>missing required fields;</li>
+<li>duplicate identities;</li>
+<li>unknown references;</li>
+<li>incompatible object types;</li>
+<li>invalid lifecycle relationships;</li>
+<li>declared context violations;</li>
+<li>structurally unsafe proposals.</li>
+</ul>
+<p>It cannot decide:</p>
+<ul>
+<li>whether Customer Group truly equals CRM Segment;</li>
+<li>whether Supplier Risk should be mandatory;</li>
+<li>whether a Portuguese exception is legally justified;</li>
+<li>whether a business owner should accept the change.</li>
+</ul>
+<p>Those questions remain with accountable humans.</p>
+<p>The architecture is strongest when each part does the work it can actually perform:</p>
+<pre><code class="language-text">Schemas check shape.
+
+Validators check declared consistency.
+
+Dataset tests check observed data.
+
+Impact analysis checks connected consequences.
+
+AI proposes interpretations and changes.
+
+Humans decide meaning and authority.
+
+Git records the accepted state.</code></pre>
+<p>Martenweave’s product direction depends on keeping these boundaries clear.</p>
+<p>Without deterministic validation, canonical files are only organised documentation.</p>
+<p>With validation but no human authority, the repository becomes a technically consistent model that may still be wrong.</p>
+<p>The practical test is:</p>
+<p>&gt; Can two independent environments validate the same repository with the same rule set and receive the same blocking results—while every semantic judgement remains traceable to an explicit human decision?</p>
+<p>When the answer is yes, validation is functioning as an engineering control.</p>
+<p>When the result depends on who runs it, which file loads first or what an AI happens to infer, it is not deterministic governance.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>We are Metalhatscats, the team behind Martenweave.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>Its validators check canonical model structure, identity, references and declared domain constraints before generated indexes, reports and proposals are published.</p>
+<p>The objective is not to automate business authority.</p>
+<p>It is to make invalid or inconsistent model state difficult to publish accidentally.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines deterministic validation as a core principle and states that model objects are checked for IDs, types, references and domain-context rules before indexing.</p>
+<p>The public demo starts with <code>martenweave validate</code>, expects zero blocking validation errors and allows explicitly retained methodology warnings before generated indexes are built.</p>
+<p>The current command set separates structural validation from repository health, scorecards, ownership analysis, broader readiness analysis and gap reporting.</p>
+<p>Martenweave Core currently declares Pydantic and PyYAML among its core dependencies.</p>
+<p>Pydantic’s current official documentation distinguishes built-in type validation, field validators and whole-model validators for enforcing more complex constraints. It also documents that validators may check or transform values, which is why canonical-model coercion should be used conservatively.</p>
+<p>The YAML 1.2.2 specification defines YAML as a data-serialization language with mappings, sequences and scalar nodes. Correct YAML syntax establishes parseability, not conformance with a Martenweave object schema or business model.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by Pydantic, YAML, SAP or other projects and vendors discussed in the broader series.</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

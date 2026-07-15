@@ -152,7 +152,123 @@ const docRoutes = [
     description:
       "Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services.",
   },
+  {
+    source: "capabilities.md",
+    output: "capabilities.html",
+    label: "Capabilities",
+    seoTitle: "Martenweave Capabilities | Model Governance for SAP Data Work",
+    description:
+      "Explore verified Martenweave Core capabilities for canonical models, validation, gaps, lineage, impact, review, and controlled changes.",
+  },
+  {
+    source: "pilot-projects.md",
+    output: "pilot-projects.html",
+    label: "Pilot projects",
+    seoTitle: "Martenweave Pilot Projects | Evidence-Based SAP Migration Readiness",
+    description:
+      "Plan a focused Martenweave pilot for SAP migration, MDM, governance, or AMS model evidence without changing production systems.",
+  },
+  {
+    source: "consulting.md",
+    output: "consulting.html",
+    label: "Consulting",
+    seoTitle: "Martenweave Consulting | SAP Migration and Model Governance",
+    description:
+      "Practical consulting for SAP migration, MDM, data governance, and AMS teams that need an accountable model and evidence workflow.",
+  },
+  {
+    source: "engagement.md",
+    output: "engagement.html",
+    label: "Engagement",
+    seoTitle: "Martenweave Engagement Process | From Scope to Reviewable Evidence",
+    description:
+      "See the practical Martenweave engagement process: scope a model slice, establish evidence, validate, review, and hand over controlled outputs.",
+  },
+  {
+    source: "contact.md",
+    output: "contact.html",
+    label: "Contact",
+    seoTitle: "Contact Martenweave | Discuss a Model Governance Pilot",
+    description:
+      "Contact Martenweave to discuss a focused SAP migration, MDM, data-governance, or AMS model-governance pilot.",
+  },
 ];
+
+const blogArticles = [
+  {
+    source: "blog/001-sap-mdg-manages-master-data-who-manages-the-implementation-knowledge.md",
+    slug: "sap-mdg-implementation-knowledge",
+    topic: "SAP MDG and MDM",
+    description: "Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change.",
+  },
+  {
+    source: "blog/002-why-sap-migration-mapping-spreadsheets-break-down.md",
+    slug: "sap-migration-mapping-spreadsheets",
+    topic: "Migration readiness",
+    description: "Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation.",
+  },
+  {
+    source: "blog/009-how-to-detect-dataset-gaps-before-sap-migration-testing.md",
+    slug: "detect-dataset-gaps-before-sap-migration-testing",
+    topic: "Migration readiness",
+    description: "How to compare representative datasets with an approved model before SAP migration testing begins.",
+  },
+  {
+    source: "blog/010-how-to-perform-impact-analysis-for-an-sap-field-change.md",
+    slug: "impact-analysis-sap-field-change",
+    topic: "Lineage and impact",
+    description: "A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list.",
+  },
+  {
+    source: "blog/011-how-to-trace-a-legacy-field-to-an-sap-target-field.md",
+    slug: "trace-legacy-field-to-sap-target",
+    topic: "Lineage and impact",
+    description: "How to trace a legacy field through mappings, business attributes, and SAP target endpoints.",
+  },
+  {
+    source: "blog/021-how-deterministic-validation-reduces-migration-risk.md",
+    slug: "deterministic-validation-migration-risk",
+    topic: "Validation and governance",
+    description: "Why deterministic validation makes migration model risk visible before derived indexes and reports are published.",
+  },
+  {
+    source: "blog/025-how-to-build-an-evidence-based-migration-readiness-report.md",
+    slug: "evidence-based-migration-readiness-report",
+    topic: "Migration readiness",
+    description: "How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.",
+  },
+  {
+    source: "blog/062-how-deterministic-model-validation-works.md",
+    slug: "how-deterministic-model-validation-works",
+    topic: "Validation and governance",
+    description: "How deterministic model validation works and why semantic authority must remain explicit and reviewable.",
+  },
+];
+
+const blogRoutes = [
+  {
+    source: "blog/index.md",
+    output: "blog/index.html",
+    rootOutput: true,
+    label: "Blog",
+    canonical: "/blog/",
+    seoTitle: "Martenweave Blog | SAP Migration, MDM, and Model Governance",
+    description: "Practical articles on SAP migration readiness, MDM and MDG delivery, data governance, lineage, impact, and deterministic validation.",
+    schemaType: "CollectionPage",
+  },
+  ...blogArticles.map((article) => ({
+    ...article,
+    output: `blog/${article.slug}.html`,
+    rootOutput: true,
+    label: article.topic,
+    canonical: `/blog/${article.slug}.html`,
+    seoTitle: `${article.slug.replaceAll("-", " ")} | Martenweave`,
+    schemaType: "Article",
+    blog: true,
+  })),
+];
+
+const allRoutes = [...docRoutes, ...blogRoutes];
 
 function escapeHtml(value) {
   return value
@@ -373,6 +489,13 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
     inLanguage: "en",
   };
 
+  if (route.blog) {
+    const reviewed = markdown.match(/\*\*Reviewed:\s*([^*]+)\*\*/)?.[1]?.trim();
+    if (reviewed) contentEntity.dateModified = reviewed;
+    contentEntity.articleSection = route.topic;
+    contentEntity.keywords = route.topic;
+  }
+
   if (articleType === "FAQPage") {
     contentEntity.mainEntity = extractFaqEntities(markdown);
   }
@@ -533,6 +656,7 @@ ${jsonLd}  </head>
         </a>
         <div class="nav-links">
           <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
           <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
           <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
         </div>
@@ -543,11 +667,11 @@ ${jsonLd}  </head>
       <aside class="doc-sidebar" aria-label="Documentation navigation">
 ${renderNav(route.output)}
       </aside>
-      <article class="doc-content">
+      <article class="doc-content${route.blog ? " blog-article" : ""}">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <span aria-hidden="true">/</span>
-          <a href="/docs.html">Docs</a>
+          <a href="${route.blog ? "/blog/" : "/docs.html"}">${route.blog ? "Blog" : "Docs"}</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">${escapeHtml(title)}</span>
         </nav>
@@ -584,8 +708,9 @@ mkdirSync(docsDir, { recursive: true });
 
 const staleFiles = [];
 
-for (const route of docRoutes) {
-  const outputPath = join(docsDir, route.output);
+for (const route of allRoutes) {
+  const outputPath = route.rootOutput ? join(root, route.output) : join(docsDir, route.output);
+  mkdirSync(dirname(outputPath), { recursive: true });
   const rendered = renderPage(route);
 
   if (checkOnly) {
@@ -612,7 +737,7 @@ function buildSearchIndex() {
       excerpt:
         "Open-source data model registry for SAP migration, MDM, and data governance. Canonical files, validation, gap detection, lineage, impact, and human-approved AI proposals.",
     },
-    ...docRoutes
+    ...allRoutes
       .filter((route) => route.indexable !== false)
       .map((route) => {
         const canonicalPath = route.canonical ?? `/docs/${route.output}`;
@@ -652,6 +777,6 @@ if (staleFiles.length > 0) {
 
 console.log(
   checkOnly
-    ? `Generated docs are current: ${docRoutes.length} routes checked.`
-    : `Generated docs: ${docRoutes.length} static HTML routes. Search index: docs/search-index.json.`,
+    ? `Generated docs are current: ${allRoutes.length} routes checked.`
+    : `Generated docs: ${allRoutes.length} static HTML routes. Search index: docs/search-index.json.`,
 );
