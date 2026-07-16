@@ -1821,7 +1821,7 @@ When the result depends on who runs it, which file loads first or what an AI hap
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.
 
@@ -1848,4 +1848,3 @@ Pydantic’s current official documentation distinguishes built-in type validati
 The YAML 1.2.2 specification defines YAML as a data-serialization language with mappings, sequences and scalar nodes. Correct YAML syntax establishes parseability, not conformance with a Martenweave object schema or business model.
 
 Martenweave is independent and is not affiliated with or endorsed by Pydantic, YAML, SAP or other projects and vendors discussed in the broader series.
-

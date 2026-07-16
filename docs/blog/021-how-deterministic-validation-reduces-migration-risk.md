@@ -1415,7 +1415,7 @@ They validate the structure first, then use judgement where judgement is actuall
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave uses deterministic validation to protect canonical model knowledge before it becomes search context, impact analysis, AI input or implementation guidance.
 
@@ -1430,4 +1430,3 @@ Martenweave’s current public documentation states that the product captures st
 The current core includes canonical Markdown and YAML model files, deterministic validation, generated SQLite and JSONL indexes, search, trace and impact analysis, dataset profiling, reports and a PatchProposal-to-ChangeRequest lifecycle.
 
 Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
-

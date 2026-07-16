@@ -549,15 +549,6 @@ function contentsNavigation(body) {
     .join("")}</ol></nav></details>`;
 }
 
-function keyTakeaways(route, body) {
-  const headings = [...body.matchAll(/<h2 id="[^"]+">([\s\S]*?)<\/h2>/g)]
-    .map((match) => textFromMarkdown(match[1]))
-    .filter(Boolean)
-    .slice(0, 2);
-  if (headings.length < 2) return "";
-  return `<aside class="key-takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>${escapeHtml(route.description)}</li>${headings.map((heading) => `<li>Use ${escapeHtml(heading)} to guide the next review.</li>`).join("")}</ul></aside>`;
-}
-
 function primarySources() {
   return `<section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section>`;
 }
@@ -835,7 +826,7 @@ function renderPage(route) {
         .join("")
     : "";
   const blogFooter = pageRoute.blog
-    ? `${keyTakeaways(pageRoute, body)}<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${primarySources()}${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
+    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${primarySources()}${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
     : "";
 
   return `<!doctype html>
@@ -851,7 +842,7 @@ function renderPage(route) {
     <meta name="robots" content="${robots}" />
     <meta name="author" content="${authorName}" />
     <meta name="application-name" content="Martenweave" />
-    <meta name="martenweave-deployment-revision" content="${deploymentRevision}" />
+    <meta name="martenweave-deployment-ref" content="${deploymentRevision}" />
     <meta name="theme-color" content="#321136" />
     <meta property="og:type" content="${pageRoute.blog ? "article" : "website"}" />
     <meta property="og:locale" content="en_US" />

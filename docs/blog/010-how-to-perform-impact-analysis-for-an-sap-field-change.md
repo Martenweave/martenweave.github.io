@@ -1015,7 +1015,7 @@ When the programme can answer that question before implementation, changes move 
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping architects and delivery teams understand the real impact of model changes, connect decisions to evidence and reduce the rework caused by changes made in isolation.
 
@@ -1030,4 +1030,3 @@ Martenweave’s public SAP migration documentation describes field-level mapping
 The current Martenweave product documentation lists canonical model files, generated indexes, structured search, trace and impact analysis, dataset profiling, reports and the PatchProposal-to-ChangeRequest lifecycle.
 
 Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
-

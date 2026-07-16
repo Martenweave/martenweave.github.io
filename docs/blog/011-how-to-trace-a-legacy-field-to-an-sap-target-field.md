@@ -1074,7 +1074,7 @@ When the answer requires finding the original consultant, it has documentationâ€
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping architects and delivery teams preserve field-level meaning, evidence and dependencies so that mappings remain understandable after the original workshops and consultants are gone.
 
@@ -1089,4 +1089,3 @@ Martenweaveâ€™s public SAP migration documentation describes source-to-target ma
 The current Martenweave product documentation lists canonical model files, generated indexes, search, structured query, trace and impact analysis, dataset profiling, spreadsheet review flows and controlled model-change proposals.
 
 Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
-

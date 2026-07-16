@@ -639,7 +639,7 @@ The objective is to help the team know what has been agreed, what remains incomp
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We work on practical approaches to SAP migration, MDM, model governance and agent-assisted enterprise delivery. Our focus is not to replace every platform already used by a programme. We focus on the model knowledge that often remains fragmented between those platforms—and on making that knowledge easier to validate, review and hand over.
 
@@ -654,4 +654,3 @@ Martenweave product scope, current capabilities and intended users are documente
 The Martenweave SAP migration scenario documents field-level mappings, contextual modelling, deterministic validation, dataset gap detection, lineage, impact analysis and human-reviewed change proposals.
 
 SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates. Martenweave is an independent project and is not affiliated with or endorsed by SAP.
-

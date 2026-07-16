@@ -1508,7 +1508,7 @@ It is to make the decision to proceed explainable.
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is designed to connect model baselines, mappings, datasets, rules, decisions and ownership so that migration readiness can be supported by evidence rather than manually assembled status.
 
@@ -1521,4 +1521,3 @@ SAP currently describes SAP Master Data Governance as a central governance layer
 Martenweave’s current public documentation describes structured model objects, deterministic validation, dataset and model gap detection, trace and impact analysis, reporting, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.
 
 Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
-

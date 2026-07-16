@@ -263,7 +263,7 @@ for (const file of publicHtmlFiles) {
     'name="robots" content="index, follow, max-image-preview:large"',
     'name="author" content="Dzmitryi Kharlanau"',
     'name="application-name" content="Martenweave"',
-    'name="martenweave-deployment-revision" content="main"',
+    'name="martenweave-deployment-ref" content="main"',
     'name="theme-color" content="#321136"',
     'property="og:locale" content="en_US"',
     'property="og:site_name" content="Martenweave"',
@@ -371,7 +371,6 @@ for (const snippet of [
   '<details class="article-contents">',
   '<nav aria-label="Article contents">',
   '<nav class="article-neighbors" aria-label="More articles">',
-  '<aside class="key-takeaways" aria-label="Key takeaways">',
   '<section class="article-sources" aria-label="Primary sources">',
 ]) {
   if (!representativeArticle.includes(snippet)) {

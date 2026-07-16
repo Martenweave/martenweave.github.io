@@ -1150,7 +1150,7 @@ Not by producing fewer reports, but by preventing the programme from building an
 
 ## About the authors
 
-We are Metalhatscats, the team behind Martenweave.
+Martenweave is maintained by Dzmitryi Kharlanau.
 
 We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. Our focus is helping architects and delivery teams compare model expectations with actual data, identify gaps before they become load defects and preserve the evidence needed to make controlled decisions.
 
@@ -1165,4 +1165,3 @@ Martenweave’s SAP migration documentation describes contextual model objects, 
 The current Martenweave product documentation lists canonical model files, generated indexes, dataset profiling, health and analysis reports, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.
 
 Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
-
