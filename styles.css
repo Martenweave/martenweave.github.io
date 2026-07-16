@@ -1003,15 +1003,20 @@ pre {
   background: transparent;
 }
 
-.blog-article .article-contents strong {
+.blog-article .article-contents summary {
   display: block;
   margin-bottom: 0.55rem;
   color: var(--aubergine);
+  cursor: pointer;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
+.blog-article .article-contents summary::-webkit-details-marker { display: none; }
+.blog-article .article-contents summary::after { content: "−"; float: right; color: var(--amber); font-size: 1rem; line-height: 0.75; }
+.blog-article .article-contents:not([open]) summary::after { content: "+"; }
 
 .blog-article .article-contents ol {
   display: flex;
@@ -1036,12 +1041,16 @@ pre {
 .blog-article h3 { margin-top: 2.5rem; }
 .blog-article p, .blog-article li { font-size: 1.03rem; line-height: 1.78; }
 
-.blog-article table {
-  display: block;
+.blog-article .table-wrap {
   width: 100%;
   overflow-x: auto;
-  border-collapse: collapse;
   margin: 2rem 0;
+}
+
+.blog-article table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
   font-size: 0.9rem;
 }
 

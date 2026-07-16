@@ -9,8 +9,7 @@ const docsDir = join(root, "docs");
 const checkOnly = process.argv.includes("--check");
 const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
-const socialDescription =
-  "Model truth for migration, MDM, and governance teams.";
+const siteLastModified = "2026-07-16";
 
 const docRoutes = [
   {
@@ -399,7 +398,21 @@ function markdownToHtml(markdown) {
     codeLines = [];
   }
 
-  for (const line of lines) {
+  function tableCells(line) {
+    return line
+      .trim()
+      .replace(/^\|/, "")
+      .replace(/\|$/, "")
+      .split("|")
+      .map((cell) => cell.trim());
+  }
+
+  function isTableDivider(line) {
+    return /^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(line);
+  }
+
+  for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
+    const line = lines[lineIndex];
     const fenceMatch = line.match(/^```([a-zA-Z0-9_-]*)\s*$/);
     if (fenceMatch) {
       if (codeFence !== null) {
@@ -421,6 +434,25 @@ function markdownToHtml(markdown) {
     if (line.trim() === "") {
       flushParagraph();
       closeList();
+      continue;
+    }
+
+    if (line.includes("|") && isTableDivider(lines[lineIndex + 1] ?? "")) {
+      flushParagraph();
+      closeList();
+      const headings = tableCells(line);
+      const rows = [];
+      lineIndex += 2;
+      while (lineIndex < lines.length && lines[lineIndex].includes("|")) {
+        rows.push(tableCells(lines[lineIndex]));
+        lineIndex += 1;
+      }
+      lineIndex -= 1;
+      html.push(`<div class="table-wrap"><table><thead><tr>${headings
+        .map((cell) => `<th scope="col">${renderInline(cell)}</th>`)
+        .join("")}</tr></thead><tbody>${rows
+        .map((row) => `<tr>${row.map((cell) => `<td>${renderInline(cell)}</td>`).join("")}</tr>`)
+        .join("")}</tbody></table></div>`);
       continue;
     }
 
@@ -505,9 +537,9 @@ function contentsNavigation(body) {
     .map((match) => ({ id: match[1], text: textFromMarkdown(match[2]) }))
     .slice(0, 15);
   if (items.length < 2) return "";
-  return `<nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol>${items
+  return `<details class="article-contents" open><summary>Contents</summary><nav aria-label="Article contents"><ol>${items
     .map((item) => `<li><a href="#${item.id}">${escapeHtml(item.text)}</a></li>`)
-    .join("")}</ol></nav>`;
+    .join("")}</ol></nav></details>`;
 }
 
 function extractFaqEntities(markdown) {
@@ -680,6 +712,74 @@ function renderBlogCollection() {
   return `<header class="blog-index-header"><p class="section-kicker">Martenweave journal</p><h1>Practical notes for model work that has to survive delivery.</h1><p>Read field-tested perspectives on SAP migration, MDM and MDG delivery, data governance, lineage, impact, and deterministic validation.</p></header><section class="blog-grid" aria-label="Articles">${cards}</section>`;
 }
 
+function buildRssFeed() {
+  const entries = blogArticles.map((article) => {
+    const markdown = readFileSync(join(docsDir, article.source), "utf8");
+    const title = extractTitle(markdown);
+    const date = publicationDate(markdown) ?? "1970-01-01";
+    const url = `${productionOrigin}/blog/${article.slug}.html`;
+    return {
+      title,
+      date,
+      url,
+      description: article.description,
+      topic: article.topic,
+    };
+  });
+  const updated = entries.map((entry) => entry.date).sort().at(-1) ?? "1970-01-01";
+  const pubDate = new Date(`${updated}T00:00:00Z`).toUTCString();
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Martenweave Blog</title>
+    <link>${productionOrigin}/blog/</link>
+    <description>Practical notes on SAP migration, MDM, data governance, lineage, impact, and deterministic validation.</description>
+    <language>en</language>
+    <lastBuildDate>${pubDate}</lastBuildDate>
+${entries
+  .map(
+    (entry) => `    <item>
+      <title>${escapeHtml(entry.title)}</title>
+      <link>${entry.url}</link>
+      <guid isPermaLink="true">${entry.url}</guid>
+      <pubDate>${new Date(`${entry.date}T00:00:00Z`).toUTCString()}</pubDate>
+      <category>${escapeHtml(entry.topic)}</category>
+      <description>${escapeHtml(entry.description)}</description>
+    </item>`,
+  )
+  .join("\n")}
+  </channel>
+</rss>
+`;
+}
+
+function buildSitemap() {
+  const routes = [
+    "/",
+    "/docs.html",
+    ...allRoutes
+      .filter((route) => route.indexable !== false)
+      .map((route) => route.canonical ?? `/docs/${route.output}`),
+    "/llms.txt",
+    "/llms-full.txt",
+    "/ai.txt",
+    "/ai.json",
+    "/humans.txt",
+  ];
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...new Set(routes)]
+  .map(
+    (route) => `  <url>
+    <loc>${productionOrigin}${route}</loc>
+    <lastmod>${siteLastModified}</lastmod>
+  </url>`,
+  )
+  .join("\n")}
+</urlset>
+`;
+}
+
 function renderPage(route) {
   const sourcePath = join(docsDir, route.source);
   const markdown = readFileSync(sourcePath, "utf8");
@@ -737,7 +837,7 @@ ${pageRoute.blog ? `    <meta property="article:author" content="https://www.lin
 ${pageRoute.blog && published ? `    <meta property="article:published_time" content="${published}" />\n    <meta property="article:modified_time" content="${published}" />` : ""}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttribute(pageRoute.seoTitle)}" />
-    <meta name="twitter:description" content="${escapeAttribute(socialDescription)}" />
+    <meta name="twitter:description" content="${escapeAttribute(pageRoute.description)}" />
     <meta name="twitter:image" content="${productionOrigin}/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
     <link rel="canonical" href="${canonicalUrl}" />
@@ -754,6 +854,7 @@ ${pageRoute.blog && published ? `    <meta property="article:published_time" con
       title="Martenweave full AI context"
     />
     <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
 ${jsonLd}  </head>
@@ -867,6 +968,10 @@ function buildSearchIndex() {
 
 const searchIndexPath = join(docsDir, "search-index.json");
 const searchIndex = buildSearchIndex();
+const rssFeedPath = join(root, "feed.xml");
+const rssFeed = buildRssFeed();
+const sitemapPath = join(root, "sitemap.xml");
+const sitemap = buildSitemap();
 
 if (checkOnly) {
   if (!existsSync(searchIndexPath)) {
@@ -877,8 +982,20 @@ if (checkOnly) {
       staleFiles.push("Stale generated file: docs/search-index.json");
     }
   }
+  if (!existsSync(rssFeedPath)) {
+    staleFiles.push("Missing generated file: feed.xml");
+  } else if (readFileSync(rssFeedPath, "utf8") !== rssFeed) {
+    staleFiles.push("Stale generated file: feed.xml");
+  }
+  if (!existsSync(sitemapPath)) {
+    staleFiles.push("Missing generated file: sitemap.xml");
+  } else if (readFileSync(sitemapPath, "utf8") !== sitemap) {
+    staleFiles.push("Stale generated file: sitemap.xml");
+  }
 } else {
   writeFileSync(searchIndexPath, searchIndex, "utf8");
+  writeFileSync(rssFeedPath, rssFeed, "utf8");
+  writeFileSync(sitemapPath, sitemap, "utf8");
 }
 
 if (staleFiles.length > 0) {

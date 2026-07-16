@@ -87,6 +87,7 @@ const requiredFiles = [
   "humans.txt",
   "robots.txt",
   "sitemap.xml",
+  "feed.xml",
   "site.webmanifest",
   ".nojekyll",
   "docs/search-index.json",
@@ -272,6 +273,7 @@ for (const file of publicHtmlFiles) {
     'rel="alternate" type="text/plain"',
     'href="/llms-full.txt"',
     'rel="alternate" type="application/json" href="/ai.json"',
+    'rel="alternate" type="application/rss+xml" href="/feed.xml"',
   ];
 
   for (const metadata of requiredMetadata) {
@@ -362,7 +364,8 @@ if (representativeArticle.includes('class="doc-sidebar"')) {
 for (const snippet of [
   '<article class="doc-content blog-article">',
   '<header class="blog-header">',
-  '<nav class="article-contents" aria-label="Article contents">',
+  '<details class="article-contents" open>',
+  '<nav aria-label="Article contents">',
   '<nav class="article-neighbors" aria-label="More articles">',
 ]) {
   if (!representativeArticle.includes(snippet)) {
@@ -407,6 +410,7 @@ const aiText = readSiteFile("ai.txt");
 const aiJson = JSON.parse(readSiteFile("ai.json"));
 const humans = readSiteFile("humans.txt");
 const sitemap = readSiteFile("sitemap.xml");
+const rssFeed = readSiteFile("feed.xml");
 const robots = readSiteFile("robots.txt");
 const manifest = JSON.parse(readSiteFile("site.webmanifest"));
 const staleVersion = ["0", "4", "0"].join(".");
@@ -527,6 +531,20 @@ for (const contextFile of [
 
 if (aiJson.url !== `${productionOrigin}/`) {
   errors.push("ai.json must identify the production root URL.");
+}
+
+if (aiJson.discovery?.rss !== `${productionOrigin}/feed.xml`) {
+  errors.push("ai.json must identify the production RSS feed.");
+}
+
+for (const [file, text] of [
+  ["llms.txt", aiContext],
+  ["llms-full.txt", aiFullContext],
+  ["ai.txt", aiText],
+]) {
+  if (!text.includes(`${productionOrigin}/feed.xml`)) {
+    errors.push(`${file} must identify the production RSS feed.`);
+  }
 }
 
 if (aiJson.packageVersion !== "0.6.0" || aiJson.corePackage?.version !== "0.6.0") {
@@ -656,6 +674,15 @@ if (new Set(sitemapRoutes).size !== sitemapRoutes.length) {
 
 if (!robots.includes(`Sitemap: ${productionOrigin}/sitemap.xml`) || /Disallow:\s*\//.test(robots)) {
   errors.push("robots.txt must allow public crawling and reference the production sitemap.");
+}
+
+if (!rssFeed.includes("<rss version=\"2.0\">") || !rssFeed.includes("<channel>")) {
+  errors.push("feed.xml must be a valid RSS channel.");
+}
+for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
+  if (!rssFeed.includes(`${productionOrigin}${route}`)) {
+    errors.push(`feed.xml is missing blog route: ${route}`);
+  }
 }
 
 const publicText = [

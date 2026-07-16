@@ -27,7 +27,7 @@
     <meta property="article:modified_time" content="2026-07-13" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="How to Build an Evidence-Based Migration Readiness Report | Martenweave" />
-    <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
+    <meta name="twitter:description" content="How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions." />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
     <link rel="canonical" href="https://martenweave.github.io/blog/evidence-based-migration-readiness-report.html" />
@@ -44,6 +44,7 @@
       title="Martenweave full AI context"
     />
     <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
     <script type="application/ld+json">
@@ -184,7 +185,7 @@
           <span aria-hidden="true">/</span>
           <span aria-current="page">How to Build an Evidence-Based Migration Readiness Report</span>
         </nav>
-<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Build an Evidence-Based Migration Readiness Report</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-13">14 July 2026</time> · 22 min read</p><p class="blog-summary">How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.</p><nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol><li><a href="#a-readiness-report-is-a-decision-instrument">A readiness report is a decision instrument</a></li><li><a href="#readiness-is-always-readiness-for-something">Readiness is always readiness for something</a></li><li><a href="#the-readiness-report-should-be-baseline-specific">The readiness report should be baseline-specific</a></li><li><a href="#the-report-needs-several-evidence-layers">The report needs several evidence layers</a></li><li><a href="#2-model-evidence">2. Model evidence</a></li><li><a href="#3-mapping-evidence">3. Mapping evidence</a></li><li><a href="#4-dataset-evidence">4. Dataset evidence</a></li><li><a href="#dataset-evidence-should-be-model-aware">Dataset evidence should be model-aware</a></li><li><a href="#measure-the-applicable-population">Measure the applicable population</a></li><li><a href="#report-observed-value-coverage">Report observed value coverage</a></li><li><a href="#report-key-and-relationship-readiness">Report key and relationship readiness</a></li><li><a href="#5-target-implementation-evidence">5. Target implementation evidence</a></li><li><a href="#distinguish-target-design-from-target-availability">Distinguish target design from target availability</a></li><li><a href="#6-test-and-reconciliation-evidence">6. Test and reconciliation evidence</a></li><li><a href="#7-ownership-and-exception-evidence">7. Ownership and exception evidence</a></li></ol></nav></header>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Build an Evidence-Based Migration Readiness Report</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-13">14 July 2026</time> · 22 min read</p><p class="blog-summary">How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.</p><details class="article-contents" open><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#a-readiness-report-is-a-decision-instrument">A readiness report is a decision instrument</a></li><li><a href="#readiness-is-always-readiness-for-something">Readiness is always readiness for something</a></li><li><a href="#the-readiness-report-should-be-baseline-specific">The readiness report should be baseline-specific</a></li><li><a href="#the-report-needs-several-evidence-layers">The report needs several evidence layers</a></li><li><a href="#2-model-evidence">2. Model evidence</a></li><li><a href="#3-mapping-evidence">3. Mapping evidence</a></li><li><a href="#4-dataset-evidence">4. Dataset evidence</a></li><li><a href="#dataset-evidence-should-be-model-aware">Dataset evidence should be model-aware</a></li><li><a href="#measure-the-applicable-population">Measure the applicable population</a></li><li><a href="#report-observed-value-coverage">Report observed value coverage</a></li><li><a href="#report-key-and-relationship-readiness">Report key and relationship readiness</a></li><li><a href="#5-target-implementation-evidence">5. Target implementation evidence</a></li><li><a href="#distinguish-target-design-from-target-availability">Distinguish target design from target availability</a></li><li><a href="#6-test-and-reconciliation-evidence">6. Test and reconciliation evidence</a></li><li><a href="#7-ownership-and-exception-evidence">7. Ownership and exception evidence</a></li></ol></nav></details></header>
 <p><strong>Reviewed: 14 July 2026</strong></p>
 <p>The steering committee sees a green dashboard.</p>
 <p>Mapping completion is 96%.</p>
@@ -560,7 +561,7 @@ Affected records:
 <li>ambiguous values.</li>
 </ul>
 <p>Example:</p>
-<p>| Source value | Records | Treatment | Status | |---|---:|---|---| | A1 | 48,120 | Maps to 01 | Approved | | A2 | 9,881 | Maps to 01 | Approved | | B1 | 7,104 | Maps to 02 | Approved | | STRAT | 1,442 | No approved treatment | Blocker | | UNKNOWN | 963 | Proposed temporary value | Pending decision |</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Source value</th><th scope="col">Records</th><th scope="col">Treatment</th><th scope="col">Status</th></tr></thead><tbody><tr><td>A1</td><td>48,120</td><td>Maps to 01</td><td>Approved</td></tr><tr><td>A2</td><td>9,881</td><td>Maps to 01</td><td>Approved</td></tr><tr><td>B1</td><td>7,104</td><td>Maps to 02</td><td>Approved</td></tr><tr><td>STRAT</td><td>1,442</td><td>No approved treatment</td><td>Blocker</td></tr><tr><td>UNKNOWN</td><td>963</td><td>Proposed temporary value</td><td>Pending decision</td></tr></tbody></table></div>
 <p>This makes the risk visible in business terms.</p>
 <h2 id="report-key-and-relationship-readiness">Report key and relationship readiness</h2>
 <p>Master-data migration is not only field population.</p>
@@ -851,7 +852,7 @@ No approved identifier treatment for 8% of active suppliers.</code></pre>
 </ul>
 <h2 id="a-practical-readiness-scorecard">A practical readiness scorecard</h2>
 <p>A useful high-level scorecard might contain:</p>
-<p>| Dimension | Status | Evidence | Main concern | |---|---|---|---| | Scope stability | Ready | Scope baseline 1.8 | None | | Model completeness | Ready with condition | 2 approved deviations | Local ownership pending | | Mapping readiness | Not ready | 97% critical mappings dataset-validated | 3 mandatory attributes lack treatment | | Dataset readiness | Not ready | Profile dated 10 July | Unmapped supplier classifications | | Target readiness | Ready | QAS R3 candidate 2 | None | | Test readiness | Ready with condition | 88% critical tests passed | 4 stale cases | | Ownership | Ready | All blockers assigned | One decision overdue |</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Status</th><th scope="col">Evidence</th><th scope="col">Main concern</th></tr></thead><tbody><tr><td>Scope stability</td><td>Ready</td><td>Scope baseline 1.8</td><td>None</td></tr><tr><td>Model completeness</td><td>Ready with condition</td><td>2 approved deviations</td><td>Local ownership pending</td></tr><tr><td>Mapping readiness</td><td>Not ready</td><td>97% critical mappings dataset-validated</td><td>3 mandatory attributes lack treatment</td></tr><tr><td>Dataset readiness</td><td>Not ready</td><td>Profile dated 10 July</td><td>Unmapped supplier classifications</td></tr><tr><td>Target readiness</td><td>Ready</td><td>QAS R3 candidate 2</td><td>None</td></tr><tr><td>Test readiness</td><td>Ready with condition</td><td>88% critical tests passed</td><td>4 stale cases</td></tr><tr><td>Ownership</td><td>Ready</td><td>All blockers assigned</td><td>One decision overdue</td></tr></tbody></table></div>
 <p>This is more informative than a single green percentage.</p>
 <h2 id="separate-blocker-risk-and-action">Separate blocker, risk and action</h2>
 <p>Reports often mix these concepts.</p>
