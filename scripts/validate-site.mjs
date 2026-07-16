@@ -648,6 +648,12 @@ for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
   if (!html?.includes('class="article-sources"') || !html.includes("https://www.sap.com/products/")) {
     errors.push(`${route} must include primary source links.`);
   }
+  const sitemapEntry = sitemap.match(
+    new RegExp(`<loc>${productionOrigin}${route}</loc>\\s*<lastmod>([^<]+)</lastmod>`),
+  );
+  if (sitemapEntry?.[1] !== "2026-07-14") {
+    errors.push(`${route} must use the article publication date in sitemap.xml.`);
+  }
 }
 
 const faqHtml = htmlByFile.get("docs/faq.html") ?? "";

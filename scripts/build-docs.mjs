@@ -774,6 +774,12 @@ ${entries
 }
 
 function buildSitemap() {
+  const blogLastModified = new Map(
+    blogArticles.map((article) => [
+      `/blog/${article.slug}.html`,
+      publicationDate(readFileSync(join(docsDir, article.source), "utf8")) ?? siteLastModified,
+    ]),
+  );
   const routes = [
     "/",
     "/docs.html",
@@ -792,7 +798,7 @@ ${[...new Set(routes)]
   .map(
     (route) => `  <url>
     <loc>${productionOrigin}${route}</loc>
-    <lastmod>${siteLastModified}</lastmod>
+    <lastmod>${blogLastModified.get(route) ?? siteLastModified}</lastmod>
   </url>`,
   )
   .join("\n")}
