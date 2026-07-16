@@ -17,6 +17,9 @@
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --paper: var(--surface);
+  --accent: var(--amber);
+  --serif: Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -950,12 +953,6 @@ pre {
   border-radius: var(--radius);
 }
 
-.blog-header {
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 2.25rem;
-  padding-bottom: 1.5rem;
-}
-
 /* Editorial pages are intentionally separate from documentation navigation. */
 .article-shell {
   width: min(1120px, calc(100% - 40px));
@@ -969,6 +966,7 @@ pre {
 }
 
 .blog-header {
+  border-bottom: 1px solid var(--line);
   margin-bottom: 3.25rem;
   padding-bottom: 2.2rem;
 }
@@ -976,7 +974,7 @@ pre {
 .blog-header h1 {
   max-width: 17ch;
   margin: 0.75rem 0 1rem;
-  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  font-size: clamp(2.3rem, 3.8vw, 3.5rem);
   line-height: 1.03;
 }
 
@@ -1093,38 +1091,28 @@ pre {
 
 @media (max-width: 760px) {
   .article-shell { width: min(100% - 28px, 760px); padding-top: calc(var(--header-height) + 2.5rem); }
-  .blog-header h1, .blog-index-header h1 { font-size: clamp(2.2rem, 11vw, 3.3rem); }
+  .blog-header h1, .blog-index-header h1 { font-size: clamp(2.2rem, 10vw, 2.6rem); }
   .blog-article .article-contents ol { display: block; }
   .blog-article .article-contents li + li { margin-top: 0.35rem; }
   .article-neighbors, .blog-grid { grid-template-columns: 1fr; }
   .blog-card, .blog-card.is-featured { grid-column: auto; min-height: 230px; border-right: 0; }
 }
 
-.blog-meta {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.article-contents,
-.blog-cta,
-.related-articles {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  margin: 1.5rem 0;
-  padding: 1.25rem;
-}
-
-.article-contents ol {
-  margin-bottom: 0;
-}
-
-.blog-cta {
-  background: var(--paper);
-}
-
 .blog-cta p {
   margin: 0.5rem 0;
 }
+
+.key-takeaways,
+.article-sources {
+  margin: 2.25rem 0;
+  border-left: 2px solid var(--amber);
+  padding-left: 1rem;
+}
+
+.key-takeaways h2,
+.article-sources h2 { margin: 0 0 0.65rem; font-size: 1.15rem; }
+.key-takeaways ul,
+.article-sources ul { margin: 0; }
 
 .doc-content blockquote {
   border-left: 3px solid var(--accent);

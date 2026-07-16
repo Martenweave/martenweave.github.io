@@ -263,6 +263,7 @@ for (const file of publicHtmlFiles) {
     'name="robots" content="index, follow, max-image-preview:large"',
     'name="author" content="Dzmitryi Kharlanau"',
     'name="application-name" content="Martenweave"',
+    'name="martenweave-deployment-revision" content="main"',
     'name="theme-color" content="#321136"',
     'property="og:locale" content="en_US"',
     'property="og:site_name" content="Martenweave"',
@@ -364,9 +365,11 @@ if (representativeArticle.includes('class="doc-sidebar"')) {
 for (const snippet of [
   '<article class="doc-content blog-article">',
   '<header class="blog-header">',
-  '<details class="article-contents" open>',
+  '<details class="article-contents">',
   '<nav aria-label="Article contents">',
   '<nav class="article-neighbors" aria-label="More articles">',
+  '<aside class="key-takeaways" aria-label="Key takeaways">',
+  '<section class="article-sources" aria-label="Primary sources">',
 ]) {
   if (!representativeArticle.includes(snippet)) {
     errors.push(`Blog article template is missing: ${snippet}`);
@@ -620,6 +623,28 @@ if (
   sourceCode?.codeRepository !== "https://github.com/metalhatscats/martenweave-core"
 ) {
   errors.push("Homepage SoftwareSourceCode JSON-LD is incomplete.");
+}
+
+const software = homepageGraph.find((entity) => entity["@type"] === "SoftwareApplication");
+if (
+  software?.softwareVersion !== "0.6.0" ||
+  software?.downloadUrl !== "https://github.com/metalhatscats/martenweave-core/archive/refs/heads/main.zip" ||
+  software?.installUrl !== "https://martenweave.github.io/docs/quickstart.html"
+) {
+  errors.push("Homepage SoftwareApplication JSON-LD must describe the current source release, not PyPI.");
+}
+
+for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
+  const html = htmlByFile.get(route.slice(1));
+  if (!html?.includes('<body class="blog-page">') || html.includes("Public docs")) {
+    errors.push(`${route} must use editorial, not docs-page, semantics.`);
+  }
+  if (!html?.includes('datetime="2026-07-14"') || !html.includes("14 July 2026")) {
+    errors.push(`${route} must use the timezone-safe 14 July 2026 publication date.`);
+  }
+  if (!html?.includes('class="article-sources"') || !html.includes("https://www.sap.com/products/")) {
+    errors.push(`${route} must include primary source links.`);
+  }
 }
 
 const faqHtml = htmlByFile.get("docs/faq.html") ?? "";

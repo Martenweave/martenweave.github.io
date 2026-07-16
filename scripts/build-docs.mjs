@@ -10,6 +10,7 @@ const checkOnly = process.argv.includes("--check");
 const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
 const siteLastModified = "2026-07-16";
+const deploymentRevision = "main";
 
 const docRoutes = [
   {
@@ -524,8 +525,14 @@ function reviewedDate(markdown) {
 function publicationDate(markdown) {
   const reviewed = reviewedDate(markdown);
   if (!reviewed) return null;
-  const date = new Date(reviewed);
-  return Number.isNaN(date.valueOf()) ? null : date.toISOString().slice(0, 10);
+  const match = reviewed.match(/^(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})$/);
+  if (!match) return null;
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const day = Number(match[1]);
+  const month = months.indexOf(match[2]);
+  const year = Number(match[3]);
+  if (month < 0 || day < 1 || day > 31) return null;
+  return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
 function readingTime(markdown) {
@@ -533,13 +540,26 @@ function readingTime(markdown) {
 }
 
 function contentsNavigation(body) {
-  const items = [...body.matchAll(/<h[1-3] id="([^"]+)">([\s\S]*?)<\/h[1-3]>/g)]
+  const items = [...body.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)]
     .map((match) => ({ id: match[1], text: textFromMarkdown(match[2]) }))
     .slice(0, 15);
   if (items.length < 2) return "";
-  return `<details class="article-contents" open><summary>Contents</summary><nav aria-label="Article contents"><ol>${items
+  return `<details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol>${items
     .map((item) => `<li><a href="#${item.id}">${escapeHtml(item.text)}</a></li>`)
     .join("")}</ol></nav></details>`;
+}
+
+function keyTakeaways(route, body) {
+  const headings = [...body.matchAll(/<h2 id="[^"]+">([\s\S]*?)<\/h2>/g)]
+    .map((match) => textFromMarkdown(match[1]))
+    .filter(Boolean)
+    .slice(0, 2);
+  if (headings.length < 2) return "";
+  return `<aside class="key-takeaways" aria-label="Key takeaways"><h2>Key takeaways</h2><ul><li>${escapeHtml(route.description)}</li>${headings.map((heading) => `<li>Use ${escapeHtml(heading)} to guide the next review.</li>`).join("")}</ul></aside>`;
+}
+
+function primarySources() {
+  return `<section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section>`;
 }
 
 function extractFaqEntities(markdown) {
@@ -782,7 +802,10 @@ ${[...new Set(routes)]
 
 function renderPage(route) {
   const sourcePath = join(docsDir, route.source);
-  const markdown = readFileSync(sourcePath, "utf8");
+  const markdown = readFileSync(sourcePath, "utf8").replaceAll(
+    "We are Metalhatscats, the team behind Martenweave.",
+    "Martenweave is maintained by Dzmitryi Kharlanau.",
+  );
   const title = extractTitle(markdown);
   const pageRoute = route.blog ? { ...route, seoTitle: `${title} | Martenweave` } : route;
   const isBlogSurface = pageRoute.blog || pageRoute.canonical === "/blog/";
@@ -797,7 +820,7 @@ function renderPage(route) {
   const published = publicationDate(markdown);
   const blogIntro = pageRoute.blog
     ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><h1>${escapeHtml(title)}</h1><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown))}</time>` : ""} · ${readingTime(markdown)} min read</p><p class="blog-summary">${escapeHtml(pageRoute.description)}</p>${contentsNavigation(body)}</header>`
-    : `<p class="section-kicker">Public docs</p>`;
+    : "";
   const related = pageRoute.blog
     ? blogArticles
         .filter((article) => article.topic === pageRoute.topic && article.slug !== pageRoute.slug)
@@ -806,7 +829,7 @@ function renderPage(route) {
         .join("")
     : "";
   const blogFooter = pageRoute.blog
-    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
+    ? `${keyTakeaways(pageRoute, body)}<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${primarySources()}${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
     : "";
 
   return `<!doctype html>
@@ -822,6 +845,7 @@ function renderPage(route) {
     <meta name="robots" content="${robots}" />
     <meta name="author" content="${authorName}" />
     <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-revision" content="${deploymentRevision}" />
     <meta name="theme-color" content="#321136" />
     <meta property="og:type" content="${pageRoute.blog ? "article" : "website"}" />
     <meta property="og:locale" content="en_US" />
@@ -858,7 +882,7 @@ ${pageRoute.blog && published ? `    <meta property="article:published_time" con
     <link rel="stylesheet" href="/styles.css" />
     <script src="/script.js" defer></script>
 ${jsonLd}  </head>
-  <body class="docs-page">
+  <body class="${isBlogSurface ? "blog-page" : "docs-page"}">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
