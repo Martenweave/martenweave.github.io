@@ -350,6 +350,9 @@ const requiredText = [
   "Validators verify.",
   "Humans approve.",
   "Git records.",
+  "A synthetic model can expose a specific next review.",
+  "ATTR-BP-CENTRAL-FOUNDATION-DATE",
+  "Run the example",
 ];
 
 for (const text of requiredText) {

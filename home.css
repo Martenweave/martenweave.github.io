@@ -467,6 +467,11 @@
 .proof-strip p:last-child { border-right: 0; }
 .proof-strip strong { color: var(--ink); }
 
+.proof-output { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr); column-gap: clamp(2rem, 6vw, 6rem); align-items: end; }
+.proof-output .section-intro { max-width: 42rem; }
+.proof-output pre { margin: 0; overflow-x: auto; border: 1px solid var(--line); background: var(--aubergine); color: #fff; padding: 1.2rem; font-size: 0.78rem; line-height: 1.7; }
+.proof-links { grid-column: 1 / -1; display: flex; gap: 1.25rem; margin: 1.5rem 0 0; font-size: 0.9rem; font-weight: 700; }
+
 .home-section { padding: clamp(4.75rem, 9vw, 8rem) 0; border-bottom: 1px solid var(--line); }
 .section-intro { max-width: 760px; }
 .section-intro h2, .conversion-section h2 { max-width: 16ch; font-size: clamp(2rem, 4.2vw, 4rem); }
@@ -527,7 +532,7 @@
   .hero, .proof-strip, .home-section { width: calc(100% - 28px); }
   .hero { padding-top: 3.5rem; gap: 2.8rem; }
   .hero h1 { font-size: clamp(2.4rem, 10.5vw, 2.6rem); }
-  .proof-strip, .capability-list, .use-case-list { grid-template-columns: 1fr; }
+  .proof-strip, .proof-output, .capability-list, .use-case-list { grid-template-columns: 1fr; }
   .proof-strip p, .capability-list article, .use-case-list a { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 1.15rem 0; }
   .proof-strip p:last-child, .capability-list article:last-child, .use-case-list a:last-child { border-bottom: 0; }
   .capability-list h3 { margin-top: 2.2rem; }
