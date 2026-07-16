@@ -26,7 +26,7 @@
     <meta property="article:published_time" content="2026-07-13" />
     <meta property="article:modified_time" content="2026-07-13" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="impact analysis sap field change | Martenweave" />
+    <meta name="twitter:title" content="How to Perform Impact Analysis for an SAP Field Change | Martenweave" />
     <meta name="twitter:description" content="Model truth for migration, MDM, and governance teams." />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
@@ -174,35 +174,8 @@
       </nav>
     </header>
 
-    <main id="main" class="doc-shell">
-      <aside class="doc-sidebar" aria-label="Documentation navigation">
-<a href="/docs.html">Docs home</a>
-<a href="/docs/product.html">Product</a>
-<a href="/docs/how-it-works.html">How it works</a>
-<a href="/docs/import-export.html">Import/export</a>
-<a href="/docs/governance.html">Governance</a>
-<a href="/docs/quickstart.html">Quickstart</a>
-<a href="/docs/local-viewer.html">Local viewer</a>
-<a href="/docs/examples.html">Examples</a>
-<a href="/docs/use-cases.html">Use cases</a>
-<a href="/docs/use-cases/sap-migration.html">SAP migration</a>
-<a href="/docs/use-cases/mdm.html">MDM</a>
-<a href="/docs/use-cases/mdg.html">SAP MDG</a>
-<a href="/docs/use-cases/data-governance.html">Data governance</a>
-<a href="/docs/use-cases/ams.html">AMS</a>
-<a href="/docs/architecture.html">Architecture</a>
-<a href="/docs/ai-governance.html">AI governance</a>
-<a href="/docs/faq.html">FAQ</a>
-<a href="/docs/release-proof.html">Release proof</a>
-<a href="/docs/roadmap.html">Roadmap</a>
-<a href="/docs/contributing-scenarios.html">Contributing scenarios</a>
-<a href="/docs/open-source.html">Open source</a>
-<a href="/docs/capabilities.html">Capabilities</a>
-<a href="/docs/pilot-projects.html">Pilot projects</a>
-<a href="/docs/consulting.html">Consulting</a>
-<a href="/docs/engagement.html">Engagement</a>
-<a href="/docs/contact.html">Contact</a>
-      </aside>
+    <main id="main" class="article-shell">
+
       <article class="doc-content blog-article">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
@@ -211,8 +184,7 @@
           <span aria-hidden="true">/</span>
           <span aria-current="page">How to Perform Impact Analysis for an SAP Field Change</span>
         </nav>
-<header class="blog-header"><p class="section-kicker">Lineage and impact</p><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-13">14 July 2026</time> · 20 min read</p><nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol><li><a href="#it-is-only-one-field-is-usually-the-wrong-unit-of-analysis">“It is only one field” is usually the wrong unit of analysis</a></li><li><a href="#what-counts-as-a-field-change">What counts as a field change?</a></li><li><a href="#why-impact-analysis-often-starts-too-late">Why impact analysis often starts too late</a></li><li><a href="#start-with-the-reason-for-the-change">Start with the reason for the change</a></li><li><a href="#identify-the-business-attribute-before-the-technical-field">Identify the business attribute before the technical field</a></li><li><a href="#the-eight-impact-areas">The eight impact areas</a></li><li><a href="#1-model-impact">1. Model impact</a></li><li><a href="#definition-changes-are-especially-dangerous">Definition changes are especially dangerous</a></li><li><a href="#2-source-data-impact">2. Source-data impact</a></li><li><a href="#3-mapping-and-transformation-impact">3. Mapping and transformation impact</a></li><li><a href="#4-value-list-impact">4. Value-list impact</a></li><li><a href="#5-rule-and-workflow-impact">5. Rule and workflow impact</a></li><li><a href="#6-integration-and-downstream-impact">6. Integration and downstream impact</a></li><li><a href="#the-consumer-does-not-use-the-field-needs-evidence">“The consumer does not use the field” needs evidence</a></li></ol></nav></header>
-<h1 id="how-to-perform-impact-analysis-for-an-sap-field-change">How to Perform Impact Analysis for an SAP Field Change</h1>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Perform Impact Analysis for an SAP Field Change</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-13">14 July 2026</time> · 20 min read</p><p class="blog-summary">A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list.</p><nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol><li><a href="#it-is-only-one-field-is-usually-the-wrong-unit-of-analysis">“It is only one field” is usually the wrong unit of analysis</a></li><li><a href="#what-counts-as-a-field-change">What counts as a field change?</a></li><li><a href="#why-impact-analysis-often-starts-too-late">Why impact analysis often starts too late</a></li><li><a href="#start-with-the-reason-for-the-change">Start with the reason for the change</a></li><li><a href="#identify-the-business-attribute-before-the-technical-field">Identify the business attribute before the technical field</a></li><li><a href="#the-eight-impact-areas">The eight impact areas</a></li><li><a href="#1-model-impact">1. Model impact</a></li><li><a href="#definition-changes-are-especially-dangerous">Definition changes are especially dangerous</a></li><li><a href="#2-source-data-impact">2. Source-data impact</a></li><li><a href="#3-mapping-and-transformation-impact">3. Mapping and transformation impact</a></li><li><a href="#4-value-list-impact">4. Value-list impact</a></li><li><a href="#5-rule-and-workflow-impact">5. Rule and workflow impact</a></li><li><a href="#6-integration-and-downstream-impact">6. Integration and downstream impact</a></li><li><a href="#the-consumer-does-not-use-the-field-needs-evidence">“The consumer does not use the field” needs evidence</a></li><li><a href="#7-testing-impact">7. Testing impact</a></li></ol></nav></header>
 <p><strong>Reviewed: 14 July 2026</strong></p>
 <p>On Monday, a country team asks for one SAP field to become mandatory.</p>
 <p>The request looks small. The field already exists. No new entity is required. The change can probably be configured quickly.</p>
@@ -973,7 +945,7 @@ Model and implementation updated</code></pre>
 <p>Martenweave’s public SAP migration documentation describes field-level mappings, contextual model objects, deterministic validation, dataset gap detection, lineage, impact analysis and human-reviewed change proposals.</p>
 <p>The current Martenweave product documentation lists canonical model files, generated indexes, structured search, trace and impact analysis, dataset profiling, reports and the PatchProposal-to-ChangeRequest lifecycle.</p>
 <p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
-<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/trace-legacy-field-to-sap-target.html">How to trace a legacy field through mappings, business attributes, and SAP target endpoints.</a></li></ul></section>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/trace-legacy-field-to-sap-target.html">How to trace a legacy field through mappings, business attributes, and SAP target endpoints.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html"><span>Previous</span>How to compare representative datasets with an approved model before SAP migration testing begins.</a><a href="/blog/trace-legacy-field-to-sap-target.html"><span>Next</span>How to trace a legacy field through mappings, business attributes, and SAP target endpoints.</a></nav>
       </article>
     </main>
 

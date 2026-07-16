@@ -503,7 +503,7 @@ function readingTime(markdown) {
 function contentsNavigation(body) {
   const items = [...body.matchAll(/<h[1-3] id="([^"]+)">([\s\S]*?)<\/h[1-3]>/g)]
     .map((match) => ({ id: match[1], text: textFromMarkdown(match[2]) }))
-    .slice(1, 15);
+    .slice(0, 15);
   if (items.length < 2) return "";
   return `<nav class="article-contents" aria-label="Article contents"><strong>Contents</strong><ol>${items
     .map((item) => `<li><a href="#${item.id}">${escapeHtml(item.text)}</a></li>`)
@@ -658,19 +658,45 @@ function renderNav(currentOutput) {
     .join("\n");
 }
 
+function blogNeighbors(slug) {
+  const index = blogArticles.findIndex((article) => article.slug === slug);
+  if (index < 0) return "";
+  const previous = blogArticles[index - 1];
+  const next = blogArticles[index + 1];
+  if (!previous && !next) return "";
+  return `<nav class="article-neighbors" aria-label="More articles">${previous ? `<a href="/blog/${previous.slug}.html"><span>Previous</span>${escapeHtml(previous.description)}</a>` : ""}${next ? `<a href="/blog/${next.slug}.html"><span>Next</span>${escapeHtml(next.description)}</a>` : ""}</nav>`;
+}
+
+function renderBlogCollection() {
+  const cards = blogArticles
+    .map((article, index) => {
+      const markdown = readFileSync(join(docsDir, article.source), "utf8");
+      const title = extractTitle(markdown);
+      const published = publicationDate(markdown);
+      const dateLabel = published ? escapeHtml(reviewedDate(markdown)) : "Reviewed article";
+      return `<a class="blog-card${index === 0 ? " is-featured" : ""}" href="/blog/${article.slug}.html"><span class="section-kicker">${escapeHtml(article.topic)}</span><strong>${escapeHtml(title)}</strong><p>${escapeHtml(article.description)}</p><small>${dateLabel} · ${readingTime(markdown)} min read</small></a>`;
+    })
+    .join("");
+  return `<header class="blog-index-header"><p class="section-kicker">Martenweave journal</p><h1>Practical notes for model work that has to survive delivery.</h1><p>Read field-tested perspectives on SAP migration, MDM and MDG delivery, data governance, lineage, impact, and deterministic validation.</p></header><section class="blog-grid" aria-label="Articles">${cards}</section>`;
+}
+
 function renderPage(route) {
   const sourcePath = join(docsDir, route.source);
   const markdown = readFileSync(sourcePath, "utf8");
   const title = extractTitle(markdown);
   const pageRoute = route.blog ? { ...route, seoTitle: `${title} | Martenweave` } : route;
-  const body = markdownToHtml(markdown);
+  const isBlogSurface = pageRoute.blog || pageRoute.canonical === "/blog/";
+  const renderedBody = pageRoute.canonical === "/blog/" ? renderBlogCollection() : markdownToHtml(markdown);
+  const body = pageRoute.blog
+    ? renderedBody.replace(/^<h1 id="[^"]+">[\s\S]*?<\/h1>\n?/, "")
+    : renderedBody;
   const canonicalPath = pageRoute.canonical ?? `/docs/${pageRoute.output}`;
   const canonicalUrl = `${productionOrigin}${canonicalPath}`;
   const robots = pageRoute.indexable === false ? "noindex, follow" : "index, follow, max-image-preview:large";
   const jsonLd = renderJsonLd(pageRoute, markdown, title, canonicalUrl);
   const published = publicationDate(markdown);
   const blogIntro = pageRoute.blog
-    ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown))}</time>` : ""} · ${readingTime(markdown)} min read</p>${contentsNavigation(body)}</header>`
+    ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><h1>${escapeHtml(title)}</h1><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown))}</time>` : ""} · ${readingTime(markdown)} min read</p><p class="blog-summary">${escapeHtml(pageRoute.description)}</p>${contentsNavigation(body)}</header>`
     : `<p class="section-kicker">Public docs</p>`;
   const related = pageRoute.blog
     ? blogArticles
@@ -680,7 +706,7 @@ function renderPage(route) {
         .join("")
     : "";
   const blogFooter = pageRoute.blog
-    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}`
+    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
     : "";
 
   return `<!doctype html>
@@ -697,7 +723,7 @@ function renderPage(route) {
     <meta name="author" content="${authorName}" />
     <meta name="application-name" content="Martenweave" />
     <meta name="theme-color" content="#321136" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="${pageRoute.blog ? "article" : "website"}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Martenweave" />
     <meta property="og:url" content="${canonicalUrl}" />
@@ -707,10 +733,10 @@ function renderPage(route) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Martenweave open-source data model registry" />
-    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+${pageRoute.blog ? `    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />` : ""}
 ${pageRoute.blog && published ? `    <meta property="article:published_time" content="${published}" />\n    <meta property="article:modified_time" content="${published}" />` : ""}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeAttribute(route.seoTitle)}" />
+    <meta name="twitter:title" content="${escapeAttribute(pageRoute.seoTitle)}" />
     <meta name="twitter:description" content="${escapeAttribute(socialDescription)}" />
     <meta name="twitter:image" content="${productionOrigin}/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
@@ -748,15 +774,15 @@ ${jsonLd}  </head>
       </nav>
     </header>
 
-    <main id="main" class="doc-shell">
-      <aside class="doc-sidebar" aria-label="Documentation navigation">
+    <main id="main" class="${isBlogSurface ? "article-shell" : "doc-shell"}">
+${isBlogSurface ? "" : `      <aside class="doc-sidebar" aria-label="Documentation navigation">
 ${renderNav(route.output)}
-      </aside>
-      <article class="doc-content${pageRoute.blog ? " blog-article" : ""}">
+      </aside>`}
+      <article class="doc-content${isBlogSurface ? " blog-article" : ""}">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Home</a>
           <span aria-hidden="true">/</span>
-          <a href="${pageRoute.blog ? "/blog/" : "/docs.html"}">${pageRoute.blog ? "Blog" : "Docs"}</a>
+          <a href="${isBlogSurface ? "/blog/" : "/docs.html"}">${isBlogSurface ? "Blog" : "Docs"}</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">${escapeHtml(title)}</span>
         </nav>

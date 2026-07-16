@@ -338,12 +338,11 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Open-source model governance and evidence for SAP migration and MDM.",
-  "Model governance pipeline",
+  "Make every model decision explainable before it becomes expensive.",
   "Apache 2.0 open source",
   "Canonical files",
-  "Deterministic validation",
-  "Human-approved AI",
+  "Derived indexes",
+  "A visible path from signal to approval.",
   "Agents propose.",
   "Validators verify.",
   "Humans approve.",
@@ -354,6 +353,26 @@ for (const text of requiredText) {
   if (!rootHtml.includes(text)) {
     errors.push(`Missing required copy: ${text}`);
   }
+}
+
+const representativeArticle = htmlByFile.get("blog/sap-mdg-implementation-knowledge.html") ?? "";
+if (representativeArticle.includes('class="doc-sidebar"')) {
+  errors.push("Blog articles must not render the documentation sidebar.");
+}
+for (const snippet of [
+  '<article class="doc-content blog-article">',
+  '<header class="blog-header">',
+  '<nav class="article-contents" aria-label="Article contents">',
+  '<nav class="article-neighbors" aria-label="More articles">',
+]) {
+  if (!representativeArticle.includes(snippet)) {
+    errors.push(`Blog article template is missing: ${snippet}`);
+  }
+}
+
+const blogIndex = htmlByFile.get("blog/index.html") ?? "";
+if (!blogIndex.includes('class="blog-grid"') || !blogIndex.includes("min read")) {
+  errors.push("Blog index must render editorial cards with reading time.");
 }
 
 if (!rootHtml.includes('href="https://github.com/metalhatscats/martenweave-core"')) {

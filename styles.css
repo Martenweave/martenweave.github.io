@@ -956,6 +956,141 @@ pre {
   padding-bottom: 1.5rem;
 }
 
+/* Editorial pages are intentionally separate from documentation navigation. */
+.article-shell {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 3.5rem) 0 6rem;
+}
+
+.blog-article {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  margin-bottom: 3.25rem;
+  padding-bottom: 2.2rem;
+}
+
+.blog-header h1 {
+  max-width: 17ch;
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  line-height: 1.03;
+}
+
+.blog-meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.blog-summary {
+  max-width: 62ch;
+  margin: 1.25rem 0 0;
+  color: var(--ink);
+  font-size: 1.08rem;
+  line-height: 1.58;
+}
+
+.blog-article .article-contents {
+  margin: 2rem 0 0;
+  border: 0;
+  border-left: 2px solid var(--amber);
+  border-radius: 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  background: transparent;
+}
+
+.blog-article .article-contents strong {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--aubergine);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-article .article-contents ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.blog-article .article-contents a {
+  color: #4f4d54;
+  font-size: 0.8rem;
+}
+
+.blog-article h2 {
+  max-width: 22ch;
+  margin-top: 4rem;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+}
+
+.blog-article h3 { margin-top: 2.5rem; }
+.blog-article p, .blog-article li { font-size: 1.03rem; line-height: 1.78; }
+
+.blog-article table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.blog-article th, .blog-article td { border: 1px solid var(--line); padding: 0.7rem; text-align: left; }
+.blog-article th { background: var(--soft); color: var(--ink); }
+
+.blog-cta {
+  margin-top: 4rem;
+  border-color: var(--aubergine);
+  background: var(--aubergine-soft);
+}
+
+.related-articles { margin-top: 2.25rem; }
+.related-articles h2 { font-size: 1.5rem; }
+
+.article-neighbors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.article-neighbors a { color: var(--ink); font-size: 0.9rem; line-height: 1.45; text-decoration: none; }
+.article-neighbors a:hover { color: var(--aubergine); text-decoration: underline; }
+.article-neighbors span { display: block; margin-bottom: 0.45rem; color: var(--amber); font-family: var(--font-mono); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.blog-index-header { max-width: 790px; margin: 0 0 3.5rem; }
+.blog-index-header h1 { max-width: 15ch; margin: 0.7rem 0 1.2rem; font-size: clamp(2.35rem, 4.8vw, 4.3rem); line-height: 1.03; }
+.blog-index-header > p:last-child { max-width: 62ch; font-size: 1.05rem; line-height: 1.65; }
+.blog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.blog-card { display: flex; min-height: 280px; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.25rem; color: var(--ink); text-decoration: none; transition: background 160ms ease; }
+.blog-card:nth-child(2n) { border-right: 0; }
+.blog-card:hover { background: var(--aubergine-soft); }
+.blog-card.is-featured { grid-column: span 2; min-height: 320px; }
+.blog-card strong { max-width: 24ch; margin-top: auto; font-size: clamp(1.35rem, 2.2vw, 2rem); letter-spacing: -0.035em; line-height: 1.1; }
+.blog-card p { max-width: 52ch; margin: 0.85rem 0 0; font-size: 0.92rem; line-height: 1.58; }
+.blog-card small { margin-top: 1.2rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.7rem; }
+
+@media (max-width: 760px) {
+  .article-shell { width: min(100% - 28px, 760px); padding-top: calc(var(--header-height) + 2.5rem); }
+  .blog-header h1, .blog-index-header h1 { font-size: clamp(2.2rem, 11vw, 3.3rem); }
+  .blog-article .article-contents ol { display: block; }
+  .blog-article .article-contents li + li { margin-top: 0.35rem; }
+  .article-neighbors, .blog-grid { grid-template-columns: 1fr; }
+  .blog-card, .blog-card.is-featured { grid-column: auto; min-height: 230px; border-right: 0; }
+}
+
 .blog-meta {
   color: var(--muted);
   font-size: 0.9rem;

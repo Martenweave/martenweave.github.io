@@ -268,68 +268,44 @@
           <span>Martenweave</span>
         </a>
         <div class="nav-links">
+          <a href="#product">Product</a>
+          <a href="#use-cases">Use cases</a>
+          <a href="#pilots">Pilots</a>
+          <a href="#consulting">Consulting</a>
           <a href="/docs.html">Docs</a>
           <a href="/blog/">Blog</a>
           <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="/docs/contact.html">Contact</a>
         </div>
       </nav>
     </header>
 
     <main id="main" class="home-main">
       <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Open-source model governance and evidence for SAP migration and MDM.</h1>
-        <p class="hero-subhead">
-          Turn spreadsheets, datasets, tickets, validation reports, and SAP context into
-          validated model gaps, impact analysis, and human-approved AI patch proposals.
-        </p>
-
-        <p class="feature-pills">
-          <span>Canonical files</span>
-          <span>Deterministic validation</span>
-          <span>Human-approved AI</span>
-        </p>
-
-        <form class="search-form" role="search" action="/docs.html" method="get" aria-label="Site search">
-          <label for="hero-search" class="sr-only">Search models, fields, SAP tables, and docs</label>
-          <input
-            id="hero-search"
-            class="search-input"
-            type="search"
-            name="q"
-            placeholder="Search models, fields, SAP tables, validation rules…"
-            autocomplete="off"
-            autocapitalize="off"
-            spellcheck="false"
-          />
-          <button class="search-button" type="submit" aria-label="Search">
-            <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
-              <path d="m21 21-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="search-results" id="search-results" hidden aria-live="polite"></div>
-        </form>
-
-        <p class="search-examples">
-          Try:
-          <button type="button" data-example="Customer Group">Customer Group</button>
-          <button type="button" data-example="FEP-S4-KNVV-KDGRP">FEP-S4-KNVV-KDGRP</button>
-          <button type="button" data-example="dataset gaps">dataset gaps</button>
-          <button type="button" data-example="impact analysis">impact analysis</button>
-        </p>
-
-        <p class="trust-line">
-          Model governance pipeline
-          <span aria-hidden="true">·</span> Apache 2.0 open source
-          <span aria-hidden="true">·</span> Python 3.11+
-          <span aria-hidden="true">·</span> Local-first
-        </p>
-
-        <div class="quick-links" aria-label="Quick links">
-          <a class="button primary" href="/docs/quickstart.html">Quickstart</a>
-          <a class="button secondary" href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
-          <a class="button secondary" href="/docs.html">Docs</a>
+        <div class="hero-copy">
+          <p class="eyebrow">Martenweave Core · local-first model governance</p>
+          <h1 id="hero-title">Make every model decision explainable before it becomes expensive.</h1>
+          <p class="hero-subhead">A canonical evidence layer for SAP migration, MDM, governance, and AMS: validate the model, expose gaps and impact, then route a reviewable change for human approval.</p>
+          <div class="hero-actions"><a class="button primary" href="/docs/quickstart.html">Start with Core</a><a class="button secondary" href="#workflow">See the workflow</a></div>
+          <p class="trust-line">Apache 2.0 open source <span aria-hidden="true">/</span> Python 3.11+ <span aria-hidden="true">/</span> canonical files stay local</p>
         </div>
+        <figure class="evidence-ledger" aria-labelledby="ledger-caption">
+          <figcaption id="ledger-caption">From scattered delivery evidence to a controlled change</figcaption>
+          <ol>
+            <li><span>01</span><strong>Evidence</strong><small>workbook · dataset · ticket</small></li>
+            <li><span>02</span><strong>Canonical model</strong><small>stable objects · context</small></li>
+            <li class="is-active"><span>03</span><strong>Validation</strong><small>deterministic checks</small></li>
+            <li><span>04</span><strong>Gap &amp; impact</strong><small>what is missing · affected</small></li>
+            <li><span>05</span><strong>Reviewed proposal</strong><small>AI drafts · human approves</small></li>
+          </ol>
+        </figure>
       </section>
+      <section class="proof-strip" aria-label="Product boundaries"><p><strong>Canonical files</strong> are the source of truth.</p><p><strong>Derived indexes</strong> are rebuildable.</p><p><strong>AI proposes.</strong> It does not silently mutate.</p></section>
+      <section id="product" class="home-section product-section"><div class="section-intro"><p class="eyebrow">Product</p><h2>One connected layer between delivery artefacts and controlled change.</h2></div><div class="capability-list"><article><span>01</span><h3>Model the meaning</h3><p>Represent business attributes, SAP contexts, field endpoints, mappings, value lists, issues, decisions, and ownership as traceable objects.</p></article><article><span>02</span><h3>Verify before publishing</h3><p>Validate object shape, references, and domain context deterministically before the index and reports are rebuilt.</p></article><article><span>03</span><h3>Investigate relationships</h3><p>Trace lineage, identify dataset gaps, and assess downstream impact from the same canonical model.</p></article><article><span>04</span><h3>Control the change</h3><p>Convert analysis into a reviewable proposal and an approved change request with an explicit audit trail.</p></article></div></section>
+      <section id="workflow" class="home-section workflow-section"><div class="section-intro"><p class="eyebrow">Workflow</p><h2>A visible path from signal to approval.</h2><p>Each stage answers a delivery question without pretending the model is a hosted platform or a chatbot.</p></div><ol class="workflow-rail"><li><b>Collect</b><span>Profiles and source evidence reveal what the delivery landscape actually contains.</span></li><li><b>Model</b><span>Canonical objects keep business meaning distinct from physical implementation.</span></li><li><b>Validate</b><span>Known rules catch structural and SAP-context defects consistently.</span></li><li><b>Analyse</b><span>Gaps, lineage, and impact make the next investigation explicit.</span></li><li><b>Review</b><span>Proposals capture a suggested change; reviewers decide whether it becomes truth.</span></li></ol></section>
+      <section id="use-cases" class="home-section use-case-section"><div class="section-intro"><p class="eyebrow">Use cases</p><h2>Built for the moments when model knowledge becomes operational risk.</h2></div><div class="use-case-list"><a href="/docs/use-cases/sap-migration.html"><strong>SAP migration</strong><span>Connect source datasets, mappings, target fields, and readiness evidence before testing exposes the mismatch.</span></a><a href="/docs/use-cases/mdg.html"><strong>MDM and MDG</strong><span>Preserve the implementation knowledge around governed operational master data.</span></a><a href="/docs/use-cases/ams.html"><strong>AMS and change</strong><span>Give support teams a defensible starting point for investigating and reviewing a model change.</span></a></div></section>
+      <section id="pilots" class="home-section conversion-section"><div><p class="eyebrow">Pilot projects</p><h2>Start with one representative model slice.</h2></div><p>A focused pilot establishes the evidence, canonical structure, validation, and review path around a real migration, MDM, governance, or AMS question.</p><a class="button primary" href="/docs/pilot-projects.html">Explore pilot projects</a></section>
+      <section id="consulting" class="home-section conversion-section conversion-section--quiet"><div><p class="eyebrow">Consulting</p><h2>Use Core with an accountable delivery method.</h2></div><p>Engagements focus on the model and evidence that need to survive a handover—not on inventing a parallel operating platform.</p><a class="button secondary" href="/docs/consulting.html">How consulting works</a></section>
     </main>
 
     <footer class="footer home-footer">
