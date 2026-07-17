@@ -760,6 +760,14 @@ if (!Array.isArray(faqEntity?.mainEntity) || faqEntity.mainEntity.length < 5) {
   errors.push("FAQ JSON-LD must contain the real FAQ questions and answers.");
 }
 
+const pilotHtml = htmlByFile.get("docs/pilot-projects.html") ?? "";
+if (
+  !pilotHtml.includes("Order a pilot on LinkedIn") ||
+  !pilotHtml.includes('href="https://www.linkedin.com/in/metalhatcats/"')
+) {
+  errors.push("Pilot Projects must include a direct Metalhatcats LinkedIn order CTA.");
+}
+
 const sitemapLocs = [...sitemap.matchAll(/<loc>https:\/\/martenweave\.github\.io(\/[^<]*)<\/loc>/g)];
 
 for (const match of sitemapLocs) {
