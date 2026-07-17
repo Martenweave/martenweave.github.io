@@ -411,7 +411,10 @@ for (const file of shareableFiles) {
 const authorProfile = htmlByFile.get("docs/author.html") ?? "";
 for (const snippet of [
   "Dzmitryi Kharlanau",
-  "Maintainer of Martenweave",
+  "Senior SAP Consultant",
+  "EPAM Systems",
+  "Hashnode",
+  "Hugging Face",
   'href="https://www.linkedin.com/in/dkharlanau/"',
 ]) {
   if (!authorProfile.includes(snippet)) {

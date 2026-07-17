@@ -11,14 +11,28 @@ const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
 const authorProfilePath = "/docs/author.html";
 const authorBio =
-  "Dzmitryi Kharlanau maintains Martenweave, an open-source, local-first model registry for SAP migration, MDM, data governance, and controlled AI-assisted model change.";
+  "Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.";
 const authorTopics = [
-  "SAP migration",
-  "master data management",
+  "SAP SD",
+  "SAP logistics",
+  "SAP integration",
+  "SAP Master Data Governance",
+  "application management services",
+  "data migration",
   "data governance",
-  "data modeling",
+  "ABAP",
   "data lineage",
   "impact analysis",
+];
+const authorSocialProfiles = [
+  "https://www.linkedin.com/in/dkharlanau/",
+  "https://x.com/dkharlanau",
+  "https://hashnode.com/@dkharlanau",
+  "https://medium.com/@dkharlanau",
+  "https://huggingface.co/dkharlanau",
+  "https://dev.to/dkharlanau",
+  "https://substack.com/@dkharlanau",
+  "https://www.reddit.com/user/dkharlanau",
 ];
 const siteLastModified = "2026-07-16";
 const deploymentRevision = "main";
@@ -594,7 +608,7 @@ function relatedArticles(current, limit = 3) {
 }
 
 function authorCard() {
-  return `<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">${authorName}</h2><p>${escapeHtml(authorBio)}</p><p><a href="${authorProfilePath}">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a></p></aside>`;
+  return `<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">${authorName}</h2><p>${escapeHtml(authorBio)}</p><p><a href="${authorProfilePath}">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a> <span aria-hidden="true">·</span> <a href="https://dkharlanau.github.io/">Personal site</a></p></aside>`;
 }
 
 function shareControls(canonicalUrl, title) {
@@ -722,9 +736,10 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
         "@id": `${productionOrigin}/#person`,
         name: authorName,
         url: `${productionOrigin}${authorProfilePath}`,
-        sameAs: ["https://www.linkedin.com/in/dkharlanau/"],
+        sameAs: authorSocialProfiles,
         description: authorBio,
-        jobTitle: "Maintainer of Martenweave",
+        jobTitle: "Senior SAP Consultant",
+        worksFor: { "@type": "Organization", name: "EPAM Systems", url: "https://www.epam.com" },
         knowsAbout: authorTopics,
       },
       {
