@@ -19,6 +19,7 @@ Start here:
 - [Roadmap](roadmap.md) - honest public roadmap and maturity notes.
 - [Contributing scenarios](contributing-scenarios.md) - how to share useful pain, examples, starter-pack needs, and issue reports.
 - [Open source](open-source.md) - Apache 2.0 rights, optional services, and contribution path.
+- [Support Martenweave](support-martenweave.md) - sponsorship conversations, design partnerships, pilots, and public contributions.
 
 For deep implementation details, see the core repository docs:
 

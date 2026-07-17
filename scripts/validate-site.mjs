@@ -24,6 +24,7 @@ const docRoutes = [
   { source: "roadmap.md", output: "roadmap.html" },
   { source: "contributing-scenarios.md", output: "contributing-scenarios.html" },
   { source: "open-source.md", output: "open-source.html" },
+  { source: "support-martenweave.md", output: "support-martenweave.html" },
   { source: "capabilities.md", output: "capabilities.html" },
   { source: "pilot-projects.md", output: "pilot-projects.html" },
   { source: "consulting.md", output: "consulting.html" },
@@ -766,6 +767,14 @@ if (
   !pilotHtml.includes('href="https://www.linkedin.com/in/metalhatcats/"')
 ) {
   errors.push("Pilot Projects must include a direct Metalhatcats LinkedIn order CTA.");
+}
+
+const supportHtml = htmlByFile.get("docs/support-martenweave.html") ?? "";
+if (
+  !supportHtml.includes("Discuss sponsorship, a design partnership, or a pilot") ||
+  !supportHtml.includes('href="https://www.linkedin.com/in/metalhatcats/"')
+) {
+  errors.push("Support page must include a direct Metalhatcats LinkedIn contact CTA.");
 }
 
 const sitemapLocs = [...sitemap.matchAll(/<loc>https:\/\/martenweave\.github\.io(\/[^<]*)<\/loc>/g)];

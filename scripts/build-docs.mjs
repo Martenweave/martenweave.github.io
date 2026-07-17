@@ -211,6 +211,14 @@ const docRoutes = [
       "Understand Martenweave Core under Apache License 2.0, contribution terms, permitted use, and optional commercial services.",
   },
   {
+    source: "support-martenweave.md",
+    output: "support-martenweave.html",
+    label: "Support",
+    seoTitle: "Support Martenweave | Sponsorship, Design Partners, and Contributions",
+    description:
+      "Support the open-source Martenweave model-governance project through sponsorship conversations, design partnerships, pilots, and practical contributions.",
+  },
+  {
     source: "capabilities.md",
     output: "capabilities.html",
     label: "Capabilities",
@@ -1022,6 +1030,7 @@ ${pageRoute.canonical !== "/blog/" ? shareControls(canonicalUrl, title) : ""}
         <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
         <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
         <a href="/docs.html">Docs</a>
+        <a href="/docs/support-martenweave.html">Support</a>
         <a href="/ai.txt">AI disclosure</a>
         <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
         <a href="/llms.txt">llms.txt</a>
