@@ -6,7 +6,7 @@
     <title>Open-Source Model Governance for SAP Migration &amp; MDM | Martenweave</title>
     <meta
       name="description"
-      content="An open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS."
+      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
     />
     <meta
       name="keywords"
@@ -27,7 +27,7 @@
     />
     <meta
       property="og:description"
-      content="An open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS."
+      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -40,7 +40,7 @@
     />
     <meta
       name="twitter:description"
-      content="An open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS."
+      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
     />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
@@ -74,7 +74,7 @@
             "@id": "https://martenweave.github.io/#website",
             "name": "Martenweave",
             "alternateName": "Martenweave model governance pipeline",
-            "description": "Open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.",
+            "description": "Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes.",
             "url": "https://martenweave.github.io/",
             "publisher": {
               "@id": "https://martenweave.github.io/#organization"
@@ -118,7 +118,7 @@
             "@type": "WebPage",
             "@id": "https://martenweave.github.io/#webpage",
             "name": "Open-Source Model Governance for SAP Migration & MDM | Martenweave",
-            "description": "An open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.",
+            "description": "Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes.",
             "url": "https://martenweave.github.io/",
             "isPartOf": {
               "@id": "https://martenweave.github.io/#website"
@@ -179,7 +179,7 @@
             "@id": "https://martenweave.github.io/#source",
             "name": "Martenweave Core",
             "alternateName": "martenweave-core",
-            "description": "Martenweave Core is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.",
+            "description": "Martenweave Core is open-source model governance for SAP migration, MDM, data governance, and AMS with canonical files, validation, lineage, impact, and reviewable AI changes.",
             "url": "https://martenweave.github.io/",
             "codeRepository": "https://github.com/metalhatscats/martenweave-core",
             "programmingLanguage": "Python",
@@ -207,7 +207,7 @@
             "@id": "https://martenweave.github.io/#software",
             "name": "Martenweave Core",
             "alternateName": "martenweave-core",
-            "description": "An open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.",
+            "description": "Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes.",
             "url": "https://martenweave.github.io/",
             "applicationCategory": "DeveloperApplication",
             "applicationSubCategory": "Model governance pipeline",
@@ -266,6 +266,60 @@
               "https://github.com/metalhatscats/martenweave-core",
               "https://pypi.org/project/martenweave-core/"
             ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://martenweave.github.io/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Martenweave?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Martenweave is an open-source model governance and evidence layer. It turns model knowledge from spreadsheets, datasets, tickets, and SAP context into canonical files that can be validated, traced, reviewed, and exported."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which systems and projects does Martenweave support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It supports SAP ECC and S/4HANA migration, SAP MDG and MDM delivery, cross-system ERP, CRM, and warehouse model work, plus AMS and change work that draws evidence from Jira, Confluence, workbooks, and delivery files."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Martenweave replace SAP MDG, S/4HANA, Jira, or Confluence?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Martenweave is a supporting model-governance layer. It does not replace system transactions, configuration, workflow, source-of-record tools, or direct SAP write-back."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Martenweave help SAP migration and MDM teams?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Teams can connect business attributes, source columns, SAP field endpoints, mappings, value rules, ownership, lineage, validation findings, and change proposals in one reviewable model."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the AI workflow work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI works from canonical objects, references, and source evidence to draft a reviewable PatchProposal. Deterministic validators then check the proposal, and a human decides whether it becomes canonical truth."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can AI change the model automatically?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. AI can prepare proposals and explain structured context, but it does not silently mutate canonical model files. Human approval and an auditable change path remain required."
+                }
+              }
+            ]
           }
         ]
       }
@@ -318,6 +372,7 @@ next_action: Add a ValidationRule</code></pre><p class="proof-links"><a href="/d
       <section id="consulting" class="home-section conversion-section"><div><p class="eyebrow">Consulting</p><h2>Use Core with an accountable delivery method.</h2></div><p>Engagements focus on the model and evidence that need to survive a handover—not on inventing a parallel operating platform.</p><a class="button secondary" href="/docs/consulting.html">How consulting works</a></section>
       <section id="fit" class="home-section fit-section" aria-labelledby="fit-title"><div class="section-intro"><p class="eyebrow">Where it fits</p><h2 id="fit-title">A supporting layer for the systems you already run.</h2><p>Martenweave keeps model evidence inspectable around delivery systems. It does not replace their transactions, configuration, workflow, or source of record.</p></div><div class="system-rail"><a href="/docs/use-cases/sap-migration.html"><span>01</span><strong>SAP ECC &amp; S/4HANA</strong><p>Connect legacy columns, SAP field endpoints, contexts, mappings, and migration evidence before testing.</p></a><a href="/docs/use-cases/mdg.html"><span>02</span><strong>SAP MDG &amp; MDM</strong><p>Keep field meaning, ownership, value rules, and implementation decisions reviewable alongside governed data.</p></a><a href="/docs/use-cases/data-governance.html"><span>03</span><strong>ERP, CRM &amp; warehouse</strong><p>Use shared business attributes and lineage to make cross-system definitions and downstream impact explicit.</p></a><a href="/docs/use-cases/ams.html"><span>04</span><strong>Jira, Confluence &amp; delivery files</strong><p>Turn tickets, documents, workbooks, and incident findings into durable evidence without replacing the tools.</p></a></div></section>
       <section id="ai-workflow" class="home-section ai-workflow-section" aria-labelledby="ai-workflow-title"><div class="section-intro"><p class="eyebrow">AI workflow</p><h2 id="ai-workflow-title">Give AI structured context—then keep the decision under control.</h2><p>Instead of asking an agent to reconstruct meaning from a chat or a spreadsheet, give it the canonical model, evidence, and boundaries it needs to prepare a focused next step.</p></div><ol class="ai-workflow-list"><li><span>01</span><div><strong>Ground the request</strong><p>Use canonical objects, references, source evidence, and known context as the working frame.</p></div></li><li><span>02</span><div><strong>Draft a proposal</strong><p>AI can prepare a reviewable PatchProposal from a note, finding, or design question.</p></div></li><li><span>03</span><div><strong>Validate deterministically</strong><p>Rules check object shape, references, and supported SAP context before anything is indexed.</p></div></li><li><span>04</span><div><strong>Approve with a human</strong><p>Reviewers decide whether a proposal becomes canonical truth and an auditable change.</p></div></li></ol><aside class="ai-workflow-note"><p>Productivity comes from less rediscovery and clearer review—not from silent automation.</p><a href="/docs/ai-governance.html">Read the AI governance boundary →</a></aside></section>
+      <section id="faq" class="home-section faq-section" aria-labelledby="faq-title"><div class="section-intro"><p class="eyebrow">Product FAQ</p><h2 id="faq-title">Questions teams ask before they put model knowledge under control.</h2><p>Short answers for migration, MDM, governance, and AI-assisted delivery teams. For detailed product boundaries, see the <a href="/docs/faq.html">full FAQ</a>.</p></div><div class="faq-list"><article><h3>What is Martenweave?</h3><p>Martenweave is an open-source model governance and evidence layer. It turns model knowledge from spreadsheets, datasets, tickets, and SAP context into canonical files that can be validated, traced, reviewed, and exported.</p></article><article><h3>Which systems and projects does Martenweave support?</h3><p>It supports SAP ECC and S/4HANA migration, SAP MDG and MDM delivery, cross-system ERP, CRM, and warehouse model work, plus AMS and change work that draws evidence from Jira, Confluence, workbooks, and delivery files.</p></article><article><h3>Does Martenweave replace SAP MDG, S/4HANA, Jira, or Confluence?</h3><p>No. Martenweave is a supporting model-governance layer. It does not replace system transactions, configuration, workflow, source-of-record tools, or direct SAP write-back.</p></article><article><h3>How does Martenweave help SAP migration and MDM teams?</h3><p>Teams can connect business attributes, source columns, SAP field endpoints, mappings, value rules, ownership, lineage, validation findings, and change proposals in one reviewable model.</p></article><article><h3>How does the AI workflow work?</h3><p>AI works from canonical objects, references, and source evidence to draft a reviewable PatchProposal. Deterministic validators then check the proposal, and a human decides whether it becomes canonical truth.</p></article><article><h3>Can AI change the model automatically?</h3><p>No. AI can prepare proposals and explain structured context, but it does not silently mutate canonical model files. Human approval and an auditable change path remain required.</p></article></div></section>
       <section id="savings" class="home-section savings-section conversion-section--quiet" aria-labelledby="savings-title"><div class="section-intro"><p class="eyebrow">Capacity scenario</p><h2 id="savings-title">Make the cost of hidden rework visible.</h2><p>Use your own team assumptions to estimate the annual capacity that clearer model evidence and controlled change could recover.</p></div><div class="savings-calculator" data-savings-calculator><div class="savings-fields"><label>People involved<input data-savings-team type="number" min="1" max="500" value="8" inputmode="numeric" /></label><label>Hours/week lost to rework<input data-savings-hours type="number" min="0" max="80" step="0.5" value="3" inputmode="decimal" /></label><label>Blended hourly cost (€)<input data-savings-rate type="number" min="0" max="10000" step="5" value="95" inputmode="decimal" /></label></div><div class="savings-result"><p>Illustrative annual capacity recovered</p><output data-savings-result aria-live="polite">€109,440</output><span data-savings-detail>8 people × 3 hours × €95 × 48 working weeks</span><small>An editable planning scenario, not a savings guarantee.</small></div><a class="button secondary" href="https://www.linkedin.com/in/metalhatcats/" target="_blank" rel="noopener noreferrer">Discuss a real baseline</a></div></section>
     </main>
 

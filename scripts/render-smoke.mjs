@@ -67,7 +67,8 @@ try {
         const result = document.querySelector("[data-savings-result]");
         const systemCards = document.querySelectorAll("#fit .system-rail a");
         const aiSteps = document.querySelectorAll("#ai-workflow .ai-workflow-list > li");
-        return fields.length === 3 && result?.textContent?.includes("€") && systemCards.length === 4 && aiSteps.length === 4;
+        const faqItems = document.querySelectorAll("#faq .faq-list article");
+        return fields.length === 3 && result?.textContent?.includes("€") && systemCards.length === 4 && aiSteps.length === 4 && faqItems.length === 6;
       }) : true;
       if (!response?.ok() || !heading?.trim() || overflow || consoleErrors.length || h1Size > maxH1 || !tocClosed || !catalogueReady || !atlasReady || !savingsReady) {
         failures.push(`${label}: status=${response?.status()} h1=${Boolean(heading?.trim())} size=${h1Size}/${maxH1} tocClosed=${tocClosed} catalogueReady=${catalogueReady} atlasReady=${atlasReady} savingsReady=${savingsReady} overflow=${overflow} console=${consoleErrors.join(" | ")}`);

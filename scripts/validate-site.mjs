@@ -533,6 +533,17 @@ for (const snippet of requiredHomepageHead) {
   }
 }
 
+const homepageData = JSON.parse(
+  [...homepageHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)][0]?.[1] ?? "{}",
+);
+const homepageFaq = (homepageData["@graph"] ?? []).find((entity) => entity["@type"] === "FAQPage");
+if (!Array.isArray(homepageFaq?.mainEntity) || homepageFaq.mainEntity.length !== 6) {
+  errors.push("Homepage FAQ JSON-LD must contain the six visible product questions and answers.");
+}
+if ((homepageHtml.match(/<section id="faq"/g) ?? []).length !== 1) {
+  errors.push("Homepage must contain one visible product FAQ section.");
+}
+
 if (manifest.name !== "Martenweave" || manifest.short_name !== "Martenweave") {
   errors.push("site.webmanifest must use Martenweave name fields.");
 }
