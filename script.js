@@ -12,6 +12,33 @@ if (header) {
   window.addEventListener("scroll", syncHeader, { passive: true });
 }
 
+for (const control of document.querySelectorAll("[data-share-controls]")) {
+  const copyButton = control.querySelector("[data-copy-link]");
+  const status = control.querySelector("[data-share-status]");
+  if (!copyButton || !status) continue;
+
+  copyButton.addEventListener("click", async () => {
+    const link = copyButton.dataset.shareUrl;
+    if (!link) return;
+
+    try {
+      await navigator.clipboard.writeText(link);
+      status.textContent = "Link copied.";
+    } catch {
+      const fallback = document.createElement("textarea");
+      fallback.value = link;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.append(fallback);
+      fallback.select();
+      const copied = document.execCommand("copy");
+      fallback.remove();
+      status.textContent = copied ? "Link copied." : "Copy the link from your browser address bar.";
+    }
+  });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window && !prefersReducedMotion) {

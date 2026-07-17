@@ -597,6 +597,12 @@ function authorCard() {
   return `<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">${authorName}</h2><p>${escapeHtml(authorBio)}</p><p><a href="${authorProfilePath}">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a></p></aside>`;
 }
 
+function shareControls(canonicalUrl, title) {
+  const encodedUrl = encodeURIComponent(canonicalUrl);
+  const encodedTitle = encodeURIComponent(title);
+  return `<section class="share-controls" aria-label="Share this page" data-share-controls><p class="section-kicker">Share this page</p><div class="share-actions"><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}" target="_blank" rel="noopener noreferrer">X</a><a href="mailto:?subject=${encodedTitle}&body=${encodedUrl}">Email</a><button type="button" data-copy-link data-share-url="${escapeAttribute(canonicalUrl)}">Copy link</button></div><p class="share-status" data-share-status aria-live="polite"></p></section>`;
+}
+
 function extractFaqEntities(markdown) {
   const sections = markdown.split(/^##\s+/m).slice(1);
   return sections
@@ -985,6 +991,7 @@ ${renderNav(route.output)}
 ${blogIntro}
 ${body}
 ${blogFooter}
+${pageRoute.canonical !== "/blog/" ? shareControls(canonicalUrl, title) : ""}
       </article>
     </main>
 

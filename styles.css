@@ -1133,6 +1133,27 @@ pre {
 .article-sources h2 { margin: 0 0 0.65rem; font-size: 1.15rem; }
 .article-sources ul { margin: 0; }
 
+.share-controls {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+.share-controls .section-kicker { margin: 0 0 0.7rem; }
+.share-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.share-actions a, .share-actions button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--aubergine);
+  font: 700 0.7rem/1 var(--font-mono);
+  letter-spacing: 0.03em;
+  padding: 0.68rem 0.78rem;
+  text-decoration: none;
+}
+.share-actions button { cursor: pointer; }
+.share-actions a:hover, .share-actions a:focus-visible, .share-actions button:hover, .share-actions button:focus-visible { background: var(--aubergine); color: var(--paper); }
+.share-status { min-height: 1.1rem; margin: 0.7rem 0 0; color: var(--muted); font: 0.7rem/1.4 var(--font-mono); }
+
 .doc-content blockquote {
   border-left: 3px solid var(--accent);
   color: var(--ink);

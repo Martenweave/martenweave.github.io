@@ -392,6 +392,22 @@ if (publicBlogRoutes.length - 1 !== blogSourceFiles.length || blogSourceFiles.le
   errors.push("Every one of the 130 canonical blog sources must render to one public article route.");
 }
 
+const shareableFiles = [...generatedDocs, ...publicBlogRoutes.filter((route) => route !== "/blog/").map((route) => route.slice(1))];
+for (const file of shareableFiles) {
+  const html = htmlByFile.get(file) ?? "";
+  for (const snippet of [
+    'class="share-controls"',
+    'data-copy-link',
+    'linkedin.com/sharing/share-offsite/',
+    'twitter.com/intent/tweet',
+    'href="mailto:',
+  ]) {
+    if (!html.includes(snippet)) {
+      errors.push(`${file} must include accessible social sharing controls: ${snippet}`);
+    }
+  }
+}
+
 const authorProfile = htmlByFile.get("docs/author.html") ?? "";
 for (const snippet of [
   "Dzmitryi Kharlanau",
