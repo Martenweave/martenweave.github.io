@@ -55,8 +55,8 @@ if (!homepage.includes('name="martenweave-deployment-ref" content="main"')) {
 if (!article.includes('<link rel="canonical" href="https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html"')) {
   throw new Error("Article canonical URL is not current.");
 }
-if (ai.packageVersion !== "0.6.0" || ai.corePackage?.version !== "0.6.0") {
-  throw new Error("ai.json does not identify Core source version 0.6.0.");
+if (ai.packageVersion !== "0.6.1" || ai.corePackage?.version !== "0.6.1") {
+  throw new Error("ai.json does not identify Core source version 0.6.1.");
 }
 console.log(
   `Production parity passed for ${origin}; deployed homepage, article, ai.json, sitemap, and RSS ` +

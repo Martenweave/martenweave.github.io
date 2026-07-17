@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.6.0` is the current supported public source and PyPI release.
+Martenweave Core `v0.6.1` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.6.0`
-- PyPI package: `martenweave-core 0.6.0`
+- GitHub Release: `v0.6.1`
+- PyPI package: `martenweave-core 0.6.1`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
