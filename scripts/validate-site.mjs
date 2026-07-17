@@ -28,6 +28,7 @@ const docRoutes = [
   { source: "pilot-projects.md", output: "pilot-projects.html" },
   { source: "consulting.md", output: "consulting.html" },
   { source: "engagement.md", output: "engagement.html" },
+  { source: "author.md", output: "author.html" },
   { source: "contact.md", output: "contact.html" },
 ];
 
@@ -369,6 +370,9 @@ for (const snippet of [
   '<nav aria-label="Article contents">',
   '<nav class="article-neighbors" aria-label="More articles">',
   '<section class="article-sources" aria-label="Primary sources">',
+  '<aside class="author-card" aria-labelledby="author-card-title">',
+  'href="/docs/author.html"',
+  '<aside class="topic-guide">',
 ]) {
   if (!representativeArticle.includes(snippet)) {
     errors.push(`Blog article template is missing: ${snippet}`);
@@ -386,6 +390,32 @@ if (
 }
 if (publicBlogRoutes.length - 1 !== blogSourceFiles.length || blogSourceFiles.length !== 130) {
   errors.push("Every one of the 130 canonical blog sources must render to one public article route.");
+}
+
+const authorProfile = htmlByFile.get("docs/author.html") ?? "";
+for (const snippet of [
+  "Dzmitryi Kharlanau",
+  "Maintainer of Martenweave",
+  'href="https://www.linkedin.com/in/dkharlanau/"',
+]) {
+  if (!authorProfile.includes(snippet)) {
+    errors.push(`Author profile is missing: ${snippet}`);
+  }
+}
+
+for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
+  const file = route.slice(1);
+  const html = htmlByFile.get(file) ?? "";
+  if (!html.includes('class="author-card"') || !html.includes('class="related-articles"')) {
+    errors.push(`${file} must include author identity and related-article links.`);
+  }
+  const relatedLinks = new Set(
+    [...html.matchAll(/<section class="related-articles">[\s\S]*?<\/section>/g)]
+      .flatMap((match) => [...match[0].matchAll(/href="(\/blog\/[^\"]+\.html)"/g)].map((link) => link[1])),
+  );
+  if (relatedLinks.size < 3 || relatedLinks.has(route)) {
+    errors.push(`${file} must link to three distinct related blog articles.`);
+  }
 }
 
 if (!rootHtml.includes('href="https://github.com/metalhatscats/martenweave-core"')) {
@@ -597,7 +627,35 @@ for (const file of publicHtmlFiles) {
     if (!graph.some((entity) => ["WebPage", "CollectionPage"].includes(entity["@type"]))) {
       errors.push(`${file} JSON-LD must identify its page type.`);
     }
+    const person = graph.find((entity) => entity["@type"] === "Person");
+    if (
+      !person ||
+      person.name !== "Dzmitryi Kharlanau" ||
+      person.url !== `${productionOrigin}/docs/author.html` ||
+      !person.description ||
+      !Array.isArray(person.knowsAbout)
+    ) {
+      errors.push(`${file} JSON-LD must include a complete first-party author profile.`);
+    }
+    if (file.startsWith("blog/") && file !== "blog/index.html") {
+      const article = graph.find((entity) => entity["@type"] === "Article");
+      if (!article || article.author?.["@id"] !== `${productionOrigin}/#person`) {
+        errors.push(`${file} JSON-LD must connect its Article to the author profile.`);
+      }
+    }
   }
+}
+
+const authorProfileJsonLd = JSON.parse(
+  [...authorProfile.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)][0]?.[1] ?? "{}",
+);
+const authorProfileGraph = authorProfileJsonLd["@graph"] ?? [];
+if (
+  !authorProfileGraph.some((entity) => entity["@type"] === "ProfilePage") ||
+  authorProfileGraph.find((entity) => entity["@type"] === "ProfilePage")?.mainEntity?.["@id"] !==
+    `${productionOrigin}/#person`
+) {
+  errors.push("Author page must expose ProfilePage structured data connected to the Person entity.");
 }
 
 const homepageJsonLd = JSON.parse(

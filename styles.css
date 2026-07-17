@@ -1064,6 +1064,17 @@ pre {
 .related-articles { margin-top: 2.25rem; }
 .related-articles h2 { font-size: 1.5rem; }
 
+.author-card, .topic-guide {
+  margin: 2.25rem 0;
+  border: 1px solid var(--line);
+  padding: 1.35rem 1.45rem;
+  background: var(--soft);
+}
+.author-card h2 { margin: 0.5rem 0 0.7rem; font-size: 1.45rem; }
+.author-card p, .topic-guide p { margin: 0.55rem 0; font-size: 0.94rem; line-height: 1.65; }
+.topic-guide { border-left: 3px solid var(--amber); background: transparent; }
+.topic-guide .section-kicker { display: block; }
+
 .article-neighbors {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

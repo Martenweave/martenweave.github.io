@@ -9,6 +9,17 @@ const docsDir = join(root, "docs");
 const checkOnly = process.argv.includes("--check");
 const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
+const authorProfilePath = "/docs/author.html";
+const authorBio =
+  "Dzmitryi Kharlanau maintains Martenweave, an open-source, local-first model registry for SAP migration, MDM, data governance, and controlled AI-assisted model change.";
+const authorTopics = [
+  "SAP migration",
+  "master data management",
+  "data governance",
+  "data modeling",
+  "data lineage",
+  "impact analysis",
+];
 const siteLastModified = "2026-07-16";
 const deploymentRevision = "main";
 
@@ -217,6 +228,14 @@ const docRoutes = [
       "See the practical Martenweave engagement process: scope a model slice, establish evidence, validate, review, and hand over controlled outputs.",
   },
   {
+    source: "author.md",
+    output: "author.html",
+    label: "Author",
+    seoTitle: "Dzmitryi Kharlanau | Martenweave Maintainer",
+    description: authorBio,
+    schemaType: "ProfilePage",
+  },
+  {
     source: "contact.md",
     output: "contact.html",
     label: "Contact",
@@ -267,8 +286,10 @@ const blogArticles = readdirSync(join(docsDir, "blog"))
     return {
       source: `blog/${filename}`,
       slug: articleSlug(filename),
+      title: extractTitle(markdown),
       topic: articleTopic(markdown),
       description: articleDescription(markdown),
+      tokens: new Set(textFromMarkdown(markdown).toLowerCase().match(/[a-z]{4,}/g) ?? []),
     };
   });
 
@@ -548,6 +569,34 @@ function primarySources() {
   return `<section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section>`;
 }
 
+const topicDestinations = {
+  "Migration readiness": { href: "/docs/use-cases/sap-migration.html", label: "SAP migration workflow" },
+  "SAP MDG and MDM": { href: "/docs/use-cases/mdg.html", label: "SAP MDG use case" },
+  "Lineage and impact": { href: "/docs/how-it-works.html", label: "lineage and impact workflow" },
+  "Validation and readiness": { href: "/docs/capabilities.html", label: "validation capabilities" },
+  "AI governance": { href: "/docs/ai-governance.html", label: "AI governance model" },
+  "AMS and continuity": { href: "/docs/use-cases/ams.html", label: "AMS use case" },
+  "Logistics data": { href: "/docs/use-cases/sap-migration.html", label: "SAP migration workflow" },
+  "Model governance": { href: "/docs/product.html", label: "Martenweave product guide" },
+};
+
+function relatedArticles(current, limit = 3) {
+  return blogArticles
+    .filter((article) => article.slug !== current.slug)
+    .map((article) => {
+      const sharedTerms = [...current.tokens].filter((term) => article.tokens.has(term)).length;
+      const sameTopic = article.topic === current.topic ? 12 : 0;
+      return { article, score: sameTopic + sharedTerms };
+    })
+    .sort((left, right) => right.score - left.score || left.article.slug.localeCompare(right.article.slug))
+    .slice(0, limit)
+    .map(({ article }) => article);
+}
+
+function authorCard() {
+  return `<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">${authorName}</h2><p>${escapeHtml(authorBio)}</p><p><a href="${authorProfilePath}">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a></p></aside>`;
+}
+
 function extractFaqEntities(markdown) {
   const sections = markdown.split(/^##\s+/m).slice(1);
   return sections
@@ -607,6 +656,10 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
     contentEntity.mainEntity = extractFaqEntities(markdown);
   }
 
+  if (articleType === "ProfilePage") {
+    contentEntity.mainEntity = { "@id": `${productionOrigin}/#person` };
+  }
+
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -662,8 +715,11 @@ function renderJsonLd(route, markdown, title, canonicalUrl) {
         "@type": "Person",
         "@id": `${productionOrigin}/#person`,
         name: authorName,
-        url: "https://www.linkedin.com/in/dkharlanau/",
+        url: `${productionOrigin}${authorProfilePath}`,
         sameAs: ["https://www.linkedin.com/in/dkharlanau/"],
+        description: authorBio,
+        jobTitle: "Maintainer of Martenweave",
+        knowsAbout: authorTopics,
       },
       {
         "@type": "WebSite",
@@ -702,7 +758,7 @@ function blogNeighbors(slug) {
   const previous = blogArticles[index - 1];
   const next = blogArticles[index + 1];
   if (!previous && !next) return "";
-  return `<nav class="article-neighbors" aria-label="More articles">${previous ? `<a href="/blog/${previous.slug}.html"><span>Previous</span>${escapeHtml(previous.description)}</a>` : ""}${next ? `<a href="/blog/${next.slug}.html"><span>Next</span>${escapeHtml(next.description)}</a>` : ""}</nav>`;
+  return `<nav class="article-neighbors" aria-label="More articles">${previous ? `<a href="/blog/${previous.slug}.html"><span>Previous</span>${escapeHtml(previous.title)}</a>` : ""}${next ? `<a href="/blog/${next.slug}.html"><span>Next</span>${escapeHtml(next.title)}</a>` : ""}</nav>`;
 }
 
 function renderBlogCollection() {
@@ -710,7 +766,7 @@ function renderBlogCollection() {
   const cards = blogArticles
     .map((article, index) => {
       const markdown = readFileSync(join(docsDir, article.source), "utf8");
-      const title = extractTitle(markdown);
+      const title = article.title;
       const published = publicationDate(markdown);
       const dateLabel = published ? escapeHtml(reviewedDate(markdown) ?? "15 July 2026") : "15 July 2026";
       const search = `${title} ${article.description} ${article.topic}`.toLowerCase();
@@ -838,14 +894,13 @@ function renderPage(route) {
     ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><h1>${escapeHtml(title)}</h1><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown) ?? "15 July 2026")}</time>` : ""} · ${readingTime(markdown)} min read</p><p class="blog-summary">${escapeHtml(pageRoute.description)}</p>${contentsNavigation(body)}</header>`
     : "";
   const related = pageRoute.blog
-    ? blogArticles
-        .filter((article) => article.topic === pageRoute.topic && article.slug !== pageRoute.slug)
-        .slice(0, 3)
-        .map((article) => `<li><a href="/blog/${article.slug}.html">${escapeHtml(article.description)}</a></li>`)
+    ? relatedArticles(pageRoute)
+        .map((article) => `<li><a href="/blog/${article.slug}.html">${escapeHtml(article.title)}</a></li>`)
         .join("")
     : "";
+  const topicDestination = pageRoute.blog ? topicDestinations[pageRoute.topic] : null;
   const blogFooter = pageRoute.blog
-    ? `<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${primarySources()}${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
+    ? `${authorCard()}<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside>${topicDestination ? `<aside class="topic-guide"><span class="section-kicker">Go deeper</span><p>Explore the <a href="${topicDestination.href}">${topicDestination.label}</a>.</p></aside>` : ""}${primarySources()}${related ? `<section class="related-articles"><h2>Related articles</h2><ul>${related}</ul></section>` : ""}${blogNeighbors(pageRoute.slug)}`
     : "";
 
   return `<!doctype html>
@@ -873,7 +928,7 @@ function renderPage(route) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Martenweave open-source data model registry" />
-${pageRoute.blog ? `    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />` : ""}
+${pageRoute.blog ? `    <meta property="article:author" content="${productionOrigin}${authorProfilePath}" />` : ""}
 ${pageRoute.blog && published ? `    <meta property="article:published_time" content="${published}" />\n    <meta property="article:modified_time" content="${published}" />` : ""}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttribute(pageRoute.seoTitle)}" />
