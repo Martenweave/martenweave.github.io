@@ -19,4 +19,4 @@ We do not present fabricated maturity scores, customer results, certifications, 
 
 ## Start with the facts
 
-See [pilot projects](/docs/pilot-projects.html) for an appropriate first scope or [contact us](/docs/contact.html) with the system landscape, model area, and delivery concern.
+See [pilot projects](/docs/pilot-projects.html) for an appropriate first scope or [contact us](https://www.linkedin.com/in/metalhatcats/) with the system landscape, model area, and delivery concern.

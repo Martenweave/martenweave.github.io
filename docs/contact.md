@@ -1,6 +1,6 @@
 # Contact
 
-To discuss a Martenweave pilot, consulting engagement, or a practical question about model governance, open a scoped issue in the [Martenweave Core repository](https://github.com/metalhatscats/martenweave-core/issues) or start from the maintainer's [public profile](https://www.linkedin.com/in/dkharlanau/).
+To discuss a Martenweave pilot, consulting engagement, or a practical question about model governance, contact [Metalhatcats on LinkedIn](https://www.linkedin.com/in/metalhatcats/).
 
 ## Helpful context
 

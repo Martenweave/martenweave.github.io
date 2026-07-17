@@ -8,6 +8,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const docsDir = join(root, "docs");
 const checkOnly = process.argv.includes("--check");
 const productionOrigin = "https://martenweave.github.io";
+const contactUrl = "https://www.linkedin.com/in/metalhatcats/";
 const authorName = "Dzmitryi Kharlanau";
 const authorProfilePath = "/docs/author.html";
 const authorBio =
@@ -766,9 +767,11 @@ ${JSON.stringify(data, null, 6)
 function renderNav(currentOutput) {
   return docRoutes
     .map((route) => {
-      const active = route.output === currentOutput ? ' aria-current="page"' : "";
-      const href = route.output === "index.html" ? "/docs.html" : `/docs/${route.output}`;
-      return `<a href="${href}"${active}>${route.label}</a>`;
+      const isContact = route.output === "contact.html";
+      const active = !isContact && route.output === currentOutput ? ' aria-current="page"' : "";
+      const href = isContact ? contactUrl : route.output === "index.html" ? "/docs.html" : `/docs/${route.output}`;
+      const external = isContact ? ' target="_blank" rel="noopener noreferrer"' : "";
+      return `<a href="${href}"${external}${active}>${route.label}</a>`;
     })
     .join("\n");
 }

@@ -44,4 +44,4 @@ Pilot inputs remain inputs. Martenweave does not write back to SAP, and AI-assis
 
 ## Discuss a pilot
 
-Read the [engagement process](/docs/engagement.html) or use the [contact page](/docs/contact.html) to describe the model slice, evidence available, and decision you need to make.
+Read the [engagement process](/docs/engagement.html) or use the [Metalhatcats LinkedIn page](https://www.linkedin.com/in/metalhatcats/) to describe the model slice, evidence available, and decision you need to make.
