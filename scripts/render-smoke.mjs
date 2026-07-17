@@ -59,8 +59,11 @@ try {
         return document.querySelector("[data-blog-search]") !== null &&
           document.querySelectorAll("[data-blog-card]:not([hidden])").length === 12;
       }) : true;
-      if (!response?.ok() || !heading?.trim() || overflow || consoleErrors.length || h1Size > maxH1 || !tocClosed || !catalogueReady) {
-        failures.push(`${label}: status=${response?.status()} h1=${Boolean(heading?.trim())} size=${h1Size}/${maxH1} tocClosed=${tocClosed} catalogueReady=${catalogueReady} overflow=${overflow} console=${consoleErrors.join(" | ")}`);
+      const atlasReady = route === "/" ? await page.locator(".atlas-hero__map img").evaluate((image) => {
+        return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0;
+      }) : true;
+      if (!response?.ok() || !heading?.trim() || overflow || consoleErrors.length || h1Size > maxH1 || !tocClosed || !catalogueReady || !atlasReady) {
+        failures.push(`${label}: status=${response?.status()} h1=${Boolean(heading?.trim())} size=${h1Size}/${maxH1} tocClosed=${tocClosed} catalogueReady=${catalogueReady} atlasReady=${atlasReady} overflow=${overflow} console=${consoleErrors.join(" | ")}`);
       }
     }
     await page.close();

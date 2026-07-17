@@ -74,6 +74,7 @@ const requiredFiles = [
   "assets/twitter-card.png",
   "assets/github-social-preview.png",
   "assets/architecture-loop.svg",
+  "assets/model-atlas-hero.png",
   "assets/screenshots/homepage-desktop.png",
   "assets/screenshots/homepage-mobile.png",
   "assets/screenshots/docs-index-desktop.png",
