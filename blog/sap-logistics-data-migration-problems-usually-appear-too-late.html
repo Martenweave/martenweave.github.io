@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP Logistics Data Migration Problems Usually Appear Too Late | Martenweave</title>
+    <meta
+      name="description"
+      content="Most SAP logistics migration problems are discovered at the worst possible moment."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html" />
+    <meta property="og:title" content="SAP Logistics Data Migration Problems Usually Appear Too Late | Martenweave" />
+    <meta property="og:description" content="Most SAP logistics migration problems are discovered at the worst possible moment." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAP Logistics Data Migration Problems Usually Appear Too Late | Martenweave" />
+    <meta name="twitter:description" content="Most SAP logistics migration problems are discovered at the worst possible moment." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html#webpage",
+                        "url": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html",
+                        "name": "SAP Logistics Data Migration Problems Usually Appear Too Late | Martenweave",
+                        "description": "Most SAP logistics migration problems are discovered at the worst possible moment.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "SAP Logistics Data Migration Problems Usually Appear Too Late",
+                                    "item": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html#content",
+                        "headline": "SAP Logistics Data Migration Problems Usually Appear Too Late",
+                        "name": "SAP Logistics Data Migration Problems Usually Appear Too Late",
+                        "description": "Most SAP logistics migration problems are discovered at the worst possible moment.",
+                        "url": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Logistics data",
+                        "keywords": "Logistics data",
+                        "timeRequired": "PT11M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">SAP Logistics Data Migration Problems Usually Appear Too Late</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Logistics data</p><h1>SAP Logistics Data Migration Problems Usually Appear Too Late</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 11 min read</p><p class="blog-summary">Most SAP logistics migration problems are discovered at the worst possible moment.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#a-mapping-spreadsheet-is-not-a-logistics-data-model">A mapping spreadsheet is not a logistics data model</a></li><li><a href="#one-missing-field-is-rarely-just-one-missing-field">One missing field is rarely just one missing field</a></li><li><a href="#the-problem-is-not-always-bad-data">The problem is not always bad data</a></li><li><a href="#why-sap-logistics-migrations-are-particularly-exposed">Why SAP logistics migrations are particularly exposed</a></li><li><a href="#what-should-be-checked-before-the-first-load">What should be checked before the first load</a></li><li><a href="#what-martenweave-changes">What Martenweave changes</a></li><li><a href="#detecting-dataset-gaps-before-they-become-load-errors">Detecting dataset gaps before they become load errors</a></li><li><a href="#showing-the-impact-before-changing-a-field">Showing the impact before changing a field</a></li><li><a href="#preventing-the-same-defects-from-returning">Preventing the same defects from returning</a></li><li><a href="#what-managers-should-ask-for">What managers should ask for</a></li><li><a href="#this-is-not-another-mdm-platform">This is not another MDM platform</a></li><li><a href="#the-first-load-should-confirm-the-model-not-discover-it">The first load should confirm the model, not discover it</a></li></ol></nav></details></header>
+<p>Most SAP logistics migration problems are discovered at the worst possible moment.</p>
+<p>Not while the data model is being designed.</p>
+<p>Not while mapping spreadsheets are being reviewed.</p>
+<p>They appear during test loads, warehouse integration testing or cutover preparation—when changing a field definition already affects several teams, systems and deadlines.</p>
+<p>A material fails to load because a mandatory warehouse attribute is missing.</p>
+<p>A unit of measure passes the migration check but causes problems in EWM.</p>
+<p>A customer is loaded successfully, yet route determination produces an unexpected result.</p>
+<p>A 3PL interface accepts the message technically but interprets one of the codes incorrectly.</p>
+<p>At that point, the problem is normally classified as a data-quality defect.</p>
+<p>Sometimes it is.</p>
+<p>Quite often, the real problem is different: the project never had a reliable model connecting the source data, SAP target fields, transformation rules, logistics dependencies and business decisions.</p>
+<p>The data was checked.</p>
+<p>The model behind the data was not.</p>
+<h2 id="a-mapping-spreadsheet-is-not-a-logistics-data-model">A mapping spreadsheet is not a logistics data model</h2>
+<p>Most migration projects use mapping spreadsheets.</p>
+<p>There is nothing inherently wrong with that. Excel is accessible, familiar and useful for reviewing large numbers of fields.</p>
+<p>The problem begins when the spreadsheet is expected to become the complete source of truth.</p>
+<p>A typical mapping row contains:</p>
+<ul>
+<li>source field;</li>
+<li>target field;</li>
+<li>transformation;</li>
+<li>mandatory status;</li>
+<li>comments;</li>
+<li>perhaps an owner.</li>
+</ul>
+<p>That may be enough to prepare an initial load.</p>
+<p>It is rarely enough to control a logistics transformation.</p>
+<p>A material attribute can be connected to warehouse processes, units of measure, packaging, plant-specific settings, interfaces, reports and external logistics providers.</p>
+<p>A customer shipping attribute can influence deliveries, route determination, scheduling and transportation planning.</p>
+<p>A supplier field may be optional globally but mandatory for one purchasing organisation or country.</p>
+<p>The spreadsheet shows the field.</p>
+<p>It does not reliably show the network around the field.</p>
+<p>That network is where the risk sits.</p>
+<h2 id="one-missing-field-is-rarely-just-one-missing-field">One missing field is rarely just one missing field</h2>
+<p>Consider a company preparing material data for an SAP S/4HANA and EWM rollout.</p>
+<p>The migration template contains a field for the product’s preferred unit of measure in the warehouse.</p>
+<p>The central material team marks the field as optional because it is not required for every material in the ERP migration object.</p>
+<p>The warehouse team assumes the field will be derived from packaging data.</p>
+<p>The packaging spreadsheet contains the required relationship, but only for one product group.</p>
+<p>The legacy warehouse extract uses a different field name.</p>
+<p>The interface team expects the warehouse unit in an outbound product message.</p>
+<p>Each team has a reasonable explanation.</p>
+<p>The combined model is still incomplete.</p>
+<p>During the first integration test, several products reach EWM without the expected warehouse unit.</p>
+<p>The immediate response is predictable:</p>
+<ol>
+<li>The test defect is assigned to the data-migration team.</li>
+<li>The migration team checks its template and confirms that the field was optional.</li>
+<li>The warehouse team argues that the value is operationally required.</li>
+<li>The integration team confirms that its mapping followed the interface specification.</li>
+<li>A temporary derivation is added.</li>
+<li>The spreadsheet is updated.</li>
+<li>Nobody checks whether other objects, plants or interfaces use the same assumption.</li>
+</ol>
+<p>The defect is closed.</p>
+<p>The underlying inconsistency remains.</p>
+<p>This is how migration projects accumulate fragile fixes.</p>
+<h2 id="the-problem-is-not-always-bad-data">The problem is not always bad data</h2>
+<p>“Data quality” is often used as a broad label for several different failures.</p>
+<p>They should be separated.</p>
+<h3 id="the-source-data-is-wrong">The source data is wrong</h3>
+<p>A weight is invalid. A customer address is incomplete. A unit conversion is mathematically incorrect.</p>
+<p>This is a genuine data-quality problem.</p>
+<h3 id="the-source-data-does-not-contain-what-the-target-model-expects">The source data does not contain what the target model expects</h3>
+<p>The migration design requires an attribute that is absent from the extract.</p>
+<p>This is a dataset-to-model gap.</p>
+<h3 id="the-mapping-is-incomplete">The mapping is incomplete</h3>
+<p>The source value exists, but there is no approved target mapping or transformation.</p>
+<p>This is a modelling gap.</p>
+<h3 id="teams-disagree-about-the-meaning-of-the-field">Teams disagree about the meaning of the field</h3>
+<p>The ERP team, warehouse team and 3PL use the same label for different concepts.</p>
+<p>This is a semantic gap.</p>
+<h3 id="a-decision-was-made-but-not-propagated">A decision was made but not propagated</h3>
+<p>A workshop or ticket introduced an exception, but the mapping, validation rule and interface specification were not updated together.</p>
+<p>This is a governance gap.</p>
+<h3 id="a-change-has-dependencies-nobody-reviewed">A change has dependencies nobody reviewed</h3>
+<p>The field was modified correctly, but downstream rules, datasets or interfaces were not considered.</p>
+<p>This is an impact-analysis gap.</p>
+<p>All six problems may eventually appear as a failed record or rejected message.</p>
+<p>Treating all of them as “bad data” hides the actual work required to resolve them.</p>
+<h2 id="why-sap-logistics-migrations-are-particularly-exposed">Why SAP logistics migrations are particularly exposed</h2>
+<p>Logistics data crosses organisational boundaries.</p>
+<p>A financial field may remain largely within one functional area.</p>
+<p>A logistics attribute often travels through several layers:</p>
+<ul>
+<li>source ERP;</li>
+<li>SAP S/4HANA;</li>
+<li>EWM or another warehouse system;</li>
+<li>TM or an external TMS;</li>
+<li>middleware;</li>
+<li>carrier or 3PL platforms;</li>
+<li>reporting and planning systems.</li>
+</ul>
+<p>Each layer may use a different representation.</p>
+<p>The SAP field may contain an internal code.</p>
+<p>The middleware may convert it.</p>
+<p>The 3PL may expect another value.</p>
+<p>The business may describe the concept using language that appears nowhere in the technical specification.</p>
+<p>As long as the existing process continues unchanged, these differences may remain invisible.</p>
+<p>They become visible when a company changes ERP, introduces a new warehouse, replaces a logistics provider or adds another country.</p>
+<p>The project is then forced to reconstruct the meaning of its own data while simultaneously delivering the transformation.</p>
+<p>Current logistics discussions increasingly focus on AI, autonomous planning and real-time optimisation. Yet data silos and poor data quality remain basic obstacles: warehouse, transportation and planning information still frequently live in separate environments that cannot use one another’s context reliably.</p>
+<p>Before adding more intelligence, the organisation needs to know what its logistics data means.</p>
+<h2 id="what-should-be-checked-before-the-first-load">What should be checked before the first load</h2>
+<p>A logistics migration readiness check should go beyond checking whether columns are populated.</p>
+<p>For each important field, the team should be able to answer:</p>
+<ul>
+<li>What business concept does this field represent?</li>
+<li>Where does the value originate?</li>
+<li>Is the source field present in the current extract?</li>
+<li>Is the target field still correct?</li>
+<li>Is the field globally required or conditionally required?</li>
+<li>Which plants, warehouses, countries or process variants use it?</li>
+<li>Which transformation produces the target value?</li>
+<li>Which values remain unmapped?</li>
+<li>Which validation rules apply?</li>
+<li>Which interfaces consume it?</li>
+<li>Who owns the definition?</li>
+<li>Which decision or document supports the rule?</li>
+<li>What else will be affected if the definition changes?</li>
+</ul>
+<p>Few projects can answer all of these questions consistently.</p>
+<p>The knowledge may exist, but it exists in separate files and separate teams.</p>
+<p>That is the problem Martenweave is intended to address.</p>
+<h2 id="what-martenweave-changes">What Martenweave changes</h2>
+<p>Martenweave does not replace the migration tool.</p>
+<p>It does not load materials into SAP, configure EWM or execute 3PL interfaces.</p>
+<p>It sits before and around those activities.</p>
+<p>The application turns scattered project knowledge into a structured model containing objects, attributes, datasets, mappings, validation rules, relationships, decisions, evidence and proposed changes.</p>
+<p>Canonical model files remain the source of truth. Generated indexes can be rebuilt. References are validated deterministically. AI-generated changes are proposals that require validation and human approval rather than direct mutation of the model.</p>
+<p>For the warehouse-unit example, the model could connect:</p>
+<ul>
+<li>the business attribute <code>Warehouse Unit of Measure</code>;</li>
+<li>its legacy source fields;</li>
+<li>the SAP target field;</li>
+<li>the EWM representation;</li>
+<li>packaging relationships;</li>
+<li>applicable product groups;</li>
+<li>plant or warehouse conditions;</li>
+<li>the outbound interface field;</li>
+<li>validation rules;</li>
+<li>the responsible owner;</li>
+<li>the decision explaining whether the value is supplied or derived.</li>
+</ul>
+<p>Now the project can check the model before checking thousands of records against it.</p>
+<h2 id="detecting-dataset-gaps-before-they-become-load-errors">Detecting dataset gaps before they become load errors</h2>
+<p>Suppose a migration team receives a new XLSX extract from a legacy material system.</p>
+<p>Instead of immediately preparing the load file, the dataset can be compared with the approved model.</p>
+<p>The check may reveal that:</p>
+<ul>
+<li>one expected column is absent;</li>
+<li>two columns were renamed;</li>
+<li>twelve products have no valid warehouse unit;</li>
+<li>three unit values are not covered by the mapping;</li>
+<li>packaging data is missing for one product group;</li>
+<li>the derivation rule applies only to one warehouse;</li>
+<li>one required attribute has no assigned owner.</li>
+</ul>
+<p>This is not yet a failed SAP load.</p>
+<p>It is a readiness report.</p>
+<p>That distinction matters.</p>
+<p>Problems are cheaper to resolve while they are still model and dataset gaps. They become more expensive after they enter migration cycles, integration testing and cutover planning.</p>
+<p>Martenweave already supports profiling CSV and XLSX datasets, comparing them with model field definitions, producing readiness reports and turning identified gaps into reviewable proposals or GitHub issue drafts.</p>
+<p>The objective is not to generate another report that nobody reads.</p>
+<p>The objective is to classify gaps early enough that the correct team can act.</p>
+<h2 id="showing-the-impact-before-changing-a-field">Showing the impact before changing a field</h2>
+<p>Finding missing data is only half of the problem.</p>
+<p>The other half is change.</p>
+<p>During migration, field definitions change constantly.</p>
+<p>A source column is replaced.</p>
+<p>A target field becomes mandatory.</p>
+<p>A derivation is introduced.</p>
+<p>A value mapping is extended.</p>
+<p>A country-specific exception is approved.</p>
+<p>The usual workflow is to update the document where the change was requested.</p>
+<p>But the same definition may also appear in:</p>
+<ul>
+<li>another migration object;</li>
+<li>a validation script;</li>
+<li>an EWM template;</li>
+<li>a 3PL specification;</li>
+<li>a test case;</li>
+<li>a reconciliation report;</li>
+<li>a support procedure.</li>
+</ul>
+<p>Without impact analysis, the project relies on people remembering all these dependencies.</p>
+<p>That works until it does not.</p>
+<p>A model registry makes the field a connected object rather than a cell in a spreadsheet.</p>
+<p>Before approving a change, the team can see which datasets, mappings, rules, interfaces and decisions refer to it.</p>
+<p>This does not remove the need for expert judgement.</p>
+<p>It directs that judgement to the places where it is needed.</p>
+<h2 id="preventing-the-same-defects-from-returning">Preventing the same defects from returning</h2>
+<p>The same approach is useful after go-live.</p>
+<p>AMS teams regularly resolve logistics incidents caused by missing or inconsistent master data:</p>
+<ul>
+<li>delivery blocks caused by incomplete customer attributes;</li>
+<li>warehouse messages rejected because of product data;</li>
+<li>purchasing failures caused by missing organisational data;</li>
+<li>interface errors caused by unsupported codes;</li>
+<li>incorrect routes caused by inconsistent shipping attributes.</li>
+</ul>
+<p>The ticket is fixed and closed.</p>
+<p>The next team receives no reusable control.</p>
+<p>A better process is to ask whether the incident exposed a missing part of the model.</p>
+<p>Should there be a new validation rule?</p>
+<p>Was a field definition unclear?</p>
+<p>Is an exception undocumented?</p>
+<p>Is ownership missing?</p>
+<p>Does the dataset-readiness check need another condition?</p>
+<p>Martenweave can convert the finding into a patch proposal. The proposal is validated and reviewed before becoming part of the approved model.</p>
+<p>Over time, support knowledge stops disappearing into closed tickets.</p>
+<p>It becomes part of the prevention layer.</p>
+<h2 id="what-managers-should-ask-for">What managers should ask for</h2>
+<p>Managers do not need to inspect individual model files.</p>
+<p>They need readiness information that can be acted upon.</p>
+<p>Instead of:</p>
+<blockquote>Material master data is 95% complete.</blockquote>
+<p>they should receive something closer to:</p>
+<blockquote>The material dataset contains all expected structural columns. Four warehouse-relevant attributes are incomplete for Plant 1200, fourteen unit values have no approved mapping, and the packaging derivation for one product group has not been approved by the warehouse owner.</blockquote>
+<p>Instead of:</p>
+<blockquote>The 3PL interface is ready.</blockquote>
+<p>a more useful statement is:</p>
+<blockquote>All required interface fields are mapped, but three business codes are used differently by SAP and the 3PL. The transformations are documented, while one regional exception remains unresolved.</blockquote>
+<p>These statements separate volume from risk.</p>
+<p>A dataset can be 99% populated and still be unfit for one critical logistics process.</p>
+<p>A model can have only a few gaps and still be unsafe because those gaps sit in high-impact attributes.</p>
+<h2 id="this-is-not-another-mdm-platform">This is not another MDM platform</h2>
+<p>The scope needs to remain clear.</p>
+<p>Martenweave is not intended to become:</p>
+<ul>
+<li>an SAP master-data maintenance screen;</li>
+<li>a warehouse-management system;</li>
+<li>a transportation-management system;</li>
+<li>an integration runtime;</li>
+<li>a workflow platform;</li>
+<li>a logistics control tower.</li>
+</ul>
+<p>Those systems execute processes and maintain operational records.</p>
+<p>Martenweave maintains the traceable model used to understand and change those records safely.</p>
+<p>Its job is to answer a narrower set of questions:</p>
+<ul>
+<li>What does the data mean?</li>
+<li>What does the target process expect?</li>
+<li>Where are the gaps?</li>
+<li>Which rules and decisions support the model?</li>
+<li>What depends on the field we want to change?</li>
+<li>Who must review the proposed correction?</li>
+</ul>
+<p>That is enough.</p>
+<h2 id="the-first-load-should-confirm-the-model-not-discover-it">The first load should confirm the model, not discover it</h2>
+<p>Some migration defects will always be found during testing.</p>
+<p>Real systems contain historical exceptions, local practices and data conditions that no design process captures perfectly.</p>
+<p>But the first load should not be the first time the project discovers that teams disagree about a mandatory field.</p>
+<p>It should not reveal that the source extract lacks attributes expected by the target model.</p>
+<p>It should not be the first place where SAP, warehouse and 3PL code meanings are compared.</p>
+<p>Those questions belong earlier.</p>
+<p>A migration tool moves data.</p>
+<p>A mapping spreadsheet describes parts of the movement.</p>
+<p>A model registry controls the meaning and dependencies behind it.</p>
+<p>When that layer is missing, logistics projects repeatedly use test loads to discover decisions they should have made before loading anything.</p>
+<p>Martenweave exists to move that discovery forward.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html">The material migration report looks successful.</a></li><li><a href="/blog/how-we-detect-missing-material-extensions-before-cutover.html">The material migration team reports:</a></li><li><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html">The unit-of-measure migration report looks harmless.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/logistics-problems-rarely-start-in-logistics.html"><span>Previous</span>When a delivery fails, people usually look at the delivery.</a><a href="/blog/what-is-a-data-model-registry-a-practical-guide-for-managers.html"><span>Next</span>Most companies do not lack documentation.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

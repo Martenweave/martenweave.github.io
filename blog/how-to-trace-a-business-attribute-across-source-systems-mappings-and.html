@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields | Martenweave</title>
+    <meta
+      name="description"
+      content="A business owner asks:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html" />
+    <meta property="og:title" content="How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields | Martenweave" />
+    <meta property="og:description" content="A business owner asks:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields | Martenweave" />
+    <meta name="twitter:description" content="A business owner asks:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html",
+                        "name": "How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields | Martenweave",
+                        "description": "A business owner asks:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields",
+                                    "item": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html#content",
+                        "headline": "How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields",
+                        "name": "How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields",
+                        "description": "A business owner asks:",
+                        "url": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Trace a Business Attribute Across Source Systems, Mappings and SAP Fields</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 17 min read</p><p class="blog-summary">A business owner asks:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#identity">Identity</a></li><li><a href="#conversion">Conversion</a></li><li><a href="#conditional-conversion">Conditional conversion</a></li><li><a href="#derivation">Derivation</a></li><li><a href="#enrichment">Enrichment</a></li><li><a href="#default">Default</a></li><li><a href="#manual-assignment">Manual assignment</a></li><li><a href="#rejection">Rejection</a></li><li><a href="#approved-trace">Approved trace</a></li><li><a href="#observed-trace">Observed trace</a></li><li><a href="#modelled">Modelled</a></li><li><a href="#validated">Validated</a></li><li><a href="#approved">Approved</a></li><li><a href="#source-ready">Source-ready</a></li><li><a href="#tested">Tested</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A business owner asks:</p>
+<blockquote>Where does Customer Group come from?</blockquote>
+<p>The answer appears obvious:</p>
+<blockquote>CRM.</blockquote>
+<p>Then the migration team examines the actual implementation.</p>
+<p>Some customers receive Customer Group from CRM Segment.</p>
+<p>Others receive it from a legacy ERP classification.</p>
+<p>Several countries use a maintained conversion table.</p>
+<p>Missing values are sent to a stewardship workbook.</p>
+<p>The value is stored centrally in one source but must be created separately for each Sales Area in SAP.</p>
+<p>An interface downstream uses the SAP field directly.</p>
+<p>A report uses a replicated value with its own code conversion.</p>
+<p>The original question was not simple.</p>
+<p>It contained several different questions:</p>
+<ul>
+<li>What is the business meaning of Customer Group?</li>
+<li>Which source systems contain related information?</li>
+<li>Which source is authoritative?</li>
+<li>Which physical fields supply the value?</li>
+<li>Which mappings transform it?</li>
+<li>Which organisational keys control the result?</li>
+<li>Which SAP field implements it?</li>
+<li>Which rules determine whether it is valid?</li>
+<li>Which evidence proves that the path works?</li>
+<li>Which alternative paths are rejected, provisional or unresolved?</li>
+</ul>
+<p>A useful trace must answer all of them without collapsing them into one arrow.</p>
+<blockquote>Attribute tracing is the process of following one governed business concept through every relevant semantic, physical, transformation and governance layer.</blockquote>
+<p>This is different from searching for a field name.</p>
+<p>It is different from opening a mapping spreadsheet.</p>
+<p>It is different from looking at an ETL dependency graph.</p>
+<p>A trace begins with a stable model object and follows typed relationships.</p>
+<p>Martenweave’s current public example supports this approach directly. Its CLI demonstrates tracing the Customer Group business Attribute and calculating impact from the related SAP FieldEndpoint. The documented result connects business attributes, physical fields, mappings, decisions, issues and evidence.</p>
+<p>The core pipeline validates canonical objects, builds generated indexes, detects gaps and then performs lineage and impact analysis before proposals are routed to human review.</p>
+<p>The trace is therefore not a visual decoration.</p>
+<p>It is one of the principal ways the registry explains model truth.</p>
+<p>---</p>
+<h1 id="start-from-the-business-attribute">Start from the business Attribute</h1>
+<p>A trace should usually begin with a business concept rather than a source column or SAP table.</p>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>The Attribute establishes:</p>
+<ul>
+<li>current approved name;</li>
+<li>definition;</li>
+<li>parent Entity;</li>
+<li>Domain;</li>
+<li>ownership;</li>
+<li>lifecycle;</li>
+<li>related Rules;</li>
+<li>physical implementations.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP
+type: Attribute
+name: Customer Group
+domain: DOMAIN-CUSTOMER
+entity: ENTITY-CUSTOMER-SALES-AREA
+status: approved</code></pre>
+<p>The exact current schema may differ. The important point is that the Attribute has an identity independent of its physical representations.</p>
+<p>Starting from the Attribute prevents an early mistake:</p>
+<pre><code class="language-text">SAP field
+=
+business concept</code></pre>
+<p>The SAP field implements the concept in one system.</p>
+<p>It is not necessarily the concept itself.</p>
+<p>---</p>
+<h1 id="the-first-trace-question-what-does-the-attribute-belong-to">The first trace question: what does the Attribute belong to?</h1>
+<p>Before looking for source fields, establish the business grain.</p>
+<p>Customer Group may belong to:</p>
+<pre><code class="language-text">Customer</code></pre>
+<p>or:</p>
+<pre><code class="language-text">Customer Sales Area</code></pre>
+<p>These are materially different models.</p>
+<p>If the Attribute belongs to Customer Sales Area, its identifying context may include:</p>
+<pre><code class="language-text">Customer
+Sales Organisation
+Distribution Channel
+Division</code></pre>
+<p>A source field cannot be considered sufficient until the source can provide or derive that context.</p>
+<p>This is why a trace must begin with:</p>
+<pre><code class="language-text">Attribute
+→ parent Entity
+→ identifying context</code></pre>
+<p>not only:</p>
+<pre><code class="language-text">Attribute
+→ source field</code></pre>
+<p>A source may contain the right-looking value at the wrong grain.</p>
+<p>---</p>
+<h1 id="the-semantic-centre-of-the-trace">The semantic centre of the trace</h1>
+<p>A useful trace can be understood as several paths meeting at the business Attribute.</p>
+<pre><code class="language-text">Upstream physical path
+        ↓
+source fields
+→ mappings
+→ business Attribute
+→ SAP endpoints
+        ↓
+Downstream physical path</code></pre>
+<p>Around this physical chain sit governance objects:</p>
+<pre><code class="language-text">Rules
+Decisions
+Evidence
+Findings
+Owners
+Proposals</code></pre>
+<p>The Attribute is the semantic centre.</p>
+<p>Source and target systems may change.</p>
+<p>The governed meaning should remain identifiable.</p>
+<p>---</p>
+<h1 id="search-first-trace-second">Search first, trace second</h1>
+<p>Users do not always know the canonical ID.</p>
+<p>They may search for:</p>
+<pre><code class="language-text">Customer Group
+KDGRP
+customer classification
+sales area group</code></pre>
+<p>Search should return typed candidates:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+Attribute
+
+FEP-S4-KNVV-KDGRP
+FieldEndpoint
+
+MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+Mapping
+
+RULE-CUSTOMER-GROUP-REQUIRED
+Rule</code></pre>
+<p>The user then selects the Attribute as the trace anchor.</p>
+<p>Martenweave exposes separate <code>search</code>, <code>query</code>, <code>trace</code> and <code>impact</code> commands. This separation is useful because discovery, structured filtering, lineage traversal and consequence analysis are different operations.</p>
+<p>A search result tells the user which objects may be relevant.</p>
+<p>A trace explains how they are connected.</p>
+<p>---</p>
+<h1 id="upstream-trace-which-sources-can-contribute">Upstream trace: which sources can contribute?</h1>
+<p>Once the Attribute is selected, the trace should find every upstream source candidate.</p>
+<p>For Customer Group, these might include:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
+FEP-ERP-A-CUSTOMER-CLASS
+FEP-ERP-B-SALES-CATEGORY
+DATAFIELD-MANUAL-ENRICHMENT-CUSTOMER-GROUP</code></pre>
+<p>These sources should not be displayed as equivalent.</p>
+<p>Each needs a role.</p>
+<p>Possible source roles include:</p>
+<ul>
+<li>authoritative;</li>
+<li>secondary;</li>
+<li>contextual;</li>
+<li>fallback;</li>
+<li>temporary;</li>
+<li>historical;</li>
+<li>rejected;</li>
+<li>merely observed.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">CRM Customer Segment
+role: input candidate
+
+ERP_A Customer Class
+role: authoritative for acquired population
+
+ERP_B Sales Category
+role: historical source, not approved for Wave 3
+
+Manual Enrichment
+role: controlled fallback</code></pre>
+<p>The trace should expose source plurality without implying that every upstream field is equally valid.</p>
+<p>---</p>
+<h1 id="physical-availability-is-not-authority">Physical availability is not authority</h1>
+<p>A source system may contain a field that resembles the Attribute.</p>
+<p>That proves availability.</p>
+<p>It does not prove authority.</p>
+<p>Suppose three applications contain Customer Group-like values:</p>
+<pre><code class="language-text">CRM.SEGMENT
+ERP_A.CUST_GROUP
+REPORTING.CUSTOMER_CLASS</code></pre>
+<p>Possible interpretation:</p>
+<ul>
+<li>CRM owns marketing segmentation;</li>
+<li>ERP_A owns operational Customer Group;</li>
+<li>Reporting contains a replicated value;</li>
+<li>none is authoritative for every country.</li>
+</ul>
+<p>A useful trace must distinguish:</p>
+<pre><code class="language-text">contains related data</code></pre>
+<p>from:</p>
+<pre><code class="language-text">approved source for this Attribute and context</code></pre>
+<p>Source authority may depend on:</p>
+<ul>
+<li>population;</li>
+<li>country;</li>
+<li>effective period;</li>
+<li>migration wave;</li>
+<li>organisational level;</li>
+<li>record lifecycle.</li>
+</ul>
+<p>This authority belongs in canonical mappings, Decisions or explicit source-role metadata—not in field-name similarity.</p>
+<p>---</p>
+<h1 id="registered-source-endpoint-versus-observed-dataset-field">Registered source endpoint versus observed dataset field</h1>
+<p>The source application may define:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT</code></pre>
+<p>The migration extract may provide:</p>
+<pre><code class="language-text">DATAFIELD-WAVE3-SEG_CODE</code></pre>
+<p>The trace should connect them:</p>
+<pre><code class="language-text">registered source endpoint
+→ extract implementation
+→ observed dataset field</code></pre>
+<p>Why keep both?</p>
+<p>Because an extract can:</p>
+<ul>
+<li>rename the field;</li>
+<li>omit it;</li>
+<li>change datatype;</li>
+<li>derive it before delivery;</li>
+<li>flatten organisational structure;</li>
+<li>contain stale schema;</li>
+<li>combine several endpoints.</li>
+</ul>
+<p>A registered endpoint tells the team what the source system is believed to contain.</p>
+<p>An observed DatasetField tells the team what the migration process actually received.</p>
+<p>Martenweave’s dataset-readiness command profiles an input dataset against the model and can promote detected gaps into reviewable proposals or issue drafts.</p>
+<p>That observed evidence should enrich the trace rather than overwrite the registered model.</p>
+<p>---</p>
+<h1 id="mapping-objects-are-the-trace-s-verbs">Mapping objects are the trace’s verbs</h1>
+<p>Endpoints and Attributes are nouns.</p>
+<p>Mappings explain what happens between them.</p>
+<p>Without a Mapping, the graph may state:</p>
+<pre><code class="language-text">CRM Segment
+→ Customer Group</code></pre>
+<p>but cannot explain the relationship.</p>
+<p>A Mapping should make the verb explicit:</p>
+<pre><code class="language-text">copied as
+converted into
+used to derive
+used as context for
+enriched into
+defaulted into
+rejected as
+manually assigned to</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">id: MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+type: Mapping
+source:
+  - FEP-CRM-CUSTOMER-SEGMENT
+context:
+  - FEP-LEGACY-SALES-AREA
+target_attribute: ATTR-CUSTOMER-GROUP
+strategy: conditional_enrichment
+status: approved</code></pre>
+<p>A trace becomes understandable when it can say:</p>
+<blockquote>CRM Segment is one direct input. Sales Area is a conditional context input. The result is Customer Group.</blockquote>
+<p>---</p>
+<h1 id="direct-and-indirect-dependencies">Direct and indirect dependencies</h1>
+<p>A source field may contribute its value directly.</p>
+<p>Another field may only influence which transformation is selected.</p>
+<p>For example:</p>
+<pre><code class="language-text">CRM Segment:
+direct value input
+
+Sales Organisation:
+indirect conditional input
+
+Country:
+indirect applicability input</code></pre>
+<p>OpenLineage’s column-lineage specification makes a similar distinction. It classifies a dependency as direct when an output value is derived from the input value, and indirect when the input influences the result through a condition such as a filter, join or conditional expression without contributing its value directly.</p>
+<p>This distinction is particularly useful for SAP master data.</p>
+<p>Otherwise, a trace may show four upstream fields but fail to explain which one actually supplies the classification.</p>
+<p>---</p>
+<h1 id="transformation-classification">Transformation classification</h1>
+<p>A trace should classify how the target Attribute is produced.</p>
+<h2 id="identity">Identity</h2>
+<pre><code class="language-text">source value
+→ unchanged target value</code></pre>
+<h2 id="conversion">Conversion</h2>
+<pre><code class="language-text">A1
+→ lookup
+→ STANDARD</code></pre>
+<h2 id="conditional-conversion">Conditional conversion</h2>
+<pre><code class="language-text">source value + country
+→ contextual lookup
+→ target value</code></pre>
+<h2 id="derivation">Derivation</h2>
+<pre><code class="language-text">risk score + supplier category
+→ formula
+→ Supplier Risk</code></pre>
+<h2 id="enrichment">Enrichment</h2>
+<pre><code class="language-text">partial source data + organisational context + stewardship input
+→ completed target value</code></pre>
+<h2 id="default">Default</h2>
+<pre><code class="language-text">missing source
+→ approved default
+→ target value</code></pre>
+<h2 id="manual-assignment">Manual assignment</h2>
+<pre><code class="language-text">business review
+→ approved assignment
+→ target value</code></pre>
+<h2 id="rejection">Rejection</h2>
+<pre><code class="language-text">source candidate
+→ rejected as semantically incompatible</code></pre>
+<p>OpenLineage’s current specification provides direct transformation subtypes such as identity, transformation and aggregation, together with indirect subtypes for joins, filtering, grouping, sorting, windowing and conditional logic.</p>
+<p>Martenweave can use a migration-oriented taxonomy while retaining the same fundamental idea: the edge must describe the nature of dependency.</p>
+<p>---</p>
+<h1 id="one-attribute-can-have-several-approved-paths">One Attribute can have several approved paths</h1>
+<p>Customer Group may be produced differently for different populations.</p>
+<pre><code class="language-text">Population A:
+CRM Segment + Sales Area lookup
+
+Population B:
+ERP_A Customer Group copied directly
+
+Population C:
+manual enrichment
+
+Population D:
+not migrated</code></pre>
+<p>The trace should not attempt to merge these into one vague upstream path.</p>
+<p>Each Mapping needs applicability.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-CRM-CUSTOMER-GROUP
+applies to:
+active CRM-managed customers
+
+MAP-ERP-A-CUSTOMER-GROUP
+applies to:
+legacy acquired company population
+
+MAP-MANUAL-CUSTOMER-GROUP
+applies to:
+records with unresolved source classification</code></pre>
+<p>A business Attribute has one governed meaning.</p>
+<p>It may have several controlled implementation paths.</p>
+<p>---</p>
+<h1 id="alternative-does-not-mean-active">Alternative does not mean active</h1>
+<p>A trace should distinguish:</p>
+<pre><code class="language-text">approved active path
+candidate path
+historical path
+rejected path
+fallback path</code></pre>
+<p>Suppose ERP_B contains <code>CUSTOMER_CLASS</code>.</p>
+<p>The current model may state:</p>
+<pre><code class="language-text">candidate source:
+ERP_B.CUSTOMER_CLASS
+
+status:
+under investigation
+
+reason:
+value meanings do not align with Customer Group</code></pre>
+<p>Displaying the endpoint as a normal upstream edge would mislead users and agents.</p>
+<p>The edge needs lifecycle or confidence.</p>
+<p>---</p>
+<h1 id="the-approved-trace-and-the-observed-trace">The approved trace and the observed trace</h1>
+<p>A migration programme has at least two relevant graphs.</p>
+<h2 id="approved-trace">Approved trace</h2>
+<p>What the canonical model says should happen.</p>
+<pre><code class="language-text">CRM Segment
++
+Sales Area
+→ approved enrichment Mapping
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<h2 id="observed-trace">Observed trace</h2>
+<p>What happened in a dataset or migration run.</p>
+<pre><code class="language-text">Wave 3 extract SEG_CODE
++
+SALES_ORG
+→ transformation run 184
+→ load file KDGRP
+→ mock-load result</code></pre>
+<p>The two should be compared.</p>
+<p>Possible outcomes:</p>
+<ul>
+<li>observed path matches approved path;</li>
+<li>observed path is incomplete;</li>
+<li>observed path contains undocumented default;</li>
+<li>approved source is missing from dataset;</li>
+<li>runtime implementation uses another field;</li>
+<li>target remains blank.</li>
+</ul>
+<p>Martenweave should preserve design lineage in canonical objects and attach observed datasets and validation reports as evidence.</p>
+<p>---</p>
+<h1 id="trace-status-needs-more-than-connected">Trace status needs more than “connected”</h1>
+<p>A path can be connected but not ready.</p>
+<p>Useful trace states include:</p>
+<h2 id="modelled">Modelled</h2>
+<p>The path exists in canonical objects.</p>
+<h2 id="validated">Validated</h2>
+<p>All IDs and references resolve.</p>
+<h2 id="approved">Approved</h2>
+<p>The Mapping and relevant Decisions are approved.</p>
+<h2 id="source-ready">Source-ready</h2>
+<p>Required source and context fields exist in the dataset.</p>
+<h2 id="tested">Tested</h2>
+<p>A test or mock load has verified the transformation.</p>
+<h2 id="implemented">Implemented</h2>
+<p>The Mapping exists in the actual migration or SAP implementation.</p>
+<h2 id="reconciled">Reconciled</h2>
+<p>Expected and observed outputs have been compared.</p>
+<h2 id="operational">Operational</h2>
+<p>The path is active in production.</p>
+<p>These states should not be collapsed into one green edge.</p>
+<p>---</p>
+<h1 id="target-trace-where-is-the-attribute-implemented-in-sap">Target trace: where is the Attribute implemented in SAP?</h1>
+<p>An Attribute may map to one or more SAP endpoints.</p>
+<p>For Customer Group:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>The trace should expose:</p>
+<ul>
+<li>SAP system;</li>
+<li>business object;</li>
+<li>table or API path;</li>
+<li>field;</li>
+<li>organisational grain;</li>
+<li>datatype;</li>
+<li>target role;</li>
+<li>implementation status.</li>
+</ul>
+<p>A physical target might be:</p>
+<pre><code class="language-yaml">id: FEP-S4-KNVV-KDGRP
+type: FieldEndpoint
+system: S4
+object: KNVV
+field: KDGRP
+business_attribute: ATTR-CUSTOMER-GROUP
+status: active</code></pre>
+<p>Again, this is conceptual.</p>
+<p>The key requirement is that the target remains a separate object from the business Attribute.</p>
+<p>---</p>
+<h1 id="one-attribute-can-have-several-target-endpoints">One Attribute can have several target endpoints</h1>
+<p>The same Attribute may be implemented in:</p>
+<ul>
+<li>SAP S/4HANA;</li>
+<li>SAP MDG staging;</li>
+<li>an API;</li>
+<li>a replicated data warehouse;</li>
+<li>an outbound interface;</li>
+<li>a data-quality platform.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+├── FEP-MDG-CUSTOMER-GROUP
+├── FEP-S4-KNVV-KDGRP
+├── FEP-API-CUSTOMER-GROUP
+└── FEP-DWH-CUSTOMER-GROUP</code></pre>
+<p>The trace should distinguish:</p>
+<ul>
+<li>system of entry;</li>
+<li>operational system;</li>
+<li>replicated consumer;</li>
+<li>reporting representation;</li>
+<li>migration-only staging endpoint.</li>
+</ul>
+<p>Otherwise, every implementation appears equally authoritative.</p>
+<p>---</p>
+<h1 id="target-field-is-not-necessarily-final-consumption">Target field is not necessarily final consumption</h1>
+<p>A migration trace often stops at SAP.</p>
+<p>For many attributes, the path continues:</p>
+<pre><code class="language-text">SAP KNVV-KDGRP
+→ outbound customer interface
+→ pricing application
+→ reporting dimension</code></pre>
+<p>Whether to include these consumers depends on scope.</p>
+<p>For migration readiness, the first target may be enough.</p>
+<p>For impact analysis, downstream endpoints matter.</p>
+<p>A trace should allow the user to change depth rather than forcing every downstream system into the initial view.</p>
+<p>---</p>
+<h1 id="a-trace-needs-direction-and-depth">A trace needs direction and depth</h1>
+<p>Useful query controls include:</p>
+<pre><code class="language-text">direction:
+upstream
+downstream
+both
+
+depth:
+1
+2
+3
+all
+
+edge types:
+mapping
+implementation
+evidence
+decision
+rule
+
+status:
+active
+historical
+candidate
+rejected</code></pre>
+<p>Without controls, a well-connected Attribute may return hundreds of nodes.</p>
+<p>The correct default is a concise governed path, not the entire graph.</p>
+<p>---</p>
+<h1 id="suggested-trace-views">Suggested trace views</h1>
+<h2 id="business-view">Business view</h2>
+<p>Shows:</p>
+<ul>
+<li>Attribute;</li>
+<li>Entity;</li>
+<li>definition;</li>
+<li>owner;</li>
+<li>Rules;</li>
+<li>Decisions.</li>
+</ul>
+<h2 id="migration-view">Migration view</h2>
+<p>Shows:</p>
+<ul>
+<li>source endpoints;</li>
+<li>DatasetFields;</li>
+<li>Mappings;</li>
+<li>context inputs;</li>
+<li>target endpoints;</li>
+<li>gaps.</li>
+</ul>
+<h2 id="implementation-view">Implementation view</h2>
+<p>Shows:</p>
+<ul>
+<li>systems;</li>
+<li>interfaces;</li>
+<li>jobs;</li>
+<li>transformation rules;</li>
+<li>deployment status.</li>
+</ul>
+<h2 id="evidence-view">Evidence view</h2>
+<p>Shows:</p>
+<ul>
+<li>source profiles;</li>
+<li>mapping tests;</li>
+<li>load results;</li>
+<li>Findings;</li>
+<li>confidence.</li>
+</ul>
+<h2 id="historical-view">Historical view</h2>
+<p>Shows:</p>
+<ul>
+<li>superseded mappings;</li>
+<li>previous endpoints;</li>
+<li>earlier baselines;</li>
+<li>retired decisions.</li>
+</ul>
+<p>The same graph can support several views when edges are typed.</p>
+<p>---</p>
+<h1 id="why-reverse-trace-matters">Why reverse trace matters</h1>
+<p>Forward trace asks:</p>
+<blockquote>Where does this source field go?</blockquote>
+<p>Reverse trace asks:</p>
+<blockquote>What produces this SAP field?</blockquote>
+<p>Both are necessary.</p>
+<p>Starting from:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>the reverse trace should identify:</p>
+<ol>
+<li>business Attribute;</li>
+<li>active Mappings;</li>
+<li>direct source fields;</li>
+<li>conditional fields;</li>
+<li>dataset evidence;</li>
+<li>unresolved gaps;</li>
+<li>authority and ownership.</li>
+</ol>
+<p>Martenweave’s current quickstart demonstrates both directions:</p>
+<pre><code class="language-bash">martenweave trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo ./my-model
+martenweave impact FEP-S4-KNVV-KDGRP --repo ./my-model</code></pre>
+<p>The commands are related, but their questions differ.</p>
+<p>Trace explains the connected path.</p>
+<p>Impact asks what may be affected if the selected object changes.</p>
+<p>---</p>
+<h1 id="trace-is-not-impact">Trace is not impact</h1>
+<p>Consider:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>Its trace may include:</p>
+<ul>
+<li>source endpoints;</li>
+<li>Mappings;</li>
+<li>target endpoints;</li>
+<li>Rules;</li>
+<li>Decisions.</li>
+</ul>
+<p>Its impact may additionally include:</p>
+<ul>
+<li>migration datasets;</li>
+<li>reports;</li>
+<li>interfaces;</li>
+<li>tests;</li>
+<li>open proposals;</li>
+<li>local overrides;</li>
+<li>owners requiring review.</li>
+</ul>
+<p>Every impact path uses lineage or model relationships.</p>
+<p>Not every trace neighbour is necessarily affected by a proposed change.</p>
+<p>A definition correction may not affect the target field.</p>
+<p>A granularity change probably will.</p>
+<p>---</p>
+<h1 id="rules-belong-in-the-trace">Rules belong in the trace</h1>
+<p>Suppose Customer Group is populated correctly but remains optional in the migration validation.</p>
+<p>The data path works.</p>
+<p>The governance path does not.</p>
+<p>The trace should show:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+→ governs
+ATTR-CUSTOMER-GROUP</code></pre>
+<p>and ideally:</p>
+<pre><code class="language-text">implemented by:
+migration validation RULE_018
+SAP control Z_CUST_GROUP</code></pre>
+<p>This allows the team to compare intended behaviour with implementation.</p>
+<p>A field trace without Rules can explain movement but not acceptability.</p>
+<p>---</p>
+<h1 id="decisions-explain-why-the-path-exists">Decisions explain why the path exists</h1>
+<p>A Mapping often looks arbitrary without its Decision.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM Segment
++
+Sales Area
+→ Customer Group</code></pre>
+<p>The relevant Decision may state:</p>
+<ul>
+<li>direct equivalence is rejected;</li>
+<li>CRM Segment is one input;</li>
+<li>Sales Area enrichment is mandatory;</li>
+<li>defaulting is permitted only for Wave 2;</li>
+<li>local values require owner approval.</li>
+</ul>
+<p>The trace should attach that Decision to the Mapping.</p>
+<p>This makes the path auditable and prevents future simplification from removing necessary context.</p>
+<p>---</p>
+<h1 id="evidence-proves-individual-claims">Evidence proves individual claims</h1>
+<p>Different evidence verifies different parts of the trace.</p>
+<pre><code class="language-text">Source profile:
+field exists and has observed values
+
+Mapping specification:
+transformation is defined
+
+Unit test:
+conversion table behaves as expected
+
+Mock load:
+target field was populated
+
+Reconciliation report:
+population matches approved expectation
+
+Business approval:
+meaning is accepted</code></pre>
+<p>A trace should not display one generic “verified” status unless the verification scope is clear.</p>
+<p>---</p>
+<h1 id="trace-confidence">Trace confidence</h1>
+<p>A useful confidence model might classify edges as:</p>
+<pre><code class="language-text">approved
+verified
+declared
+observed
+inferred
+disputed
+rejected</code></pre>
+<p>Examples:</p>
+<h2 id="approved-2">Approved</h2>
+<p>Human-authorised canonical Mapping.</p>
+<h2 id="verified">Verified</h2>
+<p>Supported by test or runtime evidence.</p>
+<h2 id="declared">Declared</h2>
+<p>Documented but not tested.</p>
+<h2 id="observed">Observed</h2>
+<p>Detected in a dataset or implementation.</p>
+<h2 id="inferred">Inferred</h2>
+<p>Suggested from names or values.</p>
+<h2 id="disputed">Disputed</h2>
+<p>Competing interpretations exist.</p>
+<h2 id="rejected">Rejected</h2>
+<p>Explicitly prohibited.</p>
+<p>This makes the graph suitable for both current truth and investigation.</p>
+<p>---</p>
+<h1 id="trace-completeness">Trace completeness</h1>
+<p>A trace can be structurally complete but operationally weak.</p>
+<p>For each Attribute, evaluate:</p>
+<h2 id="semantic-completeness">Semantic completeness</h2>
+<ul>
+<li>definition exists;</li>
+<li>parent Entity exists;</li>
+<li>grain is known.</li>
+</ul>
+<h2 id="source-completeness">Source completeness</h2>
+<ul>
+<li>authoritative source identified;</li>
+<li>source endpoint registered;</li>
+<li>observed dataset field available.</li>
+</ul>
+<h2 id="transformation-completeness">Transformation completeness</h2>
+<ul>
+<li>Mapping exists;</li>
+<li>strategy classified;</li>
+<li>context inputs represented.</li>
+</ul>
+<h2 id="target-completeness">Target completeness</h2>
+<ul>
+<li>SAP endpoint identified;</li>
+<li>target grain known;</li>
+<li>implementation status known.</li>
+</ul>
+<h2 id="governance-completeness">Governance completeness</h2>
+<ul>
+<li>owner exists;</li>
+<li>Decision linked;</li>
+<li>Rules linked.</li>
+</ul>
+<h2 id="evidence-completeness">Evidence completeness</h2>
+<ul>
+<li>source profile exists;</li>
+<li>transformation tested;</li>
+<li>target result verified.</li>
+</ul>
+<p>A completeness score should expose dimensions rather than hide them behind one percentage.</p>
+<p>---</p>
+<h1 id="the-trace-should-show-gaps-explicitly">The trace should show gaps explicitly</h1>
+<p>A missing path should not disappear from the graph.</p>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+├── target: FEP-S4-KNVV-KDGRP
+├── source: unresolved for ERP_B
+└── finding: FIND-ERP-B-CUSTOMER-GROUP-SOURCE</code></pre>
+<p>This is more informative than returning only the successful CRM path.</p>
+<p>The user needs to know:</p>
+<ul>
+<li>which population is covered;</li>
+<li>which population is not;</li>
+<li>whether fallback exists;</li>
+<li>who owns the resolution.</li>
+</ul>
+<p>---</p>
+<h1 id="unresolved-gaps-are-part-of-the-trace">Unresolved gaps are part of the trace</h1>
+<p>A gap may concern:</p>
+<ul>
+<li>missing source field;</li>
+<li>missing context key;</li>
+<li>unapproved Mapping;</li>
+<li>unavailable value conversion;</li>
+<li>undocumented default;</li>
+<li>target endpoint not implemented;</li>
+<li>missing evidence;</li>
+<li>conflicting Decisions.</li>
+</ul>
+<p>Martenweave’s dataset-readiness workflow can detect gaps, produce reports and promote them into a PatchProposal for human review.</p>
+<p>The trace should link to that Finding or proposal rather than waiting until the canonical Mapping is complete.</p>
+<p>---</p>
+<h1 id="rejected-paths-are-also-part-of-the-trace">Rejected paths are also part of the trace</h1>
+<p>Suppose a team evaluated:</p>
+<pre><code class="language-text">ERP_B.CUSTOMER_CLASS
+→ Customer Group</code></pre>
+<p>and rejected it.</p>
+<p>A future user searching upstream sources should still be able to discover:</p>
+<pre><code class="language-text">candidate evaluated:
+yes
+
+status:
+rejected
+
+reason:
+classification meanings incompatible
+
+decision:
+DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>This prevents repeated analysis and unsafe AI suggestions.</p>
+<p>The rejected edge should not appear as an active lineage path.</p>
+<p>It should appear as governed negative knowledge.</p>
+<p>---</p>
+<h1 id="historical-trace">Historical trace</h1>
+<p>The same Attribute may have different lineage over time.</p>
+<h2 id="wave-2">Wave 2</h2>
+<pre><code class="language-text">CRM Segment
+→ direct conversion
+→ Customer Group</code></pre>
+<h2 id="wave-3">Wave 3</h2>
+<pre><code class="language-text">CRM Segment
++
+Sales Area
+→ enrichment
+→ Customer Group</code></pre>
+<h2 id="production-support">Production support</h2>
+<pre><code class="language-text">S/4HANA Customer Group
+→ outbound interface
+→ reporting platform</code></pre>
+<p>The trace should be baseline-aware.</p>
+<p>Queries may need:</p>
+<pre><code class="language-text">as of baseline:
+CUSTOMER-WAVE2
+
+effective on:
+2026-03-15
+
+current:
+approved latest</code></pre>
+<p>Without temporal scope, the graph may combine paths that were never active together.</p>
+<p>---</p>
+<h1 id="a-complete-customer-group-trace">A complete Customer Group trace</h1>
+<h2 id="anchor">Anchor</h2>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<h2 id="semantic-context">Semantic context</h2>
+<pre><code class="language-text">Domain:
+Customer
+
+Entity:
+Customer Sales Area
+
+Meaning:
+Commercial classification applied in a Sales Area context.</code></pre>
+<h2 id="direct-source-input">Direct source input</h2>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT</code></pre>
+<h2 id="conditional-inputs">Conditional inputs</h2>
+<pre><code class="language-text">FEP-LEGACY-SALES-ORG
+FEP-LEGACY-DISTRIBUTION-CHANNEL
+FEP-LEGACY-DIVISION</code></pre>
+<h2 id="observed-dataset-fields">Observed dataset fields</h2>
+<pre><code class="language-text">SEG_CODE
+SALES_ORG
+DIST_CHANNEL
+DIVISION</code></pre>
+<h2 id="mapping">Mapping</h2>
+<pre><code class="language-text">MAP-CUSTOMER-GROUP-ENRICHMENT
+strategy:
+conditional enrichment</code></pre>
+<h2 id="decision">Decision</h2>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-SOURCE-017
+direct equivalence rejected</code></pre>
+<h2 id="target">Target</h2>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<h2 id="rule">Rule</h2>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+required before Customer Sales Area activation</code></pre>
+<h2 id="evidence">Evidence</h2>
+<pre><code class="language-text">EVID-WAVE3-CUSTOMER-PROFILE
+EVID-MOCK-LOAD3-KDGRP-RESULT</code></pre>
+<h2 id="open-gap">Open gap</h2>
+<pre><code class="language-text">FIND-ERP-B-CUSTOMER-GROUP-CONTEXT
+Sales Area keys unavailable for part of the population</code></pre>
+<h2 id="rendered-trace">Rendered trace</h2>
+<pre><code class="language-text">CRM Customer Segment
+        │ direct input
+        ▼
+Customer Group Enrichment Mapping
+        ▲
+        │ conditional context
+Sales Organisation / Channel / Division
+        │
+        ▼
+Customer Group
+        │
+        ▼
+S/4HANA KNVV-KDGRP</code></pre>
+<p>Governance attachments:</p>
+<pre><code class="language-text">Decision 017
+→ authorises Mapping
+
+Required Rule
+→ governs Attribute
+
+Mock Load 3 Evidence
+→ verifies observed target population
+
+ERP_B Finding
+→ marks incomplete source coverage</code></pre>
+<p>This is a model trace rather than a field lookup.</p>
+<p>---</p>
+<h1 id="a-supplier-risk-trace">A Supplier Risk trace</h1>
+<p>A more complex trace may involve several source roles.</p>
+<pre><code class="language-text">Risk Score:
+direct value input
+
+Supplier Category:
+conditional applicability
+
+Compliance Status:
+approval gate
+
+Manual Review:
+fallback evidence</code></pre>
+<p>Mapping:</p>
+<pre><code class="language-text">MAP-SUPPLIER-RISK-DERIVATION</code></pre>
+<p>Attribute:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK</code></pre>
+<p>Target:</p>
+<pre><code class="language-text">FEP-S4-SUPPLIER-RISK</code></pre>
+<p>Rejected path:</p>
+<pre><code class="language-text">Review Status
+must not populate final Risk value</code></pre>
+<p>The trace can explain why four upstream objects exist without implying that all four are copied into the target.</p>
+<p>---</p>
+<h1 id="a-trace-should-not-expose-production-records-by-default">A trace should not expose production records by default</h1>
+<p>Field-level trace concerns model dependencies.</p>
+<p>It does not need to reveal:</p>
+<ul>
+<li>customer names;</li>
+<li>supplier bank details;</li>
+<li>tax numbers;</li>
+<li>individual production values.</li>
+</ul>
+<p>Observed evidence can be represented through:</p>
+<ul>
+<li>aggregate profiles;</li>
+<li>field availability;</li>
+<li>hashes;</li>
+<li>test summaries;</li>
+<li>restricted external references.</li>
+</ul>
+<p>Record-level drill-down may exist in another controlled system.</p>
+<p>Martenweave should preserve the reference, not duplicate sensitive data unnecessarily.</p>
+<p>---</p>
+<h1 id="performance-and-graph-traversal">Performance and graph traversal</h1>
+<p>A trace engine can use the generated index to follow relationships efficiently.</p>
+<p>The current Martenweave architecture builds disposable SQLite and JSONL indexes after validating canonical files.</p>
+<p>Traversal should remain constrained by:</p>
+<ul>
+<li>direction;</li>
+<li>edge type;</li>
+<li>status;</li>
+<li>baseline;</li>
+<li>maximum depth;</li>
+<li>scope.</li>
+</ul>
+<p>A breadth-first traversal may be useful for finding connected objects by distance.</p>
+<p>The result should preserve path explanation:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+→ implemented_by
+FEP-S4-KNVV-KDGRP</code></pre>
+<p>not merely return an unordered set of related IDs.</p>
+<p>---</p>
+<h1 id="the-path-matters-more-than-the-node-list">The path matters more than the node list</h1>
+<p>Weak trace output:</p>
+<pre><code class="language-text">Related:
+FEP-CRM-SEGMENT
+MAP-CUSTOMER-GROUP
+FEP-S4-KDGRP
+DEC-017
+RULE-004</code></pre>
+<p>Stronger output:</p>
+<pre><code class="language-text">FEP-CRM-SEGMENT
+→ direct input to
+MAP-CUSTOMER-GROUP
+
+MAP-CUSTOMER-GROUP
+→ produces
+ATTR-CUSTOMER-GROUP
+
+ATTR-CUSTOMER-GROUP
+→ implemented by
+FEP-S4-KNVV-KDGRP
+
+DEC-017
+→ authorises
+MAP-CUSTOMER-GROUP
+
+RULE-004
+→ governs
+ATTR-CUSTOMER-GROUP</code></pre>
+<p>A trace must preserve edge semantics.</p>
+<p>---</p>
+<h1 id="human-readable-and-machine-readable-trace-output">Human-readable and machine-readable trace output</h1>
+<p>A human-readable report should explain the path.</p>
+<p>A machine-readable response should preserve:</p>
+<ul>
+<li>node ID;</li>
+<li>object type;</li>
+<li>edge type;</li>
+<li>direction;</li>
+<li>status;</li>
+<li>depth;</li>
+<li>baseline;</li>
+<li>confidence;</li>
+<li>source path.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-json">{
+  &quot;root&quot;: &quot;ATTR-CUSTOMER-GROUP&quot;,
+  &quot;paths&quot;: [
+    {
+      &quot;from&quot;: &quot;FEP-CRM-CUSTOMER-SEGMENT&quot;,
+      &quot;edge&quot;: &quot;DIRECT_INPUT_TO&quot;,
+      &quot;to&quot;: &quot;MAP-CUSTOMER-GROUP-ENRICHMENT&quot;,
+      &quot;status&quot;: &quot;approved&quot;
+    },
+    {
+      &quot;from&quot;: &quot;MAP-CUSTOMER-GROUP-ENRICHMENT&quot;,
+      &quot;edge&quot;: &quot;PRODUCES&quot;,
+      &quot;to&quot;: &quot;ATTR-CUSTOMER-GROUP&quot;,
+      &quot;status&quot;: &quot;approved&quot;
+    }
+  ]
+}</code></pre>
+<p>This is a recommended output structure rather than a guarantee of the current command format.</p>
+<p>---</p>
+<h1 id="trace-comparison">Trace comparison</h1>
+<p>A useful extension is to compare traces between baselines.</p>
+<p>Example:</p>
+<pre><code class="language-text">Wave 2:
+CRM Segment
+→ direct Mapping
+→ Customer Group
+
+Wave 3:
+CRM Segment + Sales Area
+→ enrichment Mapping
+→ Customer Group</code></pre>
+<p>The comparison should report:</p>
+<ul>
+<li>source added;</li>
+<li>transformation strategy changed;</li>
+<li>context dependency added;</li>
+<li>target unchanged;</li>
+<li>new Decision;</li>
+<li>datasets affected.</li>
+</ul>
+<p>This connects lineage with model diffing.</p>
+<p>---</p>
+<h1 id="trace-based-readiness-questions">Trace-based readiness questions</h1>
+<p>For each critical Attribute, ask:</p>
+<ol>
+<li>Is the business meaning approved?</li>
+<li>Is the correct Entity and grain known?</li>
+<li>Is an authoritative source identified?</li>
+<li>Does the actual dataset contain the source field?</li>
+<li>Are contextual keys available?</li>
+<li>Is the Mapping approved?</li>
+<li>Is the transformation classified?</li>
+<li>Is the SAP target endpoint implemented?</li>
+<li>Does a Rule define valid completion?</li>
+<li>Has a test verified the path?</li>
+<li>Are alternative and rejected sources documented?</li>
+<li>Are unresolved populations visible?</li>
+</ol>
+<p>A trace becomes a readiness instrument when it can answer these questions.</p>
+<p>---</p>
+<h1 id="common-failure-modes">Common failure modes</h1>
+<h2 id="starting-from-a-field-name-instead-of-an-attribute">Starting from a field name instead of an Attribute</h2>
+<p>Several unrelated objects are merged by terminology.</p>
+<h2 id="treating-every-upstream-field-as-authoritative">Treating every upstream field as authoritative</h2>
+<p>Availability becomes mistaken for ownership.</p>
+<h2 id="omitting-datasetfields">Omitting DatasetFields</h2>
+<p>Registered source capability is confused with delivered extract content.</p>
+<h2 id="mapping-displayed-as-a-generic-arrow">Mapping displayed as a generic arrow</h2>
+<p>Transformation meaning disappears.</p>
+<h2 id="context-fields-shown-as-direct-value-inputs">Context fields shown as direct value inputs</h2>
+<p>Conditional dependencies become misleading.</p>
+<h2 id="only-the-successful-path-is-shown">Only the successful path is shown</h2>
+<p>Unresolved populations and fallbacks disappear.</p>
+<h2 id="approved-and-inferred-edges-look-the-same">Approved and inferred edges look the same</h2>
+<p>Users cannot judge confidence.</p>
+<h2 id="sap-target-is-treated-as-the-business-concept">SAP target is treated as the business concept</h2>
+<p>Implementation replacement becomes a semantic change.</p>
+<h2 id="rules-and-decisions-are-omitted">Rules and Decisions are omitted</h2>
+<p>The trace explains movement but not governance.</p>
+<h2 id="historical-paths-are-overwritten">Historical paths are overwritten</h2>
+<p>Earlier migration waves cannot be reconstructed.</p>
+<h2 id="trace-returns-nodes-without-paths">Trace returns nodes without paths</h2>
+<p>Relationships lose their meaning.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>The current core already exposes:</p>
+<ul>
+<li>validated canonical objects;</li>
+<li>generated lineage indexes;</li>
+<li><code>trace</code>;</li>
+<li><code>impact</code>;</li>
+<li>dataset gap analysis;</li>
+<li>PatchProposal promotion;</li>
+<li>search and query.</li>
+</ul>
+<p>A focused improvement should make trace output explicitly <strong>path-aware and status-aware</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Trace one Attribute across approved, observed, candidate and rejected paths.</p>
+<h2 id="scope">Scope</h2>
+<p>Support filters for:</p>
+<ul>
+<li>upstream and downstream;</li>
+<li>active and historical;</li>
+<li>approved, inferred, disputed and rejected;</li>
+<li>direct and conditional inputs;</li>
+<li>maximum depth;</li>
+<li>baseline.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>Tracing Customer Group returns:</p>
+<ul>
+<li>parent Entity;</li>
+<li>approved source endpoints;</li>
+<li>observed DatasetFields;</li>
+<li>direct and contextual inputs;</li>
+<li>Mapping strategy;</li>
+<li>SAP target endpoint;</li>
+<li>Rules;</li>
+<li>Decisions;</li>
+<li>Evidence;</li>
+<li>unresolved Findings.</li>
+</ul>
+<h2 id="validation">Validation</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="functional-verification">Functional verification</h2>
+<pre><code class="language-bash">martenweave trace \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model</code></pre>
+<h2 id="expected-distinction">Expected distinction</h2>
+<p>The output must not present:</p>
+<pre><code class="language-text">ERP_B Customer Class</code></pre>
+<p>as an active source when its Mapping is pending or rejected.</p>
+<p>That is a small, high-value extension of the current trace capability.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Tracing a business Attribute is not the same as locating its SAP field.</p>
+<p>The complete question is:</p>
+<blockquote>How is this governed meaning represented, sourced, transformed, implemented, validated and evidenced across the landscape?</blockquote>
+<p>A useful trace begins with the Attribute:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>and expands in both directions:</p>
+<pre><code class="language-text">source systems
+→ physical endpoints
+→ observed dataset fields
+→ mappings
+→ business Attribute
+→ SAP fields
+→ downstream consumers</code></pre>
+<p>It also includes the governance layer:</p>
+<pre><code class="language-text">Rules
+Decisions
+Evidence
+Findings
+Owners
+Proposals</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can a reviewer start with Customer Group and see every approved source path, every conditional input, the exact SAP endpoint, the decision authorising the treatment, the evidence verifying it and the populations still unresolved?</blockquote>
+<p>When the answer is yes, the organisation can investigate and change the model safely.</p>
+<p>When the answer is:</p>
+<blockquote>Search for <code>KDGRP</code> in the mapping workbook,</blockquote>
+<p>the knowledge still lives in documents and individual memory rather than in a governed trace.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects business Attributes to physical endpoints, datasets, mappings, rules, decisions and evidence through validated canonical objects and generated lineage indexes.</p>
+<p>The objective is not to produce another large system diagram.</p>
+<p>It is to make one critical business concept traceable enough that people and agents can reason about it without inventing missing connections.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical Markdown and YAML files as the source of truth, validates object IDs, types, references and domain context, and builds disposable SQLite and JSONL indexes for search, lineage and impact analysis.</p>
+<p>The current quickstart exposes separate commands for trace, impact, search, structured query, repository diff, dataset readiness and promotion of gaps into PatchProposals.</p>
+<p>The documented Martenweave pipeline places lineage and impact analysis after canonical validation and index construction and before AI-assisted proposals are sent for human review.</p>
+<p>OpenLineage’s current column-lineage specification describes fine-grained dependencies between input and output fields and distinguishes direct value derivation from indirect influence. It further classifies identity, transformation, aggregation, joins, filters, grouping, sorting, windowing and conditional dependencies.</p>
+<p>OpenLineage’s object model separates Datasets, Jobs and Runs, providing a useful distinction between declared design metadata and observed runtime execution.</p>
+<p>The status-aware trace model, confidence categories and proposed machine-readable output in this article describe recommended Martenweave improvements. They should not be treated as guarantees of the exact current CLI output unless separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-table-level-lineage-is-not-enough-for-master-data.html"><span>Previous</span>A migration architect opens the lineage view and sees:</a><a href="/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html"><span>Next</span>A technical team proposes a simple change:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

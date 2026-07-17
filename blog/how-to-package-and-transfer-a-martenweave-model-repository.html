@@ -1,0 +1,1413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Package and Transfer a Martenweave Model Repository | Martenweave</title>
+    <meta
+      name="description"
+      content="An SAP migration programme reaches handover."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html" />
+    <meta property="og:title" content="How to Package and Transfer a Martenweave Model Repository | Martenweave" />
+    <meta property="og:description" content="An SAP migration programme reaches handover." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Package and Transfer a Martenweave Model Repository | Martenweave" />
+    <meta name="twitter:description" content="An SAP migration programme reaches handover." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html",
+                        "name": "How to Package and Transfer a Martenweave Model Repository | Martenweave",
+                        "description": "An SAP migration programme reaches handover.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Package and Transfer a Martenweave Model Repository",
+                                    "item": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html#content",
+                        "headline": "How to Package and Transfer a Martenweave Model Repository",
+                        "name": "How to Package and Transfer a Martenweave Model Repository",
+                        "description": "An SAP migration programme reaches handover.",
+                        "url": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-package-and-transfer-a-martenweave-model-repository.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Package and Transfer a Martenweave Model Repository</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Package and Transfer a Martenweave Model Repository</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">An SAP migration programme reaches handover.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-is-authoritative">What is authoritative?</a></li><li><a href="#what-exactly-was-transferred">What exactly was transferred?</a></li><li><a href="#can-it-be-reproduced">Can it be reproduced?</a></li><li><a href="#canonical-model-objects">Canonical model objects</a></li><li><a href="#repository-configuration">Repository configuration</a></li><li><a href="#validation-and-build-instructions">Validation and build instructions</a></li><li><a href="#dependency-and-environment-information">Dependency and environment information</a></li><li><a href="#open-governance-state">Open governance state</a></li><li><a href="#licence-and-notices">Licence and notices</a></li><li><a href="#include-generated-outputs-when">Include generated outputs when:</a></li><li><a href="#omit-generated-outputs-when">Omit generated outputs when:</a></li><li><a href="#snapshot-archive">Snapshot archive</a></li><li><a href="#full-repository-transfer">Full repository transfer</a></li><li><a href="#core-model-package">Core model package</a></li><li><a href="#restricted-evidence-package">Restricted evidence package</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>An SAP migration programme reaches handover.</p>
+<p>The implementation partner prepares a package containing:</p>
+<ul>
+<li>the latest mapping workbook;</li>
+<li>several design documents;</li>
+<li>a database file;</li>
+<li>a static model viewer;</li>
+<li>exported validation reports;</li>
+<li>a folder called <code>final</code>;</li>
+<li>a second folder called <code>final_updated</code>;</li>
+<li>meeting notes;</li>
+<li>unresolved tickets;</li>
+<li>a presentation explaining the model.</li>
+</ul>
+<p>The package is large.</p>
+<p>It is not necessarily transferable.</p>
+<p>The receiving AMS or data-governance team still needs to answer:</p>
+<ul>
+<li>Which files are authoritative?</li>
+<li>Which repository baseline was approved?</li>
+<li>Can the model be validated independently?</li>
+<li>Can generated indexes be rebuilt?</li>
+<li>Which findings remain open?</li>
+<li>Which decisions are temporary?</li>
+<li>Which local deviations are active?</li>
+<li>Which SAP and source-system implementations align with the model?</li>
+<li>Which secrets, production records or client-restricted evidence are included?</li>
+<li>Can the next team propose a change without reconstructing the project first?</li>
+</ul>
+<p>A transferable model repository is not merely an archive of project files.</p>
+<blockquote>It is a self-contained, verifiable model baseline that another authorised team can understand, validate, rebuild and continue operating.</blockquote>
+<p>Martenweave’s architecture makes this possible because it separates canonical files from generated outputs.</p>
+<p>The canonical Markdown and YAML objects preserve approved model truth. SQLite, JSONL, search indexes and static views are derived and rebuildable. Deterministic validation runs before indexing, while proposed changes remain subject to human review.</p>
+<p>A proper Martenweave handover package therefore needs to transfer more than the current visual output.</p>
+<p>It needs to transfer:</p>
+<ol>
+<li>canonical truth;</li>
+<li>exact baseline identity;</li>
+<li>validation evidence;</li>
+<li>reproducible build instructions;</li>
+<li>generated access artefacts where useful;</li>
+<li>unresolved governance state;</li>
+<li>security and licensing context;</li>
+<li>a continuation path.</li>
+</ol>
+<p>---</p>
+<h1 id="the-package-must-answer-three-questions">The package must answer three questions</h1>
+<p>A successful transfer should let the receiving team establish three things immediately.</p>
+<h2 id="what-is-authoritative">What is authoritative?</h2>
+<p>The team must know which files define the approved model and which files are only:</p>
+<ul>
+<li>exports;</li>
+<li>caches;</li>
+<li>reports;</li>
+<li>generated viewers;</li>
+<li>proposals;</li>
+<li>evidence;</li>
+<li>external references.</li>
+</ul>
+<h2 id="what-exactly-was-transferred">What exactly was transferred?</h2>
+<p>The package must identify:</p>
+<ul>
+<li>repository;</li>
+<li>branch or tag;</li>
+<li>commit;</li>
+<li>model baseline;</li>
+<li>schema version;</li>
+<li>Martenweave version;</li>
+<li>generation time;</li>
+<li>validation result.</li>
+</ul>
+<h2 id="can-it-be-reproduced">Can it be reproduced?</h2>
+<p>The receiving team should be able to:</p>
+<pre><code class="language-text">unpack or clone
+→ validate
+→ rebuild indexes
+→ run smoke checks
+→ inspect trace and impact</code></pre>
+<p>A handover that answers only the first question is incomplete.</p>
+<p>A handover that answers only the second is an archive.</p>
+<p>A handover that answers all three is operationally transferable.</p>
+<p>---</p>
+<h1 id="canonical-repository-versus-delivery-package">Canonical repository versus delivery package</h1>
+<p>The canonical repository and the delivery package are related but not identical.</p>
+<p>The repository contains the governed working material:</p>
+<pre><code class="language-text">model/
+docs/
+configuration/
+tests/
+examples or approved supporting material</code></pre>
+<p>The delivery package may additionally contain generated artefacts:</p>
+<pre><code class="language-text">generated/modelops.db
+generated/search_documents.jsonl
+generated/lineage_edges.jsonl
+generated/site/
+reports/
+manifest/
+checksums/</code></pre>
+<p>The delivery package should not create a new authority hierarchy.</p>
+<p>Its generated database and viewer represent a named repository baseline.</p>
+<p>They do not replace it.</p>
+<p>A useful transfer structure might look like this:</p>
+<pre><code class="language-text">martenweave-customer-wave3/
+├── CANONICAL-BASELINE.md
+├── TRANSFER-MANIFEST.json
+├── CHECKSUMS.sha256
+├── repository/
+│   ├── model/
+│   ├── docs/
+│   ├── pyproject.toml
+│   └── ...
+├── generated/
+│   ├── modelops.db
+│   ├── search_documents.jsonl
+│   ├── lineage_edges.jsonl
+│   └── site/
+├── reports/
+│   ├── validation.json
+│   ├── health.json
+│   ├── scorecard.json
+│   └── open-findings.md
+└── transfer/
+    ├── README.md
+    ├── verification.md
+    ├── security-notes.md
+    └── continuation.md</code></pre>
+<p>This is a recommended package layout, not a claim about an already fixed Martenweave export format.</p>
+<p>---</p>
+<h1 id="start-from-an-immutable-baseline">Start from an immutable baseline</h1>
+<p>Do not package an uncommitted working directory.</p>
+<p>The source should be an identified repository state:</p>
+<pre><code class="language-text">tag:
+customer-wave3-approved
+
+commit:
+abc123...</code></pre>
+<p>The transfer manifest should record both.</p>
+<p>Why both?</p>
+<p>The tag provides a meaningful baseline name.</p>
+<p>The commit provides the exact repository snapshot.</p>
+<p>The package should not depend only on:</p>
+<pre><code class="language-text">branch: main</code></pre>
+<p>A branch moves.</p>
+<p>A commit does not.</p>
+<p>The current Martenweave release history already demonstrates the importance of preserving existing tags rather than moving them: the project created a new <code>v0.4.1</code> release instead of reusing an existing <code>v0.4.0</code> tag that pointed to an earlier commit.</p>
+<p>The same discipline should apply to client model baselines.</p>
+<p>---</p>
+<h1 id="the-transfer-manifest">The transfer manifest</h1>
+<p>The manifest is the package’s identity card.</p>
+<p>It should be machine-readable and human-reviewable.</p>
+<p>Conceptually:</p>
+<pre><code class="language-json">{
+  &quot;package_id&quot;: &quot;MW-CUSTOMER-WAVE3-2026-07-14&quot;,
+  &quot;model_baseline&quot;: &quot;CUSTOMER-WAVE3-APPROVED&quot;,
+  &quot;repository&quot;: &quot;customer-model&quot;,
+  &quot;commit&quot;: &quot;abc123&quot;,
+  &quot;tag&quot;: &quot;customer-wave3-approved&quot;,
+  &quot;canonical_schema&quot;: &quot;1.0&quot;,
+  &quot;martenweave_version&quot;: &quot;0.5.0&quot;,
+  &quot;created_at&quot;: &quot;2026-07-14T16:00:00Z&quot;,
+  &quot;scope&quot;: {
+    &quot;domains&quot;: [
+      &quot;DOMAIN-CUSTOMER&quot;,
+      &quot;DOMAIN-BUSINESS-PARTNER&quot;
+    ],
+    &quot;programme&quot;: &quot;S4-MIGRATION&quot;,
+    &quot;wave&quot;: &quot;WAVE-3&quot;
+  },
+  &quot;validation&quot;: {
+    &quot;errors&quot;: 0,
+    &quot;warnings&quot;: 4
+  },
+  &quot;generated_outputs&quot;: [
+    &quot;generated/modelops.db&quot;,
+    &quot;generated/search_documents.jsonl&quot;,
+    &quot;generated/lineage_edges.jsonl&quot;
+  ]
+}</code></pre>
+<p>The manifest should state:</p>
+<ul>
+<li>package identifier;</li>
+<li>canonical baseline;</li>
+<li>repository commit;</li>
+<li>tag;</li>
+<li>scope;</li>
+<li>schema;</li>
+<li>tool version;</li>
+<li>validation status;</li>
+<li>included artefacts;</li>
+<li>known exclusions;</li>
+<li>transfer owner;</li>
+<li>receiving owner where known.</li>
+</ul>
+<p>It should not attempt to contain the complete model.</p>
+<p>It points to and describes the transferred state.</p>
+<p>---</p>
+<h1 id="a-human-readable-baseline-statement">A human-readable baseline statement</h1>
+<p>A JSON manifest is useful for tools.</p>
+<p>The package should also include a short human-readable baseline statement.</p>
+<p>Example:</p>
+<pre><code class="language-markdown"># Canonical baseline
+
+This package contains the approved Customer and Business Partner model
+for Migration Wave 3.
+
+Canonical source:
+repository/model/
+
+Approved tag:
+customer-wave3-approved
+
+Commit:
+abc123
+
+Generated files under generated/ are derived and may be deleted and rebuilt.
+
+Known limitations:
+- ERP_B cannot supply Customer Group without enrichment.
+- Portugal Tax Exemption treatment remains time-bounded.
+- Two local ownership assignments remain under review.</code></pre>
+<p>This file should be the first thing a receiving team reads.</p>
+<p>It should remove ambiguity about authority immediately.</p>
+<p>---</p>
+<h1 id="what-must-be-included">What must be included</h1>
+<p>A complete package should include several classes of material.</p>
+<h2 id="canonical-model-objects">Canonical model objects</h2>
+<p>These are non-negotiable.</p>
+<p>Examples:</p>
+<ul>
+<li>Domains;</li>
+<li>Entities;</li>
+<li>Attributes;</li>
+<li>Relationships;</li>
+<li>Rules;</li>
+<li>Mappings;</li>
+<li>FieldEndpoints;</li>
+<li>Decisions;</li>
+<li>Evidence references;</li>
+<li>PatchProposals that remain operationally relevant.</li>
+</ul>
+<h2 id="repository-configuration">Repository configuration</h2>
+<p>Include configuration that changes model interpretation:</p>
+<ul>
+<li>schema settings;</li>
+<li>enabled domain packs;</li>
+<li>ID policy;</li>
+<li>validation profiles;</li>
+<li>repository limits;</li>
+<li>approved import mappings.</li>
+</ul>
+<p>Do not depend on undocumented local machine configuration.</p>
+<h2 id="validation-and-build-instructions">Validation and build instructions</h2>
+<p>The receiving team needs exact commands.</p>
+<h2 id="dependency-and-environment-information">Dependency and environment information</h2>
+<p>Record:</p>
+<ul>
+<li>supported Python version;</li>
+<li>Martenweave version;</li>
+<li>required optional dependency groups;</li>
+<li>operating assumptions.</li>
+</ul>
+<p>The current Martenweave package requires Python 3.11 or later and declares its core dependencies in project metadata.</p>
+<h2 id="open-governance-state">Open governance state</h2>
+<p>Include:</p>
+<ul>
+<li>pending proposals;</li>
+<li>unresolved findings;</li>
+<li>temporary deviations;</li>
+<li>known implementation drift;</li>
+<li>expiring exceptions;</li>
+<li>unowned objects;</li>
+<li>stale evidence.</li>
+</ul>
+<h2 id="licence-and-notices">Licence and notices</h2>
+<p>Include the applicable licence, notices and any third-party or client-specific restrictions.</p>
+<p>The current Martenweave Core package metadata identifies Apache License 2.0 for version 0.5.0.</p>
+<p>---</p>
+<h1 id="what-should-usually-be-excluded">What should usually be excluded</h1>
+<p>A good package is not a project dump.</p>
+<p>Exclude or control:</p>
+<ul>
+<li>production master-data records;</li>
+<li>credentials;</li>
+<li>tokens;</li>
+<li><code>.env</code> files;</li>
+<li>local caches;</li>
+<li>editor settings;</li>
+<li>personal notes;</li>
+<li>temporary downloads;</li>
+<li>unrestricted ticket exports;</li>
+<li>confidential attachments with no transfer authority;</li>
+<li>duplicate spreadsheet copies;</li>
+<li>build environments;</li>
+<li>uncommitted experiments.</li>
+</ul>
+<p>The principle is:</p>
+<blockquote>Transfer enough evidence to understand and verify the model, but do not turn the repository package into an uncontrolled data room.</blockquote>
+<p>Evidence references may point to external authorised systems rather than embedding every source artefact.</p>
+<p>---</p>
+<h1 id="generated-outputs-include-them-or-rebuild-them">Generated outputs: include them or rebuild them?</h1>
+<p>Both options can be correct.</p>
+<h2 id="include-generated-outputs-when">Include generated outputs when:</h2>
+<ul>
+<li>the receiving team needs immediate read-only access;</li>
+<li>the viewer is part of a formal handover;</li>
+<li>an offline review is required;</li>
+<li>a historical release must preserve the exact generated presentation;</li>
+<li>the recipient cannot run the build immediately.</li>
+</ul>
+<h2 id="omit-generated-outputs-when">Omit generated outputs when:</h2>
+<ul>
+<li>the recipient can rebuild them;</li>
+<li>package size matters;</li>
+<li>generated state contains environment-specific paths;</li>
+<li>artefacts may expose restricted content;</li>
+<li>the transfer contract is explicitly source-only.</li>
+</ul>
+<p>A practical package often includes generated outputs for convenience while clearly marking them as derived.</p>
+<p>Martenweave’s documented demo generates <code>modelops.db</code>, search-document JSONL and lineage-edge JSONL and describes them as disposable.</p>
+<p>---</p>
+<h1 id="include-build-provenance">Include build provenance</h1>
+<p>Every generated output should identify its source.</p>
+<p>At minimum:</p>
+<pre><code class="language-text">canonical commit
+model baseline
+schema version
+Martenweave version
+build configuration
+build timestamp
+validation summary</code></pre>
+<p>A generated viewer without provenance is dangerous.</p>
+<p>It may be:</p>
+<ul>
+<li>current;</li>
+<li>stale;</li>
+<li>built from another branch;</li>
+<li>built before a critical Decision;</li>
+<li>generated with incompatible code.</li>
+</ul>
+<p>The receiver should not need to infer this from file dates.</p>
+<p>---</p>
+<h1 id="checksums-verify-transfer-integrity">Checksums verify transfer integrity</h1>
+<p>A checksum file helps detect accidental package changes during transfer or storage.</p>
+<p>For example:</p>
+<pre><code class="language-text">CHECKSUMS.sha256</code></pre>
+<p>can cover:</p>
+<ul>
+<li>archive;</li>
+<li>manifest;</li>
+<li>canonical source archive;</li>
+<li>generated database;</li>
+<li>JSONL outputs;</li>
+<li>reports;</li>
+<li>viewer package.</li>
+</ul>
+<p>Checksums answer:</p>
+<blockquote>Are these bytes the same as the bytes that were packaged?</blockquote>
+<p>They do not answer:</p>
+<ul>
+<li>Is the model correct?</li>
+<li>Was it approved?</li>
+<li>Is the package safe?</li>
+<li>Does the archive contain secrets?</li>
+</ul>
+<p>Integrity verification and governance validation are different controls.</p>
+<p>---</p>
+<h1 id="signatures-and-attestations">Signatures and attestations</h1>
+<p>In regulated or cross-company handovers, teams may need stronger evidence about package origin.</p>
+<p>Possible mechanisms include:</p>
+<ul>
+<li>signed Git tags;</li>
+<li>signed release assets;</li>
+<li>detached signatures;</li>
+<li>CI-produced provenance;</li>
+<li>controlled release records.</li>
+</ul>
+<p>The appropriate mechanism depends on organisational infrastructure and risk.</p>
+<p>Do not add a sophisticated signing system merely for appearance.</p>
+<p>First ensure the package already has:</p>
+<ul>
+<li>exact baseline;</li>
+<li>reproducible validation;</li>
+<li>checksum manifest;</li>
+<li>accountable approver;</li>
+<li>controlled distribution.</li>
+</ul>
+<p>Cryptographic provenance strengthens a disciplined release.</p>
+<p>It does not repair an ambiguous repository.</p>
+<p>---</p>
+<h1 id="archive-or-full-git-history">Archive or full Git history?</h1>
+<p>There are two main delivery modes.</p>
+<h2 id="snapshot-archive">Snapshot archive</h2>
+<p>Contains the files from one selected baseline.</p>
+<p>Advantages:</p>
+<ul>
+<li>compact;</li>
+<li>simple;</li>
+<li>easy for non-Git users;</li>
+<li>suitable for read-only handover.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>no complete commit history;</li>
+<li>no branches or tags beyond embedded metadata;</li>
+<li>weaker continuation workflow.</li>
+</ul>
+<p>Git’s <code>archive</code> command creates an archive from a named tree, commit or tag. When a commit or tag is used, Git can preserve the referenced commit identifier in archive metadata for supported formats.</p>
+<h2 id="full-repository-transfer">Full repository transfer</h2>
+<p>Contains Git objects and references.</p>
+<p>Advantages:</p>
+<ul>
+<li>complete history;</li>
+<li>tags;</li>
+<li>branches;</li>
+<li>commit-level traceability;</li>
+<li>easier continuation.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>larger;</li>
+<li>may include history that should not cross a boundary;</li>
+<li>requires Git competency;</li>
+<li>can expose accidentally committed sensitive material.</li>
+</ul>
+<p>The delivery choice depends on whether the receiver needs:</p>
+<ul>
+<li>only the approved baseline;</li>
+<li>or the ability to continue full repository history.</li>
+</ul>
+<p>---</p>
+<h1 id="git-bundle-for-offline-transfer">Git bundle for offline transfer</h1>
+<p>A Git bundle can package Git objects and references into a transferable file.</p>
+<p>Git’s official documentation describes bundles as a mechanism for offline transfer without an active server and supports self-contained repository transfer, incremental bundles and verification of prerequisites. A full bundle can be cloned into a new repository.</p>
+<p>A full transfer might use:</p>
+<pre><code class="language-bash">git bundle create customer-wave3.bundle --branches --tags</code></pre>
+<p>The recipient can verify it:</p>
+<pre><code class="language-bash">git bundle verify customer-wave3.bundle</code></pre>
+<p>and clone it:</p>
+<pre><code class="language-bash">git clone customer-wave3.bundle customer-model</code></pre>
+<p>Martenweave Core’s changelog records Git bundle generation as an existing project capability around GitHub-ready change and repository transfer workflows.</p>
+<p>A Git bundle is useful when:</p>
+<ul>
+<li>network access is restricted;</li>
+<li>client and supplier Git platforms are separate;</li>
+<li>a full auditable repository history must be transferred;</li>
+<li>the recipient needs to continue development.</li>
+</ul>
+<p>---</p>
+<h1 id="a-bundle-is-not-the-entire-working-environment">A bundle is not the entire working environment</h1>
+<p>Git bundles contain repository objects and references.</p>
+<p>They do not automatically contain every piece of local repository state, such as:</p>
+<ul>
+<li>uncommitted working-tree changes;</li>
+<li>stash entries unless referenced appropriately;</li>
+<li>local hooks;</li>
+<li>local configuration;</li>
+<li>credentials;</li>
+<li>external datasets;</li>
+<li>ignored generated artefacts.</li>
+</ul>
+<p>Git’s documentation explicitly distinguishes the transferred refs and commits from local working state and repository-specific configuration.</p>
+<p>This is beneficial.</p>
+<p>A proper handover should not depend on hidden local state.</p>
+<p>Anything required to validate or rebuild the model must be included deliberately or documented as an external prerequisite.</p>
+<p>---</p>
+<h1 id="git-archive-for-a-clean-snapshot">Git archive for a clean snapshot</h1>
+<p>A snapshot archive can be produced from an approved tag:</p>
+<pre><code class="language-bash">git archive \
+  --format=tar.gz \
+  --prefix=customer-wave3/ \
+  customer-wave3-approved \
+  -o customer-wave3.tar.gz</code></pre>
+<p>Git’s archive tooling supports formats such as tar and zip and creates the archive from a specified tree, commit or tag.</p>
+<p>This is appropriate when:</p>
+<ul>
+<li>the recipient should not receive development history;</li>
+<li>the package is intended for read-only inspection;</li>
+<li>a regulator or client wants the approved snapshot;</li>
+<li>history will remain in the source platform.</li>
+</ul>
+<p>The package should still include the commit and tag in its manifest.</p>
+<p>---</p>
+<h1 id="github-release-as-a-distribution-surface">GitHub Release as a distribution surface</h1>
+<p>A GitHub Release can package a named iteration around a Git tag and attach release notes and additional assets. GitHub also exposes automatically generated source archives for the tagged repository state.</p>
+<p>For Martenweave, a release could attach:</p>
+<ul>
+<li>transfer manifest;</li>
+<li>validation report;</li>
+<li>model archive;</li>
+<li>Git bundle;</li>
+<li>generated viewer;</li>
+<li>checksum file;</li>
+<li>semantic diff;</li>
+<li>handover notes.</li>
+</ul>
+<p>A release page improves discoverability.</p>
+<p>It does not replace governance approval.</p>
+<p>The release must still identify:</p>
+<ul>
+<li>model authority;</li>
+<li>scope;</li>
+<li>effective date;</li>
+<li>known limitations;</li>
+<li>accountable owners.</li>
+</ul>
+<p>---</p>
+<h1 id="validation-evidence">Validation evidence</h1>
+<p>The receiver should not be told merely:</p>
+<pre><code class="language-text">Validation passed.</code></pre>
+<p>The package should include:</p>
+<ul>
+<li>validation command;</li>
+<li>structured result;</li>
+<li>error count;</li>
+<li>warning count;</li>
+<li>validation profile;</li>
+<li>Martenweave version;</li>
+<li>canonical commit;</li>
+<li>execution timestamp.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;baseline&quot;: &quot;CUSTOMER-WAVE3-APPROVED&quot;,
+  &quot;commit&quot;: &quot;abc123&quot;,
+  &quot;tool&quot;: &quot;martenweave 0.5.0&quot;,
+  &quot;command&quot;: &quot;martenweave validate --repo ./repository&quot;,
+  &quot;errors&quot;: 0,
+  &quot;warnings&quot;: 4
+}</code></pre>
+<p>Warnings should be summarised.</p>
+<p>A receiver should not need to discover later that the model contained:</p>
+<ul>
+<li>unowned approved Attributes;</li>
+<li>expiring local deviations;</li>
+<li>incomplete source mappings;</li>
+<li>stale evidence.</li>
+</ul>
+<p>---</p>
+<h1 id="verification-commands">Verification commands</h1>
+<p>The handover should give the receiving team a small acceptance script.</p>
+<p>For example:</p>
+<pre><code class="language-bash">python -m venv .venv
+.venv/bin/python -m pip install -e &quot;./repository[dev]&quot;
+
+.venv/bin/martenweave validate \
+  --repo ./repository
+
+.venv/bin/martenweave build-index \
+  --repo ./repository \
+  --jsonl
+
+.venv/bin/martenweave index-fresh \
+  --repo ./repository
+
+.venv/bin/martenweave search \
+  &quot;Customer Group&quot; \
+  --repo ./repository
+
+.venv/bin/martenweave trace \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo ./repository
+
+.venv/bin/martenweave impact \
+  FEP-S4-KNVV-KDGRP \
+  --repo ./repository</code></pre>
+<p>These operations follow the current public Martenweave demo path: validation, index building, freshness checking, search, trace and impact.</p>
+<p>---</p>
+<h1 id="acceptance-should-happen-on-a-clean-environment">Acceptance should happen on a clean environment</h1>
+<p>The receiving team should not verify the package in the sender’s prepared working directory.</p>
+<p>Use:</p>
+<ul>
+<li>clean machine;</li>
+<li>clean container;</li>
+<li>clean virtual environment;</li>
+<li>clean checkout or extracted archive.</li>
+</ul>
+<p>This tests whether the package depends on:</p>
+<ul>
+<li>local caches;</li>
+<li>untracked files;</li>
+<li>developer configuration;</li>
+<li>previously generated databases;</li>
+<li>environment-specific secrets;</li>
+<li>undocumented tools.</li>
+</ul>
+<p>A package that works only on the sender’s machine has not been transferred successfully.</p>
+<p>---</p>
+<h1 id="verify-generated-artefacts-by-rebuilding">Verify generated artefacts by rebuilding</h1>
+<p>Where generated outputs are included, the receiver should:</p>
+<ol>
+<li>retain the delivered copies;</li>
+<li>delete or move them;</li>
+<li>rebuild from canonical files;</li>
+<li>compare semantic outputs.</li>
+</ol>
+<p>The comparison should check:</p>
+<ul>
+<li>object count;</li>
+<li>stable object IDs;</li>
+<li>relationship count;</li>
+<li>lineage-edge set;</li>
+<li>critical search results;</li>
+<li>trace results;</li>
+<li>impact results;</li>
+<li>viewer manifest.</li>
+</ul>
+<p>Byte-for-byte equality may not always be appropriate due to build metadata.</p>
+<p>Model-level equivalence is the stronger requirement.</p>
+<p>---</p>
+<h1 id="include-the-semantic-diff-from-the-previous-baseline">Include the semantic diff from the previous baseline</h1>
+<p>A handover should explain what changed.</p>
+<p>Example:</p>
+<pre><code class="language-text">Previous baseline:
+CUSTOMER-WAVE2-APPROVED
+
+Transferred baseline:
+CUSTOMER-WAVE3-APPROVED</code></pre>
+<p>The package should include a concise semantic diff:</p>
+<ul>
+<li>added objects;</li>
+<li>retired objects;</li>
+<li>changed definitions;</li>
+<li>changed mappings;</li>
+<li>changed Rules;</li>
+<li>changed ownership;</li>
+<li>changed physical endpoints;</li>
+<li>implementation consequences.</li>
+</ul>
+<p>The receiver should not need to reconstruct the entire project history to understand why the new baseline exists.</p>
+<p>---</p>
+<h1 id="open-findings-are-part-of-the-model-s-operating-reality">Open findings are part of the model’s operating reality</h1>
+<p>A clean validation result does not mean there are no unresolved risks.</p>
+<p>The package should include an open-findings register.</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Finding</th><th scope="col">Affected objects</th><th scope="col">Status</th><th scope="col">Owner</th><th scope="col">Due</th></tr></thead><tbody><tr><td>ERP_B lacks Customer Group context</td><td>Customer Group Mapping</td><td>Open</td><td>Migration Data Lead</td><td>Before Mock Load 3</td></tr><tr><td>Portugal exemption expiry</td><td>Tax Rule</td><td>Decision required</td><td>Local Data Owner</td><td>31 August</td></tr><tr><td>Custom field retirement</td><td>Supplier Review Status</td><td>Planned</td><td>SAP MDG Lead</td><td>Release 2026.09</td></tr></tbody></table></div>
+<p>Do not hide open issues to make the handover appear complete.</p>
+<p>A transparent incomplete package is safer than a polished package with undisclosed gaps.</p>
+<p>---</p>
+<h1 id="pending-proposals">Pending proposals</h1>
+<p>Pending <code>PatchProposal</code> objects need explicit treatment.</p>
+<p>For each proposal, state:</p>
+<ul>
+<li>why it exists;</li>
+<li>baseline it was created against;</li>
+<li>current review status;</li>
+<li>affected objects;</li>
+<li>evidence;</li>
+<li>decision owner;</li>
+<li>whether it is still valid.</li>
+</ul>
+<p>A stale proposal should not be transferred as though it were current work.</p>
+<p>It should be:</p>
+<ul>
+<li>refreshed;</li>
+<li>rejected;</li>
+<li>marked superseded;</li>
+<li>transferred with a clear warning.</li>
+</ul>
+<p>---</p>
+<h1 id="temporary-deviations">Temporary deviations</h1>
+<p>Temporary deviations are frequently lost during handover.</p>
+<p>For each deviation, include:</p>
+<ul>
+<li>canonical expectation;</li>
+<li>actual implementation;</li>
+<li>business reason;</li>
+<li>approval;</li>
+<li>scope;</li>
+<li>start date;</li>
+<li>expiry;</li>
+<li>owner;</li>
+<li>required closure action.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Canonical:
+Customer Group requires Sales Area enrichment.
+
+Temporary implementation:
+Wave 2 uses one central default.
+
+Expiry:
+Before Wave 3 production cutover.
+
+Owner:
+Customer Data Lead.</code></pre>
+<p>Without this, temporary project compromises become permanent AMS behaviour.</p>
+<p>---</p>
+<h1 id="implementation-alignment-matrix">Implementation-alignment matrix</h1>
+<p>The package should distinguish canonical truth from implementation status.</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model object</th><th scope="col">SAP</th><th scope="col">Source</th><th scope="col">Interface</th><th scope="col">Reporting</th></tr></thead><tbody><tr><td>Customer Group</td><td>Aligned</td><td>Enrichment pending</td><td>Aligned</td><td>Review required</td></tr><tr><td>Supplier Risk</td><td>Aligned</td><td>Gap open</td><td>Aligned</td><td>Aligned</td></tr><tr><td>Review Status</td><td>Planned</td><td>N/A</td><td>Pending</td><td>Pending</td></tr></tbody></table></div>
+<p>This shows the receiver where the model is already operational and where delivery work remains.</p>
+<p>Do not claim the repository is “implemented” merely because it is approved.</p>
+<p>---</p>
+<h1 id="evidence-references-need-continuity">Evidence references need continuity</h1>
+<p>If a Decision references:</p>
+<pre><code class="language-text">ServiceNow CHG001234
+Jira DATA-482
+SharePoint design document
+dataset profile hash
+SAP transport</code></pre>
+<p>the receiver must know whether those references remain accessible.</p>
+<p>For every critical external reference, classify:</p>
+<ul>
+<li>transferred directly;</li>
+<li>accessible in source system;</li>
+<li>access requested;</li>
+<li>unavailable after handover;</li>
+<li>redacted;</li>
+<li>replaced by an extracted evidence summary.</li>
+</ul>
+<p>A model that points to inaccessible evidence may remain structurally valid but operationally weak.</p>
+<p>---</p>
+<h1 id="source-registry">Source registry</h1>
+<p>Martenweave Core’s changelog records source-registry functionality for imported files and external references.</p>
+<p>A transfer package should use that concept to identify:</p>
+<ul>
+<li>original source;</li>
+<li>imported date;</li>
+<li>checksum or external identifier;</li>
+<li>licence or confidentiality status;</li>
+<li>whether the source is embedded;</li>
+<li>whether the source must be reacquired.</li>
+</ul>
+<p>This reduces the risk of evidence becoming an orphaned filename.</p>
+<p>---</p>
+<h1 id="spreadsheet-roundtrip-state">Spreadsheet roundtrip state</h1>
+<p>Where business review occurred through Excel, include:</p>
+<ul>
+<li>canonical baseline exported;</li>
+<li>workbook identifier;</li>
+<li>export time;</li>
+<li>import result;</li>
+<li>accepted changes;</li>
+<li>rejected changes;</li>
+<li>resulting proposal or Decision.</li>
+</ul>
+<p>Martenweave Core records business-review XLSX export and re-import capabilities, as well as Google Sheets import as PatchProposals.</p>
+<p>Do not include five competing spreadsheet copies without explaining which edits were incorporated.</p>
+<p>---</p>
+<h1 id="security-review-before-packaging">Security review before packaging</h1>
+<p>Before transfer, scan for:</p>
+<ul>
+<li>credentials;</li>
+<li>API tokens;</li>
+<li>private keys;</li>
+<li>personal information;</li>
+<li>client-restricted data;</li>
+<li>embedded production records;</li>
+<li>local configuration;</li>
+<li>machine-specific paths;</li>
+<li>internal URLs;</li>
+<li>unrestricted evidence attachments.</li>
+</ul>
+<p>Martenweave Core includes a configuration guard intended to identify secret and configuration risks before release.</p>
+<p>The release process should fail or require explicit acknowledgement when restricted content is detected.</p>
+<p>---</p>
+<h1 id="sensitive-evidence-may-require-a-two-package-model">Sensitive evidence may require a two-package model</h1>
+<p>In regulated environments, one package may not be sufficient.</p>
+<p>A useful split is:</p>
+<h2 id="core-model-package">Core model package</h2>
+<p>Contains:</p>
+<ul>
+<li>canonical metadata;</li>
+<li>definitions;</li>
+<li>mappings;</li>
+<li>Rules;</li>
+<li>Decisions;</li>
+<li>redacted evidence summaries;</li>
+<li>generated indexes.</li>
+</ul>
+<h2 id="restricted-evidence-package">Restricted evidence package</h2>
+<p>Contains:</p>
+<ul>
+<li>confidential extracts;</li>
+<li>ticket exports;</li>
+<li>legal documents;</li>
+<li>identifiable production samples;</li>
+<li>access-controlled attachments.</li>
+</ul>
+<p>The core package references the restricted evidence through stable identifiers.</p>
+<p>This lets more users operate the model without receiving unnecessary sensitive material.</p>
+<p>---</p>
+<h1 id="licensing-and-client-ownership">Licensing and client ownership</h1>
+<p>The package should clearly state:</p>
+<ul>
+<li>software licence;</li>
+<li>model-content ownership;</li>
+<li>third-party-content restrictions;</li>
+<li>redistribution rights;</li>
+<li>client confidentiality requirements;</li>
+<li>permitted use of examples;</li>
+<li>obligations for notices.</li>
+</ul>
+<p>The Martenweave software licence and the client’s model content are separate legal subjects.</p>
+<p>An open-source tool does not automatically make a client model public.</p>
+<p>Likewise, a transferable model package may contain evidence that cannot be redistributed outside the programme.</p>
+<p>---</p>
+<h1 id="operational-continuation-guide">Operational continuation guide</h1>
+<p>The handover should include the next routine actions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Weekly:
+- validate repository;
+- review pending proposals;
+- check expiring deviations.
+
+For each model change:
+- create or update Finding;
+- collect Evidence;
+- create PatchProposal;
+- run validation and impact;
+- obtain approval;
+- merge canonical change;
+- rebuild generated artefacts.
+
+Before each SAP release:
+- compare baseline;
+- review changed FieldEndpoints;
+- reassess global/local overrides;
+- update implementation matrix.</code></pre>
+<p>The continuation guide turns the repository into an operating capability rather than a frozen project archive.</p>
+<p>---</p>
+<h1 id="ownership-transfer">Ownership transfer</h1>
+<p>Technical transfer is incomplete without authority transfer.</p>
+<p>The package should identify new owners for:</p>
+<ul>
+<li>repository administration;</li>
+<li>semantic approval;</li>
+<li>domain stewardship;</li>
+<li>validation policy;</li>
+<li>source imports;</li>
+<li>generated releases;</li>
+<li>security review;</li>
+<li>incident escalation.</li>
+</ul>
+<p>A repository with no authorised approver may remain technically usable but cannot govern change.</p>
+<p>---</p>
+<h1 id="access-transfer">Access transfer</h1>
+<p>Check:</p>
+<ul>
+<li>Git repository access;</li>
+<li>release asset access;</li>
+<li>CI permissions;</li>
+<li>issue and pull-request permissions;</li>
+<li>external evidence systems;</li>
+<li>package decryption keys where used;</li>
+<li>domain-owner contact routes.</li>
+</ul>
+<p>Do not wait until the first urgent change to discover that the AMS team has read-only access.</p>
+<p>---</p>
+<h1 id="training-transfer">Training transfer</h1>
+<p>A short live or recorded transfer should cover:</p>
+<ol>
+<li>canonical versus generated files;</li>
+<li>validation;</li>
+<li>search and query;</li>
+<li>trace and impact;</li>
+<li>dataset gaps;</li>
+<li>proposals;</li>
+<li>approval;</li>
+<li>rebuild;</li>
+<li>release packaging;</li>
+<li>open risks.</li>
+</ol>
+<p>The objective is not to teach every command.</p>
+<p>It is to teach the operating model:</p>
+<pre><code class="language-text">Evidence enters.
+Canonical truth remains controlled.
+Validators check.
+AI or automation proposes.
+Humans approve.
+Generated views are rebuilt.</code></pre>
+<p>---</p>
+<h1 id="transfer-modes">Transfer modes</h1>
+<p>Different situations need different packages.</p>
+<h2 id="consultant-to-client-handover">Consultant-to-client handover</h2>
+<p>Include:</p>
+<ul>
+<li>full canonical repository;</li>
+<li>full authorised history;</li>
+<li>ownership matrix;</li>
+<li>open findings;</li>
+<li>build and operating instructions;</li>
+<li>generated viewer;</li>
+<li>licence and support information.</li>
+</ul>
+<h2 id="project-to-ams-handover">Project-to-AMS handover</h2>
+<p>Emphasise:</p>
+<ul>
+<li>current production baseline;</li>
+<li>deviations;</li>
+<li>pending changes;</li>
+<li>implementation alignment;</li>
+<li>incident-to-model-change process;</li>
+<li>release cadence.</li>
+</ul>
+<h2 id="wave-to-wave-transfer">Wave-to-wave transfer</h2>
+<p>Emphasise:</p>
+<ul>
+<li>previous and target baselines;</li>
+<li>semantic diff;</li>
+<li>source-system readiness;</li>
+<li>migration Mapping changes;</li>
+<li>reusable Decisions.</li>
+</ul>
+<h2 id="regulated-archive">Regulated archive</h2>
+<p>Emphasise:</p>
+<ul>
+<li>immutable baseline;</li>
+<li>approval evidence;</li>
+<li>checksums;</li>
+<li>signatures where required;</li>
+<li>restricted evidence references;</li>
+<li>retention policy.</li>
+</ul>
+<h2 id="offline-transfer">Offline transfer</h2>
+<p>Use:</p>
+<ul>
+<li>Git bundle;</li>
+<li>manifest;</li>
+<li>checksum file;</li>
+<li>optional generated viewer;</li>
+<li>verification script.</li>
+</ul>
+<p>---</p>
+<h1 id="a-transfer-acceptance-checklist">A transfer acceptance checklist</h1>
+<p>The receiving team should be able to confirm all of the following.</p>
+<h2 id="identity">Identity</h2>
+<ul>
+<li>package ID is present;</li>
+<li>baseline is named;</li>
+<li>commit and tag are recorded;</li>
+<li>scope is clear.</li>
+</ul>
+<h2 id="canonical-content">Canonical content</h2>
+<ul>
+<li>model objects are present;</li>
+<li>stable IDs resolve;</li>
+<li>Decisions and evidence references are included;</li>
+<li>pending proposals are classified.</li>
+</ul>
+<h2 id="validation">Validation</h2>
+<ul>
+<li>documented command runs;</li>
+<li>no undisclosed errors appear;</li>
+<li>warnings match the manifest.</li>
+</ul>
+<h2 id="rebuild">Rebuild</h2>
+<ul>
+<li>SQLite and JSONL artefacts can be regenerated;</li>
+<li>viewer can be rebuilt;</li>
+<li>freshness check passes.</li>
+</ul>
+<h2 id="governance">Governance</h2>
+<ul>
+<li>owners are identified;</li>
+<li>open findings are listed;</li>
+<li>deviations have expiry and accountability;</li>
+<li>approval process is documented.</li>
+</ul>
+<h2 id="security">Security</h2>
+<ul>
+<li>no credentials are present;</li>
+<li>sensitive evidence is handled correctly;</li>
+<li>licence and confidentiality terms are included.</li>
+</ul>
+<h2 id="continuation">Continuation</h2>
+<ul>
+<li>next change can be proposed;</li>
+<li>impact can be calculated;</li>
+<li>Git review path works;</li>
+<li>receiving team has required access.</li>
+</ul>
+<p>---</p>
+<h1 id="failure-modes">Failure modes</h1>
+<h2 id="database-only-handover">Database-only handover</h2>
+<p>The receiver can search but cannot reconstruct or govern the model.</p>
+<h2 id="viewer-only-handover">Viewer-only handover</h2>
+<p>The model is readable but not maintainable.</p>
+<h2 id="repository-without-baseline-identity">Repository without baseline identity</h2>
+<p>Nobody can prove which commit was approved.</p>
+<h2 id="archive-without-history-where-history-is-required">Archive without history where history is required</h2>
+<p>Decisions and change evolution become harder to reconstruct.</p>
+<h2 id="full-git-history-without-security-review">Full Git history without security review</h2>
+<p>Old committed secrets or restricted evidence may cross the boundary.</p>
+<h2 id="generated-reports-without-their-inputs">Generated reports without their inputs</h2>
+<p>Verdicts cannot be reproduced.</p>
+<h2 id="open-proposals-presented-as-approved-content">Open proposals presented as approved content</h2>
+<p>The receiving team inherits hidden ambiguity.</p>
+<h2 id="temporary-deviations-omitted">Temporary deviations omitted</h2>
+<p>Workarounds become permanent.</p>
+<h2 id="source-references-without-access-continuity">Source references without access continuity</h2>
+<p>Evidence becomes unusable.</p>
+<h2 id="build-instructions-that-depend-on-one-developer-machine">Build instructions that depend on one developer machine</h2>
+<p>The package is not reproducible.</p>
+<h2 id="checksums-without-governance-metadata">Checksums without governance metadata</h2>
+<p>The files are intact, but their authority remains unclear.</p>
+<h2 id="final-folder-copied-from-sharepoint">“Final” folder copied from SharePoint</h2>
+<p>Document naming substitutes for model control.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has much of the foundation:</p>
+<ul>
+<li>canonical files;</li>
+<li>deterministic validation;</li>
+<li>disposable indexes;</li>
+<li>static documentation;</li>
+<li>Git bundle generation;</li>
+<li>GitHub change bundles;</li>
+<li>XLSX roundtrip;</li>
+<li>source registry;</li>
+<li>config guard;</li>
+<li>proposal and ChangeRequest workflows.</li>
+</ul>
+<p>The smallest useful product increment would be a dedicated transfer command.</p>
+<p>Conceptually:</p>
+<pre><code class="language-bash">martenweave package \
+  --repo ./model \
+  --baseline customer-wave3-approved \
+  --out ./dist/customer-wave3 \
+  --include-viewer \
+  --include-bundle</code></pre>
+<p>It could produce:</p>
+<ul>
+<li>baseline manifest;</li>
+<li>canonical archive;</li>
+<li>optional Git bundle;</li>
+<li>validation report;</li>
+<li>build manifest;</li>
+<li>SQLite and JSONL outputs;</li>
+<li>static viewer;</li>
+<li>semantic diff;</li>
+<li>checksum file;</li>
+<li>open-governance summary;</li>
+<li>verification script.</li>
+</ul>
+<p>A companion command could verify the package:</p>
+<pre><code class="language-bash">martenweave package-verify ./dist/customer-wave3</code></pre>
+<p>---</p>
+<h1 id="proposed-package-verification">Proposed package verification</h1>
+<p>Verification should check:</p>
+<ol>
+<li>manifest parses;</li>
+<li>required files exist;</li>
+<li>checksums match;</li>
+<li>Git bundle verifies where included;</li>
+<li>canonical repository validates;</li>
+<li>generated index rebuilds;</li>
+<li>index freshness passes;</li>
+<li>critical trace and impact smoke tests pass;</li>
+<li>package contains no prohibited secret patterns;</li>
+<li>reported baseline matches checked-out commit.</li>
+</ol>
+<p>The verification result should be machine-readable and human-readable.</p>
+<p>Example:</p>
+<pre><code class="language-text">Package:
+MW-CUSTOMER-WAVE3-2026-07-14
+
+Integrity:
+PASS
+
+Canonical validation:
+PASS
+
+Warnings:
+4
+
+Generated rebuild:
+PASS
+
+Git bundle:
+PASS
+
+Security guard:
+PASS WITH 1 ACKNOWLEDGED FINDING
+
+Transfer verdict:
+ACCEPTABLE WITH DOCUMENTED WARNINGS</code></pre>
+<p>---</p>
+<h1 id="package-tiers">Package tiers</h1>
+<p>A single command could support several tiers.</p>
+<h2 id="source-tier">Source tier</h2>
+<p>Contains:</p>
+<ul>
+<li>canonical repository snapshot;</li>
+<li>manifest;</li>
+<li>validation report;</li>
+<li>build instructions.</li>
+</ul>
+<h2 id="review-tier">Review tier</h2>
+<p>Adds:</p>
+<ul>
+<li>generated viewer;</li>
+<li>search index;</li>
+<li>reports;</li>
+<li>semantic diff.</li>
+</ul>
+<h2 id="continuation-tier">Continuation tier</h2>
+<p>Adds:</p>
+<ul>
+<li>full Git bundle;</li>
+<li>pending proposals;</li>
+<li>issue or PR bundle;</li>
+<li>operating guide.</li>
+</ul>
+<h2 id="audit-tier">Audit tier</h2>
+<p>Adds:</p>
+<ul>
+<li>approval evidence;</li>
+<li>checksums;</li>
+<li>signatures or attestations where required;</li>
+<li>immutable historical reports;</li>
+<li>restricted-evidence manifest.</li>
+</ul>
+<p>This avoids building one oversized package for every use case.</p>
+<p>---</p>
+<h1 id="the-package-must-remain-explainable-without-martenweave">The package must remain explainable without Martenweave</h1>
+<p>A receiver should ideally be able to inspect the package even before installing the tool.</p>
+<p>They should be able to read:</p>
+<ul>
+<li>canonical Markdown;</li>
+<li>YAML frontmatter;</li>
+<li>baseline statement;</li>
+<li>transfer manifest;</li>
+<li>validation summary;</li>
+<li>open-findings report.</li>
+</ul>
+<p>Martenweave improves validation, search and analysis.</p>
+<p>It should not make the model unreadable without the application.</p>
+<p>This is one of the practical benefits of canonical human-readable files.</p>
+<p>---</p>
+<h1 id="the-transfer-should-be-reversible">The transfer should be reversible</h1>
+<p>A good transfer process should allow the sending team to prove exactly what was handed over later.</p>
+<p>Retain:</p>
+<ul>
+<li>package identifier;</li>
+<li>checksum manifest;</li>
+<li>baseline commit;</li>
+<li>release record;</li>
+<li>transfer date;</li>
+<li>recipient;</li>
+<li>acceptance result.</li>
+</ul>
+<p>If the receiver later reports:</p>
+<blockquote>The package did not contain Decision 017,</blockquote>
+<p>the sender should be able to verify the archived transfer package rather than relying on memory.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A model repository is not transferred successfully when someone uploads a ZIP file.</p>
+<p>It is transferred successfully when another authorised team can:</p>
+<ul>
+<li>identify the approved baseline;</li>
+<li>understand what is canonical;</li>
+<li>validate it independently;</li>
+<li>rebuild every generated access layer;</li>
+<li>inspect unresolved risks;</li>
+<li>trace decisions and evidence;</li>
+<li>propose the next change safely;</li>
+<li>continue governance without the original project team.</li>
+</ul>
+<p>The package should therefore preserve two things at once:</p>
+<pre><code class="language-text">Durable truth:
+canonical model, identity, decisions and history
+
+Operational usability:
+indexes, viewer, reports, instructions and continuation process</code></pre>
+<p>A static viewer without canonical files is a brochure.</p>
+<p>A database without rebuild instructions is a dependency.</p>
+<p>A repository without baseline identity is an unfinished working directory.</p>
+<p>A complete Martenweave transfer package connects all three:</p>
+<pre><code class="language-text">canonical repository
++
+immutable baseline
++
+verification evidence
++
+rebuildable generated artefacts
++
+operating handover</code></pre>
+<p>The practical test is:</p>
+<blockquote>Could an AMS team receive this package on a clean machine, verify its integrity, rebuild the model index, locate Customer Group, trace it to <code>KNVV-KDGRP</code>, understand its outstanding enrichment gap and create a reviewable proposal without contacting the original consultant?</blockquote>
+<p>When the answer is yes, the model has been transferred.</p>
+<p>When the answer is “they will need us to explain which spreadsheet is final,” the handover has transferred documents but not model governance.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>Its canonical files preserve model truth, while generated SQLite, JSONL, lineage, viewer and reporting artefacts make that truth operationally accessible.</p>
+<p>A Martenweave handover package is designed to transfer both: durable model authority and the ability to continue using it.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines canonical Markdown and YAML files as the source of truth, generated indexes as disposable, deterministic validation as the first gate and AI-assisted changes as human-reviewed proposals.</p>
+<p>The public demo validates a repository, builds <code>modelops.db</code>, <code>search_documents.jsonl</code> and <code>lineage_edges.jsonl</code>, checks freshness, generates a static viewer and supports search, trace and impact operations.</p>
+<p>Martenweave Core’s release history records Git bundle generation, GitHub-ready change bundles, Excel review roundtrip, Google Drive and Sheets connectors, a source registry, static documentation and configuration-guard capabilities.</p>
+<p>Git’s official documentation describes Git bundles as files for offline transfer of Git objects and references. Bundles can support full or incremental repository transfer, can be verified and can be cloned or fetched from.</p>
+<p>Git’s official archive documentation describes creating tar or ZIP archives from a selected tree, commit or tag. Archives created from a commit or tag can retain the referenced commit identity in archive metadata for supported formats.</p>
+<p>GitHub Releases are based on Git tags and can package release notes and attached assets around a specific repository point; GitHub also provides source archives for tagged releases.</p>
+<p>The package layout, manifest schema, package tiers and proposed <code>package</code> and <code>package-verify</code> commands in this article describe a recommended Martenweave product direction. They should not be interpreted as guarantees that this exact packaging interface already exists.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Git or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-generated-indexes-should-be-disposable.html"><span>Previous</span>A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite.</a><a href="/blog/how-to-build-field-level-lineage-for-an-sap-migration.html"><span>Next</span>A migration programme says that it has lineage.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

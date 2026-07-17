@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare | Martenweave</title>
+    <meta
+      name="description"
+      content="Lineage is often treated as design documentation."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html" />
+    <meta property="og:title" content="How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare | Martenweave" />
+    <meta property="og:description" content="Lineage is often treated as design documentation." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare | Martenweave" />
+    <meta name="twitter:description" content="Lineage is often treated as design documentation." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html",
+                        "name": "How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare | Martenweave",
+                        "description": "Lineage is often treated as design documentation.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare",
+                                    "item": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html#content",
+                        "headline": "How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare",
+                        "name": "How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare",
+                        "description": "Lineage is often treated as design documentation.",
+                        "url": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Use Lineage Evidence During Mock Loads, Cutover and Hypercare</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">Lineage is often treated as design documentation.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#mock-loads">Mock loads</a></li><li><a href="#cutover">Cutover</a></li><li><a href="#hypercare">Hypercare</a></li><li><a href="#design-path">Design path</a></li><li><a href="#execution-path">Execution path</a></li><li><a href="#outcome-path">Outcome path</a></li><li><a href="#input-evidence">Input evidence</a></li><li><a href="#transformation-evidence">Transformation evidence</a></li><li><a href="#target-evidence">Target evidence</a></li><li><a href="#reconciliation-evidence">Reconciliation evidence</a></li><li><a href="#business-evidence">Business evidence</a></li><li><a href="#mock-load-1">Mock Load 1</a></li><li><a href="#mock-load-2">Mock Load 2</a></li><li><a href="#mock-load-3">Mock Load 3</a></li><li><a href="#baseline">Baseline</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>Lineage is often treated as design documentation.</p>
+<p>A migration team defines:</p>
+<pre><code class="language-text">source field
+→ transformation
+→ target field</code></pre>
+<p>The diagram is reviewed during design.</p>
+<p>Then execution begins.</p>
+<p>Mock loads produce extracts, rejected records, defaults, manual corrections and load reports. Cutover introduces time pressure, partial source availability and emergency decisions. Hypercare reveals downstream failures that were invisible during migration testing.</p>
+<p>At that point, static lineage is not enough.</p>
+<p>The programme needs evidence showing whether the approved path actually worked for a particular dataset, load cycle, migration wave and target population.</p>
+<blockquote>Lineage evidence connects the approved model path to observable execution results.</blockquote>
+<p>It should help answer:</p>
+<ul>
+<li>Did the expected source fields arrive?</li>
+<li>Did the approved transformation run?</li>
+<li>Were required context fields available?</li>
+<li>Which fallback paths were used?</li>
+<li>Did the value reach the correct SAP object and organisational level?</li>
+<li>Did downstream consumers receive the same meaning?</li>
+<li>Which results were verified during mock loads?</li>
+<li>Which assumptions changed during cutover?</li>
+<li>Which failures remain active in hypercare?</li>
+</ul>
+<p>The evidence required changes across the migration lifecycle.</p>
+<p>A mock load is primarily a learning and correction cycle.</p>
+<p>Cutover is an execution-control period.</p>
+<p>Hypercare is a production-conformance and defect-isolation period.</p>
+<p>Using one generic “migration validation report” for all three phases loses the distinction.</p>
+<p>---</p>
+<h1 id="the-three-phases-ask-different-questions">The three phases ask different questions</h1>
+<h2 id="mock-loads">Mock loads</h2>
+<p>The central question is:</p>
+<blockquote>Does the designed migration path work against realistic data?</blockquote>
+<p>Mock loads should expose:</p>
+<ul>
+<li>missing source fields;</li>
+<li>incorrect grain;</li>
+<li>broken mappings;</li>
+<li>invalid value conversions;</li>
+<li>insufficient context;</li>
+<li>undocumented defaults;</li>
+<li>manual workload;</li>
+<li>target-structure misunderstandings.</li>
+</ul>
+<p>A mock load can fail productively if it identifies these issues early.</p>
+<h2 id="cutover">Cutover</h2>
+<p>The central question becomes:</p>
+<blockquote>Did the approved and tested path execute completely within the controlled cutover scope?</blockquote>
+<p>Cutover evidence should establish:</p>
+<ul>
+<li>correct input snapshot;</li>
+<li>correct model baseline;</li>
+<li>approved implementation version;</li>
+<li>complete execution;</li>
+<li>rejected and deferred records;</li>
+<li>fallback use;</li>
+<li>target reconciliation;</li>
+<li>release decision.</li>
+</ul>
+<h2 id="hypercare">Hypercare</h2>
+<p>The central question changes again:</p>
+<blockquote>Does the production result behave correctly across downstream processes and real operational use?</blockquote>
+<p>Hypercare evidence should identify:</p>
+<ul>
+<li>latent semantic defects;</li>
+<li>downstream interpretation problems;</li>
+<li>missing replication;</li>
+<li>incorrect organisational assignments;</li>
+<li>unresolved fallback values;</li>
+<li>master-data incidents linked to migration decisions;</li>
+<li>defects requiring model changes rather than record corrections.</li>
+</ul>
+<p>The lineage model can remain stable across all three phases.</p>
+<p>The evidence and verdicts should not.</p>
+<p>---</p>
+<h1 id="design-path-execution-path-and-outcome-path">Design path, execution path and outcome path</h1>
+<p>A useful migration view separates three paths.</p>
+<h2 id="design-path">Design path</h2>
+<p>What is approved.</p>
+<pre><code class="language-text">source endpoint
+→ Mapping
+→ business Attribute
+→ SAP endpoint</code></pre>
+<h2 id="execution-path">Execution path</h2>
+<p>What a particular run used.</p>
+<pre><code class="language-text">extract column
+→ transformation version
+→ load structure
+→ SAP load process</code></pre>
+<h2 id="outcome-path">Outcome path</h2>
+<p>What persisted and was consumed.</p>
+<pre><code class="language-text">SAP field
+→ replication or interface
+→ process or report</code></pre>
+<p>A successful execution path does not always produce a correct outcome path.</p>
+<p>A product record may load successfully into SAP but fail to replicate to a planning system.</p>
+<p>A supplier bank account may be stored correctly but blocked by a payment control.</p>
+<p>A partner function may exist in SAP but be assigned to the wrong Sales Area.</p>
+<p>Evidence should follow the complete path relevant to the business outcome.</p>
+<p>---</p>
+<h1 id="model-baseline-is-the-first-piece-of-evidence">Model baseline is the first piece of evidence</h1>
+<p>Every mock load, cutover run and hypercare investigation should identify the canonical model baseline it relates to.</p>
+<p>Record:</p>
+<ul>
+<li>model tag or commit;</li>
+<li>schema version;</li>
+<li>approved Mapping IDs;</li>
+<li>Rule versions;</li>
+<li>value-list version;</li>
+<li>target endpoint definitions;</li>
+<li>applicable Decisions.</li>
+</ul>
+<p>Without this, the statement:</p>
+<pre><code class="language-text">Mock Load 3 passed</code></pre>
+<p>has limited value.</p>
+<p>The repository may have changed after the load.</p>
+<p>A Mapping may have been updated.</p>
+<p>A Rule may have moved from warning to error.</p>
+<p>A target endpoint may have been replaced.</p>
+<p>Martenweave currently treats canonical Markdown and YAML files as the source of truth, validates them before building disposable indexes and exposes trace, impact, health and dataset-readiness operations over that model.</p>
+<p>The run must therefore point back to the model state it tested.</p>
+<p>---</p>
+<h1 id="evidence-identity">Evidence identity</h1>
+<p>A migration evidence record should be identifiable independently from the design object.</p>
+<p>Example:</p>
+<pre><code class="language-text">EVID-MOCK2-SUPPLIER-BANK-2026-08-14</code></pre>
+<p>It may reference:</p>
+<pre><code class="language-text">baseline:
+SUPPLIER-WAVE1-RC3
+
+run:
+MOCK-LOAD-2
+
+dataset:
+supplier_bank_extract_2026-08-13.csv
+
+mapping:
+MAP-SUPPLIER-BANK-TO-SAP
+
+target:
+FEP-S4-BP-BANK-IBAN</code></pre>
+<p>The Mapping is a reusable design object.</p>
+<p>The evidence describes one observation.</p>
+<p>OpenLineage uses a comparable distinction between design-time Job and Dataset metadata and runtime <code>RunEvent</code> observations. A Run represents one occurrence of a Job and can include information about its input and output datasets.</p>
+<p>Martenweave does not need to become a complete runtime observability platform to use this principle.</p>
+<p>It needs enough execution identity to make model claims verifiable.</p>
+<p>---</p>
+<h1 id="mock-load-evidence-should-test-assumptions-not-just-totals">Mock-load evidence should test assumptions, not just totals</h1>
+<p>A mock-load report often starts with:</p>
+<pre><code class="language-text">Input records: 100,000
+Loaded: 98,600
+Rejected: 1,400</code></pre>
+<p>These numbers are useful.</p>
+<p>They do not explain whether the model worked.</p>
+<p>The evidence should also test:</p>
+<ul>
+<li>source-field availability;</li>
+<li>Mapping coverage;</li>
+<li>required context;</li>
+<li>value-domain compatibility;</li>
+<li>defaults;</li>
+<li>target grain;</li>
+<li>key construction;</li>
+<li>Rule behaviour;</li>
+<li>downstream propagation.</li>
+</ul>
+<p>A result can have a high load rate and weak lineage conformance.</p>
+<p>---</p>
+<h1 id="example-1-supplier-bank-data">Example 1: Supplier bank data</h1>
+<p>Consider supplier bank migration.</p>
+<p>The design path is:</p>
+<pre><code class="language-text">Legacy bank country
++
+legacy bank key
++
+account number
++
+IBAN
+→ bank validation and normalisation
+→ Supplier Bank Account
+→ SAP Business Partner bank details</code></pre>
+<p>A mock load reports:</p>
+<pre><code class="language-text">Bank records loaded: 99.4%</code></pre>
+<p>That does not answer:</p>
+<ul>
+<li>Was IBAN used when available?</li>
+<li>Were country-specific bank keys validated?</li>
+<li>Were duplicate accounts merged?</li>
+<li>Did the same bank account attach to several suppliers?</li>
+<li>Were invalid IBANs rejected or silently stripped?</li>
+<li>Did the source account belong to the correct legal entity?</li>
+<li>Were sensitive values protected in the evidence package?</li>
+</ul>
+<p>A better evidence summary separates claims:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Claim</th><th scope="col">Result</th></tr></thead><tbody><tr><td>Required source fields available</td><td>Partial</td></tr><tr><td>IBAN format valid</td><td>97.8%</td></tr><tr><td>Duplicate account review complete</td><td>No</td></tr><tr><td>Target bank details created</td><td>99.4%</td></tr><tr><td>Business ownership verified</td><td>93.1%</td></tr><tr><td>Records using manual correction</td><td>4.7%</td></tr></tbody></table></div>
+<p>The technical target population can be high while business verification remains incomplete.</p>
+<p>For sensitive bank data, Martenweave should store aggregate findings, hashes or restricted references rather than complete account values.</p>
+<p>---</p>
+<h1 id="example-2-product-plant-mrp-type">Example 2: Product Plant MRP Type</h1>
+<p>A product migration includes MRP Type.</p>
+<p>The approved design states:</p>
+<pre><code class="language-text">Legacy planning method
++
+plant mapping
+→ MRP Type conversion
+→ Product Plant MRP Type
+→ SAP plant-specific product data</code></pre>
+<p>The first mock load shows 100 percent target completeness.</p>
+<p>Investigation finds that every missing planning method was defaulted to <code>PD</code>.</p>
+<p>The field is populated.</p>
+<p>The lineage is not fully conformant.</p>
+<p>Evidence should show:</p>
+<pre><code class="language-text">Directly mapped:
+72%
+
+Converted through approved lookup:
+18%
+
+Defaulted to PD:
+10%</code></pre>
+<p>The 10 percent default population then needs to be classified:</p>
+<ul>
+<li>approved temporary fallback;</li>
+<li>acceptable permanent policy;</li>
+<li>unresolved data-quality problem;</li>
+<li>cutover blocker.</li>
+</ul>
+<p>The critical issue is not whether the SAP field is blank.</p>
+<p>It is whether <code>PD</code> reflects a valid planning decision for the relevant Product Plant.</p>
+<p>---</p>
+<h1 id="example-3-customer-partner-functions">Example 3: Customer partner functions</h1>
+<p>Partner-function migration is not a single-field exercise.</p>
+<p>A path may require:</p>
+<pre><code class="language-text">customer identifier
++
+Sales Area
++
+partner role
++
+partner identifier
+→ partner-function Mapping
+→ SAP Customer Sales Area partner assignment</code></pre>
+<p>A record-count comparison can pass while assignments are wrong.</p>
+<p>Examples:</p>
+<ul>
+<li>ship-to party assigned to the wrong Sales Area;</li>
+<li>bill-to and payer reversed;</li>
+<li>partner role copied centrally instead of per Sales Area;</li>
+<li>self-partner default applied where an external payer was required;</li>
+<li>duplicate partner assignments collapsed incorrectly.</li>
+</ul>
+<p>The evidence should test:</p>
+<ul>
+<li>role mapping;</li>
+<li>partner-number mapping;</li>
+<li>Sales Area keys;</li>
+<li>cardinality;</li>
+<li>required partner combinations;</li>
+<li>self-partner defaults;</li>
+<li>unresolved external partners.</li>
+</ul>
+<p>This is why field-level and key-level lineage must be evaluated together.</p>
+<p>---</p>
+<h1 id="example-4-product-units-of-measure">Example 4: Product units of measure</h1>
+<p>A source product uses:</p>
+<pre><code class="language-text">base unit:
+PC
+
+sales unit:
+BOX
+
+conversion:
+1 BOX = 12 PC</code></pre>
+<p>The migration loads the Product and both units successfully.</p>
+<p>The downstream order interface fails during hypercare because it sends <code>EA</code>, while SAP expects <code>PC</code>.</p>
+<p>The source-to-SAP migration path was technically valid.</p>
+<p>The end-to-end semantic path was incomplete.</p>
+<p>Lineage evidence should include:</p>
+<pre><code class="language-text">source unit
+→ canonical unit meaning
+→ SAP unit
+→ interface unit representation
+→ downstream consumer</code></pre>
+<p>The hypercare Finding may concern:</p>
+<ul>
+<li>missing interface conversion;</li>
+<li>inconsistent code list;</li>
+<li>duplicate business meaning under <code>EA</code> and <code>PC</code>;</li>
+<li>incorrect target configuration.</li>
+</ul>
+<p>The correct response is not necessarily to change the migrated Product.</p>
+<p>---</p>
+<h1 id="evidence-during-mock-loads">Evidence during mock loads</h1>
+<p>Mock-load evidence should be deliberately diagnostic.</p>
+<p>A useful evidence pack includes several layers.</p>
+<h2 id="input-evidence">Input evidence</h2>
+<ul>
+<li>source extract identity;</li>
+<li>fingerprint;</li>
+<li>extraction time;</li>
+<li>source-system snapshot;</li>
+<li>field list;</li>
+<li>row count;</li>
+<li>key uniqueness;</li>
+<li>missing fields;</li>
+<li>unexpected fields.</li>
+</ul>
+<h2 id="transformation-evidence">Transformation evidence</h2>
+<ul>
+<li>implementation version;</li>
+<li>Mapping IDs;</li>
+<li>conversion-table version;</li>
+<li>input-to-output counts;</li>
+<li>rejected values;</li>
+<li>defaults;</li>
+<li>fallback use;</li>
+<li>manually changed records.</li>
+</ul>
+<h2 id="target-evidence">Target evidence</h2>
+<ul>
+<li>records accepted;</li>
+<li>records rejected;</li>
+<li>SAP object created;</li>
+<li>target field persisted;</li>
+<li>organisational assignments;</li>
+<li>target value distributions.</li>
+</ul>
+<h2 id="reconciliation-evidence">Reconciliation evidence</h2>
+<ul>
+<li>source-to-target totals;</li>
+<li>key reconciliation;</li>
+<li>transformation-category counts;</li>
+<li>unresolved differences;</li>
+<li>duplicates;</li>
+<li>excluded records.</li>
+</ul>
+<h2 id="business-evidence">Business evidence</h2>
+<ul>
+<li>reviewed samples;</li>
+<li>owner acceptance;</li>
+<li>approved exceptions;</li>
+<li>unresolved Findings;</li>
+<li>release verdict.</li>
+</ul>
+<p>The programme should not require every evidence layer to be stored directly in the model repository.</p>
+<p>It should retain the summary, provenance and reference needed to support model decisions.</p>
+<p>---</p>
+<h1 id="mock-load-evidence-should-be-cumulative">Mock-load evidence should be cumulative</h1>
+<p>Each mock load should build on the previous one.</p>
+<p>Example:</p>
+<h2 id="mock-load-1">Mock Load 1</h2>
+<p>Purpose:</p>
+<ul>
+<li>prove basic object creation;</li>
+<li>validate source and target structures;</li>
+<li>identify missing fields.</li>
+</ul>
+<h2 id="mock-load-2">Mock Load 2</h2>
+<p>Purpose:</p>
+<ul>
+<li>validate transformations;</li>
+<li>test organisational contexts;</li>
+<li>exercise local exceptions.</li>
+</ul>
+<h2 id="mock-load-3">Mock Load 3</h2>
+<p>Purpose:</p>
+<ul>
+<li>production-scale volume;</li>
+<li>cutover-like sequencing;</li>
+<li>complete reconciliation;</li>
+<li>operational ownership.</li>
+</ul>
+<p>The evidence model should show which claim became stronger across runs.</p>
+<p>A later successful run does not erase earlier failures.</p>
+<p>Those earlier failures may explain why the design changed.</p>
+<p>---</p>
+<h1 id="example-5-supplier-tax-identifiers">Example 5: Supplier tax identifiers</h1>
+<p>Tax identifiers are context-sensitive.</p>
+<p>The design may include:</p>
+<pre><code class="language-text">country
++
+tax-number category
++
+tax identifier
++
+exemption evidence
+→ tax Mapping and validation
+→ SAP Business Partner tax number</code></pre>
+<p>Mock-load evidence should distinguish:</p>
+<ul>
+<li>syntax validation;</li>
+<li>country/category compatibility;</li>
+<li>uniqueness;</li>
+<li>duplicate legal entities;</li>
+<li>exemption handling;</li>
+<li>missing legal evidence;</li>
+<li>target persistence.</li>
+</ul>
+<p>A tax number can pass a format check and still use the wrong category.</p>
+<p>A record can load and still create a legal or operational defect.</p>
+<p>The evidence claim should therefore be precise:</p>
+<pre><code class="language-text">format valid</code></pre>
+<p>is not equivalent to:</p>
+<pre><code class="language-text">legal treatment approved</code></pre>
+<p>---</p>
+<h1 id="example-6-payment-terms">Example 6: Payment Terms</h1>
+<p>Payment Terms may exist at different organisational levels and for different roles.</p>
+<p>A Supplier may have:</p>
+<ul>
+<li>company-code payment terms;</li>
+<li>purchasing-organisation-related process assumptions;</li>
+<li>source terms inherited from a contract;</li>
+<li>local exceptions.</li>
+</ul>
+<p>A cutover dataset may contain one field called <code>PAYMENT_TERMS</code>.</p>
+<p>The target may require several contextual assignments.</p>
+<p>Evidence should test:</p>
+<ul>
+<li>source authority;</li>
+<li>company-code context;</li>
+<li>value conversion;</li>
+<li>local override;</li>
+<li>missing company codes;</li>
+<li>conflicting terms;</li>
+<li>target assignment.</li>
+</ul>
+<p>A global count of nonblank values is almost meaningless without organisational grain.</p>
+<p>---</p>
+<h1 id="move-from-mock-load-to-cutover">Move from mock load to cutover</h1>
+<p>Cutover evidence should be based on previously verified model paths.</p>
+<p>Cutover is not the right moment to discover basic semantics.</p>
+<p>It is the moment to confirm that the approved package executed under controlled conditions.</p>
+<p>The evidence focus narrows from design discovery to execution control.</p>
+<p>---</p>
+<h1 id="cutover-evidence-package">Cutover evidence package</h1>
+<p>A cutover evidence package should identify:</p>
+<h2 id="baseline">Baseline</h2>
+<ul>
+<li>canonical model commit;</li>
+<li>approved proposal set;</li>
+<li>transformation version;</li>
+<li>SAP release or target configuration reference.</li>
+</ul>
+<h2 id="input-control">Input control</h2>
+<ul>
+<li>extract timestamp;</li>
+<li>source freeze point;</li>
+<li>dataset fingerprint;</li>
+<li>population definition;</li>
+<li>delta policy.</li>
+</ul>
+<h2 id="execution-control">Execution control</h2>
+<ul>
+<li>job or load IDs;</li>
+<li>start and finish times;</li>
+<li>implementation versions;</li>
+<li>errors;</li>
+<li>retries;</li>
+<li>manual interventions.</li>
+</ul>
+<h2 id="result-control">Result control</h2>
+<ul>
+<li>accepted records;</li>
+<li>rejected records;</li>
+<li>deferred records;</li>
+<li>defaults and fallbacks;</li>
+<li>target reconciliation;</li>
+<li>business sign-off.</li>
+</ul>
+<h2 id="decision-control">Decision control</h2>
+<ul>
+<li>go/no-go verdict;</li>
+<li>accepted residual risk;</li>
+<li>rollback or correction plan;</li>
+<li>hypercare ownership.</li>
+</ul>
+<p>A cutover run should be reproducible enough to explain later why a particular record received a particular result.</p>
+<p>---</p>
+<h1 id="example-7-product-profit-centre-assignment">Example 7: Product profit centre assignment</h1>
+<p>Product or Material data may require a profit centre at plant level.</p>
+<p>The cutover design might be:</p>
+<pre><code class="language-text">legacy site
++
+product family
++
+company structure
+→ profit centre derivation
+→ SAP Product Plant profit centre</code></pre>
+<p>During cutover, a mapping table for one newly created plant is missing.</p>
+<p>An emergency default assigns the regional profit centre.</p>
+<p>The load succeeds.</p>
+<p>This should create explicit evidence:</p>
+<pre><code class="language-text">fallback:
+regional profit centre
+
+affected plant:
+PL30
+
+affected products:
+1,842
+
+approval:
+Finance Data Lead
+
+expiry:
+before first month-end close</code></pre>
+<p>Without this, hypercare may discover cost postings against the wrong organisational responsibility.</p>
+<p>The lineage evidence should connect the temporary assignment to:</p>
+<ul>
+<li>Mapping;</li>
+<li>plant context;</li>
+<li>finance owner;</li>
+<li>affected population;</li>
+<li>remediation deadline.</li>
+</ul>
+<p>---</p>
+<h1 id="example-8-business-partner-time-zone">Example 8: Business Partner time zone</h1>
+<p>A source system does not provide time zone for a large customer population.</p>
+<p>Cutover applies a country-based derivation.</p>
+<pre><code class="language-text">country
+→ time-zone lookup
+→ SAP Business Partner time zone</code></pre>
+<p>This may be acceptable for countries with one time zone.</p>
+<p>It may be unsafe for countries with several.</p>
+<p>Evidence should separate:</p>
+<ul>
+<li>direct source value;</li>
+<li>deterministic country derivation;</li>
+<li>regional derivation;</li>
+<li>unresolved multi-time-zone population;</li>
+<li>manual correction.</li>
+</ul>
+<p>A 100 percent populated target field can hide low-confidence derivation.</p>
+<p>---</p>
+<h1 id="manual-cutover-interventions">Manual cutover interventions</h1>
+<p>Manual interventions are common.</p>
+<p>The problem is not that they occur.</p>
+<p>The problem is when they disappear from the lineage.</p>
+<p>Examples:</p>
+<ul>
+<li>conversion table edited during cutover;</li>
+<li>rejected records corrected in a spreadsheet;</li>
+<li>SAP target values changed manually;</li>
+<li>source extract patched;</li>
+<li>interface replayed with different filters;</li>
+<li>temporary Rule disabled.</li>
+</ul>
+<p>Each intervention should record:</p>
+<ul>
+<li>reason;</li>
+<li>authorised person or role;</li>
+<li>affected object;</li>
+<li>affected population;</li>
+<li>time;</li>
+<li>before and after state;</li>
+<li>whether the canonical model must change;</li>
+<li>whether the action was one-time.</li>
+</ul>
+<p>Do not automatically treat a successful manual correction as evidence that the approved design works.</p>
+<p>It may be evidence that the design or implementation failed.</p>
+<p>---</p>
+<h1 id="cutover-evidence-and-chain-of-custody">Cutover evidence and chain of custody</h1>
+<p>For critical datasets, the programme should know which exact data moved through each stage.</p>
+<p>A practical chain may include:</p>
+<pre><code class="language-text">source snapshot
+→ extracted file
+→ transformed file
+→ approved load file
+→ SAP load result
+→ post-load extract</code></pre>
+<p>Each stage can have:</p>
+<ul>
+<li>fingerprint;</li>
+<li>record count;</li>
+<li>timestamp;</li>
+<li>owner;</li>
+<li>transformation reference.</li>
+</ul>
+<p>This is particularly important for:</p>
+<ul>
+<li>supplier bank data;</li>
+<li>tax identifiers;</li>
+<li>customer credit data;</li>
+<li>finance master data;</li>
+<li>regulated classifications.</li>
+</ul>
+<p>The purpose is not to build a forensic platform.</p>
+<p>It is to prevent ambiguity over which file and transformation produced the production state.</p>
+<p>---</p>
+<h1 id="cutover-exceptions-should-feed-hypercare">Cutover exceptions should feed hypercare</h1>
+<p>Every unresolved cutover exception should become a hypercare item with lineage context.</p>
+<p>Weak handover:</p>
+<pre><code class="language-text">1,200 records need follow-up.</code></pre>
+<p>Stronger handover:</p>
+<pre><code class="language-text">1,200 Product Plant records
+lack approved MRP Controller assignment.
+
+Temporary value:
+001
+
+Affected plants:
+PL20, PL30
+
+Canonical objects:
+ATTR-MRP-CONTROLLER
+MAP-PLANT-MRP-CONTROLLER
+
+Remediation owner:
+Production Planning Data Lead
+
+Deadline:
+before first planning run</code></pre>
+<p>The hypercare team can then trace:</p>
+<ul>
+<li>source gap;</li>
+<li>temporary Mapping;</li>
+<li>target field;</li>
+<li>operational consequence;</li>
+<li>correction evidence.</li>
+</ul>
+<p>---</p>
+<h1 id="hypercare-is-where-downstream-lineage-becomes-visible">Hypercare is where downstream lineage becomes visible</h1>
+<p>Mock loads usually focus on source-to-SAP movement.</p>
+<p>Hypercare reveals whether the data functions correctly after go-live.</p>
+<p>The path expands:</p>
+<pre><code class="language-text">source
+→ migration
+→ SAP master data
+→ interface
+→ business process
+→ report or operational result</code></pre>
+<p>A production defect may originate in:</p>
+<ul>
+<li>source interpretation;</li>
+<li>migration Mapping;</li>
+<li>target configuration;</li>
+<li>downstream conversion;</li>
+<li>process Rule;</li>
+<li>local operational workaround.</li>
+</ul>
+<p>Lineage evidence helps isolate the layer.</p>
+<p>---</p>
+<h1 id="example-9-product-atp-checking-group">Example 9: Product ATP checking group</h1>
+<p>A Product is loaded with the expected checking group.</p>
+<p>Sales orders still fail availability checks.</p>
+<p>Possible causes include:</p>
+<ul>
+<li>field loaded at the wrong organisational level;</li>
+<li>related MRP settings missing;</li>
+<li>downstream rule configuration;</li>
+<li>plant-specific record absent;</li>
+<li>interface-created product missing an extension.</li>
+</ul>
+<p>The migrated field itself may be correct.</p>
+<p>The outcome path is incomplete.</p>
+<p>A hypercare investigation should connect:</p>
+<pre><code class="language-text">Product Attribute
+→ SAP endpoint
+→ related plant context
+→ operational process
+→ observed defect</code></pre>
+<p>This avoids reopening the entire Product migration design unnecessarily.</p>
+<p>---</p>
+<h1 id="example-10-supplier-purchasing-block">Example 10: Supplier purchasing block</h1>
+<p>A Supplier is unexpectedly blocked during purchase-order creation.</p>
+<p>The migrated central block flag is blank.</p>
+<p>The actual issue is a purchasing-organisation block copied from a local source.</p>
+<p>Evidence should distinguish:</p>
+<pre><code class="language-text">central Supplier block
+purchasing-organisation block
+company-code posting block
+workflow review status</code></pre>
+<p>A table-level investigation may simply report that the Supplier contains a block.</p>
+<p>A lineage-aware investigation identifies:</p>
+<ul>
+<li>which source field produced it;</li>
+<li>at which organisational level;</li>
+<li>which Mapping applied;</li>
+<li>which Decision permitted the value;</li>
+<li>which purchasing process failed.</li>
+</ul>
+<p>---</p>
+<h1 id="example-11-customer-unloading-point">Example 11: Customer unloading point</h1>
+<p>Unloading points may migrate successfully as address-related or customer-specific data.</p>
+<p>Hypercare reveals that delivery scheduling ignores them.</p>
+<p>Possible reasons:</p>
+<ul>
+<li>unloading point attached to the wrong ship-to;</li>
+<li>source key mapped to sold-to rather than ship-to;</li>
+<li>calendar or receiving-hours data missing;</li>
+<li>downstream delivery interface does not consume the field.</li>
+</ul>
+<p>The evidence path extends beyond the target field.</p>
+<p>The data may exist and still fail to produce the intended process result.</p>
+<p>---</p>
+<h1 id="example-12-cost-centre-validity">Example 12: Cost centre validity</h1>
+<p>A Cost Centre migration loads all records.</p>
+<p>Hypercare postings fail because several cost centres have validity dates that begin after go-live.</p>
+<p>The field lineage is structurally correct.</p>
+<p>The temporal Rule is not.</p>
+<p>Evidence should include:</p>
+<ul>
+<li>source validity interval;</li>
+<li>Mapping treatment;</li>
+<li>target validity interval;</li>
+<li>controlling-area context;</li>
+<li>first operational posting result.</li>
+</ul>
+<p>This is a good example of why lineage evidence must include Rules and time, not only source and target fields.</p>
+<p>---</p>
+<h1 id="hypercare-findings-should-preserve-phase-context">Hypercare Findings should preserve phase context</h1>
+<p>A hypercare defect should record whether it relates to:</p>
+<ul>
+<li>design defect;</li>
+<li>implementation defect;</li>
+<li>cutover execution defect;</li>
+<li>source-data defect;</li>
+<li>target configuration;</li>
+<li>downstream integration;</li>
+<li>business-process misunderstanding;</li>
+<li>temporary exception.</li>
+</ul>
+<p>This prevents every production issue from becoming a model change.</p>
+<p>Example:</p>
+<pre><code class="language-text">Finding:
+Supplier bank account not available in payment run
+
+Root cause:
+bank details loaded correctly;
+payment-method configuration incomplete
+
+Model change:
+none
+
+Operational correction:
+configuration update</code></pre>
+<p>Another example:</p>
+<pre><code class="language-text">Finding:
+Product MRP Type incorrect for plant PL20
+
+Root cause:
+global default used during cutover
+
+Model change:
+fallback policy must be restricted
+
+Data correction:
+required</code></pre>
+<p>The evidence determines where remediation belongs.</p>
+<p>---</p>
+<h1 id="evidence-should-support-defect-isolation">Evidence should support defect isolation</h1>
+<p>A good hypercare trace should answer:</p>
+<ol>
+<li>What business Attribute is affected?</li>
+<li>Which target endpoint stores it?</li>
+<li>Which Mapping produced it?</li>
+<li>Which source and dataset instance were used?</li>
+<li>Which run loaded it?</li>
+<li>Was a fallback applied?</li>
+<li>Did post-load validation pass?</li>
+<li>Which downstream process failed?</li>
+<li>Is the defect isolated or systematic?</li>
+<li>Does the canonical model need to change?</li>
+</ol>
+<p>This reduces dependence on individuals who remember the migration.</p>
+<p>---</p>
+<h1 id="runtime-events-and-data-quality-metrics">Runtime events and data-quality metrics</h1>
+<p>OpenLineage’s object model allows runtime events to carry input and output dataset information. It also defines facets for dataset-level and column-level quality metrics, assertions and output statistics, including row counts and null counts.</p>
+<p>This is a useful pattern for Martenweave Evidence summaries.</p>
+<p>A migration run can report:</p>
+<pre><code class="language-text">input rows
+output rows
+rejected rows
+null count
+distinct-value count
+assertion results</code></pre>
+<p>But the metrics should be interpreted through the model.</p>
+<p>A null count matters differently for:</p>
+<ul>
+<li>optional Product description;</li>
+<li>mandatory Supplier bank country;</li>
+<li>conditional Tax Identifier;</li>
+<li>derived Profit Centre;</li>
+<li>retired Customer classification.</li>
+</ul>
+<p>---</p>
+<h1 id="direct-and-indirect-evidence">Direct and indirect evidence</h1>
+<p>Field-level lineage distinguishes direct value dependencies from indirect fields used in joins, filters and conditions. OpenLineage’s column-lineage model formalises that distinction.</p>
+<p>Migration evidence should preserve it.</p>
+<p>Example: Product MRP Type.</p>
+<pre><code class="language-text">Legacy planning method:
+direct value input
+
+Plant:
+conditional lookup input
+
+Product status:
+filter input</code></pre>
+<p>If Plant is missing, the planning method may still be available.</p>
+<p>The Mapping result can still be wrong.</p>
+<p>A field-presence report alone will not detect this.</p>
+<p>---</p>
+<h1 id="evidence-verdicts">Evidence verdicts</h1>
+<p>Avoid only two statuses:</p>
+<pre><code class="language-text">pass
+fail</code></pre>
+<p>A more useful set is:</p>
+<h2 id="verified">Verified</h2>
+<p>Evidence supports the approved claim for the stated scope.</p>
+<h2 id="verified-with-exceptions">Verified with exceptions</h2>
+<p>The main path worked, but bounded exceptions remain.</p>
+<h2 id="partially-verified">Partially verified</h2>
+<p>Only part of the path or population was tested.</p>
+<h2 id="nonconformant">Nonconformant</h2>
+<p>Observed behaviour conflicts with the approved model.</p>
+<h2 id="inconclusive">Inconclusive</h2>
+<p>Evidence quality is insufficient.</p>
+<h2 id="not-tested">Not tested</h2>
+<p>No evidence exists for the claim.</p>
+<h2 id="superseded">Superseded</h2>
+<p>Evidence remains historical but does not verify the current baseline.</p>
+<p>This allows realistic release decisions without hiding uncertainty.</p>
+<p>---</p>
+<h1 id="evidence-must-age-with-the-model">Evidence must age with the model</h1>
+<p>When a Mapping, Rule, value list or endpoint changes, earlier evidence may become stale.</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier bank validation Rule changed;</li>
+<li>Product Plant Mapping gained a new context input;</li>
+<li>Tax Identifier categories changed;</li>
+<li>Partner-function conversion changed;</li>
+<li>target API replaced;</li>
+<li>profit centre derivation updated.</li>
+</ul>
+<p>The previous mock-load report remains valid for the earlier baseline.</p>
+<p>It should no longer count as current verification.</p>
+<p>Martenweave should distinguish:</p>
+<pre><code class="language-text">historically valid evidence</code></pre>
+<p>from:</p>
+<pre><code class="language-text">current evidence coverage</code></pre>
+<p>---</p>
+<h1 id="evidence-invalidation-by-change-type">Evidence invalidation by change type</h1>
+<h2 id="source-field-change">Source-field change</h2>
+<p>Recheck:</p>
+<ul>
+<li>source availability;</li>
+<li>profiling;</li>
+<li>Mapping inputs;</li>
+<li>authority.</li>
+</ul>
+<h2 id="mapping-change">Mapping change</h2>
+<p>Recheck:</p>
+<ul>
+<li>transformation;</li>
+<li>affected population;</li>
+<li>values;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="rule-change">Rule change</h2>
+<p>Recheck:</p>
+<ul>
+<li>positive and negative scenarios;</li>
+<li>exception behaviour;</li>
+<li>lifecycle stage.</li>
+</ul>
+<h2 id="target-field-change">Target-field change</h2>
+<p>Recheck:</p>
+<ul>
+<li>load structure;</li>
+<li>persistence;</li>
+<li>interface consumption;</li>
+<li>reports.</li>
+</ul>
+<h2 id="value-list-change">Value-list change</h2>
+<p>Recheck:</p>
+<ul>
+<li>existing values;</li>
+<li>source conversions;</li>
+<li>downstream code lists;</li>
+<li>historical interpretation.</li>
+</ul>
+<p>Impact analysis should identify the evidence claims that need revalidation.</p>
+<p>---</p>
+<h1 id="do-not-promote-every-hypercare-correction-into-canonical-truth">Do not promote every hypercare correction into canonical truth</h1>
+<p>During hypercare, teams often fix records quickly.</p>
+<p>Examples:</p>
+<ul>
+<li>manually update a missing bank key;</li>
+<li>change Product MRP Controller;</li>
+<li>correct partner function;</li>
+<li>remove a purchasing block;</li>
+<li>adjust Cost Centre validity.</li>
+</ul>
+<p>These corrections may solve individual incidents.</p>
+<p>They do not necessarily define the correct general model.</p>
+<p>The workflow should be:</p>
+<pre><code class="language-text">incident correction
+→ evidence
+→ root-cause Finding
+→ pattern assessment
+→ model proposal where justified</code></pre>
+<p>A one-off correction should not automatically create a new global Rule.</p>
+<p>---</p>
+<h1 id="pattern-detection-during-hypercare">Pattern detection during hypercare</h1>
+<p>Repeated incidents can reveal a model defect.</p>
+<p>Example:</p>
+<ul>
+<li>47 products in Plant PL30 have incorrect MRP Type;</li>
+<li>all came from the same source classification;</li>
+<li>all used the same fallback;</li>
+<li>the Mapping did not include plant context.</li>
+</ul>
+<p>This is no longer a record-level issue.</p>
+<p>It is evidence for a Mapping change.</p>
+<p>Another pattern:</p>
+<ul>
+<li>several suppliers fail payment because bank data is valid but payment methods are missing.</li>
+</ul>
+<p>This may indicate a separate Attribute or process dependency rather than a bank-data Mapping defect.</p>
+<p>Lineage helps separate correlated symptoms from actual shared cause.</p>
+<p>---</p>
+<h1 id="evidence-ownership">Evidence ownership</h1>
+<p>Different evidence needs different owners.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Evidence</th><th scope="col">Likely owner</th></tr></thead><tbody><tr><td>Source profile</td><td>Source data lead</td></tr><tr><td>Mapping result</td><td>Migration lead</td></tr><tr><td>SAP target validation</td><td>SAP functional lead</td></tr><tr><td>Bank-data approval</td><td>Treasury or finance owner</td></tr><tr><td>Tax treatment</td><td>Tax or legal owner</td></tr><tr><td>Product planning result</td><td>Production-planning owner</td></tr><tr><td>Interface verification</td><td>Integration owner</td></tr><tr><td>Hypercare incident pattern</td><td>Data governance or AMS lead</td></tr></tbody></table></div>
+<p>A report with no accountable reviewer is only an artefact.</p>
+<p>---</p>
+<h1 id="evidence-acceptance">Evidence acceptance</h1>
+<p>Evidence should record who accepted the claim and for what purpose.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Accepted for:
+Mock Load 2 continuation</code></pre>
+<pre><code class="language-text">Accepted for:
+Production cutover</code></pre>
+<pre><code class="language-text">Accepted with residual risk:
+temporary Product Plant default</code></pre>
+<pre><code class="language-text">Not accepted:
+Supplier Tax Identifier legal treatment unresolved</code></pre>
+<p>Acceptance of a mock-load result does not automatically approve production cutover.</p>
+<p>The scope of acceptance matters.</p>
+<p>---</p>
+<h1 id="a-phase-based-evidence-matrix">A phase-based evidence matrix</h1>
+<div class="table-wrap"><table><thead><tr><th scope="col">Evidence type</th><th scope="col">Mock load</th><th scope="col">Cutover</th><th scope="col">Hypercare</th></tr></thead><tbody><tr><td>Source schema</td><td>Discover and correct</td><td>Confirm frozen input</td><td>Investigate deltas</td></tr><tr><td>Mapping coverage</td><td>Test and improve</td><td>Confirm approved version</td><td>Diagnose patterns</td></tr><tr><td>Fallback usage</td><td>Measure and reduce</td><td>Control and approve</td><td>Reconcile and remove</td></tr><tr><td>Target persistence</td><td>Validate</td><td>Prove completeness</td><td>Investigate incidents</td></tr><tr><td>Downstream interfaces</td><td>Partial testing</td><td>Critical-path confirmation</td><td>Production behaviour</td></tr><tr><td>Business acceptance</td><td>Design validation</td><td>Go-live approval</td><td>Operational confirmation</td></tr><tr><td>Model update</td><td>Frequent proposals</td><td>Strictly controlled</td><td>Pattern-based</td></tr></tbody></table></div>
+<p>This matrix helps prevent evidence expectations from remaining static across phases.</p>
+<p>---</p>
+<h1 id="suggested-martenweave-evidence-model">Suggested Martenweave Evidence model</h1>
+<p>A practical runtime Evidence summary could contain:</p>
+<pre><code class="language-yaml">id: EVID-CUTOVER-PRODUCT-PLANT-001
+type: Evidence
+phase: cutover
+baseline: PRODUCT-WAVE1-APPROVED
+run_id: CUTOVER-PRODUCT-2026-10-03
+scope:
+  plants:
+    - PL10
+    - PL20
+claims:
+  - subject: MAP-PRODUCT-MRP-TYPE
+    claim: approved_mapping_conformance
+    verdict: verified_with_exceptions
+  - subject: FEP-S4-PRODUCT-PLANT-MRP-TYPE
+    claim: target_persistence
+    verdict: verified
+exceptions:
+  - finding: FIND-PL20-MRP-DEFAULT</code></pre>
+<p>This is a recommended direction rather than the exact current schema.</p>
+<p>---</p>
+<h1 id="suggested-diagnostics">Suggested diagnostics</h1>
+<pre><code class="language-text">MW-PHASE-EVID-001
+Evidence has no migration phase.
+
+MW-PHASE-EVID-002
+Mock-load Evidence is being used as cutover approval.
+
+MW-PHASE-EVID-003
+Cutover run does not identify the canonical baseline.
+
+MW-PHASE-EVID-004
+Target completeness passed while Mapping conformance failed.
+
+MW-PHASE-EVID-005
+Fallback records are not identifiable.
+
+MW-PHASE-EVID-006
+Manual intervention has no owner or affected population.
+
+MW-PHASE-EVID-007
+Hypercare incident cannot be traced to a source dataset or load run.
+
+MW-PHASE-EVID-008
+Evidence verifies a superseded Mapping.
+
+MW-PHASE-EVID-009
+Critical downstream consumer was not tested.
+
+MW-PHASE-EVID-010
+Residual cutover exception has no hypercare owner.
+
+MW-PHASE-EVID-011
+Sensitive evidence is embedded without restriction metadata.
+
+MW-PHASE-EVID-012
+Runtime correction was promoted to canonical policy without review.</code></pre>
+<p>---</p>
+<h1 id="operational-reports">Operational reports</h1>
+<p>Martenweave should be able to produce several concise reports.</p>
+<h2 id="mock-load-lineage-report">Mock-load lineage report</h2>
+<p>Shows:</p>
+<ul>
+<li>tested model baseline;</li>
+<li>expected paths;</li>
+<li>observed paths;</li>
+<li>Mapping conformance;</li>
+<li>source gaps;</li>
+<li>fallback usage;</li>
+<li>proposed corrections.</li>
+</ul>
+<h2 id="cutover-lineage-report">Cutover lineage report</h2>
+<p>Shows:</p>
+<ul>
+<li>approved input snapshot;</li>
+<li>executed versions;</li>
+<li>critical path completion;</li>
+<li>manual interventions;</li>
+<li>reconciliation;</li>
+<li>residual exceptions;</li>
+<li>go/no-go verdict.</li>
+</ul>
+<h2 id="hypercare-lineage-report">Hypercare lineage report</h2>
+<p>Shows:</p>
+<ul>
+<li>incidents by Attribute and Mapping;</li>
+<li>recurring source causes;</li>
+<li>unresolved fallback values;</li>
+<li>downstream failures;</li>
+<li>candidate model changes;</li>
+<li>data-correction backlog.</li>
+</ul>
+<p>The reports should derive from canonical IDs and structured Evidence rather than separate hand-maintained spreadsheets.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>deterministic validation;</li>
+<li>dataset profiling and readiness;</li>
+<li>lineage and impact;</li>
+<li>Evidence, Decisions and proposals;</li>
+<li>a Model Ledger workbench with evidence coverage and detailed object context.</li>
+</ul>
+<p>The next focused slice should add <strong>phase-aware lineage evidence</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Use the same canonical lineage across mock load, cutover and hypercare while applying different evidence and acceptance policies.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support phases:</p>
+<ul>
+<li>mock_load;</li>
+<li>cutover_rehearsal;</li>
+<li>cutover;</li>
+<li>hypercare.</li>
+</ul>
+<p>Support evidence claims:</p>
+<ul>
+<li>source availability;</li>
+<li>Mapping conformance;</li>
+<li>Rule conformance;</li>
+<li>target persistence;</li>
+<li>fallback usage;</li>
+<li>reconciliation;</li>
+<li>downstream verification;</li>
+<li>business acceptance.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The system must distinguish:</p>
+<pre><code class="language-text">Product Plant MRP Type populated</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Product Plant MRP Type produced through the approved plant-context Mapping</code></pre>
+<p>It must also distinguish:</p>
+<pre><code class="language-text">Supplier bank account loaded</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Supplier bank account validated, uniquely assigned and approved for payment use</code></pre>
+<h2 id="existing-workflow">Existing workflow</h2>
+<pre><code class="language-bash">martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/mock-load-3.xlsx \
+  --out ./reports/mock-load-3</code></pre>
+<h2 id="future-phase-aware-operation">Future phase-aware operation</h2>
+<pre><code class="language-bash">martenweave evidence-assess \
+  --repo ./model \
+  --phase cutover \
+  --run ./evidence/cutover-product-run.json</code></pre>
+<p>The second command is a product direction, not a current documented CLI guarantee.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Lineage evidence should evolve with the migration lifecycle.</p>
+<p>During mock loads, it should reveal whether the design is implementable.</p>
+<p>During cutover, it should prove that the approved path executed under controlled conditions.</p>
+<p>During hypercare, it should connect production symptoms to the correct source, Mapping, Rule, endpoint or downstream consumer.</p>
+<p>The complete loop is:</p>
+<pre><code class="language-text">approved model
+→ mock-load evidence
+→ corrected design
+→ cutover evidence
+→ production result
+→ hypercare evidence
+→ governed improvement</code></pre>
+<p>The practical test is not:</p>
+<blockquote>Did the load finish successfully?</blockquote>
+<p>It is:</p>
+<blockquote>Can the programme prove how each critical value was sourced, transformed, loaded, verified and consumed for the relevant population and model baseline?</blockquote>
+<p>For Supplier Bank Account, that means more than a populated IBAN.</p>
+<p>For Product MRP Type, it means more than a nonblank SAP field.</p>
+<p>For Partner Functions, it means more than matching record counts.</p>
+<p>For Tax Identifiers, it means more than passing a format check.</p>
+<p>For Cost Centre validity, it means more than creating the master record.</p>
+<p>When lineage evidence answers those questions, mock loads, cutover and hypercare become connected governance phases rather than separate reporting exercises.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects canonical model truth with dataset profiles, validation reports, migration evidence, Decisions and reviewable change proposals.</p>
+<p>The purpose is not to replace migration execution tools, SAP logs, interface monitoring or incident-management systems.</p>
+<p>The purpose is to preserve what those observations mean for the governed model.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, validates them deterministically, builds disposable SQLite and JSONL indexes and provides dataset-readiness, trace, impact, health, scorecard and proposal workflows.</p>
+<p>The current Martenweave product contract is backend-first and CLI-driven. It can generate a local static viewer and includes a local interactive frontend prototype for review, but it does not present that prototype as a hosted production application.</p>
+<p>OpenLineage’s current object model separates design-time Job and Dataset metadata from runtime Run events. Runs represent individual occurrences and may carry information about input and output datasets, quality metrics, assertions and output statistics.</p>
+<p>OpenLineage’s column-lineage facet describes which input fields contribute to output fields and distinguishes direct value derivation from indirect dependencies such as joins, filters and conditional logic.</p>
+<p>The phase-aware Evidence model, diagnostics and proposed <code>evidence-assess</code> command described here are recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current schema or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html"><span>Previous</span>A migration design states:</a><a href="/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html"><span>Next</span>A migration dashboard shows:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

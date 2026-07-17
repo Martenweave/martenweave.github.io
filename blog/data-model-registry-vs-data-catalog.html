@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Model Registry vs Data Catalog | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration manager searches the enterprise data catalogue for a customer field."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html" />
+    <meta property="og:title" content="Data Model Registry vs Data Catalog | Martenweave" />
+    <meta property="og:description" content="A migration manager searches the enterprise data catalogue for a customer field." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Model Registry vs Data Catalog | Martenweave" />
+    <meta name="twitter:description" content="A migration manager searches the enterprise data catalogue for a customer field." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html#webpage",
+                        "url": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html",
+                        "name": "Data Model Registry vs Data Catalog | Martenweave",
+                        "description": "A migration manager searches the enterprise data catalogue for a customer field.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Data Model Registry vs Data Catalog",
+                                    "item": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html#content",
+                        "headline": "Data Model Registry vs Data Catalog",
+                        "name": "Data Model Registry vs Data Catalog",
+                        "description": "A migration manager searches the enterprise data catalogue for a customer field.",
+                        "url": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/data-model-registry-vs-data-catalog.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Data Model Registry vs Data Catalog</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Data Model Registry vs Data Catalog</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration manager searches the enterprise data catalogue for a customer field.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-wrong-expectation-placed-on-a-data-catalogue">The wrong expectation placed on a data catalogue</a></li><li><a href="#the-central-object-is-different">The central object is different</a></li><li><a href="#in-a-data-catalogue">In a data catalogue</a></li><li><a href="#in-a-data-model-registry">In a data model registry</a></li><li><a href="#a-catalogue-optimises-for-breadth">A catalogue optimises for breadth</a></li><li><a href="#a-registry-optimises-for-decision-precision">A registry optimises for decision precision</a></li><li><a href="#discovery-lineage-and-implementation-lineage">Discovery lineage and implementation lineage</a></li><li><a href="#catalogue-lineage">Catalogue lineage</a></li><li><a href="#registry-lineage">Registry lineage</a></li><li><a href="#a-technical-column-is-not-the-same-as-a-business-attribute">A technical column is not the same as a business attribute</a></li><li><a href="#a-catalogue-may-show-all-possible-sources">A catalogue may show all possible sources</a></li><li><a href="#a-data-catalogue-is-not-automatically-a-migration-specification">A data catalogue is not automatically a migration specification</a></li><li><a href="#a-registry-is-not-a-smaller-catalogue">A registry is not a smaller catalogue</a></li><li><a href="#a-practical-capability-comparison">A practical capability comparison</a></li><li><a href="#example-finding-a-missing-migration-source">Example: finding a missing migration source</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration manager searches the enterprise data catalogue for a customer field.</p>
+<p>The catalogue finds it immediately.</p>
+<p>It shows the table, column, data type, owner, description and upstream lineage. The field appears in two legacy systems, several reports and one integration flow.</p>
+<p>The manager then asks the questions that are blocking the SAP programme:</p>
+<ul>
+<li>Which source field has been approved for migration?</li>
+<li>Which business attribute does it represent?</li>
+<li>Which transformation should be applied?</li>
+<li>Which SAP target field should receive it?</li>
+<li>Does the rule differ by country?</li>
+<li>Which value mapping was approved?</li>
+<li>Which dataset was used to validate the mapping?</li>
+<li>What happens if the target field becomes mandatory?</li>
+</ul>
+<p>The catalogue can help locate relevant assets.</p>
+<p>It may not contain the approved implementation decision.</p>
+<p>This is where teams often confuse two useful but different product categories.</p>
+<p>A <strong>data catalogue</strong> helps an organisation discover, understand and govern data assets across its landscape.</p>
+<p>A <strong>data model registry</strong> controls the specification used to design, migrate, validate and change a particular model.</p>
+<p>The simplest distinction is:</p>
+<pre><code class="language-text">Data catalogue:
+What data assets exist, where are they, and can people trust and use them?
+
+Data model registry:
+What model has been approved, how is it implemented, and what changes if it moves?</code></pre>
+<p>There is real overlap.</p>
+<p>Both categories may contain:</p>
+<ul>
+<li>datasets;</li>
+<li>tables;</li>
+<li>columns;</li>
+<li>definitions;</li>
+<li>ownership;</li>
+<li>lineage;</li>
+<li>relationships;</li>
+<li>policies;</li>
+<li>quality information.</li>
+</ul>
+<p>The difference is not the presence of metadata.</p>
+<p>The difference is the operating purpose.</p>
+<h2 id="the-wrong-expectation-placed-on-a-data-catalogue">The wrong expectation placed on a data catalogue</h2>
+<p>Enterprise catalogues are often selected to solve broad discovery and governance problems.</p>
+<p>Current catalogue products emphasise capabilities such as:</p>
+<ul>
+<li>inventorying enterprise data assets;</li>
+<li>extracting technical metadata;</li>
+<li>searching for datasets and reports;</li>
+<li>attaching business definitions and policies;</li>
+<li>showing lineage;</li>
+<li>displaying quality or trust indicators;</li>
+<li>connecting owners and users;</li>
+<li>helping people find appropriate data.</li>
+</ul>
+<p>Collibra describes a data catalogue as an inventory of enterprise data assets that uses technical, business and operational metadata to make datasets easier to discover, describe, organise, use and trust.</p>
+<p>Alation similarly presents its catalogue around finding data assets, understanding definitions and policies, viewing lineage and trust information, and integrating metadata from databases, files, BI systems, applications and other sources.</p>
+<p>These are important capabilities.</p>
+<p>They help answer:</p>
+<ul>
+<li>Where is customer data stored?</li>
+<li>Which table contains this field?</li>
+<li>Who owns this dataset?</li>
+<li>Which reports use it?</li>
+<li>What does the term mean?</li>
+<li>How does data move through the landscape?</li>
+<li>Has the asset been certified?</li>
+<li>Is the dataset reliable enough for analysis?</li>
+</ul>
+<p>The mistake is expecting the same catalogue automatically to become the authoritative system for SAP migration design and model change control.</p>
+<p>A catalogue can show that five versions of a customer classification exist.</p>
+<p>It does not necessarily decide:</p>
+<ul>
+<li>which one the programme will use;</li>
+<li>how the values will be harmonised;</li>
+<li>which target field represents the approved concept;</li>
+<li>which local exceptions are permitted;</li>
+<li>which migration default has been accepted;</li>
+<li>which tests prove the implementation;</li>
+<li>whether the decision is approved or merely proposed.</li>
+</ul>
+<p>Discovery and implementation control are connected problems.</p>
+<p>They are not identical.</p>
+<h2 id="the-central-object-is-different">The central object is different</h2>
+<p>A useful way to distinguish the categories is to ask:</p>
+<blockquote>What is the primary object being governed?</blockquote>
+<h2 id="in-a-data-catalogue">In a data catalogue</h2>
+<p>The primary objects are usually enterprise data assets and their metadata.</p>
+<p>Examples include:</p>
+<ul>
+<li>databases;</li>
+<li>schemas;</li>
+<li>tables;</li>
+<li>columns;</li>
+<li>files;</li>
+<li>datasets;</li>
+<li>reports;</li>
+<li>dashboards;</li>
+<li>data products;</li>
+<li>APIs;</li>
+<li>pipelines;</li>
+<li>models;</li>
+<li>business terms.</li>
+</ul>
+<p>The catalogue helps people discover and evaluate these assets.</p>
+<h2 id="in-a-data-model-registry">In a data model registry</h2>
+<p>The primary objects are elements of an approved model specification.</p>
+<p>Examples include:</p>
+<ul>
+<li>domain;</li>
+<li>business entity;</li>
+<li>attribute;</li>
+<li>organisational context;</li>
+<li>source endpoint;</li>
+<li>target endpoint;</li>
+<li>mapping;</li>
+<li>transformation rule;</li>
+<li>value list;</li>
+<li>value mapping;</li>
+<li>validation rule;</li>
+<li>decision;</li>
+<li>issue;</li>
+<li>dataset expectation;</li>
+<li>change proposal.</li>
+</ul>
+<p>The registry helps a delivery or operations team control how these objects fit together.</p>
+<p>Consider the difference.</p>
+<p>A catalogue may record:</p>
+<pre><code class="language-text">Asset:
+LEGACY_CUSTOMER.CUSTOMER_TYPE
+
+Type:
+VARCHAR(4)
+
+Owner:
+CRM Data Team
+
+Used by:
+12 reports and 3 pipelines</code></pre>
+<p>A model registry may record:</p>
+<pre><code class="language-text">Business attribute:
+Customer group for sales processing
+
+Approved source:
+LEGACY_CUSTOMER.CUSTOMER_TYPE
+
+Target:
+SAP sales-area customer group field
+
+Context:
+Sales area
+
+Transformation:
+Country-specific value mapping
+
+Current limitation:
+Source unavailable for system B
+
+Decision:
+Blank values may not be defaulted for active customers</code></pre>
+<p>The catalogue describes the source asset.</p>
+<p>The registry describes the approved implementation relationship.</p>
+<h2 id="a-catalogue-optimises-for-breadth">A catalogue optimises for breadth</h2>
+<p>A catalogue is expected to cover a large and diverse data landscape.</p>
+<p>Its value grows as it includes more:</p>
+<ul>
+<li>platforms;</li>
+<li>databases;</li>
+<li>datasets;</li>
+<li>reports;</li>
+<li>pipelines;</li>
+<li>owners;</li>
+<li>users;</li>
+<li>domains.</li>
+</ul>
+<p>It supports broad organisational questions.</p>
+<p>For example:</p>
+<ul>
+<li>What customer datasets do we have?</li>
+<li>Where does this metric come from?</li>
+<li>Which reports contain personal data?</li>
+<li>Which data products are certified?</li>
+<li>Who owns this table?</li>
+<li>Which pipeline will be affected if a column changes?</li>
+</ul>
+<p>Alation, for example, markets connectors across databases, files, BI systems, applications and AI assets, together with metadata extraction, search and lineage.</p>
+<p>This breadth is a strength.</p>
+<p>A data model registry is intentionally narrower.</p>
+<p>It may cover one domain, programme or governed model in much greater implementation detail.</p>
+<p>For example:</p>
+<ul>
+<li>Business Partner migration;</li>
+<li>Customer model harmonisation;</li>
+<li>Supplier MDG implementation;</li>
+<li>Product model redesign;</li>
+<li>one SAP rollout wave.</li>
+</ul>
+<p>The registry does not need to discover every table in the enterprise.</p>
+<p>It needs to control the specific objects and decisions required to deliver the model safely.</p>
+<h2 id="a-registry-optimises-for-decision-precision">A registry optimises for decision precision</h2>
+<p>A model registry should know the difference between:</p>
+<ul>
+<li>current state;</li>
+<li>proposed state;</li>
+<li>approved state;</li>
+<li>implemented state;</li>
+<li>tested state;</li>
+<li>retired state.</li>
+</ul>
+<p>This matters because an implementation programme contains competing possibilities.</p>
+<p>The target field proposed in February may be rejected in March.</p>
+<p>A local mapping may be accepted only for one wave.</p>
+<p>A temporary default may exist during testing but be prohibited at cutover.</p>
+<p>A configuration change may be implemented in development but not yet approved for production.</p>
+<p>A general catalogue can store status metadata.</p>
+<p>A model registry makes the lifecycle of the model decision central.</p>
+<p>For example:</p>
+<pre><code class="language-text">Attribute status:
+Approved
+
+Mapping status:
+Dataset validated
+
+Configuration status:
+Implemented in DEV
+
+Test status:
+Pending
+
+Deviation:
+Local migration default expires before cutover</code></pre>
+<p>This level of distinction is essential when the question is not merely “What exists?” but “What is the programme authorised to implement?”</p>
+<h2 id="discovery-lineage-and-implementation-lineage">Discovery lineage and implementation lineage</h2>
+<p>Both catalogues and registries can provide lineage.</p>
+<p>The word means different things depending on the job.</p>
+<h2 id="catalogue-lineage">Catalogue lineage</h2>
+<p>Catalogue lineage typically shows how data moves and transforms across technical assets:</p>
+<pre><code class="language-text">Source table
+→ transformation pipeline
+→ warehouse table
+→ semantic model
+→ report</code></pre>
+<p>This helps users understand provenance, downstream impact and trust.</p>
+<p>Collibra describes catalogue and lineage capabilities around discovering enterprise assets and visualising how data flows, transforms and is used across the landscape.</p>
+<p>Alation similarly presents end-to-end lineage and links between assets, sources, definitions, policies and quality information.</p>
+<h2 id="registry-lineage">Registry lineage</h2>
+<p>A model registry needs semantic and decision lineage as well:</p>
+<pre><code class="language-text">Legacy source field
+→ business interpretation
+→ approved mapping
+→ value transformation
+→ organisational context
+→ SAP target endpoint
+→ validation rule
+→ decision
+→ test evidence</code></pre>
+<p>This path may include elements that do not exist as technical data flows.</p>
+<p>For example:</p>
+<ul>
+<li>a rejected mapping option;</li>
+<li>a manual enrichment rule;</li>
+<li>a temporary default;</li>
+<li>a legal exception;</li>
+<li>a business approval;</li>
+<li>a dataset gap;</li>
+<li>a test obligation.</li>
+</ul>
+<p>The catalogue may know how data currently moves.</p>
+<p>The registry should know why the programme has chosen that movement and whether the choice is approved.</p>
+<h2 id="a-technical-column-is-not-the-same-as-a-business-attribute">A technical column is not the same as a business attribute</h2>
+<p>Catalogues often connect technical metadata with business glossaries.</p>
+<p>This is valuable.</p>
+<p>A column can be linked to a business term, owner and policy.</p>
+<p>A model registry needs to go further when one business attribute has several physical representations.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business attribute:
+Supplier payment terms
+
+Representations:
+- ERP_A.VENDOR.PAY_TERM
+- ERP_B.SUPPLIER.PAYMENT_CODE
+- SAP company-code supplier payment terms
+- outbound procurement API field</code></pre>
+<p>The implementation may require:</p>
+<ul>
+<li>source-specific mappings;</li>
+<li>company-code context;</li>
+<li>value conversions;</li>
+<li>treatment of obsolete codes;</li>
+<li>migration exceptions;</li>
+<li>downstream compatibility.</li>
+</ul>
+<p>The business term helps users understand the concept.</p>
+<p>The registry controls how the concept is realised in the implementation.</p>
+<h2 id="a-catalogue-may-show-all-possible-sources">A catalogue may show all possible sources</h2>
+<p>A migration programme needs the approved source</p>
+<p>Suppose the catalogue identifies four systems containing customer-industry data.</p>
+<p>That discovery is useful.</p>
+<p>The programme must still decide:</p>
+<ul>
+<li>Which system is authoritative?</li>
+<li>Does authority differ by country?</li>
+<li>Which source has acceptable completeness?</li>
+<li>Are the definitions equivalent?</li>
+<li>What happens when sources conflict?</li>
+<li>Which value list maps to the SAP target?</li>
+<li>Will historical records use a different treatment?</li>
+<li>Who approved the source-selection rule?</li>
+</ul>
+<p>The catalogue provides the candidates and evidence.</p>
+<p>The registry records the selected treatment.</p>
+<p>This is a strong integration pattern:</p>
+<pre><code class="language-text">Data catalogue
+Discovers candidate assets and technical lineage
+                    ↓
+Data model registry
+Records approved model, mappings and decisions
+                    ↓
+SAP, MDM or migration implementation
+Executes the approved treatment</code></pre>
+<p>The registry should not attempt to recrawl the whole enterprise if the catalogue already does that well.</p>
+<p>The catalogue should not be expected to infer programme approval from asset availability.</p>
+<h2 id="a-data-catalogue-is-not-automatically-a-migration-specification">A data catalogue is not automatically a migration specification</h2>
+<p>A catalogue entry can be rich and still be insufficient for migration.</p>
+<p>A migration specification may need:</p>
+<ul>
+<li>source-selection rules;</li>
+<li>filtering;</li>
+<li>defaulting;</li>
+<li>derivation;</li>
+<li>splitting and concatenation;</li>
+<li>code conversion;</li>
+<li>load sequencing;</li>
+<li>relationship reconstruction;</li>
+<li>key mapping;</li>
+<li>error handling;</li>
+<li>migration-wave applicability;</li>
+<li>cutover treatment;</li>
+<li>reconciliation evidence.</li>
+</ul>
+<p>These elements describe intended delivery behaviour.</p>
+<p>Some catalogue platforms can be extended to store them.</p>
+<p>The question is whether doing so produces a clear operating model or turns the catalogue into a customised project application.</p>
+<p>A model registry makes these relationships first-class by design.</p>
+<h2 id="a-registry-is-not-a-smaller-catalogue">A registry is not a smaller catalogue</h2>
+<p>This distinction protects Martenweave from product drift.</p>
+<p>It would be easy to expand the product backlog with catalogue features:</p>
+<ul>
+<li>automatic enterprise scanning;</li>
+<li>hundreds of connectors;</li>
+<li>organisation-wide business glossary;</li>
+<li>dataset marketplace;</li>
+<li>access-request workflow;</li>
+<li>privacy classification;</li>
+<li>broad analytics discovery;</li>
+<li>usage popularity;</li>
+<li>report certification.</li>
+</ul>
+<p>These are legitimate catalogue capabilities.</p>
+<p>They are not the initial Martenweave product.</p>
+<p>Martenweave should not compete on the number of systems it can scan.</p>
+<p>It should compete on whether a team can:</p>
+<ul>
+<li>represent the approved model precisely;</li>
+<li>validate its references;</li>
+<li>connect real datasets;</li>
+<li>find gaps;</li>
+<li>trace implementation relationships;</li>
+<li>assess change impact;</li>
+<li>review model proposals;</li>
+<li>preserve decisions for AMS.</li>
+</ul>
+<p>The registry is narrower, but deeper in the delivery process.</p>
+<h2 id="a-practical-capability-comparison">A practical capability comparison</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Capability</th><th scope="col">Data model registry</th><th scope="col">Data catalogue</th></tr></thead><tbody><tr><td>Inventory enterprise data assets</td><td>Limited</td><td>Primary</td></tr><tr><td>Scan databases and platforms</td><td>Not a core requirement</td><td>Primary</td></tr><tr><td>Search for datasets and reports</td><td>Supporting</td><td>Primary</td></tr><tr><td>Business glossary</td><td>Focused on model objects</td><td>Common core capability</td></tr><tr><td>Technical metadata extraction</td><td>Via integration where useful</td><td>Primary</td></tr><tr><td>Technical data lineage</td><td>Supporting or imported</td><td>Primary</td></tr><tr><td>Approved target-model specification</td><td>Primary</td><td>Possible, but not usually central</td></tr><tr><td>Source-to-target migration mappings</td><td>Primary</td><td>Possible through custom metadata</td></tr><tr><td>Transformation approval</td><td>Primary</td><td>Not usually central</td></tr><tr><td>Dataset-to-model gap detection</td><td>Primary</td><td>Quality and profiling may overlap</td></tr><tr><td>Model-baseline comparison</td><td>Primary</td><td>Product-dependent</td></tr><tr><td>Proposed vs approved model state</td><td>Primary</td><td>Product-dependent</td></tr><tr><td>Impact analysis across mappings, rules and tests</td><td>Primary</td><td>Strong for data assets; weaker for project decisions</td></tr><tr><td>Decision rationale</td><td>Primary</td><td>Possible through governance workflows</td></tr><tr><td>Model patch proposals</td><td>Primary</td><td>Not normally the main purpose</td></tr><tr><td>Data discovery for broad user populations</td><td>Limited</td><td>Primary</td></tr><tr><td>Data marketplace and access discovery</td><td>No</td><td>Common catalogue capability</td></tr><tr><td>Privacy and policy classification</td><td>Referenced where relevant</td><td>Common catalogue capability</td></tr></tbody></table></div>
+<p>This is not a claim that catalogues are incapable of storing model information.</p>
+<p>Modern catalogue and data-intelligence platforms are broad.</p>
+<p>The table shows which capability is central to each product’s purpose.</p>
+<h2 id="example-finding-a-missing-migration-source">Example: finding a missing migration source</h2>
+<p>The SAP target model requires a customer classification.</p>
+<h3 id="what-the-catalogue-contributes">What the catalogue contributes</h3>
+<p>The catalogue may identify:</p>
+<ul>
+<li>four source tables containing classification-like fields;</li>
+<li>field descriptions;</li>
+<li>owners;</li>
+<li>data types;</li>
+<li>usage;</li>
+<li>pipelines;</li>
+<li>technical lineage;</li>
+<li>quality indicators.</li>
+</ul>
+<p>This dramatically reduces discovery effort.</p>
+<h3 id="what-the-registry-contributes">What the registry contributes</h3>
+<p>The registry records:</p>
+<ul>
+<li>the approved business definition;</li>
+<li>selected source by system and context;</li>
+<li>rejected alternative sources;</li>
+<li>source-to-target mapping;</li>
+<li>value translation;</li>
+<li>completeness evidence;</li>
+<li>local exceptions;</li>
+<li>owner approval;</li>
+<li>test status.</li>
+</ul>
+<p>The catalogue answers:</p>
+<blockquote>What could we use?</blockquote>
+<p>The registry answers:</p>
+<blockquote>What have we decided to use, and under which conditions?</blockquote>
+<h2 id="example-changing-an-sap-field">Example: changing an SAP field</h2>
+<p>A target attribute becomes mandatory.</p>
+<h3 id="catalogue-impact-analysis">Catalogue impact analysis</h3>
+<p>The catalogue may identify technical consumers and upstream sources:</p>
+<ul>
+<li>tables;</li>
+<li>pipelines;</li>
+<li>reports;</li>
+<li>interfaces.</li>
+</ul>
+<h3 id="registry-impact-analysis">Registry impact analysis</h3>
+<p>The registry adds:</p>
+<ul>
+<li>source systems unable to provide the value;</li>
+<li>migration mappings requiring revision;</li>
+<li>country-specific rules;</li>
+<li>accepted defaults;</li>
+<li>current dataset populations;</li>
+<li>related decisions;</li>
+<li>tests requiring renewal;</li>
+<li>operational remediation owners.</li>
+</ul>
+<p>Both views are valuable.</p>
+<p>The catalogue shows technical landscape impact.</p>
+<p>The registry shows delivery and governance impact.</p>
+<h2 id="example-a-local-value-list-exception">Example: a local value-list exception</h2>
+<p>A country requests an additional supplier-risk value.</p>
+<h3 id="catalogue-role">Catalogue role</h3>
+<p>The catalogue may document:</p>
+<ul>
+<li>the field;</li>
+<li>business glossary term;</li>
+<li>datasets containing the value;</li>
+<li>reports consuming it;</li>
+<li>owner;</li>
+<li>lineage.</li>
+</ul>
+<h3 id="registry-role">Registry role</h3>
+<p>The registry determines whether the new value is:</p>
+<ul>
+<li>part of the global list;</li>
+<li>a local extension;</li>
+<li>a temporary migration status;</li>
+<li>an override;</li>
+<li>an invalid duplication of another concept.</li>
+</ul>
+<p>It then connects the decision to:</p>
+<ul>
+<li>mappings;</li>
+<li>workflow rules;</li>
+<li>interfaces;</li>
+<li>tests;</li>
+<li>affected records;</li>
+<li>approval.</li>
+</ul>
+<p>The catalogue documents and exposes the asset.</p>
+<p>The registry controls the model change.</p>
+<h2 id="where-a-catalogue-may-already-be-enough">Where a catalogue may already be enough</h2>
+<p>An organisation may not need a separate registry if its catalogue already supports the required model-governance workflow effectively.</p>
+<p>This can be true when:</p>
+<ul>
+<li>the model is stable;</li>
+<li>migration is simple;</li>
+<li>custom object types are supported;</li>
+<li>mappings and rules are represented clearly;</li>
+<li>approval states are controlled;</li>
+<li>dataset gaps are linked to model objects;</li>
+<li>impact analysis includes project decisions;</li>
+<li>delivery teams actively use the catalogue;</li>
+<li>handover knowledge remains current.</li>
+</ul>
+<p>The product label is not important.</p>
+<p>If the catalogue can operate as the required model registry without heavy customisation or ambiguous authority, introducing another tool may be unnecessary.</p>
+<p>We care about the operating capability, not category purity.</p>
+<h2 id="signs-that-the-catalogue-is-not-enough">Signs that the catalogue is not enough</h2>
+<p>A separate registry becomes more justifiable when:</p>
+<ul>
+<li>the catalogue contains assets but not the approved migration treatment;</li>
+<li>source-to-target mappings remain in Excel;</li>
+<li>model decisions remain in Jira;</li>
+<li>target-model versions cannot be compared;</li>
+<li>proposed and approved states are mixed;</li>
+<li>dataset profiles are not checked against target requirements;</li>
+<li>local variants are hard to represent;</li>
+<li>test evidence is disconnected from model changes;</li>
+<li>SAP configuration changes are not reflected;</li>
+<li>the catalogue team and migration team work through separate processes;</li>
+<li>adapting the catalogue would require a large custom programme.</li>
+</ul>
+<p>In this situation, the organisation may have strong asset discovery and weak model delivery control.</p>
+<h2 id="when-a-registry-is-needed-without-a-catalogue">When a registry is needed without a catalogue</h2>
+<p>A company may have no enterprise catalogue and still benefit from a registry.</p>
+<p>This is common in a bounded migration or MDG programme.</p>
+<p>The team may need to control:</p>
+<ul>
+<li>100 critical attributes;</li>
+<li>three source systems;</li>
+<li>one SAP target;</li>
+<li>mappings;</li>
+<li>value lists;</li>
+<li>dataset gaps;</li>
+<li>decisions;</li>
+<li>change impact.</li>
+</ul>
+<p>It does not necessarily need to catalogue every database and report in the enterprise.</p>
+<p>A registry can start locally and remain focused on the programme.</p>
+<p>This is one of Martenweave’s strongest practical positions.</p>
+<p>It can solve the immediate model-delivery problem without requiring a broad enterprise metadata initiative.</p>
+<h2 id="when-both-are-needed">When both are needed</h2>
+<p>A mature organisation may use both layers.</p>
+<p>The catalogue provides:</p>
+<ul>
+<li>broad asset discovery;</li>
+<li>automated metadata ingestion;</li>
+<li>technical lineage;</li>
+<li>enterprise glossary;</li>
+<li>policy and privacy context;</li>
+<li>data-product discovery.</li>
+</ul>
+<p>The registry provides:</p>
+<ul>
+<li>approved model baselines;</li>
+<li>programme-specific mappings;</li>
+<li>transformation decisions;</li>
+<li>dataset expectations;</li>
+<li>model gaps;</li>
+<li>implementation impact;</li>
+<li>change proposals;</li>
+<li>delivery and AMS continuity.</li>
+</ul>
+<p>A useful integration pattern is:</p>
+<pre><code class="language-text">Catalogue asset ID
+        ↓
+Registry SourceEndpoint or TargetEndpoint
+        ↓
+Mapping, Attribute, Rule and Decision
+        ↓
+Approved implementation change</code></pre>
+<p>The registry should reuse catalogue identities rather than duplicate asset discovery.</p>
+<p>The catalogue can link back to the approved model specification where useful.</p>
+<h2 id="when-neither-is-needed">When neither is needed</h2>
+<p>A small project may be adequately controlled through:</p>
+<ul>
+<li>one workbook;</li>
+<li>clear ownership;</li>
+<li>limited source systems;</li>
+<li>stable definitions;</li>
+<li>simple mappings;</li>
+<li>low change volume.</li>
+</ul>
+<p>A registry is not justified merely because metadata exists.</p>
+<p>A catalogue is not justified merely because users occasionally search for a table.</p>
+<p>The cost of the problem should determine the control.</p>
+<h2 id="the-governance-workflow-differs">The governance workflow differs</h2>
+<p>A catalogue governance workflow may focus on:</p>
+<ul>
+<li>assigning asset ownership;</li>
+<li>completing descriptions;</li>
+<li>certifying datasets;</li>
+<li>applying classifications;</li>
+<li>approving access;</li>
+<li>resolving quality issues.</li>
+</ul>
+<p>A registry workflow focuses on changes to the model specification:</p>
+<ul>
+<li>propose a new attribute;</li>
+<li>revise a mapping;</li>
+<li>add a local context;</li>
+<li>change a value list;</li>
+<li>retire an endpoint;</li>
+<li>update a rule;</li>
+<li>approve a migration default;</li>
+<li>record an implementation decision.</li>
+</ul>
+<p>The first governs how assets are understood and used.</p>
+<p>The second governs what the implementation team is authorised to build.</p>
+<h2 id="the-users-differ">The users differ</h2>
+<p>Data catalogues serve broad data communities:</p>
+<ul>
+<li>analysts;</li>
+<li>data scientists;</li>
+<li>data engineers;</li>
+<li>business users;</li>
+<li>governance teams;</li>
+<li>privacy teams;</li>
+<li>data-product owners.</li>
+</ul>
+<p>A model registry primarily serves people responsible for model delivery and change:</p>
+<ul>
+<li>SAP and MDM architects;</li>
+<li>migration leads;</li>
+<li>data architects;</li>
+<li>mapping teams;</li>
+<li>data-governance leads;</li>
+<li>test leads;</li>
+<li>data stewards;</li>
+<li>AMS analysts;</li>
+<li>implementation partners.</li>
+</ul>
+<p>There is overlap.</p>
+<p>An enterprise architect may use both.</p>
+<p>The difference is the job being performed.</p>
+<h2 id="ai-does-not-remove-the-distinction">AI does not remove the distinction</h2>
+<p>Catalogue vendors increasingly position AI around search, metadata curation and helping people find and understand enterprise information. Alation, for example, currently describes AI-assisted metadata curation and natural-language discovery as catalogue capabilities.</p>
+<p>AI can also help a registry:</p>
+<ul>
+<li>extract candidate mappings;</li>
+<li>compare definitions;</li>
+<li>suggest model relationships;</li>
+<li>identify gaps;</li>
+<li>draft impact analysis;</li>
+<li>propose changes.</li>
+</ul>
+<p>The governance requirement is different.</p>
+<p>A catalogue AI can help a user discover relevant assets.</p>
+<p>A registry AI may be proposing a change to the approved implementation model.</p>
+<p>That proposal requires a stricter boundary:</p>
+<pre><code class="language-text">Evidence
+→ AI proposal
+→ deterministic validation
+→ responsible-owner review
+→ approved model change</code></pre>
+<p>Finding a plausible source field is not the same as approving it for migration.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave’s current public documentation describes the problem of model knowledge being scattered across spreadsheets, datasets, tickets, validation reports, decisions, SAP context and project history. It positions the product as a control layer that connects fields, attributes, rules, owners, issues and decisions, validates references, detects gaps and traces impact.</p>
+<p>The current core provides:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured query;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>ownership, audit, health and scorecard reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>PatchProposal-to-ChangeRequest lifecycle;</li>
+<li>issue drafts and GitHub-ready change bundles.</li>
+</ul>
+<p>These capabilities position Martenweave as a model registry rather than a full catalogue.</p>
+<p>Its purpose is not to inventory the whole enterprise.</p>
+<p>Its purpose is to maintain a validated model specification connecting:</p>
+<ul>
+<li>business attributes;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>contexts;</li>
+<li>rules;</li>
+<li>datasets;</li>
+<li>decisions;</li>
+<li>changes.</li>
+</ul>
+<h2 id="martenweave-should-integrate-with-catalogues">Martenweave should integrate with catalogues</h2>
+<p>If an enterprise catalogue already exists, Martenweave should not duplicate it.</p>
+<p>A future integration should be able to:</p>
+<ul>
+<li>reference catalogue asset identifiers;</li>
+<li>import selected technical metadata;</li>
+<li>link endpoints to catalogue pages;</li>
+<li>reuse ownership information;</li>
+<li>consume lineage evidence;</li>
+<li>send approved model context back where useful.</li>
+</ul>
+<p>The boundary should remain clear.</p>
+<pre><code class="language-text">Catalogue:
+Discovers and governs enterprise assets.
+
+Martenweave:
+Selects and governs their role in an approved model implementation.</code></pre>
+<p>This is stronger than attempting to replace a mature catalogue.</p>
+<h2 id="martenweave-should-not-become-a-crawler-platform">Martenweave should not become a crawler platform</h2>
+<p>Protecting scope matters.</p>
+<p>The current Martenweave documentation explicitly states that the product is not a generic data catalogue or a replacement for enterprise catalogue tools.</p>
+<p>That means the early product should avoid:</p>
+<ul>
+<li>building hundreds of connectors;</li>
+<li>indexing every database automatically;</li>
+<li>creating a company-wide data marketplace;</li>
+<li>competing on natural-language dataset discovery;</li>
+<li>managing data-access requests;</li>
+<li>becoming a privacy-classification platform;</li>
+<li>scanning the entire analytics estate.</li>
+</ul>
+<p>Those are large product categories.</p>
+<p>They would pull development away from the core problem:</p>
+<ul>
+<li>canonical model files;</li>
+<li>validation;</li>
+<li>dataset gaps;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>controlled proposals;</li>
+<li>human approval.</li>
+</ul>
+<h2 id="a-sensible-combined-architecture">A sensible combined architecture</h2>
+<p>For an enterprise using SAP MDG, a catalogue and Martenweave, responsibilities can be separated as follows.</p>
+<h3 id="data-catalogue">Data catalogue</h3>
+<p>Maintains broad metadata about:</p>
+<ul>
+<li>source systems;</li>
+<li>tables;</li>
+<li>fields;</li>
+<li>data products;</li>
+<li>reports;</li>
+<li>technical lineage;</li>
+<li>ownership;</li>
+<li>policy classifications.</li>
+</ul>
+<h3 id="martenweave">Martenweave</h3>
+<p>Maintains:</p>
+<ul>
+<li>approved business-model specification;</li>
+<li>selected source and target endpoints;</li>
+<li>migration mappings;</li>
+<li>transformations;</li>
+<li>value mappings;</li>
+<li>contextual rules;</li>
+<li>dataset expectations;</li>
+<li>decisions;</li>
+<li>change proposals.</li>
+</ul>
+<h3 id="sap-mdg">SAP MDG</h3>
+<p>Operates:</p>
+<ul>
+<li>governed master records;</li>
+<li>stewardship;</li>
+<li>workflow;</li>
+<li>validation;</li>
+<li>matching and consolidation where implemented;</li>
+<li>activation;</li>
+<li>distribution.</li>
+</ul>
+<h3 id="jira-and-confluence">Jira and Confluence</h3>
+<p>Maintain:</p>
+<ul>
+<li>delivery work;</li>
+<li>defects;</li>
+<li>collaboration;</li>
+<li>narrative documentation;</li>
+<li>procedures.</li>
+</ul>
+<p>This architecture has several tools.</p>
+<p>It should still have clear authority.</p>
+<h2 id="a-practical-pilot">A practical pilot</h2>
+<p>Do not begin by integrating the whole enterprise catalogue.</p>
+<p>Choose one domain and one problem.</p>
+<p>For example:</p>
+<ul>
+<li>Business Partner;</li>
+<li>50 critical attributes;</li>
+<li>three source systems;</li>
+<li>one current mapping workbook;</li>
+<li>one representative dataset;</li>
+<li>several catalogue asset references;</li>
+<li>five recent model changes.</li>
+</ul>
+<p>The pilot should prove:</p>
+<ol>
+<li>Catalogue assets can be referenced without copying all metadata.</li>
+<li>Business attributes have stable identities.</li>
+<li>Approved source and target endpoints are explicit.</li>
+<li>Mappings can be validated.</li>
+<li>The dataset can be compared with model expectations.</li>
+<li>Uncovered values and missing fields are visible.</li>
+<li>A field change produces a useful impact view.</li>
+<li>A proposed change can be reviewed before approval.</li>
+<li>A role-specific report can be generated.</li>
+<li>The model remains understandable to AMS.</li>
+</ol>
+<p>The pilot should not attempt to replace catalogue search or technical lineage ingestion.</p>
+<h2 id="how-to-measure-the-difference-in-value">How to measure the difference in value</h2>
+<p>Catalogue value may be measured through:</p>
+<ul>
+<li>search adoption;</li>
+<li>metadata coverage;</li>
+<li>certified assets;</li>
+<li>time saved finding data;</li>
+<li>ownership coverage;</li>
+<li>lineage coverage;</li>
+<li>data-product usage.</li>
+</ul>
+<p>Registry value should be measured differently:</p>
+<ul>
+<li>time required to identify the approved mapping;</li>
+<li>model gaps found before testing;</li>
+<li>time required for impact analysis;</li>
+<li>percentage of critical attributes with source and target lineage;</li>
+<li>dataset coverage against model expectations;</li>
+<li>reduction in repeated mapping reconciliation;</li>
+<li>decisions connected to affected objects;</li>
+<li>time required for AMS to explain a field;</li>
+<li>changes processed without model divergence.</li>
+</ul>
+<p>Using catalogue adoption metrics to assess a registry would miss its primary benefit.</p>
+<h2 id="common-misconceptions">Common misconceptions</h2>
+<h3 id="a-data-catalogue-already-contains-columns-so-a-registry-is-unnecessary">“A data catalogue already contains columns, so a registry is unnecessary”</h3>
+<p>Columns are only part of the model. The registry also controls approved mappings, contexts, decisions and change states.</p>
+<h3 id="a-registry-is-just-a-small-catalogue">“A registry is just a small catalogue”</h3>
+<p>A registry is narrower but is organised around model delivery rather than enterprise asset discovery.</p>
+<h3 id="a-catalogue-can-never-support-migration-mappings">“A catalogue can never support migration mappings”</h3>
+<p>It can, especially with custom asset types and workflows. The question is whether this is a central, maintainable use case in the organisation.</p>
+<h3 id="we-need-to-choose-one">“We need to choose one”</h3>
+<p>Large organisations may benefit from both, with explicit integration and authority.</p>
+<h3 id="the-registry-should-ingest-everything-from-the-catalogue">“The registry should ingest everything from the catalogue”</h3>
+<p>Only the assets relevant to the model should be referenced or imported.</p>
+<h3 id="better-search-solves-model-governance">“Better search solves model governance”</h3>
+<p>Search helps locate evidence. It does not determine which evidence represents the approved decision.</p>
+<h3 id="ai-can-infer-the-correct-mapping-from-catalogue-metadata">“AI can infer the correct mapping from catalogue metadata”</h3>
+<p>AI can propose a mapping. Business meaning, context and approval still need verification.</p>
+<h2 id="a-decision-framework">A decision framework</h2>
+<p>Ask these questions before selecting or extending a tool.</p>
+<h3 id="do-users-mainly-need-to-find-data">Do users mainly need to find data?</h3>
+<p>This points toward a catalogue.</p>
+<h3 id="does-the-organisation-need-broad-technical-metadata-and-lineage">Does the organisation need broad technical metadata and lineage?</h3>
+<p>This points toward a catalogue.</p>
+<h3 id="does-the-programme-need-to-control-an-approved-target-model">Does the programme need to control an approved target model?</h3>
+<p>This points toward a registry.</p>
+<h3 id="does-the-team-need-source-to-target-mappings-with-transformation-decisions">Does the team need source-to-target mappings with transformation decisions?</h3>
+<p>This points toward a registry.</p>
+<h3 id="does-the-team-need-dataset-gap-checks-against-model-expectations">Does the team need dataset-gap checks against model expectations?</h3>
+<p>This is a strong registry use case, although catalogue quality tooling may contribute evidence.</p>
+<h3 id="does-the-organisation-need-enterprise-glossary-certification-and-data-product-discovery">Does the organisation need enterprise glossary, certification and data-product discovery?</h3>
+<p>This points toward a catalogue.</p>
+<h3 id="does-a-model-change-need-to-trigger-mapping-test-and-decision-impact">Does a model change need to trigger mapping, test and decision impact?</h3>
+<p>This points toward a registry.</p>
+<h3 id="are-both-broad-discovery-and-precise-implementation-control-needed">Are both broad discovery and precise implementation control needed?</h3>
+<p>Use both layers and connect their objects.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>A data catalogue and a data model registry both organise metadata.</p>
+<p>They are not interchangeable.</p>
+<p>A catalogue helps an organisation understand its data landscape:</p>
+<ul>
+<li>what assets exist;</li>
+<li>where they live;</li>
+<li>how they flow;</li>
+<li>who owns them;</li>
+<li>whether users can trust them.</li>
+</ul>
+<p>A registry helps a programme control an implementation model:</p>
+<ul>
+<li>which attributes are approved;</li>
+<li>which sources were selected;</li>
+<li>how values are transformed;</li>
+<li>which target endpoints apply;</li>
+<li>which rules and contexts govern them;</li>
+<li>which decisions created the current state;</li>
+<li>what will be affected by change.</li>
+</ul>
+<p>The catalogue is broad and discovery-oriented.</p>
+<p>The registry is narrow and decision-oriented.</p>
+<p>Our practical rule is:</p>
+<blockquote>Use a catalogue to find and understand candidate data assets. Use a registry to record how selected assets participate in the approved model.</blockquote>
+<p>When one platform can perform both jobs cleanly, another product may not be necessary.</p>
+<p>When migration mappings, target decisions and change evidence remain outside the catalogue, a registry provides a focused control layer rather than another enterprise inventory.</p>
+<p>Martenweave should stay on that side of the boundary.</p>
+<p>Its value is not knowing about every table in the company.</p>
+<p>Its value is knowing exactly why the critical fields in one governed model are connected the way they are.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is intended to work beside enterprise catalogues by controlling the approved mappings, rules, evidence and change decisions required to deliver and maintain a model.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Collibra describes a data catalogue as an enterprise inventory that uses technical, business and operational metadata to support discovery, description, organisation, ownership, lineage and trust in data assets.</p>
+<p>Alation currently presents its data catalogue around asset discovery, descriptions and definitions, policies, lineage, trust indicators, metadata extraction, connectors and AI-assisted curation.</p>
+<p>Martenweave’s current public documentation describes structured model objects, deterministic validation, generated indexes, dataset profiling, gap detection, trace and impact analysis, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave’s documented boundaries state that it is not a generic data catalogue or a replacement for SAP MDG, Jira, Confluence or enterprise catalogue tools.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by Collibra, Alation or SAP. Product and company names mentioned in this article may be trademarks of their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/data-model-registry-vs-mdm-platform.html"><span>Previous</span>A company has a data problem.</a><a href="/blog/why-ai-should-propose-model-changes-but-never-apply-them-directly.html"><span>Next</span>An AI agent reviews a migration workbook and finds an obvious inconsistency.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

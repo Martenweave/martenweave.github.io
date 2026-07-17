@@ -10,7 +10,7 @@ let serverExited = false;
 server.once("exit", () => {
   serverExited = true;
 });
-const pages = ["/", "/docs.html", "/blog/sap-mdg-implementation-knowledge.html"];
+const pages = ["/", "/docs.html", "/blog/", "/blog/sap-mdg-implementation-knowledge.html"];
 const viewports = [
   { name: "desktop", width: 1440, height: 900 },
   { name: "mobile", width: 390, height: 844 },
@@ -46,16 +46,21 @@ try {
     page.on("pageerror", (error) => consoleErrors.push(error.message));
     for (const route of pages) {
       const response = await page.goto(`http://127.0.0.1:${port}${route}`, { waitUntil: "networkidle" });
-      const label = `${viewport.name}-${route === "/" ? "home" : route.includes("/blog/") ? "article" : "docs"}`;
+      const isBlogArticle = route.includes("/blog/") && route !== "/blog/";
+      const label = `${viewport.name}-${route === "/" ? "home" : route === "/blog/" ? "blog" : isBlogArticle ? "article" : "docs"}`;
       const screenshot = `${output}/${label}.png`;
       await page.screenshot({ path: screenshot, fullPage: true });
       const heading = await page.locator("h1").first().textContent();
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
       const h1Size = await page.locator("h1").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
-      const maxH1 = route === "/" ? (viewport.name === "mobile" ? 42 : 68) : route.includes("/blog/") ? (viewport.name === "mobile" ? 42 : 56) : Infinity;
-      const tocClosed = route.includes("/blog/") ? await page.locator("details.article-contents").evaluate((element) => !element.open) : true;
-      if (!response?.ok() || !heading?.trim() || overflow || consoleErrors.length || h1Size > maxH1 || !tocClosed) {
-        failures.push(`${label}: status=${response?.status()} h1=${Boolean(heading?.trim())} size=${h1Size}/${maxH1} tocClosed=${tocClosed} overflow=${overflow} console=${consoleErrors.join(" | ")}`);
+      const maxH1 = route === "/" ? (viewport.name === "mobile" ? 42 : 68) : route === "/blog/" ? (viewport.name === "mobile" ? 42 : 70) : isBlogArticle ? (viewport.name === "mobile" ? 42 : 56) : Infinity;
+      const tocClosed = isBlogArticle ? await page.locator("details.article-contents").evaluate((element) => !element.open) : true;
+      const catalogueReady = route === "/blog/" ? await page.evaluate(() => {
+        return document.querySelector("[data-blog-search]") !== null &&
+          document.querySelectorAll("[data-blog-card]:not([hidden])").length === 12;
+      }) : true;
+      if (!response?.ok() || !heading?.trim() || overflow || consoleErrors.length || h1Size > maxH1 || !tocClosed || !catalogueReady) {
+        failures.push(`${label}: status=${response?.status()} h1=${Boolean(heading?.trim())} size=${h1Size}/${maxH1} tocClosed=${tocClosed} catalogueReady=${catalogueReady} overflow=${overflow} console=${consoleErrors.join(" | ")}`);
       }
     }
     await page.close();

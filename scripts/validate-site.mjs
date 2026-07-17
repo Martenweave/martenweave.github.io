@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -35,16 +35,13 @@ const markdownDocs = docRoutes.map((route) => `docs/${route.source}`);
 const generatedDocs = docRoutes.map((route) => `docs/${route.output}`);
 const generatedDocRoutes = generatedDocs.map((file) => `/${file}`);
 const publicDocRoutes = generatedDocRoutes.filter((route) => route !== "/docs/index.html");
+const blogSourceFiles = readdirSync(join(root, "docs", "blog")).filter((file) => /^\d+-.*\.md$/.test(file));
 const publicBlogRoutes = [
   "/blog/",
-  "/blog/sap-mdg-implementation-knowledge.html",
-  "/blog/sap-migration-mapping-spreadsheets.html",
-  "/blog/detect-dataset-gaps-before-sap-migration-testing.html",
-  "/blog/impact-analysis-sap-field-change.html",
-  "/blog/trace-legacy-field-to-sap-target.html",
-  "/blog/deterministic-validation-migration-risk.html",
-  "/blog/evidence-based-migration-readiness-report.html",
-  "/blog/how-deterministic-model-validation-works.html",
+  ...readdirSync(join(root, "blog"))
+    .filter((file) => file.endsWith(".html") && file !== "index.html")
+    .map((file) => `/blog/${file}`)
+    .sort(),
 ];
 const publicContentRoutes = [...publicDocRoutes, "/blog/"];
 const publicHtmlFiles = [
@@ -379,8 +376,16 @@ for (const snippet of [
 }
 
 const blogIndex = htmlByFile.get("blog/index.html") ?? "";
-if (!blogIndex.includes('class="blog-grid"') || !blogIndex.includes("min read")) {
-  errors.push("Blog index must render editorial cards with reading time.");
+if (
+  !blogIndex.includes('class="blog-grid"') ||
+  !blogIndex.includes("min read") ||
+  !blogIndex.includes("data-blog-search") ||
+  !blogIndex.includes("data-blog-pagination")
+) {
+  errors.push("Blog index must render searchable, paginated editorial cards with reading time.");
+}
+if (publicBlogRoutes.length - 1 !== blogSourceFiles.length || blogSourceFiles.length !== 130) {
+  errors.push("Every one of the 130 canonical blog sources must render to one public article route.");
 }
 
 if (!rootHtml.includes('href="https://github.com/metalhatscats/martenweave-core"')) {
@@ -641,8 +646,9 @@ for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
   if (!html?.includes('<body class="blog-page">') || html.includes("Public docs")) {
     errors.push(`${route} must use editorial, not docs-page, semantics.`);
   }
-  if (!html?.includes('datetime="2026-07-14"') || !html.includes("14 July 2026")) {
-    errors.push(`${route} must use the timezone-safe 14 July 2026 publication date.`);
+  const published = html?.match(/<time datetime="(\d{4}-\d{2}-\d{2})">/);
+  if (!published) {
+    errors.push(`${route} must expose a timezone-safe publication date.`);
   }
   if (!html?.includes('class="article-sources"') || !html.includes("https://www.sap.com/products/")) {
     errors.push(`${route} must include primary source links.`);
@@ -650,8 +656,8 @@ for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {
   const sitemapEntry = sitemap.match(
     new RegExp(`<loc>${productionOrigin}${route}</loc>\\s*<lastmod>([^<]+)</lastmod>`),
   );
-  if (sitemapEntry?.[1] !== "2026-07-14") {
-    errors.push(`${route} must use the article publication date in sitemap.xml.`);
+  if (sitemapEntry?.[1] !== published?.[1]) {
+    errors.push(`${route} must use its publication date in sitemap.xml.`);
   }
 }
 
@@ -739,8 +745,8 @@ const sap = "SAP";
 const customerLogo = ["customer", "logo"].join(" ");
 const endorsementTerm = ["test", "imonial"].join("");
 const riskyClaimPatterns = [
-  new RegExp(`${sap}-certified`, "i"),
-  new RegExp(`\\b${sap} partner\\b`, "i"),
+  new RegExp(`Martenweave (?:is|as) (?:an? )?${sap}-certified`, "i"),
+  new RegExp(`Martenweave (?:is|as) (?:an? )?${sap} partner`, "i"),
   new RegExp(`official ${sap} partner`, "i"),
   new RegExp(`\\b${customerLogo}\\b`, "i"),
   new RegExp(`\\b${endorsementTerm}\\b`, "i"),

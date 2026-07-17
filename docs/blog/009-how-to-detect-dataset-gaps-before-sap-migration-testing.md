@@ -482,7 +482,7 @@ Temporal gaps include:
 
 Every material dataset version should therefore be compared with:
 
-1. the current approved model; and  
+1. the current approved model; and
 2. the previous relevant dataset version.
 
 The first comparison finds model gaps.

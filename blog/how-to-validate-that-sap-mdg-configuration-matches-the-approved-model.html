@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Validate That SAP MDG Configuration Matches the Approved Model | Martenweave</title>
+    <meta
+      name="description"
+      content="The design review is complete."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html" />
+    <meta property="og:title" content="How to Validate That SAP MDG Configuration Matches the Approved Model | Martenweave" />
+    <meta property="og:description" content="The design review is complete." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Validate That SAP MDG Configuration Matches the Approved Model | Martenweave" />
+    <meta name="twitter:description" content="The design review is complete." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html",
+                        "name": "How to Validate That SAP MDG Configuration Matches the Approved Model | Martenweave",
+                        "description": "The design review is complete.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Validate That SAP MDG Configuration Matches the Approved Model",
+                                    "item": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html#content",
+                        "headline": "How to Validate That SAP MDG Configuration Matches the Approved Model",
+                        "name": "How to Validate That SAP MDG Configuration Matches the Approved Model",
+                        "description": "The design review is complete.",
+                        "url": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Validate That SAP MDG Configuration Matches the Approved Model</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Validate That SAP MDG Configuration Matches the Approved Model</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">The design review is complete.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#a-functioning-system-can-still-implement-the-wrong-model">A functioning system can still implement the wrong model</a></li><li><a href="#the-approved-model-and-the-configured-model-are-different-artefacts">The approved model and the configured model are different artefacts</a></li><li><a href="#sap-mdg-provides-the-operational-governance-layer">SAP MDG provides the operational governance layer</a></li><li><a href="#begin-with-an-identifiable-model-baseline">Begin with an identifiable model baseline</a></li><li><a href="#identify-the-configuration-baseline-as-well">Identify the configuration baseline as well</a></li><li><a href="#build-a-trace-from-every-critical-model-object-to-its-implementation">Build a trace from every critical model object to its implementation</a></li><li><a href="#validate-existence-first">Validate existence first</a></li><li><a href="#validate-business-meaning-not-only-technical-names">Validate business meaning, not only technical names</a></li><li><a href="#validate-organisational-context">Validate organisational context</a></li><li><a href="#validate-optionality-and-conditional-mandatory-rules">Validate optionality and conditional mandatory rules</a></li><li><a href="#validate-rule-severity">Validate rule severity</a></li><li><a href="#validate-derivations-and-precedence">Validate derivations and precedence</a></li><li><a href="#validate-value-lists-semantically">Validate value lists semantically</a></li><li><a href="#validate-relationships">Validate relationships</a></li><li><a href="#validate-workflow-against-decision-rights">Validate workflow against decision rights</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The design review is complete.</p>
+<p>The model has been approved. Configuration has been transported. Unit tests are green. The programme moves into UAT believing that the intended governance design now exists in the system.</p>
+<p>Then users start testing.</p>
+<p>A field that should be optional produces an error.</p>
+<p>A country-specific rule applies globally.</p>
+<p>A workflow routes the request to the wrong team.</p>
+<p>A value shown in the approved list cannot be selected.</p>
+<p>One attribute appears on the user interface but is missing from replication.</p>
+<p>Another field is technically available but never becomes active because the derivation overwrites it.</p>
+<p>Every individual component appears to have been delivered.</p>
+<p>Together, they do not implement the approved model.</p>
+<p>The usual response is to open defects one by one.</p>
+<p>That may fix the immediate symptoms. It does not answer the wider question:</p>
+<blockquote>Does the SAP MDG configuration, as a whole, represent the model that the programme approved?</blockquote>
+<p>A successful transport proves that configuration moved between environments.</p>
+<p>A successful unit test proves that selected technical behaviour worked under selected conditions.</p>
+<p>Neither proves complete alignment with the intended business model.</p>
+<p>We treat design-to-configuration alignment as its own validation problem.</p>
+<p>The approved model states what should be true.</p>
+<p>SAP MDG configuration determines what the system actually permits, requires, derives, routes and distributes.</p>
+<p>The programme needs explicit evidence connecting the two.</p>
+<h2 id="a-functioning-system-can-still-implement-the-wrong-model">A functioning system can still implement the wrong model</h2>
+<p>Configuration defects are not always technical failures.</p>
+<p>A validation may work exactly as configured and still be wrong because:</p>
+<ul>
+<li>the approved context was narrower;</li>
+<li>a temporary requirement was implemented permanently;</li>
+<li>the wrong attribute was used;</li>
+<li>an exception was omitted;</li>
+<li>a warning became an error;</li>
+<li>a local rule was treated as global;</li>
+<li>the approved value list changed after configuration started.</li>
+</ul>
+<p>The system is not malfunctioning.</p>
+<p>It is faithfully enforcing the wrong interpretation.</p>
+<p>This distinction matters during testing.</p>
+<p>Technical teams often investigate whether configuration behaves consistently.</p>
+<p>Business and data teams need to determine whether the behaviour matches the approved model.</p>
+<p>Both questions are necessary.</p>
+<h2 id="the-approved-model-and-the-configured-model-are-different-artefacts">The approved model and the configured model are different artefacts</h2>
+<p>The approved model may contain:</p>
+<ul>
+<li>business entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>definitions;</li>
+<li>organisational contexts;</li>
+<li>value lists;</li>
+<li>ownership;</li>
+<li>validation rules;</li>
+<li>workflow principles;</li>
+<li>local variations;</li>
+<li>source and target endpoints;</li>
+<li>decisions.</li>
+</ul>
+<p>SAP MDG configuration may implement these through:</p>
+<ul>
+<li>data-model entities and attributes;</li>
+<li>user-interface configuration;</li>
+<li>change-request types;</li>
+<li>validations and derivations;</li>
+<li>workflow routing;</li>
+<li>value help;</li>
+<li>authorisations;</li>
+<li>replication;</li>
+<li>custom logic;</li>
+<li>environment-specific settings.</li>
+</ul>
+<p>The relationship is not always one-to-one.</p>
+<p>One approved rule may require several technical components.</p>
+<p>One configuration object may support several model elements.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved rule:
+High-risk suppliers require compliance approval.</code></pre>
+<p>Its implementation may involve:</p>
+<pre><code class="language-text">Supplier Risk attribute
+→ allowed value list
+→ validation of required evidence
+→ workflow routing condition
+→ compliance approval role
+→ activation condition
+→ outbound replication</code></pre>
+<p>Checking only the field or only the workflow does not prove that the complete rule has been implemented.</p>
+<h2 id="sap-mdg-provides-the-operational-governance-layer">SAP MDG provides the operational governance layer</h2>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer that unifies master data, policy and metadata. Its listed capabilities include governed models, preserved semantics and relationships, validated values, collaborative workflow routing, business-rule validation, data-quality monitoring and auditable changes.</p>
+<p>Those capabilities make MDG the operational platform in which the approved governance design is executed.</p>
+<p>The implementation programme still needs to demonstrate that its particular configuration correctly reflects:</p>
+<ul>
+<li>the selected business meanings;</li>
+<li>contextual rules;</li>
+<li>ownership model;</li>
+<li>migration decisions;</li>
+<li>local requirements;</li>
+<li>downstream dependencies.</li>
+</ul>
+<p>The existence of platform capability does not prove the correctness of one implementation.</p>
+<h2 id="begin-with-an-identifiable-model-baseline">Begin with an identifiable model baseline</h2>
+<p>Validation cannot begin from “the latest design.”</p>
+<p>The programme needs a named baseline.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business Partner Model Baseline: 1.8
+Approved: 6 July 2026
+Applicable release: R3
+Countries: DE, AT, PT</code></pre>
+<p>The baseline should state:</p>
+<ul>
+<li>which objects are approved;</li>
+<li>which objects remain proposed;</li>
+<li>which local variations apply;</li>
+<li>which deviations are accepted;</li>
+<li>which release should implement the model.</li>
+</ul>
+<p>Without this, different teams may validate against different states.</p>
+<p>The configuration team may have implemented baseline 1.7.</p>
+<p>Migration may be using 1.8.</p>
+<p>Testing may use a design document updated after 1.8 but never formally approved.</p>
+<p>Every team can be internally consistent and still disagree.</p>
+<h2 id="identify-the-configuration-baseline-as-well">Identify the configuration baseline as well</h2>
+<p>The configured state must also be identifiable.</p>
+<p>Useful references may include:</p>
+<ul>
+<li>environment;</li>
+<li>release;</li>
+<li>transport collection;</li>
+<li>configuration export;</li>
+<li>build version;</li>
+<li>deployment date;</li>
+<li>relevant custom-code version.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Environment:
+QAS
+
+Application release:
+R3 candidate 2
+
+Transport set:
+MDG-R3-2026-07-11
+
+Configuration verification date:
+13 July 2026</code></pre>
+<p>A model-to-configuration comparison without a configuration baseline cannot be reproduced.</p>
+<p>The system may change while the review is taking place.</p>
+<h2 id="build-a-trace-from-every-critical-model-object-to-its-implementation">Build a trace from every critical model object to its implementation</h2>
+<p>For each critical attribute, rule or relationship, the programme should identify how it is implemented.</p>
+<p>A practical trace may look like:</p>
+<pre><code class="language-text">Business attribute
+→ MDG entity and attribute
+→ UI representation
+→ validation or derivation
+→ workflow use
+→ replication endpoint
+→ test evidence</code></pre>
+<p>Not every attribute needs all of these elements.</p>
+<p>The trace should include the elements that determine its operational behaviour.</p>
+<p>For example:</p>
+<pre><code class="language-text">Attribute:
+Supplier Risk Classification
+
+MDG representation:
+Supplier Risk attribute
+
+Value list:
+LOW, MEDIUM, HIGH, UNDER_REVIEW
+
+Validation:
+Mandatory for active strategic suppliers
+
+Workflow:
+HIGH routes to Compliance
+
+Replication:
+Included in Supplier outbound message
+
+Test evidence:
+TC-SUP-114, TC-SUP-118</code></pre>
+<p>This lets the reviewer ask whether the configured behaviour implements the whole approved concept.</p>
+<h2 id="validate-existence-first">Validate existence first</h2>
+<p>The first comparison is basic:</p>
+<ul>
+<li>Does every approved entity exist?</li>
+<li>Does every approved attribute exist?</li>
+<li>Does every approved relationship exist?</li>
+<li>Does every approved value exist?</li>
+<li>Does every approved rule have an implementation reference?</li>
+<li>Does every required workflow path exist?</li>
+</ul>
+<p>This catches missing implementation.</p>
+<p>The reverse check is equally important:</p>
+<ul>
+<li>Which configured attributes have no approved model reference?</li>
+<li>Which active rules are absent from the design?</li>
+<li>Which value-list entries were added directly?</li>
+<li>Which workflow conditions do not correspond to an approved decision?</li>
+</ul>
+<p>This catches undocumented implementation.</p>
+<p>Both directions matter:</p>
+<pre><code class="language-text">Approved but not configured</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Configured but not approved</code></pre>
+<h2 id="validate-business-meaning-not-only-technical-names">Validate business meaning, not only technical names</h2>
+<p>A configuration object may have the expected name while representing another concept.</p>
+<p>For example:</p>
+<pre><code class="language-text">Design:
+Supplier Classification</code></pre>
+<p>Configuration:</p>
+<pre><code class="language-text">Supplier Category</code></pre>
+<p>These may be equivalent.</p>
+<p>They may also differ.</p>
+<p>Validation should compare:</p>
+<ul>
+<li>business definition;</li>
+<li>scope;</li>
+<li>owner;</li>
+<li>intended process use;</li>
+<li>context;</li>
+<li>value semantics.</li>
+</ul>
+<p>Technical naming similarity is weak evidence.</p>
+<p>This is especially important where existing standard fields are reused.</p>
+<p>Reusing a field can be sensible, but the programme should prove that its original meaning and technical behaviour fit the approved concept.</p>
+<h2 id="validate-organisational-context">Validate organisational context</h2>
+<p>Many alignment failures are actually context failures.</p>
+<p>An attribute may be approved for:</p>
+<ul>
+<li>central Business Partner data;</li>
+<li>company-code data;</li>
+<li>sales-area data;</li>
+<li>purchasing-organisation data;</li>
+<li>plant data;</li>
+<li>one country;</li>
+<li>one partner role.</li>
+</ul>
+<p>The configured field may exist but apply at another level.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved:
+Customer classification by sales area.
+
+Configured:
+One central Business Partner classification.</code></pre>
+<p>Both fields may contain valid classifications.</p>
+<p>The configured model cannot represent the approved variation.</p>
+<p>Context validation should check:</p>
+<ul>
+<li>level at which the value is stored;</li>
+<li>keys determining uniqueness;</li>
+<li>roles to which it applies;</li>
+<li>organisational restrictions;</li>
+<li>local or global scope;</li>
+<li>inheritance or default behaviour.</li>
+</ul>
+<h2 id="validate-optionality-and-conditional-mandatory-rules">Validate optionality and conditional mandatory rules</h2>
+<p>“Mandatory” is rarely one simple property.</p>
+<p>A field may be:</p>
+<ul>
+<li>always mandatory;</li>
+<li>mandatory for one country;</li>
+<li>mandatory for one Business Partner category;</li>
+<li>mandatory for active records;</li>
+<li>mandatory only during one workflow;</li>
+<li>required before activation but not at initial creation;</li>
+<li>optional for historical migration records;</li>
+<li>mandatory after a remediation deadline.</li>
+</ul>
+<p>The approved model should state the condition clearly.</p>
+<p>The configuration review should test that exact condition.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved rule:
+Tax Registration Identifier is mandatory when:
+- Country = DE
+- Business Partner Category = Organisation
+- Role = Customer
+- Status = Active
+- No approved exemption exists</code></pre>
+<p>Testing only one successful German customer is insufficient.</p>
+<p>The validation set should include:</p>
+<ul>
+<li>positive case;</li>
+<li>each non-applicable context;</li>
+<li>valid exemption;</li>
+<li>invalid format;</li>
+<li>historical record where special treatment applies.</li>
+</ul>
+<h2 id="validate-rule-severity">Validate rule severity</h2>
+<p>A rule may be correctly implemented but with the wrong severity.</p>
+<p>Approved design:</p>
+<pre><code class="language-text">Warning during early migration testing.
+Error before production cutover.</code></pre>
+<p>Configured behaviour:</p>
+<pre><code class="language-text">Error in every environment.</code></pre>
+<p>This can block testing unnecessarily.</p>
+<p>The reverse is more dangerous:</p>
+<pre><code class="language-text">Approved:
+Blocking error.
+
+Configured:
+Warning.</code></pre>
+<p>Records then pass despite violating the intended governance control.</p>
+<p>For each rule, verify:</p>
+<ul>
+<li>severity;</li>
+<li>environment;</li>
+<li>effective date;</li>
+<li>applicable process;</li>
+<li>exception path;</li>
+<li>message presented to users.</li>
+</ul>
+<h2 id="validate-derivations-and-precedence">Validate derivations and precedence</h2>
+<p>A field can appear correctly configured but receive the wrong value because several derivations interact.</p>
+<p>Possible sources include:</p>
+<ul>
+<li>user input;</li>
+<li>source mapping;</li>
+<li>default;</li>
+<li>derivation;</li>
+<li>workflow update;</li>
+<li>replication logic;</li>
+<li>custom code.</li>
+</ul>
+<p>The programme should establish precedence.</p>
+<p>For example:</p>
+<pre><code class="language-text">1. Approved manually maintained value
+2. Country-specific derivation
+3. Global derivation
+4. Temporary migration default</code></pre>
+<p>Questions to test include:</p>
+<ul>
+<li>Can a derivation overwrite a steward’s approved value?</li>
+<li>Does a default run when the source value is blank or also when it is invalid?</li>
+<li>Does local logic override global logic?</li>
+<li>Does the same derivation run during migration and operational maintenance?</li>
+<li>Does recalculation change existing records?</li>
+</ul>
+<p>A configuration review that checks only whether the derivation exists is incomplete.</p>
+<h2 id="validate-value-lists-semantically">Validate value lists semantically</h2>
+<p>Compare the approved and configured value lists.</p>
+<p>Check:</p>
+<ul>
+<li>value code;</li>
+<li>description;</li>
+<li>status;</li>
+<li>applicability;</li>
+<li>effective dates;</li>
+<li>translations;</li>
+<li>local extensions;</li>
+<li>mapping from old values;</li>
+<li>downstream compatibility.</li>
+</ul>
+<p>A configured list can contain all expected codes and still be misaligned if:</p>
+<ul>
+<li>a value is active globally instead of locally;</li>
+<li>two values have lost their distinction;</li>
+<li>an obsolete value remains selectable;</li>
+<li>descriptions imply another meaning;</li>
+<li>interfaces expect another code;</li>
+<li>local values are missing a global reporting mapping.</li>
+</ul>
+<p>Value-list alignment is both structural and semantic.</p>
+<h2 id="validate-relationships">Validate relationships</h2>
+<p>For Business Partner and other master-data domains, relationships can be as important as attributes.</p>
+<p>The approved model may require:</p>
+<ul>
+<li>parent-child relationships;</li>
+<li>contact-person links;</li>
+<li>customer-supplier relationships;</li>
+<li>organisational assignments;</li>
+<li>ownership relationships.</li>
+</ul>
+<p>Configuration validation should check:</p>
+<ul>
+<li>relationship type;</li>
+<li>direction;</li>
+<li>cardinality;</li>
+<li>applicable roles;</li>
+<li>validity dates;</li>
+<li>approval process;</li>
+<li>replication;</li>
+<li>migration treatment.</li>
+</ul>
+<p>A relationship may exist technically but be created in the wrong direction or without the context needed by consuming systems.</p>
+<h2 id="validate-workflow-against-decision-rights">Validate workflow against decision rights</h2>
+<p>A workflow diagram can look correct while routing decisions to the wrong authority.</p>
+<p>The review should confirm:</p>
+<ul>
+<li>what starts the workflow;</li>
+<li>which change-request type is used;</li>
+<li>which attributes influence routing;</li>
+<li>which roles participate;</li>
+<li>whether global and local approvals differ;</li>
+<li>what happens after rejection;</li>
+<li>whether substitutions work;</li>
+<li>whether escalation exists;</li>
+<li>whether emergency paths bypass controls.</li>
+</ul>
+<p>SAP identifies collaborative routing and notifications as part of its MDG capabilities. The programme must still verify that the configured route reflects the approved ownership model.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved:
+Local tax data approved by Country Finance.
+
+Configured:
+All tax changes routed to Global Data Steward.</code></pre>
+<p>The workflow functions.</p>
+<p>The governance model does not.</p>
+<h2 id="validate-user-interface-behaviour">Validate user-interface behaviour</h2>
+<p>The data model can be correct while the user interface makes the intended process impossible or misleading.</p>
+<p>Check:</p>
+<ul>
+<li>field visibility;</li>
+<li>editability;</li>
+<li>mandatory indication;</li>
+<li>grouping;</li>
+<li>descriptions;</li>
+<li>value help;</li>
+<li>context;</li>
+<li>role-based visibility;</li>
+<li>error messages.</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li>the field is mandatory but hidden for the role expected to populate it;</li>
+<li>an optional field is visually marked as required;</li>
+<li>a local attribute appears for every country;</li>
+<li>two values use indistinguishable labels;</li>
+<li>an error message does not explain the valid correction.</li>
+</ul>
+<p>UI validation is not cosmetic.</p>
+<p>It determines whether users can execute the approved governance process.</p>
+<h2 id="validate-ownership-and-authorisation">Validate ownership and authorisation</h2>
+<p>The approved model should define who owns and maintains important data.</p>
+<p>Configuration should reflect this through:</p>
+<ul>
+<li>role assignments;</li>
+<li>edit permissions;</li>
+<li>approval permissions;</li>
+<li>visibility;</li>
+<li>segregation of duties;</li>
+<li>emergency access.</li>
+</ul>
+<p>Check whether:</p>
+<ul>
+<li>the right role can edit the field;</li>
+<li>the same person can create and approve where this is prohibited;</li>
+<li>local owners can act only in their context;</li>
+<li>global owners can review protected attributes;</li>
+<li>departed users have been removed;</li>
+<li>substitutions preserve decision rights.</li>
+</ul>
+<p>A field with the correct rule but the wrong authorisation still implements the wrong operating model.</p>
+<h2 id="validate-replication-and-downstream-representation">Validate replication and downstream representation</h2>
+<p>An approved attribute may exist and work correctly in MDG but fail to reach consuming systems.</p>
+<p>Validation should include:</p>
+<ul>
+<li>activation;</li>
+<li>outbound structure;</li>
+<li>transformation;</li>
+<li>code translation;</li>
+<li>consumer field;</li>
+<li>error handling;</li>
+<li>reconciliation.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Approved model:
+Supplier Risk Classification is globally governed
+and consumed by procurement analytics.
+
+Configured:
+Field maintained and approved in MDG.
+
+Replication:
+Field omitted from outbound interface.</code></pre>
+<p>The MDG configuration is internally correct.</p>
+<p>The implemented enterprise model is incomplete.</p>
+<p>SAP distinguishes master-data governance from the integration layer that distributes master data to applications. Both layers need to align with the approved model.</p>
+<h2 id="validate-migration-behaviour-separately">Validate migration behaviour separately</h2>
+<p>Operational maintenance and migration may use different paths.</p>
+<p>A rule can behave correctly for a new change request and incorrectly during initial loading.</p>
+<p>Check:</p>
+<ul>
+<li>migration staging structure;</li>
+<li>load sequence;</li>
+<li>field availability;</li>
+<li>defaulting;</li>
+<li>validation timing;</li>
+<li>bypassed workflow;</li>
+<li>post-load derivations;</li>
+<li>activation;</li>
+<li>reconciliation.</li>
+</ul>
+<p>For each critical attribute, compare:</p>
+<pre><code class="language-text">Approved operational treatment</code></pre>
+<p>with:</p>
+<pre><code class="language-text">Approved migration treatment</code></pre>
+<p>Differences may be legitimate.</p>
+<p>They should be explicit.</p>
+<p>For example:</p>
+<pre><code class="language-text">Operational:
+Tax identifier required before approval.
+
+Migration:
+Inactive historical records may load without the value.
+
+Post-load:
+Records remain blocked from operational reactivation until corrected.</code></pre>
+<h2 id="validate-global-and-local-behaviour">Validate global and local behaviour</h2>
+<p>A global programme should test inheritance and overrides explicitly.</p>
+<p>For every local rule, confirm:</p>
+<ul>
+<li>global parent;</li>
+<li>local context;</li>
+<li>precedence;</li>
+<li>approval;</li>
+<li>configuration reference;</li>
+<li>tests.</li>
+</ul>
+<p>A country-specific rule should not rely only on a comment such as:</p>
+<pre><code class="language-text">Applies to Portugal.</code></pre>
+<p>The context should be represented in the configured conditions.</p>
+<p>Test at least:</p>
+<ul>
+<li>one applicable local case;</li>
+<li>one non-applicable country;</li>
+<li>interaction with the global rule;</li>
+<li>local exception;</li>
+<li>downstream replication.</li>
+</ul>
+<h2 id="validate-negative-cases">Validate negative cases</h2>
+<p>Projects naturally focus on the process that should succeed.</p>
+<p>Alignment defects often appear in cases that should not apply.</p>
+<p>Examples:</p>
+<ul>
+<li>the local rule triggers in another country;</li>
+<li>a person receives an organisation-only requirement;</li>
+<li>a blocked historical record enters the active workflow;</li>
+<li>an obsolete value remains selectable;</li>
+<li>a local approver can approve global data;</li>
+<li>a derivation runs when a manual value exists.</li>
+</ul>
+<p>A complete validation pack should include negative cases proving the boundaries of the model.</p>
+<h2 id="use-model-based-test-generation">Use model-based test generation</h2>
+<p>The approved model can help generate the minimum required test set.</p>
+<p>For a rule containing five conditions, derive cases covering:</p>
+<ul>
+<li>all conditions true;</li>
+<li>each condition false;</li>
+<li>each valid exception;</li>
+<li>boundary values;</li>
+<li>local/global interaction;</li>
+<li>migration versus operational treatment.</li>
+</ul>
+<p>This does not automate business acceptance.</p>
+<p>It reduces the chance that testing proves only the obvious happy path.</p>
+<h2 id="compare-expected-and-observed-configuration">Compare expected and observed configuration</h2>
+<p>A useful validation record contains three states:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Element</th><th scope="col">Approved model</th><th scope="col">Configured state</th><th scope="col">Observed behaviour</th></tr></thead><tbody><tr><td>Tax ID mandatory</td><td>DE organisations only</td><td>Condition configured for DE</td><td>Also triggers for persons</td></tr><tr><td>Supplier risk values</td><td>LOW, MEDIUM, HIGH</td><td>All three configured</td><td>HIGH missing in one UI value help</td></tr><tr><td>Compliance approval</td><td>HIGH only</td><td>Workflow condition HIGH</td><td>Correct in QAS</td></tr><tr><td>Local exception</td><td>Exemption type EX-02</td><td>Rule excludes EX-02</td><td>Correct</td></tr></tbody></table></div>
+<p>This distinction matters.</p>
+<p>Configuration documentation may say one thing.</p>
+<p>Observed behaviour may reveal another due to:</p>
+<ul>
+<li>custom code;</li>
+<li>rule precedence;</li>
+<li>authorisation;</li>
+<li>environment differences;</li>
+<li>missing transport;</li>
+<li>derivation side effects.</li>
+</ul>
+<h2 id="classify-alignment-findings">Classify alignment findings</h2>
+<p>Not every difference has the same cause.</p>
+<p>Useful categories include:</p>
+<h3 id="missing-implementation">Missing implementation</h3>
+<p>Approved model element is not configured.</p>
+<h3 id="undocumented-configuration">Undocumented configuration</h3>
+<p>Configured behaviour has no approved model reference.</p>
+<h3 id="incorrect-implementation">Incorrect implementation</h3>
+<p>Configuration exists but does not match the approved rule.</p>
+<h3 id="environment-divergence">Environment divergence</h3>
+<p>The intended configuration exists in another environment or release.</p>
+<h3 id="test-evidence-gap">Test-evidence gap</h3>
+<p>Configuration may be correct, but no reliable evidence proves it.</p>
+<h3 id="model-ambiguity">Model ambiguity</h3>
+<p>The approved specification is not precise enough to validate.</p>
+<h3 id="approved-deviation">Approved deviation</h3>
+<p>Configuration intentionally differs for a controlled reason.</p>
+<p>This classification prevents every finding from becoming a generic configuration defect.</p>
+<h2 id="approved-deviations-should-remain-visible">Approved deviations should remain visible</h2>
+<p>Sometimes configuration cannot yet match the intended model.</p>
+<p>Examples:</p>
+<ul>
+<li>local workflow delayed;</li>
+<li>source data unavailable;</li>
+<li>interface release postponed;</li>
+<li>performance workaround active;</li>
+<li>temporary warning used instead of error.</li>
+</ul>
+<p>For each deviation, record:</p>
+<ul>
+<li>approved model state;</li>
+<li>current configured state;</li>
+<li>reason;</li>
+<li>affected environment;</li>
+<li>risk;</li>
+<li>owner;</li>
+<li>expiry or review date;</li>
+<li>required reconciliation.</li>
+</ul>
+<p>The validation report should not simply show a pass because the difference was accepted.</p>
+<p>It should show:</p>
+<pre><code class="language-text">Pass with approved deviations</code></pre>
+<p>and list them clearly.</p>
+<h2 id="validate-after-transport-not-only-before-it">Validate after transport, not only before it</h2>
+<p>Configuration can be correct in development and wrong in quality because:</p>
+<ul>
+<li>a transport was incomplete;</li>
+<li>object sequence caused an issue;</li>
+<li>manual settings were missed;</li>
+<li>environment-specific configuration differs;</li>
+<li>custom code version is inconsistent;</li>
+<li>role assignments were not replicated.</li>
+</ul>
+<p>The validation should therefore run against the target environment after deployment.</p>
+<p>Recommended checkpoints include:</p>
+<ul>
+<li>development completion;</li>
+<li>quality transport;</li>
+<li>formal test-cycle entry;</li>
+<li>pre-production rehearsal;</li>
+<li>production deployment;</li>
+<li>post-go-live verification.</li>
+</ul>
+<h2 id="revalidate-after-model-changes">Revalidate after model changes</h2>
+<p>Any material model change should trigger targeted configuration validation.</p>
+<p>Examples:</p>
+<ul>
+<li>attribute optionality changes;</li>
+<li>value list changes;</li>
+<li>new local context;</li>
+<li>validation severity change;</li>
+<li>workflow ownership change;</li>
+<li>retired field;</li>
+<li>interface dependency.</li>
+</ul>
+<p>Impact analysis should identify which configuration evidence and tests become stale.</p>
+<p>A test result does not remain valid forever simply because the same technical object still exists.</p>
+<h2 id="revalidate-after-configuration-changes">Revalidate after configuration changes</h2>
+<p>The reverse also applies.</p>
+<p>An emergency configuration correction may change the model in practice.</p>
+<p>After the change, the programme should ask:</p>
+<ul>
+<li>Was the approved model updated?</li>
+<li>Was this only a technical correction?</li>
+<li>Did business behaviour change?</li>
+<li>Which mappings and tests are affected?</li>
+<li>Is a new decision required?</li>
+<li>Did the change create a deviation?</li>
+</ul>
+<p>This prevents configuration from becoming the unreviewed source of model truth.</p>
+<h2 id="use-deterministic-checks-where-possible">Use deterministic checks where possible</h2>
+<p>Some alignment checks can be automated.</p>
+<p>Examples include:</p>
+<ul>
+<li>approved object has no configuration reference;</li>
+<li>configuration reference points to a retired model object;</li>
+<li>active rule lacks an owner;</li>
+<li>local rule lacks context;</li>
+<li>approved value missing from configured evidence;</li>
+<li>temporary deviation has expired;</li>
+<li>test evidence refers to an older baseline;</li>
+<li>configuration object exists only in development.</li>
+</ul>
+<p>Other checks require human judgement:</p>
+<ul>
+<li>does the configured field preserve business meaning?</li>
+<li>is the workflow authority correct?</li>
+<li>is the derivation acceptable?</li>
+<li>is the error message operationally usable?</li>
+<li>is the local variation justified?</li>
+</ul>
+<p>Automation should prepare the comparison, not pretend to replace business validation.</p>
+<h2 id="a-worked-example-supplier-risk-classification">A worked example: supplier risk classification</h2>
+<p>The approved model states:</p>
+<pre><code class="language-text">Attribute:
+Supplier Risk Classification
+
+Values:
+LOW, MEDIUM, HIGH
+
+Rule:
+HIGH requires Compliance approval.
+
+Context:
+Active suppliers.
+
+Owner:
+Global Supplier Risk Owner.</code></pre>
+<p>The configuration review finds:</p>
+<h3 id="data-model">Data model</h3>
+<p>Attribute exists.</p>
+<h3 id="value-list">Value list</h3>
+<p>LOW, MEDIUM and HIGH exist.</p>
+<p>An additional value, <code>UNDER_REVIEW</code>, is configured but absent from the approved model.</p>
+<h3 id="validation">Validation</h3>
+<p>Field is mandatory for all suppliers, including inactive historical records.</p>
+<p>The model requires it only for active suppliers.</p>
+<h3 id="workflow">Workflow</h3>
+<p>HIGH routes correctly to Compliance.</p>
+<p><code>UNDER_REVIEW</code> follows the normal approval route.</p>
+<h3 id="migration">Migration</h3>
+<p>Suppliers with missing source data were defaulted to <code>UNDER_REVIEW</code>.</p>
+<h3 id="replication">Replication</h3>
+<p>All four values are sent to a consuming procurement system, which recognises only three.</p>
+<p>This is not one defect.</p>
+<p>It is a chain of alignment findings:</p>
+<ul>
+<li>undocumented value;</li>
+<li>overbroad mandatory rule;</li>
+<li>undefined workflow treatment;</li>
+<li>migration default;</li>
+<li>interface incompatibility.</li>
+</ul>
+<p>Fixing only the interface rejection leaves the model inconsistency in place.</p>
+<h2 id="another-example-local-tax-validation">Another example: local tax validation</h2>
+<p>The approved model states:</p>
+<pre><code class="language-text">German organisational customers require tax category DE1
+unless exemption EX-02 is approved.</code></pre>
+<p>Configuration verification should check:</p>
+<ul>
+<li>Germany condition;</li>
+<li>organisation category;</li>
+<li>customer role;</li>
+<li>DE1 category;</li>
+<li>EX-02 exemption;</li>
+<li>error severity;</li>
+<li>workflow evidence;</li>
+<li>migration population;</li>
+<li>UI visibility;</li>
+<li>replication.</li>
+</ul>
+<p>A single test showing that a German organisation without DE1 receives an error proves only one part.</p>
+<p>The validation set should also show:</p>
+<ul>
+<li>a German person is not incorrectly blocked;</li>
+<li>an Austrian organisation is not affected;</li>
+<li>EX-02 works;</li>
+<li>DE1 is available in value help;</li>
+<li>the correct role can maintain it;</li>
+<li>the value reaches the consumer.</li>
+</ul>
+<h2 id="the-role-of-martenweave">The role of Martenweave</h2>
+<p>Martenweave provides an independent model baseline against which implementation evidence can be compared.</p>
+<p>Its current public description states that it captures structured model knowledge, connects fields, attributes, rules, owners, issues and decisions, validates references, detects gaps and traces impact.</p>
+<p>The current core includes:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured query;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>ownership, audit and scorecard reports;</li>
+<li>spreadsheet review flows;</li>
+<li>PatchProposal-to-ChangeRequest lifecycle.</li>
+</ul>
+<p>For configuration alignment, Martenweave can maintain:</p>
+<ul>
+<li>approved attributes and relationships;</li>
+<li>target endpoints;</li>
+<li>contexts;</li>
+<li>rules;</li>
+<li>value lists;</li>
+<li>owners;</li>
+<li>decisions;</li>
+<li>implementation references;</li>
+<li>test evidence;</li>
+<li>deviations.</li>
+</ul>
+<p>It does not inspect every SAP configuration object automatically today.</p>
+<p>Its role is to provide the controlled model and evidence structure required for comparison.</p>
+<p>SAP MDG remains the operational platform.</p>
+<h2 id="a-martenweave-alignment-flow">A Martenweave alignment flow</h2>
+<pre><code class="language-text">Approved canonical model
+        ↓
+Generated alignment checklist
+        ↓
+SAP configuration references and evidence
+        ↓
+Observed behaviour from tests
+        ↓
+Difference report
+        ↓
+Defect, deviation or model clarification
+        ↓
+PatchProposal or implementation task
+        ↓
+Verification
+        ↓
+New approved baseline</code></pre>
+<p>This turns alignment into a repeatable process rather than a one-time design review.</p>
+<h2 id="use-ai-to-assist-comparison-not-declare-alignment">Use AI to assist comparison, not declare alignment</h2>
+<p>AI can help by:</p>
+<ul>
+<li>extracting configuration descriptions;</li>
+<li>matching technical objects to model attributes;</li>
+<li>comparing design documents with test evidence;</li>
+<li>identifying possible missing implementations;</li>
+<li>summarising differences;</li>
+<li>drafting defects or PatchProposals;</li>
+<li>proposing test scenarios.</li>
+</ul>
+<p>AI should not independently certify that configuration matches the model.</p>
+<p>Possible failure modes include:</p>
+<ul>
+<li>matching similar but different fields;</li>
+<li>using obsolete documentation;</li>
+<li>missing hidden configuration precedence;</li>
+<li>treating one successful test as complete proof;</li>
+<li>confusing a local rule with a global one.</li>
+</ul>
+<p>A safe process is:</p>
+<pre><code class="language-text">AI prepares candidate comparison
+→ deterministic checks validate references
+→ technical team confirms configuration
+→ business owner confirms intended behaviour
+→ evidence is approved</code></pre>
+<h2 id="a-minimum-alignment-pack">A minimum alignment pack</h2>
+<p>For a bounded domain, we would expect:</p>
+<ol>
+<li>Approved model baseline.</li>
+<li>Configuration baseline.</li>
+<li>Model-to-configuration matrix.</li>
+<li>Critical rule catalogue.</li>
+<li>Value-list comparison.</li>
+<li>Workflow-routing comparison.</li>
+<li>Role and authorisation evidence.</li>
+<li>Migration-treatment comparison.</li>
+<li>Replication verification.</li>
+<li>Positive and negative test evidence.</li>
+<li>Open deviations.</li>
+<li>Alignment sign-off by responsible roles.</li>
+</ol>
+<p>The pack should be generated and maintained from structured objects where possible.</p>
+<p>It should not become another disconnected spreadsheet manually recreated before every milestone.</p>
+<h2 id="a-practical-model-to-configuration-matrix">A practical model-to-configuration matrix</h2>
+<p>For each critical object, record:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model object</th><th scope="col">Approved state</th><th scope="col">Configuration evidence</th><th scope="col">Observed result</th><th scope="col">Status</th></tr></thead><tbody><tr><td>ATTR-SUP-RISK</td><td>Active supplier attribute</td><td>Entity/attribute reference</td><td>Visible and editable</td><td>Aligned</td></tr><tr><td>VLIST-SUP-RISK</td><td>LOW/MEDIUM/HIGH</td><td>Config reference</td><td>Extra value present</td><td>Divergent</td></tr><tr><td>RULE-SUP-RISK-REQ</td><td>Mandatory for active suppliers</td><td>Validation reference</td><td>Applies to inactive records</td><td>Divergent</td></tr><tr><td>WF-SUP-HIGH</td><td>Compliance approval</td><td>Workflow reference</td><td>Correct</td><td>Aligned</td></tr><tr><td>MAP-SUP-RISK</td><td>Source-specific mapping</td><td>Migration reference</td><td>ERP_B uses default</td><td>Approved deviation</td></tr></tbody></table></div>
+<p>This view supports both technical review and management reporting.</p>
+<h2 id="sign-off-should-be-distributed">Sign-off should be distributed</h2>
+<p>One architect should not sign off every aspect.</p>
+<p>Possible responsibilities include:</p>
+<h3 id="business-owner">Business owner</h3>
+<p>Confirms meaning, scope and acceptable exceptions.</p>
+<h3 id="data-architect">Data architect</h3>
+<p>Confirms model coherence and context.</p>
+<h3 id="sap-mdg-architect">SAP MDG architect</h3>
+<p>Confirms technical implementation.</p>
+<h3 id="migration-lead">Migration lead</h3>
+<p>Confirms migration treatment.</p>
+<h3 id="integration-owner">Integration owner</h3>
+<p>Confirms replication and consumers.</p>
+<h3 id="security-owner">Security owner</h3>
+<p>Confirms access and decision rights.</p>
+<h3 id="test-lead">Test lead</h3>
+<p>Confirms evidence and regression scope.</p>
+<h3 id="ams-lead">AMS lead</h3>
+<p>Confirms operational understandability.</p>
+<p>A combined alignment decision is stronger than a generic “solution accepted” status.</p>
+<h2 id="what-managers-should-ask">What managers should ask</h2>
+<ol>
+<li>Which approved model baseline are we validating?</li>
+<li>Which exact environment and release are being compared?</li>
+<li>Which approved objects are not configured?</li>
+<li>Which configured objects lack approval?</li>
+<li>Do mandatory rules apply in the correct contexts?</li>
+<li>Are value lists semantically and technically aligned?</li>
+<li>Do workflow routes reflect the approved decision rights?</li>
+<li>Can expected users see and maintain the required fields?</li>
+<li>Are migration and operational behaviours intentionally different?</li>
+<li>Are fields replicated to all required consumers?</li>
+<li>Have negative and boundary cases been tested?</li>
+<li>Which deviations remain open?</li>
+<li>Who owns each reconciliation?</li>
+<li>Will this validation be repeated after the next transport or model change?</li>
+</ol>
+<p>If the programme cannot answer the first two questions precisely, the remaining evidence is difficult to trust.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="validating-only-that-configuration-exists">Validating only that configuration exists</h3>
+<p>Existence does not prove correct meaning or behaviour.</p>
+<h3 id="using-the-design-document-without-a-baseline">Using the design document without a baseline</h3>
+<p>Reviewers may compare against different versions.</p>
+<h3 id="testing-only-happy-paths">Testing only happy paths</h3>
+<p>Context and precedence failures often appear in negative cases.</p>
+<h3 id="ignoring-migration-behaviour">Ignoring migration behaviour</h3>
+<p>Initial load and operational maintenance may use different controls.</p>
+<h3 id="ignoring-replication">Ignoring replication</h3>
+<p>A field can work in MDG and still fail in the enterprise process.</p>
+<h3 id="treating-every-difference-as-a-defect">Treating every difference as a defect</h3>
+<p>Some are approved deviations or model ambiguities.</p>
+<h3 id="accepting-screenshots-as-complete-evidence">Accepting screenshots as complete evidence</h3>
+<p>Screenshots show selected states but rarely prove conditions and relationships.</p>
+<h3 id="checking-development-but-not-quality-or-production">Checking development but not quality or production</h3>
+<p>Transport and environment differences are common sources of divergence.</p>
+<h3 id="letting-configuration-silently-redefine-the-model">Letting configuration silently redefine the model</h3>
+<p>Material behaviour changes require model reconciliation.</p>
+<h3 id="asking-ai-to-certify-alignment">Asking AI to certify alignment</h3>
+<p>AI can prepare the comparison, but responsible owners must confirm meaning and evidence.</p>
+<h2 id="when-a-lightweight-approach-is-enough">When a lightweight approach is enough</h2>
+<p>A small implementation may validate alignment through:</p>
+<ul>
+<li>one controlled model workbook;</li>
+<li>one configuration matrix;</li>
+<li>targeted tests;</li>
+<li>named sign-off.</li>
+</ul>
+<p>This may be sufficient when:</p>
+<ul>
+<li>one domain is involved;</li>
+<li>few attributes are critical;</li>
+<li>local variation is limited;</li>
+<li>integrations are simple;</li>
+<li>the same team owns design and build.</li>
+</ul>
+<p>A registry-based approach becomes more useful when:</p>
+<ul>
+<li>many countries are involved;</li>
+<li>the model changes frequently;</li>
+<li>configuration and migration move at different speeds;</li>
+<li>several partners maintain different artefacts;</li>
+<li>impact analysis is manual;</li>
+<li>handover is complex;</li>
+<li>AI agents consume the model.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Validating SAP MDG configuration is not the same as confirming that transports succeeded or that technical tests passed.</p>
+<p>The real question is whether configured behaviour implements the approved business model.</p>
+<p>That requires comparing:</p>
+<ul>
+<li>entities;</li>
+<li>attributes;</li>
+<li>contexts;</li>
+<li>value lists;</li>
+<li>rules;</li>
+<li>workflows;</li>
+<li>ownership;</li>
+<li>migration behaviour;</li>
+<li>replication;</li>
+<li>observed test results.</li>
+</ul>
+<p>The comparison must work in both directions:</p>
+<pre><code class="language-text">Approved but not configured</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Configured but not approved</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the programme take any critical model object and prove how the approved meaning, rule and ownership are represented in the tested SAP MDG environment?</blockquote>
+<p>When the answer is yes, the configuration is traceable to the model.</p>
+<p>When the answer is based only on successful transports, screenshots and isolated test cases, the programme has evidence that the system works—but not yet that it implements the right model.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave provides the independent model baseline, relationships and change evidence needed to compare intended governance with actual implementation behaviour.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer that unifies master data, policy and metadata and supports governed models, preserved semantics, validated values, collaborative workflows, monitored business rules and auditable data changes.</p>
+<p>SAP also distinguishes master-data governance from master-data integration, which distributes data to consuming applications in its current state.</p>
+<p>Martenweave’s current public documentation describes structured model objects, deterministic validation, generated indexes, dataset gap detection, trace and impact analysis, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-track-sap-mdg-model-decisions.html"><span>Previous</span>During a design workshop, the programme agrees that a supplier classification should be mandatory.</a><a href="/blog/evidence-based-migration-readiness-report.html"><span>Next</span>The steering committee sees a green dashboard.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

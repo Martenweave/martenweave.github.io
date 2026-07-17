@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules | Martenweave</title>
+    <meta
+      name="description"
+      content="During Mock Load 2, the Product planning migration has a coverage problem."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html" />
+    <meta property="og:title" content="How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules | Martenweave" />
+    <meta property="og:description" content="During Mock Load 2, the Product planning migration has a coverage problem." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules | Martenweave" />
+    <meta name="twitter:description" content="During Mock Load 2, the Product planning migration has a coverage problem." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html",
+                        "name": "How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules | Martenweave",
+                        "description": "During Mock Load 2, the Product planning migration has a coverage problem.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules",
+                                    "item": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html#content",
+                        "headline": "How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules",
+                        "name": "How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules",
+                        "description": "During Mock Load 2, the Product planning migration has a coverage problem.",
+                        "url": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT15M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How We Prevent Temporary Migration Exceptions from Becoming Permanent Rules</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 15 min read</p><p class="blog-summary">During Mock Load 2, the Product planning migration has a coverage problem.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#production-planning-owner">Production Planning owner</a></li><li><a href="#plant-data-owner">Plant data owner</a></li><li><a href="#migration-lead">Migration lead</a></li><li><a href="#developer">Developer</a></li><li><a href="#why-the-exception-exists">Why the exception exists</a></li><li><a href="#what-rule-it-deviates-from">What Rule it deviates from</a></li><li><a href="#where-it-applies">Where it applies</a></li><li><a href="#who-owns-it">Who owns it</a></li><li><a href="#when-it-expires">When it expires</a></li><li><a href="#which-records-use-it">Which records use it</a></li><li><a href="#which-controls-are-required">Which controls are required</a></li><li><a href="#what-happens-next">What happens next</a></li><li><a href="#goal">Goal</a></li><li><a href="#initial-scope">Initial scope</a></li><li><a href="#required-behaviour">Required behaviour</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>During Mock Load 2, the Product planning migration has a coverage problem.</p>
+<p>The approved Plant-specific conversion does not produce an MRP Controller for every Product Plant record.</p>
+<p>The migration team has three weeks before the next rehearsal.</p>
+<p>A planning owner agrees to a temporary fallback:</p>
+<pre><code class="language-text">When no approved conversion exists,
+assign MRP Controller 001.</code></pre>
+<p>The fallback unblocks the load.</p>
+<p>The target field becomes complete.</p>
+<p>The mock load finishes.</p>
+<p>The readiness dashboard improves.</p>
+<p>The programme moves on.</p>
+<p>Several months later, controller <code>001</code> is still being assigned.</p>
+<p>The original approval was given for two Plants and one mock load. The transformation now applies the fallback to four Plants. Nobody knows whether the planning owner approved the expanded scope.</p>
+<p>The mapping workbook still describes the value as temporary.</p>
+<p>The transformation code treats it as normal logic.</p>
+<p>The validation report checks only that MRP Controller is populated.</p>
+<p>The migration team reports 100 percent field completeness.</p>
+<p>A temporary exception has become part of the effective model without ever being approved as a permanent rule.</p>
+<p>This is not an unusual edge case.</p>
+<p>Temporary migration logic appears whenever a programme must continue despite incomplete data, delayed decisions or unavailable integrations.</p>
+<p>The real problem is not that exceptions exist.</p>
+<p>The problem is that most programmes represent them badly.</p>
+<p>They store exceptions as:</p>
+<ul>
+<li>comments in mapping workbooks;</li>
+<li>hard-coded defaults;</li>
+<li>ticket descriptions;</li>
+<li>email approvals;</li>
+<li>transformation branches;</li>
+<li>manually maintained exclusion lists;</li>
+<li>values described as “temporary” without an expiry mechanism.</li>
+</ul>
+<p>Once the exception enters code, it behaves like any other rule.</p>
+<p>The system cannot tell that it was supposed to disappear.</p>
+<blockquote>A temporary exception becomes permanent when its implementation survives longer than the decision that authorised it.</blockquote>
+<p>We prevent this by modelling the exception as a governed object with its own lifecycle.</p>
+<p>It must have:</p>
+<ul>
+<li>a reason;</li>
+<li>a precisely bounded scope;</li>
+<li>an accountable owner;</li>
+<li>supporting Evidence;</li>
+<li>an effective start;</li>
+<li>an expiry condition;</li>
+<li>compensating controls;</li>
+<li>an exit plan;</li>
+<li>identifiable affected records;</li>
+<li>explicit approval;</li>
+<li>a rule for what happens when it expires.</li>
+</ul>
+<p>The exception must not hide inside the Mapping it temporarily modifies.</p>
+<p>Martenweave already provides the foundations for this approach. Its canonical files are the source of truth, deterministic validation happens before indexing, AI-generated changes require human review, and the pipeline connects Evidence, proposals, gaps, impact and Git-based delivery.</p>
+<p>A dedicated exception lifecycle is the next logical product layer.</p>
+<p>---</p>
+<h1 id="why-migration-programmes-need-exceptions">Why migration programmes need exceptions</h1>
+<p>A rigid model that permits no exceptions is rarely realistic.</p>
+<p>During migration, the programme may face:</p>
+<ul>
+<li>incomplete value mappings;</li>
+<li>missing local decisions;</li>
+<li>unavailable source fields;</li>
+<li>delayed SAP configuration;</li>
+<li>unresolved ownership;</li>
+<li>limited remediation capacity;</li>
+<li>dependencies on another release;</li>
+<li>cutover deadlines that cannot move.</li>
+</ul>
+<p>In the MRP Controller case, the correct long-term logic is clear:</p>
+<pre><code class="language-text">Planner Group + Plant
+→ approved Plant-specific MRP Controller</code></pre>
+<p>The conversion is not yet complete for every record.</p>
+<p>The programme has several possible responses:</p>
+<ol>
+<li>stop the migration wave;</li>
+<li>exclude uncovered records;</li>
+<li>complete the conversion manually;</li>
+<li>use a controlled fallback temporarily.</li>
+</ol>
+<p>The fourth option may be rational.</p>
+<p>The danger begins when we implement the fallback without modelling the obligation to remove it.</p>
+<p>The code remembers the value.</p>
+<p>It does not remember the promise.</p>
+<p>---</p>
+<h1 id="we-separate-the-rule-from-the-exception">We separate the rule from the exception</h1>
+<p>The approved model rule is:</p>
+<pre><code class="language-text">MRP Controller must be derived
+from the Plant-specific conversion.</code></pre>
+<p>The temporary exception is:</p>
+<pre><code class="language-text">For a bounded population during Mock Load 2,
+controller 001 may be used when no approved conversion exists.</code></pre>
+<p>These are not two versions of the same rule.</p>
+<p>They have different authority and lifecycle.</p>
+<p>The main Rule describes the desired model.</p>
+<p>The Exception temporarily permits deviation from it.</p>
+<p>When we merge the fallback directly into the Mapping, the distinction disappears:</p>
+<pre><code class="language-text">Use Plant-specific conversion.
+Otherwise use 001.</code></pre>
+<p>That implementation looks permanent.</p>
+<p>A future reviewer cannot determine whether <code>001</code> is:</p>
+<ul>
+<li>an approved business default;</li>
+<li>a technical emergency value;</li>
+<li>a testing convenience;</li>
+<li>a risk-accepted workaround;</li>
+<li>an accidental implementation detail.</li>
+</ul>
+<p>We therefore preserve two separate objects:</p>
+<pre><code class="language-text">Rule:
+Plant-specific MRP Controller derivation required.
+
+Exception:
+Temporary fallback 001 for approved uncovered population.</code></pre>
+<p>The Mapping may reference both, but it must not erase the difference between them.</p>
+<p>---</p>
+<h1 id="we-begin-with-the-deviation">We begin with the deviation</h1>
+<p>An exception should state which accepted obligation it violates or postpones.</p>
+<p>Weak:</p>
+<pre><code class="language-text">Use 001 temporarily.</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">Deviation:
+Records covered by this exception do not satisfy
+RULE-PLANT-SPECIFIC-MRP-CONTROLLER.
+
+Temporary treatment:
+Assign controller 001.</code></pre>
+<p>This matters because the exception is not meaningful in isolation.</p>
+<p>It is meaningful only relative to the rule it relaxes.</p>
+<p>If we cannot identify the governing Rule, we may not be dealing with an exception at all. We may be dealing with:</p>
+<ul>
+<li>an undefined Mapping;</li>
+<li>an unresolved design;</li>
+<li>an undocumented default;</li>
+<li>an actual business rule.</li>
+</ul>
+<p>Calling something temporary does not make it an exception.</p>
+<p>We need a declared expected state first.</p>
+<p>---</p>
+<h1 id="we-define-scope-so-that-the-exception-cannot-expand-silently">We define scope so that the exception cannot expand silently</h1>
+<p>The original agreement may cover:</p>
+<ul>
+<li>Plants PL20 and PL30;</li>
+<li>active Product Plant records;</li>
+<li>one legacy source;</li>
+<li>Mock Load 2;</li>
+<li>records without an approved conversion.</li>
+</ul>
+<p>If the implementation says only:</p>
+<pre><code class="language-text">if mapping_missing:
+    mrp_controller = &quot;001&quot;</code></pre>
+<p>the scope is broader than the decision.</p>
+<p>It may apply to:</p>
+<ul>
+<li>every Plant;</li>
+<li>every migration wave;</li>
+<li>new source systems;</li>
+<li>records missing Plant itself;</li>
+<li>records with invalid Planner Group;</li>
+<li>production cutover.</li>
+</ul>
+<p>We represent applicability explicitly:</p>
+<pre><code class="language-text">Scope:
+
+Plants:
+- PL20
+- PL30
+
+Migration stage:
+Mock Load 2
+
+Source system:
+LEGACY-EU
+
+Applies when:
+- Plant is present
+- Planner Group is present
+- no approved conversion exists
+
+Does not apply when:
+- Plant is missing
+- Planner Group is invalid
+- record belongs to production cutover</code></pre>
+<p>The validator can compare actual use against this scope.</p>
+<p>If the fallback appears in PL40, the result is not merely another successful Mapping.</p>
+<p>It is an unauthorised exception expansion.</p>
+<p>---</p>
+<h1 id="we-identify-the-affected-population">We identify the affected population</h1>
+<p>An exception that cannot identify its affected records cannot be controlled.</p>
+<p>We need more than:</p>
+<pre><code class="language-text">Approximately 600 records.</code></pre>
+<p>We need a reproducible population definition:</p>
+<pre><code class="language-text">All Wave 1 Product Plant records where:
+
+Plant in {PL20, PL30}
+and Planner Group is populated
+and no approved Plant-specific conversion exists.</code></pre>
+<p>From that definition, we can generate:</p>
+<ul>
+<li>a count;</li>
+<li>a record list;</li>
+<li>a fingerprint;</li>
+<li>a readiness segment;</li>
+<li>a remediation backlog;</li>
+<li>a later reconciliation report.</li>
+</ul>
+<p>This gives us an essential control:</p>
+<blockquote>Every record that used the exception remains identifiable after the load.</blockquote>
+<p>Without that control, we cannot reliably remove or remediate the fallback later.</p>
+<p>---</p>
+<h1 id="we-assign-an-accountable-owner">We assign an accountable owner</h1>
+<p>The exception needs someone who owns the accepted risk.</p>
+<p>That owner is not necessarily the developer who implements it.</p>
+<p>For the MRP Controller fallback, responsibility may be split.</p>
+<h2 id="production-planning-owner">Production Planning owner</h2>
+<p>Accepts the business consequence of controller <code>001</code>.</p>
+<h2 id="plant-data-owner">Plant data owner</h2>
+<p>Confirms the affected scope.</p>
+<h2 id="migration-lead">Migration lead</h2>
+<p>Accepts the delivery treatment for the rehearsal.</p>
+<h2 id="developer">Developer</h2>
+<p>Implements the bounded fallback.</p>
+<p>We should still identify one accountable exception owner.</p>
+<p>For example:</p>
+<pre><code class="language-text">Accountable owner:
+Production Planning Data Owner
+
+Implementation owner:
+Migration Transformation Team</code></pre>
+<p>This distinction prevents a technical team from becoming the accidental owner of a business-risk decision.</p>
+<p>Broader risk-management guidance similarly emphasises structured processes, continuous monitoring, responsibility and accountability rather than treating authorisation as a one-time technical event.</p>
+<p>---</p>
+<h1 id="we-require-an-expiry-condition">We require an expiry condition</h1>
+<p>“Temporary” is not an expiry condition.</p>
+<p>“Before go-live” is often too vague.</p>
+<p>A controlled exception needs a machine-evaluable boundary.</p>
+<p>It can expire by date:</p>
+<pre><code class="language-text">expires_on:
+2026-08-15</code></pre>
+<p>It can expire after an event:</p>
+<pre><code class="language-text">expires_after:
+Mock Load 2 completion</code></pre>
+<p>It can expire when a condition is achieved:</p>
+<pre><code class="language-text">expires_when:
+approved conversion coverage reaches 100%</code></pre>
+<p>For the MRP Controller case, we may use both:</p>
+<pre><code class="language-text">Valid through:
+Mock Load 2
+
+Absolute expiry:
+15 August 2026
+
+Earlier closure condition:
+All affected Planner Group and Plant combinations
+have approved conversions.</code></pre>
+<p>The absolute date protects us if the event definition becomes ambiguous.</p>
+<p>The condition allows earlier closure.</p>
+<p>---</p>
+<h1 id="expiry-must-change-system-behaviour">Expiry must change system behaviour</h1>
+<p>Many governance processes record expiry dates but do nothing when the date passes.</p>
+<p>That is calendar decoration.</p>
+<p>For Martenweave, expiry should produce deterministic consequences.</p>
+<p>Before expiry:</p>
+<pre><code class="language-text">Exception status:
+active
+
+Readiness treatment:
+controlled exception</code></pre>
+<p>Near expiry:</p>
+<pre><code class="language-text">Exception status:
+expiring
+
+Readiness treatment:
+warning
+
+Required action:
+close, replace or formally extend</code></pre>
+<p>After expiry:</p>
+<pre><code class="language-text">Exception status:
+expired
+
+Validation:
+failed for affected production scope
+
+Readiness:
+blocked</code></pre>
+<p>The exact severity may depend on policy.</p>
+<p>The important point is that an expired exception cannot remain invisible while the Mapping continues to populate values.</p>
+<p>---</p>
+<h1 id="we-define-the-exit-before-approving-the-exception">We define the exit before approving the exception</h1>
+<p>A temporary workaround without a removal plan is deferred design, not controlled risk acceptance.</p>
+<p>The exit plan for the MRP Controller fallback might be:</p>
+<pre><code class="language-text">1. Collect missing Planner Group and Plant combinations.
+2. Obtain approved controller assignments from each Plant owner.
+3. Update the canonical conversion value list.
+4. Rerun affected Product Plant records.
+5. Confirm zero production records use fallback 001.
+6. Close the exception.</code></pre>
+<p>We also need closure evidence:</p>
+<pre><code class="language-text">Closure Evidence:
+- approved conversion table;
+- zero-fallback readiness report;
+- planning-owner sign-off;
+- successful MRP scenario test.</code></pre>
+<p>The exception should not be closed merely because someone removed a comment from the workbook.</p>
+<p>It closes when the governed exit conditions are met.</p>
+<p>---</p>
+<h1 id="we-distinguish-exit-from-extension">We distinguish exit from extension</h1>
+<p>The team may reach the expiry date without completing the conversion.</p>
+<p>The easiest response is to edit:</p>
+<pre><code class="language-text">expires_on:
+2026-08-15</code></pre>
+<p>to:</p>
+<pre><code class="language-text">expires_on:
+2026-09-30</code></pre>
+<p>That destroys the decision history.</p>
+<p>An extension is a new risk decision.</p>
+<p>It should require a new proposal:</p>
+<pre><code class="language-text">PatchProposal:
+Extend EXC-MRP-CONTROLLER-001
+through Cutover Rehearsal 1.
+
+Reason:
+PL30 conversion approval remains incomplete.
+
+Changed risk:
+Fallback population increased from 640 to 910 records.
+
+Required approval:
+Production Planning Data Owner.</code></pre>
+<p>The original expiry remains visible.</p>
+<p>We can then see:</p>
+<ul>
+<li>how often the exception was extended;</li>
+<li>whether the population grew;</li>
+<li>whether remediation progressed;</li>
+<li>whether the risk owner repeatedly deferred closure.</li>
+</ul>
+<p>Repeated extensions are themselves a risk signal.</p>
+<p>---</p>
+<h1 id="we-do-not-allow-automatic-renewal">We do not allow automatic renewal</h1>
+<p>Automated renewal would optimise for keeping the pipeline green.</p>
+<p>It would remove the forcing function that makes exceptions temporary.</p>
+<p>AI may prepare an extension proposal.</p>
+<p>It may collect:</p>
+<ul>
+<li>current affected population;</li>
+<li>remediation status;</li>
+<li>changed impact;</li>
+<li>available Evidence;</li>
+<li>the consequences of expiry.</li>
+</ul>
+<p>It must not approve the extension.</p>
+<p>The owner must decide again whether the risk remains acceptable.</p>
+<p>Our principle remains:</p>
+<pre><code class="language-text">AI prepares the case.
+
+Validators enforce policy.
+
+Humans renew or close the exception.</code></pre>
+<p>---</p>
+<h1 id="we-require-compensating-controls">We require compensating controls</h1>
+<p>The temporary fallback may be acceptable only because another control reduces its risk.</p>
+<p>For the MRP Controller case, compensating controls might include:</p>
+<ul>
+<li>Product Plant records using <code>001</code> are reported separately;</li>
+<li>affected records are excluded from the first operational MRP run;</li>
+<li>Plant owners review the fallback population;</li>
+<li>no new Product is added to the exception automatically;</li>
+<li>the fallback is prohibited for production cutover.</li>
+</ul>
+<p>We record these controls as part of the exception.</p>
+<pre><code class="language-text">Compensating controls:
+
+- Tag every fallback record.
+- Produce Plant-level exception report.
+- Prevent production release without renewed approval.
+- Reconcile affected records after conversion completion.</code></pre>
+<p>If a required control is absent, the exception is no longer valid even if its date has not expired.</p>
+<p>---</p>
+<h1 id="we-preserve-the-risk-being-accepted">We preserve the risk being accepted</h1>
+<p>The exception should explain the consequence, not merely the deviation.</p>
+<p>For example:</p>
+<pre><code class="language-text">Accepted risk:
+
+Products using controller 001 may be assigned
+to a temporary planning responsibility that does not
+reflect the final Plant operating model.
+
+Potential consequence:
+
+Manual planning review and incorrect work allocation
+during the rehearsal.</code></pre>
+<p>This helps reviewers judge whether the exception is proportionate.</p>
+<p>It also prevents later reinterpretation.</p>
+<p>The decision was not:</p>
+<blockquote><code>001</code> is correct.</blockquote>
+<p>The decision was:</p>
+<blockquote>The programme accepts the bounded consequence of using <code>001</code> temporarily under specified controls.</blockquote>
+<p>That difference must survive.</p>
+<p>---</p>
+<h1 id="we-represent-the-exception-separately-from-the-mapping">We represent the exception separately from the Mapping</h1>
+<p>A conceptual exception object could look like this:</p>
+<pre><code class="language-text">---
+id: EXC-MRP-CONTROLLER-FALLBACK-001
+type: Exception
+status: active
+
+deviates_from:
+  - RULE-PLANT-SPECIFIC-MRP-CONTROLLER
+
+implemented_by:
+  - MAP-PRODUCT-PLANT-MRP-CONTROLLER
+
+temporary_value:
+  &quot;001&quot;
+
+scope:
+  plants:
+    - PL20
+    - PL30
+  migration_stage:
+    - MOCK-LOAD-2
+  source_system:
+    - LEGACY-EU
+
+applies_when:
+  - planner_group_present
+  - plant_present
+  - approved_conversion_missing
+
+owner:
+  ROLE-PRODUCTION-PLANNING-DATA-OWNER
+
+expires_on:
+  2026-08-15
+
+exit_criteria:
+  - approved_conversion_coverage_100_percent
+  - zero_records_using_fallback
+
+evidence:
+  - EVID-MOCK2-MRP-CONTROLLER-GAP
+  - DEC-MOCK2-FALLBACK-APPROVAL
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>The current Martenweave repository supports canonical objects such as Rules, Evidence, Decisions and proposals, but our repository inspection did not identify a dedicated first-class Exception lifecycle in the current public model. The object above should therefore be understood as a recommended extension, not a description of guaranteed current functionality.</p>
+<p>---</p>
+<h1 id="we-validate-the-exception-itself">We validate the exception itself</h1>
+<p>A valid exception should pass rules such as:</p>
+<ul>
+<li><code>deviates_from</code> references an active Rule;</li>
+<li>the owner exists;</li>
+<li>the scope is not empty;</li>
+<li>the expiry is present;</li>
+<li>the exit criteria are defined;</li>
+<li>Evidence is linked;</li>
+<li>the implementation path exists;</li>
+<li>affected records can be identified;</li>
+<li>production use is not broader than the approval;</li>
+<li>the exception has not expired;</li>
+<li>extensions do not overwrite previous approvals.</li>
+</ul>
+<p>We can introduce deterministic diagnostics such as:</p>
+<pre><code class="language-text">MW-EXC-001
+Exception has no accountable owner.
+
+MW-EXC-002
+Exception has no expiry condition.
+
+MW-EXC-003
+Exception scope is broader than approved Decision.
+
+MW-EXC-004
+Expired exception remains referenced by active Mapping.
+
+MW-EXC-005
+Exception has no reproducible affected population.
+
+MW-EXC-006
+Required compensating control is missing.
+
+MW-EXC-007
+Exception was extended without a new Decision.
+
+MW-EXC-008
+Exception has no exit criteria.
+
+MW-EXC-009
+Production dataset contains records using test-only exception.</code></pre>
+<p>The diagnostics turn governance expectations into executable controls.</p>
+<p>---</p>
+<h1 id="we-integrate-exceptions-into-dataset-readiness">We integrate exceptions into dataset readiness</h1>
+<p>A field should not be reported simply as complete because the fallback populated it.</p>
+<p>For the Product planning dataset, a better readiness report is:</p>
+<pre><code class="language-text">MRP Controller:
+
+Approved derivation:
+94.0%
+
+Controlled temporary exception:
+6.0%
+
+Unresolved:
+0.0%
+
+Technically populated:
+100.0%</code></pre>
+<p>This preserves two different truths:</p>
+<ul>
+<li>every record has a value;</li>
+<li>not every value follows the intended final model.</li>
+</ul>
+<p>A readiness score that counts fallback records as fully resolved rewards the continued use of exceptions.</p>
+<p>We should instead distinguish:</p>
+<pre><code class="language-text">complete</code></pre>
+<p>from:</p>
+<pre><code class="language-text">complete through accepted exception</code></pre>
+<p>and:</p>
+<pre><code class="language-text">complete through expired or unauthorised fallback</code></pre>
+<p>Only the first two may be acceptable, and only within the approved scope.</p>
+<p>---</p>
+<h1 id="we-integrate-exceptions-into-impact-analysis">We integrate exceptions into impact analysis</h1>
+<p>When someone proposes changing the main Mapping, Martenweave should show related exceptions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Proposed change:
+Remove controller 001 fallback logic.
+
+Affected exception:
+EXC-MRP-CONTROLLER-FALLBACK-001
+
+Affected records:
+640
+
+Current status:
+Active
+
+Closure criteria:
+Not yet met</code></pre>
+<p>Conversely, when the exception expires, impact analysis should show:</p>
+<ul>
+<li>affected datasets;</li>
+<li>affected records;</li>
+<li>affected Plants;</li>
+<li>related Mappings;</li>
+<li>blocked readiness reports;</li>
+<li>required owners;</li>
+<li>stale Evidence.</li>
+</ul>
+<p>The exception becomes part of the dependency graph rather than an external note.</p>
+<p>---</p>
+<h1 id="we-tag-the-records-that-used-the-exception">We tag the records that used the exception</h1>
+<p>The canonical model alone cannot prove which actual records followed the fallback.</p>
+<p>The transformation output should include a trace marker or produce a sidecar report.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">PRODUCT_ID:
+P-100045
+
+PLANT:
+PL30
+
+MRP_CONTROLLER:
+001
+
+DERIVATION_PATH:
+EXC-MRP-CONTROLLER-FALLBACK-001</code></pre>
+<p>This does not mean exposing internal governance IDs to every target system.</p>
+<p>The marker can exist in:</p>
+<ul>
+<li>a load manifest;</li>
+<li>a reconciliation dataset;</li>
+<li>migration logs;</li>
+<li>Evidence output.</li>
+</ul>
+<p>The essential requirement is that we can recover the population later.</p>
+<p>Without record-level attribution, exception closure becomes guesswork.</p>
+<p>---</p>
+<h1 id="we-verify-that-implementation-matches-the-exception">We verify that implementation matches the exception</h1>
+<p>The canonical exception says:</p>
+<pre><code class="language-text">PL20 and PL30 during Mock Load 2 only.</code></pre>
+<p>The transformation code may accidentally apply it to every Plant.</p>
+<p>We need implementation evidence.</p>
+<p>The readiness run should report:</p>
+<pre><code class="language-text">Approved exception usage:
+640 records
+
+Out-of-scope fallback usage:
+73 records
+
+Unexpected Plants:
+PL40</code></pre>
+<p>The 73 records are not covered by the risk acceptance.</p>
+<p>They are defects.</p>
+<p>This prevents a common failure in which the existence of an approved exception is used to justify any similar fallback behaviour.</p>
+<p>---</p>
+<h1 id="we-close-exceptions-through-evidence-not-status-editing">We close exceptions through evidence, not status editing</h1>
+<p>The PL30 conversion is eventually completed.</p>
+<p>The team updates the value list and reruns the dataset.</p>
+<p>The report shows:</p>
+<pre><code class="language-text">Approved conversion:
+100%
+
+Fallback 001:
+0 records</code></pre>
+<p>The planning owner confirms the result.</p>
+<p>We close the exception with:</p>
+<ul>
+<li>closure date;</li>
+<li>closure Evidence;</li>
+<li>final affected population;</li>
+<li>remediation reference;</li>
+<li>model commit;</li>
+<li>replacement state.</li>
+</ul>
+<p>The exception remains in history.</p>
+<p>Its status becomes:</p>
+<pre><code class="language-text">closed</code></pre>
+<p>We do not delete it.</p>
+<p>Later teams can understand:</p>
+<ul>
+<li>why fallback <code>001</code> appeared in Mock Load 2;</li>
+<li>which records were affected;</li>
+<li>why it was permitted;</li>
+<li>when it stopped;</li>
+<li>which change replaced it.</li>
+</ul>
+<p>---</p>
+<h1 id="we-treat-repeated-exceptions-as-a-model-signal">We treat repeated exceptions as a model signal</h1>
+<p>One exception may be a reasonable response to a temporary constraint.</p>
+<p>Repeated exceptions around the same Rule indicate a deeper problem.</p>
+<p>If every mock load requires another MRP Controller fallback extension, the issue may be:</p>
+<ul>
+<li>incomplete source authority;</li>
+<li>weak ownership;</li>
+<li>an unrealistic target design;</li>
+<li>missing value-list governance;</li>
+<li>incorrect Product Plant grain;</li>
+<li>insufficient remediation capacity.</li>
+</ul>
+<p>Martenweave should surface patterns such as:</p>
+<pre><code class="language-text">Rule:
+RULE-PLANT-SPECIFIC-MRP-CONTROLLER
+
+Exceptions:
+4
+
+Extensions:
+3
+
+Total duration:
+126 days
+
+Current affected population:
+1,240 records</code></pre>
+<p>At that point, the programme should stop treating the issue as temporary.</p>
+<p>It needs a model or delivery decision.</p>
+<p>---</p>
+<h1 id="we-give-the-workbench-an-exception-view">We give the Workbench an exception view</h1>
+<p>Martenweave Workbench is currently positioned as a local interface for assessment, investigation, review, reports and controlled changes while canonical truth remains in model files.</p>
+<p>A focused Exception view should show:</p>
+<h2 id="why-the-exception-exists">Why the exception exists</h2>
+<p>The missing conversion and accepted risk.</p>
+<h2 id="what-rule-it-deviates-from">What Rule it deviates from</h2>
+<p>The expected Plant-specific derivation.</p>
+<h2 id="where-it-applies">Where it applies</h2>
+<p>Plants, wave, source, population and condition.</p>
+<h2 id="who-owns-it">Who owns it</h2>
+<p>Business owner and implementation owner.</p>
+<h2 id="when-it-expires">When it expires</h2>
+<p>Date, event and exit criteria.</p>
+<h2 id="which-records-use-it">Which records use it</h2>
+<p>Count and reproducible population reference.</p>
+<h2 id="which-controls-are-required">Which controls are required</h2>
+<p>Reports, blocks and reviews.</p>
+<h2 id="what-happens-next">What happens next</h2>
+<p>Close, extend through a new proposal or allow expiry to block readiness.</p>
+<p>This is much more useful than a generic list of open exceptions.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused Martenweave capability should be <strong>Temporary Exception Control</strong>.</p>
+<p>We do not need a generic enterprise waiver platform.</p>
+<p>We need a narrow model-governance feature tied to Rules, Mappings, datasets and readiness.</p>
+<h2 id="goal">Goal</h2>
+<p>Prevent an approved migration fallback from remaining active outside its authorised scope or lifecycle.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support exceptions with:</p>
+<ul>
+<li>stable ID;</li>
+<li>governing Rule;</li>
+<li>implementation Mapping;</li>
+<li>business reason;</li>
+<li>accepted risk;</li>
+<li>scope;</li>
+<li>owner;</li>
+<li>start;</li>
+<li>expiry;</li>
+<li>compensating controls;</li>
+<li>exit criteria;</li>
+<li>Evidence;</li>
+<li>affected-population query;</li>
+<li>status.</li>
+</ul>
+<h2 id="required-behaviour">Required behaviour</h2>
+<ol>
+<li>Validate the exception definition.</li>
+<li>Detect missing owner or expiry.</li>
+<li>identify records using the exception.</li>
+<li>separate exception coverage from normal readiness.</li>
+<li>fail when usage exceeds scope.</li>
+<li>warn before expiry.</li>
+<li>block or downgrade readiness after expiry.</li>
+<li>require a new proposal for extension.</li>
+<li>preserve historical exception versions.</li>
+<li>verify closure through Evidence.</li>
+</ol>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could expose:</p>
+<pre><code class="language-text">martenweave exception list \
+  --repo ./model \
+  --status active</code></pre>
+<pre><code class="language-text">martenweave exception check \
+  EXC-MRP-CONTROLLER-FALLBACK-001 \
+  --repo ./model \
+  --dataset ./data/product-plant.csv</code></pre>
+<pre><code class="language-text">martenweave exception impact \
+  EXC-MRP-CONTROLLER-FALLBACK-001 \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave exception close \
+  EXC-MRP-CONTROLLER-FALLBACK-001 \
+  --evidence EVID-MOCK3-ZERO-FALLBACK \
+  --dry-run</code></pre>
+<p>These commands describe a product direction. They are not part of the currently documented CLI contract.</p>
+<p>The current Martenweave foundation already covers canonical model files, deterministic validation, gap detection, lineage, impact, dataset readiness and human-reviewed proposals.</p>
+<p>---</p>
+<h1 id="we-define-success-operationally">We define success operationally</h1>
+<p>The feature succeeds when we can answer:</p>
+<ol>
+<li>Which Rule is being bypassed?</li>
+<li>Why was the deviation accepted?</li>
+<li>Who accepted it?</li>
+<li>Which records and organisational scopes are covered?</li>
+<li>Which records actually used it?</li>
+<li>Which controls reduce the risk?</li>
+<li>When does it expire?</li>
+<li>What must happen before closure?</li>
+<li>Has it been extended before?</li>
+<li>What happens automatically when it expires?</li>
+</ol>
+<p>It does not succeed merely because we created an Exception object.</p>
+<p>The object must influence:</p>
+<ul>
+<li>validation;</li>
+<li>readiness;</li>
+<li>impact;</li>
+<li>proposals;</li>
+<li>reporting;</li>
+<li>closure.</li>
+</ul>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a generic policy-waiver platform;</li>
+<li>an enterprise risk-management suite;</li>
+<li>a ticketing system;</li>
+<li>a workflow engine;</li>
+<li>a direct SAP remediation service.</li>
+</ul>
+<p>The exception feature belongs inside the model layer.</p>
+<p>It exists to govern deviations from canonical model Rules during migration, MDM, data governance and AMS work.</p>
+<p>That boundary keeps the product focused.</p>
+<p>---</p>
+<h1 id="the-economic-pain-we-remove">The economic pain we remove</h1>
+<p>Temporary exceptions create hidden costs when they are not controlled:</p>
+<ul>
+<li>incorrect records survive into production;</li>
+<li>defaults conceal incomplete mappings;</li>
+<li>readiness scores become misleading;</li>
+<li>local workarounds spread to other scopes;</li>
+<li>teams repeat manual remediation;</li>
+<li>expired approvals remain in code;</li>
+<li>AMS inherits unexplained behaviour;</li>
+<li>future programmes treat a workaround as design.</li>
+</ul>
+<p>The cost is not only the wrong value.</p>
+<p>It is the loss of distinction between:</p>
+<pre><code class="language-text">accepted temporary risk</code></pre>
+<p>and:</p>
+<pre><code class="language-text">approved permanent model</code></pre>
+<p>Martenweave should preserve that distinction explicitly.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>We do not prevent temporary migration exceptions by banning them.</p>
+<p>We prevent them from becoming permanent by giving them an enforceable lifecycle.</p>
+<p>For the MRP Controller fallback, we preserve:</p>
+<ul>
+<li>the Rule being bypassed;</li>
+<li>the reason for the deviation;</li>
+<li>the approved Plants and migration stage;</li>
+<li>the affected population;</li>
+<li>the accepted business risk;</li>
+<li>the accountable owner;</li>
+<li>the compensating controls;</li>
+<li>the expiry;</li>
+<li>the exit criteria;</li>
+<li>the Evidence required for closure.</li>
+</ul>
+<p>The correct chain is:</p>
+<pre><code class="language-text">Gap
+→ Decision
+→ bounded Exception
+→ monitored usage
+→ remediation
+→ evidenced closure</code></pre>
+<p>The dangerous chain is:</p>
+<pre><code class="language-text">Gap
+→ default value
+→ successful load
+→ forgotten workaround
+→ permanent behaviour</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the system distinguish a record that satisfies the approved model from a record that is populated only because a temporary, still-valid exception was applied?</blockquote>
+<p>When the answer is yes, readiness becomes honest.</p>
+<p>When the answer is:</p>
+<blockquote>Both records have an MRP Controller, so both are complete,</blockquote>
+<p>the programme has allowed technical completeness to hide model debt.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that temporary migration decisions remain temporary in practice—not only in meeting notes.</p>
+<p>Our operating model is:</p>
+<pre><code class="language-text">Canonical Rules define the expected state.
+
+Exceptions permit bounded deviation.
+
+Validators enforce scope and expiry.
+
+AI prepares proposals and Evidence.
+
+Humans accept or renew risk.
+
+Git records the history.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently defines canonical files as the source of truth, generated indexes as disposable, deterministic validation as mandatory before indexing and AI-generated changes as reviewable proposals.</p>
+<p>Its documented pipeline moves from Evidence and profiling through validation, dataset and model gaps, lineage, impact and PatchProposals to human-reviewed GitHub issues or pull requests.</p>
+<p>NIST’s Risk Management Framework describes risk management as a disciplined, structured and flexible lifecycle process that includes control implementation, assessment, authorisation and continuous monitoring. It also emphasises responsibility and accountability for implemented controls. The framework concerns security and privacy risk rather than migration mappings specifically, but its lifecycle and accountability principles support the approach to time-bounded exceptions described here.</p>
+<p>NIST SP 800-53 describes controls as flexible and customisable components of an organisation-wide risk-management process and distinguishes both control functionality and assurance. This article applies a similar general distinction: implementing a fallback is not enough; we also need confidence that its scope, approval, monitoring and expiry are being enforced.</p>
+<p>A dedicated Exception object, exception-specific diagnostics, record-level usage tracking, expiry enforcement and the proposed CLI commands are product directions. Our current repository inspection did not identify these as a complete first-class lifecycle in the published Martenweave model. They should not be interpreted as guaranteed current functionality until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or NIST.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-keep-business-decisions-traceable-after-the-mapping-workbook-is.html"><span>Previous</span>A migration team decides that MRP Controller must be derived differently for Plant PL30.</a><a href="/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html"><span>Next</span>A migration programme is preparing Supplier bank data for SAP.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

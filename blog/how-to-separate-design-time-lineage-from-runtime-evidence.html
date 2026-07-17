@@ -1,0 +1,1577 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Separate Design-Time Lineage from Runtime Evidence | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration design states:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html" />
+    <meta property="og:title" content="How to Separate Design-Time Lineage from Runtime Evidence | Martenweave" />
+    <meta property="og:description" content="A migration design states:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Separate Design-Time Lineage from Runtime Evidence | Martenweave" />
+    <meta name="twitter:description" content="A migration design states:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html",
+                        "name": "How to Separate Design-Time Lineage from Runtime Evidence | Martenweave",
+                        "description": "A migration design states:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Separate Design-Time Lineage from Runtime Evidence",
+                                    "item": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html#content",
+                        "headline": "How to Separate Design-Time Lineage from Runtime Evidence",
+                        "name": "How to Separate Design-Time Lineage from Runtime Evidence",
+                        "description": "A migration design states:",
+                        "url": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Separate Design-Time Lineage from Runtime Evidence</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Separate Design-Time Lineage from Runtime Evidence</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration design states:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#shortcut-1-implementation-becomes-truth">Shortcut 1: implementation becomes truth</a></li><li><a href="#shortcut-2-design-hides-reality">Shortcut 2: design hides reality</a></li><li><a href="#conformant">Conformant</a></li><li><a href="#partially-conformant">Partially conformant</a></li><li><a href="#undocumented-path">Undocumented path</a></li><li><a href="#contradictory-path">Contradictory path</a></li><li><a href="#not-observed">Not observed</a></li><li><a href="#observed">Observed</a></li><li><a href="#reproduced">Reproduced</a></li><li><a href="#verified">Verified</a></li><li><a href="#contradicted">Contradicted</a></li><li><a href="#superseded">Superseded</a></li><li><a href="#inconclusive">Inconclusive</a></li><li><a href="#configuration-evidence">Configuration evidence</a></li><li><a href="#execution-evidence">Execution evidence</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration design states:</p>
+<pre><code class="language-text">CRM Segment
++
+Sales Area
+→ Customer Group enrichment
+→ SAP KNVV-KDGRP</code></pre>
+<p>The Mapping is approved.</p>
+<p>The source fields are registered.</p>
+<p>The target endpoint is known.</p>
+<p>The Rule says Customer Group must be present before Customer Sales Area activation.</p>
+<p>This is the intended lineage.</p>
+<p>Then Mock Load 3 runs.</p>
+<p>The output shows that <code>KNVV-KDGRP</code> was populated for 98.7 percent of records.</p>
+<p>At first, the result appears to confirm the design.</p>
+<p>A closer review finds that:</p>
+<ul>
+<li>the Sales Area field was absent from one extract;</li>
+<li>a transformation script used a default value;</li>
+<li>the default was not documented in the approved Mapping;</li>
+<li>640 records followed the fallback path;</li>
+<li>the load report did not identify those records separately;</li>
+<li>the target field was technically complete but not fully source-derived.</li>
+</ul>
+<p>The approved design did not execute as intended.</p>
+<p>The runtime result was not a simple failure either.</p>
+<p>Most records followed the approved path. Some did not.</p>
+<p>A useful model must preserve both facts:</p>
+<pre><code class="language-text">Design-time lineage:
+what should happen
+
+Runtime evidence:
+what happened in one observed execution</code></pre>
+<p>These two layers are related.</p>
+<p>They must not be collapsed.</p>
+<blockquote>Design-time lineage describes an approved dependency model. Runtime evidence describes a particular observation of an implementation operating against particular inputs at a particular time.</blockquote>
+<p>OpenLineage formalises a similar separation. Its current object model uses design-time <code>JobEvent</code> and <code>DatasetEvent</code> records for declared metadata, while <code>RunEvent</code> describes a specific execution occurrence and its state. Design events are not associated with a run; runtime events represent observations such as a job starting or completing.</p>
+<p>For Martenweave, the distinction should be:</p>
+<pre><code class="language-text">Canonical model objects
+→ approved design-time lineage
+
+Datasets, validation results, load reports and execution observations
+→ runtime Evidence</code></pre>
+<p>The canonical path should not be rewritten merely because one run behaved differently.</p>
+<p>The runtime discrepancy should become a Finding, Evidence object or PatchProposal candidate.</p>
+<p>---</p>
+<h1 id="why-the-distinction-matters">Why the distinction matters</h1>
+<p>Without separation, two dangerous shortcuts appear.</p>
+<h2 id="shortcut-1-implementation-becomes-truth">Shortcut 1: implementation becomes truth</h2>
+<p>A transformation happens to use a source field.</p>
+<p>The model is updated automatically to reflect it.</p>
+<p>No one verifies whether:</p>
+<ul>
+<li>the field is authoritative;</li>
+<li>its meaning matches the Attribute;</li>
+<li>the path was temporary;</li>
+<li>a defect caused the behaviour;</li>
+<li>the implementation violated an approved Decision.</li>
+</ul>
+<p>Runtime behaviour silently becomes governance.</p>
+<h2 id="shortcut-2-design-hides-reality">Shortcut 2: design hides reality</h2>
+<p>The approved Mapping remains in the repository.</p>
+<p>Every report continues to show the intended path.</p>
+<p>Actual migration runs use:</p>
+<ul>
+<li>defaults;</li>
+<li>different fields;</li>
+<li>manual fixes;</li>
+<li>local conversion tables;</li>
+<li>undocumented exclusions.</li>
+</ul>
+<p>The design remains elegant while operations diverge.</p>
+<p>A trustworthy registry must allow users to ask:</p>
+<pre><code class="language-text">What is approved?
+
+What was observed?
+
+Where do they differ?
+
+What evidence supports the conclusion?
+
+Who must decide what happens next?</code></pre>
+<p>---</p>
+<h1 id="design-time-lineage">Design-time lineage</h1>
+<p>Design-time lineage represents the stable, reviewable model of how data is intended to move and transform.</p>
+<p>It may include:</p>
+<ul>
+<li>source Systems and Applications;</li>
+<li>source FieldEndpoints;</li>
+<li>expected DatasetFields;</li>
+<li>Mappings;</li>
+<li>TransformationRules;</li>
+<li>business Attributes;</li>
+<li>Rules;</li>
+<li>target FieldEndpoints;</li>
+<li>interfaces;</li>
+<li>Decisions;</li>
+<li>source authority;</li>
+<li>fallback policy;</li>
+<li>applicability;</li>
+<li>effective periods.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
++
+FEP-LEGACY-SALES-AREA
+→ MAP-CUSTOMER-GROUP-ENRICHMENT
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<p>The design states that:</p>
+<ul>
+<li>CRM Segment is a direct input;</li>
+<li>Sales Area is contextual input;</li>
+<li>the transformation is enrichment rather than direct copying;</li>
+<li>the result represents Customer Group;</li>
+<li>the SAP target is <code>KNVV-KDGRP</code>.</li>
+</ul>
+<p>This path should be versioned, validated and approved independently of any particular migration execution.</p>
+<p>Martenweave already uses canonical files as the source of truth, validates IDs, types and references before indexing, and then runs lineage and impact analysis over generated projections. AI-assisted changes remain proposals until human review.</p>
+<p>---</p>
+<h1 id="runtime-evidence">Runtime evidence</h1>
+<p>Runtime evidence records an observation of the implemented process.</p>
+<p>For example:</p>
+<pre><code class="language-text">Run:
+MOCK-LOAD-3-CUSTOMER
+
+Started:
+2026-07-12 22:10 UTC
+
+Input:
+customer_wave3_extract.csv
+
+Transformation:
+customer_transform version 3.8.2
+
+Output:
+customer_sales_area_load.csv
+
+Result:
+98.7% Customer Group populated</code></pre>
+<p>A stronger runtime record also captures:</p>
+<ul>
+<li>canonical baseline used;</li>
+<li>Mapping or Rule versions expected;</li>
+<li>source dataset fingerprint;</li>
+<li>output dataset fingerprint;</li>
+<li>implementation version;</li>
+<li>start and completion times;</li>
+<li>row counts;</li>
+<li>rejected rows;</li>
+<li>fallback counts;</li>
+<li>validation results;</li>
+<li>target-load result;</li>
+<li>known errors;</li>
+<li>links to restricted execution logs.</li>
+</ul>
+<p>OpenLineage models a <code>Run</code> as one occurrence of a <code>Job</code> in time. Individual runs carry a unique run identity, while more stable Job and Dataset metadata is represented separately.</p>
+<p>This pattern is useful for Martenweave:</p>
+<pre><code class="language-text">Mapping:
+stable design object
+
+Execution:
+one observed application of that Mapping
+
+Evidence:
+summary and provenance of what occurred</code></pre>
+<p>---</p>
+<h1 id="a-run-is-not-a-model-object">A run is not a model object</h1>
+<p>An approved Mapping might operate thousands of times.</p>
+<p>Creating a new canonical Mapping for every execution would produce noise and confuse design with operations.</p>
+<p>Use separate identities:</p>
+<pre><code class="language-text">MAP-CUSTOMER-GROUP-ENRICHMENT</code></pre>
+<p>and:</p>
+<pre><code class="language-text">RUN-MOCK3-CUSTOMER-2026-07-12</code></pre>
+<p>The Mapping answers:</p>
+<blockquote>What transformation is approved?</blockquote>
+<p>The run answers:</p>
+<blockquote>When and how was an implementation executed?</blockquote>
+<p>The Evidence object answers:</p>
+<blockquote>What relevant result was observed and what claim does it support?</blockquote>
+<p>---</p>
+<h1 id="evidence-should-support-a-claim">Evidence should support a claim</h1>
+<p>A load report by itself is an attachment.</p>
+<p>A useful Evidence object explains why the report matters.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Claim:
+The approved Customer Group Mapping produced a valid target value.
+
+Claim:
+The source extract contained all required Sales Area keys.
+
+Claim:
+The SAP target field was populated for the approved population.
+
+Claim:
+The runtime implementation used an undocumented default.</code></pre>
+<p>The same execution report may support several claims.</p>
+<p>Each claim can have a different conclusion.</p>
+<p>Example:</p>
+<pre><code class="language-text">Source-field availability:
+failed
+
+Target-field completeness:
+passed
+
+Approved-path conformance:
+failed
+
+Technical load execution:
+passed with warnings</code></pre>
+<p>This is more accurate than one overall “Mock Load 3 passed” label.</p>
+<p>---</p>
+<h1 id="design-validity-and-execution-success-are-separate-dimensions">Design validity and execution success are separate dimensions</h1>
+<p>A design can be valid while one execution fails.</p>
+<p>Examples:</p>
+<ul>
+<li>corrupted input file;</li>
+<li>unavailable server;</li>
+<li>expired credential;</li>
+<li>incomplete extract;</li>
+<li>transient SAP error.</li>
+</ul>
+<p>The failed run does not prove that the canonical Mapping is wrong.</p>
+<p>Likewise, a run can complete successfully while the design is invalid or bypassed.</p>
+<p>Examples:</p>
+<ul>
+<li>undocumented default populated the target;</li>
+<li>stale source was used;</li>
+<li>incorrect values passed technical validation;</li>
+<li>records outside the intended population were excluded;</li>
+<li>manual corrections hid a broken Mapping.</li>
+</ul>
+<p>The correct result matrix is:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Design</th><th scope="col">Execution</th><th scope="col">Interpretation</th></tr></thead><tbody><tr><td>Valid</td><td>Successful and conformant</td><td>Strong supporting evidence</td></tr><tr><td>Valid</td><td>Failed</td><td>Operational or input defect</td></tr><tr><td>Invalid</td><td>Successful</td><td>Implementation may be producing ungoverned results</td></tr><tr><td>Invalid</td><td>Failed</td><td>Both model and execution require investigation</td></tr><tr><td>Unknown</td><td>Successful</td><td>Result cannot establish governance compliance</td></tr><tr><td>Valid</td><td>Successful but divergent</td><td>Implementation drift</td></tr></tbody></table></div>
+<p>This prevents one green technical status from closing a semantic review.</p>
+<p>---</p>
+<h1 id="five-comparison-outcomes">Five comparison outcomes</h1>
+<p>When runtime evidence is compared with approved lineage, classify the result.</p>
+<h2 id="conformant">Conformant</h2>
+<p>The observed path matches the approved path within declared tolerances.</p>
+<p>Example:</p>
+<pre><code class="language-text">Expected:
+CRM Segment + Sales Area
+→ enrichment
+→ Customer Group
+
+Observed:
+same source fields
+same transformation version
+same target endpoint</code></pre>
+<h2 id="partially-conformant">Partially conformant</h2>
+<p>Part of the approved path executed, but some context, population or evidence is missing.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM Segment present
+Sales Area absent for 4% of records</code></pre>
+<h2 id="undocumented-path">Undocumented path</h2>
+<p>Runtime used an additional or alternative dependency not represented in the canonical model.</p>
+<p>Example:</p>
+<pre><code class="language-text">Local conversion workbook used for one country</code></pre>
+<h2 id="contradictory-path">Contradictory path</h2>
+<p>Runtime behaviour conflicts with an explicit Mapping, Rule or Decision.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved:
+direct CRM equivalence prohibited
+
+Observed:
+CRM Segment copied directly to Customer Group</code></pre>
+<h2 id="not-observed">Not observed</h2>
+<p>The approved path exists but no usable runtime evidence confirms it for the selected period or scope.</p>
+<p>This does not prove the path is wrong.</p>
+<p>It means it remains unverified.</p>
+<p>---</p>
+<h1 id="design-time-objects-should-remain-relatively-stable">Design-time objects should remain relatively stable</h1>
+<p>Canonical design objects should change when:</p>
+<ul>
+<li>business meaning changes;</li>
+<li>source authority changes;</li>
+<li>an approved Mapping changes;</li>
+<li>a Rule changes;</li>
+<li>an endpoint is replaced;</li>
+<li>applicability changes;</li>
+<li>fallback policy changes.</li>
+</ul>
+<p>They should not change merely because:</p>
+<ul>
+<li>one run failed;</li>
+<li>one file was malformed;</li>
+<li>one dataset was incomplete;</li>
+<li>a runtime service was unavailable;</li>
+<li>one execution used the wrong version;</li>
+<li>a temporary incident workaround occurred.</li>
+</ul>
+<p>Those events belong in Evidence and Findings.</p>
+<p>The model changes only after review determines that the approved design itself must change.</p>
+<p>---</p>
+<h1 id="runtime-evidence-should-be-immutable">Runtime evidence should be immutable</h1>
+<p>Once recorded, execution evidence should not be edited to make it agree with the model.</p>
+<p>If an initial report is wrong:</p>
+<ol>
+<li>preserve the original report;</li>
+<li>add corrected Evidence;</li>
+<li>explain the correction;</li>
+<li>link supersession or invalidation;</li>
+<li>retain the original run identity.</li>
+</ol>
+<p>Runtime evidence is useful because it records what was observed at that time.</p>
+<p>Editing it retrospectively destroys that value.</p>
+<p>---</p>
+<h1 id="corrected-interpretation-versus-corrected-execution">Corrected interpretation versus corrected execution</h1>
+<p>Suppose a load report originally states:</p>
+<pre><code class="language-text">Customer Group completeness: 98.7%</code></pre>
+<p>A later analysis discovers that defaulted values were incorrectly counted as source-complete.</p>
+<p>The source report may remain intact.</p>
+<p>A new Evidence interpretation can state:</p>
+<pre><code class="language-text">Technical completeness:
+98.7%
+
+Authoritative-source completeness:
+91.2%
+
+Fallback population:
+7.5%</code></pre>
+<p>The run did not change.</p>
+<p>The interpretation became more precise.</p>
+<p>This distinction should be visible.</p>
+<p>---</p>
+<h1 id="bind-evidence-to-a-canonical-baseline">Bind evidence to a canonical baseline</h1>
+<p>Runtime evidence is difficult to interpret without knowing which model state it tested.</p>
+<p>Every significant Evidence object should identify:</p>
+<ul>
+<li>canonical commit or model baseline;</li>
+<li>schema version;</li>
+<li>relevant Mapping and Rule IDs;</li>
+<li>implementation version;</li>
+<li>dataset identity;</li>
+<li>execution time.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">id: EVID-MOCK3-CUSTOMER-GROUP
+type: Evidence
+baseline: CUSTOMER-WAVE3-RC2
+commit: abc123
+run: RUN-MOCK3-CUSTOMER-2026-07-12
+supports:
+  - MAP-CUSTOMER-GROUP-ENRICHMENT
+  - RULE-CUSTOMER-GROUP-REQUIRED</code></pre>
+<p>Without a baseline, later reviewers cannot determine whether the evidence verified:</p>
+<ul>
+<li>the current design;</li>
+<li>a superseded Mapping;</li>
+<li>a draft proposal;</li>
+<li>an older value list;</li>
+<li>a different Rule severity.</li>
+</ul>
+<p>---</p>
+<h1 id="bind-evidence-to-datasets">Bind evidence to datasets</h1>
+<p>A statement such as:</p>
+<pre><code class="language-text">Customer Group Mapping passed.</code></pre>
+<p>is incomplete without the tested input.</p>
+<p>Record:</p>
+<ul>
+<li>dataset name;</li>
+<li>dataset version;</li>
+<li>checksum or fingerprint;</li>
+<li>source-system snapshot;</li>
+<li>row count;</li>
+<li>applicable population;</li>
+<li>excluded records.</li>
+</ul>
+<p>OpenLineage distinguishes more stable Dataset metadata from run-specific input and output facets. It also supports dataset-level and column-level data-quality metrics and assertions as runtime-related observations.</p>
+<p>For Martenweave, the canonical Dataset object can describe what is expected.</p>
+<p>Runtime Evidence describes the specific dataset instance that was observed.</p>
+<p>---</p>
+<h1 id="dataset-definition-versus-dataset-instance">Dataset definition versus dataset instance</h1>
+<p>Design-time Dataset:</p>
+<pre><code class="language-text">DATASET-CUSTOMER-WAVE3-EXTRACT</code></pre>
+<p>defines:</p>
+<ul>
+<li>expected fields;</li>
+<li>keys;</li>
+<li>business scope;</li>
+<li>source;</li>
+<li>owner;</li>
+<li>required formats.</li>
+</ul>
+<p>Runtime dataset instance:</p>
+<pre><code class="language-text">customer_extract_2026-07-12.csv</code></pre>
+<p>has:</p>
+<ul>
+<li>actual columns;</li>
+<li>row count;</li>
+<li>fingerprint;</li>
+<li>extract time;</li>
+<li>profiling results;</li>
+<li>missing fields;</li>
+<li>unexpected fields.</li>
+</ul>
+<p>Do not alter the canonical Dataset definition to mirror every malformed extract.</p>
+<p>Create a gap report against the expected definition.</p>
+<p>Martenweave’s dataset-readiness workflow already orchestrates validation, indexing, profiling and gap detection and can promote detected gaps into a draft PatchProposal rather than silently mutating canonical files.</p>
+<p>---</p>
+<h1 id="bind-evidence-to-implementation-version">Bind evidence to implementation version</h1>
+<p>The same canonical Mapping can be implemented by several technical versions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mapping:
+MAP-CUSTOMER-GROUP-ENRICHMENT
+
+Implementation:
+customer_transform.py
+
+Version:
+3.8.2</code></pre>
+<p>A later version may fix a defect:</p>
+<pre><code class="language-text">Version 3.8.3:
+corrects Sales Area lookup</code></pre>
+<p>The runtime result must identify which implementation executed.</p>
+<p>Otherwise, evidence from the corrected version and defective version becomes indistinguishable.</p>
+<p>Where available, record:</p>
+<ul>
+<li>Git commit;</li>
+<li>package version;</li>
+<li>transport;</li>
+<li>configuration version;</li>
+<li>conversion-table version;</li>
+<li>SAP transport or release reference.</li>
+</ul>
+<p>---</p>
+<h1 id="bind-evidence-to-the-actual-path">Bind evidence to the actual path</h1>
+<p>Do not assume a configured Mapping was the Mapping that executed.</p>
+<p>Runtime evidence should record observed inputs and outputs where possible.</p>
+<p>Example:</p>
+<pre><code class="language-text">Declared inputs:
+SEGMENT_CODE
+SALES_ORG
+DIST_CHANNEL
+DIVISION
+
+Observed inputs:
+SEGMENT_CODE
+SALES_ORG
+
+Observed additional input:
+DEFAULT_CUSTOMER_GROUP</code></pre>
+<p>This reveals:</p>
+<ul>
+<li>missing context;</li>
+<li>unapproved fallback;</li>
+<li>partial implementation;</li>
+<li>configuration drift.</li>
+</ul>
+<p>Column-level lineage systems use field dependency metadata to show which input columns contribute directly or indirectly to output columns. OpenLineage distinguishes direct derivation from indirect influence such as joins, filters and conditional logic.</p>
+<p>A Martenweave Evidence comparison should preserve the same distinction.</p>
+<p>---</p>
+<h1 id="direct-and-indirect-runtime-observations">Direct and indirect runtime observations</h1>
+<p>Suppose <code>CUSTOMER_GROUP</code> is derived using:</p>
+<pre><code class="language-text">SEGMENT_CODE:
+direct input
+
+SALES_ORG:
+conditional input
+
+ACTIVE_FLAG:
+filter input</code></pre>
+<p>Runtime Evidence should not reduce this to:</p>
+<pre><code class="language-text">All three fields produced Customer Group.</code></pre>
+<p>A better record states:</p>
+<pre><code class="language-text">SEGMENT_CODE:
+value dependency observed
+
+SALES_ORG:
+lookup-selection dependency observed
+
+ACTIVE_FLAG:
+population-filter dependency observed</code></pre>
+<p>This matters when a field is missing or changes.</p>
+<p>A missing direct input affects the output value.</p>
+<p>A missing conditional input may cause the wrong conversion.</p>
+<p>A changed filter affects which records appear at all.</p>
+<p>---</p>
+<h1 id="runtime-evidence-should-be-scoped">Runtime evidence should be scoped</h1>
+<p>A result can apply to:</p>
+<ul>
+<li>one migration wave;</li>
+<li>one country;</li>
+<li>one business unit;</li>
+<li>one SAP client;</li>
+<li>one load object;</li>
+<li>one interface version;</li>
+<li>one subset of records.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Customer Group path verified
+for Germany Wave 3 customers only.</code></pre>
+<p>Do not present it as:</p>
+<pre><code class="language-text">Customer Group lineage verified globally.</code></pre>
+<p>Evidence scope should be no broader than the observed population.</p>
+<p>---</p>
+<h1 id="positive-evidence-does-not-prove-universal-correctness">Positive evidence does not prove universal correctness</h1>
+<p>One successful run confirms that the path worked for the observed input and conditions.</p>
+<p>It does not prove:</p>
+<ul>
+<li>every value combination;</li>
+<li>every country;</li>
+<li>every fallback;</li>
+<li>every organisational context;</li>
+<li>future runs;</li>
+<li>all historical data;</li>
+<li>every implementation environment.</li>
+</ul>
+<p>The model should support evidence accumulation.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mock Load 1:
+basic source path
+
+Mock Load 2:
+local exceptions
+
+Mock Load 3:
+full Sales Area coverage
+
+Cutover rehearsal:
+production-scale volume</code></pre>
+<p>Together, these provide stronger support.</p>
+<p>No single run becomes absolute proof.</p>
+<p>---</p>
+<h1 id="negative-evidence-does-not-automatically-invalidate-design">Negative evidence does not automatically invalidate design</h1>
+<p>Suppose a run fails because <code>SALES_ORG</code> is missing.</p>
+<p>Possible conclusions include:</p>
+<ul>
+<li>dataset extraction failed;</li>
+<li>expected Dataset definition is wrong;</li>
+<li>Mapping requirements are unrealistic;</li>
+<li>source system cannot provide the field;</li>
+<li>source authority decision is incomplete.</li>
+</ul>
+<p>The evidence identifies a discrepancy.</p>
+<p>Human review determines whether the fix belongs in:</p>
+<ul>
+<li>source extraction;</li>
+<li>implementation;</li>
+<li>canonical Mapping;</li>
+<li>fallback policy;</li>
+<li>business design.</li>
+</ul>
+<p>---</p>
+<h1 id="evidence-confidence">Evidence confidence</h1>
+<p>A useful classification may include:</p>
+<h2 id="observed">Observed</h2>
+<p>Directly recorded from a run, dataset or report.</p>
+<h2 id="reproduced">Reproduced</h2>
+<p>Observed in more than one controlled execution.</p>
+<h2 id="verified">Verified</h2>
+<p>Reviewed and accepted as supporting the stated claim.</p>
+<h2 id="contradicted">Contradicted</h2>
+<p>Another credible Evidence object conflicts with it.</p>
+<h2 id="superseded">Superseded</h2>
+<p>A later run or corrected analysis replaces its operational relevance.</p>
+<h2 id="inconclusive">Inconclusive</h2>
+<p>The evidence exists but cannot support a firm conclusion.</p>
+<p>Confidence should attach to the claim, not merely the file.</p>
+<p>---</p>
+<h1 id="evidence-hierarchy">Evidence hierarchy</h1>
+<p>Different evidence types answer different questions.</p>
+<h2 id="configuration-evidence">Configuration evidence</h2>
+<p>Shows what the implementation was configured to do.</p>
+<p>Examples:</p>
+<ul>
+<li>Mapping configuration;</li>
+<li>SQL;</li>
+<li>transformation code;</li>
+<li>conversion table.</li>
+</ul>
+<h2 id="execution-evidence">Execution evidence</h2>
+<p>Shows that a run occurred and its technical outcome.</p>
+<p>Examples:</p>
+<ul>
+<li>logs;</li>
+<li>run state;</li>
+<li>transport execution;</li>
+<li>job status.</li>
+</ul>
+<h2 id="data-evidence">Data evidence</h2>
+<p>Shows properties of actual inputs and outputs.</p>
+<p>Examples:</p>
+<ul>
+<li>profile;</li>
+<li>row counts;</li>
+<li>null rates;</li>
+<li>value distributions;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="business-evidence">Business evidence</h2>
+<p>Shows acceptance of meaning or outcomes.</p>
+<p>Examples:</p>
+<ul>
+<li>owner approval;</li>
+<li>reviewed sample;</li>
+<li>Decision;</li>
+<li>signed validation result.</li>
+</ul>
+<p>A successful job log is not business evidence that Customer Group means the right thing.</p>
+<p>A business approval is not technical evidence that every record was loaded.</p>
+<p>---</p>
+<h1 id="the-runtime-evidence-object">The runtime Evidence object</h1>
+<p>A practical object may include:</p>
+<pre><code class="language-yaml">id: EVID-MOCK3-CUSTOMER-GROUP
+type: Evidence
+evidence_type: runtime_lineage
+baseline: CUSTOMER-WAVE3-RC2
+run_id: RUN-MOCK3-CUSTOMER-2026-07-12
+observed_at: 2026-07-12T22:10:00Z
+implementation:
+  version: 3.8.2
+input_dataset:
+  id: DATASET-CUSTOMER-WAVE3-EXTRACT
+  fingerprint: sha256-example
+output_dataset:
+  id: DATASET-CUSTOMER-WAVE3-LOAD
+claims:
+  - claim: target_population_complete
+    result: partial
+  - claim: approved_mapping_conformance
+    result: failed</code></pre>
+<p>This is a recommended direction rather than the exact current schema.</p>
+<p>The object should point to large or sensitive logs rather than embedding them when unnecessary.</p>
+<p>---</p>
+<h1 id="avoid-copying-production-records-into-the-registry">Avoid copying production records into the registry</h1>
+<p>Runtime evidence can be valuable without storing complete business datasets.</p>
+<p>Prefer:</p>
+<ul>
+<li>hashes;</li>
+<li>aggregate profiles;</li>
+<li>row counts;</li>
+<li>value distributions;</li>
+<li>sample identifiers under controlled access;</li>
+<li>external restricted references;</li>
+<li>redacted examples.</li>
+</ul>
+<p>Avoid placing:</p>
+<ul>
+<li>customer names;</li>
+<li>bank details;</li>
+<li>tax identifiers;</li>
+<li>supplier personal data;</li>
+<li>complete source extracts;</li>
+</ul>
+<p>inside the canonical model repository.</p>
+<p>Martenweave is a model-governance and evidence layer, not a shadow master-data system.</p>
+<p>---</p>
+<h1 id="runtime-evidence-can-reveal-model-gaps">Runtime evidence can reveal model gaps</h1>
+<p>A run may expose an unknown source dependency.</p>
+<p>Example:</p>
+<pre><code class="language-text">Observed:
+COUNTRY_CODE used to select Customer Group conversion table.
+
+Canonical Mapping:
+COUNTRY_CODE not declared.</code></pre>
+<p>The correct response is:</p>
+<pre><code class="language-text">Finding:
+Undocumented conditional dependency</code></pre>
+<p>Then:</p>
+<ol>
+<li>inspect implementation;</li>
+<li>determine whether dependency is intentional;</li>
+<li>assess business meaning;</li>
+<li>create PatchProposal if the Mapping should change;</li>
+<li>validate impact;</li>
+<li>obtain approval.</li>
+</ol>
+<p>Do not automatically add the edge merely because it appeared at runtime.</p>
+<p>The implementation may itself be wrong.</p>
+<p>---</p>
+<h1 id="runtime-evidence-can-reveal-implementation-drift">Runtime evidence can reveal implementation drift</h1>
+<p>The canonical Mapping remains correct.</p>
+<p>The implementation changes without an approved model change.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved:
+CRM Segment + Sales Area enrichment
+
+Observed:
+CRM Segment direct copy</code></pre>
+<p>This is implementation drift.</p>
+<p>The preferred remediation may be:</p>
+<ul>
+<li>correct the code;</li>
+<li>correct configuration;</li>
+<li>restore conversion table;</li>
+<li>re-run affected records.</li>
+</ul>
+<p>Changing the model to match the drift would institutionalise a defect.</p>
+<p>---</p>
+<h1 id="runtime-evidence-can-reveal-outdated-design">Runtime evidence can reveal outdated design</h1>
+<p>Sometimes the implementation reflects a legitimate change that was never captured.</p>
+<p>Example:</p>
+<ul>
+<li>business approved a new source in a meeting;</li>
+<li>implementation changed;</li>
+<li>model repository was not updated;</li>
+<li>several runs confirm the new path;</li>
+<li>source owner accepts the change.</li>
+</ul>
+<p>The evidence supports a model-update proposal.</p>
+<p>It still does not bypass the proposal process.</p>
+<p>The model should change through:</p>
+<pre><code class="language-text">Evidence
+→ Finding
+→ Decision
+→ PatchProposal
+→ validation
+→ human approval</code></pre>
+<p>Martenweave’s operating model explicitly places evidence, proposals, validation, gaps and impact before GitHub review, with no silent AI mutation.</p>
+<p>---</p>
+<h1 id="runtime-evidence-and-fallback-paths">Runtime evidence and fallback paths</h1>
+<p>Fallbacks are particularly important to observe.</p>
+<p>The design may declare:</p>
+<pre><code class="language-text">Primary:
+Global Customer Reference
+
+Fallback:
+manual enrichment when primary value is absent</code></pre>
+<p>Runtime Evidence should report:</p>
+<ul>
+<li>records using primary path;</li>
+<li>records using fallback;</li>
+<li>fallback reason;</li>
+<li>fallback approval;</li>
+<li>expired fallback use;</li>
+<li>unresolved reconciliation.</li>
+</ul>
+<p>A fallback used in 1 percent of records may be acceptable.</p>
+<p>A fallback used in 80 percent may indicate that the preferred design is not operationally viable.</p>
+<p>Do not automatically promote the fallback to authority.</p>
+<p>Create a Finding.</p>
+<p>---</p>
+<h1 id="runtime-evidence-and-source-conflicts">Runtime evidence and source conflicts</h1>
+<p>Suppose the approved policy says:</p>
+<pre><code class="language-text">Global source wins over ERP replica.</code></pre>
+<p>Runtime data shows 2,400 conflicting values.</p>
+<p>The execution may still select the correct source.</p>
+<p>The conflicts are operational evidence that:</p>
+<ul>
+<li>replication may be stale;</li>
+<li>upstream governance is weak;</li>
+<li>fallback could be dangerous;</li>
+<li>reconciliation is needed.</li>
+</ul>
+<p>The Evidence should connect to source-policy health, not only to the final target population.</p>
+<p>---</p>
+<h1 id="runtime-evidence-and-rules">Runtime evidence and Rules</h1>
+<p>A Rule has at least three relevant states.</p>
+<h2 id="declared-rule">Declared Rule</h2>
+<p>The canonical behaviour.</p>
+<pre><code class="language-text">Customer Group required before activation.</code></pre>
+<h2 id="implemented-rule">Implemented Rule</h2>
+<p>The technical control configured in SAP, migration tooling or MDM.</p>
+<pre><code class="language-text">Missing value produces error.</code></pre>
+<h2 id="observed-rule-behaviour">Observed Rule behaviour</h2>
+<p>What happened during one run.</p>
+<pre><code class="language-text">42 missing values rejected.
+3 missing values passed through an exception route.</code></pre>
+<p>These states can diverge.</p>
+<p>A complete comparison asks:</p>
+<ul>
+<li>Does implementation match declared Rule?</li>
+<li>Did the run exercise the implementation?</li>
+<li>Were exceptions authorised?</li>
+<li>Did the evidence cover relevant contexts?</li>
+</ul>
+<p>---</p>
+<h1 id="runtime-evidence-and-value-lists">Runtime evidence and value lists</h1>
+<p>A Mapping may be approved to produce:</p>
+<pre><code class="language-text">STANDARD
+STRATEGIC
+HIGH_VALUE</code></pre>
+<p>A run produces:</p>
+<pre><code class="language-text">01
+02
+03
+UNKNOWN</code></pre>
+<p>Possible explanations:</p>
+<ul>
+<li>implementation outputs physical SAP codes;</li>
+<li>canonical-to-physical conversion was expected;</li>
+<li><code>UNKNOWN</code> is an undocumented fallback;</li>
+<li>value-list versions differ;</li>
+<li>source data contains invalid values.</li>
+</ul>
+<p>The evidence comparison needs the value-domain layer.</p>
+<p>A technically populated field can still violate the canonical value model.</p>
+<p>---</p>
+<h1 id="runtime-evidence-and-target-systems">Runtime evidence and target systems</h1>
+<p>A successful output file does not prove successful SAP persistence.</p>
+<p>Evidence stages may include:</p>
+<pre><code class="language-text">Transformation output created
+
+Load file accepted
+
+SAP API or migration object processed
+
+Target record created
+
+Target field persisted
+
+Post-load validation passed
+
+Downstream replication completed</code></pre>
+<p>Each stage supports a different claim.</p>
+<p>Do not call the full path verified when only the transformation output was checked.</p>
+<p>---</p>
+<h1 id="end-to-end-evidence-chain">End-to-end evidence chain</h1>
+<p>For a critical Attribute, the strongest evidence chain may be:</p>
+<pre><code class="language-text">Source profile
+→ Mapping execution
+→ transformation validation
+→ SAP load result
+→ target-field verification
+→ downstream reconciliation
+→ business owner acceptance</code></pre>
+<p>A gap at one stage should remain visible.</p>
+<p>Example:</p>
+<pre><code class="language-text">Source:
+verified
+
+Transformation:
+verified
+
+SAP persistence:
+verified
+
+Downstream interface:
+not tested
+
+Business acceptance:
+pending</code></pre>
+<p>This is more honest than one overall status.</p>
+<p>---</p>
+<h1 id="evidence-freshness">Evidence freshness</h1>
+<p>Runtime evidence loses relevance when:</p>
+<ul>
+<li>Mapping changes;</li>
+<li>Rule changes;</li>
+<li>value list changes;</li>
+<li>source system changes;</li>
+<li>target endpoint changes;</li>
+<li>implementation version changes;</li>
+<li>dataset scope changes.</li>
+</ul>
+<p>A previously verified path may become unverified after a material change.</p>
+<p>The evidence itself remains valid historically.</p>
+<p>Its applicability to the current model expires.</p>
+<p>A freshness check should compare:</p>
+<pre><code class="language-text">Evidence baseline
+vs.
+current canonical baseline</code></pre>
+<p>and:</p>
+<pre><code class="language-text">tested implementation version
+vs.
+current implementation version</code></pre>
+<p>---</p>
+<h1 id="invalidation-rules">Invalidation rules</h1>
+<p>A model change should identify which Evidence objects require reassessment.</p>
+<p>Examples:</p>
+<h2 id="mapping-source-changed">Mapping source changed</h2>
+<p>Invalidate source-profile and Mapping-execution evidence.</p>
+<h2 id="target-endpoint-changed">Target endpoint changed</h2>
+<p>Invalidate load and target-persistence evidence.</p>
+<h2 id="rule-severity-changed">Rule severity changed</h2>
+<p>Invalidate behavioural test evidence.</p>
+<h2 id="value-meaning-changed">Value meaning changed</h2>
+<p>Invalidate business-acceptance and historical interpretation evidence.</p>
+<h2 id="documentation-changed-only">Documentation changed only</h2>
+<p>Evidence may remain applicable.</p>
+<p>The result should say:</p>
+<pre><code class="language-text">Evidence remains historically valid.
+
+Current verification status:
+stale</code></pre>
+<p>not delete the evidence.</p>
+<p>---</p>
+<h1 id="evidence-coverage">Evidence coverage</h1>
+<p>A coverage report should measure claims, not attachments.</p>
+<p>Weak metric:</p>
+<pre><code class="language-text">Customer Group has five evidence files.</code></pre>
+<p>Stronger metrics:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Claim</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Authoritative source available</td><td>Verified</td></tr><tr><td>Required context available</td><td>Partial</td></tr><tr><td>Mapping conforms to design</td><td>Failed</td></tr><tr><td>SAP target populated</td><td>Verified</td></tr><tr><td>Fallback within approved scope</td><td>Failed</td></tr><tr><td>Downstream interface verified</td><td>Not tested</td></tr></tbody></table></div>
+<p>This makes evidence gaps actionable.</p>
+<p>Martenweave’s current Model Ledger workbench includes evidence coverage, impact context, ownership and validation state, while its governance views combine source, Mapping, Decision, Evidence and approval context.</p>
+<p>---</p>
+<h1 id="evidence-aggregation">Evidence aggregation</h1>
+<p>Several runs can support one design-time claim.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mock Load 1:
+Germany
+
+Mock Load 2:
+Portugal
+
+Mock Load 3:
+full Wave 3 population</code></pre>
+<p>An aggregate assessment might state:</p>
+<pre><code class="language-text">Approved Mapping:
+verified for Germany and Portugal
+
+Not verified:
+remaining countries
+
+Known exception:
+ERP_B population</code></pre>
+<p>Aggregation should preserve the individual runs.</p>
+<p>Do not merge them into one synthetic report without provenance.</p>
+<p>---</p>
+<h1 id="contradictory-runtime-evidence">Contradictory runtime evidence</h1>
+<p>Two runs may produce different conclusions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Run 184:
+Customer Group fallback 2%
+
+Run 191:
+Customer Group fallback 37%</code></pre>
+<p>Possible reasons:</p>
+<ul>
+<li>different population;</li>
+<li>source outage;</li>
+<li>code change;</li>
+<li>conversion-table version;</li>
+<li>configuration drift;</li>
+<li>evidence defect.</li>
+</ul>
+<p>The contradiction should create investigation, not average the results automatically.</p>
+<p>---</p>
+<h1 id="failed-evidence-collection">Failed evidence collection</h1>
+<p>Sometimes the run occurs, but evidence is incomplete.</p>
+<p>Examples:</p>
+<ul>
+<li>logs unavailable;</li>
+<li>dataset fingerprint missing;</li>
+<li>implementation version unknown;</li>
+<li>record counts inconsistent;</li>
+<li>report generated manually;</li>
+<li>scope undocumented.</li>
+</ul>
+<p>Classify:</p>
+<pre><code class="language-text">Execution:
+reported successful
+
+Evidence quality:
+insufficient
+
+Lineage verification:
+inconclusive</code></pre>
+<p>The absence of proof is not proof of failure.</p>
+<p>It is still a governance gap.</p>
+<p>---</p>
+<h1 id="runtime-evidence-retention">Runtime Evidence retention</h1>
+<p>Not every execution needs permanent model-level retention.</p>
+<p>Retain detailed Evidence when it supports:</p>
+<ul>
+<li>release approval;</li>
+<li>mock-load sign-off;</li>
+<li>cutover;</li>
+<li>critical defect analysis;</li>
+<li>source-authority Decision;</li>
+<li>exception approval;</li>
+<li>audit requirement.</li>
+</ul>
+<p>Routine successful runs may remain in operational logging systems.</p>
+<p>Martenweave can retain:</p>
+<ul>
+<li>summary;</li>
+<li>identifiers;</li>
+<li>relevant metrics;</li>
+<li>external references;</li>
+<li>model claims supported.</li>
+</ul>
+<p>This keeps the repository useful rather than turning it into a log archive.</p>
+<p>---</p>
+<h1 id="runtime-systems-remain-authoritative-for-their-own-logs">Runtime systems remain authoritative for their own logs</h1>
+<p>Martenweave should not replace:</p>
+<ul>
+<li>ETL monitoring;</li>
+<li>SAP application logs;</li>
+<li>interface monitoring;</li>
+<li>job orchestration;</li>
+<li>incident management;</li>
+<li>data-quality execution platforms.</li>
+</ul>
+<p>Those systems remain authoritative for operational execution details.</p>
+<p>Martenweave stores or references the Evidence needed to evaluate model truth.</p>
+<p>The separation is:</p>
+<pre><code class="language-text">Operational platform:
+what executed
+
+Martenweave:
+what that execution means for the governed model</code></pre>
+<p>---</p>
+<h1 id="evidence-and-git">Evidence and Git</h1>
+<p>Canonical Evidence summaries can be versioned in Git when they form part of model governance.</p>
+<p>Large execution files may remain external.</p>
+<p>Git records:</p>
+<ul>
+<li>Evidence object;</li>
+<li>supported claim;</li>
+<li>baseline;</li>
+<li>conclusion;</li>
+<li>references;</li>
+<li>later supersession.</li>
+</ul>
+<p>This provides reviewable history without committing every runtime log.</p>
+<p>---</p>
+<h1 id="ai-use">AI use</h1>
+<p>AI can assist with:</p>
+<ul>
+<li>summarising execution reports;</li>
+<li>extracting observed source and target fields;</li>
+<li>identifying deviations from approved paths;</li>
+<li>classifying failures;</li>
+<li>drafting Findings;</li>
+<li>proposing missing Evidence links;</li>
+<li>generating a test summary.</li>
+</ul>
+<p>AI should not autonomously decide:</p>
+<ul>
+<li>that runtime behaviour is correct;</li>
+<li>that the canonical Mapping should be rewritten;</li>
+<li>that one successful run proves universal conformance;</li>
+<li>that a fallback is acceptable;</li>
+<li>that contradictory evidence can be ignored.</li>
+</ul>
+<p>The deterministic layer compares IDs, versions, paths and expected fields.</p>
+<p>Humans decide whether the discrepancy requires an implementation fix or a model change.</p>
+<p>---</p>
+<h1 id="candidate-state-testing">Candidate-state testing</h1>
+<p>A proposed Mapping or Rule change should be tested without replacing the approved baseline immediately.</p>
+<p>The sequence is:</p>
+<pre><code class="language-text">Current canonical model
++
+PatchProposal
+=
+candidate model
+
+candidate model
+→ expected lineage
+→ test execution
+→ runtime Evidence
+→ comparison
+→ approval decision</code></pre>
+<p>This allows reviewers to see:</p>
+<ul>
+<li>whether candidate lineage is implementable;</li>
+<li>whether required datasets exist;</li>
+<li>whether target fields are populated;</li>
+<li>whether new Rules behave correctly;</li>
+<li>whether fallback use increases;</li>
+<li>whether downstream consumers remain compatible.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-customer-group-example">A worked Customer Group example</h1>
+<h2 id="approved-design">Approved design</h2>
+<pre><code class="language-text">CRM Segment
++
+Sales Area
+→ Customer Group enrichment
+→ KNVV-KDGRP</code></pre>
+<h2 id="expected-rule">Expected Rule</h2>
+<pre><code class="language-text">Customer Group required before Sales Area activation.</code></pre>
+<h2 id="mock-load-3-observation">Mock Load 3 observation</h2>
+<pre><code class="language-text">Input records:
+50,000
+
+Approved path:
+45,600
+
+Manual fallback:
+3,760
+
+Undocumented default:
+640
+
+Rejected:
+0</code></pre>
+<h2 id="initial-technical-report">Initial technical report</h2>
+<pre><code class="language-text">Target completeness:
+100%</code></pre>
+<h2 id="model-aware-assessment">Model-aware assessment</h2>
+<pre><code class="language-text">Technical target completeness:
+100%
+
+Approved-path conformance:
+91.2%
+
+Approved fallback:
+7.52%
+
+Undocumented fallback:
+1.28%
+
+Readiness:
+blocked pending review of undocumented default</code></pre>
+<p>The runtime execution succeeded technically.</p>
+<p>The lineage evidence did not fully conform.</p>
+<p>---</p>
+<h1 id="a-worked-supplier-risk-example">A worked Supplier Risk example</h1>
+<h2 id="approved-design-2">Approved design</h2>
+<pre><code class="language-text">External Risk Score
++
+Supplier Category
++
+Compliance Status
+→ approved derivation Rule
+→ Supplier Risk</code></pre>
+<h2 id="observed-execution">Observed execution</h2>
+<p>The external score service was unavailable.</p>
+<p>The implementation copied the previous ERP Risk value.</p>
+<h2 id="result">Result</h2>
+<p>SAP target populated for every supplier.</p>
+<h2 id="assessment">Assessment</h2>
+<pre><code class="language-text">Target completeness:
+passed
+
+Authoritative-source conformance:
+failed
+
+Fallback policy:
+not defined
+
+Historical source:
+used as undocumented runtime fallback</code></pre>
+<p>The correct next action is not to declare ERP authoritative.</p>
+<p>Create a Finding and decide whether:</p>
+<ul>
+<li>the run must be corrected;</li>
+<li>a bounded fallback should be approved;</li>
+<li>affected values require later reconciliation.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-rule-example">A worked Rule example</h1>
+<h2 id="canonical-rule">Canonical Rule</h2>
+<pre><code class="language-text">Missing Tax Identifier blocks activation.</code></pre>
+<h2 id="implementation">Implementation</h2>
+<p>SAP validation is configured as error.</p>
+<h2 id="runtime-evidence-2">Runtime Evidence</h2>
+<p>Five records with missing Tax Identifier became active.</p>
+<p>Investigation finds that a manual emergency override was used.</p>
+<h2 id="assessment-2">Assessment</h2>
+<pre><code class="language-text">Rule implementation:
+present
+
+Observed behaviour:
+exception path used
+
+Exception authority:
+unknown
+
+Model impact:
+no immediate canonical change
+
+Required action:
+record and review override policy</code></pre>
+<p>A runtime exception does not automatically invalidate the Rule.</p>
+<p>It exposes an ungoverned exception path.</p>
+<p>---</p>
+<h1 id="a-worked-target-replacement-example">A worked target-replacement example</h1>
+<h2 id="approved-candidate-design">Approved candidate design</h2>
+<pre><code class="language-text">Supplier Review Status
+→ new standard SAP endpoint</code></pre>
+<h2 id="runtime-evidence-3">Runtime Evidence</h2>
+<p>Mock Load 4 confirms:</p>
+<ul>
+<li>new field populated;</li>
+<li>old custom field still populated;</li>
+<li>outbound interface still reads old field;</li>
+<li>validation Rule checks new field;</li>
+<li>report reads old field.</li>
+</ul>
+<h2 id="assessment-3">Assessment</h2>
+<pre><code class="language-text">Target replacement:
+partially implemented
+
+Canonical Attribute:
+stable
+
+Dual-write state:
+observed but not fully documented
+
+Downstream continuity:
+incomplete</code></pre>
+<p>The target load succeeded.</p>
+<p>The end-to-end lineage transition remains unfinished.</p>
+<p>---</p>
+<h1 id="detection-workflow">Detection workflow</h1>
+<p>A practical comparison can follow these steps.</p>
+<h2 id="1-select-canonical-baseline">1. Select canonical baseline</h2>
+<p>Identify commit, tag or approved model version.</p>
+<h2 id="2-select-evidence-scope">2. Select Evidence scope</h2>
+<p>Run, dataset, mock load, interface execution or validation report.</p>
+<h2 id="3-validate-canonical-model">3. Validate canonical model</h2>
+<p>Ensure expected paths are structurally coherent.</p>
+<h2 id="4-resolve-expected-lineage">4. Resolve expected lineage</h2>
+<p>Identify source, Mapping, Attribute, Rules and targets.</p>
+<h2 id="5-extract-observed-lineage">5. Extract observed lineage</h2>
+<p>Use logs, profiles, dataset schemas and implementation metadata.</p>
+<h2 id="6-compare-paths">6. Compare paths</h2>
+<p>Classify match, partial match, undocumented path, contradiction or no observation.</p>
+<h2 id="7-compare-versions">7. Compare versions</h2>
+<p>Check Mapping, Rule, dataset and implementation versions.</p>
+<h2 id="8-compare-scope">8. Compare scope</h2>
+<p>Country, wave, organisation and population.</p>
+<h2 id="9-evaluate-claims">9. Evaluate claims</h2>
+<p>Source availability, transformation conformance, target persistence and business acceptance.</p>
+<h2 id="10-generate-findings">10. Generate Findings</h2>
+<p>Separate implementation drift, data gaps and possible model changes.</p>
+<p>---</p>
+<h1 id="suggested-diagnostics">Suggested diagnostics</h1>
+<pre><code class="language-text">MW-EVID-001
+Runtime Evidence has no canonical baseline.
+
+MW-EVID-002
+Observed source field differs from approved Mapping.
+
+MW-EVID-003
+Required conditional input was not observed.
+
+MW-EVID-004
+Runtime used an undocumented fallback.
+
+MW-EVID-005
+Evidence verifies a superseded Mapping or Rule.
+
+MW-EVID-006
+Implementation version is unknown.
+
+MW-EVID-007
+Target completeness passed but approved-path conformance failed.
+
+MW-EVID-008
+Evidence scope is narrower than the claimed verification scope.
+
+MW-EVID-009
+Observed path contradicts an approved Decision.
+
+MW-EVID-010
+Runtime result lacks dataset identity or fingerprint.
+
+MW-EVID-011
+Current model changed after Evidence was collected.
+
+MW-EVID-012
+Conflicting Evidence exists for the same claim and scope.</code></pre>
+<p>These diagnostics should not automatically modify canonical lineage.</p>
+<p>---</p>
+<h1 id="release-gates">Release gates</h1>
+<p>A migration release should be blocked when:</p>
+<ul>
+<li>critical lineage has no runtime evidence;</li>
+<li>runtime uses an unapproved source;</li>
+<li>required context fields are missing;</li>
+<li>undocumented defaults populate mandatory fields;</li>
+<li>target verification is incomplete;</li>
+<li>Evidence belongs to a superseded baseline;</li>
+<li>observed Rule behaviour contradicts the approved control;</li>
+<li>fallback usage exceeds approved scope;</li>
+<li>implementation version cannot be identified;</li>
+<li>contradictory evidence remains unresolved.</li>
+</ul>
+<p>Warnings may remain when:</p>
+<ul>
+<li>low-risk downstream paths are not yet tested;</li>
+<li>evidence covers only a subset of countries;</li>
+<li>historical runs have incomplete metadata;</li>
+<li>optional fields lack end-to-end verification.</li>
+</ul>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has the main foundations:</p>
+<ul>
+<li>canonical model files;</li>
+<li>deterministic validation;</li>
+<li>Dataset and Mapping objects;</li>
+<li>system lineage;</li>
+<li>Evidence and Decisions;</li>
+<li>dataset readiness;</li>
+<li>lineage and impact analysis;</li>
+<li>PatchProposal workflow;</li>
+<li>Model Ledger evidence coverage.</li>
+</ul>
+<p>The next focused vertical slice should be <strong>runtime Evidence comparison</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Compare one observed execution or dataset result with the approved design-time lineage.</p>
+<h2 id="scope">Scope</h2>
+<p>Support:</p>
+<ul>
+<li>canonical baseline identity;</li>
+<li>run identity;</li>
+<li>input and output dataset fingerprints;</li>
+<li>expected and observed FieldEndpoints;</li>
+<li>implementation version;</li>
+<li>Mapping and Rule references;</li>
+<li>fallback counts;</li>
+<li>validation outcomes.</li>
+</ul>
+<h2 id="comparison-results">Comparison results</h2>
+<ul>
+<li>conformant;</li>
+<li>partially conformant;</li>
+<li>undocumented path;</li>
+<li>contradictory path;</li>
+<li>not observed;</li>
+<li>inconclusive evidence.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For the Customer Group example, the system must distinguish:</p>
+<pre><code class="language-text">Target field populated</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Approved source and transformation path followed</code></pre>
+<p>It must report undocumented default usage even when target completeness is 100 percent.</p>
+<h2 id="existing-workflow">Existing workflow</h2>
+<pre><code class="language-bash">martenweave run dataset-readiness \
+  --repo examples/customer_bp_model \
+  --dataset customers.xlsx \
+  --out ./reports/readiness</code></pre>
+<h2 id="future-focused-operation">Future focused operation</h2>
+<pre><code class="language-bash">martenweave evidence-compare \
+  --repo examples/customer_bp_model \
+  --baseline CUSTOMER-WAVE3-RC2 \
+  --run ./evidence/mock-load-3.json</code></pre>
+<p>The second command describes a recommended direction rather than a current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Design-time lineage and runtime evidence answer different questions.</p>
+<p>Design-time lineage asks:</p>
+<blockquote>What dependency path has been approved?</blockquote>
+<p>Runtime evidence asks:</p>
+<blockquote>What happened during this execution against this input using this implementation?</blockquote>
+<p>The complete governance loop is:</p>
+<pre><code class="language-text">approved design
+→ implementation
+→ runtime observation
+→ evidence comparison
+→ Finding
+→ Decision
+→ proposal where required</code></pre>
+<p>The approved design should not hide runtime divergence.</p>
+<p>Runtime behaviour should not silently redefine the design.</p>
+<p>The practical test is:</p>
+<blockquote>Can the programme show that Customer Group was populated not only technically, but through the approved source, context, transformation, target and Rule path for the claimed population and baseline?</blockquote>
+<p>When the answer is yes, runtime evidence supports the design.</p>
+<p>When the answer is only:</p>
+<blockquote>The mock load was green,</blockquote>
+<p>the programme has execution status.</p>
+<p>It does not yet have lineage conformance.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It separates canonical model truth from observed datasets, validation reports and execution evidence so that implementation behaviour can be compared with approved lineage rather than silently replacing it.</p>
+<p>The interactive UI exists as a local Model Ledger prototype for review and investigation. It is not a hosted production application and does not replace the canonical file and validation workflow.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, generates disposable indexes, validates references before lineage and impact analysis and routes AI-assisted changes through PatchProposals and human approval.</p>
+<p>Martenweave 0.5.0 added a one-command dataset-readiness workflow combining validation, indexing, profiling, gap detection and readiness reporting. It can promote detected gaps into draft PatchProposals and generate issue drafts while preserving human approval.</p>
+<p>OpenLineage’s object model separates runtime <code>RunEvent</code> observations from design-time <code>JobEvent</code> and <code>DatasetEvent</code> metadata. It defines a Run as one occurrence of a Job and allows input and output dataset information to be attached to runtime state updates.</p>
+<p>OpenLineage’s column-level lineage facet records which input fields contribute to output fields and distinguishes direct value derivation from indirect influences such as joins, filters and conditional logic.</p>
+<p>The runtime Evidence object, comparison diagnostics and proposed <code>evidence-compare</code> command in this article describe recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current canonical schema or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html"><span>Previous</span>A migration team traces Customer Group upstream and finds four possible sources:</a><a href="/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html"><span>Next</span>Lineage is often treated as design documentation.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

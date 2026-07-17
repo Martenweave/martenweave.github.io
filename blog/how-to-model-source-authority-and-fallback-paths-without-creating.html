@@ -1,0 +1,1722 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration team traces Customer Group upstream and finds four possible sources:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html" />
+    <meta property="og:title" content="How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage | Martenweave" />
+    <meta property="og:description" content="A migration team traces Customer Group upstream and finds four possible sources:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage | Martenweave" />
+    <meta name="twitter:description" content="A migration team traces Customer Group upstream and finds four possible sources:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html",
+                        "name": "How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage | Martenweave",
+                        "description": "A migration team traces Customer Group upstream and finds four possible sources:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage",
+                                    "item": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html#content",
+                        "headline": "How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage",
+                        "name": "How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage",
+                        "description": "A migration team traces Customer Group upstream and finds four possible sources:",
+                        "url": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Model Source Authority and Fallback Paths Without Creating Ambiguous Lineage</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">A migration team traces Customer Group upstream and finds four possible sources:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#crm-is-the-semantic-authority">CRM is the semantic authority</a></li><li><a href="#crm-is-the-system-of-entry">CRM is the system of entry</a></li><li><a href="#crm-contains-a-replica">CRM contains a replica</a></li><li><a href="#crm-is-a-migration-source">CRM is a migration source</a></li><li><a href="#crm-is-a-fallback">CRM is a fallback</a></li><li><a href="#crm-provides-an-input-not-the-final-value">CRM provides an input, not the final value</a></li><li><a href="#who-defines-the-meaning">Who defines the meaning?</a></li><li><a href="#where-is-the-value-normally-maintained">Where is the value normally maintained?</a></li><li><a href="#which-system-is-considered-authoritative-for-current-operational-use">Which system is considered authoritative for current operational use?</a></li><li><a href="#which-source-is-approved-for-this-migration-or-interface">Which source is approved for this migration or interface?</a></li><li><a href="#which-path-is-allowed-when-the-preferred-source-fails">Which path is allowed when the preferred source fails?</a></li><li><a href="#authoritative-source">Authoritative source</a></li><li><a href="#system-of-entry">System of entry</a></li><li><a href="#replicated-source">Replicated source</a></li><li><a href="#enrichment-source">Enrichment source</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration team traces Customer Group upstream and finds four possible sources:</p>
+<pre><code class="language-text">CRM Customer Segment
+ERP Customer Classification
+Global Customer Reference
+Manual Enrichment Workbook</code></pre>
+<p>All four contain values that resemble Customer Group.</p>
+<p>All four are connected to the same business Attribute.</p>
+<p>The resulting graph appears rich and complete.</p>
+<p>It is also ambiguous.</p>
+<p>A reviewer cannot determine:</p>
+<ul>
+<li>which source should normally be used;</li>
+<li>which source is authoritative for the business meaning;</li>
+<li>which source applies only to one population;</li>
+<li>which source is a temporary fallback;</li>
+<li>which source merely contains a replicated copy;</li>
+<li>which source provides context but not the value itself;</li>
+<li>what happens when two sources disagree;</li>
+<li>when the fallback is permitted;</li>
+<li>when the fallback must stop.</li>
+</ul>
+<p>The graph says that several paths exist.</p>
+<p>It does not say which path is legitimate.</p>
+<blockquote>Lineage becomes operationally useful only when it distinguishes source availability from source authority and normal paths from exceptional paths.</blockquote>
+<p>This distinction matters in SAP migration, MDM and AMS because enterprise landscapes rarely contain one clean source for every Attribute.</p>
+<p>Instead, they contain:</p>
+<ul>
+<li>systems of entry;</li>
+<li>systems of record;</li>
+<li>replicated copies;</li>
+<li>migration extracts;</li>
+<li>reference-data services;</li>
+<li>local applications;</li>
+<li>manual enrichments;</li>
+<li>temporary defaults;</li>
+<li>historical sources;</li>
+<li>target systems that become sources for downstream consumers.</li>
+</ul>
+<p>A source can be technically available and still be unsuitable.</p>
+<p>A fallback can be operationally necessary and still be non-authoritative.</p>
+<p>A replicated field can be accurate and still be the wrong place to govern change.</p>
+<p>Martenweave’s current model already treats Domains, Entities, Attributes, datasets, Mappings, Rules, Evidence, Decisions and proposals as separate canonical object types. The core validates references before generating lineage and impact projections, and routes proposed changes through deterministic validation and human approval.</p>
+<p>The next requirement is to model the <strong>role</strong> of each source path.</p>
+<p>---</p>
+<h1 id="authority-is-not-the-same-as-physical-origin">Authority is not the same as physical origin</h1>
+<p>Suppose a Customer Group value appears in CRM.</p>
+<p>That may mean several things.</p>
+<h2 id="crm-is-the-semantic-authority">CRM is the semantic authority</h2>
+<p>The business owner defines and maintains Customer Group in CRM.</p>
+<h2 id="crm-is-the-system-of-entry">CRM is the system of entry</h2>
+<p>Users enter the value there, but a central reference system governs permitted values and meaning.</p>
+<h2 id="crm-contains-a-replica">CRM contains a replica</h2>
+<p>The value is copied into CRM from SAP or an MDM hub.</p>
+<h2 id="crm-is-a-migration-source">CRM is a migration source</h2>
+<p>CRM supplies the value for a one-time migration even though another system is the long-term authority.</p>
+<h2 id="crm-is-a-fallback">CRM is a fallback</h2>
+<p>CRM is used only when the authoritative source is unavailable.</p>
+<h2 id="crm-provides-an-input-not-the-final-value">CRM provides an input, not the final value</h2>
+<p>CRM Segment contributes to a Customer Group derivation but is not equivalent to Customer Group.</p>
+<p>All six situations can produce an edge from CRM toward the target.</p>
+<p>They should not produce the same edge type.</p>
+<p>---</p>
+<h1 id="five-separate-questions">Five separate questions</h1>
+<p>Source authority becomes clearer when the model separates five questions.</p>
+<h2 id="who-defines-the-meaning">Who defines the meaning?</h2>
+<p>This is semantic authority.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global Customer Data Owner</code></pre>
+<h2 id="where-is-the-value-normally-maintained">Where is the value normally maintained?</h2>
+<p>This is the system of entry or maintenance.</p>
+<p>Example:</p>
+<pre><code class="language-text">SAP MDG</code></pre>
+<h2 id="which-system-is-considered-authoritative-for-current-operational-use">Which system is considered authoritative for current operational use?</h2>
+<p>This is the operational source of record.</p>
+<p>Example:</p>
+<pre><code class="language-text">SAP S/4HANA</code></pre>
+<h2 id="which-source-is-approved-for-this-migration-or-interface">Which source is approved for this migration or interface?</h2>
+<p>This is the approved extraction source.</p>
+<p>Example:</p>
+<pre><code class="language-text">Legacy ERP_A for Wave 2</code></pre>
+<h2 id="which-path-is-allowed-when-the-preferred-source-fails">Which path is allowed when the preferred source fails?</h2>
+<p>This is fallback policy.</p>
+<p>Example:</p>
+<pre><code class="language-text">Manual enrichment after documented source gap</code></pre>
+<p>These roles may belong to different systems.</p>
+<p>A lineage graph that labels only one system as “source” loses the distinction.</p>
+<p>---</p>
+<h1 id="source-roles">Source roles</h1>
+<p>A practical source-role taxonomy can remain small.</p>
+<h2 id="authoritative-source">Authoritative source</h2>
+<p>The approved source for the Attribute within a declared context.</p>
+<pre><code class="language-text">role: authoritative</code></pre>
+<p>This does not necessarily mean that users enter data directly there.</p>
+<p>It means that its value is the approved reference for the stated scope.</p>
+<h2 id="system-of-entry">System of entry</h2>
+<p>Where the value is created or changed operationally.</p>
+<pre><code class="language-text">role: system_of_entry</code></pre>
+<p>The value may subsequently be approved, mastered or replicated elsewhere.</p>
+<h2 id="replicated-source">Replicated source</h2>
+<p>A copy derived from another authoritative location.</p>
+<pre><code class="language-text">role: replicated</code></pre>
+<p>It may be usable for downstream operations but should not silently become the source for remastering the same concept.</p>
+<h2 id="enrichment-source">Enrichment source</h2>
+<p>Provides one of several inputs to a derivation.</p>
+<pre><code class="language-text">role: enrichment</code></pre>
+<p>For example, Sales Area may help derive Customer Group without being Customer Group itself.</p>
+<h2 id="fallback-source">Fallback source</h2>
+<p>Used only when the preferred path cannot be used and declared conditions are met.</p>
+<pre><code class="language-text">role: fallback</code></pre>
+<h2 id="historical-source">Historical source</h2>
+<p>Was authoritative or operationally relevant for an earlier period or baseline.</p>
+<pre><code class="language-text">role: historical</code></pre>
+<h2 id="candidate-source">Candidate source</h2>
+<p>Under investigation but not approved.</p>
+<pre><code class="language-text">role: candidate</code></pre>
+<h2 id="rejected-source">Rejected source</h2>
+<p>Explicitly reviewed and found unsuitable.</p>
+<pre><code class="language-text">role: rejected</code></pre>
+<p>A source may hold more than one role in different contexts.</p>
+<p>---</p>
+<h1 id="authority-must-be-scoped">Authority must be scoped</h1>
+<p>The statement:</p>
+<pre><code class="language-text">ERP_A is authoritative for Customer Group.</code></pre>
+<p>is rarely sufficient.</p>
+<p>Authority may depend on:</p>
+<ul>
+<li>business Attribute;</li>
+<li>country;</li>
+<li>company;</li>
+<li>business unit;</li>
+<li>organisational level;</li>
+<li>source population;</li>
+<li>lifecycle stage;</li>
+<li>effective period;</li>
+<li>migration wave.</li>
+</ul>
+<p>A stronger statement is:</p>
+<pre><code class="language-yaml">attribute: ATTR-CUSTOMER-GROUP
+source: FEP-ERP-A-CUSTOMER-GROUP
+role: authoritative
+scope:
+  population: acquired_company_customers
+  migration_wave: WAVE-2
+effective_from: 2026-02-01
+effective_to: 2026-06-30</code></pre>
+<p>This is a conceptual representation rather than a guarantee of the exact current Martenweave schema.</p>
+<p>Authority without scope creates hidden overlap.</p>
+<p>---</p>
+<h1 id="authority-belongs-to-a-path-not-merely-a-system">Authority belongs to a path, not merely a system</h1>
+<p>One application may be authoritative for one Attribute and unreliable for another.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM:
+authoritative for Customer Segment
+not authoritative for Customer Group
+
+ERP:
+authoritative for Payment Terms
+not authoritative for legal Tax Exemption
+
+MDG:
+system of entry for Supplier Risk
+not original source for external compliance rating</code></pre>
+<p>Therefore, avoid declaring:</p>
+<pre><code class="language-text">SYS-CRM role: authoritative</code></pre>
+<p>at the whole-system level without qualification.</p>
+<p>Authority should normally be attached to:</p>
+<pre><code class="language-text">system or endpoint
++
+business Attribute
++
+context
++
+effective period</code></pre>
+<p>The same system can play different roles across the model.</p>
+<p>---</p>
+<h1 id="authority-is-not-transitive-by-default">Authority is not transitive by default</h1>
+<p>Suppose:</p>
+<pre><code class="language-text">Global Reference System
+→ replicates to CRM
+→ CRM supplies migration extract
+→ SAP receives value</code></pre>
+<p>The migration extract came from CRM.</p>
+<p>That does not make CRM the semantic authority.</p>
+<p>The full path is:</p>
+<pre><code class="language-text">semantic authority:
+Global Reference System
+
+replicated copy:
+CRM
+
+approved migration extraction point:
+CRM extract
+
+target:
+SAP</code></pre>
+<p>If the model records only the physical source used by the migration, future users may conclude incorrectly that CRM owns the definition.</p>
+<p>Authority should not be inferred merely from proximity to the target.</p>
+<p>---</p>
+<h1 id="provenance-and-authority-are-related-but-different">Provenance and authority are related but different</h1>
+<p>Provenance describes how an Entity was generated, derived, attributed or influenced.</p>
+<p>W3C PROV provides a general model for representing provenance across heterogeneous systems and contexts through concepts such as Entities, Activities and Agents.</p>
+<p>That is useful for answering:</p>
+<ul>
+<li>where a value came from;</li>
+<li>which process transformed it;</li>
+<li>which agent or system was involved.</li>
+</ul>
+<p>Authority adds another governance question:</p>
+<blockquote>Which of the available sources is approved to determine the value for this particular purpose?</blockquote>
+<p>A value can have clear provenance and disputed authority.</p>
+<p>Example:</p>
+<pre><code class="language-text">Value came from CRM.
+CRM received it from a local sales process.
+Global data owner does not accept it as Customer Group.</code></pre>
+<p>The provenance is known.</p>
+<p>The source is not authoritative.</p>
+<p>---</p>
+<h1 id="preferred-path">Preferred path</h1>
+<p>For each governed Attribute and context, the model should identify a preferred path.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global Customer Reference
+→ approved Mapping
+→ Customer Group
+→ SAP KNVV-KDGRP</code></pre>
+<p>The preferred path should state:</p>
+<ul>
+<li>authoritative source;</li>
+<li>required context fields;</li>
+<li>transformation;</li>
+<li>target;</li>
+<li>applicable population;</li>
+<li>expected evidence;</li>
+<li>owner.</li>
+</ul>
+<p>This creates a clear normal route.</p>
+<p>Fallback logic can then be evaluated relative to it.</p>
+<p>---</p>
+<h1 id="fallback-is-an-exception-policy">Fallback is an exception policy</h1>
+<p>A fallback source should not be represented as just another active Mapping.</p>
+<p>A fallback must answer:</p>
+<ul>
+<li>Why is the preferred path unavailable?</li>
+<li>Under which conditions may fallback be used?</li>
+<li>Which population may use it?</li>
+<li>Who approves its use?</li>
+<li>Does it produce equivalent meaning?</li>
+<li>Must the resulting records be marked?</li>
+<li>When does the fallback expire?</li>
+<li>What happens when the preferred source returns?</li>
+</ul>
+<p>A fallback is therefore a combination of:</p>
+<pre><code class="language-text">alternative source
++
+trigger condition
++
+priority
++
+scope
++
+approval
++
+expiry
++
+reconciliation requirement</code></pre>
+<p>Without those elements, fallback becomes uncontrolled source competition.</p>
+<p>---</p>
+<h1 id="fallback-triggers">Fallback triggers</h1>
+<p>Common triggers include:</p>
+<h2 id="source-unavailable">Source unavailable</h2>
+<p>The preferred system cannot provide the extract in time.</p>
+<h2 id="source-field-missing">Source field missing</h2>
+<p>The dataset lacks the required Attribute or context.</p>
+<h2 id="source-value-invalid">Source value invalid</h2>
+<p>The value fails a domain or quality Rule.</p>
+<h2 id="population-outside-preferred-source">Population outside preferred source</h2>
+<p>The preferred source covers only part of the migration scope.</p>
+<h2 id="transition-period">Transition period</h2>
+<p>The new authority is not yet operational for all records.</p>
+<h2 id="emergency-operational-continuity">Emergency operational continuity</h2>
+<p>A temporary manual or replicated source is used during an incident.</p>
+<p>The trigger should be machine-evaluable where possible.</p>
+<p>Weak:</p>
+<pre><code class="language-text">Use CRM when needed.</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">Use CRM fallback only when the global reference value is absent
+and the record belongs to the Wave 2 acquired-company population.</code></pre>
+<p>---</p>
+<h1 id="fallback-priority">Fallback priority</h1>
+<p>Where several paths exist, define deterministic priority.</p>
+<p>Example:</p>
+<pre><code class="language-text">Priority 1:
+Global Customer Reference
+
+Priority 2:
+ERP_A approved historical source
+
+Priority 3:
+manual enrichment
+
+Prohibited:
+CRM Segment direct mapping</code></pre>
+<p>This prevents different teams from selecting different sources based on convenience.</p>
+<p>A priority list should be scoped to the Attribute and context.</p>
+<p>It should not become one global source hierarchy for the whole enterprise.</p>
+<p>---</p>
+<h1 id="priority-is-not-evidence-quality">Priority is not evidence quality</h1>
+<p>A lower-priority fallback may contain more recent data.</p>
+<p>A higher-priority source may have stronger governance.</p>
+<p>These are separate dimensions.</p>
+<p>Model:</p>
+<pre><code class="language-text">source priority:
+which path should be selected
+
+evidence confidence:
+how strongly current evidence supports that path
+
+data freshness:
+how recent the observed value is
+
+quality:
+how well the value passes checks</code></pre>
+<p>Do not automatically promote a fresher replicated field above the authoritative source without a governance Decision.</p>
+<p>---</p>
+<h1 id="equivalent-fallback-versus-approximate-fallback">Equivalent fallback versus approximate fallback</h1>
+<p>Not all fallbacks preserve meaning equally.</p>
+<h2 id="equivalent-fallback">Equivalent fallback</h2>
+<p>The fallback holds the same business Attribute with compatible grain and values.</p>
+<p>Example:</p>
+<pre><code class="language-text">Primary:
+MDG-approved Customer Group
+
+Fallback:
+verified replicated copy in ERP</code></pre>
+<h2 id="transformable-fallback">Transformable fallback</h2>
+<p>The fallback can produce the Attribute through an approved conversion.</p>
+<p>Example:</p>
+<pre><code class="language-text">ERP Customer Class
+→ conversion table
+→ Customer Group</code></pre>
+<h2 id="approximate-fallback">Approximate fallback</h2>
+<p>The fallback is correlated but not semantically equivalent.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM Segment
+→ provisional Customer Group</code></pre>
+<h2 id="operational-default">Operational default</h2>
+<p>No source value exists; a temporary default is assigned.</p>
+<p>These should not share the same confidence or release policy.</p>
+<p>---</p>
+<h1 id="approximate-fallbacks-must-remain-visible">Approximate fallbacks must remain visible</h1>
+<p>Suppose Customer Group is unavailable and CRM Segment is used as a temporary approximation.</p>
+<p>The target field becomes populated.</p>
+<p>A completeness report may show success.</p>
+<p>The model should preserve:</p>
+<pre><code class="language-text">source role:
+approximate_fallback
+
+semantic equivalence:
+not confirmed
+
+records affected:
+tracked
+
+remediation:
+required
+
+expiry:
+before production cutover</code></pre>
+<p>Otherwise, an emergency workaround becomes indistinguishable from approved lineage.</p>
+<p>---</p>
+<h1 id="manual-enrichment-is-a-source-path">Manual enrichment is a source path</h1>
+<p>A business-owned workbook or stewardship process can be a legitimate fallback.</p>
+<p>It should be represented truthfully:</p>
+<pre><code class="language-text">missing authoritative source
+→ manual business review
+→ approved assignment
+→ Customer Group</code></pre>
+<p>The workbook itself should not become the enduring semantic authority.</p>
+<p>The model should identify:</p>
+<ul>
+<li>who made the assignment;</li>
+<li>which evidence was reviewed;</li>
+<li>which Rule governed the decision;</li>
+<li>which records were affected;</li>
+<li>whether the assignment remains valid after the authoritative source is restored.</li>
+</ul>
+<p>Manual does not mean ungoverned.</p>
+<p>---</p>
+<h1 id="defaults-are-the-weakest-fallback">Defaults are the weakest fallback</h1>
+<p>A default creates a target value without source-specific evidence.</p>
+<p>Example:</p>
+<pre><code class="language-text">Missing Customer Group
+→ default STANDARD</code></pre>
+<p>Defaults may be necessary for:</p>
+<ul>
+<li>technical load compatibility;</li>
+<li>temporary process continuity;</li>
+<li>low-risk optional classifications.</li>
+</ul>
+<p>They create serious risks:</p>
+<ul>
+<li>false completeness;</li>
+<li>hidden source gaps;</li>
+<li>distorted reporting;</li>
+<li>incorrect downstream decisions;</li>
+<li>permanent temporary values.</li>
+</ul>
+<p>A default path should require:</p>
+<ul>
+<li>explicit Decision;</li>
+<li>bounded scope;</li>
+<li>owner;</li>
+<li>effective period;</li>
+<li>affected-record tracking;</li>
+<li>remediation plan.</li>
+</ul>
+<p>The model should not label the default as authoritative.</p>
+<p>---</p>
+<h1 id="replicated-copies">Replicated copies</h1>
+<p>A replicated field may be the easiest extraction point.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global Reference
+→ replicated to CRM
+→ extracted for migration</code></pre>
+<p>The graph should represent both facts:</p>
+<pre><code class="language-text">Global Reference:
+semantic authority
+
+CRM field:
+replicated extraction source</code></pre>
+<p>This allows the migration team to use CRM operationally without changing the authority model.</p>
+<p>It also supports reconciliation:</p>
+<pre><code class="language-text">CRM replica must match Global Reference
+as of extraction date.</code></pre>
+<p>---</p>
+<h1 id="replication-lag">Replication lag</h1>
+<p>A replicated source may be valid but stale.</p>
+<p>The authority model should optionally capture:</p>
+<ul>
+<li>expected replication interval;</li>
+<li>latest successful synchronisation;</li>
+<li>acceptable lag;</li>
+<li>conflict behaviour.</li>
+</ul>
+<p>A fallback based on a replica may be allowed only when:</p>
+<pre><code class="language-text">replication age &lt; 24 hours</code></pre>
+<p>or:</p>
+<pre><code class="language-text">source version matches approved snapshot</code></pre>
+<p>OpenLineage separates static design metadata from runtime Run observations, allowing declared inputs and outputs to be compared with actual execution events.</p>
+<p>Martenweave can apply the same separation:</p>
+<pre><code class="language-text">declared replica relationship
++
+observed synchronisation evidence</code></pre>
+<p>---</p>
+<h1 id="conflict-resolution">Conflict resolution</h1>
+<p>When two active sources disagree, the model should not leave resolution implicit.</p>
+<p>Possible policies include:</p>
+<h2 id="authority-wins">Authority wins</h2>
+<p>Use the value from the authoritative source.</p>
+<h2 id="latest-approved-value-wins">Latest approved value wins</h2>
+<p>Use the most recent value that passed governance.</p>
+<h2 id="context-specific-authority">Context-specific authority</h2>
+<p>One source wins for one country or organisational level, another elsewhere.</p>
+<h2 id="manual-adjudication">Manual adjudication</h2>
+<p>Create a Finding and require owner decision.</p>
+<h2 id="block">Block</h2>
+<p>Do not produce a target value until the conflict is resolved.</p>
+<p>The policy should be represented as a Rule or Decision.</p>
+<p>Do not encode it only in ETL code.</p>
+<p>---</p>
+<h1 id="conflict-is-evidence-not-a-new-source">Conflict is evidence, not a new source</h1>
+<p>Suppose:</p>
+<pre><code class="language-text">Global Reference:
+STANDARD
+
+ERP:
+STRATEGIC</code></pre>
+<p>The difference should produce:</p>
+<pre><code class="language-text">FIND-CUSTOMER-GROUP-SOURCE-CONFLICT</code></pre>
+<p>It should not cause the transformation to select whichever value appears first in a join.</p>
+<p>The Finding should capture:</p>
+<ul>
+<li>competing values;</li>
+<li>source roles;</li>
+<li>context;</li>
+<li>affected records;</li>
+<li>selection policy;</li>
+<li>owner;</li>
+<li>resolution evidence.</li>
+</ul>
+<p>---</p>
+<h1 id="source-precedence-and-source-authority">Source precedence and source authority</h1>
+<p>These concepts are related but not identical.</p>
+<h2 id="authority">Authority</h2>
+<p>Which source is trusted to define the value.</p>
+<h2 id="precedence">Precedence</h2>
+<p>Which source is selected first by an operational process.</p>
+<p>A process may temporarily prefer a fallback for availability reasons while the semantic authority remains elsewhere.</p>
+<p>Example:</p>
+<pre><code class="language-text">Semantic authority:
+Global Reference System
+
+Migration extraction precedence:
+ERP replicated field
+
+Reason:
+Global source cannot produce the required bulk extract
+
+Requirement:
+reconcile ERP values to global source before load</code></pre>
+<p>The distinction prevents implementation convenience from redefining governance.</p>
+<p>---</p>
+<h1 id="authority-changes-over-time">Authority changes over time</h1>
+<p>An Attribute may change authority during a transformation programme.</p>
+<p>Example:</p>
+<pre><code class="language-text">Before 1 September:
+ERP_A authoritative
+
+1 September–31 October:
+ERP_A and MDG dual-running
+
+After 1 November:
+MDG authoritative</code></pre>
+<p>The transition needs:</p>
+<ul>
+<li>effective dates;</li>
+<li>dual-running policy;</li>
+<li>reconciliation;</li>
+<li>cutover condition;</li>
+<li>rollback approach;</li>
+<li>historical preservation.</li>
+</ul>
+<p>Do not edit the old source relationship in place.</p>
+<p>Create a time-bounded authority transition.</p>
+<p>---</p>
+<h1 id="dual-running">Dual-running</h1>
+<p>During dual-running, two systems may legitimately maintain or produce the same Attribute.</p>
+<p>The model should state:</p>
+<ul>
+<li>which source is primary;</li>
+<li>which is shadow;</li>
+<li>whether both may be edited;</li>
+<li>reconciliation frequency;</li>
+<li>acceptable differences;</li>
+<li>cutover criteria;</li>
+<li>conflict owner.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">attribute: ATTR-SUPPLIER-RISK
+period: dual_run
+primary_source: FEP-MDG-SUPPLIER-RISK
+shadow_source: FEP-ERP-A-SUPPLIER-RISK
+reconciliation: daily
+cutover_condition: zero_unresolved_differences</code></pre>
+<p>Again, this is a proposed modelling shape.</p>
+<p>Without this policy, dual-running appears as uncontrolled duplicate authority.</p>
+<p>---</p>
+<h1 id="authority-after-sap-migration">Authority after SAP migration</h1>
+<p>After migration, SAP often becomes a downstream operational source for other applications.</p>
+<p>That does not necessarily mean SAP becomes the semantic authority for every Attribute.</p>
+<p>Example:</p>
+<pre><code class="language-text">External compliance service
+→ Supplier Risk input
+→ governed derivation
+→ SAP
+→ outbound interfaces</code></pre>
+<p>SAP is the distribution source for downstream applications.</p>
+<p>The external service and business Rule remain part of the authority chain.</p>
+<p>A trace should distinguish:</p>
+<pre><code class="language-text">semantic origin
+operational master
+distribution source</code></pre>
+<p>---</p>
+<h1 id="different-authority-by-lifecycle-stage">Different authority by lifecycle stage</h1>
+<p>Authority may change during a record’s lifecycle.</p>
+<p>Example:</p>
+<pre><code class="language-text">Creation:
+supplier portal supplies legal name
+
+Verification:
+compliance system confirms status
+
+Approval:
+MDG becomes authoritative
+
+Operation:
+S/4HANA distributes the approved value</code></pre>
+<p>One global source declaration cannot represent this adequately.</p>
+<p>Model authority by lifecycle where material.</p>
+<p>---</p>
+<h1 id="different-authority-by-attribute">Different authority by Attribute</h1>
+<p>A Business Partner may have:</p>
+<pre><code class="language-text">Legal Name:
+external registry
+
+Customer Group:
+sales governance
+
+Payment Terms:
+finance policy
+
+Tax Identifier:
+legal documentation
+
+Review Status:
+workflow system</code></pre>
+<p>The Business Partner object does not have one universal source of truth.</p>
+<p>Authority belongs to individual Attributes or coherent Attribute groups.</p>
+<p>---</p>
+<h1 id="attribute-groups">Attribute groups</h1>
+<p>Modelling authority for every field individually may be excessive.</p>
+<p>Related Attributes can share authority when they genuinely move together.</p>
+<p>Example:</p>
+<pre><code class="language-text">Postal Address group:
+street
+city
+postal code
+country</code></pre>
+<p>A group-level authority may be appropriate if:</p>
+<ul>
+<li>same source;</li>
+<li>same ownership;</li>
+<li>same lifecycle;</li>
+<li>same applicability.</li>
+</ul>
+<p>Do not force group authority when one field has a different legal or operational source.</p>
+<p>---</p>
+<h1 id="source-mappings-should-declare-role">Source Mappings should declare role</h1>
+<p>A Mapping should not merely state:</p>
+<pre><code class="language-text">source:
+FEP-CRM-CUSTOMER-SEGMENT</code></pre>
+<p>It should explain the source’s role:</p>
+<pre><code class="language-yaml">inputs:
+  - endpoint: FEP-CRM-CUSTOMER-SEGMENT
+    role: direct_input
+    authority: non_authoritative
+
+  - endpoint: FEP-LEGACY-SALES-AREA
+    role: conditional_context</code></pre>
+<p>The Mapping can then declare:</p>
+<pre><code class="language-text">output authority:
+derived under Decision 017</code></pre>
+<p>This makes it clear that CRM Segment contributes to the result without owning the Customer Group meaning.</p>
+<p>---</p>
+<h1 id="derived-authority">Derived authority</h1>
+<p>Some Attributes are not authoritative in any single source.</p>
+<p>They are governed derivations.</p>
+<p>Example:</p>
+<pre><code class="language-text">Supplier Risk =
+external score
++
+supplier category
++
+compliance status
++
+approved Rule</code></pre>
+<p>No input alone is authoritative for the final Attribute.</p>
+<p>The authoritative artefact is:</p>
+<pre><code class="language-text">approved derivation Rule or Mapping</code></pre>
+<p>The model should distinguish:</p>
+<ul>
+<li>authoritative input sources;</li>
+<li>authoritative transformation;</li>
+<li>authoritative output store.</li>
+</ul>
+<p>This is especially important for classifications and statuses.</p>
+<p>---</p>
+<h1 id="fallback-chains">Fallback chains</h1>
+<p>A model may require more than one fallback.</p>
+<p>Example:</p>
+<pre><code class="language-text">Primary:
+Global Customer Reference
+
+Fallback 1:
+ERP replicated copy
+
+Fallback 2:
+manual enrichment
+
+Final fallback:
+block record</code></pre>
+<p>This is a fallback chain.</p>
+<p>Each step should declare:</p>
+<ul>
+<li>trigger;</li>
+<li>scope;</li>
+<li>confidence;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>next action.</li>
+</ul>
+<p>The chain should terminate explicitly.</p>
+<p>A system should not continue selecting weaker sources indefinitely.</p>
+<p>---</p>
+<h1 id="block-is-a-valid-fallback-outcome">“Block” is a valid fallback outcome</h1>
+<p>Teams often assume every fallback must produce a value.</p>
+<p>Sometimes the safest fallback is:</p>
+<pre><code class="language-text">No acceptable source
+→ do not load</code></pre>
+<p>This is particularly appropriate for:</p>
+<ul>
+<li>legal identifiers;</li>
+<li>bank data;</li>
+<li>high-risk classifications;</li>
+<li>mandatory organisational keys;</li>
+<li>regulated attributes.</li>
+</ul>
+<p>A blocked record is visible operational debt.</p>
+<p>A fabricated default is hidden data debt.</p>
+<p>---</p>
+<h1 id="fallback-records-must-be-identifiable">Fallback records must be identifiable</h1>
+<p>Where a fallback path is used, retain evidence of that fact.</p>
+<p>Possible metadata includes:</p>
+<ul>
+<li>selected source;</li>
+<li>fallback reason;</li>
+<li>selection time;</li>
+<li>Mapping version;</li>
+<li>Decision;</li>
+<li>steward;</li>
+<li>remediation status.</li>
+</ul>
+<p>The target SAP field may not store all provenance.</p>
+<p>The migration or Evidence layer should.</p>
+<p>Otherwise, after load, the programme cannot distinguish authoritative values from temporary approximations.</p>
+<p>---</p>
+<h1 id="reconciliation-after-fallback">Reconciliation after fallback</h1>
+<p>Fallback use should often trigger later reconciliation.</p>
+<p>Example:</p>
+<pre><code class="language-text">Manual Customer Group assigned during cutover.
+
+After authoritative source restoration:
+compare manual value with approved source.</code></pre>
+<p>Possible outcomes:</p>
+<ul>
+<li>values match;</li>
+<li>target correction required;</li>
+<li>authority Decision revised;</li>
+<li>manual assignment remains approved.</li>
+</ul>
+<p>The fallback path is not complete until its reconciliation obligation is closed.</p>
+<p>---</p>
+<h1 id="fallback-expiry">Fallback expiry</h1>
+<p>Every temporary fallback should answer:</p>
+<pre><code class="language-text">When does this stop?</code></pre>
+<p>Expiry can be based on:</p>
+<ul>
+<li>date;</li>
+<li>migration wave;</li>
+<li>system go-live;</li>
+<li>source remediation;</li>
+<li>Decision replacement;</li>
+<li>successful reconciliation;</li>
+<li>record-level closure.</li>
+</ul>
+<p>Weak:</p>
+<pre><code class="language-text">temporary fallback</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">valid through Mock Load 3 only</code></pre>
+<p>or:</p>
+<pre><code class="language-text">valid until the Global Customer Reference bulk API is operational</code></pre>
+<p>An expired fallback that remains active should become a health error or high-severity warning.</p>
+<p>---</p>
+<h1 id="permanent-fallback">Permanent fallback</h1>
+<p>Some fallback paths are permanent by design.</p>
+<p>Example:</p>
+<pre><code class="language-text">When no external legal registry covers the country,
+manual legal review is the approved source.</code></pre>
+<p>The path is still a fallback because it applies only under a specific condition.</p>
+<p>Permanent does not mean uncontrolled.</p>
+<p>It still requires:</p>
+<ul>
+<li>trigger;</li>
+<li>owner;</li>
+<li>evidence;</li>
+<li>Rule;</li>
+<li>auditability.</li>
+</ul>
+<p>---</p>
+<h1 id="local-fallback-versus-global-model">Local fallback versus global model</h1>
+<p>A country may need a local source because the global authority lacks coverage.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global source:
+Tax Identifier validation for EU countries
+
+Local fallback:
+national registry for one jurisdiction</code></pre>
+<p>The local source may be authoritative within that context rather than merely approximate.</p>
+<p>Model:</p>
+<pre><code class="language-text">global default authority
++
+contextual authority override</code></pre>
+<p>Do not treat every local source as lower quality simply because it is local.</p>
+<p>Authority follows approved scope, not organisational hierarchy.</p>
+<p>---</p>
+<h1 id="avoid-two-active-authoritative-sources-for-the-same-scope">Avoid two active authoritative sources for the same scope</h1>
+<p>The most dangerous ambiguity is:</p>
+<pre><code class="language-text">Source A:
+authoritative
+
+Source B:
+authoritative
+
+Attribute:
+same
+
+Scope:
+same
+
+Effective period:
+same</code></pre>
+<p>This may be intentional dual-running.</p>
+<p>If so, the model needs a reconciliation and precedence policy.</p>
+<p>Otherwise, validation should flag it.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-001
+
+Overlapping authoritative sources exist
+for ATTR-CUSTOMER-GROUP
+in the same context and effective period.
+
+No conflict-resolution policy is declared.</code></pre>
+<p>---</p>
+<h1 id="detecting-overlapping-paths">Detecting overlapping paths</h1>
+<p>For each Attribute, compare active source paths by:</p>
+<ul>
+<li>scope;</li>
+<li>population;</li>
+<li>organisational context;</li>
+<li>effective date;</li>
+<li>source role;</li>
+<li>priority.</li>
+</ul>
+<p>Two paths are ambiguous when:</p>
+<ol>
+<li>their applicability overlaps;</li>
+<li>both can produce the final value;</li>
+<li>neither has higher precedence;</li>
+<li>no reconciliation or conflict Rule exists.</li>
+</ol>
+<p>This is a semantic graph check, not simple duplicate detection.</p>
+<p>---</p>
+<h1 id="detecting-gaps-in-authority">Detecting gaps in authority</h1>
+<p>The opposite problem occurs when no source is authoritative for a context.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM:
+candidate only
+
+ERP:
+historical only
+
+Manual enrichment:
+not approved
+
+Target:
+mandatory Customer Group</code></pre>
+<p>The target may still receive values in practice.</p>
+<p>The model has an authority gap.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-002
+
+No authoritative or approved fallback path
+covers the active population.</code></pre>
+<p>This should be distinguished from a missing physical source.</p>
+<p>The field may exist.</p>
+<p>The governance path does not.</p>
+<p>---</p>
+<h1 id="detecting-fallback-without-trigger">Detecting fallback without trigger</h1>
+<p>Example:</p>
+<pre><code class="language-text">MAP-MANUAL-CUSTOMER-GROUP
+role:
+fallback</code></pre>
+<p>but no trigger condition is declared.</p>
+<p>The system cannot determine when it may be used.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-003
+
+Fallback Mapping has no activation condition.</code></pre>
+<p>---</p>
+<h1 id="detecting-fallback-without-expiry">Detecting fallback without expiry</h1>
+<p>Example:</p>
+<pre><code class="language-text">temporary_default: 01
+status: active</code></pre>
+<p>with no end date, wave or closure condition.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-004
+
+Temporary fallback has no expiry or remediation condition.</code></pre>
+<p>---</p>
+<h1 id="detecting-replica-mistaken-for-authority">Detecting replica mistaken for authority</h1>
+<p>Example:</p>
+<pre><code class="language-text">CRM Customer Group
+role:
+authoritative</code></pre>
+<p>while lineage shows:</p>
+<pre><code class="language-text">Global Reference
+→ replication job
+→ CRM Customer Group</code></pre>
+<p>The model may be correct if governance intentionally transferred authority.</p>
+<p>Otherwise, the role conflicts with provenance.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-005
+
+Endpoint classified as authoritative
+but observed lineage identifies it as a replica.
+Review source-role assignment.</code></pre>
+<p>The system should not resolve the contradiction automatically.</p>
+<p>---</p>
+<h1 id="detecting-historical-source-used-as-current">Detecting historical source used as current</h1>
+<p>A retired ERP source may remain available in extracts or archives.</p>
+<p>A Mapping accidentally uses it for a current wave.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-006
+
+Historical source path is active
+outside its effective baseline.</code></pre>
+<p>---</p>
+<h1 id="detecting-fallback-output-that-violates-the-attribute">Detecting fallback output that violates the Attribute</h1>
+<p>A fallback can be operationally available and semantically invalid.</p>
+<p>Example:</p>
+<pre><code class="language-text">Fallback source value:
+UNDER_REVIEW
+
+Target Attribute:
+Supplier Risk
+
+Allowed values:
+LOW, STANDARD, HIGH</code></pre>
+<p>The fallback Mapping cannot produce a valid target value.</p>
+<p>Suggested diagnostic:</p>
+<pre><code class="language-text">MW-AUTH-007
+
+Fallback output is outside the target value domain.</code></pre>
+<p>---</p>
+<h1 id="approved-path-versus-observed-selection">Approved path versus observed selection</h1>
+<p>A model may declare:</p>
+<pre><code class="language-text">Primary:
+Global Reference
+
+Fallback:
+ERP replica</code></pre>
+<p>Observed migration logs may show:</p>
+<pre><code class="language-text">ERP replica selected for 92% of records</code></pre>
+<p>This suggests:</p>
+<ul>
+<li>primary source unavailable;</li>
+<li>selection implementation wrong;</li>
+<li>scope incorrectly modelled;</li>
+<li>fallback has effectively become the operational source.</li>
+</ul>
+<p>OpenLineage’s distinction between design-time metadata and runtime observations is useful here: a declared path and an observed Run are related but not interchangeable.</p>
+<p>The result should be a Finding:</p>
+<pre><code class="language-text">Fallback usage materially exceeds declared scope.</code></pre>
+<p>Not an automatic authority update.</p>
+<p>---</p>
+<h1 id="measuring-fallback-usage">Measuring fallback usage</h1>
+<p>Useful metrics include:</p>
+<ul>
+<li>records using preferred source;</li>
+<li>records using each fallback;</li>
+<li>records blocked;</li>
+<li>unresolved source conflicts;</li>
+<li>expired fallback usage;</li>
+<li>fallback age;</li>
+<li>remediation completion.</li>
+</ul>
+<p>A readiness report might show:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Path</th><th scope="col">Records</th><th scope="col">Share</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Global Reference</td><td>82,400</td><td>91.4%</td><td>Approved</td></tr><tr><td>ERP replica</td><td>5,900</td><td>6.5%</td><td>Temporary fallback</td></tr><tr><td>Manual enrichment</td><td>1,320</td><td>1.5%</td><td>Review required</td></tr><tr><td>Default</td><td>210</td><td>0.2%</td><td>Expired</td></tr><tr><td>Blocked</td><td>340</td><td>0.4%</td><td>Open gap</td></tr></tbody></table></div>
+<p>These metrics make source-policy drift visible.</p>
+<p>---</p>
+<h1 id="source-conflict-metrics">Source conflict metrics</h1>
+<p>A model can also track:</p>
+<ul>
+<li>values where primary and replica disagree;</li>
+<li>values where two candidate sources disagree;</li>
+<li>records with no source;</li>
+<li>records with stale replica;</li>
+<li>records whose fallback was not reconciled.</li>
+</ul>
+<p>The objective is not to store every production record in Martenweave.</p>
+<p>The repository can reference aggregate profiles and restricted evidence.</p>
+<p>---</p>
+<h1 id="source-authority-during-migration-waves">Source authority during migration waves</h1>
+<p>A programme may deliberately use different sources by wave.</p>
+<p>Example:</p>
+<pre><code class="language-text">Wave 1:
+ERP_A
+
+Wave 2:
+ERP_B
+
+Wave 3:
+Global Customer Hub</code></pre>
+<p>This is not necessarily inconsistency.</p>
+<p>It becomes ambiguous when:</p>
+<ul>
+<li>Mappings lack wave applicability;</li>
+<li>old sources remain active;</li>
+<li>Decisions do not explain the transition;</li>
+<li>downstream reports combine values without knowing the source policy.</li>
+</ul>
+<p>Authority should be baseline-aware.</p>
+<p>---</p>
+<h1 id="source-authority-in-ams">Source authority in AMS</h1>
+<p>After migration, temporary source paths often remain embedded in support procedures.</p>
+<p>Examples:</p>
+<ul>
+<li>old ERP lookup used for corrections;</li>
+<li>spreadsheet used for missing classifications;</li>
+<li>replicated reporting field treated as master;</li>
+<li>default values reintroduced during incidents.</li>
+</ul>
+<p>AMS needs a clear operating rule:</p>
+<pre><code class="language-text">which source may correct which Attribute
+under which incident or exception condition</code></pre>
+<p>Martenweave can make these paths reviewable without becoming an incident-management platform.</p>
+<p>---</p>
+<h1 id="decision-objects-are-essential">Decision objects are essential</h1>
+<p>Authority is a governance conclusion.</p>
+<p>A Decision should explain:</p>
+<ul>
+<li>considered sources;</li>
+<li>selected authority;</li>
+<li>rejected alternatives;</li>
+<li>scope;</li>
+<li>effective period;</li>
+<li>fallback policy;</li>
+<li>reconciliation;</li>
+<li>owner.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-AUTHORITY-021
+
+Decision:
+Global Customer Reference is authoritative.
+
+ERP_A may be used as a fallback for Wave 2
+when the global value is absent.
+
+CRM Segment is not semantically equivalent
+and must not be used directly.</code></pre>
+<p>The Decision connects the lineage graph to accountable reasoning.</p>
+<p>---</p>
+<h1 id="rules-enforce-source-policy">Rules enforce source policy</h1>
+<p>A source-authority Decision should be enforceable through Rules.</p>
+<p>Examples:</p>
+<pre><code class="language-text">If Global Customer Reference is present,
+do not use ERP fallback.
+
+If fallback is used,
+record fallback reason.
+
+If CRM Segment is the only input,
+block automatic Customer Group assignment.
+
+If fallback expiry has passed,
+block candidate load.</code></pre>
+<p>Rules turn source policy into testable conditions.</p>
+<p>---</p>
+<h1 id="mapping-status-is-not-enough">Mapping status is not enough</h1>
+<p>A Mapping marked <code>approved</code> may still be:</p>
+<ul>
+<li>primary;</li>
+<li>fallback;</li>
+<li>historical;</li>
+<li>local;</li>
+<li>temporary.</li>
+</ul>
+<p>Status answers:</p>
+<pre><code class="language-text">Has this Mapping been approved?</code></pre>
+<p>Role answers:</p>
+<pre><code class="language-text">When and why should this Mapping be selected?</code></pre>
+<p>Both are required.</p>
+<p>---</p>
+<h1 id="confidence-is-not-authority">Confidence is not authority</h1>
+<p>A candidate Mapping may have high statistical confidence.</p>
+<p>An authoritative Mapping may rely on a manually approved source with limited automation.</p>
+<p>Do not equate:</p>
+<pre><code class="language-text">AI confidence
+data quality score
+historical match rate</code></pre>
+<p>with:</p>
+<pre><code class="language-text">governance authority</code></pre>
+<p>Evidence can support an authority Decision.</p>
+<p>It does not replace it.</p>
+<p>---</p>
+<h1 id="ai-can-propose-source-roles">AI can propose source roles</h1>
+<p>AI can help compare:</p>
+<ul>
+<li>field definitions;</li>
+<li>value distributions;</li>
+<li>source ownership documents;</li>
+<li>interface specifications;</li>
+<li>historical mappings;</li>
+<li>tickets and decisions.</li>
+</ul>
+<p>It can propose:</p>
+<pre><code class="language-text">ERP field appears to be a replicated copy.
+CRM Segment is likely an enrichment input.
+Manual workbook appears to be a fallback.</code></pre>
+<p>These are candidate classifications.</p>
+<p>Humans must approve authority and fallback policy.</p>
+<p>Martenweave’s existing product principle is explicit: agents propose, validators verify, humans approve and Git records the accepted change.</p>
+<p>---</p>
+<h1 id="validation-rules-for-source-authority">Validation rules for source authority</h1>
+<p>A first implementation could check:</p>
+<h2 id="coverage">Coverage</h2>
+<p>Every mandatory active Attribute has an authoritative or approved derivation path for each required context.</p>
+<h2 id="uniqueness">Uniqueness</h2>
+<p>No overlapping authoritative sources exist without reconciliation policy.</p>
+<h2 id="role-validity">Role validity</h2>
+<p>Replicated, candidate and rejected sources cannot be treated as primary without Decision.</p>
+<h2 id="fallback-trigger">Fallback trigger</h2>
+<p>Every fallback has an activation condition.</p>
+<h2 id="fallback-termination">Fallback termination</h2>
+<p>Temporary fallbacks have expiry or closure conditions.</p>
+<h2 id="priority">Priority</h2>
+<p>Overlapping paths have deterministic precedence.</p>
+<h2 id="semantic-compatibility">Semantic compatibility</h2>
+<p>Fallback outputs conform to the target Attribute and value domain.</p>
+<h2 id="temporal-compatibility">Temporal compatibility</h2>
+<p>Source paths operate only inside their effective periods.</p>
+<h2 id="governance">Governance</h2>
+<p>Authority and high-risk fallback paths have owners and Decisions.</p>
+<h2 id="evidence">Evidence</h2>
+<p>Observed use can be traced to supporting reports or run evidence.</p>
+<p>---</p>
+<h1 id="suggested-diagnostic-codes">Suggested diagnostic codes</h1>
+<pre><code class="language-text">MW-AUTH-001
+Overlapping authoritative sources without conflict policy.
+
+MW-AUTH-002
+No authoritative source covers an active context.
+
+MW-AUTH-003
+Fallback path has no trigger condition.
+
+MW-AUTH-004
+Temporary fallback has no expiry.
+
+MW-AUTH-005
+Replicated endpoint classified as authority without Decision.
+
+MW-AUTH-006
+Historical source used outside its effective period.
+
+MW-AUTH-007
+Fallback output violates target value domain.
+
+MW-AUTH-008
+Source precedence is undefined for overlapping paths.
+
+MW-AUTH-009
+Observed fallback usage exceeds approved scope.
+
+MW-AUTH-010
+Rejected source remains connected through an active Mapping.
+
+MW-AUTH-011
+Authority transition lacks dual-running or cutover policy.
+
+MW-AUTH-012
+Fallback records cannot be identified for reconciliation.</code></pre>
+<p>These diagnostics should create Findings or validation results.</p>
+<p>They should not rewire the model automatically.</p>
+<p>---</p>
+<h1 id="worked-example-customer-group">Worked example: Customer Group</h1>
+<h2 id="business-attribute">Business Attribute</h2>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<h2 id="context">Context</h2>
+<pre><code class="language-text">Entity:
+Customer Sales Area</code></pre>
+<h2 id="available-sources">Available sources</h2>
+<pre><code class="language-text">Global Customer Reference:
+Customer Group
+
+ERP_A:
+Customer Group replica
+
+CRM:
+Customer Segment
+
+Manual workbook:
+Customer Group assignment</code></pre>
+<h2 id="approved-policy">Approved policy</h2>
+<pre><code class="language-text">Primary authority:
+Global Customer Reference
+
+Migration extraction source:
+ERP_A replica
+
+Enrichment input:
+CRM Segment
+
+Fallback:
+Manual assignment when the global value is absent
+
+Prohibited:
+Direct CRM Segment to Customer Group conversion</code></pre>
+<h2 id="lineage">Lineage</h2>
+<pre><code class="language-text">Global Customer Reference
+→ replicated to ERP_A
+→ extracted for migration
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>Alternative path:</p>
+<pre><code class="language-text">Global value absent
++
+CRM Segment
++
+Sales Area
++
+manual business review
+→ approved Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>The trace remains clear because every source has a different role.</p>
+<p>---</p>
+<h1 id="worked-example-supplier-risk">Worked example: Supplier Risk</h1>
+<h2 id="inputs">Inputs</h2>
+<pre><code class="language-text">External Risk Score
+Supplier Category
+Compliance Status
+Manual Approval</code></pre>
+<p>No source contains final Supplier Risk directly.</p>
+<h2 id="authority-model">Authority model</h2>
+<pre><code class="language-text">Authoritative inputs:
+External Risk Score
+Supplier Category
+Compliance Status
+
+Authoritative derivation:
+RULE-SUPPLIER-RISK-DERIVATION
+
+Authoritative output store:
+SAP MDG</code></pre>
+<h2 id="fallback">Fallback</h2>
+<p>When external score is unavailable:</p>
+<pre><code class="language-text">manual compliance assessment
+→ provisional Supplier Risk</code></pre>
+<p>Policy:</p>
+<ul>
+<li>valid for 30 days;</li>
+<li>requires owner approval;</li>
+<li>must be reconciled when external score returns;</li>
+<li>cannot produce <code>LOW</code> without supporting evidence.</li>
+</ul>
+<p>The Rule and Decision, rather than one input system, establish authority for the derived Attribute.</p>
+<p>---</p>
+<h1 id="worked-example-tax-identifier">Worked example: Tax Identifier</h1>
+<h2 id="preferred-source">Preferred source</h2>
+<pre><code class="language-text">National legal registry</code></pre>
+<h2 id="system-of-entry-2">System of entry</h2>
+<pre><code class="language-text">Supplier portal</code></pre>
+<h2 id="operational-master">Operational master</h2>
+<pre><code class="language-text">SAP MDG</code></pre>
+<h2 id="fallback-2">Fallback</h2>
+<pre><code class="language-text">Verified legal document
++
+manual steward entry</code></pre>
+<h2 id="invalid-fallback">Invalid fallback</h2>
+<pre><code class="language-text">Legacy ERP tax number copied without evidence</code></pre>
+<p>This shows why “source of truth” is too imprecise.</p>
+<p>Several systems participate in different roles.</p>
+<p>---</p>
+<h1 id="worked-example-temporary-default">Worked example: temporary default</h1>
+<h2 id="attribute">Attribute</h2>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<h2 id="default">Default</h2>
+<pre><code class="language-text">STANDARD</code></pre>
+<h2 id="policy">Policy</h2>
+<pre><code class="language-text">Allowed:
+Mock Load 2 only
+
+Population:
+records without global Customer Group
+
+Owner:
+Customer Data Lead
+
+Requirement:
+records marked for enrichment
+
+Expiry:
+before Mock Load 3</code></pre>
+<h2 id="health-result-after-expiry">Health result after expiry</h2>
+<pre><code class="language-text">210 records still use expired default.
+
+Readiness:
+blocked</code></pre>
+<p>The default was a controlled fallback.</p>
+<p>It did not silently become the authoritative value.</p>
+<p>---</p>
+<h1 id="a-practical-modelling-workflow">A practical modelling workflow</h1>
+<h2 id="step-1-define-the-attribute-and-context">Step 1: Define the Attribute and context</h2>
+<p>Clarify meaning, Entity, grain and applicability.</p>
+<h2 id="step-2-inventory-available-source-endpoints">Step 2: Inventory available source endpoints</h2>
+<p>Include direct, replicated, manual and external sources.</p>
+<h2 id="step-3-classify-source-roles">Step 3: Classify source roles</h2>
+<p>Authority, entry, replica, enrichment, fallback, historical, candidate or rejected.</p>
+<h2 id="step-4-define-the-preferred-path">Step 4: Define the preferred path</h2>
+<p>Identify normal source, Mapping, context and target.</p>
+<h2 id="step-5-define-fallback-triggers">Step 5: Define fallback triggers</h2>
+<p>State when each alternative may activate.</p>
+<h2 id="step-6-define-priority-and-conflict-policy">Step 6: Define priority and conflict policy</h2>
+<p>Specify how overlapping values are resolved.</p>
+<h2 id="step-7-add-effective-periods">Step 7: Add effective periods</h2>
+<p>Record transition and expiry.</p>
+<h2 id="step-8-connect-decisions-and-rules">Step 8: Connect Decisions and Rules</h2>
+<p>Make authority reviewable and enforceable.</p>
+<h2 id="step-9-attach-observed-evidence">Step 9: Attach observed Evidence</h2>
+<p>Dataset profiles, reconciliation and fallback usage.</p>
+<h2 id="step-10-validate-coverage-and-ambiguity">Step 10: Validate coverage and ambiguity</h2>
+<p>Check every active context.</p>
+<p>---</p>
+<h1 id="impact-analysis-for-authority-changes">Impact analysis for authority changes</h1>
+<p>Changing source authority can affect:</p>
+<ul>
+<li>source extracts;</li>
+<li>Mappings;</li>
+<li>datasets;</li>
+<li>ownership;</li>
+<li>Rules;</li>
+<li>reconciliation;</li>
+<li>interfaces;</li>
+<li>historical interpretation;</li>
+<li>operational procedures.</li>
+</ul>
+<p>An authority change should therefore be treated as a material model change even if the target SAP field remains unchanged.</p>
+<p>Example:</p>
+<pre><code class="language-text">Authority:
+ERP_A → Global Customer Hub
+
+Target:
+KNVV-KDGRP unchanged</code></pre>
+<p>The physical target is stable.</p>
+<p>The upstream governance and operational blast radius may be large.</p>
+<p>---</p>
+<h1 id="authority-change-versus-source-replacement">Authority change versus source replacement</h1>
+<p>A system can be replaced without changing authority.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global Customer Reference v1
+→ Global Customer Reference v2</code></pre>
+<p>The same organisation, semantics and governance continue.</p>
+<p>Only implementation changes.</p>
+<p>Conversely, authority can change without replacing the physical field.</p>
+<p>Example:</p>
+<pre><code class="language-text">ERP_A field remains available,
+but MDG becomes authoritative.</code></pre>
+<p>The system still exists.</p>
+<p>Its role changed.</p>
+<p>These transitions should be modelled separately.</p>
+<p>---</p>
+<h1 id="reporting-source-policy">Reporting source policy</h1>
+<p>A useful report for one Attribute might show:</p>
+<pre><code class="language-text">Attribute:
+Customer Group
+
+Context:
+Customer Sales Area
+
+Authoritative source:
+Global Customer Reference
+
+System of entry:
+Customer Hub
+
+Migration extraction:
+ERP_A replica
+
+Fallback:
+Manual enrichment
+
+Fallback trigger:
+authoritative value absent
+
+Fallback expiry:
+Wave 2 cutover
+
+Rejected source:
+CRM Segment direct mapping
+
+Observed fallback usage:
+1.5%
+
+Open conflicts:
+27 records</code></pre>
+<p>This is far more useful than showing four incoming arrows.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has:</p>
+<ul>
+<li>canonical Attributes and Mappings;</li>
+<li>Rules, Evidence and Decisions;</li>
+<li>system-lineage objects;</li>
+<li>deterministic validation;</li>
+<li>trace and impact;</li>
+<li>dataset profiling;</li>
+<li>proposal-first changes.</li>
+</ul>
+<p>The next focused vertical slice should add <strong>source-role and fallback-policy validation</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Make every active source path for a critical Attribute unambiguous.</p>
+<h2 id="scope">Scope</h2>
+<p>Support source roles:</p>
+<ul>
+<li>authoritative;</li>
+<li>system of entry;</li>
+<li>replicated;</li>
+<li>enrichment;</li>
+<li>fallback;</li>
+<li>historical;</li>
+<li>candidate;</li>
+<li>rejected.</li>
+</ul>
+<p>Support fallback properties:</p>
+<ul>
+<li>trigger;</li>
+<li>priority;</li>
+<li>scope;</li>
+<li>effective period;</li>
+<li>expiry;</li>
+<li>reconciliation requirement.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For Customer Group, the system must distinguish:</p>
+<pre><code class="language-text">Global source:
+authoritative
+
+ERP copy:
+replicated migration extraction
+
+CRM Segment:
+enrichment input
+
+Manual workbook:
+fallback
+
+Direct CRM Mapping:
+rejected</code></pre>
+<p>Validation must detect:</p>
+<ol>
+<li>overlapping authority without conflict policy;</li>
+<li>missing source coverage;</li>
+<li>fallback without trigger;</li>
+<li>expired fallback;</li>
+<li>replicated copy incorrectly labelled authoritative;</li>
+<li>rejected source used by active Mapping;</li>
+<li>fallback output outside the target value domain;</li>
+<li>observed fallback usage outside approved scope.</li>
+</ol>
+<h2 id="existing-validation">Existing validation</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="existing-trace-and-impact">Existing trace and impact</h2>
+<pre><code class="language-bash">martenweave trace \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model
+
+martenweave impact \
+  FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model</code></pre>
+<h2 id="future-focused-report">Future focused report</h2>
+<pre><code class="language-bash">martenweave source-policy \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model</code></pre>
+<p>The final command describes a recommended product direction rather than current documented CLI behaviour.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Most enterprise Attributes have more than one technically possible source.</p>
+<p>That is not the problem.</p>
+<p>The problem is when the model cannot explain why one path should be used instead of another.</p>
+<p>A useful source model distinguishes:</p>
+<pre><code class="language-text">meaning authority
+system of entry
+operational master
+migration extraction source
+replicated copy
+enrichment input
+fallback
+historical source
+rejected source</code></pre>
+<p>A useful fallback model adds:</p>
+<pre><code class="language-text">trigger
+scope
+priority
+approval
+expiry
+reconciliation</code></pre>
+<p>The practical test is:</p>
+<blockquote>For every critical Attribute and context, can the programme identify the preferred authoritative path, explain each permitted fallback, resolve conflicts deterministically and identify every record produced through an exceptional path?</blockquote>
+<p>When the answer is yes, multiple sources can coexist without ambiguous lineage.</p>
+<p>When the answer is:</p>
+<blockquote>We take the value from whichever system has it,</blockquote>
+<p>the programme does not have a source-authority model.</p>
+<p>It has an undocumented selection algorithm.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects business Attributes, source and target endpoints, Mappings, Rules, Decisions and observed Evidence so that source selection can be reviewed as governance rather than hidden inside transformation code.</p>
+<p>The objective is not to force every Attribute into one physical system of truth.</p>
+<p>It is to make authority, derivation and fallback explicit enough that multiple systems can participate without producing contradictory model paths.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently represents generic model objects including Domains, Entities, Attributes, datasets, Mappings, Rules, Evidence, Decisions and change proposals. It treats canonical files as the source of truth, validates references deterministically and generates disposable indexes for gaps, lineage and impact analysis.</p>
+<p>The current Martenweave workflow imports or profiles evidence, validates the canonical repository, builds generated indexes, detects gaps, runs lineage and impact analysis and routes proposed changes through human review.</p>
+<p>OpenLineage’s current object model distinguishes runtime <code>RunEvent</code> observations from design-time <code>JobEvent</code> and <code>DatasetEvent</code> metadata. It models how datasets are created and transformed rather than merely recording that relationships exist.</p>
+<p>The W3C PROV Ontology provides a general framework for representing and exchanging provenance information across different systems and contexts. Its Entity, Activity and Agent concepts are useful for modelling where information came from and which processes or actors influenced it, although source authority remains an additional governance decision.</p>
+<p>The source-role taxonomy, fallback-policy fields, diagnostics and proposed <code>source-policy</code> command in this article describe recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current canonical schema or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, OpenLineage or W3C.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html"><span>Previous</span>A source system is retired.</a><a href="/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html"><span>Next</span>A migration design states:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

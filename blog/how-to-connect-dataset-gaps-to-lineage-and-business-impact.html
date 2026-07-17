@@ -1,0 +1,1496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Connect Dataset Gaps to Lineage and Business Impact | Martenweave</title>
+    <meta
+      name="description"
+      content="A dataset-readiness report says:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html" />
+    <meta property="og:title" content="How to Connect Dataset Gaps to Lineage and Business Impact | Martenweave" />
+    <meta property="og:description" content="A dataset-readiness report says:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Connect Dataset Gaps to Lineage and Business Impact | Martenweave" />
+    <meta name="twitter:description" content="A dataset-readiness report says:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html",
+                        "name": "How to Connect Dataset Gaps to Lineage and Business Impact | Martenweave",
+                        "description": "A dataset-readiness report says:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Connect Dataset Gaps to Lineage and Business Impact",
+                                    "item": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html#content",
+                        "headline": "How to Connect Dataset Gaps to Lineage and Business Impact",
+                        "name": "How to Connect Dataset Gaps to Lineage and Business Impact",
+                        "description": "A dataset-readiness report says:",
+                        "url": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Connect Dataset Gaps to Lineage and Business Impact</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Connect Dataset Gaps to Lineage and Business Impact</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A dataset-readiness report says:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#missing-field">Missing field</a></li><li><a href="#renamed-or-unrecognised-field">Renamed or unrecognised field</a></li><li><a href="#empty-field">Empty field</a></li><li><a href="#partial-population">Partial population</a></li><li><a href="#wrong-grain">Wrong grain</a></li><li><a href="#missing-key">Missing key</a></li><li><a href="#invalid-datatype-or-format">Invalid datatype or format</a></li><li><a href="#invalid-value-domain">Invalid value domain</a></li><li><a href="#missing-conditional-input">Missing conditional input</a></li><li><a href="#conflicting-source-values">Conflicting source values</a></li><li><a href="#stale-source">Stale source</a></li><li><a href="#unsupported-fallback">Unsupported fallback</a></li><li><a href="#observed-dataset">Observed dataset</a></li><li><a href="#expected-model-path">Expected model path</a></li><li><a href="#dataset-finding">Dataset finding</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A dataset-readiness report says:</p>
+<pre><code class="language-text">Missing column:
+PAYMENT_METHOD</code></pre>
+<p>The finding looks technical.</p>
+<p>A spreadsheet column is absent.</p>
+<p>The obvious response is to ask the source team to add it.</p>
+<p>That may be correct.</p>
+<p>It may also be incomplete.</p>
+<p>Before opening a ticket, the migration team needs to know:</p>
+<ul>
+<li>which business Attribute the column is expected to represent;</li>
+<li>whether the Attribute is mandatory;</li>
+<li>at which organisational level it applies;</li>
+<li>which Mapping requires it;</li>
+<li>whether another approved source exists;</li>
+<li>whether the missing field blocks the target;</li>
+<li>which SAP process depends on the result;</li>
+<li>how many records are affected;</li>
+<li>whether a controlled fallback exists;</li>
+<li>who owns the decision.</li>
+</ul>
+<p>The real chain may be:</p>
+<pre><code class="language-text">Missing dataset field
+→ incomplete Mapping input
+→ Supplier Company Code Payment Method unavailable
+→ payment proposal cannot select the Supplier
+→ first payment run at risk</code></pre>
+<p>Or it may be:</p>
+<pre><code class="language-text">Missing dataset field
+→ optional descriptive Attribute unavailable
+→ no operational process affected
+→ warning only</code></pre>
+<p>The physical gap looks similar.</p>
+<p>The business impact is completely different.</p>
+<blockquote>A dataset gap becomes actionable only when it is connected to the governed model path that depends on it.</blockquote>
+<p>This is why dataset profiling, lineage and impact analysis should not be separate reporting exercises.</p>
+<p>Profiling detects what is present or missing.</p>
+<p>The canonical model explains what the field means.</p>
+<p>Lineage shows which path depends on it.</p>
+<p>Impact analysis shows what happens if the path remains incomplete.</p>
+<p>Martenweave’s current pipeline follows that direction: canonical files remain the source of truth, deterministic validation precedes generated indexing, and dataset/model gaps are assessed before lineage, impact and reviewable proposals.</p>
+<p>---</p>
+<h1 id="a-missing-column-is-only-one-kind-of-dataset-gap">A missing column is only one kind of dataset gap</h1>
+<p>Teams often use “dataset gap” to mean:</p>
+<pre><code class="language-text">expected field not found</code></pre>
+<p>That is only the simplest case.</p>
+<p>A migration dataset can be structurally complete and still fail the model.</p>
+<p>Common gap types include:</p>
+<h2 id="missing-field">Missing field</h2>
+<p>The expected column does not exist.</p>
+<h2 id="renamed-or-unrecognised-field">Renamed or unrecognised field</h2>
+<p>The value may exist under another name, but the relationship is not confirmed.</p>
+<h2 id="empty-field">Empty field</h2>
+<p>The column exists but contains no useful values.</p>
+<h2 id="partial-population">Partial population</h2>
+<p>The field exists for only part of the migration scope.</p>
+<h2 id="wrong-grain">Wrong grain</h2>
+<p>The value is present centrally but required per Plant, Company Code or Sales Area.</p>
+<h2 id="missing-key">Missing key</h2>
+<p>The business value exists, but the dataset lacks the keys needed to assign it correctly.</p>
+<h2 id="invalid-datatype-or-format">Invalid datatype or format</h2>
+<p>The source value cannot be processed safely.</p>
+<h2 id="invalid-value-domain">Invalid value domain</h2>
+<p>Values do not belong to the governed or target code list.</p>
+<h2 id="missing-conditional-input">Missing conditional input</h2>
+<p>The direct source field exists, but a field used for lookup, selection or applicability is absent.</p>
+<h2 id="conflicting-source-values">Conflicting source values</h2>
+<p>Several columns or files provide inconsistent candidates.</p>
+<h2 id="stale-source">Stale source</h2>
+<p>The data exists but does not represent the approved snapshot.</p>
+<h2 id="unsupported-fallback">Unsupported fallback</h2>
+<p>The dataset supplies a value through a path that is not approved.</p>
+<p>Each gap requires different lineage reasoning.</p>
+<p>---</p>
+<h1 id="dataset-schema-is-not-the-business-model">Dataset schema is not the business model</h1>
+<p>Suppose a supplier extract contains:</p>
+<pre><code class="language-text">SUPPLIER_ID
+NAME
+COUNTRY
+PAYMENT_TERMS
+BANK_ACCOUNT</code></pre>
+<p>The file may look complete.</p>
+<p>The target model may require:</p>
+<ul>
+<li>central Supplier identity;</li>
+<li>Company Code-specific Payment Terms;</li>
+<li>Purchasing Organisation data;</li>
+<li>bank country;</li>
+<li>bank key;</li>
+<li>account number;</li>
+<li>IBAN;</li>
+<li>account holder;</li>
+<li>payment method;</li>
+<li>tax-number category.</li>
+</ul>
+<p>One source column may map to several target contexts.</p>
+<p>Several source columns may be required for one business Attribute.</p>
+<p>A single file row may need to expand into multiple target records.</p>
+<p>Therefore, dataset readiness cannot be measured only by:</p>
+<pre><code class="language-text">number of expected columns found</code></pre>
+<p>It must be measured against the canonical Entity, Attribute, key and Mapping model.</p>
+<p>---</p>
+<h1 id="the-first-connection-datasetfield-to-business-attribute">The first connection: DatasetField to business Attribute</h1>
+<p>When a dataset column is profiled, the system should attempt to connect it to a registered model object.</p>
+<p>Example:</p>
+<pre><code class="language-text">DatasetField:
+PAYMENT_TERM
+
+Candidate Attribute:
+Supplier Company Code Payment Terms</code></pre>
+<p>The relationship should not be approved merely because the names look similar.</p>
+<p>The review needs to confirm:</p>
+<ul>
+<li>definition;</li>
+<li>grain;</li>
+<li>source authority;</li>
+<li>value domain;</li>
+<li>applicability;</li>
+<li>transformation.</li>
+</ul>
+<p>A dataset may contain one central <code>PAYMENT_TERM</code> value.</p>
+<p>The business Attribute may be Company Code-specific.</p>
+<p>The field exists.</p>
+<p>The Attribute coverage remains incomplete.</p>
+<p>The gap is not:</p>
+<pre><code class="language-text">Payment Terms missing</code></pre>
+<p>It is:</p>
+<pre><code class="language-text">Company Code context missing for Payment Terms</code></pre>
+<p>That is a much more useful finding.</p>
+<p>---</p>
+<h1 id="example-1-supplier-payment-method">Example 1: Supplier Payment Method</h1>
+<h2 id="observed-dataset">Observed dataset</h2>
+<pre><code class="language-text">SUPPLIER_ID
+COMPANY_CODE
+BANK_COUNTRY
+IBAN</code></pre>
+<h2 id="expected-model-path">Expected model path</h2>
+<pre><code class="language-text">legacy payment instruction
++
+Company Code
+→ Payment Method Mapping
+→ Supplier Company Code Payment Method
+→ payment proposal</code></pre>
+<h2 id="dataset-finding">Dataset finding</h2>
+<p>The source extract contains no payment-instruction field.</p>
+<h2 id="weak-finding">Weak finding</h2>
+<pre><code class="language-text">Column PAYMENT_METHOD missing.</code></pre>
+<h2 id="model-aware-finding">Model-aware finding</h2>
+<pre><code class="language-text">No approved input is available for Supplier Company Code Payment Method.
+
+Affected context:
+Company Codes 3100 and 3200
+
+Affected population:
+4,280 payment-active Suppliers
+
+Target consequence:
+Payment Method cannot be assigned deterministically.
+
+Business consequence:
+Suppliers may be excluded from payment proposals or require manual maintenance.</code></pre>
+<p>The second finding can drive a decision.</p>
+<p>The first only drives a column request.</p>
+<p>---</p>
+<h1 id="a-field-can-exist-and-still-leave-a-gap">A field can exist and still leave a gap</h1>
+<p>Suppose the same extract includes:</p>
+<pre><code class="language-text">PAYMENT_METHOD = T</code></pre>
+<p>for every Supplier.</p>
+<p>The column now exists.</p>
+<p>The readiness problem may remain.</p>
+<p>Questions include:</p>
+<ul>
+<li>Is <code>T</code> a source-system code or SAP target code?</li>
+<li>Does it apply to every Company Code?</li>
+<li>Is it valid for all countries?</li>
+<li>Was it defaulted?</li>
+<li>Does it match the Supplier’s bank and payment configuration?</li>
+<li>Is it authoritative?</li>
+</ul>
+<p>Presence is evidence.</p>
+<p>It is not proof of model conformance.</p>
+<p>---</p>
+<h1 id="connect-gaps-to-mapping-inputs">Connect gaps to Mapping inputs</h1>
+<p>A Mapping should state what it requires.</p>
+<p>For example:</p>
+<pre><code class="language-text">Mapping:
+Supplier Payment Method
+
+Direct input:
+legacy payment instruction
+
+Context input:
+Company Code
+
+Conditional input:
+country
+
+Target:
+Supplier Company Code Payment Method</code></pre>
+<p>Dataset readiness can then compare observed fields with required Mapping inputs.</p>
+<p>Possible results:</p>
+<pre><code class="language-text">Direct input:
+missing
+
+Company Code:
+present
+
+Country:
+present</code></pre>
+<p>The Mapping is not executable as approved.</p>
+<p>That is stronger than saying one column is absent.</p>
+<p>It identifies the exact model path that cannot run.</p>
+<p>---</p>
+<h1 id="direct-and-indirect-gaps">Direct and indirect gaps</h1>
+<p>Some missing fields supply the target value directly.</p>
+<p>Others influence how the value is selected.</p>
+<p>This distinction matters.</p>
+<p>OpenLineage’s column-level model distinguishes direct dependencies from indirect influences such as joins, filters and conditional logic. A field can affect the output without contributing its value directly.</p>
+<p>Consider Product Profit Centre:</p>
+<pre><code class="language-text">Product Family:
+direct classification input
+
+Plant:
+conditional Mapping selector
+
+Company assignment:
+validity check</code></pre>
+<p>If Product Family is missing, the derivation has no main input.</p>
+<p>If Plant is missing, the system cannot select the right local Mapping.</p>
+<p>If Company assignment is missing, the result may not be valid for the organisational context.</p>
+<p>All three are gaps.</p>
+<p>They should not receive the same diagnostic message.</p>
+<p>---</p>
+<h1 id="example-2-product-plant-profit-centre">Example 2: Product Plant Profit Centre</h1>
+<h2 id="observed-dataset-2">Observed dataset</h2>
+<pre><code class="language-text">PRODUCT_ID
+PRODUCT_FAMILY
+GLOBAL_PROFIT_CENTRE</code></pre>
+<h2 id="target-model">Target model</h2>
+<p>Profit Centre belongs to Product Plant and depends on:</p>
+<pre><code class="language-text">Product Family
++
+Plant
++
+company structure</code></pre>
+<h2 id="initial-assessment">Initial assessment</h2>
+<p>The dataset contains a Profit Centre value.</p>
+<h2 id="real-gap">Real gap</h2>
+<p>The dataset has no Plant key.</p>
+<p>The global value cannot safely be assigned to every Product Plant.</p>
+<h2 id="business-impact">Business impact</h2>
+<ul>
+<li>incorrect responsibility assignment;</li>
+<li>inventory postings to the wrong Profit Centre;</li>
+<li>distorted management reporting;</li>
+<li>remediation before month-end close.</li>
+</ul>
+<h2 id="correct-finding">Correct finding</h2>
+<pre><code class="language-text">Product Profit Centre value is present,
+but Plant context required by the approved Mapping is missing.
+
+The dataset cannot establish Product Plant Profit Centre readiness.</code></pre>
+<p>This prevents false readiness based on a nonblank column.</p>
+<p>---</p>
+<h1 id="connect-gaps-to-target-endpoints">Connect gaps to target endpoints</h1>
+<p>A dataset gap matters because one or more target paths depend on it.</p>
+<p>A useful finding should identify:</p>
+<ul>
+<li>target business Attribute;</li>
+<li>SAP endpoint;</li>
+<li>target Entity;</li>
+<li>organisational grain;</li>
+<li>criticality.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Missing source:
+PLANT
+
+Affected Attribute:
+Product Plant MRP Controller
+
+Affected target:
+SAP Product Plant planning data
+
+Target grain:
+one value per Product and Plant
+
+Criticality:
+high</code></pre>
+<p>The physical target can be included for technical users.</p>
+<p>The business Attribute should remain the centre of the explanation.</p>
+<p>---</p>
+<h1 id="example-3-product-mrp-controller">Example 3: Product MRP Controller</h1>
+<p>A source file contains:</p>
+<pre><code class="language-text">PRODUCT_ID
+PLANNER_GROUP</code></pre>
+<p>The Mapping requires:</p>
+<pre><code class="language-text">PLANNER_GROUP
++
+PLANT
+→ MRP Controller</code></pre>
+<p>The dataset team argues that Planner Group is available and therefore the Mapping is 50 percent complete.</p>
+<p>That metric is not useful.</p>
+<p>Without Plant, the same Planner Group may map differently across locations.</p>
+<p>The path is not half executable.</p>
+<p>It is non-deterministic.</p>
+<p>A readiness engine should support findings such as:</p>
+<pre><code class="language-text">Required conditional key missing.
+
+Mapping outcome cannot be resolved unambiguously.
+
+Readiness:
+blocked for Product Plant MRP Controller.</code></pre>
+<p>---</p>
+<h1 id="gap-severity-comes-from-business-impact">Gap severity comes from business impact</h1>
+<p>The number of missing fields does not determine severity.</p>
+<p>One missing optional description may be low risk.</p>
+<p>One missing key can invalidate thousands of records.</p>
+<p>Severity should consider:</p>
+<ul>
+<li>Attribute criticality;</li>
+<li>target mandatory status;</li>
+<li>population;</li>
+<li>organisational scope;</li>
+<li>downstream processes;</li>
+<li>legal or financial relevance;</li>
+<li>fallback quality;</li>
+<li>correction timing.</li>
+</ul>
+<p>A report containing ten gaps may be more serious than one containing one hundred.</p>
+<p>The important question is:</p>
+<blockquote>Which governed paths are broken?</blockquote>
+<p>---</p>
+<h1 id="example-4-cost-centre-validity">Example 4: Cost Centre validity</h1>
+<h2 id="dataset-fields">Dataset fields</h2>
+<pre><code class="language-text">COST_CENTRE
+CONTROLLING_AREA
+DESCRIPTION
+VALID_TO</code></pre>
+<h2 id="missing-field-2">Missing field</h2>
+<pre><code class="language-text">VALID_FROM</code></pre>
+<p>At first glance, this is one missing date.</p>
+<p>The lineage path is:</p>
+<pre><code class="language-text">source validity interval
+→ Cost Centre validity Mapping
+→ SAP Cost Centre
+→ operational postings</code></pre>
+<p>If the team assigns the file-extract date as a default, every Cost Centre may become valid technically.</p>
+<p>That does not mean the business treatment is correct.</p>
+<p>Possible impact:</p>
+<ul>
+<li>historical records lose their intended start date;</li>
+<li>future Cost Centres become active too early;</li>
+<li>current Cost Centres may remain unusable at go-live;</li>
+<li>dependent postings and allocations fail.</li>
+</ul>
+<p>The finding should state which populations need which treatment, not only that <code>VALID_FROM</code> is absent.</p>
+<p>---</p>
+<h1 id="gap-coverage-should-be-population-specific">Gap coverage should be population-specific</h1>
+<p>A field may be missing only for part of the scope.</p>
+<p>Example:</p>
+<pre><code class="language-text">Tax category available:
+Germany and Austria
+
+Tax category missing:
+Portugal
+
+Tax identifier present:
+all countries</code></pre>
+<p>Global field-level readiness may appear high.</p>
+<p>Portugal remains blocked.</p>
+<p>The finding should preserve scope:</p>
+<pre><code class="language-text">Affected Attribute:
+Supplier Tax Identifier Category
+
+Affected country:
+Portugal
+
+Affected records:
+1,240
+
+Other countries:
+not affected</code></pre>
+<p>This allows targeted remediation without declaring the entire Supplier domain unready.</p>
+<p>---</p>
+<h1 id="example-5-supplier-tax-identifier-category">Example 5: Supplier tax identifier category</h1>
+<p>A dataset contains:</p>
+<pre><code class="language-text">COUNTRY
+TAX_NUMBER</code></pre>
+<p>It does not contain:</p>
+<pre><code class="language-text">TAX_CATEGORY</code></pre>
+<p>The team proposes deriving the category from Country.</p>
+<p>That may be valid for some countries.</p>
+<p>It may be ambiguous where several identifier types exist.</p>
+<p>The lineage analysis should ask:</p>
+<ul>
+<li>Is Country sufficient?</li>
+<li>Does Supplier type matter?</li>
+<li>Does the source distinguish VAT, fiscal and national identifiers?</li>
+<li>Is legal evidence available?</li>
+<li>Which SAP category is required?</li>
+</ul>
+<p>Possible result:</p>
+<pre><code class="language-text">Germany:
+deterministic derivation available
+
+Portugal:
+multiple valid categories; manual or additional source input required
+
+Global fallback:
+not approved</code></pre>
+<p>The dataset gap becomes a scoped Mapping problem and legal-governance decision.</p>
+<p>---</p>
+<h1 id="quality-metrics-need-model-context">Quality metrics need model context</h1>
+<p>Data-quality tools can produce metrics such as:</p>
+<ul>
+<li>row count;</li>
+<li>null count;</li>
+<li>distinct count;</li>
+<li>minimum and maximum;</li>
+<li>file count;</li>
+<li>update time.</li>
+</ul>
+<p>OpenLineage’s Data Quality Metrics facet is designed to attach dataset health metrics, including row counts and column-level statistics, to lineage metadata.</p>
+<p>These metrics are useful signals.</p>
+<p>They do not determine fitness for an SAP migration by themselves.</p>
+<p>A null rate of 10 percent can be:</p>
+<ul>
+<li>acceptable for an optional field;</li>
+<li>critical for an active Supplier bank account;</li>
+<li>expected for an inapplicable tax category;</li>
+<li>misleading when the denominator includes out-of-scope records.</li>
+</ul>
+<p>The canonical model must explain:</p>
+<ul>
+<li>applicability;</li>
+<li>mandatory conditions;</li>
+<li>business criticality;</li>
+<li>expected population.</li>
+</ul>
+<p>---</p>
+<h1 id="quality-is-fitness-for-purpose">Quality is fitness for purpose</h1>
+<p>The W3C Data Quality Vocabulary frames data-quality information as something that helps users judge whether a dataset is fit for their intended purpose, rather than assuming one universal definition of quality.</p>
+<p>That principle is directly relevant to migration readiness.</p>
+<p>A dataset can be:</p>
+<ul>
+<li>complete for reporting;</li>
+<li>insufficient for master-data creation;</li>
+<li>adequate for one country;</li>
+<li>inadequate for another;</li>
+<li>valid for a mock load;</li>
+<li>unsafe for production cutover.</li>
+</ul>
+<p>Therefore, Martenweave should not label a dataset simply:</p>
+<pre><code class="language-text">good</code></pre>
+<p>or:</p>
+<pre><code class="language-text">bad</code></pre>
+<p>It should assess:</p>
+<pre><code class="language-text">fit for which model path,
+scope,
+phase,
+and business purpose?</code></pre>
+<p>---</p>
+<h1 id="connect-gaps-to-rules">Connect gaps to Rules</h1>
+<p>Some dataset gaps matter because a Rule cannot be evaluated.</p>
+<p>Example:</p>
+<pre><code class="language-text">Rule:
+Supplier Risk is mandatory for strategic Suppliers.
+
+Required inputs:
+Supplier Category
+Supplier Risk</code></pre>
+<p>Dataset:</p>
+<pre><code class="language-text">Supplier Risk:
+present
+
+Supplier Category:
+missing</code></pre>
+<p>The target Attribute is present.</p>
+<p>The programme cannot determine whether the Rule applies.</p>
+<p>This is a Rule-evaluation gap.</p>
+<p>Another example:</p>
+<pre><code class="language-text">Rule:
+Bank account must be verified before payment activation.
+
+Dataset:
+bank fields present
+verification status absent</code></pre>
+<p>The bank data may load.</p>
+<p>The control path remains incomplete.</p>
+<p>Gap analysis must include Rules, not only Mappings.</p>
+<p>---</p>
+<h1 id="example-6-supplier-bank-verification">Example 6: Supplier bank verification</h1>
+<p>The extract contains:</p>
+<pre><code class="language-text">SUPPLIER_ID
+BANK_COUNTRY
+IBAN
+ACCOUNT_NUMBER</code></pre>
+<p>It lacks:</p>
+<pre><code class="language-text">BANK_VERIFICATION_STATUS</code></pre>
+<p>Possible interpretations:</p>
+<ol>
+<li>verification occurs outside the source dataset;</li>
+<li>all included records are preverified;</li>
+<li>the control was omitted;</li>
+<li>the target process performs verification;</li>
+<li>no verification exists.</li>
+</ol>
+<p>The system should not assume the most convenient interpretation.</p>
+<p>The finding should ask:</p>
+<pre><code class="language-text">How is bank-account approval evidenced?</code></pre>
+<p>The impact path includes:</p>
+<pre><code class="language-text">bank data
+→ verification Rule
+→ payment activation</code></pre>
+<p>A target-field completeness score cannot answer that question.</p>
+<p>---</p>
+<h1 id="connect-gaps-to-relationships">Connect gaps to Relationships</h1>
+<p>Many important gaps are relational.</p>
+<p>Examples:</p>
+<ul>
+<li>Product has no Plant assignment;</li>
+<li>Customer has no Payer relationship;</li>
+<li>Supplier bank account has no verified owner;</li>
+<li>Cost Centre has no hierarchy assignment;</li>
+<li>Business Partner has no required role;</li>
+<li>Unit of measure lacks conversion relationship.</li>
+</ul>
+<p>A dataset may contain every individual field while missing the relationship needed to use them.</p>
+<p>Example:</p>
+<pre><code class="language-text">CUSTOMER_ID
+PARTNER_ID
+PARTNER_ROLE</code></pre>
+<p>but no:</p>
+<pre><code class="language-text">SALES_ORG
+DISTRIBUTION_CHANNEL
+DIVISION</code></pre>
+<p>The Payer relationship cannot be assigned to the correct Sales Area.</p>
+<p>The gap is not a missing descriptive field.</p>
+<p>It is missing relationship context.</p>
+<p>---</p>
+<h1 id="example-7-customer-partner-functions">Example 7: Customer partner functions</h1>
+<h2 id="dataset">Dataset</h2>
+<pre><code class="language-text">CUSTOMER_ID
+PARTNER_ID
+PARTNER_ROLE</code></pre>
+<h2 id="target-relationship">Target relationship</h2>
+<pre><code class="language-text">Customer Sales Area
+→ partner role
+→ Partner Business Partner</code></pre>
+<h2 id="missing-keys">Missing keys</h2>
+<pre><code class="language-text">Sales Organisation
+Distribution Channel
+Division</code></pre>
+<h2 id="business-impact-2">Business impact</h2>
+<ul>
+<li>Payer may be assigned globally;</li>
+<li>invoices may route to the wrong party;</li>
+<li>Ship-to relationships may be duplicated;</li>
+<li>local sales processes may fail.</li>
+</ul>
+<h2 id="correct-verdict">Correct verdict</h2>
+<pre><code class="language-text">Partner-function values are present,
+but the dataset cannot establish Sales Area-specific relationships.
+
+Readiness:
+blocked for contextual partner assignment.</code></pre>
+<p>---</p>
+<h1 id="connect-gaps-to-downstream-impact">Connect gaps to downstream impact</h1>
+<p>A gap may not block SAP loading but may still damage a downstream process.</p>
+<p>Example: Product Base Unit is present, but alternative-unit conversion is missing.</p>
+<p>SAP Product creation may succeed.</p>
+<p>Warehouse or sales processing may fail.</p>
+<p>The lineage path should continue:</p>
+<pre><code class="language-text">source unit conversion
+→ SAP Product units
+→ warehouse interface
+→ operational quantity interpretation</code></pre>
+<p>Impact analysis should identify:</p>
+<ul>
+<li>which consumers depend on the missing relationship;</li>
+<li>whether they require the field immediately;</li>
+<li>which scenarios must be tested;</li>
+<li>whether a temporary manual process exists.</li>
+</ul>
+<p>---</p>
+<h1 id="example-8-product-units-of-measure">Example 8: Product units of measure</h1>
+<p>Dataset:</p>
+<pre><code class="language-text">PRODUCT_ID
+BASE_UNIT
+SALES_UNIT</code></pre>
+<p>Missing:</p>
+<pre><code class="language-text">CONVERSION_NUMERATOR
+CONVERSION_DENOMINATOR</code></pre>
+<p>The fields exist.</p>
+<p>The relationship between them does not.</p>
+<p>Possible target result:</p>
+<pre><code class="language-text">Base Unit:
+PC
+
+Sales Unit:
+BOX</code></pre>
+<p>Without:</p>
+<pre><code class="language-text">1 BOX = 12 PC</code></pre>
+<p>the Product may be technically created but operationally unusable.</p>
+<p>Business impact can include:</p>
+<ul>
+<li>incorrect order quantities;</li>
+<li>warehouse rejection;</li>
+<li>inventory inconsistencies;</li>
+<li>pricing or packaging errors.</li>
+</ul>
+<p>The gap should be connected to the conversion relationship and downstream processes, not reported as two missing numeric columns.</p>
+<p>---</p>
+<h1 id="a-gap-may-have-several-remediation-options">A gap may have several remediation options</h1>
+<p>Dataset gaps should not always become source-extract requests.</p>
+<p>Possible responses include:</p>
+<h2 id="add-the-missing-source-field">Add the missing source field</h2>
+<p>Best when the source owns the value.</p>
+<h2 id="register-an-existing-differently-named-field">Register an existing differently named field</h2>
+<p>Best when the value already exists and semantic equivalence is confirmed.</p>
+<h2 id="add-an-enrichment-source">Add an enrichment source</h2>
+<p>Best when the primary dataset cannot provide all required context.</p>
+<h2 id="derive-through-an-approved-rule">Derive through an approved Rule</h2>
+<p>Best when the value is deterministic from existing inputs.</p>
+<h2 id="use-a-controlled-fallback">Use a controlled fallback</h2>
+<p>Best when bounded exception treatment is acceptable.</p>
+<h2 id="mark-out-of-scope">Mark out of scope</h2>
+<p>Best when the Attribute does not apply to the selected population.</p>
+<h2 id="block-the-records">Block the records</h2>
+<p>Best when no safe value can be produced.</p>
+<h2 id="change-the-target-design">Change the target design</h2>
+<p>Appropriate only when the current model is wrong or unnecessarily restrictive.</p>
+<p>The gap report should present options without selecting one automatically.</p>
+<p>---</p>
+<h1 id="avoid-automatic-attribute-creation">Avoid automatic Attribute creation</h1>
+<p>Suppose an unexpected column appears:</p>
+<pre><code class="language-text">LEGACY_PRIORITY_CLASS</code></pre>
+<p>AI might propose:</p>
+<pre><code class="language-text">New Attribute:
+Supplier Priority Class</code></pre>
+<p>That may be correct.</p>
+<p>It may also be:</p>
+<ul>
+<li>a source workflow status;</li>
+<li>a reporting field;</li>
+<li>obsolete local data;</li>
+<li>an input to another derivation;</li>
+<li>outside migration scope.</li>
+</ul>
+<p>The safe process is:</p>
+<pre><code class="language-text">unexpected field
+→ Finding
+→ candidate semantic interpretation
+→ review
+→ PatchProposal if justified</code></pre>
+<p>Martenweave’s existing principle is proposal-first: automation and AI can produce reviewable PatchProposals, but canonical model changes require validation and human approval.</p>
+<p>---</p>
+<h1 id="avoid-automatic-defaults">Avoid automatic defaults</h1>
+<p>A missing target input often creates pressure to default.</p>
+<p>Defaults improve visible completeness.</p>
+<p>They may weaken model integrity.</p>
+<p>Before approving a default, identify:</p>
+<ul>
+<li>affected Attribute;</li>
+<li>business meaning of the default;</li>
+<li>scope;</li>
+<li>downstream consumers;</li>
+<li>expiry;</li>
+<li>remediation;</li>
+<li>owner;</li>
+<li>evidence.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Missing MRP Controller
+→ default 001</code></pre>
+<p>Questions:</p>
+<ul>
+<li>Does controller <code>001</code> accept responsibility?</li>
+<li>Does the value trigger notifications?</li>
+<li>Does it apply to every Plant?</li>
+<li>Can affected records be identified?</li>
+<li>When will the correct controller be assigned?</li>
+</ul>
+<p>A default is a governed fallback path, not a data-cleaning convenience.</p>
+<p>---</p>
+<h1 id="gap-to-impact-traversal">Gap-to-impact traversal</h1>
+<p>A useful engine can start from a dataset finding and traverse outward.</p>
+<pre><code class="language-text">DatasetField gap
+→ expected FieldEndpoint or Attribute
+→ Mapping
+→ Rule
+→ target endpoint
+→ downstream consumer
+→ owner
+→ evidence</code></pre>
+<p>The result should explain both direction and reason.</p>
+<p>Example:</p>
+<pre><code class="language-text">Missing field:
+PLANT
+
+Required by:
+MAP-PRODUCT-MRP-CONTROLLER
+
+Used as:
+conditional Mapping key
+
+Produces:
+Product Plant MRP Controller
+
+Target:
+SAP Product Plant planning data
+
+Downstream:
+MRP execution and planning responsibility
+
+Owner:
+Production Planning Data Lead</code></pre>
+<p>This is an actionable gap report.</p>
+<p>---</p>
+<h1 id="gap-classes-should-drive-impact-logic">Gap classes should drive impact logic</h1>
+<h2 id="missing-direct-input">Missing direct input</h2>
+<p>Likely result:</p>
+<ul>
+<li>target value unavailable or defaulted.</li>
+</ul>
+<h2 id="missing-conditional-input-2">Missing conditional input</h2>
+<p>Likely result:</p>
+<ul>
+<li>target may be wrong or ambiguous.</li>
+</ul>
+<h2 id="missing-key-2">Missing key</h2>
+<p>Likely result:</p>
+<ul>
+<li>value may attach to the wrong record or context.</li>
+</ul>
+<h2 id="invalid-value-domain-2">Invalid value domain</h2>
+<p>Likely result:</p>
+<ul>
+<li>transformation rejection or incorrect conversion.</li>
+</ul>
+<h2 id="partial-population-2">Partial population</h2>
+<p>Likely result:</p>
+<ul>
+<li>scoped coverage gap.</li>
+</ul>
+<h2 id="conflicting-source-values-2">Conflicting source values</h2>
+<p>Likely result:</p>
+<ul>
+<li>authority or precedence decision required.</li>
+</ul>
+<h2 id="missing-evidence-field">Missing evidence field</h2>
+<p>Likely result:</p>
+<ul>
+<li>control cannot be proven.</li>
+</ul>
+<h2 id="unexpected-field">Unexpected field</h2>
+<p>Likely result:</p>
+<ul>
+<li>model discovery opportunity, not necessarily target gap.</li>
+</ul>
+<p>The diagnostic should reflect the type.</p>
+<p>---</p>
+<h1 id="example-9-product-valuation-class">Example 9: Product valuation class</h1>
+<p>Dataset:</p>
+<pre><code class="language-text">PRODUCT_ID
+PRODUCT_TYPE
+VALUATION_CLASS</code></pre>
+<p>Observed values:</p>
+<pre><code class="language-text">3000
+3001
+3999</code></pre>
+<p>Canonical target value list permits:</p>
+<pre><code class="language-text">3000
+3001</code></pre>
+<p>The gap is not a missing field.</p>
+<p>It is an unsupported value.</p>
+<p>Lineage and impact reveal that Valuation Class affects:</p>
+<ul>
+<li>account determination;</li>
+<li>inventory postings;</li>
+<li>Finance reporting;</li>
+<li>company or valuation-area context.</li>
+</ul>
+<p>Possible remediation:</p>
+<ul>
+<li>map <code>3999</code> to an approved value;</li>
+<li>retain a local value if target configuration supports it;</li>
+<li>split the source population;</li>
+<li>reject affected Products.</li>
+</ul>
+<p>The Finance owner must decide semantic compatibility.</p>
+<p>The ETL developer should not guess from numeric proximity.</p>
+<p>---</p>
+<h1 id="example-10-address-usage">Example 10: Address usage</h1>
+<p>A Customer dataset contains:</p>
+<pre><code class="language-text">CUSTOMER_ID
+ADDRESS
+COUNTRY</code></pre>
+<p>It lacks address usage or role.</p>
+<p>The target model distinguishes:</p>
+<ul>
+<li>standard address;</li>
+<li>Ship-to address;</li>
+<li>Bill-to address;</li>
+<li>correspondence address.</li>
+</ul>
+<p>The physical address is present.</p>
+<p>The relationship and purpose are missing.</p>
+<p>Business impact includes:</p>
+<ul>
+<li>delivery routing;</li>
+<li>invoice delivery;</li>
+<li>tax determination;</li>
+<li>correspondence.</li>
+</ul>
+<p>The correct finding is:</p>
+<pre><code class="language-text">Address content is present,
+but intended usage cannot be established.</code></pre>
+<p>This is a semantic and relational gap.</p>
+<p>---</p>
+<h1 id="rank-gaps-by-path-criticality">Rank gaps by path criticality</h1>
+<p>A practical prioritisation model can consider:</p>
+<ul>
+<li>criticality of the target Attribute;</li>
+<li>number of affected records;</li>
+<li>process proximity;</li>
+<li>availability of fallback;</li>
+<li>confidence in the finding;</li>
+<li>correction deadline;</li>
+<li>evidence quality.</li>
+</ul>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Gap</th><th scope="col">Population</th><th scope="col">Impact</th><th scope="col">Priority</th></tr></thead><tbody><tr><td>Supplier Payment Method missing</td><td>4,280</td><td>First payment run</td><td>Critical</td></tr><tr><td>Product marketing text missing</td><td>18,000</td><td>No core process</td><td>Low</td></tr><tr><td>Cost Centre valid-from missing</td><td>74</td><td>Posting blocked</td><td>Critical</td></tr><tr><td>Partner-function Sales Area missing</td><td>6,300</td><td>Billing risk</td><td>High</td></tr><tr><td>Product alternative-unit conversion missing</td><td>1,920</td><td>Warehouse and orders</td><td>High</td></tr></tbody></table></div>
+<p>Record count alone would prioritise the marketing text.</p>
+<p>Business lineage produces a different order.</p>
+<p>---</p>
+<h1 id="some-gaps-should-block-a-subset-not-the-whole-migration">Some gaps should block a subset, not the whole migration</h1>
+<p>A mature readiness report supports scoped decisions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Supplier central data:
+ready
+
+Supplier bank data:
+ready with warnings
+
+Supplier Company Code Payment Method:
+blocked for Company Code 3200
+
+Supplier tax data:
+blocked for Portugal
+
+Supplier purchasing data:
+ready</code></pre>
+<p>This is more useful than:</p>
+<pre><code class="language-text">Supplier readiness:
+76%</code></pre>
+<p>The programme can decide whether to:</p>
+<ul>
+<li>remediate;</li>
+<li>defer a context;</li>
+<li>exclude records;</li>
+<li>apply a controlled fallback;</li>
+<li>postpone the entire object.</li>
+</ul>
+<p>---</p>
+<h1 id="distinguish-model-gap-from-dataset-defect">Distinguish model gap from dataset defect</h1>
+<p>A dataset finding may reveal that the model itself is incomplete.</p>
+<p>Example:</p>
+<ul>
+<li>the source contains Plant-specific Product planning data;</li>
+<li>the canonical model defines only global Product planning Attributes.</li>
+</ul>
+<p>The dataset is not necessarily wrong.</p>
+<p>The model may be too coarse.</p>
+<p>Possible classifications:</p>
+<h2 id="dataset-defect">Dataset defect</h2>
+<p>The dataset fails a valid model expectation.</p>
+<h2 id="model-gap">Model gap</h2>
+<p>The canonical model lacks a legitimate concept present in the source or target.</p>
+<h2 id="mapping-gap">Mapping gap</h2>
+<p>Both source and target are understood, but the transformation is missing.</p>
+<h2 id="evidence-gap">Evidence gap</h2>
+<p>The path may work, but current proof is absent.</p>
+<h2 id="scope-mismatch">Scope mismatch</h2>
+<p>Dataset and model describe different populations.</p>
+<p>This classification determines the right owner and remediation.</p>
+<p>---</p>
+<h1 id="example-11-serial-number-profile">Example 11: Serial-number profile</h1>
+<p>A source dataset contains:</p>
+<pre><code class="language-text">SERIAL_PROFILE</code></pre>
+<p>The canonical model does not include the Attribute.</p>
+<p>During warehouse testing, some Products require serial handling.</p>
+<p>This may be a model gap.</p>
+<p>The workflow should ask:</p>
+<ul>
+<li>Does the source field represent the SAP concept?</li>
+<li>Is the value Plant-specific?</li>
+<li>Which Product types require it?</li>
+<li>Which warehouse and delivery processes depend on it?</li>
+<li>Is the field required for cutover?</li>
+</ul>
+<p>The result may justify a new Attribute and Mapping proposal.</p>
+<p>It should not be silently ignored because it was not in the initial model.</p>
+<p>---</p>
+<h1 id="gap-evidence-should-be-reproducible">Gap evidence should be reproducible</h1>
+<p>A useful gap report should identify:</p>
+<ul>
+<li>dataset identity;</li>
+<li>fingerprint or version;</li>
+<li>model baseline;</li>
+<li>profiling time;</li>
+<li>scope;</li>
+<li>expected object;</li>
+<li>observed condition;</li>
+<li>calculation method.</li>
+</ul>
+<p>Without this, a later rerun cannot determine whether:</p>
+<ul>
+<li>the dataset changed;</li>
+<li>the model changed;</li>
+<li>the gap was fixed;</li>
+<li>the earlier report was wrong.</li>
+</ul>
+<p>OpenLineage’s data-quality model associates metrics with dataset observations, while W3C DQV explicitly supports describing quality measurements and their provenance.</p>
+<p>Martenweave can apply the same principle without storing all raw data in the canonical repository.</p>
+<p>---</p>
+<h1 id="gap-lifecycle">Gap lifecycle</h1>
+<p>A gap should move through a clear lifecycle.</p>
+<pre><code class="language-text">detected
+→ classified
+→ assigned
+→ remediation proposed
+→ validated
+→ verified
+→ closed</code></pre>
+<p>Possible closure reasons:</p>
+<ul>
+<li>source field added;</li>
+<li>Mapping added;</li>
+<li>model corrected;</li>
+<li>fallback approved;</li>
+<li>population excluded;</li>
+<li>finding disproved;</li>
+<li>target requirement removed;</li>
+<li>records deferred.</li>
+</ul>
+<p>Do not close a gap simply because the target field became nonblank.</p>
+<p>Verify the path used to produce it.</p>
+<p>---</p>
+<h1 id="gap-regression">Gap regression</h1>
+<p>A previously resolved gap can return.</p>
+<p>Examples:</p>
+<ul>
+<li>source extract drops a column;</li>
+<li>API version changes;</li>
+<li>new country joins the migration scope;</li>
+<li>fallback expires;</li>
+<li>Mapping changes;</li>
+<li>value list expands;</li>
+<li>source authority changes.</li>
+</ul>
+<p>Regression detection should compare:</p>
+<ul>
+<li>current dataset;</li>
+<li>current canonical baseline;</li>
+<li>previous verified state.</li>
+</ul>
+<p>A gap history can show:</p>
+<pre><code class="language-text">Mock Load 1:
+missing
+
+Mock Load 2:
+resolved
+
+Cutover rehearsal:
+resolved
+
+Cutover:
+regressed</code></pre>
+<p>This is operationally important.</p>
+<p>A binary current-state report loses the history.</p>
+<p>---</p>
+<h1 id="use-lineage-to-propose-tests">Use lineage to propose tests</h1>
+<p>Once a gap is connected to a path, the system can suggest targeted verification.</p>
+<p>Example: missing Product Plant key.</p>
+<p>Suggested tests:</p>
+<ul>
+<li>confirm Plant field in source;</li>
+<li>verify Product-to-Plant expansion;</li>
+<li>test plant-specific conversion;</li>
+<li>validate target record count;</li>
+<li>run planning scenario.</li>
+</ul>
+<p>Example: missing tax category.</p>
+<p>Suggested tests:</p>
+<ul>
+<li>country/category compatibility;</li>
+<li>duplicate detection;</li>
+<li>target category persistence;</li>
+<li>invoice or legal validation.</li>
+</ul>
+<p>Example: missing partner-function context.</p>
+<p>Suggested tests:</p>
+<ul>
+<li>Sales Area key completeness;</li>
+<li>partner-role cardinality;</li>
+<li>billing scenario;</li>
+<li>unresolved partner cross-reference.</li>
+</ul>
+<p>These tests follow the impact path.</p>
+<p>---</p>
+<h1 id="turn-findings-into-reviewable-proposals">Turn findings into reviewable proposals</h1>
+<p>Some gaps require model changes.</p>
+<p>Examples:</p>
+<ul>
+<li>add a missing Attribute;</li>
+<li>add a source endpoint;</li>
+<li>change Mapping applicability;</li>
+<li>define a fallback;</li>
+<li>create a Rule;</li>
+<li>retire an invalid source path.</li>
+</ul>
+<p>The safe workflow is:</p>
+<pre><code class="language-text">dataset evidence
+→ gap Finding
+→ lineage and impact
+→ PatchProposal
+→ deterministic validation
+→ human review</code></pre>
+<p>Martenweave’s documented pipeline already places evidence, gaps, lineage and impact before issue or pull-request review.</p>
+<p>The proposal should include:</p>
+<ul>
+<li>exact object changes;</li>
+<li>reason;</li>
+<li>supporting dataset evidence;</li>
+<li>affected paths;</li>
+<li>risks;</li>
+<li>validation results.</li>
+</ul>
+<p>---</p>
+<h1 id="what-ai-should-and-should-not-do">What AI should and should not do</h1>
+<p>AI can help:</p>
+<ul>
+<li>match dataset columns to candidate Attributes;</li>
+<li>summarise missing-path impact;</li>
+<li>identify possible alternate sources;</li>
+<li>detect likely context fields;</li>
+<li>draft Findings;</li>
+<li>propose validation scenarios;</li>
+<li>group similar gaps.</li>
+</ul>
+<p>AI should not autonomously:</p>
+<ul>
+<li>declare semantic equivalence;</li>
+<li>invent target values;</li>
+<li>approve defaults;</li>
+<li>transfer source authority;</li>
+<li>exclude records from scope;</li>
+<li>create canonical Attributes without review;</li>
+<li>close gaps based only on field presence.</li>
+</ul>
+<p>Dataset names are often ambiguous.</p>
+<p>Business meaning requires evidence and accountable review.</p>
+<p>---</p>
+<h1 id="a-useful-gap-report">A useful gap report</h1>
+<p>A business- and delivery-ready gap should look like:</p>
+<pre><code class="language-text">Gap:
+Plant key missing from Product planning dataset.
+
+Expected by:
+MAP-PRODUCT-MRP-CONTROLLER
+
+Role:
+Conditional Mapping input
+
+Affected Attribute:
+Product Plant MRP Controller
+
+Affected target:
+SAP Product Plant planning data
+
+Population:
+12,800 Products across four Plants
+
+Impact:
+MRP Controller cannot be derived reliably.
+Global default would assign planning responsibility incorrectly.
+
+Fallback:
+Not approved
+
+Verdict:
+Blocked
+
+Owner:
+Production Planning Data Lead
+
+Next decision:
+Add Plant to the source extract or define an approved alternate source.</code></pre>
+<p>This is much more valuable than:</p>
+<pre><code class="language-text">Missing column: PLANT</code></pre>
+<p>---</p>
+<h1 id="suggested-diagnostics">Suggested diagnostics</h1>
+<p>A focused implementation could introduce diagnostics such as:</p>
+<pre><code class="language-text">MW-DATA-GAP-001
+Expected dataset field is missing.
+
+MW-DATA-GAP-002
+Required Mapping key is missing.
+
+MW-DATA-GAP-003
+Conditional input is missing.
+
+MW-DATA-GAP-004
+Field exists but target grain is unsupported.
+
+MW-DATA-GAP-005
+Observed values fall outside the approved value domain.
+
+MW-DATA-GAP-006
+Source coverage is incomplete for an active context.
+
+MW-DATA-GAP-007
+Conflicting candidate source values require authority review.
+
+MW-DATA-GAP-008
+Dataset supplies an undocumented fallback value.
+
+MW-DATA-GAP-009
+Required control or verification evidence is absent.
+
+MW-DATA-GAP-010
+Unexpected field has no canonical interpretation.
+
+MW-DATA-GAP-011
+Resolved gap has regressed in the current dataset.
+
+MW-DATA-GAP-012
+Gap affects a downstream critical process.</code></pre>
+<p>Each diagnostic should preserve:</p>
+<ul>
+<li>dataset;</li>
+<li>baseline;</li>
+<li>model object;</li>
+<li>path;</li>
+<li>scope;</li>
+<li>severity;</li>
+<li>evidence;</li>
+<li>owner.</li>
+</ul>
+<p>---</p>
+<h1 id="release-gate-policy">Release-gate policy</h1>
+<p>Dataset gaps should block release when:</p>
+<ul>
+<li>a mandatory critical Attribute has no valid source path;</li>
+<li>a required key or organisational context is missing;</li>
+<li>a critical Mapping cannot execute deterministically;</li>
+<li>fallback is undocumented or expired;</li>
+<li>value-domain incompatibility affects active records;</li>
+<li>legal, bank or finance controls cannot be evaluated;</li>
+<li>downstream critical use is untested;</li>
+<li>affected population cannot be identified.</li>
+</ul>
+<p>Warnings may be appropriate when:</p>
+<ul>
+<li>optional fields are missing;</li>
+<li>low-risk descriptions are incomplete;</li>
+<li>evidence is partial but the path is noncritical;</li>
+<li>future-state fields are not yet supplied;</li>
+<li>a controlled fallback covers a bounded population.</li>
+</ul>
+<p>The gate should follow business impact, not gap count.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has the core workflow needed for this capability:</p>
+<ul>
+<li>canonical model files;</li>
+<li>deterministic validation;</li>
+<li>disposable generated indexes;</li>
+<li>dataset-readiness execution;</li>
+<li>gap detection;</li>
+<li>trace and impact;</li>
+<li>health and scorecards;</li>
+<li>PatchProposal generation;</li>
+<li>a local Workbench for investigation and review.</li>
+</ul>
+<p>The next focused vertical slice should be <strong>gap-to-impact traversal</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Convert each dataset gap into an explainable model and business-impact finding.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support:</p>
+<ul>
+<li>missing fields;</li>
+<li>missing keys;</li>
+<li>missing conditional inputs;</li>
+<li>partial population;</li>
+<li>invalid values;</li>
+<li>unexpected fields;</li>
+<li>conflicting source candidates;</li>
+<li>unsupported fallback.</li>
+</ul>
+<h2 id="required-output">Required output</h2>
+<p>For every gap, return:</p>
+<ol>
+<li>Dataset and field.</li>
+<li>Expected Attribute or FieldEndpoint.</li>
+<li>Mapping dependency.</li>
+<li>Role of the missing input.</li>
+<li>Target endpoint.</li>
+<li>affected scope and population.</li>
+<li>downstream process.</li>
+<li>fallback status.</li>
+<li>severity.</li>
+<li>owner and next decision.</li>
+</ol>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The implementation must distinguish:</p>
+<pre><code class="language-text">Payment Method column missing</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Supplier Company Code Payment Method path unavailable,
+placing the first payment run at risk.</code></pre>
+<p>It must distinguish:</p>
+<pre><code class="language-text">Profit Centre value present</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Product Plant Profit Centre cannot be assigned safely
+because Plant context is missing.</code></pre>
+<p>It must distinguish:</p>
+<pre><code class="language-text">Partner role present</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Customer Sales Area partner relationship cannot be constructed
+because Sales Area keys are absent.</code></pre>
+<p>It must distinguish:</p>
+<pre><code class="language-text">Units present</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Base-to-alternative-unit conversion relationship is missing.</code></pre>
+<h2 id="existing-command">Existing command</h2>
+<pre><code>martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/source.xlsx \
+  --out ./reports/readiness</code></pre>
+<h2 id="future-focused-report">Future focused report</h2>
+<pre><code>martenweave gap-impact \
+  --repo ./model \
+  --report ./reports/readiness/gaps.json</code></pre>
+<p>The <code>gap-impact</code> command describes a recommended direction rather than a current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Dataset gaps should not remain isolated spreadsheet findings.</p>
+<p>A missing field, key, context or value matters because some governed model path depends on it.</p>
+<p>The useful chain is:</p>
+<pre><code class="language-text">observed dataset condition
+→ model expectation
+→ Mapping dependency
+→ business Attribute
+→ target endpoint
+→ Rule
+→ downstream process
+→ owner and decision</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the programme explain not only what is missing from the dataset, but which business value cannot be created, which SAP context is affected, what process is at risk, which records are exposed and what safe remediation options exist?</blockquote>
+<p>When the answer is yes, dataset profiling supports migration governance.</p>
+<p>When the answer is:</p>
+<blockquote>Twelve columns are missing,</blockquote>
+<p>the programme has a schema comparison.</p>
+<p>It does not yet have an impact assessment.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects observed datasets to canonical Attributes, Mappings, Rules, target endpoints, Evidence and Decisions so that a technical gap can be translated into a controlled business response.</p>
+<p>The aim is not to make every dataset conform mechanically.</p>
+<p>It is to determine whether each dataset is fit for the governed migration path it is expected to support.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, validates model references deterministically, builds disposable SQLite and JSONL indexes, detects dataset and model gaps and runs lineage and impact analysis before human-reviewed change proposals.</p>
+<p>The current CLI exposes validation, health, scorecard, trace, impact, search, query, repository diff and a one-command dataset-readiness workflow.</p>
+<p>OpenLineage’s Data Quality Metrics facet supports dataset-level and column-level health metrics such as row count, null counts, distinct counts and numerical summaries. These metrics become more useful when connected to lineage and model context.</p>
+<p>OpenLineage’s column-level lineage model distinguishes direct value derivation from indirect dependencies such as conditional selection, joins and filtering. That distinction is important when a missing contextual field breaks a Mapping without being the direct source of the target value.</p>
+<p>The W3C Data Quality Vocabulary provides a framework for describing dataset quality so that users can judge fitness for purpose and supports linking quality measurements to provenance and policy.</p>
+<p>The diagnostic codes, gap-to-impact traversal and proposed <code>gap-impact</code> command described here are recommended Martenweave improvements. They should not be interpreted as guarantees of the current schema, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, OpenLineage or W3C.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html"><span>Previous</span>A production incident arrives in the AMS queue:</a><a href="/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html"><span>Next</span>A readiness report identifies 137 data gaps.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

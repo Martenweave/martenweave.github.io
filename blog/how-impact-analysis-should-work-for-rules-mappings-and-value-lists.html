@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Impact Analysis Should Work for Rules, Mappings and Value Lists | Martenweave</title>
+    <meta
+      name="description"
+      content="A team proposes three changes:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html" />
+    <meta property="og:title" content="How Impact Analysis Should Work for Rules, Mappings and Value Lists | Martenweave" />
+    <meta property="og:description" content="A team proposes three changes:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Impact Analysis Should Work for Rules, Mappings and Value Lists | Martenweave" />
+    <meta name="twitter:description" content="A team proposes three changes:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html",
+                        "name": "How Impact Analysis Should Work for Rules, Mappings and Value Lists | Martenweave",
+                        "description": "A team proposes three changes:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Impact Analysis Should Work for Rules, Mappings and Value Lists",
+                                    "item": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html#content",
+                        "headline": "How Impact Analysis Should Work for Rules, Mappings and Value Lists",
+                        "name": "How Impact Analysis Should Work for Rules, Mappings and Value Lists",
+                        "description": "A team proposes three changes:",
+                        "url": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Impact Analysis Should Work for Rules, Mappings and Value Lists</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How Impact Analysis Should Work for Rules, Mappings and Value Lists</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A team proposes three changes:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#rule-dependency">Rule dependency</a></li><li><a href="#mapping-dependency">Mapping dependency</a></li><li><a href="#value-list-dependency">Value-list dependency</a></li><li><a href="#severity-change">Severity change</a></li><li><a href="#applicability-change">Applicability change</a></li><li><a href="#lifecycle-stage-change">Lifecycle-stage change</a></li><li><a href="#expression-change">Expression change</a></li><li><a href="#exception-change">Exception change</a></li><li><a href="#rule-retirement">Rule retirement</a></li><li><a href="#source-replacement">Source replacement</a></li><li><a href="#source-addition">Source addition</a></li><li><a href="#target-replacement">Target replacement</a></li><li><a href="#strategy-change">Strategy change</a></li><li><a href="#applicability-change-2">Applicability change</a></li><li><a href="#value-conversion-change">Value-conversion change</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A team proposes three changes:</p>
+<ol>
+<li>Customer Group should become mandatory before Sales Area activation.</li>
+<li>CRM Segment should no longer map directly to Customer Group.</li>
+<li>Value <code>01</code> in the Customer Group list should be replaced with <code>STANDARD</code>.</li>
+</ol>
+<p>All three changes concern the same business Attribute.</p>
+<p>They do not create the same impact.</p>
+<p>The Rule change affects when records can progress.</p>
+<p>The Mapping change affects how values are produced.</p>
+<p>The value-list change affects which codes are valid and how existing data is interpreted.</p>
+<p>A generic dependency graph may return many of the same connected objects:</p>
+<ul>
+<li>Customer Group;</li>
+<li>source fields;</li>
+<li>SAP field <code>KNVV-KDGRP</code>;</li>
+<li>migration datasets;</li>
+<li>validation tests;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>Decisions.</li>
+</ul>
+<p>But the reason each object is affected differs.</p>
+<p>That difference determines:</p>
+<ul>
+<li>which tests must run;</li>
+<li>which data may need conversion;</li>
+<li>which owners must review;</li>
+<li>whether existing records become invalid;</li>
+<li>whether the change is prospective or retrospective;</li>
+<li>whether the SAP implementation, source systems or only documentation must change.</li>
+</ul>
+<blockquote>Impact analysis should follow the semantics of the change, not merely the object’s position in a graph.</blockquote>
+<p>Martenweave’s current core already treats Rules and Mappings as first-class model objects alongside Attributes, Relationships, datasets, evidence, Decisions and change proposals. It validates references before building generated indexes and exposes lineage, impact and diff operations over the canonical model.</p>
+<p>The next step is to make impact propagation sensitive to object type.</p>
+<p>A Rule does not propagate change like a Mapping.</p>
+<p>A Mapping does not propagate change like a value-list entry.</p>
+<p>---</p>
+<h1 id="three-objects-three-kinds-of-dependency">Three objects, three kinds of dependency</h1>
+<p>A Rule answers:</p>
+<blockquote>Under which conditions must something be true?</blockquote>
+<p>A Mapping answers:</p>
+<blockquote>How does one representation become another?</blockquote>
+<p>A value list answers:</p>
+<blockquote>Which governed values may represent the Attribute?</blockquote>
+<p>These objects often connect to the same Attribute:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+├── governed by RULE-CUSTOMER-GROUP-REQUIRED
+├── populated by MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+└── constrained by VALUE-LIST-CUSTOMER-GROUP</code></pre>
+<p>Their downstream effects are different.</p>
+<h2 id="rule-dependency">Rule dependency</h2>
+<p>A Rule affects:</p>
+<ul>
+<li>acceptance;</li>
+<li>validation;</li>
+<li>workflow;</li>
+<li>activation;</li>
+<li>distribution;</li>
+<li>exception handling.</li>
+</ul>
+<h2 id="mapping-dependency">Mapping dependency</h2>
+<p>A Mapping affects:</p>
+<ul>
+<li>value derivation;</li>
+<li>source readiness;</li>
+<li>target population;</li>
+<li>transformation logic;</li>
+<li>lineage;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="value-list-dependency">Value-list dependency</h2>
+<p>A value list affects:</p>
+<ul>
+<li>code validity;</li>
+<li>conversion tables;</li>
+<li>interfaces;</li>
+<li>reporting groups;</li>
+<li>historical interpretation;</li>
+<li>existing records.</li>
+</ul>
+<p>A useful impact engine needs separate propagation policies for each.</p>
+<p>---</p>
+<h1 id="begin-with-an-explicit-change-operation">Begin with an explicit change operation</h1>
+<p>The object ID alone is not enough.</p>
+<p>Consider:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED</code></pre>
+<p>Possible changes include:</p>
+<ul>
+<li>warning becomes error;</li>
+<li>creation-stage check moves to activation;</li>
+<li>applicability expands to another country;</li>
+<li>one exception is removed;</li>
+<li>Rule is retired;</li>
+<li>expression wording is clarified;</li>
+<li>implementation endpoint changes while meaning remains stable.</li>
+</ul>
+<p>Each produces a different blast radius.</p>
+<p>A PatchProposal should therefore describe the operation.</p>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">object_id: RULE-CUSTOMER-GROUP-REQUIRED
+operation: change
+changes:
+  severity:
+    before: warning
+    after: error
+  lifecycle_stage:
+    before: creation
+    after: activation</code></pre>
+<p>Impact should be calculated from the changed properties, not only from the object identity.</p>
+<p>The same applies to Mappings:</p>
+<pre><code class="language-yaml">object_id: MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+changes:
+  strategy:
+    before: direct
+    after: conditional_enrichment</code></pre>
+<p>and value lists:</p>
+<pre><code class="language-yaml">object_id: VALUE-LIST-CUSTOMER-GROUP
+operation: replace_value
+value:
+  before: &quot;01&quot;
+  after: &quot;STANDARD&quot;</code></pre>
+<p>---</p>
+<h1 id="rule-impact-begins-with-behaviour">Rule impact begins with behaviour</h1>
+<p>A Rule change is behavioural.</p>
+<p>The first question is:</p>
+<blockquote>What records, lifecycle stages or decisions would behave differently after the change?</blockquote>
+<p>This is more useful than:</p>
+<blockquote>Which objects are connected to the Rule?</blockquote>
+<p>Suppose:</p>
+<pre><code class="language-text">Before:
+Customer Group missing → warning
+
+After:
+Customer Group missing → error</code></pre>
+<p>The Attribute and field remain unchanged.</p>
+<p>The source Mapping may remain unchanged.</p>
+<p>The effect appears when records are evaluated.</p>
+<p>Potential consequences include:</p>
+<ul>
+<li>more rejected migration records;</li>
+<li>blocked Customer Sales Area activation;</li>
+<li>increased steward workload;</li>
+<li>new cutover exceptions;</li>
+<li>changed readiness score;</li>
+<li>changed test expectations;</li>
+<li>changed operational support procedure.</li>
+</ul>
+<p>The impact engine should classify this as a <strong>control-strength change</strong>.</p>
+<p>---</p>
+<h1 id="rule-change-classes">Rule-change classes</h1>
+<p>A practical taxonomy can distinguish several forms.</p>
+<h2 id="severity-change">Severity change</h2>
+<pre><code class="language-text">information → warning
+warning → error
+error → warning</code></pre>
+<p>Impact areas:</p>
+<ul>
+<li>release gates;</li>
+<li>readiness reports;</li>
+<li>migration rejection;</li>
+<li>workflow;</li>
+<li>incident volume.</li>
+</ul>
+<h2 id="applicability-change">Applicability change</h2>
+<pre><code class="language-text">global → strategic suppliers only
+Germany → Germany and Austria
+Customer → Customer Sales Area</code></pre>
+<p>Impact areas:</p>
+<ul>
+<li>affected population;</li>
+<li>local overrides;</li>
+<li>source coverage;</li>
+<li>organisational keys;</li>
+<li>reporting denominators.</li>
+</ul>
+<h2 id="lifecycle-stage-change">Lifecycle-stage change</h2>
+<pre><code class="language-text">creation → activation
+activation → distribution</code></pre>
+<p>Impact areas:</p>
+<ul>
+<li>when data must become available;</li>
+<li>which system enforces the control;</li>
+<li>exception duration;</li>
+<li>process design.</li>
+</ul>
+<h2 id="expression-change">Expression change</h2>
+<pre><code class="language-text">Country = PT
+→ Country in [PT, ES]</code></pre>
+<p>Impact areas:</p>
+<ul>
+<li>population;</li>
+<li>test scenarios;</li>
+<li>local Decisions;</li>
+<li>legal or policy review.</li>
+</ul>
+<h2 id="exception-change">Exception change</h2>
+<pre><code class="language-text">temporary default allowed
+→ default prohibited</code></pre>
+<p>Impact areas:</p>
+<ul>
+<li>unresolved records;</li>
+<li>steward workload;</li>
+<li>cutover risk;</li>
+<li>source remediation.</li>
+</ul>
+<h2 id="rule-retirement">Rule retirement</h2>
+<p>Impact areas:</p>
+<ul>
+<li>implementation controls;</li>
+<li>dependent Decisions;</li>
+<li>tests;</li>
+<li>reports;</li>
+<li>active exceptions.</li>
+</ul>
+<p>The change class determines which relationship types should be traversed first.</p>
+<p>---</p>
+<h1 id="a-stricter-rule-may-not-require-a-mapping-change">A stricter Rule may not require a Mapping change</h1>
+<p>Consider:</p>
+<pre><code class="language-text">Rule:
+Customer Group is mandatory before activation.
+
+Mapping:
+CRM Segment plus Sales Area derives Customer Group.</code></pre>
+<p>Changing the Rule from warning to error does not necessarily alter the Mapping.</p>
+<p>The Mapping still produces the same value.</p>
+<p>However, source readiness becomes more critical.</p>
+<p>The Mapping should appear in the impact report as:</p>
+<pre><code class="language-text">Review required:
+Mapping must produce sufficient coverage under the stricter Rule.</code></pre>
+<p>not:</p>
+<pre><code class="language-text">Mapping must be changed.</code></pre>
+<p>This distinction matters.</p>
+<p>Impact analysis should identify <strong>review obligation</strong>, not assume remediation.</p>
+<p>---</p>
+<h1 id="rule-impact-must-include-affected-population">Rule impact must include affected population</h1>
+<p>The same Rule can have radically different impact depending on scope.</p>
+<p>Example A:</p>
+<pre><code class="language-text">Applies to:
+12 strategic suppliers</code></pre>
+<p>Example B:</p>
+<pre><code class="language-text">Applies to:
+all active suppliers</code></pre>
+<p>The graph topology may be identical.</p>
+<p>The operational impact is not.</p>
+<p>A Rule-impact report should state:</p>
+<ul>
+<li>current applicability;</li>
+<li>proposed applicability;</li>
+<li>estimated or observed population;</li>
+<li>excluded contexts;</li>
+<li>historical exceptions;</li>
+<li>affected migration waves.</li>
+</ul>
+<p>Where actual record counts are unavailable, the report should state that population impact is unknown rather than assign false precision.</p>
+<p>---</p>
+<h1 id="rule-impact-reaches-implementation-controls">Rule impact reaches implementation controls</h1>
+<p>The canonical Rule may be implemented through:</p>
+<ul>
+<li>SAP MDG validation;</li>
+<li>BRFplus;</li>
+<li>ABAP;</li>
+<li>migration readiness check;</li>
+<li>source-system validation;</li>
+<li>data-quality platform;</li>
+<li>manual procedure.</li>
+</ul>
+<p>The impact engine should traverse:</p>
+<pre><code class="language-text">Canonical Rule
+→ implementation references
+→ tests
+→ operational procedures</code></pre>
+<p>Changing the Rule’s meaning may require every implementation to change.</p>
+<p>Changing only one implementation does not necessarily change the canonical Rule.</p>
+<p>That distinction exposes drift.</p>
+<p>---</p>
+<h1 id="rule-impact-reaches-evidence">Rule impact reaches Evidence</h1>
+<p>Existing Evidence may verify the previous Rule.</p>
+<p>For example:</p>
+<pre><code class="language-text">EVID-MOCK-LOAD3-CUSTOMER-GROUP
+
+Verified:
+missing value produced warning</code></pre>
+<p>After severity changes to error, that Evidence remains historically valid.</p>
+<p>It no longer proves the candidate behaviour.</p>
+<p>The impact result should classify it:</p>
+<pre><code class="language-text">Historical evidence:
+valid for previous Rule state
+
+New verification:
+required</code></pre>
+<p>Do not delete or relabel old evidence as though it tested the new Rule.</p>
+<p>---</p>
+<h1 id="rule-impact-reaches-local-overrides">Rule impact reaches local overrides</h1>
+<p>A global Rule may have contextual overrides.</p>
+<pre><code class="language-text">Global:
+Tax Identifier required before activation.
+
+Portugal:
+approved exemption with legal evidence.
+
+Legacy migration:
+temporary warning until Wave 3.</code></pre>
+<p>When the global Rule changes, every override needs reassessment.</p>
+<p>Possible outcomes:</p>
+<ul>
+<li>still valid;</li>
+<li>conflicting;</li>
+<li>redundant;</li>
+<li>broader than permitted;</li>
+<li>expired.</li>
+</ul>
+<p>This should be a dedicated impact path:</p>
+<pre><code class="language-text">Global Rule changed
+→ review all active overrides</code></pre>
+<p>Local overrides must not disappear inside a generic neighbour list.</p>
+<p>---</p>
+<h1 id="mapping-impact-begins-with-the-value-path">Mapping impact begins with the value path</h1>
+<p>A Mapping change is a lineage change.</p>
+<p>The first question is:</p>
+<blockquote>How will the target value be produced differently?</blockquote>
+<p>Suppose:</p>
+<pre><code class="language-text">Before:
+CRM Segment → Customer Group
+
+After:
+CRM Segment + Sales Area → Customer Group</code></pre>
+<p>The target Attribute remains the same.</p>
+<p>The target SAP field may remain the same.</p>
+<p>But the transformation now requires:</p>
+<ul>
+<li>another source field;</li>
+<li>organisational context;</li>
+<li>new lookup logic;</li>
+<li>different tests;</li>
+<li>different gap handling.</li>
+</ul>
+<p>The impact propagates upstream and downstream.</p>
+<p>---</p>
+<h1 id="mapping-change-classes">Mapping-change classes</h1>
+<h2 id="source-replacement">Source replacement</h2>
+<pre><code class="language-text">ERP_A field → CRM field</code></pre>
+<p>Impact:</p>
+<ul>
+<li>source authority;</li>
+<li>dataset availability;</li>
+<li>historical continuity;</li>
+<li>reconciliation;</li>
+<li>source ownership.</li>
+</ul>
+<h2 id="source-addition">Source addition</h2>
+<pre><code class="language-text">CRM Segment
+→ CRM Segment + Sales Area</code></pre>
+<p>Impact:</p>
+<ul>
+<li>extract schema;</li>
+<li>keys;</li>
+<li>join logic;</li>
+<li>missing-data rate;</li>
+<li>test combinations.</li>
+</ul>
+<h2 id="target-replacement">Target replacement</h2>
+<pre><code class="language-text">custom SAP field → standard SAP field</code></pre>
+<p>Impact:</p>
+<ul>
+<li>load structure;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>historical fields;</li>
+<li>implementation tests.</li>
+</ul>
+<h2 id="strategy-change">Strategy change</h2>
+<pre><code class="language-text">direct → lookup
+direct → enrichment
+default → blocking gap
+manual → automated</code></pre>
+<p>Impact:</p>
+<ul>
+<li>transformation implementation;</li>
+<li>evidence;</li>
+<li>operational workload;</li>
+<li>control behaviour.</li>
+</ul>
+<h2 id="applicability-change-2">Applicability change</h2>
+<pre><code class="language-text">all customers → acquired-company customers only</code></pre>
+<p>Impact:</p>
+<ul>
+<li>population routing;</li>
+<li>alternative Mappings;</li>
+<li>unresolved records.</li>
+</ul>
+<h2 id="value-conversion-change">Value-conversion change</h2>
+<pre><code class="language-text">A → 01
+A → 02</code></pre>
+<p>Impact:</p>
+<ul>
+<li>existing target values;</li>
+<li>reports;</li>
+<li>code consumers;</li>
+<li>business interpretation.</li>
+</ul>
+<h2 id="mapping-retirement">Mapping retirement</h2>
+<p>Impact:</p>
+<ul>
+<li>orphaned target paths;</li>
+<li>fallback;</li>
+<li>historical lineage;</li>
+<li>active datasets.</li>
+</ul>
+<p>---</p>
+<h1 id="direct-and-indirect-inputs-require-different-impact-logic">Direct and indirect inputs require different impact logic</h1>
+<p>A Mapping may use several fields.</p>
+<pre><code class="language-text">CRM Segment:
+direct value input
+
+Sales Organisation:
+conditional lookup input
+
+Customer Status:
+filter input</code></pre>
+<p>If CRM Segment changes, the target value itself may change.</p>
+<p>If Sales Organisation changes, the lookup route may change.</p>
+<p>If Customer Status changes, the included population may change.</p>
+<p>OpenLineage’s column-level lineage model distinguishes direct derivation from indirect influence, including conditional, join and filter dependencies. This is useful for deciding how an input-field change propagates through a Mapping.</p>
+<p>Martenweave should preserve this distinction in Mapping impact:</p>
+<pre><code class="language-text">Value derivation affected
+Conditional selection affected
+Population affected</code></pre>
+<p>rather than one generic <code>upstream field changed</code> warning.</p>
+<p>---</p>
+<h1 id="mapping-impact-must-inspect-alternative-paths">Mapping impact must inspect alternative paths</h1>
+<p>One Attribute may have several Mappings.</p>
+<pre><code class="language-text">CRM population:
+MAP-CRM-CUSTOMER-GROUP
+
+ERP_A population:
+MAP-ERP-A-CUSTOMER-GROUP
+
+Missing source:
+MAP-MANUAL-CUSTOMER-GROUP</code></pre>
+<p>Changing one Mapping may:</p>
+<ul>
+<li>affect only one population;</li>
+<li>increase use of another path;</li>
+<li>expose uncovered records;</li>
+<li>create overlap between two sources;</li>
+<li>change source precedence.</li>
+</ul>
+<p>The impact engine should examine the Mapping set around the Attribute.</p>
+<p>Questions include:</p>
+<ul>
+<li>Does another approved Mapping cover the affected population?</li>
+<li>Do two Mappings now overlap?</li>
+<li>Is a fallback path available?</li>
+<li>Does the fallback have an expiry?</li>
+<li>Does the source-precedence Decision still hold?</li>
+</ul>
+<p>---</p>
+<h1 id="mapping-impact-reaches-source-datasets">Mapping impact reaches source datasets</h1>
+<p>When a Mapping gains another input field, all relevant datasets should be checked.</p>
+<p>Example:</p>
+<pre><code class="language-text">New required context:
+Distribution Channel</code></pre>
+<p>Affected artefacts may include:</p>
+<ul>
+<li>source extract specification;</li>
+<li>staging schema;</li>
+<li>sample CSV;</li>
+<li>profiling report;</li>
+<li>business-review workbook;</li>
+<li>migration API;</li>
+<li>mock-load dataset.</li>
+</ul>
+<p>Martenweave’s dataset-readiness workflow can compare observed datasets with model expectations and turn gaps into reports, proposals or issue drafts.</p>
+<p>A Mapping proposal should trigger readiness analysis against the candidate input requirements.</p>
+<p>---</p>
+<h1 id="mapping-impact-reaches-the-target-population">Mapping impact reaches the target population</h1>
+<p>Changing a Mapping does not affect every target record equally.</p>
+<p>The impact report should estimate or classify:</p>
+<ul>
+<li>newly covered records;</li>
+<li>records no longer covered;</li>
+<li>records receiving a different value;</li>
+<li>records requiring manual review;</li>
+<li>records remaining unchanged;</li>
+<li>records impossible to evaluate.</li>
+</ul>
+<p>A useful summary might say:</p>
+<pre><code class="language-text">Affected population:
+ERP_B customers without Sales Area context
+
+Estimated consequence:
+Customer Group no longer derivable
+
+Fallback:
+manual enrichment
+
+Readiness:
+blocked for Wave 3</code></pre>
+<p>That is more actionable than a list of connected datasets.</p>
+<p>---</p>
+<h1 id="mapping-impact-reaches-reconciliation">Mapping impact reaches reconciliation</h1>
+<p>Existing reconciliation may assume:</p>
+<pre><code class="language-text">source value count
+=
+target value count</code></pre>
+<p>A new enrichment or split changes that expectation.</p>
+<p>Reconciliation may need to compare:</p>
+<ul>
+<li>mapped populations;</li>
+<li>rejected values;</li>
+<li>defaulted values;</li>
+<li>context expansions;</li>
+<li>one-to-many output rows;</li>
+<li>manual assignments.</li>
+</ul>
+<p>The Mapping change should therefore impact:</p>
+<ul>
+<li>reconciliation Rules;</li>
+<li>test evidence;</li>
+<li>expected result sets;</li>
+<li>sign-off criteria.</li>
+</ul>
+<p>---</p>
+<h1 id="value-list-impact-begins-with-identity-and-meaning">Value-list impact begins with identity and meaning</h1>
+<p>A value list is often treated as static reference data.</p>
+<p>It is part of the model.</p>
+<p>A value has at least:</p>
+<ul>
+<li>code;</li>
+<li>label;</li>
+<li>meaning;</li>
+<li>status;</li>
+<li>applicability;</li>
+<li>effective period;</li>
+<li>mapping relationships.</li>
+</ul>
+<p>Consider:</p>
+<pre><code class="language-text">code: 01
+label: Standard</code></pre>
+<p>Possible changes include:</p>
+<ul>
+<li>label corrected;</li>
+<li>code changed;</li>
+<li>meaning changed;</li>
+<li>value retired;</li>
+<li>replacement introduced;</li>
+<li>scope narrowed;</li>
+<li>value split into several values.</li>
+</ul>
+<p>These are not equivalent.</p>
+<p>---</p>
+<h1 id="label-change">Label change</h1>
+<pre><code class="language-text">Standard Customer
+→ Standard</code></pre>
+<p>Potential impact:</p>
+<ul>
+<li>UI;</li>
+<li>documentation;</li>
+<li>exports;</li>
+<li>translations;</li>
+<li>search.</li>
+</ul>
+<p>Usually no data conversion is required if the code and meaning remain stable.</p>
+<p>The impact should be classified as editorial or presentation-related.</p>
+<p>---</p>
+<h1 id="code-change">Code change</h1>
+<pre><code class="language-text">01
+→ STANDARD</code></pre>
+<p>Potential impact:</p>
+<ul>
+<li>persisted data;</li>
+<li>mappings;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>validations;</li>
+<li>source conversion tables;</li>
+<li>test data;</li>
+<li>historical comparisons.</li>
+</ul>
+<p>The meaning may remain stable.</p>
+<p>The implementation contract changes.</p>
+<p>This is often a breaking physical change.</p>
+<p>---</p>
+<h1 id="meaning-change-under-the-same-code">Meaning change under the same code</h1>
+<pre><code class="language-text">01 previously meant:
+Standard Customer
+
+01 now means:
+Default Customer Group for incomplete records</code></pre>
+<p>This is more dangerous than a code change.</p>
+<p>Systems may continue processing <code>01</code> successfully while users interpret it differently.</p>
+<p>Impact includes:</p>
+<ul>
+<li>existing records;</li>
+<li>historical reports;</li>
+<li>Decisions;</li>
+<li>Mappings;</li>
+<li>business definitions;</li>
+<li>audit interpretation.</li>
+</ul>
+<p>The value should usually not be silently redefined.</p>
+<p>A new value or explicit temporal version may be safer.</p>
+<p>---</p>
+<h1 id="value-addition">Value addition</h1>
+<p>Adding:</p>
+<pre><code class="language-text">DIGITAL_ONLY</code></pre>
+<p>may appear non-breaking.</p>
+<p>Potential impact includes:</p>
+<ul>
+<li>interfaces with fixed enumerations;</li>
+<li>reports with exhaustive grouping;</li>
+<li>validation code;</li>
+<li>translations;</li>
+<li>source-system mappings;</li>
+<li>unknown-value handling;</li>
+<li>test coverage.</li>
+</ul>
+<p>Compatibility must be assessed per consumer.</p>
+<p>An SAP field may accept the new code while a downstream interface rejects it.</p>
+<p>---</p>
+<h1 id="value-retirement">Value retirement</h1>
+<p>Retiring:</p>
+<pre><code class="language-text">UNDER_REVIEW</code></pre>
+<p>requires several questions:</p>
+<ul>
+<li>Are active records using it?</li>
+<li>Is it replaced by another value?</li>
+<li>Does it move to another Attribute?</li>
+<li>Can historical records retain it?</li>
+<li>Which Mappings still produce it?</li>
+<li>Which reports filter on it?</li>
+<li>Which Rules reference it?</li>
+</ul>
+<p>Retirement is not deletion.</p>
+<p>The old value may remain necessary for historical interpretation.</p>
+<p>---</p>
+<h1 id="value-split">Value split</h1>
+<p>Suppose:</p>
+<pre><code class="language-text">OTHER</code></pre>
+<p>is replaced by:</p>
+<pre><code class="language-text">TEMPORARY
+UNCLASSIFIED
+OUT_OF_SCOPE</code></pre>
+<p>Impact includes:</p>
+<ul>
+<li>conversion of existing records;</li>
+<li>source reclassification;</li>
+<li>Mapping changes;</li>
+<li>report grouping;</li>
+<li>exceptions;</li>
+<li>data-quality Rules;</li>
+<li>human review for ambiguous records.</li>
+</ul>
+<p>A deterministic conversion may not exist.</p>
+<p>The impact report should mark records requiring judgement.</p>
+<p>---</p>
+<h1 id="value-merge">Value merge</h1>
+<p>Suppose:</p>
+<pre><code class="language-text">LOW
+STANDARD</code></pre>
+<p>become:</p>
+<pre><code class="language-text">NON_CRITICAL</code></pre>
+<p>Impact includes:</p>
+<ul>
+<li>loss of distinction;</li>
+<li>historical trend compatibility;</li>
+<li>downstream logic;</li>
+<li>Mapping simplification;</li>
+<li>report aggregation.</li>
+</ul>
+<p>The change may be technically easy and analytically irreversible.</p>
+<p>---</p>
+<h1 id="applicability-change-for-one-value">Applicability change for one value</h1>
+<p>A value may remain valid globally but become prohibited in one context.</p>
+<p>Example:</p>
+<pre><code class="language-text">Customer Group 01:
+allowed globally
+
+New Rule:
+not allowed for Sales Organisation 2000</code></pre>
+<p>This change crosses value-list and Rule impact.</p>
+<p>The impact engine should identify:</p>
+<ul>
+<li>records in the newly prohibited context;</li>
+<li>Mappings that can produce the value there;</li>
+<li>local overrides;</li>
+<li>reports;</li>
+<li>migration datasets;</li>
+<li>replacement values.</li>
+</ul>
+<p>---</p>
+<h1 id="value-list-impact-reaches-mappings-in-both-directions">Value-list impact reaches Mappings in both directions</h1>
+<p>Mappings may translate:</p>
+<pre><code class="language-text">source code → canonical value
+canonical value → SAP code
+SAP code → interface code</code></pre>
+<p>Changing the canonical value list can affect all three layers.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM A
+→ canonical STANDARD
+→ SAP 01
+→ interface STD</code></pre>
+<p>Retiring <code>STANDARD</code> requires reviewing:</p>
+<ul>
+<li>source conversion;</li>
+<li>SAP representation;</li>
+<li>outbound conversion;</li>
+<li>historical data.</li>
+</ul>
+<p>A value list should not be analysed only against its immediate Attribute.</p>
+<p>---</p>
+<h1 id="value-list-impact-reaches-rules">Value-list impact reaches Rules</h1>
+<p>Rules may reference values explicitly:</p>
+<pre><code class="language-text">if Customer Group = STRATEGIC
+then Credit Review is required</code></pre>
+<p>Adding, changing or retiring values may make Rule expressions:</p>
+<ul>
+<li>incomplete;</li>
+<li>invalid;</li>
+<li>redundant;</li>
+<li>over-broad.</li>
+</ul>
+<p>The impact engine should find:</p>
+<pre><code class="language-text">Rule expression references value
+Rule applicability excludes value
+Rule default assumes value</code></pre>
+<p>This requires typed references where possible.</p>
+<p>Free-text references should be detected cautiously and presented as candidates.</p>
+<p>---</p>
+<h1 id="rule-and-value-list-changes-can-interact">Rule and value-list changes can interact</h1>
+<p>Suppose a new value is added:</p>
+<pre><code class="language-text">UNDER_REVIEW</code></pre>
+<p>and a Rule says:</p>
+<pre><code class="language-text">Customer Group must be one of:
+STANDARD
+STRATEGIC
+HIGH_VALUE</code></pre>
+<p>The Attribute technically accepts the new value.</p>
+<p>The Rule rejects it.</p>
+<p>The candidate model is inconsistent.</p>
+<p>Prospective validation should detect this before merge.</p>
+<p>---</p>
+<h1 id="mapping-and-value-list-changes-can-interact">Mapping and value-list changes can interact</h1>
+<p>Suppose a Mapping still produces:</p>
+<pre><code class="language-text">01</code></pre>
+<p>but the target value list now permits only:</p>
+<pre><code class="language-text">STANDARD
+STRATEGIC</code></pre>
+<p>The Mapping becomes invalid.</p>
+<p>The impact engine should identify:</p>
+<pre><code class="language-text">Mapping output no longer belongs to target value domain.</code></pre>
+<p>This is stronger than saying both objects changed.</p>
+<p>It identifies an actual candidate-state contradiction.</p>
+<p>---</p>
+<h1 id="rule-and-mapping-changes-can-interact">Rule and Mapping changes can interact</h1>
+<p>Suppose the Rule becomes stricter:</p>
+<pre><code class="language-text">Customer Group required before activation.</code></pre>
+<p>At the same time, the Mapping removes a default.</p>
+<p>This may be the correct design.</p>
+<p>Operationally, it can increase blocked records sharply.</p>
+<p>The combined impact is larger than either isolated change.</p>
+<p>A proposal-aware engine should evaluate the complete candidate patch rather than analyse each operation independently.</p>
+<p>---</p>
+<h1 id="compound-change-impact">Compound change impact</h1>
+<p>Real releases often contain several connected changes.</p>
+<p>Example:</p>
+<ol>
+<li>retire <code>UNDER_REVIEW</code> from Supplier Risk;</li>
+<li>create Supplier Review Status;</li>
+<li>split the old Mapping;</li>
+<li>add lifecycle Rules;</li>
+<li>add a new SAP endpoint.</li>
+</ol>
+<p>The correct impact is not the union of five unrelated lists.</p>
+<p>It is a model transition:</p>
+<pre><code class="language-text">Old overloaded concept
+→ two governed Attributes
+→ two Mappings
+→ two target endpoints
+→ separate Rules</code></pre>
+<p>The report should describe:</p>
+<ul>
+<li>old state;</li>
+<li>candidate state;</li>
+<li>conversion;</li>
+<li>affected records;</li>
+<li>implementation changes;</li>
+<li>historical treatment.</li>
+</ul>
+<p>---</p>
+<h1 id="candidate-state-validation-is-essential">Candidate-state validation is essential</h1>
+<p>Current-state impact answers:</p>
+<blockquote>What is connected now?</blockquote>
+<p>Candidate-state validation answers:</p>
+<blockquote>Will the proposed Rules, Mappings and values form a coherent model?</blockquote>
+<p>Conceptually:</p>
+<pre><code class="language-text">current repository
++
+PatchProposal
+=
+candidate repository</code></pre>
+<p>Then run:</p>
+<ul>
+<li>schema validation;</li>
+<li>reference validation;</li>
+<li>Rule-value compatibility;</li>
+<li>Mapping-output compatibility;</li>
+<li>lifecycle checks;</li>
+<li>impact graph comparison.</li>
+</ul>
+<p>Martenweave’s proposal-first principle is designed for this: AI or automation creates a <code>PatchProposal</code>; validators verify it; humans approve before canonical mutation.</p>
+<p>---</p>
+<h1 id="existing-records-must-be-part-of-impact">Existing records must be part of impact</h1>
+<p>A model can be internally valid after a change while existing records become invalid.</p>
+<p>Examples:</p>
+<ul>
+<li>retired value still used;</li>
+<li>new mandatory Rule fails;</li>
+<li>Mapping no longer covers a population;</li>
+<li>value split requires reclassification;</li>
+<li>context-specific prohibition affects active records.</li>
+</ul>
+<p>The impact report should distinguish:</p>
+<pre><code class="language-text">Model impact:
+references and semantics
+
+Data impact:
+existing records and datasets
+
+Implementation impact:
+systems and controls</code></pre>
+<p>Martenweave should reference profiling or migration evidence rather than store every production record.</p>
+<p>---</p>
+<h1 id="prospective-versus-retrospective-effect">Prospective versus retrospective effect</h1>
+<p>A change may apply only to future records.</p>
+<p>Or it may require correcting historical data.</p>
+<p>Example:</p>
+<pre><code class="language-text">New Supplier Risk value:
+applies from 1 October</code></pre>
+<p>Possible policies:</p>
+<ul>
+<li>future use only;</li>
+<li>convert all active records;</li>
+<li>preserve historical records;</li>
+<li>reinterpret old code retrospectively.</li>
+</ul>
+<p>The impact report must ask:</p>
+<ul>
+<li>effective date;</li>
+<li>record population;</li>
+<li>historical interpretation;</li>
+<li>backfill requirement.</li>
+</ul>
+<p>Without temporal scope, “affected records” is ambiguous.</p>
+<p>---</p>
+<h1 id="implementation-locations">Implementation locations</h1>
+<p>Rules, Mappings and value lists may be implemented in several places.</p>
+<h2 id="rules">Rules</h2>
+<ul>
+<li>SAP MDG;</li>
+<li>BRFplus;</li>
+<li>ABAP;</li>
+<li>source controls;</li>
+<li>data-quality tools;</li>
+<li>migration validators.</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<ul>
+<li>ETL code;</li>
+<li>SQL;</li>
+<li>conversion tables;</li>
+<li>integration middleware;</li>
+<li>manual enrichment files;</li>
+<li>SAP migration objects.</li>
+</ul>
+<h2 id="value-lists">Value lists</h2>
+<ul>
+<li>SAP domains;</li>
+<li>configuration tables;</li>
+<li>MDG value lists;</li>
+<li>APIs;</li>
+<li>source-system reference tables;</li>
+<li>report logic.</li>
+</ul>
+<p>Impact should traverse implementation references without assuming that one technology is authoritative for the business model.</p>
+<p>---</p>
+<h1 id="design-lineage-and-runtime-evidence">Design lineage and runtime evidence</h1>
+<p>A canonical Mapping may declare a dependency.</p>
+<p>Runtime evidence may show which path actually executed.</p>
+<p>OpenLineage distinguishes design-time metadata from runtime Job Run observations and models field-level transformations, including direct and indirect dependencies.</p>
+<p>For Martenweave, this suggests a useful separation:</p>
+<pre><code class="language-text">Canonical Rule or Mapping:
+approved intended behaviour
+
+Runtime Evidence:
+observed execution or result</code></pre>
+<p>Impact can be refined by runtime evidence:</p>
+<ul>
+<li>active path;</li>
+<li>unused path;</li>
+<li>zero-volume path;</li>
+<li>failed path;</li>
+<li>context-limited path.</li>
+</ul>
+<p>But runtime behaviour should not silently redefine canonical truth.</p>
+<p>---</p>
+<h1 id="impact-confidence">Impact confidence</h1>
+<p>Each impact result should state why it appears.</p>
+<h2 id="confirmed">Confirmed</h2>
+<p>A typed direct dependency is incompatible with the proposed change.</p>
+<h2 id="strong-review">Strong review</h2>
+<p>The object depends on the changed concept but compatibility requires testing.</p>
+<h2 id="possible">Possible</h2>
+<p>The connection is transitive, inferred or context-dependent.</p>
+<h2 id="historical">Historical</h2>
+<p>The relationship applies only to previous baselines.</p>
+<h2 id="excluded">Excluded</h2>
+<p>The object was reviewed and shown unaffected.</p>
+<p>This classification should be accompanied by the path.</p>
+<p>---</p>
+<h1 id="path-aware-output">Path-aware output</h1>
+<p>Weak result:</p>
+<pre><code class="language-text">Affected:
+RULE-001
+MAP-004
+VALUE-07
+INTERFACE-002</code></pre>
+<p>Stronger result:</p>
+<pre><code class="language-text">MAP-004
+produces value 01
+for ATTR-CUSTOMER-GROUP
+
+VALUE-01
+is retired by the proposal
+
+Therefore:
+MAP-004 output becomes invalid</code></pre>
+<p>Another example:</p>
+<pre><code class="language-text">RULE-001
+blocks activation when Customer Group is missing
+
+MAP-004
+removes the previous default
+
+Therefore:
+records without a source value may newly fail activation</code></pre>
+<p>The path and reasoning turn graph traversal into impact analysis.</p>
+<p>---</p>
+<h1 id="suggested-impact-report-structure">Suggested impact report structure</h1>
+<h2 id="change-summary">Change summary</h2>
+<ul>
+<li>changed objects;</li>
+<li>operations;</li>
+<li>target baseline;</li>
+<li>effective context.</li>
+</ul>
+<h2 id="candidate-state-validation">Candidate-state validation</h2>
+<ul>
+<li>errors;</li>
+<li>warnings;</li>
+<li>incompatible references.</li>
+</ul>
+<h2 id="rule-impact">Rule impact</h2>
+<ul>
+<li>affected population;</li>
+<li>lifecycle;</li>
+<li>implementations;</li>
+<li>overrides;</li>
+<li>tests.</li>
+</ul>
+<h2 id="mapping-impact">Mapping impact</h2>
+<ul>
+<li>source requirements;</li>
+<li>target changes;</li>
+<li>alternative paths;</li>
+<li>datasets;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="value-list-impact">Value-list impact</h2>
+<ul>
+<li>added, retired or redefined values;</li>
+<li>existing-record population;</li>
+<li>Mapping references;</li>
+<li>Rule references;</li>
+<li>interface compatibility.</li>
+</ul>
+<h2 id="compound-effects">Compound effects</h2>
+<ul>
+<li>interactions between changed objects.</li>
+</ul>
+<h2 id="required-reviewers">Required reviewers</h2>
+<ul>
+<li>semantic owner;</li>
+<li>migration lead;</li>
+<li>SAP owner;</li>
+<li>integration owner;</li>
+<li>local owner.</li>
+</ul>
+<h2 id="verification-plan">Verification plan</h2>
+<ul>
+<li>datasets;</li>
+<li>tests;</li>
+<li>reports;</li>
+<li>release gates.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-example-making-customer-group-mandatory">A worked example: making Customer Group mandatory</h1>
+<h2 id="proposal">Proposal</h2>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+
+Before:
+warning at activation
+
+After:
+error at activation</code></pre>
+<h2 id="direct-impact">Direct impact</h2>
+<ul>
+<li>Rule implementation;</li>
+<li>validation tests;</li>
+<li>readiness score.</li>
+</ul>
+<h2 id="mapping-review">Mapping review</h2>
+<ul>
+<li>CRM Mapping coverage;</li>
+<li>ERP_A Mapping coverage;</li>
+<li>manual fallback capacity.</li>
+</ul>
+<h2 id="dataset-review">Dataset review</h2>
+<ul>
+<li>missing Customer Group count;</li>
+<li>missing Sales Area context;</li>
+<li>affected migration records.</li>
+</ul>
+<h2 id="operational-review">Operational review</h2>
+<ul>
+<li>activation failure handling;</li>
+<li>exception process;</li>
+<li>steward workload.</li>
+</ul>
+<h2 id="unchanged">Unchanged</h2>
+<ul>
+<li>business Attribute definition;</li>
+<li>target SAP field;</li>
+<li>value list.</li>
+</ul>
+<p>The report should not claim that all connected Mappings must change.</p>
+<p>It should state that their coverage must be proven under the stricter control.</p>
+<p>---</p>
+<h1 id="a-worked-example-replacing-a-direct-mapping">A worked example: replacing a direct Mapping</h1>
+<h2 id="proposal-2">Proposal</h2>
+<pre><code class="language-text">Before:
+CRM Segment → Customer Group
+
+After:
+CRM Segment + Sales Area → contextual enrichment</code></pre>
+<h2 id="direct-impact-2">Direct impact</h2>
+<ul>
+<li>Mapping implementation;</li>
+<li>source dataset;</li>
+<li>transformation tests.</li>
+</ul>
+<h2 id="indirect-impact">Indirect impact</h2>
+<ul>
+<li>organisational keys;</li>
+<li>unmatched records;</li>
+<li>manual fallback;</li>
+<li>readiness reports.</li>
+</ul>
+<h2 id="rule-impact-2">Rule impact</h2>
+<p>The existing mandatory Rule may now block more records.</p>
+<h2 id="value-list-impact-2">Value-list impact</h2>
+<p>The target list is unchanged.</p>
+<p>The conversion table may still require new combinations.</p>
+<h2 id="target-impact">Target impact</h2>
+<p><code>KNVV-KDGRP</code> remains the same.</p>
+<p>This is a lineage change without a physical target change.</p>
+<p>---</p>
+<h1 id="a-worked-example-retiring-under-review">A worked example: retiring <code>UNDER_REVIEW</code></h1>
+<h2 id="current-state">Current state</h2>
+<pre><code class="language-text">Attribute:
+Supplier Risk
+
+Value:
+UNDER_REVIEW</code></pre>
+<h2 id="candidate-state">Candidate state</h2>
+<pre><code class="language-text">Supplier Risk:
+LOW
+STANDARD
+HIGH
+
+Supplier Review Status:
+PENDING
+CLEARED
+REJECTED</code></pre>
+<h2 id="value-list-impact-3">Value-list impact</h2>
+<ul>
+<li><code>UNDER_REVIEW</code> retired;</li>
+<li>historical records identified;</li>
+<li>replacement is not one-to-one.</li>
+</ul>
+<h2 id="mapping-impact-2">Mapping impact</h2>
+<ul>
+<li>old source classification Mapping split;</li>
+<li>Review Status Mapping added;</li>
+<li>Risk Mapping amended.</li>
+</ul>
+<h2 id="rule-impact-3">Rule impact</h2>
+<ul>
+<li>activation Rule uses Review Status;</li>
+<li>final Risk Rule excludes pending state.</li>
+</ul>
+<h2 id="implementation-impact">Implementation impact</h2>
+<ul>
+<li>new target endpoint;</li>
+<li>interface contract;</li>
+<li>reporting logic;</li>
+<li>conversion process.</li>
+</ul>
+<p>This is a semantic decomposition, not a simple value deletion.</p>
+<p>---</p>
+<h1 id="a-worked-example-renaming-code-01">A worked example: renaming code <code>01</code></h1>
+<h2 id="proposal-a">Proposal A</h2>
+<pre><code class="language-text">Code remains:
+01
+
+Label:
+Standard Customer → Standard</code></pre>
+<p>Likely impact:</p>
+<ul>
+<li>display;</li>
+<li>documentation;</li>
+<li>translation.</li>
+</ul>
+<h2 id="proposal-b">Proposal B</h2>
+<pre><code class="language-text">Code:
+01 → STANDARD
+
+Meaning unchanged</code></pre>
+<p>Likely impact:</p>
+<ul>
+<li>stored values;</li>
+<li>interfaces;</li>
+<li>conversion tables;</li>
+<li>reports;</li>
+<li>tests.</li>
+</ul>
+<h2 id="proposal-c">Proposal C</h2>
+<pre><code class="language-text">Code remains:
+01
+
+Meaning changes:
+Standard → Temporary Default</code></pre>
+<p>Likely impact:</p>
+<ul>
+<li>all historical interpretation;</li>
+<li>Rules;</li>
+<li>Mappings;</li>
+<li>Decisions;</li>
+<li>data remediation.</li>
+</ul>
+<p>The textual size of the change does not indicate its impact.</p>
+<p>---</p>
+<h1 id="test-planning-from-impact-paths">Test planning from impact paths</h1>
+<p>Impact results should produce a test plan.</p>
+<h2 id="rule-tests">Rule tests</h2>
+<ul>
+<li>positive condition;</li>
+<li>negative condition;</li>
+<li>boundary;</li>
+<li>exception;</li>
+<li>lifecycle transition;</li>
+<li>local override.</li>
+</ul>
+<h2 id="mapping-tests">Mapping tests</h2>
+<ul>
+<li>direct source;</li>
+<li>missing source;</li>
+<li>unsupported value;</li>
+<li>conditional context;</li>
+<li>fallback;</li>
+<li>duplicate or conflicting sources.</li>
+</ul>
+<h2 id="value-list-tests">Value-list tests</h2>
+<ul>
+<li>new value accepted;</li>
+<li>retired value rejected;</li>
+<li>interface response;</li>
+<li>report grouping;</li>
+<li>historical value handling.</li>
+</ul>
+<h2 id="compound-tests">Compound tests</h2>
+<ul>
+<li>stricter Rule with missing Mapping input;</li>
+<li>retired value still produced by Mapping;</li>
+<li>local override using deprecated value.</li>
+</ul>
+<p>Testing should follow the model transition, not just the changed code.</p>
+<p>---</p>
+<h1 id="ownership-and-review-routing">Ownership and review routing</h1>
+<p>Different change types require different reviewers.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Change</th><th scope="col">Primary reviewer</th></tr></thead><tbody><tr><td>Rule meaning</td><td>Semantic owner</td></tr><tr><td>Rule implementation</td><td>SAP or control owner</td></tr><tr><td>Mapping source</td><td>Source and migration owners</td></tr><tr><td>Mapping target</td><td>SAP target owner</td></tr><tr><td>Value meaning</td><td>Business data owner</td></tr><tr><td>Value code</td><td>Integration and implementation owners</td></tr><tr><td>Historical conversion</td><td>Migration and reporting owners</td></tr><tr><td>Local applicability</td><td>Local data owner</td></tr></tbody></table></div>
+<p>The impact report should produce a review matrix automatically where ownership metadata exists.</p>
+<p>---</p>
+<h1 id="release-gate-conditions">Release-gate conditions</h1>
+<p>A candidate change should be blocked when:</p>
+<ul>
+<li>a Mapping produces a retired value;</li>
+<li>a Rule references an unknown value;</li>
+<li>no Mapping covers a newly mandatory Attribute;</li>
+<li>local overrides conflict with a new global Rule;</li>
+<li>replacement values are ambiguous;</li>
+<li>required source fields are missing;</li>
+<li>active records cannot be converted safely;</li>
+<li>critical implementation owners are unknown;</li>
+<li>candidate-state validation fails.</li>
+</ul>
+<p>Warnings may remain for:</p>
+<ul>
+<li>incomplete optional evidence;</li>
+<li>unverified low-risk consumers;</li>
+<li>planned future implementation;</li>
+<li>historical-only references.</li>
+</ul>
+<p>---</p>
+<h1 id="avoid-a-universal-impact-score">Avoid a universal impact score</h1>
+<p>A single number such as:</p>
+<pre><code class="language-text">Impact score: 82</code></pre>
+<p>can help sort work.</p>
+<p>It should not become the explanation.</p>
+<p>Two changes may receive the same score for different reasons:</p>
+<ul>
+<li>one affects millions of records but few systems;</li>
+<li>another affects a small population across many critical controls.</li>
+</ul>
+<p>The report should expose dimensions:</p>
+<pre><code class="language-text">Semantic impact:
+high
+
+Data conversion:
+medium
+
+Implementation spread:
+high
+
+Population:
+low
+
+Reversibility:
+medium
+
+Evidence confidence:
+high</code></pre>
+<p>---</p>
+<h1 id="what-ai-can-contribute">What AI can contribute</h1>
+<p>AI can help:</p>
+<ul>
+<li>summarise Rule expression changes;</li>
+<li>identify likely Mapping conflicts;</li>
+<li>explain value-list consequences;</li>
+<li>draft reviewer checklists;</li>
+<li>propose tests;</li>
+<li>detect references in prose.</li>
+</ul>
+<p>It should not decide autonomously:</p>
+<ul>
+<li>that two values are equivalent;</li>
+<li>that a Mapping remains valid;</li>
+<li>that a stricter Rule is acceptable;</li>
+<li>that historical records may be reinterpreted;</li>
+<li>that a local override can be removed.</li>
+</ul>
+<p>The deterministic engine should establish exact references and candidate-state contradictions.</p>
+<p>Humans decide business compatibility.</p>
+<p>---</p>
+<h1 id="a-focused-martenweave-implementation-slice">A focused Martenweave implementation slice</h1>
+<p>Martenweave already has the required foundation:</p>
+<ul>
+<li>canonical Rules and Mappings;</li>
+<li>deterministic validation;</li>
+<li>lineage and impact;</li>
+<li>repository diff;</li>
+<li>dataset readiness;</li>
+<li>proposal-first changes.</li>
+</ul>
+<p>The next vertical slice should add <strong>typed candidate-state impact policies</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Evaluate proposed changes differently for Rules, Mappings and value lists.</p>
+<h2 id="scope">Scope</h2>
+<p>Support:</p>
+<ul>
+<li>Rule severity, applicability and lifecycle changes;</li>
+<li>Mapping source, target and strategy changes;</li>
+<li>value addition, retirement, code change and meaning change;</li>
+<li>cross-object compatibility checks;</li>
+<li>direct and transitive impact paths.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The engine must detect:</p>
+<ol>
+<li>Mapping produces a retired value.</li>
+<li>Rule references a removed value.</li>
+<li>New mandatory Rule has no complete Mapping path.</li>
+<li>Mapping adds a source field absent from the dataset.</li>
+<li>Local override conflicts with changed global Rule.</li>
+<li>Historical Evidence refers to the previous state without being invalidated.</li>
+</ol>
+<h2 id="validation-command">Validation command</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="existing-analysis-commands">Existing analysis commands</h2>
+<pre><code class="language-bash">martenweave impact FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model
+
+martenweave diff \
+  examples/customer_bp_model \
+  examples/customer_bp_model_candidate</code></pre>
+<h2 id="future-proposal-aware-operation">Future proposal-aware operation</h2>
+<pre><code class="language-bash">martenweave impact \
+  --proposal PATCH-CUSTOMER-GROUP-CONTROL-CHANGE \
+  --repo examples/customer_bp_model</code></pre>
+<p>The last command describes a recommended product direction rather than current guaranteed CLI behaviour.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Rules, Mappings and value lists are closely connected.</p>
+<p>They are not interchangeable.</p>
+<p>A Rule determines whether a value is acceptable or required.</p>
+<p>A Mapping determines how the value is produced.</p>
+<p>A value list determines which representations are governed as valid.</p>
+<p>Changing one can invalidate the others.</p>
+<p>The impact engine must therefore reason across the complete triangle:</p>
+<pre><code class="language-text">Rule
+↕
+Business Attribute
+↕
+Mapping
+↔
+Value List</code></pre>
+<p>and then continue into:</p>
+<pre><code class="language-text">datasets
+SAP fields
+interfaces
+reports
+tests
+Decisions
+Evidence
+local overrides</code></pre>
+<p>The practical test is:</p>
+<blockquote>Before approving a change, can the programme determine which records will behave differently, which Mappings will become incomplete, which values will become invalid, which implementations must change and which historical results must remain interpretable?</blockquote>
+<p>When the answer is yes, impact analysis supports governed change.</p>
+<p>When the answer is only:</p>
+<blockquote>These objects are connected in the graph,</blockquote>
+<p>the system has lineage, but it has not yet explained the consequences.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It treats Rules, Mappings, values, Attributes, physical fields, datasets, Decisions and Evidence as typed canonical objects so that proposed changes can be validated before they alter approved model truth.</p>
+<p>The objective is not to predict every business consequence automatically.</p>
+<p>It is to expose enough structured consequence that accountable people know what must be reviewed.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently represents generic data-model objects including Attributes, Relationships, datasets, Mappings, Rules, Evidence, Decisions and change proposals. It validates references before building generated lineage and impact indexes and requires human approval for proposed changes.</p>
+<p>The current pipeline imports or profiles evidence, validates canonical files, builds generated indexes, detects model and dataset gaps, runs lineage and impact analysis and then routes proposals through human review.</p>
+<p>OpenLineage’s current column-lineage specification models which input fields produce output fields and distinguishes direct value derivation from indirect influence. It classifies direct identity, transformation and aggregation dependencies and indirect join, grouping, filtering, sorting, window and conditional dependencies.</p>
+<p>OpenLineage’s object model distinguishes design-time lineage metadata from runtime Job Run observations. This is useful for separating approved Rule or Mapping intent from evidence about how a particular implementation actually executed.</p>
+<p>The value-list object model, typed change policies and proposal-aware impact command described here are recommended Martenweave directions. They should not be treated as guarantees of the exact current schema or CLI unless separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html"><span>Previous</span>A technical team proposes a simple change:</a><a href="/blog/how-to-detect-orphaned-fields-rules-and-mappings.html"><span>Next</span>A repository validates successfully.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

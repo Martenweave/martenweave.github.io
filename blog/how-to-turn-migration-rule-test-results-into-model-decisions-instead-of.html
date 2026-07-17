@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise | Martenweave</title>
+    <meta
+      name="description"
+      content="The first migration-rule test produces 8,420 failures."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html" />
+    <meta property="og:title" content="How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise | Martenweave" />
+    <meta property="og:description" content="The first migration-rule test produces 8,420 failures." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise | Martenweave" />
+    <meta name="twitter:description" content="The first migration-rule test produces 8,420 failures." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html",
+                        "name": "How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise | Martenweave",
+                        "description": "The first migration-rule test produces 8,420 failures.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise",
+                                    "item": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html#content",
+                        "headline": "How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise",
+                        "name": "How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise",
+                        "description": "The first migration-rule test produces 8,420 failures.",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Turn Migration Rule Test Results into Model Decisions Instead of Defect Noise</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">The first migration-rule test produces 8,420 failures.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-defect-factory">The defect factory</a></li><li><a href="#one-failed-record-can-represent-six-different-problems">One failed record can represent six different problems</a></li><li><a href="#record-defect">Record defect</a></li><li><a href="#extraction-defect">Extraction defect</a></li><li><a href="#transformation-or-mapping-defect">Transformation or mapping defect</a></li><li><a href="#configuration-defect">Configuration defect</a></li><li><a href="#model-ambiguity">Model ambiguity</a></li><li><a href="#model-defect">Model defect</a></li><li><a href="#policy-or-ownership-decision">Policy or ownership decision</a></li><li><a href="#approved-exception">Approved exception</a></li><li><a href="#temporary-deviation">Temporary deviation</a></li><li><a href="#test-specification-defect">Test-specification defect</a></li><li><a href="#does-the-approved-model-already-describe-the-correct-state">Does the approved model already describe the correct state?</a></li><li><a href="#does-the-current-model-omit-the-observed-case">Does the current model omit the observed case?</a></li><li><a href="#is-the-issue-only-temporary">Is the issue only temporary?</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The first migration-rule test produces 8,420 failures.</p>
+<p>The project creates 8,420 defect records.</p>
+<p>Some are grouped by error message. Others are assigned by country, source system or migration object. The testing team reports a large red backlog. The migration team starts correcting records. SAP consultants inspect validation logic. Business owners receive spreadsheets asking them to confirm exceptions.</p>
+<p>After two weeks, the backlog has fallen to 5,900.</p>
+<p>Then the next extract arrives.</p>
+<p>The test produces 7,600 failures.</p>
+<p>Many look familiar, but the identifiers have changed. Some corrected records failed again because the source was never fixed. Some “defects” are legitimate non-applicable records. Others expose a missing mapping decision. Several come from one global rule being applied at the wrong organisational level. Hundreds are copies of the same unsupported source value.</p>
+<p>The programme is busy.</p>
+<p>It is not learning.</p>
+<p>This is what happens when every failed rule result is treated as an independent defect.</p>
+<p>A test result is an observation.</p>
+<p>A defect is only one possible interpretation.</p>
+<p>The real work is to determine whether the result points to:</p>
+<ul>
+<li>bad data;</li>
+<li>an extraction problem;</li>
+<li>an incorrect mapping;</li>
+<li>a missing model decision;</li>
+<li>an invalid rule;</li>
+<li>wrong SAP configuration;</li>
+<li>an approved exception;</li>
+<li>a temporary migration treatment;</li>
+<li>a source-system capability gap;</li>
+<li>a test expectation that is itself wrong.</li>
+</ul>
+<p>Without this classification, the defect backlog becomes a noisy mixture of records, causes, decisions and implementation tasks.</p>
+<p>The backlog grows faster than the model improves.</p>
+<blockquote>A migration programme should not ask only how many records failed. It should ask what kind of model knowledge each failure reveals.</blockquote>
+<p>That shift changes testing from record correction into governed model improvement.</p>
+<p>---</p>
+<h2 id="the-defect-factory">The defect factory</h2>
+<p>Migration testing often follows a straightforward pattern:</p>
+<pre><code class="language-text">Run validation
+→ export failures
+→ create defects
+→ assign owners
+→ correct records
+→ rerun</code></pre>
+<p>This works reasonably well for isolated technical errors.</p>
+<p>It works poorly for model-level problems.</p>
+<p>Suppose 3,200 suppliers fail because source value <code>S1</code> has no approved target mapping.</p>
+<p>Creating 3,200 defects does not create 3,200 useful work items.</p>
+<p>It creates one unresolved value-mapping decision affecting 3,200 records.</p>
+<p>Suppose 860 customer records fail because Customer Group is mandatory.</p>
+<p>Further analysis shows that:</p>
+<ul>
+<li>600 are not in an applicable sales area;</li>
+<li>180 use a source field with different granularity;</li>
+<li>80 genuinely lack required values.</li>
+</ul>
+<p>The initial failure count says 860.</p>
+<p>The model work consists of at least three different findings.</p>
+<p>A defect-centric process tends to flatten these distinctions.</p>
+<p>It optimises for ticket closure rather than explanation.</p>
+<p>Atlassian describes Jira as a system for capturing, assigning, prioritising and tracking bugs and other work items through configurable workflows. That is useful once the programme knows what work needs to be done. It does not by itself determine whether a failed migration rule represents a record defect, model ambiguity, source limitation or policy decision.</p>
+<p>The limitation is not Jira.</p>
+<p>The limitation is sending unclassified test output directly into an issue tracker.</p>
+<p>---</p>
+<h2 id="one-failed-record-can-represent-six-different-problems">One failed record can represent six different problems</h2>
+<p>Consider a supplier rejected because Supplier Risk is blank.</p>
+<p>The visible condition is simple:</p>
+<pre><code class="language-text">Supplier Risk = blank</code></pre>
+<p>The underlying explanation may be completely different.</p>
+<h3 id="the-record-is-wrong">The record is wrong</h3>
+<p>The source contains the approved value, but it was not extracted or transformed correctly.</p>
+<p>This is a data or pipeline defect.</p>
+<h3 id="the-source-cannot-provide-the-value">The source cannot provide the value</h3>
+<p>The source process never maintained Supplier Risk.</p>
+<p>This is a source-capability gap.</p>
+<h3 id="the-rule-applies-to-the-wrong-population">The rule applies to the wrong population</h3>
+<p>The supplier is not strategic, but the validation applies to all suppliers.</p>
+<p>This is a rule-context or configuration defect.</p>
+<h3 id="the-record-is-legitimately-incomplete">The record is legitimately incomplete</h3>
+<p>The supplier is still under review and should not yet contain a final risk classification.</p>
+<p>This may require a separate lifecycle status.</p>
+<h3 id="the-value-is-present-under-another-concept">The value is present under another concept</h3>
+<p>A field called <code>RISK_STATUS</code> contains workflow state rather than final risk classification.</p>
+<p>This is a semantic-mapping problem.</p>
+<h3 id="the-programme-has-never-decided-what-should-happen">The programme has never decided what should happen</h3>
+<p>The source lacks the value, no approved default exists, and the business has not selected enrichment, exclusion or review.</p>
+<p>This is a model decision gap.</p>
+<p>All six produce a blank Supplier Risk result.</p>
+<p>They should not become the same defect type.</p>
+<p>---</p>
+<h1 id="the-translation-layer-between-test-and-action">The translation layer between test and action</h1>
+<p>A mature testing process needs a translation layer between raw results and delivery work.</p>
+<p>The sequence should be:</p>
+<pre><code class="language-text">Raw test result
+→ grouped finding
+→ root classification
+→ model or implementation decision
+→ action package</code></pre>
+<p>The raw result remains important.</p>
+<p>It preserves evidence.</p>
+<p>But it should not be the primary unit of governance.</p>
+<p>The primary unit should be the finding.</p>
+<p>A finding groups results that share:</p>
+<ul>
+<li>the same rule;</li>
+<li>the same model context;</li>
+<li>the same observed condition;</li>
+<li>the same likely cause;</li>
+<li>the same treatment.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Finding:
+ERP_B does not provide Supplier Risk for active strategic suppliers.
+
+Affected records:
+1,284
+
+Rule:
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Sources:
+ERP_B
+
+Countries:
+DE, AT
+
+Current interpretation:
+Source-capability gap
+
+Decision required:
+Choose enrichment, exclusion or controlled review treatment.</code></pre>
+<p>One finding can support several delivery actions:</p>
+<ul>
+<li>business decision;</li>
+<li>source remediation;</li>
+<li>mapping change;</li>
+<li>SAP configuration;</li>
+<li>data correction;</li>
+<li>regression testing.</li>
+</ul>
+<p>This is far more useful than 1,284 nearly identical tickets.</p>
+<p>---</p>
+<h1 id="a-taxonomy-that-prevents-backlog-pollution">A taxonomy that prevents backlog pollution</h1>
+<p>Every material test finding should be classified before it enters the delivery backlog.</p>
+<p>A practical taxonomy can include the following categories.</p>
+<h2 id="record-defect">Record defect</h2>
+<p>The approved model, rule and implementation are correct, but one or more records contain wrong data.</p>
+<p>Examples:</p>
+<ul>
+<li>invalid date;</li>
+<li>malformed identifier;</li>
+<li>missing approved value;</li>
+<li>duplicate record caused by source entry.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>remediate records;</li>
+<li>correct the originating process where possible.</li>
+</ul>
+<p>Model impact:</p>
+<ul>
+<li>usually none.</li>
+</ul>
+<h2 id="extraction-defect">Extraction defect</h2>
+<p>The source contains the required information, but the migration extract omits, truncates or alters it.</p>
+<p>Examples:</p>
+<ul>
+<li>missing column;</li>
+<li>incorrect filter;</li>
+<li>lost leading zeros;</li>
+<li>wrong organisational join.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>correct extraction or staging logic.</li>
+</ul>
+<p>Model impact:</p>
+<ul>
+<li>none unless the extraction exposed an undocumented source relationship.</li>
+</ul>
+<h2 id="transformation-or-mapping-defect">Transformation or mapping defect</h2>
+<p>The approved source and target concepts are known, but the transformation is wrong.</p>
+<p>Examples:</p>
+<ul>
+<li>wrong value conversion;</li>
+<li>incorrect target endpoint;</li>
+<li>context lost during mapping;</li>
+<li>old default still active.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>correct mapping implementation;</li>
+<li>rerun affected population.</li>
+</ul>
+<p>Model impact:</p>
+<ul>
+<li>normally none if canonical mapping already states the right behaviour.</li>
+</ul>
+<h2 id="configuration-defect">Configuration defect</h2>
+<p>The approved model is correct, but SAP, an MDM platform or another consuming system implements different behaviour.</p>
+<p>Examples:</p>
+<ul>
+<li>global rule applied to persons and organisations;</li>
+<li>warning configured where error was approved;</li>
+<li>workflow skips required local owner;</li>
+<li>retired value still selectable.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>correct configuration;</li>
+<li>verify against the approved rule.</li>
+</ul>
+<p>Model impact:</p>
+<ul>
+<li>none unless the approved model is incomplete.</li>
+</ul>
+<h2 id="model-ambiguity">Model ambiguity</h2>
+<p>The canonical model does not define the observed case clearly.</p>
+<p>Examples:</p>
+<ul>
+<li>rule does not specify lifecycle stage;</li>
+<li>organisational granularity is unclear;</li>
+<li>local exception overlaps a global rule;</li>
+<li>source and target terms have no approved semantic relationship.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>investigate;</li>
+<li>make a model decision;</li>
+<li>update canonical objects.</li>
+</ul>
+<h2 id="model-defect">Model defect</h2>
+<p>The approved model itself is wrong or internally inconsistent.</p>
+<p>Examples:</p>
+<ul>
+<li>one attribute mixes classification and workflow state;</li>
+<li>cardinality does not reflect business reality;</li>
+<li>value list combines unrelated dimensions;</li>
+<li>global rule contradicts approved local regulation.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>create a reviewed PatchProposal;</li>
+<li>assess impact;</li>
+<li>update implementations after approval.</li>
+</ul>
+<h2 id="policy-or-ownership-decision">Policy or ownership decision</h2>
+<p>The model identifies the question, but accountable owners have not decided the required business treatment.</p>
+<p>Examples:</p>
+<ul>
+<li>whether a default is acceptable;</li>
+<li>who owns a derived classification;</li>
+<li>whether local variation should become global;</li>
+<li>which source is authoritative.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>decision record;</li>
+<li>named authority;</li>
+<li>explicit alternatives and consequences.</li>
+</ul>
+<h2 id="approved-exception">Approved exception</h2>
+<p>The result fails the normal rule but complies with an approved contextual exception.</p>
+<p>Primary action:</p>
+<ul>
+<li>preserve evidence;</li>
+<li>do not count as an ordinary defect;</li>
+<li>verify that the exception scope and expiry remain valid.</li>
+</ul>
+<h2 id="temporary-deviation">Temporary deviation</h2>
+<p>The permanent model remains unchanged, but the programme has approved bounded temporary behaviour.</p>
+<p>Examples:</p>
+<ul>
+<li>load permitted but activation blocked;</li>
+<li>warning allowed during Mock Load 2;</li>
+<li>manual enrichment until source release.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>operate the control;</li>
+<li>track expiry;</li>
+<li>verify convergence.</li>
+</ul>
+<h2 id="test-specification-defect">Test-specification defect</h2>
+<p>The expected result is wrong.</p>
+<p>Examples:</p>
+<ul>
+<li>test assumes a field is mandatory for all suppliers;</li>
+<li>expected value comes from a superseded mapping;</li>
+<li>scenario ignores an approved local exception.</li>
+</ul>
+<p>Primary action:</p>
+<ul>
+<li>correct the test;</li>
+<li>link it to the current rule baseline.</li>
+</ul>
+<p>This taxonomy keeps the project from treating every red line as the same type of failure.</p>
+<p>---</p>
+<h1 id="stop-creating-one-defect-per-record">Stop creating one defect per record</h1>
+<p>Record-level traceability is still necessary.</p>
+<p>Each affected record should remain identifiable.</p>
+<p>But issue creation should follow the treatment unit, not the row count.</p>
+<p>Consider 2,600 failed records caused by five conditions:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Finding</th><th scope="col">Records</th><th scope="col">Appropriate work unit</th></tr></thead><tbody><tr><td>Unsupported source value <code>S1</code></td><td>1,400</td><td>One value-mapping decision</td></tr><tr><td>Missing strategic status in ERP_B</td><td>720</td><td>One source-context gap</td></tr><tr><td>Incorrect SAP rule scope</td><td>310</td><td>One configuration defect</td></tr><tr><td>Expired exemption evidence</td><td>140</td><td>Remediation population</td></tr><tr><td>Corrupted identifiers</td><td>30</td><td>Record-level correction batch</td></tr></tbody></table></div>
+<p>The programme may create five primary work items, not 2,600.</p>
+<p>Each work item should retain the affected-record list as evidence.</p>
+<p>This produces a backlog that reflects actual decisions and implementation changes.</p>
+<p>---</p>
+<h1 id="grouping-by-error-message-is-not-enough">Grouping by error message is not enough</h1>
+<p>Two records can show the same error message while having different causes.</p>
+<p>Likewise, one root cause may produce several messages.</p>
+<p>Example:</p>
+<pre><code class="language-text">Message:
+Supplier Risk is required.</code></pre>
+<p>Potential causes:</p>
+<ul>
+<li>missing final value;</li>
+<li>wrong applicability;</li>
+<li>missing strategic-status input;</li>
+<li>temporary review state;</li>
+<li>old mapping removed the value;</li>
+<li>target rule executed too early.</li>
+</ul>
+<p>Grouping only by message creates false unity.</p>
+<p>A stronger grouping key uses:</p>
+<ul>
+<li>canonical rule ID;</li>
+<li>model object;</li>
+<li>effective context;</li>
+<li>lifecycle stage;</li>
+<li>source system;</li>
+<li>observed condition;</li>
+<li>suspected cause.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Rule:
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Context:
+Country = PT
+Supplier type = regulated
+Stage = activation
+
+Condition:
+Risk missing
+Review status = pending
+
+Classification:
+Expected block, not defect</code></pre>
+<p>The same visible error becomes an approved rule outcome.</p>
+<p>---</p>
+<h1 id="a-failed-rule-can-be-evidence-that-the-rule-works">A failed rule can be evidence that the rule works</h1>
+<p>This distinction is routinely lost in defect reporting.</p>
+<p>Suppose a Portuguese regulated supplier has:</p>
+<ul>
+<li>Supplier Risk = <code>HIGH</code>;</li>
+<li>Review Status = <code>PENDING</code>;</li>
+<li>Activation attempted.</li>
+</ul>
+<p>The system blocks activation.</p>
+<p>The test result is technically a failure to complete activation.</p>
+<p>It is a successful rule result.</p>
+<p>A good report separates:</p>
+<pre><code class="language-text">Expected prevention
+Unexpected failure
+Unexpected pass
+Unevaluable
+Approved exception</code></pre>
+<p>The categories matter.</p>
+<h3 id="expected-prevention">Expected prevention</h3>
+<p>The system correctly blocked an invalid state.</p>
+<p>No defect exists.</p>
+<h3 id="unexpected-failure">Unexpected failure</h3>
+<p>A record that should pass was blocked.</p>
+<p>Possible configuration, data or model problem.</p>
+<h3 id="unexpected-pass">Unexpected pass</h3>
+<p>A record that should be blocked succeeded.</p>
+<p>Usually more serious because the control failed silently.</p>
+<h3 id="unevaluable">Unevaluable</h3>
+<p>Required context was missing or contradictory.</p>
+<p>The programme cannot determine the right outcome.</p>
+<h3 id="approved-exception-2">Approved exception</h3>
+<p>The record followed a valid contextual or temporary treatment.</p>
+<p>A report that marks every blocked record as failed will punish the controls for working.</p>
+<p>---</p>
+<h1 id="unexpected-passes-deserve-more-attention-than-visible-failures">Unexpected passes deserve more attention than visible failures</h1>
+<p>A rejected record is visible.</p>
+<p>An incorrectly accepted record may enter production unnoticed.</p>
+<p>Examples include:</p>
+<ul>
+<li>missing Supplier Risk defaulted to <code>STANDARD</code>;</li>
+<li>expired exemption accepted;</li>
+<li>local process status treated as final classification;</li>
+<li>person record accepted under an organisation-only rule;</li>
+<li>invalid value mapped to a valid-looking target.</li>
+</ul>
+<p>These conditions often appear in dashboards as successful loads.</p>
+<p>A migration test should therefore search for false success.</p>
+<p>Useful checks include:</p>
+<ul>
+<li>records receiving defaults;</li>
+<li>values created by fallback logic;</li>
+<li>rules bypassed by missing context;</li>
+<li>accepted records with contradictory source evidence;</li>
+<li>exceptions without approval;</li>
+<li>activation completed while temporary status remains.</li>
+</ul>
+<p>The programme should create findings for unexpected passes even when no SAP error message exists.</p>
+<p>---</p>
+<h1 id="the-triage-ledger">The triage ledger</h1>
+<p>A useful migration-rule triage ledger is not a list of every failed row.</p>
+<p>It is a list of findings.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Finding ID</th><th scope="col">Rule</th><th scope="col">Population</th><th scope="col">Classification</th><th scope="col">Decision state</th><th scope="col">Primary owner</th></tr></thead><tbody><tr><td>FIND-001</td><td>Supplier Risk required</td><td>1,284</td><td>Source-capability gap</td><td>Decision required</td><td>ERP_B owner</td></tr><tr><td>FIND-002</td><td>Tax ID applicability</td><td>310</td><td>Configuration defect</td><td>Treatment known</td><td>MDG architect</td></tr><tr><td>FIND-003</td><td>Customer Group mapping</td><td>642</td><td>Model ambiguity</td><td>Investigation open</td><td>Customer owner</td></tr><tr><td>FIND-004</td><td>Exemption expired</td><td>140</td><td>Record remediation</td><td>No model change</td><td>Local steward</td></tr><tr><td>FIND-005</td><td><code>STANDARD</code> default</td><td>2,110</td><td>Unexpected pass/model risk</td><td>Patch proposed</td><td>Global risk owner</td></tr></tbody></table></div>
+<p>The ledger should answer:</p>
+<ul>
+<li>what happened;</li>
+<li>how many records are affected;</li>
+<li>which canonical object or rule is involved;</li>
+<li>what type of problem it is;</li>
+<li>whether a decision is needed;</li>
+<li>what action should follow;</li>
+<li>which evidence supports the classification.</li>
+</ul>
+<p>This can coexist with Jira or ServiceNow.</p>
+<p>The issue tracker manages execution.</p>
+<p>The ledger preserves the relationship between test evidence and model meaning.</p>
+<p>---</p>
+<h1 id="one-finding-may-need-several-linked-tickets">One finding may need several linked tickets</h1>
+<p>A source-capability gap can require:</p>
+<ul>
+<li>business-decision ticket;</li>
+<li>source remediation;</li>
+<li>temporary enrichment;</li>
+<li>migration-script change;</li>
+<li>SAP validation update;</li>
+<li>test update;</li>
+<li>data correction.</li>
+</ul>
+<p>The project should not force all work into one giant ticket.</p>
+<p>It should preserve one parent finding and create linked implementation tasks.</p>
+<p>For example:</p>
+<pre><code class="language-text">FIND-ERP-B-SUPPLIER-RISK
+├── DECISION: approve temporary review treatment
+├── SOURCE: add Supplier Risk to ERP_B feed
+├── MIGRATION: implement enrichment queue
+├── SAP: block activation while pending
+├── TEST: add lifecycle scenarios
+└── DATA: remediate current population</code></pre>
+<p>This structure prevents teams from closing the finding when only one task is complete.</p>
+<p>---</p>
+<h1 id="the-model-decision-gate">The model decision gate</h1>
+<p>Not every finding should change the model.</p>
+<p>Before creating a PatchProposal, ask four questions.</p>
+<h2 id="does-the-approved-model-already-describe-the-correct-state">Does the approved model already describe the correct state?</h2>
+<p>When yes, fix data, extraction, mapping or configuration.</p>
+<p>Do not rewrite the model to match an implementation error.</p>
+<h2 id="does-the-current-model-omit-the-observed-case">Does the current model omit the observed case?</h2>
+<p>When yes, investigate whether a new context, value, relationship or lifecycle state is required.</p>
+<h2 id="is-the-issue-only-temporary">Is the issue only temporary?</h2>
+<p>When yes, create a deviation or control, not a permanent semantic change.</p>
+<h2 id="is-the-business-authority-clear">Is the business authority clear?</h2>
+<p>When no, create a decision request rather than an implementation proposal.</p>
+<p>A PatchProposal is justified when evidence indicates that model truth itself may need to change.</p>
+<p>Martenweave’s current core explicitly separates proposed changes from approved state: generated <code>PatchProposal</code> objects remain reviewable and become <code>ChangeRequest</code>s only after human approval.</p>
+<p>---</p>
+<h1 id="what-a-model-decision-package-should-contain">What a model decision package should contain</h1>
+<p>When test results justify a model decision, the package should include:</p>
+<h3 id="the-test-finding">The test finding</h3>
+<p>What happened and how often?</p>
+<h3 id="the-affected-population">The affected population</h3>
+<p>Which records, systems, countries and lifecycle states are involved?</p>
+<h3 id="the-current-canonical-model">The current canonical model</h3>
+<p>What does it currently say?</p>
+<h3 id="the-contradiction-or-gap">The contradiction or gap</h3>
+<p>Why can the existing model not explain or govern the result?</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>What treatments were considered?</p>
+<h3 id="recommended-change">Recommended change</h3>
+<p>Which attribute, mapping, rule, context or lifecycle should change?</p>
+<h3 id="impact">Impact</h3>
+<p>Which mappings, tests, interfaces, reports and local contexts may be affected?</p>
+<h3 id="residual-uncertainty">Residual uncertainty</h3>
+<p>Which evidence remains incomplete?</p>
+<h3 id="approval-roles">Approval roles</h3>
+<p>Who has authority over meaning, context and risk?</p>
+<p>The model decision should not be reconstructed from the defect comments after the fact.</p>
+<p>---</p>
+<h1 id="a-test-result-can-challenge-the-test-model-itself">A test result can challenge the test model itself</h1>
+<p>Consider Customer Group.</p>
+<p>The test expectation says:</p>
+<blockquote>Every active customer must have one Customer Group.</blockquote>
+<p>The migration dataset contains one record per sales area.</p>
+<p>Some customers operate in three sales areas and have different values.</p>
+<p>The test reports duplicates and inconsistent values.</p>
+<p>The defect may not be in the data.</p>
+<p>The test expectation assumed central cardinality.</p>
+<p>The correct result may be:</p>
+<pre><code class="language-text">Finding:
+Test specification uses customer-level cardinality.
+
+Canonical target:
+Customer Group is sales-area-specific.
+
+Classification:
+Test-specification defect.
+
+Action:
+Rewrite the test by sales-area key.</code></pre>
+<p>This is why the canonical model should be linked to test design.</p>
+<p>Otherwise, test scripts become another independent source of model truth.</p>
+<p>---</p>
+<h1 id="repeated-remediation-is-evidence-of-a-missing-control">Repeated remediation is evidence of a missing control</h1>
+<p>Suppose the same source defect returns in every extract.</p>
+<p>The team repeatedly corrects 400 records.</p>
+<p>The defect backlog shows successful closure each cycle.</p>
+<p>The recurring pattern indicates that record remediation is not enough.</p>
+<p>Possible missing controls include:</p>
+<ul>
+<li>source validation;</li>
+<li>extraction check;</li>
+<li>ownership;</li>
+<li>reference-data distribution;</li>
+<li>model rule;</li>
+<li>recurring monitoring;</li>
+<li>source-system change.</li>
+</ul>
+<p>A finding should carry recurrence information:</p>
+<pre><code class="language-text">First observed:
+Mock Load 1
+
+Repeated in:
+Mock Load 2
+Mock Load 3
+
+Corrected records:
+1,140
+
+Source prevention:
+Not implemented</code></pre>
+<p>After repeated recurrence, the issue should be escalated from remediation to structural treatment.</p>
+<p>The exact escalation threshold should be programme-specific.</p>
+<p>The principle is stable:</p>
+<blockquote>A defect that returns unchanged is evidence that the programme is correcting outcomes rather than causes.</blockquote>
+<p>---</p>
+<h1 id="compare-runs-at-the-finding-level">Compare runs at the finding level</h1>
+<p>Record identifiers may change between extracts.</p>
+<p>Finding identity should remain stable.</p>
+<p>For example:</p>
+<pre><code class="language-text">FIND-SUPPLIER-RISK-ERP-B</code></pre>
+<p>Across runs:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Run</th><th scope="col">Affected</th><th scope="col">New</th><th scope="col">Resolved</th><th scope="col">Recurring</th></tr></thead><tbody><tr><td>Mock Load 1</td><td>1,284</td><td>1,284</td><td>—</td><td>—</td></tr><tr><td>Mock Load 2</td><td>1,050</td><td>210</td><td>444</td><td>840</td></tr><tr><td>Mock Load 3</td><td>1,190</td><td>390</td><td>250</td><td>800</td></tr></tbody></table></div>
+<p>This tells a different story from the raw failure count.</p>
+<p>The population fell after remediation, then increased because new records entered the source.</p>
+<p>The finding remains active.</p>
+<p>A simple dashboard showing “1,284 → 1,050 → 1,190” cannot explain whether the control is improving.</p>
+<p>---</p>
+<h1 id="defect-severity-should-follow-business-consequence-not-volume-alone">Defect severity should follow business consequence, not volume alone</h1>
+<p>A finding affecting 20 records may be more serious than one affecting 20,000.</p>
+<p>High-severity examples:</p>
+<ul>
+<li>strategic suppliers required for cutover;</li>
+<li>legal identifiers for regulated records;</li>
+<li>parent entities used by many relationships;</li>
+<li>incorrect values that allow activation;</li>
+<li>classifications affecting payment or compliance;</li>
+<li>errors that propagate to several systems.</li>
+</ul>
+<p>Lower-volume findings may carry systemic risk.</p>
+<p>Likewise, a high-volume format correction may be operationally easy and semantically harmless.</p>
+<p>Prioritisation should consider:</p>
+<ul>
+<li>affected population;</li>
+<li>business criticality;</li>
+<li>detectability;</li>
+<li>propagation;</li>
+<li>reversibility;</li>
+<li>regulatory consequence;</li>
+<li>cutover dependency;</li>
+<li>recurrence;</li>
+<li>model centrality.</li>
+</ul>
+<p>Ticketing tools can prioritise work once these attributes are known. Atlassian’s Jira materials describe assignment, prioritisation, custom workflows, reporting and integration across the software-delivery lifecycle. The model-governance process must provide the classification and consequence that make those prioritisation fields meaningful.</p>
+<p>---</p>
+<h1 id="the-role-of-sap-mdg-and-other-operational-platforms">The role of SAP MDG and other operational platforms</h1>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer for master data, policy and metadata, with governed models, preserved semantics and relationships, profiling, matching, validated values, workflow, data-quality monitoring and audit trails.</p>
+<p>That makes SAP MDG an appropriate place to implement and monitor approved master-data behaviour.</p>
+<p>It does not mean that every migration test result should become an SAP MDG defect.</p>
+<p>A failed result may belong to:</p>
+<ul>
+<li>a legacy source;</li>
+<li>a migration transformation;</li>
+<li>a contextual model decision;</li>
+<li>a test expectation;</li>
+<li>a local process;</li>
+<li>a separate data-quality platform.</li>
+</ul>
+<p>The model-governance layer should identify where the treatment belongs before the work is assigned.</p>
+<p>---</p>
+<h1 id="why-a-ticketing-system-should-not-become-the-model-registry">Why a ticketing system should not become the model registry</h1>
+<p>Jira and similar tools are effective for recording, assigning, prioritising and progressing issues through configurable workflows. They can preserve descriptions, severity, versions, screenshots and implementation links.</p>
+<p>They become weak as the only model record when:</p>
+<ul>
+<li>one finding creates many tickets;</li>
+<li>tickets close while the model decision remains active;</li>
+<li>several projects use different issue taxonomies;</li>
+<li>the affected canonical objects are only mentioned in prose;</li>
+<li>evidence baselines are not stable;</li>
+<li>issue status is mistaken for model status.</li>
+</ul>
+<p>A closed configuration ticket does not prove that:</p>
+<ul>
+<li>the source was corrected;</li>
+<li>the residual population was remediated;</li>
+<li>the canonical rule was updated;</li>
+<li>affected tests were revised;</li>
+<li>local contexts were checked;</li>
+<li>the next extract will pass.</li>
+</ul>
+<p>The ticket should link to the model finding.</p>
+<p>It should not replace it.</p>
+<p>---</p>
+<h1 id="a-practical-pipeline-for-martenweave">A practical pipeline for Martenweave</h1>
+<p>Martenweave already supports a backend-first flow in which canonical model files are validated, indexed and compared with datasets. Its current demo workflow includes deterministic validation, generated SQLite and JSONL indexes, search, trace, impact analysis, gap reporting and one-command dataset readiness.</p>
+<p>The current dataset-readiness flow can also promote identified gaps into a pending-review <code>PatchProposal</code> or generate a GitHub-ready issue draft.</p>
+<p>The missing classification layer should sit between readiness output and proposal or issue generation.</p>
+<pre><code class="language-text">Dataset-readiness result
+→ finding classification
+→ action decision
+→ PatchProposal, issue draft or remediation population</code></pre>
+<p>Without this step, automated issue generation risks accelerating defect noise.</p>
+<p>---</p>
+<h1 id="a-conceptual-finding-object">A conceptual finding object</h1>
+<pre><code class="language-yaml">id: FIND-SUPPLIER-RISK-ERP-B-001
+status: decision_required
+
+rule:
+  - RULE-SUPPLIER-RISK-ACTIVATION
+
+model_objects:
+  - ATTR-SUPPLIER-RISK
+  - FEP-ERP-B-SUPPLIER-RISK
+  - MAP-ERP-B-SUPPLIER-RISK
+
+evidence:
+  dataset: ERP_B_supplier_extract_2026-07-12
+  applicable_records: 1284
+  condition: supplier_risk_missing
+
+classification:
+  primary: source_capability_gap
+  secondary:
+    - model_decision_gap
+
+assessment:
+  current_model_valid: true
+  implementation_defect: false
+  record_remediation_required: true
+  permanent_model_change_required: unresolved
+
+decision_required:
+  question: &gt;
+    Select source remediation, controlled enrichment,
+    temporary review treatment or exclusion.
+
+owners:
+  business:
+    - ROLE-GLOBAL-SUPPLIER-RISK-OWNER
+  source:
+    - ROLE-ERP-B-DATA-OWNER
+  migration:
+    - ROLE-SUPPLIER-MIGRATION-LEAD</code></pre>
+<p>This is a conceptual direction, not a claim about the current Martenweave schema.</p>
+<p>The important change is that the finding remains stable while individual records, tasks and test runs change.</p>
+<p>---</p>
+<h1 id="deterministic-checks-can-prevent-weak-triage">Deterministic checks can prevent weak triage</h1>
+<p>Martenweave could validate that:</p>
+<ul>
+<li>every finding references an existing rule or model object;</li>
+<li>affected population and dataset are identified;</li>
+<li>a <code>model_defect</code> classification links to a proposal or decision request;</li>
+<li>a <code>configuration_defect</code> identifies an implementation reference;</li>
+<li>an <code>approved_exception</code> links to a current decision;</li>
+<li>a <code>temporary_deviation</code> has expiry;</li>
+<li>a closed finding contains verification evidence;</li>
+<li>a recurring finding cannot be marked resolved without prevention or explicit acceptance;</li>
+<li>one record is not assigned contradictory final treatments;</li>
+<li>proposed patches identify supporting findings.</li>
+</ul>
+<p>These checks do not determine the root cause automatically.</p>
+<p>They make incomplete triage visible.</p>
+<p>---</p>
+<h1 id="what-automation-may-safely-do">What automation may safely do</h1>
+<p>Automation can help with:</p>
+<ul>
+<li>grouping results by rule and context;</li>
+<li>detecting repeated patterns;</li>
+<li>comparing runs;</li>
+<li>identifying shared source values;</li>
+<li>linking failures to canonical objects;</li>
+<li>finding previous decisions;</li>
+<li>drafting a finding summary;</li>
+<li>suggesting likely classifications.</li>
+</ul>
+<p>It should not silently conclude:</p>
+<blockquote>1,284 missing values mean the field should be optional.</blockquote>
+<p>That is a business and model decision.</p>
+<p>A safer automated output is:</p>
+<pre><code class="language-text">Observed:
+1,284 applicable ERP_B records lack Supplier Risk.
+
+Repeated:
+Same pattern appeared in the previous two extracts.
+
+Likely classifications:
+- source-capability gap;
+- recurring remediation failure.
+
+Not established:
+- whether the global rule should change;
+- whether a default is valid;
+- whether the population may be excluded.</code></pre>
+<p>This is useful assistance without invented authority.</p>
+<p>---</p>
+<h1 id="the-triage-meeting-should-decide-causes-not-read-spreadsheets">The triage meeting should decide causes, not read spreadsheets</h1>
+<p>A focused migration-rule triage should review findings, not individual rows.</p>
+<p>For each finding, decide:</p>
+<ol>
+<li>Is the result expected?</li>
+<li>Is the rule evaluable?</li>
+<li>Does the approved model define the case?</li>
+<li>Does implementation match the model?</li>
+<li>Is the issue record-specific or structural?</li>
+<li>Is a decision required?</li>
+<li>What is the treatment unit?</li>
+<li>Which owner is accountable?</li>
+<li>What evidence will prove closure?</li>
+</ol>
+<p>The record-level list remains available for remediation.</p>
+<p>It should not consume the governance meeting.</p>
+<p>---</p>
+<h1 id="closure-should-follow-the-classification">Closure should follow the classification</h1>
+<p>Different finding types need different closure evidence.</p>
+<h2 id="record-defect-2">Record defect</h2>
+<ul>
+<li>affected records corrected;</li>
+<li>source prevention verified where required;</li>
+<li>next extract checked.</li>
+</ul>
+<h2 id="extraction-defect-2">Extraction defect</h2>
+<ul>
+<li>extraction logic changed;</li>
+<li>source-to-staging reconciliation passed;</li>
+<li>affected population rerun.</li>
+</ul>
+<h2 id="mapping-defect">Mapping defect</h2>
+<ul>
+<li>canonical mapping confirmed;</li>
+<li>transformation corrected;</li>
+<li>regression performed.</li>
+</ul>
+<h2 id="configuration-defect-2">Configuration defect</h2>
+<ul>
+<li>approved rule linked;</li>
+<li>configuration updated;</li>
+<li>positive and negative tests passed.</li>
+</ul>
+<h2 id="model-ambiguity-or-defect">Model ambiguity or defect</h2>
+<ul>
+<li>decision approved;</li>
+<li>canonical model changed;</li>
+<li>impact reviewed;</li>
+<li>implementations aligned.</li>
+</ul>
+<h2 id="approved-exception-3">Approved exception</h2>
+<ul>
+<li>scope verified;</li>
+<li>evidence current;</li>
+<li>expiry or review trigger valid.</li>
+</ul>
+<h2 id="temporary-deviation-2">Temporary deviation</h2>
+<ul>
+<li>control operated;</li>
+<li>residual population tracked;</li>
+<li>deviation removed or formally extended.</li>
+</ul>
+<p>A generic status of <code>Done</code> is not sufficient.</p>
+<p>---</p>
+<h1 id="a-worked-example-3-200-defects-become-four-findings">A worked example: 3,200 “defects” become four findings</h1>
+<p>A migration test reports 3,200 Customer Group failures.</p>
+<p>Initial backlog:</p>
+<pre><code class="language-text">3,200 records
+3,200 defect rows</code></pre>
+<p>After classification:</p>
+<h2 id="finding-1-wrong-applicability">Finding 1: wrong applicability</h2>
+<pre><code class="language-text">Records:
+1,740
+
+Cause:
+Test expects Customer Group for customers without an applicable sales-area record.
+
+Classification:
+Test-specification defect.</code></pre>
+<p>Action:</p>
+<ul>
+<li>correct test key and population;</li>
+<li>no data correction.</li>
+</ul>
+<h2 id="finding-2-source-to-target-granularity-gap">Finding 2: source-to-target granularity gap</h2>
+<pre><code class="language-text">Records:
+920
+
+Cause:
+Central CRM Segment is being considered as a source
+for sales-area Customer Group.
+
+Classification:
+Model ambiguity.</code></pre>
+<p>Action:</p>
+<ul>
+<li>open investigation;</li>
+<li>do not create direct mapping.</li>
+</ul>
+<h2 id="finding-3-missing-approved-values">Finding 3: missing approved values</h2>
+<pre><code class="language-text">Records:
+480
+
+Cause:
+Applicable sales-area records lack Customer Group.
+
+Classification:
+Record remediation and source-process gap.</code></pre>
+<p>Action:</p>
+<ul>
+<li>enrich current records;</li>
+<li>assign source owner.</li>
+</ul>
+<h2 id="finding-4-invalid-transformation">Finding 4: invalid transformation</h2>
+<pre><code class="language-text">Records:
+60
+
+Cause:
+Approved value `05` transformed to retired target code.
+
+Classification:
+Mapping defect.</code></pre>
+<p>Action:</p>
+<ul>
+<li>correct transformation;</li>
+<li>rerun regression.</li>
+</ul>
+<p>The project now has four governed findings rather than 3,200 undifferentiated defects.</p>
+<p>---</p>
+<h1 id="another-example-a-test-failure-becomes-a-model-improvement">Another example: a test failure becomes a model improvement</h1>
+<p>Supplier records with <code>UNDER_REVIEW</code> fail the approved Supplier Risk value list.</p>
+<p>The immediate response could be:</p>
+<blockquote>Add <code>UNDER_REVIEW</code> to the list.</blockquote>
+<p>Classification shows:</p>
+<ul>
+<li><code>LOW</code>, <code>MEDIUM</code> and <code>HIGH</code> represent final risk;</li>
+<li><code>UNDER_REVIEW</code> represents lifecycle;</li>
+<li>several countries have similar informal statuses;</li>
+<li>reporting currently treats all values as comparable risk levels.</li>
+</ul>
+<p>The result is classified as a model defect.</p>
+<p>The approved change becomes:</p>
+<ul>
+<li>retain Supplier Risk as final classification;</li>
+<li>create Supplier Review Status;</li>
+<li>migrate affected records;</li>
+<li>update workflow and reporting;</li>
+<li>reject future use of process status in risk values.</li>
+</ul>
+<p>The failed test did not merely reveal bad data.</p>
+<p>It revealed a missing shared concept.</p>
+<p>---</p>
+<h1 id="a-failure-that-should-not-change-the-model">A failure that should not change the model</h1>
+<p>Italian Payment Terms completeness is 55%.</p>
+<p>The local team requests that Payment Terms become optional.</p>
+<p>Classification shows:</p>
+<ul>
+<li>the global process still requires Payment Terms;</li>
+<li>the Italian source release is delayed;</li>
+<li>values can be enriched;</li>
+<li>the limitation is temporary.</li>
+</ul>
+<p>The finding becomes:</p>
+<pre><code class="language-text">Primary classification:
+Source-capability gap
+
+Treatment:
+Temporary enrichment and migration deviation
+
+Permanent model:
+Unchanged</code></pre>
+<p>The test result does not justify a local semantic override.</p>
+<p>---</p>
+<h1 id="a-failure-that-is-actually-a-successful-control">A failure that is actually a successful control</h1>
+<p>A Portuguese supplier with valid risk but <code>Review Status = PENDING</code> cannot activate.</p>
+<p>The test report marks activation as failed.</p>
+<p>Classification shows:</p>
+<pre><code class="language-text">Expected result:
+Block activation.
+
+Actual result:
+Block activation.
+
+Finding:
+Control operating correctly.</code></pre>
+<p>No defect is created.</p>
+<p>The result remains as positive evidence for the local rule.</p>
+<p>This simple distinction can remove substantial noise from a test backlog.</p>
+<p>---</p>
+<h1 id="reporting-should-show-decisions-not-only-counts">Reporting should show decisions, not only counts</h1>
+<p>A useful management report might contain:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Category</th><th scope="col">Findings</th><th scope="col">Records</th><th scope="col">Decision required</th><th scope="col">Blocking</th></tr></thead><tbody><tr><td>Record remediation</td><td>12</td><td>4,820</td><td>0</td><td>2</td></tr><tr><td>Extraction defects</td><td>4</td><td>2,100</td><td>0</td><td>3</td></tr><tr><td>Mapping defects</td><td>7</td><td>1,240</td><td>1</td><td>5</td></tr><tr><td>Configuration defects</td><td>5</td><td>910</td><td>0</td><td>4</td></tr><tr><td>Model ambiguity</td><td>6</td><td>3,880</td><td>6</td><td>5</td></tr><tr><td>Model defect</td><td>2</td><td>2,170</td><td>2</td><td>2</td></tr><tr><td>Approved exceptions</td><td>3</td><td>420</td><td>0</td><td>0</td></tr><tr><td>Temporary deviations</td><td>4</td><td>1,600</td><td>1 extension</td><td>1</td></tr><tr><td>Unevaluable populations</td><td>5</td><td>2,940</td><td>3</td><td>4</td></tr></tbody></table></div>
+<p>This report tells management where governance attention is required.</p>
+<p>A single count of 20,080 failed records does not.</p>
+<p>---</p>
+<h1 id="the-test-backlog-should-shrink-as-knowledge-improves">The test backlog should shrink as knowledge improves</h1>
+<p>A healthy programme may still find new record defects.</p>
+<p>But repeated testing should reduce uncertainty.</p>
+<p>Over time, the organisation should see:</p>
+<ul>
+<li>fewer unclassified results;</li>
+<li>fewer recurring causes;</li>
+<li>fewer model ambiguities;</li>
+<li>more stable rule identities;</li>
+<li>faster grouping;</li>
+<li>better source prevention;</li>
+<li>smaller unevaluable populations;</li>
+<li>fewer defects created per affected record.</li>
+</ul>
+<p>The objective is not zero failed records at every stage.</p>
+<p>The objective is a model and control system that explains failures consistently and turns them into the right form of work.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Migration testing can generate enormous amounts of activity without producing durable knowledge.</p>
+<p>The difference lies in the unit of work.</p>
+<p>When the unit is the failed row, the programme builds a defect factory.</p>
+<p>When the unit is the classified finding, the programme can distinguish:</p>
+<ul>
+<li>correction;</li>
+<li>remediation;</li>
+<li>configuration;</li>
+<li>investigation;</li>
+<li>policy;</li>
+<li>exception;</li>
+<li>controlled model change.</li>
+</ul>
+<p>SAP MDG can govern and enforce approved master-data behaviour. Jira and similar tools can organise and progress implementation work. Dataset and testing tools can execute checks at scale. SAP explicitly positions MDG around governed models, validated values, business rules, workflow, monitoring and auditable change; Atlassian positions Jira around capturing, prioritising and tracking issues through configurable workflows.</p>
+<p>The gap Martenweave can close is the translation between those layers:</p>
+<blockquote>Turn repeated test output into evidence about the model, then route that evidence into the correct decision or implementation workflow.</blockquote>
+<p>The practical test is:</p>
+<blockquote>Can the programme explain why 8,420 failed results represent 14 remediation populations, 3 mapping defects, 2 configuration defects, 4 unresolved model decisions and 1 valid control?</blockquote>
+<p>When it can, testing is improving the model.</p>
+<p>When it cannot, the programme is converting every uncertainty into another ticket.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>canonical rules;</li>
+<li>dataset evidence;</li>
+<li>failed populations;</li>
+<li>investigation findings;</li>
+<li>decisions;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>reviewable model changes;</li>
+<li>delivery issues.</li>
+</ul>
+<p>The purpose is not to replace test-management or defect-tracking systems.</p>
+<p>It is to prevent their backlogs from becoming the only place where the organisation attempts to understand its data model.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a central governance layer that combines governed models, preserved semantics and relationships, profiling, matching, validated values, collaborative workflows, business-rule monitoring, data-quality controls and auditable changes.</p>
+<p>Atlassian describes Jira bug tracking as a way to capture, assign, prioritise, document and track bugs and other work items through configurable workflows, reporting, automation and development-tool integrations.</p>
+<p>Martenweave’s current demo workflow validates canonical files, builds disposable indexes, supports search, trace, impact and gap analysis, and produces combined dataset-readiness reports.</p>
+<p>The same workflow can promote dataset gaps into a pending-review <code>PatchProposal</code> or generate a GitHub-ready issue draft while preserving human review.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Atlassian or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html"><span>Previous</span>The global design says that Supplier Risk is mandatory for every active strategic supplier.</a><a href="/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html"><span>Next</span>The migration test reports that 4,860 supplier records failed the Tax Identifier rule.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume | Martenweave</title>
+    <meta
+      name="description"
+      content="The AMS dashboard shows progress."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html" />
+    <meta property="og:title" content="How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume | Martenweave" />
+    <meta property="og:description" content="The AMS dashboard shows progress." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume | Martenweave" />
+    <meta name="twitter:description" content="The AMS dashboard shows progress." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html",
+                        "name": "How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume | Martenweave",
+                        "description": "The AMS dashboard shows progress.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume",
+                                    "item": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html#content",
+                        "headline": "How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume",
+                        "name": "How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume",
+                        "description": "The AMS dashboard shows progress.",
+                        "url": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>How to Use AMS Incident Patterns to Improve the SAP Data Model Instead of Just Reducing Ticket Volume</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">The AMS dashboard shows progress.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#users-stop-reporting-the-problem">Users stop reporting the problem</a></li><li><a href="#ams-resolves-the-issue-before-creating-an-incident">AMS resolves the issue before creating an incident</a></li><li><a href="#the-validation-is-weakened">The validation is weakened</a></li><li><a href="#a-default-suppresses-the-error">A default suppresses the error</a></li><li><a href="#the-process-moves-into-a-spreadsheet">The process moves into a spreadsheet</a></li><li><a href="#several-incidents-are-grouped-into-one-recurring-request">Several incidents are grouped into one recurring request</a></li><li><a href="#1-definition-pattern">1. Definition pattern</a></li><li><a href="#2-applicability-pattern">2. Applicability pattern</a></li><li><a href="#3-source-evidence-pattern">3. Source-evidence pattern</a></li><li><a href="#4-lifecycle-pattern">4. Lifecycle pattern</a></li><li><a href="#5-ownership-pattern">5. Ownership pattern</a></li><li><a href="#frequency">Frequency</a></li><li><a href="#population">Population</a></li><li><a href="#recurrence">Recurrence</a></li><li><a href="#spread">Spread</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The AMS dashboard shows progress.</p>
+<p>Supplier-related incidents have fallen from 180 per month to 95.</p>
+<p>Average resolution time has improved. More tickets are resolved on first contact. Knowledge articles cover the most common validation messages. Automated routing sends incidents to the correct support teams.</p>
+<p>The service organisation is performing better.</p>
+<p>But behind the lower ticket count, the same model weaknesses remain:</p>
+<ul>
+<li>users still enter placeholder values to pass mandatory checks;</li>
+<li>one country still maintains exceptions in a spreadsheet;</li>
+<li>Customer Group is still interpreted differently by sales area and central CRM;</li>
+<li>Supplier Risk incidents are resolved through manual review, but the review state does not exist in the canonical model;</li>
+<li>AMS closes repeated mapping errors by correcting individual records;</li>
+<li>local support teams suppress recurring errors before users report them.</li>
+</ul>
+<p>The visible ticket volume is lower.</p>
+<p>The model has not necessarily improved.</p>
+<p>This is the limitation of treating AMS incidents only as service-management demand.</p>
+<p>An incident is also an observation of where the approved model, operational process, source data and implemented system fail to meet each other.</p>
+<p>A single incident may be noise.</p>
+<p>A recurring pattern is evidence.</p>
+<blockquote>The purpose of incident-pattern analysis should not be limited to reducing support demand. It should reveal where the SAP data model is incomplete, ambiguous, misapplied or no longer aligned with operational reality.</blockquote>
+<p>This does not mean turning every incident into a design issue.</p>
+<p>Most incidents remain operational:</p>
+<ul>
+<li>a job failed;</li>
+<li>an interface stopped;</li>
+<li>a user entered invalid data;</li>
+<li>a configuration transport introduced a defect;</li>
+<li>a record requires ordinary correction.</li>
+</ul>
+<p>The value appears when AMS can distinguish these cases from incidents that expose a structural model problem.</p>
+<p>---</p>
+<h1 id="the-support-queue-is-an-operational-sensor">The support queue is an operational sensor</h1>
+<p>An SAP programme sees the model primarily through:</p>
+<ul>
+<li>workshops;</li>
+<li>requirements;</li>
+<li>mappings;</li>
+<li>test cycles;</li>
+<li>migration datasets;</li>
+<li>design decisions.</li>
+</ul>
+<p>AMS sees the model differently.</p>
+<p>It sees what happens when thousands of users, records, integrations and local processes apply that design every day.</p>
+<p>AMS incidents reveal:</p>
+<ul>
+<li>concepts users do not understand;</li>
+<li>rules that cannot be evaluated;</li>
+<li>fields maintained at the wrong granularity;</li>
+<li>exceptions that occur too often to remain exceptional;</li>
+<li>source systems that cannot provide required evidence;</li>
+<li>local processes not represented in the global model;</li>
+<li>values used with inconsistent meanings;</li>
+<li>configurations that have drifted from approved design;</li>
+<li>workarounds that have become permanent.</li>
+</ul>
+<p>This evidence is especially valuable because it appears after the controlled conditions of programme testing have ended.</p>
+<p>The objective is not to treat the support queue as automatically authoritative.</p>
+<p>Users can misunderstand the process. Local workarounds can be poor practice. Repeated incidents can come from training or access problems rather than model design.</p>
+<p>The queue is a sensor, not the model owner.</p>
+<p>It tells the organisation where to investigate.</p>
+<p>---</p>
+<h1 id="ticket-reduction-can-hide-model-deterioration">Ticket reduction can hide model deterioration</h1>
+<p>A lower incident count can result from genuine improvement.</p>
+<p>It can also result from several less desirable changes.</p>
+<h2 id="users-stop-reporting-the-problem">Users stop reporting the problem</h2>
+<p>They learn a workaround.</p>
+<h2 id="ams-resolves-the-issue-before-creating-an-incident">AMS resolves the issue before creating an incident</h2>
+<p>The operational effort remains but disappears from formal metrics.</p>
+<h2 id="the-validation-is-weakened">The validation is weakened</h2>
+<p>Records no longer fail, but data quality declines.</p>
+<h2 id="a-default-suppresses-the-error">A default suppresses the error</h2>
+<p>Completeness improves while meaning becomes less trustworthy.</p>
+<h2 id="the-process-moves-into-a-spreadsheet">The process moves into a spreadsheet</h2>
+<p>SAP generates fewer incidents because the real lifecycle now happens outside SAP.</p>
+<h2 id="several-incidents-are-grouped-into-one-recurring-request">Several incidents are grouped into one recurring request</h2>
+<p>Ticket volume falls while structural demand remains.</p>
+<p>Therefore, a good AMS review should ask two separate questions:</p>
+<ol>
+<li>Are fewer users experiencing operational disruption?</li>
+<li>Has the underlying model become more coherent?</li>
+</ol>
+<p>The first is a service metric.</p>
+<p>The second is a governance outcome.</p>
+<p>They may move in different directions.</p>
+<p>---</p>
+<h1 id="problem-management-is-necessary-but-not-sufficient">Problem management is necessary but not sufficient</h1>
+<p>Problem management already provides a useful discipline for moving beyond individual incidents.</p>
+<p>Atlassian describes problem management as identifying and managing the underlying causes of incidents, linking incidents to problems, supporting root-cause analysis and tracking longer-term corrective actions. It also stresses that service restoration may close an incident while the underlying problem remains.</p>
+<p>ServiceNow similarly presents problem management as a way to analyse service patterns, connect incidents, identify root causes, manage workarounds and prevent recurrence through remediation plans.</p>
+<p>That is the correct operational foundation.</p>
+<p>For master-data and model-related incidents, one additional question is needed:</p>
+<blockquote>Does the recurring problem indicate that the effective data model should be clarified, corrected or extended?</blockquote>
+<p>A root cause such as:</p>
+<blockquote>Validation rule does not include the new supplier category</blockquote>
+<p>can represent several different model situations:</p>
+<ul>
+<li>configuration failed to implement the approved model;</li>
+<li>the approved model never defined the category;</li>
+<li>the category should remain outside the rule;</li>
+<li>the category needs another lifecycle;</li>
+<li>the source cannot provide the required context;</li>
+<li>a local interpretation conflicts with global policy.</li>
+</ul>
+<p>Problem management identifies and coordinates the investigation.</p>
+<p>Model governance determines what should become true.</p>
+<p>---</p>
+<h1 id="start-with-patterns-not-ticket-counts">Start with patterns, not ticket counts</h1>
+<p>A monthly report may show:</p>
+<pre><code class="language-text">Supplier incidents: 95
+Customer incidents: 64
+Product incidents: 48</code></pre>
+<p>This is useful for workload planning.</p>
+<p>It is weak evidence for model improvement.</p>
+<p>A stronger analysis groups incidents by their relationship to model objects and decisions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Supplier Risk applicability:
+27 incidents
+
+Tax exemption evidence:
+19 incidents
+
+Customer Group granularity:
+16 incidents
+
+Unmapped local Legal Form:
+14 incidents
+
+Expired migration default:
+11 incidents
+
+Supplier Review Status absent:
+8 incidents</code></pre>
+<p>The second view reveals recurring model themes.</p>
+<p>The incidents may have different:</p>
+<ul>
+<li>error messages;</li>
+<li>countries;</li>
+<li>users;</li>
+<li>SAP transactions;</li>
+<li>ticket categories.</li>
+</ul>
+<p>They still point to the same model question.</p>
+<p>---</p>
+<h1 id="error-message-clustering-is-not-enough">Error-message clustering is not enough</h1>
+<p>A single model problem may produce several technical symptoms.</p>
+<p>Suppose Customer Group is modelled incorrectly as a central attribute even though the operational meaning is sales-area-specific.</p>
+<p>The resulting incidents may include:</p>
+<ul>
+<li>inconsistent Customer Group;</li>
+<li>duplicate customer extension;</li>
+<li>missing sales-area value;</li>
+<li>incorrect pricing determination;</li>
+<li>reporting mismatch;</li>
+<li>interface mapping failure.</li>
+</ul>
+<p>Grouping by error message creates six problem groups.</p>
+<p>Grouping by canonical model object reveals one shared issue:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+Granularity: unresolved between central and sales-area context</code></pre>
+<p>The reverse also occurs.</p>
+<p>One message such as:</p>
+<blockquote>Supplier Risk is required</blockquote>
+<p>may point to:</p>
+<ul>
+<li>genuinely missing data;</li>
+<li>incorrect applicability;</li>
+<li>unavailable source context;</li>
+<li>pending review;</li>
+<li>expired exception;</li>
+<li>wrong partner category.</li>
+</ul>
+<p>Pattern analysis must therefore use more than text similarity.</p>
+<p>It should consider:</p>
+<ul>
+<li>canonical object;</li>
+<li>rule;</li>
+<li>context;</li>
+<li>source;</li>
+<li>lifecycle;</li>
+<li>observed condition;</li>
+<li>resolution;</li>
+<li>recurrence.</li>
+</ul>
+<p>---</p>
+<h1 id="normalise-incident-evidence">Normalise incident evidence</h1>
+<p>Incident descriptions are usually written for support.</p>
+<p>They are not structured model evidence.</p>
+<p>Before analysing patterns, normalise each relevant incident into a small set of fields.</p>
+<pre><code class="language-text">Incident:
+INC-4821
+
+Affected object:
+ATTR-SUPPLIER-RISK
+
+Rule:
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Context:
+Country = PT
+Supplier category = regulated
+Lifecycle = activation
+
+Observed condition:
+Risk missing
+Review status pending
+
+Operational resolution:
+Manual review completed
+
+Model interpretation:
+Possible missing review lifecycle</code></pre>
+<p>The normalisation does not replace the original ticket.</p>
+<p>It creates a comparable evidence layer.</p>
+<p>Important fields include:</p>
+<ul>
+<li>source ticket;</li>
+<li>model object;</li>
+<li>rule or mapping;</li>
+<li>source and target system;</li>
+<li>country or organisation;</li>
+<li>lifecycle stage;</li>
+<li>symptom;</li>
+<li>operational resolution;</li>
+<li>suspected model implication;</li>
+<li>confidence.</li>
+</ul>
+<p>Without this structure, incident analysis remains dependent on keywords and analyst memory.</p>
+<p>---</p>
+<h1 id="separate-recurring-symptoms-from-recurring-causes">Separate recurring symptoms from recurring causes</h1>
+<p>A recurring symptom is:</p>
+<blockquote>Supplier activation blocked.</blockquote>
+<p>Possible recurring causes include:</p>
+<ul>
+<li>missing risk classification;</li>
+<li>wrong validation scope;</li>
+<li>incomplete source evidence;</li>
+<li>expired exemption;</li>
+<li>incorrect partner category;</li>
+<li>workflow owner unavailable.</li>
+</ul>
+<p>A recurring cause may also create different symptoms.</p>
+<p>For example, missing strategic-status evidence may lead to:</p>
+<ul>
+<li>activation block;</li>
+<li>risk rule bypass;</li>
+<li>wrong default;</li>
+<li>inconsistent reporting;</li>
+<li>manual classification request.</li>
+</ul>
+<p>The analysis should preserve both levels.</p>
+<pre><code class="language-text">Pattern:
+Supplier activation failures
+
+Sub-patterns:
+- risk missing;
+- applicability unknown;
+- exemption invalid;
+- configuration mismatch.
+
+Shared contributing factor:
+strategic-status context is unreliable.</code></pre>
+<p>This prevents the organisation from solving only the most visible error message.</p>
+<p>---</p>
+<h1 id="use-five-pattern-classes">Use five pattern classes</h1>
+<p>Most model-relevant AMS incident patterns fall into five broad classes.</p>
+<h2 id="1-definition-pattern">1. Definition pattern</h2>
+<p>Users and systems interpret the same term differently.</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier Risk versus Review Status;</li>
+<li>Customer Group versus CRM Segment;</li>
+<li>block status versus lifecycle state;</li>
+<li>legal sector versus supplier type.</li>
+</ul>
+<p>Typical evidence:</p>
+<ul>
+<li>repeated clarification requests;</li>
+<li>different local descriptions;</li>
+<li>inconsistent mappings;</li>
+<li>support articles using conflicting language.</li>
+</ul>
+<p>Potential model response:</p>
+<ul>
+<li>clarify definition;</li>
+<li>split concepts;</li>
+<li>record synonyms and non-equivalences;</li>
+<li>update mappings and training.</li>
+</ul>
+<p>---</p>
+<h2 id="2-applicability-pattern">2. Applicability pattern</h2>
+<p>The rule is valid, but teams disagree about where or when it applies.</p>
+<p>Examples:</p>
+<ul>
+<li>organisation versus person;</li>
+<li>active versus inactive;</li>
+<li>strategic versus ordinary supplier;</li>
+<li>creation versus activation;</li>
+<li>global versus local context.</li>
+</ul>
+<p>Typical evidence:</p>
+<ul>
+<li>repeated exception requests;</li>
+<li>validation bypasses;</li>
+<li>country-specific incidents;</li>
+<li>records blocked at the wrong lifecycle stage.</li>
+</ul>
+<p>Potential model response:</p>
+<ul>
+<li>clarify context;</li>
+<li>define effective rule;</li>
+<li>introduce explicit override;</li>
+<li>correct implementation scope.</li>
+</ul>
+<p>---</p>
+<h2 id="3-source-evidence-pattern">3. Source-evidence pattern</h2>
+<p>The model requires information that operational sources cannot supply reliably.</p>
+<p>Examples:</p>
+<ul>
+<li>missing risk classification;</li>
+<li>unavailable residency status;</li>
+<li>central source used for organisational data;</li>
+<li>historical records without legal-form detail.</li>
+</ul>
+<p>Typical evidence:</p>
+<ul>
+<li>repeated manual enrichment;</li>
+<li>recurring spreadsheets;</li>
+<li>mass incident populations;</li>
+<li>defaults introduced by AMS.</li>
+</ul>
+<p>Potential model response:</p>
+<ul>
+<li>establish authoritative source;</li>
+<li>create enrichment process;</li>
+<li>add evidence requirements;</li>
+<li>approve bounded deviation;</li>
+<li>reconsider model feasibility.</li>
+</ul>
+<p>---</p>
+<h2 id="4-lifecycle-pattern">4. Lifecycle pattern</h2>
+<p>Operational work requires intermediate states missing from the model.</p>
+<p>Examples:</p>
+<ul>
+<li>under review;</li>
+<li>awaiting evidence;</li>
+<li>temporarily approved;</li>
+<li>pending remediation;</li>
+<li>not ready for distribution.</li>
+</ul>
+<p>Typical evidence:</p>
+<ul>
+<li>placeholder values;</li>
+<li>parallel spreadsheets;</li>
+<li>workflow comments carrying status;</li>
+<li>repeated requests to bypass final validation.</li>
+</ul>
+<p>Potential model response:</p>
+<ul>
+<li>introduce separate lifecycle attribute;</li>
+<li>define allowed transitions;</li>
+<li>separate final classification from process state.</li>
+</ul>
+<p>---</p>
+<h2 id="5-ownership-pattern">5. Ownership pattern</h2>
+<p>Incidents circulate because nobody has clear authority.</p>
+<p>Examples:</p>
+<ul>
+<li>local and global teams reject responsibility;</li>
+<li>AMS waits for former programme leads;</li>
+<li>source owner and data owner disagree;</li>
+<li>configuration team receives semantic questions.</li>
+</ul>
+<p>Typical evidence:</p>
+<ul>
+<li>high reassignment count;</li>
+<li>long resolution after technical diagnosis;</li>
+<li>repeated “business confirmation required” status;</li>
+<li>conflicting approvals.</li>
+</ul>
+<p>Potential model response:</p>
+<ul>
+<li>assign role-based ownership;</li>
+<li>define decision rights;</li>
+<li>create fallback and escalation;</li>
+<li>separate decision owner from action owner.</li>
+</ul>
+<p>These classes are broad enough to remain stable across projects while still leading to distinct model actions.</p>
+<p>---</p>
+<h1 id="do-not-promote-a-pattern-based-on-frequency-alone">Do not promote a pattern based on frequency alone</h1>
+<p>A pattern affecting three critical suppliers may matter more than one affecting thousands of inactive records.</p>
+<p>Use several signals.</p>
+<h2 id="frequency">Frequency</h2>
+<p>How often does it occur?</p>
+<h2 id="population">Population</h2>
+<p>How many records are affected?</p>
+<h2 id="recurrence">Recurrence</h2>
+<p>Does it return after correction?</p>
+<h2 id="spread">Spread</h2>
+<p>Does it affect several countries, systems or processes?</p>
+<h2 id="materiality">Materiality</h2>
+<p>Does it affect compliance, payments, operations or cutover-critical objects?</p>
+<h2 id="semantic-divergence">Semantic divergence</h2>
+<p>Does the workaround change the meaning of stored data?</p>
+<h2 id="operational-effort">Operational effort</h2>
+<p>How much manual work is required?</p>
+<h2 id="detectability">Detectability</h2>
+<p>Does the issue produce visible failure, or can bad data pass silently?</p>
+<h2 id="reversibility">Reversibility</h2>
+<p>Can the condition be corrected easily after propagation?</p>
+<p>A low-frequency unexpected pass may deserve immediate model review.</p>
+<p>A high-frequency formatting error may remain an implementation problem.</p>
+<p>---</p>
+<h1 id="analyse-resolutions-not-only-incidents">Analyse resolutions, not only incidents</h1>
+<p>The resolution history often contains stronger model evidence than the incident description.</p>
+<p>Suppose 40 incidents were resolved through:</p>
+<ul>
+<li>18 manual defaults;</li>
+<li>12 validation bypasses;</li>
+<li>7 spreadsheet exceptions;</li>
+<li>3 source corrections.</li>
+</ul>
+<p>The pattern is not merely “missing field.”</p>
+<p>It shows that the current model cannot be satisfied operationally without altering behaviour.</p>
+<p>Resolution analysis can reveal:</p>
+<ul>
+<li>repeated manual derivation;</li>
+<li>recurring temporary values;</li>
+<li>local exceptions;</li>
+<li>configuration relaxation;</li>
+<li>dependency on one expert;</li>
+<li>missing lifecycle.</li>
+</ul>
+<p>A support organisation that reviews only open-ticket categories misses this evidence.</p>
+<p>---</p>
+<h1 id="workarounds-are-model-hypotheses">Workarounds are model hypotheses</h1>
+<p>Every workaround makes an implicit claim.</p>
+<p>Example:</p>
+<pre><code class="language-text">Workaround:
+Enter STANDARD when final risk is unavailable.</code></pre>
+<p>Implicit hypothesis:</p>
+<blockquote>A supplier without assessment can be treated operationally as standard risk.</blockquote>
+<p>Another:</p>
+<pre><code class="language-text">Workaround:
+Maintain exemption in a spreadsheet.</code></pre>
+<p>Implicit hypothesis:</p>
+<blockquote>Exemption is a separate governed state requiring evidence and validity.</blockquote>
+<p>Another:</p>
+<pre><code class="language-text">Workaround:
+Allow blank field until activation.</code></pre>
+<p>Implicit hypothesis:</p>
+<blockquote>The field is required at activation, not creation.</blockquote>
+<p>These hypotheses may be valid or invalid.</p>
+<p>Incident-pattern analysis should surface them explicitly.</p>
+<p>Do not wait until the workaround has become permanent.</p>
+<p>---</p>
+<h1 id="build-an-incident-to-model-review-cadence">Build an incident-to-model review cadence</h1>
+<p>A useful cadence does not require a large governance board.</p>
+<h2 id="weekly-operational-review">Weekly operational review</h2>
+<p>Focus on:</p>
+<ul>
+<li>new high-impact patterns;</li>
+<li>unexpected passes;</li>
+<li>emergency workarounds;</li>
+<li>ownerless findings;</li>
+<li>incidents likely to recur immediately.</li>
+</ul>
+<p>Participants:</p>
+<ul>
+<li>AMS lead;</li>
+<li>relevant domain or model owner;</li>
+<li>SAP or integration representative;</li>
+<li>data analyst where required.</li>
+</ul>
+<h2 id="monthly-pattern-review">Monthly pattern review</h2>
+<p>Focus on:</p>
+<ul>
+<li>repeated model objects;</li>
+<li>recurring resolutions;</li>
+<li>growing workaround populations;</li>
+<li>country clusters;</li>
+<li>source-specific issues;</li>
+<li>decisions awaiting ownership.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>continue operational treatment;</li>
+<li>open problem investigation;</li>
+<li>create model finding;</li>
+<li>draft PatchProposal;</li>
+<li>accept bounded exception.</li>
+</ul>
+<h2 id="quarterly-model-health-review">Quarterly model-health review</h2>
+<p>Focus on:</p>
+<ul>
+<li>persistent semantic ambiguity;</li>
+<li>repeated local extensions;</li>
+<li>ownership gaps;</li>
+<li>unresolved source commitments;</li>
+<li>model changes implemented during the period;</li>
+<li>reduction in recurrence after model updates.</li>
+</ul>
+<p>The quarterly review should not read individual incidents.</p>
+<p>It should assess whether the model is learning from operations.</p>
+<p>---</p>
+<h1 id="a-pattern-record-should-remain-stable">A pattern record should remain stable</h1>
+<p>Incidents open and close.</p>
+<p>The pattern should persist across them.</p>
+<pre><code class="language-yaml">id: PATTERN-SUPPLIER-RISK-REVIEW-001
+
+status: model_decision_required
+
+affected_objects:
+  - ATTR-SUPPLIER-RISK
+  - RULE-SUPPLIER-RISK-ACTIVATION
+
+evidence:
+  incidents:
+    - INC-4821
+    - INC-4930
+    - INC-5014
+  service_requests:
+    - REQ-2088
+  datasets:
+    - ERP_B_SUPPLIER_PROFILE_2026_07
+
+pattern:
+  symptom: supplier activation blocked
+  recurring_resolution: manual risk review
+  hidden_state: assessment_pending
+
+scope:
+  source_systems:
+    - ERP_B
+  supplier_categories:
+    - STRATEGIC
+  lifecycle:
+    - ACTIVATION
+
+assessment:
+  classification: lifecycle_model_gap
+  confidence: high
+
+decision_required: &gt;
+  Determine whether Supplier Review Status should become
+  a governed concept separate from final Supplier Risk.</code></pre>
+<p>This is a conceptual product direction, not a claim about the current Martenweave schema.</p>
+<p>The stable pattern ID allows the organisation to measure whether the eventual model change works.</p>
+<p>---</p>
+<h1 id="compare-before-and-after-the-model-change">Compare before and after the model change</h1>
+<p>A model change should have a measurable operational hypothesis.</p>
+<p>Example:</p>
+<blockquote>Introducing Supplier Review Status will reduce activation incidents caused by pending assessment without weakening the final Supplier Risk control.</blockquote>
+<p>Baseline:</p>
+<pre><code class="language-text">Monthly incidents:
+27
+
+Manual defaults:
+18
+
+Average resolution:
+2.8 days
+
+Records with ambiguous STANDARD:
+1,800</code></pre>
+<p>After implementation:</p>
+<pre><code class="language-text">Monthly incidents:
+6
+
+Manual defaults:
+0
+
+Average review initiation:
+3 hours
+
+Ambiguous STANDARD:
+0 new records</code></pre>
+<p>This demonstrates more than ticket reduction.</p>
+<p>It shows that:</p>
+<ul>
+<li>the hidden lifecycle became explicit;</li>
+<li>unsafe defaulting stopped;</li>
+<li>operational routing improved;</li>
+<li>final classification remained governed.</li>
+</ul>
+<p>---</p>
+<h1 id="measure-displacement">Measure displacement</h1>
+<p>After a model change, incident counts may fall because demand moved elsewhere.</p>
+<p>For example:</p>
+<ul>
+<li>incidents become service requests;</li>
+<li>users create spreadsheets;</li>
+<li>local teams perform manual maintenance;</li>
+<li>errors appear in downstream systems;</li>
+<li>support calls remain unlogged.</li>
+</ul>
+<p>Therefore, compare:</p>
+<ul>
+<li>incidents;</li>
+<li>service requests;</li>
+<li>manual interventions;</li>
+<li>data-quality exceptions;</li>
+<li>workarounds;</li>
+<li>downstream failures;</li>
+<li>residual populations.</li>
+</ul>
+<p>A successful model improvement reduces the underlying operational friction, not only one queue.</p>
+<p>---</p>
+<h1 id="track-recurrence-by-model-object">Track recurrence by model object</h1>
+<p>Traditional AMS reporting often groups by:</p>
+<ul>
+<li>module;</li>
+<li>priority;</li>
+<li>country;</li>
+<li>assignment group;</li>
+<li>resolution code.</li>
+</ul>
+<p>Add a model-object view.</p>
+<p>For each critical object, show:</p>
+<ul>
+<li>incident count;</li>
+<li>recurring patterns;</li>
+<li>active workarounds;</li>
+<li>unresolved decisions;</li>
+<li>configuration changes;</li>
+<li>affected sources;</li>
+<li>ownership;</li>
+<li>trend after model changes.</li>
+</ul>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model object</th><th scope="col">Incidents</th><th scope="col">Active patterns</th><th scope="col">Workarounds</th><th scope="col">Open decisions</th></tr></thead><tbody><tr><td>Supplier Risk</td><td>42</td><td>2</td><td>1</td><td>1</td></tr><tr><td>Customer Group</td><td>31</td><td>1</td><td>2</td><td>1</td></tr><tr><td>Tax Identifier</td><td>28</td><td>3</td><td>1</td><td>2</td></tr><tr><td>Payment Terms</td><td>14</td><td>1</td><td>0</td><td>0</td></tr></tbody></table></div>
+<p>This turns AMS demand into a model-maintenance portfolio.</p>
+<p>---</p>
+<h1 id="distinguish-a-weak-process-from-a-weak-model">Distinguish a weak process from a weak model</h1>
+<p>Repeated incidents do not automatically justify model change.</p>
+<p>Consider mandatory Tax Identifier.</p>
+<p>Users repeatedly fail to provide it.</p>
+<p>Possible explanations include:</p>
+<h3 id="weak-process">Weak process</h3>
+<p>The field is valid and required, but users lack training or evidence at the correct point.</p>
+<p>Response:</p>
+<ul>
+<li>improve process;</li>
+<li>improve guidance;</li>
+<li>improve routing.</li>
+</ul>
+<h3 id="weak-source">Weak source</h3>
+<p>The field exists but does not arrive reliably.</p>
+<p>Response:</p>
+<ul>
+<li>fix source or integration.</li>
+</ul>
+<h3 id="weak-implementation">Weak implementation</h3>
+<p>Validation fires too early or for the wrong population.</p>
+<p>Response:</p>
+<ul>
+<li>correct configuration.</li>
+</ul>
+<h3 id="weak-model">Weak model</h3>
+<p>The rule does not represent legitimate exemptions or lifecycle.</p>
+<p>Response:</p>
+<ul>
+<li>model change.</li>
+</ul>
+<p>The investigation should preserve these alternatives.</p>
+<p>Changing the model to reduce incidents is dangerous when the incidents are caused by weak execution.</p>
+<p>---</p>
+<h1 id="do-not-optimise-the-model-for-zero-incidents">Do not optimise the model for zero incidents</h1>
+<p>A good control may intentionally create incidents or review work.</p>
+<p>For example:</p>
+<ul>
+<li>an invalid legal identifier should be rejected;</li>
+<li>an expired exemption should block activation;</li>
+<li>a suspicious duplicate should enter review;</li>
+<li>an unapproved value should fail.</li>
+</ul>
+<p>The objective is not zero exceptions or zero support demand.</p>
+<p>The objective is that expected controls produce:</p>
+<ul>
+<li>clear messages;</li>
+<li>correct routing;</li>
+<li>sufficient evidence;</li>
+<li>proportionate operational effort.</li>
+</ul>
+<p>A model can be correct while still generating legitimate review cases.</p>
+<p>The pattern review should distinguish:</p>
+<pre><code class="language-text">Expected control demand
+Unexpected operational friction
+Structural model weakness</code></pre>
+<p>Removing a valid control to improve ticket metrics damages governance.</p>
+<p>---</p>
+<h1 id="unexpected-passes-are-the-highest-value-signals">Unexpected passes are the highest-value signals</h1>
+<p>Support queues primarily capture visible failure.</p>
+<p>The more dangerous model problems may not create incidents:</p>
+<ul>
+<li>defaults make records appear complete;</li>
+<li>invalid values are mapped to valid-looking codes;</li>
+<li>missing context prevents rules from running;</li>
+<li>local exceptions are applied too broadly;</li>
+<li>workflow state is stored as final classification.</li>
+</ul>
+<p>Find these through:</p>
+<ul>
+<li>data-quality profiles;</li>
+<li>audit logs;</li>
+<li>configuration comparisons;</li>
+<li>workaround registers;</li>
+<li>downstream reconciliation;</li>
+<li>model-to-dataset checks.</li>
+</ul>
+<p>Incident-pattern analysis should therefore combine reported tickets with silent evidence.</p>
+<p>Otherwise, the organisation optimises only what users can see.</p>
+<p>---</p>
+<h1 id="link-operational-patterns-to-dataset-evidence">Link operational patterns to dataset evidence</h1>
+<p>A pattern is stronger when it can be measured against actual data.</p>
+<p>Suppose incidents suggest that Customer Group is often wrong for multi-sales-area customers.</p>
+<p>Dataset analysis can test:</p>
+<ul>
+<li>number of customers with several sales areas;</li>
+<li>number using one repeated value;</li>
+<li>number with local overrides;</li>
+<li>number of downstream inconsistencies;</li>
+<li>source-field granularity.</li>
+</ul>
+<p>The result may show:</p>
+<pre><code class="language-text">Incidents:
+16
+
+Affected observed records:
+9,480
+
+Multi-sales-area customers:
+3,120
+
+Repeated central value:
+2,870
+
+Approved organisational mapping:
+Not defined</code></pre>
+<p>The incident count understated the scale.</p>
+<p>AMS evidence identified the question.</p>
+<p>Dataset analysis revealed the population.</p>
+<p>---</p>
+<h1 id="use-trace-and-impact-before-proposing-change">Use trace and impact before proposing change</h1>
+<p>A recurring incident pattern may point to one attribute, but the change can affect:</p>
+<ul>
+<li>mappings;</li>
+<li>source fields;</li>
+<li>validation;</li>
+<li>workflow;</li>
+<li>reports;</li>
+<li>interfaces;</li>
+<li>local rules;</li>
+<li>test cases;</li>
+<li>service requests.</li>
+</ul>
+<p>Before proposing a model change, trace the object.</p>
+<p>For Customer Group:</p>
+<pre><code class="language-text">Business attribute
+→ source CRM Segment
+→ country mapping
+→ SAP sales-area endpoint
+→ pricing process
+→ reporting
+→ downstream interface
+→ local override spreadsheet</code></pre>
+<p>This prevents the organisation from fixing the visible incident while creating another inconsistency.</p>
+<p>---</p>
+<h1 id="model-changes-should-explain-which-incidents-they-resolve">Model changes should explain which incidents they resolve</h1>
+<p>A PatchProposal should reference its operational evidence.</p>
+<p>Example:</p>
+<pre><code class="language-text">Proposal:
+Separate Supplier Review Status from Supplier Risk.
+
+Supported by:
+- 27 recurring activation incidents;
+- 18 manual defaults;
+- one expired workaround;
+- 1,800 ambiguous records;
+- two downstream interface conversions.</code></pre>
+<p>The proposal should also state what it will not fix.</p>
+<p>For example:</p>
+<blockquote>This proposal will not correct missing source risk evidence. Source remediation remains a separate action.</blockquote>
+<p>This prevents one model change from becoming a vague promise to solve every operational problem.</p>
+<p>---</p>
+<h1 id="the-role-of-sap-mdg">The role of SAP MDG</h1>
+<p>SAP describes SAP Master Data Governance as a central layer for governed master data, with one governed model across business entities, preserved semantics and relationships, ownership of attributes, collaborative workflow routing, validated values, business-rule monitoring and auditable changes.</p>
+<p>Those capabilities are appropriate for implementing approved operational improvements such as:</p>
+<ul>
+<li>new lifecycle status;</li>
+<li>corrected validation context;</li>
+<li>explicit ownership;</li>
+<li>improved workflow;</li>
+<li>monitored data-quality rule.</li>
+</ul>
+<p>They do not independently establish that repeated incidents justify changing the model.</p>
+<p>The incident evidence, business authority and model-impact assessment remain necessary.</p>
+<p>---</p>
+<h1 id="the-role-of-problem-management-platforms">The role of problem-management platforms</h1>
+<p>Jira Service Management, ServiceNow and similar tools can:</p>
+<ul>
+<li>connect incidents to problems;</li>
+<li>support root-cause investigation;</li>
+<li>maintain known errors and workarounds;</li>
+<li>track remediation;</li>
+<li>report recurring trends.</li>
+</ul>
+<p>Atlassian explicitly warns that a heavy, isolated problem-management process can become a dumping ground where problems remain disconnected from the teams capable of addressing them.</p>
+<p>ServiceNow describes dashboards and analytics for identifying abnormal trends, coordinating root-cause analysis and reducing repeated incidents.</p>
+<p>The model-governance process should use these capabilities rather than duplicate them.</p>
+<p>Its narrower task is:</p>
+<blockquote>Connect the operational pattern to the canonical model object and decide whether model truth should change.</blockquote>
+<p>---</p>
+<h1 id="where-martenweave-fits">Where Martenweave fits</h1>
+<p>Martenweave currently positions itself as a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It connects datasets, tickets, validation reports, decisions and SAP context to canonical model files, deterministic validation, gap reporting, lineage, impact analysis and reviewable proposals.</p>
+<p>Its principles are relevant to incident-driven improvement:</p>
+<ul>
+<li>canonical files remain the source of truth;</li>
+<li>generated indexes are rebuildable;</li>
+<li>validation runs before indexing and change;</li>
+<li>AI must not silently mutate approved state;</li>
+<li>proposed changes require human review.</li>
+</ul>
+<p>The operating chain could be:</p>
+<pre><code class="language-text">AMS incidents and problems
+→ normalised observations
+→ recurring pattern
+→ affected model objects
+→ dataset evidence
+→ impact analysis
+→ PatchProposal
+→ human approval
+→ implementation
+→ recurrence measurement</code></pre>
+<p>Martenweave should not replace incident or problem management.</p>
+<p>It should preserve the model-learning loop those systems usually do not own.</p>
+<p>---</p>
+<h1 id="a-focused-product-slice">A focused product slice</h1>
+<p>A useful first implementation would not need sophisticated machine learning.</p>
+<p>It could support:</p>
+<h2 id="incident-evidence-references">Incident evidence references</h2>
+<p>Register external incidents, requests, problems and knowledge records.</p>
+<h2 id="model-object-linking">Model-object linking</h2>
+<p>Associate evidence with:</p>
+<ul>
+<li>domain;</li>
+<li>entity;</li>
+<li>attribute;</li>
+<li>rule;</li>
+<li>mapping;</li>
+<li>source;</li>
+<li>context.</li>
+</ul>
+<h2 id="pattern-grouping">Pattern grouping</h2>
+<p>Group by:</p>
+<ul>
+<li>model object;</li>
+<li>condition;</li>
+<li>context;</li>
+<li>resolution;</li>
+<li>source;</li>
+<li>lifecycle.</li>
+</ul>
+<h2 id="recurrence-report">Recurrence report</h2>
+<p>Show:</p>
+<ul>
+<li>count over time;</li>
+<li>affected contexts;</li>
+<li>repeated workarounds;</li>
+<li>reopened patterns;</li>
+<li>linked populations.</li>
+</ul>
+<h2 id="promotion-to-finding">Promotion to finding</h2>
+<p>Convert a recurring pattern into a reviewable model finding.</p>
+<h2 id="proposal-generation">Proposal generation</h2>
+<p>Draft a PatchProposal using:</p>
+<ul>
+<li>incident summaries;</li>
+<li>dataset evidence;</li>
+<li>previous decisions;</li>
+<li>affected objects;</li>
+<li>impact.</li>
+</ul>
+<h2 id="outcome-tracking">Outcome tracking</h2>
+<p>Compare recurrence before and after the approved change.</p>
+<p>This is enough to demonstrate operational model learning.</p>
+<p>---</p>
+<h1 id="deterministic-controls">Deterministic controls</h1>
+<p>Martenweave could validate that:</p>
+<ul>
+<li>a model proposal references evidence;</li>
+<li>recurring patterns reference existing model objects or record an explicit model gap;</li>
+<li>closed patterns identify resolution type;</li>
+<li>workaround-based patterns include expiry;</li>
+<li>proposed semantic changes identify an accountable owner;</li>
+<li>incident closure is not treated as model closure;</li>
+<li>implementation changes reference the approved decision;</li>
+<li>outcome reviews use comparable periods and contexts;</li>
+<li>unresolved high-impact patterns remain visible.</li>
+</ul>
+<p>The validator should not decide that ten incidents automatically require a model change.</p>
+<p>It should ensure that the decision is supported and traceable.</p>
+<p>---</p>
+<h1 id="what-ai-may-safely-contribute">What AI may safely contribute</h1>
+<p>AI can help with:</p>
+<ul>
+<li>summarising incident descriptions;</li>
+<li>suggesting model-object links;</li>
+<li>clustering similar resolutions;</li>
+<li>detecting recurring workaround language;</li>
+<li>identifying potentially missing lifecycle states;</li>
+<li>drafting a pattern record;</li>
+<li>finding related decisions;</li>
+<li>generating candidate test scenarios;</li>
+<li>drafting a proposal.</li>
+</ul>
+<p>AI should not conclude:</p>
+<ul>
+<li>repeated user error means the field should be optional;</li>
+<li>a local workaround is approved policy;</li>
+<li>a frequent value is semantically valid;</li>
+<li>lower incident volume proves the model improved;</li>
+<li>the most common resolution should become the target design.</li>
+</ul>
+<p>A safer AI output is:</p>
+<pre><code class="language-text">Observed pattern:
+Twenty-seven incidents concern Supplier Risk during activation.
+
+Common resolution:
+Manual review followed by temporary STANDARD entry.
+
+Possible model implication:
+The operational process uses an assessment-pending state
+that is not represented separately from final risk.
+
+Evidence still required:
+- owner confirmation;
+- affected dataset population;
+- downstream use of STANDARD;
+- current source-remediation status.</code></pre>
+<p>This assists investigation without inventing authority.</p>
+<p>---</p>
+<h1 id="a-worked-example-customer-group">A worked example: Customer Group</h1>
+<h2 id="operational-evidence">Operational evidence</h2>
+<p>Over four months:</p>
+<ul>
+<li>31 incidents;</li>
+<li>14 manual mapping overrides;</li>
+<li>6 reporting corrections;</li>
+<li>3 interface failures.</li>
+</ul>
+<h2 id="initial-support-interpretation">Initial support interpretation</h2>
+<p>Users maintain Customer Group incorrectly.</p>
+<h2 id="pattern-analysis">Pattern analysis</h2>
+<p>Most incidents involve customers with multiple sales areas.</p>
+<p>The central CRM provides one Segment value.</p>
+<p>SAP stores Customer Group by sales area.</p>
+<p>Local teams maintain overrides in a CSV.</p>
+<h2 id="model-finding">Model finding</h2>
+<p>The approved mapping implies central equivalence but does not define organisational derivation.</p>
+<h2 id="decision">Decision</h2>
+<p>Customer Group remains sales-area-specific.</p>
+<p>CRM Segment is not automatically equivalent.</p>
+<p>A governed enrichment process is required until an authoritative organisational source exists.</p>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>remove direct default;</li>
+<li>formalise sales-area mapping;</li>
+<li>register override ownership;</li>
+<li>update validation;</li>
+<li>correct reporting assumptions.</li>
+</ul>
+<h2 id="outcome">Outcome</h2>
+<p>Ticket volume falls, but the more important result is that the model now represents the correct granularity.</p>
+<p>---</p>
+<h1 id="a-worked-example-supplier-risk">A worked example: Supplier Risk</h1>
+<h2 id="operational-evidence-2">Operational evidence</h2>
+<ul>
+<li>repeated activation blocks;</li>
+<li>manual <code>STANDARD</code> defaults;</li>
+<li>one review spreadsheet;</li>
+<li>two knowledge articles;</li>
+<li>outbound conversion to blank.</li>
+</ul>
+<h2 id="pattern">Pattern</h2>
+<p>The process requires an intermediate review state.</p>
+<h2 id="model-change">Model change</h2>
+<p>Create Supplier Review Status separate from final Supplier Risk.</p>
+<h2 id="implementation-2">Implementation</h2>
+<ul>
+<li>workflow;</li>
+<li>status transitions;</li>
+<li>activation rule;</li>
+<li>interface treatment;</li>
+<li>historical conversion.</li>
+</ul>
+<h2 id="outcome-measures">Outcome measures</h2>
+<ul>
+<li>no new ambiguous <code>STANDARD</code>;</li>
+<li>lower activation incidents;</li>
+<li>shorter review initiation;</li>
+<li>final risk completeness unchanged or improved;</li>
+<li>spreadsheet retired.</li>
+</ul>
+<p>The result cannot be assessed through incident count alone.</p>
+<p>---</p>
+<h1 id="a-worked-example-tax-identifier-exemptions">A worked example: Tax Identifier exemptions</h1>
+<h2 id="operational-evidence-3">Operational evidence</h2>
+<p>Country support repeatedly requests validation bypasses.</p>
+<h2 id="first-hypothesis">First hypothesis</h2>
+<p>Local users are avoiding mandatory data.</p>
+<h2 id="pattern-analysis-2">Pattern analysis</h2>
+<p>Most cases involve non-resident supplier organisations with exemption evidence.</p>
+<p>The approved model lacks an explicit exemption structure.</p>
+<h2 id="model-response">Model response</h2>
+<p>Create contextual exemption attributes or relationships containing:</p>
+<ul>
+<li>jurisdiction;</li>
+<li>reason;</li>
+<li>evidence;</li>
+<li>validity;</li>
+<li>owner;</li>
+<li>governing rule.</li>
+</ul>
+<h2 id="operational-result">Operational result</h2>
+<p>Fewer bypass requests.</p>
+<h2 id="governance-result">Governance result</h2>
+<p>Exemptions become identifiable, time-bound and auditable.</p>
+<p>The second result is more important.</p>
+<p>---</p>
+<h1 id="a-worked-example-no-model-change-required">A worked example: no model change required</h1>
+<h2 id="operational-evidence-4">Operational evidence</h2>
+<p>Twenty incidents report that supplier persons fail an organisation-only validation.</p>
+<h2 id="investigation">Investigation</h2>
+<p>The canonical rule already applies only to organisations.</p>
+<h2 id="classification">Classification</h2>
+<p>Configuration defect.</p>
+<h2 id="response">Response</h2>
+<p>Correct SAP configuration and regression tests.</p>
+<h2 id="model-outcome">Model outcome</h2>
+<p>No canonical semantic change.</p>
+<h2 id="operational-outcome">Operational outcome</h2>
+<p>Incidents cease.</p>
+<p>Incident patterns improve the system without changing the model when the model is already correct.</p>
+<p>This distinction protects the registry from unnecessary churn.</p>
+<p>---</p>
+<h1 id="a-decision-matrix">A decision matrix</h1>
+<div class="table-wrap"><table><thead><tr><th scope="col">Pattern evidence</th><th scope="col">Model clear?</th><th scope="col">Implementation aligned?</th><th scope="col">Likely response</th></tr></thead><tbody><tr><td>Repeated incident, known correct rule</td><td>Yes</td><td>No</td><td>Fix implementation</td></tr><tr><td>Repeated incident, missing source evidence</td><td>Yes</td><td>Yes</td><td>Source or process remediation</td></tr><tr><td>Repeated exception, context undefined</td><td>No</td><td>Unclear</td><td>Model decision</td></tr><tr><td>Placeholder used as workflow state</td><td>No</td><td>Operational workaround</td><td>Split concepts</td></tr><tr><td>Users misunderstand valid process</td><td>Yes</td><td>Yes</td><td>Training and service improvement</td></tr><tr><td>Unexpected pass caused by default</td><td>Yes</td><td>No</td><td>Remove default and remediate</td></tr><tr><td>Same local concept in several countries</td><td>Partial</td><td>Mixed</td><td>Evaluate global promotion</td></tr><tr><td>Owner reassignment dominates resolution time</td><td>Partial</td><td>N/A</td><td>Ownership model change</td></tr></tbody></table></div>
+<p>The matrix is not an automated decision engine.</p>
+<p>It disciplines the initial interpretation.</p>
+<p>---</p>
+<h1 id="measures-for-an-incident-informed-model">Measures for an incident-informed model</h1>
+<p>A useful scorecard can include:</p>
+<h2 id="model-linked-incident-coverage">Model-linked incident coverage</h2>
+<p>What proportion of relevant incidents reference a canonical object?</p>
+<h2 id="recurring-pattern-rate">Recurring-pattern rate</h2>
+<p>How many incidents belong to an existing pattern?</p>
+<h2 id="unresolved-model-patterns">Unresolved model patterns</h2>
+<p>Which recurring patterns still lack a decision?</p>
+<h2 id="workaround-dependence">Workaround dependence</h2>
+<p>How many patterns rely on defaults, spreadsheets or bypasses?</p>
+<h2 id="time-from-evidence-to-decision">Time from evidence to decision</h2>
+<p>How long after a pattern becomes clear does the owner decide?</p>
+<h2 id="recurrence-after-change">Recurrence after change</h2>
+<p>Did incidents return after model or implementation correction?</p>
+<h2 id="unexpected-pass-detection">Unexpected-pass detection</h2>
+<p>How many silent-control failures were found outside user reports?</p>
+<h2 id="semantic-debt-reduction">Semantic debt reduction</h2>
+<p>How many overloaded values, shadow states or ambiguous mappings were removed?</p>
+<h2 id="ownership-delay">Ownership delay</h2>
+<p>How much resolution time is spent finding authority?</p>
+<p>These measures show whether AMS is improving the model rather than merely becoming faster at handling its weaknesses.</p>
+<p>---</p>
+<h1 id="do-not-punish-teams-for-surfacing-patterns">Do not punish teams for surfacing patterns</h1>
+<p>If recurring incidents are treated as evidence of poor AMS performance, teams will suppress or recategorise them.</p>
+<p>A learning-oriented process should distinguish:</p>
+<ul>
+<li>incident generation caused by weak support;</li>
+<li>incident generation caused by model weakness;</li>
+<li>valuable discovery of previously invisible risk.</li>
+</ul>
+<p>The team that identifies a shadow lifecycle or invalid default has improved governance, even if the short-term defect count increases.</p>
+<p>The purpose of the analysis is not to assign blame.</p>
+<p>It is to make operational evidence usable.</p>
+<p>---</p>
+<h1 id="the-final-operating-loop">The final operating loop</h1>
+<p>A mature AMS organisation should be able to run this loop continuously:</p>
+<pre><code class="language-text">1. Restore service.
+2. Preserve the incident evidence.
+3. Link the issue to canonical model context.
+4. Group recurring patterns.
+5. Distinguish implementation, process, source and model causes.
+6. Measure the affected population.
+7. Route the question to the correct owner.
+8. Propose the smallest valid change.
+9. Validate and review impact.
+10. Implement through existing SAP and ITSM processes.
+11. Measure recurrence and semantic improvement.</code></pre>
+<p>The loop does not require a new enterprise platform.</p>
+<p>It requires a stable model layer between operational evidence and approved change.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>AMS is usually measured by:</p>
+<ul>
+<li>ticket volume;</li>
+<li>resolution time;</li>
+<li>SLA compliance;</li>
+<li>backlog;</li>
+<li>user satisfaction.</li>
+</ul>
+<p>These metrics matter.</p>
+<p>They do not measure whether the underlying data model is becoming healthier.</p>
+<p>An organisation can build an efficient support service around an increasingly fragmented model.</p>
+<p>It can resolve:</p>
+<ul>
+<li>missing values through defaults;</li>
+<li>ambiguity through tribal knowledge;</li>
+<li>local variation through spreadsheets;</li>
+<li>lifecycle gaps through support queues;</li>
+<li>ownership gaps through escalation.</li>
+</ul>
+<p>The tickets close.</p>
+<p>The model debt grows.</p>
+<p>Problem-management practices already encourage organisations to connect incidents, investigate contributing causes and prevent recurrence rather than stopping at service restoration.</p>
+<p>SAP MDG provides the operational governance capabilities needed to enforce approved models, ownership, workflows, validated values and business rules.</p>
+<p>Martenweave’s opportunity sits between them:</p>
+<blockquote>Turn recurring operational evidence into traceable, validated and human-approved improvements to the canonical data model.</blockquote>
+<p>The practical test is not only:</p>
+<blockquote>Did the number of incidents fall?</blockquote>
+<p>It is:</p>
+<blockquote>Can the organisation explain which model weakness caused the incidents, which approved change addressed it, which population and implementations were affected, and whether the same semantic problem disappeared afterward?</blockquote>
+<p>When it can, AMS becomes part of continuous data-model governance.</p>
+<p>When it cannot, support becomes increasingly efficient at compensating for a model that never learns.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>incidents and problems;</li>
+<li>recurring operational patterns;</li>
+<li>canonical model objects;</li>
+<li>dataset populations;</li>
+<li>workarounds;</li>
+<li>ownership;</li>
+<li>decisions;</li>
+<li>impact analysis;</li>
+<li>reviewable proposals;</li>
+<li>post-change evidence.</li>
+</ul>
+<p>It does not replace SAP MDG, ServiceNow, Jira Service Management, problem management or AMS delivery.</p>
+<p>Its role is to ensure that operational learning becomes durable model knowledge rather than another closed ticket.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer that unifies master data, policy and metadata; preserves semantics and relationships through one governed model; assigns ownership of attributes; enforces validated values; supports collaborative workflow routing; monitors business rules; and preserves an audit trail of changes.</p>
+<p>Atlassian describes problem management as identifying and managing the causes of incidents, analysing contributing factors, connecting incidents to problems and tracking long-term corrective actions. It distinguishes service restoration from elimination of the underlying problem and warns against heavy, isolated problem backlogs disconnected from teams that can act.</p>
+<p>ServiceNow’s current Problem Management description includes identifying abnormal trends, linking incidents and problems, exposing known errors and workarounds, coordinating root-cause analysis and building remediation plans to reduce recurring incidents.</p>
+<p>Martenweave Core currently describes itself as a backend-first model-governance and evidence layer that turns datasets, tickets, validation reports, decisions and SAP context into canonical files, deterministic validation, gap reports, lineage, impact analysis and human-reviewed proposals.</p>
+<p>Its current principles define canonical Markdown and YAML files as the source of truth, generated indexes as rebuildable, deterministic validation as the first gate and AI output as reviewable <code>PatchProposal</code> objects rather than silent model mutation.</p>
+<p>Its documented pipeline connects evidence, proposals, validation, dataset gaps, impact analysis, human review and GitHub issues or pull requests, while explicitly avoiding the role of a generic workflow engine or direct SAP write-back platform.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Atlassian, ServiceNow or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-retire-sap-ams-workarounds-without-breaking-the-business-process.html"><span>Previous</span>A temporary Supplier Risk workaround has been running for nine months.</a><a href="/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html"><span>Next</span>A migration team needs to confirm the meaning of Customer Group .</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

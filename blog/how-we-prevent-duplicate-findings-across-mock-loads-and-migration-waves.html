@@ -1,0 +1,1231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Prevent Duplicate Findings Across Mock Loads and Migration Waves | Martenweave</title>
+    <meta
+      name="description"
+      content="We run the Supplier bank-verification check during Mock Load 2."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html" />
+    <meta property="og:title" content="How We Prevent Duplicate Findings Across Mock Loads and Migration Waves | Martenweave" />
+    <meta property="og:description" content="We run the Supplier bank-verification check during Mock Load 2." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Prevent Duplicate Findings Across Mock Loads and Migration Waves | Martenweave" />
+    <meta name="twitter:description" content="We run the Supplier bank-verification check during Mock Load 2." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html",
+                        "name": "How We Prevent Duplicate Findings Across Mock Loads and Migration Waves | Martenweave",
+                        "description": "We run the Supplier bank-verification check during Mock Load 2.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Prevent Duplicate Findings Across Mock Loads and Migration Waves",
+                                    "item": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html#content",
+                        "headline": "How We Prevent Duplicate Findings Across Mock Loads and Migration Waves",
+                        "name": "How We Prevent Duplicate Findings Across Mock Loads and Migration Waves",
+                        "description": "We run the Supplier bank-verification check during Mock Load 2.",
+                        "url": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT16M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Prevent Duplicate Findings Across Mock Loads and Migration Waves</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Prevent Duplicate Findings Across Mock Loads and Migration Waves</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 16 min read</p><p class="blog-summary">We run the Supplier bank-verification check during Mock Load 2.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#recurrence">Recurrence</a></li><li><a href="#regression">Regression</a></li><li><a href="#root-finding">Root Finding</a></li><li><a href="#scoped-occurrence">Scoped Occurrence</a></li><li><a href="#root-problem">Root problem</a></li><li><a href="#current-status">Current status</a></li><li><a href="#occurrence-timeline">Occurrence timeline</a></li><li><a href="#occurrence-type">Occurrence type</a></li><li><a href="#scope">Scope</a></li><li><a href="#remediation-history">Remediation history</a></li><li><a href="#related-findings">Related Findings</a></li><li><a href="#delivery-work">Delivery work</a></li><li><a href="#recommended-systemic-change">Recommended systemic change</a></li><li><a href="#goal">Goal</a></li><li><a href="#initial-objects">Initial objects</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>We run the Supplier bank-verification check during Mock Load 2.</p>
+<p>The validator finds 3,400 payment-active Suppliers without authorised verification evidence.</p>
+<p>We investigate the result and confirm the Finding:</p>
+<blockquote>The Treasury Review Dataset is not connected to the Supplier bank migration path.</blockquote>
+<p>The migration team creates an issue.</p>
+<p>The Treasury dataset is added, but the implementation is incomplete.</p>
+<p>During Mock Load 3, the validator finds 480 Suppliers without authorised verification.</p>
+<p>A second Finding is created:</p>
+<blockquote>Supplier bank verification missing for 480 records.</blockquote>
+<p>During Cutover Rehearsal 1, 95 records fail.</p>
+<p>A third Finding is created.</p>
+<p>Wave 2 starts in another country.</p>
+<p>The same Treasury dataset dependency is absent from that wave’s configuration.</p>
+<p>A fourth Finding is created.</p>
+<p>By cutover, the programme has:</p>
+<ul>
+<li>four Findings;</li>
+<li>six issues;</li>
+<li>three spreadsheets;</li>
+<li>several validation reports;</li>
+<li>multiple owners;</li>
+<li>no clear view of whether these are separate problems or repeated observations of the same unresolved cause.</li>
+</ul>
+<p>The error count decreased from 3,400 to 95.</p>
+<p>The backlog count increased.</p>
+<p>The programme appears to be discovering new problems while it is actually observing the same model failure repeatedly.</p>
+<p>This is the duplication problem.</p>
+<blockquote>A new validation result is not automatically a new Finding.</blockquote>
+<p>Every mock load produces new Evidence.</p>
+<p>Every migration wave introduces a new scope.</p>
+<p>A Finding should represent the governed interpretation of a problem—not each individual occasion on which the problem became visible.</p>
+<p>We therefore separate:</p>
+<pre><code>Observation:
+A specific execution detected a condition.
+
+Finding:
+The accepted explanation of the underlying problem.
+
+Occurrence:
+The Finding appeared in a particular baseline or scope.
+
+Recurrence:
+The Finding returned after it was believed to be resolved.
+
+Regression:
+A previously working control stopped working.
+
+Related Finding:
+A similar symptom has a materially different cause or treatment.</code></pre>
+<p>Without these distinctions, Martenweave would become another error-ingestion system that creates more objects every time a validator runs.</p>
+<p>Our objective is different.</p>
+<p>We want to preserve one coherent problem history across:</p>
+<ul>
+<li>mock loads;</li>
+<li>cutover rehearsals;</li>
+<li>migration waves;</li>
+<li>model releases;</li>
+<li>source systems;</li>
+<li>post-go-live incidents.</li>
+</ul>
+<p>Martenweave’s current architecture already treats validation reports, datasets, Decisions and SAP context as inputs to canonical model files, gap reports, lineage, impact analysis and human-reviewed proposals. Canonical files own model truth, while generated indexes remain rebuildable.</p>
+<p>The next product layer should ensure that repeated Evidence updates an existing Finding when the underlying problem is the same.</p>
+<p>---</p>
+<h1 id="the-validation-run-is-an-event">The validation run is an event</h1>
+<p>Mock Load 2 produces a validation result:</p>
+<pre><code>Execution:
+VALRUN-BANK-VERIFY-ML2
+
+Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Dataset:
+SUPPLIER-BANK-ML2
+
+Failed records:
+3,400</code></pre>
+<p>Mock Load 3 produces another:</p>
+<pre><code>Execution:
+VALRUN-BANK-VERIFY-ML3
+
+Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Dataset:
+SUPPLIER-BANK-ML3
+
+Failed records:
+480</code></pre>
+<p>These are two distinct execution events.</p>
+<p>They occurred:</p>
+<ul>
+<li>at different times;</li>
+<li>against different datasets;</li>
+<li>under different model baselines;</li>
+<li>with different populations.</li>
+</ul>
+<p>They should remain separate Evidence objects.</p>
+<p>The mistake is creating a separate canonical problem merely because the Evidence is new.</p>
+<p>A provenance model needs to distinguish the artefact from the activity that generated it. W3C PROV-O similarly separates entities, activities and responsible agents, and supports derivation, generation, revision and invalidation relationships across heterogeneous systems.</p>
+<p>Martenweave does not need to implement PROV-O directly.</p>
+<p>We need the same basic discipline:</p>
+<pre><code>Validation report:
+new Evidence
+
+Validation execution:
+new Activity
+
+Underlying Finding:
+possibly the same problem</code></pre>
+<p>---</p>
+<h1 id="the-finding-represents-the-root-problem">The Finding represents the root problem</h1>
+<p>After Mock Load 2, we confirm:</p>
+<pre><code>Finding:
+Treasury verification evidence is not connected
+to the Supplier bank migration path.
+
+Classification:
+Dataset and Mapping gap
+
+Affected Rule:
+Payment-active Supplier requires
+authorised bank verification.
+
+Affected source:
+LEGACY-EU
+
+Required remediation:
+Register Treasury Review Dataset
+and implement account-specific matching.</code></pre>
+<p>Mock Load 3 shows fewer failures because part of the integration was completed.</p>
+<p>The underlying Finding remains open.</p>
+<p>We do not create:</p>
+<pre><code>Finding 1:
+3,400 missing verifications
+
+Finding 2:
+480 missing verifications</code></pre>
+<p>We update the existing Finding history:</p>
+<pre><code>Observed in Mock Load 2:
+3,400 records
+
+Observed in Mock Load 3:
+480 records
+
+Trend:
+improving
+
+Current state:
+partially remediated
+
+Remaining cause:
+bank-account fingerprint matching incomplete</code></pre>
+<p>The count changed.</p>
+<p>The problem identity did not.</p>
+<p>---</p>
+<h1 id="we-do-not-use-the-error-message-as-the-finding-identity">We do not use the error message as the Finding identity</h1>
+<p>Validators often emit messages such as:</p>
+<pre><code>Verification status missing.</code></pre>
+<p>That message is too broad for deduplication.</p>
+<p>The same message may be produced by:</p>
+<ul>
+<li>an omitted Treasury file;</li>
+<li>an incorrect join;</li>
+<li>a stale account fingerprint;</li>
+<li>an out-of-scope Rule;</li>
+<li>a genuinely unverified bank account;</li>
+<li>an expired Exception.</li>
+</ul>
+<p>These are different Findings.</p>
+<p>Conversely, the same underlying problem may produce different messages in different tools:</p>
+<pre><code>BANK_VERIFICATION_STATUS is null</code></pre>
+<pre><code>Treasury approval not found</code></pre>
+<pre><code>Payment-active Supplier lacks evidence</code></pre>
+<pre><code>Target bank record rejected</code></pre>
+<p>Text similarity is useful for candidate matching.</p>
+<p>It is not sufficient for semantic identity.</p>
+<p>---</p>
+<h1 id="we-identify-findings-through-stable-model-context">We identify Findings through stable model context</h1>
+<p>A useful Finding fingerprint should use the parts that describe the underlying problem.</p>
+<p>For example:</p>
+<pre><code>Affected Rule
++
+failure classification
++
+affected model path
++
+source authority
++
+root cause
++
+governed scope</code></pre>
+<p>For the Supplier case:</p>
+<pre><code>Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Classification:
+dataset_mapping_gap
+
+Affected path:
+Treasury Review Dataset
+→ Bank Verification Evidence
+
+Source:
+LEGACY-EU
+
+Cause:
+authoritative dataset not connected
+
+Scope:
+Wave 1 Supplier bank migration</code></pre>
+<p>We exclude unstable execution details such as:</p>
+<ul>
+<li>validation-run ID;</li>
+<li>timestamp;</li>
+<li>current record count;</li>
+<li>report filename;</li>
+<li>mock-load number;</li>
+<li>message wording.</li>
+</ul>
+<p>Those details belong to the occurrence.</p>
+<p>They do not normally define the Finding.</p>
+<p>---</p>
+<h1 id="a-fingerprint-is-a-matching-aid-not-final-authority">A fingerprint is a matching aid, not final authority</h1>
+<p>We can generate a deterministic candidate fingerprint:</p>
+<pre><code>RULE-SUPPLIER-BANK-VERIFICATION
+| dataset_mapping_gap
+| TREASURY-REVIEW-DATASET
+| LEGACY-EU
+| authoritative_input_not_connected</code></pre>
+<p>If Mock Load 3 produces the same fingerprint, Martenweave can suggest:</p>
+<blockquote>Attach this observation to the existing Finding.</blockquote>
+<p>That suggestion may be correct.</p>
+<p>Human review or stronger deterministic rules remain necessary when the context changes materially.</p>
+<p>For example, Wave 2 may use:</p>
+<ul>
+<li>another Treasury system;</li>
+<li>another Supplier identifier;</li>
+<li>another operational owner;</li>
+<li>another accepted fallback.</li>
+</ul>
+<p>The symptom may look identical.</p>
+<p>The remediation may not be.</p>
+<p>---</p>
+<h1 id="we-distinguish-continuing-occurrence-from-recurrence">We distinguish continuing occurrence from recurrence</h1>
+<p>A Finding can appear repeatedly because it was never fully resolved.</p>
+<p>That is a continuing occurrence.</p>
+<p>Timeline:</p>
+<pre><code>Mock Load 2:
+Finding confirmed
+
+Mock Load 3:
+Finding still present
+
+Cutover Rehearsal 1:
+Finding still present</code></pre>
+<p>The Finding should remain open.</p>
+<p>The later Evidence updates:</p>
+<ul>
+<li>affected population;</li>
+<li>severity;</li>
+<li>impact;</li>
+<li>remediation progress.</li>
+</ul>
+<p>A recurrence is different.</p>
+<p>Timeline:</p>
+<pre><code>Mock Load 2:
+Finding confirmed
+
+Mock Load 3:
+Finding resolved and revalidated
+
+Cutover Rehearsal 1:
+same failure returns</code></pre>
+<p>Now we need to record:</p>
+<pre><code>Recurrence:
+yes
+
+Previous resolution:
+Treasury dataset integrated
+
+New observation:
+dataset omitted from cutover pipeline
+
+Possible cause:
+deployment or configuration regression</code></pre>
+<p>The Finding history should preserve that it was once resolved.</p>
+<p>We should not simply reopen it without recording the recurrence.</p>
+<p>Repeated recurrence may indicate a control-design problem rather than another isolated implementation defect.</p>
+<p>---</p>
+<h1 id="we-distinguish-recurrence-from-regression">We distinguish recurrence from regression</h1>
+<p>A recurrence means the same business problem has returned.</p>
+<p>A regression means a previously working implementation or control has stopped working.</p>
+<p>For the Supplier case:</p>
+<h2 id="recurrence">Recurrence</h2>
+<p>Wave 2 never connected its Treasury verification dataset.</p>
+<p>The same governance gap appears in a new rollout scope.</p>
+<h2 id="regression">Regression</h2>
+<p>Wave 1 had a working Treasury integration in Mock Load 3, but the cutover pipeline used an older configuration and lost the join.</p>
+<p>Both may attach to the same parent Finding family.</p>
+<p>They require different delivery responses.</p>
+<p>The regression may require:</p>
+<ul>
+<li>deployment control;</li>
+<li>baseline enforcement;</li>
+<li>pipeline comparison;</li>
+<li>release validation.</li>
+</ul>
+<p>The recurrence may require:</p>
+<ul>
+<li>rollout template improvement;</li>
+<li>domain-pack reuse;</li>
+<li>onboarding control;</li>
+<li>ownership clarification.</li>
+</ul>
+<p>We should not flatten them into one generic duplicate label.</p>
+<p>---</p>
+<h1 id="migration-waves-require-scoped-identity">Migration waves require scoped identity</h1>
+<p>Wave 1 and Wave 2 may contain the same structural defect.</p>
+<p>Should they share one Finding?</p>
+<p>Sometimes yes.</p>
+<p>Sometimes no.</p>
+<p>We use two levels.</p>
+<h2 id="root-finding">Root Finding</h2>
+<p>Represents the reusable model or control problem.</p>
+<p>For example:</p>
+<blockquote>Supplier bank migration lacks a mandatory pattern for integrating authorised verification evidence.</blockquote>
+<h2 id="scoped-occurrence">Scoped Occurrence</h2>
+<p>Represents how that problem appears in one wave.</p>
+<p>For example:</p>
+<pre><code>Wave 1 occurrence:
+LEGACY-EU Treasury dataset not connected
+
+Wave 2 occurrence:
+LEGACY-NA approval service not connected</code></pre>
+<p>This structure lets us see both:</p>
+<ul>
+<li>the repeated enterprise pattern;</li>
+<li>the wave-specific work.</li>
+</ul>
+<p>The root Finding may lead to a reusable product or model improvement.</p>
+<p>Each occurrence may require its own implementation issue.</p>
+<p>---</p>
+<h1 id="we-avoid-merging-findings-that-merely-look-similar">We avoid merging Findings that merely look similar</h1>
+<p>Over-deduplication is as dangerous as duplication.</p>
+<p>Suppose two validation results say:</p>
+<pre><code>Bank verification missing.</code></pre>
+<p>In Wave 1, the cause is:</p>
+<pre><code>Treasury dataset absent.</code></pre>
+<p>In Wave 2, the cause is:</p>
+<pre><code>Verification exists,
+but refers to a previous bank account.</code></pre>
+<p>The first is a dataset and Mapping gap.</p>
+<p>The second is a record-level evidence defect.</p>
+<p>They should not be one Finding.</p>
+<p>They have different:</p>
+<ul>
+<li>causes;</li>
+<li>remediation levels;</li>
+<li>owners;</li>
+<li>closure criteria;</li>
+<li>risk treatments.</li>
+</ul>
+<p>The correct relationship is:</p>
+<pre><code>Related through:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Separate Findings:
+different cause and remediation</code></pre>
+<p>The common Rule supports navigation.</p>
+<p>It does not force identity.</p>
+<p>---</p>
+<h1 id="our-deduplication-test">Our deduplication test</h1>
+<p>Before attaching a new observation to an existing Finding, we ask:</p>
+<ol>
+<li>Does it violate the same canonical Rule?</li>
+<li>Does it affect the same business concept and model path?</li>
+<li>Is the failure classification the same?</li>
+<li>Is the probable or confirmed cause the same?</li>
+<li>Would the same remediation resolve it?</li>
+<li>Is the accountable owner materially the same?</li>
+<li>Are the closure criteria the same?</li>
+<li>Is the new scope a continuation, recurrence or rollout occurrence?</li>
+</ol>
+<p>When the answers are mostly yes, we update the existing Finding.</p>
+<p>When cause, treatment or closure diverge, we create a separate Finding and link it as related.</p>
+<p>The strongest identity test is:</p>
+<blockquote>Would one approved remediation resolve both observations without weakening the model?</blockquote>
+<p>If yes, they are likely the same Finding.</p>
+<p>If no, they probably need separate Findings.</p>
+<p>---</p>
+<h1 id="we-preserve-every-occurrence">We preserve every occurrence</h1>
+<p>Deduplication must not erase history.</p>
+<p>The canonical Finding should keep an occurrence timeline.</p>
+<p>For example:</p>
+<pre><code>Finding:
+FIND-TREASURY-VERIFICATION-PATH
+
+Occurrence 1:
+Mock Load 2
+3,400 affected
+LEGACY-EU
+confirmed
+
+Occurrence 2:
+Mock Load 3
+480 affected
+LEGACY-EU
+continuing
+
+Occurrence 3:
+Cutover Rehearsal 1
+95 affected
+LEGACY-EU
+continuing
+
+Occurrence 4:
+Wave 2 Assessment
+1,200 affected
+LEGACY-NA
+related rollout occurrence</code></pre>
+<p>Each occurrence references:</p>
+<ul>
+<li>validation Evidence;</li>
+<li>dataset baseline;</li>
+<li>model commit;</li>
+<li>population;</li>
+<li>impact assessment;</li>
+<li>stage;</li>
+<li>status.</li>
+</ul>
+<p>We retain the operational detail without creating four unrelated root problems.</p>
+<p>---</p>
+<h1 id="counts-belong-to-occurrences">Counts belong to occurrences</h1>
+<p>The Finding’s identity should not depend on the current affected count.</p>
+<p>Counts change because:</p>
+<ul>
+<li>data is corrected;</li>
+<li>scope changes;</li>
+<li>mappings improve;</li>
+<li>records leave the wave;</li>
+<li>new records enter;</li>
+<li>Exceptions are approved;</li>
+<li>validation logic becomes more precise.</li>
+</ul>
+<p>The Finding should expose a trend:</p>
+<pre><code>3,400
+→ 480
+→ 95</code></pre>
+<p>This tells us that remediation is working but incomplete.</p>
+<p>Creating a new Finding at each count loses that trend.</p>
+<p>It also makes programme reporting misleading:</p>
+<pre><code>Closed Findings:
+1
+
+New Findings:
+2</code></pre>
+<p>The programme may appear to be generating new defects when it is reducing one persistent defect.</p>
+<p>---</p>
+<h1 id="we-separate-problem-history-from-task-history">We separate problem history from task history</h1>
+<p>One Finding may create several delivery tasks:</p>
+<ul>
+<li>register the Treasury dataset;</li>
+<li>implement Supplier identity matching;</li>
+<li>add bank-account fingerprint matching;</li>
+<li>create a cutover control;</li>
+<li>update the rollout template.</li>
+</ul>
+<p>Those tasks may be represented as GitHub Issues.</p>
+<p>GitHub supports marking issues and pull requests as duplicates to group similar work and reduce unnecessary burden.</p>
+<p>That mechanism is useful at the delivery layer.</p>
+<p>Martenweave still needs a semantic layer above it.</p>
+<p>Two issues may be duplicates because they implement the same remediation.</p>
+<p>Two Findings may be related but not duplicates because they affect different model causes.</p>
+<p>We therefore preserve:</p>
+<pre><code>Finding identity:
+governed problem meaning
+
+Issue identity:
+delivery work item</code></pre>
+<p>GitHub can manage duplicate tasks.</p>
+<p>Martenweave should decide whether observations represent the same model problem.</p>
+<p>---</p>
+<h1 id="we-do-not-reopen-every-closed-issue">We do not reopen every closed issue</h1>
+<p>Suppose the original GitHub issue implemented the Wave 1 Treasury integration and was completed.</p>
+<p>Wave 2 later reveals the same structural gap.</p>
+<p>Reopening the old issue may be inappropriate because:</p>
+<ul>
+<li>the original implementation was completed;</li>
+<li>a different team owns Wave 2;</li>
+<li>the acceptance criteria differ;</li>
+<li>the rollout template now needs improvement.</li>
+</ul>
+<p>We may create a new issue linked to the existing root Finding.</p>
+<p>The Finding history shows recurrence across waves.</p>
+<p>The delivery history remains clear.</p>
+<p>This is another reason not to equate Findings with issues.</p>
+<p>---</p>
+<h1 id="we-use-provenance-to-establish-whether-results-are-comparable">We use provenance to establish whether results are comparable</h1>
+<p>Before comparing two observations, we verify:</p>
+<ul>
+<li>same Rule version;</li>
+<li>same model baseline or known difference;</li>
+<li>comparable dataset scope;</li>
+<li>same validator semantics;</li>
+<li>known exception policy;</li>
+<li>compatible source authority.</li>
+</ul>
+<p>Mock Load 2 may have used Rule version 1:</p>
+<pre><code>Any VERIFIED status accepted.</code></pre>
+<p>Mock Load 3 may use Rule version 2:</p>
+<pre><code>Only current Treasury verification accepted.</code></pre>
+<p>The failure counts are not directly comparable.</p>
+<p>An increase may result from a stronger Rule rather than worsening data.</p>
+<p>The occurrence record should state:</p>
+<pre><code>Comparable to previous run:
+partially
+
+Material Rule change:
+verification authority narrowed</code></pre>
+<p>This protects trend analysis from false conclusions.</p>
+<p>---</p>
+<h1 id="we-detect-stale-observations">We detect stale observations</h1>
+<p>An old validation result may remain attached to an active Finding after:</p>
+<ul>
+<li>the Rule changed;</li>
+<li>the Mapping changed;</li>
+<li>the dataset was regenerated;</li>
+<li>the affected population left scope.</li>
+</ul>
+<p>We do not delete it.</p>
+<p>We mark its relevance:</p>
+<pre><code>Historical Evidence:
+valid for Mock Load 2 baseline
+
+Current Evidence:
+superseded by Mock Load 3 execution</code></pre>
+<p>PROV-O includes revision, derivation and invalidation concepts that illustrate why provenance systems should preserve relationships among historical entities rather than overwrite them.</p>
+<p>For Martenweave, the practical result is:</p>
+<ul>
+<li>old Evidence remains available;</li>
+<li>current status relies on the newest compatible Evidence;</li>
+<li>historical counts do not pollute current readiness.</li>
+</ul>
+<p>---</p>
+<h1 id="the-finding-lifecycle">The Finding lifecycle</h1>
+<p>A Finding may move through:</p>
+<pre><code>candidate
+→ confirmed
+→ remediating
+→ controlled
+→ resolved
+→ recurring
+→ resolved again</code></pre>
+<p>Occurrences can have their own states:</p>
+<pre><code>open
+controlled
+resolved
+out_of_scope
+superseded</code></pre>
+<p>The root Finding should not be marked resolved merely because one occurrence is closed.</p>
+<p>For a multi-wave Finding:</p>
+<pre><code>Wave 1:
+resolved
+
+Wave 2:
+open
+
+Root Finding:
+active across rollout</code></pre>
+<p>This lets leadership see that the reusable problem remains.</p>
+<p>---</p>
+<h1 id="we-create-a-finding-family-when-needed">We create a Finding family when needed</h1>
+<p>Some problems evolve.</p>
+<p>The original Finding is:</p>
+<blockquote>Treasury verification dataset is missing.</blockquote>
+<p>After integration, a smaller population remains because account fingerprints do not match.</p>
+<p>That is not necessarily a duplicate of the original Finding.</p>
+<p>It may become a child Finding:</p>
+<pre><code>Parent:
+Authorised verification path incomplete
+
+Child 1:
+Treasury dataset missing
+
+Child 2:
+Current bank-account matching incomplete
+
+Child 3:
+Payment block not applied to unresolved records</code></pre>
+<p>The parent expresses the broader business-control failure.</p>
+<p>The children express distinct causes and remediation paths.</p>
+<p>This hierarchy is better than either extreme:</p>
+<ul>
+<li>one vague Finding containing everything;</li>
+<li>hundreds of disconnected record-level Findings.</li>
+</ul>
+<p>---</p>
+<h1 id="we-make-fingerprint-changes-explainable">We make fingerprint changes explainable</h1>
+<p>A Finding fingerprint should be stable, but the Finding may evolve after investigation.</p>
+<p>Candidate classification:</p>
+<pre><code>missing verification</code></pre>
+<p>Confirmed classification:</p>
+<pre><code>authoritative dataset not connected</code></pre>
+<p>We should preserve both:</p>
+<pre><code>Initial candidate fingerprint:
+RULE + missing_verification + LEGACY-EU
+
+Confirmed fingerprint:
+RULE + dataset_mapping_gap
++ TREASURY-DATASET + LEGACY-EU</code></pre>
+<p>The system records why the identity became more precise.</p>
+<p>We do not silently replace it.</p>
+<p>This helps AI-assisted matching improve without hiding earlier uncertainty.</p>
+<p>---</p>
+<h1 id="ai-suggests-duplicates-it-does-not-merge-them-silently">AI suggests duplicates; it does not merge them silently</h1>
+<p>AI can compare:</p>
+<ul>
+<li>titles;</li>
+<li>descriptions;</li>
+<li>Rule references;</li>
+<li>model paths;</li>
+<li>failure populations;</li>
+<li>source systems;</li>
+<li>probable causes;</li>
+<li>proposed remediation.</li>
+</ul>
+<p>It can return:</p>
+<pre><code>Possible duplicate:
+FIND-TREASURY-VERIFICATION-PATH
+
+Similarity:
+High
+
+Matching:
+- same Rule
+- same source
+- same missing dataset
+- same remediation
+
+Difference:
+new mock-load baseline</code></pre>
+<p>The safe action is:</p>
+<pre><code>Attach as new occurrence?</code></pre>
+<p>Not:</p>
+<pre><code>Merged automatically.</code></pre>
+<p>A wrong merge can hide a distinct risk.</p>
+<p>A wrong split creates noise.</p>
+<p>Both decisions require review where semantic meaning is uncertain.</p>
+<p>---</p>
+<h1 id="we-can-automate-exact-cases">We can automate exact cases</h1>
+<p>Not every deduplication decision needs human review.</p>
+<p>We can attach an observation automatically when all of these are true:</p>
+<ul>
+<li>exact Finding fingerprint match;</li>
+<li>same Rule version;</li>
+<li>same source path;</li>
+<li>same scope family;</li>
+<li>same cause classification;</li>
+<li>existing Finding is open;</li>
+<li>no material model change occurred.</li>
+</ul>
+<p>We can require review when:</p>
+<ul>
+<li>model version changed materially;</li>
+<li>source authority changed;</li>
+<li>migration wave differs;</li>
+<li>Finding was previously resolved;</li>
+<li>remediation differs;</li>
+<li>confidence is below a threshold.</li>
+</ul>
+<p>This gives us useful automation without autonomous semantic mutation.</p>
+<p>---</p>
+<h1 id="we-do-not-use-record-overlap-as-the-only-criterion">We do not use record overlap as the only criterion</h1>
+<p>Mock Load 2 and Mock Load 3 may contain mostly different records.</p>
+<p>The same pipeline defect can affect both.</p>
+<p>Low record overlap does not mean separate Findings.</p>
+<p>Conversely, the same records may fail two different Rules for different reasons.</p>
+<p>High record overlap does not mean duplicate Findings.</p>
+<p>Record overlap is supporting Evidence.</p>
+<p>Cause and remediation remain stronger identity signals.</p>
+<p>---</p>
+<h1 id="migration-wave-templates-should-prevent-recurrence">Migration-wave templates should prevent recurrence</h1>
+<p>When the same root Finding appears in multiple waves, we should ask whether the programme has failed to convert a lesson into reusable model control.</p>
+<p>For example, after Wave 1 resolves the Treasury dependency, the domain pack or rollout template should require:</p>
+<ul>
+<li>authorised verification source;</li>
+<li>Supplier identity Mapping;</li>
+<li>account-specific matching;</li>
+<li>payment-block fallback;</li>
+<li>readiness validation.</li>
+</ul>
+<p>If Wave 2 repeats the gap, the problem is no longer only local implementation.</p>
+<p>It may indicate:</p>
+<ul>
+<li>missing model packaging;</li>
+<li>incomplete wave onboarding;</li>
+<li>weak required-object validation;</li>
+<li>poor reuse of accepted Decisions.</li>
+</ul>
+<p>Martenweave should surface:</p>
+<pre><code>Cross-wave recurrence:
+2 waves
+
+Shared cause:
+verification dependency not included
+in rollout baseline
+
+Recommended model improvement:
+make verification dataset dependency mandatory
+for Supplier bank domain pack</code></pre>
+<p>This turns repeated Findings into product and governance improvement.</p>
+<p>---</p>
+<h1 id="we-measure-recurrence-not-just-open-count">We measure recurrence, not just open count</h1>
+<p>Useful programme metrics include:</p>
+<ul>
+<li>unique root Findings;</li>
+<li>total occurrences;</li>
+<li>recurring Findings;</li>
+<li>regressions;</li>
+<li>cross-wave recurrences;</li>
+<li>average time to confirmed cause;</li>
+<li>average time to evidenced resolution;</li>
+<li>number of Findings reopened;</li>
+<li>number of repeated failures prevented by model changes.</li>
+</ul>
+<p>A high number of observations with a low number of root Findings may indicate recurring systemic issues.</p>
+<p>A simple “open issues” count cannot show this.</p>
+<p>---</p>
+<h1 id="a-conceptual-finding-model">A conceptual Finding model</h1>
+<p>A root Finding might look like:</p>
+<pre><code>---
+id: FIND-TREASURY-VERIFICATION-PATH
+type: Finding
+status: active
+
+title:
+  Authorised Treasury verification
+  is not reliably connected
+  to the Supplier bank migration path
+
+rule:
+  RULE-SUPPLIER-BANK-VERIFICATION
+
+classification:
+  dataset_mapping_gap
+
+root_cause:
+  mandatory verification dependency
+  is not enforced across migration baselines
+
+affected_path:
+  - DATASET-TREASURY-BANK-REVIEW
+  - MAP-TREASURY-BANK-VERIFICATION
+  - ATTR-SUPPLIER-BANK-VERIFICATION
+
+scope_family:
+  supplier_bank_migration
+
+occurrences:
+  - OCC-BANK-VERIFY-ML2
+  - OCC-BANK-VERIFY-ML3
+  - OCC-BANK-VERIFY-CR1
+  - OCC-BANK-VERIFY-WAVE2
+---</code></pre>
+<p>An occurrence might contain:</p>
+<pre><code>---
+id: OCC-BANK-VERIFY-ML3
+type: FindingOccurrence
+
+finding:
+  FIND-TREASURY-VERIFICATION-PATH
+
+validation_run:
+  VALRUN-BANK-VERIFY-ML3
+
+stage:
+  mock_load_3
+
+source_system:
+  LEGACY-EU
+
+affected_records:
+  480
+
+occurrence_type:
+  continuing
+
+model_baseline:
+  abc123
+---</code></pre>
+<p>These are proposed product directions.</p>
+<p>They are not claims about the exact current Martenweave schema.</p>
+<p>---</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A Finding page should show:</p>
+<h2 id="root-problem">Root problem</h2>
+<p>Authorised Treasury verification is not reliably connected.</p>
+<h2 id="current-status">Current status</h2>
+<p>Active.</p>
+<h2 id="occurrence-timeline">Occurrence timeline</h2>
+<ul>
+<li>Mock Load 2: 3,400 records.</li>
+<li>Mock Load 3: 480 records.</li>
+<li>Cutover Rehearsal 1: 95 records.</li>
+<li>Wave 2 assessment: 1,200 records.</li>
+</ul>
+<h2 id="occurrence-type">Occurrence type</h2>
+<p>Continuing, regression or new-wave recurrence.</p>
+<h2 id="scope">Scope</h2>
+<p>Source systems, countries, waves and baselines.</p>
+<h2 id="remediation-history">Remediation history</h2>
+<p>Which changes reduced the population.</p>
+<h2 id="related-findings">Related Findings</h2>
+<p>Distinct causes under the same Rule.</p>
+<h2 id="delivery-work">Delivery work</h2>
+<p>Issues and pull requests created for each scope.</p>
+<h2 id="recommended-systemic-change">Recommended systemic change</h2>
+<p>Make the verification dependency mandatory in the Supplier bank domain pack.</p>
+<p>This view tells the story of the problem.</p>
+<p>A list of four tickets does not.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next Martenweave capability should be <strong>Finding Deduplication and Recurrence Tracking</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Prevent repeated validation runs and migration waves from creating duplicate root Findings while preserving every occurrence and its Evidence.</p>
+<h2 id="initial-objects">Initial objects</h2>
+<ul>
+<li>Finding;</li>
+<li>FindingOccurrence;</li>
+<li>validation Evidence;</li>
+<li>recurrence relationship;</li>
+<li>regression relationship;</li>
+<li>related-Finding relationship;</li>
+<li>optional Finding family.</li>
+</ul>
+<h2 id="initial-matching-inputs">Initial matching inputs</h2>
+<ul>
+<li>Rule;</li>
+<li>classification;</li>
+<li>affected model path;</li>
+<li>source system;</li>
+<li>authority;</li>
+<li>probable cause;</li>
+<li>scope family;</li>
+<li>remediation type.</li>
+</ul>
+<h2 id="excluded-from-primary-identity">Excluded from primary identity</h2>
+<ul>
+<li>error count;</li>
+<li>execution timestamp;</li>
+<li>report filename;</li>
+<li>mock-load number;</li>
+<li>free-text wording.</li>
+</ul>
+<h2 id="required-outputs">Required outputs</h2>
+<ul>
+<li>attach to existing Finding;</li>
+<li>reopen as recurrence;</li>
+<li>record as regression;</li>
+<li>create wave-specific occurrence;</li>
+<li>create distinct related Finding;</li>
+<li>request human review.</li>
+</ul>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could support:</p>
+<pre><code>martenweave findings match \
+  --from ./reports/bank-validation-ml3.json \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings attach-occurrence \
+  FIND-TREASURY-VERIFICATION-PATH \
+  --from ./reports/bank-validation-ml3.json \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings recurrence \
+  FIND-TREASURY-VERIFICATION-PATH \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings duplicates \
+  --repo ./model \
+  --scope supplier-bank</code></pre>
+<pre><code>martenweave findings compare-occurrences \
+  OCC-BANK-VERIFY-ML2 \
+  OCC-BANK-VERIFY-ML3 \
+  --repo ./model</code></pre>
+<p>These commands describe a product direction, not the currently documented CLI.</p>
+<p>Martenweave’s current foundation already provides canonical files, deterministic validation, generated indexes, dataset gaps, lineage, impact analysis and proposal-first Git delivery.</p>
+<p>---</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider the capability useful when:</p>
+<ol>
+<li>Mock Load 2 and Mock Load 3 results with the same cause update one Finding.</li>
+<li>Their validation reports remain separate Evidence.</li>
+<li>Record-count changes appear as a trend.</li>
+<li>A resolved Finding returning later is marked as recurrence or regression.</li>
+<li>The same structural issue in another wave becomes a scoped occurrence or related child.</li>
+<li>A similar message with a different cause creates a separate Finding.</li>
+<li>AI cannot merge Findings without review when semantics differ.</li>
+<li>GitHub delivery issues remain linked but independent.</li>
+<li>Current readiness uses current compatible Evidence.</li>
+<li>Historical occurrences remain traceable.</li>
+</ol>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a generic ticket-deduplication service;</li>
+<li>an issue-tracker replacement;</li>
+<li>an opaque semantic-clustering engine;</li>
+<li>a high-volume event platform;</li>
+<li>a universal incident-management system.</li>
+</ul>
+<p>The deduplication feature should remain tied to model-aware Findings.</p>
+<p>Its job is to answer:</p>
+<blockquote>Is this new Evidence about an existing governed problem, or evidence of a materially different problem?</blockquote>
+<p>That narrow question is valuable enough.</p>
+<p>---</p>
+<h1 id="the-economic-value">The economic value</h1>
+<p>Duplicate Findings create more than administrative noise.</p>
+<p>They cause:</p>
+<ul>
+<li>fragmented ownership;</li>
+<li>repeated root-cause analysis;</li>
+<li>contradictory remediation;</li>
+<li>misleading progress reporting;</li>
+<li>duplicated issues;</li>
+<li>repeated business workshops;</li>
+<li>lost cross-wave learning;</li>
+<li>incomplete closure Evidence.</li>
+</ul>
+<p>Over-deduplication creates another risk:</p>
+<ul>
+<li>distinct causes are merged;</li>
+<li>minority risks disappear;</li>
+<li>one closure incorrectly closes several problems;</li>
+<li>different owners assume somebody else is acting.</li>
+</ul>
+<p>A model-aware identity system reduces both errors.</p>
+<p>It allows the programme to see:</p>
+<pre><code>one persistent root problem,
+four observed occurrences,
+three remediation attempts,
+two migration waves,
+one systemic improvement still required.</code></pre>
+<p>That is more useful than four separate red rows.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Every mock load should create new Evidence.</p>
+<p>It should not necessarily create a new Finding.</p>
+<p>For the Supplier bank-verification case:</p>
+<pre><code>Mock Load 2:
+3,400 failed records
+
+Mock Load 3:
+480 failed records
+
+Cutover Rehearsal:
+95 failed records</code></pre>
+<p>These may describe one continuing Finding.</p>
+<p>Another wave may reveal the same structural weakness as a new scoped occurrence.</p>
+<p>A different failure under the same Rule may require a separate Finding because its cause and remediation differ.</p>
+<p>Our decision rule is:</p>
+<pre><code>Same symptom:
+not enough.
+
+Same Rule:
+not enough.
+
+Same records:
+not enough.
+
+Same cause,
+same model path,
+same treatment
+and same closure:
+likely the same Finding.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we preserve every validation execution and affected population while maintaining one coherent history of the underlying problem?</blockquote>
+<p>When the answer is yes, the programme can learn across runs and waves.</p>
+<p>When the answer is:</p>
+<blockquote>We created a new issue because the report had a new filename,</blockquote>
+<p>we have confused fresh Evidence with a new problem.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that migration programmes can distinguish:</p>
+<pre><code>new Evidence
+from a new problem,
+
+continued failure
+from recurrence,
+
+recurrence
+from regression,
+
+and related symptoms
+from true duplicates.</code></pre>
+<p>Our operating model is:</p>
+<pre><code>Validation runs create Evidence.
+
+Evidence produces or updates occurrences.
+
+Occurrences belong to governed Findings.
+
+Findings preserve root cause and remediation.
+
+Delivery systems track the work.
+
+Canonical model changes prevent recurrence.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a backend-first model-governance and evidence pipeline that turns datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical Markdown and YAML files authoritative, generated indexes disposable, validation deterministic and AI changes proposal-first.</p>
+<p>Its documented workflow moves from Evidence and profiling through validation, gap detection, lineage and impact analysis to reviewed GitHub issues or pull requests.</p>
+<p>W3C PROV-O is a W3C Recommendation for representing and exchanging provenance information across systems and contexts. It distinguishes entities, activities and agents and includes relationships for generation, derivation, revision and invalidation. Martenweave does not need to implement PROV-O directly, but these distinctions support preserving separate validation executions while relating them to one continuing Finding.</p>
+<p>GitHub supports marking issues and pull requests as duplicates so similar delivery items can be tracked together and unnecessary burden reduced. In the architecture described here, GitHub manages duplicate work items, while Martenweave determines whether validation observations refer to the same governed model problem.</p>
+<p>FindingOccurrence objects, semantic fingerprints, recurrence and regression classification, cross-wave Finding families and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, W3C or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html"><span>Previous</span>We complete a Supplier bank-data validation run.</a><a href="/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html"><span>Next</span>We confirm a critical Supplier bank-data Finding.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

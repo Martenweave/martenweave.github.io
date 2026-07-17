@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Turn Model Governance into an AMS Capability After Go-Live | Martenweave</title>
+    <meta
+      name="description"
+      content="The implementation programme has ended."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html" />
+    <meta property="og:title" content="How to Turn Model Governance into an AMS Capability After Go-Live | Martenweave" />
+    <meta property="og:description" content="The implementation programme has ended." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Turn Model Governance into an AMS Capability After Go-Live | Martenweave" />
+    <meta name="twitter:description" content="The implementation programme has ended." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html",
+                        "name": "How to Turn Model Governance into an AMS Capability After Go-Live | Martenweave",
+                        "description": "The implementation programme has ended.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Turn Model Governance into an AMS Capability After Go-Live",
+                                    "item": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html#content",
+                        "headline": "How to Turn Model Governance into an AMS Capability After Go-Live",
+                        "name": "How to Turn Model Governance into an AMS Capability After Go-Live",
+                        "description": "The implementation programme has ended.",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Turn Model Governance into an AMS Capability After Go-Live</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>How to Turn Model Governance into an AMS Capability After Go-Live</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">The implementation programme has ended.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#go-live-does-not-stabilise-the-model-permanently">Go-live does not stabilise the model permanently</a></li><li><a href="#sap-mdg-remains-the-operational-governance-platform">SAP MDG remains the operational governance platform</a></li><li><a href="#ams-usually-manages-symptoms-before-it-manages-model-causes">AMS usually manages symptoms before it manages model causes</a></li><li><a href="#classify-tickets-by-model-significance">Classify tickets by model significance</a></li><li><a href="#1-data-correction">1. Data correction</a></li><li><a href="#2-configuration-defect">2. Configuration defect</a></li><li><a href="#3-mapping-or-integration-defect">3. Mapping or integration defect</a></li><li><a href="#4-documentation-defect">4. Documentation defect</a></li><li><a href="#5-model-ambiguity">5. Model ambiguity</a></li><li><a href="#6-model-change">6. Model change</a></li><li><a href="#7-accepted-operational-deviation">7. Accepted operational deviation</a></li><li><a href="#a-ticket-should-not-become-the-permanent-model-record">A ticket should not become the permanent model record</a></li><li><a href="#establish-a-maintained-operational-baseline">Establish a maintained operational baseline</a></li><li><a href="#reconcile-three-states">Reconcile three states</a></li><li><a href="#approved-model">Approved model</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The implementation programme has ended.</p>
+<p>SAP MDG is live. The migration team has completed cutover. The project repository contains mapping workbooks, design documents, test evidence and decision logs. The main implementation partner has reduced its team.</p>
+<p>Responsibility moves to Application Management Services.</p>
+<p>During the first months, support incidents appear:</p>
+<ul>
+<li>a validation blocks a legitimate local case;</li>
+<li>an interface rejects a newly introduced value;</li>
+<li>a migrated record contains an unexplained default;</li>
+<li>a country requests another attribute;</li>
+<li>a workflow routes requests to an outdated role;</li>
+<li>a source system changes the meaning of a field;</li>
+<li>a business owner asks why a rule exists.</li>
+</ul>
+<p>AMS resolves each ticket.</p>
+<p>Configuration is corrected. A mapping spreadsheet is updated. A workaround is added to the knowledge base. The ticket closes.</p>
+<p>Six months later, the model has changed in several places.</p>
+<p>No one has updated the complete model baseline.</p>
+<p>The project had model governance.</p>
+<p>AMS has ticket management.</p>
+<p>This is one of the most common ways implementation knowledge begins to disappear after go-live.</p>
+<p>The system remains operational. Individual incidents are resolved. But each change gradually separates:</p>
+<ul>
+<li>approved business meaning;</li>
+<li>SAP configuration;</li>
+<li>integration behaviour;</li>
+<li>migration history;</li>
+<li>documentation;</li>
+<li>support knowledge.</li>
+</ul>
+<p>The problem is not that AMS is performing badly.</p>
+<p>The operating model has defined support as restoring service rather than maintaining model truth.</p>
+<blockquote>Model governance becomes an AMS capability when every material incident and change is reconciled back into the approved model—not merely resolved in the operational system.</blockquote>
+<p>That requires more than handing project documents to support.</p>
+<p>It requires a repeatable process for understanding, proposing, validating, approving and preserving model changes throughout the operational lifecycle.</p>
+<h2 id="go-live-does-not-stabilise-the-model-permanently">Go-live does not stabilise the model permanently</h2>
+<p>Projects often treat the production release as the point at which the model becomes complete.</p>
+<p>In reality, go-live exposes the model to new evidence.</p>
+<p>The organisation begins learning from:</p>
+<ul>
+<li>real user behaviour;</li>
+<li>production data;</li>
+<li>new countries;</li>
+<li>additional interfaces;</li>
+<li>regulatory changes;</li>
+<li>acquisitions;</li>
+<li>process redesign;</li>
+<li>source-system replacement;</li>
+<li>data-quality incidents;</li>
+<li>support tickets.</li>
+</ul>
+<p>Some incidents reveal implementation defects.</p>
+<p>Others reveal that the approved model was incomplete, ambiguous or based on assumptions that no longer hold.</p>
+<p>For example:</p>
+<ul>
+<li>a mandatory rule may be too broad;</li>
+<li>a value list may not support a legitimate business case;</li>
+<li>a source mapping may lose reliability;</li>
+<li>a local exception may need promotion into the global model;</li>
+<li>a temporary migration default may remain in active records;</li>
+<li>an attribute may be used differently by downstream systems.</li>
+</ul>
+<p>AMS therefore does not merely maintain configuration.</p>
+<p>It continuously receives evidence about the model.</p>
+<h2 id="sap-mdg-remains-the-operational-governance-platform">SAP MDG remains the operational governance platform</h2>
+<p>SAP currently positions SAP Master Data Governance as a central governance layer combining master data, policy and metadata. Its capabilities include governed models, golden records, matching and consolidation, collaborative workflows, validated values, monitored business rules, data-quality management and auditable data changes.</p>
+<p>These capabilities remain central after go-live.</p>
+<p>SAP MDG should continue to govern:</p>
+<ul>
+<li>operational master-data creation and maintenance;</li>
+<li>change-request processing;</li>
+<li>workflow routing;</li>
+<li>validations and derivations;</li>
+<li>stewardship;</li>
+<li>activation;</li>
+<li>matching and consolidation where implemented;</li>
+<li>monitoring of operational data quality;</li>
+<li>audit of governed record changes.</li>
+</ul>
+<p>The missing AMS capability is not another operational master-data system.</p>
+<p>It is the ability to maintain the implementation knowledge explaining:</p>
+<ul>
+<li>what the governed model means;</li>
+<li>why the rules have their current form;</li>
+<li>which systems supply and consume each attribute;</li>
+<li>which local differences are approved;</li>
+<li>what a change will affect;</li>
+<li>which evidence supports the new state.</li>
+</ul>
+<h2 id="ams-usually-manages-symptoms-before-it-manages-model-causes">AMS usually manages symptoms before it manages model causes</h2>
+<p>A support ticket begins with an observed problem.</p>
+<p>For example:</p>
+<blockquote>Supplier cannot be activated because classification is missing.</blockquote>
+<p>The immediate investigation may identify:</p>
+<ul>
+<li>validation rule fired;</li>
+<li>record is missing a value;</li>
+<li>user cannot maintain the field;</li>
+<li>source interface did not send it.</li>
+</ul>
+<p>The operational fix might be:</p>
+<ul>
+<li>correct the authorisation;</li>
+<li>populate the value;</li>
+<li>adjust the interface;</li>
+<li>change the validation.</li>
+</ul>
+<p>The model questions are broader:</p>
+<ul>
+<li>Is the classification genuinely mandatory for this supplier type?</li>
+<li>Which source should provide it?</li>
+<li>Does the rule apply globally?</li>
+<li>Is the field available at the correct organisational level?</li>
+<li>Which workflow depends on it?</li>
+<li>Are other records affected?</li>
+<li>Does the approved model match current configuration?</li>
+</ul>
+<p>Closing the ticket without answering these questions may restore one process while preserving the underlying inconsistency.</p>
+<h2 id="classify-tickets-by-model-significance">Classify tickets by model significance</h2>
+<p>Not every incident requires a model change.</p>
+<p>A practical AMS process should classify each relevant ticket.</p>
+<h2 id="1-data-correction">1. Data correction</h2>
+<p>The model and configuration are correct. One or more records contain bad data.</p>
+<p>Example:</p>
+<ul>
+<li>user entered an invalid identifier before a rule was activated;</li>
+<li>migrated record contains a one-off error;</li>
+<li>source system sent a corrupt value.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>correct the records;</li>
+<li>investigate repeated source failure if necessary;</li>
+<li>leave the model unchanged.</li>
+</ul>
+<h2 id="2-configuration-defect">2. Configuration defect</h2>
+<p>The approved model is correct, but SAP implementation does not match it.</p>
+<p>Example:</p>
+<ul>
+<li>rule applies to persons instead of organisations;</li>
+<li>local value is active globally;</li>
+<li>workflow uses the wrong approval role.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>correct configuration;</li>
+<li>verify behaviour;</li>
+<li>preserve evidence that configuration now matches the approved model.</li>
+</ul>
+<h2 id="3-mapping-or-integration-defect">3. Mapping or integration defect</h2>
+<p>The model is correct, but an interface or migration treatment implements it incorrectly.</p>
+<p>Example:</p>
+<ul>
+<li>wrong source field;</li>
+<li>incomplete code conversion;</li>
+<li>outbound message omits an attribute.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>correct mapping or integration;</li>
+<li>update tests and implementation evidence;</li>
+<li>leave semantic model unchanged unless the investigation reveals a design issue.</li>
+</ul>
+<h2 id="4-documentation-defect">4. Documentation defect</h2>
+<p>The operational model is correct, but maintained guidance is stale or ambiguous.</p>
+<p>Required action:</p>
+<ul>
+<li>correct documentation or generated views;</li>
+<li>link them to the current model baseline.</li>
+</ul>
+<h2 id="5-model-ambiguity">5. Model ambiguity</h2>
+<p>The current approved model does not answer the operational question clearly.</p>
+<p>Example:</p>
+<ul>
+<li>“active suppliers” is not defined precisely;</li>
+<li>a value has unclear semantics;</li>
+<li>precedence between global and local rules is missing.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>create a model clarification proposal;</li>
+<li>obtain responsible-owner approval;</li>
+<li>update the canonical model and implementation where necessary.</li>
+</ul>
+<h2 id="6-model-change">6. Model change</h2>
+<p>Business requirements, regulation or operating conditions have changed.</p>
+<p>Example:</p>
+<ul>
+<li>new local identifier;</li>
+<li>new supplier-risk category;</li>
+<li>revised ownership;</li>
+<li>source-system replacement;</li>
+<li>retired attribute.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>run formal impact analysis;</li>
+<li>create a controlled change proposal;</li>
+<li>implement only after approval.</li>
+</ul>
+<h2 id="7-accepted-operational-deviation">7. Accepted operational deviation</h2>
+<p>The system intentionally differs from the target model for a limited period.</p>
+<p>Example:</p>
+<ul>
+<li>warning used instead of blocking error;</li>
+<li>temporary value remains until remediation;</li>
+<li>one interface cannot consume the new attribute until the next release.</li>
+</ul>
+<p>Required action:</p>
+<ul>
+<li>record owner, reason, risk and expiry;</li>
+<li>continue reporting the deviation until resolved.</li>
+</ul>
+<p>This classification prevents every ticket from becoming either “just data” or “change the system.”</p>
+<h2 id="a-ticket-should-not-become-the-permanent-model-record">A ticket should not become the permanent model record</h2>
+<p>Service-management systems are designed to track work:</p>
+<ul>
+<li>incident status;</li>
+<li>priority;</li>
+<li>assignment;</li>
+<li>response time;</li>
+<li>resolution;</li>
+<li>communication.</li>
+</ul>
+<p>They are not naturally organised around the long-term lifecycle of model objects.</p>
+<p>A ticket may contain the full history of a difficult decision.</p>
+<p>After closure, future users usually start from the attribute or rule—not from the ticket number.</p>
+<p>A stronger lifecycle is:</p>
+<pre><code class="language-text">Incident or request
+→ model significance classified
+→ affected model objects identified
+→ evidence gathered
+→ correction or proposal processed
+→ canonical model reconciled
+→ implementation verified
+→ ticket closed</code></pre>
+<p>The ticket keeps the support history.</p>
+<p>The model keeps the approved operational truth.</p>
+<h2 id="establish-a-maintained-operational-baseline">Establish a maintained operational baseline</h2>
+<p>AMS needs an identifiable model baseline.</p>
+<p>It should include current:</p>
+<ul>
+<li>entities;</li>
+<li>attributes;</li>
+<li>contexts;</li>
+<li>endpoints;</li>
+<li>mappings;</li>
+<li>value lists;</li>
+<li>rules;</li>
+<li>ownership;</li>
+<li>local variations;</li>
+<li>decisions;</li>
+<li>known deviations.</li>
+</ul>
+<p>The baseline must be distinguishable from:</p>
+<ul>
+<li>the original go-live design;</li>
+<li>proposed future state;</li>
+<li>historical migration model;</li>
+<li>previous release configuration.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Operational model baseline:
+BP-AMS-2.4
+
+Effective release:
+September 2026
+
+Applicable countries:
+DE, AT, PT
+
+Open approved deviations:
+3
+
+Supersedes:
+BP-GOLIVE-1.9</code></pre>
+<p>Without an operational baseline, support teams may continue using project documentation that no longer describes production.</p>
+<h2 id="reconcile-three-states">Reconcile three states</h2>
+<p>After go-live, AMS should compare three states.</p>
+<h2 id="approved-model">Approved model</h2>
+<p>What the organisation has authorised.</p>
+<h2 id="configured-model">Configured model</h2>
+<p>What SAP MDG and related systems implement.</p>
+<h2 id="observed-behaviour">Observed behaviour</h2>
+<p>What users, records and integrations actually experience.</p>
+<p>These can diverge.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Object</th><th scope="col">Approved model</th><th scope="col">Configuration</th><th scope="col">Observed behaviour</th></tr></thead><tbody><tr><td>Supplier risk</td><td>Mandatory for active suppliers</td><td>Rule configured</td><td>Also blocks inactive suppliers</td></tr><tr><td>Local tax value</td><td>Portugal only</td><td>Portugal context configured</td><td>Correct</td></tr><tr><td>Payment terms</td><td>Company-code level</td><td>Company-code field</td><td>Source sends one global value</td></tr><tr><td>Temporary status</td><td>Migration only</td><td>Still active</td><td>Users continue assigning it</td></tr></tbody></table></div>
+<p>The AMS task is not only to fix observed behaviour.</p>
+<p>It is to reconcile all three states.</p>
+<h2 id="make-model-reconciliation-part-of-ticket-closure">Make model reconciliation part of ticket closure</h2>
+<p>A material AMS ticket should not close until the team has answered:</p>
+<ol>
+<li>Which model object was affected?</li>
+<li>Was the approved model correct?</li>
+<li>Was configuration aligned?</li>
+<li>Did observed data reveal another issue?</li>
+<li>Was a decision or deviation created?</li>
+<li>Were related tests updated?</li>
+<li>Does the operational baseline now reflect the result?</li>
+</ol>
+<p>This does not need to burden every minor incident.</p>
+<p>Apply it to changes affecting:</p>
+<ul>
+<li>critical attributes;</li>
+<li>validations;</li>
+<li>mappings;</li>
+<li>value lists;</li>
+<li>workflow;</li>
+<li>global and local behaviour;</li>
+<li>interfaces;</li>
+<li>ownership;</li>
+<li>high-volume data populations.</li>
+</ul>
+<h2 id="use-stable-identifiers-in-support-work">Use stable identifiers in support work</h2>
+<p>A ticket title such as:</p>
+<blockquote>Customer group issue</blockquote>
+<p>is too ambiguous.</p>
+<p>The issue should identify relevant objects:</p>
+<pre><code class="language-text">Attribute:
+ATTR-CUST-SALES-CUSTOMER-GROUP
+
+Rule:
+RULE-CUST-GROUP-MANDATORY-DE
+
+Mapping:
+MAP-CRM-A-CUST-GROUP
+
+Target endpoint:
+FEP-S4-KNVV-KDGRP</code></pre>
+<p>Stable identifiers help connect:</p>
+<ul>
+<li>incident;</li>
+<li>model;</li>
+<li>configuration;</li>
+<li>tests;</li>
+<li>decision;</li>
+<li>release.</li>
+</ul>
+<p>Users do not need to memorise the identifiers.</p>
+<p>They give the support process a reliable internal reference.</p>
+<h2 id="maintain-source-and-target-lineage-after-migration">Maintain source and target lineage after migration</h2>
+<p>Projects often stop maintaining migration mappings after cutover.</p>
+<p>This is a mistake when migrated data continues influencing operations.</p>
+<p>AMS may need to answer:</p>
+<ul>
+<li>Why does this record contain this value?</li>
+<li>Was it migrated or operationally maintained?</li>
+<li>Which source field produced it?</li>
+<li>Was a default used?</li>
+<li>Which value list applied at the time?</li>
+<li>Does the original source still exist?</li>
+</ul>
+<p>Historical lineage remains valuable for:</p>
+<ul>
+<li>incident investigation;</li>
+<li>remediation;</li>
+<li>audit;</li>
+<li>data correction;</li>
+<li>later migration waves;</li>
+<li>source-system retirement.</li>
+</ul>
+<p>The lineage can be marked historical without being deleted.</p>
+<pre><code class="language-text">Historical migration source
+→ migration mapping
+→ target attribute
+→ operational rule</code></pre>
+<p>This allows AMS to separate migration defects from current operational behaviour.</p>
+<h2 id="treat-recurring-incidents-as-model-evidence">Treat recurring incidents as model evidence</h2>
+<p>One incident may be a data error.</p>
+<p>Twenty similar incidents may indicate:</p>
+<ul>
+<li>wrong model optionality;</li>
+<li>unclear process ownership;</li>
+<li>unreliable source;</li>
+<li>poor value semantics;</li>
+<li>incorrect workflow;</li>
+<li>incomplete training;</li>
+<li>missing automation.</li>
+</ul>
+<p>AMS should aggregate incidents by model object.</p>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK
+
+Incidents this quarter:
+27
+
+Main causes:
+- 14 missing source values
+- 8 incorrect local default
+- 5 authorisation failures</code></pre>
+<p>This view is more useful than a list of unrelated ticket numbers.</p>
+<p>It may support a model change such as:</p>
+<ul>
+<li>revise source responsibility;</li>
+<li>introduce a controlled temporary state;</li>
+<li>narrow the mandatory rule;</li>
+<li>change the maintenance process.</li>
+</ul>
+<h2 id="track-operational-model-debt">Track operational model debt</h2>
+<p>Some post-go-live gaps cannot be resolved immediately.</p>
+<p>Examples:</p>
+<ul>
+<li>source remediation postponed;</li>
+<li>local interface remains on old value list;</li>
+<li>manual enrichment continues;</li>
+<li>temporary default remains active;</li>
+<li>configuration differs from the target model.</li>
+</ul>
+<p>These should become visible model debt.</p>
+<p>For each item, record:</p>
+<ul>
+<li>affected object;</li>
+<li>current state;</li>
+<li>intended state;</li>
+<li>operational consequence;</li>
+<li>owner;</li>
+<li>due date;</li>
+<li>review trigger;</li>
+<li>related incidents.</li>
+</ul>
+<p>Model debt differs from generic technical debt because it concerns the meaning and governance of business data.</p>
+<p>A workaround may function technically while weakening the approved model.</p>
+<h2 id="temporary-values-require-aggressive-governance">Temporary values require aggressive governance</h2>
+<p>Migration and early support often introduce values such as:</p>
+<ul>
+<li>UNKNOWN;</li>
+<li>TO_BE_REVIEWED;</li>
+<li>MIGRATION_DEFAULT;</li>
+<li>NOT_AVAILABLE.</li>
+</ul>
+<p>These values are operationally dangerous because they can appear valid.</p>
+<p>AMS should know:</p>
+<ul>
+<li>which records contain them;</li>
+<li>whether users may assign them;</li>
+<li>which processes consume them;</li>
+<li>who owns remediation;</li>
+<li>when they expire.</li>
+</ul>
+<p>A temporary value should have a lifecycle:</p>
+<pre><code class="language-text">Introduced
+→ restricted
+→ monitored
+→ remediated
+→ blocked for new use
+→ retired</code></pre>
+<p>Without this control, temporary migration logic becomes permanent master-data policy.</p>
+<h2 id="revalidate-decisions-when-their-conditions-change">Revalidate decisions when their conditions change</h2>
+<p>Many project decisions are conditional.</p>
+<p>For example:</p>
+<blockquote>Payment Terms may be defaulted until ERP_B provides the source field.</blockquote>
+<p>When ERP_B is replaced or enhanced, AMS should review the decision.</p>
+<p>Useful review triggers include:</p>
+<ul>
+<li>source-system replacement;</li>
+<li>new country rollout;</li>
+<li>regulatory change;</li>
+<li>large incident volume;</li>
+<li>remediation completion;</li>
+<li>integration redesign;</li>
+<li>ownership change.</li>
+</ul>
+<p>A decision without a review trigger tends to survive longer than its rationale.</p>
+<h2 id="build-a-model-change-calendar">Build a model change calendar</h2>
+<p>Operational model governance should have a regular cadence.</p>
+<p>A practical calendar might include:</p>
+<h3 id="weekly">Weekly</h3>
+<ul>
+<li>classify new model-significant tickets;</li>
+<li>review blockers;</li>
+<li>identify urgent proposals.</li>
+</ul>
+<h3 id="monthly">Monthly</h3>
+<ul>
+<li>review material model changes;</li>
+<li>inspect recurring incidents;</li>
+<li>assess model debt and temporary deviations;</li>
+<li>approve low- and medium-risk changes.</li>
+</ul>
+<h3 id="quarterly">Quarterly</h3>
+<ul>
+<li>review ownership;</li>
+<li>review temporary values and exceptions;</li>
+<li>analyse model-health trends;</li>
+<li>inspect high-impact changes;</li>
+<li>confirm critical lineage and test freshness.</li>
+</ul>
+<h3 id="per-release">Per release</h3>
+<ul>
+<li>establish model baseline;</li>
+<li>validate references;</li>
+<li>compare configuration;</li>
+<li>update impact and regression scope;</li>
+<li>publish release change summary.</li>
+</ul>
+<h3 id="annually">Annually</h3>
+<ul>
+<li>review domain scope;</li>
+<li>retire obsolete objects;</li>
+<li>confirm governance roles;</li>
+<li>assess whether operational support still matches business needs.</li>
+</ul>
+<p>The cadence should remain proportional to actual change volume.</p>
+<h2 id="define-change-classes">Define change classes</h2>
+<p>Not every model change requires the same governance.</p>
+<h2 id="class-1-documentation-correction">Class 1: documentation correction</h2>
+<p>Examples:</p>
+<ul>
+<li>typo;</li>
+<li>clearer description;</li>
+<li>additional alias.</li>
+</ul>
+<p>Approval:</p>
+<ul>
+<li>model owner or maintainer.</li>
+</ul>
+<h2 id="class-2-implementation-correction">Class 2: implementation correction</h2>
+<p>The approved meaning does not change.</p>
+<p>Examples:</p>
+<ul>
+<li>fix wrong mapping;</li>
+<li>correct configuration context;</li>
+<li>restore missing interface field.</li>
+</ul>
+<p>Approval:</p>
+<ul>
+<li>relevant technical owners;</li>
+<li>business confirmation where behaviour changes.</li>
+</ul>
+<h2 id="class-3-bounded-model-change">Class 3: bounded model change</h2>
+<p>Examples:</p>
+<ul>
+<li>add local value;</li>
+<li>revise mapping;</li>
+<li>change ownership;</li>
+<li>introduce a contextual exception.</li>
+</ul>
+<p>Approval:</p>
+<ul>
+<li>business owner;</li>
+<li>architecture or domain owner;</li>
+<li>affected local owner.</li>
+</ul>
+<h2 id="class-4-material-model-change">Class 4: material model change</h2>
+<p>Examples:</p>
+<ul>
+<li>change global definition;</li>
+<li>introduce or retire a critical attribute;</li>
+<li>change identifier strategy;</li>
+<li>make field globally mandatory;</li>
+<li>alter significant workflow authority.</li>
+</ul>
+<p>Approval:</p>
+<ul>
+<li>formal governance authority;</li>
+<li>architecture;</li>
+<li>affected business owners;</li>
+<li>implementation and testing plan.</li>
+</ul>
+<p>This keeps governance efficient without making major changes informal.</p>
+<h2 id="connect-each-change-to-regression-evidence">Connect each change to regression evidence</h2>
+<p>A change should identify which tests become stale.</p>
+<p>For example:</p>
+<pre><code class="language-text">Change:
+Add supplier-risk value UNDER_REVIEW.
+
+Affected tests:
+- value-help test
+- validation test
+- workflow-routing test
+- outbound interface test
+- reporting test</code></pre>
+<p>After implementation, new evidence should be linked to the current model baseline.</p>
+<p>This prevents AMS from relying on project tests that proved an older state.</p>
+<h2 id="generate-release-notes-from-model-changes">Generate release notes from model changes</h2>
+<p>Traditional release notes often list technical transports or ticket titles.</p>
+<p>A model-aware release note can explain:</p>
+<ul>
+<li>attribute changed;</li>
+<li>previous state;</li>
+<li>new state;</li>
+<li>applicable context;</li>
+<li>reason;</li>
+<li>affected processes;</li>
+<li>required user action;</li>
+<li>related decision.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Supplier Risk Classification
+
+Change:
+Added local value UNDER_REVIEW for Portugal.
+
+Reason:
+Support controlled investigation before final classification.
+
+Restriction:
+Not available outside Portugal.
+Cannot be used for fully approved suppliers.
+
+Affected areas:
+Workflow, outbound supplier interface and quality report.</code></pre>
+<p>This is more useful for business owners and AMS teams than a list of configuration objects.</p>
+<h2 id="preserve-negative-decisions">Preserve negative decisions</h2>
+<p>AMS regularly receives requests that should not be implemented.</p>
+<p>Examples:</p>
+<ul>
+<li>reuse an existing field for another meaning;</li>
+<li>introduce a local duplicate of a global value;</li>
+<li>make a critical field optional to reduce incidents;</li>
+<li>retain a temporary default indefinitely.</li>
+</ul>
+<p>Rejected requests should be recorded when they are likely to return.</p>
+<p>The record should explain:</p>
+<ul>
+<li>requested treatment;</li>
+<li>affected model object;</li>
+<li>rejection reason;</li>
+<li>alternative;</li>
+<li>approver.</li>
+</ul>
+<p>This reduces repeated analysis and prevents another support team from approving the same weak change later.</p>
+<h2 id="separate-emergency-fixes-from-final-model-decisions">Separate emergency fixes from final model decisions</h2>
+<p>Production incidents sometimes require immediate action.</p>
+<p>The team may:</p>
+<ul>
+<li>reduce validation severity;</li>
+<li>disable a rule;</li>
+<li>allow a temporary value;</li>
+<li>reroute workflow.</li>
+</ul>
+<p>Emergency action can be legitimate.</p>
+<p>It should create two linked items:</p>
+<ol>
+<li>Emergency operational change.</li>
+<li>Required model reconciliation.</li>
+</ol>
+<p>The operational fix should have:</p>
+<ul>
+<li>reason;</li>
+<li>scope;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>rollback or permanent-decision path.</li>
+</ul>
+<p>An emergency change should never silently become the new model because nobody revisited it.</p>
+<h2 id="model-governance-needs-named-operational-roles">Model governance needs named operational roles</h2>
+<p>A sustainable AMS model usually requires several responsibilities.</p>
+<h2 id="model-owner">Model owner</h2>
+<p>Owns the current approved model for a domain.</p>
+<h2 id="business-data-owner">Business data owner</h2>
+<p>Approves material meaning, policy and risk decisions.</p>
+<h2 id="sap-mdg-owner">SAP MDG owner</h2>
+<p>Confirms platform configuration and operational behaviour.</p>
+<h2 id="integration-owner">Integration owner</h2>
+<p>Confirms consumers and distribution dependencies.</p>
+<h2 id="source-owner">Source owner</h2>
+<p>Maintains source definition and quality where inbound data remains relevant.</p>
+<h2 id="local-owner">Local owner</h2>
+<p>Approves legitimate country or organisational variation.</p>
+<h2 id="model-maintainer">Model maintainer</h2>
+<p>Operates repository validation, indexing, reports and proposal processing.</p>
+<h2 id="test-owner">Test owner</h2>
+<p>Maintains current regression evidence.</p>
+<p>One person may hold several roles in a small organisation.</p>
+<p>The responsibilities should still be explicit.</p>
+<h2 id="ams-service-levels-should-include-model-work">AMS service levels should include model work</h2>
+<p>Traditional service levels focus on:</p>
+<ul>
+<li>response time;</li>
+<li>resolution time;</li>
+<li>availability;</li>
+<li>ticket backlog.</li>
+</ul>
+<p>Model governance needs additional expectations.</p>
+<p>Examples:</p>
+<ul>
+<li>material incidents classified within two business days;</li>
+<li>temporary deviations receive expiry dates;</li>
+<li>model baseline updated for each release;</li>
+<li>critical change impact analysed before implementation;</li>
+<li>recurring model issues reviewed monthly;</li>
+<li>configuration alignment checked after material change.</li>
+</ul>
+<p>These measures prevent model reconciliation from being treated as optional documentation work.</p>
+<h2 id="measure-more-than-incident-closure">Measure more than incident closure</h2>
+<p>Useful AMS model-governance metrics include:</p>
+<h3 id="unreconciled-model-changes">Unreconciled model changes</h3>
+<p>Configuration or mapping changes not yet reflected in the approved model.</p>
+<h3 id="recurring-incidents-by-model-object">Recurring incidents by model object</h3>
+<p>Indicates unresolved root causes.</p>
+<h3 id="temporary-deviations-past-expiry">Temporary deviations past expiry</h3>
+<p>Shows unmanaged operational exceptions.</p>
+<h3 id="change-impact-completeness">Change-impact completeness</h3>
+<p>How often implementation discovers missed dependencies.</p>
+<h3 id="decision-retrieval-time">Decision retrieval time</h3>
+<p>How long support needs to explain why a rule exists.</p>
+<h3 id="stale-test-evidence">Stale test evidence</h3>
+<p>Tests referring to superseded model states.</p>
+<h3 id="unowned-critical-objects">Unowned critical objects</h3>
+<p>Attributes, rules or values with no accountable owner.</p>
+<h3 id="model-baseline-age">Model baseline age</h3>
+<p>Time since the last verified baseline.</p>
+<p>The goal is not to create a large KPI system.</p>
+<p>It is to make model drift visible.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals.</p>
+<p>The current source version is listed as 0.5.0. The project remains CLI-driven and backend-first rather than a hosted editable production application.</p>
+<p>Its core principles are directly relevant to AMS:</p>
+<ul>
+<li>canonical model files remain the source of truth;</li>
+<li>SQLite and JSONL indexes can be rebuilt;</li>
+<li>deterministic validation runs before indexing;</li>
+<li>AI cannot silently mutate the model;</li>
+<li>approved proposals become controlled change requests;</li>
+<li>operation remains local-first.</li>
+</ul>
+<h2 id="a-martenweave-ams-flow">A Martenweave AMS flow</h2>
+<pre><code class="language-text">Support ticket or change request
+        ↓
+Affected model objects identified
+        ↓
+Evidence and current behaviour collected
+        ↓
+Classification:
+data, configuration, mapping or model
+        ↓
+Impact analysis
+        ↓
+PatchProposal where model change is required
+        ↓
+Deterministic validation
+        ↓
+Business and technical approval
+        ↓
+ChangeRequest and implementation
+        ↓
+Verification
+        ↓
+New operational model baseline</code></pre>
+<p>This flow does not replace the ITSM system.</p>
+<p>It connects service-management work to the maintained model.</p>
+<h2 id="martenweave-can-support-recurring-ams-questions">Martenweave can support recurring AMS questions</h2>
+<p>Current commands include capabilities for:</p>
+<ul>
+<li>validating canonical files;</li>
+<li>rebuilding indexes;</li>
+<li>checking index freshness;</li>
+<li>producing health and scorecard reports;</li>
+<li>running trace and impact analysis;</li>
+<li>searching and querying model objects;</li>
+<li>comparing repositories;</li>
+<li>proposing patches;</li>
+<li>profiling datasets;</li>
+<li>detecting model-to-dataset gaps;</li>
+<li>generating issue-ready outputs.</li>
+</ul>
+<p>Examples of operational use include:</p>
+<pre><code class="language-text">Why is this target field mandatory?
+→ trace Attribute to Rule and Decision</code></pre>
+<pre><code class="language-text">What will be affected if this value is retired?
+→ run impact analysis</code></pre>
+<pre><code class="language-text">Does the current source extract still support the mapping?
+→ rerun dataset readiness</code></pre>
+<pre><code class="language-text">Which approved objects have missing ownership?
+→ run health or scorecard analysis</code></pre>
+<h2 id="do-not-turn-martenweave-into-the-service-desk">Do not turn Martenweave into the service desk</h2>
+<p>Martenweave’s current boundaries are explicit.</p>
+<p>It is not:</p>
+<ul>
+<li>a generic workflow platform;</li>
+<li>a hosted MDM system;</li>
+<li>an ITSM replacement;</li>
+<li>a chatbot;</li>
+<li>an autonomous mutation engine;</li>
+<li>a direct SAP write-back tool.</li>
+</ul>
+<p>The service desk should continue to manage:</p>
+<ul>
+<li>communication;</li>
+<li>prioritisation;</li>
+<li>assignment;</li>
+<li>escalation;</li>
+<li>service levels;</li>
+<li>ticket closure.</li>
+</ul>
+<p>Martenweave should manage:</p>
+<ul>
+<li>model identity;</li>
+<li>relationships;</li>
+<li>evidence;</li>
+<li>validation;</li>
+<li>impact;</li>
+<li>approved model changes.</li>
+</ul>
+<p>The two systems should link rather than duplicate each other.</p>
+<h2 id="do-not-force-every-ams-analyst-to-edit-canonical-files">Do not force every AMS analyst to edit canonical files</h2>
+<p>The canonical model provides control.</p>
+<p>It should not impose a developer workflow on every support user.</p>
+<p>Possible interaction surfaces include:</p>
+<ul>
+<li>generated spreadsheet reviews;</li>
+<li>static model views;</li>
+<li>impact reports;</li>
+<li>semantic diffs;</li>
+<li>issue templates;</li>
+<li>proposal forms;</li>
+<li>local frontend views.</li>
+</ul>
+<p>Technical maintainers can operate the canonical files and Git workflow.</p>
+<p>Business and functional reviewers can approve meaningful changes through readable views.</p>
+<h2 id="ai-can-improve-ams-investigation">AI can improve AMS investigation</h2>
+<p>AI can assist with:</p>
+<ul>
+<li>summarising long incident histories;</li>
+<li>finding related model objects;</li>
+<li>comparing current and previous configuration descriptions;</li>
+<li>grouping recurring incidents;</li>
+<li>extracting candidate decisions;</li>
+<li>drafting impact summaries;</li>
+<li>preparing PatchProposals;</li>
+<li>generating release explanations.</li>
+</ul>
+<p>This is useful because AMS contains large volumes of repetitive and fragmented evidence.</p>
+<p>AI should not decide that:</p>
+<ul>
+<li>a validation should be weakened;</li>
+<li>two business values are equivalent;</li>
+<li>a local exception should become global;</li>
+<li>a temporary default is safe;</li>
+<li>a model change is approved.</li>
+</ul>
+<p>The safe boundary remains:</p>
+<pre><code class="language-text">AI organises evidence and proposes.
+Validators check structure.
+Responsible owners approve.</code></pre>
+<h2 id="recovering-model-governance-after-go-live">Recovering model governance after go-live</h2>
+<p>Some organisations reach this point without a maintained operational model.</p>
+<p>The original project documents are stale, and production has already changed.</p>
+<p>Recovery should not attempt to reconstruct everything immediately.</p>
+<p>Choose one incident-heavy domain.</p>
+<h3 id="step-1-establish-the-current-model">Step 1: establish the current model</h3>
+<p>Use production behaviour, configuration evidence and responsible-owner review.</p>
+<h3 id="step-2-identify-critical-objects">Step 2: identify critical objects</h3>
+<p>Focus on attributes, rules, mappings and values generating operational cost.</p>
+<h3 id="step-3-recover-material-decisions">Step 3: recover material decisions</h3>
+<p>Extract candidate rationale from tickets and documents, then confirm it.</p>
+<h3 id="step-4-connect-recurring-incidents">Step 4: connect recurring incidents</h3>
+<p>Link support history to model objects.</p>
+<h3 id="step-5-record-deviations">Step 5: record deviations</h3>
+<p>Make configuration differences and temporary workarounds visible.</p>
+<h3 id="step-6-validate-structure">Step 6: validate structure</h3>
+<p>Find broken or incomplete relationships.</p>
+<h3 id="step-7-introduce-proposal-based-changes">Step 7: introduce proposal-based changes</h3>
+<p>Ensure the next change is governed properly.</p>
+<p>The objective is to create a trustworthy current baseline—not to produce a perfect historical archive.</p>
+<h2 id="a-worked-example-recurring-customer-group-incidents">A worked example: recurring customer-group incidents</h2>
+<p>AMS receives repeated tickets because Customer Group is missing or incorrect.</p>
+<p>Investigation reveals:</p>
+<ul>
+<li>CRM_A supplies a global customer segment;</li>
+<li>SAP target stores Customer Group by sales area;</li>
+<li>migration copied the same value to every sales area;</li>
+<li>Germany later introduced a contextual validation;</li>
+<li>one interface still sends the original global field;</li>
+<li>project documentation calls both concepts “Customer Group.”</li>
+</ul>
+<p>A model-governance response would:</p>
+<ol>
+<li>Separate the two business meanings.</li>
+<li>Identify the current target attribute and context.</li>
+<li>Record historical migration mapping.</li>
+<li>identify the operational source.</li>
+<li>connect the German rule.</li>
+<li>identify affected interfaces and tests.</li>
+<li>create a controlled change proposal.</li>
+<li>update the operational model after approval.</li>
+</ol>
+<p>A ticket-only response might correct individual records repeatedly without resolving the conceptual mismatch.</p>
+<h2 id="another-example-temporary-supplier-status">Another example: temporary supplier status</h2>
+<p>Migration introduced <code>MIGRATION_REVIEW</code>.</p>
+<p>After go-live, users continue assigning it because it bypasses classification decisions.</p>
+<p>AMS should not merely close data-quality tickets.</p>
+<p>The model-governance review asks:</p>
+<ul>
+<li>Was the value intended for operational use?</li>
+<li>Which records still contain it?</li>
+<li>Which workflow and interfaces recognise it?</li>
+<li>Who owns remediation?</li>
+<li>Should it now be blocked?</li>
+<li>Is another legitimate operational status required?</li>
+</ul>
+<p>The likely change package includes:</p>
+<ul>
+<li>value-list restriction;</li>
+<li>validation;</li>
+<li>remediation report;</li>
+<li>workflow update;</li>
+<li>communication;</li>
+<li>retirement decision.</li>
+</ul>
+<h2 id="another-example-local-tax-exception">Another example: local tax exception</h2>
+<p>A local team asks AMS to disable a tax validation.</p>
+<p>The incident volume is high.</p>
+<p>Before changing the rule, the team should analyse:</p>
+<ul>
+<li>affected Business Partner categories;</li>
+<li>current source completeness;</li>
+<li>legal or process evidence;</li>
+<li>existing exemptions;</li>
+<li>other countries using the same rule;</li>
+<li>impact on integration and reporting.</li>
+</ul>
+<p>The final outcome may be:</p>
+<ul>
+<li>fix source data;</li>
+<li>correct the context;</li>
+<li>add an approved exemption;</li>
+<li>revise the global rule;</li>
+<li>reject the request.</li>
+</ul>
+<p>AMS becomes a governance capability when it can process this evidence rather than choosing the quickest configuration change.</p>
+<h2 id="a-minimum-ams-model-governance-package">A minimum AMS model-governance package</h2>
+<p>For one domain, a practical package should include:</p>
+<ol>
+<li>Current operational model baseline.</li>
+<li>Critical object inventory.</li>
+<li>Source and target lineage.</li>
+<li>Active rules and value lists.</li>
+<li>Current ownership.</li>
+<li>Local variations.</li>
+<li>Known model debt and temporary deviations.</li>
+<li>Material decision history.</li>
+<li>Current test and implementation evidence.</li>
+<li>Model-significant incident links.</li>
+<li>Change classification and approval rules.</li>
+<li>Validation and reporting runbook.</li>
+</ol>
+<p>This is enough to establish continuity without recreating the full project repository.</p>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>What is the current approved operational model?</li>
+<li>Does it match production configuration?</li>
+<li>Which material changes occurred after go-live?</li>
+<li>Were those changes reconciled back into the model?</li>
+<li>Which incidents recur around the same attributes or rules?</li>
+<li>Which temporary migration treatments remain active?</li>
+<li>Which deviations have passed their expiry dates?</li>
+<li>Are support tickets linked to affected model objects?</li>
+<li>Can AMS perform impact analysis before changing configuration?</li>
+<li>Are current tests connected to the model they prove?</li>
+<li>Can the team explain why critical rules exist?</li>
+<li>Which questions still require the original project team?</li>
+<li>Are AI-generated fixes routed through reviewable proposals?</li>
+<li>Does each release produce a new verified model baseline?</li>
+</ol>
+<p>If these questions cannot be answered, AMS may be maintaining system availability while the model gradually drifts.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="treating-the-go-live-design-as-permanently-current">Treating the go-live design as permanently current</h3>
+<p>Production changes begin immediately.</p>
+<h3 id="updating-configuration-without-updating-model-truth">Updating configuration without updating model truth</h3>
+<p>This turns configuration into an undocumented architecture decision.</p>
+<h3 id="closing-tickets-before-model-reconciliation">Closing tickets before model reconciliation</h3>
+<p>The symptom is resolved, but the next team cannot reuse the result.</p>
+<h3 id="treating-repeated-data-incidents-as-unrelated-records">Treating repeated data incidents as unrelated records</h3>
+<p>Recurring incidents may reveal a model or process defect.</p>
+<h3 id="leaving-migration-mappings-behind">Leaving migration mappings behind</h3>
+<p>Historical lineage remains valuable for production investigations.</p>
+<h3 id="allowing-temporary-values-to-remain-assignable">Allowing temporary values to remain assignable</h3>
+<p>Migration workarounds become operational policy.</p>
+<h3 id="using-only-service-level-metrics">Using only service-level metrics</h3>
+<p>Fast closure can coexist with growing model debt.</p>
+<h3 id="creating-a-separate-ams-model-copy">Creating a separate AMS model copy</h3>
+<p>The operational model should be the continuing canonical baseline.</p>
+<h3 id="making-every-change-follow-a-heavy-governance-board">Making every change follow a heavy governance board</h3>
+<p>Change classes should determine proportional approval.</p>
+<h3 id="letting-ai-apply-configuration-or-model-fixes-directly">Letting AI apply configuration or model fixes directly</h3>
+<p>AI may prepare evidence and proposals, not assume authority.</p>
+<h2 id="when-a-lightweight-approach-is-enough">When a lightweight approach is enough</h2>
+<p>A small stable environment may use:</p>
+<ul>
+<li>one controlled model workbook;</li>
+<li>linked tickets;</li>
+<li>a decision register;</li>
+<li>release-based review;</li>
+<li>named owners.</li>
+</ul>
+<p>This may be sufficient when:</p>
+<ul>
+<li>one country is involved;</li>
+<li>few integrations exist;</li>
+<li>model changes are rare;</li>
+<li>the same team owns design and support;</li>
+<li>impact analysis is simple.</li>
+</ul>
+<p>A registry-based approach becomes more valuable when:</p>
+<ul>
+<li>several countries and sources exist;</li>
+<li>the model changes frequently;</li>
+<li>multiple suppliers support the system;</li>
+<li>mappings and rules interact;</li>
+<li>AMS repeatedly contacts the project team;</li>
+<li>temporary migration treatments remain active;</li>
+<li>AI-assisted support is being introduced.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Model governance should not end when the implementation project closes.</p>
+<p>After go-live, the model encounters its strongest evidence:</p>
+<ul>
+<li>real records;</li>
+<li>real users;</li>
+<li>real interfaces;</li>
+<li>real exceptions;</li>
+<li>real support incidents.</li>
+</ul>
+<p>AMS can treat that evidence in two ways.</p>
+<p>It can resolve each ticket locally and allow the model to fragment.</p>
+<p>Or it can use incidents and changes to maintain a verified operational baseline.</p>
+<p>The practical test is:</p>
+<blockquote>After resolving a material AMS ticket, can the organisation show whether the data, configuration, mapping or approved model changed—and prove that all affected artefacts now agree?</blockquote>
+<p>When the answer is yes, model governance has become an operational capability.</p>
+<p>When the answer is no, AMS may keep the system running while implementation knowledge slowly disappears.</p>
+<p>The objective is not to make every support ticket an architecture project.</p>
+<p>It is to ensure that operational changes with model consequences do not vanish when the ticket closes.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We help SAP migration, MDG, MDM, data-governance and AMS teams preserve model truth across project delivery and long-term operations.</p>
+<p>Martenweave provides a backend-first foundation for canonical model files, deterministic validation, lineage, impact analysis, dataset evidence and human-approved change proposals.</p>
+<p>It does not replace SAP MDG or the service desk.</p>
+<p>It connects operational support decisions back to the model the organisation intends to govern.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer that unifies master data, policy and metadata. Its current capabilities include governed models, golden records, matching and consolidation, collaborative workflows, validated values, monitored business rules, data-quality management and auditable data changes.</p>
+<p>SAP also distinguishes master-data integration as the distribution layer that provides applications with a harmonised view of master data in its current state.</p>
+<p>The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.</p>
+<p>Martenweave uses canonical model files, deterministic validation, disposable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>The current implementation is CLI-driven and backend-first. It is not a hosted MDM platform, generic workflow engine, autonomous mutation system or direct SAP write-back tool.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li><li><a href="/blog/how-to-build-an-ams-model-change-process-that-does-not-recreate-the-sap.html">Six months after go-live, a country requests a new Supplier Classification value.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html"><span>Previous</span>A programme has already created most of the artefacts it needs.</a><a href="/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html"><span>Next</span>A country team changes one row in a mapping workbook.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

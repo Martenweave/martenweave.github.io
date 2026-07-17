@@ -1,0 +1,1487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration dashboard shows:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html" />
+    <meta property="og:title" content="How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk | Martenweave" />
+    <meta property="og:description" content="A migration dashboard shows:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk | Martenweave" />
+    <meta name="twitter:description" content="A migration dashboard shows:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html",
+                        "name": "How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk | Martenweave",
+                        "description": "A migration dashboard shows:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html#content",
+                        "headline": "How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk",
+                        "name": "How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk",
+                        "description": "A migration dashboard shows:",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Build a Lineage-Based Migration Readiness Score Without Hiding Risk</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration dashboard shows:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#ready">Ready</a></li><li><a href="#ready-with-warnings">Ready with warnings</a></li><li><a href="#conditionally-ready">Conditionally ready</a></li><li><a href="#blocked">Blocked</a></li><li><a href="#not-assessed">Not assessed</a></li><li><a href="#1-model-integrity">1. Model integrity</a></li><li><a href="#2-source-readiness">2. Source readiness</a></li><li><a href="#3-mapping-readiness">3. Mapping readiness</a></li><li><a href="#4-rule-readiness">4. Rule readiness</a></li><li><a href="#5-target-readiness">5. Target readiness</a></li><li><a href="#6-evidence-readiness">6. Evidence readiness</a></li><li><a href="#7-downstream-readiness">7. Downstream readiness</a></li><li><a href="#8-operational-readiness">8. Operational readiness</a></li><li><a href="#critical">Critical</a></li><li><a href="#high">High</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration dashboard shows:</p>
+<pre><code class="language-text">Overall readiness: 92%</code></pre>
+<p>The programme reports green status.</p>
+<p>Most fields are mapped.</p>
+<p>Most records load successfully.</p>
+<p>Most validation checks pass.</p>
+<p>Then the details emerge:</p>
+<ul>
+<li>supplier bank data is only partially verified;</li>
+<li>one Product Plant Mapping uses a broad default;</li>
+<li>several Cost Centres have invalid go-live dates;</li>
+<li>a mandatory tax identifier has no authoritative source for one country;</li>
+<li>customer partner-function counts reconcile, but some roles belong to the wrong Sales Area;</li>
+<li>the only evidence for a critical interface comes from an obsolete mock load.</li>
+</ul>
+<p>The score is mathematically correct according to its formula.</p>
+<p>It is operationally misleading.</p>
+<p>The main problem is not that readiness was calculated.</p>
+<p>The problem is that weak and strong evidence, critical and optional fields, direct and fallback paths, and blockers and warnings were averaged into one reassuring number.</p>
+<blockquote>A migration-readiness score should summarise evidence without allowing aggregation to hide a critical break in lineage.</blockquote>
+<p>Lineage provides a better foundation than simple field-completion metrics because it evaluates the whole path:</p>
+<pre><code class="language-text">source
+→ dataset
+→ Mapping
+→ business Attribute
+→ SAP endpoint
+→ Rule
+→ evidence
+→ downstream use</code></pre>
+<p>A target field can be populated while this path remains incomplete.</p>
+<p>A Mapping can exist while its source is unavailable.</p>
+<p>A Rule can be documented while its implementation has not been tested.</p>
+<p>A fallback can improve completeness while increasing business risk.</p>
+<p>A serious readiness score must reflect those differences.</p>
+<p>Martenweave already positions deterministic validation, dataset-gap detection, lineage, impact analysis and human-approved PatchProposals as parts of one backend-first governance pipeline. It also exposes health and scorecard commands alongside dataset-readiness, trace and impact operations.</p>
+<p>The correct next step is not to create a more decorative dashboard.</p>
+<p>It is to define a score whose components remain explainable and whose blockers cannot be averaged away.</p>
+<p>---</p>
+<h1 id="readiness-is-not-completeness">Readiness is not completeness</h1>
+<p>Completeness asks:</p>
+<blockquote>Is a value present?</blockquote>
+<p>Readiness asks:</p>
+<blockquote>Is the value available, correctly interpreted, properly transformed, valid for the target context, supported by evidence and safe to use?</blockquote>
+<p>Consider Product Plant MRP Type.</p>
+<p>A load file contains a nonblank value for every Product Plant record.</p>
+<p>Completeness is 100 percent.</p>
+<p>But suppose:</p>
+<ul>
+<li>76 percent came from an approved direct conversion;</li>
+<li>14 percent came from an approved plant-specific lookup;</li>
+<li>10 percent received a global default of <code>PD</code>;</li>
+<li>the default has not been approved for two plants.</li>
+</ul>
+<p>The target field is complete.</p>
+<p>The migration path is not fully ready.</p>
+<p>A readiness score should therefore separate:</p>
+<pre><code class="language-text">technical completeness
+from
+governed conformance</code></pre>
+<p>The first is useful.</p>
+<p>The second determines whether the result can be trusted.</p>
+<p>---</p>
+<h1 id="a-score-is-a-summary-not-a-verdict">A score is a summary, not a verdict</h1>
+<p>One number can help compare:</p>
+<ul>
+<li>migration objects;</li>
+<li>domains;</li>
+<li>waves;</li>
+<li>model versions;</li>
+<li>progress over time.</li>
+</ul>
+<p>It should not replace the underlying findings.</p>
+<p>A score of 84 may result from:</p>
+<ul>
+<li>many minor warnings;</li>
+<li>one critical unresolved bank-data issue;</li>
+<li>low evidence coverage;</li>
+<li>several missing optional fields;</li>
+<li>one untested interface;</li>
+<li>broad use of defaults.</li>
+</ul>
+<p>These situations require different decisions.</p>
+<p>Every score should therefore be accompanied by:</p>
+<ul>
+<li>readiness verdict;</li>
+<li>critical blockers;</li>
+<li>dimension scores;</li>
+<li>evidence confidence;</li>
+<li>affected scope;</li>
+<li>trend;</li>
+<li>explanation.</li>
+</ul>
+<p>The number helps navigation.</p>
+<p>The findings govern release decisions.</p>
+<p>---</p>
+<h1 id="start-with-a-readiness-verdict">Start with a readiness verdict</h1>
+<p>Before calculating a percentage, define the possible verdicts.</p>
+<p>A practical set is:</p>
+<h2 id="ready">Ready</h2>
+<p>No blocking condition exists. Critical paths are sufficiently evidenced for the declared scope.</p>
+<h2 id="ready-with-warnings">Ready with warnings</h2>
+<p>No blocker exists, but bounded risks or incomplete low-criticality evidence remain.</p>
+<h2 id="conditionally-ready">Conditionally ready</h2>
+<p>Release is possible only under explicit conditions, temporary controls or accepted residual risk.</p>
+<h2 id="blocked">Blocked</h2>
+<p>At least one release-gate condition is unresolved.</p>
+<h2 id="not-assessed">Not assessed</h2>
+<p>Evidence is too incomplete to provide a defensible verdict.</p>
+<p>Martenweave’s current dataset-readiness workflow already produces <code>ready</code>, <code>ready_with_warnings</code> or <code>blocked</code> outcomes while combining validation, indexing, profiling and gap detection.</p>
+<p>A broader lineage-based model can extend this pattern without reducing everything to a percentage.</p>
+<p>---</p>
+<h1 id="blockers-must-override-averages">Blockers must override averages</h1>
+<p>Suppose a Supplier migration receives these scores:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Score</th></tr></thead><tbody><tr><td>Source availability</td><td>98</td></tr><tr><td>Mapping coverage</td><td>96</td></tr><tr><td>Target persistence</td><td>99</td></tr><tr><td>Evidence coverage</td><td>90</td></tr><tr><td>Downstream verification</td><td>88</td></tr></tbody></table></div>
+<p>The weighted result may be 95.</p>
+<p>Now add one condition:</p>
+<pre><code class="language-text">Supplier bank-account ownership is not verified
+for 3,400 active suppliers.</code></pre>
+<p>The migration should not become ready because unrelated dimensions score well.</p>
+<p>The correct result may be:</p>
+<pre><code class="language-text">Score: 95
+Verdict: Blocked
+Reason: Critical bank-data ownership control unresolved</code></pre>
+<p>This is not contradictory.</p>
+<p>The score measures aggregate preparation.</p>
+<p>The verdict applies release policy.</p>
+<p>---</p>
+<h1 id="define-critical-path-assertions-first">Define critical-path assertions first</h1>
+<p>A readiness model should begin with deterministic assertions, not weights.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Every mandatory SAP target Attribute
+must have at least one approved source or creation path.</code></pre>
+<pre><code class="language-text">Every critical Mapping
+must have current evidence for its required context.</code></pre>
+<pre><code class="language-text">No active fallback may be used outside its approved scope.</code></pre>
+<pre><code class="language-text">Every Supplier bank account
+must have a traceable ownership and validation path.</code></pre>
+<pre><code class="language-text">Every Product Plant record
+must contain the organisational keys required by its Mapping.</code></pre>
+<pre><code class="language-text">Every production interface consuming a changed value list
+must have compatibility evidence.</code></pre>
+<p>If a critical assertion fails, the verdict may be blocked regardless of the numerical score.</p>
+<p>---</p>
+<h1 id="readiness-dimensions">Readiness dimensions</h1>
+<p>A lineage-based score can use several dimensions.</p>
+<p>The precise weights can vary by programme, but the dimensions should remain stable and interpretable.</p>
+<h2 id="1-model-integrity">1. Model integrity</h2>
+<p>Does the canonical model validate?</p>
+<p>Checks include:</p>
+<ul>
+<li>IDs;</li>
+<li>object types;</li>
+<li>references;</li>
+<li>domain context;</li>
+<li>status compatibility;</li>
+<li>effective periods;</li>
+<li>orphaned critical objects.</li>
+</ul>
+<p>This is the foundation.</p>
+<p>A model with broken references should not receive a reliable readiness score.</p>
+<h2 id="2-source-readiness">2. Source readiness</h2>
+<p>Are the required source fields, keys and contexts available?</p>
+<p>Checks include:</p>
+<ul>
+<li>expected fields present;</li>
+<li>source authority declared;</li>
+<li>required keys available;</li>
+<li>source grain compatible;</li>
+<li>values profiled;</li>
+<li>relevant source snapshot identified.</li>
+</ul>
+<h2 id="3-mapping-readiness">3. Mapping readiness</h2>
+<p>Can approved Mappings produce the target values for the intended population?</p>
+<p>Checks include:</p>
+<ul>
+<li>source and target connected;</li>
+<li>transformation classified;</li>
+<li>applicability complete;</li>
+<li>value conversions valid;</li>
+<li>fallback controlled;</li>
+<li>population coverage measured.</li>
+</ul>
+<h2 id="4-rule-readiness">4. Rule readiness</h2>
+<p>Are required controls defined, implemented and tested?</p>
+<p>Checks include:</p>
+<ul>
+<li>requiredness;</li>
+<li>format;</li>
+<li>value domain;</li>
+<li>cross-field checks;</li>
+<li>lifecycle behaviour;</li>
+<li>exceptions;</li>
+<li>implementation evidence.</li>
+</ul>
+<h2 id="5-target-readiness">5. Target readiness</h2>
+<p>Can the SAP target represent and persist the governed result?</p>
+<p>Checks include:</p>
+<ul>
+<li>endpoint available;</li>
+<li>datatype compatible;</li>
+<li>organisational context correct;</li>
+<li>target object extendable;</li>
+<li>field persistence verified;</li>
+<li>required configuration available.</li>
+</ul>
+<h2 id="6-evidence-readiness">6. Evidence readiness</h2>
+<p>Is the path verified for the current baseline and scope?</p>
+<p>Checks include:</p>
+<ul>
+<li>current evidence;</li>
+<li>dataset identity;</li>
+<li>implementation version;</li>
+<li>claim coverage;</li>
+<li>review acceptance;</li>
+<li>no unresolved contradiction.</li>
+</ul>
+<h2 id="7-downstream-readiness">7. Downstream readiness</h2>
+<p>Will consuming systems and processes interpret the result correctly?</p>
+<p>Checks include:</p>
+<ul>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>code lists;</li>
+<li>process controls;</li>
+<li>operational tests;</li>
+<li>ownership.</li>
+</ul>
+<h2 id="8-operational-readiness">8. Operational readiness</h2>
+<p>Can cutover and hypercare manage remaining exceptions?</p>
+<p>Checks include:</p>
+<ul>
+<li>exception owners;</li>
+<li>fallback tracking;</li>
+<li>reconciliation;</li>
+<li>remediation deadlines;</li>
+<li>rollback or correction path;</li>
+<li>hypercare handover.</li>
+</ul>
+<p>A score that measures only source fields and target loads misses most of these dimensions.</p>
+<p>---</p>
+<h1 id="do-not-assign-equal-weight-to-every-field">Do not assign equal weight to every field</h1>
+<p>One missing optional Product description is not equivalent to:</p>
+<ul>
+<li>missing Supplier bank country;</li>
+<li>missing Customer Sales Area key;</li>
+<li>invalid Tax Identifier category;</li>
+<li>missing Cost Centre validity;</li>
+<li>unresolved Business Partner role;</li>
+<li>incorrect Product base unit.</li>
+</ul>
+<p>Objects need criticality.</p>
+<p>A simple criticality model might include:</p>
+<h2 id="critical">Critical</h2>
+<p>Failure blocks migration or creates unacceptable legal, financial, operational or integrity risk.</p>
+<h2 id="high">High</h2>
+<p>Failure materially affects core processes or large populations.</p>
+<h2 id="medium">Medium</h2>
+<p>Failure creates controlled operational degradation or manual work.</p>
+<h2 id="low">Low</h2>
+<p>Failure affects convenience, description or nonessential reporting.</p>
+<p>This criticality should influence both:</p>
+<ul>
+<li>score contribution;</li>
+<li>release-gate policy.</li>
+</ul>
+<p>A critical failure may block.</p>
+<p>A low-criticality failure may reduce the score without blocking.</p>
+<p>---</p>
+<h1 id="criticality-belongs-to-a-business-path">Criticality belongs to a business path</h1>
+<p>Avoid rating only the physical SAP field.</p>
+<p>For example:</p>
+<pre><code class="language-text">Supplier Bank Account</code></pre>
+<p>may be critical for active payable suppliers but irrelevant for prospects not yet approved for payment.</p>
+<pre><code class="language-text">MRP Type</code></pre>
+<p>may be critical for manufacturing plants but low priority for nonstock products.</p>
+<pre><code class="language-text">Tax Identifier</code></pre>
+<p>may be mandatory in one country and conditional in another.</p>
+<p>Criticality should therefore be scoped by:</p>
+<ul>
+<li>Attribute;</li>
+<li>population;</li>
+<li>organisational context;</li>
+<li>lifecycle;</li>
+<li>migration wave;</li>
+<li>business process.</li>
+</ul>
+<p>---</p>
+<h1 id="example-1-supplier-bank-data-readiness">Example 1: Supplier bank-data readiness</h1>
+<p>A Supplier Bank Account readiness assessment might include:</p>
+<h2 id="model-integrity">Model integrity</h2>
+<ul>
+<li>Bank Account Attribute exists.</li>
+<li>Supplier-bank relationship is defined.</li>
+<li>target endpoint is registered.</li>
+</ul>
+<h2 id="source-readiness">Source readiness</h2>
+<ul>
+<li>bank country present;</li>
+<li>IBAN or account number present;</li>
+<li>bank key present where required;</li>
+<li>source ownership known.</li>
+</ul>
+<h2 id="mapping-readiness">Mapping readiness</h2>
+<ul>
+<li>country-specific normalisation defined;</li>
+<li>duplicate-account handling defined;</li>
+<li>account-holder treatment defined.</li>
+</ul>
+<h2 id="rule-readiness">Rule readiness</h2>
+<ul>
+<li>IBAN validation;</li>
+<li>account-number rules;</li>
+<li>duplicate ownership checks;</li>
+<li>blocked-country policy.</li>
+</ul>
+<h2 id="evidence-readiness">Evidence readiness</h2>
+<ul>
+<li>source profile;</li>
+<li>validation results;</li>
+<li>target creation;</li>
+<li>reviewed exceptions.</li>
+</ul>
+<h2 id="operational-readiness">Operational readiness</h2>
+<ul>
+<li>unresolved bank records isolated;</li>
+<li>payment block policy;</li>
+<li>correction ownership.</li>
+</ul>
+<p>Possible outcome:</p>
+<pre><code class="language-text">Aggregate score: 93
+
+Verdict: Blocked
+
+Critical finding:
+Bank ownership not verified for 680 payment-active suppliers.</code></pre>
+<p>The score shows substantial progress.</p>
+<p>The verdict prevents false confidence.</p>
+<p>---</p>
+<h1 id="example-2-product-units-of-measure">Example 2: Product units of measure</h1>
+<p>For Product units of measure, the critical path may include:</p>
+<pre><code class="language-text">source unit
+→ canonical unit meaning
+→ conversion ratio
+→ SAP base and alternative units
+→ sales or warehouse interface</code></pre>
+<p>Readiness dimensions include:</p>
+<ul>
+<li>base unit available;</li>
+<li>alternative units available;</li>
+<li>conversion numerator and denominator valid;</li>
+<li>no circular conversions;</li>
+<li>interface code compatibility;</li>
+<li>target persistence;</li>
+<li>order and warehouse scenarios tested.</li>
+</ul>
+<p>A Product might load successfully with:</p>
+<pre><code class="language-text">Base unit: PC
+Alternative unit: BOX</code></pre>
+<p>while the conversion ratio is missing.</p>
+<p>Field completeness appears high.</p>
+<p>Operational readiness is low.</p>
+<p>A useful score penalises the missing transformation relationship more heavily than an absent marketing description.</p>
+<p>---</p>
+<h1 id="example-3-cost-centre-validity">Example 3: Cost Centre validity</h1>
+<p>Cost Centre readiness requires more than object creation.</p>
+<p>The path includes:</p>
+<pre><code class="language-text">source Cost Centre
++
+controlling area
++
+valid-from date
++
+valid-to date
++
+responsible organisational context
+→ SAP Cost Centre</code></pre>
+<p>A mock load may create all records.</p>
+<p>Readiness should still assess:</p>
+<ul>
+<li>controlling-area Mapping;</li>
+<li>uniqueness;</li>
+<li>validity at go-live;</li>
+<li>hierarchy assignment;</li>
+<li>company-code compatibility;</li>
+<li>posting test;</li>
+<li>downstream reporting.</li>
+</ul>
+<p>Possible result:</p>
+<pre><code class="language-text">Object creation: 100%
+Validity at go-live: 94%
+Posting verification: 82%
+Hierarchy assignment: 97%
+
+Verdict: Blocked</code></pre>
+<p>Why blocked?</p>
+<p>Because 6 percent of active Cost Centres cannot receive postings on the planned go-live date.</p>
+<p>The overall percentage should not conceal that.</p>
+<p>---</p>
+<h1 id="example-4-customer-partner-functions">Example 4: Customer partner functions</h1>
+<p>A readiness model for partner functions should not count only partner records.</p>
+<p>It should evaluate:</p>
+<ul>
+<li>Customer identity;</li>
+<li>Sales Area;</li>
+<li>partner role;</li>
+<li>partner identity;</li>
+<li>mandatory-role combination;</li>
+<li>cardinality;</li>
+<li>self-partner default;</li>
+<li>unresolved external partners.</li>
+</ul>
+<p>A load may reconcile 100 percent of source rows.</p>
+<p>But if Bill-to and Payer were reversed for one sales organisation, the migration is not ready.</p>
+<p>Suggested dimension scores:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Score</th></tr></thead><tbody><tr><td>Source field availability</td><td>100</td></tr><tr><td>Key Mapping</td><td>96</td></tr><tr><td>Role conversion</td><td>89</td></tr><tr><td>Target persistence</td><td>99</td></tr><tr><td>Mandatory-role conformance</td><td>84</td></tr><tr><td>Business sample approval</td><td>72</td></tr></tbody></table></div>
+<p>Verdict:</p>
+<pre><code class="language-text">Conditionally ready</code></pre>
+<p>Condition:</p>
+<pre><code class="language-text">Resolve Payer/Bill-to conversion for Sales Organisation 2200.</code></pre>
+<p>---</p>
+<h1 id="example-5-supplier-tax-identifiers">Example 5: Supplier tax identifiers</h1>
+<p>Tax-Identifier readiness should distinguish:</p>
+<ul>
+<li>presence;</li>
+<li>syntax;</li>
+<li>category;</li>
+<li>country applicability;</li>
+<li>legal evidence;</li>
+<li>uniqueness;</li>
+<li>target persistence.</li>
+</ul>
+<p>Possible results:</p>
+<pre><code class="language-text">Presence: 98%
+Format: 97%
+Country/category match: 88%
+Legal evidence: 76%
+Target persistence: 99%</code></pre>
+<p>A naive average gives 92.</p>
+<p>That may still be blocked if the programme cannot determine which tax category applies to a critical country population.</p>
+<p>The category problem is semantic.</p>
+<p>Target completeness does not compensate for it.</p>
+<p>---</p>
+<h1 id="example-6-product-profit-centre">Example 6: Product profit centre</h1>
+<p>Profit centre derivation may depend on:</p>
+<pre><code class="language-text">plant
++
+product family
++
+company structure
+→ profit centre</code></pre>
+<p>Readiness should assess:</p>
+<ul>
+<li>plant coverage;</li>
+<li>source classification;</li>
+<li>derivation Rule;</li>
+<li>valid profit centre;</li>
+<li>effective period;</li>
+<li>finance-owner acceptance;</li>
+<li>posting simulation.</li>
+</ul>
+<p>A default regional Profit Centre may improve completeness from 91 to 100 percent.</p>
+<p>The readiness score should not reward it without qualification.</p>
+<p>Instead:</p>
+<pre><code class="language-text">Target completeness: 100%
+Approved derivation: 91%
+Temporary fallback: 9%
+Verdict: Ready with conditions</code></pre>
+<p>Condition:</p>
+<pre><code class="language-text">Fallback population must be remediated before first month-end close.</code></pre>
+<p>---</p>
+<h1 id="score-lineage-paths-not-only-objects">Score lineage paths, not only objects</h1>
+<p>A FieldEndpoint may be valid.</p>
+<p>A Mapping may be valid.</p>
+<p>A Rule may be valid.</p>
+<p>Yet the complete path may still fail.</p>
+<p>Example:</p>
+<pre><code class="language-text">source Product Status
+→ Mapping
+→ Product Lifecycle Status
+→ SAP endpoint</code></pre>
+<p>All objects exist.</p>
+<p>But the source population covers only active products, while the target scope includes discontinued products.</p>
+<p>The path has a coverage gap.</p>
+<p>Readiness should therefore evaluate path assertions such as:</p>
+<ul>
+<li>source exists;</li>
+<li>required context exists;</li>
+<li>Mapping applies;</li>
+<li>output belongs to value domain;</li>
+<li>target supports result;</li>
+<li>Rule accepts result;</li>
+<li>evidence covers population.</li>
+</ul>
+<p>A path receives readiness only when these conditions align.</p>
+<p>---</p>
+<h1 id="path-level-readiness-states">Path-level readiness states</h1>
+<p>A useful path classification can include:</p>
+<h2 id="complete">Complete</h2>
+<p>All required components and current evidence are present.</p>
+<h2 id="complete-with-controlled-fallback">Complete with controlled fallback</h2>
+<p>The path relies on an approved fallback within declared scope.</p>
+<h2 id="partially-covered">Partially covered</h2>
+<p>Only part of the intended population has a valid path.</p>
+<h2 id="unverified">Unverified</h2>
+<p>The design path exists but current evidence is missing.</p>
+<h2 id="nonconformant">Nonconformant</h2>
+<p>Observed behaviour differs from approved lineage.</p>
+<h2 id="broken">Broken</h2>
+<p>A required source, Mapping, context or target is unavailable.</p>
+<p>These path states can feed the aggregate score.</p>
+<p>They should also remain visible individually.</p>
+<p>---</p>
+<h1 id="evidence-confidence-must-affect-the-score">Evidence confidence must affect the score</h1>
+<p>A path supported by:</p>
+<ul>
+<li>current cutover rehearsal;</li>
+<li>identified dataset;</li>
+<li>known implementation version;</li>
+<li>reviewed result;</li>
+</ul>
+<p>is stronger than one supported by:</p>
+<ul>
+<li>an old spreadsheet;</li>
+<li>unknown dataset;</li>
+<li>no baseline;</li>
+<li>unreviewed assertion.</li>
+</ul>
+<p>Possible confidence levels:</p>
+<h2 id="high-2">High</h2>
+<p>Current, reproducible and reviewed evidence.</p>
+<h2 id="medium-2">Medium</h2>
+<p>Current but partial evidence, or reviewed evidence with limited scope.</p>
+<h2 id="low-2">Low</h2>
+<p>Indirect, stale, incomplete or unreviewed evidence.</p>
+<h2 id="none">None</h2>
+<p>No supporting evidence.</p>
+<p>A score can include an evidence-confidence factor.</p>
+<p>However, low confidence for a critical path should often change the verdict to <code>not assessed</code> or <code>blocked</code>, rather than merely reducing the percentage slightly.</p>
+<p>---</p>
+<h1 id="evidence-age-should-not-be-treated-uniformly">Evidence age should not be treated uniformly</h1>
+<p>A six-month-old source profile may still be useful for a stable reference table.</p>
+<p>A one-week-old interface test may be stale if:</p>
+<ul>
+<li>the API version changed;</li>
+<li>the value list changed;</li>
+<li>the Mapping changed;</li>
+<li>the target endpoint changed.</li>
+</ul>
+<p>Evidence freshness should depend on model changes, not only calendar age.</p>
+<p>An Evidence object becomes stale when its tested assumptions no longer match the current baseline.</p>
+<p>---</p>
+<h1 id="scoring-fallbacks">Scoring fallbacks</h1>
+<p>Fallbacks need separate treatment.</p>
+<p>A readiness formula that treats:</p>
+<pre><code class="language-text">value successfully produced</code></pre>
+<p>as full credit will reward defaults and manual workarounds.</p>
+<p>Instead, classify fallback quality.</p>
+<h2 id="approved-equivalent-fallback">Approved equivalent fallback</h2>
+<p>Nearly full readiness credit.</p>
+<p>Example:</p>
+<ul>
+<li>current verified replica of authoritative source.</li>
+</ul>
+<h2 id="approved-transformable-fallback">Approved transformable fallback</h2>
+<p>Reduced credit until transformation and reconciliation are verified.</p>
+<h2 id="manual-governed-fallback">Manual governed fallback</h2>
+<p>Partial credit, limited by capacity and evidence.</p>
+<h2 id="approximate-fallback">Approximate fallback</h2>
+<p>Low credit and likely conditional readiness.</p>
+<h2 id="undocumented-fallback">Undocumented fallback</h2>
+<p>No readiness credit and possible blocker.</p>
+<h2 id="expired-fallback">Expired fallback</h2>
+<p>Blocker for affected critical scope.</p>
+<p>This keeps technical completeness from disguising weak provenance.</p>
+<p>---</p>
+<h1 id="example-7-business-partner-time-zone">Example 7: Business Partner time zone</h1>
+<p>A migration derives Time Zone from country.</p>
+<p>For countries with one time zone, this may be reliable.</p>
+<p>For countries with several time zones, it is approximate.</p>
+<p>A readiness report might show:</p>
+<pre><code class="language-text">Direct source value: 61%
+Deterministic country derivation: 24%
+Regional derivation: 10%
+Approximate country default: 5%</code></pre>
+<p>The field is 100 percent populated.</p>
+<p>Path readiness is lower.</p>
+<p>The five-percent approximate population should remain visible by country and risk.</p>
+<p>---</p>
+<h1 id="example-8-product-serial-number-profile">Example 8: Product serial-number profile</h1>
+<p>Serial-number profile affects operational processing.</p>
+<p>Readiness may require:</p>
+<ul>
+<li>source profile;</li>
+<li>product type;</li>
+<li>plant or business context;</li>
+<li>conversion;</li>
+<li>SAP target;</li>
+<li>inventory and delivery tests.</li>
+</ul>
+<p>A wrong profile may not prevent product creation.</p>
+<p>It can break warehouse or delivery execution after go-live.</p>
+<p>Therefore, the downstream-process dimension may carry more weight than simple target persistence.</p>
+<p>This is a good example of a field whose migration risk appears only after examining the process lineage.</p>
+<p>---</p>
+<h1 id="example-9-supplier-purchasing-block">Example 9: Supplier purchasing block</h1>
+<p>A Supplier may have several block types:</p>
+<ul>
+<li>central block;</li>
+<li>company-code posting block;</li>
+<li>purchasing-organisation block;</li>
+<li>deletion indicator;</li>
+<li>workflow review state.</li>
+</ul>
+<p>A readiness score that groups them as “Supplier Block” can be misleading.</p>
+<p>The score should assess:</p>
+<ul>
+<li>semantic separation;</li>
+<li>organisational level;</li>
+<li>source authority;</li>
+<li>Mapping;</li>
+<li>expected operational behaviour.</li>
+</ul>
+<p>A complete target field with the wrong block type is worse than a missing optional field.</p>
+<p>---</p>
+<h1 id="example-10-customer-shipping-condition">Example 10: Customer shipping condition</h1>
+<p>Shipping Condition may be sourced from:</p>
+<ul>
+<li>Customer Sales Area;</li>
+<li>order defaults;</li>
+<li>route-determination policy;</li>
+<li>local commercial practice.</li>
+</ul>
+<p>Readiness should verify:</p>
+<ul>
+<li>correct Sales Area grain;</li>
+<li>valid target values;</li>
+<li>local conversion;</li>
+<li>downstream order test;</li>
+<li>no unapproved global default.</li>
+</ul>
+<p>A score based only on nonblank target values will miss incorrect logistics behaviour.</p>
+<p>---</p>
+<h1 id="avoid-one-universal-formula">Avoid one universal formula</h1>
+<p>Different migration domains have different risk structures.</p>
+<p>Supplier bank data should emphasise:</p>
+<ul>
+<li>authority;</li>
+<li>validation;</li>
+<li>ownership;</li>
+<li>payment usability.</li>
+</ul>
+<p>Product planning data should emphasise:</p>
+<ul>
+<li>plant context;</li>
+<li>derivation;</li>
+<li>downstream planning behaviour.</li>
+</ul>
+<p>Tax data should emphasise:</p>
+<ul>
+<li>category;</li>
+<li>country;</li>
+<li>legal evidence;</li>
+<li>uniqueness.</li>
+</ul>
+<p>Partner functions should emphasise:</p>
+<ul>
+<li>keys;</li>
+<li>cardinality;</li>
+<li>role combinations;</li>
+<li>Sales Area.</li>
+</ul>
+<p>The score framework should remain consistent.</p>
+<p>Dimension weights and blockers should be domain-specific.</p>
+<p>---</p>
+<h1 id="a-two-layer-scoring-model">A two-layer scoring model</h1>
+<p>A practical approach uses two layers.</p>
+<h2 id="layer-1-release-gates">Layer 1: release gates</h2>
+<p>Boolean or categorical conditions.</p>
+<p>Examples:</p>
+<ul>
+<li>no critical broken lineage;</li>
+<li>no expired critical fallback;</li>
+<li>no unresolved mandatory target;</li>
+<li>current evidence exists;</li>
+<li>no high-risk source-authority gap.</li>
+</ul>
+<p>These determine the verdict.</p>
+<h2 id="layer-2-weighted-readiness-dimensions">Layer 2: weighted readiness dimensions</h2>
+<p>Used to measure progress and compare areas.</p>
+<p>Example:</p>
+<pre><code class="language-text">Model integrity: 15%
+Source readiness: 15%
+Mapping readiness: 20%
+Rule readiness: 10%
+Target readiness: 10%
+Evidence readiness: 15%
+Downstream readiness: 10%
+Operational readiness: 5%</code></pre>
+<p>The exact numbers should be configurable.</p>
+<p>The two-layer model prevents a high aggregate score from overriding a failed gate.</p>
+<p>---</p>
+<h1 id="example-formula">Example formula</h1>
+<p>For each path, a score might be based on:</p>
+<pre><code class="language-text">Path readiness =
+model integrity
+× source factor
+× Mapping factor
+× target factor
+× evidence factor</code></pre>
+<p>A multiplicative approach reflects an important principle:</p>
+<blockquote>A missing essential component can make the path unusable.</blockquote>
+<p>If source readiness is zero, the path should not receive a high score because its target and documentation are excellent.</p>
+<p>At a higher level, dimension scores can be aggregated using weights.</p>
+<p>The calculation should remain transparent.</p>
+<p>---</p>
+<h1 id="why-multiplication-can-be-useful">Why multiplication can be useful</h1>
+<p>Consider:</p>
+<pre><code class="language-text">Source readiness: 0.2
+Mapping readiness: 1.0
+Target readiness: 1.0
+Evidence readiness: 0.8</code></pre>
+<p>A simple average gives:</p>
+<pre><code class="language-text">0.75</code></pre>
+<p>That suggests moderate readiness.</p>
+<p>A multiplicative result gives:</p>
+<pre><code class="language-text">0.16</code></pre>
+<p>This better reflects that the path lacks usable source coverage.</p>
+<p>However, multiplication can also become too punitive for partial evidence.</p>
+<p>The correct approach may combine:</p>
+<ul>
+<li>hard gates;</li>
+<li>minimum thresholds;</li>
+<li>weighted dimensions;</li>
+<li>controlled multiplication for essential path components.</li>
+</ul>
+<p>The formula should reflect programme policy, not mathematical elegance.</p>
+<p>---</p>
+<h1 id="use-floors-for-essential-dimensions">Use floors for essential dimensions</h1>
+<p>Another approach is to limit the final score by the weakest essential dimension.</p>
+<p>Example:</p>
+<pre><code class="language-text">Aggregate weighted score: 91
+Lowest essential dimension: 54
+Final displayed score: 54</code></pre>
+<p>This makes bottlenecks visible.</p>
+<p>Possible essential dimensions:</p>
+<ul>
+<li>source;</li>
+<li>Mapping;</li>
+<li>target;</li>
+<li>evidence.</li>
+</ul>
+<p>A domain can choose which dimensions are essential.</p>
+<p>---</p>
+<h1 id="do-not-hide-denominators">Do not hide denominators</h1>
+<p>A readiness percentage should always expose what was counted.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mapping readiness: 92%</code></pre>
+<p>should explain:</p>
+<pre><code class="language-text">46 of 50 critical Mapping paths verified</code></pre>
+<p>not only the percentage.</p>
+<p>Also show:</p>
+<ul>
+<li>excluded paths;</li>
+<li>out-of-scope paths;</li>
+<li>not-assessed paths;</li>
+<li>fallback paths;</li>
+<li>blocked paths.</li>
+</ul>
+<p>A score can rise artificially when hard objects are moved to “out of scope.”</p>
+<p>Scope changes should be reviewed.</p>
+<p>---</p>
+<h1 id="population-weighted-and-object-weighted-scores">Population-weighted and object-weighted scores</h1>
+<p>These answer different questions.</p>
+<h2 id="object-weighted">Object-weighted</h2>
+<p>Each Attribute or Mapping contributes equally.</p>
+<p>Useful for model completeness.</p>
+<h2 id="population-weighted">Population-weighted</h2>
+<p>Contribution depends on affected record count.</p>
+<p>Useful for operational exposure.</p>
+<p>Example:</p>
+<ul>
+<li>one broken Mapping affects 80 percent of suppliers;</li>
+<li>five broken Mappings affect ten records each.</li>
+</ul>
+<p>Object-weighted scoring may make the second situation look worse.</p>
+<p>Population-weighted scoring shows the first has greater exposure.</p>
+<p>A mature report should show both.</p>
+<p>---</p>
+<h1 id="criticality-weighted-score">Criticality-weighted score</h1>
+<p>Criticality weighting focuses on business importance.</p>
+<p>Example:</p>
+<pre><code class="language-text">Missing optional Product subtitle:
+low weight
+
+Missing Supplier bank country:
+critical weight</code></pre>
+<p>This helps prioritisation.</p>
+<p>It should not replace population weighting.</p>
+<p>A critical issue affecting one record may still require a block.</p>
+<p>---</p>
+<h1 id="three-parallel-views">Three parallel views</h1>
+<p>A useful scorecard can show:</p>
+<h2 id="model-view">Model view</h2>
+<p>How many objects and paths are structurally ready?</p>
+<h2 id="population-view">Population view</h2>
+<p>How many records are covered by ready paths?</p>
+<h2 id="risk-view">Risk view</h2>
+<p>How much critical business exposure remains?</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">View</th><th scope="col">Score</th></tr></thead><tbody><tr><td>Model readiness</td><td>91</td></tr><tr><td>Population coverage</td><td>97</td></tr><tr><td>Critical risk readiness</td><td>68</td></tr></tbody></table></div>
+<p>This is more informative than one blended figure.</p>
+<p>---</p>
+<h1 id="example-11-product-plant-planning-data">Example 11: Product Plant planning data</h1>
+<p>Suppose:</p>
+<ul>
+<li>96 percent of Product Plant records have MRP Type;</li>
+<li>94 percent have MRP Controller;</li>
+<li>99 percent have Procurement Type;</li>
+<li>82 percent have verified planning strategy;</li>
+<li>12 percent use a temporary MRP Controller default.</li>
+</ul>
+<p>Possible views:</p>
+<pre><code class="language-text">Field completeness: 95
+Model-path readiness: 86
+Population readiness: 92
+Critical risk readiness: 71
+Verdict: Conditionally ready</code></pre>
+<p>Condition:</p>
+<pre><code class="language-text">Remove or formally approve the temporary MRP Controller fallback
+before the first production planning cycle.</code></pre>
+<p>---</p>
+<h1 id="example-12-finance-payment-terms">Example 12: Finance payment terms</h1>
+<p>Payment Terms readiness may score highly because the field is widely populated.</p>
+<p>But analysis finds:</p>
+<ul>
+<li>company-code context missing for acquired-company suppliers;</li>
+<li>a central source term is copied to every company code;</li>
+<li>local finance owners have not approved the result.</li>
+</ul>
+<p>Possible report:</p>
+<pre><code class="language-text">Technical completeness: 99
+Contextual Mapping readiness: 74
+Owner acceptance: 63
+Population affected: 18%
+Verdict: Blocked for acquired-company population</code></pre>
+<p>The migration object may remain ready for other populations.</p>
+<p>Readiness should support scoped verdicts.</p>
+<p>---</p>
+<h1 id="scoped-readiness">Scoped readiness</h1>
+<p>Avoid declaring an entire domain ready or blocked when only one context is affected.</p>
+<p>Possible scopes:</p>
+<ul>
+<li>country;</li>
+<li>company code;</li>
+<li>plant;</li>
+<li>Sales Organisation;</li>
+<li>supplier category;</li>
+<li>migration wave;</li>
+<li>source system;</li>
+<li>legal entity.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Supplier domain:
+Ready with warnings
+
+Portugal tax scope:
+Blocked
+
+Germany bank-data scope:
+Ready
+
+Acquired-company payment terms:
+Conditionally ready</code></pre>
+<p>This allows proportionate decisions without hiding local blockers.</p>
+<p>---</p>
+<h1 id="readiness-aggregation-hierarchy">Readiness aggregation hierarchy</h1>
+<p>Scores can roll up through several levels:</p>
+<pre><code class="language-text">Field or Rule
+→ lineage path
+→ business Attribute
+→ Entity
+→ migration object
+→ domain
+→ wave
+→ programme</code></pre>
+<p>Every roll-up should preserve:</p>
+<ul>
+<li>blockers;</li>
+<li>lowest critical score;</li>
+<li>evidence gaps;</li>
+<li>affected scope.</li>
+</ul>
+<p>The programme score should never erase a blocked lower-level critical path.</p>
+<p>---</p>
+<h1 id="red-amber-and-green-need-definitions">Red, amber and green need definitions</h1>
+<p>Colour alone is not governance.</p>
+<p>Define thresholds and gates.</p>
+<p>Example:</p>
+<h2 id="green">Green</h2>
+<ul>
+<li>score at least 85;</li>
+<li>no blocker;</li>
+<li>critical evidence current;</li>
+<li>fallback within policy.</li>
+</ul>
+<h2 id="amber">Amber</h2>
+<ul>
+<li>score from 65 to 84;</li>
+<li>or controlled warning;</li>
+<li>or incomplete noncritical evidence.</li>
+</ul>
+<h2 id="red">Red</h2>
+<ul>
+<li>score below 65;</li>
+<li>or any critical gate failure;</li>
+<li>or not-assessed critical path.</li>
+</ul>
+<p>A score of 91 can still be red if a critical gate fails.</p>
+<p>This should be intentional, not treated as a dashboard defect.</p>
+<p>---</p>
+<h1 id="unknown-is-not-green">Unknown is not green</h1>
+<p>Many programmes score only what has been assessed.</p>
+<p>Unassessed objects disappear from the denominator.</p>
+<p>This inflates readiness.</p>
+<p>Use an explicit state:</p>
+<pre><code class="language-text">Not assessed</code></pre>
+<p>Critical unassessed paths should reduce evidence coverage and may block release.</p>
+<p>The organisation should not receive readiness credit for missing information.</p>
+<p>---</p>
+<h1 id="evidence-confidence-and-uncertainty">Evidence confidence and uncertainty</h1>
+<p>A score should expose uncertainty.</p>
+<p>Example:</p>
+<pre><code class="language-text">Readiness score: 82
+Evidence confidence: Low</code></pre>
+<p>This is materially different from:</p>
+<pre><code class="language-text">Readiness score: 82
+Evidence confidence: High</code></pre>
+<p>Confidence may depend on:</p>
+<ul>
+<li>evidence freshness;</li>
+<li>scope coverage;</li>
+<li>reproducibility;</li>
+<li>reviewer acceptance;</li>
+<li>baseline match;</li>
+<li>contradictory findings.</li>
+</ul>
+<p>---</p>
+<h1 id="readiness-trends">Readiness trends</h1>
+<p>Trend is useful when interpreted carefully.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mock Load 1: 54
+Mock Load 2: 68
+Mock Load 3: 79
+Cutover rehearsal: 83</code></pre>
+<p>The trend suggests progress.</p>
+<p>But the report should also show:</p>
+<ul>
+<li>blockers opened;</li>
+<li>blockers closed;</li>
+<li>scope expanded;</li>
+<li>scoring policy changed;</li>
+<li>evidence invalidated.</li>
+</ul>
+<p>A score can drop because the model became more honest.</p>
+<p>That may be progress.</p>
+<p>---</p>
+<h1 id="do-not-optimise-for-the-score">Do not optimise for the score</h1>
+<p>Once a metric becomes a target, teams may:</p>
+<ul>
+<li>lower criticality;</li>
+<li>move objects out of scope;</li>
+<li>convert errors to warnings;</li>
+<li>count defaults as mapped;</li>
+<li>reuse old evidence;</li>
+<li>close Findings without remediation;</li>
+<li>reduce test scope.</li>
+</ul>
+<p>Controls should include:</p>
+<ul>
+<li>reviewed criticality;</li>
+<li>reviewed exclusions;</li>
+<li>transparent denominators;</li>
+<li>evidence freshness;</li>
+<li>immutable history;</li>
+<li>score-policy versioning.</li>
+</ul>
+<p>The score is an instrument.</p>
+<p>It should not become a game.</p>
+<p>---</p>
+<h1 id="score-policy-versioning">Score-policy versioning</h1>
+<p>When weights, thresholds or blockers change, record the policy version.</p>
+<p>Example:</p>
+<pre><code class="language-text">Readiness policy:
+MW-READINESS-2.1</code></pre>
+<p>A score of 82 under one policy may not be comparable to 82 under another.</p>
+<p>Store:</p>
+<ul>
+<li>policy ID;</li>
+<li>weights;</li>
+<li>thresholds;</li>
+<li>gates;</li>
+<li>criticality rules;</li>
+<li>date;</li>
+<li>approving Decision.</li>
+</ul>
+<p>---</p>
+<h1 id="score-explanations">Score explanations</h1>
+<p>For every result, produce a concise explanation.</p>
+<p>Weak:</p>
+<pre><code class="language-text">Product readiness: 73</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">Product readiness: 73
+
+Primary constraints:
+- MRP Controller fallback used for 12% of Product Plant records
+- serial-number profile not tested in warehouse process
+- three plant mappings lack current evidence
+
+Blockers:
+none
+
+Verdict:
+Ready with conditions</code></pre>
+<p>The explanation should be generated from structured findings, not manually rewritten each time.</p>
+<p>---</p>
+<h1 id="recommended-scorecard-layout">Recommended scorecard layout</h1>
+<h2 id="overall-verdict">Overall verdict</h2>
+<pre><code class="language-text">Conditionally ready</code></pre>
+<h2 id="overall-score">Overall score</h2>
+<pre><code class="language-text">81 / 100</code></pre>
+<h2 id="confidence">Confidence</h2>
+<pre><code class="language-text">Medium</code></pre>
+<h2 id="blocking-conditions">Blocking conditions</h2>
+<pre><code class="language-text">None</code></pre>
+<h2 id="release-conditions">Release conditions</h2>
+<pre><code class="language-text">- Resolve Cost Centre validity for company code 3100
+- Reconcile temporary Product profit-centre fallback before month-end</code></pre>
+<h2 id="dimension-scores">Dimension scores</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Score</th></tr></thead><tbody><tr><td>Model integrity</td><td>98</td></tr><tr><td>Source readiness</td><td>86</td></tr><tr><td>Mapping readiness</td><td>78</td></tr><tr><td>Rule readiness</td><td>84</td></tr><tr><td>Target readiness</td><td>95</td></tr><tr><td>Evidence readiness</td><td>69</td></tr><tr><td>Downstream readiness</td><td>71</td></tr><tr><td>Operational readiness</td><td>80</td></tr></tbody></table></div>
+<h2 id="critical-low-points">Critical low points</h2>
+<ul>
+<li>Supplier bank ownership verification;</li>
+<li>Product Plant fallback usage;</li>
+<li>partner-function role conversion;</li>
+<li>tax-category evidence.</li>
+</ul>
+<h2 id="trend">Trend</h2>
+<pre><code class="language-text">+6 since Mock Load 3</code></pre>
+<h2 id="scope">Scope</h2>
+<pre><code class="language-text">Wave 1, Germany and Portugal</code></pre>
+<p>---</p>
+<h1 id="release-gate-examples">Release-gate examples</h1>
+<h2 id="supplier-bank-data">Supplier bank data</h2>
+<p>Block when:</p>
+<ul>
+<li>bank ownership unresolved;</li>
+<li>IBAN validation absent for critical population;</li>
+<li>duplicate account ownership unresolved;</li>
+<li>sensitive evidence uncontrolled.</li>
+</ul>
+<h2 id="product-planning">Product planning</h2>
+<p>Block when:</p>
+<ul>
+<li>mandatory plant context missing;</li>
+<li>critical Product Plants use unapproved defaults;</li>
+<li>planning-process test fails.</li>
+</ul>
+<h2 id="tax-data">Tax data</h2>
+<p>Block when:</p>
+<ul>
+<li>category and country conflict;</li>
+<li>mandatory legal evidence missing;</li>
+<li>duplicate tax identity unresolved.</li>
+</ul>
+<h2 id="cost-centres">Cost Centres</h2>
+<p>Block when:</p>
+<ul>
+<li>validity excludes go-live date;</li>
+<li>controlling-area Mapping missing;</li>
+<li>posting test fails.</li>
+</ul>
+<h2 id="partner-functions">Partner functions</h2>
+<p>Block when:</p>
+<ul>
+<li>mandatory role missing;</li>
+<li>partner identity unresolved;</li>
+<li>role assigned to wrong Sales Area.</li>
+</ul>
+<p>These gates should be domain policy, not ad hoc dashboard interpretation.</p>
+<p>---</p>
+<h1 id="readiness-findings-should-produce-action">Readiness findings should produce action</h1>
+<p>Each low score or failed gate should identify:</p>
+<ul>
+<li>affected object;</li>
+<li>affected path;</li>
+<li>scope;</li>
+<li>severity;</li>
+<li>owner;</li>
+<li>evidence;</li>
+<li>suggested next action.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Finding:
+Product Plant MRP Controller fallback exceeds approved scope
+
+Affected path:
+Legacy Planner Group
+→ MRP Controller Mapping
+→ Product Plant MRP Controller
+
+Scope:
+PL20, PL30
+
+Population:
+8,420 records
+
+Owner:
+Production Planning Data Lead
+
+Action:
+Provide plant-specific conversion or approve bounded fallback</code></pre>
+<p>The score points to the problem.</p>
+<p>The Finding drives delivery.</p>
+<p>---</p>
+<h1 id="patch-proposals-and-readiness">Patch proposals and readiness</h1>
+<p>A gap should not automatically rewrite the model.</p>
+<p>The flow remains:</p>
+<pre><code class="language-text">readiness finding
+→ Evidence
+→ PatchProposal
+→ validation
+→ candidate impact
+→ human approval</code></pre>
+<p>Martenweave’s current architecture explicitly keeps AI and automation in a proposal-first role rather than permitting silent canonical mutation.</p>
+<p>This matters because a low score can result from:</p>
+<ul>
+<li>model defect;</li>
+<li>source-data defect;</li>
+<li>implementation defect;</li>
+<li>missing evidence;</li>
+<li>legitimate exception.</li>
+</ul>
+<p>Only some cases require a canonical model change.</p>
+<p>---</p>
+<h1 id="what-ai-can-contribute">What AI can contribute</h1>
+<p>AI can help:</p>
+<ul>
+<li>summarise score drivers;</li>
+<li>group related Findings;</li>
+<li>explain why the verdict is blocked;</li>
+<li>identify recurring low-readiness patterns;</li>
+<li>draft remediation plans;</li>
+<li>suggest candidate tests;</li>
+<li>compare scorecards between baselines.</li>
+</ul>
+<p>AI should not autonomously:</p>
+<ul>
+<li>change criticality;</li>
+<li>exclude scope;</li>
+<li>downgrade a blocker;</li>
+<li>approve fallback;</li>
+<li>reuse stale evidence;</li>
+<li>adjust weights to improve status.</li>
+</ul>
+<p>The scoring policy must remain deterministic and reviewable.</p>
+<p>---</p>
+<h1 id="a-focused-martenweave-implementation-slice">A focused Martenweave implementation slice</h1>
+<p>Martenweave already includes:</p>
+<ul>
+<li>deterministic validation;</li>
+<li>health and scorecard commands;</li>
+<li>lineage and impact analysis;</li>
+<li>dataset readiness with explicit verdicts;</li>
+<li>Evidence, Decisions and PatchProposals;</li>
+<li>a generated index that remains disposable.</li>
+</ul>
+<p>The next vertical slice should introduce a <strong>lineage-based readiness policy</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Calculate readiness from complete governed paths while preventing critical failures from being hidden by aggregation.</p>
+<h2 id="initial-dimensions">Initial dimensions</h2>
+<ul>
+<li>model integrity;</li>
+<li>source readiness;</li>
+<li>Mapping readiness;</li>
+<li>Rule readiness;</li>
+<li>target readiness;</li>
+<li>evidence readiness;</li>
+<li>downstream readiness;</li>
+<li>operational readiness.</li>
+</ul>
+<h2 id="required-capabilities">Required capabilities</h2>
+<ul>
+<li>type- and path-level scoring;</li>
+<li>object criticality;</li>
+<li>scope-specific verdicts;</li>
+<li>hard release gates;</li>
+<li>fallback penalties;</li>
+<li>evidence-confidence factor;</li>
+<li>object- and population-weighted views;</li>
+<li>transparent denominators;</li>
+<li>score-policy versioning.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The scorecard must distinguish:</p>
+<pre><code class="language-text">Supplier bank target populated</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Supplier bank path verified for ownership, validity and payment use</code></pre>
+<p>It must distinguish:</p>
+<pre><code class="language-text">Product MRP Type nonblank</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Product MRP Type produced through the approved plant-specific path</code></pre>
+<p>It must allow:</p>
+<pre><code class="language-text">Score: 94
+Verdict: Blocked</code></pre>
+<p>when a critical release gate fails.</p>
+<h2 id="existing-commands">Existing commands</h2>
+<pre><code class="language-bash">martenweave validate --repo ./model
+martenweave health --repo ./model
+martenweave scorecard --repo ./model
+martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/mock-load-3.xlsx \
+  --out ./reports/readiness</code></pre>
+<h2 id="future-policy-aware-operation">Future policy-aware operation</h2>
+<pre><code class="language-bash">martenweave scorecard \
+  --repo ./model \
+  --policy ./policies/migration-readiness.yaml \
+  --scope WAVE-1</code></pre>
+<p>The policy-aware arguments describe a recommended product direction rather than the current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A migration-readiness score is useful only when it makes risk easier to see.</p>
+<p>It becomes dangerous when it converts:</p>
+<ul>
+<li>critical failures;</li>
+<li>missing evidence;</li>
+<li>approximate fallbacks;</li>
+<li>context gaps;</li>
+<li>untested consumers;</li>
+</ul>
+<p>into small reductions in an otherwise green percentage.</p>
+<p>The right model is:</p>
+<pre><code class="language-text">deterministic release gates
++
+transparent readiness dimensions
++
+path-level evidence
++
+criticality
++
+scope
++
+explainable aggregation</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can a reviewer understand why the score has its current value, which critical paths remain unsafe, which populations are affected and what evidence would change the verdict?</blockquote>
+<p>When the answer is yes, the score supports migration governance.</p>
+<p>When the answer is:</p>
+<blockquote>We are 92 percent ready,</blockquote>
+<p>without a clear explanation of the remaining eight percent, the score is hiding precisely the part that matters.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects canonical model objects, source datasets, Mappings, Rules, physical endpoints, Evidence, Decisions and proposals so that readiness can be calculated from governed paths rather than isolated field counts.</p>
+<p>The objective is not to manufacture a reassuring score.</p>
+<p>It is to make incomplete or unsafe migration paths difficult to ignore.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, validates IDs, types, references and domain context before generating disposable indexes and exposes health, scorecard, lineage, impact and dataset-readiness operations through its CLI.</p>
+<p>The current dataset-readiness workflow orchestrates validation, indexing, dataset profiling, gap detection and summarisation into a report with an explicit readiness verdict. It can promote detected gaps into reviewable PatchProposals rather than mutating the canonical model automatically.</p>
+<p>Martenweave’s product contract remains backend-first and proposal-first: evidence enters the pipeline, validators and impact analysis assess the model, and human review controls accepted changes.</p>
+<p>The weighting models, critical-path gates, confidence factors and policy-aware scorecard described in this article are recommended Martenweave directions. They should not be interpreted as guarantees of the exact current scorecard implementation unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html"><span>Previous</span>Lineage is often treated as design documentation.</a><a href="/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html"><span>Next</span>A data architect opens a lineage viewer during a business review.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

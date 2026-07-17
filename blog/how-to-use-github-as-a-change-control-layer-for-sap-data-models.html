@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Use GitHub as a Change-Control Layer for SAP Data Models | Martenweave</title>
+    <meta
+      name="description"
+      content="A country team changes one row in a mapping workbook."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html" />
+    <meta property="og:title" content="How to Use GitHub as a Change-Control Layer for SAP Data Models | Martenweave" />
+    <meta property="og:description" content="A country team changes one row in a mapping workbook." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Use GitHub as a Change-Control Layer for SAP Data Models | Martenweave" />
+    <meta name="twitter:description" content="A country team changes one row in a mapping workbook." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html",
+                        "name": "How to Use GitHub as a Change-Control Layer for SAP Data Models | Martenweave",
+                        "description": "A country team changes one row in a mapping workbook.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Use GitHub as a Change-Control Layer for SAP Data Models",
+                                    "item": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html#content",
+                        "headline": "How to Use GitHub as a Change-Control Layer for SAP Data Models",
+                        "name": "How to Use GitHub as a Change-Control Layer for SAP Data Models",
+                        "description": "A country team changes one row in a mapping workbook.",
+                        "url": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Use GitHub as a Change-Control Layer for SAP Data Models</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Use GitHub as a Change-Control Layer for SAP Data Models</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A country team changes one row in a mapping workbook.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#github-should-not-become-the-business-application">GitHub should not become the business application</a></li><li><a href="#git-is-useful-because-a-model-has-state">Git is useful because a model has state</a></li><li><a href="#a-repository-is-not-automatically-a-governance-system">A repository is not automatically a governance system</a></li><li><a href="#the-main-branch-should-represent-approved-model-truth">The main branch should represent approved model truth</a></li><li><a href="#protect-the-approved-baseline">Protect the approved baseline</a></li><li><a href="#a-pull-request-is-a-model-change-proposal">A pull request is a model-change proposal</a></li><li><a href="#use-a-structured-pull-request-template">Use a structured pull-request template</a></li><li><a href="#the-diff-is-the-central-review-object">The diff is the central review object</a></li><li><a href="#file-diff-and-semantic-diff-are-not-the-same">File diff and semantic diff are not the same</a></li><li><a href="#use-codeowners-to-route-model-review">Use CODEOWNERS to route model review</a></li><li><a href="#separate-technical-review-from-business-approval">Separate technical review from business approval</a></li><li><a href="#automated-checks-should-run-before-human-review">Automated checks should run before human review</a></li><li><a href="#validate-the-proposed-full-state-not-only-changed-files">Validate the proposed full state, not only changed files</a></li><li><a href="#use-baseline-comparison-for-impact-analysis">Use baseline comparison for impact analysis</a></li><li><a href="#do-not-store-generated-truth-as-canonical-truth">Do not store generated truth as canonical truth</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A country team changes one row in a mapping workbook.</p>
+<p>The row now points to a different SAP target field. A short comment says that the previous field was incorrect. The file is uploaded to SharePoint with a new suffix:</p>
+<pre><code class="language-text">Customer_Mapping_Final_v12_Approved.xlsx</code></pre>
+<p>The migration developer updates the transformation.</p>
+<p>The SAP architect does not see the change. The test team continues using the previous expected result. The global data owner never reviews whether the new target preserves the intended business meaning.</p>
+<p>Several weeks later, the discrepancy appears during testing.</p>
+<p>The programme can usually determine who uploaded the workbook.</p>
+<p>It is harder to establish:</p>
+<ul>
+<li>exactly what changed;</li>
+<li>what evidence supported it;</li>
+<li>which dependencies were checked;</li>
+<li>who approved the semantic change;</li>
+<li>which version should be restored if the decision was wrong.</li>
+</ul>
+<p>The problem is not that the programme lacks a change process.</p>
+<p>It may already use Jira, service-management workflows, design authorities and formal approvals.</p>
+<p>The missing element is a controlled, reviewable representation of the model change itself.</p>
+<p>A ticket describes requested work.</p>
+<p>An approval email records consent.</p>
+<p>A meeting records discussion.</p>
+<p>None of them necessarily shows the precise difference between the current approved model and the proposed new one.</p>
+<p>This is where GitHub can provide practical value outside software development.</p>
+<blockquote>GitHub can act as a change-control layer for SAP data models when canonical model files are treated like controlled source: changes are proposed as explicit diffs, validated automatically, reviewed by accountable owners and merged only after approval.</blockquote>
+<p>This does not mean business users should become software developers.</p>
+<p>It means the model needs the same basic control principles already used for important code:</p>
+<ul>
+<li>identifiable baseline;</li>
+<li>visible difference;</li>
+<li>automated checks;</li>
+<li>responsible review;</li>
+<li>preserved history;</li>
+<li>reversible change.</li>
+</ul>
+<h2 id="github-should-not-become-the-business-application">GitHub should not become the business application</h2>
+<p>GitHub is not an MDM platform.</p>
+<p>It does not provide operational master-data stewardship, record matching, SAP change-request processing or business workflow execution.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer for master data, policy and metadata, with governed models, golden records, matching and consolidation, steward workflows, validated values, quality monitoring and auditable data changes.</p>
+<p>Those responsibilities remain in SAP MDG or another operational master-data platform.</p>
+<p>GitHub’s role is narrower.</p>
+<p>It can control the files and proposals describing:</p>
+<ul>
+<li>business attributes;</li>
+<li>entities and relationships;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>validation rules;</li>
+<li>value lists;</li>
+<li>contexts;</li>
+<li>ownership;</li>
+<li>model decisions;</li>
+<li>accepted deviations.</li>
+</ul>
+<p>It controls model definition and change evidence.</p>
+<p>It does not govern individual customer or supplier records.</p>
+<h2 id="git-is-useful-because-a-model-has-state">Git is useful because a model has state</h2>
+<p>A programme frequently treats its model as a collection of documents.</p>
+<p>A stronger view is:</p>
+<pre><code class="language-text">The approved model is a defined state.
+
+A change is the difference between two states.</code></pre>
+<p>For example, the current state may contain:</p>
+<pre><code class="language-yaml">id: RULE-SUPPLIER-RISK-REQUIRED
+attribute: ATTR-SUPPLIER-RISK
+context: ACTIVE_SUPPLIERS
+severity: warning</code></pre>
+<p>A proposal changes:</p>
+<pre><code class="language-yaml">severity: warning</code></pre>
+<p>to:</p>
+<pre><code class="language-yaml">severity: error</code></pre>
+<p>That one-line difference may affect:</p>
+<ul>
+<li>source-data remediation;</li>
+<li>migration readiness;</li>
+<li>user workflow;</li>
+<li>test cases;</li>
+<li>interfaces;</li>
+<li>operational incident volume.</li>
+</ul>
+<p>Git records the textual change precisely.</p>
+<p>Martenweave adds the model context required to explain what the change means.</p>
+<h2 id="a-repository-is-not-automatically-a-governance-system">A repository is not automatically a governance system</h2>
+<p>Moving spreadsheets or YAML files into GitHub does not solve governance by itself.</p>
+<p>A weak repository can still have:</p>
+<ul>
+<li>unclear ownership;</li>
+<li>direct edits to the main branch;</li>
+<li>no model validation;</li>
+<li>large unreadable changes;</li>
+<li>technical reviewers approving business decisions;</li>
+<li>obsolete branches;</li>
+<li>vague commit messages;</li>
+<li>undocumented emergency fixes.</li>
+</ul>
+<p>GitHub supplies mechanisms.</p>
+<p>The programme must establish the operating rules.</p>
+<p>The essential control chain is:</p>
+<pre><code class="language-text">Current approved model
+        ↓
+Proposed change branch
+        ↓
+Visible semantic and file diff
+        ↓
+Automated validation
+        ↓
+Required owner review
+        ↓
+Approval
+        ↓
+Merge into approved baseline
+        ↓
+Implementation and verification</code></pre>
+<h2 id="the-main-branch-should-represent-approved-model-truth">The main branch should represent approved model truth</h2>
+<p>A simple convention is:</p>
+<pre><code class="language-text">main = current approved canonical model</code></pre>
+<p>This does not mean everything in <code>main</code> is unquestionably correct.</p>
+<p>It means that any correction must enter through controlled change rather than silent replacement.</p>
+<p>Other branches represent proposed states.</p>
+<p>For example:</p>
+<pre><code class="language-text">proposal/de-supplier-tax-rule
+fix/customer-group-target-endpoint
+change/retire-legacy-risk-value</code></pre>
+<p>A branch should be temporary.</p>
+<p>It exists to make a bounded proposal reviewable.</p>
+<p>After the change is approved and merged, the branch can be removed.</p>
+<h2 id="protect-the-approved-baseline">Protect the approved baseline</h2>
+<p>GitHub supports protected branches that can prevent direct or destructive changes and require specific conditions before merging. Available controls include required pull-request reviews, successful status checks, resolved conversations, signed commits, restricted pushes and restrictions against bypassing the rules.</p>
+<p>For a canonical model repository, a practical starting policy is:</p>
+<ul>
+<li>no direct push to <code>main</code>;</li>
+<li>changes require a pull request;</li>
+<li>deterministic model validation must pass;</li>
+<li>at least one independent reviewer must approve;</li>
+<li>critical directories require owner approval;</li>
+<li>unresolved review comments block merge;</li>
+<li>stale approvals are dismissed after material new changes;</li>
+<li>force pushes and branch deletion remain disabled.</li>
+</ul>
+<p>These controls do not prove that the business decision is correct.</p>
+<p>They prevent unreviewed model state from becoming the official baseline.</p>
+<h2 id="a-pull-request-is-a-model-change-proposal">A pull request is a model-change proposal</h2>
+<p>In software development, a pull request proposes merging one set of changes into another.</p>
+<p>For model governance, the same object can represent:</p>
+<ul>
+<li>change request;</li>
+<li>evidence package;</li>
+<li>semantic diff;</li>
+<li>validation result;</li>
+<li>review record;</li>
+<li>approval boundary.</li>
+</ul>
+<p>A useful pull request should answer:</p>
+<h3 id="what-is-changing">What is changing?</h3>
+<p>List affected stable model identifiers.</p>
+<h3 id="why-is-it-changing">Why is it changing?</h3>
+<p>State the problem and evidence.</p>
+<h3 id="where-does-it-apply">Where does it apply?</h3>
+<p>Specify domain, country, organisation, population and release.</p>
+<h3 id="what-is-affected">What is affected?</h3>
+<p>Include mappings, datasets, rules, interfaces and tests.</p>
+<h3 id="which-decision-is-required">Which decision is required?</h3>
+<p>Make approval explicit.</p>
+<h3 id="what-has-been-validated">What has been validated?</h3>
+<p>Show deterministic checks and remaining business questions.</p>
+<h3 id="how-will-implementation-be-verified">How will implementation be verified?</h3>
+<p>State the expected configuration, migration or test result.</p>
+<p>This is more valuable than a pull request saying:</p>
+<blockquote>Update supplier mapping.</blockquote>
+<h2 id="use-a-structured-pull-request-template">Use a structured pull-request template</h2>
+<p>A model-change template can include:</p>
+<pre><code class="language-text">## Goal
+
+What business or implementation problem does this change address?
+
+## Affected model objects
+
+- ATTR-...
+- MAP-...
+- RULE-...
+- VLIST-...
+
+## Current state
+
+What does the approved model say today?
+
+## Proposed state
+
+What will become different?
+
+## Evidence
+
+Which dataset, issue, decision, regulation or test supports the proposal?
+
+## Context
+
+Where does the change apply?
+
+## Impact
+
+Which mappings, rules, datasets, tests, interfaces or countries require review?
+
+## Validation
+
+Which deterministic checks passed?
+
+## Open questions
+
+Which semantic or risk decisions still require human judgement?
+
+## Required approvers
+
+Which roles have authority?
+
+## Verification
+
+How will the implemented result be tested?</code></pre>
+<p>The template should remain short enough to use.</p>
+<p>Its purpose is not administrative completeness.</p>
+<p>It is to prevent reviewers from approving a change without understanding its boundary.</p>
+<h2 id="the-diff-is-the-central-review-object">The diff is the central review object</h2>
+<p>Traditional model approval frequently reviews the new document.</p>
+<p>A Git-based process reviews the difference.</p>
+<p>Suppose the proposed change:</p>
+<ul>
+<li>adds one value;</li>
+<li>modifies two mappings;</li>
+<li>changes one validation severity;</li>
+<li>updates one decision;</li>
+<li>retires one source endpoint.</li>
+</ul>
+<p>Reviewers can inspect only those differences rather than rereading the complete domain model.</p>
+<p>This supports a better question:</p>
+<blockquote>Do these specific changes correctly move the approved model from its current state to the proposed state?</blockquote>
+<p>The diff is especially valuable when the change has hidden side effects.</p>
+<p>A reviewer may notice that an AI proposal updated the mapping but not:</p>
+<ul>
+<li>the value list;</li>
+<li>the local context;</li>
+<li>the related rule;</li>
+<li>the decision record.</li>
+</ul>
+<h2 id="file-diff-and-semantic-diff-are-not-the-same">File diff and semantic diff are not the same</h2>
+<p>A raw Git diff shows lines.</p>
+<p>A business reviewer needs meaning.</p>
+<p>For example:</p>
+<pre><code class="language-diff">-severity: warning
++severity: error</code></pre>
+<p>A semantic view should explain:</p>
+<pre><code class="language-text">Rule:
+Supplier Risk Classification Required
+
+Change:
+Validation becomes blocking.
+
+Applicable population:
+Active suppliers in Germany.
+
+Dataset impact:
+8,420 records currently lack a valid value.
+
+Migration impact:
+Mock Load 3 would reject these records.
+
+Decision required:
+Approve blocking behaviour and remediation plan.</code></pre>
+<p>Martenweave should generate or support this semantic layer.</p>
+<p>Git remains the authoritative record of exact file change.</p>
+<p>The generated report makes the change reviewable by non-developers.</p>
+<h2 id="use-codeowners-to-route-model-review">Use CODEOWNERS to route model review</h2>
+<p>GitHub supports a <code>CODEOWNERS</code> file that assigns responsibility for repository files or directories to individuals or teams. Code owners can be automatically requested for review, and protected-branch settings can require their approval before affected changes merge.</p>
+<p>In a model repository, ownership can follow domain structure.</p>
+<p>For example:</p>
+<pre><code class="language-text">/model/business-partner/      @bp-domain-owners
+/model/customer/              @customer-data-owners
+/model/supplier/              @supplier-data-owners
+/model/local/de/              @de-data-governance
+/model/integration/           @integration-architecture
+/model/rules/                 @mdg-architecture</code></pre>
+<p>This can ensure that a supplier model change reaches the supplier owners.</p>
+<p>But there is an important limitation:</p>
+<blockquote>File ownership is not always equivalent to decision authority.</blockquote>
+<p>A change may affect:</p>
+<ul>
+<li>supplier business meaning;</li>
+<li>German tax policy;</li>
+<li>SAP implementation;</li>
+<li>integration consumers.</li>
+</ul>
+<p>No single directory owner represents every required approval.</p>
+<p>CODEOWNERS should provide a baseline routing mechanism.</p>
+<p>The pull request and model impact analysis should identify additional reviewers.</p>
+<h2 id="separate-technical-review-from-business-approval">Separate technical review from business approval</h2>
+<p>A technically competent reviewer can confirm that:</p>
+<ul>
+<li>YAML is valid;</li>
+<li>references resolve;</li>
+<li>naming conventions are followed;</li>
+<li>tests pass;</li>
+<li>the proposal can be indexed.</li>
+</ul>
+<p>They may not have authority to decide that:</p>
+<ul>
+<li>a field should become mandatory;</li>
+<li>two classifications are equivalent;</li>
+<li>a country exception is legally justified;</li>
+<li>a migration default is acceptable.</li>
+</ul>
+<p>A robust review can require several perspectives.</p>
+<h3 id="model-maintainer">Model maintainer</h3>
+<p>Confirms structural consistency.</p>
+<h3 id="domain-owner">Domain owner</h3>
+<p>Approves business meaning and policy.</p>
+<h3 id="sap-mdg-architect">SAP MDG architect</h3>
+<p>Confirms target implementation feasibility.</p>
+<h3 id="migration-owner">Migration owner</h3>
+<p>Confirms source and transformation consequences.</p>
+<h3 id="local-owner">Local owner</h3>
+<p>Approves contextual variation.</p>
+<h3 id="integration-owner">Integration owner</h3>
+<p>Confirms downstream compatibility.</p>
+<p>Not every change needs all six.</p>
+<p>The affected objects and change classification should determine the review set.</p>
+<h2 id="automated-checks-should-run-before-human-review">Automated checks should run before human review</h2>
+<p>Human reviewers should not spend their time finding basic structural problems.</p>
+<p>Martenweave’s current core treats Markdown and YAML model files as canonical truth, rebuilds disposable SQLite and JSONL indexes, validates IDs, types, references and domain-context rules before indexing, and requires AI-generated changes to enter through reviewable proposals.</p>
+<p>For every pull request, automated checks can run:</p>
+<pre><code class="language-bash">martenweave validate --repo ./model
+martenweave build-index --repo ./model --jsonl
+martenweave index-fresh --repo ./model
+martenweave health --repo ./model</code></pre>
+<p>Additional checks may include:</p>
+<ul>
+<li>duplicate IDs;</li>
+<li>invalid references;</li>
+<li>lifecycle conflicts;</li>
+<li>missing ownership;</li>
+<li>local override without global parent;</li>
+<li>active mapping using retired endpoint;</li>
+<li>invalid value-list reference;</li>
+<li>stale generated files;</li>
+<li>tests.</li>
+</ul>
+<p>GitHub protected branches can require status checks to succeed before a change is merged.</p>
+<p>The validator reports whether the proposal is structurally acceptable.</p>
+<p>It does not approve the business decision.</p>
+<h2 id="validate-the-proposed-full-state-not-only-changed-files">Validate the proposed full state, not only changed files</h2>
+<p>A small change can break objects elsewhere.</p>
+<p>For example:</p>
+<ul>
+<li>retiring an endpoint breaks five unchanged mappings;</li>
+<li>renaming an ID invalidates old decisions;</li>
+<li>removing a value breaks a local rule;</li>
+<li>changing a context creates overlapping requirements.</li>
+</ul>
+<p>The validation should therefore apply the proposed branch as a complete model state.</p>
+<p>The process should answer:</p>
+<pre><code class="language-text">Does the complete repository remain valid after this change?</code></pre>
+<p>not only:</p>
+<pre><code class="language-text">Are the edited files individually valid?</code></pre>
+<p>This is one reason generated indexes should be disposable.</p>
+<p>They can be rebuilt from the candidate canonical state during review.</p>
+<h2 id="use-baseline-comparison-for-impact-analysis">Use baseline comparison for impact analysis</h2>
+<p>The pull request naturally provides two states:</p>
+<pre><code class="language-text">Base branch:
+Current approved model
+
+Proposal branch:
+Candidate future model</code></pre>
+<p>Martenweave can compare them and generate:</p>
+<ul>
+<li>added objects;</li>
+<li>changed objects;</li>
+<li>retired objects;</li>
+<li>changed relationships;</li>
+<li>affected mappings;</li>
+<li>affected rules;</li>
+<li>affected datasets;</li>
+<li>affected ownership;</li>
+<li>potentially stale tests.</li>
+</ul>
+<p>The current CLI includes repository comparison, trace and impact commands alongside validation and indexing.</p>
+<p>The result should become part of review evidence.</p>
+<h2 id="do-not-store-generated-truth-as-canonical-truth">Do not store generated truth as canonical truth</h2>
+<p>The canonical files should be reviewed and merged.</p>
+<p>Generated indexes and reports should normally be reproducible.</p>
+<p>Martenweave explicitly treats SQLite and JSONL outputs as disposable and rebuildable from canonical files.</p>
+<p>This reduces several risks:</p>
+<ul>
+<li>reviewers approving opaque database changes;</li>
+<li>stale index files appearing authoritative;</li>
+<li>merge conflicts in generated artefacts;</li>
+<li>inability to reconstruct the model from readable sources.</li>
+</ul>
+<p>Generated reports may be attached to the pull request or produced by CI.</p>
+<p>The canonical model remains the controlled input.</p>
+<h2 id="keep-business-evidence-outside-the-repository-when-necessary">Keep business evidence outside the repository when necessary</h2>
+<p>A repository should not become an uncontrolled archive for:</p>
+<ul>
+<li>personal data;</li>
+<li>confidential contracts;</li>
+<li>large production datasets;</li>
+<li>regulated documents;</li>
+<li>credentials.</li>
+</ul>
+<p>The model can store references and evidence metadata:</p>
+<pre><code class="language-yaml">evidence:
+  type: dataset_profile
+  source: controlled-data-platform
+  reference: PROFILE-2026-0714-ERP-A-SUPPLIERS
+  reviewed_by: supplier-data-owner</code></pre>
+<p>The principle is:</p>
+<pre><code class="language-text">Preserve enough evidence to understand and verify the decision.
+
+Do not copy every sensitive source into Git.</code></pre>
+<p>Access, retention and classification requirements still apply.</p>
+<h2 id="use-issues-for-problems-pull-requests-for-model-state">Use issues for problems, pull requests for model state</h2>
+<p>GitHub issues and pull requests serve different purposes.</p>
+<h3 id="issue">Issue</h3>
+<p>Tracks a problem, question, gap or required work.</p>
+<p>Examples:</p>
+<ul>
+<li>source field missing;</li>
+<li>value mapping incomplete;</li>
+<li>ownership unresolved;</li>
+<li>configuration differs from design.</li>
+</ul>
+<h3 id="pull-request">Pull request</h3>
+<p>Proposes a specific change to the canonical model.</p>
+<p>An issue may remain open while evidence is gathered.</p>
+<p>When the treatment is known, a pull request can implement the proposed model update.</p>
+<p>A useful chain is:</p>
+<pre><code class="language-text">Dataset finding
+→ GitHub issue
+→ model decision
+→ pull request
+→ validation and approval
+→ merge
+→ implementation task
+→ verification</code></pre>
+<p>Martenweave’s current pipeline similarly moves from evidence through proposal, validation, gap and impact review to a GitHub issue or pull request for human review.</p>
+<h2 id="do-not-approve-by-ticket-status-alone">Do not approve by ticket status alone</h2>
+<p>A Jira ticket may show “Approved.”</p>
+<p>That approval may refer to:</p>
+<ul>
+<li>budget;</li>
+<li>requirement;</li>
+<li>technical implementation;</li>
+<li>sprint completion;</li>
+<li>business acceptance.</li>
+</ul>
+<p>The GitHub pull request should show the exact model change being approved.</p>
+<p>The Jira issue can remain the programme record for scheduling and delivery.</p>
+<p>The pull request becomes the authoritative review of model state.</p>
+<p>Link them.</p>
+<p>Do not assume they are interchangeable.</p>
+<h2 id="use-small-pull-requests">Use small pull requests</h2>
+<p>A pull request changing 400 model objects across six domains is difficult to govern.</p>
+<p>Reviewers may approve it because understanding every change is impractical.</p>
+<p>Prefer bounded changes such as:</p>
+<ul>
+<li>add one contextual rule;</li>
+<li>retire one value and update dependencies;</li>
+<li>correct one mapping;</li>
+<li>add one local extension;</li>
+<li>introduce one dataset expectation;</li>
+<li>record one material decision.</li>
+</ul>
+<p>A small model change should include all affected dependencies.</p>
+<p>“Small” does not mean changing only one file.</p>
+<p>It means representing one coherent decision.</p>
+<h2 id="one-decision-per-pull-request-is-a-useful-default">One decision per pull request is a useful default</h2>
+<p>Suppose the programme wants to:</p>
+<ol>
+<li>Add value <code>UNDER_REVIEW</code>.</li>
+<li>Change the global owner.</li>
+<li>Retire a source field.</li>
+<li>Fix an unrelated description.</li>
+</ol>
+<p>These changes should usually not share one approval.</p>
+<p>They have different:</p>
+<ul>
+<li>evidence;</li>
+<li>reviewers;</li>
+<li>risks;</li>
+<li>implementation plans;</li>
+<li>rollback paths.</li>
+</ul>
+<p>A practical default is:</p>
+<pre><code class="language-text">One material model decision per pull request.</code></pre>
+<p>Minor supporting updates required by that decision should remain in the same pull request.</p>
+<h2 id="use-commit-history-carefully">Use commit history carefully</h2>
+<p>A pull request may contain several working commits:</p>
+<ul>
+<li>initial proposal;</li>
+<li>reviewer corrections;</li>
+<li>validation fixes;</li>
+<li>evidence updates.</li>
+</ul>
+<p>The merged history should remain understandable.</p>
+<p>A squash merge can create one concise approved change record.</p>
+<p>A merge commit may preserve more detailed development history.</p>
+<p>The team should choose one consistent approach.</p>
+<p>The important outcome is that the final merged change can be identified and reversed.</p>
+<p>GitHub notes that enforcing a linear history can make changes easier to revert, although the precise merge strategy should fit the repository workflow.</p>
+<h2 id="use-tags-or-releases-for-approved-baselines">Use tags or releases for approved baselines</h2>
+<p>The <code>main</code> branch represents the current state.</p>
+<p>Programmes also need named historical baselines.</p>
+<p>Examples:</p>
+<pre><code class="language-text">model-v1.8-mock-load-2
+model-v2.0-uat
+model-v2.1-production</code></pre>
+<p>A baseline can record:</p>
+<ul>
+<li>model version;</li>
+<li>date;</li>
+<li>migration wave;</li>
+<li>applicable SAP release;</li>
+<li>validation result;</li>
+<li>approved deviations.</li>
+</ul>
+<p>This supports questions such as:</p>
+<ul>
+<li>Which model did Mock Load 2 use?</li>
+<li>Which decisions applied at cutover?</li>
+<li>Did UAT test the same mappings as production?</li>
+<li>When was this rule introduced?</li>
+</ul>
+<p>A branch is not a good permanent baseline.</p>
+<p>Tags or releases are more appropriate for identifiable approved states.</p>
+<h2 id="do-not-rewrite-historical-model-state">Do not rewrite historical model state</h2>
+<p>When a decision changes, create a new change.</p>
+<p>Do not edit old tags or rewrite history to make the past appear consistent with the present.</p>
+<p>Historical truth matters because:</p>
+<ul>
+<li>old migration loads used earlier rules;</li>
+<li>incidents may concern previous configuration;</li>
+<li>test evidence belongs to a specific baseline;</li>
+<li>local programmes may still run an older release.</li>
+</ul>
+<p>A new pull request can supersede an earlier decision.</p>
+<p>The original decision remains visible.</p>
+<h2 id="use-emergency-change-rules">Use emergency-change rules</h2>
+<p>Production incidents may require urgent model or configuration action.</p>
+<p>A normal review process may be too slow.</p>
+<p>The repository should define an emergency path.</p>
+<p>For example:</p>
+<ol>
+<li>Create a narrowly scoped emergency branch.</li>
+<li>Record the incident and immediate risk.</li>
+<li>Run mandatory structural validation.</li>
+<li>Obtain one authorised emergency approval.</li>
+<li>Merge and tag the emergency baseline.</li>
+<li>Create a mandatory follow-up review.</li>
+<li>Confirm whether the emergency state becomes permanent or is reversed.</li>
+</ol>
+<p>Emergency access should not mean invisible direct editing.</p>
+<p>GitHub branch protection can also be configured to limit bypassing and restrict direct pushes.</p>
+<h2 id="approval-should-follow-the-latest-diff">Approval should follow the latest diff</h2>
+<p>A reviewer approves a specific proposed state.</p>
+<p>If the author changes the branch materially after approval, the previous approval may no longer be valid.</p>
+<p>GitHub can dismiss stale pull-request approvals when commits change the reviewed diff, or require approval of the most recent reviewable push by someone other than the person who made it.</p>
+<p>For model governance, this is important.</p>
+<p>An author should not be able to:</p>
+<ol>
+<li>Obtain approval for a contextual warning.</li>
+<li>Change it to a global blocking error.</li>
+<li>Merge using the earlier approval.</li>
+</ol>
+<p>Materially changed proposals should be reviewed again.</p>
+<h2 id="resolve-review-conversations-before-merge">Resolve review conversations before merge</h2>
+<p>A review comment may identify:</p>
+<ul>
+<li>missing context;</li>
+<li>unreviewed downstream consumer;</li>
+<li>incorrect ownership;</li>
+<li>unsupported value;</li>
+<li>weak evidence.</li>
+</ul>
+<p>Leaving the comment open while merging weakens the approval record.</p>
+<p>GitHub protected branches can require review conversations to be resolved before merge.</p>
+<p>Resolution should mean one of:</p>
+<ul>
+<li>proposal updated;</li>
+<li>evidence added;</li>
+<li>concern accepted with explanation;</li>
+<li>separate follow-up issue created and linked;</li>
+<li>change rejected.</li>
+</ul>
+<p>It should not mean hiding an unresolved concern to achieve a green status.</p>
+<h2 id="a-worked-example-making-supplier-risk-mandatory">A worked example: making Supplier Risk mandatory</h2>
+<p>The current model contains:</p>
+<pre><code class="language-text">Attribute:
+ATTR-SUPPLIER-RISK
+
+Rule:
+Optional for all suppliers</code></pre>
+<p>The business proposes:</p>
+<pre><code class="language-text">Mandatory for active strategic suppliers.</code></pre>
+<h3 id="issue-2">Issue</h3>
+<p>The business owner reports inconsistent compliance processing.</p>
+<h3 id="evidence">Evidence</h3>
+<ul>
+<li>94% of applicable suppliers have valid classifications;</li>
+<li>6% are blank;</li>
+<li>blanks are concentrated in ERP_B;</li>
+<li>the compliance workflow depends on <code>HIGH</code>.</li>
+</ul>
+<h3 id="pull-request-changes">Pull request changes</h3>
+<ul>
+<li>update the rule context;</li>
+<li>add dataset expectation;</li>
+<li>link the responsible owner;</li>
+<li>record the business decision;</li>
+<li>identify ERP_B remediation gap;</li>
+<li>update related test references.</li>
+</ul>
+<h3 id="automated-checks">Automated checks</h3>
+<ul>
+<li>all object references resolve;</li>
+<li>context is valid;</li>
+<li>target value list exists;</li>
+<li>no active mapping uses retired endpoints;</li>
+<li>generated index rebuilds.</li>
+</ul>
+<h3 id="human-review">Human review</h3>
+<ul>
+<li>Procurement approves the meaning;</li>
+<li>Compliance approves workflow impact;</li>
+<li>Migration approves remediation treatment;</li>
+<li>SAP architect confirms implementability.</li>
+</ul>
+<h3 id="merge">Merge</h3>
+<p>The model becomes approved.</p>
+<h3 id="after-merge">After merge</h3>
+<p>Separate delivery tasks implement:</p>
+<ul>
+<li>SAP validation;</li>
+<li>source remediation;</li>
+<li>test update;</li>
+<li>readiness reporting.</li>
+</ul>
+<p>The pull request does not itself change SAP.</p>
+<p>It establishes the model state that implementation must follow.</p>
+<h2 id="another-example-correcting-a-target-mapping">Another example: correcting a target mapping</h2>
+<p>Current mapping:</p>
+<pre><code class="language-text">CRM_A.CUSTOMER_SEGMENT
+→ SAP central Business Partner classification</code></pre>
+<p>Proposed correction:</p>
+<pre><code class="language-text">CRM_A.CUSTOMER_SEGMENT
+→ SAP sales-area Customer Group</code></pre>
+<p>The raw file edit may look small.</p>
+<p>The pull-request impact report reveals:</p>
+<ul>
+<li>the target context changes from central to sales area;</li>
+<li>the transformation needs organisational expansion;</li>
+<li>several tests become stale;</li>
+<li>one integration consumes the central field;</li>
+<li>the original decision did not confirm semantic equivalence.</li>
+</ul>
+<p>The proposal may be rejected or split into:</p>
+<ol>
+<li>Clarify the business attribute.</li>
+<li>Decide target representation.</li>
+<li>Implement the approved mapping.</li>
+</ol>
+<p>GitHub did not determine the correct design.</p>
+<p>The controlled diff prevented a silent field substitution.</p>
+<h2 id="another-example-retiring-a-temporary-value">Another example: retiring a temporary value</h2>
+<p>Temporary value:</p>
+<pre><code class="language-text">MIGRATION_REVIEW</code></pre>
+<p>The pull request proposes retirement.</p>
+<p>It should include:</p>
+<ul>
+<li>current records still using the value;</li>
+<li>whether users can still assign it;</li>
+<li>related mappings;</li>
+<li>workflow branches;</li>
+<li>interface consumers;</li>
+<li>remediation owner;</li>
+<li>effective release.</li>
+</ul>
+<p>Validation should fail if active model objects still depend on the retired value.</p>
+<p>This turns retirement into a complete change rather than removing one line from a value-list file.</p>
+<h2 id="ai-generated-changes-fit-naturally-into-pull-requests">AI-generated changes fit naturally into pull requests</h2>
+<p>AI can help:</p>
+<ul>
+<li>extract proposed objects from notes;</li>
+<li>compare mapping versions;</li>
+<li>draft decisions;</li>
+<li>suggest impact relationships;</li>
+<li>generate patch content;</li>
+<li>prepare issue descriptions.</li>
+</ul>
+<p>The current Martenweave principle is explicit:</p>
+<blockquote>AI must not silently mutate.</blockquote>
+<p>AI proposals become <code>PatchProposal</code> objects; approved changes become <code>ChangeRequest</code>s.</p>
+<p>A GitHub pull request provides an additional review surface:</p>
+<pre><code class="language-text">AI-generated proposal
+→ canonical file diff
+→ deterministic validation
+→ owner review
+→ merge or rejection</code></pre>
+<p>The reviewer sees what the AI wants to change.</p>
+<p>The agent does not gain authority merely because it produced valid YAML.</p>
+<h2 id="github-is-not-sufficient-for-business-accessibility">GitHub is not sufficient for business accessibility</h2>
+<p>A pure GitHub workflow may fail if reviewers cannot understand or access it.</p>
+<p>Possible barriers include:</p>
+<ul>
+<li>unfamiliar interface;</li>
+<li>technical diffs;</li>
+<li>YAML syntax;</li>
+<li>repository permissions;</li>
+<li>notification overload;</li>
+<li>lack of mobile or corporate access.</li>
+</ul>
+<p>The operating model should provide alternative review surfaces:</p>
+<ul>
+<li>generated XLSX review packs;</li>
+<li>semantic HTML reports;</li>
+<li>static viewers;</li>
+<li>concise issue summaries;</li>
+<li>meeting-based approval with recorded model identifiers.</li>
+</ul>
+<p>The approval must still connect to the exact proposed state.</p>
+<p>For example, a business owner may approve a generated semantic report.</p>
+<p>The pull request records:</p>
+<ul>
+<li>report version;</li>
+<li>model commit;</li>
+<li>approval evidence;</li>
+<li>responsible reviewer.</li>
+</ul>
+<p>The goal is controlled state, not forcing everyone to use developer tooling directly.</p>
+<h2 id="security-and-confidentiality-still-matter">Security and confidentiality still matter</h2>
+<p>A repository containing model knowledge may expose:</p>
+<ul>
+<li>system architecture;</li>
+<li>field-level business rules;</li>
+<li>regulatory decisions;</li>
+<li>interface dependencies;</li>
+<li>local exceptions.</li>
+</ul>
+<p>Use appropriate:</p>
+<ul>
+<li>repository visibility;</li>
+<li>permissions;</li>
+<li>team access;</li>
+<li>evidence references;</li>
+<li>secret scanning;</li>
+<li>retention policy;</li>
+<li>backup;</li>
+<li>ownership continuity.</li>
+</ul>
+<p>Do not commit:</p>
+<ul>
+<li>credentials;</li>
+<li>production personal data;</li>
+<li>unredacted sensitive extracts;</li>
+<li>secrets embedded in configuration.</li>
+</ul>
+<p>Git history is intentionally persistent.</p>
+<p>Sensitive content remains difficult to remove completely once committed.</p>
+<h2 id="a-minimum-repository-structure">A minimum repository structure</h2>
+<p>A small model repository might contain:</p>
+<pre><code class="language-text">model/
+  domains/
+  entities/
+  attributes/
+  contexts/
+  endpoints/
+  mappings/
+  rules/
+  value-lists/
+  decisions/
+  datasets/
+  proposals/
+
+reports/
+  generated/
+
+.github/
+  workflows/
+  pull_request_template.md
+  CODEOWNERS
+
+docs/
+  operating-model.md
+  review-guide.md</code></pre>
+<p>The structure should follow how teams review and own the model.</p>
+<p>Do not create excessive directory depth merely to appear organised.</p>
+<h2 id="a-minimum-github-control-setup">A minimum GitHub control setup</h2>
+<p>For an initial pilot:</p>
+<ol>
+<li>Protect <code>main</code>.</li>
+<li>Require pull requests.</li>
+<li>Require one independent approval.</li>
+<li>Require Martenweave validation.</li>
+<li>Require resolved conversations.</li>
+<li>Add domain-level CODEOWNERS.</li>
+<li>Use a model-change template.</li>
+<li>Use stable model IDs.</li>
+<li>Tag milestone baselines.</li>
+<li>Document an emergency path.</li>
+</ol>
+<p>This is enough to create a meaningful control boundary.</p>
+<p>A complex ruleset is unnecessary before the workflow proves useful.</p>
+<h2 id="what-github-should-record">What GitHub should record</h2>
+<p>GitHub is well suited to preserving:</p>
+<ul>
+<li>exact file changes;</li>
+<li>proposal discussions;</li>
+<li>reviewer comments;</li>
+<li>approvals;</li>
+<li>validation status;</li>
+<li>merge history;</li>
+<li>baseline tags;</li>
+<li>linked issues.</li>
+</ul>
+<p>It is less suited to being the primary place for:</p>
+<ul>
+<li>operational master-data records;</li>
+<li>large datasets;</li>
+<li>confidential legal evidence;</li>
+<li>broad business collaboration;</li>
+<li>programme scheduling;</li>
+<li>user-facing stewardship workflows.</li>
+</ul>
+<p>Use GitHub for the part it controls well.</p>
+<h2 id="what-managers-should-ask">What managers should ask</h2>
+<ol>
+<li>What does the <code>main</code> branch represent?</li>
+<li>Can anyone change it directly?</li>
+<li>Which automated checks run before approval?</li>
+<li>Does the pull request show the semantic effect of the change?</li>
+<li>Are business owners reviewing meaning, not only file syntax?</li>
+<li>Does ownership follow the affected domain and context?</li>
+<li>Are approvals invalidated after material new edits?</li>
+<li>Are unresolved concerns blocking merge?</li>
+<li>Can the programme identify which baseline supported each test or migration wave?</li>
+<li>Are emergency changes reconciled later?</li>
+<li>Can business reviewers participate without editing YAML?</li>
+<li>Are sensitive datasets kept outside the repository?</li>
+<li>Can a merged model change be reverted?</li>
+<li>Does the Git history connect to actual SAP implementation and verification?</li>
+</ol>
+<p>If only developers can answer these questions, the repository is being used for storage rather than model governance.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="allowing-direct-changes-to-the-approved-branch">Allowing direct changes to the approved branch</h3>
+<p>This removes the review boundary.</p>
+<h3 id="treating-a-passing-validator-as-business-approval">Treating a passing validator as business approval</h3>
+<p>Structural correctness does not prove correct meaning.</p>
+<h3 id="making-large-cross-domain-pull-requests">Making large cross-domain pull requests</h3>
+<p>Review becomes superficial.</p>
+<h3 id="using-only-raw-diffs">Using only raw diffs</h3>
+<p>Business reviewers need semantic explanation.</p>
+<h3 id="treating-codeowners-as-complete-governance">Treating CODEOWNERS as complete governance</h3>
+<p>File ownership may not represent every required decision role.</p>
+<h3 id="merging-after-the-proposal-changes-materially">Merging after the proposal changes materially</h3>
+<p>Review must apply to the latest state.</p>
+<h3 id="committing-generated-indexes-as-authoritative-artefacts">Committing generated indexes as authoritative artefacts</h3>
+<p>Generated views should normally be reproducible.</p>
+<h3 id="storing-sensitive-source-data-in-git">Storing sensitive source data in Git</h3>
+<p>Preserve evidence references rather than unnecessary raw data.</p>
+<h3 id="using-pull-requests-without-implementation-reconciliation">Using pull requests without implementation reconciliation</h3>
+<p>An approved model change is not proof that SAP and integrations were updated.</p>
+<h3 id="forcing-all-business-users-into-a-developer-workflow">Forcing all business users into a developer workflow</h3>
+<p>Provide readable generated review views.</p>
+<h2 id="when-github-may-be-the-wrong-choice">When GitHub may be the wrong choice</h2>
+<p>A Git-based model-control process may be excessive when:</p>
+<ul>
+<li>the model is very small;</li>
+<li>one stable team owns all changes;</li>
+<li>changes are rare;</li>
+<li>a controlled workbook already provides reliable history;</li>
+<li>users cannot access the repository;</li>
+<li>no technical maintainer exists.</li>
+</ul>
+<p>A version-controlled workbook plus a decision log may be sufficient.</p>
+<p>GitHub becomes more useful when:</p>
+<ul>
+<li>several teams change the model;</li>
+<li>AI agents generate proposals;</li>
+<li>deterministic validation exists;</li>
+<li>model objects have stable identities;</li>
+<li>exact historical diffs matter;</li>
+<li>configuration and migration evolve through releases;</li>
+<li>vendor and staff continuity are concerns.</li>
+</ul>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>The current Martenweave Core README describes an open-source, backend-first governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals. The current source version is listed as 0.5.0.</p>
+<p>Its pipeline is:</p>
+<pre><code class="language-text">evidence
+→ proposal
+→ validation
+→ gaps and impact
+→ review
+→ GitHub issue or pull request</code></pre>
+<p>The project summarises the operating principle as:</p>
+<blockquote>Agents propose. Validators verify. Humans approve. Git records.</blockquote>
+<p>This is the precise relationship between Martenweave and GitHub.</p>
+<p>Martenweave provides:</p>
+<ul>
+<li>model objects;</li>
+<li>validation;</li>
+<li>traceability;</li>
+<li>impact analysis;</li>
+<li>dataset evidence;</li>
+<li>proposal structure.</li>
+</ul>
+<p>GitHub provides:</p>
+<ul>
+<li>diff;</li>
+<li>review;</li>
+<li>approval mechanics;</li>
+<li>protected baseline;</li>
+<li>durable change history.</li>
+</ul>
+<p>SAP MDG provides:</p>
+<ul>
+<li>operational master-data governance.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>SAP data-model changes should not be approved only as tickets, spreadsheet replacements or meeting conclusions.</p>
+<p>They should be reviewed as explicit changes to an identifiable approved state.</p>
+<p>GitHub can provide that control when:</p>
+<ul>
+<li>canonical model files represent the baseline;</li>
+<li>changes enter through pull requests;</li>
+<li>validators test structural consistency;</li>
+<li>accountable owners review meaning and impact;</li>
+<li>protected branches prevent silent mutation;</li>
+<li>merged history records the approved evolution.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can the programme show the exact model difference that was approved, the evidence supporting it, the people who reviewed it and the validation result that applied to that same version?</blockquote>
+<p>When the answer is yes, GitHub is acting as a model change-control layer.</p>
+<p>When the answer is no, it is only another file repository.</p>
+<p>The objective is not to turn SAP architects and data owners into software developers.</p>
+<p>It is to give critical model decisions a controlled lifecycle that is more precise than replacing <code>Final_v11</code> with <code>Final_v12</code>.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.</p>
+<p>Martenweave uses canonical model files, deterministic validation, dataset evidence, traceability and proposal-first change control. GitHub can provide the review and history layer around those changes.</p>
+<p>SAP MDG remains the operational governance platform.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer that combines master data, policy and metadata, including governed models, golden records, workflow, validated values, business-rule monitoring, data-quality controls and auditable changes.</p>
+<p>GitHub documents that protected branches can require pull-request approval, successful status checks, conversation resolution, signed commits, restricted pushes and controls preventing rule bypass.</p>
+<p>GitHub also supports <code>CODEOWNERS</code> files for assigning individuals or teams responsibility for repository paths, with optional mandatory code-owner review on protected branches.</p>
+<p>The current Martenweave Core README defines canonical files as the source of truth, generated indexes as disposable, deterministic validation as a pre-indexing requirement and AI changes as reviewable proposals rather than silent mutations.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP or GitHub. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates. GitHub is a trademark of GitHub, Inc.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html"><span>Previous</span>The implementation programme has ended.</a><a href="/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html"><span>Next</span>The business owner receives a mapping workbook.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

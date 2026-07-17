@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration | Martenweave</title>
+    <meta
+      name="description"
+      content="The global design states:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html" />
+    <meta property="og:title" content="How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration | Martenweave" />
+    <meta property="og:description" content="The global design states:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration | Martenweave" />
+    <meta name="twitter:description" content="The global design states:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html",
+                        "name": "How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration | Martenweave",
+                        "description": "The global design states:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration",
+                                    "item": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html#content",
+                        "headline": "How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration",
+                        "name": "How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration",
+                        "description": "The global design states:",
+                        "url": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Resolve Conflicting Global and Local Rules Before They Reach SAP Configuration</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 18 min read</p><p class="blog-summary">The global design states:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#conflict-is-often-hidden-by-compatible-wording">Conflict is often hidden by compatible wording</a></li><li><a href="#semantic-conflict">Semantic conflict</a></li><li><a href="#applicability-conflict">Applicability conflict</a></li><li><a href="#lifecycle-conflict">Lifecycle conflict</a></li><li><a href="#consequence-conflict">Consequence conflict</a></li><li><a href="#authority-conflict">Authority conflict</a></li><li><a href="#implementation-conflict">Implementation conflict</a></li><li><a href="#narrowing">Narrowing</a></li><li><a href="#strengthening">Strengthening</a></li><li><a href="#replacement">Replacement</a></li><li><a href="#the-hidden-lifecycle-conflict">The hidden lifecycle conflict</a></li><li><a href="#the-dimension-mixing-conflict">The dimension-mixing conflict</a></li><li><a href="#the-source-capability-conflict">The source-capability conflict</a></li><li><a href="#about-the-authors">About the authors</a></li><li><a href="#sources-and-notes">Sources and notes</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The global design states:</p>
+<blockquote>Tax Registration Number is mandatory for supplier organisations.</blockquote>
+<p>The Portuguese team adds:</p>
+<blockquote>Non-resident supplier organisations may proceed without a Portuguese tax number when approved exemption evidence exists.</blockquote>
+<p>The migration team adds another condition:</p>
+<blockquote>During Mock Load 2, records with missing tax numbers may load with a warning.</blockquote>
+<p>The SAP configuration team receives all three requirements.</p>
+<p>They must now decide what the system should do for a non-resident Portuguese supplier during Mock Load 2.</p>
+<p>Should the record:</p>
+<ul>
+<li>pass because it is non-resident;</li>
+<li>fail because the global rule is mandatory;</li>
+<li>pass with warning because the migration exception is active;</li>
+<li>require exemption evidence;</li>
+<li>remain blocked from final activation?</li>
+</ul>
+<p>The configuration team asks for clarification.</p>
+<p>The answer arrives in fragments:</p>
+<ul>
+<li>the global rule is in the design workbook;</li>
+<li>the Portuguese exception is in meeting minutes;</li>
+<li>the migration treatment is in Jira;</li>
+<li>the evidence requirement is in a compliance email;</li>
+<li>the final-activation restriction exists only in a test script.</li>
+</ul>
+<p>A developer eventually implements an interpretation.</p>
+<p>The configuration now works, but nobody can state confidently whether it reflects the approved business model.</p>
+<p>This is the critical point:</p>
+<blockquote>When conflicting rules reach SAP configuration unresolved, configuration stops being implementation and starts becoming accidental governance.</blockquote>
+<p>The person writing BRFplus logic, a derivation, validation, workflow condition or custom enhancement is forced to decide:</p>
+<ul>
+<li>which rule has priority;</li>
+<li>which context is more specific;</li>
+<li>whether an exception cancels the rule or only postpones it;</li>
+<li>whether a warning is allowed at creation, activation or migration load;</li>
+<li>which evidence is required.</li>
+</ul>
+<p>Those are not merely technical decisions.</p>
+<p>They define the effective model.</p>
+<p>The conflict must therefore be resolved before configuration begins.</p>
+<p>---</p>
+<h2 id="conflict-is-often-hidden-by-compatible-wording">Conflict is often hidden by compatible wording</h2>
+<p>Rules do not need to contradict each other directly to create conflict.</p>
+<p>Consider these statements:</p>
+<pre><code class="language-text">Global:
+Supplier Risk is required for active strategic suppliers.
+
+Local:
+Portuguese regulated suppliers require compliance clearance.
+
+Migration:
+Records without Supplier Risk may enter the review queue.
+
+Operational:
+Final supplier activation requires all mandatory data.</code></pre>
+<p>Each statement can be valid.</p>
+<p>The conflict appears only when the programme tries to apply them to one record.</p>
+<p>For a Portuguese regulated strategic supplier with no Supplier Risk:</p>
+<ul>
+<li>Is review-queue entry permitted?</li>
+<li>Is compliance clearance possible before risk classification?</li>
+<li>Does “required” mean required at creation or activation?</li>
+<li>Is the migration queue a temporary process or a change to the global rule?</li>
+<li>Which status may be distributed to downstream systems?</li>
+</ul>
+<p>A rule conflict is therefore not simply:</p>
+<pre><code class="language-text">Rule A says yes.
+Rule B says no.</code></pre>
+<p>It may be:</p>
+<ul>
+<li>different lifecycle moments;</li>
+<li>overlapping contexts;</li>
+<li>inconsistent granularity;</li>
+<li>competing owners;</li>
+<li>unclear precedence;</li>
+<li>one rule about data and another about process;</li>
+<li>permanent policy mixed with temporary treatment.</li>
+</ul>
+<p>The resolution process must expose these dimensions.</p>
+<p>---</p>
+<h1 id="first-rewrite-every-rule-into-the-same-shape">First, rewrite every rule into the same shape</h1>
+<p>Conflicts remain difficult when rules are written in different styles.</p>
+<p>One may be a business sentence:</p>
+<blockquote>Every strategic supplier needs risk classification.</blockquote>
+<p>Another may be technical:</p>
+<blockquote><code>ZZ_RISK</code> must not be initial.</blockquote>
+<p>A third may describe workflow:</p>
+<blockquote>Route incomplete records to Compliance Review.</blockquote>
+<p>A fourth may describe a migration exception:</p>
+<blockquote>Blank values are tolerated for Wave 2.</blockquote>
+<p>Before comparing them, normalise them into a common structure.</p>
+<p>A rule packet should contain:</p>
+<pre><code class="language-text">Subject:
+Which entity or object does the rule govern?
+
+Condition:
+When does it apply?
+
+Obligation:
+What must be true?
+
+Lifecycle point:
+When must it be true?
+
+Consequence:
+What happens if it is not true?
+
+Authority:
+Who approved the rule?
+
+Effective period:
+When is it active?
+
+Evidence:
+What supports it?</code></pre>
+<p>For example:</p>
+<pre><code class="language-text">Subject:
+Supplier organisation
+
+Condition:
+Active and strategic
+
+Obligation:
+Supplier Risk must contain an approved final value
+
+Lifecycle point:
+Before final activation
+
+Consequence:
+Activation blocked
+
+Authority:
+Global Supplier Risk Owner
+
+Effective period:
+Permanent until superseded</code></pre>
+<p>The Portuguese rule becomes:</p>
+<pre><code class="language-text">Subject:
+Supplier organisation
+
+Condition:
+Country = PT and regulatory category = regulated
+
+Obligation:
+Compliance Review Status must equal CLEARED
+
+Lifecycle point:
+Before final activation
+
+Consequence:
+Activation blocked
+
+Authority:
+Portugal Compliance Data Owner
+
+Effective period:
+From 1 October 2026</code></pre>
+<p>The migration rule becomes:</p>
+<pre><code class="language-text">Subject:
+Supplier organisation
+
+Condition:
+Migration Wave 2 and Supplier Risk missing
+
+Obligation:
+Record enters controlled review queue
+
+Lifecycle point:
+During migration load
+
+Consequence:
+Load permitted, activation blocked
+
+Authority:
+Migration Data Owner with Global Supplier Risk Owner approval
+
+Effective period:
+Wave 2 only</code></pre>
+<p>Once written consistently, the rules may no longer conflict.</p>
+<p>They govern different obligations and lifecycle stages.</p>
+<p>The problem was not necessarily policy contradiction.</p>
+<p>It was incomplete representation.</p>
+<p>---</p>
+<h1 id="distinguish-semantic-conflict-from-execution-conflict">Distinguish semantic conflict from execution conflict</h1>
+<p>This separation prevents many unnecessary governance escalations.</p>
+<h2 id="semantic-conflict">Semantic conflict</h2>
+<p>Two rules define the same business concept differently.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global:
+Supplier Risk is a final exposure classification.
+
+Local:
+PENDING is a valid Supplier Risk value.</code></pre>
+<p>These rules conflict because one treats the attribute as final classification and the other mixes in process state.</p>
+<p>The semantic model must be corrected before implementation.</p>
+<h2 id="applicability-conflict">Applicability conflict</h2>
+<p>Two rules disagree about which records are in scope.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global:
+Tax number required for all supplier organisations.
+
+Local:
+Non-resident supplier organisations are exempt.</code></pre>
+<p>This requires a contextual decision and precedence.</p>
+<h2 id="lifecycle-conflict">Lifecycle conflict</h2>
+<p>The rules may both be correct at different stages.</p>
+<p>Example:</p>
+<pre><code class="language-text">Migration:
+Blank value may enter review.
+
+Operational:
+Blank value may not be activated.</code></pre>
+<p>No semantic conflict exists when the lifecycle boundary is explicit.</p>
+<h2 id="consequence-conflict">Consequence conflict</h2>
+<p>Rules agree that a condition is invalid but prescribe different responses.</p>
+<p>Example:</p>
+<pre><code class="language-text">Rule A:
+Reject the record.
+
+Rule B:
+Accept the record with warning.
+
+Rule C:
+Route to stewardship.</code></pre>
+<p>The organisation must decide whether these responses apply at different stages or represent genuine disagreement.</p>
+<h2 id="authority-conflict">Authority conflict</h2>
+<p>Global and local owners issue overlapping rules without a clear governance boundary.</p>
+<p>The content may be resolvable, but the decision authority is not.</p>
+<h2 id="implementation-conflict">Implementation conflict</h2>
+<p>The approved rules are compatible, but SAP configuration, migration code or an interface implements them inconsistently.</p>
+<p>This should create an implementation-alignment issue, not another policy debate.</p>
+<p>---</p>
+<h1 id="draw-the-overlap-before-debating-priority">Draw the overlap before debating priority</h1>
+<p>A rule can only conflict where its scope overlaps another rule.</p>
+<p>Use a simple context comparison.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Dimension</th><th scope="col">Global rule</th><th scope="col">Portuguese rule</th><th scope="col">Migration rule</th></tr></thead><tbody><tr><td>Country</td><td>All</td><td>PT</td><td>All</td></tr><tr><td>Entity category</td><td>Organisation</td><td>Organisation</td><td>Organisation</td></tr><tr><td>Supplier type</td><td>Strategic</td><td>Regulated</td><td>Any in Wave 2</td></tr><tr><td>Lifecycle</td><td>Final activation</td><td>Final activation</td><td>Migration load</td></tr><tr><td>Effective period</td><td>Permanent</td><td>From October 2026</td><td>Wave 2</td></tr><tr><td>Obligation</td><td>Risk required</td><td>Clearance required</td><td>Missing risk enters review</td></tr></tbody></table></div>
+<p>The overlap may apply only to suppliers that are:</p>
+<ul>
+<li>Portuguese;</li>
+<li>organisations;</li>
+<li>strategic;</li>
+<li>regulated;</li>
+<li>included in Wave 2.</li>
+</ul>
+<p>This affected population may be small but material.</p>
+<p>The programme should assess exactly that population rather than debating the rules abstractly.</p>
+<p>A useful conflict statement is:</p>
+<blockquote>For Portuguese regulated strategic supplier organisations in Wave 2, the model does not yet define whether a missing Supplier Risk blocks load, blocks activation, or is permitted under controlled review.</blockquote>
+<p>That is far more actionable than:</p>
+<blockquote>Global and local rules conflict.</blockquote>
+<p>---</p>
+<h1 id="do-not-use-a-universal-local-beats-global-rule">Do not use a universal “local beats global” rule</h1>
+<p>Context specificity matters, but it is not sufficient.</p>
+<p>A narrow local rule may be:</p>
+<ul>
+<li>a legitimate regulatory override;</li>
+<li>an unapproved workaround;</li>
+<li>a stale legacy configuration;</li>
+<li>a temporary migration concession;</li>
+<li>a misunderstanding of the global concept.</li>
+</ul>
+<p>Likewise, a global rule may be:</p>
+<ul>
+<li>an approved enterprise policy;</li>
+<li>an overgeneralisation;</li>
+<li>a design assumption never validated locally;</li>
+<li>a copy of one dominant source system.</li>
+</ul>
+<p>Precedence should depend on authority and rule type, not geography alone.</p>
+<p>A defensible order is:</p>
+<ol>
+<li>fixed semantic definition;</li>
+<li>approved global policy;</li>
+<li>approved contextual restriction or strengthening;</li>
+<li>approved contextual override;</li>
+<li>temporary deviation;</li>
+<li>technical implementation.</li>
+</ol>
+<p>This hierarchy means:</p>
+<ul>
+<li>local configuration cannot redefine global meaning;</li>
+<li>an approved local legal override can alter applicability;</li>
+<li>a temporary deviation can alter immediate execution without changing permanent policy;</li>
+<li>current implementation remains subordinate to approved model truth.</li>
+</ul>
+<p>The order is not “central always wins.”</p>
+<p>It is “semantic and governance authority must be explicit.”</p>
+<p>---</p>
+<h1 id="decide-whether-the-local-rule-narrows-strengthens-or-replaces">Decide whether the local rule narrows, strengthens or replaces</h1>
+<p>These three operations have very different consequences.</p>
+<h2 id="narrowing">Narrowing</h2>
+<p>The local rule reduces the global applicability.</p>
+<pre><code class="language-text">Global:
+Tax number required for supplier organisations.
+
+Local narrowing:
+Requirement does not apply to approved non-resident organisations.</code></pre>
+<p>The core concept remains intact.</p>
+<p>The local rule defines a smaller applicable population.</p>
+<h2 id="strengthening">Strengthening</h2>
+<p>The local context adds another obligation.</p>
+<pre><code class="language-text">Global:
+Supplier Risk required before activation.
+
+Local strengthening:
+Compliance clearance also required before activation.</code></pre>
+<p>Both rules apply.</p>
+<p>No replacement occurs.</p>
+<h2 id="replacement">Replacement</h2>
+<p>The local rule substitutes another behaviour.</p>
+<pre><code class="language-text">Global:
+Supplier Risk required.
+
+Local replacement:
+Supplier Risk optional; local risk note used instead.</code></pre>
+<p>Replacement is the most disruptive option.</p>
+<p>It may break:</p>
+<ul>
+<li>cross-country reporting;</li>
+<li>integrations;</li>
+<li>shared validation;</li>
+<li>analytics;</li>
+<li>future harmonisation.</li>
+</ul>
+<p>A replacement should require evidence that the global concept or rule is genuinely invalid in the local context.</p>
+<p>Weak source data is not sufficient.</p>
+<p>---</p>
+<h1 id="temporary-migration-rules-must-never-silently-alter-permanent-semantics">Temporary migration rules must never silently alter permanent semantics</h1>
+<p>Migration projects frequently need controlled concessions.</p>
+<p>Examples:</p>
+<ul>
+<li>warning instead of error;</li>
+<li>manual enrichment;</li>
+<li>delayed blocking rule;</li>
+<li>temporary status;</li>
+<li>excluded population;</li>
+<li>staged remediation.</li>
+</ul>
+<p>These are valid delivery controls when clearly bounded.</p>
+<p>They become dangerous when represented as permanent local policy.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Permanent model:
+Supplier Risk required before activation.
+
+Temporary migration treatment:
+Wave 2 records may load without Supplier Risk.
+
+Control:
+Records enter PENDING review and cannot activate.</code></pre>
+<p>The effective interpretation is:</p>
+<pre><code class="language-text">Load permitted.
+Final activation prohibited.
+Permanent requirement unchanged.</code></pre>
+<p>It is not:</p>
+<pre><code class="language-text">Supplier Risk optional in Wave 2.</code></pre>
+<p>The wording matters because later teams may copy the rule.</p>
+<p>A temporary treatment must include:</p>
+<ul>
+<li>exact population;</li>
+<li>permitted lifecycle step;</li>
+<li>prohibited lifecycle step;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>remediation plan;</li>
+<li>evidence of removal.</li>
+</ul>
+<p>---</p>
+<h1 id="resolve-the-business-outcome-before-choosing-sap-technology">Resolve the business outcome before choosing SAP technology</h1>
+<p>Teams often jump too early to implementation questions:</p>
+<ul>
+<li>BRFplus or BAdI?</li>
+<li>derivation or validation?</li>
+<li>change-request step or workflow route?</li>
+<li>custom field or standard field?</li>
+<li>error or warning?</li>
+</ul>
+<p>These questions are premature until the effective rule is stated.</p>
+<p>The approved business outcome should first read something like:</p>
+<pre><code class="language-text">For Portuguese regulated supplier organisations:
+
+1. Compliance Review Status is required.
+2. Supplier Risk remains a separate final classification.
+3. During Wave 2, a record may enter review without final Supplier Risk.
+4. The record may not activate until:
+   - Review Status = CLEARED; and
+   - Supplier Risk contains an approved final value.
+5. The Wave 2 concession expires before UAT.</code></pre>
+<p>Only then should the SAP team determine the appropriate configuration.</p>
+<p>SAP currently describes MDG as supporting governed models, validated values, collaborative workflows, business-rule definition and monitoring, ownership and auditable changes. Those capabilities are suitable for enforcing an approved rule set; they should not be the place where unresolved policy conflicts are silently settled.</p>
+<p>---</p>
+<h1 id="use-a-conflict-hearing-not-a-general-workshop">Use a conflict hearing, not a general workshop</h1>
+<p>A broad workshop often generates more opinions than resolution.</p>
+<p>A focused conflict hearing should contain only the roles needed to decide the effective model:</p>
+<ul>
+<li>global semantic owner;</li>
+<li>local business or regulatory owner;</li>
+<li>migration owner;</li>
+<li>SAP or MDM implementation architect;</li>
+<li>data owner for the affected population;</li>
+<li>integration or consumer owner where required;</li>
+<li>decision recorder.</li>
+</ul>
+<p>The meeting should receive a prepared conflict packet.</p>
+<p>It should not begin by searching for documents.</p>
+<p>The packet should show:</p>
+<ol>
+<li>normalised rules;</li>
+<li>overlap population;</li>
+<li>affected model objects;</li>
+<li>evidence;</li>
+<li>authority;</li>
+<li>implementation consequences;</li>
+<li>proposed resolution;</li>
+<li>unresolved questions.</li>
+</ol>
+<p>The meeting then decides among a limited set of outcomes:</p>
+<ul>
+<li>rules are compatible once lifecycle is clarified;</li>
+<li>local rule narrows the global rule;</li>
+<li>local rule strengthens the global rule;</li>
+<li>local override is approved;</li>
+<li>temporary deviation is approved;</li>
+<li>local rule is rejected;</li>
+<li>global rule requires redesign;</li>
+<li>further investigation is required.</li>
+</ul>
+<p>---</p>
+<h1 id="a-conflict-resolution-must-produce-one-effective-rule">A conflict resolution must produce one effective rule</h1>
+<p>Do not close the discussion with:</p>
+<blockquote>Global and local teams agreed on an approach.</blockquote>
+<p>Write the resulting behaviour in a way that can be tested.</p>
+<p>Example:</p>
+<pre><code class="language-text">Effective rule:
+
+For supplier organisations in Portugal:
+
+- Tax Registration Number is required before activation.
+- Approved non-resident organisations are exempt from the number.
+- Exemption Evidence must be present for exempt records.
+- During Mock Load 2, records may load with missing number or evidence.
+- Such records remain blocked from activation.
+- The Mock Load 2 exception expires on 15 October 2026.</code></pre>
+<p>This can be converted into:</p>
+<ul>
+<li>canonical rule objects;</li>
+<li>dataset checks;</li>
+<li>SAP configuration;</li>
+<li>workflow tests;</li>
+<li>interface expectations;</li>
+<li>closure criteria.</li>
+</ul>
+<p>A statement such as “Portugal exception approved” cannot.</p>
+<p>---</p>
+<h1 id="record-the-rules-that-lost">Record the rules that lost</h1>
+<p>Rejected rules are valuable.</p>
+<p>Suppose the local team proposed:</p>
+<blockquote>Disable tax validation for all Portuguese suppliers.</blockquote>
+<p>The final decision approves only a non-resident exemption.</p>
+<p>Preserve the rejected proposal:</p>
+<pre><code class="language-text">Rejected treatment:
+Country-wide tax validation exemption.
+
+Reason:
+Evidence supports an exemption only for approved non-resident
+supplier organisations. A country-wide exemption would weaken
+the rule for records that remain legally in scope.</code></pre>
+<p>This prevents the broad exemption from returning in another test cycle as though it were new.</p>
+<p>---</p>
+<h1 id="test-the-resolution-against-real-records">Test the resolution against real records</h1>
+<p>A conflict is not resolved by elegant wording alone.</p>
+<p>Construct a small decision table.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Load</th><th scope="col">Activation</th><th scope="col">Required evidence</th></tr></thead><tbody><tr><td>PT resident organisation with tax number</td><td>Pass</td><td>Pass</td><td>Tax number</td></tr><tr><td>PT resident organisation without tax number</td><td>Review or fail by phase</td><td>Block</td><td>Tax number</td></tr><tr><td>PT approved non-resident with exemption evidence</td><td>Pass</td><td>Pass</td><td>Exemption evidence</td></tr><tr><td>PT non-resident without exemption evidence</td><td>Review or fail by phase</td><td>Block</td><td>Exemption evidence</td></tr><tr><td>German organisation without tax number</td><td>Governed by global rule</td><td>Block</td><td>Tax number</td></tr><tr><td>Wave 2 unresolved record</td><td>Pass to review</td><td>Block</td><td>Remediation required</td></tr></tbody></table></div>
+<p>This table exposes ambiguities immediately.</p>
+<p>If two stakeholders expect different results for the same row, the conflict remains unresolved.</p>
+<p>---</p>
+<h1 id="test-boundary-cases-not-only-ordinary-cases">Test boundary cases, not only ordinary cases</h1>
+<p>Conflicting rules usually fail at boundaries.</p>
+<p>Include:</p>
+<ul>
+<li>record changing country;</li>
+<li>supplier changing from inactive to active;</li>
+<li>organisation versus person;</li>
+<li>strategic and regulated supplier;</li>
+<li>migration exception after expiry;</li>
+<li>exemption evidence revoked;</li>
+<li>record created in one context and activated in another;</li>
+<li>interface update arriving after the status change.</li>
+</ul>
+<p>Boundary testing verifies that context and lifecycle are correctly represented.</p>
+<p>It also reveals whether a proposed rule depends on data that is not available at the moment when the decision must be made.</p>
+<p>---</p>
+<h1 id="make-data-availability-part-of-the-decision">Make data availability part of the decision</h1>
+<p>A rule may be conceptually correct but impossible to evaluate.</p>
+<p>Suppose the Portuguese exception depends on:</p>
+<pre><code class="language-text">Residency Status = Non-resident</code></pre>
+<p>The migration dataset does not contain Residency Status.</p>
+<p>The programme then has three separate problems:</p>
+<ol>
+<li>the business rule;</li>
+<li>the missing source evidence;</li>
+<li>the implementation treatment.</li>
+</ol>
+<p>Do not weaken the rule merely because the source is incomplete.</p>
+<p>Possible responses include:</p>
+<ul>
+<li>enrich Residency Status;</li>
+<li>use approved exemption evidence;</li>
+<li>exclude the population;</li>
+<li>keep records blocked;</li>
+<li>approve a bounded temporary deviation.</li>
+</ul>
+<p>Martenweave’s dataset-readiness workflow is designed to compare current dataset evidence with canonical model expectations and promote gaps into reviewable proposals or issue drafts.</p>
+<p>That is the correct sequence:</p>
+<pre><code class="language-text">Approved rule
+→ dataset support check
+→ explicit gap
+→ controlled treatment</code></pre>
+<p>Not:</p>
+<pre><code class="language-text">Dataset lacks field
+→ silently weaken rule</code></pre>
+<p>---</p>
+<h1 id="separate-rule-identity-from-its-implementations">Separate rule identity from its implementations</h1>
+<p>The same approved rule may be realised in several places:</p>
+<ul>
+<li>SAP MDG validation;</li>
+<li>SAP workflow;</li>
+<li>migration transformation;</li>
+<li>source-system check;</li>
+<li>interface validation;</li>
+<li>data-quality monitoring;</li>
+<li>downstream control.</li>
+</ul>
+<p>Each implementation should reference one rule identity.</p>
+<p>For example:</p>
+<pre><code class="language-text">Canonical rule:
+RULE-PT-NONRESIDENT-TAX-EXEMPTION
+
+Implemented by:
+- SAP MDG validation
+- Migration readiness check
+- Supplier activation workflow
+- Outbound interface test</code></pre>
+<p>This allows the programme to ask:</p>
+<ul>
+<li>Does every implementation match the same rule version?</li>
+<li>Has one implementation drifted?</li>
+<li>Which systems require change after the rule is revised?</li>
+<li>Which dataset checks should validate it?</li>
+</ul>
+<p>Without canonical rule identity, each technology contains its own interpretation.</p>
+<p>---</p>
+<h1 id="data-quality-rule-libraries-solve-a-related-but-different-problem">Data-quality rule libraries solve a related—but different—problem</h1>
+<p>Data-quality platforms can centralise, version, monitor and reuse executable checks.</p>
+<p>Ataccama, for example, describes a central library for governed business-defined rules, along with profiling, lineage, monitoring, remediation and application of reusable rules across datasets and pipelines.</p>
+<p>This is valuable after the organisation knows:</p>
+<ul>
+<li>what the rule means;</li>
+<li>which context it governs;</li>
+<li>which population is applicable;</li>
+<li>which result is expected.</li>
+</ul>
+<p>A data-quality rule such as:</p>
+<pre><code class="language-text">Tax Registration Number must not be blank</code></pre>
+<p>is incomplete without applicability.</p>
+<p>The full model might be:</p>
+<pre><code class="language-text">Tax Registration Number must not be blank
+for active resident supplier organisations,
+unless an approved contextual exemption exists.</code></pre>
+<p>Martenweave should not attempt to replace enterprise profiling and rule-execution platforms.</p>
+<p>Its role is to preserve the model-level rule identity, context, evidence and conflict resolution that those platforms can then implement.</p>
+<p>---</p>
+<h1 id="enterprise-governance-platforms-help-establish-authority">Enterprise governance platforms help establish authority</h1>
+<p>A conflict cannot be resolved reliably when nobody knows who may decide.</p>
+<p>Collibra’s governance guidance emphasises operating models, data domains, ownership, business and technical stewards, and centralised or federated authority structures.</p>
+<p>That broader governance structure should determine:</p>
+<ul>
+<li>who owns global semantics;</li>
+<li>who owns local applicability;</li>
+<li>who approves regulatory interpretation;</li>
+<li>who accepts temporary risk;</li>
+<li>who confirms technical feasibility.</li>
+</ul>
+<p>Martenweave should consume or reference that authority.</p>
+<p>It should not invent a second enterprise governance hierarchy.</p>
+<p>Its narrower job is to bind authority to the exact rule, context, evidence and model change under review.</p>
+<p>---</p>
+<h1 id="governance-suites-do-not-remove-the-need-for-a-delivery-level-rule-model">Governance suites do not remove the need for a delivery-level rule model</h1>
+<p>Informatica defines data governance through principles, standards, practices, policies and procedures intended to keep data reliable, consistent and trustworthy. It also recommends starting from specific business drivers and achievable pilots.</p>
+<p>A broad governance platform may hold:</p>
+<ul>
+<li>policies;</li>
+<li>critical data elements;</li>
+<li>owners;</li>
+<li>glossary terms;</li>
+<li>quality measures.</li>
+</ul>
+<p>A migration programme still needs a more precise delivery representation:</p>
+<pre><code class="language-text">Business attribute
+→ applicable context
+→ source availability
+→ transformation
+→ target field
+→ validation point
+→ workflow consequence
+→ temporary deviation
+→ test evidence</code></pre>
+<p>That delivery-level connection is where many SAP rule conflicts become visible.</p>
+<p>---</p>
+<h1 id="the-decision-log-must-remain-linked-to-change">The decision log must remain linked to change</h1>
+<p>After conflict resolution, the resulting rule may require:</p>
+<ul>
+<li>model update;</li>
+<li>SAP configuration;</li>
+<li>migration mapping;</li>
+<li>dataset remediation;</li>
+<li>interface change;</li>
+<li>test change;</li>
+<li>local procedure;</li>
+<li>monitoring.</li>
+</ul>
+<p>Do not close the conflict when the decision is approved.</p>
+<p>Track the implementation alignment separately.</p>
+<p>A complete chain is:</p>
+<pre><code class="language-text">Rule conflict
+→ investigation
+→ effective rule decision
+→ PatchProposal
+→ validation
+→ impact analysis
+→ implementation work
+→ verification
+→ closure</code></pre>
+<p>Martenweave’s current core follows a related evidence-to-proposal pipeline and requires proposed changes to remain reviewable before becoming approved <code>ChangeRequest</code>s.</p>
+<p>---</p>
+<h1 id="a-compact-conflict-record">A compact conflict record</h1>
+<p>A canonical conflict record could look like this:</p>
+<pre><code class="language-yaml">id: CONFLICT-PT-TAX-004
+
+status: resolved
+
+subject:
+  - ATTR-SUPPLIER-TAX-ID
+
+context:
+  countries:
+    - PT
+  partner_categories:
+    - ORGANISATION
+
+rules:
+  - RULE-GLOBAL-SUPPLIER-TAX-ID
+  - RULE-PT-NONRESIDENT-EXEMPTION
+  - DEV-WAVE2-TAX-WARNING
+
+conflict:
+  type: lifecycle_and_applicability
+  question: &gt;
+    Determine load and activation behavior for Portuguese
+    non-resident supplier organisations with missing tax ID.
+
+resolution:
+  - global requirement remains active
+  - approved non-residents may use exemption evidence
+  - Wave 2 load may proceed to review
+  - activation remains blocked until rule conditions are met
+
+authority:
+  global:
+    - ROLE-GLOBAL-SUPPLIER-DATA-OWNER
+  local:
+    - ROLE-PT-TAX-DATA-OWNER
+  temporary_risk:
+    - ROLE-MIGRATION-DATA-OWNER
+
+effective_from: 2026-10-01
+
+temporary_exception_expires: 2026-10-15
+
+affected_objects:
+  - ATTR-SUPPLIER-TAX-ID
+  - ATTR-TAX-EXEMPTION-EVIDENCE
+  - RULE-SUPPLIER-ACTIVATION
+
+follow_up:
+  - PATCH-PT-TAX-019
+  - TEST-PT-TAX-REGRESSION-07</code></pre>
+<p>This is a conceptual structure rather than a claim about the current Martenweave schema.</p>
+<p>The value is that the conflict, authority and effective outcome remain inspectable after configuration is completed.</p>
+<p>---</p>
+<h1 id="what-deterministic-validation-can-catch">What deterministic validation can catch</h1>
+<p>Some conflict classes can be detected before a human review.</p>
+<p>Examples:</p>
+<ul>
+<li>overlapping rules with contradictory obligations;</li>
+<li>local rule missing context;</li>
+<li>override without authority;</li>
+<li>temporary deviation without expiry;</li>
+<li>rule referring to retired attribute;</li>
+<li>global and local rules using different granularity;</li>
+<li>two active decisions for the same context;</li>
+<li>migration exception that permits activation contrary to permanent policy;</li>
+<li>implementation linked to superseded rule;</li>
+<li>local value violating the global classification dimension.</li>
+</ul>
+<p>The validator should report:</p>
+<pre><code class="language-text">Potential conflict:
+RULE-GLOBAL-TAX-ID and RULE-PT-TAX-OPTIONAL
+both apply to Portuguese supplier organisations.
+
+Difference:
+required = true
+required = false
+
+No approved override relationship found.</code></pre>
+<p>The validator should not decide which rule is correct.</p>
+<p>It should stop the conflict from remaining invisible.</p>
+<p>---</p>
+<h1 id="what-requires-human-judgement">What requires human judgement</h1>
+<p>Automation cannot settle:</p>
+<ul>
+<li>whether the local regulation has been interpreted correctly;</li>
+<li>whether two terms carry the same business meaning;</li>
+<li>whether the global rule is overbroad;</li>
+<li>whether residual risk is acceptable;</li>
+<li>whether a temporary concession is justified;</li>
+<li>whether the operational cost of harmonisation is proportionate.</li>
+</ul>
+<p>These decisions require accountable owners and explicit evidence.</p>
+<p>The system can assemble the decision surface.</p>
+<p>It should not create false authority.</p>
+<p>---</p>
+<h1 id="three-conflict-patterns-worth-recognising-early">Three conflict patterns worth recognising early</h1>
+<h2 id="the-hidden-lifecycle-conflict">The hidden lifecycle conflict</h2>
+<pre><code class="language-text">Rule A:
+Value required.
+
+Rule B:
+Blank value allowed.</code></pre>
+<p>Often the real distinction is:</p>
+<pre><code class="language-text">Blank allowed during intake.
+Value required before activation.</code></pre>
+<p>Resolve by stating lifecycle points.</p>
+<h2 id="the-dimension-mixing-conflict">The dimension-mixing conflict</h2>
+<pre><code class="language-text">Global values:
+LOW, MEDIUM, HIGH
+
+Local value:
+PENDING</code></pre>
+<p>The local value represents status, not risk.</p>
+<p>Resolve by separating attributes.</p>
+<h2 id="the-source-capability-conflict">The source-capability conflict</h2>
+<pre><code class="language-text">Global:
+Field mandatory.
+
+Local:
+Field optional because source cannot provide it.</code></pre>
+<p>The local statement is not necessarily a business rule.</p>
+<p>Resolve through remediation or temporary deviation unless business applicability genuinely differs.</p>
+<p>---</p>
+<h1 id="a-worked-resolution-supplier-risk-in-portugal">A worked resolution: Supplier Risk in Portugal</h1>
+<h3 id="the-conflict">The conflict</h3>
+<p>Global rule:</p>
+<blockquote>Supplier Risk required for active strategic suppliers.</blockquote>
+<p>Portuguese rule:</p>
+<blockquote>Regulated suppliers require Compliance Review Status = CLEARED.</blockquote>
+<p>Migration rule:</p>
+<blockquote>ERP_PT records without Supplier Risk may enter Wave 2.</blockquote>
+<h3 id="the-ambiguity">The ambiguity</h3>
+<p>For a regulated strategic supplier with missing risk:</p>
+<ul>
+<li>may it load?</li>
+<li>may it activate?</li>
+<li>may compliance clearance happen before risk classification?</li>
+<li>which status is sent downstream?</li>
+</ul>
+<h3 id="the-resolved-model">The resolved model</h3>
+<pre><code class="language-text">1. Supplier Risk remains final classification.
+2. Compliance Review Status remains separate.
+3. Wave 2 load may create PENDING review records.
+4. Activation requires:
+   - Supplier Risk approved; and
+   - Compliance Review Status = CLEARED.
+5. Downstream systems receive no final risk value until approved.
+6. Temporary Wave 2 treatment expires before UAT.</code></pre>
+<h3 id="why-this-works">Why this works</h3>
+<p>No global semantic rule is weakened.</p>
+<p>The Portuguese rule strengthens activation control.</p>
+<p>The migration rule changes only the load stage.</p>
+<p>Each rule retains separate identity.</p>
+<p>---</p>
+<h1 id="a-worked-resolution-french-customer-group">A worked resolution: French Customer Group</h1>
+<h3 id="the-conflict-2">The conflict</h3>
+<p>Global rule:</p>
+<blockquote>Customer Group is maintained by sales area.</blockquote>
+<p>French request:</p>
+<blockquote>Copy the central CRM Segment into every sales area.</blockquote>
+<h3 id="the-apparent-argument">The apparent argument</h3>
+<p>The local team calls the request a mapping rule.</p>
+<h3 id="the-actual-conflict">The actual conflict</h3>
+<ul>
+<li>source is central;</li>
+<li>target is organisational;</li>
+<li>no derivation policy exists;</li>
+<li>direct replication would assert equivalence.</li>
+</ul>
+<h3 id="resolution">Resolution</h3>
+<p>Do not create a local override.</p>
+<p>Record a source-to-target model gap.</p>
+<p>Use controlled enrichment until a valid sales-area treatment is approved.</p>
+<p>This conflict should never reach SAP configuration as a simple field mapping.</p>
+<p>---</p>
+<h1 id="a-worked-resolution-german-migration-status">A worked resolution: German migration status</h1>
+<h3 id="the-conflict-3">The conflict</h3>
+<p>Global Supplier Risk values:</p>
+<pre><code class="language-text">LOW
+MEDIUM
+HIGH</code></pre>
+<p>German proposal:</p>
+<pre><code class="language-text">UNDER_REVIEW</code></pre>
+<h3 id="finding">Finding</h3>
+<p><code>UNDER_REVIEW</code> is a process state, not final risk.</p>
+<h3 id="resolution-2">Resolution</h3>
+<p>Reject the value-list extension.</p>
+<p>Create or reuse Supplier Review Status.</p>
+<p>Migrate existing <code>UNDER_REVIEW</code> records into the separate status.</p>
+<p>Update rules and reporting.</p>
+<p>The conflict is semantic, not merely local.</p>
+<p>---</p>
+<h1 id="a-worked-resolution-italian-payment-terms">A worked resolution: Italian Payment Terms</h1>
+<h3 id="the-conflict-4">The conflict</h3>
+<p>Global rule:</p>
+<blockquote>Payment Terms required before activation.</blockquote>
+<p>Italian migration rule:</p>
+<blockquote>Missing Payment Terms allowed for Wave 2.</blockquote>
+<h3 id="resolution-3">Resolution</h3>
+<pre><code class="language-text">Load:
+Allowed into remediation queue.
+
+Activation:
+Blocked.
+
+Permanent model:
+Unchanged.
+
+Expiry:
+Before UAT.
+
+Implementation:
+Controlled enrichment.</code></pre>
+<p>The rules are compatible after lifecycle and expiry are explicit.</p>
+<p>---</p>
+<h1 id="the-pre-configuration-gate">The pre-configuration gate</h1>
+<p>Before any conflicting rule reaches SAP, MDM or pipeline implementation, require a short gate.</p>
+<p>The gate should confirm:</p>
+<ul>
+<li>every rule has stable identity;</li>
+<li>contexts are explicit;</li>
+<li>lifecycle points are explicit;</li>
+<li>overlap population is known;</li>
+<li>semantic conflicts are resolved;</li>
+<li>precedence is approved;</li>
+<li>temporary deviations have expiry;</li>
+<li>effective behaviour is written;</li>
+<li>test scenarios exist;</li>
+<li>affected implementations are identified;</li>
+<li>accountable owners approve.</li>
+</ul>
+<p>A rule set that fails this gate is not ready for configuration.</p>
+<p>That may feel slower than immediate technical implementation.</p>
+<p>It is faster than discovering during UAT that several teams implemented different meanings.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-own">What Martenweave should own</h1>
+<p>Martenweave should not become a runtime rules engine.</p>
+<p>It should not replace:</p>
+<ul>
+<li>SAP MDG validation and workflow;</li>
+<li>MDM stewardship platforms;</li>
+<li>enterprise governance suites;</li>
+<li>data-quality execution platforms;</li>
+<li>Jira or ServiceNow.</li>
+</ul>
+<p>Its defensible role is earlier and more specific:</p>
+<blockquote>Preserve the canonical rule identities, contexts, evidence, conflicts, precedence decisions and implementation relationships required to make configuration deterministic.</blockquote>
+<p>The current Martenweave core already provides:</p>
+<ul>
+<li>canonical model files;</li>
+<li>deterministic reference validation;</li>
+<li>generated indexes;</li>
+<li>dataset-to-model gap detection;</li>
+<li>trace;</li>
+<li>impact analysis;</li>
+<li>proposal-first change control;</li>
+<li>GitHub-ready review output.</li>
+</ul>
+<p>A rule-conflict capability would extend this foundation with:</p>
+<ul>
+<li>normalised Rule objects;</li>
+<li>explicit contexts;</li>
+<li>lifecycle stages;</li>
+<li>precedence relationships;</li>
+<li>Conflict records;</li>
+<li>effective-rule resolution;</li>
+<li>conflict validators;</li>
+<li>test-case generation.</li>
+</ul>
+<p>That remains aligned with the product’s north star.</p>
+<p>---</p>
+<h1 id="questions-for-the-rule-owner">Questions for the rule owner</h1>
+<p>Before approving the result, ask:</p>
+<ul>
+<li>Are the rules genuinely contradictory, or do they apply at different lifecycle points?</li>
+<li>Do they govern the same business concept?</li>
+<li>Is the local rule a restriction, strengthening or replacement?</li>
+<li>Is a source limitation being presented as policy?</li>
+<li>Which exact population satisfies all overlapping contexts?</li>
+<li>Who has authority over global meaning?</li>
+<li>Who has authority over local applicability?</li>
+<li>Is the temporary rule time-limited?</li>
+<li>What is the effective result for each boundary scenario?</li>
+<li>Which systems must implement the result?</li>
+<li>What evidence proves that implementation matches the decision?</li>
+<li>Can another country understand the rule without copying the local workaround?</li>
+</ul>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Rule conflict is not a configuration defect.</p>
+<p>It is unresolved model governance exposed by configuration.</p>
+<p>When the conflict reaches the SAP developer, migration analyst or workflow configurator, the organisation has already waited too long.</p>
+<p>The resolution must happen where the programme can compare:</p>
+<ul>
+<li>meaning;</li>
+<li>context;</li>
+<li>lifecycle;</li>
+<li>authority;</li>
+<li>evidence;</li>
+<li>population;</li>
+<li>consequence.</li>
+</ul>
+<p>The resulting rule must be specific enough to test and stable enough to reuse.</p>
+<p>The practical standard is:</p>
+<blockquote>One effective rule for one context at one lifecycle point.</blockquote>
+<p>Not one sentence for the global team, another for the country and a third hidden in migration code.</p>
+<p>The programme should be able to answer:</p>
+<blockquote>For this record, in this context, at this stage, what must be true—and which approved decision makes that answer authoritative?</blockquote>
+<p>When it can, SAP configuration becomes implementation again.</p>
+<p>When it cannot, configuration becomes the place where unresolved governance is converted into code.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>global and local rules;</li>
+<li>context;</li>
+<li>datasets;</li>
+<li>source and target endpoints;</li>
+<li>investigations;</li>
+<li>decisions;</li>
+<li>temporary deviations;</li>
+<li>impact;</li>
+<li>reviewable changes.</li>
+</ul>
+<p>Its role is not to execute every rule.</p>
+<p>It is to make the effective model clear before several platforms implement different interpretations of it.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer supporting one governed model across business entities, preserved semantics and relationships, profiling and reconciliation, validated values, collaborative workflows, business-rule monitoring and auditable changes.</p>
+<p>Collibra describes data governance as an organisational discipline supported by an operating model defining roles, responsibilities, business terms and domains. Its guidance distinguishes centralised from decentralised or federated authority and stresses formalised ownership.</p>
+<p>Informatica defines data governance through principles, standards, policies and procedures intended to keep data reliable and consistent, and recommends beginning with specific business drivers and bounded pilot outcomes.</p>
+<p>Ataccama describes centralised, reusable and governed data-quality rule libraries, together with profiling, lineage, monitoring, remediation and application of rules across datasets and pipelines.</p>
+<p>Martenweave Core currently uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace, impact analysis and human-reviewed <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Its documented workflow moves from evidence through validation, gap and impact analysis to human-reviewed GitHub-ready changes.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Collibra, Informatica, Ataccama or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-design-global-and-local-model-inheritance-without-creating.html"><span>Previous</span>The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers.</a><a href="/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html"><span>Next</span>The global design says that Supplier Risk is mandatory for every active strategic supplier.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

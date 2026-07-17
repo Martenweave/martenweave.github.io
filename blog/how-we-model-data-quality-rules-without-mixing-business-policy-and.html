@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration programme is preparing Supplier bank data for SAP."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html" />
+    <meta property="og:title" content="How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation | Martenweave" />
+    <meta property="og:description" content="A migration programme is preparing Supplier bank data for SAP." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation | Martenweave" />
+    <meta name="twitter:description" content="A migration programme is preparing Supplier bank data for SAP." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html",
+                        "name": "How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation | Martenweave",
+                        "description": "A migration programme is preparing Supplier bank data for SAP.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation",
+                                    "item": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html#content",
+                        "headline": "How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation",
+                        "name": "How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation",
+                        "description": "A migration programme is preparing Supplier bank data for SAP.",
+                        "url": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Model Data Quality Rules Without Mixing Business Policy and Technical Validation</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 17 min read</p><p class="blog-summary">A migration programme is preparing Supplier bank data for SAP.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#canonical-model">Canonical model</a></li><li><a href="#dataset-schema">Dataset schema</a></li><li><a href="#dataset-records">Dataset records</a></li><li><a href="#mapping-definition">Mapping definition</a></li><li><a href="#target-result">Target result</a></li><li><a href="#evidence-package">Evidence package</a></li><li><a href="#before-mock-load">Before mock load</a></li><li><a href="#before-cutover-approval">Before cutover approval</a></li><li><a href="#after-load-with-payment-block">After load with payment block</a></li><li><a href="#level-1-structural-validation">Level 1: structural validation</a></li><li><a href="#level-2-syntactic-validation">Level 2: syntactic validation</a></li><li><a href="#level-3-semantic-validation">Level 3: semantic validation</a></li><li><a href="#level-4-authority-validation">Level 4: authority validation</a></li><li><a href="#level-5-operational-validation">Level 5: operational validation</a></li><li><a href="#what-do-we-require">What do we require?</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>A migration programme is preparing Supplier bank data for SAP.</p>
+<p>The business requirement sounds simple:</p>
+<blockquote>A payment-active Supplier must have a bank account that has been verified by Treasury.</blockquote>
+<p>The team turns this statement into a validation:</p>
+<pre><code class="language-text">BANK_VERIFICATION_STATUS must equal VERIFIED.</code></pre>
+<p>The check fails for 3,400 Suppliers.</p>
+<p>The migration team now has a problem.</p>
+<p>Some records have no verification status because the Treasury review file was not included in the extract.</p>
+<p>Some Suppliers are not payment-active and do not require a bank account at all.</p>
+<p>Some bank accounts were technically validated but were never confirmed by Treasury.</p>
+<p>Some Suppliers were approved for migration with a payment block.</p>
+<p>Some records use the word <code>VERIFIED</code>, but the status came from a legacy portal whose approval process is unknown.</p>
+<p>A single validation statement has mixed together several different questions:</p>
+<ul>
+<li>What business outcome do we require?</li>
+<li>Which Suppliers are in scope?</li>
+<li>What does “verified” mean?</li>
+<li>Which source is authorised to establish verification?</li>
+<li>Which technical field represents the result?</li>
+<li>How should missing or invalid data be detected?</li>
+<li>What is the operational consequence of failure?</li>
+<li>Can an exception be accepted?</li>
+<li>Which evidence proves that the rule was executed?</li>
+</ul>
+<p>This is where many data-quality frameworks become difficult to govern.</p>
+<p>The business policy, technical check and validation result are compressed into one rule.</p>
+<p>The rule may run successfully, but nobody can explain whether it tests the right obligation.</p>
+<p>Or the rule fails, and the team cannot determine whether it found:</p>
+<ul>
+<li>bad source data;</li>
+<li>a missing integration;</li>
+<li>an incorrect model;</li>
+<li>an out-of-scope record;</li>
+<li>an accepted exception;</li>
+<li>a genuinely unsafe Supplier.</li>
+</ul>
+<blockquote>A technical test can tell us whether data satisfies an encoded condition. It cannot, by itself, prove that the encoded condition represents the correct business policy.</blockquote>
+<p>We therefore model data quality in layers.</p>
+<p>For the Supplier bank-verification case, we separate:</p>
+<pre><code class="language-text">Business policy
+→ model obligation
+→ technical validation
+→ execution result
+→ Finding
+→ remediation or exception</code></pre>
+<p>This separation is central to Martenweave.</p>
+<p>Martenweave’s current model scope includes Rules, Attributes, Datasets, Mappings, Evidence, Decisions and change proposals. Its architecture places deterministic validation around canonical files while keeping AI-generated changes subject to human review.</p>
+<p>Our goal is not to build another generic data-quality execution platform.</p>
+<p>Our goal is to preserve the meaning, authority and consequences around the checks that matter to migration, MDM, governance and AMS work.</p>
+<p>---</p>
+<h1 id="the-business-statement-is-not-yet-a-technical-rule">The business statement is not yet a technical rule</h1>
+<p>We begin with the policy:</p>
+<blockquote>A payment-active Supplier must have a Treasury-verified bank account.</blockquote>
+<p>This statement contains several business concepts:</p>
+<ul>
+<li>Supplier;</li>
+<li>payment-active status;</li>
+<li>bank account;</li>
+<li>Treasury verification;</li>
+<li>obligation.</li>
+</ul>
+<p>It does not identify:</p>
+<ul>
+<li>a database column;</li>
+<li>a file;</li>
+<li>a target SAP field;</li>
+<li>a SQL query;</li>
+<li>a severity code;</li>
+<li>a remediation workflow.</li>
+</ul>
+<p>That is useful.</p>
+<p>A business policy should be able to survive implementation changes.</p>
+<p>Today, Treasury verification may come from an Excel file.</p>
+<p>Later, it may come from:</p>
+<ul>
+<li>SAP MDG workflow;</li>
+<li>a supplier portal;</li>
+<li>an external verification service;</li>
+<li>a Treasury approval application.</li>
+</ul>
+<p>The policy remains the same.</p>
+<p>If we define the rule only as:</p>
+<pre><code class="language-text">BANK_VERIFICATION_STATUS = &quot;VERIFIED&quot;</code></pre>
+<p>we bind business meaning to one current implementation.</p>
+<p>A future system may use:</p>
+<pre><code class="language-text">APPROVAL_STATE = &quot;APPROVED&quot;</code></pre>
+<p>or:</p>
+<pre><code class="language-text">VERIFICATION_LEVEL &gt;= 2</code></pre>
+<p>The business obligation should not disappear because a column was renamed.</p>
+<p>We therefore model the business policy separately from the technical assertion.</p>
+<p>---</p>
+<h1 id="we-make-the-policy-explicit">We make the policy explicit</h1>
+<p>A conceptual business-policy object might state:</p>
+<pre><code class="language-text">Policy:
+Payment-active Suppliers require a verified bank account.
+
+Purpose:
+Prevent payment activation using bank details
+that have not been reviewed by an authorised Treasury process.
+
+Applies to:
+Suppliers eligible for outgoing payment.
+
+Owner:
+Treasury Data Owner.</code></pre>
+<p>This object explains why the control exists.</p>
+<p>It also provides the basis for later decisions.</p>
+<p>For example:</p>
+<ul>
+<li>Does the policy apply to one-time Suppliers?</li>
+<li>Does it apply before migration or before payment activation?</li>
+<li>Can an unverified Supplier migrate with a payment block?</li>
+<li>Which process qualifies as Treasury verification?</li>
+</ul>
+<p>Those are policy questions.</p>
+<p>They should not be hidden inside validation code.</p>
+<p>---</p>
+<h1 id="we-define-the-model-obligation">We define the model obligation</h1>
+<p>The business policy must be translated into an obligation that the canonical model can understand.</p>
+<p>For our case:</p>
+<pre><code class="language-text">When Supplier payment status is active:
+
+- one current bank account must exist;
+- verification evidence must exist;
+- the verification source must be authorised;
+- the verification must apply to the current account;
+- otherwise payment must remain blocked.</code></pre>
+<p>This is more precise than the original policy.</p>
+<p>It defines the required relationships between model objects.</p>
+<p>The obligation can reference:</p>
+<ul>
+<li>Supplier;</li>
+<li>Supplier Bank Account;</li>
+<li>Payment Status;</li>
+<li>Bank Verification Status;</li>
+<li>verification Evidence;</li>
+<li>payment block.</li>
+</ul>
+<p>It still does not prescribe one SQL statement.</p>
+<p>That separation allows several technical validators to implement the same obligation in different stages.</p>
+<p>---</p>
+<h1 id="one-policy-may-require-several-technical-checks">One policy may require several technical checks</h1>
+<p>The Supplier bank-verification policy cannot be proven by checking one field.</p>
+<p>We may need to verify:</p>
+<ol>
+<li>the Supplier is payment-active;</li>
+<li>a bank account exists;</li>
+<li>the account has a stable identity;</li>
+<li>verification Evidence exists;</li>
+<li>the Evidence refers to the same account;</li>
+<li>the verification source is approved;</li>
+<li>the verification is current;</li>
+<li>a payment block exists when verification is absent.</li>
+</ol>
+<p>These are separate assertions.</p>
+<p>A single pass/fail result would hide which part failed.</p>
+<p>We therefore allow one business obligation to be implemented by multiple validation checks.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Business policy:
+Payment-active Supplier requires verified bank account.
+
+Implemented by:
+- CHECK-BANK-ACCOUNT-PRESENT
+- CHECK-BANK-VERIFICATION-PRESENT
+- CHECK-BANK-VERIFICATION-AUTHORITY
+- CHECK-BANK-VERIFICATION-CURRENT
+- CHECK-PAYMENT-BLOCK-WHEN-UNVERIFIED</code></pre>
+<p>This makes failures actionable.</p>
+<p>A missing account and an unapproved verification source are not the same problem.</p>
+<p>---</p>
+<h1 id="we-distinguish-policy-scope-from-query-filters">We distinguish policy scope from query filters</h1>
+<p>A technical query may contain:</p>
+<pre><code class="language-text">WHERE PAYMENT_ACTIVE = 'X'</code></pre>
+<p>That filter implements part of the scope.</p>
+<p>It does not define why the scope exists.</p>
+<p>The canonical Rule should state the applicability in business terms:</p>
+<pre><code class="language-text">Applies to:
+Suppliers authorised for outgoing payment.
+
+Does not apply to:
+- Suppliers migrated for historical reference only;
+- payment-blocked Suppliers with no planned activation;
+- records excluded from the current migration wave.</code></pre>
+<p>The technical validator then maps those concepts to dataset fields.</p>
+<p>This distinction matters when source systems encode payment activity differently.</p>
+<p>One source may use:</p>
+<pre><code class="language-text">PAYMENT_ACTIVE = &quot;X&quot;</code></pre>
+<p>Another may derive it from:</p>
+<ul>
+<li>company-code status;</li>
+<li>deletion flag;</li>
+<li>payment block;</li>
+<li>Supplier category.</li>
+</ul>
+<p>The policy scope remains stable.</p>
+<p>The implementation can change by dataset.</p>
+<p>---</p>
+<h1 id="we-separate-the-rule-from-the-validator">We separate the Rule from the validator</h1>
+<p>We use the word “Rule” carefully.</p>
+<p>A canonical Rule represents the governed obligation.</p>
+<p>A validator is the executable mechanism that tests a particular dataset or model state against that obligation.</p>
+<p>The Rule says:</p>
+<pre><code class="language-text">A payment-active Supplier must have current,
+authorised bank-verification evidence.</code></pre>
+<p>The validator says:</p>
+<pre><code class="language-text">For dataset SUPPLIER_BANK_CUTOVER:
+
+fail when PAYMENT_ACTIVE = true
+and no matching Treasury verification record exists.</code></pre>
+<p>The Rule may have several validators:</p>
+<ul>
+<li>source-readiness validator;</li>
+<li>transformed-dataset validator;</li>
+<li>target-load validator;</li>
+<li>post-load reconciliation validator.</li>
+</ul>
+<p>All test the same underlying obligation at different points.</p>
+<p>This gives us continuity across the migration lifecycle.</p>
+<p>---</p>
+<h1 id="we-identify-what-exactly-is-being-validated">We identify what exactly is being validated</h1>
+<p>A validation result is meaningful only when we know its subject.</p>
+<p>Possible subjects include:</p>
+<h2 id="canonical-model">Canonical model</h2>
+<p>Does the Rule reference valid Attributes, Datasets and owners?</p>
+<h2 id="dataset-schema">Dataset schema</h2>
+<p>Are the required fields present?</p>
+<h2 id="dataset-records">Dataset records</h2>
+<p>Do individual Suppliers comply?</p>
+<h2 id="mapping-definition">Mapping definition</h2>
+<p>Does the Mapping produce the required verification status?</p>
+<h2 id="target-result">Target result</h2>
+<p>Did the loaded Supplier retain the required payment block?</p>
+<h2 id="evidence-package">Evidence package</h2>
+<p>Is current verification Evidence available?</p>
+<p>We should not report all of these as:</p>
+<pre><code class="language-text">Bank verification rule failed.</code></pre>
+<p>A better result states:</p>
+<pre><code class="language-text">Subject:
+Supplier bank cutover dataset
+
+Validation:
+Treasury verification record required
+
+Result:
+3,400 records failed
+
+Failure type:
+missing evidence input</code></pre>
+<p>The failed subject changes the remediation.</p>
+<p>---</p>
+<h1 id="we-distinguish-model-validation-from-data-validation">We distinguish model validation from data validation</h1>
+<p>Martenweave already uses deterministic validation to check canonical objects, including IDs, types, references and domain context.</p>
+<p>That is model validation.</p>
+<p>For example, it can check:</p>
+<ul>
+<li>the Rule has a stable ID;</li>
+<li>the referenced Attribute exists;</li>
+<li>the owner exists;</li>
+<li>the scope is valid;</li>
+<li>the validator references a known Dataset;</li>
+<li>severity values are allowed.</li>
+</ul>
+<p>Data validation asks whether actual records satisfy the Rule.</p>
+<p>For example:</p>
+<pre><code class="language-text">Does every payment-active Supplier
+have matching Treasury verification Evidence?</code></pre>
+<p>Both are deterministic.</p>
+<p>They validate different things.</p>
+<p>A structurally valid Rule can still be a poor business rule.</p>
+<p>A correct business Rule can be implemented by a broken validator.</p>
+<p>We must be able to identify which layer failed.</p>
+<p>---</p>
+<h1 id="we-distinguish-validation-from-inference">We distinguish validation from inference</h1>
+<p>Suppose the dataset has no explicit verification status.</p>
+<p>An AI agent notices that Suppliers with an uploaded bank letter were usually approved by Treasury.</p>
+<p>It proposes:</p>
+<pre><code class="language-text">Treat uploaded bank letter as verified.</code></pre>
+<p>That is not validation.</p>
+<p>It is an inference about business meaning.</p>
+<p>The agent may propose the interpretation, but it cannot quietly incorporate it into the validator.</p>
+<p>The proper sequence is:</p>
+<pre><code class="language-text">Observed correlation
+→ Finding
+→ candidate Decision
+→ business review
+→ approved model change
+→ validator update</code></pre>
+<p>Otherwise, the technical validation begins to encode an unapproved policy.</p>
+<p>---</p>
+<h1 id="we-define-authority-for-the-expected-value">We define authority for the expected value</h1>
+<p>The dataset contains:</p>
+<pre><code class="language-text">BANK_VERIFICATION_STATUS = VERIFIED</code></pre>
+<p>That does not prove that verification occurred.</p>
+<p>We need to know which source has authority to make the claim.</p>
+<p>Possible sources include:</p>
+<ul>
+<li>Treasury Review Dataset;</li>
+<li>Supplier Portal;</li>
+<li>legacy Finance system;</li>
+<li>SAP MDG workflow;</li>
+<li>manually maintained cutover file.</li>
+</ul>
+<p>The Rule should specify the accepted authority.</p>
+<p>For example:</p>
+<pre><code class="language-text">Accepted verification authority:
+Treasury Review Dataset.
+
+Portal self-declaration:
+not sufficient.
+
+Legacy Finance verified flag:
+supporting evidence only.</code></pre>
+<p>The technical validator must check both:</p>
+<ul>
+<li>the value;</li>
+<li>the provenance of the value.</li>
+</ul>
+<p>A value can be syntactically correct and semantically unauthorised.</p>
+<p>---</p>
+<h1 id="we-make-evidence-a-first-class-requirement">We make evidence a first-class requirement</h1>
+<p>The policy does not require only a status.</p>
+<p>It requires evidence that supports the status.</p>
+<p>For our case, a verification Evidence record might include:</p>
+<ul>
+<li>Supplier ID;</li>
+<li>bank-account fingerprint;</li>
+<li>verification result;</li>
+<li>reviewer or authorised system;</li>
+<li>verification date;</li>
+<li>source;</li>
+<li>applicable migration baseline.</li>
+</ul>
+<p>The Rule can require:</p>
+<pre><code class="language-text">Verification Evidence must:
+
+- identify the Supplier;
+- identify the bank account;
+- come from an authorised process;
+- be current for the migration baseline.</code></pre>
+<p>This avoids the dangerous pattern:</p>
+<pre><code class="language-text">status = VERIFIED</code></pre>
+<p>without any proof of what was verified.</p>
+<p>---</p>
+<h1 id="we-model-time-explicitly">We model time explicitly</h1>
+<p>Verification can become stale.</p>
+<p>A bank account may change after approval.</p>
+<p>A Treasury review from six months earlier may refer to a different IBAN.</p>
+<p>The Rule must define freshness.</p>
+<p>For example:</p>
+<pre><code class="language-text">Verification is valid when:
+
+- it refers to the current bank-account fingerprint;
+- it was completed after the latest bank-account change;
+- it remains valid at the dataset baseline date.</code></pre>
+<p>A technical check can then compare:</p>
+<ul>
+<li>account fingerprint;</li>
+<li>account update timestamp;</li>
+<li>verification timestamp;</li>
+<li>dataset extraction date.</li>
+</ul>
+<p>Without temporal context, an old valid status may incorrectly validate a new account.</p>
+<p>---</p>
+<h1 id="we-do-not-use-severity-as-a-substitute-for-meaning">We do not use severity as a substitute for meaning</h1>
+<p>Teams often debate whether a rule should be:</p>
+<ul>
+<li>error;</li>
+<li>warning;</li>
+<li>information.</li>
+</ul>
+<p>Severity matters.</p>
+<p>It does not define the Rule.</p>
+<p>For the Supplier case:</p>
+<h2 id="before-mock-load">Before mock load</h2>
+<p>Missing verification may be a warning because the Treasury file is not yet available.</p>
+<h2 id="before-cutover-approval">Before cutover approval</h2>
+<p>The same failure may be critical.</p>
+<h2 id="after-load-with-payment-block">After load with payment block</h2>
+<p>It may remain an accepted controlled condition.</p>
+<p>The business obligation did not change.</p>
+<p>The enforcement policy changed by stage.</p>
+<p>We therefore separate:</p>
+<pre><code class="language-text">Rule:
+what must ultimately be true
+
+Enforcement profile:
+how failure is treated at a specific stage</code></pre>
+<p>For example:</p>
+<pre><code class="language-text">Mock Load 1:
+warning
+
+Cutover readiness:
+blocking error
+
+Post-load with payment block:
+controlled exception</code></pre>
+<p>W3C SHACL provides a useful technical precedent for separating constraints, targets and validation reports, including severity, focus nodes, result paths and source constraints. It treats validation as checking a data graph against explicitly declared conditions and producing structured results rather than conflating the condition with the result.</p>
+<p>Martenweave does not need to adopt SHACL or RDF.</p>
+<p>The separation is still useful.</p>
+<p>---</p>
+<h1 id="we-distinguish-failure-from-consequence">We distinguish failure from consequence</h1>
+<p>When a Supplier lacks verification, the validation result is:</p>
+<pre><code class="language-text">Verification requirement not satisfied.</code></pre>
+<p>The business consequence may be:</p>
+<pre><code class="language-text">Supplier cannot be activated for outgoing payment.</code></pre>
+<p>The remediation may be:</p>
+<pre><code class="language-text">Obtain Treasury verification.</code></pre>
+<p>The migration treatment may be:</p>
+<pre><code class="language-text">Migrate with payment block.</code></pre>
+<p>These are four different things.</p>
+<p>If we store them in one validation message, future teams cannot change the treatment without rewriting the Rule.</p>
+<p>We model:</p>
+<ul>
+<li>violation;</li>
+<li>consequence;</li>
+<li>remediation;</li>
+<li>temporary treatment.</li>
+</ul>
+<p>This allows the organisation to preserve the business obligation while adjusting delivery handling.</p>
+<p>---</p>
+<h1 id="we-represent-an-accepted-exception-separately">We represent an accepted exception separately</h1>
+<p>The programme may approve migration of unverified Suppliers with payment block.</p>
+<p>That does not mean the bank-verification Rule passed.</p>
+<p>It means an Exception permits a bounded deviation under a compensating control.</p>
+<p>The state should be:</p>
+<pre><code class="language-text">Rule result:
+failed
+
+Exception:
+approved
+
+Compensating control:
+payment block active
+
+Readiness:
+controlled exception</code></pre>
+<p>It should not be:</p>
+<pre><code class="language-text">Rule result:
+passed</code></pre>
+<p>This preserves honest reporting.</p>
+<p>The previous article described how we model temporary exceptions with scope, owner, expiry, controls and closure conditions. The same lifecycle applies here.</p>
+<p>---</p>
+<h1 id="we-preserve-the-validation-result-as-evidence">We preserve the validation result as Evidence</h1>
+<p>A validation execution should produce an Evidence object or linked report containing:</p>
+<ul>
+<li>Rule ID;</li>
+<li>validator version;</li>
+<li>dataset fingerprint;</li>
+<li>model baseline;</li>
+<li>execution timestamp;</li>
+<li>population size;</li>
+<li>failed-record count;</li>
+<li>failure categories;</li>
+<li>result fingerprint.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-text">Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Dataset:
+SUPPLIER-BANK-CUTOVER-RC4
+
+Model commit:
+abc123
+
+Population:
+50,000 Suppliers
+
+Passed:
+46,600
+
+Controlled exception:
+3,200
+
+Unresolved:
+200</code></pre>
+<p>The result is Evidence about a particular model and dataset state.</p>
+<p>It is not the Rule itself.</p>
+<p>When either the dataset or Rule changes, the Evidence may become stale.</p>
+<p>---</p>
+<h1 id="we-make-validation-reproducible">We make validation reproducible</h1>
+<p>A result is difficult to trust if nobody can reproduce it.</p>
+<p>We need to know:</p>
+<ul>
+<li>which input dataset was used;</li>
+<li>which model version applied;</li>
+<li>which validator implementation ran;</li>
+<li>which parameters were supplied;</li>
+<li>which exclusions were active;</li>
+<li>which exception set was recognised.</li>
+</ul>
+<p>This is especially important when an AI agent summarises results.</p>
+<p>The summary may say:</p>
+<blockquote>Bank verification readiness is 99.6 percent.</blockquote>
+<p>We must be able to inspect the underlying execution.</p>
+<p>Reproducibility is more important than a polished score.</p>
+<p>---</p>
+<h1 id="we-keep-aggregate-quality-separate-from-record-level-compliance">We keep aggregate quality separate from record-level compliance</h1>
+<p>The Supplier dataset may achieve:</p>
+<pre><code class="language-text">Verification completeness:
+99.6%</code></pre>
+<p>That sounds strong.</p>
+<p>The remaining 0.4 percent may include 200 high-value Suppliers scheduled for immediate payment.</p>
+<p>An aggregate percentage does not express business risk.</p>
+<p>The Rule should preserve:</p>
+<ul>
+<li>failed records;</li>
+<li>organisational scope;</li>
+<li>payment exposure;</li>
+<li>criticality;</li>
+<li>exception status.</li>
+</ul>
+<p>We can calculate a score for reporting.</p>
+<p>The score must not replace the underlying findings.</p>
+<p>ISO/IEC 25012 defines a general data-quality model for structured data used by people and systems. The standard is useful as a vocabulary for thinking about quality characteristics, but a migration programme still needs context-specific Rules, scope, ownership and consequences rather than relying on a generic quality dimension alone.</p>
+<p>---</p>
+<h1 id="we-avoid-turning-every-policy-into-executable-code-immediately">We avoid turning every policy into executable code immediately</h1>
+<p>Some policies are not ready for deterministic validation.</p>
+<p>For example:</p>
+<blockquote>Treasury must be satisfied that the Supplier bank account is credible.</blockquote>
+<p>This statement is too subjective.</p>
+<p>We should not pretend that an AI confidence score makes it deterministic.</p>
+<p>We may decompose it into measurable controls:</p>
+<ul>
+<li>account identity matched;</li>
+<li>bank-country consistency;</li>
+<li>authorised reviewer;</li>
+<li>approved evidence type;</li>
+<li>no unresolved conflict.</li>
+</ul>
+<p>The residual judgement may remain human.</p>
+<p>A Rule object can state:</p>
+<pre><code class="language-text">Validation mode:
+human decision supported by technical checks</code></pre>
+<p>Not every business obligation must become a Boolean query.</p>
+<p>The model should make the boundary visible.</p>
+<p>---</p>
+<h1 id="we-allow-multiple-implementation-levels">We allow multiple implementation levels</h1>
+<p>For Supplier bank verification, we may have:</p>
+<h2 id="level-1-structural-validation">Level 1: structural validation</h2>
+<p>Required fields and references exist.</p>
+<h2 id="level-2-syntactic-validation">Level 2: syntactic validation</h2>
+<p>IBAN format and country relationship are valid.</p>
+<h2 id="level-3-semantic-validation">Level 3: semantic validation</h2>
+<p>Verification Evidence refers to the same account.</p>
+<h2 id="level-4-authority-validation">Level 4: authority validation</h2>
+<p>Evidence came from an accepted source.</p>
+<h2 id="level-5-operational-validation">Level 5: operational validation</h2>
+<p>Payment block is active when verification is absent.</p>
+<p>These levels help us explain why a record can pass one check and fail another.</p>
+<p>A technically valid IBAN is not automatically an authorised bank account.</p>
+<p>---</p>
+<h1 id="a-conceptual-martenweave-rule">A conceptual Martenweave Rule</h1>
+<p>A simplified canonical Rule might look like:</p>
+<pre><code class="language-text">---
+id: RULE-SUPPLIER-BANK-VERIFICATION
+type: Rule
+status: approved
+
+policy:
+  Payment-active Suppliers require current,
+  authorised bank-account verification.
+
+applies_to:
+  entity: ENT-SUPPLIER
+  condition: payment_active
+
+requires:
+  - ATTR-SUPPLIER-BANK-ACCOUNT
+  - ATTR-SUPPLIER-BANK-VERIFICATION
+  - EVIDENCE-TYPE-TREASURY-BANK-APPROVAL
+
+owner:
+  ROLE-TREASURY-DATA-OWNER
+
+failure_consequence:
+  payment_block_required
+
+validators:
+  - VAL-SUPPLIER-BANK-PRESENT
+  - VAL-SUPPLIER-BANK-VERIFICATION-MATCH
+  - VAL-SUPPLIER-BANK-VERIFICATION-AUTHORITY
+---</code></pre>
+<p>This is a recommended direction, not a claim about the exact current Rule schema.</p>
+<p>The important separation is visible:</p>
+<ul>
+<li>business statement;</li>
+<li>applicability;</li>
+<li>required model objects;</li>
+<li>owner;</li>
+<li>consequence;</li>
+<li>executable validators.</li>
+</ul>
+<p>---</p>
+<h1 id="a-conceptual-validator">A conceptual validator</h1>
+<p>One validator may state:</p>
+<pre><code class="language-text">---
+id: VAL-SUPPLIER-BANK-VERIFICATION-MATCH
+type: Validator
+
+implements:
+  RULE-SUPPLIER-BANK-VERIFICATION
+
+subject:
+  dataset: DATASET-SUPPLIER-BANK-CUTOVER
+
+inputs:
+  - SUPPLIER_ID
+  - BANK_ACCOUNT_FINGERPRINT
+  - PAYMENT_ACTIVE
+  - VERIFICATION_ACCOUNT_FINGERPRINT
+  - VERIFICATION_STATUS
+
+failure_when:
+  payment_active
+  and current_bank_account_exists
+  and no matching approved verification exists
+---</code></pre>
+<p>The validator is tied to a dataset implementation.</p>
+<p>The Rule is not.</p>
+<p>A different dataset can implement another validator for the same Rule.</p>
+<p>---</p>
+<h1 id="we-validate-the-rule-definition-before-running-it">We validate the Rule definition before running it</h1>
+<p>A Rule should fail model validation when:</p>
+<ul>
+<li>the owner is missing;</li>
+<li>applicability references an unknown Attribute;</li>
+<li>the required Evidence type does not exist;</li>
+<li>no consequence is defined for a critical failure;</li>
+<li>validators refer to unknown datasets;</li>
+<li>the Rule contradicts an active Decision;</li>
+<li>an enforcement profile uses an invalid stage;</li>
+<li>an Exception references the Rule outside its scope.</li>
+</ul>
+<p>This is where Martenweave’s deterministic model validation creates value before any data is processed.</p>
+<p>---</p>
+<h1 id="we-turn-execution-failures-into-findings">We turn execution failures into Findings</h1>
+<p>A validation failure is an observation.</p>
+<p>It should not automatically rewrite the Rule or Mapping.</p>
+<p>For the 3,400 Suppliers, we create grouped Findings such as:</p>
+<pre><code class="language-text">Finding:
+Treasury verification input is unavailable
+for 3,200 payment-active Suppliers.
+
+Likely cause:
+Treasury Review Dataset was not included.
+
+Model implication:
+None confirmed.
+
+Delivery implication:
+Dataset enrichment required.</code></pre>
+<p>And:</p>
+<pre><code class="language-text">Finding:
+200 Suppliers contain a legacy VERIFIED flag
+without authorised Treasury Evidence.
+
+Model implication:
+Legacy verification source is not approved.
+
+Risk:
+Payment activation must remain blocked.</code></pre>
+<p>We do not create one issue per failed record.</p>
+<p>We group failures by coherent cause and treatment.</p>
+<p>---</p>
+<h1 id="we-do-not-weaken-the-rule-to-improve-the-score">We do not weaken the Rule to improve the score</h1>
+<p>A common failure pattern is:</p>
+<ol>
+<li>readiness score is low;</li>
+<li>team makes the Rule optional;</li>
+<li>readiness score improves;</li>
+<li>underlying risk remains.</li>
+</ol>
+<p>For our case, the team might propose:</p>
+<pre><code class="language-text">Bank verification recommended but not required.</code></pre>
+<p>That may be a valid policy change.</p>
+<p>It must not happen as an undocumented validator adjustment.</p>
+<p>The correct sequence is:</p>
+<pre><code class="language-text">Finding
+→ policy-change proposal
+→ impact analysis
+→ Treasury review
+→ approved Decision
+→ Rule update
+→ validator update</code></pre>
+<p>The score must follow the policy.</p>
+<p>The policy must not follow the desired score.</p>
+<p>---</p>
+<h1 id="we-connect-rules-to-impact-analysis">We connect Rules to impact analysis</h1>
+<p>When Treasury changes the policy, Martenweave should identify affected objects.</p>
+<p>For example, changing:</p>
+<pre><code class="language-text">Verification required before payment activation</code></pre>
+<p>to:</p>
+<pre><code class="language-text">Verification required before migration load</code></pre>
+<p>affects:</p>
+<ul>
+<li>dataset readiness;</li>
+<li>target Mapping;</li>
+<li>payment-block treatment;</li>
+<li>Exception scope;</li>
+<li>cutover sequencing;</li>
+<li>Evidence requirements;</li>
+<li>affected Supplier population.</li>
+</ul>
+<p>The text change may be small.</p>
+<p>The operating impact may be large.</p>
+<p>Rules must therefore participate in lineage and impact analysis like Attributes and Mappings.</p>
+<p>---</p>
+<h1 id="we-keep-rule-versions-tied-to-evidence">We keep Rule versions tied to evidence</h1>
+<p>Suppose Mock Load 3 was validated against Rule version 2.</p>
+<p>Before cutover, Rule version 3 changes the accepted verification authority.</p>
+<p>The old validation result is now stale.</p>
+<p>Martenweave should report:</p>
+<pre><code class="language-text">Evidence:
+EVID-MOCK3-BANK-VERIFICATION
+
+Validated against:
+RULE-SUPPLIER-BANK-VERIFICATION v2
+
+Current Rule:
+v3
+
+Material difference:
+legacy Finance verification no longer accepted
+
+Status:
+revalidation required</code></pre>
+<p>This prevents teams from presenting an old green report as evidence for a changed standard.</p>
+<p>---</p>
+<h1 id="we-design-the-workbench-around-explanation">We design the Workbench around explanation</h1>
+<p>The Rule page should not show only code and pass rate.</p>
+<p>It should answer:</p>
+<h2 id="what-do-we-require">What do we require?</h2>
+<p>Payment-active Suppliers need verified bank accounts.</p>
+<h2 id="why">Why?</h2>
+<p>To prevent payment activation using unreviewed bank details.</p>
+<h2 id="who-owns-the-policy">Who owns the policy?</h2>
+<p>Treasury Data Owner.</p>
+<h2 id="which-records-are-in-scope">Which records are in scope?</h2>
+<p>Payment-active Suppliers in the declared migration wave.</p>
+<h2 id="how-is-it-tested">How is it tested?</h2>
+<p>Through linked validators.</p>
+<h2 id="what-counts-as-evidence">What counts as Evidence?</h2>
+<p>An authorised Treasury verification linked to the current bank account.</p>
+<h2 id="what-happens-on-failure">What happens on failure?</h2>
+<p>Payment block or migration block, depending on stage.</p>
+<h2 id="which-exceptions-exist">Which exceptions exist?</h2>
+<p>Bounded, approved deviations with expiry and controls.</p>
+<h2 id="what-is-the-latest-result">What is the latest result?</h2>
+<p>Passed, controlled-exception and unresolved populations.</p>
+<p>This is more useful than a generic rule catalogue.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused Martenweave capability should be <strong>Rule Layering and Validation Evidence</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Represent one business data-quality obligation independently from its technical validators and execution results.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support:</p>
+<ul>
+<li>Rule ID;</li>
+<li>business statement;</li>
+<li>purpose;</li>
+<li>applicability;</li>
+<li>owner;</li>
+<li>required Attributes and Evidence;</li>
+<li>failure consequence;</li>
+<li>validator references;</li>
+<li>enforcement profiles;</li>
+<li>related Decisions;</li>
+<li>active Exceptions.</li>
+</ul>
+<h2 id="validator-scope">Validator scope</h2>
+<p>Support:</p>
+<ul>
+<li>implemented Rule;</li>
+<li>subject dataset;</li>
+<li>required fields;</li>
+<li>deterministic condition;</li>
+<li>execution parameters;</li>
+<li>output classification.</li>
+</ul>
+<h2 id="result-scope">Result scope</h2>
+<p>Support:</p>
+<ul>
+<li>dataset fingerprint;</li>
+<li>model baseline;</li>
+<li>Rule and validator versions;</li>
+<li>passed population;</li>
+<li>controlled exceptions;</li>
+<li>unresolved failures;</li>
+<li>Evidence output.</li>
+</ul>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could expose:</p>
+<pre><code class="language-text">martenweave rule show \
+  RULE-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave rule validate \
+  RULE-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model \
+  --dataset ./data/supplier-bank.csv</code></pre>
+<pre><code class="language-text">martenweave rule impact \
+  RULE-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave rule evidence \
+  RULE-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model</code></pre>
+<p>These commands describe a product direction, not the currently documented CLI.</p>
+<p>Martenweave’s current documented foundation already includes canonical files, deterministic validation, dataset-gap detection, lineage, impact analysis, dataset readiness and proposal-first change.</p>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a full data-observability platform;</li>
+<li>an ETL runtime;</li>
+<li>a generic SQL testing framework;</li>
+<li>an SAP validation replacement;</li>
+<li>a business-rules execution engine;</li>
+<li>a workflow platform.</li>
+</ul>
+<p>Existing tools can execute tests efficiently.</p>
+<p>For example, dbt data tests are assertions about models and resources and return failing rows when the assertion is violated. That is useful execution behaviour. Martenweave’s role is different: preserving which business Rule the assertion implements, why it exists, where it applies, what Evidence it produced and which change process governs it.</p>
+<p>Our product boundary remains the canonical model and governance context.</p>
+<p>---</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Separating policy from technical validation reduces several recurring costs:</p>
+<ul>
+<li>validators that test outdated assumptions;</li>
+<li>duplicate Rules implemented differently across datasets;</li>
+<li>unclear ownership;</li>
+<li>quality scores that hide accepted exceptions;</li>
+<li>false confidence from technically valid values;</li>
+<li>business policies buried in SQL;</li>
+<li>unnecessary rework when source systems change;</li>
+<li>weak auditability of why a record was accepted.</li>
+</ul>
+<p>It also makes AI assistance safer.</p>
+<p>An agent can:</p>
+<ul>
+<li>identify candidate validators;</li>
+<li>compare implementations;</li>
+<li>summarise failure patterns;</li>
+<li>propose Rule changes;</li>
+<li>detect missing Evidence.</li>
+</ul>
+<p>It cannot silently turn a correlation into policy or lower severity to improve readiness.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>We do not model data quality as a list of SQL conditions.</p>
+<p>We model a chain of meaning and evidence.</p>
+<p>For the Supplier bank-verification case:</p>
+<pre><code class="language-text">Business policy:
+Payment-active Suppliers require verified bank accounts.
+
+Model obligation:
+Current, authorised verification Evidence
+must exist for the current bank account.
+
+Technical validators:
+Check presence, matching account,
+authority and freshness.
+
+Execution result:
+Passed, controlled exception or unresolved failure.
+
+Consequence:
+Payment activation allowed, blocked or deferred.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we change the technical implementation of bank verification without losing the business obligation, and can we change the business policy without hiding that change inside validator code?</blockquote>
+<p>When the answer is yes, the Rule is governed.</p>
+<p>When the answer is:</p>
+<blockquote>The SQL returned no rows, so the policy is satisfied,</blockquote>
+<p>we know only that one technical assertion passed against one dataset.</p>
+<p>We do not yet know whether it represented the right business requirement.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that enterprise data-quality controls remain connected to:</p>
+<ul>
+<li>business meaning;</li>
+<li>scope;</li>
+<li>ownership;</li>
+<li>source authority;</li>
+<li>Evidence;</li>
+<li>consequences;</li>
+<li>Decisions;</li>
+<li>approved exceptions.</li>
+</ul>
+<p>Our model is:</p>
+<pre><code class="language-text">Business policy defines the obligation.
+
+Canonical Rules preserve it.
+
+Validators test it.
+
+Results become Evidence.
+
+Findings explain failures.
+
+Humans approve changes.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently includes Rules, Evidence, Decisions, Mappings and change proposals in its generic canonical model. It keeps canonical files authoritative, performs deterministic validation and requires human review for AI-generated changes.</p>
+<p>Its documented pipeline moves from Evidence and profiling through validation, gap detection, lineage and impact analysis to proposals and human-reviewed Git delivery.</p>
+<p>The W3C Shapes Constraint Language specification defines a model for validating data graphs against explicitly declared conditions. It distinguishes shapes, constraints, targets and structured validation reports, including focus nodes, result paths, source constraints, messages and severity. Martenweave does not need to adopt RDF or SHACL, but this separation supports the layered validation approach described here.</p>
+<p>ISO/IEC 25012 defines a general data-quality model for structured data in computer systems. It provides useful quality-model context, while the specific Rules, ownership, applicability and consequences described in this article remain project and domain concerns.</p>
+<p>dbt data tests are assertions about models and other resources; their execution returns failing records when the assertion is violated. This is a useful technical-test pattern, but Martenweave’s intended role is to connect such executable assertions to canonical business Rules, Evidence, impact and governed change.</p>
+<p>The separate Policy, Rule, Validator and Validation Result objects, enforcement profiles and proposed commands described here are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, W3C, ISO or dbt Labs.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html"><span>Previous</span>During Mock Load 2, the Product planning migration has a coverage problem.</a><a href="/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html"><span>Next</span>We run a validation against a Supplier bank-data migration dataset.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

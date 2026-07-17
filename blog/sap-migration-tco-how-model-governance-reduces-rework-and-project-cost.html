@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP Migration TCO: How Model Governance Reduces Rework and Project Cost | Martenweave</title>
+    <meta
+      name="description"
+      content="The licence fee is rarely the most dangerous part of migration cost."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html" />
+    <meta property="og:title" content="SAP Migration TCO: How Model Governance Reduces Rework and Project Cost | Martenweave" />
+    <meta property="og:description" content="The licence fee is rarely the most dangerous part of migration cost." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAP Migration TCO: How Model Governance Reduces Rework and Project Cost | Martenweave" />
+    <meta name="twitter:description" content="The licence fee is rarely the most dangerous part of migration cost." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html#webpage",
+                        "url": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html",
+                        "name": "SAP Migration TCO: How Model Governance Reduces Rework and Project Cost | Martenweave",
+                        "description": "The licence fee is rarely the most dangerous part of migration cost.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "SAP Migration TCO: How Model Governance Reduces Rework and Project Cost",
+                                    "item": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html#content",
+                        "headline": "SAP Migration TCO: How Model Governance Reduces Rework and Project Cost",
+                        "name": "SAP Migration TCO: How Model Governance Reduces Rework and Project Cost",
+                        "description": "The licence fee is rarely the most dangerous part of migration cost.",
+                        "url": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT14M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">SAP Migration TCO: How Model Governance Reduces Rework and Project Cost</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>SAP Migration TCO: How Model Governance Reduces Rework and Project Cost</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 14 min read</p><p class="blog-summary">The licence fee is rarely the most dangerous part of migration cost.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#tco-is-larger-than-the-technology-bill">TCO is larger than the technology bill</a></li><li><a href="#the-useful-cost-model-is-prevention-checking-and-failure">The useful cost model is prevention, checking and failure</a></li><li><a href="#do-not-use-the-mythical-late-defect-multiplier">Do not use the mythical “late defect multiplier”</a></li><li><a href="#where-the-money-is-actually-lost">Where the money is actually lost</a></li><li><a href="#1-mapping-reconciliation">1. Mapping reconciliation</a></li><li><a href="#2-repeated-model-defects">2. Repeated model defects</a></li><li><a href="#3-dataset-mismatch">3. Dataset mismatch</a></li><li><a href="#4-change-impact-investigation">4. Change-impact investigation</a></li><li><a href="#5-knowledge-transfer">5. Knowledge transfer</a></li><li><a href="#6-readiness-reporting">6. Readiness reporting</a></li><li><a href="#a-simple-tco-formula">A simple TCO formula</a></li><li><a href="#a-conservative-example">A conservative example</a></li><li><a href="#a-larger-programme-behaves-differently">A larger programme behaves differently</a></li><li><a href="#comparison-with-other-tools">Comparison with other tools</a></li><li><a href="#the-tco-of-martenweave-itself">The TCO of Martenweave itself</a></li></ol></nav></details></header>
+<p>The licence fee is rarely the most dangerous part of migration cost.</p>
+<p>Managers can see software licences, consulting rates, infrastructure, training and planned test cycles. These amounts are negotiated, budgeted and reported.</p>
+<p>The less visible cost accumulates between the budget lines:</p>
+<ul>
+<li>another workshop to clarify an old mapping;</li>
+<li>another extract because the source structure changed;</li>
+<li>another test cycle after a rule was corrected;</li>
+<li>another interface review because nobody knew it depended on the field;</li>
+<li>another country copying an obsolete workbook;</li>
+<li>another senior consultant reconstructing a decision from Jira comments;</li>
+<li>another defect closed at record level without correcting the model behind it.</li>
+</ul>
+<p>Each event looks minor.</p>
+<p>Together, they form a large part of the total cost of ownership of an SAP migration.</p>
+<p>Martenweave should not be sold on the claim that it makes migration inexpensive. It cannot remove business complexity, cleanse source records, configure SAP or execute the cutover.</p>
+<p>Its economic case is narrower:</p>
+<blockquote>Martenweave can reduce the coordination, rework and repeated analysis caused by an inconsistent migration model.</blockquote>
+<p>That case can be measured.</p>
+<h2 id="tco-is-larger-than-the-technology-bill">TCO is larger than the technology bill</h2>
+<p>When managers calculate the cost of a migration platform, they usually include:</p>
+<ul>
+<li>software licences;</li>
+<li>implementation services;</li>
+<li>infrastructure;</li>
+<li>internal employees;</li>
+<li>external consultants;</li>
+<li>testing;</li>
+<li>training;</li>
+<li>support.</li>
+</ul>
+<p>This is the visible TCO.</p>
+<p>A more complete calculation also includes the cost of maintaining agreement across the programme.</p>
+<p>That means the effort required to keep mappings, rules, datasets, decisions, interfaces and test expectations aligned.</p>
+<p>In a simple project, this effort is small.</p>
+<p>In a multi-country SAP programme, it can become a permanent workstream without ever receiving a formal name.</p>
+<p>The programme pays people to:</p>
+<ul>
+<li>compare workbook versions;</li>
+<li>trace decisions;</li>
+<li>reconcile conflicting definitions;</li>
+<li>explain fields to other teams;</li>
+<li>identify downstream dependencies;</li>
+<li>repeat profiling;</li>
+<li>update validation scripts;</li>
+<li>retest corrected mappings;</li>
+<li>prepare status reports manually;</li>
+<li>transfer knowledge between waves.</li>
+</ul>
+<p>These are not accidental administrative tasks.</p>
+<p>They are the operating cost of a fragmented model.</p>
+<h2 id="the-useful-cost-model-is-prevention-checking-and-failure">The useful cost model is prevention, checking and failure</h2>
+<p>Quality-management models traditionally separate costs into prevention, appraisal, internal failure and external failure. Prevention creates controls before defects occur. Appraisal detects problems through review and testing. Internal failure covers rework before release. External failure covers problems that escape into operations.</p>
+<p>The same structure can be applied to SAP migration.</p>
+<h3 id="prevention-costs">Prevention costs</h3>
+<p>These include:</p>
+<ul>
+<li>defining the model;</li>
+<li>assigning ownership;</li>
+<li>validating mappings;</li>
+<li>connecting decisions to affected fields;</li>
+<li>performing impact analysis before changes;</li>
+<li>checking datasets against expected structures.</li>
+</ul>
+<p>Martenweave mainly adds prevention cost.</p>
+<p>That point should be stated openly. It is not a free saving mechanism. The model must be created and maintained.</p>
+<h3 id="appraisal-costs">Appraisal costs</h3>
+<p>These include:</p>
+<ul>
+<li>mapping reviews;</li>
+<li>data-quality checks;</li>
+<li>test loads;</li>
+<li>reconciliation;</li>
+<li>interface testing;</li>
+<li>readiness reviews.</li>
+</ul>
+<p>Martenweave can reduce appraisal effort by making reviews more focused and reproducible.</p>
+<p>It should not eliminate testing.</p>
+<h3 id="internal-failure-costs">Internal failure costs</h3>
+<p>These include:</p>
+<ul>
+<li>correcting transformations;</li>
+<li>regenerating files;</li>
+<li>repeating loads;</li>
+<li>updating validation rules;</li>
+<li>reopening mappings;</li>
+<li>retesting affected objects.</li>
+</ul>
+<p>This is where much of the potential saving sits.</p>
+<h3 id="external-failure-costs">External failure costs</h3>
+<p>These include:</p>
+<ul>
+<li>production data corrections;</li>
+<li>failed deliveries;</li>
+<li>incorrect supplier or customer processing;</li>
+<li>warehouse disruptions;</li>
+<li>urgent support work;</li>
+<li>business downtime;</li>
+<li>audit and compliance exposure.</li>
+</ul>
+<p>Martenweave may help prevent some external failures, but these savings are difficult to forecast honestly. They depend heavily on the business process and severity of the incident.</p>
+<p>The strongest business case should therefore begin with measurable internal effort, not dramatic claims about avoided operational disasters.</p>
+<h2 id="do-not-use-the-mythical-late-defect-multiplier">Do not use the mythical “late defect multiplier”</h2>
+<p>Consulting presentations often claim that a defect becomes ten, fifty or one hundred times more expensive when found later.</p>
+<p>That is too crude for a serious business case.</p>
+<p>A study covering 171 software projects found no consistent universal relationship showing that every delayed issue becomes substantially more expensive to resolve. The effect depends on the project and the type of dependency involved.</p>
+<p>In migration, some late defects really are expensive.</p>
+<p>A renamed source column may take minutes to correct.</p>
+<p>A changed tax-number interpretation discovered after several waves may require new extraction, transformation, approval, load and reconciliation work.</p>
+<p>The cost is not created by lateness alone.</p>
+<p>It is created by the number of dependent activities that must be repeated.</p>
+<p>That gives us a better economic model:</p>
+<blockquote>Cost of a model defect = people involved × investigation time + implementation effort + repeated downstream work.</blockquote>
+<p>Martenweave creates value when it reduces one or more of these variables.</p>
+<h2 id="where-the-money-is-actually-lost">Where the money is actually lost</h2>
+<p>The main economic problem is not the first creation of the mapping.</p>
+<p>It is the repeated cost of rediscovering and propagating change.</p>
+<h2 id="1-mapping-reconciliation">1. Mapping reconciliation</h2>
+<p>Suppose a business rule changes.</p>
+<p>Without a connected model, several people may need to determine whether the change affects:</p>
+<ul>
+<li>the main mapping workbook;</li>
+<li>transformation code;</li>
+<li>a validation rule;</li>
+<li>a country-specific file;</li>
+<li>an interface;</li>
+<li>a report;</li>
+<li>another migration object.</li>
+</ul>
+<p>This often requires a meeting because the dependencies are held by different people.</p>
+<p>Martenweave does not make the decision.</p>
+<p>It can reduce the search area by showing the registered dependencies before the meeting begins.</p>
+<p>The economic effect is fewer people spending less time reconstructing context.</p>
+<h2 id="2-repeated-model-defects">2. Repeated model defects</h2>
+<p>A defect may be corrected in one transformation but remain present in another wave, dataset or validation.</p>
+<p>The organisation pays for the same analysis several times.</p>
+<p>Martenweave makes the corrected rule part of a canonical model rather than leaving it only in the implementation where the defect was found.</p>
+<p>The potential saving is avoided recurrence.</p>
+<h2 id="3-dataset-mismatch">3. Dataset mismatch</h2>
+<p>Migration teams frequently receive extracts whose structure differs from the expected model.</p>
+<p>Fields are missing, renamed or supplied under different conditions.</p>
+<p>When discovered during a load cycle, the programme has already paid for preparation, transformation and testing.</p>
+<p>Martenweave can profile CSV and XLSX files and compare them with registered field expectations before the dataset enters the main execution process. The current core supports dataset profiling, gap detection and a combined dataset-readiness workflow.</p>
+<p>The saving is not the removal of data problems.</p>
+<p>It is earlier classification and routing.</p>
+<h2 id="4-change-impact-investigation">4. Change-impact investigation</h2>
+<p>A change request may be small in implementation terms but expensive to assess.</p>
+<p>Managers need to know:</p>
+<ul>
+<li>which teams must review it;</li>
+<li>which objects must be retested;</li>
+<li>whether another wave uses the same definition;</li>
+<li>whether external systems depend on it.</li>
+</ul>
+<p>Without explicit relationships, senior specialists perform this investigation manually.</p>
+<p>Martenweave can trace registered upstream and downstream dependencies and generate an impact report from the canonical model.</p>
+<p>The saving is reduced analysis time and a smaller review group.</p>
+<h2 id="5-knowledge-transfer">5. Knowledge transfer</h2>
+<p>When consultants or employees leave, the project does not lose only documentation.</p>
+<p>It loses explanations:</p>
+<ul>
+<li>why one mapping differs from another;</li>
+<li>why an exception exists;</li>
+<li>which workaround is temporary;</li>
+<li>which source field is unreliable;</li>
+<li>which decision was never fully implemented.</li>
+</ul>
+<p>A replacement specialist must reconstruct this from files and conversations.</p>
+<p>Martenweave can connect decisions and evidence to the model elements they affect.</p>
+<p>The saving appears during onboarding, handover and later rollout waves.</p>
+<h2 id="6-readiness-reporting">6. Readiness reporting</h2>
+<p>Many programmes calculate readiness manually.</p>
+<p>Teams collect completion percentages, defect counts and workbook statuses, then consolidate them into management slides.</p>
+<p>This reporting is expensive and often difficult to reproduce.</p>
+<p>Martenweave can generate validation, health, scorecard, gap and ownership outputs from the current model state.</p>
+<p>The saving is reduced reporting effort.</p>
+<p>The more important benefit is that the status is tied to inspectable model conditions rather than a manually negotiated percentage.</p>
+<h2 id="a-simple-tco-formula">A simple TCO formula</h2>
+<p>The economic case can be expressed without pretending to know the future perfectly.</p>
+<h3 id="current-state-cost">Current-state cost</h3>
+<pre><code class="language-text">Current model-governance cost =
+mapping reconciliation
++ repeated defect analysis
++ dataset mismatch handling
++ change-impact investigation
++ manual reporting
++ knowledge-transfer effort
++ operational incidents caused by model errors</code></pre>
+<h3 id="martenweave-cost">Martenweave cost</h3>
+<pre><code class="language-text">Martenweave TCO =
+initial model setup
++ import and integration work
++ training
++ model maintenance
++ pipeline or Git integration
++ infrastructure and support
++ residual coordination and rework</code></pre>
+<h3 id="net-benefit">Net benefit</h3>
+<pre><code class="language-text">Net benefit =
+avoided current-state cost
+− Martenweave TCO</code></pre>
+<h3 id="roi">ROI</h3>
+<pre><code class="language-text">ROI =
+(net benefit ÷ Martenweave TCO) × 100</code></pre>
+<p>The difficult number is not the formula.</p>
+<p>It is the avoided-cost percentage.</p>
+<p>That number should come from a pilot, not a sales presentation.</p>
+<h2 id="a-conservative-example">A conservative example</h2>
+<p>Consider an 18-month SAP migration with several source systems and multiple waves.</p>
+<p>Assume the programme records the following model-related work:</p>
+<h3 id="mapping-and-rule-changes">Mapping and rule changes</h3>
+<ul>
+<li>120 material changes;</li>
+<li>five people involved on average;</li>
+<li>1.5 hours spent investigating and aligning each change;</li>
+<li>blended internal and external rate: €100 per hour.</li>
+</ul>
+<pre><code class="language-text">120 × 5 × 1.5 × €100 = €90,000</code></pre>
+<h3 id="repeated-model-related-defects">Repeated model-related defects</h3>
+<ul>
+<li>30 defects caused by inconsistent mappings, rules or decisions;</li>
+<li>24 hours of combined analysis, correction and retesting per defect;</li>
+<li>blended rate: €100 per hour.</li>
+</ul>
+<pre><code class="language-text">30 × 24 × €100 = €72,000</code></pre>
+<h3 id="dataset-mismatch-incidents">Dataset mismatch incidents</h3>
+<ul>
+<li>ten extracts requiring investigation or regeneration;</li>
+<li>30 hours of combined effort per incident;</li>
+<li>blended rate: €100 per hour.</li>
+</ul>
+<pre><code class="language-text">10 × 30 × €100 = €30,000</code></pre>
+<p>The measured coordination and rework cost is:</p>
+<pre><code class="language-text">€90,000 + €72,000 + €30,000 = €192,000</code></pre>
+<p>This excludes licences, normal migration development and most operational risk. It counts only selected costs connected to model inconsistency.</p>
+<p>Suppose a Martenweave pilot indicates that canonical mappings, deterministic validation, dataset gap detection and impact reporting can reduce this effort by 25%.</p>
+<pre><code class="language-text">Potential avoided cost = €48,000</code></pre>
+<p>If implementation and operation cost €40,000 for the programme:</p>
+<pre><code class="language-text">Net benefit = €8,000
+ROI = 20%</code></pre>
+<p>That is not a spectacular business case.</p>
+<p>It may still be worthwhile if the project also values auditability, repeatability and lower dependency on individual experts.</p>
+<p>But the calculation shows an important point:</p>
+<blockquote>Martenweave is not automatically economical for every migration.</blockquote>
+<p>If the programme is small or the existing process is already disciplined, the additional control layer may barely pay for itself.</p>
+<h2 id="a-larger-programme-behaves-differently">A larger programme behaves differently</h2>
+<p>Now consider a multi-country programme with:</p>
+<ul>
+<li>350 model changes;</li>
+<li>six participants per change;</li>
+<li>1.5 hours of alignment work;</li>
+<li>70 repeated model-related defects;</li>
+<li>20 major dataset mismatch incidents;</li>
+<li>a blended rate of €110 per hour.</li>
+</ul>
+<p>Using reasonable working assumptions, the selected hidden-cost categories total approximately €680,900.</p>
+<p>If model governance reduces this effort by 30%, the avoided cost is approximately €204,270.</p>
+<p>If Martenweave costs €90,000 to introduce and operate, the modelled ROI is approximately 127%.</p>
+<p>This does not prove that Martenweave will deliver that result.</p>
+<p>It shows where scale changes the economics.</p>
+<p>The product becomes easier to justify when the programme has:</p>
+<ul>
+<li>many waves;</li>
+<li>repeated mappings;</li>
+<li>several consulting teams;</li>
+<li>frequent design changes;</li>
+<li>country exceptions;</li>
+<li>external warehouses or 3PLs;</li>
+<li>expensive senior specialists;</li>
+<li>recurring model-related defects.</li>
+</ul>
+<p>The same capabilities may be unnecessary overhead in a single-system migration with stable requirements.</p>
+<h2 id="comparison-with-other-tools">Comparison with other tools</h2>
+<p>The economic case depends on what the organisation already owns.</p>
+<p>Martenweave should not be evaluated as if it replaces the surrounding stack.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Tool</th><th scope="col">Existing economic value</th><th scope="col">Cost that may remain</th></tr></thead><tbody><tr><td>Migration platform</td><td>Automates extraction, transformation, load and reconciliation</td><td>Model decisions remain fragmented across tools</td></tr><tr><td>SAP MDG or another MDM platform</td><td>Governs productive master records and approvals</td><td>Migration sources, mappings and temporary project logic remain outside</td></tr><tr><td>Data catalog</td><td>Reduces discovery effort and provides technical lineage</td><td>Future-state mappings and project decisions may be missing</td></tr><tr><td>Data-quality tool</td><td>Automates record-level checks</td><td>Incorrect or obsolete rules may still be enforced</td></tr><tr><td>Schema registry</td><td>Prevents incompatible message changes</td><td>Compatible fields may carry inconsistent meanings</td></tr><tr><td>Jira and Confluence</td><td>Preserve tasks, discussion and documentation</td><td>Decisions are not automatically connected to model dependencies</td></tr><tr><td>Excel</td><td>Cheap and effective for business review</td><td>Version drift, weak validation and limited impact analysis</td></tr><tr><td>Martenweave</td><td>Connects model objects, evidence, validation, gaps and change impact</td><td>Does not execute migration or govern productive records</td></tr></tbody></table></div>
+<p>The economic value of Martenweave is not replacing these systems.</p>
+<p>It is reducing the manual coordination required between them.</p>
+<h2 id="the-tco-of-martenweave-itself">The TCO of Martenweave itself</h2>
+<p>A credible assessment must include the cost the project introduces.</p>
+<h2 id="initial-modelling">Initial modelling</h2>
+<p>Existing workbooks and documents must be converted into structured objects.</p>
+<p>This may expose ambiguity that the team has successfully ignored for months.</p>
+<p>Resolving that ambiguity requires business time.</p>
+<p>That is a real cost.</p>
+<h2 id="integration">Integration</h2>
+<p>The project may need scripts or adapters for:</p>
+<ul>
+<li>existing mapping files;</li>
+<li>dataset locations;</li>
+<li>Jira or GitHub workflows;</li>
+<li>validation results;</li>
+<li>catalog metadata;</li>
+<li>migration platforms.</li>
+</ul>
+<p>Martenweave should not force every integration into the first release. Each connector adds implementation and maintenance cost.</p>
+<h2 id="operating-discipline">Operating discipline</h2>
+<p>Somebody must own the canonical model.</p>
+<p>If teams continue changing Excel, code and tickets without updating or proposing changes to the registry, the model will become stale.</p>
+<p>No tool removes the need for governance behaviour.</p>
+<h2 id="training">Training</h2>
+<p>Business users may remain in spreadsheets and reports, but functional and technical leads must understand:</p>
+<ul>
+<li>what is canonical;</li>
+<li>how proposals work;</li>
+<li>how validation failures are resolved;</li>
+<li>how impact results should be interpreted.</li>
+</ul>
+<h2 id="duplicate-maintenance-risk">Duplicate maintenance risk</h2>
+<p>This is the largest TCO danger.</p>
+<p>If Martenweave becomes another place where mappings are copied manually, it increases cost instead of reducing it.</p>
+<p>The implementation must establish one of two clear patterns:</p>
+<pre><code class="language-text">Martenweave is canonical
+and other views are generated from it</code></pre>
+<p>or:</p>
+<pre><code class="language-text">Another system is canonical
+and Martenweave imports it deterministically as evidence</code></pre>
+<p>A vague shared-ownership model creates permanent reconciliation work.</p>
+<h2 id="infrastructure-and-support">Infrastructure and support</h2>
+<p>Martenweave is local-first and its generated SQLite and search indexes can be rebuilt from canonical files. This avoids the operating profile of a large hosted metadata platform, but it does not make operation free. The project still needs version control, backups, CI, access management and support responsibility.</p>
+<h2 id="where-martenweave-should-reduce-tco">Where Martenweave should reduce TCO</h2>
+<p>The product should be judged against specific mechanisms, not general promises.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Martenweave capability</th><th scope="col">Expected economic effect</th></tr></thead><tbody><tr><td>Canonical model files</td><td>Less version reconciliation</td></tr><tr><td>Deterministic reference validation</td><td>Fewer structurally broken mappings</td></tr><tr><td>Dataset-to-model gap detection</td><td>Earlier detection of unusable extracts</td></tr><tr><td>Trace and impact analysis</td><td>Faster change assessment</td></tr><tr><td>Evidence and decision links</td><td>Less repeated investigation</td></tr><tr><td>Patch proposals</td><td>Safer AI and spreadsheet-driven changes</td></tr><tr><td>Generated reports and indexes</td><td>Lower manual reporting effort</td></tr><tr><td>Git-based review history</td><td>Easier audit and handover</td></tr></tbody></table></div>
+<p>These are measurable hypotheses.</p>
+<p>A pilot should verify them.</p>
+<h2 id="where-martenweave-will-not-reduce-tco">Where Martenweave will not reduce TCO</h2>
+<p>It will not materially reduce cost when the problem is:</p>
+<ul>
+<li>poor source-record quality requiring manual cleansing;</li>
+<li>missing business ownership;</li>
+<li>unresolved process design;</li>
+<li>bad SAP configuration;</li>
+<li>weak programme leadership;</li>
+<li>insufficient testing;</li>
+<li>unstable source systems;</li>
+<li>lack of migration developers;</li>
+<li>failures in the execution platform.</li>
+</ul>
+<p>Martenweave may make some of these problems more visible.</p>
+<p>Visibility is not the same as resolution.</p>
+<p>A registry can show that no owner has approved a payment-term mapping.</p>
+<p>It cannot make the business choose one.</p>
+<h2 id="a-pilot-should-measure-work-not-object-counts">A pilot should measure work, not object counts</h2>
+<p>A weak pilot measures:</p>
+<ul>
+<li>number of imported objects;</li>
+<li>number of mappings stored;</li>
+<li>number of pages generated;</li>
+<li>number of AI proposals created.</li>
+</ul>
+<p>These are activity metrics.</p>
+<p>A useful pilot measures economic effects.</p>
+<h3 id="baseline-metrics">Baseline metrics</h3>
+<p>Before introducing Martenweave, record:</p>
+<ul>
+<li>average time to assess a mapping change;</li>
+<li>number of people involved;</li>
+<li>number of repeated model defects;</li>
+<li>number of dataset-structure mismatches;</li>
+<li>time spent preparing readiness reports;</li>
+<li>time required to trace an old decision;</li>
+<li>defects caused by outdated mapping versions;</li>
+<li>onboarding time for a new specialist.</li>
+</ul>
+<h3 id="pilot-metrics">Pilot metrics</h3>
+<p>After applying Martenweave to one domain or migration object, measure the same indicators.</p>
+<p>For example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Metric</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Average change-impact analysis</td><td>8 hours</td><td>3 hours</td></tr><tr><td>People involved in first review</td><td>7</td><td>4</td></tr><tr><td>Dataset mismatch found after transformation</td><td>6</td><td>2</td></tr><tr><td>Time to locate approval evidence</td><td>90 minutes</td><td>10 minutes</td></tr><tr><td>Manual readiness-report preparation</td><td>2 days</td><td>4 hours</td></tr><tr><td>Repeated mapping defects</td><td>5</td><td>2</td></tr></tbody></table></div>
+<p>The economic calculation then uses observed differences rather than optimistic assumptions.</p>
+<h2 id="start-with-a-costly-object-not-an-easy-demo">Start with a costly object, not an easy demo</h2>
+<p>A pilot on a perfectly maintained reference table may demonstrate the software but not the economics.</p>
+<p>Choose an object with genuine coordination cost:</p>
+<ul>
+<li>material with plant and warehouse dependencies;</li>
+<li>Business Partner with customer and supplier roles;</li>
+<li>supplier with country and purchasing-organisation rules;</li>
+<li>logistics attributes shared with a 3PL;</li>
+<li>a dataset reused across several migration waves.</li>
+</ul>
+<p>The objective is not to select the most complicated object in the programme.</p>
+<p>It is to select one where the current cost of fragmented knowledge can already be measured.</p>
+<h2 id="the-management-decision">The management decision</h2>
+<p>Martenweave has a positive economic case when three conditions are true.</p>
+<p>First, the project is repeatedly paying to reconcile model knowledge across tools and teams.</p>
+<p>Second, a meaningful part of that work can be reduced through canonical definitions, validation, gap detection and impact analysis.</p>
+<p>Third, the registry can be operated without creating an equal amount of duplicate maintenance.</p>
+<p>If one of these conditions is absent, the business case weakens.</p>
+<p>The right question is not:</p>
+<blockquote>How much money does a model registry save?</blockquote>
+<p>There is no universal answer.</p>
+<p>The right questions are:</p>
+<ul>
+<li>How many hours are we currently spending reconstructing model context?</li>
+<li>How often do the same mapping problems return?</li>
+<li>How much downstream work is repeated after a change?</li>
+<li>How much senior expertise is consumed by avoidable investigation?</li>
+<li>Can a controlled model remove enough of that work to pay for itself?</li>
+</ul>
+<p>Martenweave does not make migration cheap.</p>
+<p>It targets a particular form of waste: paying repeatedly to understand a model the programme should already control.</p>
+<p>For a small project, that may not justify another layer.</p>
+<p>For a long, multi-wave SAP programme, it may be one of the few governance investments that reduces both delivery risk and the cost of coordination.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html"><span>Previous</span>Most migration teams believe they have a mapping problem only when a field is missing.</a><a href="/blog/why-martenweave-creates-more-value-across-a-programme-than-in-a-single.html"><span>Next</span>A small migration project may not need Martenweave.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

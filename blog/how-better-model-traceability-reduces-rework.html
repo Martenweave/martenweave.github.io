@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Better Model Traceability Reduces Rework | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration defect appears during UAT."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html" />
+    <meta property="og:title" content="How Better Model Traceability Reduces Rework | Martenweave" />
+    <meta property="og:description" content="A migration defect appears during UAT." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Better Model Traceability Reduces Rework | Martenweave" />
+    <meta name="twitter:description" content="A migration defect appears during UAT." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html",
+                        "name": "How Better Model Traceability Reduces Rework | Martenweave",
+                        "description": "A migration defect appears during UAT.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Better Model Traceability Reduces Rework",
+                                    "item": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html#content",
+                        "headline": "How Better Model Traceability Reduces Rework",
+                        "name": "How Better Model Traceability Reduces Rework",
+                        "description": "A migration defect appears during UAT.",
+                        "url": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-better-model-traceability-reduces-rework.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Better Model Traceability Reduces Rework</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How Better Model Traceability Reduces Rework</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">A migration defect appears during UAT.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#rework-is-often-repeated-discovery">Rework is often repeated discovery</a></li><li><a href="#the-relationship-is-usually-more-valuable-than-the-document">The relationship is usually more valuable than the document</a></li><li><a href="#target-traceability">Target traceability</a></li><li><a href="#change-traceability">Change traceability</a></li><li><a href="#ownership-traceability">Ownership traceability</a></li><li><a href="#traceability-reduces-dependence-on-key-individuals">Traceability reduces dependence on key individuals</a></li><li><a href="#traceability-should-be-risk-based">Traceability should be risk-based</a></li><li><a href="#stable-identifiers-are-the-foundation">Stable identifiers are the foundation</a></li><li><a href="#a-worked-example-changing-supplier-payment-terms">A worked example: changing supplier payment terms</a></li><li><a href="#another-example-retiring-a-customer-classification">Another example: retiring a customer classification</a></li><li><a href="#another-example-adding-a-local-value">Another example: adding a local value</a></li><li><a href="#traceability-and-impact-analysis">Traceability and impact analysis</a></li><li><a href="#a-martenweave-trace-can-connect">A Martenweave trace can connect</a></li><li><a href="#what-managers-should-ask">What managers should ask</a></li><li><a href="#common-mistakes">Common mistakes</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration defect appears during UAT.</p>
+<p>One customer field contains the wrong value. The mapping team checks its workbook and confirms that the transformation is correct. The SAP team checks the target configuration and confirms that the field accepts the value. The business team says the requirement changed several months ago. Testing finds a Jira issue where the change was discussed, but the final decision is unclear.</p>
+<p>The issue is assigned to architecture.</p>
+<p>Architecture reconstructs the path:</p>
+<ul>
+<li>the source field was reinterpreted;</li>
+<li>a value list changed;</li>
+<li>one country received an exception;</li>
+<li>migration code still uses the previous rule;</li>
+<li>two test cases were never updated;</li>
+<li>a downstream interface expects the older values.</li>
+</ul>
+<p>A corrected design is agreed.</p>
+<p>The mapping is updated. Code is changed. Tests are repeated. Documentation is revised.</p>
+<p>Three months later, another country encounters almost the same problem.</p>
+<p>The programme repeats much of the analysis because the first investigation produced a defect fix, not a durable trace connecting the field, mapping, rule, decision, dataset and affected consumers.</p>
+<p>This is the type of rework that model traceability should reduce.</p>
+<p>The problem is not that teams failed to solve the first defect.</p>
+<p>The problem is that the solution remained attached to one incident instead of becoming part of the reusable model knowledge.</p>
+<blockquote>Better traceability reduces rework by allowing teams to reuse previous analysis, identify affected objects earlier and update connected implementation artefacts together.</blockquote>
+<p>It does not remove legitimate design changes.</p>
+<p>It reduces the amount of work spent rediscovering relationships that the programme has already encountered.</p>
+<h2 id="rework-is-often-repeated-discovery">Rework is often repeated discovery</h2>
+<p>When programmes discuss rework, they usually focus on outputs that need to be redone:</p>
+<ul>
+<li>mapping updated again;</li>
+<li>validation reconfigured;</li>
+<li>code changed;</li>
+<li>test rerun;</li>
+<li>document revised;</li>
+<li>load repeated.</li>
+</ul>
+<p>The visible repetition is only part of the cost.</p>
+<p>Before those outputs can be changed, teams often repeat discovery:</p>
+<ul>
+<li>What does this field mean?</li>
+<li>Where does the value come from?</li>
+<li>Which rule applies?</li>
+<li>Why was the current treatment selected?</li>
+<li>Which countries use it?</li>
+<li>Which systems consume it?</li>
+<li>Which test proves it?</li>
+<li>Who can approve the change?</li>
+</ul>
+<p>The organisation may already have answered these questions.</p>
+<p>The answers are distributed across people and artefacts.</p>
+<p>Rework therefore begins with reconstruction.</p>
+<p>The team does not immediately correct the model. It first rebuilds enough understanding to decide what correction is safe.</p>
+<h2 id="the-relationship-is-usually-more-valuable-than-the-document">The relationship is usually more valuable than the document</h2>
+<p>A programme can retain every source document and still struggle with traceability.</p>
+<p>Suppose the following evidence exists:</p>
+<ul>
+<li>a source-system specification;</li>
+<li>an Excel mapping;</li>
+<li>an SAP design document;</li>
+<li>a validation-rule catalogue;</li>
+<li>a closed Jira decision;</li>
+<li>a test case;</li>
+<li>an interface specification.</li>
+</ul>
+<p>The key operational knowledge is the relationship between them:</p>
+<p>```text id=&quot;trace-rework-01&quot; Legacy field → business attribute → approved mapping → SAP target endpoint → validation rule → decision → test → downstream consumer</p>
+<pre><code>
+If these links are not explicit, each new investigation has to infer them again.
+
+Search can find the documents.
+
+It cannot automatically prove that they describe the same concept, the same context and the same approved model version.
+
+## SAP MDG increases the value of connected model knowledge
+
+SAP currently positions SAP Master Data Governance as a central governance layer combining master data, policy and metadata. It highlights governed models, preserved semantics and relationships, steward workflows, validated values, business rules, monitoring and auditable changes.
+
+Those capabilities provide operational governance for master records.
+
+An MDG implementation still connects to a broader delivery landscape:
+
+- legacy data;
+- migration mappings;
+- target configuration;
+- integrations;
+- testing;
+- local requirements;
+- architecture decisions;
+- AMS knowledge.
+
+The operational record may be governed inside MDG.
+
+The explanation of how the record reached its current structure often remains outside it.
+
+Traceability connects these layers without pretending that one platform owns all of them.
+
+## Traceability is not only source-to-target mapping
+
+A source-to-target line is useful:
+
+```text id=&quot;trace-rework-02&quot;
+LEGACY_CUSTOMER.TYPE → SAP Customer Group</code></pre>
+<p>It does not answer enough questions to prevent repeated analysis.</p>
+<p>A stronger trace includes:</p>
+<ul>
+<li>source system;</li>
+<li>source dataset;</li>
+<li>source field;</li>
+<li>business meaning;</li>
+<li>transformation;</li>
+<li>value mapping;</li>
+<li>target context;</li>
+<li>target endpoint;</li>
+<li>validation;</li>
+<li>decision;</li>
+<li>ownership;</li>
+<li>test evidence;</li>
+<li>consumers.</li>
+</ul>
+<p>For example:</p>
+<p>```text id=&quot;trace-rework-03&quot; CRM_A.CUSTOMER_TYPE → Customer Group for sales processing → normalise legacy values → apply DE value mapping → SAP sales-area Customer Group → mandatory for active German B2B customers → decision DEC-0142 → tested in TC-882 → consumed by pricing and reporting</p>
+<pre><code>
+The longer trace is not needed for every low-risk field.
+
+It is valuable for fields where a misunderstanding would create significant rework.
+
+## There are several forms of traceability
+
+A useful model should support more than one direction.
+
+## Source traceability
+
+Answers:
+
+&gt; Where did this SAP value come from?
+
+```text id=&quot;trace-rework-04&quot;
+Target field
+→ mapping
+→ transformation
+→ source field
+→ source dataset</code></pre>
+<h2 id="target-traceability">Target traceability</h2>
+<p>Answers:</p>
+<blockquote>Where should this legacy field go?</blockquote>
+<p>```text id=&quot;trace-rework-05&quot; Source field → business attribute → target endpoint</p>
+<pre><code>
+## Rule traceability
+
+Answers:
+
+&gt; Why is this field rejected or required?
+
+```text id=&quot;trace-rework-06&quot;
+Attribute
+→ validation rule
+→ context
+→ decision
+→ owner</code></pre>
+<h2 id="change-traceability">Change traceability</h2>
+<p>Answers:</p>
+<blockquote>What must be reviewed if this object changes?</blockquote>
+<p>```text id=&quot;trace-rework-07&quot; Changed attribute → mappings → rules → values → datasets → tests → integrations</p>
+<pre><code>
+## Historical traceability
+
+Answers:
+
+&gt; Why was this state introduced?
+
+```text id=&quot;trace-rework-08&quot;
+Current object
+→ previous versions
+→ decisions
+→ releases
+→ superseded treatments</code></pre>
+<h2 id="ownership-traceability">Ownership traceability</h2>
+<p>Answers:</p>
+<blockquote>Who has authority to clarify or approve the treatment?</blockquote>
+<p>```text id=&quot;trace-rework-09&quot; Model object → business owner → technical owner → local owner</p>
+<pre><code>
+Rework decreases when the programme can move through these traces without beginning another manual discovery exercise.
+
+## Traceability shortens defect triage
+
+Consider a migration record rejected by a tax validation.
+
+Without traceability, the triage process may involve:
+
+1. Check the error message.
+2. Ask the SAP team which rule fired.
+3. Find the field in the target design.
+4. Search for the migration mapping.
+5. Compare source extracts.
+6. Ask the country team about exemptions.
+7. Find the original decision.
+8. determine whether the test expectation is current.
+
+With a connected model, the starting object can expose:
+
+- rule identifier;
+- affected attribute;
+- applicable country and role;
+- source mapping;
+- known dataset gap;
+- exemption decision;
+- owner;
+- related tests.
+
+The team may still need expert judgement.
+
+It no longer needs to locate every component separately.
+
+## Traceability prevents narrow fixes
+
+A defect often produces a local repair.
+
+For example:
+
+&gt; Add missing target value `09`.
+
+That repair may be technically correct.
+
+A trace can reveal that the value also affects:
+
+- two source value mappings;
+- one workflow condition;
+- one interface code list;
+- several test cases;
+- reporting logic;
+- another country using a local copy.
+
+Without traceability, the project fixes the immediate point of failure.
+
+The remaining dependencies create later defects.
+
+Better traceability encourages complete change packages rather than isolated corrections.
+
+## Traceability reduces repeated workshops
+
+Many project workshops are not discovering new requirements.
+
+They are reconstructing previous decisions.
+
+A typical meeting begins with:
+
+- Which version is correct?
+- Was this agreed globally?
+- Does the exception apply only to migration?
+- Why was this value removed?
+- Who approved the default?
+
+Participants search old files and contact former team members.
+
+A decision trace can show:
+
+- question;
+- alternatives;
+- selected treatment;
+- evidence;
+- scope;
+- approvers;
+- review condition.
+
+The meeting can then focus on whether current conditions justify changing the previous decision.
+
+This is productive reconsideration rather than historical reconstruction.
+
+## Traceability reduces unnecessary retesting
+
+Testing teams often rerun a broad set of cases because the effect of a change is uncertain.
+
+Suppose a value list changes.
+
+Without traceability, the team may repeat:
+
+- all field validations;
+- complete workflow scenarios;
+- several integrations;
+- full migration samples.
+
+A traceable model can identify:
+
+- attributes using the list;
+- mappings producing the affected values;
+- rules checking those values;
+- workflows branching on them;
+- interfaces consuming them;
+- existing tests covering them.
+
+The regression scope becomes targeted.
+
+This does not justify minimal testing where risk remains uncertain.
+
+It gives the test lead evidence for selecting the appropriate scope.
+
+## Traceability reduces mapping rework
+
+Mappings are frequently revised because target or source assumptions change.
+
+A mapping row alone may not show why it was created.
+
+When a source field is replaced, the team has to determine:
+
+- which business attribute it represented;
+- whether the replacement has the same meaning;
+- which transformation is reusable;
+- whether value coverage differs;
+- which countries used the old source;
+- which tests need revision.
+
+If the mapping is connected through a stable business attribute, the source can change without rebuilding the target interpretation from the beginning.
+
+```text id=&quot;trace-rework-10&quot;
+Old source endpoint
+        ↓
+Business attribute
+        ↓
+Target endpoint</code></pre>
+<p>becomes:</p>
+<p>```text id=&quot;trace-rework-11&quot; New source endpoint ↓ Same business attribute ↓ Same or reviewed target endpoint</p>
+<pre><code>
+The stable semantic layer preserves previous analysis.
+
+## Traceability reduces local/global reconciliation work
+
+Global programmes often maintain:
+
+- one global model;
+- several local mappings;
+- country-specific rules;
+- temporary deviations.
+
+When relationships are unclear, every global change triggers manual comparison across local workbooks.
+
+For example:
+
+&gt; Global Supplier Classification value list changed.
+
+The programme must ask every country whether it:
+
+- copied the list;
+- extended it;
+- mapped local codes;
+- used the values in workflow;
+- introduced migration defaults.
+
+If each local object references its global parent, impact analysis can identify the affected variants directly.
+
+The local teams still review the change.
+
+The global team no longer has to rediscover which local artefacts exist.
+
+## Traceability reduces handover rework
+
+AMS often begins with a second implementation-discovery phase.
+
+The system is live, but support must reconstruct:
+
+- model meaning;
+- mappings;
+- rules;
+- exceptions;
+- ownership;
+- integration dependencies.
+
+Every incident becomes a small handover exercise.
+
+A traceable model gives AMS a path from the incident to the implementation knowledge.
+
+For example:
+
+```text id=&quot;trace-rework-12&quot;
+Production validation error
+→ configured rule
+→ approved business rule
+→ affected attribute
+→ owner
+→ exception process
+→ decision
+→ regression tests</code></pre>
+<p>This does not remove the need for SAP expertise.</p>
+<p>It prevents experts from spending most of their time locating historical context.</p>
+<h2 id="traceability-reduces-dependence-on-key-individuals">Traceability reduces dependence on key individuals</h2>
+<p>A senior consultant may appear uniquely productive because they can recall relationships that are not represented elsewhere.</p>
+<p>They know:</p>
+<ul>
+<li>which source field is reliable;</li>
+<li>which mapping is outdated;</li>
+<li>which local exception was approved;</li>
+<li>which test covers the rule;</li>
+<li>which integration will fail.</li>
+</ul>
+<p>This knowledge is genuinely valuable.</p>
+<p>The problem is that the organisation cannot reuse it without the individual.</p>
+<p>Traceability captures repeatable knowledge so experts can focus on new judgement.</p>
+<p>It does not attempt to capture every intuition or replace experience.</p>
+<p>It preserves the relationships the programme has already accepted as part of its operating model.</p>
+<h2 id="traceability-should-be-risk-based">Traceability should be risk-based</h2>
+<p>Modelling every dependency in exhaustive detail can create its own overhead.</p>
+<p>Not every descriptive field needs:</p>
+<ul>
+<li>full decision history;</li>
+<li>source lineage;</li>
+<li>integration impact;</li>
+<li>detailed test references.</li>
+</ul>
+<p>Prioritise traceability where one or more conditions apply:</p>
+<ul>
+<li>legally or financially significant;</li>
+<li>mandatory;</li>
+<li>heavily transformed;</li>
+<li>sourced from several systems;</li>
+<li>used in matching or workflow;</li>
+<li>consumed by important integrations;</li>
+<li>frequently changed;</li>
+<li>subject to local variation;</li>
+<li>difficult to remediate;</li>
+<li>likely to generate support incidents.</li>
+</ul>
+<p>This creates a practical rule:</p>
+<blockquote>Trace critical model decisions deeply. Trace low-risk descriptive content lightly.</blockquote>
+<h2 id="stable-identifiers-are-the-foundation">Stable identifiers are the foundation</h2>
+<p>Traceability becomes fragile when it relies on names.</p>
+<p>Names change.</p>
+<p>The same name can refer to different contexts.</p>
+<p>Different names can refer to the same business concept.</p>
+<p>Stable identifiers allow relationships to survive changes in labels and presentation.</p>
+<p>Examples:</p>
+<p>```text id=&quot;trace-rework-13&quot; ATTR-SUPPLIER-RISK FEP-ERP-A-VENDOR-RISK FEP-SAP-SUPPLIER-RISK MAP-SUPPLIER-RISK-ERP-A RULE-SUPPLIER-RISK-HIGH DEC-SUPPLIER-RISK-004</p>
+<pre><code>
+The identifiers can appear in:
+
+- canonical files;
+- Excel exports;
+- Jira issues;
+- test cases;
+- reports;
+- configuration documentation.
+
+A user does not need to memorise them.
+
+The system uses them to preserve identity.
+
+## Traceability needs explicit relationship types
+
+A generic link is often insufficient.
+
+The system should know whether an object:
+
+- maps to;
+- derives from;
+- validates;
+- owns;
+- implements;
+- supersedes;
+- tests;
+- consumes;
+- extends;
+- overrides;
+- depends on.
+
+For example:
+
+```text id=&quot;trace-rework-14&quot;
+RULE-SUPPLIER-RISK-HIGH
+validates
+ATTR-SUPPLIER-RISK</code></pre>
+<p>is different from:</p>
+<p>```text id=&quot;trace-rework-15&quot; WF-SUPPLIER-COMPLIANCE depends on ATTR-SUPPLIER-RISK</p>
+<pre><code>
+Typed relationships improve impact analysis and reporting.
+
+They also make invalid connections easier to detect deterministically.
+
+## Traceability needs version context
+
+A relationship may be true for one baseline and false for another.
+
+For example:
+
+- Mapping version 1 used source field A.
+- Version 2 replaced it with source field B.
+- Test cycle 1 proved version 1.
+- Test cycle 2 proved version 2.
+
+If the registry shows only the current mapping, historical defects become difficult to explain.
+
+If it shows every mapping as simultaneously active, current impact analysis becomes misleading.
+
+Record:
+
+- effective model baseline;
+- activation date;
+- retirement or supersession;
+- migration wave;
+- applicable release.
+
+This supports both operational and historical questions.
+
+## Traceability must distinguish current and proposed states
+
+A proposed mapping should not appear as an approved relationship.
+
+Useful states include:
+
+- candidate;
+- proposed;
+- approved;
+- implemented;
+- verified;
+- deprecated;
+- retired.
+
+AI-generated relationships are especially important here.
+
+An AI may suggest that two fields represent the same concept.
+
+That suggestion should be traceable as a proposal with evidence and assumptions.
+
+It should not enter approved lineage until responsible people review it.
+
+## Traceability should include uncertainty
+
+Some links remain uncertain.
+
+For example:
+
+- source documentation is incomplete;
+- two candidate fields exist;
+- local usage is inconsistent;
+- no approval evidence was found.
+
+The system should allow the relationship to be represented as:
+
+```text id=&quot;trace-rework-16&quot;
+Candidate source:
+ERP_B.CUST_CLASS
+
+Confidence:
+Low
+
+Reason:
+Name and value distribution are similar,
+but no confirmed business definition exists.</code></pre>
+<p>This helps the programme manage the gap.</p>
+<p>A false definitive relationship may reduce short-term reporting noise while increasing later rework.</p>
+<h2 id="a-worked-example-changing-supplier-payment-terms">A worked example: changing supplier payment terms</h2>
+<p>The programme decides to change how supplier payment terms are sourced for one country.</p>
+<h3 id="without-traceability">Without traceability</h3>
+<p>The team updates:</p>
+<ul>
+<li>one mapping workbook;</li>
+<li>one transformation routine;</li>
+<li>one test.</li>
+</ul>
+<p>Later it discovers:</p>
+<ul>
+<li>the same source field is used for another company code;</li>
+<li>a default is documented in a closed ticket;</li>
+<li>an interface expects a different code;</li>
+<li>an AMS report groups suppliers by the old mapping.</li>
+</ul>
+<h3 id="with-traceability">With traceability</h3>
+<p>The source endpoint shows relationships to:</p>
+<ul>
+<li>two mappings;</li>
+<li>one transformation;</li>
+<li>one value list;</li>
+<li>three company-code contexts;</li>
+<li>one decision;</li>
+<li>five test cases;</li>
+<li>one downstream consumer.</li>
+</ul>
+<p>The programme can create one change package covering all affected objects.</p>
+<p>The change still requires analysis.</p>
+<p>The dependency discovery is not repeated manually.</p>
+<h2 id="another-example-retiring-a-customer-classification">Another example: retiring a customer classification</h2>
+<p>The business retires an old customer classification.</p>
+<p>Traceability should identify:</p>
+<ul>
+<li>source systems still providing it;</li>
+<li>target fields storing it;</li>
+<li>value mappings;</li>
+<li>validations;</li>
+<li>workflows;</li>
+<li>reports;</li>
+<li>interfaces;</li>
+<li>historical migration decisions;</li>
+<li>local extensions;</li>
+<li>test cases.</li>
+</ul>
+<p>The programme may then decide:</p>
+<ul>
+<li>stop populating the field;</li>
+<li>retain historical values;</li>
+<li>convert records;</li>
+<li>update reporting;</li>
+<li>retire related rules;</li>
+<li>preserve an alias for search.</li>
+</ul>
+<p>Without the trace, retirement is likely to be implemented as a field-level change while dependencies remain active.</p>
+<h2 id="another-example-adding-a-local-value">Another example: adding a local value</h2>
+<p>A country requests value <code>UNDER_REVIEW</code> for Supplier Risk.</p>
+<p>A trace can show:</p>
+<ul>
+<li>global value list;</li>
+<li>local extension relationship;</li>
+<li>migration mapping;</li>
+<li>workflow dependency;</li>
+<li>integration consumers;</li>
+<li>data-quality report;</li>
+<li>decision owner.</li>
+</ul>
+<p>The programme sees immediately that the value is not only a dropdown entry.</p>
+<p>This reduces the chance of configuring it first and discovering its operational meaning later.</p>
+<h2 id="traceability-and-impact-analysis">Traceability and impact analysis</h2>
+<p>Traceability provides the graph.</p>
+<p>Impact analysis asks which part of the graph is relevant to a proposed change.</p>
+<p>For example:</p>
+<p>```text id=&quot;trace-rework-17&quot; Change: Make Customer Group mandatory in Germany.</p>
+<pre><code>
+Possible impact paths:
+
+```text id=&quot;trace-rework-18&quot;
+Attribute
+→ DE validation rule
+→ source mappings
+→ datasets
+→ incomplete records
+→ tests
+→ remediation owner</code></pre>
+<p>and:</p>
+<p>```text id=&quot;trace-rework-19&quot; Attribute → outbound interface → pricing consumer</p>
+<pre><code>
+Not every connected object is equally affected.
+
+Impact analysis should classify relationships:
+
+- direct;
+- indirect;
+- informational;
+- requires review;
+- likely unaffected.
+
+The objective is not to produce a huge graph.
+
+It is to identify the work that should not be forgotten.
+
+## Traceability and deterministic validation
+
+A trace is useful only when its references are structurally reliable.
+
+Deterministic checks can identify:
+
+- missing referenced objects;
+- duplicate identities;
+- mappings without endpoints;
+- active objects linked to retired objects;
+- local overrides without parents;
+- test evidence referring to obsolete mappings;
+- decisions without affected objects.
+
+Martenweave’s current public documentation states that references are validated before indexing and that the core supports trace and impact analysis.
+
+This matters because a visually impressive lineage diagram built on broken references creates false confidence.
+
+## Traceability and generated views
+
+The canonical model should preserve the relationships.
+
+Different users need different views.
+
+### Migration view
+
+Shows:
+
+- source;
+- transformation;
+- target;
+- dataset coverage;
+- gaps.
+
+### Business view
+
+Shows:
+
+- definition;
+- ownership;
+- values;
+- context;
+- decisions.
+
+### SAP view
+
+Shows:
+
+- target endpoints;
+- rules;
+- workflow dependencies;
+- implementation references.
+
+### Testing view
+
+Shows:
+
+- mappings;
+- rules;
+- expected behaviour;
+- evidence;
+- stale tests.
+
+### AMS view
+
+Shows:
+
+- current object;
+- owner;
+- dependencies;
+- known exceptions;
+- history.
+
+This avoids asking every stakeholder to navigate the full graph directly.
+
+## Traceability should integrate with existing tools
+
+Martenweave should not become another system requiring teams to duplicate all project content.
+
+A practical pattern is:
+
+- keep narrative design in Confluence;
+- keep delivery work in Jira;
+- keep business review in Excel where useful;
+- keep operational master data in SAP MDG;
+- keep canonical model identities and relationships in Martenweave.
+
+The registry stores:
+
+- model object;
+- relationship;
+- evidence reference;
+- approved outcome.
+
+It does not need to copy every discussion or attachment.
+
+The product earns its place when it reduces reconciliation between the existing tools.
+
+## Where Martenweave fits
+
+Martenweave’s current public description presents the product as a practical model-control layer for knowledge scattered across spreadsheets, datasets, tickets, validation reports, decisions, SAP context and project history. It connects fields, attributes, rules, owners, issues and decisions, validates references, detects gaps and traces impact.
+
+The current open-source core includes:
+
+- canonical Markdown and YAML files;
+- deterministic validation;
+- generated SQLite and JSONL indexes;
+- search and structured queries;
+- trace and impact analysis;
+- dataset profiling and gap detection;
+- ownership, audit, analysis and scorecard reports;
+- CSV and XLSX review flows;
+- PatchProposal-to-ChangeRequest lifecycle;
+- issue drafts and GitHub-ready change bundles.
+
+For traceability, the important architectural flow is:
+
+```text id=&quot;trace-rework-20&quot;
+Canonical objects
+→ validated relationships
+→ generated index
+→ trace and impact analysis
+→ reviewable report
+→ controlled change proposal</code></pre>
+<p>The graph is generated from the approved model rather than maintained as a separate diagram.</p>
+<h2 id="a-martenweave-trace-can-connect">A Martenweave trace can connect</h2>
+<p>```text id=&quot;trace-rework-21&quot; Dataset column → source FieldEndpoint → Mapping → Attribute → EntityContext → target FieldEndpoint → Rule → Decision → Issue → ChangeRequest</p>
+<pre><code>
+The exact object model can evolve.
+
+The core value is stable identity and explicit connection.
+
+## A practical implementation approach
+
+Do not begin by tracing every object in a large programme.
+
+Start with one rework-heavy scenario.
+
+Examples:
+
+- repeated tax-validation defects;
+- unclear supplier classifications;
+- frequently changing customer mappings;
+- local payment-term differences;
+- unexplained migration defaults.
+
+### Step 1: Select critical objects
+
+Choose 30–100 fields, mappings and rules.
+
+### Step 2: Assign stable identifiers
+
+Make sure the same objects can be referenced across tools.
+
+### Step 3: Connect source and target endpoints
+
+Include applicable context.
+
+### Step 4: Add rules and value lists
+
+Focus on controls that generate defects or repeated reviews.
+
+### Step 5: Link decisions and ownership
+
+Preserve why the current treatment exists.
+
+### Step 6: Connect datasets and tests
+
+Show which evidence supports the mapping.
+
+### Step 7: Run validation
+
+Remove broken references and ambiguous identities.
+
+### Step 8: Test impact analysis
+
+Use one real proposed change.
+
+### Step 9: Measure investigation effort
+
+Compare the time needed before and after the trace exists.
+
+This keeps the pilot tied to operational value.
+
+## How to measure rework reduction
+
+The benefit should not be measured only by the number of model objects stored.
+
+Useful indicators include:
+
+### Investigation time
+
+How long does it take to explain a defect or field?
+
+### Repeated-analysis rate
+
+How often is the same requirement or mapping reconsidered without new evidence?
+
+### Change completeness
+
+How often does a model change miss a mapping, rule, test or consumer?
+
+### Defect recurrence
+
+How often does a previously solved model problem reappear in another wave or country?
+
+### Regression scope effort
+
+How long does it take to identify affected tests?
+
+### Handover dependency
+
+How often must AMS contact the original project team?
+
+### Mapping reconciliation effort
+
+How much time is spent comparing files and versions?
+
+### Decision retrieval
+
+Can teams find why a rule exists without reading long ticket histories?
+
+The goal is not perfect trace coverage.
+
+It is measurable reduction in reconstruction work.
+
+## The danger of tracing everything
+
+Traceability can become an architecture hobby.
+
+Teams may create:
+
+- huge graphs;
+- many relationship types;
+- exhaustive metadata;
+- complex visualisations.
+
+If users still cannot answer a practical change question, the model is not helping.
+
+Every relationship should support at least one useful job:
+
+- validation;
+- impact analysis;
+- issue resolution;
+- readiness;
+- testing;
+- handover;
+- audit.
+
+Avoid storing relationships only because they may be interesting later.
+
+## The danger of stale traceability
+
+A trace that is not maintained becomes another misleading document.
+
+Traceability must update through the change process.
+
+A material change should update:
+
+- object state;
+- relationships;
+- decision;
+- affected evidence;
+- version;
+- implementation status.
+
+The definition of done should include model reconciliation.
+
+Otherwise, the trace describes the previous implementation while users assume it describes the current one.
+
+## The danger of automated inference
+
+AI can infer many likely relationships from:
+
+- similar names;
+- shared descriptions;
+- documents;
+- code;
+- datasets.
+
+This can accelerate model building.
+
+Inferred links should remain proposals.
+
+For example:
+
+```text id=&quot;trace-rework-22&quot;
+AI suggestion:
+CRM_A.CUST_SEGMENT may map to ATTR-CUSTOMER-GROUP.
+
+Evidence:
+Similar descriptions and overlapping values.
+
+Conflict:
+Source is global; target is sales-area-specific.</code></pre>
+<p>This is useful analysis.</p>
+<p>It is not an approved mapping.</p>
+<p>The same principle applies when AI attempts to infer decisions or ownership.</p>
+<h2 id="what-managers-should-ask">What managers should ask</h2>
+<ol>
+<li>Can a critical target field be traced to its source and decision?</li>
+<li>Can a source field be traced to every target use?</li>
+<li>Can the programme identify mappings affected by a rule change?</li>
+<li>Are local variants linked to global parent objects?</li>
+<li>Are tests connected to the mappings and rules they prove?</li>
+<li>Are migrated defaults linked to affected populations and remediation?</li>
+<li>Can AMS retrieve ownership and rationale?</li>
+<li>Are proposed relationships distinguished from approved ones?</li>
+<li>Does traceability refer to identifiable model baselines?</li>
+<li>Are broken references detected automatically?</li>
+<li>How much time is spent reconstructing information that already exists?</li>
+<li>Has traceability reduced that time in a real scenario?</li>
+</ol>
+<p>A large lineage diagram is not an answer to these questions.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="treating-traceability-as-a-visual-diagram">Treating traceability as a visual diagram</h3>
+<p>The graph should be generated from validated relationships.</p>
+<h3 id="tracing-only-technical-fields">Tracing only technical fields</h3>
+<p>Business meaning, context and decisions are required to explain implementation.</p>
+<h3 id="linking-only-documents">Linking only documents</h3>
+<p>Link the actual model objects and use documents as evidence.</p>
+<h3 id="relying-on-names">Relying on names</h3>
+<p>Stable identifiers reduce ambiguity.</p>
+<h3 id="ignoring-versions">Ignoring versions</h3>
+<p>Historical and current relationships should not be mixed.</p>
+<h3 id="treating-every-link-as-equally-important">Treating every link as equally important</h3>
+<p>Prioritise critical objects and typed dependencies.</p>
+<h3 id="allowing-proposed-links-into-approved-lineage">Allowing proposed links into approved lineage</h3>
+<p>Candidate relationships need review.</p>
+<h3 id="capturing-traceability-only-at-handover">Capturing traceability only at handover</h3>
+<p>The most useful relationships should be created during delivery.</p>
+<h3 id="maintaining-traceability-outside-change-control">Maintaining traceability outside change control</h3>
+<p>It will become stale.</p>
+<h3 id="measuring-success-by-object-count">Measuring success by object count</h3>
+<p>Measure reduced investigation and change effort.</p>
+<h2 id="when-a-lightweight-approach-is-enough">When a lightweight approach is enough</h2>
+<p>A controlled workbook may provide sufficient traceability when:</p>
+<ul>
+<li>one source and one target exist;</li>
+<li>mappings are simple;</li>
+<li>the domain is small;</li>
+<li>the same team handles design, migration and support;</li>
+<li>changes are infrequent.</li>
+</ul>
+<p>At minimum, maintain:</p>
+<ul>
+<li>stable mapping IDs;</li>
+<li>business attribute;</li>
+<li>source;</li>
+<li>target;</li>
+<li>context;</li>
+<li>owner;</li>
+<li>rule;</li>
+<li>decision;</li>
+<li>test reference.</li>
+</ul>
+<p>A registry becomes more useful when:</p>
+<ul>
+<li>several source systems are involved;</li>
+<li>several countries maintain variations;</li>
+<li>the model changes frequently;</li>
+<li>different partners own different workstreams;</li>
+<li>impact analysis takes days;</li>
+<li>knowledge must survive several waves;</li>
+<li>AI agents consume the model.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Rework is not caused only by incorrect design.</p>
+<p>It is caused by the cost of repeatedly understanding how design, data and implementation are connected.</p>
+<p>Better traceability preserves those connections.</p>
+<p>It allows teams to move from:</p>
+<ul>
+<li>a field to its source;</li>
+<li>a rule to its decision;</li>
+<li>a change to its dependencies;</li>
+<li>a defect to its evidence;</li>
+<li>a local variant to its global parent;</li>
+<li>a test to the model version it proves.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>When one critical field changes, can the programme identify the affected mappings, datasets, rules, decisions, tests and consumers without organising another discovery exercise?</blockquote>
+<p>When the answer is yes, traceability is reducing rework.</p>
+<p>When the answer requires searching several tools and interviewing the original team, the organisation is paying again for knowledge it already produced.</p>
+<p>The purpose of a model registry is not to make every relationship visible.</p>
+<p>It is to preserve the relationships expensive enough that the programme should not have to rediscover them twice.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is designed to preserve validated relationships between fields, mappings, rules, datasets, decisions and changes so that delivery teams spend less time reconstructing their own implementation knowledge.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer combining master data, policy and metadata. Its listed capabilities include governed models, preserved semantics and relationships, collaborative workflows, validated values, monitored business rules and auditable data changes. SAP also recommends curating clean and correct master data well before an SAP S/4HANA implementation.</p>
+<p>Martenweave’s current public documentation describes a model-control layer connecting fields, attributes, rules, owners, issues and decisions, with deterministic validation, dataset and model gap detection, trace and impact analysis, reporting and reviewable model proposals.</p>
+<p>The current open-source core includes canonical model files, generated indexes, search, trace and impact analysis, dataset profiling, ownership and audit reports, spreadsheet review flows and a PatchProposal-to-ChangeRequest lifecycle.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html">A user reports that a supplier cannot be activated in SAP.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/evidence-based-migration-readiness-report.html"><span>Previous</span>The steering committee sees a green dashboard.</a><a href="/blog/how-to-reduce-key-person-risk-in-sap-programmes.html"><span>Next</span>The programme has one person who knows how everything fits together.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

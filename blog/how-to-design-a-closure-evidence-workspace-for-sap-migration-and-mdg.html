@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Design a Closure Evidence Workspace for SAP Migration and MDG | Martenweave</title>
+    <meta
+      name="description"
+      content="The programme is preparing for a risk-closure meeting."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html" />
+    <meta property="og:title" content="How to Design a Closure Evidence Workspace for SAP Migration and MDG | Martenweave" />
+    <meta property="og:description" content="The programme is preparing for a risk-closure meeting." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Design a Closure Evidence Workspace for SAP Migration and MDG | Martenweave" />
+    <meta name="twitter:description" content="The programme is preparing for a risk-closure meeting." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html",
+                        "name": "How to Design a Closure Evidence Workspace for SAP Migration and MDG | Martenweave",
+                        "description": "The programme is preparing for a risk-closure meeting.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Design a Closure Evidence Workspace for SAP Migration and MDG",
+                                    "item": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html#content",
+                        "headline": "How to Design a Closure Evidence Workspace for SAP Migration and MDG",
+                        "name": "How to Design a Closure Evidence Workspace for SAP Migration and MDG",
+                        "description": "The programme is preparing for a risk-closure meeting.",
+                        "url": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Design a Closure Evidence Workspace for SAP Migration and MDG</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Design a Closure Evidence Workspace for SAP Migration and MDG</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">The programme is preparing for a risk-closure meeting.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#martenweave-already-has-the-ui-foundation">Martenweave already has the UI foundation</a></li><li><a href="#a-closure-workspace-is-not-a-risk-dashboard">A closure workspace is not a risk dashboard</a></li><li><a href="#start-from-the-closure-claim">Start from the closure claim</a></li><li><a href="#the-workspace-should-reconcile-three-forms-of-truth">The workspace should reconcile three forms of truth</a></li><li><a href="#1-approved-model-truth">1. Approved model truth</a></li><li><a href="#2-implemented-system-truth">2. Implemented system truth</a></li><li><a href="#3-observed-data-truth">3. Observed data truth</a></li><li><a href="#the-home-screen-should-become-an-evidence-queue">The Home screen should become an evidence queue</a></li><li><a href="#use-meaningful-status-labels">Use meaningful status labels</a></li><li><a href="#use-lineage-to-show-the-evidence-boundary">Use Lineage to show the evidence boundary</a></li><li><a href="#do-not-make-lineage-visually-impressive-but-operationally-vague">Do not make lineage visually impressive but operationally vague</a></li><li><a href="#turn-gaps-into-closure-blockers">Turn Gaps into closure blockers</a></li><li><a href="#make-closure-blockers-deterministic-where-possible">Make closure blockers deterministic where possible</a></li><li><a href="#add-an-evidence-matrix">Add an evidence matrix</a></li><li><a href="#treat-evidence-as-a-first-class-object">Treat evidence as a first-class object</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The programme is preparing for a risk-closure meeting.</p>
+<p>The migration lead has a readiness workbook. The SAP team has screenshots from the latest test. The data-quality team has a profiling report. The business owner approved a decision in Jira. The integration team has an email confirming that the new value was accepted.</p>
+<p>The risk register says:</p>
+<blockquote>Ready to close.</blockquote>
+<p>During the meeting, several questions appear:</p>
+<ul>
+<li>Which model version did the data-quality report validate?</li>
+<li>Was the mapping used in the successful load the approved mapping?</li>
+<li>Does the SAP screenshot show the latest configuration?</li>
+<li>Were all countries included in the test?</li>
+<li>Is the temporary default still active?</li>
+<li>Which downstream systems were checked?</li>
+<li>Who accepted the remaining exceptions?</li>
+</ul>
+<p>The evidence exists.</p>
+<p>It is not assembled into a coherent proof.</p>
+<p>The meeting becomes another reconstruction exercise. Participants search for attachments, compare dates and contact specialists who remember what happened.</p>
+<p>Eventually, the risk is closed because the deadline is near and no one can identify a specific reason to keep it open.</p>
+<p>That is not evidence-based closure.</p>
+<p>It is closure by exhaustion.</p>
+<blockquote>A closure evidence workspace should let reviewers move from a risk to the affected model, data, implementation, tests and residual exposure without reconstructing the programme from separate tools.</blockquote>
+<p>The goal is not another executive dashboard.</p>
+<p>The goal is a working environment where a qualified reviewer can inspect the claim:</p>
+<blockquote>This model risk is resolved, controlled or consciously accepted.</blockquote>
+<h2 id="martenweave-already-has-the-ui-foundation">Martenweave already has the UI foundation</h2>
+<p>Martenweave should no longer be described as a backend with a hypothetical future interface.</p>
+<p>The repository already contains a browser-based interactive workspace covering:</p>
+<ul>
+<li>Home;</li>
+<li>Models and global search;</li>
+<li>Object detail;</li>
+<li>Lineage;</li>
+<li>Gaps;</li>
+<li>Proposals;</li>
+<li>Proposal review.</li>
+</ul>
+<p>These are the correct foundational screens for model-governance investigation.</p>
+<p>The current frontend is local-first and uses demo data. It does not yet provide persistence, authentication, a live backend connection or direct mutation of canonical model files. The documented integration direction is to read from the generated SQLite index or a local Martenweave API while retaining the core’s reviewed <code>PatchProposal</code> to <code>ChangeRequest</code> workflow.</p>
+<p>This distinction is important.</p>
+<p>The product does not need to invent a dashboard from zero.</p>
+<p>It needs to turn the existing model investigation and proposal UI into a connected evidence workspace.</p>
+<h2 id="a-closure-workspace-is-not-a-risk-dashboard">A closure workspace is not a risk dashboard</h2>
+<p>A conventional risk dashboard usually shows:</p>
+<ul>
+<li>open risks;</li>
+<li>status;</li>
+<li>probability;</li>
+<li>impact;</li>
+<li>owner;</li>
+<li>due date;</li>
+<li>trend.</li>
+</ul>
+<p>This is useful for portfolio management.</p>
+<p>It does not prove closure.</p>
+<p>A closure workspace must answer a different set of questions:</p>
+<ol>
+<li>What exactly was the risk?</li>
+<li>Which model objects were exposed?</li>
+<li>What treatment was approved?</li>
+<li>Which canonical changes were made?</li>
+<li>Does current source data support the new state?</li>
+<li>Does SAP implement the same approved model?</li>
+<li>Were connected systems and tests updated?</li>
+<li>What residual exposure remains?</li>
+<li>Who reviewed and accepted the conclusion?</li>
+<li>Can the evidence be reproduced?</li>
+</ol>
+<p>The workspace should not merely show that evidence exists.</p>
+<p>It should show how the evidence relates.</p>
+<h2 id="start-from-the-closure-claim">Start from the closure claim</h2>
+<p>Every closure review begins with a claim.</p>
+<p>Examples:</p>
+<blockquote>The risk of uncontrolled Supplier Risk defaults has been resolved.</blockquote>
+<blockquote>The risk of mappings referencing a retired target endpoint has been resolved.</blockquote>
+<blockquote>The remaining incomplete tax records have been accepted for cutover under a controlled exception.</blockquote>
+<blockquote>The model risk has been transferred to AMS with an operational control.</blockquote>
+<p>This statement should appear at the top of the risk workspace.</p>
+<p>Reviewers should immediately see:</p>
+<ul>
+<li>proposed final status;</li>
+<li>affected scope;</li>
+<li>closure owner;</li>
+<li>current baseline;</li>
+<li>decision required.</li>
+</ul>
+<p>For example:</p>
+<p>```text id=&quot;closure-workspace-01&quot; Risk: MRISK-SUPPLIER-0048</p>
+<p>Closure claim: Uncontrolled Supplier Risk defaulting has been removed.</p>
+<p>Proposed status: Resolved with accepted residual population</p>
+<p>Affected scope: ERP_B active suppliers, Wave 2</p>
+<p>Residual population: 42 inactive suppliers</p>
+<p>Closure owner: Global Supplier Data Owner</p>
+<pre><code>
+The rest of the workspace exists to test this claim.
+
+## Design around a proof chain
+
+The core information architecture should follow the closure proof:
+
+```text id=&quot;closure-workspace-02&quot;
+Risk
+→ affected model objects
+→ approved treatment
+→ canonical model change
+→ structural validation
+→ dataset evidence
+→ implementation evidence
+→ test evidence
+→ residual risk
+→ closure decision</code></pre>
+<p>A reviewer should be able to move through this chain without opening unrelated systems manually.</p>
+<p>The workspace does not need to copy every source document.</p>
+<p>It should preserve enough structured metadata and links to establish:</p>
+<ul>
+<li>identity;</li>
+<li>version;</li>
+<li>relationship;</li>
+<li>authority;</li>
+<li>evidence status.</li>
+</ul>
+<h2 id="the-workspace-should-reconcile-three-forms-of-truth">The workspace should reconcile three forms of truth</h2>
+<p>A model risk is rarely proven closed by one system.</p>
+<p>The workspace needs to compare three states.</p>
+<h2 id="1-approved-model-truth">1. Approved model truth</h2>
+<p>What the organisation has authorised.</p>
+<p>This includes:</p>
+<ul>
+<li>business attributes;</li>
+<li>definitions;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>values;</li>
+<li>contexts;</li>
+<li>ownership;</li>
+<li>decisions.</li>
+</ul>
+<h2 id="2-implemented-system-truth">2. Implemented system truth</h2>
+<p>What SAP MDG, migration code and connected applications currently do.</p>
+<p>This includes:</p>
+<ul>
+<li>configured validations;</li>
+<li>workflow behaviour;</li>
+<li>transformations;</li>
+<li>interface contracts;</li>
+<li>active values;</li>
+<li>release state.</li>
+</ul>
+<h2 id="3-observed-data-truth">3. Observed data truth</h2>
+<p>What current records and datasets actually contain.</p>
+<p>This includes:</p>
+<ul>
+<li>available columns;</li>
+<li>completeness;</li>
+<li>observed values;</li>
+<li>key integrity;</li>
+<li>affected populations;</li>
+<li>rejected records;</li>
+<li>exceptions.</li>
+</ul>
+<p>Closure becomes credible when these states agree—or when their remaining differences are explicit and accepted.</p>
+<p>SAP describes SAP Master Data Governance as a central governance layer that supports governed models, preserved semantics and relationships, validated values, collaborative workflows, business-rule monitoring, quality controls and auditable changes.</p>
+<p>The closure workspace should not duplicate those operational capabilities.</p>
+<p>It should connect their implementation evidence to the wider migration and model decision context.</p>
+<h2 id="the-home-screen-should-become-an-evidence-queue">The Home screen should become an evidence queue</h2>
+<p>Martenweave’s existing Home screen can become the entry point for model investigation and closure work.</p>
+<p>It should avoid a generic collection of charts.</p>
+<p>The primary content should be actionable queues.</p>
+<h3 id="risks-awaiting-evidence">Risks awaiting evidence</h3>
+<p>Risks where required proof is incomplete.</p>
+<h3 id="risks-ready-for-closure-review">Risks ready for closure review</h3>
+<p>All mandatory evidence is present, but no accountable closure decision has been made.</p>
+<h3 id="risks-with-contradictory-evidence">Risks with contradictory evidence</h3>
+<p>For example:</p>
+<ul>
+<li>model says value retired;</li>
+<li>current dataset still contains it;</li>
+<li>SAP configuration still allows it.</li>
+</ul>
+<h3 id="expired-accepted-risks">Expired accepted risks</h3>
+<p>Residual exposure was accepted temporarily, but the review or expiry date has passed.</p>
+<h3 id="reopened-risks">Reopened risks</h3>
+<p>A monitoring rule or new dataset invalidated the previous closure conclusion.</p>
+<h3 id="high-risk-model-objects">High-risk model objects</h3>
+<p>Attributes, mappings or rules with several unresolved risks.</p>
+<p>This makes Home an operational workbench rather than a presentation layer.</p>
+<h2 id="use-meaningful-status-labels">Use meaningful status labels</h2>
+<p>Avoid relying only on red, amber and green.</p>
+<p>Useful closure states include:</p>
+<ul>
+<li>Evidence not started;</li>
+<li>Evidence incomplete;</li>
+<li>Contradictory evidence;</li>
+<li>Ready for review;</li>
+<li>Changes requested;</li>
+<li>Residual acceptance required;</li>
+<li>Closed;</li>
+<li>Transferred to AMS;</li>
+<li>Reopened.</li>
+</ul>
+<p>A risk can be green operationally while still requiring an evidence decision.</p>
+<p>For example, a successful load may remove immediate urgency while source prevention remains incomplete.</p>
+<p>The workspace should allow:</p>
+<p>```text id=&quot;closure-workspace-03&quot; Operational status: Stable</p>
+<p>Closure evidence: Incomplete</p>
+<p>Reason: Current population remediated, but future source control not implemented</p>
+<pre><code>
+## Build a dedicated risk detail view
+
+The current UI already has Object Detail. A closure workspace can use the same interaction model for risk records.
+
+The risk detail should show five sections.
+
+## 1. Risk definition
+
+- risk statement;
+- cause;
+- potential event;
+- consequence;
+- affected context;
+- original likelihood and impact.
+
+## 2. Affected objects
+
+- attributes;
+- endpoints;
+- mappings;
+- rules;
+- values;
+- datasets;
+- decisions;
+- integrations.
+
+## 3. Approved treatment
+
+- selected response;
+- rejected alternatives;
+- responsible owner;
+- conditions;
+- expiry;
+- related change request.
+
+## 4. Closure evidence
+
+- model;
+- data;
+- implementation;
+- testing;
+- controls;
+- residual-risk approval.
+
+## 5. Final decision
+
+- resolved;
+- accepted;
+- transferred;
+- superseded;
+- remains open.
+
+This structure allows a reviewer to understand both the historical risk and the proposed conclusion.
+
+## Reuse Object Detail for model evidence
+
+A reviewer should be able to open any affected model object directly from the risk.
+
+For an attribute, the object view should show:
+
+- definition;
+- context;
+- lifecycle state;
+- owner;
+- source and target representations;
+- mappings;
+- rules;
+- values;
+- decisions;
+- linked risks;
+- current validation state;
+- last evidence update.
+
+For example:
+
+```text id=&quot;closure-workspace-04&quot;
+ATTR-SUPPLIER-RISK
+
+Lifecycle:
+Active
+
+Owner:
+Global Supplier Data Owner
+
+Current source treatments:
+ERP_A — direct
+ERP_B — reviewed enrichment
+
+Target:
+SAP Supplier Risk Classification
+
+Temporary defaults:
+None active
+
+Linked open risks:
+0
+
+Accepted residual risks:
+1</code></pre>
+<p>This allows the reviewer to verify the current truth instead of relying on the closure report’s summary.</p>
+<h2 id="use-lineage-to-show-the-evidence-boundary">Use Lineage to show the evidence boundary</h2>
+<p>The current Martenweave Lineage screen already represents one of the most important parts of closure review.</p>
+<p>For a critical attribute, it should show:</p>
+<p>```text id=&quot;closure-workspace-05&quot; Dataset column → source endpoint → mapping → business attribute → target endpoint → validation → workflow → interface → test</p>
+<pre><code>
+Evidence status can be shown on the relationships:
+
+- verified;
+- changed;
+- stale;
+- missing;
+- out of scope;
+- accepted exception.
+
+For example:
+
+```text id=&quot;closure-workspace-06&quot;
+ERP_B.SUPPLIER_REVIEW_CODE
+        ↓ verified
+MAP-ERP-B-SUPPLIER-REVIEW
+        ↓ verified
+ATTR-SUPPLIER-REVIEW-STATUS
+        ↓ verified
+SAP target endpoint
+        ↓ verified
+Compliance workflow
+        ↓ verified
+Outbound analytics
+        ↓ evidence missing</code></pre>
+<p>The closure decision should remain blocked until the missing consumer evidence is reviewed or explicitly declared outside scope.</p>
+<h2 id="do-not-make-lineage-visually-impressive-but-operationally-vague">Do not make lineage visually impressive but operationally vague</h2>
+<p>A large graph can create the appearance of control while hiding the actual review question.</p>
+<p>The Lineage screen should support focused modes.</p>
+<h3 id="source-trace">Source trace</h3>
+<p>Where did the value come from?</p>
+<h3 id="target-trace">Target trace</h3>
+<p>Where is the business concept implemented?</p>
+<h3 id="impact-trace">Impact trace</h3>
+<p>What depends on this object?</p>
+<h3 id="closure-trace">Closure trace</h3>
+<p>Which dependencies require evidence before this risk can close?</p>
+<h3 id="historical-trace">Historical trace</h3>
+<p>Which previous mapping or decision produced existing records?</p>
+<p>The closure mode should hide unrelated graph nodes and emphasise evidence obligations.</p>
+<h2 id="turn-gaps-into-closure-blockers">Turn Gaps into closure blockers</h2>
+<p>The current Gaps screen should not be limited to dataset-column mismatches.</p>
+<p>It can act as the central view for unresolved evidence conditions.</p>
+<p>Useful gap types include:</p>
+<h3 id="model-gap">Model gap</h3>
+<ul>
+<li>missing owner;</li>
+<li>missing source;</li>
+<li>missing target;</li>
+<li>unlinked decision;</li>
+<li>invalid context.</li>
+</ul>
+<h3 id="dataset-gap">Dataset gap</h3>
+<ul>
+<li>required column absent;</li>
+<li>low completeness;</li>
+<li>unmapped values;</li>
+<li>key failure;</li>
+<li>relationship inconsistency.</li>
+</ul>
+<h3 id="implementation-gap">Implementation gap</h3>
+<ul>
+<li>approved rule not configured;</li>
+<li>active configuration not represented in the model;</li>
+<li>interface missing a field;</li>
+<li>configuration version unknown.</li>
+</ul>
+<h3 id="test-gap">Test gap</h3>
+<ul>
+<li>no negative test;</li>
+<li>stale expected result;</li>
+<li>affected consumer not tested;</li>
+<li>test references an old baseline.</li>
+</ul>
+<h3 id="closure-gap">Closure gap</h3>
+<ul>
+<li>residual risk not accepted;</li>
+<li>expiry missing;</li>
+<li>evidence baseline inconsistent;</li>
+<li>prevention control not verified.</li>
+</ul>
+<p>Each gap should state whether it:</p>
+<ul>
+<li>blocks closure;</li>
+<li>requires review;</li>
+<li>is informational;</li>
+<li>has been accepted.</li>
+</ul>
+<h2 id="make-closure-blockers-deterministic-where-possible">Make closure blockers deterministic where possible</h2>
+<p>Some closure conditions can be checked automatically.</p>
+<p>Examples:</p>
+<ul>
+<li>an active mapping references a retired endpoint;</li>
+<li>a temporary deviation has no expiry;</li>
+<li>a critical object lacks an owner;</li>
+<li>a required evidence category is absent;</li>
+<li>evidence refers to incompatible baselines;</li>
+<li>an approved rule has no linked test;</li>
+<li>a retired value still has active dependencies.</li>
+</ul>
+<p>Martenweave Core already prioritises deterministic validation of IDs, types, references and domain-context rules before indexing.</p>
+<p>Closure-specific validators can extend the same principle.</p>
+<p>They should not decide whether residual business risk is acceptable.</p>
+<p>They should prevent obvious structural gaps from being overlooked during review.</p>
+<h2 id="add-an-evidence-matrix">Add an evidence matrix</h2>
+<p>Every risk detail should include a compact evidence matrix.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Evidence area</th><th scope="col">Required</th><th scope="col">Status</th><th scope="col">Baseline</th><th scope="col">Owner</th></tr></thead><tbody><tr><td>Approved model change</td><td>Yes</td><td>Complete</td><td>supplier-model-v2.8</td><td>Data architect</td></tr><tr><td>Structural validation</td><td>Yes</td><td>Passed</td><td>supplier-model-v2.8</td><td>Model maintainer</td></tr><tr><td>Current dataset profile</td><td>Yes</td><td>Complete</td><td>ERP_B 2026-09-01</td><td>Migration lead</td></tr><tr><td>SAP implementation</td><td>Yes</td><td>Complete</td><td>MDG-R4</td><td>MDG architect</td></tr><tr><td>Integration verification</td><td>Yes</td><td>Partial</td><td>Contract v6</td><td>Integration owner</td></tr><tr><td>Regression tests</td><td>Yes</td><td>Complete</td><td>UAT-2</td><td>Test lead</td></tr><tr><td>Residual-risk approval</td><td>Yes</td><td>Missing</td><td>—</td><td>Data owner</td></tr></tbody></table></div>
+<p>This tells reviewers immediately why closure is not yet available.</p>
+<p>The matrix should be generated from structured evidence records rather than maintained manually as another status table.</p>
+<h2 id="treat-evidence-as-a-first-class-object">Treat evidence as a first-class object</h2>
+<p>An evidence record should contain more than an attachment.</p>
+<p>A useful evidence object includes:</p>
+<p>```text id=&quot;closure-workspace-07&quot; Evidence ID: EVID-SUPPLIER-READINESS-2026-09-01</p>
+<p>Type: Dataset readiness report</p>
+<p>Supports: MRISK-SUPPLIER-0048</p>
+<p>Affected objects: ATTR-SUPPLIER-RISK MAP-ERP-B-SUPPLIER-RISK</p>
+<p>Model baseline: supplier-model-v2.8</p>
+<p>Dataset baseline: ERP_B extract 2026-09-01</p>
+<p>Produced by: Migration Data Lead</p>
+<p>Validation method: Martenweave dataset-readiness workflow</p>
+<p>Result: Passed with 42 accepted residual records</p>
+<p>Status: Current</p>
+<pre><code>
+This allows the workspace to detect stale or incompatible evidence.
+
+## Evidence needs lifecycle state
+
+Evidence should not remain permanently current.
+
+Useful states include:
+
+- Candidate;
+- Current;
+- Superseded;
+- Stale;
+- Rejected;
+- Missing;
+- Accepted with limitation.
+
+A dataset report may become stale when:
+
+- a new extract arrives;
+- the mapping changes;
+- the target rule changes;
+- another country enters scope.
+
+A test may become stale when its model baseline is superseded.
+
+The workspace should flag this automatically where possible.
+
+## Show baseline compatibility
+
+One of the most important workspace functions is determining whether the evidence describes one coherent state.
+
+For each evidence item, compare:
+
+- model baseline;
+- dataset version;
+- mapping version;
+- SAP release;
+- interface contract;
+- test cycle.
+
+For example:
+
+```text id=&quot;closure-workspace-08&quot;
+Model evidence:
+v2.8
+
+Dataset evidence:
+v2.8
+
+SAP implementation:
+v2.7
+
+Test evidence:
+v2.7
+
+Result:
+Closure blocked — SAP and test evidence do not verify the approved model baseline</code></pre>
+<p>This prevents a common failure where individually valid artefacts are combined into an invalid closure argument.</p>
+<h2 id="add-a-before-and-after-model-view">Add a before-and-after model view</h2>
+<p>A closure reviewer should be able to compare:</p>
+<ul>
+<li>state when the risk was opened;</li>
+<li>approved treatment;</li>
+<li>current state.</li>
+</ul>
+<p>The view should show semantic differences, not only raw YAML.</p>
+<p>For example:</p>
+<p>```text id=&quot;closure-workspace-09&quot; Before: Missing Supplier Risk was defaulted to STANDARD.</p>
+<p>After: No Supplier Risk default is allowed.</p>
+<p>New treatment: Records without classification receive Review Status = PENDING.</p>
+<p>Activation: Blocked until final Supplier Risk is approved.</p>
+<pre><code>
+Below this summary, technical users can open the exact canonical file diff.
+
+This serves business and technical reviewers without creating two separate change records.
+
+## Use Proposals to preserve rejected and pending treatments
+
+The current Proposals screen is central to closure evidence.
+
+A risk may have several proposed treatments:
+
+- remediate source;
+- introduce default;
+- create review status;
+- narrow mandatory rule;
+- exclude records.
+
+The workspace should show:
+
+- accepted proposal;
+- rejected proposals;
+- reason for rejection;
+- pending follow-up changes.
+
+This is important because closure is not proven merely by showing the implemented solution.
+
+Reviewers need to know whether an unsafe alternative remains active elsewhere.
+
+For example:
+
+```text id=&quot;closure-workspace-10&quot;
+Rejected proposal:
+Default missing values to STANDARD
+
+Reason:
+Creates false final classification
+
+Status:
+Rejected
+
+Control:
+Validator blocks unrestricted default for this attribute</code></pre>
+<h2 id="use-proposal-review-as-the-closure-decision-surface">Use Proposal Review as the closure decision surface</h2>
+<p>Martenweave already has a Proposal Review screen concept. It should also support final closure decisions.</p>
+<p>The review should present:</p>
+<h3 id="closure-claim">Closure claim</h3>
+<p>What status is being requested?</p>
+<h3 id="semantic-summary">Semantic summary</h3>
+<p>What changed?</p>
+<h3 id="model-diff">Model diff</h3>
+<p>Which canonical objects changed?</p>
+<h3 id="validation">Validation</h3>
+<p>Which structural checks passed or failed?</p>
+<h3 id="evidence-matrix">Evidence matrix</h3>
+<p>Which proof categories are complete?</p>
+<h3 id="impact">Impact</h3>
+<p>Which dependencies were reviewed?</p>
+<h3 id="residual-exposure">Residual exposure</h3>
+<p>What remains?</p>
+<h3 id="coverage-limitations">Coverage limitations</h3>
+<p>Which external systems or populations were not represented?</p>
+<h3 id="decision">Decision</h3>
+<ul>
+<li>Approve closure;</li>
+<li>Approve residual-risk acceptance;</li>
+<li>Transfer to AMS;</li>
+<li>Request changes;</li>
+<li>Reopen investigation.</li>
+</ul>
+<p>This keeps the final decision connected to the evidence state.</p>
+<h2 id="do-not-combine-change-approval-and-closure-approval-automatically">Do not combine change approval and closure approval automatically</h2>
+<p>Approving a model change does not prove that the risk is closed.</p>
+<p>The workflow should distinguish:</p>
+<p>```text id=&quot;closure-workspace-11&quot; Model change approved → implementation → data remediation → verification → closure review</p>
+<pre><code>
+For low-risk changes, some stages may be combined.
+
+For material risks, they should remain distinct.
+
+A proposal may be correctly approved but not yet implemented.
+
+The risk should remain open.
+
+## Show coverage limitations prominently
+
+Martenweave can only analyse objects and relationships represented in its model.
+
+A closure report should state:
+
+```text id=&quot;closure-workspace-12&quot;
+Evidence coverage:
+
+Included:
+- ERP_A and ERP_B source mappings
+- SAP MDG validation
+- supplier outbound interface
+- procurement analytics
+
+Not represented:
+- local reporting tool in Country X
+- historical archive extraction</code></pre>
+<p>This prevents the UI from creating false confidence.</p>
+<p>Unknown coverage should be treated as a review question, not silently assumed unaffected.</p>
+<h2 id="add-role-specific-review-modes">Add role-specific review modes</h2>
+<p>Different reviewers should see the same closure case through different views.</p>
+<h2 id="business-owner-view">Business owner view</h2>
+<p>Shows:</p>
+<ul>
+<li>original business risk;</li>
+<li>approved treatment;</li>
+<li>affected population;</li>
+<li>remaining exceptions;</li>
+<li>policy impact;</li>
+<li>final acceptance question.</li>
+</ul>
+<h2 id="migration-view">Migration view</h2>
+<p>Shows:</p>
+<ul>
+<li>source systems;</li>
+<li>mappings;</li>
+<li>dataset profile;</li>
+<li>remediation;</li>
+<li>rejected records;</li>
+<li>next-load prevention.</li>
+</ul>
+<h2 id="sap-mdg-view">SAP MDG view</h2>
+<p>Shows:</p>
+<ul>
+<li>target objects;</li>
+<li>validation;</li>
+<li>workflow;</li>
+<li>ownership;</li>
+<li>configuration evidence;</li>
+<li>release and test state.</li>
+</ul>
+<h2 id="integration-view">Integration view</h2>
+<p>Shows:</p>
+<ul>
+<li>field and value consumers;</li>
+<li>contract compatibility;</li>
+<li>delivery status;</li>
+<li>failed or missing tests.</li>
+</ul>
+<h2 id="test-view">Test view</h2>
+<p>Shows:</p>
+<ul>
+<li>affected scenarios;</li>
+<li>stale evidence;</li>
+<li>positive and negative cases;</li>
+<li>regression completeness.</li>
+</ul>
+<h2 id="ams-view">AMS view</h2>
+<p>Shows:</p>
+<ul>
+<li>continuing control;</li>
+<li>residual risk;</li>
+<li>monitoring;</li>
+<li>temporary deviations;</li>
+<li>reopening triggers;</li>
+<li>next review date.</li>
+</ul>
+<p>These should be views over the same evidence graph.</p>
+<p>They should not become separate closure documents.</p>
+<h2 id="make-residual-risk-impossible-to-hide">Make residual risk impossible to hide</h2>
+<p>A closure workspace should always contain a residual-risk section.</p>
+<p>Even when the proposed status is <code>Resolved</code>, require an explicit answer:</p>
+<p>```text id=&quot;closure-workspace-13&quot; Remaining known exposure: None identified within stated evidence coverage</p>
+<pre><code>
+or:
+
+```text id=&quot;closure-workspace-14&quot;
+Remaining exposure:
+42 inactive suppliers remain PENDING.
+
+Control:
+Records cannot be activated.
+
+Owner:
+Supplier Data Stewardship.
+
+Review date:
+1 December 2026.</code></pre>
+<p>This prevents “minor exceptions remain” from becoming an ungoverned footnote.</p>
+<h2 id="build-explicit-acceptance-workflows">Build explicit acceptance workflows</h2>
+<p>When residual risk remains, the workspace should ask:</p>
+<ul>
+<li>What remains?</li>
+<li>Why is further remediation not justified now?</li>
+<li>Which control limits the consequence?</li>
+<li>Who has authority to accept it?</li>
+<li>When will it be reviewed?</li>
+<li>What invalidates the acceptance?</li>
+</ul>
+<p>The acceptance record should be distinct from technical evidence.</p>
+<p>A developer cannot approve business residual risk simply because all tests passed.</p>
+<h2 id="add-reopening-triggers-as-monitorable-rules">Add reopening triggers as monitorable rules</h2>
+<p>Closure should create future monitoring where appropriate.</p>
+<p>Examples:</p>
+<ul>
+<li>reopen if an uncontrolled default reappears;</li>
+<li>reopen if completeness falls below the approved programme threshold;</li>
+<li>reopen if a new unmapped value appears;</li>
+<li>reopen when an accepted exception expires;</li>
+<li>reopen if a new country adopts the rule;</li>
+<li>reopen if the source endpoint changes;</li>
+<li>reopen after repeated related incidents.</li>
+</ul>
+<p>The workspace can display these triggers on the closed risk.</p>
+<p>Where technically feasible, Martenweave validators or dataset-readiness checks can evaluate them.</p>
+<h2 id="use-the-workspace-after-go-live">Use the workspace after go-live</h2>
+<p>Closure evidence is not only for migration governance.</p>
+<p>It should survive into AMS.</p>
+<p>The AMS user should be able to open a production incident and see:</p>
+<ul>
+<li>related model object;</li>
+<li>previous risk;</li>
+<li>approved treatment;</li>
+<li>closure evidence;</li>
+<li>remaining controls;</li>
+<li>reopening conditions.</li>
+</ul>
+<p>This allows a recurring incident to challenge a previous closure decision.</p>
+<p>For example:</p>
+<p>```text id=&quot;closure-workspace-15&quot; Closed risk: Uncontrolled Customer Group default</p>
+<p>New incidents: 12 records received the same default after source upgrade</p>
+<p>System action: Recommend reopening MRISK-CUSTOMER-0031</p>
+<pre><code>
+This turns historical closure into operational knowledge rather than an archived report.
+
+## Design the data model before adding more screens
+
+The next product step should not be another dashboard page.
+
+The core needs first-class objects or relationships for:
+
+- ModelRisk;
+- Evidence;
+- ExitCriterion;
+- ResidualRisk;
+- ClosureDecision;
+- ReopeningTrigger;
+- ImplementationReference;
+- TestEvidence.
+
+These can connect to existing Martenweave concepts:
+
+- Attribute;
+- FieldEndpoint;
+- Mapping;
+- Rule;
+- Dataset;
+- Decision;
+- PatchProposal;
+- ChangeRequest;
+- Issue.
+
+The UI can then reuse existing screens and interaction patterns.
+
+Without structured closure objects, the product will display another collection of manually assembled summaries.
+
+## A conceptual closure record
+
+```yaml id=&quot;closure-workspace-16&quot;
+id: CLOSURE-MRISK-SUPPLIER-0048
+risk: MRISK-SUPPLIER-0048
+proposed_status: resolved_with_residual
+
+affected_objects:
+  - ATTR-SUPPLIER-RISK
+  - MAP-ERP-B-SUPPLIER-RISK
+  - RULE-SUPPLIER-RISK-REQUIRED
+
+approved_treatment:
+  decision: DEC-SUPPLIER-RISK-0094
+  change_request: CR-SUPPLIER-RISK-021
+
+evidence:
+  model:
+    - EVID-MODEL-DIFF-021
+    - EVID-VALIDATION-021
+  data:
+    - EVID-READINESS-ERP-B-2026-09-01
+  implementation:
+    - EVID-MDG-R4-118
+    - EVID-INTERFACE-V6-044
+  tests:
+    - EVID-UAT2-SUPPLIER-RISK
+
+residual_risk:
+  population: 42
+  context: inactive_suppliers
+  control: activation_blocked
+  accepted_by: ROLE-GLOBAL-SUPPLIER-DATA-OWNER
+  review_date: 2026-12-01
+
+reopening_triggers:
+  - uncontrolled_default_detected
+  - completeness_below_approved_threshold
+  - new_unmapped_source_value</code></pre>
+<p>This is a conceptual representation, not a claim about the current Martenweave schema.</p>
+<p>The important design principle is that closure becomes a structured, inspectable object rather than a comment on a risk ticket.</p>
+<h2 id="a-practical-first-implementation-slice">A practical first implementation slice</h2>
+<p>The smallest useful vertical slice would be:</p>
+<h3 id="scope">Scope</h3>
+<p>One model risk involving one critical attribute.</p>
+<h3 id="core-additions">Core additions</h3>
+<ul>
+<li>evidence object;</li>
+<li>exit-criteria status;</li>
+<li>closure decision;</li>
+<li>residual-risk record;</li>
+<li>risk-to-model relationships.</li>
+</ul>
+<h3 id="backend">Backend</h3>
+<ul>
+<li>load evidence records;</li>
+<li>validate baseline references;</li>
+<li>check required evidence categories;</li>
+<li>generate a closure report;</li>
+<li>prevent closure when blocking criteria fail.</li>
+</ul>
+<h3 id="ui">UI</h3>
+<p>Reuse existing screens:</p>
+<ul>
+<li>Home: closure queue;</li>
+<li>Object Detail: linked risk and evidence;</li>
+<li>Lineage: closure dependency path;</li>
+<li>Gaps: missing evidence;</li>
+<li>Proposal Review: closure decision.</li>
+</ul>
+<h3 id="acceptance-scenario">Acceptance scenario</h3>
+<p>A reviewer can:</p>
+<ol>
+<li>Open a risk.</li>
+<li>Inspect affected model objects.</li>
+<li>See the approved treatment.</li>
+<li>Review model and dataset evidence.</li>
+<li>Find one missing integration test.</li>
+<li>Block closure.</li>
+<li>Attach the missing evidence.</li>
+<li>Approve closure with an explicit residual population.</li>
+</ol>
+<p>This would prove the workspace concept without building a broad risk-management product.</p>
+<h2 id="a-second-implementation-slice">A second implementation slice</h2>
+<p>After the first slice works, add:</p>
+<ul>
+<li>evidence staleness;</li>
+<li>baseline compatibility;</li>
+<li>role-specific review views;</li>
+<li>reopening triggers;</li>
+<li>AMS handover state;</li>
+<li>generated closure packs.</li>
+</ul>
+<p>Do not begin with:</p>
+<ul>
+<li>enterprise dashboards;</li>
+<li>complex configurable workflows;</li>
+<li>large approval engines;</li>
+<li>direct SAP write-back;</li>
+<li>multi-tenant SaaS architecture.</li>
+</ul>
+<p>Those would weaken the backend-first focus before the evidence model proves its value.</p>
+<h2 id="a-worked-example-closure-workspace-for-a-mandatory-rule">A worked example: closure workspace for a mandatory rule</h2>
+<h3 id="risk">Risk</h3>
+<p>Supplier Classification mandatory rule may block records that lack source support.</p>
+<h3 id="workspace-summary">Workspace summary</h3>
+<p>```text id=&quot;closure-workspace-17&quot; Model baseline: supplier-model-v2.9</p>
+<p>Affected population: 84,000 active suppliers</p>
+<p>Valid classification: 82,718</p>
+<p>Review Status PENDING: 1,240</p>
+<p>Accepted exclusions: 42</p>
+<pre><code>
+### Model view
+
+- mandatory rule applies only to active strategic suppliers;
+- Review Status is a separate attribute;
+- no unrestricted default exists;
+- owners and contexts are present.
+
+### Lineage view
+
+- ERP_A direct source verified;
+- ERP_B enrichment verified;
+- SAP target verified;
+- compliance workflow verified;
+- analytics consumer verified.
+
+### Gaps view
+
+- no blocking structural gaps;
+- one accepted residual population;
+- no expired deviation.
+
+### Proposal history
+
+- global default proposal rejected;
+- separate Review Status approved;
+- mandatory rule narrowed by context.
+
+### Evidence matrix
+
+All required evidence complete.
+
+### Closure decision
+
+Resolved with accepted inactive residual records.
+
+The workspace provides a reusable proof, not just a final meeting deck.
+
+## A worked example: closure blocked by stale evidence
+
+### Risk
+
+Mappings depend on a target endpoint being retired.
+
+### Current evidence
+
+- mappings updated in model version 3.2;
+- dataset test used version 3.2;
+- SAP test used target configuration from version 3.1;
+- one interface test used an old field contract.
+
+### Workspace result
+
+```text id=&quot;closure-workspace-18&quot;
+Closure status:
+Blocked
+
+Reason:
+Implementation and integration evidence do not verify model baseline 3.2</code></pre>
+<p>The team cannot close the risk merely because each evidence category contains an attachment.</p>
+<p>The baseline relationship is wrong.</p>
+<h2 id="a-worked-example-transfer-to-ams">A worked example: transfer to AMS</h2>
+<h3 id="risk-2">Risk</h3>
+<p>A source system cannot automatically provide a local tax attribute.</p>
+<h3 id="migration-result">Migration result</h3>
+<ul>
+<li>all cutover records enriched;</li>
+<li>migration completed;</li>
+<li>no load failures;</li>
+<li>future operational records require manual stewardship.</li>
+</ul>
+<h3 id="workspace-decision">Workspace decision</h3>
+<p>```text id=&quot;closure-workspace-19&quot; Migration exposure: Resolved</p>
+<p>Operational exposure: Transferred to AMS</p>
+<p>Control: Manual stewardship queue</p>
+<p>Owner: Local Tax Data Steward</p>
+<p>Monitoring: Weekly incomplete-record report</p>
+<p>Review date: Quarterly</p>
+<p>Reopening trigger: More than ten overdue records</p>
+<pre><code>
+The workspace preserves continuity without keeping the migration programme risk permanently open.
+
+## What the UI should not become
+
+The closure evidence workspace should not become:
+
+- a generic risk-management suite;
+- a replacement for Jira or ServiceNow;
+- a document repository;
+- an SAP monitoring platform;
+- a large workflow engine;
+- an opaque AI assistant;
+- an executive dashboard disconnected from model objects.
+
+Its defensible role is narrower:
+
+&gt; Investigate and prove model-risk treatment through connected model, data, implementation and decision evidence.
+
+That is directly aligned with Martenweave’s north star.
+
+## How AI should appear in the workspace
+
+AI can assist with:
+
+- assembling evidence from tickets and reports;
+- drafting the closure claim;
+- identifying missing evidence;
+- comparing model baselines;
+- summarising dataset changes;
+- suggesting affected dependencies;
+- proposing reopening triggers;
+- generating reviewer-specific summaries.
+
+AI output should be visually labelled as:
+
+- suggested;
+- inferred;
+- incomplete;
+- awaiting review.
+
+It should not display:
+
+```text id=&quot;closure-workspace-20&quot;
+AI confidence: 94%
+Risk closed</code></pre>
+<p>A numeric confidence score does not substitute for authority or evidence completeness.</p>
+<p>The safe workflow remains:</p>
+<p>```text id=&quot;closure-workspace-21&quot; AI assembles and challenges.</p>
+<p>Validators verify structure.</p>
+<p>The UI exposes the evidence.</p>
+<p>Responsible humans decide.</p>
+<pre><code>
+## What management should ask
+
+1. Does the workspace begin from a precise closure claim?
+2. Can reviewers see the affected model objects?
+3. Does the evidence belong to one coherent baseline?
+4. Can the dataset population be inspected?
+5. Does the UI distinguish remediation from prevention?
+6. Can SAP implementation evidence be compared with the approved model?
+7. Are downstream consumers represented?
+8. Are missing tests visible as closure gaps?
+9. Is residual risk impossible to hide?
+10. Does closure require the correct accountable roles?
+11. Can closed risks be reopened by new evidence?
+12. Can AMS inspect the original closure proof?
+13. Does the UI use the existing Models, Object, Lineage, Gaps and Proposals capabilities?
+14. Is the workspace connected to the backend rather than maintaining another manual status layer?
+
+If the workspace only shows a green badge and attachments, it has digitised the old meeting process without improving it.
+
+## Common mistakes
+
+### Starting with an executive dashboard
+
+The evidence model remains weak underneath attractive charts.
+
+### Creating a separate closure document
+
+It quickly diverges from the canonical model and current datasets.
+
+### Treating every attachment as current evidence
+
+Evidence needs baseline, scope, owner and lifecycle.
+
+### Hiding contradictions
+
+Conflicting model, data and implementation evidence should block closure.
+
+### Using lineage without evidence state
+
+A graph alone does not prove that dependencies were tested.
+
+### Showing one global status for partial scope
+
+Country, source and population differences become invisible.
+
+### Letting the proposal approval close the risk automatically
+
+Implementation and verification still need to occur.
+
+### Ignoring the existing Martenweave UI
+
+The product already has the right investigation surfaces.
+
+### Building persistence before defining evidence objects
+
+The system would persist weak, unstructured status data.
+
+### Allowing AI to approve closure
+
+Closure remains an accountable governance decision.
+
+## Our conclusion
+
+A closure evidence workspace should not answer only:
+
+&gt; Is the risk closed?
+
+It should allow reviewers to understand why that conclusion is justified.
+
+The workspace should connect:
+
+- risk;
+- affected model;
+- approved treatment;
+- canonical change;
+- structural validation;
+- dataset evidence;
+- SAP and integration implementation;
+- tests;
+- residual exposure;
+- accountable decision.
+
+Martenweave already has the essential UI foundation for this work:
+
+- Home for queues;
+- Models for discovery;
+- Object Detail for current truth;
+- Lineage for dependencies;
+- Gaps for blockers;
+- Proposals for candidate treatments;
+- Proposal Review for controlled decisions.
+
+The next step is not to claim that Martenweave needs a UI.
+
+It is to connect the existing UI to live canonical models, generated indexes, datasets, evidence records and review state.
+
+The practical test is:
+
+&gt; Can a reviewer open one SAP migration risk in Martenweave, inspect the full evidence chain and approve or reject closure without manually reconstructing the story from Excel, Jira, screenshots and individual memory?
+
+When the answer is yes, closure evidence has become an operational capability.
+
+When the answer is no, the programme may have many tools and documents but still depends on meetings to decide whether its own risks are truly controlled.
+
+## About the authors
+
+Martenweave is maintained by Dzmitryi Kharlanau.
+
+We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.
+
+Martenweave combines a backend-first canonical model, deterministic validation, dataset analysis, lineage and proposal workflows with an existing interactive workspace for model search, object investigation, gaps, lineage and review.
+
+The product direction is not another generic dashboard.
+
+It is a connected evidence workspace where teams can investigate model problems, review proposed treatments and prove that risks have reached an approved state.
+
+## Sources and notes
+
+This article was reviewed on 14 July 2026.
+
+SAP currently describes SAP Master Data Governance as a central governance layer that unifies master data, policy and metadata. Its stated capabilities include governed models, preserved semantics and relationships, collaborative workflows, validated values, business-rule monitoring, quality controls, mass changes and auditable data changes. SAP also recommends preparing clean and correct master data early because automated SAP S/4HANA processes rely heavily on it.
+
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It uses canonical model files, deterministic validation, generated indexes, dataset-gap analysis, trace, impact analysis and human-reviewed proposals.
+
+The Martenweave repository already includes a browser-based interactive workspace with Home, Models, Object Detail, Lineage, Gaps, Proposals and Proposal Review screens. The current frontend is local-first and uses demo data; its documented integration direction is to consume the generated SQLite index or a local Martenweave API while preserving the core review workflow.
+
+Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
+</code></pre>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-prove-that-an-sap-migration-risk-is-really-closed.html"><span>Previous</span>The steering committee asks whether a critical migration risk has been closed.</a><a href="/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html"><span>Next</span>A migration architect opens Martenweave and searches for Customer Group .</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

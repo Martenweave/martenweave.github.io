@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Detect Orphaned Fields, Rules and Mappings | Martenweave</title>
+    <meta
+      name="description"
+      content="A repository validates successfully."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html" />
+    <meta property="og:title" content="How to Detect Orphaned Fields, Rules and Mappings | Martenweave" />
+    <meta property="og:description" content="A repository validates successfully." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Detect Orphaned Fields, Rules and Mappings | Martenweave" />
+    <meta name="twitter:description" content="A repository validates successfully." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html",
+                        "name": "How to Detect Orphaned Fields, Rules and Mappings | Martenweave",
+                        "description": "A repository validates successfully.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Detect Orphaned Fields, Rules and Mappings",
+                                    "item": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html#content",
+                        "headline": "How to Detect Orphaned Fields, Rules and Mappings",
+                        "name": "How to Detect Orphaned Fields, Rules and Mappings",
+                        "description": "A repository validates successfully.",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-orphaned-fields-rules-and-mappings.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT27M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Detect Orphaned Fields, Rules and Mappings</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Detect Orphaned Fields, Rules and Mappings</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 27 min read</p><p class="blog-summary">A repository validates successfully.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#isolated-orphan">Isolated orphan</a></li><li><a href="#source-orphan">Source orphan</a></li><li><a href="#target-orphan">Target orphan</a></li><li><a href="#governance-orphan">Governance orphan</a></li><li><a href="#temporal-orphan">Temporal orphan</a></li><li><a href="#evidence-orphan">Evidence orphan</a></li><li><a href="#attribute">Attribute</a></li><li><a href="#fieldendpoint">FieldEndpoint</a></li><li><a href="#mapping">Mapping</a></li><li><a href="#rule">Rule</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#decision">Decision</a></li><li><a href="#hard-orphan">Hard orphan</a></li><li><a href="#soft-orphan">Soft orphan</a></li><li><a href="#active-graph">Active graph</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A repository validates successfully.</p>
+<p>Every file has a valid ID.</p>
+<p>Every declared reference resolves.</p>
+<p>The generated index builds.</p>
+<p>Search works.</p>
+<p>No schema error appears.</p>
+<p>The team concludes that the model is healthy.</p>
+<p>Then someone asks what an old Mapping does.</p>
+<p>It points from a legacy field to a valid business Attribute. The source system was retired two years ago. No active dataset uses the Mapping. No current migration wave references it. The last supporting evidence belongs to an obsolete test cycle.</p>
+<p>The Mapping is structurally valid.</p>
+<p>It is operationally orphaned.</p>
+<p>Elsewhere, a Rule requires an Attribute before activation. The Attribute was moved to another Entity, but the Rule’s applicability was never updated. Its references resolve, yet it no longer governs a coherent population.</p>
+<p>A custom SAP FieldEndpoint exists in the model. It is not connected to a business Attribute, active Mapping, interface or historical retirement decision. Nobody knows whether it is:</p>
+<ul>
+<li>still used;</li>
+<li>awaiting documentation;</li>
+<li>replaced;</li>
+<li>abandoned;</li>
+<li>incorrectly imported.</li>
+</ul>
+<p>Again, the object is valid.</p>
+<p>Again, it is not healthy.</p>
+<blockquote>Reference integrity proves that declared connections are not broken. It does not prove that the object participates in a meaningful, current and governed model path.</blockquote>
+<p>Orphan detection must therefore look beyond missing references.</p>
+<p>It must identify objects that have become:</p>
+<ul>
+<li>disconnected;</li>
+<li>one-sided;</li>
+<li>semantically stranded;</li>
+<li>inactive without retirement;</li>
+<li>unsupported by evidence;</li>
+<li>unreachable from the model’s operational entry points.</li>
+</ul>
+<p>Martenweave already validates object IDs, types, references and domain context before building its generated indexes. It then uses the resulting model for gaps, lineage and impact analysis.</p>
+<p>That is the correct foundation.</p>
+<p>Orphan detection is the next layer:</p>
+<pre><code class="language-text">structurally valid
+→ graph connected
+→ semantically purposeful
+→ operationally current
+→ historically explainable</code></pre>
+<p>---</p>
+<h1 id="an-orphan-is-not-simply-an-object-with-zero-edges">An orphan is not simply an object with zero edges</h1>
+<p>The simplest graph definition would be:</p>
+<blockquote>An orphan is a node with no relationships.</blockquote>
+<p>That catches obvious cases.</p>
+<p>It misses most real enterprise-model problems.</p>
+<p>Consider a Mapping:</p>
+<pre><code class="language-text">FEP-LEGACY-CUSTOMER-CLASS
+→ MAP-LEGACY-CLASS-TO-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP</code></pre>
+<p>The Mapping has incoming and outgoing edges.</p>
+<p>It is not graph-isolated.</p>
+<p>But suppose:</p>
+<ul>
+<li>the legacy endpoint is retired;</li>
+<li>the Mapping status remains <code>approved</code>;</li>
+<li>no active dataset contains the source field;</li>
+<li>a newer Mapping now covers the same population;</li>
+<li>no historical applicability is recorded.</li>
+</ul>
+<p>The Mapping is connected and still orphaned from the active operating model.</p>
+<p>A better definition is:</p>
+<blockquote>An orphan is an object whose declared role cannot be reached from, or justified by, an appropriate active, historical or governance context.</blockquote>
+<p>That context varies by object type.</p>
+<p>A FieldEndpoint needs different justification from a Rule.</p>
+<p>A Rule needs different justification from Evidence.</p>
+<p>A Mapping needs both a meaningful source path and a meaningful target path.</p>
+<p>---</p>
+<h1 id="six-forms-of-orphaning">Six forms of orphaning</h1>
+<p>Orphaning is easier to detect when divided into specific failure modes.</p>
+<h2 id="isolated-orphan">Isolated orphan</h2>
+<p>The object has no meaningful incoming or outgoing relationships.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-S4-ZZ-OLD-CLASSIFICATION</code></pre>
+<p>with no Attribute, Mapping, interface, Decision or retirement record.</p>
+<h2 id="source-orphan">Source orphan</h2>
+<p>A transformation object has no usable upstream source.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-CUSTOMER-GROUP-ENRICHMENT
+→ ATTR-CUSTOMER-GROUP</code></pre>
+<p>but its source FieldEndpoint was deleted or retired without replacement.</p>
+<h2 id="target-orphan">Target orphan</h2>
+<p>A Mapping or Rule has no active governed target.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-LEGACY-RISK-CONVERSION</code></pre>
+<p>still references an Attribute that exists only as a historical tombstone.</p>
+<h2 id="governance-orphan">Governance orphan</h2>
+<p>An operational object has no accountable owner, Decision or approved purpose where one is required.</p>
+<p>Example:</p>
+<pre><code class="language-text">RULE-SUPPLIER-RISK-DEFAULT</code></pre>
+<p>is active but no approved Decision explains why defaulting is allowed.</p>
+<h2 id="temporal-orphan">Temporal orphan</h2>
+<p>An object remains active after its effective scope ended.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-WAVE2-TEMPORARY-CUSTOMER-GROUP</code></pre>
+<p>has no <code>effective_to</code>, despite Wave 2 being complete.</p>
+<h2 id="evidence-orphan">Evidence orphan</h2>
+<p>Evidence exists but supports no current Finding, Decision, Rule, Mapping or release assertion.</p>
+<p>The file may still be valuable historically. Its purpose is no longer represented.</p>
+<p>These categories should produce different warnings and remediation actions.</p>
+<p>---</p>
+<h1 id="start-with-the-expected-role-of-each-object-type">Start with the expected role of each object type</h1>
+<p>Orphan detection cannot use one universal degree rule.</p>
+<p>The system must know what a healthy object normally connects to.</p>
+<h2 id="attribute">Attribute</h2>
+<p>A healthy active Attribute usually belongs to:</p>
+<ul>
+<li>an Entity;</li>
+<li>a Domain;</li>
+<li>at least one owner;</li>
+<li>one or more physical implementations, Mappings, Rules or explicit conceptual-use declarations.</li>
+</ul>
+<p>An Attribute may be valid without a current SAP endpoint if it represents:</p>
+<ul>
+<li>future model scope;</li>
+<li>non-SAP semantics;</li>
+<li>a concept under design.</li>
+</ul>
+<p>That exception should be explicit.</p>
+<h2 id="fieldendpoint">FieldEndpoint</h2>
+<p>A healthy active FieldEndpoint usually participates in at least one of:</p>
+<ul>
+<li>Mapping;</li>
+<li>business Attribute implementation;</li>
+<li>interface;</li>
+<li>dataset expectation;</li>
+<li>lineage path;</li>
+<li>historical replacement chain.</li>
+</ul>
+<p>A physical field registered only because it exists in SAP is not automatically a governed model object.</p>
+<h2 id="mapping">Mapping</h2>
+<p>A healthy active Mapping normally needs:</p>
+<ul>
+<li>at least one source;</li>
+<li>one target Attribute or endpoint;</li>
+<li>transformation classification;</li>
+<li>applicability;</li>
+<li>current or historical purpose.</li>
+</ul>
+<h2 id="rule">Rule</h2>
+<p>A healthy Rule needs:</p>
+<ul>
+<li>governed subject;</li>
+<li>applicability;</li>
+<li>lifecycle or evaluation context;</li>
+<li>accountable authority;</li>
+<li>implementation or declared design status.</li>
+</ul>
+<h2 id="evidence">Evidence</h2>
+<p>Evidence should support a claim:</p>
+<ul>
+<li>Finding;</li>
+<li>Decision;</li>
+<li>Mapping;</li>
+<li>Rule;</li>
+<li>test result;</li>
+<li>release assertion.</li>
+</ul>
+<h2 id="decision">Decision</h2>
+<p>A Decision should affect or explain one or more model objects, rejected alternatives or governance states.</p>
+<p>A Decision with no consequences is probably incomplete, incorrectly linked or purely narrative material outside the registry’s scope.</p>
+<p>---</p>
+<h1 id="hard-orphans-and-soft-orphans">Hard orphans and soft orphans</h1>
+<p>Not every orphan warning should block validation.</p>
+<p>A useful policy separates hard and soft cases.</p>
+<h2 id="hard-orphan">Hard orphan</h2>
+<p>The object cannot fulfil its declared role.</p>
+<p>Examples:</p>
+<ul>
+<li>active Mapping without a source;</li>
+<li>active Mapping without a target;</li>
+<li>Rule referencing no governed subject;</li>
+<li>replacement reference pointing nowhere;</li>
+<li>active FieldEndpoint attached only to retired objects;</li>
+<li>approved proposal whose target object no longer exists.</li>
+</ul>
+<p>These should usually be errors.</p>
+<h2 id="soft-orphan">Soft orphan</h2>
+<p>The object may be legitimate, but its purpose is unclear or weakly supported.</p>
+<p>Examples:</p>
+<ul>
+<li>Attribute with no implementation;</li>
+<li>Evidence not used for twelve months;</li>
+<li>Rule with no implementation reference;</li>
+<li>FieldEndpoint discovered from metadata but not yet classified;</li>
+<li>historical Mapping missing explicit effective dates.</li>
+</ul>
+<p>These should usually be warnings requiring review.</p>
+<p>The distinction prevents two bad outcomes:</p>
+<ul>
+<li>allowing unusable model paths;</li>
+<li>blocking legitimate early-stage modelling.</li>
+</ul>
+<p>---</p>
+<h1 id="referential-validity-is-only-the-first-gate">Referential validity is only the first gate</h1>
+<p>Suppose this Mapping resolves correctly:</p>
+<pre><code class="language-yaml">id: MAP-OLD-CUSTOMER-CLASS
+type: Mapping
+source:
+  - FEP-ERP-A-CUSTOMER-CLASS
+target:
+  - ATTR-CUSTOMER-GROUP
+status: approved</code></pre>
+<p>Basic validation confirms:</p>
+<ul>
+<li>source ID exists;</li>
+<li>target ID exists;</li>
+<li>types are permitted.</li>
+</ul>
+<p>Orphan analysis must ask more:</p>
+<ul>
+<li>Is the source endpoint active?</li>
+<li>Does it belong to an active system?</li>
+<li>Does the Mapping apply to a current population?</li>
+<li>Is another Mapping now authoritative?</li>
+<li>Is the target Attribute still active?</li>
+<li>Does the Mapping produce a valid value?</li>
+<li>Is supporting Evidence current enough for its declared status?</li>
+<li>Is the Mapping reachable from a current migration or operational scenario?</li>
+</ul>
+<p>A reference can resolve and still lead into a dead branch.</p>
+<p>---</p>
+<h1 id="reachability-from-operational-roots">Reachability from operational roots</h1>
+<p>One useful technique is to define model entry points, or roots.</p>
+<p>Possible roots include:</p>
+<ul>
+<li>active business Domains;</li>
+<li>active Entities;</li>
+<li>approved critical Attributes;</li>
+<li>active source systems;</li>
+<li>active SAP target systems;</li>
+<li>current migration waves;</li>
+<li>production interfaces;</li>
+<li>open Findings and proposals;</li>
+<li>named model baselines.</li>
+</ul>
+<p>An object is suspicious when it cannot be reached from any appropriate root through permitted edge types.</p>
+<p>Example:</p>
+<pre><code class="language-text">Current migration wave
+→ expected dataset
+→ DatasetField
+→ Mapping
+→ Attribute
+→ SAP FieldEndpoint</code></pre>
+<p>A Mapping outside every current or historical path may be orphaned.</p>
+<p>However, reachability must be baseline- and status-aware.</p>
+<p>An old Mapping may be unreachable from the current baseline but reachable from:</p>
+<pre><code class="language-text">historical baseline:
+CUSTOMER-WAVE2-APPROVED</code></pre>
+<p>That is not an orphan.</p>
+<p>It is historical lineage.</p>
+<p>---</p>
+<h1 id="active-graph-and-historical-graph">Active graph and historical graph</h1>
+<p>A model registry should not use one undifferentiated graph for orphan detection.</p>
+<p>Use at least two views.</p>
+<h2 id="active-graph">Active graph</h2>
+<p>Includes objects currently applicable or approved for a selected baseline and context.</p>
+<p>Used to detect:</p>
+<ul>
+<li>dead active paths;</li>
+<li>unused fields;</li>
+<li>missing targets;</li>
+<li>duplicate active Mappings.</li>
+</ul>
+<h2 id="historical-graph">Historical graph</h2>
+<p>Includes retired, superseded and expired objects with their previous relationships.</p>
+<p>Used to verify:</p>
+<ul>
+<li>historical interpretability;</li>
+<li>replacement chains;</li>
+<li>old evidence;</li>
+<li>previous migration waves.</li>
+</ul>
+<p>An object can be absent from the active graph and healthy in the historical graph.</p>
+<p>The problem is not retirement.</p>
+<p>The problem is unrecorded disappearance.</p>
+<p>---</p>
+<h1 id="fieldendpoint-orphans">FieldEndpoint orphans</h1>
+<p>Physical fields are frequently imported in bulk from SAP metadata, interface definitions or source schemas.</p>
+<p>This creates a large population of technically real but semantically unclassified fields.</p>
+<p>A FieldEndpoint can be in several states.</p>
+<h2 id="governed-endpoint">Governed endpoint</h2>
+<p>Connected to a business Attribute, Mapping, Rule or interface.</p>
+<h2 id="discovered-endpoint">Discovered endpoint</h2>
+<p>Known to exist physically but not yet assessed.</p>
+<h2 id="ignored-endpoint">Ignored endpoint</h2>
+<p>Reviewed and intentionally outside governance scope.</p>
+<h2 id="historical-endpoint">Historical endpoint</h2>
+<p>Retired but retained for lineage.</p>
+<h2 id="orphaned-endpoint">Orphaned endpoint</h2>
+<p>Declared active or governed, but with no meaningful path.</p>
+<p>These states must be distinguished.</p>
+<p>Otherwise, every unmodelled SAP field looks like a defect—or every imported field looks governed.</p>
+<p>---</p>
+<h1 id="a-field-without-a-business-attribute">A field without a business Attribute</h1>
+<p>Consider:</p>
+<pre><code class="language-text">FEP-S4-ZZ-SUPPLIER-CATEGORY</code></pre>
+<p>It may be connected to an interface but not to any business Attribute.</p>
+<p>Possible explanations:</p>
+<ol>
+<li>the Attribute was never modelled;</li>
+<li>the field is purely technical;</li>
+<li>the field carries an obsolete concept;</li>
+<li>the interface connection is wrong;</li>
+<li>the endpoint was imported speculatively.</li>
+</ol>
+<p>The orphan detector should not automatically create an Attribute.</p>
+<p>It should emit a Finding:</p>
+<pre><code class="language-text">Physical endpoint has operational usage
+but no governed business meaning.</code></pre>
+<p>Suggested review:</p>
+<ul>
+<li>link to an existing Attribute;</li>
+<li>create a candidate Attribute;</li>
+<li>mark as technical-only;</li>
+<li>retire;</li>
+<li>exclude from managed scope.</li>
+</ul>
+<p>---</p>
+<h1 id="a-field-with-a-business-attribute-but-no-implementation-path">A field with a business Attribute but no implementation path</h1>
+<p>The reverse can also occur.</p>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS
+→ implemented_by
+FEP-S4-ZZ-REVIEW-STATUS</code></pre>
+<p>but no Mapping populates the field, no interface creates it and no manual procedure is recorded.</p>
+<p>The relationship says where the concept belongs.</p>
+<p>It does not explain how the value arrives.</p>
+<p>This may be a design-stage object.</p>
+<p>If its status is <code>approved</code> or <code>operational</code>, the missing population path is a meaningful gap.</p>
+<p>The warning should be specific:</p>
+<pre><code class="language-text">Approved Attribute has target implementation
+but no active source or creation path.</code></pre>
+<p>---</p>
+<h1 id="duplicate-endpoint-orphans">Duplicate endpoint orphans</h1>
+<p>A custom field may be replaced by a standard field.</p>
+<p>Both remain connected:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS
+├── FEP-S4-ZZ-REVIEW-STATUS
+└── FEP-S4-STANDARD-REVIEW-STATUS</code></pre>
+<p>If neither endpoint has a clear status or effective period, the graph cannot explain which one is current.</p>
+<p>One may be functionally orphaned even though it remains connected.</p>
+<p>Detect:</p>
+<ul>
+<li>multiple active endpoints for a single-role implementation;</li>
+<li>no source Mapping to one endpoint;</li>
+<li>no Decision authorising coexistence;</li>
+<li>no transition dates.</li>
+</ul>
+<p>The warning is not “duplicate field.”</p>
+<p>It is:</p>
+<blockquote>Competing implementations exist without an explicit transition model.</blockquote>
+<p>---</p>
+<h1 id="rule-orphans">Rule orphans</h1>
+<p>Rules become orphaned in several ways.</p>
+<h2 id="subject-orphan">Subject orphan</h2>
+<p>The Rule no longer governs an active Attribute, Entity, Relationship or process state.</p>
+<h2 id="applicability-orphan">Applicability orphan</h2>
+<p>The Rule refers to a context that no longer exists.</p>
+<p>Example:</p>
+<pre><code class="language-text">applies_to:
+  migration_wave: WAVE-2</code></pre>
+<p>while status remains active.</p>
+<h2 id="implementation-orphan">Implementation orphan</h2>
+<p>The Rule is approved and required, but no implementation or operating procedure is known.</p>
+<h2 id="evidence-orphan-2">Evidence orphan</h2>
+<p>The Rule’s supporting evidence is obsolete, missing or tied only to an earlier definition.</p>
+<h2 id="exception-orphan">Exception orphan</h2>
+<p>An exception exists, but its parent Rule was retired or changed.</p>
+<h2 id="authority-orphan">Authority orphan</h2>
+<p>The Rule remains active without an accountable owner or Decision.</p>
+<p>These conditions require different responses.</p>
+<p>---</p>
+<h1 id="a-rule-with-no-implementation-is-not-always-invalid">A Rule with no implementation is not always invalid</h1>
+<p>The Rule may be:</p>
+<ul>
+<li>business policy awaiting implementation;</li>
+<li>migration-only validation;</li>
+<li>manually enforced;</li>
+<li>used to evaluate readiness rather than SAP runtime behaviour.</li>
+</ul>
+<p>Therefore, the Rule needs an explicit implementation status:</p>
+<pre><code class="language-text">design_only
+planned
+implemented
+manual_control
+migration_control
+retired</code></pre>
+<p>A Rule marked <code>implemented</code> with no implementation reference is suspicious.</p>
+<p>A Rule marked <code>design_only</code> is not.</p>
+<p>The orphan check must respect lifecycle.</p>
+<p>---</p>
+<h1 id="rule-references-hidden-in-prose">Rule references hidden in prose</h1>
+<p>Some Rules are referenced only in Markdown descriptions, tickets or code comments.</p>
+<p>A deterministic graph may not see them.</p>
+<p>AI or text search can identify candidate references:</p>
+<pre><code class="language-text">“Customer Group must be present before activation”</code></pre>
+<p>may refer to:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED</code></pre>
+<p>These should be presented as possible links.</p>
+<p>They should not be accepted automatically.</p>
+<p>The safe process remains:</p>
+<pre><code class="language-text">candidate reference
+→ human review
+→ canonical relationship</code></pre>
+<p>---</p>
+<h1 id="contradictory-rule-orphans">Contradictory Rule orphans</h1>
+<p>A Rule may remain connected but become logically redundant or contradictory.</p>
+<p>Example:</p>
+<pre><code class="language-text">RULE-A:
+Customer Group required before activation.
+
+RULE-B:
+Customer Group may be blank for all migrated customers.</code></pre>
+<p>If the temporary exception period has ended, Rule B is no longer a valid active control.</p>
+<p>It is semantically orphaned from current governance even though both Rules reference the same Attribute.</p>
+<p>Orphan analysis should therefore consider:</p>
+<ul>
+<li>supersession;</li>
+<li>effective dates;</li>
+<li>exception hierarchy;</li>
+<li>Decision precedence.</li>
+</ul>
+<p>This is more than graph degree.</p>
+<p>---</p>
+<h1 id="mapping-orphans">Mapping orphans</h1>
+<p>Mappings are especially prone to orphaning because migration programmes create them rapidly and retire them unevenly.</p>
+<p>Common cases include:</p>
+<ul>
+<li>source endpoint removed;</li>
+<li>target replaced;</li>
+<li>population moved to another Mapping;</li>
+<li>temporary default retained after source remediation;</li>
+<li>manual Mapping superseded by automation;</li>
+<li>code conversion table retired;</li>
+<li>local Mapping absorbed into the global model;</li>
+<li>Mapping created for a dataset that never arrived.</li>
+</ul>
+<p>A healthy Mapping needs an explainable role in at least one active or historical path.</p>
+<p>---</p>
+<h1 id="one-sided-mapping">One-sided Mapping</h1>
+<p>An active Mapping with only a source is incomplete:</p>
+<pre><code class="language-text">FEP-CRM-SEGMENT
+→ MAP-CUSTOMER-GROUP
+→ ?</code></pre>
+<p>An active Mapping with only a target is equally incomplete:</p>
+<pre><code class="language-text">?
+→ MAP-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP</code></pre>
+<p>These are hard orphans unless explicitly represented as:</p>
+<ul>
+<li>Finding;</li>
+<li>incomplete proposal;</li>
+<li>design placeholder.</li>
+</ul>
+<p>Canonical approved Mappings should not remain one-sided.</p>
+<p>---</p>
+<h1 id="mapping-with-retired-source">Mapping with retired source</h1>
+<p>Suppose:</p>
+<pre><code class="language-text">FEP-ERP-A-CUSTOMER-CLASS
+status: retired</code></pre>
+<p>but:</p>
+<pre><code class="language-text">MAP-ERP-A-CUSTOMER-GROUP
+status: approved</code></pre>
+<p>The Mapping may remain legitimate historically.</p>
+<p>It should not remain active without:</p>
+<ul>
+<li>historical applicability;</li>
+<li>replacement source;</li>
+<li>transition status.</li>
+</ul>
+<p>The detector should suggest:</p>
+<ul>
+<li>retire Mapping;</li>
+<li>mark historical;</li>
+<li>redirect source;</li>
+<li>document dual-running period.</li>
+</ul>
+<p>---</p>
+<h1 id="mapping-with-no-reachable-target-consumer">Mapping with no reachable target consumer</h1>
+<p>A Mapping may populate an active Attribute that has:</p>
+<ul>
+<li>no SAP endpoint;</li>
+<li>no interface;</li>
+<li>no Rule;</li>
+<li>no report;</li>
+<li>no declared conceptual use.</li>
+</ul>
+<p>This does not prove the Mapping is useless.</p>
+<p>The Attribute may be part of a future-state model.</p>
+<p>But if both are marked operational, the path ends without a consumer.</p>
+<p>The warning should ask:</p>
+<blockquote>What uses the mapped result?</blockquote>
+<p>This is a target-side orphan condition.</p>
+<p>---</p>
+<h1 id="shadow-mapping">Shadow Mapping</h1>
+<p>A new Mapping may fully supersede an old one, but the old Mapping remains active.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-CRM-SEGMENT-DIRECT
+MAP-CUSTOMER-GROUP-ENRICHMENT</code></pre>
+<p>Both feed Customer Group for the same population.</p>
+<p>Possible consequences:</p>
+<ul>
+<li>duplicate production logic;</li>
+<li>ambiguous source precedence;</li>
+<li>different values in separate implementations;</li>
+<li>inconsistent readiness results.</li>
+</ul>
+<p>Detect overlapping applicability.</p>
+<p>An orphaned Mapping is not always unused.</p>
+<p>It may be dangerously still usable.</p>
+<p>---</p>
+<h1 id="value-output-orphan">Value-output orphan</h1>
+<p>A Mapping can remain structurally connected while producing no valid target value.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mapping output:
+01
+
+Current value list:
+STANDARD
+STRATEGIC</code></pre>
+<p>The Mapping references the Attribute correctly.</p>
+<p>Its output is outside the current value domain.</p>
+<p>This is a semantic orphan.</p>
+<p>Candidate-state validation should report:</p>
+<pre><code class="language-text">Mapping output no longer belongs to target value list.</code></pre>
+<p>---</p>
+<h1 id="evidence-orphans">Evidence orphans</h1>
+<p>Evidence is often accumulated faster than it is curated.</p>
+<p>Typical orphan cases include:</p>
+<ul>
+<li>profile report with no linked Finding;</li>
+<li>screenshot supporting a Decision that was never recorded;</li>
+<li>test report tied to a retired Mapping;</li>
+<li>duplicate evidence imported from several folders;</li>
+<li>dataset sample whose source system is unknown;</li>
+<li>validation report from an unidentified model baseline.</li>
+</ul>
+<p>Evidence should not be deleted merely because it is old.</p>
+<p>It should be classified.</p>
+<p>---</p>
+<h1 id="evidence-needs-a-supported-claim">Evidence needs a supported claim</h1>
+<p>A healthy Evidence object should say what it supports.</p>
+<p>Examples:</p>
+<pre><code class="language-text">supports source availability
+verifies Mapping result
+demonstrates Rule behaviour
+justifies Decision
+confirms implementation drift</code></pre>
+<p>A generic attachment link is weaker:</p>
+<pre><code class="language-text">related evidence</code></pre>
+<p>Without claim-level context, evidence may remain connected but unusable.</p>
+<p>The receiving team cannot determine why it matters.</p>
+<p>---</p>
+<h1 id="baseline-less-evidence">Baseline-less evidence</h1>
+<p>A validation report states that Customer Group completeness was 98%.</p>
+<p>Without:</p>
+<ul>
+<li>dataset identity;</li>
+<li>model baseline;</li>
+<li>Rule version;</li>
+<li>execution date;</li>
+<li>scope;</li>
+</ul>
+<p>the result is difficult to interpret.</p>
+<p>The Evidence object is not graph-isolated.</p>
+<p>It is context-orphaned.</p>
+<p>Detect missing provenance fields for evidence types that require them.</p>
+<p>---</p>
+<h1 id="decision-orphans">Decision orphans</h1>
+<p>A Decision can be orphaned when:</p>
+<ul>
+<li>no object reflects its conclusion;</li>
+<li>all affected objects were removed without supersession;</li>
+<li>the Decision was replaced but not marked superseded;</li>
+<li>implementation contradicts it;</li>
+<li>the Decision records discussion but no outcome;</li>
+<li>its evidence is inaccessible.</li>
+</ul>
+<p>A Decision does not need to remain active forever.</p>
+<p>It needs to remain historically interpretable.</p>
+<p>---</p>
+<h1 id="decision-with-no-consequence">Decision with no consequence</h1>
+<p>Example:</p>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-SOURCE-017
+
+Conclusion:
+Direct CRM equivalence is rejected.</code></pre>
+<p>But the current graph contains:</p>
+<pre><code class="language-text">CRM Segment
+→ direct Mapping
+→ Customer Group</code></pre>
+<p>The Decision is linked to the Attribute but has no effect on the Mapping.</p>
+<p>Possible explanations:</p>
+<ul>
+<li>implementation drift;</li>
+<li>missing relationship;</li>
+<li>Decision outdated;</li>
+<li>Mapping wrongly approved.</li>
+</ul>
+<p>This is not a normal orphan.</p>
+<p>It is a governance contradiction.</p>
+<p>The health check should escalate it above a simple missing-link warning.</p>
+<p>---</p>
+<h1 id="patchproposal-orphans">PatchProposal orphans</h1>
+<p>Proposals become stale when:</p>
+<ul>
+<li>target objects changed;</li>
+<li>baseline advanced;</li>
+<li>referenced Findings closed;</li>
+<li>another proposal implemented the same change;</li>
+<li>candidate IDs were used elsewhere;</li>
+<li>affected Mappings were retired.</li>
+</ul>
+<p>A proposal can remain syntactically valid while being unsafe to apply.</p>
+<p>Detect:</p>
+<ul>
+<li>base commit no longer current;</li>
+<li>expected previous values no longer match;</li>
+<li>target object missing;</li>
+<li>proposal superseded;</li>
+<li>impact graph materially changed.</li>
+</ul>
+<p>The response should be:</p>
+<pre><code class="language-text">rebase
+refresh impact
+supersede
+reject</code></pre>
+<p>not silent application.</p>
+<p>---</p>
+<h1 id="orphans-caused-by-file-deletion">Orphans caused by file deletion</h1>
+<p>Deleting a canonical file should not be treated as an ordinary repository cleanup when the object has dependants.</p>
+<p>Basic validation catches explicit references pointing to the missing ID.</p>
+<p>It may not catch:</p>
+<ul>
+<li>prose references;</li>
+<li>external issue links;</li>
+<li>generated reports;</li>
+<li>legacy IDs;</li>
+<li>archived evidence;</li>
+<li>code or interfaces outside the repository.</li>
+</ul>
+<p>Deletion should therefore trigger an impact check before merge.</p>
+<p>Safer lifecycle:</p>
+<pre><code class="language-text">active
+→ deprecated
+→ retired
+→ tombstone retained</code></pre>
+<p>rather than immediate disappearance.</p>
+<p>---</p>
+<h1 id="orphans-caused-by-renaming-ids">Orphans caused by renaming IDs</h1>
+<p>Changing an object ID can create apparent new and deleted objects.</p>
+<p>References inside the repository may be updated.</p>
+<p>External references may not.</p>
+<p>Potential orphans include:</p>
+<ul>
+<li>issue links;</li>
+<li>stored report IDs;</li>
+<li>package manifests;</li>
+<li>old proposals;</li>
+<li>external catalog mappings;</li>
+<li>agent prompts;</li>
+<li>interface metadata.</li>
+</ul>
+<p>Stable IDs should normally survive label and path changes.</p>
+<p>When ID migration is unavoidable, preserve:</p>
+<ul>
+<li>legacy ID;</li>
+<li>redirect;</li>
+<li>migration Decision;</li>
+<li>reserved historical identity.</li>
+</ul>
+<p>---</p>
+<h1 id="orphans-caused-by-system-retirement">Orphans caused by system retirement</h1>
+<p>A source system is decommissioned.</p>
+<p>Its endpoints, Mappings and Evidence remain.</p>
+<p>Do not delete the entire branch blindly.</p>
+<p>Classify each object:</p>
+<h2 id="historical-lineage">Historical lineage</h2>
+<p>Needed to interpret records migrated from the system.</p>
+<h2 id="active-transition-dependency">Active transition dependency</h2>
+<p>Needed until all waves complete.</p>
+<h2 id="replaced-implementation">Replaced implementation</h2>
+<p>Should point to the new source.</p>
+<h2 id="truly-obsolete-material">Truly obsolete material</h2>
+<p>May be archived or retired after review.</p>
+<p>System retirement is a model transition, not a directory-deletion task.</p>
+<p>---</p>
+<h1 id="orphans-caused-by-sap-upgrades">Orphans caused by SAP upgrades</h1>
+<p>An SAP release may replace:</p>
+<ul>
+<li>a custom field;</li>
+<li>an interface property;</li>
+<li>an API;</li>
+<li>a validation implementation;</li>
+<li>a value list.</li>
+</ul>
+<p>The old objects may remain connected to the business Attribute.</p>
+<p>Orphan checks should detect:</p>
+<ul>
+<li>endpoint no longer present in target release;</li>
+<li>active Mapping still targets old endpoint;</li>
+<li>new endpoint has no Mapping;</li>
+<li>Rule implementation references retired technology;</li>
+<li>old interface remains the only downstream consumer.</li>
+</ul>
+<p>The product release is external evidence.</p>
+<p>The organisation still needs a Decision about model transition.</p>
+<p>---</p>
+<h1 id="zero-degree-is-useful-but-not-enough">Zero degree is useful, but not enough</h1>
+<p>A basic graph-health report should still include:</p>
+<pre><code class="language-text">objects with zero incoming edges
+objects with zero outgoing edges
+objects with no edges</code></pre>
+<p>These lists are useful discovery tools.</p>
+<p>They must be interpreted by type.</p>
+<p>Examples:</p>
+<ul>
+<li>a Domain may legitimately have no incoming edges;</li>
+<li>a terminal Evidence object may have no outgoing edges;</li>
+<li>a target FieldEndpoint may have no outgoing edges if downstream scope is excluded;</li>
+<li>an active Mapping with no incoming source edge is probably invalid.</li>
+</ul>
+<p>The same graph statistic means different things for different objects.</p>
+<p>---</p>
+<h1 id="in-degree-and-out-degree-policies">In-degree and out-degree policies</h1>
+<p>A type-aware policy might include:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Object type</th><th scope="col">Expected incoming</th><th scope="col">Expected outgoing</th></tr></thead><tbody><tr><td>Attribute</td><td>Entity or Domain context</td><td>Mapping, Rule, endpoint or declared conceptual use</td></tr><tr><td>FieldEndpoint</td><td>System or dataset context</td><td>Mapping, Attribute or interface</td></tr><tr><td>Mapping</td><td>Source input</td><td>Attribute, endpoint or another transformation</td></tr><tr><td>Rule</td><td>Decision or authority optional</td><td>Governed object or implementation</td></tr><tr><td>Evidence</td><td>Source metadata</td><td>Finding, Decision, Rule or Mapping claim</td></tr><tr><td>Decision</td><td>Evidence or Finding</td><td>affected object or superseded Decision</td></tr></tbody></table></div>
+<p>These are not universal cardinalities.</p>
+<p>They are health expectations.</p>
+<p>The schema should distinguish required structural references from recommended governance relationships.</p>
+<p>---</p>
+<h1 id="strongly-connected-components-are-not-automatically-healthy">Strongly connected components are not automatically healthy</h1>
+<p>A cluster of objects may be internally connected and still isolated from the rest of the model.</p>
+<p>Example:</p>
+<pre><code class="language-text">old source endpoint
+↔ old Mapping
+↔ old Attribute alias
+↔ old evidence</code></pre>
+<p>The cluster has several edges.</p>
+<p>It is unreachable from any active Domain, current baseline, migration wave or historical manifest.</p>
+<p>This is an orphaned subgraph.</p>
+<p>Graph analysis should therefore detect disconnected components, not only individual zero-degree nodes.</p>
+<p>Each component should be classified:</p>
+<ul>
+<li>active model component;</li>
+<li>historical component;</li>
+<li>proposal component;</li>
+<li>imported unclassified component;</li>
+<li>orphaned component.</li>
+</ul>
+<p>---</p>
+<h1 id="cycles-can-expose-modelling-defects">Cycles can expose modelling defects</h1>
+<p>Some cycles are legitimate:</p>
+<pre><code class="language-text">Decision
+→ authorises Mapping
+→ affected by Decision</code></pre>
+<p>Others may indicate confused semantics.</p>
+<p>Example:</p>
+<pre><code class="language-text">Mapping A derives Attribute B
+Mapping B derives Attribute A</code></pre>
+<p>without a base source.</p>
+<p>Both Mappings have sources and targets.</p>
+<p>Together they form a closed derivation cycle with no external input.</p>
+<p>This is a source-orphaned component.</p>
+<p>Another example:</p>
+<pre><code class="language-text">Rule A depends on value created only if Rule A passes.</code></pre>
+<p>Cycle analysis can reveal model paths that are connected but impossible to initialise.</p>
+<p>---</p>
+<h1 id="reachability-must-use-typed-paths">Reachability must use typed paths</h1>
+<p>An Attribute should not be considered operationally connected merely because it links to Evidence.</p>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-OLD-CUSTOMER-CLASS
+→ EVID-WAVE1-SCREENSHOT</code></pre>
+<p>The Attribute has an edge.</p>
+<p>It has no implementation, Mapping, Rule, active consumer or historical retirement record.</p>
+<p>Different health questions require different permitted paths.</p>
+<h2 id="operational-reachability">Operational reachability</h2>
+<p>Uses:</p>
+<ul>
+<li>source;</li>
+<li>Mapping;</li>
+<li>Attribute;</li>
+<li>target;</li>
+<li>interface;</li>
+<li>dataset.</li>
+</ul>
+<h2 id="governance-reachability">Governance reachability</h2>
+<p>Uses:</p>
+<ul>
+<li>Finding;</li>
+<li>Evidence;</li>
+<li>Decision;</li>
+<li>owner;</li>
+<li>proposal.</li>
+</ul>
+<h2 id="historical-reachability">Historical reachability</h2>
+<p>Uses:</p>
+<ul>
+<li>supersedes;</li>
+<li>replaced_by;</li>
+<li>baseline;</li>
+<li>effective period.</li>
+</ul>
+<p>An object should be assessed against the path types relevant to its status.</p>
+<p>---</p>
+<h1 id="criticality-changes-the-response">Criticality changes the response</h1>
+<p>An orphaned optional documentation object may be low priority.</p>
+<p>An orphaned mandatory SAP field is not.</p>
+<p>Prioritisation factors include:</p>
+<ul>
+<li>business criticality;</li>
+<li>mandatory status;</li>
+<li>data sensitivity;</li>
+<li>migration-wave proximity;</li>
+<li>production usage;</li>
+<li>number of records;</li>
+<li>downstream consumers;</li>
+<li>legal relevance;</li>
+<li>unresolved age;</li>
+<li>availability of replacement.</li>
+</ul>
+<p>A health report should separate detection from priority.</p>
+<p>---</p>
+<h1 id="age-alone-does-not-prove-orphaning">Age alone does not prove orphaning</h1>
+<p>A Mapping unchanged for five years may be stable and correct.</p>
+<p>Evidence created yesterday may already be irrelevant if it came from the wrong dataset.</p>
+<p>Use age as a signal, not a verdict.</p>
+<p>Better questions include:</p>
+<ul>
+<li>Is the object still reachable?</li>
+<li>Is its effective period current?</li>
+<li>Does runtime evidence still support it?</li>
+<li>Is its source system active?</li>
+<li>Has it been superseded?</li>
+<li>Does an owner still accept responsibility?</li>
+</ul>
+<p>---</p>
+<h1 id="runtime-evidence-can-reduce-false-positives">Runtime evidence can reduce false positives</h1>
+<p>A Mapping appears unreachable from current declared migration datasets.</p>
+<p>Runtime evidence shows that an active integration still executes it.</p>
+<p>Possible conclusions:</p>
+<ul>
+<li>canonical dataset relationships are incomplete;</li>
+<li>Mapping is operational outside the migration scope;</li>
+<li>runtime metadata is misclassified;</li>
+<li>Mapping should not be retired.</li>
+</ul>
+<p>OpenLineage’s object model separates declared Dataset and Job metadata from individual runtime Runs, while column-level lineage describes how input fields contribute to outputs. This separation supports comparing intended paths with observed execution rather than treating either one as the sole truth.</p>
+<p>Martenweave can use runtime evidence to challenge orphan findings.</p>
+<p>It should not let runtime execution silently approve an undocumented model path.</p>
+<p>---</p>
+<h1 id="orphan-versus-intentionally-unused">Orphan versus intentionally unused</h1>
+<p>Some objects are deliberately dormant.</p>
+<p>Examples:</p>
+<ul>
+<li>future-state Attribute;</li>
+<li>optional domain pack object;</li>
+<li>source endpoint discovered for later assessment;</li>
+<li>archived historical Decision;</li>
+<li>reusable Rule template;</li>
+<li>candidate Mapping under review.</li>
+</ul>
+<p>These should carry explicit states.</p>
+<pre><code class="language-text">planned
+discovered
+template
+historical
+candidate
+excluded</code></pre>
+<p>Without such states, the health engine cannot distinguish intentional dormancy from neglect.</p>
+<p>---</p>
+<h1 id="orphan-versus-out-of-scope">Orphan versus out of scope</h1>
+<p>A FieldEndpoint may exist in SAP but lie outside the current project scope.</p>
+<p>The correct representation is not necessarily to delete it.</p>
+<p>It may be marked:</p>
+<pre><code class="language-text">scope_status: excluded
+reason: not part of Customer migration</code></pre>
+<p>An out-of-scope object should not count against current lineage completeness.</p>
+<p>It should remain searchable when useful.</p>
+<p>This avoids inflating the repository with false gaps or hiding known landscape context.</p>
+<p>---</p>
+<h1 id="orphan-versus-placeholder">Orphan versus placeholder</h1>
+<p>Placeholders are acceptable during early modelling when they are visible.</p>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-CREDIT-SEGMENT
+status: draft
+implementation: unresolved</code></pre>
+<p>The health report can say:</p>
+<pre><code class="language-text">Draft Attribute has no implementation path.
+Expected for current status.</code></pre>
+<p>A placeholder becomes problematic when it remains:</p>
+<ul>
+<li>approved;</li>
+<li>operational;</li>
+<li>required;</li>
+<li>release-scoped;</li>
+</ul>
+<p>without the missing relationships being resolved.</p>
+<p>---</p>
+<h1 id="orphan-remediation-is-a-governed-change">Orphan remediation is a governed change</h1>
+<p>Detection should not trigger automatic deletion.</p>
+<p>Possible remediation actions include:</p>
+<ul>
+<li>connect to existing object;</li>
+<li>add missing source or target;</li>
+<li>classify as technical-only;</li>
+<li>mark out of scope;</li>
+<li>deprecate;</li>
+<li>retire;</li>
+<li>create replacement relationship;</li>
+<li>add effective period;</li>
+<li>attach Decision;</li>
+<li>reopen investigation;</li>
+<li>promote finding to proposal.</li>
+</ul>
+<p>The selected action can affect history and downstream analysis.</p>
+<p>AI may suggest it.</p>
+<p>Humans should approve it.</p>
+<p>---</p>
+<h1 id="create-findings-before-creating-replacements">Create Findings before creating replacements</h1>
+<p>Suppose an active FieldEndpoint has no business Attribute.</p>
+<p>An AI system might generate:</p>
+<pre><code class="language-text">ATTR-ZZ-SUPPLIER-CATEGORY</code></pre>
+<p>based on the field name.</p>
+<p>That can create a false business concept.</p>
+<p>A safer response is:</p>
+<pre><code class="language-text">FIND-UNCLASSIFIED-SUPPLIER-CATEGORY-ENDPOINT</code></pre>
+<p>The Finding records:</p>
+<ul>
+<li>endpoint;</li>
+<li>observed usage;</li>
+<li>possible meanings;</li>
+<li>owners;</li>
+<li>evidence;</li>
+<li>next decision.</li>
+</ul>
+<p>Only after review should the system create or link an Attribute.</p>
+<p>---</p>
+<h1 id="automated-retirement-is-unsafe">Automated retirement is unsafe</h1>
+<p>An object with no current incoming edges may still be:</p>
+<ul>
+<li>referenced externally;</li>
+<li>used in production;</li>
+<li>needed historically;</li>
+<li>temporarily disconnected during a proposal;</li>
+<li>deliberately terminal.</li>
+</ul>
+<p>Automatic retirement risks destroying traceability.</p>
+<p>The product can generate a retirement proposal:</p>
+<pre><code class="language-text">candidate:
+retire MAP-ERP-A-CUSTOMER-GROUP
+
+reason:
+source retired
+no active population
+superseded by MAP-CUSTOMER-GROUP-ENRICHMENT</code></pre>
+<p>Validators check the candidate state.</p>
+<p>Humans decide.</p>
+<p>---</p>
+<h1 id="orphan-findings-need-suppression-with-reasons">Orphan findings need suppression with reasons</h1>
+<p>Some warnings will be accepted.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-S4-TECHNICAL-LOAD-TIMESTAMP</code></pre>
+<p>has no business Attribute because it is purely technical.</p>
+<p>The team should be able to suppress the warning with structured justification:</p>
+<pre><code class="language-yaml">orphan_check:
+  excluded: true
+  reason: technical audit field
+  reviewed_by: ROLE-SAP-TECHNICAL-OWNER</code></pre>
+<p>A suppression should be:</p>
+<ul>
+<li>explicit;</li>
+<li>reviewable;</li>
+<li>baseline-aware;</li>
+<li>optionally expiring.</li>
+</ul>
+<p>Do not hide exceptions in global configuration without object-level explanation.</p>
+<p>---</p>
+<h1 id="orphan-debt">Orphan debt</h1>
+<p>Repositories accumulate orphan debt over time.</p>
+<p>A useful scorecard can report:</p>
+<pre><code class="language-text">Active hard orphans:
+3
+
+Active soft orphans:
+17
+
+Historical-context gaps:
+6
+
+Unclassified imported endpoints:
+84
+
+Stale proposals:
+4
+
+Accepted suppressions:
+12</code></pre>
+<p>Trends matter:</p>
+<ul>
+<li>Are hard orphans increasing?</li>
+<li>Is imported metadata being classified?</li>
+<li>Are temporary objects being retired?</li>
+<li>Are stale proposals being closed?</li>
+</ul>
+<p>One percentage cannot express this adequately.</p>
+<p>---</p>
+<h1 id="a-rule-orphan-example">A Rule-orphan example</h1>
+<h2 id="current-object">Current object</h2>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-CREATION</code></pre>
+<p>It states:</p>
+<pre><code class="language-text">Customer Group is required at Customer creation.</code></pre>
+<h2 id="current-model">Current model</h2>
+<p>Customer Group now belongs to Customer Sales Area and is required before Sales Area activation.</p>
+<h2 id="references">References</h2>
+<p>The Rule still points to the Attribute.</p>
+<p>Basic validation passes.</p>
+<h2 id="orphan-analysis">Orphan analysis</h2>
+<p>The Rule’s lifecycle and Entity context no longer match the Attribute.</p>
+<p>Classification:</p>
+<pre><code class="language-text">semantic applicability orphan</code></pre>
+<p>Recommended action:</p>
+<ul>
+<li>supersede with the activation Rule;</li>
+<li>retain historical link;</li>
+<li>review implementation controls;</li>
+<li>preserve previous test Evidence as historical.</li>
+</ul>
+<p>---</p>
+<h1 id="a-mapping-orphan-example">A Mapping-orphan example</h1>
+<h2 id="current-object-2">Current object</h2>
+<pre><code class="language-text">MAP-CRM-SEGMENT-DIRECT</code></pre>
+<h2 id="current-model-2">Current model</h2>
+<p>Direct equivalence was rejected. Customer Group now uses contextual enrichment.</p>
+<h2 id="graph-state">Graph state</h2>
+<p>The Mapping still has:</p>
+<ul>
+<li>valid source;</li>
+<li>valid Attribute target;</li>
+<li>approved status.</li>
+</ul>
+<h2 id="governance-state">Governance state</h2>
+<p>A newer Decision rejects its semantics.</p>
+<h2 id="classification">Classification</h2>
+<pre><code class="language-text">governance-conflicted Mapping</code></pre>
+<p>This is more serious than an unused object because it remains a plausible active path.</p>
+<p>Recommended action:</p>
+<ul>
+<li>retire or mark historical;</li>
+<li>link superseding Mapping;</li>
+<li>preserve the rejecting Decision;</li>
+<li>verify no runtime implementation still uses it.</li>
+</ul>
+<p>---</p>
+<h1 id="a-fieldendpoint-orphan-example">A FieldEndpoint-orphan example</h1>
+<h2 id="current-object-3">Current object</h2>
+<pre><code class="language-text">FEP-S4-ZZ-REVIEW-STATUS</code></pre>
+<h2 id="current-model-3">Current model</h2>
+<p>A standard endpoint replaced the custom field.</p>
+<h2 id="remaining-links">Remaining links</h2>
+<ul>
+<li>old mock-load Evidence;</li>
+<li>historical Decision;</li>
+<li>no active Mapping;</li>
+<li>no active interface.</li>
+</ul>
+<h2 id="classification-2">Classification</h2>
+<p>Not an active orphan if status is historical and replacement is explicit.</p>
+<p>It becomes an orphan when:</p>
+<ul>
+<li>status remains active;</li>
+<li>no replacement is recorded;</li>
+<li>users cannot tell whether the field should still be used.</li>
+</ul>
+<p>---</p>
+<h1 id="an-evidence-orphan-example">An Evidence-orphan example</h1>
+<h2 id="evidence-2">Evidence</h2>
+<pre><code class="language-text">EVID-CUSTOMER-GROUP-PROFILE-2025-04</code></pre>
+<h2 id="content">Content</h2>
+<p>Profile of a dataset from ERP_A.</p>
+<h2 id="current-state">Current state</h2>
+<p>ERP_A has been retired.</p>
+<p>The Evidence is not linked to:</p>
+<ul>
+<li>historical baseline;</li>
+<li>Decision;</li>
+<li>Finding;</li>
+<li>retired Mapping.</li>
+</ul>
+<h2 id="classification-3">Classification</h2>
+<pre><code class="language-text">historical-context orphan</code></pre>
+<p>Recommended action:</p>
+<ul>
+<li>link to Wave 2 baseline and retired Mapping;</li>
+<li>record dataset identity;</li>
+<li>or archive outside canonical scope if no governed claim depends on it.</li>
+</ul>
+<p>---</p>
+<h1 id="detection-workflow">Detection workflow</h1>
+<p>A practical health run can use the following sequence.</p>
+<h2 id="1-validate-structure">1. Validate structure</h2>
+<p>Check IDs, types and explicit references.</p>
+<h2 id="2-build-status-aware-graph">2. Build status-aware graph</h2>
+<p>Separate active, draft, historical, candidate and excluded objects.</p>
+<h2 id="3-apply-type-specific-degree-checks">3. Apply type-specific degree checks</h2>
+<p>Find zero-sided and one-sided objects according to expected roles.</p>
+<h2 id="4-calculate-root-reachability">4. Calculate root reachability</h2>
+<p>Test active operational and governance paths.</p>
+<h2 id="5-detect-disconnected-components">5. Detect disconnected components</h2>
+<p>Classify components by baseline and purpose.</p>
+<h2 id="6-check-lifecycle-compatibility">6. Check lifecycle compatibility</h2>
+<p>Find active objects connected only to retired or expired objects.</p>
+<h2 id="7-check-semantic-compatibility">7. Check semantic compatibility</h2>
+<p>Detect Mapping outputs outside value lists, Rules on incompatible Entities and contradictory Decisions.</p>
+<h2 id="8-check-provenance">8. Check provenance</h2>
+<p>Find Evidence and reports without baseline, source or supported claim.</p>
+<h2 id="9-check-proposal-freshness">9. Check proposal freshness</h2>
+<p>Find stale or superseded candidate changes.</p>
+<h2 id="10-produce-findings">10. Produce Findings</h2>
+<p>Do not mutate the model automatically.</p>
+<p>---</p>
+<h1 id="suggested-health-codes">Suggested health codes</h1>
+<p>A first implementation could use explicit diagnostic codes.</p>
+<pre><code class="language-text">MW-ORPHAN-001
+Active object has no model relationships.
+
+MW-ORPHAN-002
+Active Mapping has no active source.
+
+MW-ORPHAN-003
+Active Mapping has no active target.
+
+MW-ORPHAN-004
+FieldEndpoint has operational usage but no business Attribute.
+
+MW-ORPHAN-005
+Approved Rule has no governed subject.
+
+MW-ORPHAN-006
+Approved Rule has no implementation or declared manual-control status.
+
+MW-ORPHAN-007
+Active object is connected only to retired objects.
+
+MW-ORPHAN-008
+Evidence has no supported claim or baseline.
+
+MW-ORPHAN-009
+Disconnected subgraph has no active or historical root.
+
+MW-ORPHAN-010
+Proposal target changed after proposal baseline.</code></pre>
+<p>The codes make findings:</p>
+<ul>
+<li>searchable;</li>
+<li>testable;</li>
+<li>suppressible;</li>
+<li>reportable;</li>
+<li>suitable for CI policy.</li>
+</ul>
+<p>---</p>
+<h1 id="release-gate-policy">Release-gate policy</h1>
+<p>Not every orphan should block release.</p>
+<h2 id="block">Block</h2>
+<ul>
+<li>active one-sided Mapping;</li>
+<li>active Rule with missing subject;</li>
+<li>candidate change creates unreachable mandatory Attribute;</li>
+<li>active implementation connected only to retired model objects;</li>
+<li>required target field has no population path;</li>
+<li>replacement chain is broken.</li>
+</ul>
+<h2 id="warn">Warn</h2>
+<ul>
+<li>unclassified discovered endpoint;</li>
+<li>Evidence missing optional metadata;</li>
+<li>design-stage Attribute without implementation;</li>
+<li>historical component missing full provenance;</li>
+<li>stale low-priority proposal.</li>
+</ul>
+<h2 id="inform">Inform</h2>
+<ul>
+<li>intentionally excluded technical field;</li>
+<li>terminal target endpoint;</li>
+<li>archived historical Evidence;</li>
+<li>accepted dormant future-state object.</li>
+</ul>
+<p>This avoids both permissiveness and alert fatigue.</p>
+<p>---</p>
+<h1 id="orphan-detection-in-ci">Orphan detection in CI</h1>
+<p>A repository health check can run after normal validation:</p>
+<pre><code class="language-bash">martenweave validate --repo ./model
+martenweave build-index --repo ./model --jsonl
+martenweave health --repo ./model
+martenweave scorecard --repo ./model</code></pre>
+<p>Martenweave already exposes validation, index, health and scorecard operations in its documented CLI.</p>
+<p>A CI policy could fail when:</p>
+<ul>
+<li>new hard orphan count exceeds zero;</li>
+<li>an existing suppression expires;</li>
+<li>active orphan debt increases;</li>
+<li>a critical object becomes unreachable;</li>
+<li>a candidate proposal creates a broken path.</li>
+</ul>
+<p>The report should compare against the base branch so that teams can see newly introduced debt rather than being blocked by every historical warning immediately.</p>
+<p>---</p>
+<h1 id="orphan-detection-during-diff-review">Orphan detection during diff review</h1>
+<p>The most useful time to detect orphans is before merge.</p>
+<p>A repository diff can ask:</p>
+<ul>
+<li>Which objects lost their last source?</li>
+<li>Which objects lost their last target?</li>
+<li>Which components became disconnected?</li>
+<li>Which active objects now point only to retired objects?</li>
+<li>Which Rules lost applicable values?</li>
+<li>Which proposals became stale?</li>
+<li>Which Evidence lost its supported claim?</li>
+</ul>
+<p>This converts orphan analysis from periodic cleanup into change prevention.</p>
+<p>---</p>
+<h1 id="orphan-detection-after-dataset-profiling">Orphan detection after dataset profiling</h1>
+<p>Observed datasets can expose orphaned model paths.</p>
+<p>Examples:</p>
+<ul>
+<li>expected source field never appears;</li>
+<li>dataset includes an unmapped field repeatedly;</li>
+<li>Mapping expects a context key absent from every extract;</li>
+<li>endpoint is documented but no observed data ever uses it.</li>
+</ul>
+<p>The result should not immediately retire the object.</p>
+<p>It should produce a Finding:</p>
+<pre><code class="language-text">Declared lineage has no observed dataset support
+for the selected migration scope.</code></pre>
+<p>Martenweave’s dataset-readiness flow already supports profiling, gap reporting and promotion into reviewable proposals or issue drafts.</p>
+<p>---</p>
+<h1 id="orphan-detection-after-migration-completion">Orphan detection after migration completion</h1>
+<p>When a migration wave closes, review temporary objects:</p>
+<ul>
+<li>wave-specific Mappings;</li>
+<li>defaults;</li>
+<li>manual enrichment paths;</li>
+<li>provisional Rules;</li>
+<li>temporary interfaces;</li>
+<li>gap Findings;</li>
+<li>candidate endpoints.</li>
+</ul>
+<p>Each should be:</p>
+<ul>
+<li>promoted to ongoing governance;</li>
+<li>transferred to the next wave;</li>
+<li>marked historical;</li>
+<li>retired;</li>
+<li>closed with evidence.</li>
+</ul>
+<p>Without this step, wave artefacts remain active indefinitely and make future impact analysis noisy.</p>
+<p>---</p>
+<h1 id="orphan-detection-in-ams">Orphan detection in AMS</h1>
+<p>AMS teams inherit a different pattern of orphans:</p>
+<ul>
+<li>old custom fields;</li>
+<li>superseded interfaces;</li>
+<li>temporary fixes;</li>
+<li>rules no longer aligned with process;</li>
+<li>unresolved change tickets;</li>
+<li>reports using retired codes.</li>
+</ul>
+<p>A periodic health report can identify objects whose operational evidence has disappeared or whose replacement paths are incomplete.</p>
+<p>This helps AMS move from incident repair toward model maintenance.</p>
+<p>---</p>
+<h1 id="what-ai-can-do">What AI can do</h1>
+<p>AI can help:</p>
+<ul>
+<li>explain why a component appears disconnected;</li>
+<li>compare definitions of possible duplicate Attributes;</li>
+<li>suggest likely replacement links;</li>
+<li>identify references in prose;</li>
+<li>draft retirement proposals;</li>
+<li>group orphan findings by root cause.</li>
+</ul>
+<p>AI should not:</p>
+<ul>
+<li>delete objects;</li>
+<li>merge semantic identities;</li>
+<li>retire active fields;</li>
+<li>infer that lack of observed data means lack of production use;</li>
+<li>close Findings;</li>
+<li>approve suppressions.</li>
+</ul>
+<p>The graph engine detects structure.</p>
+<p>AI helps interpret.</p>
+<p>Humans decide model intent.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has the core pieces needed:</p>
+<ul>
+<li>canonical typed objects;</li>
+<li>deterministic reference validation;</li>
+<li>disposable graph and search projections;</li>
+<li>health and scorecard commands;</li>
+<li>lineage and impact analysis;</li>
+<li>proposal-first changes.</li>
+</ul>
+<p>The next vertical slice should add <strong>type-aware orphan diagnostics</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Detect objects that are structurally valid but disconnected from a meaningful active or historical model path.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support:</p>
+<ul>
+<li>Attribute;</li>
+<li>FieldEndpoint;</li>
+<li>Mapping;</li>
+<li>Rule;</li>
+<li>Evidence;</li>
+<li>PatchProposal.</li>
+</ul>
+<h2 id="required-checks">Required checks</h2>
+<ol>
+<li>Active Mapping without active source.</li>
+<li>Active Mapping without active target.</li>
+<li>Active FieldEndpoint with no Attribute, Mapping or explicit technical-only classification.</li>
+<li>Approved Attribute with target endpoint but no population path.</li>
+<li>Approved Rule without subject or implementation status.</li>
+<li>Active object connected only to retired objects.</li>
+<li>Evidence without supported claim or baseline.</li>
+<li>Stale PatchProposal whose expected base state changed.</li>
+<li>Disconnected component without active, historical or proposal root.</li>
+<li>Suppression without reason or reviewer.</li>
+</ol>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The Customer model example should distinguish:</p>
+<pre><code class="language-text">retired custom endpoint with replacement:
+healthy historical object</code></pre>
+<p>from:</p>
+<pre><code class="language-text">active custom endpoint with no Mapping or replacement:
+orphan warning</code></pre>
+<p>It should also identify:</p>
+<pre><code class="language-text">direct CRM Mapping still active
+despite a Decision rejecting direct equivalence</code></pre>
+<p>as a governance conflict rather than a zero-degree orphan.</p>
+<h2 id="validation">Validation</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="health-analysis">Health analysis</h2>
+<pre><code class="language-bash">martenweave health --repo examples/customer_bp_model
+martenweave scorecard --repo examples/customer_bp_model</code></pre>
+<p>A future focused command could be:</p>
+<pre><code class="language-bash">martenweave orphans \
+  --repo examples/customer_bp_model \
+  --status active</code></pre>
+<p>The dedicated command is a recommended direction, not a claim about current CLI behaviour.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A model repository can contain no broken references and still contain a large amount of dead or misleading structure.</p>
+<p>An orphan may be:</p>
+<ul>
+<li>a field without governed meaning;</li>
+<li>an Attribute without a creation path;</li>
+<li>a Rule without current applicability;</li>
+<li>a Mapping whose source disappeared;</li>
+<li>Evidence without a supported claim;</li>
+<li>a proposal based on an obsolete baseline;</li>
+<li>an entire connected component detached from every active and historical model root.</li>
+</ul>
+<p>The right question is not:</p>
+<blockquote>Does this object have an edge?</blockquote>
+<p>It is:</p>
+<blockquote>Does this object still have a justified role in an active, planned or historically explainable model path?</blockquote>
+<p>A useful health process moves through several levels:</p>
+<pre><code class="language-text">reference integrity
+→ type-specific connectivity
+→ status-aware reachability
+→ semantic compatibility
+→ operational evidence
+→ governance purpose</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the team explain why every approved Rule, Mapping and critical FieldEndpoint exists, what active or historical path it belongs to, who is accountable for it and what should happen if the path is no longer used?</blockquote>
+<p>When the answer is yes, the repository is maintainable.</p>
+<p>When the answer is:</p>
+<blockquote>The file validates, so we left it there,</blockquote>
+<p>the model has accumulated hidden structural debt.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It uses canonical typed objects, deterministic validation, generated lineage indexes, health analysis and reviewable proposals to distinguish broken references from deeper model-health problems.</p>
+<p>The objective is not to delete every disconnected object.</p>
+<p>It is to make every active, historical and intentionally dormant object explainable.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently represents Domains, Entities, Attributes, Relationships, datasets, Mappings, Rules, Evidence, Decisions and change proposals in canonical files. It validates IDs, types, references and domain context before generating disposable indexes for gap, lineage and impact analysis.</p>
+<p>The current Martenweave CLI documents validation, index building, freshness checks, health reports, scorecards, impact, trace, repository diff and PatchProposal creation.</p>
+<p>OpenLineage’s column-level lineage model distinguishes direct dependencies, where an output derives from an input value, from indirect dependencies, where an input affects selection or calculation. It further identifies transformation subtypes such as identity, transformation, aggregation, joins, filters and conditional logic.</p>
+<p>OpenLineage’s object model separates declared Datasets and Jobs from individual runtime Runs. This provides a useful pattern for comparing designed model reachability with evidence about paths that actually execute.</p>
+<p>The orphan categories, diagnostic codes, status-aware graph views and proposed dedicated <code>orphans</code> command in this article describe recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current health or scorecard implementation unless separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html"><span>Previous</span>A team proposes three changes:</a><a href="/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html"><span>Next</span>A source system is retired.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

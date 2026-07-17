@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why a Successfully Loaded Material May Still Be Unusable | Martenweave</title>
+    <meta
+      name="description"
+      content="The material migration report looks successful."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html" />
+    <meta property="og:title" content="Why a Successfully Loaded Material May Still Be Unusable | Martenweave" />
+    <meta property="og:description" content="The material migration report looks successful." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why a Successfully Loaded Material May Still Be Unusable | Martenweave" />
+    <meta name="twitter:description" content="The material migration report looks successful." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html",
+                        "name": "Why a Successfully Loaded Material May Still Be Unusable | Martenweave",
+                        "description": "The material migration report looks successful.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why a Successfully Loaded Material May Still Be Unusable",
+                                    "item": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html#content",
+                        "headline": "Why a Successfully Loaded Material May Still Be Unusable",
+                        "name": "Why a Successfully Loaded Material May Still Be Unusable",
+                        "description": "The material migration report looks successful.",
+                        "url": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-a-successfully-loaded-material-may-still-be-unusable.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Logistics data",
+                        "keywords": "Logistics data",
+                        "timeRequired": "PT16M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why a Successfully Loaded Material May Still Be Unusable</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Logistics data</p><h1>Why a Successfully Loaded Material May Still Be Unusable</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 16 min read</p><p class="blog-summary">The material migration report looks successful.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#approved-business-default">Approved business default</a></li><li><a href="#temporary-fallback">Temporary fallback</a></li><li><a href="#undocumented-technical-constant">Undocumented technical constant</a></li><li><a href="#ready">Ready</a></li><li><a href="#controlled">Controlled</a></li><li><a href="#not-ready">Not ready</a></li><li><a href="#not-assessed">Not assessed</a></li><li><a href="#not-applicable">Not applicable</a></li><li><a href="#material">Material</a></li><li><a href="#intended-use">Intended use</a></li><li><a href="#technical-migration">Technical migration</a></li><li><a href="#capability-readiness">Capability readiness</a></li><li><a href="#critical-blockers">Critical blockers</a></li><li><a href="#current-controls">Current controls</a></li><li><a href="#owners">Owners</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>The material migration report looks successful.</p>
+<pre><code>Materials in scope:
+120,000
+
+Materials loaded:
+119,640
+
+Technical success rate:
+99.7%
+
+Critical interface failures:
+0</code></pre>
+<p>The programme reports that the material domain is ready.</p>
+<p>After go-live, the first operational problems appear.</p>
+<p>A buyer cannot create a purchase order because the material is not extended to the required purchasing context.</p>
+<p>A production planner cannot run the expected planning process because the Plant-specific settings are missing or defaulted incorrectly.</p>
+<p>The warehouse receives an inbound delivery but cannot execute the intended putaway process because the warehouse product data is incomplete.</p>
+<p>A picker sees an unexpected quantity because the warehouse and ERP systems interpret the packaging conversion differently.</p>
+<p>Transportation planning uses dimensions and weights that were technically accepted but were copied from an unreliable source.</p>
+<p>The material exists in the target system.</p>
+<p>The migration interface accepted it.</p>
+<p>Most required fields contain values.</p>
+<p>The business still cannot use it correctly.</p>
+<p>This is not an unusual edge case.</p>
+<p>It is one of the central management problems in logistics data migration:</p>
+<blockquote>A material can be technically loaded long before it is operationally usable.</blockquote>
+<p>The mistake begins when programmes use object creation as a proxy for readiness.</p>
+<p>The technical question is:</p>
+<blockquote>Did the target system create the material?</blockquote>
+<p>The management question should be:</p>
+<blockquote>Can the material support the intended purchasing, planning, production, warehouse and transportation processes in every required organisational context?</blockquote>
+<p>Those questions lead to different project controls.</p>
+<p>They also require a different data model.</p>
+<p>Martenweave should not replace SAP S/4HANA, SAP EWM, SAP MDG, a migration cockpit or a warehouse management system.</p>
+<p>Its role is to preserve the model knowledge that those systems and project artefacts do not hold together:</p>
+<ul>
+<li>what the material is expected to support;</li>
+<li>which extensions and relationships are required;</li>
+<li>where each value comes from;</li>
+<li>which Rules determine readiness;</li>
+<li>which Exceptions remain;</li>
+<li>which Evidence proves the current state;</li>
+<li>which owner can accept the remaining risk.</li>
+</ul>
+<p>Martenweave Core is already positioned as a backend-first model-governance and evidence layer that turns datasets, validation reports, Decisions and SAP context into canonical files, deterministic validation, gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>The logistics opportunity is to apply that foundation to a painful question:</p>
+<blockquote>Why can the process still not run when every technical report says the material was loaded successfully?</blockquote>
+<h1 id="the-management-trap-reporting-the-object-instead-of-the-capability">The management trap: reporting the object instead of the capability</h1>
+<p>A conventional migration dashboard is organised around objects.</p>
+<p>It reports:</p>
+<ul>
+<li>Material created;</li>
+<li>Business Partner created;</li>
+<li>bill of material loaded;</li>
+<li>routing loaded;</li>
+<li>warehouse product replicated;</li>
+<li>open stock reconciled.</li>
+</ul>
+<p>This is useful delivery information.</p>
+<p>It is not sufficient operational information.</p>
+<p>A manager does not ultimately need a material to exist.</p>
+<p>The organisation needs the material to support capabilities such as:</p>
+<ul>
+<li>purchasing;</li>
+<li>material requirements planning;</li>
+<li>production supply;</li>
+<li>quality inspection;</li>
+<li>goods receipt;</li>
+<li>putaway;</li>
+<li>replenishment;</li>
+<li>picking;</li>
+<li>packing;</li>
+<li>transportation planning;</li>
+<li>delivery execution;</li>
+<li>billing.</li>
+</ul>
+<p>SAP describes EWM as supporting high-volume warehouse operations and integrating warehouse and distribution processes with production, quality and track-and-trace capabilities. That breadth is precisely why the material’s readiness cannot be inferred from one global record or one successful replication event.</p>
+<p>The manager’s unit of readiness should therefore be:</p>
+<pre><code>Material
++
+business capability
++
+organisational context
++
+current Evidence</code></pre>
+<p>Not simply:</p>
+<pre><code>Material exists</code></pre>
+<h1 id="one-material-several-operational-truths">One material, several operational truths</h1>
+<p>Consider one automotive component:</p>
+<pre><code>Material:
+AX-4711
+
+Description:
+Steering Module Assembly
+
+Base unit:
+EA
+
+Procurement:
+External
+
+Required Plant:
+DE10
+
+Required warehouse:
+EWM-WH01
+
+Required purchasing organisation:
+P100
+
+Required production-supply scenario:
+Line-side staging
+
+Required transportation context:
+Returnable pallet</code></pre>
+<p>The migration creates the material successfully.</p>
+<p>The general description, material type, base unit and gross weight are populated.</p>
+<p>The technical load report marks it as complete.</p>
+<p>The project later discovers five problems:</p>
+<ol>
+<li>The material is not extended to Plant DE10 with the approved planning parameters.</li>
+<li>The purchasing data contains a temporary purchasing group copied from a migration default.</li>
+<li>The EWM warehouse product exists, but the intended putaway and replenishment settings are missing.</li>
+<li>The packaging hierarchy says 48 pieces per pallet, while the warehouse specification uses 40.</li>
+<li>The weight was copied from an old engineering extract and does not match the current packaging level.</li>
+</ol>
+<p>This is still one material.</p>
+<p>It contains several separate readiness questions.</p>
+<pre><code>Ready for central identification:
+Yes
+
+Ready for purchasing:
+Controlled
+
+Ready for planning:
+No
+
+Ready for warehouse receipt:
+Possibly
+
+Ready for line-side replenishment:
+No
+
+Ready for transportation planning:
+No</code></pre>
+<p>A single traffic light cannot represent this honestly.</p>
+<h1 id="why-the-existing-project-artefacts-do-not-solve-the-problem">Why the existing project artefacts do not solve the problem</h1>
+<p>Most programmes already have a large amount of information.</p>
+<p>They may have:</p>
+<ul>
+<li>migration workbooks;</li>
+<li>field-mapping specifications;</li>
+<li>data-quality reports;</li>
+<li>SAP configuration documents;</li>
+<li>MDG change requests;</li>
+<li>EWM setup sheets;</li>
+<li>test evidence;</li>
+<li>cutover trackers;</li>
+<li>incident tickets;</li>
+<li>business Decisions in meeting minutes.</li>
+</ul>
+<p>The problem is not the absence of documents.</p>
+<p>The problem is that the documents answer different fragments of the question.</p>
+<p>The Mapping workbook can say where a value comes from.</p>
+<p>It may not say whether that value is sufficient for warehouse execution.</p>
+<p>The load report can prove that a record was created.</p>
+<p>It may not say whether the required organisational extensions exist.</p>
+<p>The EWM test can prove that one warehouse process worked for a small test set.</p>
+<p>It may not identify which current production materials lack equivalent master data.</p>
+<p>An MDG workflow can prove that an approved change was governed.</p>
+<p>It may not prove that the cutover dataset used the approved version.</p>
+<p>SAP positions MDG around governed models, golden records, profiling, matching, merging, workflow, data-quality Rules and auditability. Those are important sources of trusted Evidence, but a migration still has to connect the governed object to the exact dataset, Mapping, target load and operational scope used for cutover.</p>
+<p>The project therefore needs a layer that connects the fragments without replacing their source systems.</p>
+<h1 id="the-real-pain-is-fragmented-operational-context">The real pain is fragmented operational context</h1>
+<p>The material master is often discussed as one object.</p>
+<p>Operationally, it behaves more like a network.</p>
+<pre><code>Global Material
+→ Plant
+→ Storage Location
+→ Purchasing Context
+→ Warehouse Product
+→ Packaging Specification
+→ Product–Location
+→ Transportation Context
+→ Production Supply Relationship</code></pre>
+<p>Each node can have:</p>
+<ul>
+<li>separate Attributes;</li>
+<li>separate owners;</li>
+<li>separate source systems;</li>
+<li>separate Rules;</li>
+<li>separate migration timing;</li>
+<li>separate Evidence.</li>
+</ul>
+<p>The global material can be correct while a local extension is wrong.</p>
+<p>The Plant extension can be correct while the warehouse product is incomplete.</p>
+<p>The warehouse product can be complete while packaging data contradicts the ERP unit conversion.</p>
+<p>This is why logistics issues are frequently transferred between teams.</p>
+<p>The MM team says the material exists.</p>
+<p>The EWM team says the warehouse setup is incomplete.</p>
+<p>The data team says all mapped fields were loaded.</p>
+<p>The business says the process does not work.</p>
+<p>Each team can be correct within its own boundary.</p>
+<p>The programme lacks a shared model of the complete capability.</p>
+<h1 id="the-first-management-solution-define-readiness-by-business-capability">The first management solution: define readiness by business capability</h1>
+<p>Before building more validation Rules, managers should define what “ready” means for each operational capability.</p>
+<p>For AX-4711, purchasing readiness might require:</p>
+<pre><code>Material active in Plant DE10
+
+Purchasing organisation P100 applicable
+
+Approved purchasing group available
+
+Order unit and conversion valid
+
+Supplier sourcing relationship available
+
+No purchasing block
+
+Current Evidence generated from the cutover baseline</code></pre>
+<p>Warehouse readiness might require:</p>
+<pre><code>Warehouse product available in EWM-WH01
+
+Required putaway control present
+
+Required stock-removal control present
+
+Replenishment settings present
+
+Packaging specification aligned
+
+Unit conversions consistent
+
+Production-supply relationship available</code></pre>
+<p>Transportation readiness might require:</p>
+<pre><code>Current gross weight and volume
+
+Correct packaging level
+
+Returnable pallet relationship
+
+Relevant transportation group
+
+Valid loading characteristics
+
+Location and route context available</code></pre>
+<p>These are not universal SAP requirements.</p>
+<p>They are programme-specific capability contracts.</p>
+<p>That is the point.</p>
+<p>The project should state explicitly what the future operating model needs, rather than assuming that the target system’s minimum creation checks represent full business readiness.</p>
+<h1 id="the-second-solution-model-the-organisational-grain-correctly">The second solution: model the organisational grain correctly</h1>
+<p>A recurring logistics failure occurs because a global Attribute is confused with a local one.</p>
+<p>For example:</p>
+<ul>
+<li>base unit may be global;</li>
+<li>planning parameters are Plant-specific;</li>
+<li>warehouse controls are warehouse-specific;</li>
+<li>some procurement settings depend on purchasing organisation;</li>
+<li>packaging or handling assumptions may vary by location or process;</li>
+<li>lead times can depend on source, destination and activity.</li>
+</ul>
+<p>If the canonical model stores everything under <code>Material</code>, it becomes impossible to express these differences safely.</p>
+<p>We need first-class relationships such as:</p>
+<pre><code>Material–Plant
+
+Material–Purchasing Organisation
+
+Material–Warehouse
+
+Material–Storage Location
+
+Material–Packaging Level
+
+Product–Location
+
+Product–Transportation Lane</code></pre>
+<p>This changes the management conversation.</p>
+<p>Instead of asking:</p>
+<blockquote>Is the material complete?</blockquote>
+<p>We ask:</p>
+<blockquote>Is the material complete for Plant DE10, purchasing organisation P100 and warehouse EWM-WH01 for the processes included in Wave 1?</blockquote>
+<p>The second question is longer.</p>
+<p>It is also operationally meaningful.</p>
+<h1 id="the-third-solution-distinguish-data-presence-from-data-authority">The third solution: distinguish data presence from data authority</h1>
+<p>A value can be present and still be unsafe.</p>
+<p>For AX-4711, the gross weight is populated.</p>
+<p>But which source owns it?</p>
+<p>Possible sources include:</p>
+<ul>
+<li>engineering;</li>
+<li>legacy ERP;</li>
+<li>warehouse packaging data;</li>
+<li>supplier information;</li>
+<li>transportation planning;</li>
+<li>a manual migration file.</li>
+</ul>
+<p>These sources may represent different things.</p>
+<p>Engineering may describe the component itself.</p>
+<p>Warehouse packaging data may describe the handled logistics unit.</p>
+<p>Transportation may require the packed shipping weight.</p>
+<p>The field name <code>GROSS_WEIGHT</code> does not resolve the semantic difference.</p>
+<p>Managers need an authority Decision:</p>
+<pre><code>Component net weight:
+Engineering authority
+
+Packed case weight:
+Packaging specification authority
+
+Transport pallet weight:
+Approved logistics packaging authority</code></pre>
+<p>Martenweave can preserve this as canonical model truth.</p>
+<p>Then a validator can detect when a target Attribute is populated from a source that is technically available but not authorised for the intended meaning.</p>
+<h1 id="the-fourth-solution-treat-defaults-as-controlled-debt">The fourth solution: treat defaults as controlled debt</h1>
+<p>Defaults are common during migration.</p>
+<p>They are sometimes necessary.</p>
+<p>They are dangerous when they lose their temporary status.</p>
+<p>For AX-4711, the migration team sets:</p>
+<pre><code>Purchasing group:
+001</code></pre>
+<p>This can mean three very different things.</p>
+<h2 id="approved-business-default">Approved business default</h2>
+<p>Group <code>001</code> is the accepted permanent owner for the defined material population.</p>
+<p>The value may count as ready.</p>
+<h2 id="temporary-fallback">Temporary fallback</h2>
+<p>The final responsibility is not confirmed, but group <code>001</code> is approved for cutover under a time-bounded Exception.</p>
+<p>The material is controlled, not fully ready.</p>
+<h2 id="undocumented-technical-constant">Undocumented technical constant</h2>
+<p>The value was used to avoid an empty target field.</p>
+<p>The material is not governed.</p>
+<p>Most completion dashboards treat all three as populated.</p>
+<p>A useful readiness model must distinguish them.</p>
+<p>Managers should require every material default to answer:</p>
+<ul>
+<li>Is this permanent or temporary?</li>
+<li>Who approved it?</li>
+<li>For which population?</li>
+<li>What business process does it affect?</li>
+<li>When does it expire?</li>
+<li>What replaces it?</li>
+<li>How will we identify every record using it?</li>
+</ul>
+<p>Without those answers, the default becomes invisible operational debt.</p>
+<h1 id="the-fifth-solution-validate-relationships-not-only-fields">The fifth solution: validate relationships, not only fields</h1>
+<p>Many logistics failures are relationship failures.</p>
+<p>Examples include:</p>
+<ul>
+<li>material exists, but Plant extension is absent;</li>
+<li>warehouse product exists, but packaging specification is not linked;</li>
+<li>unit conversion exists, but contradicts another conversion path;</li>
+<li>product-location exists, but no valid source of supply supports it;</li>
+<li>transportation lane exists, but the origin location is inactive;</li>
+<li>production material exists, but production-supply relationship is missing.</li>
+</ul>
+<p>A field-level validator may report no problem.</p>
+<p>The records are individually valid.</p>
+<p>The network is incomplete.</p>
+<p>Martenweave should support Rules such as:</p>
+<pre><code>Every production material in Plant DE10
+requiring line-side staging
+must have a valid warehouse product,
+production-supply relationship
+and replenishment treatment
+for EWM-WH01.</code></pre>
+<p>This is closer to the real operational requirement than:</p>
+<pre><code>WAREHOUSE_NUMBER is not empty.</code></pre>
+<h1 id="the-sixth-solution-separate-global-correctness-from-local-applicability">The sixth solution: separate global correctness from local applicability</h1>
+<p>Global templates are useful.</p>
+<p>They also create false confidence.</p>
+<p>A Mapping may correctly derive a putaway indicator for the primary warehouse.</p>
+<p>The same Mapping may be wrong for a smaller warehouse using different storage conditions.</p>
+<p>A packaging hierarchy may be valid in Europe and invalid for a North American returnable-container process.</p>
+<p>Managers should require every Rule and Mapping to declare applicability.</p>
+<p>For example:</p>
+<pre><code>Applicable when:
+
+Plant = DE10
+
+Warehouse = EWM-WH01
+
+Material category = Production Component
+
+Storage condition = Standard
+
+Production supply = Line-side staging</code></pre>
+<p>This prevents a global Mapping from silently becoming a global policy.</p>
+<h1 id="the-seventh-solution-connect-data-gaps-to-business-consequences">The seventh solution: connect data gaps to business consequences</h1>
+<p>A migration gap should not stop at:</p>
+<pre><code>70 materials missing warehouse extension</code></pre>
+<p>Managers need the operational consequence.</p>
+<p>For AX-4711:</p>
+<pre><code>Missing object:
+Warehouse replenishment settings
+
+Affected process:
+Line-side production supply
+
+Potential consequence:
+Component not replenished to production supply area
+
+Operational fallback:
+Manual warehouse task creation
+
+Fallback capacity:
+Not validated for expected volume
+
+Readiness:
+Not ready</code></pre>
+<p>This lets the programme prioritize correctly.</p>
+<p>A missing descriptive field affecting 10,000 materials may be less important than a missing replenishment relationship affecting 20 components required for production start.</p>
+<p>Volume does not equal business impact.</p>
+<h1 id="the-eighth-solution-define-evidence-backed-closure">The eighth solution: define evidence-backed closure</h1>
+<p>When the team fixes AX-4711, a closed ticket is not enough.</p>
+<p>A Mapping change is not enough.</p>
+<p>The programme needs Evidence that:</p>
+<ol>
+<li>the Plant extension exists;</li>
+<li>the warehouse product exists;</li>
+<li>the packaging relationship is consistent;</li>
+<li>the replenishment setting is active;</li>
+<li>the material is included in the current cutover population;</li>
+<li>the target system contains the expected result;</li>
+<li>the intended warehouse process can execute;</li>
+<li>no new contradiction was introduced.</li>
+</ol>
+<p>The closure package could contain:</p>
+<pre><code>Current model commit
+
+Current material dataset fingerprint
+
+Mapping version
+
+Target load identifier
+
+Warehouse-product reconciliation
+
+Packaging conversion validation
+
+Production-supply process test
+
+Business owner approval</code></pre>
+<p>This is how a Finding becomes genuinely resolved.</p>
+<h1 id="a-manager-focused-readiness-model">A manager-focused readiness model</h1>
+<p>For each logistics material, the programme should classify capabilities separately.</p>
+<h2 id="ready">Ready</h2>
+<p>The required objects, relationships and Rules are satisfied.</p>
+<p>Current Evidence proves the state.</p>
+<h2 id="controlled">Controlled</h2>
+<p>The final condition is incomplete, but an approved Exception and compensating control permit temporary use.</p>
+<h2 id="not-ready">Not ready</h2>
+<p>A required capability is missing or unsafe.</p>
+<p>No valid control covers it.</p>
+<h2 id="not-assessed">Not assessed</h2>
+<p>The current baseline has no valid Evidence.</p>
+<h2 id="not-applicable">Not applicable</h2>
+<p>The capability is outside the approved use of the material.</p>
+<p>For AX-4711:</p>
+<pre><code>Purchasing:
+Controlled
+
+Planning:
+Not ready
+
+Warehouse receipt:
+Ready
+
+Production replenishment:
+Not ready
+
+Transportation:
+Not assessed</code></pre>
+<p>This is a more useful management view than:</p>
+<pre><code>Material load:
+Successful</code></pre>
+<h1 id="what-the-workbench-should-show">What the Workbench should show</h1>
+<p>A manager should not have to inspect dozens of SAP tables or Mapping sheets.</p>
+<p>The Martenweave Workbench could show a generated summary.</p>
+<h2 id="material">Material</h2>
+<p>AX-4711 — Steering Module Assembly</p>
+<h2 id="intended-use">Intended use</h2>
+<p>Plant DE10, purchasing organisation P100, warehouse EWM-WH01, line-side production supply.</p>
+<h2 id="technical-migration">Technical migration</h2>
+<ul>
+<li>global record created;</li>
+<li>Plant extension created;</li>
+<li>warehouse product created;</li>
+<li>target reconciliation complete.</li>
+</ul>
+<h2 id="capability-readiness">Capability readiness</h2>
+<ul>
+<li>purchasing: controlled;</li>
+<li>planning: blocked;</li>
+<li>warehouse receipt: ready;</li>
+<li>production replenishment: blocked;</li>
+<li>transportation: not assessed.</li>
+</ul>
+<h2 id="critical-blockers">Critical blockers</h2>
+<ul>
+<li>Plant planning parameters use an unapproved default;</li>
+<li>replenishment settings are missing;</li>
+<li>pallet conversion conflicts with packaging specification.</li>
+</ul>
+<h2 id="current-controls">Current controls</h2>
+<ul>
+<li>manual purchasing-group fallback;</li>
+<li>no validated production-supply fallback.</li>
+</ul>
+<h2 id="owners">Owners</h2>
+<ul>
+<li>planning data owner;</li>
+<li>warehouse data owner;</li>
+<li>packaging owner;</li>
+<li>migration implementation owner.</li>
+</ul>
+<h2 id="evidence-health">Evidence health</h2>
+<ul>
+<li>target reconciliation current;</li>
+<li>packaging Evidence stale after latest Mapping change;</li>
+<li>transportation Evidence missing.</li>
+</ul>
+<p>This is not a transaction screen.</p>
+<p>It is a management explanation of the model state.</p>
+<h1 id="a-practical-pilot-for-martenweave">A practical pilot for Martenweave</h1>
+<p>The best logistics pilot is not to model every material field.</p>
+<p>That would be slow and generic.</p>
+<p>A focused pilot should select:</p>
+<ul>
+<li>one Plant;</li>
+<li>one warehouse;</li>
+<li>one material category;</li>
+<li>one critical business process;</li>
+<li>one recent migration dataset.</li>
+</ul>
+<p>For example:</p>
+<pre><code>Scope:
+Production components for Plant DE10
+
+Warehouse:
+EWM-WH01
+
+Capability:
+Line-side production supply
+
+Population:
+2,000 materials</code></pre>
+<p>The pilot should answer five questions.</p>
+<h2 id="1-which-materials-are-in-scope">1. Which materials are in scope?</h2>
+<p>Reconcile the population and preserve approved exclusions.</p>
+<h2 id="2-which-objects-and-relationships-are-required">2. Which objects and relationships are required?</h2>
+<p>Material–Plant, warehouse product, unit conversion, packaging and production-supply relationships.</p>
+<h2 id="3-which-records-are-incomplete-or-contradictory">3. Which records are incomplete or contradictory?</h2>
+<p>Detect missing extensions, conflicting conversions and unsupported defaults.</p>
+<h2 id="4-which-gaps-block-the-process">4. Which gaps block the process?</h2>
+<p>Connect Findings to production-supply impact.</p>
+<h2 id="5-which-current-evidence-proves-readiness">5. Which current Evidence proves readiness?</h2>
+<p>Show target reconciliation, validator results, Exceptions and owner approval.</p>
+<p>The result is not another data-quality report.</p>
+<p>It is a capability-based readiness package.</p>
+<h1 id="what-martenweave-should-store">What Martenweave should store</h1>
+<p>The canonical repository could represent:</p>
+<pre><code>Material
+
+Material–Plant relationship
+
+Material–Warehouse relationship
+
+Packaging level
+
+Unit conversion
+
+Production-supply relationship
+
+Rule
+
+Mapping
+
+Decision
+
+Exception
+
+Evidence
+
+Finding
+
+Readiness assessment
+
+Patch proposal</code></pre>
+<p>This fits the current Martenweave direction, which already treats domains, entities, attributes, relationships, datasets, mappings, Rules, Evidence, Decisions and change proposals as generic model objects.</p>
+<p>The dedicated logistics objects and readiness lifecycle described here should be treated as a proposed domain pack rather than released functionality.</p>
+<h1 id="what-martenweave-should-not-store">What Martenweave should not store</h1>
+<p>Martenweave should not become the operational owner of:</p>
+<ul>
+<li>warehouse tasks;</li>
+<li>stock quantities;</li>
+<li>purchase orders;</li>
+<li>production orders;</li>
+<li>transport orders;</li>
+<li>real-time resource assignments;</li>
+<li>live MRP execution;</li>
+<li>direct SAP updates.</li>
+</ul>
+<p>SAP EWM is designed to manage warehouse operations, integrate logistics processes and provide operational visibility and control. Martenweave should not compete with that execution role.</p>
+<p>Its purpose is different:</p>
+<pre><code>Operational systems execute.
+
+Martenweave explains
+what the model expects,
+why the data has its current meaning,
+which gaps affect execution,
+and what Evidence proves readiness.</code></pre>
+<h1 id="the-first-product-slice">The first product slice</h1>
+<p>The strongest initial logistics feature would be:</p>
+<h2 id="material-capability-readiness">Material Capability Readiness</h2>
+<h3 id="goal">Goal</h3>
+<p>Determine whether each material can support a defined business process in a defined organisational context.</p>
+<h3 id="inputs">Inputs</h3>
+<ul>
+<li>material dataset;</li>
+<li>Plant scope;</li>
+<li>warehouse scope;</li>
+<li>canonical Rules;</li>
+<li>required extensions;</li>
+<li>mappings;</li>
+<li>unit conversions;</li>
+<li>packaging relationships;</li>
+<li>Exceptions;</li>
+<li>validation Evidence.</li>
+</ul>
+<h3 id="outputs">Outputs</h3>
+<ul>
+<li>readiness by capability;</li>
+<li>missing extensions;</li>
+<li>contradictory relationships;</li>
+<li>unapproved defaults;</li>
+<li>critical blockers;</li>
+<li>affected business processes;</li>
+<li>owners;</li>
+<li>proposed remediation;</li>
+<li>evidence-backed closure criteria.</li>
+</ul>
+<h3 id="initial-capabilities">Initial capabilities</h3>
+<ul>
+<li>purchasing;</li>
+<li>planning;</li>
+<li>warehouse receipt;</li>
+<li>production supply;</li>
+<li>transportation.</li>
+</ul>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave logistics readiness \
+  --dataset ./data/materials-rc4.xlsx \
+  --plant DE10 \
+  --warehouse EWM-WH01 \
+  --capability production-supply \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics missing-extensions \
+  --plant DE10 \
+  --warehouse EWM-WH01 \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics explain-material \
+  AX-4711 \
+  --plant DE10 \
+  --warehouse EWM-WH01 \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics impact \
+  ATTR-PALLET-CONVERSION \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics propose-fix \
+  FIND-AX-4711-REPLENISHMENT \
+  --dry-run \
+  --repo ./model</code></pre>
+<p>These commands are proposed product directions.</p>
+<p>They are not part of the currently documented Martenweave CLI.</p>
+<p>The existing core already provides canonical files, deterministic validation, dataset-gap detection, lineage, impact analysis and proposal-first change handling that can support this domain slice.</p>
+<h1 id="what-managers-should-change-in-the-programme">What managers should change in the programme</h1>
+<p>The main solution is not a new dashboard.</p>
+<p>It is a different control model.</p>
+<h2 id="stop-accepting-loaded-as-a-readiness-status">Stop accepting “loaded” as a readiness status</h2>
+<p>Require the team to state the intended capability and organisational context.</p>
+<h2 id="stop-measuring-only-field-completion">Stop measuring only field completion</h2>
+<p>Measure missing relationships, conflicting authority and unsupported defaults.</p>
+<h2 id="stop-allowing-defaults-to-disappear-into-normal-data">Stop allowing defaults to disappear into normal data</h2>
+<p>Classify permanent defaults, temporary fallbacks and unapproved constants separately.</p>
+<h2 id="stop-closing-findings-when-code-changes">Stop closing Findings when code changes</h2>
+<p>Require current target Evidence and, for critical capabilities, a business-process test.</p>
+<h2 id="stop-reporting-only-global-material-percentages">Stop reporting only global material percentages</h2>
+<p>Show readiness by Plant, warehouse, capability and critical population.</p>
+<h2 id="stop-making-data-teams-responsible-for-policy-ambiguity">Stop making data teams responsible for policy ambiguity</h2>
+<p>Assign business owners to authority, applicability and Exception Decisions.</p>
+<h2 id="stop-treating-mdg-migration-and-ewm-reports-as-competing-truths">Stop treating MDG, migration and EWM reports as competing truths</h2>
+<p>Use each as Evidence tied to a common canonical model.</p>
+<h1 id="the-management-questions-that-expose-the-real-state">The management questions that expose the real state</h1>
+<p>Before cutover, leaders should ask:</p>
+<ol>
+<li>Which business capabilities must each material support on day one?</li>
+<li>Which organisational extensions are required for those capabilities?</li>
+<li>Which critical relationships are validated, not merely populated?</li>
+<li>Which values use approved authority?</li>
+<li>Which records depend on defaults?</li>
+<li>Which defaults are permanent, temporary or unapproved?</li>
+<li>Which materials are usable only under manual controls?</li>
+<li>Which Exceptions expire before normal operations stabilise?</li>
+<li>Which Evidence was produced after the latest model and Mapping changes?</li>
+<li>Which technically loaded materials remain operationally blocked?</li>
+</ol>
+<p>A programme that cannot answer these questions does not yet have a trustworthy material-readiness model.</p>
+<h1 id="the-business-value">The business value</h1>
+<p>The value is not better documentation.</p>
+<p>It is fewer operational surprises.</p>
+<p>A capability-based material model can reduce:</p>
+<ul>
+<li>failed purchase-order creation;</li>
+<li>incorrect MRP behaviour;</li>
+<li>manual warehouse intervention;</li>
+<li>production-supply disruption;</li>
+<li>packaging and quantity discrepancies;</li>
+<li>transportation-planning errors;</li>
+<li>repeated handoffs between MM, EWM, PP and data teams;</li>
+<li>emergency master-data fixes during hypercare.</li>
+</ul>
+<p>It also improves management decisions.</p>
+<p>Instead of hearing:</p>
+<pre><code>99.7% of materials loaded successfully.</code></pre>
+<p>leaders can hear:</p>
+<pre><code>119,640 materials were technically created.
+
+118,900 are ready for their intended capabilities.
+
+520 are usable under controlled Exceptions.
+
+140 are blocked by missing organisational extensions.
+
+80 have contradictory unit or packaging relationships.
+
+The production-supply gate remains blocked
+for 20 critical components.</code></pre>
+<p>The second statement is less attractive.</p>
+<p>It is much more actionable.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>The material record is not the business outcome.</p>
+<p>It is one part of an operational network.</p>
+<p>A material becomes useful only when:</p>
+<ul>
+<li>the right organisational extensions exist;</li>
+<li>the required relationships are complete;</li>
+<li>the values have accepted meaning;</li>
+<li>local applicability is understood;</li>
+<li>temporary defaults are controlled;</li>
+<li>downstream systems receive the right state;</li>
+<li>current Evidence proves the intended capability.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can we explain exactly what the material can do, where it can do it, which conditions remain, and which Evidence proves the answer?</blockquote>
+<p>When the answer is yes, the material is operationally governed.</p>
+<p>When the answer is:</p>
+<blockquote>The material was loaded successfully,</blockquote>
+<p>we know that the migration interface completed its work.</p>
+<p>We do not yet know whether logistics can.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that logistics migration programmes can distinguish object creation from operational capability and convert scattered model knowledge into a traceable readiness layer.</p>
+<p>Our operating model is:</p>
+<pre><code>Systems execute logistics processes.
+
+Canonical models define expected capability.
+
+Validators detect missing or contradictory context.
+
+Findings explain operational impact.
+
+Exceptions preserve controlled limitations.
+
+Evidence proves readiness.
+
+AI proposes remediation.
+
+Humans approve model truth and cutover risk.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance, logistics and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes an open-source, backend-first model-governance and evidence layer that transforms datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, deterministic validation mandatory and AI-generated changes proposal-first.</p>
+<p>The documented pipeline moves from source Evidence through validation, dataset and model gaps, lineage and impact analysis to reviewed proposals and GitHub delivery.</p>
+<p>SAP describes SAP EWM as a warehouse management system for high-volume operations that integrates complex supply-chain logistics with warehouse and distribution processes, including quality, production and track-and-trace integration. This supports the article’s central point that warehouse readiness depends on operational relationships and controls beyond creation of a global material record.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer for trusted master data, with governed models, golden records, profiling, matching, merging, semantic reconciliation, workflow, business Rules, continuous quality monitoring and auditability. These capabilities can supply important governance Evidence, while Martenweave’s proposed logistics layer connects that Evidence to a specific migration dataset, Mapping, organisational context and operational capability.</p>
+<p>Material Capability Readiness, logistics relationship objects, capability gates and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-we-detect-missing-material-extensions-before-cutover.html">The material migration team reports:</a></li><li><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html">The unit-of-measure migration report looks harmless.</a></li><li><a href="/blog/how-we-model-packaging-hierarchies-without-losing-logistics-meaning.html">The material migration team reports that packaging data is complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-use-model-evidence-during-cutover-approval.html"><span>Previous</span>The Supplier migration team completes the final rehearsal.</a><a href="/blog/how-we-detect-missing-material-extensions-before-cutover.html"><span>Next</span>The material migration team reports:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

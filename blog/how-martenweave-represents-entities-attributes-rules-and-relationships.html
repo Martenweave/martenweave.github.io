@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Martenweave Represents Entities, Attributes, Rules and Relationships | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration workbook contains one row:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html" />
+    <meta property="og:title" content="How Martenweave Represents Entities, Attributes, Rules and Relationships | Martenweave" />
+    <meta property="og:description" content="A migration workbook contains one row:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Martenweave Represents Entities, Attributes, Rules and Relationships | Martenweave" />
+    <meta name="twitter:description" content="A migration workbook contains one row:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html",
+                        "name": "How Martenweave Represents Entities, Attributes, Rules and Relationships | Martenweave",
+                        "description": "A migration workbook contains one row:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Martenweave Represents Entities, Attributes, Rules and Relationships",
+                                    "item": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html#content",
+                        "headline": "How Martenweave Represents Entities, Attributes, Rules and Relationships",
+                        "name": "How Martenweave Represents Entities, Attributes, Rules and Relationships",
+                        "description": "A migration workbook contains one row:",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Martenweave Represents Entities, Attributes, Rules and Relationships</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How Martenweave Represents Entities, Attributes, Rules and Relationships</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration workbook contains one row:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#definition-rule">Definition rule</a></li><li><a href="#applicability-rule">Applicability rule</a></li><li><a href="#completeness-rule">Completeness rule</a></li><li><a href="#validation-rule">Validation rule</a></li><li><a href="#derivation-rule">Derivation rule</a></li><li><a href="#lifecycle-rule">Lifecycle rule</a></li><li><a href="#distribution-rule">Distribution rule</a></li><li><a href="#direct-equivalence">Direct equivalence</a></li><li><a href="#value-conversion">Value conversion</a></li><li><a href="#conditional-transformation">Conditional transformation</a></li><li><a href="#aggregation">Aggregation</a></li><li><a href="#split">Split</a></li><li><a href="#enrichment">Enrichment</a></li><li><a href="#rejection">Rejection</a></li><li><a href="#entity-owner">Entity owner</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration workbook contains one row:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Source field</th><th scope="col">Target field</th><th scope="col">Rule</th></tr></thead><tbody><tr><td>CRM_SEGMENT</td><td>KNVV-KDGRP</td><td>Map according to business decision</td></tr></tbody></table></div>
+<p>The row appears to describe a mapping.</p>
+<p>In reality, it compresses several different model concepts:</p>
+<ul>
+<li>Customer;</li>
+<li>Customer Sales Area;</li>
+<li>CRM Segment;</li>
+<li>Customer Group;</li>
+<li>the relationship between Customer and Sales Area;</li>
+<li>the physical source field;</li>
+<li>the physical SAP target field;</li>
+<li>the transformation between them;</li>
+<li>the applicability rule;</li>
+<li>the business decision authorising the treatment.</li>
+</ul>
+<p>When these concepts are stored as one row, teams lose the ability to ask precise questions.</p>
+<p>Is Customer Group central or sales-area-specific?</p>
+<p>Does CRM Segment have the same business meaning?</p>
+<p>Which customer and organisational context does the mapping require?</p>
+<p>Is the rule about completeness, derivation or activation?</p>
+<p>Does the SAP field implement the business attribute directly, or only in one specific target system?</p>
+<p>The spreadsheet row cannot answer these questions reliably because it does not distinguish the things being described.</p>
+<p>Martenweave uses separate object types for this reason.</p>
+<p>Its current product model includes domains, entities, attributes, relationships, datasets, mappings, rules, evidence, decisions and change proposals. SAP migration and MDM are the first domain pack rather than the limit of the underlying registry.</p>
+<p>The objective is not to create the largest possible metamodel.</p>
+<p>It is to represent enough distinctions that model knowledge can be:</p>
+<ul>
+<li>validated;</li>
+<li>traced;</li>
+<li>compared;</li>
+<li>reviewed;</li>
+<li>changed safely.</li>
+</ul>
+<blockquote>A useful metamodel separates business meaning, structural relationships, behavioural constraints and physical implementation.</blockquote>
+<p>Entities describe the things the organisation governs.</p>
+<p>Attributes describe their properties.</p>
+<p>Relationships describe how governed things are connected.</p>
+<p>Rules describe conditions and expected behaviour.</p>
+<p>Mappings describe how representations are transformed.</p>
+<p>Field endpoints describe where data physically appears.</p>
+<p>Decisions and evidence explain why the model has its current form.</p>
+<p>Collapsing these concepts may make authoring look simpler. It makes every later investigation harder.</p>
+<p>---</p>
+<h1 id="begin-with-the-business-thing-not-the-sap-table">Begin with the business thing, not the SAP table</h1>
+<p>A common SAP modelling habit begins with physical structure:</p>
+<pre><code class="language-text">KNA1
+KNVV
+LFA1
+BUT000
+MARA
+MARC</code></pre>
+<p>These tables matter.</p>
+<p>They are implementation structures.</p>
+<p>They are not always the best starting point for governed meaning.</p>
+<p>A business-oriented model begins with concepts such as:</p>
+<ul>
+<li>Business Partner;</li>
+<li>Customer;</li>
+<li>Customer Sales Area;</li>
+<li>Supplier;</li>
+<li>Supplier Purchasing Organisation;</li>
+<li>Product;</li>
+<li>Plant Product;</li>
+<li>Tax Identification;</li>
+<li>Supplier Risk Assessment.</li>
+</ul>
+<p>The distinction matters because one business concept may be implemented:</p>
+<ul>
+<li>in several SAP tables;</li>
+<li>in several source systems;</li>
+<li>differently by country;</li>
+<li>differently before and after migration;</li>
+<li>through an MDM platform rather than directly in SAP.</li>
+</ul>
+<p>If the canonical object is named after one table field, the model becomes coupled to that implementation.</p>
+<p>A stronger separation is:</p>
+<pre><code class="language-text">Business concept:
+Customer Group
+
+Physical SAP endpoint:
+KNVV-KDGRP</code></pre>
+<p>The first object answers:</p>
+<blockquote>What does the organisation mean by Customer Group?</blockquote>
+<p>The second answers:</p>
+<blockquote>Where is that concept represented in this SAP implementation?</blockquote>
+<p>This separation allows the same business attribute to connect to:</p>
+<ul>
+<li>a legacy source field;</li>
+<li>an SAP field;</li>
+<li>an MDM field;</li>
+<li>a report dimension;</li>
+<li>a future target endpoint.</li>
+</ul>
+<p>Martenweave’s trace and impact examples deliberately distinguish the business attribute <code>ATTR-CUST-SALES-CUSTOMER-GROUP</code> from the physical SAP field endpoint <code>FEP-S4-KNVV-KDGRP</code>.</p>
+<p>---</p>
+<h1 id="domain">Domain</h1>
+<p>The Domain is the broadest governance boundary in the core metamodel.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Customer
+Supplier
+Business Partner
+Product
+Finance
+Organisation</code></pre>
+<p>A Domain can help determine:</p>
+<ul>
+<li>ownership;</li>
+<li>vocabulary;</li>
+<li>validation policies;</li>
+<li>repository navigation;</li>
+<li>domain-specific rules;</li>
+<li>reporting and scorecards.</li>
+</ul>
+<p>A Domain should not become a miscellaneous folder for everything related to one SAP module.</p>
+<p>For example, Customer is not simply <code>SD</code>.</p>
+<p>Customer data may be used by:</p>
+<ul>
+<li>Sales and Distribution;</li>
+<li>Finance;</li>
+<li>Credit Management;</li>
+<li>Service;</li>
+<li>Reporting;</li>
+<li>external applications.</li>
+</ul>
+<p>Likewise, Business Partner is not only an SAP technical construct. It may connect several roles and operational contexts.</p>
+<p>A domain boundary should reflect governance responsibility and semantic coherence rather than the organisational chart of the implementation project.</p>
+<p>A conceptual Domain object might contain:</p>
+<pre><code class="language-yaml">---
+id: DOMAIN-CUSTOMER
+type: Domain
+name: Customer
+status: approved
+owners:
+  - ROLE-GLOBAL-CUSTOMER-DATA-OWNER
+---</code></pre>
+<p>The exact current schema may differ. The example demonstrates the object boundary.</p>
+<p>---</p>
+<h1 id="entity">Entity</h1>
+<p>An Entity represents a governed type of business thing or context-bearing record.</p>
+<p>Examples include:</p>
+<ul>
+<li>Customer;</li>
+<li>Customer Sales Area;</li>
+<li>Supplier;</li>
+<li>Supplier Purchasing Organisation;</li>
+<li>Product;</li>
+<li>Product Plant;</li>
+<li>Tax Exemption;</li>
+<li>Risk Assessment.</li>
+</ul>
+<p>In conventional entity–relationship modelling, entity types classify things of interest in a domain, attributes describe their properties, and relationships express associations between entity types.</p>
+<p>Martenweave uses the same broad distinction but applies it to model governance, migration evidence and physical implementations.</p>
+<p>An Entity is not necessarily:</p>
+<ul>
+<li>one database table;</li>
+<li>one API object;</li>
+<li>one spreadsheet tab;</li>
+<li>one SAP transaction.</li>
+</ul>
+<p>Consider Customer Sales Area.</p>
+<p>It may be implemented in SAP through <code>KNVV</code>.</p>
+<p>But the governed entity means more than the table.</p>
+<p>It represents a Customer in a defined combination of:</p>
+<ul>
+<li>Sales Organisation;</li>
+<li>Distribution Channel;</li>
+<li>Division.</li>
+</ul>
+<p>The Entity establishes the granularity at which relevant attributes exist.</p>
+<p>That enables the registry to distinguish:</p>
+<pre><code class="language-text">Customer Name:
+central Customer attribute
+
+Customer Group:
+Customer Sales Area attribute</code></pre>
+<p>Without the entity boundary, teams may map a central CRM field directly to an organisational SAP field because both appear to describe the customer.</p>
+<p>---</p>
+<h1 id="an-entity-is-a-type-not-a-production-record">An entity is a type, not a production record</h1>
+<p>Martenweave’s model registry describes model objects.</p>
+<p>It does not need to store every customer or supplier instance as a canonical Markdown object.</p>
+<p>This distinction is essential:</p>
+<pre><code class="language-text">Entity type:
+Customer
+
+Instance:
+Customer 1000458921</code></pre>
+<p>The canonical Entity defines:</p>
+<ul>
+<li>meaning;</li>
+<li>identifiers;</li>
+<li>relationships;</li>
+<li>applicable attributes;</li>
+<li>governance context.</li>
+</ul>
+<p>Production systems and datasets contain the instances.</p>
+<p>Dataset evidence can then be assessed against the Entity and its expected fields.</p>
+<p>If the registry attempted to store all business records, it would become another operational data platform.</p>
+<p>That is outside Martenweave’s intended role.</p>
+<p>---</p>
+<h1 id="contextual-entities-are-often-more-important-than-teams-expect">Contextual entities are often more important than teams expect</h1>
+<p>Many migration problems result from modelling everything at the central master-record level.</p>
+<p>SAP landscapes commonly contain data at organisational or contextual levels:</p>
+<ul>
+<li>Customer Sales Area;</li>
+<li>Customer Company Code;</li>
+<li>Supplier Purchasing Organisation;</li>
+<li>Supplier Company Code;</li>
+<li>Material Plant;</li>
+<li>Material Sales Organisation;</li>
+<li>Business Partner Role.</li>
+</ul>
+<p>These are not merely technical extensions.</p>
+<p>They represent contexts in which different facts can be true.</p>
+<p>For example:</p>
+<pre><code class="language-text">Customer 1000
+may have Customer Group A in Sales Area 1010/10/00
+and Customer Group B in Sales Area 2010/20/00.</code></pre>
+<p>Treating Customer Group as a central Customer attribute destroys this possibility.</p>
+<p>A canonical metamodel should therefore represent the contextual Entity explicitly rather than hide its granularity inside field descriptions.</p>
+<p>---</p>
+<h1 id="attribute">Attribute</h1>
+<p>An Attribute describes a governed property of an Entity.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Customer Name
+Customer Group
+Supplier Risk
+Legal Form
+Tax Identifier
+Payment Terms
+Review Status</code></pre>
+<p>An Attribute object should define more than a label.</p>
+<p>Depending on scope, useful properties can include:</p>
+<ul>
+<li>business definition;</li>
+<li>owning Entity;</li>
+<li>Domain;</li>
+<li>datatype or value type;</li>
+<li>cardinality;</li>
+<li>allowed values;</li>
+<li>applicability;</li>
+<li>owner;</li>
+<li>confidentiality or criticality;</li>
+<li>physical endpoints;</li>
+<li>related rules;</li>
+<li>evidence and decisions.</li>
+</ul>
+<p>A conceptual representation might be:</p>
+<pre><code class="language-yaml">---
+id: ATTR-CUSTOMER-GROUP
+type: Attribute
+name: Customer Group
+domain: DOMAIN-CUSTOMER
+entity: ENTITY-CUSTOMER-SALES-AREA
+status: approved
+owners:
+  - ROLE-GLOBAL-CUSTOMER-DATA-OWNER
+---</code></pre>
+<p>The body can then explain meaning:</p>
+<pre><code class="language-markdown">Customer Group is a sales-area-specific commercial classification.
+
+It must not be treated as automatically equivalent to a central CRM
+segment without an approved organisational mapping.</code></pre>
+<p>The structured fields allow validation and traversal.</p>
+<p>The body preserves human interpretation.</p>
+<p>---</p>
+<h1 id="attribute-and-field-are-not-synonyms">Attribute and field are not synonyms</h1>
+<p>This is one of the most important Martenweave distinctions.</p>
+<p>An Attribute is semantic.</p>
+<p>A FieldEndpoint is physical.</p>
+<p>Example:</p>
+<pre><code class="language-text">Attribute:
+Supplier Risk
+
+Possible endpoints:
+ERP_A.RISK_CODE
+ERP_B.SUPP_CLASS
+MDG.ZZ_RISK_LEVEL
+S4.BusinessPartner.SupplierRisk</code></pre>
+<p>The same Attribute can have several endpoints.</p>
+<p>One physical endpoint can also be misleadingly named.</p>
+<p>For example:</p>
+<pre><code class="language-text">CRM_SEGMENT</code></pre>
+<p>may appear related to:</p>
+<pre><code class="language-text">Customer Group</code></pre>
+<p>The names alone do not prove equivalence.</p>
+<p>A Mapping must establish how one representation becomes another.</p>
+<p>A Decision may be required to approve that Mapping.</p>
+<p>This separation prevents the model from assuming that every similarly named field carries the same meaning.</p>
+<p>---</p>
+<h1 id="when-something-should-not-be-an-attribute">When something should not be an attribute</h1>
+<p>Teams often model every column as an Attribute.</p>
+<p>That produces weak semantics.</p>
+<p>A concept may deserve another object type when it has:</p>
+<ul>
+<li>its own lifecycle;</li>
+<li>its own ownership;</li>
+<li>several properties;</li>
+<li>relationships to several entities;</li>
+<li>effective dates;</li>
+<li>evidence;</li>
+<li>approval.</li>
+</ul>
+<p>Consider Tax Exemption.</p>
+<p>A simple implementation might use:</p>
+<pre><code class="language-text">Tax Exempt = Yes/No</code></pre>
+<p>But the real concept may require:</p>
+<ul>
+<li>jurisdiction;</li>
+<li>exemption reason;</li>
+<li>valid-from date;</li>
+<li>valid-to date;</li>
+<li>evidence document;</li>
+<li>approving authority;</li>
+<li>affected tax type.</li>
+</ul>
+<p>That is no longer one scalar Attribute.</p>
+<p>It may be better represented as an Entity or governed Relationship connected to the Supplier.</p>
+<p>The practical rule is:</p>
+<blockquote>When a concept has independent identity, lifecycle or several governed properties, consider modelling it as an Entity rather than compressing it into one Attribute.</blockquote>
+<p>---</p>
+<h1 id="relationship">Relationship</h1>
+<p>A Relationship represents a semantic association between model objects.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Customer participates in Sales Area
+
+Supplier is extended to Purchasing Organisation
+
+Business Partner plays Customer Role
+
+Product is maintained for Plant
+
+Tax Exemption applies to Supplier in Jurisdiction</code></pre>
+<p>A Relationship is not merely a generic edge in a graph.</p>
+<p>It should describe:</p>
+<ul>
+<li>what is connected;</li>
+<li>relationship meaning;</li>
+<li>direction or roles;</li>
+<li>cardinality;</li>
+<li>optionality;</li>
+<li>context;</li>
+<li>lifecycle where relevant.</li>
+</ul>
+<p>A conceptual object might state:</p>
+<pre><code class="language-yaml">---
+id: REL-CUSTOMER-SALES-AREA
+type: Relationship
+name: Customer participates in Sales Area
+from_entity: ENTITY-CUSTOMER
+to_entity: ENTITY-SALES-AREA
+cardinality:
+  from: one
+  to: many
+status: approved
+---</code></pre>
+<p>The exact schema can evolve.</p>
+<p>The key point is that the Relationship carries meaning that cannot be inferred safely from file proximity.</p>
+<p>---</p>
+<h1 id="not-every-reference-is-a-business-relationship">Not every reference is a business relationship</h1>
+<p>Martenweave objects also have technical or governance references:</p>
+<pre><code class="language-text">Attribute references Entity
+Mapping references target endpoint
+Decision affects Rule
+Evidence supports Finding
+Proposal modifies Attribute</code></pre>
+<p>These references form graph edges in the generated index.</p>
+<p>They are not all domain Relationships.</p>
+<p>This distinction matters.</p>
+<p>Compare:</p>
+<pre><code class="language-text">Customer participates in Sales Area</code></pre>
+<p>with:</p>
+<pre><code class="language-text">Decision DEC-017 affects Customer Group</code></pre>
+<p>Both can be traversed as edges.</p>
+<p>Only the first is part of the business model.</p>
+<p>The second is a governance relationship.</p>
+<p>The index may store both as typed edges.</p>
+<p>The canonical metamodel should preserve their different meanings.</p>
+<p>---</p>
+<h1 id="relationship-versus-contextual-entity">Relationship versus contextual entity</h1>
+<p>Some business associations are simple.</p>
+<p>Others carry their own Attributes.</p>
+<p>For example:</p>
+<pre><code class="language-text">Customer — participates in — Sales Area</code></pre>
+<p>If the connection carries:</p>
+<ul>
+<li>Customer Group;</li>
+<li>Shipping Condition;</li>
+<li>Sales Office;</li>
+<li>Pricing Procedure;</li>
+</ul>
+<p>the association becomes a context-bearing business object.</p>
+<p>It can be represented as:</p>
+<pre><code class="language-text">Customer Sales Area</code></pre>
+<p>rather than as a relationship with many attached properties.</p>
+<p>This is a standard modelling trade-off.</p>
+<p>For Martenweave, the decision should favour whichever representation makes:</p>
+<ul>
+<li>granularity;</li>
+<li>ownership;</li>
+<li>mappings;</li>
+<li>physical endpoints;</li>
+<li>rules;</li>
+</ul>
+<p>most explicit.</p>
+<p>The goal is not theoretical purity.</p>
+<p>The goal is reliable governance and traceability.</p>
+<p>---</p>
+<h1 id="rule">Rule</h1>
+<p>A Rule states a condition, constraint, derivation or expected behaviour.</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier Risk is required before activation for strategic supplier organisations.</li>
+<li>Customer Group is required when a Customer Sales Area is active.</li>
+<li>Tax Identifier must match the approved country format.</li>
+<li>Review Status <code>PENDING</code> blocks final distribution.</li>
+<li>CRM Segment may not be copied directly to Customer Group without an approved contextual mapping.</li>
+</ul>
+<p>Rules should be separate from Attributes because one Attribute can have several rules:</p>
+<pre><code class="language-text">Supplier Risk
+├── completeness rule
+├── applicability rule
+├── allowed-value rule
+├── activation rule
+└── distribution rule</code></pre>
+<p>Likewise, one Rule can involve several Attributes.</p>
+<p>Example:</p>
+<pre><code class="language-text">If Supplier Category = STRATEGIC
+and Review Status = CLEARED,
+then Supplier Risk must be present before activation.</code></pre>
+<p>Compressing this logic into one Attribute definition makes it difficult to:</p>
+<ul>
+<li>validate;</li>
+<li>test;</li>
+<li>version;</li>
+<li>reuse;</li>
+<li>override by context;</li>
+<li>connect to implementation.</li>
+</ul>
+<p>---</p>
+<h1 id="rule-type-matters">Rule type matters</h1>
+<p>A useful model distinguishes several rule families.</p>
+<h2 id="definition-rule">Definition rule</h2>
+<p>Clarifies semantic boundaries.</p>
+<p>Example:</p>
+<blockquote>Supplier Risk represents final classification, not review state.</blockquote>
+<h2 id="applicability-rule">Applicability rule</h2>
+<p>Defines where a concept applies.</p>
+<p>Example:</p>
+<blockquote>Tax Identifier rule applies to Portuguese supplier organisations.</blockquote>
+<h2 id="completeness-rule">Completeness rule</h2>
+<p>Defines when a value is required.</p>
+<p>Example:</p>
+<blockquote>Customer Group is required for active Customer Sales Areas.</blockquote>
+<h2 id="validation-rule">Validation rule</h2>
+<p>Defines acceptable values or formats.</p>
+<p>Example:</p>
+<blockquote>Country code must belong to the approved reference list.</blockquote>
+<h2 id="derivation-rule">Derivation rule</h2>
+<p>Defines how a value is calculated.</p>
+<p>Example:</p>
+<blockquote>Risk Category is derived from approved score bands.</blockquote>
+<h2 id="lifecycle-rule">Lifecycle rule</h2>
+<p>Defines permitted states or transitions.</p>
+<p>Example:</p>
+<blockquote><code>PENDING</code> may transition to <code>CLEARED</code> or <code>REJECTED</code>.</blockquote>
+<h2 id="distribution-rule">Distribution rule</h2>
+<p>Defines when information can be sent downstream.</p>
+<p>Example:</p>
+<blockquote>Records under review must not be distributed as final master data.</blockquote>
+<p>These distinctions help determine:</p>
+<ul>
+<li>required evidence;</li>
+<li>expected implementation;</li>
+<li>testing approach;</li>
+<li>impact.</li>
+</ul>
+<p>A single generic <code>Rule</code> type can still carry a rule category rather than requiring a separate top-level object type for every family.</p>
+<p>---</p>
+<h1 id="a-rule-is-not-the-same-as-its-implementation">A rule is not the same as its implementation</h1>
+<p>A Rule can be implemented in:</p>
+<ul>
+<li>SAP MDG validation;</li>
+<li>BRFplus;</li>
+<li>ABAP;</li>
+<li>migration transformation;</li>
+<li>source-system control;</li>
+<li>data-quality platform;</li>
+<li>manual stewardship procedure.</li>
+</ul>
+<p>The canonical Rule describes intended behaviour.</p>
+<p>Implementation references describe where the behaviour is enforced.</p>
+<p>This creates a useful comparison:</p>
+<pre><code class="language-text">Canonical rule:
+Supplier Risk blocks activation when missing.
+
+SAP implementation:
+BRFplus rule Z_SUPP_RISK_04.
+
+Migration implementation:
+Readiness validation RULE_018.
+
+Operational procedure:
+AMS review instruction KA-0081.</code></pre>
+<p>If one implementation differs, the Rule does not automatically change.</p>
+<p>The difference becomes an implementation-drift finding.</p>
+<p>SAP currently positions MDG around governed models, semantic relationships, ownership, validated values, workflows and business rules. Martenweave’s role is not to replace that operational enforcement, but to preserve the independent model context that implementations should follow.</p>
+<p>---</p>
+<h1 id="mapping">Mapping</h1>
+<p>A Mapping explains how one representation relates or transforms into another.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Legacy supplier class → Supplier Risk
+
+CRM Segment → Customer Group
+
+Legacy country code → ISO country code
+
+Source table column → SAP field endpoint</code></pre>
+<p>A Mapping should not be treated as a generic Relationship.</p>
+<p>A Relationship says:</p>
+<blockquote>These concepts are associated.</blockquote>
+<p>A Mapping says:</p>
+<blockquote>This source representation is transformed or interpreted as this target representation under defined conditions.</blockquote>
+<p>A Mapping may require:</p>
+<ul>
+<li>source object;</li>
+<li>target object;</li>
+<li>transformation;</li>
+<li>applicability;</li>
+<li>default behaviour;</li>
+<li>rejected values;</li>
+<li>owner;</li>
+<li>evidence;</li>
+<li>decision;</li>
+<li>status.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">---
+id: MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+type: Mapping
+source: FEP-CRM-CUSTOMER-SEGMENT
+target: FEP-S4-KNVV-KDGRP
+business_attribute: ATTR-CUSTOMER-GROUP
+status: pending_review
+decision:
+  - DEC-CUSTOMER-GROUP-SOURCE-017
+---</code></pre>
+<p>Again, this demonstrates the distinction rather than the exact current schema.</p>
+<p>---</p>
+<h1 id="mapping-is-not-proof-of-equivalence">Mapping is not proof of equivalence</h1>
+<p>A mapping can express several different treatments:</p>
+<h2 id="direct-equivalence">Direct equivalence</h2>
+<pre><code class="language-text">A → B</code></pre>
+<h2 id="value-conversion">Value conversion</h2>
+<pre><code class="language-text">01 → STANDARD
+02 → STRATEGIC</code></pre>
+<h2 id="conditional-transformation">Conditional transformation</h2>
+<pre><code class="language-text">When Country = PT and Supplier Type = ORGANISATION,
+source value X becomes target value Y.</code></pre>
+<h2 id="aggregation">Aggregation</h2>
+<p>Several source values contribute to one target.</p>
+<h2 id="split">Split</h2>
+<p>One source value populates several target attributes.</p>
+<h2 id="enrichment">Enrichment</h2>
+<p>Target value requires source data plus external evidence.</p>
+<h2 id="rejection">Rejection</h2>
+<p>No safe target mapping exists.</p>
+<p>Therefore, the existence of a Mapping does not mean source and target are semantically identical.</p>
+<p>The Mapping object should make the treatment explicit.</p>
+<p>---</p>
+<h1 id="fieldendpoint">FieldEndpoint</h1>
+<p>The physical endpoint object connects the semantic model to implementation.</p>
+<p>A FieldEndpoint can represent:</p>
+<ul>
+<li>table field;</li>
+<li>API property;</li>
+<li>file column;</li>
+<li>message element;</li>
+<li>MDM attribute;</li>
+<li>report dimension.</li>
+</ul>
+<p>Useful properties may include:</p>
+<ul>
+<li>system;</li>
+<li>object or table;</li>
+<li>field;</li>
+<li>path;</li>
+<li>datatype;</li>
+<li>length;</li>
+<li>organisational context;</li>
+<li>source or target role;</li>
+<li>technical owner.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">---
+id: FEP-S4-KNVV-KDGRP
+type: FieldEndpoint
+system: S4
+object: KNVV
+field: KDGRP
+business_attribute: ATTR-CUSTOMER-GROUP
+status: active
+---</code></pre>
+<p>Separating endpoints from Attributes enables:</p>
+<ul>
+<li>field-level lineage;</li>
+<li>migration-gap detection;</li>
+<li>target impact analysis;</li>
+<li>system replacement;</li>
+<li>comparison between physical and business definitions.</li>
+</ul>
+<p>Martenweave’s dataset-gap workflow compares dataset fields with expected FieldEndpoints, while its trace and impact commands connect business Attributes to physical SAP endpoints and related evidence.</p>
+<p>---</p>
+<h1 id="dataset-and-dataset-field">Dataset and dataset field</h1>
+<p>A Dataset represents an observed data source used for:</p>
+<ul>
+<li>profiling;</li>
+<li>migration readiness;</li>
+<li>testing;</li>
+<li>evidence;</li>
+<li>gap detection.</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-text">ERP_B Customer Extract
+Mock Load 3 Supplier File
+SAP Production Customer Snapshot
+MDG Validation Export</code></pre>
+<p>A DatasetField represents a concrete column or path in that dataset.</p>
+<p>The distinction between DatasetField and FieldEndpoint can be useful.</p>
+<p>A FieldEndpoint describes a registered physical location in a system or interface.</p>
+<p>A DatasetField describes what appeared in one specific extract.</p>
+<p>For example:</p>
+<pre><code class="language-text">Registered endpoint:
+ERP_B.CUSTOMER.SEGMENT
+
+Observed dataset field:
+SEGMENT_CODE in extract dated 2026-07-10</code></pre>
+<p>The two may be linked.</p>
+<p>They are not necessarily identical.</p>
+<p>This allows Martenweave to detect:</p>
+<ul>
+<li>expected field absent from extract;</li>
+<li>unexpected field present;</li>
+<li>renamed column;</li>
+<li>different datatype;</li>
+<li>schema drift.</li>
+</ul>
+<p>---</p>
+<h1 id="evidence">Evidence</h1>
+<p>Evidence is not part of the business model in the same way as an Entity or Attribute.</p>
+<p>It supports claims about the model.</p>
+<p>Evidence may include:</p>
+<ul>
+<li>dataset profile;</li>
+<li>ticket;</li>
+<li>validation report;</li>
+<li>workshop outcome;</li>
+<li>source-system analysis;</li>
+<li>SAP configuration extract;</li>
+<li>legal interpretation;</li>
+<li>test result.</li>
+</ul>
+<p>An Evidence object should answer:</p>
+<ul>
+<li>What was observed?</li>
+<li>Where did it come from?</li>
+<li>When was it collected?</li>
+<li>Which model objects does it concern?</li>
+<li>How reliable is it?</li>
+<li>Can the source be retrieved?</li>
+</ul>
+<p>Evidence should not silently change the model.</p>
+<p>It can support:</p>
+<ul>
+<li>Finding;</li>
+<li>Decision;</li>
+<li>PatchProposal;</li>
+<li>closure verification.</li>
+</ul>
+<p>---</p>
+<h1 id="decision">Decision</h1>
+<p>A Decision records an authorised choice.</p>
+<p>Examples:</p>
+<ul>
+<li>CRM Segment is not automatically equivalent to Customer Group.</li>
+<li>Supplier Review Status must be separate from Supplier Risk.</li>
+<li>Portugal may use a contextual Tax Exemption rule.</li>
+<li>ERP_B remains a temporary source pending remediation.</li>
+</ul>
+<p>A Decision is distinct from a Rule.</p>
+<p>The Decision explains what was chosen and why.</p>
+<p>The Rule expresses the resulting governed behaviour.</p>
+<p>Example:</p>
+<pre><code class="language-text">Decision:
+Supplier Review Status must be separate from final risk classification.
+
+Resulting objects:
+ATTR-SUPPLIER-REVIEW-STATUS
+RULE-SUPPLIER-RISK-ACTIVATION
+REL-SUPPLIER-RISK-REVIEW</code></pre>
+<p>Keeping Decisions as objects preserves institutional memory and prevents future teams from reversing earlier conclusions without seeing the evidence.</p>
+<p>---</p>
+<h1 id="finding">Finding</h1>
+<p>A Finding represents an interpreted issue or gap discovered through evidence.</p>
+<p>Examples:</p>
+<ul>
+<li>source cannot provide Supplier Risk;</li>
+<li>mapping granularity is ambiguous;</li>
+<li>SAP configuration differs from approved Rule;</li>
+<li>local field has become a shadow model;</li>
+<li>ownership is missing.</li>
+</ul>
+<p>A Finding should not be modelled as a Rule or Decision.</p>
+<p>It is the object that connects:</p>
+<pre><code class="language-text">observation
+→ investigation
+→ decision
+→ proposal
+→ implementation
+→ verification</code></pre>
+<p>The Finding may eventually be closed.</p>
+<p>The resulting model objects remain.</p>
+<p>---</p>
+<h1 id="patchproposal">PatchProposal</h1>
+<p>A PatchProposal describes a possible canonical change.</p>
+<p>It can propose:</p>
+<ul>
+<li>adding an Attribute;</li>
+<li>changing a definition;</li>
+<li>retiring a Mapping;</li>
+<li>adding a Relationship;</li>
+<li>changing Rule applicability;</li>
+<li>assigning an owner.</li>
+</ul>
+<p>The proposal remains separate from approved truth.</p>
+<p>Martenweave’s current workflow explicitly uses <code>PatchProposal</code> objects for AI- or automation-generated changes, keeps them in reviewable status and requires human approval before canonical state changes.</p>
+<p>A proposal should reference:</p>
+<ul>
+<li>affected objects;</li>
+<li>evidence;</li>
+<li>finding;</li>
+<li>decision required;</li>
+<li>anticipated impact.</li>
+</ul>
+<p>This makes change review more precise than editing a document and asking reviewers to find the semantic delta themselves.</p>
+<p>---</p>
+<h1 id="the-metamodel-should-not-become-an-ontology-project">The metamodel should not become an ontology project</h1>
+<p>Once teams begin distinguishing object types, there is a temptation to model everything.</p>
+<p>Possible additions include:</p>
+<ul>
+<li>processes;</li>
+<li>capabilities;</li>
+<li>applications;</li>
+<li>APIs;</li>
+<li>organisations;</li>
+<li>policies;</li>
+<li>controls;</li>
+<li>events;</li>
+<li>services;</li>
+<li>projects;</li>
+<li>requirements;</li>
+<li>risks.</li>
+</ul>
+<p>Some may become useful.</p>
+<p>Adding them too early would weaken the product.</p>
+<p>Martenweave’s first value comes from a smaller chain:</p>
+<pre><code class="language-text">Domain
+→ Entity
+→ Attribute
+→ FieldEndpoint
+→ Mapping
+→ Rule
+→ Evidence
+→ Decision
+→ Proposal</code></pre>
+<p>This chain already supports:</p>
+<ul>
+<li>dataset gaps;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>migration readiness;</li>
+<li>model change review;</li>
+<li>AMS investigations.</li>
+</ul>
+<p>The criterion for adding another object type should be:</p>
+<blockquote>Does this object enable a concrete validation, trace, impact or review capability that cannot be represented safely with the current model?</blockquote>
+<p>If not, it may belong in Markdown explanation or an external system.</p>
+<p>---</p>
+<h1 id="avoid-the-universal-object-anti-pattern">Avoid the universal-object anti-pattern</h1>
+<p>A superficially flexible design could use one object:</p>
+<pre><code class="language-yaml">type: Thing
+properties: {}
+links: []</code></pre>
+<p>This makes every concept technically representable.</p>
+<p>It removes most deterministic meaning.</p>
+<p>The validator cannot easily determine:</p>
+<ul>
+<li>whether a Mapping has valid endpoints;</li>
+<li>whether a Rule has applicability;</li>
+<li>whether a Decision has authority;</li>
+<li>whether a Relationship has valid cardinality;</li>
+<li>whether an Attribute belongs to an Entity.</li>
+</ul>
+<p>A metamodel needs enough explicit types to make invalid combinations detectable.</p>
+<p>Flexibility without constraints produces a graph of labels rather than a governed model.</p>
+<p>---</p>
+<h1 id="avoid-the-universal-link-anti-pattern">Avoid the universal-link anti-pattern</h1>
+<p>The same problem appears with relationships.</p>
+<p>A generic edge:</p>
+<pre><code class="language-yaml">from: A
+to: B
+type: related_to</code></pre>
+<p>does not explain whether:</p>
+<ul>
+<li>A maps to B;</li>
+<li>A owns B;</li>
+<li>A is implemented by B;</li>
+<li>A supersedes B;</li>
+<li>A supports B;</li>
+<li>A applies to B;</li>
+<li>A depends on B.</li>
+</ul>
+<p>Typed relationships enable:</p>
+<ul>
+<li>meaningful trace;</li>
+<li>targeted impact;</li>
+<li>validation;</li>
+<li>useful search results.</li>
+</ul>
+<p>The generated index may use one general edge table internally.</p>
+<p>The canonical relationship type should remain explicit.</p>
+<p>---</p>
+<h1 id="ownership-applies-differently-by-object-type">Ownership applies differently by object type</h1>
+<p>Ownership should not be represented as one generic <code>owner</code> field with no meaning.</p>
+<p>Different objects may have different authority:</p>
+<h2 id="entity-owner">Entity owner</h2>
+<p>Owns the governed business object.</p>
+<h2 id="attribute-owner">Attribute owner</h2>
+<p>Owns definition and applicability of one concept.</p>
+<h2 id="rule-owner">Rule owner</h2>
+<p>Owns policy or control behaviour.</p>
+<h2 id="mapping-owner">Mapping owner</h2>
+<p>Owns transformation design and maintenance.</p>
+<h2 id="endpoint-owner">Endpoint owner</h2>
+<p>Owns the technical system representation.</p>
+<h2 id="evidence-owner">Evidence owner</h2>
+<p>Owns collection or verification of evidence.</p>
+<h2 id="decision-authority">Decision authority</h2>
+<p>Can approve the model choice.</p>
+<p>One person may hold several roles.</p>
+<p>The roles should not be treated as automatically interchangeable.</p>
+<p>---</p>
+<h1 id="lifecycle-also-differs-by-object-type">Lifecycle also differs by object type</h1>
+<p>An Attribute may be:</p>
+<pre><code class="language-text">draft
+approved
+retired</code></pre>
+<p>A Proposal may be:</p>
+<pre><code class="language-text">draft
+pending_review
+approved
+rejected
+applied</code></pre>
+<p>A Finding may be:</p>
+<pre><code class="language-text">observed
+classified
+decision_required
+actioned
+verified
+closed</code></pre>
+<p>A Dataset may be:</p>
+<pre><code class="language-text">registered
+profiled
+superseded
+archived</code></pre>
+<p>Trying to use one universal status list makes the state model vague.</p>
+<p>Object-type-specific lifecycle rules allow deterministic validation.</p>
+<p>---</p>
+<h1 id="a-worked-customer-group-model">A worked Customer Group model</h1>
+<p>The following conceptual chain illustrates the separation.</p>
+<pre><code class="language-text">DOMAIN-CUSTOMER
+└── ENTITY-CUSTOMER
+    └── REL-CUSTOMER-SALES-AREA
+        └── ENTITY-CUSTOMER-SALES-AREA
+            └── ATTR-CUSTOMER-GROUP</code></pre>
+<p>Physical representations:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
+FEP-S4-KNVV-KDGRP</code></pre>
+<p>Transformation:</p>
+<pre><code class="language-text">MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP</code></pre>
+<p>Governed behaviour:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-APPLICABILITY
+RULE-CUSTOMER-GROUP-COMPLETENESS</code></pre>
+<p>Supporting context:</p>
+<pre><code class="language-text">EVID-ERP-B-CUSTOMER-GROUP-PROFILE
+DEC-CUSTOMER-GROUP-SOURCE-017
+PATCH-CUSTOMER-GROUP-ENRICHMENT-004</code></pre>
+<p>This structure allows precise questions:</p>
+<ul>
+<li>Which Entity owns Customer Group?</li>
+<li>Which SAP field implements it?</li>
+<li>Which source feeds it?</li>
+<li>Which Rule makes it mandatory?</li>
+<li>Which Decision rejected direct equivalence?</li>
+<li>Which Dataset exposed the gap?</li>
+<li>Which Proposal is pending?</li>
+</ul>
+<p>One spreadsheet row cannot support this investigation reliably.</p>
+<p>---</p>
+<h1 id="a-worked-supplier-risk-model">A worked Supplier Risk model</h1>
+<p>Business structure:</p>
+<pre><code class="language-text">ENTITY-SUPPLIER
+├── ATTR-SUPPLIER-RISK
+└── ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>Rules:</p>
+<pre><code class="language-text">RULE-RISK-REQUIRED-BEFORE-ACTIVATION
+RULE-PENDING-REVIEW-BLOCKS-DISTRIBUTION</code></pre>
+<p>Physical endpoints:</p>
+<pre><code class="language-text">FEP-ERP-B-RISK
+FEP-S4-SUPPLIER-RISK
+FEP-S4-REVIEW-STATUS</code></pre>
+<p>Evidence and governance:</p>
+<pre><code class="language-text">EVID-ERP-B-RISK-GAP
+FIND-RISK-SOURCE-CAPABILITY
+DEC-SEPARATE-RISK-AND-REVIEW
+PATCH-ADD-REVIEW-STATUS</code></pre>
+<p>The separation prevents <code>UNDER_REVIEW</code> from being added as another risk classification merely because it solves an operational problem.</p>
+<p>---</p>
+<h1 id="what-the-validator-can-do-with-typed-objects">What the validator can do with typed objects</h1>
+<p>Once the metamodel distinguishes object types, Martenweave can check:</p>
+<ul>
+<li>every Attribute belongs to an Entity;</li>
+<li>every Mapping has valid source and target types;</li>
+<li>every physical endpoint identifies a system;</li>
+<li>every local Relationship references valid contexts;</li>
+<li>every approved Rule references existing governed objects;</li>
+<li>every Proposal identifies affected objects;</li>
+<li>every Decision has an authority;</li>
+<li>every retired Attribute has no unresolved active dependants;</li>
+<li>every DatasetField used in a Mapping is registered;</li>
+<li>every Finding promoted to change has evidence.</li>
+</ul>
+<p>These checks would be impossible or unreliable in a universal document model.</p>
+<p>---</p>
+<h1 id="what-trace-and-impact-gain-from-typed-objects">What trace and impact gain from typed objects</h1>
+<p>A trace operation can distinguish direction and meaning.</p>
+<p>Example:</p>
+<pre><code class="language-text">upstream source endpoint
+→ Mapping
+→ business Attribute
+→ target endpoint
+→ Rule</code></pre>
+<p>Impact can distinguish consequences:</p>
+<pre><code class="language-text">Changing Attribute definition
+may affect:
+- Mappings;
+- Rules;
+- Decisions;
+- endpoints;
+- datasets;
+- proposals.
+
+Changing one FieldEndpoint
+may affect:
+- implementation mappings;
+- dataset gaps;
+- tests;
+- interfaces;
+but not necessarily the business definition.</code></pre>
+<p>Typed objects prevent impact reports from becoming one undifferentiated list of “related items.”</p>
+<p>---</p>
+<h1 id="business-and-physical-models-should-remain-connected-not-merged">Business and physical models should remain connected, not merged</h1>
+<p>A purely conceptual model can become detached from implementation.</p>
+<p>A purely physical model becomes a catalogue of fields without business meaning.</p>
+<p>Martenweave should hold the connection:</p>
+<pre><code class="language-text">Business Entity
+→ business Attribute
+→ Mapping
+→ physical FieldEndpoint</code></pre>
+<p>and then extend it with governance:</p>
+<pre><code class="language-text">Evidence
+→ Finding
+→ Decision
+→ Rule or model change</code></pre>
+<p>This is the distinctive value of the registry.</p>
+<p>It does not stop at ER modelling.</p>
+<p>It does not stop at technical metadata.</p>
+<p>It links semantic, physical and decision layers.</p>
+<p>---</p>
+<h1 id="a-model-object-should-answer-one-primary-question">A model object should answer one primary question</h1>
+<p>A useful design heuristic is:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Object</th><th scope="col">Primary question</th></tr></thead><tbody><tr><td>Domain</td><td>Which governance area does this belong to?</td></tr><tr><td>Entity</td><td>What kind of business thing or context is governed?</td></tr><tr><td>Attribute</td><td>What property is governed?</td></tr><tr><td>Relationship</td><td>How are governed things associated?</td></tr><tr><td>Rule</td><td>What condition or behaviour must hold?</td></tr><tr><td>Mapping</td><td>How does one representation become another?</td></tr><tr><td>FieldEndpoint</td><td>Where does the data physically appear?</td></tr><tr><td>Dataset</td><td>What observed data source provides evidence?</td></tr><tr><td>Evidence</td><td>What was observed or documented?</td></tr><tr><td>Finding</td><td>What interpreted problem exists?</td></tr><tr><td>Decision</td><td>What was authorised?</td></tr><tr><td>PatchProposal</td><td>What canonical change is suggested?</td></tr></tbody></table></div>
+<p>When one object attempts to answer several unrelated questions, it may need to be split.</p>
+<p>---</p>
+<h1 id="common-modelling-mistakes">Common modelling mistakes</h1>
+<h2 id="sap-field-modelled-as-business-attribute">SAP field modelled as business Attribute</h2>
+<p>The canonical concept becomes tied to one implementation.</p>
+<h2 id="organisational-attribute-attached-to-central-entity">Organisational Attribute attached to central Entity</h2>
+<p>Granularity is lost.</p>
+<h2 id="workflow-status-stored-as-classification-value">Workflow status stored as classification value</h2>
+<p>Lifecycle and business meaning become mixed.</p>
+<h2 id="mapping-represented-as-generic-relationship">Mapping represented as generic Relationship</h2>
+<p>Transformation and applicability disappear.</p>
+<h2 id="rule-stored-only-in-prose">Rule stored only in prose</h2>
+<p>It cannot be validated or tested.</p>
+<h2 id="decision-stored-as-comment">Decision stored as comment</h2>
+<p>The current model loses its rationale.</p>
+<h2 id="dataset-column-treated-as-authoritative-attribute">Dataset column treated as authoritative Attribute</h2>
+<p>Observed structure becomes approved meaning without review.</p>
+<h2 id="local-override-copied-into-global-rule">Local override copied into global Rule</h2>
+<p>Context is lost.</p>
+<h2 id="evidence-copied-into-the-definition">Evidence copied into the definition</h2>
+<p>Observation and policy become indistinguishable.</p>
+<h2 id="proposal-written-directly-into-approved-object">Proposal written directly into approved object</h2>
+<p>Review boundaries disappear.</p>
+<p>---</p>
+<h1 id="how-much-structure-is-enough">How much structure is enough?</h1>
+<p>A model does not become better merely because it contains more objects.</p>
+<p>A pilot should represent only what supports the target investigation.</p>
+<p>For Customer Group, the minimum useful chain may be:</p>
+<pre><code class="language-text">Customer Sales Area
+Customer Group
+CRM Segment endpoint
+KNVV-KDGRP endpoint
+Mapping
+applicability Rule
+source Decision
+dataset Evidence</code></pre>
+<p>That is enough to demonstrate:</p>
+<ul>
+<li>semantic granularity;</li>
+<li>source-to-target trace;</li>
+<li>dataset gap;</li>
+<li>impact;</li>
+<li>proposal review.</li>
+</ul>
+<p>Do not begin by modelling every SAP Business Partner field.</p>
+<p>Choose a critical chain where the distinctions matter.</p>
+<p>---</p>
+<h1 id="the-metamodel-should-evolve-through-real-cases">The metamodel should evolve through real cases</h1>
+<p>New object types and properties should emerge from repeated limitations.</p>
+<p>For example:</p>
+<ul>
+<li>recurring temporary treatments may justify a <code>Deviation</code> object;</li>
+<li>complex role assignments may justify richer <code>GovernanceRole</code>;</li>
+<li>repeated implementation comparisons may justify <code>ImplementationEvidence</code>;</li>
+<li>cross-repository dependencies may require explicit external references.</li>
+</ul>
+<p>The sequence should be:</p>
+<pre><code class="language-text">real case
+→ modelling limitation
+→ smallest metamodel extension
+→ validator
+→ example
+→ documented use</code></pre>
+<p>Not:</p>
+<pre><code class="language-text">abstract enterprise ontology
+→ hundreds of unused object types</code></pre>
+<p>This keeps Martenweave aligned with its backend-first MVP.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Entities, Attributes, Relationships and Rules are not academic labels added to make the repository look formal.</p>
+<p>They separate different kinds of truth.</p>
+<p>An Entity establishes the governed thing and its granularity.</p>
+<p>An Attribute establishes a property and its meaning.</p>
+<p>A Relationship establishes how governed things are associated.</p>
+<p>A Rule establishes expected behaviour.</p>
+<p>A Mapping establishes transformation between representations.</p>
+<p>A FieldEndpoint connects the business model to physical systems and datasets.</p>
+<p>Evidence, Findings, Decisions and Proposals connect operational reality to controlled change.</p>
+<p>The practical test is:</p>
+<blockquote>Can the model distinguish Customer Group as a sales-area business Attribute, <code>KNVV-KDGRP</code> as its SAP endpoint, CRM Segment as a separate source concept, the mapping as a proposed transformation, and the approval as an independent Decision?</blockquote>
+<p>When the answer is yes, the registry can validate and trace the model.</p>
+<p>When all five appear in one spreadsheet row called “mapping,” the organisation has stored a conclusion without preserving the structure needed to challenge it.</p>
+<p>Martenweave should remain disciplined here.</p>
+<p>The product does not need every possible enterprise object.</p>
+<p>It needs the smallest metamodel that keeps business meaning, physical implementation, evidence and change authority separate—but connected.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It represents business concepts, physical fields, mappings, rules, evidence and decisions as distinct canonical objects so that validators, people and agents can reason about them without collapsing them into one document or one database row.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently describes its generic model scope as including domains, entities, attributes, relationships, datasets, mappings, rules, evidence, decisions and change proposals. SAP migration and MDM are positioned as the first domain pack rather than the limit of the registry.</p>
+<p>The current product principles define canonical Markdown and YAML objects as the source of truth, require deterministic validation of IDs, types, references and domain context, and keep AI-generated changes in reviewable proposals.</p>
+<p>The public demo uses separate stable IDs for a business Attribute and a physical SAP FieldEndpoint and shows trace and impact across attributes, endpoints, mappings, issues, decisions and evidence.</p>
+<p>The dataset-gap workflow compares observed datasets with expected FieldEndpoints before migration readiness reviews.</p>
+<p>Basic entity–relationship modelling distinguishes entity types, their attributes and relationships between them. Martenweave extends that separation with mappings, physical endpoints, evidence, decisions and proposals needed for operational model governance.</p>
+<p>SAP currently describes SAP Master Data Governance as supporting governed models across business entities, semantic relationships, ownership, validated values, workflows and business-rule controls. Martenweave does not replace those runtime capabilities; it preserves an independent canonical model and evidence layer around them.</p>
+<p>The conceptual YAML and Markdown examples in this article illustrate recommended modelling boundaries. They should not be treated as a complete guarantee of the exact current Martenweave object schemas unless those schemas are separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-deterministic-model-validation-works.html"><span>Previous</span>A migration analyst adds a new mapping:</a><a href="/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html"><span>Next</span>A Customer Group rule changes during an SAP programme.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

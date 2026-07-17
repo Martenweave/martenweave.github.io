@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Single Source of Truth for SAP Mappings | Martenweave</title>
+    <meta
+      name="description"
+      content="Most SAP programmes claim to have a single source of truth for mappings."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html" />
+    <meta property="og:title" content="How to Build a Single Source of Truth for SAP Mappings | Martenweave" />
+    <meta property="og:description" content="Most SAP programmes claim to have a single source of truth for mappings." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a Single Source of Truth for SAP Mappings | Martenweave" />
+    <meta name="twitter:description" content="Most SAP programmes claim to have a single source of truth for mappings." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html",
+                        "name": "How to Build a Single Source of Truth for SAP Mappings | Martenweave",
+                        "description": "Most SAP programmes claim to have a single source of truth for mappings.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build a Single Source of Truth for SAP Mappings",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html#content",
+                        "headline": "How to Build a Single Source of Truth for SAP Mappings",
+                        "name": "How to Build a Single Source of Truth for SAP Mappings",
+                        "description": "Most SAP programmes claim to have a single source of truth for mappings.",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build a Single Source of Truth for SAP Mappings</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Build a Single Source of Truth for SAP Mappings</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">Most SAP programmes claim to have a single source of truth for mappings.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#start-by-defining-what-truth-means">Start by defining what “truth” means</a></li><li><a href="#the-goal-is-not-one-physical-file">The goal is not one physical file</a></li><li><a href="#what-the-mapping-source-of-truth-should-contain">What the mapping source of truth should contain</a></li><li><a href="#business-attributes">Business attributes</a></li><li><a href="#source-endpoints">Source endpoints</a></li><li><a href="#target-endpoints">Target endpoints</a></li><li><a href="#mapping-objects">Mapping objects</a></li><li><a href="#transformation-rules">Transformation rules</a></li><li><a href="#value-lists-and-value-mappings">Value lists and value mappings</a></li><li><a href="#contexts">Contexts</a></li><li><a href="#decisions-and-evidence">Decisions and evidence</a></li><li><a href="#status-and-lifecycle">Status and lifecycle</a></li><li><a href="#one-source-of-truth-requires-one-object-identity">One source of truth requires one object identity</a></li><li><a href="#canonical-source-and-generated-views">Canonical source and generated views</a></li><li><a href="#excel-should-remain-part-of-the-workflow">Excel should remain part of the workflow</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>Most SAP programmes claim to have a single source of truth for mappings.</p>
+<p>Usually, this means one workbook has been declared official.</p>
+<p>The programme may store it in SharePoint, Teams or a controlled document repository. Access is restricted. Version history is enabled. One team is responsible for updates.</p>
+<p>This is better than exchanging uncontrolled files by email.</p>
+<p>It is not necessarily a single source of truth.</p>
+<p>The workbook may contain the approved source-to-target fields while important decisions remain elsewhere:</p>
+<ul>
+<li>business definitions in Confluence;</li>
+<li>open questions in Jira;</li>
+<li>value mappings in another spreadsheet;</li>
+<li>transformation logic in migration code;</li>
+<li>target changes in SAP configuration;</li>
+<li>local exceptions in country files;</li>
+<li>data-quality findings in profiling reports;</li>
+<li>test evidence in a testing tool;</li>
+<li>approval history in email or meeting notes.</li>
+</ul>
+<p>The official workbook is one important source.</p>
+<p>The actual truth remains distributed.</p>
+<p>We use a stricter definition:</p>
+<blockquote>A single source of truth is the controlled representation from which the programme can determine the current approved mapping, its meaning, its context, its evidence and its dependencies.</blockquote>
+<p>It does not have to contain every project artefact.</p>
+<p>It must provide a reliable way to connect them.</p>
+<h2 id="start-by-defining-what-truth-means">Start by defining what “truth” means</h2>
+<p>The phrase “single source of truth” is used so often that it can become meaningless.</p>
+<p>For SAP mappings, we believe the programme needs to distinguish at least four kinds of truth.</p>
+<h3 id="business-truth">Business truth</h3>
+<p>What does the attribute mean?</p>
+<p>Who owns the definition?</p>
+<p>Where does it apply?</p>
+<p>Which values are valid?</p>
+<h3 id="design-truth">Design truth</h3>
+<p>How should the business attribute be represented in the target model?</p>
+<p>Which SAP object, entity or field corresponds to it?</p>
+<p>Which rules and contexts apply?</p>
+<h3 id="migration-truth">Migration truth</h3>
+<p>Which legacy data supplies the value?</p>
+<p>How is it transformed?</p>
+<p>Which source values map to which target values?</p>
+<p>What happens when data is missing or invalid?</p>
+<h3 id="implementation-truth">Implementation truth</h3>
+<p>What has actually been configured, coded, tested and deployed?</p>
+<p>These truths should align, but they are not identical.</p>
+<p>A source-to-target workbook often tries to compress all four into one row.</p>
+<p>That is where control begins to break down.</p>
+<h2 id="the-goal-is-not-one-physical-file">The goal is not one physical file</h2>
+<p>A single source of truth does not mean all project information must be stored in one document or application.</p>
+<p>That would create another oversized repository and force every stakeholder into the same working method.</p>
+<p>Different tools remain useful:</p>
+<ul>
+<li>Excel for business review and bulk editing;</li>
+<li>Jira or Azure DevOps for delivery work;</li>
+<li>Confluence or SharePoint for readable documentation;</li>
+<li>SAP MDG for operational governance;</li>
+<li>migration tools for execution;</li>
+<li>test-management tools for evidence;</li>
+<li>Git for controlled model changes;</li>
+<li>profiling tools for dataset analysis.</li>
+</ul>
+<p>The issue is not the number of tools.</p>
+<p>The issue is whether each tool refers to the same model objects and whether the approved state can be reconstructed without manual interpretation.</p>
+<p>A useful architecture looks like this:</p>
+<pre><code class="language-text">Excel, Jira, documentation, datasets, SAP and test tools
+                         ↓
+             Controlled mapping model
+                         ↓
+        Validated views, reports and change history</code></pre>
+<p>The controlled model does not replace every surrounding system.</p>
+<p>It defines the relationships that make their information coherent.</p>
+<h2 id="what-the-mapping-source-of-truth-should-contain">What the mapping source of truth should contain</h2>
+<p>At minimum, a governed mapping model should separate the objects that are often mixed together in workbook rows.</p>
+<h2 id="business-attributes">Business attributes</h2>
+<p>The business attribute should exist independently from the source and target fields.</p>
+<p>For example:</p>
+<pre><code class="language-text">Customer classification</code></pre>
+<p>is a business concept.</p>
+<pre><code class="language-text">LEGACY_CUST.TYPE</code></pre>
+<p>is a source endpoint.</p>
+<pre><code class="language-text">KNVV-KDGRP</code></pre>
+<p>is a physical SAP target endpoint.</p>
+<p>They may be connected, but they are not the same object.</p>
+<p>Separating them allows the programme to change a source system or target implementation without losing the business meaning.</p>
+<h2 id="source-endpoints">Source endpoints</h2>
+<p>Each source endpoint should identify:</p>
+<ul>
+<li>source system;</li>
+<li>table, file or interface;</li>
+<li>column or field;</li>
+<li>data type;</li>
+<li>applicable population;</li>
+<li>extraction method where relevant;</li>
+<li>lifecycle status.</li>
+</ul>
+<p>A field name without a system and context is rarely sufficient.</p>
+<p><code>CUSTOMER_TYPE</code> may exist in several systems and mean something different in each one.</p>
+<h2 id="target-endpoints">Target endpoints</h2>
+<p>The target should identify:</p>
+<ul>
+<li>target system;</li>
+<li>business object or entity;</li>
+<li>physical field;</li>
+<li>organisational context;</li>
+<li>applicable role or process;</li>
+<li>lifecycle status.</li>
+</ul>
+<p>In SAP programmes, the same business concept can appear at central, company-code, sales-area, purchasing-organisation or plant level.</p>
+<p>The context must be explicit.</p>
+<h2 id="mapping-objects">Mapping objects</h2>
+<p>The mapping itself should be a separate object connecting source and target.</p>
+<p>It should contain:</p>
+<ul>
+<li>stable identifier;</li>
+<li>source endpoint;</li>
+<li>target endpoint;</li>
+<li>business attribute;</li>
+<li>applicable context;</li>
+<li>transformation reference;</li>
+<li>owner;</li>
+<li>status;</li>
+<li>approval;</li>
+<li>evidence;</li>
+<li>effective version;</li>
+<li>known exceptions.</li>
+</ul>
+<p>This is different from treating the spreadsheet row number as the mapping identity.</p>
+<p>Rows move. Tabs are renamed. Files are copied.</p>
+<p>A stable mapping identifier can survive those changes.</p>
+<h2 id="transformation-rules">Transformation rules</h2>
+<p>A transformation should be identifiable independently from the mapping.</p>
+<p>This matters because one transformation may be reused by several mappings, or one mapping may require several ordered transformations.</p>
+<p>A transformation should state:</p>
+<ul>
+<li>input;</li>
+<li>condition;</li>
+<li>output;</li>
+<li>treatment of blanks;</li>
+<li>treatment of invalid values;</li>
+<li>applicable context;</li>
+<li>examples;</li>
+<li>owner;</li>
+<li>approval status;</li>
+<li>implementation location.</li>
+</ul>
+<p>“Convert according to business rules” is not a controlled transformation.</p>
+<h2 id="value-lists-and-value-mappings">Value lists and value mappings</h2>
+<p>Field-level mappings and value-level mappings should not be treated as one status.</p>
+<p>A source field can be connected to a target field while many actual source values remain unresolved.</p>
+<p>The model should identify:</p>
+<ul>
+<li>target value list;</li>
+<li>source values;</li>
+<li>target values;</li>
+<li>many-to-one conversions;</li>
+<li>local variations;</li>
+<li>inactive codes;</li>
+<li>unknown values;</li>
+<li>defaults;</li>
+<li>effective dates;</li>
+<li>ownership.</li>
+</ul>
+<p>Value coverage should be checked against actual datasets, not only against an intended list.</p>
+<h2 id="contexts">Contexts</h2>
+<p>Country, company code, sales area, purchasing organisation, plant and business process should be structured objects or explicit references.</p>
+<p>Context should not depend on:</p>
+<ul>
+<li>worksheet names;</li>
+<li>comments;</li>
+<li>colour coding;</li>
+<li>file naming;</li>
+<li>team memory.</li>
+</ul>
+<p>If a mapping applies only to one country, the model should state that directly.</p>
+<h2 id="decisions-and-evidence">Decisions and evidence</h2>
+<p>A mapping source of truth should not preserve only the final result.</p>
+<p>It should retain enough evidence to explain significant decisions.</p>
+<p>For example:</p>
+<ul>
+<li>why several source values were merged;</li>
+<li>why a target field was made mandatory;</li>
+<li>why a default was accepted;</li>
+<li>why one country received an exception;</li>
+<li>why a legacy distinction was removed;</li>
+<li>why a source field was rejected as unreliable.</li>
+</ul>
+<p>The mapping does not need to contain the full meeting transcript.</p>
+<p>It should point to the decision, owner and relevant evidence.</p>
+<h2 id="status-and-lifecycle">Status and lifecycle</h2>
+<p>A single <code>Complete</code> flag is too weak for critical mappings.</p>
+<p>We prefer a lifecycle such as:</p>
+<ul>
+<li>Identified;</li>
+<li>Defined;</li>
+<li>Business approved;</li>
+<li>Architecture approved;</li>
+<li>Implemented;</li>
+<li>Dataset validated;</li>
+<li>Tested;</li>
+<li>Ready;</li>
+<li>Retired.</li>
+</ul>
+<p>This separates the existence of mapping logic from evidence that it works.</p>
+<h2 id="one-source-of-truth-requires-one-object-identity">One source of truth requires one object identity</h2>
+<p>The most important technical principle is stable identity.</p>
+<p>A programme often identifies mappings by:</p>
+<ul>
+<li>row number;</li>
+<li>source and target text;</li>
+<li>worksheet and position;</li>
+<li>a generated sequence in one tool.</li>
+</ul>
+<p>These references are fragile.</p>
+<p>A stable identifier allows several tools to refer to the same object:</p>
+<pre><code class="language-text">MAP-CUSTOMER-0042</code></pre>
+<p>That identifier can appear in:</p>
+<ul>
+<li>the canonical model;</li>
+<li>an exported workbook;</li>
+<li>a Jira issue;</li>
+<li>a test case;</li>
+<li>a migration log;</li>
+<li>an impact report;</li>
+<li>a change request;</li>
+<li>an AMS investigation.</li>
+</ul>
+<p>The tool-specific records remain where they belong.</p>
+<p>The stable identifier connects them.</p>
+<p>Without object identity, “single source of truth” usually means manual text matching.</p>
+<h2 id="canonical-source-and-generated-views">Canonical source and generated views</h2>
+<p>We recommend separating the canonical representation from the views used by stakeholders.</p>
+<p>The canonical source should be:</p>
+<ul>
+<li>structured;</li>
+<li>versioned;</li>
+<li>validatable;</li>
+<li>portable;</li>
+<li>suitable for comparison;</li>
+<li>independent from presentation layout.</li>
+</ul>
+<p>Stakeholders can then receive generated views:</p>
+<h3 id="business-review-view">Business review view</h3>
+<p>Contains definitions, contexts, mappings, value translations, owners and open decisions.</p>
+<h3 id="migration-view">Migration view</h3>
+<p>Contains physical endpoints, transformations, dependencies, dataset coverage and implementation status.</p>
+<h3 id="architecture-view">Architecture view</h3>
+<p>Contains business attributes, model relationships, rules, lineage and impact.</p>
+<h3 id="management-view">Management view</h3>
+<p>Contains readiness, blockers, unresolved ownership and accepted risk.</p>
+<h3 id="ams-view">AMS view</h3>
+<p>Contains operational meaning, mapping history, dependencies, rules and approved exceptions.</p>
+<p>These views can be spreadsheets, reports, diagrams or web pages.</p>
+<p>They do not become competing sources of truth because they are generated from the same controlled model.</p>
+<h2 id="excel-should-remain-part-of-the-workflow">Excel should remain part of the workflow</h2>
+<p>We do not recommend forcing business users to edit YAML files or work directly in Git.</p>
+<p>Excel remains useful because it supports:</p>
+<ul>
+<li>bulk review;</li>
+<li>filtering;</li>
+<li>sorting;</li>
+<li>annotations;</li>
+<li>offline work;</li>
+<li>familiar approval discussions;</li>
+<li>exchange with external teams.</li>
+</ul>
+<p>The important rule is:</p>
+<blockquote>Excel may be a review and import format. It should not silently become a separate approved model.</blockquote>
+<p>A controlled Excel workflow can work like this:</p>
+<ol>
+<li>Export the current approved mappings.</li>
+<li>Include stable identifiers and model versions.</li>
+<li>Allow reviewers to propose changes.</li>
+<li>Import the reviewed workbook.</li>
+<li>Validate the proposed changes.</li>
+<li>Show the differences.</li>
+<li>Approve or reject them.</li>
+<li>Update the canonical model.</li>
+<li>Regenerate the views.</li>
+</ol>
+<p>This preserves Excel’s usability while keeping change control outside manual file merging.</p>
+<h2 id="jira-should-track-work-not-define-the-model">Jira should track work, not define the model</h2>
+<p>Jira or Azure DevOps is appropriate for:</p>
+<ul>
+<li>assigning mapping tasks;</li>
+<li>tracking unresolved questions;</li>
+<li>recording defects;</li>
+<li>planning changes;</li>
+<li>discussing implementation.</li>
+</ul>
+<p>The issue should refer to stable mapping and model identifiers.</p>
+<p>For example:</p>
+<pre><code class="language-text">Issue: Local customer classification cannot be mapped for Spain
+Affected objects:
+- ATTR-CUSTOMER-CLASS
+- MAP-CUSTOMER-0042
+- VLMAP-CUSTCLASS-ES</code></pre>
+<p>The issue contains the delivery discussion.</p>
+<p>The model contains the approved outcome.</p>
+<p>When the issue closes, the programme should be able to verify that the corresponding model objects changed—or that the decision was explicitly to make no change.</p>
+<p>Otherwise, closed tickets and current mappings begin to diverge.</p>
+<h2 id="sap-mdg-should-remain-the-operational-governance-system">SAP MDG should remain the operational governance system</h2>
+<p>SAP currently positions SAP Master Data Governance as a governance layer that unifies master data, policy and metadata. Its capabilities include governed golden records, profiling, matching, consolidation, change-request workflows, validated values, quality monitoring and audit trails.</p>
+<p>That is operational master-data governance.</p>
+<p>The mapping source of truth serves a different purpose.</p>
+<p>It should explain:</p>
+<ul>
+<li>how legacy and external data reaches the governed model;</li>
+<li>what the business attribute means;</li>
+<li>which transformation was approved;</li>
+<li>which source limitations exist;</li>
+<li>which migration exceptions were accepted;</li>
+<li>how target changes affect mappings;</li>
+<li>what evidence supports readiness.</li>
+</ul>
+<p>The SAP configuration remains part of implementation truth.</p>
+<p>It should be linked to the controlled mapping model, not treated as a replacement for the surrounding project knowledge.</p>
+<h2 id="migration-code-should-implement-mappings-not-become-the-only-record-of-them">Migration code should implement mappings, not become the only record of them</h2>
+<p>Transformation logic often becomes more precise in code than in the mapping workbook.</p>
+<p>That is expected.</p>
+<p>Code must handle conditions, nulls, errors, ordering and technical formats.</p>
+<p>The risk appears when the code becomes the only reliable description of the mapping.</p>
+<p>Then business and architecture teams cannot review the rule without reading implementation details, and the model cannot be compared easily with the approved design.</p>
+<p>We recommend maintaining a clear relationship:</p>
+<pre><code class="language-text">Approved transformation rule
+              ↓
+Implementation reference
+              ↓
+Execution and test evidence</code></pre>
+<p>The canonical rule explains the intended behaviour.</p>
+<p>The code implements it.</p>
+<p>Tests provide evidence.</p>
+<p>If the implementation requires a different rule, the model should change through review rather than allowing the code to redefine the mapping silently.</p>
+<h2 id="the-source-of-truth-must-include-actual-data-evidence">The source of truth must include actual data evidence</h2>
+<p>A mapping repository can be internally consistent and still be disconnected from the data.</p>
+<p>We therefore include dataset evidence in the control model.</p>
+<p>For every critical mapping, the programme should be able to determine:</p>
+<ul>
+<li>whether the source column exists;</li>
+<li>how complete it is;</li>
+<li>which values occur;</li>
+<li>whether unexpected values exist;</li>
+<li>whether the current value mapping covers them;</li>
+<li>whether formats are consistent;</li>
+<li>which populations have gaps;</li>
+<li>which extract version was tested.</li>
+</ul>
+<p>The source of truth should not copy every source record.</p>
+<p>It should preserve the profiling results and their relationship to the relevant model objects.</p>
+<p>This turns the mapping repository from a design catalogue into a readiness tool.</p>
+<h2 id="model-baselines-matter">Model baselines matter</h2>
+<p>Mappings should be approved against a defined model baseline.</p>
+<p>Consider a mapping approved in March.</p>
+<p>In April:</p>
+<ul>
+<li>the target field becomes mandatory;</li>
+<li>the target value list changes;</li>
+<li>a country exception is introduced;</li>
+<li>the transformation rule is revised.</li>
+</ul>
+<p>The mapping still exists. Its previous approval may no longer be sufficient.</p>
+<p>A controlled model should identify:</p>
+<ul>
+<li>which version was approved;</li>
+<li>which model change affected it;</li>
+<li>whether revalidation is required;</li>
+<li>which tests must be repeated;</li>
+<li>whether the current dataset still passes.</li>
+</ul>
+<p>Without baseline awareness, the programme can have a source of historical truth rather than current truth.</p>
+<h2 id="change-control-is-what-makes-the-source-authoritative">Change control is what makes the source authoritative</h2>
+<p>A repository becomes authoritative not because management says so, but because approved changes flow through it consistently.</p>
+<p>A practical mapping-change process should include:</p>
+<h3 id="proposal">Proposal</h3>
+<p>The requester identifies the mapping or related objects and describes the proposed change.</p>
+<h3 id="validation">Validation</h3>
+<p>Deterministic checks identify missing references, invalid objects, duplicated identifiers or structural conflicts.</p>
+<h3 id="impact-analysis">Impact analysis</h3>
+<p>The team identifies affected:</p>
+<ul>
+<li>mappings;</li>
+<li>source fields;</li>
+<li>target fields;</li>
+<li>value lists;</li>
+<li>datasets;</li>
+<li>countries;</li>
+<li>rules;</li>
+<li>tests;</li>
+<li>interfaces.</li>
+</ul>
+<h3 id="review">Review</h3>
+<p>Business, architecture, migration and other relevant owners review the parts within their responsibility.</p>
+<h3 id="approval">Approval</h3>
+<p>The approved target state is recorded.</p>
+<h3 id="implementation">Implementation</h3>
+<p>Migration code, MDG configuration, interfaces and tests are updated.</p>
+<h3 id="verification">Verification</h3>
+<p>The programme confirms that implementation and canonical model remain aligned.</p>
+<p>The source of truth is therefore a process as much as a repository.</p>
+<h2 id="avoiding-two-parallel-truths">Avoiding two parallel truths</h2>
+<p>A common failure pattern is creating a model registry without retiring the old approval path.</p>
+<p>The programme then has:</p>
+<ul>
+<li>an official mapping workbook;</li>
+<li>an official model repository.</li>
+</ul>
+<p>Both are updated.</p>
+<p>Neither is consistently authoritative.</p>
+<p>To avoid this, the team must decide explicitly:</p>
+<ul>
+<li>Which representation is canonical?</li>
+<li>Which formats are generated?</li>
+<li>Which formats may propose changes?</li>
+<li>Where does approval occur?</li>
+<li>How are emergency changes reconciled?</li>
+<li>How are local files imported?</li>
+<li>How is divergence detected?</li>
+</ul>
+<p>A source of truth is weakened every time an approved change bypasses it.</p>
+<p>Exceptions may be necessary. They must be visible and reconciled.</p>
+<h2 id="global-and-local-mappings">Global and local mappings</h2>
+<p>Global SAP programmes need a model that supports both standardisation and legitimate variation.</p>
+<p>We recommend separating:</p>
+<ul>
+<li>global mapping rule;</li>
+<li>local extension;</li>
+<li>local override;</li>
+<li>temporary migration exception;</li>
+<li>source-specific transformation.</li>
+</ul>
+<p>These are not the same thing.</p>
+<p>For example, a global customer attribute may map directly in most countries. One country may require a local source conversion because the legacy system uses a different classification.</p>
+<p>The global business definition may remain unchanged.</p>
+<p>The model should show:</p>
+<pre><code class="language-text">Global attribute
+   ├── Global target endpoint
+   ├── Standard mapping rule
+   └── Country-specific source transformation</code></pre>
+<p>This is clearer than copying the global mapping into several country workbooks and modifying each copy.</p>
+<h2 id="ownership-should-attach-to-objects-not-files">Ownership should attach to objects, not files</h2>
+<p>A workbook owner may control updates without owning the business meaning of its contents.</p>
+<p>We separate several responsibilities:</p>
+<ul>
+<li>business definition owner;</li>
+<li>source-data owner;</li>
+<li>target-model owner;</li>
+<li>mapping owner;</li>
+<li>value-list owner;</li>
+<li>implementation owner;</li>
+<li>approver;</li>
+<li>test owner.</li>
+</ul>
+<p>These responsibilities may belong to different people.</p>
+<p>The model should represent them at the relevant object level.</p>
+<p>This makes escalation more precise.</p>
+<p>A missing source column belongs to the source owner.</p>
+<p>An unresolved value translation belongs to the business or value-list owner.</p>
+<p>A target-field ambiguity belongs to the target-model owner.</p>
+<p>A generic workbook owner cannot resolve all three.</p>
+<h2 id="the-source-of-truth-should-be-able-to-answer-questions">The source of truth should be able to answer questions</h2>
+<p>A practical test is whether the programme can answer important questions without assembling a temporary investigation team.</p>
+<p>For example:</p>
+<ul>
+<li>Which source fields populate this SAP attribute?</li>
+<li>Which mappings depend on this value list?</li>
+<li>Which countries use a local exception?</li>
+<li>Which approved mappings have not been tested?</li>
+<li>Which target fields have no reliable source?</li>
+<li>Which mappings changed since the last mock load?</li>
+<li>Which datasets were used to validate them?</li>
+<li>Which issues are still open?</li>
+<li>Which rules will be affected by this model change?</li>
+<li>Which migrated values require post-go-live remediation?</li>
+</ul>
+<p>If the repository cannot answer these questions, it may be storing mappings without governing them.</p>
+<h2 id="a-practical-implementation-pattern">A practical implementation pattern</h2>
+<p>We recommend beginning with a limited domain.</p>
+<p>For example:</p>
+<ul>
+<li>one Business Partner scope;</li>
+<li>one or two source systems;</li>
+<li>50–100 critical mappings;</li>
+<li>current value mappings;</li>
+<li>one representative dataset;</li>
+<li>the most important validation rules;</li>
+<li>current open decisions.</li>
+</ul>
+<h3 id="step-1-inventory-current-sources">Step 1: Inventory current sources</h3>
+<p>Collect:</p>
+<ul>
+<li>mapping workbooks;</li>
+<li>data dictionaries;</li>
+<li>target designs;</li>
+<li>Jira issues;</li>
+<li>value-mapping files;</li>
+<li>validation reports;</li>
+<li>sample datasets.</li>
+</ul>
+<p>Do not immediately merge everything.</p>
+<p>First identify which artefact currently owns which decision.</p>
+<h3 id="step-2-define-canonical-object-types">Step 2: Define canonical object types</h3>
+<p>At minimum:</p>
+<ul>
+<li>Attribute;</li>
+<li>SourceEndpoint;</li>
+<li>TargetEndpoint;</li>
+<li>Mapping;</li>
+<li>TransformationRule;</li>
+<li>ValueList;</li>
+<li>ValueMapping;</li>
+<li>Context;</li>
+<li>Decision;</li>
+<li>Issue.</li>
+</ul>
+<p>Keep the initial model small.</p>
+<h3 id="step-3-assign-stable-identifiers">Step 3: Assign stable identifiers</h3>
+<p>Do not use workbook row numbers.</p>
+<p>Identifiers should remain stable when files and labels change.</p>
+<h3 id="step-4-import-the-current-mappings">Step 4: Import the current mappings</h3>
+<p>Preserve original source references.</p>
+<p>Do not pretend the imported data is clean.</p>
+<p>Flag:</p>
+<ul>
+<li>missing targets;</li>
+<li>missing contexts;</li>
+<li>duplicate mappings;</li>
+<li>unclear transformations;</li>
+<li>missing ownership;</li>
+<li>unresolved values.</li>
+</ul>
+<h3 id="step-5-connect-an-actual-dataset">Step 5: Connect an actual dataset</h3>
+<p>Profile the current extract.</p>
+<p>Compare model expectations with:</p>
+<ul>
+<li>columns;</li>
+<li>completeness;</li>
+<li>value distributions;</li>
+<li>reference values;</li>
+<li>context coverage.</li>
+</ul>
+<h3 id="step-6-validate-the-model">Step 6: Validate the model</h3>
+<p>Check structural consistency before architectural review.</p>
+<h3 id="step-7-generate-role-specific-views">Step 7: Generate role-specific views</h3>
+<p>Export a business review workbook, migration gap report and architecture impact view.</p>
+<h3 id="step-8-establish-the-change-path">Step 8: Establish the change path</h3>
+<p>Define how proposed changes enter the canonical model and how updated views are regenerated.</p>
+<p>The pilot is successful when the programme stops manually reconciling several interpretations of the same mappings.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave around this model.</p>
+<p>Martenweave turns knowledge from spreadsheets, datasets, tickets, validation reports, decisions and SAP context into structured model objects. The current product model supports attributes, contexts, field endpoints, mappings, value lists, rules, issues, decisions and controlled change proposals.</p>
+<p>The canonical source is maintained in readable Markdown and YAML files. Deterministic validators check object identity, references and structural consistency before generated indexes and reports are built. The current core also supports CSV and XLSX review flows, dataset profiling, gap detection, lineage, impact analysis and a PatchProposal-to-ChangeRequest lifecycle.</p>
+<p>For SAP migration scenarios, Martenweave can connect legacy columns to SAP field endpoints, represent different organisational contexts and compare the expected model with actual CSV or XLSX datasets.</p>
+<p>Our intended operating model is:</p>
+<pre><code class="language-text">Integrations bring input.
+Martenweave stores model knowledge.
+Validators check consistency.
+AI proposes changes.
+Humans approve.
+Reports create business value.</code></pre>
+<p>Martenweave does not replace SAP MDG, migration execution, Jira or Excel.</p>
+<p>It gives those tools a shared model reference.</p>
+<h2 id="ai-and-the-mapping-source-of-truth">AI and the mapping source of truth</h2>
+<p>AI can help with mapping work.</p>
+<p>It can:</p>
+<ul>
+<li>extract candidate mappings from documents;</li>
+<li>identify possible duplicates;</li>
+<li>suggest transformation rules;</li>
+<li>compare source and target descriptions;</li>
+<li>detect missing evidence;</li>
+<li>summarise issues;</li>
+<li>draft value mappings;</li>
+<li>propose updates from tickets.</li>
+</ul>
+<p>It should not change the approved mapping model directly.</p>
+<p>An AI suggestion should become a reviewable proposal containing:</p>
+<ul>
+<li>affected objects;</li>
+<li>proposed change;</li>
+<li>source evidence;</li>
+<li>confidence or uncertainty;</li>
+<li>validation results;</li>
+<li>expected impact.</li>
+</ul>
+<p>The team then approves, rejects or modifies the proposal.</p>
+<p>This protects the source of truth from becoming a generated collection of plausible but unverified mappings.</p>
+<p>SAP’s current MDG positioning also emphasises governed models, trusted data and steward workflows. The same governance principle should apply to AI-assisted implementation knowledge.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="declaring-a-workbook-authoritative-without-controlling-other-changes">Declaring a workbook authoritative without controlling other changes</h3>
+<p>The workbook cannot be the source of truth if configuration, code and local files change independently.</p>
+<h3 id="copying-every-project-artefact-into-one-repository">Copying every project artefact into one repository</h3>
+<p>A source of truth should connect relevant evidence, not become an uncontrolled archive.</p>
+<h3 id="modelling-only-physical-fields">Modelling only physical fields</h3>
+<p>Business meaning, context and ownership need independent representation.</p>
+<h3 id="ignoring-actual-datasets">Ignoring actual datasets</h3>
+<p>A clean mapping model can still describe data that does not exist.</p>
+<h3 id="allowing-local-teams-to-maintain-detached-copies">Allowing local teams to maintain detached copies</h3>
+<p>Local variation should be modelled as variation, not hidden in separate truth.</p>
+<h3 id="treating-generated-reports-as-canonical">Treating generated reports as canonical</h3>
+<p>Reports are views. The structured approved model should remain canonical.</p>
+<h3 id="automating-imports-without-review">Automating imports without review</h3>
+<p>Importing a spreadsheet does not mean accepting every row as approved truth.</p>
+<h3 id="measuring-repository-size-instead-of-usefulness">Measuring repository size instead of usefulness</h3>
+<p>The number of model objects is less important than the programme’s ability to answer impact, readiness and ownership questions.</p>
+<h2 id="what-management-should-expect">What management should expect</h2>
+<p>Managers should not be asked to approve a technical repository.</p>
+<p>They should expect measurable improvements in delivery control.</p>
+<p>A functioning source of truth should allow the programme to demonstrate:</p>
+<ul>
+<li>one identifiable approved mapping baseline;</li>
+<li>visible differences between versions;</li>
+<li>clear ownership of critical objects;</li>
+<li>alignment between global and local mappings;</li>
+<li>current dataset coverage;</li>
+<li>explicit unresolved gaps;</li>
+<li>traceability to decisions and evidence;</li>
+<li>impact analysis before change;</li>
+<li>consistent outputs for business, migration and testing;</li>
+<li>a usable handover to AMS.</li>
+</ul>
+<p>These outcomes show that the model is authoritative in practice.</p>
+<h2 id="how-this-reduces-project-risk">How this reduces project risk</h2>
+<p>The immediate benefit is not fewer spreadsheets.</p>
+<p>The benefit is fewer uncontrolled interpretations.</p>
+<p>A governed mapping model reduces the risk of:</p>
+<ul>
+<li>loading against an outdated target;</li>
+<li>applying different rules by workstream;</li>
+<li>losing local exceptions;</li>
+<li>accepting incomplete value mappings;</li>
+<li>repeating design analysis;</li>
+<li>changing fields without understanding dependencies;</li>
+<li>handing over unexplained migration logic;</li>
+<li>becoming dependent on one workbook owner or consultant.</li>
+</ul>
+<p>The main time saving comes from reducing reconstruction.</p>
+<p>A decision should not need to be rediscovered during every design change, mock load and support incident.</p>
+<h2 id="when-a-single-workbook-may-still-be-enough">When a single workbook may still be enough</h2>
+<p>For a small migration, a well-managed workbook may provide sufficient control.</p>
+<p>This is more likely when:</p>
+<ul>
+<li>there is one source system;</li>
+<li>one target context;</li>
+<li>few stakeholders;</li>
+<li>limited value conversion;</li>
+<li>a stable model;</li>
+<li>low change volume;</li>
+<li>short project duration;</li>
+<li>low cost of error.</li>
+</ul>
+<p>In that case, the workbook can be the canonical source if:</p>
+<ul>
+<li>ownership is clear;</li>
+<li>changes are controlled;</li>
+<li>versions are managed;</li>
+<li>the current dataset is checked;</li>
+<li>approvals are explicit;</li>
+<li>the document can be handed over.</li>
+</ul>
+<p>We do not recommend introducing a registry solely because the project uses Excel.</p>
+<p>We recommend it when the relationships have outgrown what one document can reliably control.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>A single source of truth for SAP mappings is not one file with an official label.</p>
+<p>It is a controlled model that can explain:</p>
+<ul>
+<li>what the attribute means;</li>
+<li>where the value comes from;</li>
+<li>where it goes;</li>
+<li>how it changes;</li>
+<li>which context applies;</li>
+<li>who approved the rule;</li>
+<li>which evidence supports it;</li>
+<li>what will be affected if it changes.</li>
+</ul>
+<p>The programme may continue to use many tools.</p>
+<p>The truth becomes single when those tools refer to the same stable model objects and when approved changes flow through one controlled process.</p>
+<p>Our recommendation is therefore not “replace Excel.”</p>
+<p>It is:</p>
+<blockquote>Separate the canonical mapping model from the formats used to collect, review, implement and report it.</blockquote>
+<p>That distinction allows business teams to keep familiar working methods while giving architects and delivery leads the traceability, validation and change control needed for a complex SAP programme.</p>
+<p>A repository becomes the source of truth only when the team can trust it more than individual documents, environments or memories.</p>
+<p>That trust has to be designed.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping teams connect business meaning, physical mappings, datasets, decisions and change history without forcing every part of the programme into another large platform.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer for business-critical data, with governed models, golden records, profiling, matching, consolidation, steward workflows, validated values, quality monitoring and audit trails.</p>
+<p>SAP also describes a single source of truth in the context of uniting SAP and third-party master-data sources. Our use of the term in this article is narrower: the controlled implementation model for SAP mappings and their supporting decisions.</p>
+<p>Martenweave’s public product materials describe canonical model objects, deterministic validation, generated indexes, spreadsheet review flows, dataset profiling, gap detection, traceability, impact analysis and controlled change proposals.</p>
+<p>The Martenweave SAP migration scenario documents explicit source-to-target mappings, organisational context and dataset comparison.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-mapping-completion-is-not-migration-readiness.html"><span>Previous</span>A migration programme reports that 96% of mappings are complete.</a><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html"><span>Next</span>Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

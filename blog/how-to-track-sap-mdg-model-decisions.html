@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Track SAP MDG Model Decisions | Martenweave</title>
+    <meta
+      name="description"
+      content="During a design workshop, the programme agrees that a supplier classification should be mandatory."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html" />
+    <meta property="og:title" content="How to Track SAP MDG Model Decisions | Martenweave" />
+    <meta property="og:description" content="During a design workshop, the programme agrees that a supplier classification should be mandatory." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Track SAP MDG Model Decisions | Martenweave" />
+    <meta name="twitter:description" content="During a design workshop, the programme agrees that a supplier classification should be mandatory." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html",
+                        "name": "How to Track SAP MDG Model Decisions | Martenweave",
+                        "description": "During a design workshop, the programme agrees that a supplier classification should be mandatory.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Track SAP MDG Model Decisions",
+                                    "item": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html#content",
+                        "headline": "How to Track SAP MDG Model Decisions",
+                        "name": "How to Track SAP MDG Model Decisions",
+                        "description": "During a design workshop, the programme agrees that a supplier classification should be mandatory.",
+                        "url": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-track-sap-mdg-model-decisions.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Track SAP MDG Model Decisions</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Track SAP MDG Model Decisions</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">During a design workshop, the programme agrees that a supplier classification should be mandatory.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#sap-mdg-records-operational-changes-but-implementation-decisions-extend-beyond-records">SAP MDG records operational changes, but implementation decisions extend beyond records</a></li><li><a href="#a-ticket-is-not-automatically-a-decision">A ticket is not automatically a decision</a></li><li><a href="#a-meeting-conclusion-is-not-durable-enough">A meeting conclusion is not durable enough</a></li><li><a href="#what-qualifies-as-a-model-decision">What qualifies as a model decision</a></li><li><a href="#the-anatomy-of-a-useful-decision-record">The anatomy of a useful decision record</a></li><li><a href="#decision-identifier">Decision identifier</a></li><li><a href="#title">Title</a></li><li><a href="#problem">Problem</a></li><li><a href="#affected-model-objects">Affected model objects</a></li><li><a href="#alternatives">Alternatives</a></li><li><a href="#selected-option">Selected option</a></li><li><a href="#rationale">Rationale</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#approvers">Approvers</a></li><li><a href="#effective-scope">Effective scope</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>During a design workshop, the programme agrees that a supplier classification should be mandatory.</p>
+<p>The decision appears straightforward.</p>
+<p>The architect updates the design deck. The SAP MDG team configures a validation. The migration team adds the field to its mapping workbook. A Jira ticket is closed with the comment:</p>
+<blockquote>Confirmed with business. Please proceed.</blockquote>
+<p>Eight months later, the rule blocks a large population of suppliers.</p>
+<p>The new business owner asks why the classification is mandatory.</p>
+<p>The design deck says that it supports compliance. The ticket contains several competing options. One workshop participant remembers that the requirement applied only to high-risk suppliers. Another believes it was introduced as a temporary control until source-data remediation was complete.</p>
+<p>Production configuration applies the rule to all active suppliers.</p>
+<p>The programme can see what was implemented.</p>
+<p>It cannot reconstruct exactly what was decided.</p>
+<p>This is not a rare documentation gap. It is a structural weakness in how model decisions are recorded.</p>
+<p>Most projects track activities well:</p>
+<ul>
+<li>a workshop happened;</li>
+<li>an issue was raised;</li>
+<li>a document was updated;</li>
+<li>configuration was transported;</li>
+<li>testing was completed.</li>
+</ul>
+<p>They are often less precise about the decision connecting those activities:</p>
+<ul>
+<li>What exactly changed?</li>
+<li>Which model objects were affected?</li>
+<li>Which alternatives were rejected?</li>
+<li>What evidence supported the choice?</li>
+<li>Who had authority to approve it?</li>
+<li>Under which conditions should it be reviewed?</li>
+<li>Which implementation artefacts were expected to change?</li>
+</ul>
+<p>A decision should not disappear into the documents and tickets created around it.</p>
+<p>It should remain an identifiable part of the model history.</p>
+<blockquote>A model decision is the controlled explanation of why the approved model has one state rather than another.</blockquote>
+<p>Without that explanation, teams can maintain configuration but struggle to govern change.</p>
+<h2 id="sap-mdg-records-operational-changes-but-implementation-decisions-extend-beyond-records">SAP MDG records operational changes, but implementation decisions extend beyond records</h2>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer that combines master data, policy and metadata, with governed models, collaborative workflows, business rules, data-quality controls and an audit trail of data changes.</p>
+<p>These capabilities are central to operational governance.</p>
+<p>They allow organisations to control:</p>
+<ul>
+<li>who changes master data;</li>
+<li>which values are valid;</li>
+<li>which approvals are required;</li>
+<li>how records are matched, consolidated or activated;</li>
+<li>how changes are audited.</li>
+</ul>
+<p>An implementation programme also makes decisions about the model surrounding those processes.</p>
+<p>Examples include:</p>
+<ul>
+<li>why one attribute exists;</li>
+<li>why another was excluded;</li>
+<li>why a rule is global or local;</li>
+<li>why one source was selected as authoritative;</li>
+<li>why several legacy values were merged;</li>
+<li>why a temporary default was accepted;</li>
+<li>why a workflow step was added;</li>
+<li>why a target extension was preferred over standard behaviour;</li>
+<li>why a dataset gap was accepted for one migration wave.</li>
+</ul>
+<p>These decisions may influence SAP MDG configuration, but they are usually discussed across a wider toolset:</p>
+<ul>
+<li>workshops;</li>
+<li>Jira;</li>
+<li>Confluence;</li>
+<li>Excel mappings;</li>
+<li>architecture boards;</li>
+<li>test defects;</li>
+<li>migration reports;</li>
+<li>email;</li>
+<li>meeting notes.</li>
+</ul>
+<p>The organisation needs to preserve them as part of the implementation model.</p>
+<h2 id="a-ticket-is-not-automatically-a-decision">A ticket is not automatically a decision</h2>
+<p>A Jira issue is an effective way to track work.</p>
+<p>It can show:</p>
+<ul>
+<li>requester;</li>
+<li>assignee;</li>
+<li>discussion;</li>
+<li>status;</li>
+<li>attachments;</li>
+<li>implementation tasks;</li>
+<li>closure date.</li>
+</ul>
+<p>The issue may contain a decision.</p>
+<p>It is not necessarily a clean decision record.</p>
+<p>A typical issue thread may include:</p>
+<ol>
+<li>Initial request.</li>
+<li>Technical objection.</li>
+<li>Local business clarification.</li>
+<li>Alternative proposal.</li>
+<li>Temporary workaround.</li>
+<li>Meeting note.</li>
+<li>Final implementation comment.</li>
+<li>Closure.</li>
+</ol>
+<p>Months later, a reader must infer which statement represents the approved model.</p>
+<p>The ticket summary may no longer reflect the result.</p>
+<p>The ticket may have been closed because configuration was delivered, even though the underlying business interpretation remained provisional.</p>
+<p>We separate the roles:</p>
+<pre><code class="language-text">Issue:
+Tracks the problem and work.
+
+Decision:
+Records the approved outcome and rationale.
+
+Model change:
+Updates the authoritative model state.</code></pre>
+<p>The issue can remain linked to the decision.</p>
+<p>The decision should remain usable after the issue closes.</p>
+<h2 id="a-meeting-conclusion-is-not-durable-enough">A meeting conclusion is not durable enough</h2>
+<p>Many important model choices happen in workshops.</p>
+<p>This is normal. The right people are present, alternatives can be discussed and trade-offs become visible.</p>
+<p>The risk appears after the meeting.</p>
+<p>The result may be recorded as:</p>
+<ul>
+<li>a sentence in meeting minutes;</li>
+<li>a highlighted slide;</li>
+<li>a chat message;</li>
+<li>an updated spreadsheet cell;</li>
+<li>the memory of the solution architect.</li>
+</ul>
+<p>These forms are difficult to validate and connect to downstream work.</p>
+<p>A durable decision should identify:</p>
+<ul>
+<li>the problem;</li>
+<li>the affected model objects;</li>
+<li>the selected treatment;</li>
+<li>the reason;</li>
+<li>the evidence;</li>
+<li>the approvers;</li>
+<li>the consequences;</li>
+<li>the review condition.</li>
+</ul>
+<p>This does not require bureaucratic minutes for every discussion.</p>
+<p>It requires extracting the final authoritative outcome from the discussion.</p>
+<h2 id="what-qualifies-as-a-model-decision">What qualifies as a model decision</h2>
+<p>Not every edit needs a formal decision object.</p>
+<p>Correcting a typo in a description is usually not a material architecture decision.</p>
+<p>A model decision is worth tracking when it changes or confirms something that affects implementation, governance or future interpretation.</p>
+<p>Typical examples include:</p>
+<h3 id="business-definition">Business definition</h3>
+<p>What does the attribute actually mean?</p>
+<h3 id="scope">Scope</h3>
+<p>Which domains, countries, organisations or populations does it apply to?</p>
+<h3 id="source-authority">Source authority</h3>
+<p>Which source system or field should be trusted?</p>
+<h3 id="target-representation">Target representation</h3>
+<p>Which SAP object or attribute should represent the concept?</p>
+<h3 id="transformation">Transformation</h3>
+<p>How should values be derived, merged, split or converted?</p>
+<h3 id="validation">Validation</h3>
+<p>When should a value be mandatory, rejected or warned?</p>
+<h3 id="workflow">Workflow</h3>
+<p>Which owner or approver should participate?</p>
+<h3 id="value-semantics">Value semantics</h3>
+<p>Which codes are valid, equivalent or obsolete?</p>
+<h3 id="exception">Exception</h3>
+<p>Which deviation from the intended model is accepted?</p>
+<h3 id="lifecycle">Lifecycle</h3>
+<p>When should an object become active, deprecated or retired?</p>
+<h3 id="risk-acceptance">Risk acceptance</h3>
+<p>Which known gap may proceed to the next stage?</p>
+<p>The common feature is consequence.</p>
+<p>The decision changes what the programme builds, migrates, tests or operates.</p>
+<h2 id="the-anatomy-of-a-useful-decision-record">The anatomy of a useful decision record</h2>
+<p>A practical decision record should be compact enough to maintain and structured enough to query.</p>
+<p>We recommend the following fields.</p>
+<h2 id="decision-identifier">Decision identifier</h2>
+<p>A stable reference such as:</p>
+<pre><code class="language-text">DEC-BP-0048</code></pre>
+<p>This can be used in:</p>
+<ul>
+<li>model files;</li>
+<li>mappings;</li>
+<li>tickets;</li>
+<li>tests;</li>
+<li>release notes;</li>
+<li>configuration documentation.</li>
+</ul>
+<h2 id="title">Title</h2>
+<p>A concise statement of the choice.</p>
+<p>Example:</p>
+<pre><code class="language-text">Require German tax identifier for active organisational customers</code></pre>
+<h2 id="problem">Problem</h2>
+<p>What question required resolution?</p>
+<p>Example:</p>
+<blockquote>The target model requires tax identification, but source availability and exemption handling differ by Business Partner category and country.</blockquote>
+<h2 id="affected-model-objects">Affected model objects</h2>
+<p>List stable identifiers for:</p>
+<ul>
+<li>attributes;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>value lists;</li>
+<li>contexts;</li>
+<li>endpoints.</li>
+</ul>
+<h2 id="alternatives">Alternatives</h2>
+<p>What realistic options were considered?</p>
+<p>For example:</p>
+<ol>
+<li>Mandatory globally.</li>
+<li>Mandatory only in Germany.</li>
+<li>Warning during migration, error after go-live.</li>
+<li>Keep optional and monitor through data-quality reporting.</li>
+</ol>
+<h2 id="selected-option">Selected option</h2>
+<p>State the outcome without forcing future readers to infer it.</p>
+<h2 id="rationale">Rationale</h2>
+<p>Why was this option selected?</p>
+<p>The rationale should mention the actual trade-off, not generic language such as “best practice.”</p>
+<h2 id="evidence">Evidence</h2>
+<p>Examples:</p>
+<ul>
+<li>legal requirement;</li>
+<li>dataset profile;</li>
+<li>process analysis;</li>
+<li>source-system documentation;</li>
+<li>test result;</li>
+<li>audit finding;</li>
+<li>volume estimate.</li>
+</ul>
+<h2 id="approvers">Approvers</h2>
+<p>Record roles as well as people.</p>
+<p>People change. Authority usually belongs to a role.</p>
+<h2 id="effective-scope">Effective scope</h2>
+<p>Specify:</p>
+<ul>
+<li>countries;</li>
+<li>organisations;</li>
+<li>populations;</li>
+<li>release;</li>
+<li>migration wave.</li>
+</ul>
+<h2 id="conditions">Conditions</h2>
+<p>Identify assumptions or limitations.</p>
+<p>Example:</p>
+<blockquote>The rule applies only after the remediation population falls below the agreed threshold.</blockquote>
+<h2 id="review-trigger">Review trigger</h2>
+<p>State when the decision must be reconsidered.</p>
+<p>Examples:</p>
+<ul>
+<li>new country rollout;</li>
+<li>source-system replacement;</li>
+<li>remediation completion;</li>
+<li>legal change;</li>
+<li>target-model redesign.</li>
+</ul>
+<h2 id="implementation-references">Implementation references</h2>
+<p>Link the decision to:</p>
+<ul>
+<li>SAP MDG configuration;</li>
+<li>mapping;</li>
+<li>code;</li>
+<li>workflow;</li>
+<li>release;</li>
+<li>test evidence.</li>
+</ul>
+<p>This turns a historical statement into an operational control object.</p>
+<h2 id="record-rejected-alternatives">Record rejected alternatives</h2>
+<p>Teams often record only the chosen option.</p>
+<p>Rejected alternatives are valuable because future teams may propose them again.</p>
+<p>Suppose the programme decides not to create a new custom attribute and instead reuses a standard SAP field.</p>
+<p>Six months later, another workstream suggests the custom field again.</p>
+<p>Without the original rationale, the organisation repeats the analysis.</p>
+<p>A concise rejected-option record can state:</p>
+<pre><code class="language-text">Alternative:
+Create local custom supplier classification.
+
+Rejected because:
+- duplicates the global risk concept;
+- not supported by two downstream systems;
+- introduces a second ownership model;
+- prevents comparable reporting.</code></pre>
+<p>This does not mean every brainstorming idea must be stored.</p>
+<p>Preserve serious alternatives that were analysed and could plausibly return.</p>
+<h2 id="distinguish-decisions-from-assumptions">Distinguish decisions from assumptions</h2>
+<p>Projects frequently proceed before every question is resolved.</p>
+<p>That is acceptable.</p>
+<p>The problem begins when an assumption is stored as if it were an approved decision.</p>
+<p>For example:</p>
+<pre><code class="language-text">Assumption:
+Legacy CUSTOMER_TYPE represents SAP Customer Group.</code></pre>
+<p>The team may need this assumption to continue mapping work.</p>
+<p>It should remain visibly provisional until evidence and responsible-owner approval exist.</p>
+<p>Useful states include:</p>
+<ul>
+<li>Proposed;</li>
+<li>Assumed;</li>
+<li>Under review;</li>
+<li>Approved;</li>
+<li>Superseded;</li>
+<li>Rejected;</li>
+<li>Expired.</li>
+</ul>
+<p>An assumption may later become a decision.</p>
+<p>The history should show the transition.</p>
+<h2 id="distinguish-decisions-from-requirements">Distinguish decisions from requirements</h2>
+<p>A requirement states a need.</p>
+<p>A decision states how the programme will address it.</p>
+<p>Requirement:</p>
+<blockquote>The organisation must identify suppliers requiring enhanced compliance review.</blockquote>
+<p>Possible decisions:</p>
+<ul>
+<li>create a new classification attribute;</li>
+<li>derive the classification from risk indicators;</li>
+<li>reuse an existing status;</li>
+<li>keep the classification outside MDG;</li>
+<li>route suppliers through a separate workflow.</li>
+</ul>
+<p>Treating the requirement and decision as the same object hides the design choice.</p>
+<p>This matters because requirements may remain stable while implementation decisions change.</p>
+<h2 id="distinguish-decisions-from-configuration">Distinguish decisions from configuration</h2>
+<p>Configuration shows the implemented state.</p>
+<p>A decision explains why that state was selected.</p>
+<p>For example:</p>
+<pre><code class="language-text">Configuration:
+Validation severity = Error</code></pre>
+<p>The decision may explain:</p>
+<ul>
+<li>why an error was required rather than a warning;</li>
+<li>which population it covers;</li>
+<li>what exception process applies;</li>
+<li>which source-data gap was accepted;</li>
+<li>when the severity should be reviewed.</li>
+</ul>
+<p>If the configuration changes without a decision update, the programme should know whether:</p>
+<ul>
+<li>the model changed;</li>
+<li>an implementation defect was corrected;</li>
+<li>a temporary workaround was introduced;</li>
+<li>the system has diverged from the approved state.</li>
+</ul>
+<h2 id="link-decisions-directly-to-model-objects">Link decisions directly to model objects</h2>
+<p>A decision register organised only by date or meeting becomes difficult to use.</p>
+<p>Future questions usually begin with a model object:</p>
+<ul>
+<li>Why is this field mandatory?</li>
+<li>Why does this source map here?</li>
+<li>Why does this value exist?</li>
+<li>Why is this country different?</li>
+<li>Why was this attribute retired?</li>
+</ul>
+<p>The object should show its related decisions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Attribute:
+ATTR-SUPPLIER-RISK
+
+Related decisions:
+- DEC-0021: Adopt global risk classification
+- DEC-0037: Add HIGH compliance workflow
+- DEC-0049: Permit local UNDER_REVIEW extension
+- DEC-0062: Retire temporary UNKNOWN default</code></pre>
+<p>The decision register can still provide a chronological view.</p>
+<p>The model relationship provides operational usefulness.</p>
+<h2 id="one-decision-may-affect-several-objects">One decision may affect several objects</h2>
+<p>Avoid attaching a decision to only one field when the consequence is broader.</p>
+<p>A decision to add <code>UNDER_REVIEW</code> may affect:</p>
+<ul>
+<li>value list;</li>
+<li>attribute;</li>
+<li>workflow rule;</li>
+<li>migration mapping;</li>
+<li>interface contract;</li>
+<li>data-quality report;</li>
+<li>test cases;</li>
+<li>remediation backlog.</li>
+</ul>
+<p>A structured decision should list all known affected objects.</p>
+<p>This allows impact analysis to travel in both directions:</p>
+<pre><code class="language-text">Decision → affected model objects</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Model object → decisions that shaped it</code></pre>
+<h2 id="preserve-context">Preserve context</h2>
+<p>A decision without context is easily misapplied.</p>
+<p>Suppose the record says:</p>
+<blockquote>Customer Group is mandatory.</blockquote>
+<p>The missing context may include:</p>
+<ul>
+<li>Germany only;</li>
+<li>active B2B customers;</li>
+<li>selected sales organisations;</li>
+<li>new operational records;</li>
+<li>post-remediation release;</li>
+<li>migration excluded.</li>
+</ul>
+<p>The decision object should reference structured context where possible.</p>
+<p>This prevents local decisions from becoming global assumptions.</p>
+<h2 id="preserve-time-and-model-version">Preserve time and model version</h2>
+<p>A decision may be correct for one model baseline and obsolete for another.</p>
+<p>Record:</p>
+<ul>
+<li>decision date;</li>
+<li>effective model version;</li>
+<li>effective release;</li>
+<li>superseding decision if applicable.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">DEC-0048
+Effective in model baseline 1.7
+Superseded by DEC-0091 in baseline 2.1</code></pre>
+<p>Do not erase the old decision.</p>
+<p>Historical mappings, datasets and tests may still depend on it.</p>
+<h2 id="use-supersession-not-silent-editing">Use supersession, not silent editing</h2>
+<p>A common mistake is editing the original decision record when policy changes.</p>
+<p>That destroys historical meaning.</p>
+<p>Suppose a field was originally mandatory and later made optional.</p>
+<p>The organisation needs to know:</p>
+<ul>
+<li>when the mandatory rule applied;</li>
+<li>which migration wave used it;</li>
+<li>why it changed;</li>
+<li>which tests and records were affected.</li>
+</ul>
+<p>Create a new decision that supersedes the old one.</p>
+<pre><code class="language-text">DEC-0048:
+Mandatory for active German customers.
+
+DEC-0091:
+Supersedes DEC-0048.
+Optional when approved exemption type EX-02 exists.</code></pre>
+<p>This supports historical reconstruction.</p>
+<h2 id="track-decision-conditions">Track decision conditions</h2>
+<p>Some decisions are intentionally temporary or conditional.</p>
+<p>Examples:</p>
+<ul>
+<li>default allowed only for Mock Load 1;</li>
+<li>local value accepted until global harmonisation;</li>
+<li>warning used until source remediation is complete;</li>
+<li>manual ownership permitted during pilot;</li>
+<li>legacy identifier retained until system retirement.</li>
+</ul>
+<p>These decisions need:</p>
+<ul>
+<li>expiry date;</li>
+<li>review date;</li>
+<li>measurable trigger;</li>
+<li>owner.</li>
+</ul>
+<p>Poor condition:</p>
+<blockquote>Temporary until later.</blockquote>
+<p>Useful condition:</p>
+<blockquote>Reassess after ERP_B provides the source field or before production cutover, whichever occurs first.</blockquote>
+<p>Conditional decisions without review triggers become permanent by inertia.</p>
+<h2 id="track-evidence-strength">Track evidence strength</h2>
+<p>Not all decisions are supported equally.</p>
+<p>Useful evidence levels might include:</p>
+<h3 id="confirmed-policy-evidence">Confirmed policy evidence</h3>
+<p>Legal requirement, approved policy or signed business decision.</p>
+<h3 id="operational-evidence">Operational evidence</h3>
+<p>Observed process, system usage or production behaviour.</p>
+<h3 id="dataset-evidence">Dataset evidence</h3>
+<p>Profiled values, completeness, duplicates or population analysis.</p>
+<h3 id="expert-judgement">Expert judgement</h3>
+<p>Reasoned recommendation by accountable specialists.</p>
+<h3 id="working-assumption">Working assumption</h3>
+<p>Necessary but not yet confirmed.</p>
+<p>The decision record should not hide weak evidence.</p>
+<p>An approved decision can still be based on limited evidence when the programme consciously accepts the risk.</p>
+<h2 id="a-worked-example-supplier-classification-default">A worked example: supplier classification default</h2>
+<p>The target model requires Supplier Classification.</p>
+<p>One legacy system has no equivalent field.</p>
+<p>The migration team proposes defaulting every affected supplier to <code>STANDARD</code>.</p>
+<p>A useful decision record would look like this:</p>
+<pre><code class="language-text">Decision:
+DEC-SUP-0072
+
+Problem:
+ERP_B has no reliable source for Supplier Classification.
+
+Affected objects:
+ATTR-SUPPLIER-CLASS
+MAP-ERP-B-SUPPLIER-CLASS
+VLIST-SUPPLIER-CLASS
+RULE-SUPPLIER-CLASS-REQUIRED
+
+Alternatives:
+1. Default all records to STANDARD.
+2. Derive from annual spend.
+3. Manually enrich active suppliers.
+4. Make target field optional for migration.
+
+Selected option:
+Manually enrich active suppliers.
+Blocked and historical suppliers may use temporary value
+MIGRATION_REVIEW.
+
+Rationale:
+STANDARD would appear as a genuine business classification.
+Spend does not represent the approved classification meaning.
+
+Conditions:
+MIGRATION_REVIEW may not be assigned to newly created suppliers.
+
+Review trigger:
+Temporary population must be remediated before 31 December.
+
+Approvers:
+Global Procurement Data Owner
+Migration Lead
+SAP MDG Architect</code></pre>
+<p>This is more useful than a mapping comment stating:</p>
+<blockquote>Use migration default where blank.</blockquote>
+<h2 id="another-example-local-tax-rule">Another example: local tax rule</h2>
+<p>A country team requests a mandatory tax identifier.</p>
+<p>The decision should clarify whether it is:</p>
+<ul>
+<li>a new global attribute;</li>
+<li>a country-specific rule on an existing attribute;</li>
+<li>a migration-only requirement;</li>
+<li>a workflow condition;</li>
+<li>a legal exception.</li>
+</ul>
+<p>Possible record:</p>
+<pre><code class="language-text">Selected treatment:
+Use existing global Tax Registration Identifier attribute.
+
+Add country-specific validation for organisational Business Partners.
+
+Do not alter the global optionality rule.
+
+Historical inactive records are excluded from migration remediation.</code></pre>
+<p>The decision prevents the local requirement from being interpreted as a global model change.</p>
+<h2 id="another-example-retiring-an-attribute">Another example: retiring an attribute</h2>
+<p>The programme wants to remove an obsolete customer classification.</p>
+<p>The decision should not only state that the field is retired.</p>
+<p>It should include:</p>
+<ul>
+<li>why the concept is no longer needed;</li>
+<li>replacement attribute, if any;</li>
+<li>mappings that must stop populating it;</li>
+<li>interfaces consuming it;</li>
+<li>historical reporting treatment;</li>
+<li>existing-record conversion;</li>
+<li>effective release;</li>
+<li>rollback or transition plan.</li>
+</ul>
+<p>Retirement is a model decision with downstream consequences.</p>
+<h2 id="decisions-should-drive-implementation-work">Decisions should drive implementation work</h2>
+<p>An approved decision should produce or update the necessary delivery tasks.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved decision
+        ↓
+Update canonical model
+        ↓
+Update SAP MDG configuration
+        ↓
+Update migration mapping
+        ↓
+Update dataset checks
+        ↓
+Update interfaces
+        ↓
+Update tests
+        ↓
+Verify implementation</code></pre>
+<p>Jira can track these tasks.</p>
+<p>The decision remains the shared source explaining why they exist.</p>
+<h2 id="close-the-loop-after-implementation">Close the loop after implementation</h2>
+<p>Approval is not the end of decision tracking.</p>
+<p>The programme should verify that the decision was implemented as intended.</p>
+<p>Record:</p>
+<ul>
+<li>implementation status;</li>
+<li>release or transport;</li>
+<li>validation result;</li>
+<li>test evidence;</li>
+<li>deviations discovered;</li>
+<li>final effective model baseline.</li>
+</ul>
+<p>This prevents a decision register from becoming a list of intentions disconnected from production.</p>
+<p>A useful state flow is:</p>
+<pre><code class="language-text">Proposed
+→ Approved
+→ Implementation in progress
+→ Implemented
+→ Verified
+→ Superseded or retired</code></pre>
+<h2 id="decisions-and-defects">Decisions and defects</h2>
+<p>A defect can reveal that the model decision was wrong or incomplete.</p>
+<p>Classify the outcome.</p>
+<h3 id="implementation-defect">Implementation defect</h3>
+<p>The approved decision remains correct. Configuration or mapping is fixed.</p>
+<h3 id="decision-clarification">Decision clarification</h3>
+<p>The intention was valid but insufficiently precise. The decision record is amended through controlled clarification.</p>
+<h3 id="model-decision-change">Model decision change</h3>
+<p>The programme selects a different treatment. A new decision supersedes the original.</p>
+<p>This distinction protects history.</p>
+<p>Do not rewrite an old decision to make it appear that the programme always intended the final outcome.</p>
+<h2 id="decisions-and-local-requirements">Decisions and local requirements</h2>
+<p>Global programmes should connect local decisions to global parent objects.</p>
+<p>Example:</p>
+<pre><code class="language-text">Local decision:
+DEC-DE-0034
+
+Global parent:
+ATTR-BP-TAX-REGISTRATION
+
+Treatment:
+Country-specific validation override
+
+Scope:
+Germany, organisational customers
+
+Global model impact:
+No change to global definition</code></pre>
+<p>This allows future global changes to identify affected local decisions.</p>
+<p>It also prevents local tickets from becoming disconnected architecture.</p>
+<h2 id="decision-ownership">Decision ownership</h2>
+<p>Different decisions require different authority.</p>
+<p>Examples:</p>
+<h3 id="definition-change">Definition change</h3>
+<p>Business domain owner and data architect.</p>
+<h3 id="source-selection">Source selection</h3>
+<p>Business owner, source-system owner and migration lead.</p>
+<h3 id="target-model-change">Target-model change</h3>
+<p>Data architect and SAP MDG architect.</p>
+<h3 id="validation-severity">Validation severity</h3>
+<p>Business rule owner and process owner.</p>
+<h3 id="local-legal-requirement">Local legal requirement</h3>
+<p>Local legal or business owner plus global governance review.</p>
+<h3 id="temporary-migration-default">Temporary migration default</h3>
+<p>Business owner, migration lead and data-quality owner.</p>
+<p>The system should derive required reviewers from the type and affected objects where possible.</p>
+<h2 id="decision-quality-is-more-important-than-decision-volume">Decision quality is more important than decision volume</h2>
+<p>A programme can create too many decision records.</p>
+<p>If every small edit produces a formal record, the register becomes noise.</p>
+<p>Prioritise decisions with one or more of these characteristics:</p>
+<ul>
+<li>material business meaning;</li>
+<li>several realistic alternatives;</li>
+<li>cross-workstream impact;</li>
+<li>local/global tension;</li>
+<li>accepted risk;</li>
+<li>temporary deviation;</li>
+<li>high remediation cost;</li>
+<li>likely future challenge;</li>
+<li>significant downstream dependency.</li>
+</ul>
+<p>The objective is not to document every thought.</p>
+<p>It is to preserve choices that future teams would otherwise need to reconstruct.</p>
+<h2 id="use-a-decision-backlog">Use a decision backlog</h2>
+<p>Open model questions should be visible before they block testing.</p>
+<p>A decision backlog can show:</p>
+<ul>
+<li>question;</li>
+<li>affected objects;</li>
+<li>owner;</li>
+<li>evidence status;</li>
+<li>required approvers;</li>
+<li>target date;</li>
+<li>delivery impact.</li>
+</ul>
+<p>This is different from a general project issue backlog.</p>
+<p>It focuses specifically on unresolved model truth.</p>
+<p>Useful categories include:</p>
+<ul>
+<li>definition;</li>
+<li>source authority;</li>
+<li>target design;</li>
+<li>transformation;</li>
+<li>value mapping;</li>
+<li>validation;</li>
+<li>ownership;</li>
+<li>local variation;</li>
+<li>accepted gap.</li>
+</ul>
+<p>A decision backlog helps management see where “design completion” is hiding unresolved choices.</p>
+<h2 id="decision-ageing-is-a-risk-signal">Decision ageing is a risk signal</h2>
+<p>Track how long material decisions remain unresolved.</p>
+<p>An ageing decision may indicate:</p>
+<ul>
+<li>missing owner;</li>
+<li>insufficient evidence;</li>
+<li>cross-country disagreement;</li>
+<li>unclear governance authority;</li>
+<li>unresolved target architecture;</li>
+<li>source-data uncertainty.</li>
+</ul>
+<p>Ageing matters because downstream teams often proceed with assumptions while waiting.</p>
+<p>The programme may appear to maintain schedule while accumulating rework.</p>
+<h2 id="use-semantic-decision-diffs">Use semantic decision diffs</h2>
+<p>Reviewers should see what the decision changes in business terms.</p>
+<p>For example:</p>
+<pre><code class="language-text">Current state:
+Customer Group optional globally.
+
+Proposed state:
+Mandatory for active German B2B customers.
+
+Data impact:
+4,620 affected records are currently blank.
+
+Mapping impact:
+ERP_B has no reliable source.
+
+Configuration impact:
+New contextual validation required.
+
+Test impact:
+Seven scenarios require revision.
+
+Decision requested:
+Approve rule and remediation plan.</code></pre>
+<p>This is more useful than asking decision-makers to compare two YAML files or two workbook versions.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave’s current public description states that it turns scattered knowledge from spreadsheets, datasets, tickets, validation reports, decisions and SAP context into structured model objects. It connects fields, attributes, rules, owners, issues and decisions, validates references, detects gaps and traces impact.</p>
+<p>The current core includes:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured query;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>ownership, audit, health and scorecard reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>PatchProposal-to-ChangeRequest lifecycle;</li>
+<li>issue drafts and GitHub-ready change bundles.</li>
+</ul>
+<p>A Martenweave decision object can connect:</p>
+<pre><code class="language-text">Issue
+→ Decision
+→ affected Attribute, Mapping, Rule or Context
+→ approved ChangeRequest
+→ implementation evidence
+→ new model baseline</code></pre>
+<p>This converts decision tracking from a narrative archive into part of the model graph.</p>
+<h2 id="a-practical-martenweave-decision-flow">A practical Martenweave decision flow</h2>
+<pre><code class="language-text">Evidence collected
+        ↓
+Model question identified
+        ↓
+Options structured
+        ↓
+Impact analysis
+        ↓
+PatchProposal
+        ↓
+Required owners review
+        ↓
+Decision approved
+        ↓
+ChangeRequest created
+        ↓
+Canonical model updated
+        ↓
+Implementation verified</code></pre>
+<p>AI can assist with the preparation:</p>
+<ul>
+<li>extract candidate decisions from tickets;</li>
+<li>summarise alternatives;</li>
+<li>locate conflicting evidence;</li>
+<li>identify affected model objects;</li>
+<li>draft the decision record;</li>
+<li>generate implementation tasks.</li>
+</ul>
+<p>AI should not approve the decision.</p>
+<p>It does not own the business policy, legal interpretation or risk.</p>
+<h2 id="deterministic-validation-for-decisions">Deterministic validation for decisions</h2>
+<p>Decision objects can also be validated structurally.</p>
+<p>Useful checks include:</p>
+<ul>
+<li>every approved decision has an approver;</li>
+<li>every decision references existing model objects;</li>
+<li>every superseded decision identifies its replacement;</li>
+<li>temporary decisions have review triggers;</li>
+<li>rejected decisions cannot remain active dependencies;</li>
+<li>model changes reference an approved decision where policy requires it;</li>
+<li>decisions do not reference retired objects without historical context;</li>
+<li>implementation verification exists before status becomes Verified.</li>
+</ul>
+<p>These checks do not prove the rationale is good.</p>
+<p>They prevent incomplete decisions from being treated as formally governed.</p>
+<h2 id="ai-can-recover-decisions-from-old-projects-but-only-as-candidates">AI can recover decisions from old projects—but only as candidates</h2>
+<p>Many existing programmes already have years of fragmented history.</p>
+<p>AI can help reconstruct candidate decision records from:</p>
+<ul>
+<li>Jira threads;</li>
+<li>Confluence pages;</li>
+<li>meeting notes;</li>
+<li>mapping comments;</li>
+<li>test defects;</li>
+<li>configuration documentation.</li>
+</ul>
+<p>For example, it may produce:</p>
+<pre><code class="language-text">Candidate decision:
+Make Supplier Risk mandatory for high-spend suppliers.
+
+Evidence found:
+- Workshop note dated 12 March
+- Jira comment in issue 482
+- UAT test case 119
+
+Conflict:
+Current configuration applies rule to all active suppliers.
+
+Approval evidence:
+Not found.</code></pre>
+<p>This is valuable.</p>
+<p>It should be reviewed and confirmed before entering the approved decision history.</p>
+<p>The absence of approval evidence is itself a finding.</p>
+<h2 id="decision-reports-for-management">Decision reports for management</h2>
+<p>A useful management view should show:</p>
+<ul>
+<li>open decisions by impact;</li>
+<li>ageing;</li>
+<li>missing owners;</li>
+<li>decisions blocking configuration;</li>
+<li>decisions blocking migration;</li>
+<li>temporary deviations nearing expiry;</li>
+<li>approved decisions not yet implemented;</li>
+<li>implemented decisions not yet verified;</li>
+<li>recent decisions with high downstream impact;</li>
+<li>superseded decisions still referenced by active objects.</li>
+</ul>
+<p>This is more informative than reporting only the number of open design issues.</p>
+<h2 id="what-managers-should-ask">What managers should ask</h2>
+<ol>
+<li>Which model decisions remain unresolved?</li>
+<li>Which workstreams are proceeding on assumptions?</li>
+<li>Does every material decision identify affected model objects?</li>
+<li>Are alternatives and rationale recorded?</li>
+<li>Is evidence attached or referenced?</li>
+<li>Did the correct roles approve the choice?</li>
+<li>Are local decisions connected to global parent objects?</li>
+<li>Do temporary decisions have review triggers?</li>
+<li>Are approved decisions reflected in the canonical model?</li>
+<li>Are configuration, mappings and tests aligned with them?</li>
+<li>Are superseded decisions still influencing active artefacts?</li>
+<li>Can AMS retrieve the reason behind a critical rule without contacting the original project team?</li>
+</ol>
+<p>If the last question requires searching meeting recordings, decision tracking is not working.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="treating-jira-closure-as-decision-approval">Treating Jira closure as decision approval</h3>
+<p>Work status and model authority are different.</p>
+<h3 id="recording-only-the-selected-option">Recording only the selected option</h3>
+<p>Preserve serious alternatives and why they were rejected.</p>
+<h3 id="writing-vague-rationale">Writing vague rationale</h3>
+<p>“Best practice” and “business requirement” are not enough.</p>
+<h3 id="editing-historical-decisions">Editing historical decisions</h3>
+<p>Use supersession to preserve the state that applied at the time.</p>
+<h3 id="omitting-scope">Omitting scope</h3>
+<p>A local or temporary decision can be misapplied globally.</p>
+<h3 id="omitting-review-triggers">Omitting review triggers</h3>
+<p>Temporary choices become permanent by inertia.</p>
+<h3 id="linking-decisions-only-to-documents">Linking decisions only to documents</h3>
+<p>Link them directly to the affected model objects.</p>
+<h3 id="recording-approval-without-authority">Recording approval without authority</h3>
+<p>The approver must hold the relevant decision right.</p>
+<h3 id="stopping-after-approval">Stopping after approval</h3>
+<p>Verify that the decision was implemented.</p>
+<h3 id="generating-decisions-automatically-from-ai-summaries">Generating decisions automatically from AI summaries</h3>
+<p>AI can produce candidates. Responsible people must confirm authority and meaning.</p>
+<h2 id="when-a-simple-decision-log-is-enough">When a simple decision log is enough</h2>
+<p>A spreadsheet or Confluence table may be sufficient when:</p>
+<ul>
+<li>the domain is small;</li>
+<li>few decisions occur;</li>
+<li>the team is stable;</li>
+<li>dependencies are simple;</li>
+<li>the project is short.</li>
+</ul>
+<p>At minimum, include:</p>
+<ul>
+<li>ID;</li>
+<li>question;</li>
+<li>affected object;</li>
+<li>outcome;</li>
+<li>rationale;</li>
+<li>approver;</li>
+<li>date;</li>
+<li>status;</li>
+<li>review condition.</li>
+</ul>
+<p>A structured registry becomes more valuable when:</p>
+<ul>
+<li>several countries are involved;</li>
+<li>model decisions change frequently;</li>
+<li>many mappings and rules depend on them;</li>
+<li>multiple vendors work in parallel;</li>
+<li>handover spans several years;</li>
+<li>AI agents consume the model;</li>
+<li>impact analysis is otherwise manual.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>SAP MDG model decisions should not be preserved only as workshop memory, Jira discussion or configuration outcome.</p>
+<p>They are part of the model.</p>
+<p>A good decision record explains:</p>
+<ul>
+<li>what question was resolved;</li>
+<li>which model objects were affected;</li>
+<li>which options were considered;</li>
+<li>why one option was selected;</li>
+<li>what evidence supported it;</li>
+<li>who had authority;</li>
+<li>where it applies;</li>
+<li>when it should be reviewed;</li>
+<li>how it was implemented and verified.</li>
+</ul>
+<p>The practical test is simple:</p>
+<blockquote>Can someone who did not attend the original workshop explain why this attribute, mapping or rule has its current state?</blockquote>
+<p>When the answer is yes, the programme has preserved a decision.</p>
+<p>When the answer requires reading several ticket threads and calling a former consultant, the programme has preserved activity—but not model knowledge.</p>
+<p>The goal is not to document every conversation.</p>
+<p>It is to ensure that important choices remain visible after the conversations have ended.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is designed to connect model decisions directly to attributes, mappings, rules, datasets and approved changes so that implementation reasoning survives beyond workshops and project teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer that combines master data, policy and metadata and supports governed models, collaborative workflows, established business rules, validated values, quality monitoring and an audit trail of changes.</p>
+<p>Martenweave’s current public documentation describes a model-control layer that connects fields, attributes, rules, owners, issues and decisions and supports deterministic validation, gap detection, traceability, impact analysis and reviewable model proposals.</p>
+<p>The current open-source core includes canonical model files, generated indexes, ownership and audit reports, spreadsheet review flows, issue drafts and a PatchProposal-to-ChangeRequest lifecycle.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-manage-global-and-local-requirements-in-sap-mdg.html"><span>Previous</span>The global template says the field is mandatory.</a><a href="/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html"><span>Next</span>The design review is complete.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

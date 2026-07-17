@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Model Registry vs MDM Platform | Martenweave</title>
+    <meta
+      name="description"
+      content="A company has a data problem."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html" />
+    <meta property="og:title" content="Data Model Registry vs MDM Platform | Martenweave" />
+    <meta property="og:description" content="A company has a data problem." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Model Registry vs MDM Platform | Martenweave" />
+    <meta name="twitter:description" content="A company has a data problem." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html#webpage",
+                        "url": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html",
+                        "name": "Data Model Registry vs MDM Platform | Martenweave",
+                        "description": "A company has a data problem.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Data Model Registry vs MDM Platform",
+                                    "item": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html#content",
+                        "headline": "Data Model Registry vs MDM Platform",
+                        "name": "Data Model Registry vs MDM Platform",
+                        "description": "A company has a data problem.",
+                        "url": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/data-model-registry-vs-mdm-platform.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Data Model Registry vs MDM Platform</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Data Model Registry vs MDM Platform</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A company has a data problem.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-procurement-mistake">The procurement mistake</a></li><li><a href="#what-an-mdm-platform-is-designed-to-do">What an MDM platform is designed to do</a></li><li><a href="#what-we-mean-by-a-data-model-registry">What we mean by a data model registry</a></li><li><a href="#the-same-word-model-refers-to-different-things">The same word “model” refers to different things</a></li><li><a href="#record-truth-and-model-truth">Record truth and model truth</a></li><li><a href="#record-truth">Record truth</a></li><li><a href="#model-truth">Model truth</a></li><li><a href="#a-practical-capability-comparison">A practical capability comparison</a></li><li><a href="#why-an-mdm-platform-does-not-automatically-become-the-registry">Why an MDM platform does not automatically become the registry</a></li><li><a href="#why-a-registry-should-not-become-an-mdm-platform">Why a registry should not become an MDM platform</a></li><li><a href="#the-user-groups-are-different">The user groups are different</a></li><li><a href="#the-lifecycle-is-different">The lifecycle is different</a></li><li><a href="#example-adding-a-supplier-risk-attribute">Example: adding a supplier risk attribute</a></li><li><a href="#example-correcting-a-migrated-customer-value">Example: correcting a migrated customer value</a></li><li><a href="#example-changing-a-mandatory-rule">Example: changing a mandatory rule</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A company has a data problem.</p>
+<p>Customer definitions differ between countries. SAP migration mappings are inconsistent. Important decisions are buried in tickets. Nobody can show which source fields support the target model. Every field change triggers another round of meetings.</p>
+<p>The programme begins looking for an MDM platform.</p>
+<p>Vendors demonstrate golden records, matching, consolidation, stewardship workflows, data quality, multidomain views and distribution.</p>
+<p>These are substantial capabilities.</p>
+<p>They may also be solving a different problem.</p>
+<p>The company did not begin with duplicate customer records or the absence of an operational master-data hub. It began with an inability to control its model specification, mappings, evidence and implementation decisions.</p>
+<p>An MDM platform can become part of the eventual solution. It does not automatically repair the fragmented delivery knowledge surrounding the programme.</p>
+<p>This is where the distinction between a <strong>data model registry</strong> and an <strong>MDM platform</strong> matters.</p>
+<p>An MDM platform governs important business records.</p>
+<p>A data model registry governs the structured specification explaining what those records mean, how they are represented, where their values come from and how the model may change.</p>
+<p>The difference can be expressed simply:</p>
+<pre><code class="language-text">MDM platform:
+Manages trusted master-data records.
+
+Data model registry:
+Manages trusted knowledge about the model.</code></pre>
+<p>The two categories can overlap in terminology. Both work with domains, attributes, relationships, rules and ownership.</p>
+<p>Their operational responsibilities are different.</p>
+<h2 id="the-procurement-mistake">The procurement mistake</h2>
+<p>The mistake is not buying an MDM platform.</p>
+<p>The mistake is assuming that every master-data problem is an MDM-platform problem.</p>
+<p>An organisation may actually be struggling with one or more narrower problems:</p>
+<ul>
+<li>no approved model baseline;</li>
+<li>inconsistent source-to-target mappings;</li>
+<li>missing field definitions;</li>
+<li>weak traceability;</li>
+<li>unresolved dataset gaps;</li>
+<li>uncontrolled local variants;</li>
+<li>poor impact analysis;</li>
+<li>lost implementation decisions;</li>
+<li>difficult handover to AMS;</li>
+<li>unsafe AI-generated mapping suggestions.</li>
+</ul>
+<p>These problems are real and expensive.</p>
+<p>They do not always require an operational hub for creating, matching, approving and distributing master records.</p>
+<p>Buying a full MDM platform before clarifying the problem can produce an awkward result:</p>
+<ul>
+<li>the organisation receives powerful operational capabilities;</li>
+<li>the implementation team still works through disconnected spreadsheets and tickets;</li>
+<li>the model is configured before its meaning is stable;</li>
+<li>migration mappings remain outside the platform;</li>
+<li>source limitations are discovered late;</li>
+<li>project decisions disappear after go-live.</li>
+</ul>
+<p>The MDM technology may be functioning correctly.</p>
+<p>The surrounding delivery model remains weak.</p>
+<h2 id="what-an-mdm-platform-is-designed-to-do">What an MDM platform is designed to do</h2>
+<p>MDM is an established enterprise discipline rather than one specific product architecture.</p>
+<p>SAP currently defines MDM around creating a trusted master reference and identifies consolidation, governance and data-quality management as central pillars. SAP MDG adds governed models, matching, consolidation, steward workflows, validated values, quality monitoring, mass changes and auditable operational processes.</p>
+<p>IBM similarly describes MDM as an enterprise approach using tools, processes and workflows to consolidate critical data, reduce fragmentation and provide unified records across applications. Informatica presents MDM around integrating source data, maintaining high-quality records, match-and-merge, multidomain views and 360-degree applications.</p>
+<p>Although products vary, an operational MDM platform commonly addresses capabilities such as:</p>
+<ul>
+<li>creating or consolidating master records;</li>
+<li>matching duplicate records;</li>
+<li>merging records;</li>
+<li>defining survivorship;</li>
+<li>maintaining golden records;</li>
+<li>managing stewardship;</li>
+<li>executing approval workflows;</li>
+<li>validating operational data;</li>
+<li>managing reference values;</li>
+<li>maintaining hierarchies and relationships;</li>
+<li>distributing trusted records;</li>
+<li>auditing record changes;</li>
+<li>monitoring master-data quality.</li>
+</ul>
+<p>The central object is usually the <strong>master-data record</strong>.</p>
+<p>Examples include:</p>
+<ul>
+<li>a customer;</li>
+<li>a supplier;</li>
+<li>a Business Partner;</li>
+<li>a product;</li>
+<li>a material;</li>
+<li>an asset;</li>
+<li>a location;</li>
+<li>a financial reference entity.</li>
+</ul>
+<p>The platform answers questions such as:</p>
+<ul>
+<li>Which customer record is authoritative?</li>
+<li>Are these two suppliers duplicates?</li>
+<li>Who may approve this bank-detail change?</li>
+<li>Which product values are valid?</li>
+<li>Which record should consuming systems receive?</li>
+<li>Who changed this master record?</li>
+<li>Is this entity complete enough to activate?</li>
+</ul>
+<p>These are operational governance questions.</p>
+<h2 id="what-we-mean-by-a-data-model-registry">What we mean by a data model registry</h2>
+<p>“Data model registry” is not yet as standardised a software category as MDM.</p>
+<p>We use the term deliberately to describe a narrower control layer.</p>
+<p>A data model registry maintains identifiable, versioned and validated objects representing the model and its implementation context.</p>
+<p>Typical objects include:</p>
+<ul>
+<li>domains;</li>
+<li>entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>contexts;</li>
+<li>source endpoints;</li>
+<li>target endpoints;</li>
+<li>mappings;</li>
+<li>transformation rules;</li>
+<li>value lists;</li>
+<li>validation rules;</li>
+<li>owners;</li>
+<li>decisions;</li>
+<li>issues;</li>
+<li>datasets;</li>
+<li>change proposals.</li>
+</ul>
+<p>The central object is not the operational customer or supplier record.</p>
+<p>It is an element of the <strong>model specification</strong>.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business attribute:
+Supplier Risk Classification
+
+Source endpoints:
+LEGACY_A.VENDOR_RISK
+LEGACY_B.SUPPLIER_GRADE
+
+Target endpoint:
+SAP supplier-risk field
+
+Value list:
+LOW, MEDIUM, HIGH, UNDER_REVIEW
+
+Related rule:
+HIGH requires compliance approval
+
+Related decision:
+UNDER_REVIEW may not be used as a permanent default</code></pre>
+<p>The registry answers different questions:</p>
+<ul>
+<li>What does this attribute mean?</li>
+<li>Which source fields represent it?</li>
+<li>Which SAP target endpoint implements it?</li>
+<li>Which mappings populate it?</li>
+<li>Which values are allowed?</li>
+<li>Which dataset gaps affect it?</li>
+<li>Which rules refer to it?</li>
+<li>Who owns the definition?</li>
+<li>Which decision produced the current design?</li>
+<li>What will be affected if it changes?</li>
+</ul>
+<p>These are model-engineering and implementation-governance questions.</p>
+<h2 id="the-same-word-model-refers-to-different-things">The same word “model” refers to different things</h2>
+<p>Confusion begins because both categories contain models.</p>
+<p>An MDM platform needs a model to operate.</p>
+<p>It must understand:</p>
+<ul>
+<li>entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>hierarchies;</li>
+<li>rules;</li>
+<li>record structures.</li>
+</ul>
+<p>A data model registry also stores entities, attributes and relationships.</p>
+<p>The distinction is not that one has a model and the other does not.</p>
+<p>The distinction is the role the model plays.</p>
+<h3 id="in-an-mdm-platform">In an MDM platform</h3>
+<p>The model is part of an operational system that creates, validates, consolidates or distributes master data.</p>
+<h3 id="in-a-data-model-registry">In a data model registry</h3>
+<p>The model is an independent specification used to understand, validate and change implementations across several systems and project artefacts.</p>
+<p>The registry may describe:</p>
+<ul>
+<li>an SAP MDG model;</li>
+<li>an S/4HANA target model;</li>
+<li>legacy source models;</li>
+<li>mappings between them;</li>
+<li>another MDM platform;</li>
+<li>interface contracts;</li>
+<li>dataset expectations.</li>
+</ul>
+<p>It sits across implementation boundaries.</p>
+<h2 id="record-truth-and-model-truth">Record truth and model truth</h2>
+<p>A useful way to distinguish the categories is through two forms of truth.</p>
+<h2 id="record-truth">Record truth</h2>
+<p>Record truth answers:</p>
+<ul>
+<li>Which customer record is trusted?</li>
+<li>Which supplier address is current?</li>
+<li>Which values should be distributed?</li>
+<li>Which duplicate should survive?</li>
+<li>Who approved the record?</li>
+</ul>
+<p>This belongs to the MDM platform.</p>
+<h2 id="model-truth">Model truth</h2>
+<p>Model truth answers:</p>
+<ul>
+<li>What is a customer in this programme?</li>
+<li>Which attributes define it?</li>
+<li>Which contexts apply?</li>
+<li>Which source fields populate the target?</li>
+<li>Which mappings and rules were approved?</li>
+<li>Which decisions explain the implementation?</li>
+<li>What will break when the model changes?</li>
+</ul>
+<p>This belongs to the data model registry.</p>
+<p>An organisation may need both.</p>
+<p>A trusted customer record does not explain why one migration source was selected over another.</p>
+<p>A validated model specification does not create or distribute a trusted customer record.</p>
+<h2 id="a-practical-capability-comparison">A practical capability comparison</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Capability</th><th scope="col">Data model registry</th><th scope="col">MDM platform</th></tr></thead><tbody><tr><td>Define structured model objects</td><td>Primary</td><td>Required for operation</td></tr><tr><td>Version an independent specification</td><td>Primary</td><td>Product-dependent</td></tr><tr><td>Represent source and target endpoints</td><td>Primary</td><td>Often integration-specific</td></tr><tr><td>Maintain migration mappings</td><td>Primary use case</td><td>Not usually central</td></tr><tr><td>Compare datasets with model expectations</td><td>Primary use case</td><td>Data-quality capabilities may overlap</td></tr><tr><td>Detect missing model references</td><td>Primary</td><td>Product-dependent</td></tr><tr><td>Trace implementation decisions</td><td>Primary</td><td>Usually surrounding documentation</td></tr><tr><td>Analyse impact of a model change</td><td>Primary</td><td>Often configuration- or domain-specific</td></tr><tr><td>Create and maintain master records</td><td>No</td><td>Primary</td></tr><tr><td>Match and merge records</td><td>No</td><td>Primary</td></tr><tr><td>Manage survivorship</td><td>No</td><td>Primary</td></tr><tr><td>Execute stewardship workflows</td><td>No</td><td>Primary</td></tr><tr><td>Create golden records</td><td>No</td><td>Primary</td></tr><tr><td>Distribute operational master data</td><td>No</td><td>Primary</td></tr><tr><td>Audit master-record changes</td><td>No</td><td>Primary</td></tr><tr><td>Review model patch proposals</td><td>Primary</td><td>Not the main operational purpose</td></tr></tbody></table></div>
+<p>The table is intentionally asymmetric.</p>
+<p>A registry is not a reduced MDM feature set.</p>
+<p>It is a different control surface.</p>
+<h2 id="why-an-mdm-platform-does-not-automatically-become-the-registry">Why an MDM platform does not automatically become the registry</h2>
+<p>A sophisticated MDM platform may store many of the objects listed above.</p>
+<p>It may contain:</p>
+<ul>
+<li>rich data models;</li>
+<li>business rules;</li>
+<li>mappings;</li>
+<li>metadata;</li>
+<li>lineage;</li>
+<li>workflows;</li>
+<li>quality policies;</li>
+<li>reference data.</li>
+</ul>
+<p>The question is not whether it can technically store them.</p>
+<p>The question is whether it should become the independent source for all implementation knowledge.</p>
+<p>Several constraints appear.</p>
+<h3 id="the-platform-model-represents-its-own-implementation">The platform model represents its own implementation</h3>
+<p>An MDM platform naturally describes the model as implemented in that platform.</p>
+<p>The programme may also need to describe:</p>
+<ul>
+<li>legacy sources;</li>
+<li>SAP structures;</li>
+<li>migration datasets;</li>
+<li>external transformations;</li>
+<li>rejected model proposals;</li>
+<li>temporary exceptions;</li>
+<li>test evidence;</li>
+<li>planned future states.</li>
+</ul>
+<p>These may extend beyond the operational platform’s responsibility.</p>
+<h3 id="the-platform-arrives-after-some-decisions-have-already-been-made">The platform arrives after some decisions have already been made</h3>
+<p>Before an MDM platform is configured, the organisation needs to understand:</p>
+<ul>
+<li>domain boundaries;</li>
+<li>source systems;</li>
+<li>target requirements;</li>
+<li>ownership;</li>
+<li>data quality;</li>
+<li>migration feasibility.</li>
+</ul>
+<p>The independent model can begin earlier.</p>
+<h3 id="the-organisation-may-replace-the-platform">The organisation may replace the platform</h3>
+<p>A model specification tied completely to one vendor’s configuration becomes harder to reuse during:</p>
+<ul>
+<li>migration;</li>
+<li>platform replacement;</li>
+<li>partner transition;</li>
+<li>architecture review;</li>
+<li>audit.</li>
+</ul>
+<h3 id="different-platforms-may-govern-different-domains">Different platforms may govern different domains</h3>
+<p>An enterprise may have:</p>
+<ul>
+<li>SAP MDG for Business Partner;</li>
+<li>a product-information platform;</li>
+<li>another customer hub;</li>
+<li>local reference-data systems.</li>
+</ul>
+<p>A registry can describe relationships across these boundaries without becoming the operational owner of every domain.</p>
+<h2 id="why-a-registry-should-not-become-an-mdm-platform">Why a registry should not become an MDM platform</h2>
+<p>The reverse boundary is equally important.</p>
+<p>A registry may begin adding features because users want to see and edit data.</p>
+<p>The progression can look tempting:</p>
+<ol>
+<li>Display example records.</li>
+<li>Allow record editing.</li>
+<li>Add approvals.</li>
+<li>Add matching.</li>
+<li>Add distribution.</li>
+<li>Add audit history.</li>
+<li>Add tenant administration.</li>
+<li>Add real-time operational requirements.</li>
+</ol>
+<p>At that point, the registry is becoming an MDM platform.</p>
+<p>This would require a very different product:</p>
+<ul>
+<li>transactional reliability;</li>
+<li>authorisation architecture;</li>
+<li>high availability;</li>
+<li>privacy controls;</li>
+<li>operational workflows;</li>
+<li>data-retention policies;</li>
+<li>scalability;</li>
+<li>integration runtime;</li>
+<li>support processes;</li>
+<li>regulatory controls.</li>
+</ul>
+<p>That is not a small product extension.</p>
+<p>It is a category change.</p>
+<p>For Martenweave, this would be overbuilding and strategic drift.</p>
+<p>The product should remain focused on model truth rather than operational record truth.</p>
+<h2 id="the-user-groups-are-different">The user groups are different</h2>
+<p>An MDM platform primarily serves operational and governance roles such as:</p>
+<ul>
+<li>data stewards;</li>
+<li>business approvers;</li>
+<li>data owners;</li>
+<li>operational users;</li>
+<li>MDM administrators;</li>
+<li>integration teams;</li>
+<li>data-quality teams.</li>
+</ul>
+<p>A data model registry primarily serves delivery and change roles such as:</p>
+<ul>
+<li>data architects;</li>
+<li>migration architects;</li>
+<li>SAP MDG architects;</li>
+<li>mapping teams;</li>
+<li>data-governance leads;</li>
+<li>test leads;</li>
+<li>AMS analysts;</li>
+<li>implementation partners;</li>
+<li>model-review agents.</li>
+</ul>
+<p>There is overlap.</p>
+<p>A data steward may review an attribute definition or value list in the registry.</p>
+<p>An architect may inspect operational behaviour in the MDM platform.</p>
+<p>But the primary jobs differ.</p>
+<h2 id="the-lifecycle-is-different">The lifecycle is different</h2>
+<p>An MDM platform operates continuously around master-data records.</p>
+<pre><code class="language-text">Create
+→ validate
+→ review
+→ approve
+→ activate
+→ distribute
+→ maintain</code></pre>
+<p>A model registry operates around model knowledge.</p>
+<pre><code class="language-text">Discover
+→ structure
+→ validate
+→ compare
+→ propose
+→ review
+→ approve
+→ implement elsewhere
+→ preserve evidence</code></pre>
+<p>The distinction is especially important for AI.</p>
+<p>An AI system working with an MDM platform may help classify, match or enrich records.</p>
+<p>An AI system working with a registry may help propose:</p>
+<ul>
+<li>mappings;</li>
+<li>definitions;</li>
+<li>relationships;</li>
+<li>rules;</li>
+<li>impact;</li>
+<li>model changes.</li>
+</ul>
+<p>In both cases, governance is necessary.</p>
+<p>The approval boundaries are not identical.</p>
+<h2 id="example-adding-a-supplier-risk-attribute">Example: adding a supplier risk attribute</h2>
+<p>Suppose the business wants a new supplier-risk classification.</p>
+<p>An MDM platform may need to:</p>
+<ul>
+<li>add the attribute;</li>
+<li>maintain allowed values;</li>
+<li>expose it to stewards;</li>
+<li>validate entries;</li>
+<li>route high-risk suppliers for approval;</li>
+<li>store the value;</li>
+<li>distribute it.</li>
+</ul>
+<p>A model registry should capture the surrounding design:</p>
+<ul>
+<li>business definition;</li>
+<li>global and local contexts;</li>
+<li>ownership;</li>
+<li>source availability;</li>
+<li>target endpoint;</li>
+<li>migration treatment;</li>
+<li>value mappings;</li>
+<li>workflow dependency;</li>
+<li>interface consumers;</li>
+<li>test expectations;</li>
+<li>decision rationale.</li>
+</ul>
+<p>The MDM platform operates the classification.</p>
+<p>The registry explains and controls how that classification fits into the wider implementation.</p>
+<h2 id="example-correcting-a-migrated-customer-value">Example: correcting a migrated customer value</h2>
+<p>A customer record in SAP contains the wrong group.</p>
+<p>The MDM or MDG platform supports correcting the record through the governed operational process.</p>
+<p>The registry helps answer:</p>
+<ul>
+<li>Which legacy source supplied the original value?</li>
+<li>Which mapping transformed it?</li>
+<li>Which value-list version was used?</li>
+<li>Is the defect isolated or systemic?</li>
+<li>Which other records may be affected?</li>
+<li>Does the mapping need to change?</li>
+<li>Which tests should be repeated?</li>
+<li>Which decision approved the original conversion?</li>
+</ul>
+<p>The MDM platform corrects record truth.</p>
+<p>The registry helps correct model truth and prevent recurrence.</p>
+<h2 id="example-changing-a-mandatory-rule">Example: changing a mandatory rule</h2>
+<p>The business asks to make a tax field mandatory.</p>
+<p>The MDM platform or SAP MDG can enforce the rule after approval.</p>
+<p>The registry helps establish whether the rule should be approved:</p>
+<ul>
+<li>Which countries are affected?</li>
+<li>Which source systems contain the value?</li>
+<li>How complete is the current population?</li>
+<li>Which migration mappings require updates?</li>
+<li>Which existing records become invalid?</li>
+<li>Which interfaces create records?</li>
+<li>Which exemptions exist?</li>
+<li>Which tests and reports depend on the rule?</li>
+</ul>
+<p>The MDM platform enforces the decision.</p>
+<p>The registry improves the decision.</p>
+<h2 id="when-a-company-needs-an-mdm-platform">When a company needs an MDM platform</h2>
+<p>An organisation likely needs an MDM platform when it must operationally control master data across systems.</p>
+<p>Signals include:</p>
+<ul>
+<li>duplicate customer or supplier records;</li>
+<li>no trusted authoritative record;</li>
+<li>inconsistent master data distributed across applications;</li>
+<li>need for stewardship workflows;</li>
+<li>need for match-and-merge;</li>
+<li>need for survivorship;</li>
+<li>need for governed record creation;</li>
+<li>need for central reference-data maintenance;</li>
+<li>need for mass changes;</li>
+<li>need for continuous master-data quality monitoring;</li>
+<li>need for controlled distribution.</li>
+</ul>
+<p>These are significant enterprise capabilities.</p>
+<p>A registry should not be proposed as a cheaper substitute.</p>
+<p>SAP, IBM and Informatica all describe MDM around consolidating, governing and maintaining trusted enterprise records rather than merely documenting their structure.</p>
+<h2 id="when-a-company-needs-a-data-model-registry">When a company needs a data model registry</h2>
+<p>A registry becomes useful when the primary problem is controlling knowledge about models and their implementation.</p>
+<p>Signals include:</p>
+<ul>
+<li>mappings exist in many spreadsheets;</li>
+<li>business definitions conflict;</li>
+<li>target changes do not reach migration teams;</li>
+<li>model decisions remain in tickets;</li>
+<li>source-data gaps are detected during testing;</li>
+<li>local exceptions are not visible globally;</li>
+<li>impact analysis depends on individual consultants;</li>
+<li>test evidence cannot be connected to model versions;</li>
+<li>handover produces large document archives but weak understanding;</li>
+<li>AI-generated suggestions cannot be trusted safely;</li>
+<li>several platforms need to share one model specification.</li>
+</ul>
+<p>The organisation may not need to replace or add an MDM platform.</p>
+<p>It may need a better control layer around the work it already performs.</p>
+<h2 id="when-both-are-needed">When both are needed</h2>
+<p>This is likely the most relevant scenario for large SAP and MDM programmes.</p>
+<p>The operating model can be:</p>
+<pre><code class="language-text">Data model registry
+Defines and validates implementation model truth
+                ↓
+MDM platform
+Executes operational master-data governance
+                ↓
+Business applications
+Consume governed records</code></pre>
+<p>The feedback loop then returns operational evidence:</p>
+<pre><code class="language-text">Operational defects and change requests
+                ↓
+Registry impact analysis
+                ↓
+Approved model change
+                ↓
+MDM configuration and release</code></pre>
+<p>The two systems remain aligned without sharing the same authority.</p>
+<h2 id="when-neither-is-needed">When neither is needed</h2>
+<p>A small organisation may not need either category.</p>
+<p>A disciplined workbook and clear process may be enough when:</p>
+<ul>
+<li>there is one source;</li>
+<li>one target;</li>
+<li>a small domain;</li>
+<li>few users;</li>
+<li>limited duplication;</li>
+<li>simple approval;</li>
+<li>low change frequency;</li>
+<li>low regulatory exposure.</li>
+</ul>
+<p>A registry should not be introduced merely because mappings exist.</p>
+<p>An MDM platform should not be introduced merely because data quality is imperfect.</p>
+<p>The architecture should match the cost of the problem.</p>
+<h2 id="registry-first-does-not-mean-mdm-later">Registry first does not mean MDM later</h2>
+<p>A model-registry pilot can help clarify whether an MDM platform is needed.</p>
+<p>It can reveal:</p>
+<ul>
+<li>how many systems contain the domain;</li>
+<li>how definitions differ;</li>
+<li>where duplicates arise;</li>
+<li>which governance processes are missing;</li>
+<li>which source values are unreliable;</li>
+<li>what operational ownership is required.</li>
+</ul>
+<p>The result may strengthen the case for MDM.</p>
+<p>It may also show that the problem can be resolved through:</p>
+<ul>
+<li>source-system correction;</li>
+<li>simpler governance;</li>
+<li>reference-data harmonisation;</li>
+<li>migration controls;</li>
+<li>clearer ownership;</li>
+<li>a limited workflow.</li>
+</ul>
+<p>The registry is not necessarily the first stage of a vendor upsell.</p>
+<p>It should improve the decision about what comes next.</p>
+<h2 id="mdm-first-does-not-remove-the-registry-problem">MDM first does not remove the registry problem</h2>
+<p>An organisation may already have an MDM platform and still need a registry.</p>
+<p>Common symptoms include:</p>
+<ul>
+<li>the configured model is poorly documented;</li>
+<li>migration mappings are external;</li>
+<li>source lineage is incomplete;</li>
+<li>local requirements are managed through tickets;</li>
+<li>implementation decisions cannot be reconstructed;</li>
+<li>changes require extensive manual impact analysis;</li>
+<li>multiple MDM domains use different platforms;</li>
+<li>AMS depends on the original implementation partner.</li>
+</ul>
+<p>The operational platform may be working well.</p>
+<p>The missing capability remains model-delivery governance.</p>
+<h2 id="data-model-registry-vs-metadata-catalogue">Data model registry vs metadata catalogue</h2>
+<p>The distinction also matters because a registry may be confused with a data catalogue.</p>
+<p>A catalogue typically helps users discover and understand data assets across an organisation.</p>
+<p>It may cover:</p>
+<ul>
+<li>tables;</li>
+<li>columns;</li>
+<li>reports;</li>
+<li>datasets;</li>
+<li>owners;</li>
+<li>lineage;</li>
+<li>classifications;</li>
+<li>policies.</li>
+</ul>
+<p>A data model registry is narrower and more delivery-oriented.</p>
+<p>It focuses on the approved model specification and its changes:</p>
+<ul>
+<li>attributes;</li>
+<li>contexts;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>decisions;</li>
+<li>datasets;</li>
+<li>proposals;</li>
+<li>implementation impact.</li>
+</ul>
+<p>A large catalogue may contain some of these capabilities.</p>
+<p>The registry does not need to become a full enterprise discovery platform.</p>
+<p>This distinction will be explored separately, but it reinforces the main point: tool categories should be selected based on the job, not on overlapping terminology.</p>
+<h2 id="the-cost-profile-is-different">The cost profile is different</h2>
+<p>An MDM platform is an operational enterprise system.</p>
+<p>Its cost may include:</p>
+<ul>
+<li>software or subscription;</li>
+<li>implementation;</li>
+<li>data integration;</li>
+<li>data modelling;</li>
+<li>matching design;</li>
+<li>workflow design;</li>
+<li>stewardship;</li>
+<li>migration;</li>
+<li>operating support;</li>
+<li>infrastructure;</li>
+<li>change management.</li>
+</ul>
+<p>A data model registry should have a lighter operational footprint.</p>
+<p>Its cost should be justified through reduced delivery friction:</p>
+<ul>
+<li>fewer mapping reconciliations;</li>
+<li>earlier dataset-gap discovery;</li>
+<li>faster impact analysis;</li>
+<li>less repeated discovery;</li>
+<li>better handover;</li>
+<li>safer AI assistance;</li>
+<li>lower key-person dependency.</li>
+</ul>
+<p>A registry has failed economically if it requires a large platform programme merely to document the platform programme.</p>
+<h2 id="a-decision-framework">A decision framework</h2>
+<p>Before selecting a product category, ask what object needs to be governed.</p>
+<h3 id="question-1">Question 1</h3>
+<p>Do we need to govern operational customer, supplier, product or material records?</p>
+<p>If yes, an MDM platform may be required.</p>
+<h3 id="question-2">Question 2</h3>
+<p>Do we need matching, merging and survivorship?</p>
+<p>If yes, this points strongly toward MDM.</p>
+<h3 id="question-3">Question 3</h3>
+<p>Do we need approval workflows for master-record creation and change?</p>
+<p>If yes, this is an MDM or MDG capability.</p>
+<h3 id="question-4">Question 4</h3>
+<p>Do we mainly need to control definitions, mappings, rules and implementation decisions?</p>
+<p>If yes, this points toward a registry.</p>
+<h3 id="question-5">Question 5</h3>
+<p>Do we need to compare actual migration datasets with the approved model?</p>
+<p>This is a strong registry use case.</p>
+<h3 id="question-6">Question 6</h3>
+<p>Do we need to distribute trusted master records across applications?</p>
+<p>This is an MDM or master-data-integration responsibility.</p>
+<h3 id="question-7">Question 7</h3>
+<p>Do we need to analyse the impact of changing an attribute across mappings, rules and tests?</p>
+<p>This is a registry use case.</p>
+<h3 id="question-8">Question 8</h3>
+<p>Do we need both operational governance and implementation traceability?</p>
+<p>Use both, with explicit boundaries.</p>
+<h2 id="a-product-selection-anti-pattern">A product-selection anti-pattern</h2>
+<p>A programme creates an RFP containing every desirable data capability:</p>
+<ul>
+<li>MDM;</li>
+<li>data quality;</li>
+<li>catalogue;</li>
+<li>lineage;</li>
+<li>workflow;</li>
+<li>integration;</li>
+<li>migration;</li>
+<li>AI;</li>
+<li>reporting;</li>
+<li>modelling;</li>
+<li>governance.</li>
+</ul>
+<p>Every vendor appears to cover much of the list.</p>
+<p>The programme cannot distinguish core capabilities from adjacent ones.</p>
+<p>This produces evaluation based on feature quantity rather than architectural responsibility.</p>
+<p>A better RFP begins with:</p>
+<ul>
+<li>What record or model object becomes authoritative?</li>
+<li>Which system executes operational change?</li>
+<li>Which system preserves model specification?</li>
+<li>Which system stores work status?</li>
+<li>Which system stores narrative documentation?</li>
+<li>Which system distributes data?</li>
+<li>Which system approves which type of change?</li>
+</ul>
+<p>The answer may include several products.</p>
+<p>That is acceptable when the boundaries are intentional.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave’s current public description defines it as a practical model-control layer for knowledge scattered across spreadsheets, datasets, tickets, validation reports, decisions, SAP context and project history. It connects fields, attributes, rules, owners, issues and decisions; validates references; detects gaps; traces impact; and routes AI suggestions through reviewable proposals.</p>
+<p>The current core includes:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured query;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>health, analysis, ownership, audit and scorecard reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>PatchProposal-to-ChangeRequest lifecycle;</li>
+<li>GitHub-ready issue and change bundles.</li>
+</ul>
+<p>This places Martenweave on the registry side of the boundary.</p>
+<p>Its core object is the model specification.</p>
+<p>Its main value is controlling relationships between:</p>
+<ul>
+<li>source fields;</li>
+<li>business attributes;</li>
+<li>target fields;</li>
+<li>rules;</li>
+<li>datasets;</li>
+<li>decisions;</li>
+<li>changes.</li>
+</ul>
+<h2 id="what-martenweave-is-not">What Martenweave is not</h2>
+<p>The product’s current documented boundaries are important.</p>
+<p>Martenweave is not:</p>
+<ul>
+<li>a full enterprise MDM replacement;</li>
+<li>an operational workflow engine;</li>
+<li>a generic data catalogue;</li>
+<li>an SAP-certified product;</li>
+<li>a replacement for SAP MDG, SAP S/4HANA, Jira or Confluence.</li>
+</ul>
+<p>These are not temporary omissions to hide.</p>
+<p>They define the product.</p>
+<p>Martenweave should not:</p>
+<ul>
+<li>create golden customer records;</li>
+<li>perform match-and-merge;</li>
+<li>operate high-volume stewardship workflows;</li>
+<li>distribute production master data;</li>
+<li>write directly to SAP production;</li>
+<li>become the central runtime for business processes.</li>
+</ul>
+<p>Its value disappears if it tries to become a smaller version of every adjacent platform.</p>
+<h2 id="a-martenweave-operating-model">A Martenweave operating model</h2>
+<pre><code class="language-text">Spreadsheets, datasets, tickets and SAP context
+                        ↓
+             Martenweave model registry
+                        ↓
+      Validation, gaps, lineage and impact
+                        ↓
+              Reviewable proposal
+                        ↓
+                 Human approval
+                        ↓
+   SAP MDG, MDM or another platform implements change</code></pre>
+<p>The implementation platform owns operational behaviour.</p>
+<p>Martenweave preserves the approved specification and evidence.</p>
+<h2 id="example-using-martenweave-beside-sap-mdg">Example: using Martenweave beside SAP MDG</h2>
+<p>Suppose SAP MDG governs Business Partner.</p>
+<p>SAP MDG owns:</p>
+<ul>
+<li>change requests;</li>
+<li>workflow;</li>
+<li>validation;</li>
+<li>activation;</li>
+<li>operational data quality;</li>
+<li>replication.</li>
+</ul>
+<p>Martenweave owns the independent implementation model:</p>
+<ul>
+<li>Business Partner attributes;</li>
+<li>source-system fields;</li>
+<li>migration mappings;</li>
+<li>value translations;</li>
+<li>local contexts;</li>
+<li>decisions;</li>
+<li>dataset gaps;</li>
+<li>impact analysis;</li>
+<li>change proposals.</li>
+</ul>
+<p>A tax rule change may begin in Martenweave as a model proposal.</p>
+<p>The proposal identifies:</p>
+<ul>
+<li>affected attribute;</li>
+<li>country context;</li>
+<li>current-data completeness;</li>
+<li>source gaps;</li>
+<li>mapping impact;</li>
+<li>tests;</li>
+<li>existing records.</li>
+</ul>
+<p>After approval, the SAP team implements the rule through normal MDG and release controls.</p>
+<p>Martenweave records the new baseline and evidence.</p>
+<h2 id="example-using-martenweave-before-mdm-selection">Example: using Martenweave before MDM selection</h2>
+<p>An organisation has customer data across five systems.</p>
+<p>It is considering an MDM platform.</p>
+<p>Before procurement, Martenweave can help structure:</p>
+<ul>
+<li>customer entities;</li>
+<li>definitions;</li>
+<li>sources;</li>
+<li>field overlap;</li>
+<li>conflicting values;</li>
+<li>ownership;</li>
+<li>duplicate indicators;</li>
+<li>target requirements;</li>
+<li>open decisions.</li>
+</ul>
+<p>This will not create a customer golden record.</p>
+<p>It gives the organisation a clearer basis for determining:</p>
+<ul>
+<li>whether consolidation is required;</li>
+<li>which MDM style is appropriate;</li>
+<li>which domains are in scope;</li>
+<li>which matching challenges exist;</li>
+<li>which source systems must integrate;</li>
+<li>which governance roles are needed.</li>
+</ul>
+<p>The MDM implementation then begins from a more controlled specification.</p>
+<h2 id="example-using-martenweave-without-mdm">Example: using Martenweave without MDM</h2>
+<p>A company is migrating from legacy ERP systems to SAP S/4HANA.</p>
+<p>It will use standard SAP processes and does not need a separate enterprise MDM hub.</p>
+<p>It still needs to manage:</p>
+<ul>
+<li>canonical target definitions;</li>
+<li>source-to-target mappings;</li>
+<li>dataset gaps;</li>
+<li>value conversions;</li>
+<li>local variants;</li>
+<li>impact analysis;</li>
+<li>handover.</li>
+</ul>
+<p>Martenweave can support this model-delivery problem without introducing operational MDM.</p>
+<p>This is an important market position.</p>
+<p>Not every migration needs another master-data platform.</p>
+<p>Most complex migrations need better control of model knowledge.</p>
+<h2 id="a-sensible-pilot">A sensible pilot</h2>
+<p>A data model registry should prove value without requiring an enterprise rollout.</p>
+<p>Select:</p>
+<ul>
+<li>one domain;</li>
+<li>one active model or mapping workbook;</li>
+<li>one representative dataset;</li>
+<li>30–100 critical attributes;</li>
+<li>several rules;</li>
+<li>several recent change requests.</li>
+</ul>
+<p>The pilot should demonstrate:</p>
+<ol>
+<li>Stable model-object identity.</li>
+<li>Deterministic reference validation.</li>
+<li>Source-to-target traceability.</li>
+<li>Dataset gap detection.</li>
+<li>Value-coverage analysis.</li>
+<li>Impact analysis for one change.</li>
+<li>A reviewable model proposal.</li>
+<li>A role-specific report or workbook.</li>
+<li>Preserved decision rationale.</li>
+<li>Clear handover value.</li>
+</ol>
+<p>The pilot should not attempt:</p>
+<ul>
+<li>golden-record creation;</li>
+<li>stewardship workflow;</li>
+<li>matching;</li>
+<li>record distribution;</li>
+<li>enterprise catalogue ingestion.</li>
+</ul>
+<p>Those would test the wrong product category.</p>
+<h2 id="how-to-measure-registry-value">How to measure registry value</h2>
+<p>Useful measures include:</p>
+<ul>
+<li>time required to find the approved mapping;</li>
+<li>time required to trace a target field to its source;</li>
+<li>number of model gaps detected before testing;</li>
+<li>time required for field-change impact analysis;</li>
+<li>number of broken references detected automatically;</li>
+<li>number of unresolved ownership gaps;</li>
+<li>reduction in repeated mapping reconciliation;</li>
+<li>percentage of critical objects with decisions and evidence;</li>
+<li>time required for AMS to investigate a model issue.</li>
+</ul>
+<p>These measures are modest and practical.</p>
+<p>The registry does not need to claim that it transformed all enterprise data governance.</p>
+<p>It needs to reduce the cost of model delivery and change.</p>
+<h2 id="common-misconceptions">Common misconceptions</h2>
+<h3 id="the-registry-is-a-lightweight-mdm">“The registry is a lightweight MDM”</h3>
+<p>No. It does not govern operational master records.</p>
+<h3 id="the-mdm-platform-already-has-a-data-model-so-the-registry-is-redundant">“The MDM platform already has a data model, so the registry is redundant”</h3>
+<p>The MDM model describes the platform implementation. The registry may describe sources, targets, mappings, decisions and several platforms.</p>
+<h3 id="a-registry-is-only-documentation">“A registry is only documentation”</h3>
+<p>Documentation is one output. The core value is structured objects, validation, lineage and controlled change.</p>
+<h3 id="a-registry-should-eventually-write-directly-into-mdm">“A registry should eventually write directly into MDM”</h3>
+<p>Not necessarily. A deliberate human and release boundary may be safer.</p>
+<h3 id="mdm-will-solve-our-mapping-spreadsheet-problem">“MDM will solve our mapping-spreadsheet problem”</h3>
+<p>It may provide useful modelling and integration capabilities. Migration and implementation knowledge can remain external unless the programme governs it explicitly.</p>
+<h3 id="we-can-use-the-registry-instead-of-mdm-to-save-money">“We can use the registry instead of MDM to save money”</h3>
+<p>Only when the organisation does not need operational MDM capabilities.</p>
+<h3 id="ai-can-generate-the-model-so-we-do-not-need-either">“AI can generate the model, so we do not need either”</h3>
+<p>AI can propose a model. The organisation still needs authority, validation, ownership and operational execution.</p>
+<h2 id="ai-behaves-differently-in-each-category">AI behaves differently in each category</h2>
+<p>Within an MDM platform, AI may assist with:</p>
+<ul>
+<li>match recommendations;</li>
+<li>record enrichment;</li>
+<li>classification;</li>
+<li>anomaly detection;</li>
+<li>steward productivity;</li>
+<li>record search.</li>
+</ul>
+<p>In a registry, AI may assist with:</p>
+<ul>
+<li>extracting candidate mappings;</li>
+<li>connecting field descriptions;</li>
+<li>suggesting definitions;</li>
+<li>finding missing evidence;</li>
+<li>proposing impact relationships;</li>
+<li>drafting model changes.</li>
+</ul>
+<p>Informatica currently presents AI-assisted match tuning and recommendations as part of its operational MDM offering. That illustrates how AI can support mastered-record processes inside an MDM platform.</p>
+<p>Martenweave’s principle is different:</p>
+<pre><code class="language-text">AI proposes model changes.
+Validators check structural consistency.
+Humans approve.
+Operational platforms implement.</code></pre>
+<p>This keeps AI outside direct authority over the approved model and production records.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>A data model registry and an MDM platform are not two versions of the same product.</p>
+<p>An MDM platform manages operational master-data truth.</p>
+<p>A data model registry manages implementation-model truth.</p>
+<p>The MDM platform answers:</p>
+<ul>
+<li>Which record is trusted?</li>
+<li>Who may change it?</li>
+<li>Which values are valid?</li>
+<li>Which record should be distributed?</li>
+</ul>
+<p>The registry answers:</p>
+<ul>
+<li>What does the model mean?</li>
+<li>Where do its values come from?</li>
+<li>Which mappings and rules implement it?</li>
+<li>Which evidence supports it?</li>
+<li>What will be affected if it changes?</li>
+</ul>
+<p>A company may need one, both or neither.</p>
+<p>The correct decision begins with the object that needs governance.</p>
+<p>Our practical rule is:</p>
+<blockquote>Do not buy an MDM platform to solve a model-documentation problem. Do not use a model registry to solve an operational master-data problem.</blockquote>
+<p>When both problems exist, use both layers with explicit authority.</p>
+<p>That separation makes the architecture easier to explain, the product scope easier to control and the implementation less likely to become another expensive platform built around the wrong problem.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams. Martenweave is designed to preserve and validate the model specification surrounding enterprise implementations—not to replace the platforms that govern operational master data.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently defines master data management around creating a trusted master reference and identifies consolidation, governance and data-quality management as key pillars. SAP Master Data Governance adds governed models, golden records, matching, consolidation, steward workflows, validation, monitoring, mass changes and auditable operational processes.</p>
+<p>IBM describes MDM as an enterprise approach combining technology, processes and workflows to consolidate critical data into unified master-data services shared across applications.</p>
+<p>Informatica describes MDM as consolidating and maintaining high-quality master records from multiple sources and currently markets match-and-merge, multidomain views and 360-degree applications as part of its MDM offering.</p>
+<p>Martenweave’s current public documentation describes structured model objects, deterministic validation, generated indexes, dataset gap detection, trace and impact analysis, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave’s documented boundaries state that it is not a full enterprise MDM replacement, workflow engine, generic data catalogue or replacement for SAP MDG and related enterprise systems.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP, IBM or Informatica. Product and company names mentioned in this article may be trademarks of their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-data-catalog.html">A migration manager searches the enterprise data catalogue for a customer field.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/martenweave-vs-excel-jira-and-confluence.html"><span>Previous</span>The programme already has an approved toolset.</a><a href="/blog/data-model-registry-vs-data-catalog.html"><span>Next</span>A migration manager searches the enterprise data catalogue for a customer field.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

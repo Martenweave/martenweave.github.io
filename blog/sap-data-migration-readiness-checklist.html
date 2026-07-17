@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAP Data Migration Readiness Checklist | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html" />
+    <meta property="og:title" content="SAP Data Migration Readiness Checklist | Martenweave" />
+    <meta property="og:description" content="A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAP Data Migration Readiness Checklist | Martenweave" />
+    <meta name="twitter:description" content="A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html#webpage",
+                        "url": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html",
+                        "name": "SAP Data Migration Readiness Checklist | Martenweave",
+                        "description": "A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "SAP Data Migration Readiness Checklist",
+                                    "item": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html#content",
+                        "headline": "SAP Data Migration Readiness Checklist",
+                        "name": "SAP Data Migration Readiness Checklist",
+                        "description": "A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.",
+                        "url": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/sap-data-migration-readiness-checklist.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">SAP Data Migration Readiness Checklist</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>SAP Data Migration Readiness Checklist</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#readiness-is-not-the-same-as-completion">Readiness is not the same as completion</a></li><li><a href="#the-six-dimensions-of-migration-readiness">The six dimensions of migration readiness</a></li><li><a href="#is-there-one-approved-model">Is there one approved model?</a></li><li><a href="#are-the-business-objects-clearly-bounded">Are the business objects clearly bounded?</a></li><li><a href="#are-critical-attributes-defined">Are critical attributes defined?</a></li><li><a href="#are-contexts-explicit">Are contexts explicit?</a></li><li><a href="#are-value-lists-approved">Are value lists approved?</a></li><li><a href="#are-validation-rules-defined">Are validation rules defined?</a></li><li><a href="#have-representative-datasets-been-profiled">Have representative datasets been profiled?</a></li><li><a href="#do-expected-columns-exist">Do expected columns exist?</a></li><li><a href="#is-completeness-measured-by-context">Is completeness measured by context?</a></li><li><a href="#are-data-types-and-formats-understood">Are data types and formats understood?</a></li><li><a href="#are-duplicate-patterns-known">Are duplicate patterns known?</a></li><li><a href="#are-invalid-references-known">Are invalid references known?</a></li><li><a href="#are-obsolete-records-filtered">Are obsolete records filtered?</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</p>
+<p>This happens because readiness is often reduced to a few visible indicators:</p>
+<ul>
+<li>mapping completion;</li>
+<li>file availability;</li>
+<li>defect count;</li>
+<li>test execution;</li>
+<li>load success.</li>
+</ul>
+<p>These indicators matter. None of them proves that the model, source data, transformation rules, target configuration and business ownership are aligned.</p>
+<p>We use a broader definition:</p>
+<blockquote>A domain is ready for migration when the programme can explain what will be loaded, where every critical value comes from, which rules were applied, which gaps remain, who accepted them and how the result will be governed after the load.</blockquote>
+<p>Readiness is therefore not a document produced immediately before cutover.</p>
+<p>It is accumulated evidence.</p>
+<p>SAP itself recommends curating master data early, before an SAP S/4HANA implementation, because more automated target processes depend heavily on clean and correct master data.</p>
+<p>The practical difficulty is deciding what “curated” and “ready” mean for a specific programme.</p>
+<p>This checklist is our answer.</p>
+<p>It is intended for migration managers, MDG and MDM architects, data leads, domain owners, testing teams and programme managers. It can be used before a mock load, dress rehearsal or cutover, but the work should begin much earlier.</p>
+<h2 id="readiness-is-not-the-same-as-completion">Readiness is not the same as completion</h2>
+<p>Projects often report completion through percentages.</p>
+<p>For example:</p>
+<ul>
+<li>98% of mappings completed;</li>
+<li>95% of data extracted;</li>
+<li>92% of defects closed;</li>
+<li>100% of migration objects configured.</li>
+</ul>
+<p>These figures can all be accurate while hiding significant risk.</p>
+<p>A mapping may be marked complete even when:</p>
+<ul>
+<li>the source column is empty for half the records;</li>
+<li>the value mapping covers only known codes;</li>
+<li>the business owner has not approved the transformation;</li>
+<li>the target field became mandatory after the mapping was completed;</li>
+<li>a country-specific exception is stored in another workbook;</li>
+<li>the migration rule conflicts with MDG validation;</li>
+<li>the test used synthetic rather than representative data.</li>
+</ul>
+<p>Completion describes the status of an activity.</p>
+<p>Readiness describes whether the resulting system and data can support the intended business process.</p>
+<p>We recommend reporting both, but never treating them as interchangeable.</p>
+<h2 id="the-six-dimensions-of-migration-readiness">The six dimensions of migration readiness</h2>
+<p>We assess readiness across six connected dimensions:</p>
+<ol>
+<li>Model readiness</li>
+<li>Source-data readiness</li>
+<li>Mapping and transformation readiness</li>
+<li>Target-system readiness</li>
+<li>Testing and evidence readiness</li>
+<li>Operational and governance readiness</li>
+</ol>
+<p>A weakness in one dimension can invalidate progress in the others.</p>
+<p>A technically perfect load is not useful when the target model is wrong.</p>
+<p>An approved target model is not useful when the required source data does not exist.</p>
+<p>A clean dataset is not enough when no one owns post-go-live corrections.</p>
+<p>The checklist should therefore be reviewed as a whole.</p>
+<h1 id="1-model-readiness">1. Model readiness</h1>
+<p>The first question is not whether the migration file is ready.</p>
+<p>The first question is whether the programme knows what the target model is.</p>
+<h2 id="is-there-one-approved-model">Is there one approved model?</h2>
+<p>The programme should be able to identify the current approved model without asking several teams to reconcile their own versions.</p>
+<p>The model may be represented through several views, but the underlying objects should be consistent.</p>
+<p>Check:</p>
+<ul>
+<li>Is there a defined model baseline?</li>
+<li>Is the baseline versioned?</li>
+<li>Can the team distinguish approved, proposed and implemented changes?</li>
+<li>Do MDG, migration and testing teams use the same attribute definitions?</li>
+<li>Are local variants linked to the global model?</li>
+<li>Are temporary exceptions clearly marked?</li>
+</ul>
+<p>A common warning sign is that each workstream has an “official” workbook.</p>
+<p>That usually means there is no single approved model, only several documents with different owners.</p>
+<h2 id="are-the-business-objects-clearly-bounded">Are the business objects clearly bounded?</h2>
+<p>Terms such as Customer, Supplier, Business Partner and Material are too broad by themselves.</p>
+<p>The team should understand which components are included.</p>
+<p>For Business Partner, for example:</p>
+<ul>
+<li>central identity;</li>
+<li>roles;</li>
+<li>addresses;</li>
+<li>tax data;</li>
+<li>bank data;</li>
+<li>relationships;</li>
+<li>customer company-code data;</li>
+<li>customer sales-area data;</li>
+<li>supplier company-code data;</li>
+<li>supplier purchasing data.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Are included entities explicit?</li>
+<li>Are excluded entities explicit?</li>
+<li>Are relationships between entities modelled?</li>
+<li>Are organisational contexts understood?</li>
+<li>Are local extensions visible?</li>
+</ul>
+<p>If boundaries remain unclear, mapping completion will be misleading because different teams will be mapping different interpretations of the domain.</p>
+<h2 id="are-critical-attributes-defined">Are critical attributes defined?</h2>
+<p>A target field name is not a sufficient definition.</p>
+<p>For each critical attribute, the programme should know:</p>
+<ul>
+<li>what it means;</li>
+<li>why it is needed;</li>
+<li>where it applies;</li>
+<li>who owns it;</li>
+<li>which values are allowed;</li>
+<li>when it is mandatory;</li>
+<li>which business processes consume it;</li>
+<li>whether it is global or local.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Does every critical attribute have a definition?</li>
+<li>Can business and technical teams interpret the definition consistently?</li>
+<li>Are similar attributes differentiated?</li>
+<li>Are retired or obsolete attributes marked?</li>
+<li>Are regulatory attributes identified?</li>
+</ul>
+<p>Definitions should be written in business language first and connected to physical fields second.</p>
+<h2 id="are-contexts-explicit">Are contexts explicit?</h2>
+<p>Many migration defects are not field defects. They are context defects.</p>
+<p>A value may be valid centrally but missing for one company code. A field may be mandatory in one country and optional elsewhere. A material attribute may be valid at plant level but incorrectly applied globally.</p>
+<p>Check whether the model explicitly represents:</p>
+<ul>
+<li>company code;</li>
+<li>sales area;</li>
+<li>purchasing organisation;</li>
+<li>plant;</li>
+<li>storage location;</li>
+<li>country;</li>
+<li>language;</li>
+<li>partner role;</li>
+<li>business process;</li>
+<li>effective period.</li>
+</ul>
+<p>If these conditions are stored only in notes or tab names, they are difficult to validate.</p>
+<h2 id="are-value-lists-approved">Are value lists approved?</h2>
+<p>A field can be mapped while its values remain unresolved.</p>
+<p>Check:</p>
+<ul>
+<li>Is the target value list approved?</li>
+<li>Are inactive values identified?</li>
+<li>Are local code lists documented?</li>
+<li>Is ownership clear?</li>
+<li>Are effective dates relevant?</li>
+<li>Are blank and unknown values defined?</li>
+<li>Are defaults controlled?</li>
+<li>Are unmapped source values visible?</li>
+</ul>
+<p>Value-list readiness should be tracked separately from field readiness.</p>
+<h2 id="are-validation-rules-defined">Are validation rules defined?</h2>
+<p>For each critical rule, the programme should know:</p>
+<ul>
+<li>what is being checked;</li>
+<li>under which context;</li>
+<li>whether failure is an error or warning;</li>
+<li>who owns the rule;</li>
+<li>where it will be implemented;</li>
+<li>how it will be tested.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Are mandatory-field rules explicit?</li>
+<li>Are cross-field dependencies documented?</li>
+<li>Are organisational rules clear?</li>
+<li>Are format and reference validations defined?</li>
+<li>Are duplicate and matching criteria agreed?</li>
+<li>Are temporary migration rules separated from permanent governance rules?</li>
+</ul>
+<p>SAP MDG supports validated values, business rules, workflow routing, quality monitoring and auditable changes. The programme still has to define the actual rules and ownership appropriate to its domain.</p>
+<h1 id="2-source-data-readiness">2. Source-data readiness</h1>
+<p>A migration model describes what the programme expects.</p>
+<p>Source-data readiness shows what the organisation actually has.</p>
+<h2 id="have-representative-datasets-been-profiled">Have representative datasets been profiled?</h2>
+<p>Do not rely only on field catalogues or source-system documentation.</p>
+<p>Use actual extracts.</p>
+<p>Check:</p>
+<ul>
+<li>Were representative datasets received?</li>
+<li>Do they include all relevant countries and organisations?</li>
+<li>Do they include realistic historical and active records?</li>
+<li>Are large-volume and edge-case populations represented?</li>
+<li>Is the extraction date known?</li>
+<li>Can the extract be reproduced?</li>
+</ul>
+<p>A dataset from one country or one clean business unit should not be treated as evidence for the entire domain.</p>
+<h2 id="do-expected-columns-exist">Do expected columns exist?</h2>
+<p>Compare the target model and mapping expectations against the current extract.</p>
+<p>Check:</p>
+<ul>
+<li>Are all required source columns present?</li>
+<li>Are column names stable?</li>
+<li>Are data types consistent?</li>
+<li>Are fields available for every relevant source system?</li>
+<li>Are some values stored outside the main source?</li>
+<li>Are relationships supplied in separate files?</li>
+<li>Are important columns derived only during extraction?</li>
+</ul>
+<p>A mapping to a theoretical source field is not a usable mapping.</p>
+<h2 id="is-completeness-measured-by-context">Is completeness measured by context?</h2>
+<p>An overall completeness percentage may hide the real problem.</p>
+<p>For example, a field may be 95% complete globally but almost entirely missing for one country that goes live in the first wave.</p>
+<p>Check completeness by:</p>
+<ul>
+<li>country;</li>
+<li>source system;</li>
+<li>company code;</li>
+<li>sales organisation;</li>
+<li>plant;</li>
+<li>record type;</li>
+<li>business status;</li>
+<li>migration wave.</li>
+</ul>
+<p>Readiness should reflect the population being loaded, not the average across the enterprise.</p>
+<h2 id="are-data-types-and-formats-understood">Are data types and formats understood?</h2>
+<p>Check:</p>
+<ul>
+<li>date formats;</li>
+<li>decimal conventions;</li>
+<li>leading zeros;</li>
+<li>identifier lengths;</li>
+<li>phone and address formats;</li>
+<li>character encoding;</li>
+<li>language-specific text;</li>
+<li>numeric values stored as text;</li>
+<li>concatenated fields;</li>
+<li>multi-value fields.</li>
+</ul>
+<p>A format issue is sometimes easy to fix technically. The business meaning may still be unclear.</p>
+<p>For example, normalising a date is straightforward if the source is genuinely a date. It is harder when the field contains text such as “unknown,” “before 2010” or “not required.”</p>
+<h2 id="are-duplicate-patterns-known">Are duplicate patterns known?</h2>
+<p>For Customer, Supplier and Business Partner migration, duplicate handling can determine the entire loading strategy.</p>
+<p>Check:</p>
+<ul>
+<li>Are duplicate candidates identified?</li>
+<li>Are matching criteria approved?</li>
+<li>Are false-positive risks understood?</li>
+<li>Are local and global duplicates distinguished?</li>
+<li>Is there a merge strategy?</li>
+<li>Is survivorship defined?</li>
+<li>Are legacy keys preserved?</li>
+<li>Are downstream references updated?</li>
+<li>Who approves merged records?</li>
+</ul>
+<p>The migration team should not invent duplicate policy during load execution.</p>
+<h2 id="are-invalid-references-known">Are invalid references known?</h2>
+<p>Check for:</p>
+<ul>
+<li>organisational units that do not exist in the target;</li>
+<li>obsolete country or region codes;</li>
+<li>invalid payment terms;</li>
+<li>missing parent entities;</li>
+<li>broken product hierarchies;</li>
+<li>unknown tax categories;</li>
+<li>missing partner relationships;</li>
+<li>inactive plants or company codes.</li>
+</ul>
+<p>Reference-data failures should be visible before the load.</p>
+<h2 id="are-obsolete-records-filtered">Are obsolete records filtered?</h2>
+<p>A source system may contain data that is technically valid but no longer useful.</p>
+<p>Check:</p>
+<ul>
+<li>Are active-record criteria defined?</li>
+<li>Are retention obligations understood?</li>
+<li>Are blocked and deleted records treated consistently?</li>
+<li>Are historical relationships required?</li>
+<li>Are dormant customers or suppliers included?</li>
+<li>Are unused materials excluded?</li>
+<li>Is the exclusion decision approved?</li>
+</ul>
+<p>Migrating everything can increase cost and reduce trust in the target system.</p>
+<h2 id="is-remediation-ownership-defined">Is remediation ownership defined?</h2>
+<p>Every significant source-data issue should have a treatment and owner.</p>
+<p>Possible treatments include:</p>
+<ul>
+<li>source correction;</li>
+<li>pre-migration cleansing;</li>
+<li>migration transformation;</li>
+<li>enrichment;</li>
+<li>controlled default;</li>
+<li>rejection;</li>
+<li>exclusion;</li>
+<li>post-go-live remediation;</li>
+<li>accepted exception.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Is the chosen treatment recorded?</li>
+<li>Does the owner have authority to deliver it?</li>
+<li>Is the deadline aligned with the load?</li>
+<li>Is unresolved remediation visible to management?</li>
+<li>Will accepted issues remain traceable after go-live?</li>
+</ul>
+<h1 id="3-mapping-and-transformation-readiness">3. Mapping and transformation readiness</h1>
+<p>This is where programmes often report the highest completion and carry the most hidden assumptions.</p>
+<h2 id="does-every-target-attribute-have-an-identified-source-or-treatment">Does every target attribute have an identified source or treatment?</h2>
+<p>For each required target attribute, the team should know whether it is:</p>
+<ul>
+<li>directly mapped;</li>
+<li>transformed;</li>
+<li>derived;</li>
+<li>defaulted;</li>
+<li>manually enriched;</li>
+<li>created by the target system;</li>
+<li>not applicable;</li>
+<li>unavailable;</li>
+<li>intentionally left blank.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Are any target attributes still source-unknown?</li>
+<li>Are “TBD” mappings visible?</li>
+<li>Are default rules approved?</li>
+<li>Are manual enrichments planned and resourced?</li>
+<li>Are system-generated values clearly separated?</li>
+</ul>
+<h2 id="are-transformations-precise-enough-to-implement">Are transformations precise enough to implement?</h2>
+<p>A note such as “convert to SAP format” is not a transformation rule.</p>
+<p>A usable rule should explain:</p>
+<ul>
+<li>inputs;</li>
+<li>conditions;</li>
+<li>output;</li>
+<li>precedence;</li>
+<li>error behaviour;</li>
+<li>treatment of blanks;</li>
+<li>applicable context;</li>
+<li>examples;</li>
+<li>owner.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Can another consultant implement the rule without interviewing the author?</li>
+<li>Can the rule be tested?</li>
+<li>Does the rule change business meaning?</li>
+<li>Has the business approved that change?</li>
+<li>Is the same rule duplicated elsewhere?</li>
+</ul>
+<h2 id="are-value-mappings-complete-against-actual-source-values">Are value mappings complete against actual source values?</h2>
+<p>Do not review only the intended value list.</p>
+<p>Compare mappings with current dataset distributions.</p>
+<p>Check:</p>
+<ul>
+<li>Is every source value mapped?</li>
+<li>Are unexpected values visible?</li>
+<li>Are whitespace and case differences normalised?</li>
+<li>Are inactive codes treated?</li>
+<li>Are many-to-one mappings approved?</li>
+<li>Are one-to-many cases resolved?</li>
+<li>Are country-specific values handled?</li>
+<li>Are defaults documented?</li>
+<li>Is there a process for new values appearing in later extracts?</li>
+</ul>
+<p>A value-mapping table is not complete because every row in the design document has a target. It is complete when it covers the values that actually appear in the migration population.</p>
+<h2 id="are-key-mappings-controlled">Are key mappings controlled?</h2>
+<p>Check:</p>
+<ul>
+<li>Will existing identifiers be retained?</li>
+<li>Are internal or external number ranges used?</li>
+<li>How are legacy keys stored?</li>
+<li>How are merged records represented?</li>
+<li>How are cross-system keys reconciled?</li>
+<li>Are key mappings required by downstream systems?</li>
+<li>Can records be traced back after migration?</li>
+<li>Who owns corrections to key mappings?</li>
+</ul>
+<p>Identifier errors can be more damaging than field-level defects because they affect relationships and reconciliation.</p>
+<h2 id="are-mapping-dependencies-visible">Are mapping dependencies visible?</h2>
+<p>Some mappings depend on others.</p>
+<p>For example:</p>
+<ul>
+<li>a sales-area attribute requires the sales-area record to exist;</li>
+<li>a partner function requires a related Business Partner;</li>
+<li>a bank record requires the parent supplier;</li>
+<li>a value derivation depends on country and company code;</li>
+<li>a product hierarchy requires reference data loaded first.</li>
+</ul>
+<p>Check:</p>
+<ul>
+<li>Are prerequisites modelled?</li>
+<li>Is load sequence aligned?</li>
+<li>Are circular dependencies identified?</li>
+<li>Are missing parent records detected?</li>
+<li>Are cross-file relationships tested?</li>
+</ul>
+<h2 id="are-temporary-workarounds-clearly-separated">Are temporary workarounds clearly separated?</h2>
+<p>Migration programmes often introduce temporary logic to keep testing moving.</p>
+<p>Check:</p>
+<ul>
+<li>Is the workaround explicitly marked temporary?</li>
+<li>Is the reason recorded?</li>
+<li>Is there an expiry or review condition?</li>
+<li>Does the MDG team know about it?</li>
+<li>Could the value remain in production?</li>
+<li>Is remediation assigned?</li>
+</ul>
+<p>Temporary rules have a tendency to become permanent when they are embedded only in code or workbook comments.</p>
+<h1 id="4-target-system-readiness">4. Target-system readiness</h1>
+<p>The source and mapping can be ready while the target environment is not.</p>
+<h2 id="is-the-target-model-stable-enough-for-the-load">Is the target model stable enough for the load?</h2>
+<p>Check:</p>
+<ul>
+<li>Are required fields configured?</li>
+<li>Are structures and contexts available?</li>
+<li>Are target value lists aligned?</li>
+<li>Are recent design changes transported?</li>
+<li>Are environments consistent?</li>
+<li>Are planned extensions complete?</li>
+<li>Are obsolete target fields removed from the mapping?</li>
+<li>Is the migration team using the correct target version?</li>
+</ul>
+<p>A changing target is normal during early testing. The programme must still know which version each load targets.</p>
+<h2 id="are-mdg-and-migration-validations-aligned">Are MDG and migration validations aligned?</h2>
+<p>A record may pass migration validation and fail in MDG.</p>
+<p>Check:</p>
+<ul>
+<li>Are mandatory rules consistent?</li>
+<li>Are format checks aligned?</li>
+<li>Are allowed values aligned?</li>
+<li>Are derivations understood?</li>
+<li>Are workflow conditions relevant during initial load?</li>
+<li>Are duplicate checks active?</li>
+<li>Are errors and warnings treated consistently?</li>
+<li>Are bypasses or loading modes documented?</li>
+</ul>
+<p>The goal is not necessarily to implement every rule twice.</p>
+<p>The programme should know which layer owns each rule and whether the combined behaviour is correct.</p>
+<h2 id="are-prerequisites-loaded">Are prerequisites loaded?</h2>
+<p>Check whether the target requires:</p>
+<ul>
+<li>organisational structures;</li>
+<li>reference data;</li>
+<li>code lists;</li>
+<li>parent objects;</li>
+<li>number ranges;</li>
+<li>users and roles;</li>
+<li>key mappings;</li>
+<li>integration endpoints.</li>
+</ul>
+<p>A migration object can be ready in isolation but blocked by missing prerequisites.</p>
+<h2 id="is-load-sequencing-agreed">Is load sequencing agreed?</h2>
+<p>Check:</p>
+<ul>
+<li>Which objects load first?</li>
+<li>Which relationships depend on parent records?</li>
+<li>When are deltas taken?</li>
+<li>How are failed records retried?</li>
+<li>Can partial loads be reconciled?</li>
+<li>What happens when a downstream system is unavailable?</li>
+<li>Is rollback possible?</li>
+<li>Which steps are manual?</li>
+</ul>
+<p>Sequence should be documented as an operational runbook, not only understood by the technical team.</p>
+<h2 id="are-technical-capacity-and-windows-confirmed">Are technical capacity and windows confirmed?</h2>
+<p>Check:</p>
+<ul>
+<li>expected volumes;</li>
+<li>throughput;</li>
+<li>batch sizes;</li>
+<li>processing windows;</li>
+<li>lock constraints;</li>
+<li>replication load;</li>
+<li>error-log volumes;</li>
+<li>monitoring;</li>
+<li>storage;</li>
+<li>cutover timing.</li>
+</ul>
+<p>A functionally correct load can still fail operationally if volume assumptions are wrong.</p>
+<h1 id="5-testing-and-evidence-readiness">5. Testing and evidence readiness</h1>
+<p>Readiness requires evidence that the intended model works with representative data.</p>
+<h2 id="have-tests-covered-more-than-technical-loading">Have tests covered more than technical loading?</h2>
+<p>A successful load proves that records entered the system.</p>
+<p>It does not prove that the resulting data is correct or usable.</p>
+<p>Check whether testing covers:</p>
+<ul>
+<li>mapping accuracy;</li>
+<li>transformation behaviour;</li>
+<li>mandatory rules;</li>
+<li>value mappings;</li>
+<li>relationships;</li>
+<li>organisational contexts;</li>
+<li>duplicate handling;</li>
+<li>workflow behaviour after loading;</li>
+<li>replication;</li>
+<li>downstream consumption;</li>
+<li>correction process;</li>
+<li>auditability.</li>
+</ul>
+<h2 id="are-tests-linked-to-model-objects">Are tests linked to model objects?</h2>
+<p>The programme should know which attributes, mappings and rules have been tested.</p>
+<p>Check:</p>
+<ul>
+<li>Is every critical rule linked to a test?</li>
+<li>Are critical mappings covered?</li>
+<li>Are local variants tested?</li>
+<li>Are exceptions tested?</li>
+<li>Can a failed test be traced to the affected object?</li>
+<li>Can the team identify untested areas?</li>
+</ul>
+<p>A list of executed test cases is less useful than evidence of model coverage.</p>
+<h2 id="was-representative-data-used">Was representative data used?</h2>
+<p>Check:</p>
+<ul>
+<li>Did tests include each relevant source system?</li>
+<li>Did they include each country?</li>
+<li>Did they include large and complex records?</li>
+<li>Did they include missing and invalid values?</li>
+<li>Did they include duplicates?</li>
+<li>Did they include relationship scenarios?</li>
+<li>Did they include records expected to fail?</li>
+</ul>
+<p>Testing only clean “happy path” records provides false confidence.</p>
+<h2 id="are-reconciliation-criteria-defined">Are reconciliation criteria defined?</h2>
+<p>The team should know how to prove that the load result is complete and correct.</p>
+<p>Check:</p>
+<ul>
+<li>record counts;</li>
+<li>rejected records;</li>
+<li>duplicate outcomes;</li>
+<li>key mappings;</li>
+<li>financial or quantitative totals where relevant;</li>
+<li>field-level comparisons;</li>
+<li>relationship counts;</li>
+<li>organisational coverage;</li>
+<li>downstream replication;</li>
+<li>unresolved differences.</li>
+</ul>
+<p>Reconciliation should distinguish between expected and unexplained differences.</p>
+<h2 id="are-defects-classified-correctly">Are defects classified correctly?</h2>
+<p>We recommend classifying defects as:</p>
+<ul>
+<li>source-data defect;</li>
+<li>mapping defect;</li>
+<li>transformation defect;</li>
+<li>target-model defect;</li>
+<li>configuration defect;</li>
+<li>integration defect;</li>
+<li>test-data defect;</li>
+<li>requirement or decision gap.</li>
+</ul>
+<p>This matters because each category has a different owner and resolution path.</p>
+<p>A generic defect backlog hides systemic problems.</p>
+<h2 id="is-evidence-retained">Is evidence retained?</h2>
+<p>Check:</p>
+<ul>
+<li>Which dataset version was used?</li>
+<li>Which model baseline was tested?</li>
+<li>Which transformation version was executed?</li>
+<li>Which environment was used?</li>
+<li>Which results were approved?</li>
+<li>Can evidence be retrieved later?</li>
+<li>Can AMS understand the result?</li>
+</ul>
+<p>A test result without model and dataset context is difficult to reuse.</p>
+<h1 id="6-operational-and-governance-readiness">6. Operational and governance readiness</h1>
+<p>Migration does not end when the load completes.</p>
+<p>The organisation has to own the resulting data.</p>
+<h2 id="are-owners-ready-to-accept-the-data">Are owners ready to accept the data?</h2>
+<p>Check:</p>
+<ul>
+<li>Have business owners reviewed the outcome?</li>
+<li>Are stewards assigned?</li>
+<li>Do they understand migrated defaults and exceptions?</li>
+<li>Can they identify unresolved remediation?</li>
+<li>Do they know how to request corrections?</li>
+<li>Are escalation paths available?</li>
+</ul>
+<p>The project should not hand over unexplained exceptions as operational surprises.</p>
+<h2 id="are-post-go-live-validations-active">Are post-go-live validations active?</h2>
+<p>Check:</p>
+<ul>
+<li>Will the same critical rules remain enforced?</li>
+<li>Are migration-only bypasses disabled?</li>
+<li>Can stewards correct migrated data?</li>
+<li>Are quality reports available?</li>
+<li>Are duplicate controls operating?</li>
+<li>Are data owners receiving meaningful metrics?</li>
+</ul>
+<p>SAP positions MDG as a central governance layer with workflows, validated values, data-quality monitoring and audit trails. Migration readiness should therefore include evidence that the loaded records can enter that operational governance model.</p>
+<h2 id="is-unresolved-remediation-transferred">Is unresolved remediation transferred?</h2>
+<p>Some issues will remain open at cutover.</p>
+<p>That may be acceptable if they are controlled.</p>
+<p>Check:</p>
+<ul>
+<li>Is each issue documented?</li>
+<li>Is business impact understood?</li>
+<li>Is an owner assigned?</li>
+<li>Is a deadline agreed?</li>
+<li>Is the affected population known?</li>
+<li>Is monitoring in place?</li>
+<li>Is the exception approved?</li>
+</ul>
+<p>“Fix after go-live” is not a plan unless ownership and evidence survive the project.</p>
+<h2 id="can-ams-understand-the-migrated-model">Can AMS understand the migrated model?</h2>
+<p>Check whether the support team can answer:</p>
+<ul>
+<li>Why is this field populated this way?</li>
+<li>Which source supplied it?</li>
+<li>Which transformation was applied?</li>
+<li>Which value mapping was used?</li>
+<li>Which exceptions were accepted?</li>
+<li>Which rule validates it?</li>
+<li>Which downstream systems depend on it?</li>
+<li>What should be reviewed before changing it?</li>
+</ul>
+<p>If the answer depends on contacting the original migration consultant, the handover is incomplete.</p>
+<h1 id="the-readiness-decision">The readiness decision</h1>
+<p>A readiness review should not produce only “green” or “red.”</p>
+<p>We recommend four states.</p>
+<h2 id="ready">Ready</h2>
+<p>The required evidence exists. Critical gaps are closed. Remaining issues are minor and owned.</p>
+<h2 id="ready-with-accepted-exceptions">Ready with accepted exceptions</h2>
+<p>The programme understands the remaining gaps, their impact, owners and treatment. The appropriate authority has accepted the risk.</p>
+<h2 id="conditionally-ready">Conditionally ready</h2>
+<p>Specific actions must be completed before the next load or milestone. The conditions are explicit and measurable.</p>
+<h2 id="not-ready">Not ready</h2>
+<p>Critical model, data, mapping, target or ownership gaps make the outcome unreliable.</p>
+<p>This classification is more useful than forcing every domain into a binary status before the evidence supports it.</p>
+<h1 id="a-compact-management-checklist">A compact management checklist</h1>
+<p>Managers do not need to inspect every mapping.</p>
+<p>Before approving the next migration milestone, we recommend asking:</p>
+<ol>
+<li>Which approved model baseline are we loading against?</li>
+<li>Which required target attributes still lack reliable source data?</li>
+<li>Which value mappings do not cover the current dataset?</li>
+<li>Which transformations still depend on open business decisions?</li>
+<li>Which country or organisational contexts remain untested?</li>
+<li>Which target validations differ from migration checks?</li>
+<li>Which critical model objects have no test evidence?</li>
+<li>Which exceptions will enter production?</li>
+<li>Who owns unresolved remediation after cutover?</li>
+<li>Can AMS explain and safely change the migrated data later?</li>
+</ol>
+<p>These questions expose more risk than a single mapping-completion percentage.</p>
+<h1 id="a-practical-readiness-scorecard">A practical readiness scorecard</h1>
+<p>A scorecard can help management compare domains, but it should not hide critical blockers.</p>
+<p>We use categories such as:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Area</th><th scope="col">Example evidence</th></tr></thead><tbody><tr><td>Model</td><td>Approved attributes, contexts, rules and ownership</td></tr><tr><td>Source data</td><td>Current profiles, completeness and reference checks</td></tr><tr><td>Mapping</td><td>Complete source-to-target and value mappings</td></tr><tr><td>Target</td><td>Stable structures, configuration and prerequisites</td></tr><tr><td>Testing</td><td>Representative coverage and reconciliation</td></tr><tr><td>Operations</td><td>Stewards, remediation and handover</td></tr></tbody></table></div>
+<p>Each area can be assessed as:</p>
+<ul>
+<li>Verified;</li>
+<li>Partially verified;</li>
+<li>Unsupported;</li>
+<li>Blocked.</li>
+</ul>
+<p>We avoid averaging a severe blocker into a generally positive score.</p>
+<p>For example, a domain should not receive a reassuring 88% readiness score when one mandatory tax requirement remains unresolved for the largest country.</p>
+<p>The scorecard should direct attention, not produce comfort.</p>
+<h1 id="where-martenweave-fits">Where Martenweave fits</h1>
+<p>We built Martenweave to turn readiness from a manual document exercise into a model-driven control process.</p>
+<p>The current Martenweave product can represent:</p>
+<ul>
+<li>domains;</li>
+<li>entities;</li>
+<li>attributes;</li>
+<li>organisational contexts;</li>
+<li>source and target field endpoints;</li>
+<li>mappings;</li>
+<li>value lists and mappings;</li>
+<li>validation rules;</li>
+<li>owners;</li>
+<li>issues;</li>
+<li>decisions;</li>
+<li>change proposals;</li>
+<li>datasets and detected gaps.</li>
+</ul>
+<p>It supports canonical model files, deterministic validation, generated indexes, dataset profiling, gap detection, trace and impact analysis, ownership and health reports, and reviewable change proposals.</p>
+<p>For SAP migration scenarios, Martenweave can connect legacy source columns to SAP field endpoints, validate context and references, compare CSV or XLSX datasets against the expected model, detect missing coverage and trace downstream impact before a rule changes.</p>
+<p>A readiness workflow can therefore be built from actual relationships:</p>
+<pre><code class="language-text">Approved model
+      ↓
+Expected source and target endpoints
+      ↓
+Current migration dataset
+      ↓
+Detected gaps and unresolved mappings
+      ↓
+Validation and impact analysis
+      ↓
+Reviewable readiness report</code></pre>
+<p>This does not replace migration tooling, SAP MDG or testing systems.</p>
+<p>It provides a controlled view of whether their outputs remain aligned.</p>
+<h2 id="a-minimal-martenweave-readiness-pilot">A minimal Martenweave readiness pilot</h2>
+<p>We recommend starting with:</p>
+<ul>
+<li>one domain;</li>
+<li>one representative dataset;</li>
+<li>20–100 critical attributes;</li>
+<li>source and target endpoints;</li>
+<li>current mappings;</li>
+<li>important value lists;</li>
+<li>critical validation rules;</li>
+<li>known open decisions.</li>
+</ul>
+<p>The pilot should demonstrate that the team can:</p>
+<ol>
+<li>validate the target model;</li>
+<li>profile the dataset;</li>
+<li>detect missing or unexpected fields;</li>
+<li>identify incomplete value mappings;</li>
+<li>trace source to target;</li>
+<li>show the impact of one model change;</li>
+<li>generate a management-readable readiness report.</li>
+</ol>
+<p>The purpose is not to model every field immediately.</p>
+<p>It is to prove that readiness can be assessed through evidence rather than spreadsheet status alone.</p>
+<h1 id="common-readiness-mistakes">Common readiness mistakes</h1>
+<h2 id="waiting-until-the-mock-load-to-profile-the-data">Waiting until the mock load to profile the data</h2>
+<p>By then, many mapping and design decisions already depend on assumptions.</p>
+<p>Profile representative data during model design.</p>
+<h2 id="treating-blank-values-as-a-cleansing-issue-only">Treating blank values as a cleansing issue only</h2>
+<p>A blank may indicate poor quality, an incorrect target requirement or a missing business process.</p>
+<p>The cause matters.</p>
+<h2 id="reporting-mapping-completion-without-value-coverage">Reporting mapping completion without value coverage</h2>
+<p>A field mapping can be complete while most source codes remain unmapped.</p>
+<p>Track both.</p>
+<h2 id="hiding-temporary-defaults">Hiding temporary defaults</h2>
+<p>Defaults should be visible, approved and assigned for remediation.</p>
+<h2 id="testing-only-the-successful-population">Testing only the successful population</h2>
+<p>Records expected to fail are part of readiness evidence.</p>
+<h2 id="treating-every-gap-as-a-migration-defect">Treating every gap as a migration defect</h2>
+<p>Some gaps belong to the source, target model, governance process or business decision.</p>
+<p>Classify them correctly.</p>
+<h2 id="completing-the-load-without-preparing-ownership">Completing the load without preparing ownership</h2>
+<p>The loaded data becomes an operational responsibility immediately after go-live.</p>
+<p>Stewardship cannot begin after the project team disappears.</p>
+<h1 id="our-conclusion">Our conclusion</h1>
+<p>SAP data migration readiness is not demonstrated by a finished workbook or a successful technical load.</p>
+<p>It is demonstrated when the programme can connect:</p>
+<ul>
+<li>the approved model;</li>
+<li>actual source data;</li>
+<li>mappings and transformations;</li>
+<li>target rules;</li>
+<li>test evidence;</li>
+<li>ownership;</li>
+<li>accepted exceptions.</li>
+</ul>
+<p>We use this checklist because most migration risk sits between those artefacts.</p>
+<p>A source field exists, but not for every country.</p>
+<p>A mapping exists, but the value list is incomplete.</p>
+<p>A rule exists, but migration bypasses it.</p>
+<p>A test passed, but against an outdated model.</p>
+<p>A defect was accepted, but no one owns it after go-live.</p>
+<p>Each artefact can appear complete while the overall migration remains unsafe.</p>
+<p>Our position is simple:</p>
+<blockquote>A domain is ready when the programme can explain and prove the full path from source data to governed operational use.</blockquote>
+<p>That requires more than technical preparation.</p>
+<p>It requires a controlled model, explicit decisions and evidence that the organisation can maintain the result after the migration team leaves.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. Our focus is helping architects and delivery teams identify gaps earlier, reduce repeated manual analysis and build evidence that a domain is genuinely ready—not merely reported as complete.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a central governance hub supporting golden records, governed models, profiling, matching and consolidation, workflow routing, validated values, data-quality monitoring, mass changes and auditable data changes. SAP also recommends curating master data early before an SAP S/4HANA implementation.</p>
+<p>Martenweave’s public product materials describe canonical model files, deterministic validation, generated indexes, dataset profiling, gap detection, traceability, impact analysis and controlled model-change proposals.</p>
+<p>The Martenweave SAP migration scenario documents source-to-target mappings, organisational context, dataset gap detection, lineage and impact analysis.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li><li><a href="/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html">Most SAP programmes claim to have a single source of truth for mappings.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html"><span>Previous</span>An SAP MDG implementation contains several versions of the model.</a><a href="/blog/why-mapping-completion-is-not-migration-readiness.html"><span>Next</span>A migration programme reports that 96% of mappings are complete.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

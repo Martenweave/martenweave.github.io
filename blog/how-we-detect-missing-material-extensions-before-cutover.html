@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Detect Missing Material Extensions Before Cutover | Martenweave</title>
+    <meta
+      name="description"
+      content="The material migration team reports:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html" />
+    <meta property="og:title" content="How We Detect Missing Material Extensions Before Cutover | Martenweave" />
+    <meta property="og:description" content="The material migration team reports:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Detect Missing Material Extensions Before Cutover | Martenweave" />
+    <meta name="twitter:description" content="The material migration team reports:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html",
+                        "name": "How We Detect Missing Material Extensions Before Cutover | Martenweave",
+                        "description": "The material migration team reports:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Detect Missing Material Extensions Before Cutover",
+                                    "item": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html#content",
+                        "headline": "How We Detect Missing Material Extensions Before Cutover",
+                        "name": "How We Detect Missing Material Extensions Before Cutover",
+                        "description": "The material migration team reports:",
+                        "url": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-detect-missing-material-extensions-before-cutover.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Logistics data",
+                        "keywords": "Logistics data",
+                        "timeRequired": "PT15M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Detect Missing Material Extensions Before Cutover</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Logistics data</p><h1>How We Detect Missing Material Extensions Before Cutover</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 15 min read</p><p class="blog-summary">The material migration team reports:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#relationship-existence">Relationship existence</a></li><li><a href="#relationship-readiness">Relationship readiness</a></li><li><a href="#required-and-present">Required and present</a></li><li><a href="#required-and-missing">Required and missing</a></li><li><a href="#present-but-not-required">Present but not required</a></li><li><a href="#future-organisational-model">Future organisational model</a></li><li><a href="#material-use-classification">Material-use classification</a></li><li><a href="#operational-relationships">Operational relationships</a></li><li><a href="#open-business">Open business</a></li><li><a href="#planning-scope">Planning scope</a></li><li><a href="#approved-decisions">Approved Decisions</a></li><li><a href="#purchasing-capability">Purchasing capability</a></li><li><a href="#planning-capability">Planning capability</a></li><li><a href="#inventory-capability">Inventory capability</a></li><li><a href="#warehouse-capability">Warehouse capability</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>The material migration team reports:</p>
+<pre><code>Materials in scope: 120,000
+Materials created: 119,640
+Technical success rate: 99.7%</code></pre>
+<p>The result looks strong.</p>
+<p>The material numbers exist in SAP S/4HANA. Descriptions, material types, base units and several global attributes are populated. The final rehearsal produced few technical errors.</p>
+<p>Then the operational teams ask different questions.</p>
+<p>Procurement asks:</p>
+<blockquote>Are the materials extended to every purchasing context required on day one?</blockquote>
+<p>Production planning asks:</p>
+<blockquote>Do the materials exist in the Plants where MRP and production will actually run?</blockquote>
+<p>Warehouse operations asks:</p>
+<blockquote>Which materials are available as warehouse products with the data required for receiving, putaway, replenishment and picking?</blockquote>
+<p>Finance asks:</p>
+<blockquote>Which valuation and accounting contexts are missing?</blockquote>
+<p>The answers are no longer 99.7 percent.</p>
+<p>Hundreds of materials exist globally but are missing one or more operational extensions.</p>
+<p>Some can be displayed but not purchased.</p>
+<p>Some can be purchased but not planned.</p>
+<p>Some can be planned but not received into the intended warehouse.</p>
+<p>Some can be received but not replenished to production.</p>
+<p>The migration has created the material numbers.</p>
+<p>It has not completed the operational network around them.</p>
+<blockquote>A missing material extension is not a missing field. It is a missing permission for the business process to use the material in a specific organisational context.</blockquote>
+<p>This distinction matters for managers because extension gaps are often discovered late.</p>
+<p>They may remain invisible during:</p>
+<ul>
+<li>global material validation;</li>
+<li>basic load reconciliation;</li>
+<li>sample-based testing;</li>
+<li>central MDG approval;</li>
+<li>high-level migration reporting.</li>
+</ul>
+<p>They become visible when a Plant, purchasing organisation, storage location or warehouse tries to execute a real process.</p>
+<p>By then, the programme is already in cutover or hypercare.</p>
+<p>The management objective should therefore be:</p>
+<blockquote>Detect every required material–organisation relationship before cutover, explain which business process depends on it, and prove that the relationship exists in the current target baseline.</blockquote>
+<p>Martenweave can support this without becoming another ERP or migration tool.</p>
+<p>Its current architecture is built around canonical model files, deterministic validation, dataset-gap detection, lineage, impact analysis and human-reviewed proposals. It treats entities, attributes, relationships, datasets, mappings, rules, evidence and decisions as model objects rather than isolated spreadsheet columns.</p>
+<p>That makes material extensions a natural use case.</p>
+<h1 id="why-managers-underestimate-extension-risk">Why managers underestimate extension risk</h1>
+<p>A global material record is visible.</p>
+<p>An extension is relational and contextual.</p>
+<p>The project can point to material <code>AX-4711</code> in the target system and conclude that the migration succeeded.</p>
+<p>The missing extension is harder to see because the question is not:</p>
+<pre><code>Does AX-4711 exist?</code></pre>
+<p>It is:</p>
+<pre><code>Does AX-4711 exist
+for Plant DE10,
+purchasing organisation P100,
+storage location 0001,
+warehouse EWM-WH01
+and the processes expected after go-live?</code></pre>
+<p>The second question requires the programme to know the intended operating scope.</p>
+<p>That scope is often fragmented across:</p>
+<ul>
+<li>production plans;</li>
+<li>purchasing lists;</li>
+<li>warehouse-product files;</li>
+<li>stock migration scope;</li>
+<li>source lists;</li>
+<li>bills of material;</li>
+<li>open purchase orders;</li>
+<li>planning combinations;</li>
+<li>cutover spreadsheets;</li>
+<li>local business knowledge.</li>
+</ul>
+<p>The data team may know what was extracted.</p>
+<p>It may not know what the business will need.</p>
+<p>The business may know which materials it uses.</p>
+<p>It may not know which target extensions and relationships are required to enable that use.</p>
+<p>The functional team may know the SAP configuration.</p>
+<p>It may not know which migration population should satisfy each configured process.</p>
+<p>The gap survives because no artefact connects all three perspectives.</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>We use one material throughout the article.</p>
+<pre><code>Material:
+AX-4711
+
+Description:
+Steering Module Assembly
+
+Material category:
+Externally procured production component
+
+Required Plant:
+DE10
+
+Required purchasing organisation:
+P100
+
+Required storage location:
+0001
+
+Required warehouse:
+EWM-WH01
+
+Required process:
+Purchase, receive, store and replenish to production</code></pre>
+<p>The global material is created successfully.</p>
+<p>The migration report shows:</p>
+<pre><code>Global material:
+created
+
+Plant DE10:
+created
+
+Purchasing data:
+created
+
+Storage location 0001:
+missing
+
+Warehouse product EWM-WH01:
+missing
+
+Production-supply relationship:
+missing</code></pre>
+<p>A global completion metric may still show the material as loaded.</p>
+<p>Operationally, the result is incomplete.</p>
+<p>The missing relationships create a chain of consequences.</p>
+<pre><code>Storage-location extension missing
+→ stock cannot be managed in the intended local context
+
+Warehouse product missing
+→ warehouse-specific execution data is unavailable
+
+Production-supply relationship missing
+→ line-side replenishment cannot follow the intended process</code></pre>
+<p>The manager does not need to inspect every technical table.</p>
+<p>The manager needs to know:</p>
+<ul>
+<li>which capability is blocked;</li>
+<li>how many materials are affected;</li>
+<li>whether the affected materials are operationally critical;</li>
+<li>which team owns the missing relationship;</li>
+<li>whether a safe fallback exists;</li>
+<li>what Evidence will prove closure.</li>
+</ul>
+<h1 id="the-first-mistake-defining-scope-from-the-source-extract">The first mistake: defining scope from the source extract</h1>
+<p>Many programmes begin with a list of source materials.</p>
+<p>That list becomes the migration scope.</p>
+<p>This is necessary but insufficient.</p>
+<p>A source extract can tell us:</p>
+<ul>
+<li>which materials exist;</li>
+<li>where they currently have data;</li>
+<li>which historical organisational relationships are present.</li>
+</ul>
+<p>It cannot, by itself, define the target operating model.</p>
+<p>The target may introduce:</p>
+<ul>
+<li>new Plants;</li>
+<li>consolidated purchasing organisations;</li>
+<li>embedded or decentralised EWM;</li>
+<li>new storage locations;</li>
+<li>different production-supply concepts;</li>
+<li>new planning responsibilities;</li>
+<li>changed sourcing patterns.</li>
+</ul>
+<p>If scope is copied directly from the legacy system, the programme can reproduce old extensions and still miss new ones.</p>
+<p>The correct scope question is:</p>
+<blockquote>Which material–organisation combinations are required by the target processes?</blockquote>
+<p>That requires business and process Evidence.</p>
+<h1 id="the-second-mistake-assuming-that-transactions-reveal-the-full-scope">The second mistake: assuming that transactions reveal the full scope</h1>
+<p>Projects often derive extension requirements from historical transactions.</p>
+<p>For example:</p>
+<ul>
+<li>purchase-order history suggests purchasing extensions;</li>
+<li>inventory balances suggest Plant and storage-location extensions;</li>
+<li>warehouse stock suggests warehouse-product scope;</li>
+<li>production orders suggest production-use scope.</li>
+</ul>
+<p>Historical transactions are valuable Evidence.</p>
+<p>They are not a complete future-state specification.</p>
+<p>A material may have no recent purchase orders but still be required for:</p>
+<ul>
+<li>service parts;</li>
+<li>emergency maintenance;</li>
+<li>seasonal production;</li>
+<li>new product launch;</li>
+<li>safety stock;</li>
+<li>planned supplier transition.</li>
+</ul>
+<p>A material may have historical stock in a warehouse that will not exist after transformation.</p>
+<p>The programme should combine transaction history with:</p>
+<ul>
+<li>future process design;</li>
+<li>open business;</li>
+<li>planning scope;</li>
+<li>approved organisational model;</li>
+<li>business-owner confirmation.</li>
+</ul>
+<h1 id="the-third-mistake-creating-every-possible-extension">The third mistake: creating every possible extension</h1>
+<p>When managers recognise the risk, the opposite reaction can occur:</p>
+<blockquote>Extend every material everywhere.</blockquote>
+<p>This reduces some missing-extension errors.</p>
+<p>It creates other problems.</p>
+<p>Unnecessary extensions can:</p>
+<ul>
+<li>increase maintenance volume;</li>
+<li>make ownership unclear;</li>
+<li>create incorrect planning combinations;</li>
+<li>expose materials in processes where they should not be used;</li>
+<li>increase data-governance workload;</li>
+<li>complicate reporting and lifecycle management.</li>
+</ul>
+<p>The goal is not maximum extension coverage.</p>
+<p>The goal is justified extension coverage.</p>
+<p>Every relationship should have a reason.</p>
+<pre><code>Material AX-4711
+requires Plant DE10
+because it is used in the DE10 production model.
+
+Material AX-4711
+requires warehouse EWM-WH01
+because DE10 production supply is executed through that warehouse.</code></pre>
+<p>The reason should be traceable to Evidence.</p>
+<h1 id="the-fourth-mistake-treating-all-missing-extensions-equally">The fourth mistake: treating all missing extensions equally</h1>
+<p>A missing storage-location relationship for a dormant material is not equivalent to a missing Plant extension for a component required during the first production shift.</p>
+<p>Managers need impact segmentation.</p>
+<p>For each extension gap, we should know:</p>
+<ul>
+<li>business capability;</li>
+<li>Plant or warehouse;</li>
+<li>first required date;</li>
+<li>stock or demand exposure;</li>
+<li>criticality of the material;</li>
+<li>fallback;</li>
+<li>reversibility;</li>
+<li>owner.</li>
+</ul>
+<p>For AX-4711:</p>
+<pre><code>Missing relationship:
+Material–Warehouse EWM-WH01
+
+Affected capability:
+Production replenishment
+
+First required use:
+First production shift after go-live
+
+Fallback:
+Manual warehouse handling
+
+Fallback capacity:
+Not validated
+
+Priority:
+Critical</code></pre>
+<p>This is a management Finding.</p>
+<p>“Warehouse product missing” is only the technical symptom.</p>
+<h1 id="the-fifth-mistake-validating-the-extension-without-validating-its-content">The fifth mistake: validating the extension without validating its content</h1>
+<p>An extension may exist and still be unusable.</p>
+<p>A material can be extended to a Plant with:</p>
+<ul>
+<li>placeholder MRP data;</li>
+<li>wrong procurement type;</li>
+<li>unapproved planning parameters;</li>
+<li>an inappropriate default controller;</li>
+<li>missing production-storage location.</li>
+</ul>
+<p>A warehouse product can exist with incomplete or contradictory warehouse-process data.</p>
+<p>SAP describes EWM as managing high-volume warehouse operations and integrating warehouse and distribution processes with quality, production and track-and-trace. That means warehouse readiness depends on more than the presence of a replicated product identifier.</p>
+<p>We therefore separate two checks.</p>
+<h2 id="relationship-existence">Relationship existence</h2>
+<p>Does the material have the required organisational extension?</p>
+<h2 id="relationship-readiness">Relationship readiness</h2>
+<p>Does the extension contain the governed data required for its intended capability?</p>
+<p>For AX-4711:</p>
+<pre><code>Plant extension:
+exists
+
+Planning readiness:
+fails
+
+Reason:
+MRP controller is an unapproved migration default</code></pre>
+<p>Counting the extension as complete would hide the real problem.</p>
+<h1 id="the-management-solution-create-an-extension-obligation-model">The management solution: create an extension obligation model</h1>
+<p>The programme needs an explicit list of required relationships.</p>
+<p>We call each required relationship an <strong>extension obligation</strong>.</p>
+<p>Conceptually:</p>
+<pre><code>Material:
+AX-4711
+
+Required relationship:
+Material–Plant DE10
+
+Reason:
+Production demand exists in DE10
+
+Required capability:
+Material planning
+
+Evidence:
+Approved production scope</code></pre>
+<p>Another obligation:</p>
+<pre><code>Material:
+AX-4711
+
+Required relationship:
+Material–Warehouse EWM-WH01
+
+Reason:
+DE10 production supply uses EWM-WH01
+
+Required capability:
+Line-side replenishment
+
+Evidence:
+Approved warehouse and production-supply design</code></pre>
+<p>The extension obligation is not the extension itself.</p>
+<p>It is the reason the extension must exist.</p>
+<p>This gives us three states.</p>
+<h2 id="required-and-present">Required and present</h2>
+<p>The relationship exists. Its content must still be validated.</p>
+<h2 id="required-and-missing">Required and missing</h2>
+<p>A migration gap exists.</p>
+<h2 id="present-but-not-required">Present but not required</h2>
+<p>Possible over-extension or obsolete scope.</p>
+<p>This third category is often ignored.</p>
+<p>It can reveal poor scope control.</p>
+<h1 id="how-we-derive-extension-obligations">How we derive extension obligations</h1>
+<p>The obligation model should combine several sources.</p>
+<h2 id="future-organisational-model">Future organisational model</h2>
+<p>Which Plants, storage locations, purchasing organisations and warehouses will operate?</p>
+<h2 id="material-use-classification">Material-use classification</h2>
+<p>Which materials will be purchased, produced, stored, sold or transported?</p>
+<h2 id="operational-relationships">Operational relationships</h2>
+<p>Which Plant uses which warehouse? Which production process requires which storage location?</p>
+<h2 id="open-business">Open business</h2>
+<p>Which purchase orders, stock balances, production requirements and deliveries cross cutover?</p>
+<h2 id="planning-scope">Planning scope</h2>
+<p>Which product-location combinations are expected to participate in planning?</p>
+<h2 id="approved-decisions">Approved Decisions</h2>
+<p>Which materials are intentionally excluded, deferred or replaced?</p>
+<p>No single source is sufficient.</p>
+<p>The canonical model records the resulting obligation and its Evidence.</p>
+<h1 id="we-classify-extension-obligations-by-capability">We classify extension obligations by capability</h1>
+<p>Managers do not need a flat list of technical relationships.</p>
+<p>They need grouped business meaning.</p>
+<h2 id="purchasing-capability">Purchasing capability</h2>
+<p>Possible obligations:</p>
+<ul>
+<li>Material–Plant;</li>
+<li>purchasing context;</li>
+<li>order unit;</li>
+<li>purchasing group or responsibility;</li>
+<li>source relationship where required.</li>
+</ul>
+<h2 id="planning-capability">Planning capability</h2>
+<p>Possible obligations:</p>
+<ul>
+<li>Material–Plant;</li>
+<li>planning parameters;</li>
+<li>procurement treatment;</li>
+<li>relevant production or sourcing relationship;</li>
+<li>planning calendar where applicable.</li>
+</ul>
+<h2 id="inventory-capability">Inventory capability</h2>
+<p>Possible obligations:</p>
+<ul>
+<li>Material–Plant;</li>
+<li>Material–Storage Location;</li>
+<li>stock-management context;</li>
+<li>batch or serial-number treatment where required.</li>
+</ul>
+<h2 id="warehouse-capability">Warehouse capability</h2>
+<p>Possible obligations:</p>
+<ul>
+<li>material or product replication;</li>
+<li>warehouse-product relationship;</li>
+<li>required packaging and unit relationships;</li>
+<li>process-specific warehouse data.</li>
+</ul>
+<h2 id="production-supply-capability">Production-supply capability</h2>
+<p>Possible obligations:</p>
+<ul>
+<li>production Plant;</li>
+<li>storage or supply-area relationship;</li>
+<li>warehouse product;</li>
+<li>staging and replenishment treatment.</li>
+</ul>
+<p>The exact requirements remain programme-specific.</p>
+<p>Martenweave should not hard-code one universal SAP template.</p>
+<p>It should let the project define capability profiles.</p>
+<h1 id="we-compare-obligations-with-actual-target-state">We compare obligations with actual target state</h1>
+<p>Once obligations are known, detection becomes deterministic.</p>
+<pre><code>Required extensions
+minus
+confirmed target extensions
+equals
+missing-extension Findings</code></pre>
+<p>For AX-4711:</p>
+<pre><code>Required:
+Plant DE10
+Purchasing organisation P100
+Storage location 0001
+Warehouse EWM-WH01
+
+Confirmed:
+Plant DE10
+Purchasing organisation P100
+
+Missing:
+Storage location 0001
+Warehouse EWM-WH01</code></pre>
+<p>We then validate the relationships that exist.</p>
+<pre><code>Plant DE10:
+present but planning content incomplete
+
+Purchasing P100:
+present and ready</code></pre>
+<p>The result is more precise than “two extensions missing.”</p>
+<h1 id="we-preserve-evidence-for-both-sides">We preserve evidence for both sides</h1>
+<p>The obligation must have Evidence.</p>
+<p>The target state must also have Evidence.</p>
+<h2 id="obligation-evidence">Obligation Evidence</h2>
+<p>Why is the extension required?</p>
+<p>Examples:</p>
+<ul>
+<li>approved process scope;</li>
+<li>production model;</li>
+<li>open stock;</li>
+<li>active demand;</li>
+<li>business-owner Decision.</li>
+</ul>
+<h2 id="existence-evidence">Existence Evidence</h2>
+<p>How do we know the target extension exists?</p>
+<p>Examples:</p>
+<ul>
+<li>current target extract;</li>
+<li>load reconciliation;</li>
+<li>API response;</li>
+<li>replication result;</li>
+<li>validated target report.</li>
+</ul>
+<h2 id="readiness-evidence">Readiness Evidence</h2>
+<p>How do we know the extension supports the process?</p>
+<p>Examples:</p>
+<ul>
+<li>Rule execution;</li>
+<li>process test;</li>
+<li>target configuration check;</li>
+<li>business-owner approval.</li>
+</ul>
+<p>This prevents an Excel checkmark from becoming the only proof.</p>
+<h1 id="we-keep-source-authority-separate-from-extension-ownership">We keep source authority separate from extension ownership</h1>
+<p>An extension may contain values from several authorities.</p>
+<p>For a Plant extension:</p>
+<ul>
+<li>planning parameters may belong to planning;</li>
+<li>procurement treatment may belong to Procurement;</li>
+<li>production-storage location may belong to production logistics;</li>
+<li>costing attributes may belong to Finance.</li>
+</ul>
+<p>The team responsible for loading the extension does not own all of its meaning.</p>
+<p>Managers should avoid assigning the entire extension to “the data team.”</p>
+<p>Typed ownership is better.</p>
+<pre><code>Extension delivery owner:
+Material Migration Team
+
+Planning attributes owner:
+Plant Planning Owner
+
+Procurement attributes owner:
+Procurement Data Owner
+
+Closure approver:
+Plant Business Owner</code></pre>
+<h1 id="we-detect-partial-extensions">We detect partial extensions</h1>
+<p>A common problem is that the relationship appears to exist because one segment was loaded.</p>
+<p>For example:</p>
+<pre><code>Material–Plant relationship:
+present
+
+Purchasing-relevant data:
+present
+
+Planning-relevant data:
+missing</code></pre>
+<p>If the project checks only for the Plant key, it reports success.</p>
+<p>We need capability-specific completeness inside the relationship.</p>
+<p>For AX-4711:</p>
+<pre><code>Plant DE10
+
+Purchasing gate:
+ready
+
+Planning gate:
+not ready
+
+Production-supply gate:
+not ready</code></pre>
+<p>One extension can therefore have several readiness results.</p>
+<h1 id="we-detect-extensions-that-exist-in-the-wrong-scope">We detect extensions that exist in the wrong scope</h1>
+<p>A material may be extended to:</p>
+<pre><code>Plant DE01</code></pre>
+<p>when the approved target scope requires:</p>
+<pre><code>Plant DE10</code></pre>
+<p>A simple count shows one Plant extension.</p>
+<p>The required relationship remains missing.</p>
+<p>This happens after:</p>
+<ul>
+<li>Plant consolidation;</li>
+<li>code conversion;</li>
+<li>carve-out;</li>
+<li>template redesign;</li>
+<li>incorrect Mapping.</li>
+</ul>
+<p>The Finding should state:</p>
+<blockquote>Material is extended, but not to the required target organisational unit.</blockquote>
+<p>That is different from complete absence.</p>
+<h1 id="we-detect-orphaned-local-extensions">We detect orphaned local extensions</h1>
+<p>Some target extensions may have no current justification.</p>
+<p>For example:</p>
+<pre><code>Material AX-4711
+exists in warehouse EWM-WH09</code></pre>
+<p>but EWM-WH09 is not part of the target operating scope for this material.</p>
+<p>This may indicate:</p>
+<ul>
+<li>obsolete legacy replication;</li>
+<li>incorrect rule applicability;</li>
+<li>over-extension;</li>
+<li>scope contamination.</li>
+</ul>
+<p>The immediate risk may be lower than a missing critical extension.</p>
+<p>It still matters for governance and lifecycle management.</p>
+<h1 id="we-detect-extension-contradictions">We detect extension contradictions</h1>
+<p>The relationship exists, but connected values disagree.</p>
+<p>For example:</p>
+<pre><code>Plant DE10 procurement type:
+External
+
+Approved sourcing model:
+In-house production</code></pre>
+<p>Or:</p>
+<pre><code>ERP packaging conversion:
+48 EA per pallet
+
+Warehouse packaging specification:
+40 EA per pallet</code></pre>
+<p>The extension should not be classified as ready merely because all fields are populated.</p>
+<p>Martenweave should connect related objects and surface contradictions through deterministic Rules.</p>
+<h1 id="we-detect-hidden-defaults">We detect hidden defaults</h1>
+<p>A migration file may fill every missing MRP Controller with <code>001</code>.</p>
+<p>The Plant extensions now pass a non-empty check.</p>
+<p>The extension-obligation model should still report:</p>
+<pre><code>Plant extension:
+present
+
+Planning responsibility:
+temporary fallback
+
+Readiness:
+controlled
+
+Exception:
+required</code></pre>
+<p>This is a better management result than “100 percent complete.”</p>
+<h1 id="we-detect-missing-extension-evidence">We detect missing extension Evidence</h1>
+<p>Sometimes the extension probably exists, but current proof is unavailable.</p>
+<p>For example:</p>
+<ul>
+<li>the latest target extract was not delivered;</li>
+<li>the reconciliation used an earlier load;</li>
+<li>the validation ran before the final Mapping change.</li>
+</ul>
+<p>The correct state is:</p>
+<pre><code>Not assessed</code></pre>
+<p>not:</p>
+<pre><code>Missing</code></pre>
+<p>and not:</p>
+<pre><code>Ready</code></pre>
+<p>This avoids converting absence of Evidence into either failure or success.</p>
+<h1 id="we-connect-extension-gaps-to-cutover-gates">We connect extension gaps to cutover gates</h1>
+<p>A missing extension should affect the correct business gate.</p>
+<p>For AX-4711:</p>
+<pre><code>Missing storage location:
+Inventory gate blocked
+
+Missing warehouse product:
+Warehouse execution gate blocked
+
+Missing production-supply relationship:
+Production replenishment gate blocked</code></pre>
+<p>The global material-load gate may still be green.</p>
+<p>That is acceptable as long as the operational gates remain visible.</p>
+<p>A programme can then decide:</p>
+<ul>
+<li>block cutover;</li>
+<li>remove the material from the day-one scope;</li>
+<li>create a controlled manual fallback;</li>
+<li>complete the extension before activation.</li>
+</ul>
+<h1 id="we-define-controlled-temporary-operation-carefully">We define controlled temporary operation carefully</h1>
+<p>Some materials may be loaded before every extension is complete.</p>
+<p>This can be rational.</p>
+<p>For example, AX-4711 may be purchased and received into a temporary non-EWM process while the final warehouse setup is completed.</p>
+<p>That requires an Exception.</p>
+<p>The Exception should define:</p>
+<ul>
+<li>affected materials;</li>
+<li>allowed process;</li>
+<li>prohibited process;</li>
+<li>compensating control;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>closure condition.</li>
+</ul>
+<pre><code>Allowed:
+Purchase and receive through temporary process
+
+Not allowed:
+Automated line-side replenishment
+
+Control:
+Manual release by warehouse supervisor
+
+Expiry:
+Before production ramp-up</code></pre>
+<p>Without those boundaries, “manual workaround available” is not a controlled state.</p>
+<h1 id="we-close-gaps-with-target-evidence">We close gaps with target Evidence</h1>
+<p>A developer or data specialist adds the missing warehouse relationship.</p>
+<p>The Finding should not close immediately.</p>
+<p>We need to prove:</p>
+<ol>
+<li>the extension was created for the correct material and warehouse;</li>
+<li>the current cutover dataset includes it;</li>
+<li>required content is present;</li>
+<li>connected units and packaging are consistent;</li>
+<li>the intended process can execute;</li>
+<li>no unrelated materials were extended incorrectly.</li>
+</ol>
+<p>For AX-4711:</p>
+<pre><code>Warehouse product:
+confirmed
+
+Packaging relationship:
+confirmed
+
+Replenishment treatment:
+confirmed
+
+Target reconciliation:
+passed
+
+Production-supply test:
+passed
+
+Business owner:
+approved</code></pre>
+<p>Only then is the capability ready.</p>
+<h1 id="a-manager-focused-extension-dashboard">A manager-focused extension dashboard</h1>
+<p>The Workbench should not begin with a list of missing SAP views.</p>
+<p>It should begin with business exposure.</p>
+<h2 id="scope">Scope</h2>
+<p>Production components for Plant DE10 and warehouse EWM-WH01.</p>
+<h2 id="population">Population</h2>
+<pre><code>Materials:
+2,000</code></pre>
+<h2 id="extension-state">Extension state</h2>
+<pre><code>Fully extended and ready:
+1,860
+
+Required extension missing:
+70
+
+Extension present but incomplete:
+40
+
+Controlled by Exception:
+20
+
+Not assessed:
+10</code></pre>
+<h2 id="business-impact">Business impact</h2>
+<pre><code>Purchasing blocked:
+15 materials
+
+Planning blocked:
+25 materials
+
+Warehouse execution blocked:
+50 materials
+
+Production supply blocked:
+20 critical materials</code></pre>
+<h2 id="critical-findings">Critical Findings</h2>
+<ul>
+<li>warehouse product missing for line-start components;</li>
+<li>production-storage relationship missing;</li>
+<li>packaging contradiction;</li>
+<li>unapproved planning default.</li>
+</ul>
+<h2 id="evidence-health">Evidence health</h2>
+<ul>
+<li>target extract current;</li>
+<li>packaging validation stale;</li>
+<li>ten materials added after latest validation.</li>
+</ul>
+<p>This is the level at which a manager can act.</p>
+<h1 id="the-first-martenweave-logistics-slice">The first Martenweave logistics slice</h1>
+<p>The focused capability should be:</p>
+<h2 id="material-extension-obligations">Material Extension Obligations</h2>
+<h3 id="goal">Goal</h3>
+<p>Compare required material–organisation relationships with current target Evidence and explain the operational impact of every gap.</p>
+<h3 id="initial-relationship-types">Initial relationship types</h3>
+<ul>
+<li>Material–Plant;</li>
+<li>Material–Storage Location;</li>
+<li>Material–Purchasing Context;</li>
+<li>Material–Warehouse;</li>
+<li>Material–Planning Location;</li>
+<li>Material–Production Supply.</li>
+</ul>
+<h3 id="initial-inputs">Initial inputs</h3>
+<ul>
+<li>material population;</li>
+<li>target organisational model;</li>
+<li>business-capability profiles;</li>
+<li>open business and planning Evidence;</li>
+<li>approved scope Decisions;</li>
+<li>target extension extracts;</li>
+<li>active Exceptions.</li>
+</ul>
+<h3 id="initial-outputs">Initial outputs</h3>
+<ul>
+<li>missing required extensions;</li>
+<li>incomplete existing extensions;</li>
+<li>present but unjustified extensions;</li>
+<li>contradictory extension data;</li>
+<li>affected capabilities;</li>
+<li>owners;</li>
+<li>priority;</li>
+<li>closure criteria.</li>
+</ul>
+<h1 id="a-conceptual-obligation-object">A conceptual obligation object</h1>
+<pre><code>---
+id: OBL-AX-4711-EWM-WH01
+type: ExtensionObligation
+
+material:
+  AX-4711
+
+relationship_type:
+  material_warehouse
+
+target:
+  EWM-WH01
+
+required_for:
+  production_supply
+
+reason:
+  DE10 line-side supply is executed
+  through EWM-WH01
+
+evidence:
+  - DEC-DE10-PRODUCTION-SCOPE
+  - DATASET-DE10-LINE-COMPONENTS
+
+required_by:
+  cutover
+
+owner:
+  ROLE-WAREHOUSE-DATA-OWNER
+---</code></pre>
+<p>This is a proposed product direction, not a claim about the current Martenweave schema.</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave logistics extension-obligations \
+  --dataset ./data/material-scope.xlsx \
+  --plant DE10 \
+  --warehouse EWM-WH01 \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics missing-extensions \
+  --capability production-supply \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics explain-extension \
+  AX-4711 \
+  --target EWM-WH01 \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics validate-extension \
+  OBL-AX-4711-EWM-WH01 \
+  --target-evidence ./reports/warehouse-products.csv \
+  --repo ./model</code></pre>
+<pre><code>martenweave logistics propose-extension-fix \
+  FIND-AX-4711-WAREHOUSE-MISSING \
+  --dry-run \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended capability, not the current published CLI.</p>
+<p>The existing Martenweave foundation already supports the canonical model, deterministic validation, gap detection, lineage, impact analysis and human-reviewed proposal flow needed for the slice.</p>
+<h1 id="what-managers-should-require-before-cutover">What managers should require before cutover</h1>
+<p>A practical control checklist is short.</p>
+<h2 id="require-a-target-capability-list">Require a target capability list</h2>
+<p>For each material population, define whether it must support:</p>
+<ul>
+<li>purchasing;</li>
+<li>planning;</li>
+<li>inventory;</li>
+<li>warehouse execution;</li>
+<li>production supply;</li>
+<li>transportation.</li>
+</ul>
+<h2 id="require-explicit-organisational-scope">Require explicit organisational scope</h2>
+<p>Name the Plants, storage locations, purchasing contexts and warehouses.</p>
+<h2 id="require-obligation-to-target-reconciliation">Require obligation-to-target reconciliation</h2>
+<p>Do not rely only on source extracts or global material counts.</p>
+<h2 id="require-separate-reporting-for-missing-and-incomplete-extensions">Require separate reporting for missing and incomplete extensions</h2>
+<p>“Present” is not the same as “ready.”</p>
+<h2 id="require-exception-visibility">Require exception visibility</h2>
+<p>Temporary workarounds must remain outside the fully ready population.</p>
+<h2 id="require-business-impact-prioritisation">Require business-impact prioritisation</h2>
+<p>Twenty missing extensions for production-critical components may matter more than thousands of minor field gaps.</p>
+<h2 id="require-current-evidence">Require current Evidence</h2>
+<p>The report must match the final model, Mapping, dataset and target load.</p>
+<h1 id="the-questions-managers-should-ask">The questions managers should ask</h1>
+<ol>
+<li>Which materials must operate in each Plant after go-live?</li>
+<li>Which materials need purchasing, planning, storage, warehouse and production-supply extensions?</li>
+<li>What Evidence created each requirement?</li>
+<li>Which required relationships are completely absent?</li>
+<li>Which relationships exist but contain defaults or missing process data?</li>
+<li>Which materials are extended to the wrong organisational units?</li>
+<li>Which materials have unnecessary or obsolete extensions?</li>
+<li>Which gaps block a day-one capability?</li>
+<li>Which workarounds are validated and time-bounded?</li>
+<li>Which target Evidence proves that the final extension state exists?</li>
+</ol>
+<p>These questions move the programme from object migration to operational readiness.</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Missing extensions create predictable post-go-live incidents:</p>
+<ul>
+<li>purchase orders cannot be created;</li>
+<li>MRP does not plan expected materials;</li>
+<li>stock cannot be managed in the intended location;</li>
+<li>warehouse processes fail or require manual handling;</li>
+<li>production replenishment is interrupted;</li>
+<li>logistics teams create emergency master-data changes;</li>
+<li>hypercare tickets move between MM, PP, EWM and data teams.</li>
+</ul>
+<p>Detecting the gaps before cutover reduces:</p>
+<ul>
+<li>emergency extensions;</li>
+<li>production disruption;</li>
+<li>manual warehouse work;</li>
+<li>duplicated investigation;</li>
+<li>unclear ownership;</li>
+<li>false-green reporting.</li>
+</ul>
+<p>The value is not just earlier error detection.</p>
+<p>It is clearer operational scope.</p>
+<p>Instead of reporting:</p>
+<pre><code>99.7% of materials were loaded.</code></pre>
+<p>the programme can report:</p>
+<pre><code>119,640 materials were created.
+
+118,900 are fully extended for their intended capabilities.
+
+410 require controlled temporary treatment.
+
+210 have missing organisational relationships.
+
+90 contain incomplete or contradictory extension data.
+
+Twenty production-critical components
+still block the production-supply gate.</code></pre>
+<p>That is a management statement.</p>
+<p>It supports a real decision.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A material extension is not a technical detail attached to a global record.</p>
+<p>It is the relationship that permits the material to participate in a specific part of the operating model.</p>
+<p>The practical test is:</p>
+<blockquote>Can we prove that every material has every justified organisational relationship required for its day-one capabilities—and no critical relationship is being inferred from a global load-success rate?</blockquote>
+<p>When the answer is yes, extension readiness is governed.</p>
+<p>When the answer is:</p>
+<blockquote>The material number exists in the target,</blockquote>
+<p>we have proven identity creation.</p>
+<p>We have not proven that purchasing, planning, inventory, warehouse or production can use it.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that missing operational relationships are detected before they become warehouse, planning and production incidents.</p>
+<p>Our operating model is:</p>
+<pre><code>Business capability defines the need.
+
+Extension obligation defines the relationship.
+
+Target Evidence proves existence.
+
+Rules prove readiness.
+
+Findings explain operational impact.
+
+Exceptions preserve temporary limits.
+
+AI proposes remediation.
+
+Humans approve scope and model truth.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance, logistics and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a backend-first model-governance and Evidence layer that converts datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI-generated changes proposal-first.</p>
+<p>Its documented workflow includes dataset and model-gap detection, lineage, impact analysis and a dataset-readiness command.</p>
+<p>SAP describes SAP EWM as a warehouse-management system for high-volume operations that integrates warehouse and distribution processes with quality, production and track-and-trace. This supports the article’s argument that a material identifier alone does not establish warehouse or production-supply readiness.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer that preserves governed models, semantics and relationships, applies business Rules, supports matching and consolidation and maintains an audit trail. It also states that master-data integration distributes data in its current state rather than improving its quality. This distinction supports connecting MDG and replication Evidence to a separate migration-readiness assessment.</p>
+<p>ExtensionObligation objects, capability profiles, extension-readiness states and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html">The material migration report looks successful.</a></li><li><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html">The unit-of-measure migration report looks harmless.</a></li><li><a href="/blog/how-we-model-packaging-hierarchies-without-losing-logistics-meaning.html">The material migration team reports that packaging data is complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html"><span>Previous</span>The material migration report looks successful.</a><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html"><span>Next</span>The unit-of-measure migration report looks harmless.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

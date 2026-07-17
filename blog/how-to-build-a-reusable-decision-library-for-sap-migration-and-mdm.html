@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Reusable Decision Library for SAP Migration and MDM | Martenweave</title>
+    <meta
+      name="description"
+      content="A programme has an approved decision:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html" />
+    <meta property="og:title" content="How to Build a Reusable Decision Library for SAP Migration and MDM | Martenweave" />
+    <meta property="og:description" content="A programme has an approved decision:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a Reusable Decision Library for SAP Migration and MDM | Martenweave" />
+    <meta name="twitter:description" content="A programme has an approved decision:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html",
+                        "name": "How to Build a Reusable Decision Library for SAP Migration and MDM | Martenweave",
+                        "description": "A programme has an approved decision:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build a Reusable Decision Library for SAP Migration and MDM",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html#content",
+                        "headline": "How to Build a Reusable Decision Library for SAP Migration and MDM",
+                        "name": "How to Build a Reusable Decision Library for SAP Migration and MDM",
+                        "description": "A programme has an approved decision:",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build a Reusable Decision Library for SAP Migration and MDM</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Build a Reusable Decision Library for SAP Migration and MDM</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A programme has an approved decision:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#decisions-disappear-in-several-ways">Decisions disappear in several ways</a></li><li><a href="#a-decision-statement-is-not-a-decision-record">A decision statement is not a decision record</a></li><li><a href="#the-library-should-contain-model-decisions-not-every-project-choice">The library should contain model decisions—not every project choice</a></li><li><a href="#a-useful-decision-has-a-boundary">A useful decision has a boundary</a></li><li><a href="#preserve-the-considered-alternatives">Preserve the considered alternatives</a></li><li><a href="#record-rejected-defaults-explicitly">Record rejected defaults explicitly</a></li><li><a href="#decision-status-needs-more-precision-than-approved-or-rejected">Decision status needs more precision than Approved or Rejected</a></li><li><a href="#temporary-decisions-need-a-built-in-ending">Temporary decisions need a built-in ending</a></li><li><a href="#link-decisions-to-evidence-without-copying-everything">Link decisions to evidence without copying everything</a></li><li><a href="#git-provides-durable-model-change-history">Git provides durable model-change history</a></li><li><a href="#a-decision-record-should-be-small-enough-to-complete">A decision record should be small enough to complete</a></li><li><a href="#determine-the-effective-decision-by-context">Determine the effective decision by context</a></li><li><a href="#a-decision-can-be-implemented-incorrectly">A decision can be implemented incorrectly</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A programme has an approved decision:</p>
+<blockquote>Customer Group will be maintained at sales-area level.</blockquote>
+<p>The decision appears in a steering presentation. A related Jira ticket is closed. The mapping workbook contains the selected SAP field. Meeting minutes record that the business accepted the approach.</p>
+<p>Nine months later, another country asks whether it can use one central source value for every sales area.</p>
+<p>The project team searches for the original decision.</p>
+<p>They find several fragments:</p>
+<ul>
+<li>a slide containing the final sentence;</li>
+<li>a Jira issue discussing the implementation;</li>
+<li>a Confluence page with three abandoned options;</li>
+<li>a mapping row without rationale;</li>
+<li>an email from the original architect;</li>
+<li>an SAP configuration that does not exactly match any of them.</li>
+</ul>
+<p>The decision exists.</p>
+<p>Its usable context does not.</p>
+<p>The new team cannot determine:</p>
+<ul>
+<li>why sales-area granularity was selected;</li>
+<li>which source systems were investigated;</li>
+<li>whether the decision was global or limited to two countries;</li>
+<li>what assumptions supported it;</li>
+<li>what alternatives were rejected;</li>
+<li>whether later evidence changed the conclusion;</li>
+<li>who has authority to revise it.</li>
+</ul>
+<p>The team now has two unsafe choices.</p>
+<p>It can repeat the investigation.</p>
+<p>Or it can reuse the old conclusion without knowing whether the conditions still match.</p>
+<p>This is why a decision library must be more than a searchable list of approved statements.</p>
+<blockquote>A reusable decision library preserves not only what was decided, but the scope, evidence, alternatives, authority and conditions that make the decision valid.</blockquote>
+<p>The objective is not to document every meeting.</p>
+<p>It is to stop important model decisions from becoming detached from the problem they solved.</p>
+<h2 id="decisions-disappear-in-several-ways">Decisions disappear in several ways</h2>
+<p>Knowledge loss does not require documents to be deleted.</p>
+<p>A decision can remain technically available and still become unusable.</p>
+<h3 id="the-decision-is-buried-inside-delivery-work">The decision is buried inside delivery work</h3>
+<p>A Jira issue may contain the reasoning, but its title describes implementation:</p>
+<blockquote>Configure Supplier Classification validation.</blockquote>
+<p>Later users searching for the business decision may never find it.</p>
+<h3 id="the-outcome-survives-but-the-alternatives-disappear">The outcome survives, but the alternatives disappear</h3>
+<p>The final mapping exists, but nobody remembers why another target was rejected.</p>
+<p>A later team proposes the same unsafe alternative.</p>
+<h3 id="the-scope-disappears">The scope disappears</h3>
+<p>A local Portuguese exception is remembered as a general rule.</p>
+<p>A migration-only default becomes part of operational design.</p>
+<h3 id="evidence-ages-silently">Evidence ages silently</h3>
+<p>The decision relied on a dataset profile produced before source remediation or system replacement.</p>
+<p>The page remains marked “Approved.”</p>
+<h3 id="implementation-becomes-confused-with-policy">Implementation becomes confused with policy</h3>
+<p>Teams infer the business decision from current SAP configuration, even when configuration contains a defect or temporary workaround.</p>
+<h3 id="the-original-authority-leaves">The original authority leaves</h3>
+<p>The programme knows who made the decision, but not which governance role gave that person authority.</p>
+<p>The practical result is the same: the organisation cannot reuse its own conclusions safely.</p>
+<h2 id="a-decision-statement-is-not-a-decision-record">A decision statement is not a decision record</h2>
+<p>Consider this sentence:</p>
+<blockquote>Use <code>PENDING</code> for suppliers without a final risk classification.</blockquote>
+<p>It looks precise.</p>
+<p>It leaves important questions unanswered:</p>
+<ul>
+<li>Is <code>PENDING</code> part of Supplier Risk or a separate Review Status?</li>
+<li>Does it apply to all suppliers?</li>
+<li>Is it migration-only?</li>
+<li>Can operational users assign it?</li>
+<li>Does it block activation?</li>
+<li>Which source systems may use it?</li>
+<li>When must it be removed?</li>
+<li>Who approved the exception?</li>
+</ul>
+<p>A decision record must provide enough context to distinguish the approved treatment from other plausible interpretations.</p>
+<p>A useful test is:</p>
+<blockquote>Could a team that did not attend the original discussion implement the decision correctly without calling the original author?</blockquote>
+<p>When the answer is no, the record contains an outcome but not a reusable decision.</p>
+<h2 id="the-library-should-contain-model-decisions-not-every-project-choice">The library should contain model decisions—not every project choice</h2>
+<p>A programme makes thousands of decisions:</p>
+<ul>
+<li>workshop date;</li>
+<li>spreadsheet format;</li>
+<li>sprint assignment;</li>
+<li>test-environment sequence;</li>
+<li>meeting frequency.</li>
+</ul>
+<p>A Martenweave decision library should focus on choices that affect persistent model truth or its controlled implementation.</p>
+<p>Examples include:</p>
+<ul>
+<li>business definition;</li>
+<li>authoritative source;</li>
+<li>source-to-target relationship;</li>
+<li>organisational granularity;</li>
+<li>value semantics;</li>
+<li>global versus local applicability;</li>
+<li>mandatory rules;</li>
+<li>derivation;</li>
+<li>default policy;</li>
+<li>ownership;</li>
+<li>lifecycle;</li>
+<li>accepted exception;</li>
+<li>retirement;</li>
+<li>risk acceptance.</li>
+</ul>
+<p>The library should not become a complete project diary.</p>
+<p>Its value comes from preserving decisions that future teams are likely to question, reuse or accidentally contradict.</p>
+<h2 id="a-useful-decision-has-a-boundary">A useful decision has a boundary</h2>
+<p>Every model decision should state where it applies.</p>
+<p>For example:</p>
+<p>```text id=&quot;dec-01&quot; Decision: Customer Group is maintained at sales-area level.</p>
+<p>Applies to:</p>
+<ul>
+<li>active sold-to customers;</li>
+<li>SAP sales processing;</li>
+<li>Germany and Austria;</li>
+<li>CRM_A migration;</li>
+<li>Wave 2 and subsequent operational maintenance.</li>
+</ul>
+<p>Does not determine:</p>
+<ul>
+<li>marketing segmentation;</li>
+<li>account-group assignment;</li>
+<li>pricing-group design;</li>
+<li>historical inactive customers.</li>
+</ul>
+<pre><code>
+The exclusion section is important.
+
+Without it, a correct decision may be reused for another concept simply because the terminology is similar.
+
+## Write the decision as a change in model truth
+
+Weak wording:
+
+&gt; Agreed to update the mapping.
+
+Stronger wording:
+
+&gt; `CRM_A.CUSTOMER_SEGMENT` will not be treated as a direct source for the sales-area Customer Group. Customer Group values for Wave 2 will be provided through controlled enrichment until an approved organisational derivation or authoritative source is available.
+
+The stronger version identifies:
+
+- rejected relationship;
+- approved temporary treatment;
+- applicable scope;
+- condition for future change.
+
+A decision should describe what becomes true after approval.
+
+## Keep the problem beside the outcome
+
+A reusable record needs a short problem statement.
+
+Example:
+
+```text id=&quot;dec-02&quot;
+Problem:
+
+CRM_A stores one central marketing segment per customer.
+The SAP target Customer Group can differ by sales area
+and influences sales-processing analysis.</code></pre>
+<p>This explains why a direct mapping was questioned.</p>
+<p>Without the problem, later users see only the chosen solution and may apply it in a context where the original issue does not exist.</p>
+<h2 id="preserve-the-considered-alternatives">Preserve the considered alternatives</h2>
+<p>Atlassian’s current decision-documentation guidance recommends recording context, involved roles, options, advantages and disadvantages, action items and the final outcome. Its DACI structure also distinguishes the driver, approver, contributors and informed participants.</p>
+<p>That is a useful general collaboration pattern.</p>
+<p>For a model decision, alternatives should be more tightly connected to model consequences.</p>
+<p>For example:</p>
+<h3 id="option-a-copy-central-segment-to-every-sales-area">Option A: copy central segment to every sales area</h3>
+<p>Rejected because:</p>
+<ul>
+<li>source and target granularity differ;</li>
+<li>no approved business rule supports repetition;</li>
+<li>local variation would be lost.</li>
+</ul>
+<h3 id="option-b-derive-customer-group-by-sales-area">Option B: derive Customer Group by sales area</h3>
+<p>Deferred because:</p>
+<ul>
+<li>derivation rules are not agreed;</li>
+<li>required organisational evidence is incomplete.</li>
+</ul>
+<h3 id="option-c-controlled-enrichment">Option C: controlled enrichment</h3>
+<p>Approved for Wave 2 because:</p>
+<ul>
+<li>business owners can provide contextual values;</li>
+<li>unresolved records remain visible;</li>
+<li>the approach does not falsely redefine the source field.</li>
+</ul>
+<h3 id="option-d-leave-target-blank">Option D: leave target blank</h3>
+<p>Rejected for the applicable population because:</p>
+<ul>
+<li>downstream sales processing requires the value;</li>
+<li>readiness policy does not permit unresolved cutover records.</li>
+</ul>
+<p>Future readers can now understand why the approved option was selected.</p>
+<p>They can also reassess the deferred option when circumstances change.</p>
+<h2 id="record-rejected-defaults-explicitly">Record rejected defaults explicitly</h2>
+<p>Defaults deserve special treatment because they often reappear.</p>
+<p>A decision should state:</p>
+<p>```text id=&quot;dec-03&quot; Rejected treatment: Default blank Supplier Risk to STANDARD.</p>
+<p>Reason: Absence of classification does not establish standard risk. The default would create a plausible final value and hide which records still require assessment.</p>
+<pre><code>
+This is valuable institutional knowledge.
+
+Without it, another team may reintroduce the same default as an apparently practical improvement.
+
+## Distinguish the finding from the decision
+
+An investigation produces a finding.
+
+An authority makes a decision.
+
+Example:
+
+### Finding
+
+The central CRM segment is not semantically equivalent to sales-area Customer Group.
+
+### Decision
+
+Use controlled enrichment for the current migration wave.
+
+The finding may remain valid for years.
+
+The implementation decision may be temporary.
+
+Keeping them separate allows the library to evolve correctly.
+
+A future authoritative source may replace enrichment without invalidating the original finding about semantic non-equivalence.
+
+## Authority should be represented as a role
+
+A decision record should identify:
+
+- driver;
+- accountable approver;
+- contributors;
+- affected owners;
+- parties informed.
+
+But permanent model authority should normally be represented through governance roles rather than only individual names.
+
+Example:
+
+```text id=&quot;dec-04&quot;
+Approving role:
+Global Customer Data Owner
+
+Current approver:
+Jane Smith
+
+Technical concurrence:
+SAP Customer Architect
+
+Local concurrence:
+Germany Sales Data Owner
+Austria Sales Data Owner</code></pre>
+<p>If Jane Smith leaves, the organisation still knows which role may review or supersede the decision.</p>
+<p>This is stronger than treating the original meeting attendees as permanent authorities.</p>
+<h2 id="decision-status-needs-more-precision-than-approved-or-rejected">Decision status needs more precision than Approved or Rejected</h2>
+<p>Useful lifecycle states include:</p>
+<h3 id="draft">Draft</h3>
+<p>The question and alternatives are still being prepared.</p>
+<h3 id="decision-required">Decision required</h3>
+<p>Evidence is sufficient, but the accountable authority has not selected an option.</p>
+<h3 id="approved">Approved</h3>
+<p>The decision is current for its stated scope.</p>
+<h3 id="approved-with-conditions">Approved with conditions</h3>
+<p>The decision applies only while explicit conditions are maintained.</p>
+<h3 id="temporary">Temporary</h3>
+<p>The decision has an expiry or review trigger.</p>
+<h3 id="superseded">Superseded</h3>
+<p>A later decision replaces it.</p>
+<h3 id="partially-superseded">Partially superseded</h3>
+<p>The decision remains valid for part of its original scope.</p>
+<h3 id="withdrawn">Withdrawn</h3>
+<p>The decision was cancelled before becoming effective.</p>
+<h3 id="review-required">Review required</h3>
+<p>New evidence may invalidate the decision.</p>
+<h3 id="rejected">Rejected</h3>
+<p>The proposal was considered and not accepted.</p>
+<p>This lifecycle prevents “Approved” from becoming a permanent label after the underlying conditions have changed.</p>
+<h2 id="temporary-decisions-need-a-built-in-ending">Temporary decisions need a built-in ending</h2>
+<p>A temporary migration decision should include:</p>
+<ul>
+<li>effective date;</li>
+<li>expiry date;</li>
+<li>permitted population;</li>
+<li>restriction;</li>
+<li>owner;</li>
+<li>cleanup action;</li>
+<li>review trigger.</li>
+</ul>
+<p>For example:</p>
+<p>```text id=&quot;dec-05&quot; Decision: Allow Review Status = PENDING during Mock Load 2.</p>
+<p>Scope: ERP_B active suppliers with unresolved classification.</p>
+<p>Restriction: Records cannot be activated.</p>
+<p>Expiry: Before UAT Cycle 1.</p>
+<p>Required follow-up: Remediate population and retire migration-only treatment.</p>
+<pre><code>
+A temporary decision without an ending is usually a permanent model defect waiting to happen.
+
+## Reuse conditions are the heart of the library
+
+A decision library becomes useful when it tells teams whether an earlier decision can be applied again.
+
+Example:
+
+```text id=&quot;dec-06&quot;
+Reusable when:
+
+- the source remains central;
+- the target remains sales-area-specific;
+- no approved organisational derivation exists;
+- the same business definitions apply;
+- affected records remain within the stated customer population.</code></pre>
+<p>Then add:</p>
+<p>```text id=&quot;dec-07&quot; New review required when:</p>
+<ul>
+<li>a source becomes sales-area-specific;</li>
+<li>another target attribute is proposed;</li>
+<li>a country uses Customer Group for a different purpose;</li>
+<li>target semantics change;</li>
+<li>new evidence contradicts the original source analysis.</li>
+</ul>
+<pre><code>
+Without these fields, a decision library encourages blind copying.
+
+With them, it supports controlled precedent.
+
+## A reusable decision is not automatically a global standard
+
+Decisions can have different levels of authority.
+
+### Case-specific decision
+
+Applies only to one incident, dataset or migration batch.
+
+### Source-specific decision
+
+Applies to one legacy system.
+
+### Contextual decision
+
+Applies to a country, business unit or organisational level.
+
+### Domain precedent
+
+May guide similar cases but still requires scope confirmation.
+
+### Global model policy
+
+Applies across the governed domain unless an approved exception exists.
+
+A German mapping decision should not become a global policy simply because no other decision exists.
+
+The library should make authority level visible.
+
+## Decisions should link to canonical objects
+
+A record becomes far more useful when it is connected to what it governs.
+
+For example:
+
+```text id=&quot;dec-08&quot;
+Decision:
+DEC-CUSTOMER-GROUP-017
+
+Governs:
+- ATTR-CUST-SALES-CUSTOMER-GROUP
+- FEP-CRM-A-CUSTOMER-SEGMENT
+- FEP-S4-KNVV-KDGRP
+- MAP-CRM-A-CUSTOMER-GROUP
+- RULE-CUSTOMER-GROUP-REQUIRED</code></pre>
+<p>This enables questions such as:</p>
+<ul>
+<li>Which decisions define this attribute?</li>
+<li>Which decision approved this mapping?</li>
+<li>Which active objects still depend on a superseded decision?</li>
+<li>Which local rules have no recorded decision?</li>
+<li>Which decisions may be affected by retiring this endpoint?</li>
+</ul>
+<p>Martenweave’s current core already uses canonical objects for domains, entities, attributes, relationships, datasets, mappings, rules, evidence, decisions and proposals, with deterministic validation and generated indexes.</p>
+<p>A decision library should strengthen those relationships rather than exist as a separate document repository.</p>
+<h2 id="link-decisions-to-evidence-without-copying-everything">Link decisions to evidence without copying everything</h2>
+<p>Evidence may live in:</p>
+<ul>
+<li>dataset reports;</li>
+<li>data-quality platforms;</li>
+<li>enterprise catalogues;</li>
+<li>SAP configuration;</li>
+<li>Jira;</li>
+<li>ServiceNow;</li>
+<li>Confluence;</li>
+<li>GitHub;</li>
+<li>test tools.</li>
+</ul>
+<p>The decision record should preserve:</p>
+<ul>
+<li>evidence ID or reference;</li>
+<li>type;</li>
+<li>date;</li>
+<li>producer;</li>
+<li>model baseline;</li>
+<li>what claim it supports;</li>
+<li>known limitations.</li>
+</ul>
+<p>Example:</p>
+<p>```text id=&quot;dec-09&quot; Evidence: EVID-CRM-A-CUSTOMER-SEGMENT-PROFILE</p>
+<p>Supports: Source cardinality is one value per customer.</p>
+<p>Does not prove: Whether the source value has the same business meaning as SAP Customer Group.</p>
+<pre><code>
+This prevents data statistics from being treated as semantic authority.
+
+## Keep operational workflow in the appropriate platform
+
+SAP MDG is designed to govern operational master data through models, validations, ownership, matching, consolidation, workflows, quality monitoring and auditable changes.
+
+The decision library should not recreate SAP MDG change-request processing.
+
+Instead, it should answer:
+
+- why a model rule exists;
+- which evidence supported it;
+- what scope was approved;
+- which alternatives were rejected;
+- what should trigger review.
+
+The approved decision may then be implemented through SAP MDG workflow and configuration.
+
+## Confluence is good at collaborative decision pages
+
+Confluence’s DACI decision template is designed to record status, context, impact, participants, options, trade-offs, action items and final outcomes.
+
+That makes Confluence a reasonable authoring and collaboration surface.
+
+Its limitation is not that it cannot store decisions.
+
+The limitation appears when model-specific relationships remain only in prose:
+
+- affected object IDs;
+- target endpoints;
+- mapping versions;
+- datasets;
+- decision lifecycle;
+- superseding relationships;
+- deterministic consistency.
+
+Martenweave should not attempt to replace Confluence’s broad collaboration capabilities.
+
+It can make the decision structurally connected to the model.
+
+A programme may still publish a readable Confluence view generated from or linked to the canonical decision record.
+
+## ServiceNow is appropriate for operational knowledge and workflow
+
+ServiceNow positions its knowledge-management capability around contextual knowledge bases, self-service and agent productivity, within a broader platform covering workflows, risk, operations and service management.
+
+That makes it suitable for:
+
+- operational knowledge articles;
+- incident resolution;
+- service procedures;
+- approval workflows;
+- AMS support.
+
+A Martenweave decision may be referenced from a ServiceNow knowledge article:
+
+&gt; Why does the system block activation while Supplier Review Status is pending?
+
+The ServiceNow article explains operational handling.
+
+The decision library retains:
+
+- model rationale;
+- evidence;
+- affected objects;
+- approved scope;
+- change history.
+
+## Data-governance platforms can carry enterprise context
+
+Collibra and Informatica provide broad data-governance capabilities around policies, metadata, ownership, data understanding, quality and enterprise governance.
+
+They may be the appropriate enterprise systems for:
+
+- business glossary;
+- data ownership;
+- certification;
+- policy;
+- metadata discovery;
+- data-quality governance.
+
+Martenweave’s role should remain more delivery-specific:
+
+- exact source and target endpoints;
+- migration mappings;
+- dataset-to-model gaps;
+- local and global context;
+- model investigations;
+- reviewable file-level changes;
+- Git history.
+
+The library can reference enterprise catalogue assets and owners.
+
+It does not need to duplicate the complete catalogue.
+
+## Jira is useful for action, not as the only memory
+
+A Jira issue can track:
+
+- required decision;
+- owner;
+- due date;
+- implementation tasks;
+- progress;
+- blockers.
+
+But when the issue closes, its content may become hard to discover outside the original project context.
+
+The decision record should remain independently discoverable from the model objects it governs.
+
+A clean chain is:
+
+```text id=&quot;dec-10&quot;
+Investigation
+→ decision record
+→ PatchProposal or ChangeRequest
+→ Jira implementation tasks
+→ verification evidence</code></pre>
+<p>The decision explains why.</p>
+<p>Jira tracks delivery.</p>
+<h2 id="git-provides-durable-model-change-history">Git provides durable model-change history</h2>
+<p>Git is especially useful for preserving:</p>
+<ul>
+<li>exact canonical diff;</li>
+<li>reviewer comments;</li>
+<li>approvals;</li>
+<li>baseline;</li>
+<li>superseding change.</li>
+</ul>
+<p>But Git history alone does not guarantee a reusable decision.</p>
+<p>A commit message such as:</p>
+<blockquote>Update Supplier Risk logic</blockquote>
+<p>does not explain the business context.</p>
+<p>The decision record should link the semantic rationale to the exact model change.</p>
+<p>Martenweave’s existing operating principle is:</p>
+<blockquote>Agents propose. Validators verify. Humans approve. Git records.</blockquote>
+<p>The decision library supplies the reasoning that Git should record beside the diff.</p>
+<h2 id="a-decision-record-should-be-small-enough-to-complete">A decision record should be small enough to complete</h2>
+<p>A practical schema might contain:</p>
+<p>```yaml id=&quot;dec-11&quot; id: DEC-CUSTOMER-GROUP-017 title: Treat Customer Group as a sales-area attribute status: approved_with_conditions authority_level: domain_precedent</p>
+<p>problem: &gt; CRM_A provides one central marketing segment, while SAP Customer Group is maintained by sales area.</p>
+<p>decision: &gt; Do not use CRM_A.CUSTOMER_SEGMENT as an unrestricted direct source for Customer Group. Use controlled enrichment for Wave 2.</p>
+<p>scope: countries:</p>
+<ul>
+<li>DE</li>
+<li>AT</li>
+<p>source_systems:</p>
+<li>CRM_A</li>
+<p>population:</p>
+<li>active_sold_to_customers</li>
+<p>organisational_level:</p>
+<li>sales_area</li>
+</ul>
+<p>affected_objects:</p>
+<ul>
+<li>ATTR-CUST-SALES-CUSTOMER-GROUP</li>
+<li>FEP-CRM-A-CUSTOMER-SEGMENT</li>
+<li>FEP-S4-KNVV-KDGRP</li>
+</ul>
+<p>evidence:</p>
+<ul>
+<li>EVID-CRM-A-PROFILE-2026-07</li>
+<li>INV-CUSTOMER-GROUP-CRM-A-001</li>
+</ul>
+<p>alternatives: rejected:</p>
+<ul>
+<li>direct_replication</li>
+<p>deferred:</p>
+<li>organisational_derivation</li>
+</ul>
+<p>approving_role:</p>
+<ul>
+<li>ROLE-GLOBAL-CUSTOMER-DATA-OWNER</li>
+</ul>
+<p>reuse_conditions:</p>
+<ul>
+<li>source remains central</li>
+<li>target remains sales-area-specific</li>
+</ul>
+<p>review_triggers:</p>
+<ul>
+<li>source granularity changes</li>
+<li>target semantics change</li>
+<li>new authoritative source becomes available</li>
+</ul>
+<pre><code>
+This is a conceptual example.
+
+The important point is that the record is structured enough to validate and search, while still leaving room for concise human explanation.
+
+## Decisions need relationships to one another
+
+A library is not merely a list.
+
+Decisions can:
+
+- supersede;
+- refine;
+- restrict;
+- extend;
+- temporarily override;
+- implement;
+- reject;
+- depend on.
+
+Example:
+
+```text id=&quot;dec-12&quot;
+DEC-GLOBAL-SUPPLIER-RISK-001
+        ↓ refined_by
+DEC-PT-SUPPLIER-RISK-004
+        ↓ temporarily_overridden_by
+DEC-PT-MIGRATION-EXCEPTION-009
+        ↓ superseded_by
+DEC-PT-SOURCE-REMEDIATION-014</code></pre>
+<p>This allows users to determine which decision is currently effective for a particular context.</p>
+<p>Without explicit relationships, the newest document is often assumed to replace everything that came before.</p>
+<p>That may be wrong.</p>
+<h2 id="determine-the-effective-decision-by-context">Determine the effective decision by context</h2>
+<p>Suppose the global rule states:</p>
+<blockquote>Supplier Risk is mandatory for active strategic suppliers.</blockquote>
+<p>A Portuguese decision adds:</p>
+<blockquote>Individual suppliers are out of scope.</blockquote>
+<p>A migration decision permits:</p>
+<blockquote>During Mock Load 2, unresolved records may remain pending but cannot be activated.</blockquote>
+<p>All three decisions may be active simultaneously.</p>
+<p>The library should resolve them by:</p>
+<ul>
+<li>domain;</li>
+<li>country;</li>
+<li>entity type;</li>
+<li>lifecycle;</li>
+<li>migration phase;</li>
+<li>effective dates.</li>
+</ul>
+<p>This is more useful than treating decisions as one flat chronological log.</p>
+<h2 id="a-decision-can-be-implemented-incorrectly">A decision can be implemented incorrectly</h2>
+<p>The library should distinguish:</p>
+<p>```text id=&quot;dec-13&quot; Approved decision: Rule applies only to organisations.</p>
+<p>Current implementation: Rule applies to organisations and persons.</p>
+<pre><code>
+This should create an implementation-alignment gap.
+
+Do not rewrite the decision to match the system.
+
+The decision library protects intended truth from accidental configuration.
+
+## A decision can become stale without being wrong
+
+A decision may still describe its original context correctly while no longer supporting the current one.
+
+Example:
+
+- it assumed one source system;
+- a second source was added;
+- it assumed one country;
+- rollout expanded;
+- it relied on a temporary value list;
+- the target model changed.
+
+Mark it:
+
+&gt; Review required
+
+rather than deleting or silently editing it.
+
+Historical decisions explain how existing data and configuration came into existence.
+
+## Use review triggers instead of arbitrary annual reviews
+
+Some decisions require periodic review.
+
+Others should be reviewed only when relevant conditions change.
+
+Useful triggers include:
+
+- source-system replacement;
+- target-field retirement;
+- value-list change;
+- new country rollout;
+- new regulatory requirement;
+- dataset contradiction;
+- repeated incidents;
+- expired exception;
+- ownership change;
+- proposal affecting governed objects.
+
+Trigger-based review is more meaningful than asking owners to reread every decision once a year.
+
+## Make contradictions visible
+
+A library should detect or expose:
+
+- two active decisions governing the same object and context;
+- local exception with no global parent;
+- temporary decision past expiry;
+- current mapping linked to a superseded decision;
+- rule implemented without an approved decision;
+- decision referencing retired objects;
+- approved decision with missing authority.
+
+Some of these can be deterministic validation failures.
+
+Others require human resolution.
+
+The important point is that contradiction should not remain buried in documents.
+
+## What should be validated automatically
+
+Martenweave could check that:
+
+- decision ID is unique;
+- status is valid;
+- affected objects exist;
+- approver role exists;
+- temporary decisions have expiry;
+- superseded decisions identify replacements;
+- reusable decisions define scope;
+- active decisions do not reference retired objects without explanation;
+- implementation objects link to a current decision where policy requires it;
+- review triggers are well formed.
+
+The validator cannot determine whether the business decision is wise.
+
+It can determine whether the decision is structurally governable.
+
+## Search must work from the user’s language
+
+Users may search for:
+
+- Customer Group;
+- KNVV-KDGRP;
+- CRM segment;
+- German exception;
+- missing Supplier Risk;
+- migration default;
+- `PENDING`;
+- the related Jira number.
+
+The library should search:
+
+- decision title;
+- problem;
+- outcome;
+- aliases;
+- affected object IDs;
+- values;
+- systems;
+- countries;
+- evidence references;
+- implementation links.
+
+A decision that can only be found by its internal ID will not be reused.
+
+## Reuse should start with comparison, not copying
+
+When a user finds a previous decision, the system should prompt a scope comparison.
+
+For example:
+
+| Dimension | Previous decision | Current case |
+|---|---|---|
+| Source | CRM_A | CRM_B |
+| Source granularity | Central | Sales organisation |
+| Target | Customer Group | Customer Group |
+| Countries | DE, AT | FR |
+| Business definition | Sales-processing group | Sales-processing group |
+| Value model | One source value | Several organisational values |
+
+The previous conclusion may not apply because the source granularity differs.
+
+The library has still saved work:
+
+- target definition is known;
+- previous alternatives are available;
+- comparison dimensions are established.
+
+Reuse means carrying forward verified knowledge, not copying the final sentence.
+
+## A worked decision: Supplier Review Status
+
+### The question
+
+How should suppliers without a completed risk assessment be represented during migration?
+
+### The evidence
+
+- final Supplier Risk values drive compliance handling;
+- ERP_B cannot provide the value for part of the applicable population;
+- defaulting to `STANDARD` would conceal missing assessment;
+- an operational review process already exists informally.
+
+### Options considered
+
+1. Default Supplier Risk to `STANDARD`.
+2. Make Supplier Risk optional.
+3. Exclude all unresolved suppliers.
+4. Introduce a separate Review Status.
+
+### Decision
+
+Introduce Review Status with `PENDING`, `CLEARED` and `REJECTED`.
+
+Supplier Risk remains a final classification.
+
+Records with `PENDING` cannot be activated.
+
+### Authority level
+
+Domain precedent.
+
+### Scope
+
+Supplier organisations requiring compliance assessment.
+
+### Conditions
+
+- Review Status must be separate from Supplier Risk.
+- Operational ownership must be assigned.
+- Downstream reporting must not treat `PENDING` as final classification.
+
+### Reuse
+
+Other sources may reuse the treatment when they lack a final classification but can identify records requiring review.
+
+### New review required
+
+- final Supplier Risk becomes deterministically derivable;
+- another MDM platform represents the process differently;
+- activation policy changes;
+- downstream systems cannot accept the status.
+
+This decision is now reusable without being universal.
+
+## A second worked decision: local tax exception
+
+### Original request
+
+Disable Tax Identifier validation for Portugal.
+
+### Investigation result
+
+Failures affected individual suppliers because configuration ignored Business Partner category.
+
+### Decision
+
+Retain the tax rule for supplier organisations.
+
+Correct category context.
+
+Do not introduce a country-wide exemption.
+
+### Why it matters in the library
+
+A later project may search for:
+
+&gt; Portugal tax exception
+
+and find that the requested exception was explicitly rejected.
+
+This prevents the same broad exemption from being proposed again.
+
+The library preserves negative decisions as well as approved changes.
+
+## A third worked decision: target endpoint retirement
+
+### Trigger
+
+A target field is scheduled for retirement.
+
+### Finding
+
+The proposed replacement has a similar label but different organisational scope.
+
+### Decision
+
+Do not automatically migrate mappings to the replacement endpoint.
+
+Open separate investigations by affected business attribute.
+
+### Implementation consequence
+
+- freeze automatic replacement;
+- create impact report;
+- assign owners;
+- review twelve mappings.
+
+The decision prevents a technically efficient bulk change from creating semantic errors.
+
+## The smallest useful Martenweave implementation
+
+Martenweave already includes decision objects in its broader canonical model and supports validation, search, trace, impact, proposals and Git-oriented review workflows.
+
+The next useful decision-library slice should avoid becoming a large knowledge-management feature.
+
+### Add or strengthen these fields
+
+- decision authority level;
+- scope;
+- exclusions;
+- affected model objects;
+- alternatives;
+- approving role;
+- reuse conditions;
+- review triggers;
+- effective dates;
+- superseding relationships.
+
+### Add validation
+
+- active decision consistency;
+- expiry;
+- references;
+- authority;
+- superseding chain.
+
+### Add read operations
+
+- decisions for an object;
+- currently effective decisions by context;
+- decisions requiring review;
+- conflicting decisions;
+- precedents for a new investigation.
+
+### Connect to proposals
+
+A PatchProposal should identify which decision authorises it—or state that a new decision is required.
+
+### Generate human-readable views
+
+- Markdown;
+- static HTML;
+- GitHub issue or pull-request summary;
+- optional Confluence or ServiceNow reference.
+
+This is enough to prove value.
+
+## What not to build
+
+Do not turn Martenweave into:
+
+- a generic meeting-decision app;
+- a broad wiki;
+- a replacement for Confluence;
+- an enterprise knowledge base;
+- a workflow suite;
+- a full data catalogue;
+- a policy-management platform.
+
+Its decision library should remain anchored to model objects, migration evidence and controlled changes.
+
+That is what differentiates it.
+
+## How to measure whether the library works
+
+Do not count only the number of decisions recorded.
+
+Better indicators include:
+
+### Decision retrieval
+
+Can a new team find the relevant decision from a field, mapping or value?
+
+### Decision reuse
+
+Did a later wave reuse verified evidence or precedent?
+
+### Repeated-analysis reduction
+
+Were previously rejected options avoided?
+
+### Contradiction detection
+
+Did the library identify conflicting active decisions?
+
+### Time to impact assessment
+
+Can a reviewer identify affected objects and implementations?
+
+### Handover quality
+
+Can AMS understand why a rule exists without contacting the project team?
+
+### Stale-decision control
+
+Are expired and contradicted decisions surfaced?
+
+A library containing hundreds of unread decisions is not successful.
+
+## Questions to ask before approving a decision record
+
+- What problem does the decision resolve?
+- Is the decision itself stated clearly?
+- What scope does it govern?
+- What is explicitly out of scope?
+- Which evidence supports it?
+- Which serious alternatives were rejected?
+- Which role had authority?
+- Is it permanent, temporary or conditional?
+- Which model objects does it govern?
+- Which implementation must follow?
+- Under which conditions may it be reused?
+- What should trigger review?
+- Does it replace an earlier decision?
+- Can another team find it from the affected field or mapping?
+
+A record that cannot answer these questions is likely to become another project note.
+
+## Final perspective
+
+A decision library should not preserve the past merely for audit.
+
+It should make future work cheaper and safer.
+
+The organisation should be able to move from a current problem to:
+
+- previous investigations;
+- relevant evidence;
+- active decisions;
+- rejected alternatives;
+- applicable conditions;
+- current implementation;
+- required review.
+
+SAP MDG, enterprise catalogues, governance platforms, Confluence, ServiceNow, Jira and Git each solve important parts of the wider process. SAP MDG governs operational master data. Catalogues and governance suites organise enterprise metadata, ownership and policy. Confluence supports collaborative decision documentation. ServiceNow manages operational knowledge and workflow. Jira manages delivery. Git records exact model changes.
+
+The gap Martenweave can own is narrower:
+
+&gt; Connect a model decision to the exact evidence, objects, context and reviewed change that made it necessary.
+
+The practical test is:
+
+&gt; When a similar question appears in another country or migration wave, can the team determine whether the previous decision still applies without repeating the complete investigation or copying the conclusion blindly?
+
+When the answer is yes, the organisation has a reusable decision library.
+
+When the answer is no, it has a searchable archive of old conclusions.
+
+Those are not the same thing.
+
+## About the authors
+
+Martenweave is maintained by Dzmitryi Kharlanau.
+
+Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.
+
+It connects:
+
+- canonical model objects;
+- datasets;
+- mappings;
+- rules;
+- investigations;
+- evidence;
+- decisions;
+- impact;
+- reviewable proposals;
+- Git-recorded changes.
+
+The purpose of the decision library is not to replace the organisation’s existing knowledge, governance or operational platforms.
+
+It is to preserve the missing link between why a model decision was made and the exact model state it governs.
+
+## Sources and notes
+
+This article was reviewed on 14 July 2026.
+
+SAP describes SAP Master Data Governance as a central governance layer with governed models, preserved semantics and relationships, validated values, stewardship workflows, quality controls and auditable master-data changes.
+
+Atlassian’s DACI decision template recommends recording decision status, context, impact, participants, options, trade-offs, actions and final outcomes, with clear driver, approver, contributor and informed roles.
+
+ServiceNow positions Knowledge Management as a contextual knowledge base supporting self-service and agent productivity within a wider workflow and service-management platform.
+
+Collibra and Informatica provide broader enterprise data-governance capabilities spanning metadata, policy, ownership, data understanding, quality and governance processes.
+
+Martenweave Core currently uses canonical model files, deterministic validation, rebuildable indexes, dataset-gap analysis, trace, impact analysis and human-reviewed proposal workflows. Its documented operating pipeline moves from evidence through proposal, validation, gaps and impact to human review and GitHub-ready output.
+
+Martenweave is independent and is not affiliated with or endorsed by SAP, Atlassian, ServiceNow, Collibra, Informatica or other vendors named in this article. Product names and trademarks belong to their respective owners.
+</code></pre>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html"><span>Previous</span>The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a><a href="/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html"><span>Next</span>A country team raises a reasonable request.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

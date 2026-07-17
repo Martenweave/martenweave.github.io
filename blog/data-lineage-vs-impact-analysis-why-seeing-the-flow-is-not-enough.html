@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough | Martenweave</title>
+    <meta
+      name="description"
+      content="Data lineage is one of the most attractive ideas in data management."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html" />
+    <meta property="og:title" content="Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough | Martenweave" />
+    <meta property="og:description" content="Data lineage is one of the most attractive ideas in data management." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough | Martenweave" />
+    <meta name="twitter:description" content="Data lineage is one of the most attractive ideas in data management." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html#webpage",
+                        "url": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html",
+                        "name": "Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough | Martenweave",
+                        "description": "Data lineage is one of the most attractive ideas in data management.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough",
+                                    "item": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html#content",
+                        "headline": "Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough",
+                        "name": "Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough",
+                        "description": "Data lineage is one of the most attractive ideas in data management.",
+                        "url": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT15M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>Data Lineage vs Impact Analysis: Why Seeing the Flow Is Not Enough</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 15 min read</p><p class="blog-summary">Data lineage is one of the most attractive ideas in data management.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-data-lineage-tells-us">What data lineage tells us</a></li><li><a href="#what-impact-analysis-tells-us">What impact analysis tells us</a></li><li><a href="#a-practical-example-changing-a-shipping-condition">A practical example: changing a shipping condition</a></li><li><a href="#why-the-terms-are-often-confused">Why the terms are often confused</a></li><li><a href="#technical-lineage-and-model-lineage">Technical lineage and model lineage</a></li><li><a href="#lineage-describes-what-is-impact-analysis-evaluates-what-may-change">Lineage describes what is; impact analysis evaluates what may change</a></li><li><a href="#not-every-downstream-relationship-represents-real-business-impact">Not every downstream relationship represents real business impact</a></li><li><a href="#not-every-important-impact-is-downstream">Not every important impact is downstream</a></li><li><a href="#a-second-example-changing-a-material-unit-of-measure">A second example: changing a material unit of measure</a></li><li><a href="#why-this-matters-during-migration">Why this matters during migration</a></li><li><a href="#design-time-and-runtime-evidence-should-meet">Design-time and runtime evidence should meet</a></li><li><a href="#why-impact-analysis-needs-evidence">Why impact analysis needs evidence</a></li><li><a href="#the-quality-of-impact-analysis-depends-on-the-quality-of-the-model">The quality of impact analysis depends on the quality of the model</a></li><li><a href="#what-managers-should-expect-from-lineage">What managers should expect from lineage</a></li><li><a href="#what-managers-should-expect-from-impact-analysis">What managers should expect from impact analysis</a></li></ol></nav></details></header>
+<p>Data lineage is one of the most attractive ideas in data management.</p>
+<p>A field appears on the screen. The user selects it and sees where it came from, which transformations touched it and which reports consume it.</p>
+<p>For managers, this promises something valuable: visibility.</p>
+<p>Instead of relying on technical specialists to reconstruct a chain across systems, the organisation can see the movement of data directly.</p>
+<p>That visibility matters. It supports investigations, auditability, debugging and change planning. OpenLineage, for example, defines a standard model around datasets, jobs and execution runs so that lineage metadata can be collected consistently across processing systems. The W3C’s broader provenance model similarly describes the entities, activities and people involved in producing information, helping users assess its reliability and origins.</p>
+<p>But lineage is often expected to answer a question it cannot answer alone:</p>
+<blockquote>What will happen if we change this field, rule or definition?</blockquote>
+<p>That is an impact-analysis question.</p>
+<p>Lineage may provide part of the evidence. It does not automatically provide the complete answer.</p>
+<p>This distinction becomes particularly important in SAP migrations, MDM programmes, warehouse rollouts and logistics integrations. In these environments, many critical dependencies do not exist as executable data pipelines. They exist in mappings, business rules, validation files, tickets, exceptions, interface specifications and project decisions.</p>
+<p>A technically complete lineage graph may still miss the dependency that causes the next rollout to fail.</p>
+<p>Managers therefore need to understand both concepts:</p>
+<ul>
+<li>lineage explains where data came from and where it travels;</li>
+<li>impact analysis evaluates what may be affected by a proposed change.</li>
+</ul>
+<p>They overlap, but they are not the same control.</p>
+<h2 id="what-data-lineage-tells-us">What data lineage tells us</h2>
+<p>At its simplest, data lineage describes the path taken by data.</p>
+<p>A typical lineage chain may look like this:</p>
+<pre><code class="language-text">Legacy customer table
+    → extraction job
+    → transformation pipeline
+    → SAP staging file
+    → reporting dataset
+    → management dashboard</code></pre>
+<p>At a high level, this tells the organisation which systems participate in the flow.</p>
+<p>At a more detailed level, lineage may show:</p>
+<ul>
+<li>which source table produced the result;</li>
+<li>which column supplied a target field;</li>
+<li>which transformation modified the value;</li>
+<li>which pipeline executed the transformation;</li>
+<li>which downstream datasets received the output;</li>
+<li>which dashboards or reports consume it.</li>
+</ul>
+<p>OpenLineage’s core model is explicitly centred on datasets, jobs and runs. This makes it useful for recording what processing activity occurred and which inputs and outputs participated in it.</p>
+<p>The W3C provenance model is broader. It treats provenance as information about entities, activities and agents involved in producing something, including derivation, attribution, versioning and reproducibility.</p>
+<p>These are strong foundations for answering questions such as:</p>
+<ul>
+<li>Where did this number come from?</li>
+<li>Which processing job changed it?</li>
+<li>Which downstream reports depend on this dataset?</li>
+<li>Which source should we inspect when a value looks wrong?</li>
+<li>Which outputs may contain data from a defective pipeline?</li>
+<li>Can we reproduce how this result was produced?</li>
+</ul>
+<p>These questions are important.</p>
+<p>They are not yet the whole impact question.</p>
+<h2 id="what-impact-analysis-tells-us">What impact analysis tells us</h2>
+<p>Impact analysis begins with a proposed or suspected change.</p>
+<p>For example:</p>
+<ul>
+<li>a source field will be removed;</li>
+<li>a material attribute will become mandatory;</li>
+<li>a value mapping will change;</li>
+<li>a customer classification will be redefined;</li>
+<li>a validation rule will be tightened;</li>
+<li>a 3PL code will be replaced;</li>
+<li>a country-specific exception will be withdrawn.</li>
+</ul>
+<p>The purpose of impact analysis is to identify what may need attention before the change is approved or implemented.</p>
+<p>A useful impact assessment may include:</p>
+<ul>
+<li>affected datasets;</li>
+<li>source and target mappings;</li>
+<li>transformations;</li>
+<li>validation rules;</li>
+<li>business processes;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>migration objects;</li>
+<li>organisations or countries;</li>
+<li>owners;</li>
+<li>decisions;</li>
+<li>test cases;</li>
+<li>unresolved proposals.</li>
+</ul>
+<p>Some of these dependencies can be derived from lineage.</p>
+<p>Others cannot.</p>
+<p>Lineage can show that a target field feeds an outbound table.</p>
+<p>It may not show that an interface specification assigns a particular business meaning to the field.</p>
+<p>It can show that a pipeline reads a material attribute.</p>
+<p>It may not show that a warehouse rollout requires the attribute only for one plant.</p>
+<p>It can show that a report consumes the target column.</p>
+<p>It may not show that a migration decision approved a temporary exception that expires after cutover.</p>
+<p>Impact analysis needs a wider model than movement alone.</p>
+<h2 id="a-practical-example-changing-a-shipping-condition">A practical example: changing a shipping condition</h2>
+<p>Consider a company using SAP customer master data to control shipping processes.</p>
+<p>The business decides that a group of customers should move from a standard shipping condition to an expedited condition.</p>
+<p>The technical lineage may show:</p>
+<pre><code class="language-text">Legacy customer field
+    → migration transformation
+    → SAP customer sales-area field
+    → outbound delivery extract
+    → logistics reporting table</code></pre>
+<p>This is useful.</p>
+<p>The team can see that the value originates in the legacy system, is transformed during migration and later appears in reporting.</p>
+<p>But the proposed change may also affect:</p>
+<ul>
+<li>route determination;</li>
+<li>scheduling logic;</li>
+<li>warehouse handling assumptions;</li>
+<li>transportation planning;</li>
+<li>a 3PL mapping;</li>
+<li>a country-specific exception;</li>
+<li>a validation rule in the migration process;</li>
+<li>a report that groups deliveries by service level;</li>
+<li>a business decision that limits expedited handling to selected customer segments.</li>
+</ul>
+<p>Not all these relationships appear as data movement.</p>
+<p>Route determination may be represented in SAP configuration.</p>
+<p>The 3PL meaning may exist only in an interface mapping document.</p>
+<p>The country exception may be stored in a Jira ticket.</p>
+<p>The migration validation may be implemented in a Python script.</p>
+<p>The service-level interpretation may exist in a workshop decision.</p>
+<p>If management reviews only the technical lineage, the change can look smaller than it is.</p>
+<p>The field flows through four technical assets.</p>
+<p>Its business impact spans several processes and teams.</p>
+<h2 id="why-the-terms-are-often-confused">Why the terms are often confused</h2>
+<p>Many data platforms use lineage to support impact analysis.</p>
+<p>That is reasonable.</p>
+<p>Forward lineage is an important starting point: if a source changes, the organisation can follow the graph downstream and identify potentially affected assets.</p>
+<p>The confusion begins when that capability is described as complete impact analysis.</p>
+<p>It may be complete within the scope of the captured graph.</p>
+<p>The scope is the issue.</p>
+<p>A lineage system usually captures relationships it can ingest or infer from:</p>
+<ul>
+<li>SQL;</li>
+<li>ETL jobs;</li>
+<li>data pipelines;</li>
+<li>databases;</li>
+<li>dashboards;</li>
+<li>orchestration tools;</li>
+<li>application metadata.</li>
+</ul>
+<p>It may not automatically capture relationships contained in:</p>
+<ul>
+<li>Excel mappings;</li>
+<li>migration workbooks;</li>
+<li>business rules;</li>
+<li>SAP configuration decisions;</li>
+<li>test evidence;</li>
+<li>local exceptions;</li>
+<li>support tickets;</li>
+<li>approval records;</li>
+<li>design documents.</li>
+</ul>
+<p>The lineage engine is not necessarily failing.</p>
+<p>It simply does not know that these relationships exist.</p>
+<p>Managers should therefore ask:</p>
+<blockquote>What kinds of dependency are represented in the graph, and what remains outside it?</blockquote>
+<p>A large graph can still be incomplete in the places that matter most to the project.</p>
+<h2 id="technical-lineage-and-model-lineage">Technical lineage and model lineage</h2>
+<p>It is useful to separate two forms of lineage.</p>
+<h3 id="technical-lineage">Technical lineage</h3>
+<p>Technical lineage follows executable or observable data movement.</p>
+<p>It may connect:</p>
+<ul>
+<li>database tables;</li>
+<li>files;</li>
+<li>columns;</li>
+<li>jobs;</li>
+<li>pipelines;</li>
+<li>APIs;</li>
+<li>reports;</li>
+<li>dashboards.</li>
+</ul>
+<p>This lineage is often discovered or generated automatically.</p>
+<p>It is particularly valuable for:</p>
+<ul>
+<li>root-cause analysis;</li>
+<li>debugging;</li>
+<li>audit;</li>
+<li>regulatory traceability;</li>
+<li>pipeline changes;</li>
+<li>reporting dependencies.</li>
+</ul>
+<h3 id="model-lineage">Model lineage</h3>
+<p>Model lineage follows the relationships that define the intended meaning and use of data.</p>
+<p>It may connect:</p>
+<ul>
+<li>business concepts;</li>
+<li>attributes;</li>
+<li>source fields;</li>
+<li>target fields;</li>
+<li>mappings;</li>
+<li>transformations;</li>
+<li>validation rules;</li>
+<li>decisions;</li>
+<li>exceptions;</li>
+<li>owners;</li>
+<li>datasets;</li>
+<li>proposed changes.</li>
+</ul>
+<p>This lineage often requires explicit modelling because the relationships do not exist in one executable platform.</p>
+<p>A customer-group attribute may be linked to:</p>
+<ul>
+<li>three legacy fields;</li>
+<li>one approved harmonisation decision;</li>
+<li>two target fields;</li>
+<li>a conditional validation;</li>
+<li>a segmentation report;</li>
+<li>a logistics process;</li>
+<li>a proposed replacement mapping.</li>
+</ul>
+<p>Some of those links may appear in technical metadata.</p>
+<p>Others are project knowledge.</p>
+<p>Both forms are needed when the organisation wants to understand not only where data flows, but why the flow is designed that way.</p>
+<h2 id="lineage-describes-what-is-impact-analysis-evaluates-what-may-change">Lineage describes what is; impact analysis evaluates what may change</h2>
+<p>This is another useful distinction.</p>
+<p>Lineage is usually descriptive.</p>
+<p>It represents an existing or observed relationship:</p>
+<blockquote>Dataset A is an input to Job B, which produces Dataset C.</blockquote>
+<p>Impact analysis is prospective.</p>
+<p>It asks:</p>
+<blockquote>If we change A, which parts of the current and intended model require review?</blockquote>
+<p>The prospective question introduces additional concerns:</p>
+<ul>
+<li>Is the dependency still active?</li>
+<li>Is the change compatible with the target model?</li>
+<li>Does the affected item have an owner?</li>
+<li>Is the relationship global or conditional?</li>
+<li>Is there an approved exception?</li>
+<li>Does the change affect the current migration wave?</li>
+<li>Does it invalidate an earlier decision?</li>
+<li>Must the dataset be reprofiled?</li>
+<li>Which tests must be repeated?</li>
+</ul>
+<p>A graph edge alone does not answer these questions.</p>
+<p>The organisation needs status, context and governance around the edge.</p>
+<h2 id="not-every-downstream-relationship-represents-real-business-impact">Not every downstream relationship represents real business impact</h2>
+<p>Another limitation appears when a lineage graph becomes large.</p>
+<p>Suppose a source field feeds:</p>
+<ul>
+<li>three staging tables;</li>
+<li>two intermediate views;</li>
+<li>one data lake table;</li>
+<li>five reports;</li>
+<li>four archived datasets;</li>
+<li>an unused test pipeline.</li>
+</ul>
+<p>Technically, all may be downstream.</p>
+<p>Operationally, they are not equally important.</p>
+<p>A manager needs to know:</p>
+<ul>
+<li>which assets are active;</li>
+<li>which are productive;</li>
+<li>which are critical;</li>
+<li>which belong to the current programme;</li>
+<li>which have owners;</li>
+<li>which are historical;</li>
+<li>which can be ignored for this change.</li>
+</ul>
+<p>Impact analysis therefore requires prioritisation.</p>
+<p>Without it, lineage can produce a long list that transfers the investigation burden back to the user.</p>
+<p>The graph answers, “These objects are connected.”</p>
+<p>The manager still needs an answer to, “Which connections matter now?”</p>
+<h2 id="not-every-important-impact-is-downstream">Not every important impact is downstream</h2>
+<p>Lineage is frequently visualised as an upstream or downstream graph.</p>
+<p>But model changes may have lateral or governance effects.</p>
+<p>For example, changing a definition of “active supplier” may affect:</p>
+<ul>
+<li>a procurement rule;</li>
+<li>an MDM validation;</li>
+<li>a migration filter;</li>
+<li>a compliance report;</li>
+<li>an ownership policy.</li>
+</ul>
+<p>These elements may not sit downstream of one another technically.</p>
+<p>They share a business concept.</p>
+<p>A change to that concept affects all of them.</p>
+<p>This is why a registry needs relationships beyond data flow.</p>
+<p>It may need to express:</p>
+<pre><code class="language-text">Business definition
+    → validation rule
+    → migration filter
+    → report logic
+    → ownership decision</code></pre>
+<p>The connection is semantic and governed, not merely technical.</p>
+<h2 id="a-second-example-changing-a-material-unit-of-measure">A second example: changing a material unit of measure</h2>
+<p>Suppose a company changes the approved warehouse unit for a product group.</p>
+<p>A technical lineage graph may identify:</p>
+<ul>
+<li>the source packaging table;</li>
+<li>the transformation job;</li>
+<li>the SAP target field;</li>
+<li>the EWM replication message;</li>
+<li>a warehouse reporting dataset.</li>
+</ul>
+<p>This provides an important starting point.</p>
+<p>But the impact assessment must also ask:</p>
+<ul>
+<li>Does the base unit remain unchanged?</li>
+<li>Are existing conversion ratios still valid?</li>
+<li>Does the change apply to every plant?</li>
+<li>Which products belong to the group?</li>
+<li>Is the warehouse unit derived or supplied?</li>
+<li>Do packaging instructions need revision?</li>
+<li>Will existing stock or handling units be affected?</li>
+<li>Does a 3PL expect the old code?</li>
+<li>Which migration dataset must be regenerated?</li>
+<li>Which reconciliation checks should be repeated?</li>
+<li>Who can approve the new operational meaning?</li>
+</ul>
+<p>A complete technical flow does not contain every answer.</p>
+<p>The project needs model context, scope conditions and ownership.</p>
+<p>Without these, the lineage graph can show the path perfectly while the change is implemented incorrectly.</p>
+<h2 id="why-this-matters-during-migration">Why this matters during migration</h2>
+<p>Migration projects are especially vulnerable because they contain both current-state and future-state relationships.</p>
+<p>Technical lineage generally describes the systems and flows that exist or have been instrumented.</p>
+<p>A migration also needs to represent relationships that are planned but not yet productive:</p>
+<ul>
+<li>a future SAP target field;</li>
+<li>a proposed transformation;</li>
+<li>an expected source extract;</li>
+<li>a mapping awaiting approval;</li>
+<li>a validation planned for the next load;</li>
+<li>a new 3PL interface;</li>
+<li>a warehouse rollout that has not started.</li>
+</ul>
+<p>These relationships may have no runtime metadata yet.</p>
+<p>The pipeline has not executed.</p>
+<p>The target may not be live.</p>
+<p>The interface may still be a specification.</p>
+<p>Yet management needs impact analysis before implementation.</p>
+<p>This is one reason a migration programme cannot rely only on runtime lineage.</p>
+<p>It needs design-time lineage too.</p>
+<h2 id="design-time-and-runtime-evidence-should-meet">Design-time and runtime evidence should meet</h2>
+<p>The strongest architecture connects planned model relationships with observed runtime relationships.</p>
+<p>For example:</p>
+<h3 id="design-time-model">Design-time model</h3>
+<pre><code class="language-text">Legacy field A
+    → approved mapping
+    → SAP target attribute B
+    → outbound interface field C</code></pre>
+<h3 id="runtime-lineage">Runtime lineage</h3>
+<pre><code class="language-text">Extract file A
+    → transformation job
+    → staging column B
+    → interface payload C</code></pre>
+<p>The design-time model tells us what should happen.</p>
+<p>The runtime lineage tells us what did happen.</p>
+<p>Comparing the two can reveal useful gaps:</p>
+<ul>
+<li>the executed pipeline uses another source field;</li>
+<li>the target column is populated through an undocumented derivation;</li>
+<li>the interface consumes a field absent from the approved model;</li>
+<li>a registered mapping has never appeared in runtime evidence;</li>
+<li>a planned dependency was not implemented.</li>
+</ul>
+<p>This is more valuable than either graph alone.</p>
+<p>It allows the organisation to compare intent with execution.</p>
+<h2 id="why-impact-analysis-needs-evidence">Why impact analysis needs evidence</h2>
+<p>An impact result should not be a mysterious list generated by an opaque algorithm.</p>
+<p>The user should be able to see why each item appears.</p>
+<p>For example:</p>
+<blockquote>The 3PL interface is affected because mapping <code>MAP-SHIP-COND-03</code> references attribute <code>ATTR-SHIPPING-CONDITION</code>.</blockquote>
+<blockquote>The warehouse validation is affected because rule <code>RULE-WH-112</code> checks the same attribute for Plant 1200.</blockquote>
+<blockquote>The migration dataset is affected because field endpoint <code>FEP-LEGACY-SHIPCOND</code> supplies the attribute.</blockquote>
+<p>This evidence changes the quality of review.</p>
+<p>Instead of asking teams to trust a graph, it gives them a traceable reason.</p>
+<p>Martenweave’s core direction follows this approach: canonical model objects are validated, indexed and connected so the system can trace dependencies and generate impact reports. The generated index remains disposable; the canonical files remain the approved source.</p>
+<h2 id="the-quality-of-impact-analysis-depends-on-the-quality-of-the-model">The quality of impact analysis depends on the quality of the model</h2>
+<p>Impact analysis can create false confidence.</p>
+<p>A tool may return “No downstream impact found.”</p>
+<p>That may mean:</p>
+<ul>
+<li>there is genuinely no impact;</li>
+<li>the relevant dependencies were never registered;</li>
+<li>the connector does not cover the affected system;</li>
+<li>the relationship exists only in a document;</li>
+<li>the graph is stale;</li>
+<li>the object is identified under another name.</li>
+</ul>
+<p>Managers should treat absence of evidence carefully.</p>
+<p>An impact system should therefore expose coverage and uncertainty.</p>
+<p>For example:</p>
+<blockquote>No registered downstream mappings were found. Interface specifications and local country workbooks have not yet been imported.</blockquote>
+<p>That is more honest than a green result.</p>
+<p>The tool should distinguish:</p>
+<ul>
+<li>no impact found;</li>
+<li>no impact exists;</li>
+<li>impact cannot be assessed with current evidence.</li>
+</ul>
+<p>These are different statements.</p>
+<h2 id="what-managers-should-expect-from-lineage">What managers should expect from lineage</h2>
+<p>A useful lineage capability should provide:</p>
+<ul>
+<li>identifiable upstream and downstream assets;</li>
+<li>transformation context;</li>
+<li>suitable levels of detail;</li>
+<li>freshness information;</li>
+<li>ownership where available;</li>
+<li>evidence explaining each relationship;</li>
+<li>filtering to remove irrelevant technical noise.</li>
+</ul>
+<p>Managers should also understand the capture method.</p>
+<p>Ask:</p>
+<ul>
+<li>Is the lineage discovered automatically?</li>
+<li>Is it inferred from SQL?</li>
+<li>Is it reported by runtime jobs?</li>
+<li>Is part of it entered manually?</li>
+<li>How frequently is it refreshed?</li>
+<li>Which systems are covered?</li>
+<li>Are column-level relationships available?</li>
+<li>Are planned future-state flows represented?</li>
+</ul>
+<p>A lineage graph without coverage information can be visually impressive but operationally misleading.</p>
+<h2 id="what-managers-should-expect-from-impact-analysis">What managers should expect from impact analysis</h2>
+<p>Impact analysis should begin with a specific change and produce a reviewable result.</p>
+<p>A useful report should show:</p>
+<ul>
+<li>the object being changed;</li>
+<li>the proposed change;</li>
+<li>directly affected elements;</li>
+<li>indirectly affected elements;</li>
+<li>business and technical owners;</li>
+<li>criticality;</li>
+<li>unresolved gaps;</li>
+<li>relevant decisions and evidence;</li>
+<li>required validation or testing;</li>
+<li>known limitations of the analysis.</li>
+</ul>
+<p>The report should not merely show everything connected to the object.</p>
+<p>It should help the organisation decide:</p>
+<ul>
+<li>who must review the change;</li>
+<li>which implementation work is required;</li>
+<li>which tests must be repeated;</li>
+<li>whether the change can proceed safely;</li>
+<li>which risks remain unresolved.</li>
+</ul>
+<h2 id="five-questions-before-approving-a-change">Five questions before approving a change</h2>
+<p>Managers do not need to inspect every graph edge.</p>
+<p>They should insist that the team can answer five questions.</p>
+<h3 id="1-where-does-the-value-come-from">1. Where does the value come from?</h3>
+<p>This is the lineage question.</p>
+<p>The answer should identify source fields, transformations and intermediate systems.</p>
+<h3 id="2-where-is-the-value-used">2. Where is the value used?</h3>
+<p>This is also partly lineage.</p>
+<p>It should include downstream systems, reports and interfaces.</p>
+<h3 id="3-which-rules-and-decisions-depend-on-its-meaning">3. Which rules and decisions depend on its meaning?</h3>
+<p>This moves beyond technical lineage.</p>
+<p>The answer should include validations, exceptions, mappings and approvals.</p>
+<h3 id="4-who-must-review-the-change">4. Who must review the change?</h3>
+<p>Impact must lead to ownership.</p>
+<p>A list of affected assets without responsible people is incomplete.</p>
+<h3 id="5-how-do-we-know-the-implementation-still-matches-the-model">5. How do we know the implementation still matches the model?</h3>
+<p>This requires validation after the change.</p>
+<p>The dataset, pipeline or target should be checked against the approved design.</p>
+<h2 id="when-lineage-alone-may-be-enough">When lineage alone may be enough</h2>
+<p>Not every change needs a broad model registry.</p>
+<p>Technical lineage may be sufficient when:</p>
+<ul>
+<li>the change is limited to a data pipeline;</li>
+<li>business meaning remains unchanged;</li>
+<li>dependencies are fully represented in executable systems;</li>
+<li>the main concern is report or dataset breakage;</li>
+<li>ownership and testing procedures are already clear;</li>
+<li>there are few manual mappings or project artefacts.</li>
+</ul>
+<p>For example, renaming an internal staging column may require only technical downstream analysis.</p>
+<p>Adding model governance would not improve every small engineering change.</p>
+<h2 id="when-broader-impact-analysis-becomes-necessary">When broader impact analysis becomes necessary</h2>
+<p>The need grows when the change affects:</p>
+<ul>
+<li>business meaning;</li>
+<li>source-to-target mappings;</li>
+<li>migration design;</li>
+<li>SAP master-data rules;</li>
+<li>organisational conditions;</li>
+<li>local exceptions;</li>
+<li>external partners;</li>
+<li>warehouses or 3PL providers;</li>
+<li>approved decisions;</li>
+<li>several project workstreams.</li>
+</ul>
+<p>In these cases, technical movement is only one part of the dependency model.</p>
+<h2 id="how-martenweave-approaches-the-distinction">How Martenweave approaches the distinction</h2>
+<p>Martenweave does not aim to replace enterprise lineage platforms or automatically discover every pipeline in the data estate.</p>
+<p>Its narrower purpose is to govern the model relationships surrounding migration, MDM, data governance and controlled change.</p>
+<p>It can register and trace relationships among:</p>
+<ul>
+<li>domains;</li>
+<li>entities;</li>
+<li>attributes;</li>
+<li>field endpoints;</li>
+<li>mappings;</li>
+<li>datasets;</li>
+<li>rules;</li>
+<li>evidence;</li>
+<li>decisions;</li>
+<li>change proposals.</li>
+</ul>
+<p>The CLI includes trace and impact operations, while the broader workflow validates canonical files, builds indexes, detects dataset gaps and creates proposals for human review.</p>
+<p>This is model-centred impact analysis.</p>
+<p>It should integrate with technical lineage where that evidence exists rather than attempting to duplicate the entire runtime metadata ecosystem.</p>
+<h2 id="a-sensible-combined-architecture">A sensible combined architecture</h2>
+<p>A practical enterprise setup may divide responsibilities as follows.</p>
+<h3 id="runtime-lineage-platform">Runtime lineage platform</h3>
+<p>Captures:</p>
+<ul>
+<li>datasets;</li>
+<li>jobs;</li>
+<li>runs;</li>
+<li>pipelines;</li>
+<li>technical transformations;</li>
+<li>reports and dashboards;</li>
+<li>observed data movement.</li>
+</ul>
+<h3 id="model-registry">Model registry</h3>
+<p>Controls:</p>
+<ul>
+<li>approved business definitions;</li>
+<li>mappings;</li>
+<li>target expectations;</li>
+<li>validation rules;</li>
+<li>exceptions;</li>
+<li>evidence;</li>
+<li>proposed changes;</li>
+<li>design-time dependencies.</li>
+</ul>
+<h3 id="operational-and-project-systems">Operational and project systems</h3>
+<p>Execute and record:</p>
+<ul>
+<li>SAP transactions;</li>
+<li>migration loads;</li>
+<li>MDM workflows;</li>
+<li>integration messages;</li>
+<li>issues;</li>
+<li>approvals;</li>
+<li>testing.</li>
+</ul>
+<p>The model registry can consume lineage as evidence.</p>
+<p>The lineage platform can receive approved semantic context from the registry.</p>
+<p>Neither needs to own the other’s entire responsibility.</p>
+<h2 id="the-management-rule">The management rule</h2>
+<p>The distinction can be expressed simply.</p>
+<p><strong>Lineage asks:</strong></p>
+<blockquote>How did the data get here, and where does it go?</blockquote>
+<p><strong>Impact analysis asks:</strong></p>
+<blockquote>What must we review, change or retest if we alter this part of the model?</blockquote>
+<p>Lineage is a major input to impact analysis.</p>
+<p>It is not always the complete result.</p>
+<p>Seeing the flow is valuable.</p>
+<p>Understanding the consequence requires more: business meaning, rules, ownership, evidence, scope and proposed change context.</p>
+<p>A project that confuses the two may build a detailed graph of its data landscape and still discover critical dependencies during testing.</p>
+<p>The objective is not to produce the largest graph.</p>
+<p>It is to identify the right consequences before the change becomes a defect.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/from-mapping-spreadsheet-to-governed-data-model.html"><span>Previous</span>Most migration programmes begin with a spreadsheet.</a><a href="/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html"><span>Next</span>A data-quality report can be completely green while the migration is still wrong.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

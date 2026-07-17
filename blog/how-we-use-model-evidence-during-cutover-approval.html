@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Use Model Evidence During Cutover Approval | Martenweave</title>
+    <meta
+      name="description"
+      content="The Supplier migration team completes the final rehearsal."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html" />
+    <meta property="og:title" content="How We Use Model Evidence During Cutover Approval | Martenweave" />
+    <meta property="og:description" content="The Supplier migration team completes the final rehearsal." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Use Model Evidence During Cutover Approval | Martenweave" />
+    <meta name="twitter:description" content="The Supplier migration team completes the final rehearsal." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html",
+                        "name": "How We Use Model Evidence During Cutover Approval | Martenweave",
+                        "description": "The Supplier migration team completes the final rehearsal.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Use Model Evidence During Cutover Approval",
+                                    "item": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html#content",
+                        "headline": "How We Use Model Evidence During Cutover Approval",
+                        "name": "How We Use Model Evidence During Cutover Approval",
+                        "description": "The Supplier migration team completes the final rehearsal.",
+                        "url": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-use-model-evidence-during-cutover-approval.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT15M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Use Model Evidence During Cutover Approval</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How We Use Model Evidence During Cutover Approval</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 15 min read</p><p class="blog-summary">The Supplier migration team completes the final rehearsal.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#claim-1">Claim 1</a></li><li><a href="#claim-2">Claim 2</a></li><li><a href="#claim-3">Claim 3</a></li><li><a href="#claim-4">Claim 4</a></li><li><a href="#claim-5">Claim 5</a></li><li><a href="#purchasing-gate">Purchasing gate</a></li><li><a href="#invoice-posting-gate">Invoice-posting gate</a></li><li><a href="#payment-gate">Payment gate</a></li><li><a href="#ready">Ready</a></li><li><a href="#controlled">Controlled</a></li><li><a href="#blocked">Blocked</a></li><li><a href="#not-assessed">Not assessed</a></li><li><a href="#approved-out-of-scope">Approved out of scope</a></li><li><a href="#weak-evidence">Weak Evidence</a></li><li><a href="#moderate-evidence">Moderate Evidence</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>The Supplier migration team completes the final rehearsal.</p>
+<p>The technical report looks strong:</p>
+<pre><code>Records in scope:
+50,000
+
+Records transformed:
+50,000
+
+Records loaded:
+49,920
+
+Load success:
+99.84%
+
+Critical interface errors:
+0</code></pre>
+<p>The cutover meeting begins.</p>
+<p>The migration lead recommends approval.</p>
+<p>Treasury asks:</p>
+<blockquote>How many payment-active Suppliers still rely on temporary payment blocks because bank verification is incomplete?</blockquote>
+<p>The answer is 700.</p>
+<p>Procurement asks:</p>
+<blockquote>How many Suppliers can be loaded but cannot support purchase-order creation because a required purchasing-organisation extension is missing?</blockquote>
+<p>The answer is 70.</p>
+<p>The MDM lead asks:</p>
+<blockquote>How many records remain inside unresolved duplicate clusters?</blockquote>
+<p>The answer is 110.</p>
+<p>The data-governance lead asks:</p>
+<blockquote>Which validation reports were produced before the latest Mapping change?</blockquote>
+<p>The answer is unclear.</p>
+<p>The programme has enough information to know that the load can probably run.</p>
+<p>It does not yet have a coherent body of Evidence showing that the resulting master data is safe for the intended business processes.</p>
+<p>This is the cutover-approval problem.</p>
+<blockquote>Cutover approval should not be based on whether the migration job can finish. It should be based on whether the resulting model state, business controls and residual risks are understood well enough to accept.</blockquote>
+<p>A cutover decision is rarely made with perfect data.</p>
+<p>There may still be:</p>
+<ul>
+<li>temporary Exceptions;</li>
+<li>unresolved low-priority Findings;</li>
+<li>manual controls;</li>
+<li>records intentionally excluded from the wave;</li>
+<li>unverified downstream dependencies;</li>
+<li>delta loads still to come;</li>
+<li>Evidence that is valid only for part of the current scope.</li>
+</ul>
+<p>The objective is not to eliminate every imperfection before approval.</p>
+<p>The objective is to make the remaining imperfection explicit, bounded and owned.</p>
+<p>Martenweave’s role is to assemble the model-aware Evidence behind that decision.</p>
+<p>Its current architecture already connects datasets, validation reports, Decisions and SAP context to canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-reviewed proposals. Canonical files own model truth, while generated indexes remain disposable.</p>
+<p>The cutover layer should turn those objects into a decision package that answers:</p>
+<pre><code>What are we approving?
+
+For which population?
+
+Against which model baseline?
+
+For which business capabilities?
+
+Using which Evidence?
+
+With which Exceptions?
+
+Under whose authority?
+
+With what residual risk?</code></pre>
+<h1 id="cutover-approval-is-a-claim-about-a-specific-state">Cutover approval is a claim about a specific state</h1>
+<p>A vague approval sounds like:</p>
+<blockquote>Supplier migration is ready.</blockquote>
+<p>A defensible approval is narrower:</p>
+<blockquote>The Wave 1 Supplier population is approved for the Cutover RC6 load under model commit <code>def456</code>, with the declared Exceptions and compensating controls, for the listed purchasing, invoicing and payment capabilities.</blockquote>
+<p>That statement identifies:</p>
+<ul>
+<li>the domain;</li>
+<li>the wave;</li>
+<li>the dataset;</li>
+<li>the model baseline;</li>
+<li>the target load;</li>
+<li>the intended use;</li>
+<li>the remaining limitations.</li>
+</ul>
+<p>Without those boundaries, “approved” becomes difficult to interpret later.</p>
+<p>A record may have been ready for purchasing but not for payment.</p>
+<p>A company code may have been ready while another remained excluded.</p>
+<p>An Exception may have been valid on cutover weekend but expired before the first payment run.</p>
+<p>The approval package must preserve the exact state that was accepted.</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>We continue with one Supplier migration population.</p>
+<p>The current readiness assessment shows:</p>
+<pre><code>Total in current scope:
+50,000
+
+Fully ready:
+48,900
+
+Ready under controlled Exception:
+700
+
+Not ready:
+220
+
+Not assessed under current baseline:
+100
+
+Approved out of scope:
+80</code></pre>
+<p>The 220 not-ready records include:</p>
+<pre><code>110 unresolved duplicate clusters
+
+70 missing purchasing-organisation extensions
+
+40 payment-active Suppliers
+without current verification
+or confirmed payment block</code></pre>
+<p>The cutover decision is not simply whether 99.56 percent of records are acceptable.</p>
+<p>The decision board must understand:</p>
+<ul>
+<li>which of the 220 records block a business gate;</li>
+<li>whether they can be excluded safely;</li>
+<li>whether temporary controls exist;</li>
+<li>whether the unresolved population contains strategic Suppliers;</li>
+<li>whether the Evidence covers the latest model and load;</li>
+<li>whether excluded records have approved scope Decisions.</li>
+</ul>
+<p>The same number can support different decisions depending on context.</p>
+<p>Forty inactive Suppliers may be deferred.</p>
+<p>Forty payment-active Suppliers scheduled for the first payment run may block approval.</p>
+<h1 id="we-build-approval-from-evidence-claims">We build approval from evidence claims</h1>
+<p>A report should not be included merely because it exists.</p>
+<p>Every artefact in the cutover pack should support an explicit claim.</p>
+<p>For example:</p>
+<h2 id="claim-1">Claim 1</h2>
+<p>The current migration population is complete and reconciled.</p>
+<p>Supporting Evidence:</p>
+<ul>
+<li>scope manifest;</li>
+<li>source extract fingerprint;</li>
+<li>inclusion and exclusion Decisions;</li>
+<li>reconciliation of current and previous baselines.</li>
+</ul>
+<h2 id="claim-2">Claim 2</h2>
+<p>Every in-scope record was evaluated under the current Rule set.</p>
+<p>Supporting Evidence:</p>
+<ul>
+<li>model commit;</li>
+<li>validator version;</li>
+<li>validation execution;</li>
+<li>not-assessed population report.</li>
+</ul>
+<h2 id="claim-3">Claim 3</h2>
+<p>Critical business controls operate in the target state.</p>
+<p>Supporting Evidence:</p>
+<ul>
+<li>payment-block reconciliation;</li>
+<li>duplicate-survivor Mapping;</li>
+<li>organisational-extension report;</li>
+<li>targeted business-process tests.</li>
+</ul>
+<h2 id="claim-4">Claim 4</h2>
+<p>Every remaining deviation is governed.</p>
+<p>Supporting Evidence:</p>
+<ul>
+<li>active Exception objects;</li>
+<li>owners;</li>
+<li>expiry conditions;</li>
+<li>compensating controls;</li>
+<li>closure plans.</li>
+</ul>
+<h2 id="claim-5">Claim 5</h2>
+<p>The delivery artefacts match the approved model.</p>
+<p>Supporting Evidence:</p>
+<ul>
+<li>Mapping versions;</li>
+<li>transformation build;</li>
+<li>target load identifier;</li>
+<li>implementation and target reconciliation.</li>
+</ul>
+<p>This claim-based structure prevents cutover packs from becoming folders of unrelated spreadsheets.</p>
+<h1 id="we-separate-technical-approval-from-business-approval">We separate technical approval from business approval</h1>
+<p>The technical team can confirm that:</p>
+<ul>
+<li>source files were received;</li>
+<li>transformation completed;</li>
+<li>load files were generated;</li>
+<li>interfaces are available;</li>
+<li>technical errors are within tolerance;</li>
+<li>rollback procedures exist.</li>
+</ul>
+<p>Business owners must confirm that:</p>
+<ul>
+<li>identity Decisions are acceptable;</li>
+<li>critical values come from approved authorities;</li>
+<li>business-process gates are satisfied;</li>
+<li>remaining Exceptions are acceptable;</li>
+<li>compensating controls are operational;</li>
+<li>excluded records will not be used accidentally.</li>
+</ul>
+<p>These approvals should be related but separate.</p>
+<p>For our Supplier case:</p>
+<pre><code>Technical load approval:
+Migration Lead
+
+Purchasing readiness approval:
+Procurement Data Owner
+
+Invoice readiness approval:
+Finance Data Owner
+
+Payment-control approval:
+Treasury Data Owner
+
+Overall cutover acceptance:
+Cutover Decision Authority</code></pre>
+<p>A migration developer should not be expected to accept Treasury risk.</p>
+<p>Treasury should not be expected to approve transformation code in detail.</p>
+<p>The model connects each role to the claim it is authorised to approve.</p>
+<h1 id="we-use-business-capability-gates">We use business-capability gates</h1>
+<p>The cutover pack should not present one global Supplier status.</p>
+<p>We assess the capabilities required immediately after go-live.</p>
+<p>For our population:</p>
+<h2 id="purchasing-gate">Purchasing gate</h2>
+<p>Questions:</p>
+<ul>
+<li>Are required Supplier roles present?</li>
+<li>Are purchasing-organisation extensions complete?</li>
+<li>Are purchasing values governed?</li>
+<li>Are partner relationships available?</li>
+<li>Are unresolved records excluded from purchase-order creation?</li>
+</ul>
+<p>Result:</p>
+<pre><code>Purchasing-ready:
+49,850
+
+Controlled:
+60
+
+Blocked:
+70
+
+Not assessed:
+20</code></pre>
+<h2 id="invoice-posting-gate">Invoice-posting gate</h2>
+<p>Questions:</p>
+<ul>
+<li>Are company-code extensions present?</li>
+<li>Are reconciliation accounts valid?</li>
+<li>Are tax-relevant values governed?</li>
+<li>Are posting controls complete?</li>
+</ul>
+<p>Result:</p>
+<pre><code>Ready:
+49,940
+
+Controlled:
+20
+
+Blocked:
+20
+
+Not assessed:
+20</code></pre>
+<h2 id="payment-gate">Payment gate</h2>
+<p>Questions:</p>
+<ul>
+<li>Are bank accounts current?</li>
+<li>Is verification valid?</li>
+<li>Are payment methods available?</li>
+<li>Is payment block active when verification is absent?</li>
+<li>Are Exceptions current?</li>
+</ul>
+<p>Result:</p>
+<pre><code>Ready:
+19,500 of 20,000 payment-scope Suppliers
+
+Controlled:
+420
+
+Blocked:
+40
+
+Not assessed:
+40</code></pre>
+<p>The overall cutover decision cannot ignore the payment gate merely because the global load percentage is high.</p>
+<h1 id="we-preserve-zero-tolerance-conditions">We preserve zero-tolerance conditions</h1>
+<p>Some conditions should not be averaged.</p>
+<p>For example:</p>
+<pre><code>Payment-active Supplier
++
+expired verification
++
+no payment block</code></pre>
+<p>may be defined as a zero-tolerance control failure.</p>
+<p>Even one such record may block payment activation.</p>
+<p>The gate should therefore report:</p>
+<pre><code>Payment-control gate:
+BLOCKED
+
+Uncontrolled records:
+40
+
+Tolerance:
+0</code></pre>
+<p>This is stronger than:</p>
+<pre><code>Payment readiness:
+99.8%</code></pre>
+<p>The percentage remains useful for context.</p>
+<p>It cannot override the declared gate policy.</p>
+<h1 id="we-distinguish-ready-controlled-and-blocked">We distinguish ready, controlled and blocked</h1>
+<p>Cutover boards need a precise vocabulary.</p>
+<h2 id="ready">Ready</h2>
+<p>The current model conditions are satisfied, and current Evidence proves the result.</p>
+<h2 id="controlled">Controlled</h2>
+<p>The final condition is not fully satisfied, but an approved Exception and effective compensating control permit the declared use.</p>
+<h2 id="blocked">Blocked</h2>
+<p>A critical requirement is not satisfied, and no valid control covers it.</p>
+<h2 id="not-assessed">Not assessed</h2>
+<p>No current Evidence proves either compliance or a governed deviation.</p>
+<h2 id="approved-out-of-scope">Approved out of scope</h2>
+<p>A documented Decision removes the record from the cutover population.</p>
+<p>These categories must remain separate in the approval pack.</p>
+<p>A common mistake is to merge ready and controlled records into one green total.</p>
+<p>That removes visibility into temporary debt.</p>
+<h1 id="we-show-every-exception-as-a-cutover-commitment">We show every Exception as a cutover commitment</h1>
+<p>An Exception is not merely permission to proceed.</p>
+<p>It creates obligations.</p>
+<p>For the 700 Supplier records migrating with payment block, the cutover pack should show:</p>
+<pre><code>Exception:
+EXC-SUPPLIER-BANK-VERIFICATION-W1
+
+Affected records:
+700
+
+Business reason:
+Verification remediation incomplete
+
+Compensating control:
+Payment block
+
+Owner:
+Treasury Data Owner
+
+Valid through:
+First controlled payment activation
+
+Expiry:
+15 August 2026
+
+Closure condition:
+Current verification obtained
+and payment block removed through approval</code></pre>
+<p>The board is not only accepting 700 controlled records.</p>
+<p>It is accepting:</p>
+<ul>
+<li>the control;</li>
+<li>the owner;</li>
+<li>the time boundary;</li>
+<li>the remediation commitment;</li>
+<li>the consequence if the Exception expires.</li>
+</ul>
+<p>An Exception without these elements should not support approval.</p>
+<h1 id="we-verify-that-compensating-controls-exist-in-the-target">We verify that compensating controls exist in the target</h1>
+<p>The model may declare:</p>
+<pre><code>Unverified Suppliers remain payment-blocked.</code></pre>
+<p>The cutover Evidence must prove that the target state actually contains the block.</p>
+<p>We should not accept:</p>
+<ul>
+<li>an intended Mapping;</li>
+<li>an approved design;</li>
+<li>a developer statement.</li>
+</ul>
+<p>We need target Evidence.</p>
+<p>For example:</p>
+<pre><code>Exception-covered Suppliers:
+700
+
+Payment block generated:
+700
+
+Payment block confirmed in target:
+700
+
+Unexpected payment-enabled records:
+0</code></pre>
+<p>A control described in a document but absent from the loaded record is not an operational control.</p>
+<h1 id="we-expose-exception-concentration">We expose Exception concentration</h1>
+<p>The board should not see only the total count.</p>
+<p>Seven hundred Exception-covered Suppliers may consist of:</p>
+<pre><code>Inactive or historical:
+420
+
+Future-use, no near-term transaction:
+190
+
+Payment-active but blocked:
+70
+
+Scheduled for first payment run:
+20</code></pre>
+<p>The last 20 deserve specific review.</p>
+<p>The same Exception status can carry different business exposure.</p>
+<p>Martenweave should segment the population through model context rather than presenting one undifferentiated count.</p>
+<h1 id="we-verify-duplicate-decisions">We verify duplicate Decisions</h1>
+<p>In MDM and MDG projects, unresolved duplicates can undermine cutover even when every field is populated.</p>
+<p>For each critical duplicate cluster, the board may need Evidence that:</p>
+<ul>
+<li>the survivor was approved;</li>
+<li>source identifiers map to the survivor;</li>
+<li>bank and tax data were assigned correctly;</li>
+<li>open transactional references remain usable;</li>
+<li>duplicate target creation is prevented;</li>
+<li>downstream systems received the correct key.</li>
+</ul>
+<p>SAP positions MDG around governed models, golden records, matching, merging, semantic reconciliation, workflows and continuous data-quality monitoring. Those functions can provide strong governance Evidence, but the migration decision still has to connect the governed record to the actual wave, load and consuming processes.</p>
+<p>For our Supplier case:</p>
+<pre><code>Duplicate candidate clusters:
+150
+
+Resolved with approved survivor:
+40
+
+Confirmed separate entities:
+0
+
+Unresolved:
+110</code></pre>
+<p>The 110 unresolved clusters should not disappear inside a 99-percent completion score.</p>
+<h1 id="we-verify-organisational-completeness">We verify organisational completeness</h1>
+<p>A Supplier can exist successfully without every required organisational extension.</p>
+<p>For cutover approval, we compare intended use with actual extensions.</p>
+<p>For example:</p>
+<pre><code>Supplier:
+100045
+
+Required for cutover:
+Company code DE01
+Purchasing organisation P100
+Purchasing organisation P200
+
+Loaded:
+DE01
+P100
+
+Missing:
+P200</code></pre>
+<p>The general Business Partner record is technically complete.</p>
+<p>Purchasing readiness for P200 is blocked.</p>
+<p>The cutover board must decide whether:</p>
+<ul>
+<li>P200 is required immediately;</li>
+<li>the Supplier can be excluded from that scope;</li>
+<li>a controlled manual process exists;</li>
+<li>the extension must be loaded before approval.</li>
+</ul>
+<p>This is a business decision, not only a field-completeness issue.</p>
+<h1 id="we-reconcile-the-cutover-population">We reconcile the cutover population</h1>
+<p>A readiness result is meaningless when the population is unclear.</p>
+<p>We establish:</p>
+<pre><code>Previous rehearsal scope:
+49,800
+
+Current cutover scope:
+50,000
+
+Added:
+280
+
+Removed by approved Decision:
+80
+
+Unexpectedly missing:
+0</code></pre>
+<p>Every removed record should reference an approved scope Decision.</p>
+<p>Every newly added record should have current Evidence.</p>
+<p>A common false-green pattern occurs when difficult records disappear from the denominator.</p>
+<p>The cutover pack must make denominator changes visible.</p>
+<h1 id="we-verify-that-evidence-is-current">We verify that Evidence is current</h1>
+<p>The payment-control report may have passed during RC5.</p>
+<p>After RC5:</p>
+<ul>
+<li>the Rule moved from Supplier-level to bank-account-level verification;</li>
+<li>the Mapping changed;</li>
+<li>a new company code entered scope;</li>
+<li>an Exception was added.</li>
+</ul>
+<p>The RC5 Evidence remains historically valid.</p>
+<p>It no longer proves RC6 readiness.</p>
+<p>The cutover package should show:</p>
+<pre><code>Evidence:
+EVID-BANK-CONTROL-RC5
+
+Historical status:
+valid
+
+Current-use status:
+stale
+
+Reason:
+Rule, Mapping and scope changed
+
+Replacement Evidence:
+required before approval</code></pre>
+<p>A green historical report must not silently support a new decision.</p>
+<h1 id="we-trace-evidence-provenance">We trace Evidence provenance</h1>
+<p>Cutover Evidence should record where it came from.</p>
+<p>A target reconciliation may reference:</p>
+<pre><code>Model commit:
+def456
+
+Dataset fingerprint:
+SUPPLIER-RC6-7F21
+
+Transformation build:
+2026.07.15.4
+
+Target load:
+CUTOVER-RC6-LOAD-02
+
+Validator:
+BANK-CONTROL v4
+
+Generated by:
+Migration Validation Team</code></pre>
+<p>The W3C PROV model provides a general framework for representing provenance across different systems and contexts by distinguishing entities, activities and agents. Martenweave does not need to implement PROV-O directly, but the same discipline is useful when we must explain which dataset, model, activity and responsible party produced a cutover result.</p>
+<p>Without provenance, the board may rely on a report that came from:</p>
+<ul>
+<li>the wrong environment;</li>
+<li>an earlier load;</li>
+<li>a reduced dataset;</li>
+<li>an outdated Rule;</li>
+<li>a manual spreadsheet revision.</li>
+</ul>
+<h1 id="we-distinguish-evidence-strength">We distinguish evidence strength</h1>
+<p>Not every artefact carries the same assurance.</p>
+<p>For a critical payment-control claim:</p>
+<h2 id="weak-evidence">Weak Evidence</h2>
+<ul>
+<li>meeting statement;</li>
+<li>screenshot;</li>
+<li>issue marked done;</li>
+<li>Mapping document.</li>
+</ul>
+<h2 id="moderate-evidence">Moderate Evidence</h2>
+<ul>
+<li>current transformed dataset;</li>
+<li>current validation report;</li>
+<li>full-population control check.</li>
+</ul>
+<h2 id="strong-evidence">Strong Evidence</h2>
+<ul>
+<li>current model and dataset;</li>
+<li>target reconciliation;</li>
+<li>negative-control testing;</li>
+<li>business-owner approval;</li>
+<li>explicit remaining Exceptions.</li>
+</ul>
+<p>The board should know the strength of the evidence behind each gate.</p>
+<p>We should not hide weak proof behind a green status.</p>
+<h1 id="we-include-negative-controls">We include negative controls</h1>
+<p>To prove that payment blocks were applied correctly, we test:</p>
+<pre><code>Expired verification records:
+block required
+
+Current verification records:
+block not introduced by this remediation</code></pre>
+<p>A remediation that blocks every Supplier may eliminate one risk while creating another.</p>
+<p>For our case:</p>
+<pre><code>Required payment blocks:
+700
+
+Confirmed:
+700
+
+Current verified Suppliers incorrectly blocked:
+0</code></pre>
+<p>The negative control strengthens the approval claim.</p>
+<h1 id="we-distinguish-failure-from-non-execution">We distinguish failure from non-execution</h1>
+<p>A report with zero failed records can mean:</p>
+<ul>
+<li>everything passed;</li>
+<li>no records were evaluated;</li>
+<li>the input was missing;</li>
+<li>the validator was skipped;</li>
+<li>the run failed before evaluation.</li>
+</ul>
+<p>The cutover pack should show execution state explicitly.</p>
+<pre><code>Validation:
+completed
+
+Population expected:
+20,000
+
+Population evaluated:
+20,000
+
+Failed:
+40</code></pre>
+<p>Not:</p>
+<pre><code>Failed:
+0</code></pre>
+<p>with no execution metadata.</p>
+<p>Unknown must never be converted into pass.</p>
+<h1 id="we-show-open-findings-by-business-impact">We show open Findings by business impact</h1>
+<p>The board does not need every warning.</p>
+<p>It needs the Findings that affect approval.</p>
+<p>A useful summary is:</p>
+<pre><code>Critical blockers:
+1
+
+High controlled Findings:
+3
+
+Medium remediation Findings:
+8
+
+Low post-cutover Findings:
+14</code></pre>
+<p>For every critical or high Finding, show:</p>
+<ul>
+<li>business consequence;</li>
+<li>affected population;</li>
+<li>owner;</li>
+<li>current treatment;</li>
+<li>Evidence;</li>
+<li>required decision.</li>
+</ul>
+<p>We prioritize by business impact, not by raw error count.</p>
+<h1 id="we-separate-cutover-approval-from-permanent-acceptance">We separate cutover approval from permanent acceptance</h1>
+<p>A record may be safe for cutover because a temporary control exists.</p>
+<p>That does not make the final design acceptable forever.</p>
+<p>For example:</p>
+<pre><code>Cutover approval:
+Supplier may be loaded with payment block.
+
+Permanent target state:
+Current Treasury verification required
+before payment activation.</code></pre>
+<p>The cutover Decision should preserve both.</p>
+<p>Otherwise the temporary control can become the production norm.</p>
+<h1 id="we-create-explicit-approval-outcomes">We create explicit approval outcomes</h1>
+<p>The decision should not be limited to approve or reject.</p>
+<p>Useful outcomes include:</p>
+<h2 id="approved">Approved</h2>
+<p>All required gates are satisfied.</p>
+<h2 id="approved-with-controlled-exceptions">Approved with controlled Exceptions</h2>
+<p>The board accepts the declared temporary deviations and controls.</p>
+<h2 id="conditionally-approved">Conditionally approved</h2>
+<p>Approval depends on Evidence or actions completed before a defined checkpoint.</p>
+<h2 id="partially-approved">Partially approved</h2>
+<p>Specific company codes, capabilities or populations are approved; others remain excluded.</p>
+<h2 id="not-approved">Not approved</h2>
+<p>A critical uncontrolled gate remains.</p>
+<p>For our case:</p>
+<pre><code>Technical load:
+approved
+
+Purchasing:
+approved except P200 missing-extension population
+
+Invoice posting:
+approved
+
+Payment activation:
+not approved until 40 uncontrolled records are blocked
+
+Overall cutover:
+conditionally approved</code></pre>
+<p>This is more precise than one global traffic light.</p>
+<h1 id="we-record-the-decision-not-only-the-meeting-minutes">We record the Decision, not only the meeting minutes</h1>
+<p>A conceptual cutover Decision might contain:</p>
+<pre><code>---
+id: DEC-CUTOVER-SUPPLIER-WAVE1-RC6
+type: Decision
+
+scope:
+  domain: supplier
+  migration_wave: WAVE-1
+  model_commit: def456
+  dataset: SUPPLIER-RC6
+  target_load: CUTOVER-RC6-LOAD-02
+
+outcome:
+  conditionally_approved
+
+approved_capabilities:
+  - supplier_identification
+  - invoice_posting
+  - purchasing_except_P200_population
+
+blocked_capabilities:
+  - payment_activation_for_uncontrolled_records
+
+accepted_exceptions:
+  - EXC-SUPPLIER-BANK-VERIFICATION-W1
+
+conditions:
+  - apply_payment_block_to_40_records
+  - confirm_target_reconciliation
+  - approve_P200_scope_treatment
+
+evidence:
+  - READINESS-SUPPLIER-W1-RC6
+  - EVID-TARGET-RECONCILIATION-RC6
+  - EVID-DUPLICATE-DECISIONS-RC6
+
+decision_authority:
+  ROLE-CUTOVER-DECISION-OWNER
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<h1 id="we-validate-the-approval-package">We validate the approval package</h1>
+<p>Deterministic checks can detect:</p>
+<pre><code>Cutover Decision references stale Evidence.
+
+Critical gate is blocked,
+but overall outcome is approved.
+
+Exception is expired.
+
+Exception has no owner.
+
+Current scope contains unassessed records.
+
+A removed population has no approved scope Decision.
+
+Target reconciliation references an earlier load.
+
+Decision has no authorised approver.
+
+Conditionally approved Decision has no deadline.
+
+Accepted Exception lacks compensating-control Evidence.</code></pre>
+<p>These checks do not make the cutover Decision.</p>
+<p>They make contradictions visible before the meeting.</p>
+<h1 id="we-use-ai-to-prepare-not-approve">We use AI to prepare, not approve</h1>
+<p>AI can help us:</p>
+<ul>
+<li>assemble the Evidence package;</li>
+<li>summarize Findings by business impact;</li>
+<li>identify stale reports;</li>
+<li>compare rehearsal and cutover populations;</li>
+<li>surface expiring Exceptions;</li>
+<li>draft the cutover Decision;</li>
+<li>identify missing owners or approval conditions.</li>
+</ul>
+<p>AI cannot:</p>
+<ul>
+<li>accept residual Treasury risk;</li>
+<li>approve unresolved duplicate identity;</li>
+<li>decide that an uncontrolled record is safe;</li>
+<li>convert missing Evidence into a pass;</li>
+<li>silently exclude difficult records;</li>
+<li>issue final cutover approval.</li>
+</ul>
+<p>The operating rule remains:</p>
+<pre><code>AI prepares the decision case.
+
+Validators detect contradictions.
+
+Business owners accept domain risk.
+
+Cutover authority approves the state.</code></pre>
+<h1 id="we-keep-martenweave-out-of-cutover-orchestration">We keep Martenweave out of cutover orchestration</h1>
+<p>Martenweave should not become:</p>
+<ul>
+<li>a cutover scheduler;</li>
+<li>a command-centre application;</li>
+<li>a runbook engine;</li>
+<li>a deployment orchestrator;</li>
+<li>a bridge-call tool;</li>
+<li>an incident-management platform.</li>
+</ul>
+<p>Existing tools can manage tasks, timing, dependencies and communication.</p>
+<p>Martenweave should provide the model evidence required at the decision checkpoints.</p>
+<p>The current repository already defines Martenweave as a canonical model-governance pipeline rather than a generic workflow platform, and keeps human-reviewed GitHub delivery outside the source-of-truth model.</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A cutover-approval page should show:</p>
+<h2 id="decision-scope">Decision scope</h2>
+<p>Domain, wave, dataset, model commit and target load.</p>
+<h2 id="overall-recommendation">Overall recommendation</h2>
+<p>Approved, conditional, partial or blocked.</p>
+<h2 id="capability-gates">Capability gates</h2>
+<p>Purchasing, invoice posting, payment and other required uses.</p>
+<h2 id="population-state">Population state</h2>
+<p>Ready, controlled, not ready, not assessed and approved out of scope.</p>
+<h2 id="critical-findings">Critical Findings</h2>
+<p>Business consequence, affected population and owner.</p>
+<h2 id="exceptions">Exceptions</h2>
+<p>Scope, control, expiry and closure commitment.</p>
+<h2 id="evidence-health">Evidence health</h2>
+<p>Current, stale, missing and partially current.</p>
+<h2 id="identity-status">Identity status</h2>
+<p>Resolved and unresolved duplicate populations.</p>
+<h2 id="organisational-completeness">Organisational completeness</h2>
+<p>Company-code and purchasing-organisation gaps.</p>
+<h2 id="approval-conditions">Approval conditions</h2>
+<p>Actions and Evidence required before activation.</p>
+<h2 id="decision-authorities">Decision authorities</h2>
+<p>Who approves each domain claim and the overall cutover state.</p>
+<p>The page should not begin with the load-success percentage.</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused Martenweave capability should be <strong>Model-Evidence Cutover Approval</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Generate an explainable, model-aware decision package for cutover approval without turning Martenweave into a cutover workflow tool.</p>
+<h2 id="initial-inputs">Initial inputs</h2>
+<ul>
+<li>cutover population;</li>
+<li>model commit;</li>
+<li>dataset fingerprint;</li>
+<li>readiness assessment;</li>
+<li>critical Findings;</li>
+<li>active Exceptions;</li>
+<li>Evidence freshness;</li>
+<li>duplicate Decisions;</li>
+<li>organisational-extension status;</li>
+<li>target reconciliation;</li>
+<li>approval roles.</li>
+</ul>
+<h2 id="initial-outputs">Initial outputs</h2>
+<ul>
+<li>gate-by-gate status;</li>
+<li>residual-risk summary;</li>
+<li>Exception commitments;</li>
+<li>stale or missing Evidence;</li>
+<li>population reconciliation;</li>
+<li>recommended outcome;</li>
+<li>approval conditions;</li>
+<li>draft Decision object.</li>
+</ul>
+<h2 id="supported-outcomes">Supported outcomes</h2>
+<ul>
+<li>approved;</li>
+<li>approved with controlled Exceptions;</li>
+<li>conditionally approved;</li>
+<li>partially approved;</li>
+<li>not approved.</li>
+</ul>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could support:</p>
+<pre><code>martenweave cutover prepare \
+  --scope supplier-wave1 \
+  --dataset ./data/supplier-rc6.csv \
+  --target-load CUTOVER-RC6-LOAD-02 \
+  --repo ./model</code></pre>
+<pre><code>martenweave cutover evidence \
+  DEC-CUTOVER-SUPPLIER-WAVE1-RC6 \
+  --repo ./model</code></pre>
+<pre><code>martenweave cutover blockers \
+  --scope supplier-wave1 \
+  --repo ./model</code></pre>
+<pre><code>martenweave cutover validate-decision \
+  DEC-CUTOVER-SUPPLIER-WAVE1-RC6 \
+  --repo ./model</code></pre>
+<pre><code>martenweave cutover compare \
+  --from READINESS-SUPPLIER-RC5 \
+  --to READINESS-SUPPLIER-RC6 \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended product direction.</p>
+<p>They are not part of the currently documented CLI contract.</p>
+<p>The existing Martenweave core already contains the canonical-file, validation, dataset-gap, lineage, impact and dataset-readiness foundations required for this capability.</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider this capability useful when it prevents each of these weak cutover decisions:</p>
+<ol>
+<li>A high load-success rate is treated as proof of business readiness.</li>
+<li>Exception-covered records are counted as fully ready.</li>
+<li>An expired Exception supports approval.</li>
+<li>A critical payment-control population is hidden inside an average.</li>
+<li>Unresolved duplicate clusters are reported only as data-quality warnings.</li>
+<li>Missing organisational extensions are hidden by successful general-object creation.</li>
+<li>Stale Evidence is reused after a Rule or Mapping change.</li>
+<li>Records removed from scope have no approved Decision.</li>
+<li>A validation report contains zero failures because the run did not execute.</li>
+<li>A pull request or closed issue is treated as proof that the target control works.</li>
+</ol>
+<p>The output must also be practical.</p>
+<p>The decision board should be able to identify:</p>
+<ul>
+<li>what it is approving;</li>
+<li>which risks remain;</li>
+<li>who owns them;</li>
+<li>which controls exist;</li>
+<li>what conditions must be completed.</li>
+</ul>
+<h1 id="the-business-value">The business value</h1>
+<p>Weak cutover approval creates predictable post-go-live pain:</p>
+<ul>
+<li>Suppliers exist but cannot support purchase orders;</li>
+<li>invoices fail because company-code data is incomplete;</li>
+<li>payment controls do not operate as expected;</li>
+<li>duplicate identities create conflicting transactions;</li>
+<li>temporary defaults become production behaviour;</li>
+<li>local exclusions are forgotten;</li>
+<li>stale reports are reused during hypercare;</li>
+<li>business owners discover risks after activation.</li>
+</ul>
+<p>A model-evidence approval package does not eliminate those risks automatically.</p>
+<p>It makes them visible before the Decision.</p>
+<p>Instead of:</p>
+<pre><code>Supplier load success is 99.84%.
+Recommendation: approve.</code></pre>
+<p>we can state:</p>
+<pre><code>The technical load is ready.
+
+Purchasing and invoice posting
+are approved for the declared scope.
+
+Payment activation remains blocked
+for 40 uncontrolled Suppliers.
+
+Seven hundred Suppliers are approved
+only under time-bounded payment controls.
+
+One hundred ten duplicate clusters
+remain unresolved and excluded.
+
+The overall cutover is conditionally approved
+subject to the listed controls and Evidence.</code></pre>
+<p>That is a decision a responsible owner can evaluate.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Cutover approval is not the final status of a migration job.</p>
+<p>It is an acceptance of a model state.</p>
+<p>For our Supplier case, the board should understand:</p>
+<pre><code>which records are ready,
+
+which are controlled,
+
+which are blocked,
+
+which are unassessed,
+
+which are excluded,
+
+which Evidence is current,
+
+which Exceptions remain,
+
+and which business capabilities
+can operate safely.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can an approver trace every critical cutover claim to the current model, population, target state, Exception and accountable owner?</blockquote>
+<p>When the answer is yes, cutover approval becomes defensible.</p>
+<p>When the answer is:</p>
+<blockquote>The load report is green and the remaining errors are small,</blockquote>
+<p>the programme is making a business-risk decision from a technical execution summary.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that cutover approval is supported by a traceable model-evidence package rather than a collection of green reports and verbal assurances.</p>
+<p>Our operating model is:</p>
+<pre><code>Canonical model defines the expected state.
+
+Readiness gates define business use.
+
+Evidence proves the current baseline.
+
+Findings expose blockers.
+
+Exceptions define controlled deviation.
+
+Owners accept residual risk.
+
+Cutover authority approves a bounded state.
+
+Git records the Decision.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a backend-first model-governance pipeline that turns datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI-generated changes proposal-first.</p>
+<p>Its documented workflow includes gap detection, lineage, impact analysis, proposal generation and human-reviewed delivery, while explicitly avoiding a generic workflow or hosted platform.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer that creates governed models and golden records, supports profiling, matching, merging and semantic reconciliation, provides workflows and continuously monitors data quality. The article uses these capabilities as potential sources of governance Evidence while keeping migration-wave, target-load and cutover approval context separate.</p>
+<p>W3C PROV-O provides a framework for representing and exchanging provenance information generated by different systems and under different contexts. Its distinction among entities, activities and agents supports the model used here for connecting cutover Evidence to the datasets, executions and accountable roles that produced it.</p>
+<p>The Cutover Decision object, capability gates, approval outcomes, contradiction checks and proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or W3C.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-separate-technical-completeness-from-business-readiness.html"><span>Previous</span>A Supplier migration load finishes successfully.</a><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html"><span>Next</span>The material migration report looks successful.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Design a Model Change Request That Business and Technical Teams Can Review Together | Martenweave</title>
+    <meta
+      name="description"
+      content="A business owner requests a change:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html" />
+    <meta property="og:title" content="How to Design a Model Change Request That Business and Technical Teams Can Review Together | Martenweave" />
+    <meta property="og:description" content="A business owner requests a change:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Design a Model Change Request That Business and Technical Teams Can Review Together | Martenweave" />
+    <meta name="twitter:description" content="A business owner requests a change:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html",
+                        "name": "How to Design a Model Change Request That Business and Technical Teams Can Review Together | Martenweave",
+                        "description": "A business owner requests a change:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Design a Model Change Request That Business and Technical Teams Can Review Together",
+                                    "item": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html#content",
+                        "headline": "How to Design a Model Change Request That Business and Technical Teams Can Review Together",
+                        "name": "How to Design a Model Change Request That Business and Technical Teams Can Review Together",
+                        "description": "A business owner requests a change:",
+                        "url": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Design a Model Change Request That Business and Technical Teams Can Review Together</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>How to Design a Model Change Request That Business and Technical Teams Can Review Together</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A business owner requests a change:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#a-model-change-request-is-not-merely-a-ticket">A model change request is not merely a ticket</a></li><li><a href="#sap-mdg-workflow-does-not-remove-the-need-for-cross-team-model-review">SAP MDG workflow does not remove the need for cross-team model review</a></li><li><a href="#begin-with-the-decision-not-the-requested-solution">Begin with the decision—not the requested solution</a></li><li><a href="#show-the-current-approved-state">Show the current approved state</a></li><li><a href="#describe-the-proposed-state-precisely">Describe the proposed state precisely</a></li><li><a href="#separate-meaning-from-implementation">Separate meaning from implementation</a></li><li><a href="#business-change">Business change</a></li><li><a href="#model-change">Model change</a></li><li><a href="#implementation-change">Implementation change</a></li><li><a href="#use-stable-object-identifiers">Use stable object identifiers</a></li><li><a href="#define-scope-and-applicability-explicitly">Define scope and applicability explicitly</a></li><li><a href="#distinguish-permanent-changes-from-temporary-deviations">Distinguish permanent changes from temporary deviations</a></li><li><a href="#include-the-evidence">Include the evidence</a></li><li><a href="#state-the-evidence-quality">State the evidence quality</a></li><li><a href="#present-realistic-alternatives">Present realistic alternatives</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A business owner requests a change:</p>
+<blockquote>Make Supplier Classification mandatory.</blockquote>
+<p>The request sounds clear.</p>
+<p>The SAP team asks which field should become mandatory.</p>
+<p>The migration team asks which source systems can populate it.</p>
+<p>The country teams ask whether the rule applies globally.</p>
+<p>The integration team asks whether downstream applications accept every classification value.</p>
+<p>The test lead asks which scenarios should now fail.</p>
+<p>The business owner is surprised.</p>
+<p>They were asking for a governance control, not a technical investigation.</p>
+<p>A technical change request is created. It lists:</p>
+<ul>
+<li>target field;</li>
+<li>validation object;</li>
+<li>transport;</li>
+<li>estimated effort;</li>
+<li>test environment.</li>
+</ul>
+<p>The business owner approves it because the title still says “Make Supplier Classification mandatory.”</p>
+<p>During testing, thousands of suppliers fail validation.</p>
+<p>The source field is incomplete in one ERP. Historical suppliers were never intended to be included. One country uses Supplier Classification for a different purpose. A downstream interface does not recognise two of the target values.</p>
+<p>The implementation team delivered the requested technical change.</p>
+<p>The programme never created a shared review object connecting business intent with implementation consequences.</p>
+<p>This is the purpose of a model change request.</p>
+<blockquote>A model change request should allow business and technical reviewers to evaluate the same proposed model state from their respective responsibilities without forcing either group to infer what the other means.</blockquote>
+<p>The business reviewer should understand:</p>
+<ul>
+<li>what business meaning changes;</li>
+<li>where it applies;</li>
+<li>why it is needed;</li>
+<li>which risks are accepted.</li>
+</ul>
+<p>The technical reviewer should understand:</p>
+<ul>
+<li>which model objects change;</li>
+<li>what dependencies are affected;</li>
+<li>whether current data and systems support the proposal;</li>
+<li>how implementation will be verified.</li>
+</ul>
+<p>Neither group should approve a vague summary that hides the part it does not understand.</p>
+<h2 id="a-model-change-request-is-not-merely-a-ticket">A model change request is not merely a ticket</h2>
+<p>A ticket is useful for managing work.</p>
+<p>It can contain:</p>
+<ul>
+<li>requester;</li>
+<li>priority;</li>
+<li>assignee;</li>
+<li>due date;</li>
+<li>status;</li>
+<li>discussion;</li>
+<li>attachments.</li>
+</ul>
+<p>A model change request has a different purpose.</p>
+<p>It should define the proposed movement from one approved model state to another.</p>
+<pre><code class="language-text">Current approved state
+        ↓
+Proposed model difference
+        ↓
+Business and technical impact
+        ↓
+Required decisions
+        ↓
+Approval or rejection</code></pre>
+<p>The delivery ticket may be created before, during or after this process.</p>
+<p>But work should not begin merely because a ticket exists.</p>
+<p>The programme should first determine whether the requested change is:</p>
+<ul>
+<li>clearly defined;</li>
+<li>supported by evidence;</li>
+<li>structurally valid;</li>
+<li>reviewed by the right authorities;</li>
+<li>feasible across affected systems.</li>
+</ul>
+<h2 id="sap-mdg-workflow-does-not-remove-the-need-for-cross-team-model-review">SAP MDG workflow does not remove the need for cross-team model review</h2>
+<p>SAP currently describes SAP Master Data Governance as supporting governed models, collaborative change-request workflows, validated values, attribute ownership, business-rule monitoring and auditable changes.</p>
+<p>These capabilities are relevant to operational master-data governance.</p>
+<p>A programme still needs to determine what a proposed implementation change means across:</p>
+<ul>
+<li>business definitions;</li>
+<li>data sources;</li>
+<li>migration;</li>
+<li>SAP configuration;</li>
+<li>local contexts;</li>
+<li>integrations;</li>
+<li>testing;</li>
+<li>AMS.</li>
+</ul>
+<p>The platform can route an approved operational change to the right participants.</p>
+<p>It does not automatically create a complete implementation decision package from a sentence such as:</p>
+<blockquote>Add a new supplier category.</blockquote>
+<p>The programme needs a model-level review before the requested behaviour is treated as approved design.</p>
+<h2 id="begin-with-the-decision-not-the-requested-solution">Begin with the decision—not the requested solution</h2>
+<p>Many change requests arrive as solutions:</p>
+<ul>
+<li>add a field;</li>
+<li>create a value;</li>
+<li>make the field mandatory;</li>
+<li>change the target;</li>
+<li>disable the validation;</li>
+<li>add an approval step.</li>
+</ul>
+<p>The first section of the model change request should describe the problem independently of the proposed solution.</p>
+<p>Weak problem statement:</p>
+<blockquote>We need value <code>UNDER_REVIEW</code>.</blockquote>
+<p>Stronger problem statement:</p>
+<blockquote>Suppliers requiring additional compliance investigation cannot currently be represented without assigning a final risk classification. Users are applying inconsistent workarounds, and 1,442 migrated suppliers remain unresolved.</blockquote>
+<p>The stronger statement allows reviewers to consider alternatives.</p>
+<p>Possible treatments may include:</p>
+<ul>
+<li>new value;</li>
+<li>separate status attribute;</li>
+<li>workflow state;</li>
+<li>temporary migration marker;</li>
+<li>existing exception process;</li>
+<li>no model change, but process correction.</li>
+</ul>
+<p>Starting from the requested field or value can prematurely lock the discussion into one technical design.</p>
+<h2 id="show-the-current-approved-state">Show the current approved state</h2>
+<p>Reviewers need to know what exists before they can judge the change.</p>
+<p>The request should identify:</p>
+<ul>
+<li>model baseline;</li>
+<li>affected objects;</li>
+<li>current meaning;</li>
+<li>current context;</li>
+<li>current owner;</li>
+<li>current implementation;</li>
+<li>known deviations.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Model baseline:
+Supplier Model 2.4
+
+Attribute:
+ATTR-SUPPLIER-RISK
+
+Current values:
+LOW, MEDIUM, HIGH
+
+Current rule:
+Mandatory for active strategic suppliers
+
+Current workflow:
+HIGH requires Compliance approval
+
+Known deviation:
+ERP_B migration population uses temporary blank treatment
+until remediation is complete.</code></pre>
+<p>Without the current state, the request can misrepresent the change as smaller than it is.</p>
+<p>“Add one value” may actually alter:</p>
+<ul>
+<li>business semantics;</li>
+<li>workflow;</li>
+<li>migration logic;</li>
+<li>interfaces;</li>
+<li>reporting.</li>
+</ul>
+<h2 id="describe-the-proposed-state-precisely">Describe the proposed state precisely</h2>
+<p>The proposed state should be written in business-readable terms and supported by structured model changes.</p>
+<p>Business-readable description:</p>
+<blockquote>Introduce <code>UNDER_REVIEW</code> as a temporary Supplier Risk value for suppliers undergoing compliance assessment. The value may be assigned only in Portugal, cannot be used for final supplier approval and must trigger a compliance review workflow.</blockquote>
+<p>Structured model implications:</p>
+<pre><code class="language-text">Modify:
+VLIST-SUPPLIER-RISK
+
+Add value:
+UNDER_REVIEW
+
+Context:
+Country = PT
+
+Modify:
+RULE-SUPPLIER-RISK-APPROVAL
+
+Modify:
+WF-SUPPLIER-COMPLIANCE
+
+Add:
+Temporary-value monitoring rule</code></pre>
+<p>The business statement explains the intended policy.</p>
+<p>The structured list explains what would change in the model.</p>
+<p>Both are necessary.</p>
+<h2 id="separate-meaning-from-implementation">Separate meaning from implementation</h2>
+<p>A model change request should distinguish at least three layers.</p>
+<h2 id="business-change">Business change</h2>
+<p>What policy, meaning or ownership changes?</p>
+<p>Example:</p>
+<blockquote>Suppliers under active investigation need a non-final classification.</blockquote>
+<h2 id="model-change">Model change</h2>
+<p>Which attributes, values, relationships, rules or contexts change?</p>
+<p>Example:</p>
+<blockquote>Add contextual value <code>UNDER_REVIEW</code> to Supplier Risk and define restrictions.</blockquote>
+<h2 id="implementation-change">Implementation change</h2>
+<p>Which systems and components must be updated?</p>
+<p>Example:</p>
+<ul>
+<li>SAP MDG value list;</li>
+<li>workflow route;</li>
+<li>validation;</li>
+<li>outbound interface;</li>
+<li>migration mapping;</li>
+<li>quality report;</li>
+<li>tests.</li>
+</ul>
+<p>This separation prevents a technical limitation from silently redefining the business requirement.</p>
+<p>It also prevents a business approval from being interpreted as approval of every implementation detail.</p>
+<h2 id="use-stable-object-identifiers">Use stable object identifiers</h2>
+<p>The request should identify affected model objects precisely.</p>
+<p>Examples:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK
+VLIST-SUPPLIER-RISK
+RULE-SUPPLIER-RISK-REQUIRED
+WF-SUPPLIER-COMPLIANCE
+MAP-ERP-B-SUPPLIER-RISK</code></pre>
+<p>Names are useful for readers.</p>
+<p>Identifiers provide reliable references across:</p>
+<ul>
+<li>canonical model files;</li>
+<li>Excel reviews;</li>
+<li>GitHub;</li>
+<li>Jira;</li>
+<li>test systems;</li>
+<li>implementation documentation.</li>
+</ul>
+<p>The reviewer should not need to understand the identifier format.</p>
+<p>The delivery system needs the identity to avoid ambiguity.</p>
+<h2 id="define-scope-and-applicability-explicitly">Define scope and applicability explicitly</h2>
+<p>A model change request should never rely on phrases such as:</p>
+<ul>
+<li>for selected countries;</li>
+<li>for active records;</li>
+<li>where applicable;</li>
+<li>except historical data;</li>
+<li>only for important suppliers.</li>
+</ul>
+<p>These phrases need structured scope.</p>
+<p>For example:</p>
+<pre><code class="language-text">Country:
+Portugal
+
+Business Partner category:
+Organisation
+
+Role:
+Supplier
+
+Status:
+Active
+
+Supplier segment:
+Regulated
+
+Effective release:
+R4
+
+Migration applicability:
+New and active migrated suppliers only</code></pre>
+<p>Scope is not a minor detail.</p>
+<p>It determines:</p>
+<ul>
+<li>dataset population;</li>
+<li>validation behaviour;</li>
+<li>workflow routing;</li>
+<li>remediation effort;</li>
+<li>testing;</li>
+<li>local ownership.</li>
+</ul>
+<h2 id="distinguish-permanent-changes-from-temporary-deviations">Distinguish permanent changes from temporary deviations</h2>
+<p>A temporary workaround should not be presented like a permanent model enhancement.</p>
+<p>The request should classify the proposed change as one of:</p>
+<ul>
+<li>permanent global model change;</li>
+<li>permanent local extension;</li>
+<li>contextual override;</li>
+<li>temporary operational deviation;</li>
+<li>migration-only treatment;</li>
+<li>implementation correction;</li>
+<li>documentation clarification.</li>
+</ul>
+<p>Temporary changes require:</p>
+<ul>
+<li>owner;</li>
+<li>expiry date;</li>
+<li>measurable review trigger;</li>
+<li>remediation plan;</li>
+<li>restrictions on new use.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Change type:
+Temporary migration deviation
+
+Expiry:
+Before production cutover
+
+Review trigger:
+ERP_B source remediation completed
+
+Restriction:
+Value may not be assigned through operational creation workflow</code></pre>
+<p>Without these conditions, temporary values and defaults tend to survive indefinitely.</p>
+<h2 id="include-the-evidence">Include the evidence</h2>
+<p>The request should show why the change is being considered.</p>
+<p>Useful evidence may include:</p>
+<ul>
+<li>dataset profile;</li>
+<li>incident volume;</li>
+<li>legal requirement;</li>
+<li>process analysis;</li>
+<li>test defect;</li>
+<li>source-system specification;</li>
+<li>interface rejection;</li>
+<li>business decision;</li>
+<li>audit finding.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Dataset:
+erp_b_suppliers_2026-07-10.csv
+
+Affected records:
+1,442 active suppliers
+
+Current source values:
+STRAT, PENDING, blank
+
+Current approved target coverage:
+88%
+
+Related incidents:
+27 in the previous quarter</code></pre>
+<p>Evidence should be referenced, not replaced by broad statements such as:</p>
+<blockquote>Business requires this.</blockquote>
+<p>The request may still rely partly on expert judgement.</p>
+<p>That should be visible.</p>
+<h2 id="state-the-evidence-quality">State the evidence quality</h2>
+<p>Not all evidence has equal strength.</p>
+<p>A useful classification is:</p>
+<h3 id="confirmed">Confirmed</h3>
+<p>Approved policy, validated dataset result or tested system behaviour.</p>
+<h3 id="representative">Representative</h3>
+<p>Evidence exists but covers only part of the scope.</p>
+<h3 id="expert-judgement">Expert judgement</h3>
+<p>Responsible experts support the conclusion, but direct evidence is limited.</p>
+<h3 id="assumption">Assumption</h3>
+<p>The programme needs to proceed, but the statement is not yet confirmed.</p>
+<h3 id="unknown">Unknown</h3>
+<p>No reliable evidence is currently available.</p>
+<p>For example:</p>
+<pre><code class="language-text">Source completeness for ERP_A:
+Confirmed
+
+Source completeness for ERP_B:
+Representative sample only
+
+Downstream reporting impact:
+Unknown</code></pre>
+<p>This prevents reviewers from interpreting all listed facts as equally certain.</p>
+<h2 id="present-realistic-alternatives">Present realistic alternatives</h2>
+<p>A change request should not be written as if only one solution exists.</p>
+<p>For a material change, show the serious alternatives considered.</p>
+<p>Example:</p>
+<h3 id="option-a-add-under-review-to-supplier-risk">Option A: add <code>UNDER_REVIEW</code> to Supplier Risk</h3>
+<p>Benefits:</p>
+<ul>
+<li>easy to understand;</li>
+<li>supports current workflow need.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>mixes final classification with process status;</li>
+<li>may be consumed incorrectly downstream.</li>
+</ul>
+<h3 id="option-b-create-a-separate-review-status-attribute">Option B: create a separate Review Status attribute</h3>
+<p>Benefits:</p>
+<ul>
+<li>preserves Supplier Risk semantics;</li>
+<li>separates process and classification.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>requires new field and interface work.</li>
+</ul>
+<h3 id="option-c-use-workflow-state-only">Option C: use workflow state only</h3>
+<p>Benefits:</p>
+<ul>
+<li>no additional business value.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>status may not be visible in all consumers.</li>
+</ul>
+<h3 id="option-d-no-model-change">Option D: no model change</h3>
+<p>Benefits:</p>
+<ul>
+<li>avoids expansion.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>current workaround and incident pattern remain.</li>
+</ul>
+<p>Reviewers can now evaluate the actual trade-off.</p>
+<h2 id="state-the-recommended-option-without-hiding-alternatives">State the recommended option without hiding alternatives</h2>
+<p>The author of the change request should make a recommendation.</p>
+<p>A request containing only neutral options transfers the analysis burden entirely to the governance board.</p>
+<p>Example:</p>
+<blockquote>Recommend Option B. <code>UNDER_REVIEW</code> describes process state rather than supplier risk. A separate status preserves the approved meaning of Supplier Risk and prevents downstream systems from treating an unresolved supplier as a final classification.</blockquote>
+<p>The recommendation may be rejected.</p>
+<p>The reasoning should still be explicit.</p>
+<h2 id="show-dataset-impact">Show dataset impact</h2>
+<p>A model change can be structurally sensible and operationally unrealistic.</p>
+<p>The request should assess the current data population.</p>
+<p>For affected attributes, include:</p>
+<ul>
+<li>column availability;</li>
+<li>completeness;</li>
+<li>observed values;</li>
+<li>mapping coverage;</li>
+<li>affected record count;</li>
+<li>key or relationship gaps;</li>
+<li>required remediation.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Current active suppliers in scope:
+24,800
+
+Valid existing risk classification:
+22,458
+
+Blank:
+900
+
+Pending or ambiguous source values:
+1,442
+
+Source systems without direct support:
+ERP_B</code></pre>
+<p>This gives the business reviewer a view of implementation consequence.</p>
+<p>It also prevents the technical team from configuring a rule that the current population cannot satisfy.</p>
+<h2 id="show-migration-impact-separately">Show migration impact separately</h2>
+<p>Operational and migration treatments may differ.</p>
+<p>The request should answer:</p>
+<ul>
+<li>Does this apply to existing migrated records?</li>
+<li>Does historical data require remediation?</li>
+<li>Can the source populate the proposed value?</li>
+<li>Is a temporary default needed?</li>
+<li>Will the next mock load fail?</li>
+<li>Which migration waves are affected?</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Operational creation:
+New status must be selected by Compliance.
+
+Migration:
+Existing ERP_B records may be assigned temporary status
+only when included in the approved remediation population.
+
+Cutover:
+No unrestricted default permitted.</code></pre>
+<p>The change should not accidentally convert a migration workaround into the permanent operating model.</p>
+<h2 id="show-sap-mdg-impact">Show SAP MDG impact</h2>
+<p>The SAP or MDM implementation section should identify expected technical areas without pretending the final build design is already complete.</p>
+<p>Possible areas include:</p>
+<ul>
+<li>entity or attribute configuration;</li>
+<li>value list;</li>
+<li>UI;</li>
+<li>validation;</li>
+<li>derivation;</li>
+<li>change-request type;</li>
+<li>workflow routing;</li>
+<li>authorisation;</li>
+<li>activation;</li>
+<li>replication.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Expected SAP MDG impact:
+
+- add Review Status attribute;
+- expose field in supplier change request;
+- restrict maintenance to Compliance role;
+- route PENDING status to compliance approval;
+- prevent final activation while status remains PENDING;
+- include status in outbound interface.</code></pre>
+<p>The responsible SAP architect should confirm technical feasibility.</p>
+<p>Business approval alone should not be interpreted as technical acceptance.</p>
+<h2 id="show-integration-and-consumer-impact">Show integration and consumer impact</h2>
+<p>Every new or changed value should be assessed against consuming systems.</p>
+<p>Questions include:</p>
+<ul>
+<li>Is the field replicated?</li>
+<li>Which systems consume it?</li>
+<li>Do consumers validate allowed values?</li>
+<li>Does the field drive reporting, pricing or workflow?</li>
+<li>Is code conversion required?</li>
+<li>Can an old consumer ignore the new value safely?</li>
+<li>Does the interface contract need a new version?</li>
+</ul>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Consumer</th><th scope="col">Current use</th><th scope="col">Change impact</th><th scope="col">Owner</th></tr></thead><tbody><tr><td>Procurement analytics</td><td>Groups suppliers by risk</td><td>New status must be excluded from final risk distribution</td><td>Analytics owner</td></tr><tr><td>Compliance workflow</td><td>Routes HIGH risk</td><td>New status requires separate queue</td><td>Compliance IT</td></tr><tr><td>Legacy portal</td><td>Displays risk code</td><td>Does not support new field</td><td>Portal owner</td></tr></tbody></table></div>
+<p>A new value that works inside MDG can still break the enterprise process.</p>
+<h2 id="show-ownership-impact">Show ownership impact</h2>
+<p>A change may introduce new responsibilities.</p>
+<p>The request should identify:</p>
+<ul>
+<li>business owner;</li>
+<li>data owner;</li>
+<li>local owner;</li>
+<li>operational steward;</li>
+<li>technical owner;</li>
+<li>remediation owner.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Business meaning:
+Global Supplier Risk Owner
+
+Operational status:
+Compliance Process Owner
+
+Portugal applicability:
+PT Procurement Data Owner
+
+Source remediation:
+ERP_B Data Owner
+
+Technical implementation:
+SAP MDG Product Owner</code></pre>
+<p>A model element with no owner is not ready merely because it is technically implementable.</p>
+<h2 id="show-control-and-compliance-impact">Show control and compliance impact</h2>
+<p>Where relevant, the request should assess:</p>
+<ul>
+<li>segregation of duties;</li>
+<li>regulatory obligation;</li>
+<li>audit evidence;</li>
+<li>retention;</li>
+<li>data privacy;</li>
+<li>approval authority.</li>
+</ul>
+<p>Do not add a generic “Compliance impact: none” field to every request.</p>
+<p>Use this section where the change genuinely affects control design.</p>
+<p>The evidence may still need specialist review.</p>
+<p>A model-governance workflow should not infer legal approval from a business owner’s agreement.</p>
+<h2 id="show-impact-on-tests">Show impact on tests</h2>
+<p>A model change request should identify existing evidence that becomes stale.</p>
+<p>Examples:</p>
+<ul>
+<li>value-list tests;</li>
+<li>mandatory-rule tests;</li>
+<li>workflow tests;</li>
+<li>authorisation tests;</li>
+<li>migration tests;</li>
+<li>interface tests;</li>
+<li>reports.</li>
+</ul>
+<p>Use a minimum regression map:</p>
+<pre><code class="language-text">Existing tests affected:
+TC-SUP-114
+TC-SUP-118
+TC-INT-042
+TC-MIG-207
+
+New tests required:
+- PENDING status creation
+- non-Compliance user restriction
+- activation blocked while PENDING
+- outbound interface handling</code></pre>
+<p>Testing should prove the proposed business behaviour, not merely that the transport succeeds.</p>
+<h2 id="show-risk-in-business-terms">Show risk in business terms</h2>
+<p>A change request should not rely only on technical severity.</p>
+<p>Useful risk statements include:</p>
+<ul>
+<li>legitimate suppliers may be blocked;</li>
+<li>unresolved classifications may be reported as final;</li>
+<li>source remediation may delay cutover;</li>
+<li>local values may become visible globally;</li>
+<li>interface consumers may reject records;</li>
+<li>AMS may inherit an unowned temporary process.</li>
+</ul>
+<p>For each risk, identify:</p>
+<ul>
+<li>likelihood;</li>
+<li>consequence;</li>
+<li>control;</li>
+<li>owner;</li>
+<li>residual risk.</li>
+</ul>
+<p>The framework can remain lightweight.</p>
+<p>The objective is to ensure reviewers understand the operational trade-off.</p>
+<h2 id="define-the-approval-question-precisely">Define the approval question precisely</h2>
+<p>A review meeting often ends with:</p>
+<blockquote>Approved.</blockquote>
+<p>But what exactly was approved?</p>
+<p>The request should state the decision explicitly.</p>
+<p>For example:</p>
+<blockquote>Approve the introduction of a separate Supplier Review Status attribute for Portuguese regulated suppliers, with values <code>PENDING</code>, <code>CLEARED</code> and <code>REJECTED</code>, subject to interface support and completion of regression testing.</blockquote>
+<p>This is better than:</p>
+<blockquote>Approve supplier classification change.</blockquote>
+<p>The approval statement should identify:</p>
+<ul>
+<li>model treatment;</li>
+<li>scope;</li>
+<li>conditions;</li>
+<li>effective release.</li>
+</ul>
+<h2 id="separate-approval-domains">Separate approval domains</h2>
+<p>One approval status is often too coarse.</p>
+<p>A request may need distinct decisions.</p>
+<h3 id="business-semantic-approval">Business semantic approval</h3>
+<p>Is the meaning and policy correct?</p>
+<h3 id="data-approval">Data approval</h3>
+<p>Can sources and current populations support the change?</p>
+<h3 id="architecture-approval">Architecture approval</h3>
+<p>Is the model coherent?</p>
+<h3 id="implementation-approval">Implementation approval</h3>
+<p>Is the design technically feasible?</p>
+<h3 id="local-approval">Local approval</h3>
+<p>Is the contextual treatment correct?</p>
+<h3 id="risk-acceptance">Risk acceptance</h3>
+<p>May unresolved conditions proceed?</p>
+<h3 id="release-approval">Release approval</h3>
+<p>Is implementation ready to deploy?</p>
+<p>The model change should not become approved merely because one of these is complete.</p>
+<p>A practical request can show a review matrix:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Review</th><th scope="col">Responsible role</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Business meaning</td><td>Global Supplier Risk Owner</td><td>Approved</td></tr><tr><td>Portugal scope</td><td>PT Data Owner</td><td>Approved</td></tr><tr><td>Dataset feasibility</td><td>Migration Lead</td><td>Approved with condition</td></tr><tr><td>SAP implementation</td><td>MDG Architect</td><td>Pending</td></tr><tr><td>Interface compatibility</td><td>Integration Owner</td><td>Pending</td></tr><tr><td>Final model approval</td><td>Data Governance Authority</td><td>Not started</td></tr></tbody></table></div>
+<h2 id="do-not-ask-reviewers-to-approve-areas-outside-their-authority">Do not ask reviewers to approve areas outside their authority</h2>
+<p>The business owner should not be asked to certify:</p>
+<ul>
+<li>YAML validity;</li>
+<li>interface design;</li>
+<li>transport completeness.</li>
+</ul>
+<p>The developer should not be asked to approve:</p>
+<ul>
+<li>business meaning;</li>
+<li>legal applicability;</li>
+<li>risk acceptance.</li>
+</ul>
+<p>Each reviewer should receive a clear question.</p>
+<p>For example:</p>
+<h3 id="question-to-business-owner">Question to business owner</h3>
+<blockquote>Does the proposed Review Status preserve the intended meaning of Supplier Risk and correctly represent the business process?</blockquote>
+<h3 id="question-to-migration-lead">Question to migration lead</h3>
+<blockquote>Can the current source population support this treatment, including the proposed temporary migration rule?</blockquote>
+<h3 id="question-to-integration-owner">Question to integration owner</h3>
+<blockquote>Can each identified consumer receive or safely ignore the new attribute and values?</blockquote>
+<p>This produces meaningful approval rather than ritual sign-off.</p>
+<h2 id="use-one-shared-request-with-role-specific-views">Use one shared request with role-specific views</h2>
+<p>Business and technical teams should review the same underlying proposal.</p>
+<p>They do not need the same presentation.</p>
+<h3 id="executive-summary">Executive summary</h3>
+<p>Shows:</p>
+<ul>
+<li>problem;</li>
+<li>proposed outcome;</li>
+<li>major impact;</li>
+<li>decision required.</li>
+</ul>
+<h3 id="business-view">Business view</h3>
+<p>Shows:</p>
+<ul>
+<li>meaning;</li>
+<li>scope;</li>
+<li>values;</li>
+<li>policy;</li>
+<li>ownership;</li>
+<li>evidence;</li>
+<li>alternatives.</li>
+</ul>
+<h3 id="technical-view">Technical view</h3>
+<p>Shows:</p>
+<ul>
+<li>object IDs;</li>
+<li>mappings;</li>
+<li>validation;</li>
+<li>interfaces;</li>
+<li>implementation components;</li>
+<li>tests.</li>
+</ul>
+<h3 id="detailed-evidence">Detailed evidence</h3>
+<p>Shows:</p>
+<ul>
+<li>dataset results;</li>
+<li>issue links;</li>
+<li>model diff;</li>
+<li>affected objects.</li>
+</ul>
+<p>The views should be generated from one change object.</p>
+<p>Do not create separate business and technical documents that can diverge.</p>
+<h2 id="keep-proposed-and-approved-state-separate">Keep proposed and approved state separate</h2>
+<p>A model change request should never directly modify the canonical model merely because it has been submitted.</p>
+<p>Martenweave’s current design explicitly separates proposals from approved changes. Its canonical files remain the source of truth, deterministic validation runs before indexing, and proposed AI-assisted changes enter as <code>PatchProposal</code> objects before approved changes become <code>ChangeRequest</code>s.</p>
+<p>The same lifecycle should apply to all sources of change:</p>
+<ul>
+<li>spreadsheet input;</li>
+<li>Jira request;</li>
+<li>workshop decision;</li>
+<li>dataset finding;</li>
+<li>architect proposal;</li>
+<li>AI suggestion.</li>
+</ul>
+<pre><code class="language-text">Evidence
+→ model change request
+→ PatchProposal
+→ validation
+→ impact analysis
+→ review
+→ approved ChangeRequest
+→ canonical update</code></pre>
+<p>The source of the proposal does not determine its authority.</p>
+<h2 id="use-deterministic-validation-before-review">Use deterministic validation before review</h2>
+<p>Before asking business owners to review meaning, basic structural checks should pass.</p>
+<p>Examples:</p>
+<ul>
+<li>affected object IDs exist;</li>
+<li>proposed references resolve;</li>
+<li>object types are valid;</li>
+<li>local override identifies a global parent;</li>
+<li>new value code is unique;</li>
+<li>retired objects have no unaddressed active dependencies;</li>
+<li>mandatory ownership fields are present;</li>
+<li>context is structurally valid.</li>
+</ul>
+<p>This prevents reviewers from spending time on a proposal that cannot be represented consistently.</p>
+<p>The validator should not decide:</p>
+<ul>
+<li>whether the new value is meaningful;</li>
+<li>whether the business risk is acceptable;</li>
+<li>whether the local requirement is justified.</li>
+</ul>
+<p>It prepares a clean decision surface.</p>
+<h2 id="generate-an-impact-report-before-approval">Generate an impact report before approval</h2>
+<p>The model change request should not depend only on the author’s list of affected areas.</p>
+<p>Run trace and impact analysis against the canonical model.</p>
+<p>Martenweave currently supports validated canonical model files, generated indexes, trace, impact analysis, dataset gap detection and proposal-oriented workflows.</p>
+<p>The impact report may identify:</p>
+<ul>
+<li>direct dependencies;</li>
+<li>local variants;</li>
+<li>affected mappings;</li>
+<li>relevant datasets;</li>
+<li>rules;</li>
+<li>decisions;</li>
+<li>tests;</li>
+<li>owners.</li>
+</ul>
+<p>The output should distinguish:</p>
+<h3 id="confirmed-impact">Confirmed impact</h3>
+<p>Known dependency will change.</p>
+<h3 id="review-required">Review required</h3>
+<p>Relationship exists, but consequence requires judgement.</p>
+<h3 id="informational">Informational</h3>
+<p>Connected object is unlikely to require implementation work.</p>
+<p>This keeps the report usable.</p>
+<h2 id="use-draft-status-for-incomplete-proposals">Use draft status for incomplete proposals</h2>
+<p>Not every model request is ready for formal review.</p>
+<p>GitHub supports draft pull requests as work-in-progress proposals that cannot be merged until marked ready for review.</p>
+<p>The same concept is useful regardless of the review tool.</p>
+<p>Suggested lifecycle:</p>
+<pre><code class="language-text">Draft
+→ Evidence gathering
+→ Ready for review
+→ Changes requested
+→ Approved
+→ Implementation
+→ Verified
+→ Closed</code></pre>
+<p>A request should remain Draft when:</p>
+<ul>
+<li>the problem is unclear;</li>
+<li>evidence is missing;</li>
+<li>alternatives have not been assessed;</li>
+<li>affected objects are unidentified;</li>
+<li>the owner is unknown.</li>
+</ul>
+<p>Do not schedule governance approval simply because a ticket has reached its due date.</p>
+<h2 id="record-reviewer-comments-against-the-proposal">Record reviewer comments against the proposal</h2>
+<p>GitHub pull-request reviews allow reviewers to comment, approve or request changes, and conversations can be retained as part of the review history. Required approvals can also be used to prevent premature merging.</p>
+<p>A model change review should preserve the same basic concepts even when business reviewers use another interface:</p>
+<ul>
+<li>comment;</li>
+<li>approve;</li>
+<li>reject;</li>
+<li>request clarification;</li>
+<li>request modification.</li>
+</ul>
+<p>Comments should attach to:</p>
+<ul>
+<li>an affected model object;</li>
+<li>a specific proposed value;</li>
+<li>a rule;</li>
+<li>a stated risk;</li>
+<li>an alternative.</li>
+</ul>
+<p>A general email saying “looks okay” is weak evidence for a material change.</p>
+<h2 id="re-review-after-material-changes">Re-review after material changes</h2>
+<p>Review applies to a specific proposal state.</p>
+<p>Suppose reviewers approve:</p>
+<blockquote>Add a local warning.</blockquote>
+<p>The proposal is later changed to:</p>
+<blockquote>Add a global blocking error.</blockquote>
+<p>The previous approvals no longer apply.</p>
+<p>The process should detect material changes to:</p>
+<ul>
+<li>meaning;</li>
+<li>scope;</li>
+<li>severity;</li>
+<li>values;</li>
+<li>owner;</li>
+<li>migration treatment;</li>
+<li>affected systems.</li>
+</ul>
+<p>Then request review again from the relevant roles.</p>
+<p>Minor wording corrections may not require complete reapproval.</p>
+<p>The policy should distinguish editorial and material changes.</p>
+<h2 id="define-the-implementation-boundary">Define the implementation boundary</h2>
+<p>Approval of the model does not mean implementation is complete.</p>
+<p>After model approval, create implementation tasks for affected systems.</p>
+<p>For example:</p>
+<pre><code class="language-text">Approved model change
+        ↓
+SAP MDG configuration task
+Migration mapping task
+Interface task
+Test task
+Documentation task
+Data-remediation task</code></pre>
+<p>The approved change request should remain linked to these tasks.</p>
+<p>The model status may progress through:</p>
+<pre><code class="language-text">Approved
+→ Implementing
+→ Implemented
+→ Verified
+→ Effective</code></pre>
+<p>This avoids treating governance approval as evidence that production already matches the model.</p>
+<h2 id="verify-the-implemented-result">Verify the implemented result</h2>
+<p>After implementation, compare:</p>
+<ul>
+<li>approved model;</li>
+<li>configured state;</li>
+<li>observed behaviour.</li>
+</ul>
+<p>Verification evidence may include:</p>
+<ul>
+<li>SAP configuration reference;</li>
+<li>successful positive test;</li>
+<li>successful negative test;</li>
+<li>interface result;</li>
+<li>migration reconciliation;</li>
+<li>authorisation check;</li>
+<li>release version.</li>
+</ul>
+<p>If implementation differs, classify the difference:</p>
+<ul>
+<li>implementation defect;</li>
+<li>approved deviation;</li>
+<li>model clarification;</li>
+<li>new change request.</li>
+</ul>
+<p>Do not silently update the model to match whatever was implemented.</p>
+<h2 id="a-worked-example-mandatory-supplier-classification">A worked example: mandatory Supplier Classification</h2>
+<h3 id="request">Request</h3>
+<p>Make Supplier Classification mandatory.</p>
+<h3 id="problem">Problem</h3>
+<p>Suppliers without classification bypass risk-based review and create inconsistent reporting.</p>
+<h3 id="current-model">Current model</h3>
+<p>Supplier Classification is optional globally.</p>
+<h3 id="scope-analysis">Scope analysis</h3>
+<p>The request affects active strategic suppliers in Germany and Austria—not all suppliers globally.</p>
+<h3 id="dataset-evidence">Dataset evidence</h3>
+<ul>
+<li>Germany: 98.7% complete;</li>
+<li>Austria: 96.1% complete;</li>
+<li>ERP_B population: 72.4% complete;</li>
+<li>historical inactive suppliers: 41% complete.</li>
+</ul>
+<h3 id="alternatives">Alternatives</h3>
+<ol>
+<li>Mandatory globally.</li>
+<li>Mandatory only for active strategic suppliers.</li>
+<li>Warning first, error after remediation.</li>
+<li>Keep optional and monitor quality.</li>
+</ol>
+<h3 id="recommendation">Recommendation</h3>
+<p>Option 3:</p>
+<ul>
+<li>introduce contextual warning;</li>
+<li>complete ERP_B remediation;</li>
+<li>convert warning to error at defined threshold.</li>
+</ul>
+<h3 id="model-changes">Model changes</h3>
+<ul>
+<li>add DE/AT context;</li>
+<li>update rule;</li>
+<li>add quality threshold;</li>
+<li>record remediation decision;</li>
+<li>define severity transition.</li>
+</ul>
+<h3 id="technical-impact">Technical impact</h3>
+<ul>
+<li>SAP validation;</li>
+<li>MDG message;</li>
+<li>dataset check;</li>
+<li>migration readiness;</li>
+<li>regression tests.</li>
+</ul>
+<h3 id="approval-questions">Approval questions</h3>
+<p>Business owner:</p>
+<blockquote>Is the contextual population correct?</blockquote>
+<p>Migration owner:</p>
+<blockquote>Is the remediation threshold achievable?</blockquote>
+<p>MDG architect:</p>
+<blockquote>Can severity change be controlled by release without inconsistent behaviour?</blockquote>
+<h3 id="result">Result</h3>
+<p>Approved with conditions.</p>
+<p>The original one-sentence request becomes a controlled, staged policy change rather than a global blocking rule.</p>
+<h2 id="another-worked-example-disabling-a-tax-validation">Another worked example: disabling a tax validation</h2>
+<h3 id="request-2">Request</h3>
+<p>Disable tax validation because users cannot complete supplier creation.</p>
+<h3 id="evidence">Evidence</h3>
+<ul>
+<li>38 incidents in one country;</li>
+<li>most failures concern individual suppliers;</li>
+<li>approved rule was intended for organisations;</li>
+<li>configuration applies to both categories.</li>
+</ul>
+<h3 id="classification">Classification</h3>
+<p>Configuration defect—not a model-policy change.</p>
+<h3 id="correct-action">Correct action</h3>
+<ul>
+<li>correct configured context;</li>
+<li>rerun tests;</li>
+<li>preserve approved model;</li>
+<li>link verification evidence.</li>
+</ul>
+<p>A weak process might ask the business owner to approve disabling the rule.</p>
+<p>A good model change request identifies that no model change is needed.</p>
+<h2 id="another-worked-example-changing-a-source-field">Another worked example: changing a source field</h2>
+<h3 id="request-3">Request</h3>
+<p>Replace source field <code>CUSTOMER_SEGMENT</code> with <code>CUSTOMER_CLASS</code>.</p>
+<h3 id="evidence-2">Evidence</h3>
+<p>The original field is being retired.</p>
+<h3 id="questions">Questions</h3>
+<ul>
+<li>Does the new field have the same business meaning?</li>
+<li>Is its organisational level the same?</li>
+<li>Are values compatible?</li>
+<li>Is historical coverage available?</li>
+<li>Which mappings and tests depend on the old endpoint?</li>
+</ul>
+<h3 id="finding">Finding</h3>
+<p>The new field represents enterprise classification, while the target Customer Group is sales-area-specific.</p>
+<h3 id="result-2">Result</h3>
+<p>Reject direct replacement.</p>
+<p>Create a separate design decision to determine whether:</p>
+<ul>
+<li>organisational expansion is valid;</li>
+<li>another target attribute should be used;</li>
+<li>the source requires enrichment.</li>
+</ul>
+<p>The change request prevents a technically convenient but semantically incorrect substitution.</p>
+<h2 id="a-minimum-model-change-request-template">A minimum model change request template</h2>
+<p>A practical template can contain:</p>
+<h3 id="identification">Identification</h3>
+<ul>
+<li>request ID;</li>
+<li>title;</li>
+<li>requester;</li>
+<li>change class;</li>
+<li>model baseline.</li>
+</ul>
+<h3 id="problem-2">Problem</h3>
+<ul>
+<li>observed issue;</li>
+<li>affected business process;</li>
+<li>urgency.</li>
+</ul>
+<h3 id="current-state">Current state</h3>
+<ul>
+<li>affected model objects;</li>
+<li>current meaning;</li>
+<li>current scope;</li>
+<li>current implementation.</li>
+</ul>
+<h3 id="proposed-state">Proposed state</h3>
+<ul>
+<li>business outcome;</li>
+<li>model changes;</li>
+<li>context;</li>
+<li>effective release.</li>
+</ul>
+<h3 id="evidence-3">Evidence</h3>
+<ul>
+<li>datasets;</li>
+<li>incidents;</li>
+<li>policy;</li>
+<li>tests;</li>
+<li>assumptions.</li>
+</ul>
+<h3 id="alternatives-2">Alternatives</h3>
+<ul>
+<li>realistic options;</li>
+<li>trade-offs;</li>
+<li>recommendation.</li>
+</ul>
+<h3 id="impact">Impact</h3>
+<ul>
+<li>business;</li>
+<li>data;</li>
+<li>migration;</li>
+<li>SAP MDG;</li>
+<li>integrations;</li>
+<li>testing;</li>
+<li>ownership;</li>
+<li>AMS.</li>
+</ul>
+<h3 id="risk-and-conditions">Risk and conditions</h3>
+<ul>
+<li>main risks;</li>
+<li>mitigations;</li>
+<li>accepted deviations;</li>
+<li>review triggers.</li>
+</ul>
+<h3 id="validation">Validation</h3>
+<ul>
+<li>structural checks;</li>
+<li>dataset checks;</li>
+<li>impact-analysis result.</li>
+</ul>
+<h3 id="review-matrix">Review matrix</h3>
+<ul>
+<li>required roles;</li>
+<li>exact approval question;</li>
+<li>status.</li>
+</ul>
+<h3 id="verification">Verification</h3>
+<ul>
+<li>implementation tasks;</li>
+<li>expected evidence;</li>
+<li>final effective baseline.</li>
+</ul>
+<p>This may sound substantial.</p>
+<p>For a small correction, many sections can remain brief.</p>
+<p>The template should scale with change risk.</p>
+<h2 id="use-change-classes-to-control-the-review-burden">Use change classes to control the review burden</h2>
+<h3 id="class-1-editorial-correction">Class 1: editorial correction</h3>
+<p>Examples:</p>
+<ul>
+<li>description;</li>
+<li>alias;</li>
+<li>typo.</li>
+</ul>
+<p>Review:</p>
+<ul>
+<li>model maintainer.</li>
+</ul>
+<h3 id="class-2-implementation-correction">Class 2: implementation correction</h3>
+<p>Approved meaning stays the same.</p>
+<p>Examples:</p>
+<ul>
+<li>fix mapping endpoint;</li>
+<li>correct configuration context;</li>
+<li>restore missing interface field.</li>
+</ul>
+<p>Review:</p>
+<ul>
+<li>technical owner plus business confirmation where needed.</li>
+</ul>
+<h3 id="class-3-bounded-contextual-change">Class 3: bounded contextual change</h3>
+<p>Examples:</p>
+<ul>
+<li>add local value;</li>
+<li>add country-specific rule;</li>
+<li>change a source mapping.</li>
+</ul>
+<p>Review:</p>
+<ul>
+<li>domain, local and technical owners.</li>
+</ul>
+<h3 id="class-4-material-model-change">Class 4: material model change</h3>
+<p>Examples:</p>
+<ul>
+<li>change global definition;</li>
+<li>add or retire a critical attribute;</li>
+<li>alter enterprise identifier;</li>
+<li>change global mandatory policy.</li>
+</ul>
+<p>Review:</p>
+<ul>
+<li>formal governance authority and all affected functions.</li>
+</ul>
+<p>This prevents every minor change from becoming a committee event.</p>
+<p>It also prevents a major semantic change from being approved like a routine defect.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="starting-with-a-technical-solution">Starting with a technical solution</h3>
+<p>The programme may implement the wrong treatment efficiently.</p>
+<h3 id="omitting-the-current-baseline">Omitting the current baseline</h3>
+<p>Reviewers cannot see the real difference.</p>
+<h3 id="using-only-business-narrative">Using only business narrative</h3>
+<p>Technical dependencies remain implicit.</p>
+<h3 id="using-only-object-level-diffs">Using only object-level diffs</h3>
+<p>Business meaning and risk remain unclear.</p>
+<h3 id="asking-one-reviewer-to-approve-everything">Asking one reviewer to approve everything</h3>
+<p>Authority and expertise differ by review domain.</p>
+<h3 id="listing-no-alternatives">Listing no alternatives</h3>
+<p>The request becomes a justification document for a predetermined solution.</p>
+<h3 id="ignoring-current-datasets">Ignoring current datasets</h3>
+<p>The target rule may be impossible to satisfy.</p>
+<h3 id="mixing-permanent-and-temporary-treatment">Mixing permanent and temporary treatment</h3>
+<p>Temporary workarounds become policy.</p>
+<h3 id="treating-approval-as-implementation">Treating approval as implementation</h3>
+<p>The configured and observed state must still be verified.</p>
+<h3 id="creating-separate-business-and-technical-requests">Creating separate business and technical requests</h3>
+<p>They can diverge and receive contradictory approval.</p>
+<h3 id="letting-ai-create-the-final-request-without-owner-review">Letting AI create the final request without owner review</h3>
+<p>AI can assemble evidence and draft impacts, but it cannot assign organisational authority or accept business risk.</p>
+<h2 id="how-ai-can-help">How AI can help</h2>
+<p>AI can assist by:</p>
+<ul>
+<li>extracting the problem from tickets;</li>
+<li>summarising incident history;</li>
+<li>identifying candidate affected objects;</li>
+<li>comparing current and proposed model states;</li>
+<li>grouping dataset findings;</li>
+<li>drafting alternatives;</li>
+<li>creating an initial impact summary;</li>
+<li>generating role-specific review views;</li>
+<li>preparing implementation tasks.</li>
+</ul>
+<p>AI should explicitly mark:</p>
+<ul>
+<li>uncertain relationships;</li>
+<li>missing evidence;</li>
+<li>inferred ownership;</li>
+<li>unresolved semantic conflicts.</li>
+</ul>
+<p>It should not determine:</p>
+<ul>
+<li>whether the business meaning is correct;</li>
+<li>whether legal evidence is sufficient;</li>
+<li>whether an exception is acceptable;</li>
+<li>whether the change is approved.</li>
+</ul>
+<p>The operating boundary remains:</p>
+<pre><code class="language-text">AI prepares.
+Validators check.
+Reviewers decide.
+Git records.</code></pre>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>The current Martenweave Core README describes the project as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It converts spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved patch proposals.</p>
+<p>Its current principles define:</p>
+<ul>
+<li>canonical files as the source of truth;</li>
+<li>generated indexes as rebuildable;</li>
+<li>deterministic validation before indexing;</li>
+<li>AI proposals as reviewable rather than self-applying;</li>
+<li>local-first operation.</li>
+</ul>
+<p>The pipeline is described as:</p>
+<pre><code class="language-text">evidence
+→ proposal
+→ validation
+→ gaps and impact
+→ review
+→ GitHub issue or pull request</code></pre>
+<p>A Martenweave model change request should therefore act as the human-readable decision layer around this pipeline.</p>
+<p>It connects:</p>
+<ul>
+<li>evidence;</li>
+<li>canonical objects;</li>
+<li>proposed diff;</li>
+<li>deterministic checks;</li>
+<li>dataset findings;</li>
+<li>impact;</li>
+<li>reviewers;</li>
+<li>final approval.</li>
+</ul>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>What problem is this change solving?</li>
+<li>What is the current approved state?</li>
+<li>What exactly will be different?</li>
+<li>Where does the change apply?</li>
+<li>Which evidence supports it?</li>
+<li>Which alternatives were considered?</li>
+<li>Can current datasets support it?</li>
+<li>Which SAP components and integrations are affected?</li>
+<li>Which tests become stale?</li>
+<li>Which risks and temporary conditions remain?</li>
+<li>Does each reviewer have one precise approval question?</li>
+<li>Is the proposed state separate from canonical truth?</li>
+<li>Will material edits trigger re-review?</li>
+<li>How will implementation be verified?</li>
+<li>Which model baseline becomes effective after completion?</li>
+</ol>
+<p>If the request cannot answer these questions, it is probably not ready for approval.</p>
+<h2 id="when-a-lightweight-request-is-sufficient">When a lightweight request is sufficient</h2>
+<p>A small change may need only:</p>
+<ul>
+<li>affected object;</li>
+<li>current value;</li>
+<li>proposed value;</li>
+<li>reason;</li>
+<li>owner;</li>
+<li>validation result;</li>
+<li>reviewer;</li>
+<li>verification.</li>
+</ul>
+<p>This may be enough when:</p>
+<ul>
+<li>business meaning does not change;</li>
+<li>one system is affected;</li>
+<li>no local variation exists;</li>
+<li>impact is easily understood;</li>
+<li>rollback is simple.</li>
+</ul>
+<p>A fuller model change request is appropriate when:</p>
+<ul>
+<li>meaning or scope changes;</li>
+<li>several sources or consumers exist;</li>
+<li>migration populations are affected;</li>
+<li>global and local rules interact;</li>
+<li>temporary deviations are introduced;</li>
+<li>change impact is uncertain;</li>
+<li>several authorities must review.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Business and technical teams do not need separate versions of the truth.</p>
+<p>They need different views of the same proposed model change.</p>
+<p>A good model change request connects:</p>
+<ul>
+<li>business problem;</li>
+<li>current model;</li>
+<li>proposed state;</li>
+<li>evidence;</li>
+<li>alternatives;</li>
+<li>data feasibility;</li>
+<li>technical impact;</li>
+<li>ownership;</li>
+<li>risk;</li>
+<li>approval;</li>
+<li>verification.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can the business owner explain what policy and meaning will change, while the technical team can explain exactly which objects, systems and tests are affected—without either side contradicting the other?</blockquote>
+<p>When the answer is yes, the request is ready for shared review.</p>
+<p>When the business approves a title and the technical team approves a field change, the programme has two partial approvals rather than one governed decision.</p>
+<p>The purpose of the model change request is not to add documentation.</p>
+<p>It is to create one decision boundary where business intent and implementation consequence become visible at the same time.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.</p>
+<p>Martenweave provides canonical model files, deterministic validation, dataset evidence, lineage, impact analysis and proposal-first change control. Model change requests provide the shared review layer through which business and technical authorities can make informed decisions.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer that combines master data, policy and metadata and supports governed models, collaborative change-request workflows, validated values, ownership, business-rule monitoring and auditable master-data changes.</p>
+<p>GitHub documents pull requests as proposals that allow changes to be discussed, reviewed, checked and compared before they are merged. Its review model supports comments, approvals, requested changes, requested reviewers and required approvals.</p>
+<p>The current Martenweave Core README identifies Martenweave as an open-source, backend-first model-governance and evidence layer. The current source version is listed as 0.5.0.</p>
+<p>Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP or GitHub. SAP, SAP S/4HANA, SAP Master Data Governance and GitHub are trademarks or registered trademarks of their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-build-an-ams-model-change-process-that-does-not-recreate-the-sap.html">Six months after go-live, a country requests a new Supplier Classification value.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html"><span>Previous</span>The business owner receives a mapping workbook.</a><a href="/blog/how-to-prioritise-model-changes-by-business-risk-instead-of-ticket.html"><span>Next</span>A senior stakeholder opens a ticket:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Calculate Downstream Impact Before Changing an SAP Field | Martenweave</title>
+    <meta
+      name="description"
+      content="A technical team proposes a simple change:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html" />
+    <meta property="og:title" content="How to Calculate Downstream Impact Before Changing an SAP Field | Martenweave" />
+    <meta property="og:description" content="A technical team proposes a simple change:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Calculate Downstream Impact Before Changing an SAP Field | Martenweave" />
+    <meta name="twitter:description" content="A technical team proposes a simple change:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html",
+                        "name": "How to Calculate Downstream Impact Before Changing an SAP Field | Martenweave",
+                        "description": "A technical team proposes a simple change:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Calculate Downstream Impact Before Changing an SAP Field",
+                                    "item": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html#content",
+                        "headline": "How to Calculate Downstream Impact Before Changing an SAP Field",
+                        "name": "How to Calculate Downstream Impact Before Changing an SAP Field",
+                        "description": "A technical team proposes a simple change:",
+                        "url": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Calculate Downstream Impact Before Changing an SAP Field</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Calculate Downstream Impact Before Changing an SAP Field</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A technical team proposes a simple change:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#incoming-mappings">Incoming Mappings</a></li><li><a href="#outgoing-mappings">Outgoing Mappings</a></li><li><a href="#mapping-internals">Mapping internals</a></li><li><a href="#additive-value">Additive value</a></li><li><a href="#retired-value">Retired value</a></li><li><a href="#meaning-change-under-the-same-code">Meaning change under the same code</a></li><li><a href="#canonical-and-implementation-agree-proposal-differs">Canonical and implementation agree; proposal differs</a></li><li><a href="#canonical-differs-from-implementation-proposal-matches-canonical">Canonical differs from implementation; proposal matches canonical</a></li><li><a href="#implementation-and-proposal-agree-canonical-differs">Implementation and proposal agree; canonical differs</a></li><li><a href="#all-three-differ">All three differ</a></li><li><a href="#confirmed">Confirmed</a></li><li><a href="#probable">Probable</a></li><li><a href="#possible">Possible</a></li><li><a href="#historical-only">Historical only</a></li><li><a href="#excluded">Excluded</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A technical team proposes a simple change:</p>
+<blockquote>Replace the custom Supplier Review Status field with a new standard SAP field.</blockquote>
+<p>The field contains one code.</p>
+<p>The database change appears small.</p>
+<p>A developer checks where the custom field is used in ABAP and finds three references.</p>
+<p>The initial estimate is two days.</p>
+<p>Then the programme discovers that the field is also used by:</p>
+<ul>
+<li>an SAP MDG validation;</li>
+<li>a migration Mapping;</li>
+<li>an outbound supplier interface;</li>
+<li>a reporting extract;</li>
+<li>a data-quality rule;</li>
+<li>a local stewardship workbook;</li>
+<li>an activation procedure;</li>
+<li>two open change requests;</li>
+<li>a rejected proposal that explains why the field must remain separate from Supplier Risk.</li>
+</ul>
+<p>The field was not merely a column.</p>
+<p>It was an implementation point for a governed business concept.</p>
+<p>The original technical where-used check was useful.</p>
+<p>It covered only one part of the blast radius.</p>
+<blockquote>Downstream impact analysis asks which business meanings, controls, transformations, datasets, interfaces, reports and decisions may be affected when a model object or physical field changes.</blockquote>
+<p>The result should not be a flat list of everything connected to the field.</p>
+<p>It should explain:</p>
+<ul>
+<li>how each item depends on the field;</li>
+<li>whether the dependency is direct or indirect;</li>
+<li>whether the effect is confirmed or only possible;</li>
+<li>which contexts are affected;</li>
+<li>what must be retested;</li>
+<li>who must review the change;</li>
+<li>which historical states must remain interpretable.</li>
+</ul>
+<p>Martenweave already exposes <code>impact</code> and <code>trace</code> as separate operations. Its current quickstart uses <code>impact FEP-S4-KNVV-KDGRP</code> for a physical SAP FieldEndpoint and <code>trace ATTR-CUST-SALES-CUSTOMER-GROUP</code> for the related business Attribute.</p>
+<p>That distinction is important.</p>
+<p>Trace explains how an object is connected.</p>
+<p>Impact asks what may need attention if it changes.</p>
+<p>---</p>
+<h1 id="begin-by-defining-the-proposed-change">Begin by defining the proposed change</h1>
+<p>Impact analysis is weak when the initiating change is vague.</p>
+<p>Consider:</p>
+<pre><code class="language-text">Change KNVV-KDGRP.</code></pre>
+<p>This may mean:</p>
+<ul>
+<li>rename the field in documentation;</li>
+<li>replace its source;</li>
+<li>change its allowed values;</li>
+<li>make it mandatory;</li>
+<li>alter its organisational applicability;</li>
+<li>replace it with a custom field;</li>
+<li>retire it from one interface;</li>
+<li>change its datatype;</li>
+<li>remove a default;</li>
+<li>reinterpret its business meaning.</li>
+</ul>
+<p>Each change creates a different impact pattern.</p>
+<p>Before traversing the graph, classify the proposal.</p>
+<p>A useful change description should identify:</p>
+<pre><code class="language-yaml">change:
+  object: FEP-S4-KNVV-KDGRP
+  type: target_endpoint_replacement
+  proposed_replacement: FEP-S4-NEW-CUSTOMER-GROUP
+  business_attribute: ATTR-CUSTOMER-GROUP
+  effective_baseline: CUSTOMER-WAVE4-CANDIDATE</code></pre>
+<p>This is a conceptual shape rather than a claim about the current PatchProposal schema.</p>
+<p>The impact engine needs to know whether it is evaluating:</p>
+<ul>
+<li>a physical implementation change;</li>
+<li>a semantic model change;</li>
+<li>a Rule change;</li>
+<li>a lifecycle change;</li>
+<li>an ownership change;</li>
+<li>a dataset change.</li>
+</ul>
+<p>---</p>
+<h1 id="field-change-and-attribute-change-are-not-the-same">Field change and Attribute change are not the same</h1>
+<p>Suppose the programme replaces:</p>
+<pre><code class="language-text">FEP-S4-ZZ-CUSTOMER-GROUP</code></pre>
+<p>with:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>while preserving:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>The business concept remains stable.</p>
+<p>The primary impact is physical and operational:</p>
+<ul>
+<li>Mappings must target another endpoint;</li>
+<li>interfaces reading the custom field must change;</li>
+<li>migration load structures may change;</li>
+<li>reconciliation tests must change;</li>
+<li>historical data may require conversion;</li>
+<li>the custom field may need retirement.</li>
+</ul>
+<p>Now suppose the programme changes the meaning of Customer Group from central to sales-area-specific.</p>
+<p>The physical endpoint may stay <code>KNVV-KDGRP</code>.</p>
+<p>The impact is broader:</p>
+<ul>
+<li>source grain;</li>
+<li>Mapping applicability;</li>
+<li>key structure;</li>
+<li>completeness Rules;</li>
+<li>dataset requirements;</li>
+<li>reports;</li>
+<li>ownership;</li>
+<li>historical interpretation.</li>
+</ul>
+<p>A useful analysis starts by asking:</p>
+<pre><code class="language-text">Is the implementation changing,
+or is the governed meaning changing?</code></pre>
+<p>Sometimes both change together.</p>
+<p>They should still be classified separately.</p>
+<p>---</p>
+<h1 id="the-impact-anchor">The impact anchor</h1>
+<p>Every analysis needs one or more anchor objects.</p>
+<p>Possible anchors include:</p>
+<ul>
+<li>FieldEndpoint;</li>
+<li>Attribute;</li>
+<li>Rule;</li>
+<li>Mapping;</li>
+<li>Entity;</li>
+<li>Decision;</li>
+<li>value-list entry;</li>
+<li>interface field;</li>
+<li>DatasetField.</li>
+</ul>
+<p>For an SAP field change, the initial anchor is usually the physical endpoint:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>The first traversal should find the implemented business Attribute:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+→ implements
+ATTR-CUSTOMER-GROUP</code></pre>
+<p>From there, the analysis can expand across semantic and operational dependencies.</p>
+<p>Starting only from the table field may miss model objects whose relationship is mediated through the Attribute.</p>
+<p>---</p>
+<h1 id="direct-impact">Direct impact</h1>
+<p>Direct impact includes objects with an explicit first-degree dependency on the changed object.</p>
+<p>For a FieldEndpoint, direct dependants may include:</p>
+<ul>
+<li>Mappings that populate it;</li>
+<li>Mappings that read it;</li>
+<li>Rules implemented on it;</li>
+<li>interfaces exposing it;</li>
+<li>DatasetFields corresponding to it;</li>
+<li>validation Evidence referring to it;</li>
+<li>transformation tests;</li>
+<li>proposals modifying it.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+├── target of MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+├── implements ATTR-CUSTOMER-GROUP
+├── exported by INTERFACE-CUSTOMER-OUTBOUND
+└── verified by EVID-MOCK-LOAD3-KDGRP</code></pre>
+<p>These objects should normally appear first in the impact report.</p>
+<p>They are the most likely to require a concrete change.</p>
+<p>---</p>
+<h1 id="transitive-impact">Transitive impact</h1>
+<p>Transitive impact travels through one or more intermediate objects.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+→ implements
+ATTR-CUSTOMER-GROUP
+→ governed by
+RULE-CUSTOMER-GROUP-REQUIRED</code></pre>
+<p>The Rule is not directly attached to the physical field.</p>
+<p>It may still be affected if the field replacement changes:</p>
+<ul>
+<li>enforcement location;</li>
+<li>availability;</li>
+<li>lifecycle timing;</li>
+<li>organisational context.</li>
+</ul>
+<p>Another path:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+→ consumed by
+INTERFACE-CUSTOMER-OUTBOUND
+→ consumed by
+PRICING-APPLICATION</code></pre>
+<p>The external application is a second-degree dependant.</p>
+<p>Impact depth matters.</p>
+<p>A practical result should show:</p>
+<pre><code class="language-text">Depth 1:
+direct dependency
+
+Depth 2:
+dependency through Attribute, Mapping or Interface
+
+Depth 3:
+downstream consumer or governance consequence</code></pre>
+<p>Without distance, the result becomes an undifferentiated graph dump.</p>
+<p>---</p>
+<h1 id="direct-dependency-does-not-always-mean-stronger-impact">Direct dependency does not always mean stronger impact</h1>
+<p>A directly connected object may remain unaffected.</p>
+<p>For example, an Evidence object may mention the old field only as historical test evidence.</p>
+<p>A second-degree report may break immediately because it hard-codes the old field name.</p>
+<p>Graph distance helps prioritisation.</p>
+<p>It does not replace dependency interpretation.</p>
+<p>The report should classify each result:</p>
+<pre><code class="language-text">confirmed change required
+likely review required
+possible impact
+historical reference only
+unaffected after verification</code></pre>
+<p>---</p>
+<h1 id="typed-edges-make-impact-analysis-possible">Typed edges make impact analysis possible</h1>
+<p>A generic graph may contain:</p>
+<pre><code class="language-text">A related_to B</code></pre>
+<p>This provides little information about change propagation.</p>
+<p>Typed edges support better reasoning:</p>
+<pre><code class="language-text">FieldEndpoint implements Attribute
+
+Mapping populates FieldEndpoint
+
+Interface exports FieldEndpoint
+
+Rule governs Attribute
+
+Evidence verifies Mapping
+
+Decision authorises Mapping
+
+Report consumes Interface Field
+
+Proposal modifies Rule</code></pre>
+<p>Different edges propagate different risks.</p>
+<p>Changing a display name may affect search and documentation.</p>
+<p>Changing a datatype may affect:</p>
+<ul>
+<li>Mappings;</li>
+<li>interfaces;</li>
+<li>extracts;</li>
+<li>code;</li>
+<li>validation.</li>
+</ul>
+<p>Changing semantic meaning may affect nearly every object connected through the Attribute.</p>
+<p>---</p>
+<h1 id="direct-and-indirect-field-dependencies">Direct and indirect field dependencies</h1>
+<p>A target value can depend on fields in different ways.</p>
+<p>OpenLineage’s current column-lineage specification distinguishes direct dependencies, where an output value derives from an input field, from indirect dependencies, where a field influences the output through conditions such as joins, filters or conditional logic. It further classifies direct identity, transformation and aggregation, and indirect join, filter, grouping, sorting, window and conditional dependencies.</p>
+<p>This distinction is valuable for SAP impact analysis.</p>
+<p>Suppose Customer Group depends on:</p>
+<pre><code class="language-text">CRM Segment:
+direct input
+
+Sales Organisation:
+conditional input
+
+Customer Status:
+filter input</code></pre>
+<p>If CRM Segment changes, value derivation is affected.</p>
+<p>If Sales Organisation changes, contextual selection may be affected.</p>
+<p>If Customer Status changes, the included population may change.</p>
+<p>All three are downstream impacts.</p>
+<p>They are not the same kind of impact.</p>
+<p>---</p>
+<h1 id="the-semantic-blast-radius">The semantic blast radius</h1>
+<p>Every physical field should connect to a business Attribute where possible.</p>
+<p>The Attribute determines the semantic blast radius.</p>
+<p>For Customer Group, this may include:</p>
+<ul>
+<li>business definition;</li>
+<li>Customer Sales Area Entity;</li>
+<li>allowed values;</li>
+<li>source authority;</li>
+<li>mandatory Rules;</li>
+<li>local overrides;</li>
+<li>migration Mappings;</li>
+<li>downstream reporting meaning;</li>
+<li>responsible owner.</li>
+</ul>
+<p>Changing the field without reviewing the Attribute can create technical alignment and semantic drift.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old field:
+custom ZZ_CUST_GROUP
+
+New field:
+standard KDGRP</code></pre>
+<p>A technical migration may copy values successfully.</p>
+<p>The programme must still verify:</p>
+<ul>
+<li>value domains match;</li>
+<li>organisational grain matches;</li>
+<li>blank behaviour matches;</li>
+<li>code meanings match;</li>
+<li>downstream consumers interpret the same semantics.</li>
+</ul>
+<p>Field replacement does not prove semantic equivalence.</p>
+<p>---</p>
+<h1 id="rule-impact">Rule impact</h1>
+<p>Rules often create the most important hidden dependencies.</p>
+<p>A field may participate in:</p>
+<ul>
+<li>requiredness;</li>
+<li>format validation;</li>
+<li>value-list validation;</li>
+<li>derivation;</li>
+<li>activation controls;</li>
+<li>distribution controls;</li>
+<li>workflow routing;</li>
+<li>exception handling.</li>
+</ul>
+<p>Changing the endpoint may require moving or reimplementing the Rule.</p>
+<p>Changing the Attribute meaning may require changing the Rule itself.</p>
+<p>Example:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+
+Before:
+Customer Group required at Customer creation
+
+After:
+Customer Group required before Sales Area activation</code></pre>
+<p>This change affects:</p>
+<ul>
+<li>lifecycle behaviour;</li>
+<li>incomplete-record handling;</li>
+<li>migration readiness;</li>
+<li>SAP or MDG validation;</li>
+<li>exception procedures;</li>
+<li>tests.</li>
+</ul>
+<p>A where-used search for the physical field may find the implementation.</p>
+<p>It may not find the canonical Rule or the Decision behind it.</p>
+<p>---</p>
+<h1 id="mapping-impact">Mapping impact</h1>
+<p>Mappings should be assessed in both directions.</p>
+<h2 id="incoming-mappings">Incoming Mappings</h2>
+<p>Which sources populate the changed field?</p>
+<pre><code class="language-text">CRM Segment → Customer Group
+ERP_A Customer Class → Customer Group
+Manual Enrichment → Customer Group</code></pre>
+<p>A field replacement may require all active incoming Mappings to be redirected.</p>
+<h2 id="outgoing-mappings">Outgoing Mappings</h2>
+<p>Which systems consume the field?</p>
+<pre><code class="language-text">Customer Group → outbound customer API
+Customer Group → reporting classification
+Customer Group → pricing integration</code></pre>
+<p>The target field may also act as a source.</p>
+<h2 id="mapping-internals">Mapping internals</h2>
+<p>Review:</p>
+<ul>
+<li>strategy;</li>
+<li>datatype;</li>
+<li>value conversion;</li>
+<li>default;</li>
+<li>lookup;</li>
+<li>context inputs;</li>
+<li>rejected values;</li>
+<li>applicability.</li>
+</ul>
+<p>A field change that preserves the technical type may still invalidate the conversion table or applicability logic.</p>
+<p>---</p>
+<h1 id="value-domain-impact">Value-domain impact</h1>
+<p>Changing a field often changes its values rather than its location.</p>
+<p>Examples:</p>
+<ul>
+<li>adding a code;</li>
+<li>retiring a code;</li>
+<li>renaming a label;</li>
+<li>merging values;</li>
+<li>splitting one code into several;</li>
+<li>changing the meaning of an existing code.</li>
+</ul>
+<p>These have different impacts.</p>
+<h2 id="additive-value">Additive value</h2>
+<p>Potentially affects:</p>
+<ul>
+<li>fixed code lists;</li>
+<li>interfaces;</li>
+<li>reports;</li>
+<li>validation Rules;</li>
+<li>test data.</li>
+</ul>
+<h2 id="retired-value">Retired value</h2>
+<p>Requires:</p>
+<ul>
+<li>existing-record analysis;</li>
+<li>conversion;</li>
+<li>historical interpretation;</li>
+<li>interface compatibility.</li>
+</ul>
+<h2 id="meaning-change-under-the-same-code">Meaning change under the same code</h2>
+<p>This is particularly dangerous.</p>
+<p>Technical consumers continue working.</p>
+<p>Business interpretation changes silently.</p>
+<p>The impact report should treat meaning changes as semantic breaking changes even when no table structure changes.</p>
+<p>---</p>
+<h1 id="organisational-context-impact">Organisational-context impact</h1>
+<p>Many SAP fields exist at an organisational level.</p>
+<p>Customer Group in <code>KNVV</code> is associated with Customer Sales Area.</p>
+<p>A change may affect:</p>
+<ul>
+<li>Sales Organisation;</li>
+<li>Distribution Channel;</li>
+<li>Division;</li>
+<li>record cardinality;</li>
+<li>source-data expansion;</li>
+<li>local ownership;</li>
+<li>target completeness.</li>
+</ul>
+<p>Suppose the old implementation copied one central value to every Sales Area.</p>
+<p>The new implementation allows different values.</p>
+<p>Impact includes:</p>
+<ul>
+<li>source redesign;</li>
+<li>dataset keys;</li>
+<li>transformation logic;</li>
+<li>business review;</li>
+<li>reports that assumed one value per customer;</li>
+<li>interfaces using only customer number.</li>
+</ul>
+<p>This is a granularity change, not merely a field change.</p>
+<p>---</p>
+<h1 id="key-impact">Key impact</h1>
+<p>The target field may remain unchanged while its record identity changes.</p>
+<p>Example:</p>
+<pre><code class="language-text">Before:
+Customer Group keyed by Customer
+
+After:
+Customer Group keyed by Customer + Sales Area</code></pre>
+<p>The impact includes every object that assumes the former key.</p>
+<p>Key impact often reaches:</p>
+<ul>
+<li>extracts;</li>
+<li>joins;</li>
+<li>deduplication;</li>
+<li>interfaces;</li>
+<li>spreadsheets;</li>
+<li>reconciliation;</li>
+<li>APIs;</li>
+<li>reports.</li>
+</ul>
+<p>A field-level impact engine must understand its Entity and keys.</p>
+<p>---</p>
+<h1 id="dataset-impact">Dataset impact</h1>
+<p>The next question is:</p>
+<blockquote>Which datasets contain, expect or derive this field?</blockquote>
+<p>Dataset impact can include:</p>
+<ul>
+<li>migration extracts;</li>
+<li>staging schemas;</li>
+<li>test files;</li>
+<li>mock-load input;</li>
+<li>reconciliation output;</li>
+<li>defect samples;</li>
+<li>business-review workbooks;</li>
+<li>training data.</li>
+</ul>
+<p>Martenweave’s current dataset-readiness flow compares observed dataset structure with expected model fields, generates reports and can promote detected gaps into a PatchProposal or issue draft.</p>
+<p>When a field changes, rerun readiness against the candidate model.</p>
+<p>Possible findings include:</p>
+<ul>
+<li>old column still present;</li>
+<li>new target column missing;</li>
+<li>datatype incompatible;</li>
+<li>required key absent;</li>
+<li>deprecated value still used;</li>
+<li>source population incomplete.</li>
+</ul>
+<p>---</p>
+<h1 id="interface-impact">Interface impact</h1>
+<p>Interfaces may consume the field through:</p>
+<ul>
+<li>table extraction;</li>
+<li>CDS view;</li>
+<li>API property;</li>
+<li>IDoc segment;</li>
+<li>OData service;</li>
+<li>file export;</li>
+<li>replicated data product.</li>
+</ul>
+<p>The physical field may not be visible in the interface contract.</p>
+<p>The interface may expose a business-facing name.</p>
+<p>The impact graph should connect:</p>
+<pre><code class="language-text">SAP FieldEndpoint
+→ Interface Mapping
+→ Interface Property
+→ Consuming Application</code></pre>
+<p>A search limited to the SAP field name may miss consumers that use an alias.</p>
+<p>---</p>
+<h1 id="report-impact">Report impact</h1>
+<p>Reports can depend on:</p>
+<ul>
+<li>field presence;</li>
+<li>code meaning;</li>
+<li>grouping;</li>
+<li>filtering;</li>
+<li>historical comparability;</li>
+<li>aggregation grain.</li>
+</ul>
+<p>A new field may populate correctly but alter trend reporting.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old Customer Group:
+one value per customer
+
+New Customer Group:
+one value per Sales Area</code></pre>
+<p>A customer-level report may now:</p>
+<ul>
+<li>duplicate customers;</li>
+<li>select an arbitrary value;</li>
+<li>require aggregation logic;</li>
+<li>become semantically invalid.</li>
+</ul>
+<p>Report impact is frequently indirect.</p>
+<p>It should not be omitted because the report does not reference the original SAP table directly.</p>
+<p>---</p>
+<h1 id="data-quality-impact">Data-quality impact</h1>
+<p>Data-quality controls can depend on:</p>
+<ul>
+<li>null thresholds;</li>
+<li>allowed values;</li>
+<li>format;</li>
+<li>cross-field rules;</li>
+<li>uniqueness;</li>
+<li>context completeness.</li>
+</ul>
+<p>A field replacement or semantic change may require:</p>
+<ul>
+<li>new profiling baseline;</li>
+<li>revised thresholds;</li>
+<li>new assertions;</li>
+<li>retired checks;</li>
+<li>changed exception process.</li>
+</ul>
+<p>A rule such as:</p>
+<pre><code class="language-text">Customer Group completeness must be 98%</code></pre>
+<p>may become meaningless when the Attribute changes from central to sales-area-specific.</p>
+<p>The population denominator changed.</p>
+<p>The threshold may need recalculation.</p>
+<p>---</p>
+<h1 id="workflow-and-lifecycle-impact">Workflow and lifecycle impact</h1>
+<p>A field may drive:</p>
+<ul>
+<li>approval routing;</li>
+<li>activation;</li>
+<li>distribution;</li>
+<li>review status;</li>
+<li>change request type;</li>
+<li>exception escalation.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Supplier Review Status = PENDING
+→ block distribution</code></pre>
+<p>Replacing the field without updating workflow logic can produce a technically valid record that bypasses governance.</p>
+<p>The impact report should identify both:</p>
+<ul>
+<li>direct field reference;</li>
+<li>business lifecycle dependency.</li>
+</ul>
+<p>---</p>
+<h1 id="ownership-impact">Ownership impact</h1>
+<p>A changed object may require review from several owners:</p>
+<ul>
+<li>semantic owner;</li>
+<li>technical owner;</li>
+<li>Mapping owner;</li>
+<li>interface owner;</li>
+<li>data-quality owner;</li>
+<li>local steward;</li>
+<li>migration lead.</li>
+</ul>
+<p>The impact analysis should route work, not merely list components.</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Impacted area</th><th scope="col">Review owner</th></tr></thead><tbody><tr><td>Attribute definition</td><td>Customer Data Owner</td></tr><tr><td>SAP endpoint</td><td>SAP MDG Lead</td></tr><tr><td>Migration Mapping</td><td>Data Migration Lead</td></tr><tr><td>Outbound interface</td><td>Integration Owner</td></tr><tr><td>Reporting logic</td><td>Analytics Owner</td></tr><tr><td>Portugal override</td><td>Local Data Owner</td></tr></tbody></table></div>
+<p>This is where impact analysis becomes delivery support.</p>
+<p>---</p>
+<h1 id="decision-impact">Decision impact</h1>
+<p>An approved Decision may explicitly refer to the field.</p>
+<p>Examples:</p>
+<ul>
+<li>custom field retained because the standard field lacked required semantics;</li>
+<li>direct source mapping rejected;</li>
+<li>default permitted temporarily;</li>
+<li>local exception approved;</li>
+<li>field split from another concept.</li>
+</ul>
+<p>Changing the field may invalidate the Decision’s assumptions.</p>
+<p>The Decision should be reviewed, not silently left attached to a different implementation.</p>
+<p>Possible outcomes:</p>
+<ul>
+<li>Decision remains valid;</li>
+<li>implementation reference is updated;</li>
+<li>Decision is superseded;</li>
+<li>a new Decision is required.</li>
+</ul>
+<p>---</p>
+<h1 id="proposal-impact">Proposal impact</h1>
+<p>Open PatchProposals and ChangeRequests may already modify the field or related Attribute.</p>
+<p>Before approving a new change, check for:</p>
+<ul>
+<li>overlapping proposals;</li>
+<li>stale proposals;</li>
+<li>conflicting replacements;</li>
+<li>proposals based on an older baseline;</li>
+<li>pending local overrides.</li>
+</ul>
+<p>A field change should not be approved independently while another proposal is changing its business definition.</p>
+<p>---</p>
+<h1 id="historical-impact">Historical impact</h1>
+<p>Retiring a field does not remove its historical significance.</p>
+<p>Past datasets, test evidence and production records may still refer to it.</p>
+<p>The model should preserve:</p>
+<ul>
+<li>retired FieldEndpoint;</li>
+<li>effective period;</li>
+<li>replacement;</li>
+<li>historical Mappings;</li>
+<li>previous Decisions;</li>
+<li>applicable baselines.</li>
+</ul>
+<p>Impact analysis should ask:</p>
+<blockquote>Will historical records remain interpretable after this change?</blockquote>
+<p>This is especially important when codes are reused or meanings change.</p>
+<p>---</p>
+<h1 id="impact-across-current-and-future-baselines">Impact across current and future baselines</h1>
+<p>The same field may appear in several active planning states:</p>
+<pre><code class="language-text">Production baseline:
+custom field
+
+Wave 4 candidate:
+standard field
+
+Local rollout:
+custom field retained temporarily</code></pre>
+<p>The impact report should identify:</p>
+<ul>
+<li>current production impact;</li>
+<li>future release impact;</li>
+<li>local rollout impact;</li>
+<li>transition overlap.</li>
+</ul>
+<p>A single “affected” flag hides these differences.</p>
+<p>---</p>
+<h1 id="three-way-impact-analysis">Three-way impact analysis</h1>
+<p>For SAP changes, two-way comparison may be insufficient.</p>
+<p>A useful assessment can compare:</p>
+<pre><code class="language-text">A:
+current canonical model
+
+B:
+current implementation
+
+C:
+proposed target model or SAP release</code></pre>
+<p>This reveals:</p>
+<h2 id="canonical-and-implementation-agree-proposal-differs">Canonical and implementation agree; proposal differs</h2>
+<p>A new model decision is required.</p>
+<h2 id="canonical-differs-from-implementation-proposal-matches-canonical">Canonical differs from implementation; proposal matches canonical</h2>
+<p>The change may close existing drift.</p>
+<h2 id="implementation-and-proposal-agree-canonical-differs">Implementation and proposal agree; canonical differs</h2>
+<p>The repository may be stale, or an unapproved implementation may have become established.</p>
+<h2 id="all-three-differ">All three differ</h2>
+<p>The programme needs design resolution before delivery estimation.</p>
+<p>---</p>
+<h1 id="runtime-evidence-changes-the-impact-verdict">Runtime evidence changes the impact verdict</h1>
+<p>Graph relationships identify potential impact.</p>
+<p>Observed evidence can refine it.</p>
+<p>For example:</p>
+<pre><code class="language-text">Interface is connected to Customer Group.</code></pre>
+<p>Runtime evidence may show:</p>
+<ul>
+<li>interface population is zero;</li>
+<li>field is never used by the consumer;</li>
+<li>interface uses a derived constant;</li>
+<li>only one country consumes it;</li>
+<li>deprecated path still runs.</li>
+</ul>
+<p>The impact remains reviewable.</p>
+<p>Its priority may change.</p>
+<p>OpenLineage’s object model distinguishes design-time lineage metadata from runtime Run events, allowing declared dependencies and observed executions to remain separate.</p>
+<p>Martenweave can apply the same principle:</p>
+<pre><code class="language-text">canonical dependency:
+declared impact
+
+runtime evidence:
+observed relevance</code></pre>
+<p>---</p>
+<h1 id="candidate-impact-versus-confirmed-impact">Candidate impact versus confirmed impact</h1>
+<p>A defensible report should distinguish:</p>
+<h2 id="confirmed">Confirmed</h2>
+<p>The object has an explicit dependency and the change breaks or modifies it.</p>
+<h2 id="probable">Probable</h2>
+<p>The dependency strongly suggests review, but compatibility is not yet tested.</p>
+<h2 id="possible">Possible</h2>
+<p>The object is connected transitively or through uncertain lineage.</p>
+<h2 id="historical-only">Historical only</h2>
+<p>The relationship applies to earlier baselines.</p>
+<h2 id="excluded">Excluded</h2>
+<p>The object was reviewed and shown unaffected.</p>
+<p>This classification prevents two common failures:</p>
+<ul>
+<li>under-reporting;</li>
+<li>overwhelming teams with every graph neighbour.</li>
+</ul>
+<p>---</p>
+<h1 id="impact-is-path-dependent">Impact is path-dependent</h1>
+<p>The reason an object appears matters.</p>
+<p>Weak result:</p>
+<pre><code class="language-text">Affected:
+INTERFACE-CUSTOMER-OUTBOUND</code></pre>
+<p>Stronger result:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+→ exported_by
+INTERFACE-CUSTOMER-OUTBOUND
+→ consumed_by
+PRICING-APPLICATION</code></pre>
+<p>The path explains:</p>
+<ul>
+<li>why the interface is included;</li>
+<li>whether the dependency is direct;</li>
+<li>how far the impact travels;</li>
+<li>which edge requires verification.</li>
+</ul>
+<p>An impact report should preserve paths, not return only node IDs.</p>
+<p>---</p>
+<h1 id="impact-severity">Impact severity</h1>
+<p>Severity can be based on several factors.</p>
+<h2 id="change-type">Change type</h2>
+<ul>
+<li>editorial;</li>
+<li>physical;</li>
+<li>additive;</li>
+<li>restrictive;</li>
+<li>semantic;</li>
+<li>retirement.</li>
+</ul>
+<h2 id="dependency-type">Dependency type</h2>
+<ul>
+<li>direct value dependency;</li>
+<li>conditional dependency;</li>
+<li>governance dependency;</li>
+<li>historical reference.</li>
+</ul>
+<h2 id="object-criticality">Object criticality</h2>
+<ul>
+<li>key field;</li>
+<li>mandatory Attribute;</li>
+<li>legal field;</li>
+<li>high-volume interface;</li>
+<li>cutover blocker.</li>
+</ul>
+<h2 id="scope">Scope</h2>
+<ul>
+<li>one local context;</li>
+<li>one migration wave;</li>
+<li>global model;</li>
+<li>production landscape.</li>
+</ul>
+<h2 id="evidence">Evidence</h2>
+<ul>
+<li>verified;</li>
+<li>declared;</li>
+<li>uncertain;</li>
+<li>disputed.</li>
+</ul>
+<h2 id="reversibility">Reversibility</h2>
+<ul>
+<li>easy rollback;</li>
+<li>data conversion required;</li>
+<li>irreversible historical reinterpretation.</li>
+</ul>
+<p>A score may help sort results.</p>
+<p>It should not replace the underlying explanation.</p>
+<p>---</p>
+<h1 id="a-worked-example-replacing-a-custom-field">A worked example: replacing a custom field</h1>
+<h2 id="proposed-change">Proposed change</h2>
+<pre><code class="language-text">Retire:
+FEP-S4-ZZ-SUPPLIER-REVIEW-STATUS
+
+Adopt:
+FEP-S4-STANDARD-REVIEW-STATUS</code></pre>
+<h2 id="business-attribute">Business Attribute</h2>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<h2 id="direct-impact-2">Direct impact</h2>
+<ul>
+<li>migration Mapping target;</li>
+<li>MDG validation implementation;</li>
+<li>outbound interface property;</li>
+<li>mock-load test;</li>
+<li>endpoint documentation.</li>
+</ul>
+<h2 id="transitive-impact-2">Transitive impact</h2>
+<ul>
+<li>Supplier activation Rule;</li>
+<li>distribution Rule;</li>
+<li>stewardship procedure;</li>
+<li>report filter;</li>
+<li>local rollout deviation.</li>
+</ul>
+<h2 id="historical-impact-2">Historical impact</h2>
+<ul>
+<li>old records;</li>
+<li>previous load evidence;</li>
+<li>custom-field-based reconciliation;</li>
+<li>audit references.</li>
+</ul>
+<h2 id="required-verification">Required verification</h2>
+<ul>
+<li>value-domain equivalence;</li>
+<li>datatype and length;</li>
+<li>lifecycle behaviour;</li>
+<li>interface contract;</li>
+<li>conversion of existing values;</li>
+<li>historical trace preservation.</li>
+</ul>
+<p>The conclusion may be:</p>
+<pre><code class="language-text">Business meaning:
+expected to remain stable
+
+Physical implementation:
+breaking change
+
+Migration impact:
+high
+
+Semantic review:
+required because standard value domain differs</code></pre>
+<p>---</p>
+<h1 id="a-worked-example-changing-customer-group-granularity">A worked example: changing Customer Group granularity</h1>
+<h2 id="proposed-change-2">Proposed change</h2>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+
+Before:
+belongs to Customer
+
+After:
+belongs to Customer Sales Area</code></pre>
+<h2 id="physical-target">Physical target</h2>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>The field remains the same.</p>
+<h2 id="direct-semantic-impact">Direct semantic impact</h2>
+<ul>
+<li>parent Entity;</li>
+<li>cardinality;</li>
+<li>key context;</li>
+<li>definition;</li>
+<li>owner approval.</li>
+</ul>
+<h2 id="mapping-impact-2">Mapping impact</h2>
+<ul>
+<li>CRM Segment no longer sufficient alone;</li>
+<li>Sales Area fields required;</li>
+<li>central default must be reviewed;</li>
+<li>local Mappings may diverge.</li>
+</ul>
+<h2 id="dataset-impact-2">Dataset impact</h2>
+<ul>
+<li>central customer extract insufficient;</li>
+<li>organisational keys required;</li>
+<li>duplicate customer rows expected.</li>
+</ul>
+<h2 id="report-impact-2">Report impact</h2>
+<ul>
+<li>customer-level aggregation changes;</li>
+<li>one customer may have several groups.</li>
+</ul>
+<h2 id="rule-impact-2">Rule impact</h2>
+<ul>
+<li>requiredness moves to Sales Area activation.</li>
+</ul>
+<h2 id="interface-impact-2">Interface impact</h2>
+<ul>
+<li>consumers using customer number alone become ambiguous.</li>
+</ul>
+<p>This is a high-impact change even though the SAP field name does not change.</p>
+<p>---</p>
+<h1 id="a-worked-example-adding-one-value">A worked example: adding one value</h1>
+<h2 id="proposed-change-3">Proposed change</h2>
+<p>Add:</p>
+<pre><code class="language-text">Customer Group = DIGITAL_ONLY</code></pre>
+<p>Possible direct impact:</p>
+<ul>
+<li>value list;</li>
+<li>validation Rule;</li>
+<li>test data;</li>
+<li>documentation.</li>
+</ul>
+<p>Possible downstream impact:</p>
+<ul>
+<li>interface code list;</li>
+<li>report grouping;</li>
+<li>pricing logic;</li>
+<li>source conversion table;</li>
+<li>local translations;</li>
+<li>data-quality thresholds.</li>
+</ul>
+<p>The database structure is unchanged.</p>
+<p>The code meaning changes the blast radius.</p>
+<p>---</p>
+<h1 id="a-worked-example-removing-a-default">A worked example: removing a default</h1>
+<h2 id="current-path">Current path</h2>
+<pre><code class="language-text">Missing CRM Segment
+→ default STANDARD
+→ Customer Group</code></pre>
+<h2 id="proposed-path">Proposed path</h2>
+<pre><code class="language-text">Missing CRM Segment
+→ unresolved
+→ block activation</code></pre>
+<p>Impact includes:</p>
+<ul>
+<li>completeness;</li>
+<li>migration rejection rate;</li>
+<li>business workload;</li>
+<li>cutover plan;</li>
+<li>source remediation;</li>
+<li>exception procedure;</li>
+<li>Rule severity;</li>
+<li>reporting.</li>
+</ul>
+<p>Removing a default can improve data integrity and still create major delivery impact.</p>
+<p>---</p>
+<h1 id="a-practical-impact-workflow">A practical impact workflow</h1>
+<h2 id="step-1-describe-the-change">Step 1: Describe the change</h2>
+<p>Identify object, change type, target baseline and intended outcome.</p>
+<h2 id="step-2-validate-the-current-repository">Step 2: Validate the current repository</h2>
+<p>Do not analyse a broken graph.</p>
+<h2 id="step-3-locate-the-anchor">Step 3: Locate the anchor</h2>
+<p>Use stable ID, not only a field label.</p>
+<h2 id="step-4-traverse-direct-dependencies">Step 4: Traverse direct dependencies</h2>
+<p>Collect first-degree typed relationships.</p>
+<h2 id="step-5-expand-through-the-business-attribute">Step 5: Expand through the business Attribute</h2>
+<p>Reach semantic Rules, ownership and Mappings.</p>
+<h2 id="step-6-expand-through-operational-objects">Step 6: Expand through operational objects</h2>
+<p>Reach datasets, interfaces, reports and implementation evidence.</p>
+<h2 id="step-7-apply-scope-filters">Step 7: Apply scope filters</h2>
+<p>Filter by:</p>
+<ul>
+<li>baseline;</li>
+<li>country;</li>
+<li>migration wave;</li>
+<li>active status;</li>
+<li>edge type;</li>
+<li>maximum depth.</li>
+</ul>
+<h2 id="step-8-classify-each-path">Step 8: Classify each path</h2>
+<p>Confirmed, probable, possible, historical or excluded.</p>
+<h2 id="step-9-assign-review-owners">Step 9: Assign review owners</h2>
+<p>Turn analysis into action.</p>
+<h2 id="step-10-validate-the-candidate-state">Step 10: Validate the candidate state</h2>
+<p>Apply the proposal in dry-run or candidate form and compare resulting impact.</p>
+<p>---</p>
+<h1 id="current-state-impact-versus-candidate-state-impact">Current-state impact versus candidate-state impact</h1>
+<p>A current-state traversal answers:</p>
+<blockquote>What is connected now?</blockquote>
+<p>A candidate-state analysis asks:</p>
+<blockquote>What would become broken, redirected or newly connected after the change?</blockquote>
+<p>This is more useful.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">current model
++
+proposed patch
+=
+candidate model
+
+compare:
+current impact graph
+vs.
+candidate impact graph</code></pre>
+<p>This can reveal:</p>
+<ul>
+<li>orphaned Mappings;</li>
+<li>unimplemented Rules;</li>
+<li>lost Evidence links;</li>
+<li>consumers still pointing to the retired field;</li>
+<li>replacement endpoint without ownership;</li>
+<li>new dataset requirements.</li>
+</ul>
+<p>Martenweave’s proposal-first architecture is suited to this pattern because proposed changes remain separate until validation and human review.</p>
+<p>---</p>
+<h1 id="impact-analysis-should-not-mutate-anything">Impact analysis should not mutate anything</h1>
+<p>The operation should produce:</p>
+<ul>
+<li>findings;</li>
+<li>report;</li>
+<li>review checklist;</li>
+<li>proposed issue;</li>
+<li>proposal annotations.</li>
+</ul>
+<p>It should not automatically:</p>
+<ul>
+<li>redirect Mappings;</li>
+<li>retire fields;</li>
+<li>update interfaces;</li>
+<li>approve a replacement;</li>
+<li>modify SAP.</li>
+</ul>
+<p>Martenweave’s operating principle remains that agents propose, validators verify, humans approve and Git records the accepted change.</p>
+<p>---</p>
+<h1 id="human-readable-output">Human-readable output</h1>
+<p>A practical impact summary might look like:</p>
+<pre><code class="language-text">Change:
+Retire FEP-S4-ZZ-SUPPLIER-REVIEW-STATUS
+
+Business Attribute:
+ATTR-SUPPLIER-REVIEW-STATUS
+
+Confirmed direct impacts:
+- MAP-LEGACY-REVIEW-STATUS-TO-S4
+- INTERFACE-SUPPLIER-OUTBOUND
+- EVID-MOCK-LOAD4-REVIEW-STATUS
+
+Probable semantic impacts:
+- RULE-SUPPLIER-ACTIVATION
+- RULE-SUPPLIER-DISTRIBUTION
+
+Historical references:
+- EVID-MOCK-LOAD2
+- DEC-CUSTOM-FIELD-RETENTION-004
+
+Required reviewers:
+- Supplier Data Owner
+- SAP MDG Lead
+- Integration Owner
+- Migration Lead</code></pre>
+<p>This is more usable than a graph screenshot alone.</p>
+<p>---</p>
+<h1 id="machine-readable-output">Machine-readable output</h1>
+<p>A structured result should preserve:</p>
+<ul>
+<li>root object;</li>
+<li>proposed change;</li>
+<li>impacted object;</li>
+<li>path;</li>
+<li>depth;</li>
+<li>dependency type;</li>
+<li>confidence;</li>
+<li>severity;</li>
+<li>context;</li>
+<li>review owner;</li>
+<li>verification status.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-json">{
+  &quot;root&quot;: &quot;FEP-S4-KNVV-KDGRP&quot;,
+  &quot;change_type&quot;: &quot;endpoint_replacement&quot;,
+  &quot;impacts&quot;: [
+    {
+      &quot;object_id&quot;: &quot;MAP-CRM-CUSTOMER-GROUP&quot;,
+      &quot;path&quot;: [
+        &quot;FEP-S4-KNVV-KDGRP&quot;,
+        &quot;TARGET_OF&quot;,
+        &quot;MAP-CRM-CUSTOMER-GROUP&quot;
+      ],
+      &quot;depth&quot;: 1,
+      &quot;classification&quot;: &quot;confirmed&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    }
+  ]
+}</code></pre>
+<p>This is a recommended direction, not a guarantee of the current command output.</p>
+<p>---</p>
+<h1 id="release-gates">Release gates</h1>
+<p>A field change should not proceed when:</p>
+<ul>
+<li>the business Attribute is unknown;</li>
+<li>direct Mappings have no replacement;</li>
+<li>critical consumers have no owner;</li>
+<li>candidate state creates broken references;</li>
+<li>mandatory Rules have no implementation path;</li>
+<li>historical interpretation is lost;</li>
+<li>conflicting proposals remain unresolved;</li>
+<li>required datasets cannot support the new grain;</li>
+<li>high-risk impact remains unreviewed.</li>
+</ul>
+<p>A release gate does not need to block every warning.</p>
+<p>It should block conditions that make the candidate model unsafe or operationally unjustified.</p>
+<p>---</p>
+<h1 id="common-failure-modes">Common failure modes</h1>
+<h2 id="running-only-an-abap-where-used-search">Running only an ABAP where-used search</h2>
+<p>Useful code dependencies are found; non-code model and business dependencies remain invisible.</p>
+<h2 id="starting-from-a-table-name">Starting from a table name</h2>
+<p>The actual business Attribute and field-level path remain ambiguous.</p>
+<h2 id="returning-every-connected-object">Returning every connected object</h2>
+<p>The report becomes too broad to act on.</p>
+<h2 id="ignoring-indirect-dependencies">Ignoring indirect dependencies</h2>
+<p>Conditional fields, keys and filters are missed.</p>
+<h2 id="treating-graph-proximity-as-confirmed-breakage">Treating graph proximity as confirmed breakage</h2>
+<p>Review effort is inflated.</p>
+<h2 id="ignoring-historical-references">Ignoring historical references</h2>
+<p>Past datasets and evidence become uninterpretable.</p>
+<h2 id="assuming-a-standard-field-is-semantically-equivalent">Assuming a standard field is semantically equivalent</h2>
+<p>Technical replacement bypasses model review.</p>
+<h2 id="analysing-only-current-state">Analysing only current state</h2>
+<p>Orphaned candidate-state dependencies are missed.</p>
+<h2 id="omitting-owners">Omitting owners</h2>
+<p>The result describes risk without routing action.</p>
+<h2 id="letting-ai-apply-the-change">Letting AI apply the change</h2>
+<p>Plausible remediation bypasses approval.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>The current core already provides:</p>
+<ul>
+<li>validated canonical references;</li>
+<li>generated lineage indexes;</li>
+<li><code>trace</code>;</li>
+<li><code>impact</code>;</li>
+<li>repository diff;</li>
+<li>dataset readiness;</li>
+<li>reviewable PatchProposals.</li>
+</ul>
+<p>The next focused capability should be <strong>candidate-state impact analysis</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Calculate downstream impact before an approved canonical change is applied.</p>
+<h2 id="scope-2">Scope</h2>
+<p>Given a PatchProposal:</p>
+<ul>
+<li>identify changed objects;</li>
+<li>create a candidate in-memory model;</li>
+<li>validate candidate references;</li>
+<li>compare current and candidate graphs;</li>
+<li>classify broken, redirected and newly created dependencies;</li>
+<li>assign direct and transitive impact.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>Replacing <code>FEP-S4-KNVV-KDGRP</code> must identify:</p>
+<ul>
+<li>incoming Mappings;</li>
+<li>related Customer Group Attribute;</li>
+<li>Rules;</li>
+<li>DatasetFields;</li>
+<li>outbound interfaces;</li>
+<li>Evidence;</li>
+<li>local overrides;</li>
+<li>open proposals;</li>
+<li>historical references.</li>
+</ul>
+<h2 id="validation-command">Validation command</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="functional-verification">Functional verification</h2>
+<pre><code class="language-bash">martenweave impact FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model</code></pre>
+<p>A future extension could add:</p>
+<pre><code class="language-bash">martenweave impact \
+  --proposal PATCH-REPLACE-CUSTOMER-GROUP-ENDPOINT \
+  --repo examples/customer_bp_model</code></pre>
+<p>The proposal-aware command is a product direction, not a claim about the current CLI.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>An SAP field is rarely only a field.</p>
+<p>It may be:</p>
+<ul>
+<li>the implementation of a business Attribute;</li>
+<li>the target of several migration Mappings;</li>
+<li>an input to interfaces and reports;</li>
+<li>the subject of Rules and Decisions;</li>
+<li>a dependency of local exceptions;</li>
+<li>the anchor for historical evidence.</li>
+</ul>
+<p>The correct question before changing it is not:</p>
+<blockquote>Where is this field used?</blockquote>
+<p>It is:</p>
+<blockquote>Which governed meanings and operational paths depend on this field, and how would the candidate change alter them?</blockquote>
+<p>A useful impact calculation follows the chain:</p>
+<pre><code class="language-text">proposed field change
+→ business Attribute
+→ Mappings
+→ Rules
+→ datasets
+→ interfaces
+→ reports
+→ decisions
+→ evidence
+→ owners</code></pre>
+<p>It then distinguishes:</p>
+<pre><code class="language-text">direct
+transitive
+confirmed
+probable
+possible
+historical</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the team explain, before implementation, which migration paths, SAP controls, interfaces, reports, local deviations and historical baselines must be changed or reviewed—and why each one appears in the result?</blockquote>
+<p>When the answer is yes, the programme has change impact analysis.</p>
+<p>When the answer is:</p>
+<blockquote>The where-used list found three ABAP objects,</blockquote>
+<p>the programme has completed one useful technical check and mistaken it for the complete blast radius.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It uses validated canonical objects, generated lineage indexes, typed relationships and reviewable proposals to calculate how model and implementation changes propagate through the landscape.</p>
+<p>The objective is not to predict every consequence automatically.</p>
+<p>It is to make the likely consequences visible early enough for accountable people to review them.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, validates object references before indexing and exposes separate trace, impact, diff, dataset-readiness and proposal workflows.</p>
+<p>The current Martenweave workflow places lineage and impact analysis after deterministic validation and generated-index construction and before AI-assisted proposals are routed to human review.</p>
+<p>OpenLineage’s current column-lineage specification describes fine-grained dependencies between input and output fields and distinguishes direct value derivation from indirect influence through joins, filters and conditional logic.</p>
+<p>OpenLineage’s object model distinguishes design-time Job and Dataset metadata from runtime Run observations. This provides a useful pattern for separating declared impact paths from evidence about which paths are actually active.</p>
+<p>The candidate-state impact workflow, impact classifications and proposed machine-readable output in this article describe recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current CLI behaviour unless separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html"><span>Previous</span>A business owner asks:</a><a href="/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html"><span>Next</span>A team proposes three changes:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

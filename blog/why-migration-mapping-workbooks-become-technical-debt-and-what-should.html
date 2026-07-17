@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration programme creates a mapping workbook for Product planning data."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html" />
+    <meta property="og:title" content="Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them | Martenweave" />
+    <meta property="og:description" content="A migration programme creates a mapping workbook for Product planning data." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them | Martenweave" />
+    <meta name="twitter:description" content="A migration programme creates a mapping workbook for Product planning data." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html",
+                        "name": "Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them | Martenweave",
+                        "description": "A migration programme creates a mapping workbook for Product planning data.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them",
+                                    "item": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html#content",
+                        "headline": "Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them",
+                        "name": "Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them",
+                        "description": "A migration programme creates a mapping workbook for Product planning data.",
+                        "url": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>Why Migration Mapping Workbooks Become Technical Debt—and What Should Replace Them</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 17 min read</p><p class="blog-summary">A migration programme creates a mapping workbook for Product planning data.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#documented-state">Documented state</a></li><li><a href="#implemented-state">Implemented state</a></li><li><a href="#observed-state">Observed state</a></li><li><a href="#entity">Entity</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#field-endpoints">Field endpoints</a></li><li><a href="#mapping">Mapping</a></li><li><a href="#rule">Rule</a></li><li><a href="#fallback">Fallback</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#decision">Decision</a></li><li><a href="#finding">Finding</a></li><li><a href="#patchproposal">PatchProposal</a></li><li><a href="#stage-1-inventory">Stage 1: inventory</a></li><li><a href="#stage-2-extract-stable-objects">Stage 2: extract stable objects</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration programme creates a mapping workbook for Product planning data.</p>
+<p>At first, the workbook is useful.</p>
+<p>It contains:</p>
+<ul>
+<li>source columns;</li>
+<li>SAP target fields;</li>
+<li>transformation notes;</li>
+<li>value mappings;</li>
+<li>requiredness;</li>
+<li>responsible owners;</li>
+<li>comments from workshops.</li>
+</ul>
+<p>The file gives business experts and migration developers a shared place to work. It can be opened without specialist software. Rows can be filtered, coloured and discussed during meetings.</p>
+<p>Then the programme progresses.</p>
+<p>A Plant column is added to the source extract.</p>
+<p>The MRP Controller logic becomes Plant-specific.</p>
+<p>A temporary fallback is introduced for two Plants.</p>
+<p>One workshop changes the interpretation of Planner Group.</p>
+<p>Mock Load 2 exposes several unmapped values.</p>
+<p>Mock Load 3 uses a revised conversion table.</p>
+<p>A developer implements another exception directly in transformation code.</p>
+<p>A local business owner approves the fallback in an email.</p>
+<p>Someone adds a yellow comment to the workbook:</p>
+<blockquote>Check before cutover.</blockquote>
+<p>Another person creates <code>Product_Mapping_FINAL_v7_reviewed.xlsx</code>.</p>
+<p>The original workbook is still open on a shared drive.</p>
+<p>A copy is attached to a ticket.</p>
+<p>Another copy is stored in the cutover folder.</p>
+<p>The transformation code no longer matches any single version exactly.</p>
+<p>The programme still says:</p>
+<blockquote>The mapping workbook is our source of truth.</blockquote>
+<p>It is not.</p>
+<p>It has become a partial, manually maintained representation of a model that now exists across:</p>
+<ul>
+<li>spreadsheet cells;</li>
+<li>comments;</li>
+<li>colour conventions;</li>
+<li>transformation code;</li>
+<li>validation reports;</li>
+<li>tickets;</li>
+<li>decisions;</li>
+<li>individual memory.</li>
+</ul>
+<p>This is the central problem.</p>
+<blockquote>A mapping workbook becomes technical debt when it stops being a temporary collaboration surface and starts acting as an unvalidated executable model.</blockquote>
+<p>The problem is not that spreadsheets are inherently bad.</p>
+<p>The problem is that the programme begins to depend on a spreadsheet for responsibilities it cannot reliably fulfil:</p>
+<ul>
+<li>stable object identity;</li>
+<li>deterministic validation;</li>
+<li>reference integrity;</li>
+<li>versioned semantic change;</li>
+<li>lineage;</li>
+<li>impact analysis;</li>
+<li>evidence linkage;</li>
+<li>automated reuse;</li>
+<li>controlled AI access.</li>
+</ul>
+<p>Research on operational spreadsheets has repeatedly found that errors can occur in real spreadsheet use and that some errors have material consequences, while error detection depends heavily on inspection and user behaviour.</p>
+<p>A migration workbook can remain helpful.</p>
+<p>It should not own model truth.</p>
+<p>Martenweave’s product position is that spreadsheets, datasets, tickets, validation reports, decisions and SAP context should feed a canonical model layer rather than collectively pretending to be one. The current repository describes canonical files, deterministic validation, gap detection, lineage, impact analysis and human-approved proposals as the controlled pipeline around that model.</p>
+<p>---</p>
+<h1 id="the-workbook-begins-as-a-view-and-becomes-a-system">The workbook begins as a view and becomes a system</h1>
+<p>The Product planning workbook starts with a familiar structure:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Source field</th><th scope="col">Target field</th><th scope="col">Rule</th><th scope="col">Status</th></tr></thead><tbody><tr><td><code>PLANNER_GROUP</code></td><td>MRP Controller</td><td>Convert through lookup</td><td>Approved</td></tr><tr><td><code>MRP_TYPE</code></td><td>MRP Type</td><td>Direct with value conversion</td><td>Approved</td></tr><tr><td><code>PROCUREMENT_TYPE</code></td><td>Procurement Type</td><td>Direct</td><td>Approved</td></tr></tbody></table></div>
+<p>This is easy to understand.</p>
+<p>The hidden complexity appears when the team discovers that planning data belongs to Product Plant rather than global Product.</p>
+<p>The MRP Controller Mapping actually needs:</p>
+<pre><code class="language-text">Planner Group
++
+Plant
+→ plant-specific MRP Controller</code></pre>
+<p>The workbook now has to represent more than a field-to-field mapping.</p>
+<p>It must represent:</p>
+<ul>
+<li>the Product Plant Entity;</li>
+<li>Plant as a contextual key;</li>
+<li>the relationship between Product and Plant;</li>
+<li>the applicable source system;</li>
+<li>a plant-specific value table;</li>
+<li>a temporary fallback;</li>
+<li>the scope of that fallback;</li>
+<li>its expiry;</li>
+<li>the evidence supporting it;</li>
+<li>the owner who approved it.</li>
+</ul>
+<p>A row-oriented spreadsheet can store text describing all of this.</p>
+<p>That does not make the structure explicit.</p>
+<p>The programme has moved from documenting a transformation to maintaining a model.</p>
+<p>---</p>
+<h1 id="the-first-debt-meaning-is-encoded-in-layout">The first debt: meaning is encoded in layout</h1>
+<p>Spreadsheet logic often depends on conventions that are clear only to the current team.</p>
+<p>For example:</p>
+<ul>
+<li>yellow means business review required;</li>
+<li>green means approved;</li>
+<li>grey means out of scope;</li>
+<li>blank means either not applicable or not yet analysed;</li>
+<li>comments contain exceptions;</li>
+<li>strikethrough means retired;</li>
+<li>a separate tab contains the latest value mapping;</li>
+<li>bold rows identify critical fields.</li>
+</ul>
+<p>These conventions are readable to people who already know them.</p>
+<p>They are weak machine contracts.</p>
+<p>A validator cannot safely infer whether:</p>
+<pre><code class="language-text">blank status</code></pre>
+<p>means:</p>
+<pre><code class="language-text">not applicable</code></pre>
+<p>or:</p>
+<pre><code class="language-text">decision missing</code></pre>
+<p>An AI agent may interpret colour, comments and neighbouring cells, but the result remains probabilistic.</p>
+<p>The model needs explicit states:</p>
+<pre><code class="language-text">status: approved
+applicability: product_plant
+fallback_status: temporary
+decision_required: false</code></pre>
+<p>When meaning depends on presentation, the workbook is not merely storing data.</p>
+<p>Its visual structure is carrying business logic.</p>
+<p>That logic is difficult to test.</p>
+<p>---</p>
+<h1 id="the-second-debt-one-row-hides-several-objects">The second debt: one row hides several objects</h1>
+<p>The workbook row says:</p>
+<pre><code class="language-text">PLANNER_GROUP → MRP Controller</code></pre>
+<p>The actual model contains several distinct objects:</p>
+<ul>
+<li>Planner Group business Attribute;</li>
+<li>source FieldEndpoint;</li>
+<li>Product Plant MRP Controller Attribute;</li>
+<li>SAP target FieldEndpoint;</li>
+<li>Mapping;</li>
+<li>Plant contextual input;</li>
+<li>conversion value list;</li>
+<li>validation Rule;</li>
+<li>temporary fallback;</li>
+<li>Evidence;</li>
+<li>Decision.</li>
+</ul>
+<p>These objects have different lifecycles.</p>
+<p>The source field may be retired.</p>
+<p>The business Attribute may remain.</p>
+<p>The Mapping may change.</p>
+<p>The target implementation may move to another API or field.</p>
+<p>The fallback may expire.</p>
+<p>The Evidence may become stale.</p>
+<p>The Decision may be superseded.</p>
+<p>When everything is represented by one workbook row, the programme loses these distinctions.</p>
+<p>A change to any part becomes an edit to the same row.</p>
+<p>The row no longer communicates which object changed.</p>
+<p>---</p>
+<h1 id="the-third-debt-there-is-no-stable-identity">The third debt: there is no stable identity</h1>
+<p>The workbook identifies the Mapping by its position:</p>
+<pre><code class="language-text">Sheet: Product Planning
+Row: 47</code></pre>
+<p>Then someone sorts the sheet.</p>
+<p>Another person inserts ten rows.</p>
+<p>A new version renames the tab.</p>
+<p>A developer copies the row into a technical specification.</p>
+<p>A ticket refers to:</p>
+<blockquote>MRP Controller mapping in the latest workbook.</blockquote>
+<p>None of these references is stable.</p>
+<p>A canonical registry should use an identifier such as:</p>
+<pre><code class="language-text">MAP-PRODUCT-PLANT-MRP-CONTROLLER</code></pre>
+<p>Then the same Mapping can be referenced by:</p>
+<ul>
+<li>a dataset gap;</li>
+<li>a validation error;</li>
+<li>a Decision;</li>
+<li>a PatchProposal;</li>
+<li>an issue;</li>
+<li>a test;</li>
+<li>an AMS incident;</li>
+<li>an AI agent.</li>
+</ul>
+<p>Stable identity turns a temporary document location into a reusable project object.</p>
+<p>---</p>
+<h1 id="the-fourth-debt-changes-cannot-be-interpreted-reliably">The fourth debt: changes cannot be interpreted reliably</h1>
+<p>Two workbook versions can be compared at the file level.</p>
+<p>The comparison does not necessarily explain the semantic change.</p>
+<p>Suppose version 6 says:</p>
+<pre><code class="language-text">Default MRP Controller:
+001</code></pre>
+<p>Version 7 says:</p>
+<pre><code class="language-text">Default MRP Controller:
+001, except PL20 and PL30</code></pre>
+<p>What changed?</p>
+<p>Possibilities include:</p>
+<ul>
+<li>the fallback scope narrowed;</li>
+<li>new plant-specific conversions were approved;</li>
+<li>the Plants moved into another wave;</li>
+<li>the fallback was found unsafe;</li>
+<li>the target configuration changed;</li>
+<li>someone edited the note without changing the code.</li>
+</ul>
+<p>A spreadsheet diff can show that text changed.</p>
+<p>A model diff should say:</p>
+<pre><code class="language-text">Fallback applicability changed.
+
+Removed scope:
+- PL20
+- PL30
+
+Affected Mapping:
+MAP-PRODUCT-PLANT-MRP-CONTROLLER
+
+Affected population:
+1,840 Product Plant records
+
+Required retest:
+Plant planning scenario</code></pre>
+<p>This is the difference between file comparison and model comparison.</p>
+<p>---</p>
+<h1 id="the-fifth-debt-reference-errors-remain-invisible">The fifth debt: reference errors remain invisible</h1>
+<p>The workbook may refer to:</p>
+<ul>
+<li>a source field that was renamed;</li>
+<li>a target field that was retired;</li>
+<li>a value list that no longer exists;</li>
+<li>an owner who left the programme;</li>
+<li>a Rule stored on another tab;</li>
+<li>a Plant outside the current wave.</li>
+</ul>
+<p>Spreadsheets can validate cell formats and formulas.</p>
+<p>They do not automatically validate a typed enterprise model unless substantial custom logic is built around them.</p>
+<p>A canonical registry can enforce:</p>
+<ul>
+<li>every referenced object exists;</li>
+<li>IDs are unique;</li>
+<li>Mapping inputs have allowed types;</li>
+<li>target Attributes belong to the correct Entity;</li>
+<li>contextual keys match the target grain;</li>
+<li>fallback references are valid;</li>
+<li>ownership and domain requirements are satisfied.</li>
+</ul>
+<p>Martenweave’s current core principles explicitly place deterministic validation before indexing and treat generated SQLite and JSONL outputs as rebuildable rather than authoritative.</p>
+<p>That design matters because a model error should fail predictably.</p>
+<p>It should not remain hidden in a comment until cutover.</p>
+<p>---</p>
+<h1 id="the-sixth-debt-the-workbook-and-implementation-drift-apart">The sixth debt: the workbook and implementation drift apart</h1>
+<p>The Product planning workbook specifies:</p>
+<pre><code class="language-text">Use Planner Group and Plant.</code></pre>
+<p>The transformation code implements:</p>
+<pre><code class="language-text">Use Planner Group and Plant.
+
+When conversion is missing:
+assign controller 001.</code></pre>
+<p>Later, a developer adds:</p>
+<pre><code class="language-text">For PL30:
+use controller 030.</code></pre>
+<p>The workbook is not updated.</p>
+<p>Mock Load 3 succeeds.</p>
+<p>The team begins treating the production output as evidence that the Mapping is correct.</p>
+<p>There are now at least three states:</p>
+<h2 id="documented-state">Documented state</h2>
+<p>What the workbook says.</p>
+<h2 id="implemented-state">Implemented state</h2>
+<p>What the code does.</p>
+<h2 id="observed-state">Observed state</h2>
+<p>What the mock load produced.</p>
+<p>Without a canonical model, the programme cannot compare them cleanly.</p>
+<p>The transformation code may become the de facto source of truth even though business owners cannot review it.</p>
+<p>Alternatively, the workbook may remain the declared source of truth even though it no longer describes execution.</p>
+<p>Both conditions are dangerous.</p>
+<p>---</p>
+<h1 id="the-seventh-debt-evidence-is-disconnected-from-the-mapping">The seventh debt: evidence is disconnected from the mapping</h1>
+<p>Mock Load 3 shows that 94 percent of Product Plant records receive an approved MRP Controller.</p>
+<p>Six percent use fallback <code>001</code>.</p>
+<p>The result is stored in a validation report.</p>
+<p>The workbook contains:</p>
+<pre><code class="language-text">Status:
+Approved</code></pre>
+<p>What does “Approved” mean?</p>
+<ul>
+<li>The business logic was approved?</li>
+<li>The Mapping was technically implemented?</li>
+<li>The mock-load result was accepted?</li>
+<li>The fallback was approved?</li>
+<li>The six percent were reviewed?</li>
+<li>The whole wave is ready?</li>
+</ul>
+<p>The status compresses several distinct claims into one cell.</p>
+<p>A model registry should link evidence to specific claims:</p>
+<pre><code class="language-text">Claim:
+Plant-specific Mapping covers 94% of Wave 1 Product Plant records.
+
+Evidence:
+EVID-MOCK3-MRP-CONTROLLER-COVERAGE
+
+Claim:
+Fallback 001 is permitted for the remaining population.
+
+Decision:
+DEC-PLANNING-FALLBACK-017</code></pre>
+<p>Evidence does not merely sit beside the Mapping.</p>
+<p>It supports a declared assertion about it.</p>
+<p>---</p>
+<h1 id="the-eighth-debt-temporary-logic-becomes-permanent">The eighth debt: temporary logic becomes permanent</h1>
+<p>Migration workbooks contain many practical compromises:</p>
+<ul>
+<li>default values;</li>
+<li>manual corrections;</li>
+<li>temporary source precedence;</li>
+<li>wave-specific exceptions;</li>
+<li>cutover-only rules.</li>
+</ul>
+<p>These are often necessary.</p>
+<p>The debt appears when the workbook cannot enforce:</p>
+<ul>
+<li>expiry;</li>
+<li>scope;</li>
+<li>owner;</li>
+<li>remediation;</li>
+<li>prohibition of future use.</li>
+</ul>
+<p>In the Product planning case, fallback <code>001</code> may have been approved for Mock Load 2 only.</p>
+<p>Because it remains in the workbook and code, it survives into Mock Load 3 and cutover rehearsal.</p>
+<p>The temporary path becomes permanent through inertia.</p>
+<p>A governed fallback should state:</p>
+<pre><code class="language-text">fallback:
+  value: &quot;001&quot;
+  scope:
+    plants:
+      - PL20
+      - PL30
+  valid_until: 2026-09-30
+  approved_by: ROLE-PRODUCTION-PLANNING-OWNER
+  remediation: complete plant-specific conversion</code></pre>
+<p>The exact schema may differ.</p>
+<p>The essential point is that temporariness must be machine-visible.</p>
+<p>---</p>
+<h1 id="the-ninth-debt-impact-is-reconstructed-manually">The ninth debt: impact is reconstructed manually</h1>
+<p>A business owner proposes changing the Product Plant MRP Controller logic.</p>
+<p>The team asks:</p>
+<blockquote>What else is affected?</blockquote>
+<p>People search:</p>
+<ul>
+<li>workbook tabs;</li>
+<li>technical specifications;</li>
+<li>transformation jobs;</li>
+<li>test scripts;</li>
+<li>interface documents;</li>
+<li>issue trackers.</li>
+</ul>
+<p>The answer depends on who remembers the landscape.</p>
+<p>A canonical model can traverse from the Mapping to:</p>
+<ul>
+<li>source DatasetFields;</li>
+<li>Product Plant Attribute;</li>
+<li>target endpoint;</li>
+<li>validation Rule;</li>
+<li>fallback;</li>
+<li>Evidence;</li>
+<li>downstream interface;</li>
+<li>planning process;</li>
+<li>owner.</li>
+</ul>
+<p>The impact set may still require business interpretation.</p>
+<p>It should not require document archaeology.</p>
+<p>---</p>
+<h1 id="the-tenth-debt-ai-amplifies-ambiguity">The tenth debt: AI amplifies ambiguity</h1>
+<p>Without a structured model, an AI agent can read the workbook and propose changes.</p>
+<p>It may do so convincingly.</p>
+<p>The problem is that the workbook contains implicit conventions and outdated fragments.</p>
+<p>The agent may:</p>
+<ul>
+<li>treat a comment as approved policy;</li>
+<li>use the newest worksheet as authoritative;</li>
+<li>interpret a blank as optional;</li>
+<li>merge conflicting rows;</li>
+<li>mistake an example value for a default;</li>
+<li>update one workbook copy while implementation uses another.</li>
+</ul>
+<p>AI does not remove spreadsheet ambiguity.</p>
+<p>It can make ambiguous interpretation faster.</p>
+<p>Martenweave’s current product principle is that AI produces <code>PatchProposal</code> objects for review rather than silently changing canonical files.</p>
+<p>That principle becomes useful only when the canonical model itself is explicit.</p>
+<p>An agent cannot propose safely against a source of truth that nobody can identify.</p>
+<p>---</p>
+<h1 id="what-should-replace-the-workbook-as-source-of-truth">What should replace the workbook as source of truth</h1>
+<p>The answer is not a larger spreadsheet.</p>
+<p>It is also not a large new SaaS application.</p>
+<p>The replacement should be a small set of canonical, typed, version-controlled objects.</p>
+<p>For the Product planning case, the minimum model includes:</p>
+<h2 id="entity">Entity</h2>
+<pre><code class="language-text">Product Plant</code></pre>
+<h2 id="attributes">Attributes</h2>
+<pre><code class="language-text">Planner Group
+Plant
+MRP Controller</code></pre>
+<h2 id="field-endpoints">Field endpoints</h2>
+<pre><code class="language-text">Legacy planner-group column
+Legacy Plant column
+SAP MRP Controller field</code></pre>
+<h2 id="mapping">Mapping</h2>
+<pre><code class="language-text">Planner Group + Plant
+→ plant-specific MRP Controller</code></pre>
+<h2 id="rule">Rule</h2>
+<pre><code class="language-text">Plant is required for Product Plant planning assignment.</code></pre>
+<h2 id="fallback">Fallback</h2>
+<pre><code class="language-text">Controller 001 for explicitly approved scope only.</code></pre>
+<h2 id="evidence">Evidence</h2>
+<pre><code class="language-text">Mock Load 3 coverage report.</code></pre>
+<h2 id="decision">Decision</h2>
+<pre><code class="language-text">Production Planning approval of plant-specific derivation.</code></pre>
+<h2 id="finding">Finding</h2>
+<pre><code class="language-text">Six percent of records remain outside approved conversion.</code></pre>
+<h2 id="patchproposal">PatchProposal</h2>
+<pre><code class="language-text">Add PL30 conversions and retire fallback for that Plant.</code></pre>
+<p>This is enough to create a usable governance loop.</p>
+<p>---</p>
+<h1 id="what-the-canonical-representation-could-look-like">What the canonical representation could look like</h1>
+<p>A simplified Mapping object might be:</p>
+<pre><code>---
+id: MAP-PRODUCT-PLANT-MRP-CONTROLLER
+type: Mapping
+status: approved
+
+source_inputs:
+  - id: FEP-LEGACY-PLANNER-GROUP
+    role: direct
+  - id: FEP-LEGACY-PLANT
+    role: conditional_context
+
+target:
+  id: ATTR-PRODUCT-PLANT-MRP-CONTROLLER
+
+transformation:
+  type: value_lookup
+  value_list: VL-PLANT-PLANNER-TO-MRP-CONTROLLER
+
+fallback:
+  id: FALLBACK-MRP-CONTROLLER-001
+---
+
+Derive the MRP Controller from legacy Planner Group
+using the Plant-specific conversion table.</code></pre>
+<p>This is not intended as a guarantee of the current Martenweave schema.</p>
+<p>It illustrates the properties the model needs:</p>
+<ul>
+<li>stable ID;</li>
+<li>type;</li>
+<li>explicit inputs;</li>
+<li>input roles;</li>
+<li>target;</li>
+<li>transformation;</li>
+<li>fallback reference;</li>
+<li>readable explanation.</li>
+</ul>
+<p>The object can be validated without removing its human-readable form.</p>
+<p>---</p>
+<h1 id="the-workbook-should-remain-as-an-interface">The workbook should remain as an interface</h1>
+<p>Replacing the workbook as source of truth does not mean banning Excel.</p>
+<p>Business users may still prefer a tabular review.</p>
+<p>Martenweave should generate or import workbook views.</p>
+<p>The correct relationship is:</p>
+<pre><code class="language-text">Canonical model
+→ generated review workbook</code></pre>
+<p>and:</p>
+<pre><code class="language-text">edited workbook
+→ proposed model changes
+→ validation
+→ review</code></pre>
+<p>It should not be:</p>
+<pre><code class="language-text">edited workbook
+→ silent overwrite of model truth</code></pre>
+<p>A generated workbook can include:</p>
+<ul>
+<li>business labels;</li>
+<li>source and target fields;</li>
+<li>Mapping status;</li>
+<li>owners;</li>
+<li>open Findings;</li>
+<li>readiness;</li>
+<li>evidence links.</li>
+</ul>
+<p>It becomes a view of the model.</p>
+<p>It is disposable and reproducible.</p>
+<p>---</p>
+<h1 id="workbook-edits-should-become-proposals">Workbook edits should become proposals</h1>
+<p>Suppose a business owner changes fallback scope in the workbook:</p>
+<pre><code class="language-text">Remove PL30 from controller 001 fallback.</code></pre>
+<p>The import process should create:</p>
+<pre><code class="language-text">PatchProposal:
+Restrict FALLBACK-MRP-CONTROLLER-001.
+
+Removed scope:
+PL30.
+
+Affected records:
+640.
+
+Required reviewer:
+Plant PL30 Planning Owner.</code></pre>
+<p>The proposal is then:</p>
+<ul>
+<li>validated;</li>
+<li>impact-assessed;</li>
+<li>reviewed;</li>
+<li>accepted or rejected.</li>
+</ul>
+<p>This preserves the convenience of spreadsheet collaboration without granting every cell edit authority over the canonical model.</p>
+<p>---</p>
+<h1 id="the-product-value-is-not-file-conversion">The product value is not file conversion</h1>
+<p>A weak product would convert Excel rows into YAML.</p>
+<p>That is useful for initial import.</p>
+<p>It is not the main value.</p>
+<p>The product must preserve distinctions that the workbook blurred:</p>
+<ul>
+<li>business object versus physical field;</li>
+<li>direct input versus contextual input;</li>
+<li>Mapping versus Rule;</li>
+<li>observed evidence versus approved Decision;</li>
+<li>fallback versus normal path;</li>
+<li>current state versus candidate state;</li>
+<li>model change versus implementation task.</li>
+</ul>
+<p>Martenweave becomes valuable when those distinctions drive:</p>
+<ul>
+<li>validation;</li>
+<li>gap detection;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>proposals;</li>
+<li>review.</li>
+</ul>
+<p>File conversion is only the entry point.</p>
+<p>---</p>
+<h1 id="a-realistic-migration-path-away-from-workbook-ownership">A realistic migration path away from workbook ownership</h1>
+<p>Programmes cannot replace a large workbook in one step.</p>
+<p>A practical transition can use five stages.</p>
+<h2 id="stage-1-inventory">Stage 1: inventory</h2>
+<p>Identify:</p>
+<ul>
+<li>workbook versions;</li>
+<li>tabs;</li>
+<li>owners;</li>
+<li>mappings;</li>
+<li>code lists;</li>
+<li>comments;</li>
+<li>unresolved decisions.</li>
+</ul>
+<p>Do not attempt full automation yet.</p>
+<h2 id="stage-2-extract-stable-objects">Stage 2: extract stable objects</h2>
+<p>Create canonical objects for:</p>
+<ul>
+<li>important Entities;</li>
+<li>critical Attributes;</li>
+<li>source and target endpoints;</li>
+<li>high-risk Mappings.</li>
+</ul>
+<p>Start with one domain slice.</p>
+<h2 id="stage-3-validate-references">Stage 3: validate references</h2>
+<p>Check:</p>
+<ul>
+<li>missing endpoints;</li>
+<li>duplicate mappings;</li>
+<li>incompatible grain;</li>
+<li>unresolved owners;</li>
+<li>invalid value-list references.</li>
+</ul>
+<h2 id="stage-4-generate-the-workbook">Stage 4: generate the workbook</h2>
+<p>Create a review view from canonical files.</p>
+<p>Compare it with the historical workbook.</p>
+<h2 id="stage-5-proposal-only-imports">Stage 5: proposal-only imports</h2>
+<p>Treat future workbook edits as candidate changes rather than direct truth.</p>
+<p>This transition reduces risk without requiring the programme to abandon familiar working practices.</p>
+<p>---</p>
+<h1 id="the-first-martenweave-pilot-should-use-one-mapping-workbook">The first Martenweave pilot should use one mapping workbook</h1>
+<p>A strong pilot does not need the entire migration estate.</p>
+<p>Use the Product planning workbook.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>current mapping workbook;</li>
+<li>one source dataset;</li>
+<li>one mock-load report;</li>
+<li>one target-field list;</li>
+<li>one planning Decision.</li>
+</ul>
+<h2 id="canonical-scope">Canonical scope</h2>
+<ul>
+<li>Product Plant;</li>
+<li>Plant;</li>
+<li>Planner Group;</li>
+<li>MRP Controller;</li>
+<li>one Mapping;</li>
+<li>one fallback;</li>
+<li>one Rule;</li>
+<li>one Evidence object.</li>
+</ul>
+<h2 id="demonstration">Demonstration</h2>
+<ol>
+<li>import the workbook;</li>
+<li>create stable model objects;</li>
+<li>validate references;</li>
+<li>profile the source dataset;</li>
+<li>detect missing or incomplete Plant context;</li>
+<li>show current lineage;</li>
+<li>render the workbook from the model;</li>
+<li>propose a fallback-scope change;</li>
+<li>calculate affected records;</li>
+<li>approve through Git review.</li>
+</ol>
+<p>The pilot demonstrates the whole product thesis with one meaningful Mapping.</p>
+<p>---</p>
+<h1 id="what-current-martenweave-already-provides">What current Martenweave already provides</h1>
+<p>The current repository describes Martenweave as a backend-first canonical model layer designed to be embedded in pipelines, IDEs, local APIs, MCP servers and agent workflows. Its Workbench reads through the local API and does not store independent model truth.</p>
+<p>Its documented pipeline includes:</p>
+<ul>
+<li>evidence import and profiling;</li>
+<li>deterministic validation;</li>
+<li>generated indexing;</li>
+<li>dataset and model gap detection;</li>
+<li>lineage;</li>
+<li>impact analysis;</li>
+<li>AI PatchProposals;</li>
+<li>human-reviewed GitHub issues and pull requests.</li>
+</ul>
+<p>That foundation is suitable for replacing workbook ownership without replacing workbook usability.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>The next focused product slice should be <strong>Mapping Workbook Intake and Round-Trip Review</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Convert one mapping workbook into validated canonical model objects while preserving Excel as a review interface.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support a controlled workbook template with:</p>
+<ul>
+<li>source field;</li>
+<li>source system;</li>
+<li>business Attribute;</li>
+<li>target field;</li>
+<li>Mapping type;</li>
+<li>contextual inputs;</li>
+<li>value-list reference;</li>
+<li>Rule reference;</li>
+<li>owner;</li>
+<li>status;</li>
+<li>notes.</li>
+</ul>
+<h2 id="import-behaviour">Import behaviour</h2>
+<p>The importer should:</p>
+<ol>
+<li>identify existing canonical objects by stable ID;</li>
+<li>propose new objects where no match exists;</li>
+<li>detect duplicate or conflicting rows;</li>
+<li>separate comments from structured fields;</li>
+<li>create Findings for unresolved ambiguity;</li>
+<li>generate PatchProposals rather than overwrite files.</li>
+</ol>
+<h2 id="export-behaviour">Export behaviour</h2>
+<p>The exporter should generate a workbook containing:</p>
+<ul>
+<li>stable IDs;</li>
+<li>business labels;</li>
+<li>source and target endpoints;</li>
+<li>Mapping summary;</li>
+<li>validation status;</li>
+<li>Evidence status;</li>
+<li>open Findings;</li>
+<li>proposal status.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The Product planning workbook must no longer be the only place where the MRP Controller logic exists.</p>
+<p>The system must be able to answer:</p>
+<ul>
+<li>What is the canonical Mapping ID?</li>
+<li>Which inputs are direct and contextual?</li>
+<li>Which Plant scope uses fallback?</li>
+<li>Which Evidence supports the Mapping?</li>
+<li>Which records are affected by a proposed change?</li>
+<li>Which workbook version was generated from which model commit?</li>
+</ul>
+<h2 id="proposed-commands">Proposed commands</h2>
+<pre><code>martenweave workbook import \
+  ./inputs/product-planning-mapping.xlsx \
+  --repo ./model \
+  --proposal-only</code></pre>
+<pre><code>martenweave workbook export \
+  --repo ./model \
+  --domain product-planning \
+  --out ./reviews/product-planning-mapping.xlsx</code></pre>
+<p>These commands describe a recommended product direction rather than the current documented CLI contract.</p>
+<p>---</p>
+<h1 id="the-governance-rule-that-matters">The governance rule that matters</h1>
+<p>The migration team should adopt one simple rule:</p>
+<blockquote>A spreadsheet can propose model truth, but it cannot silently own it.</blockquote>
+<p>That rule allows:</p>
+<ul>
+<li>business-friendly collaboration;</li>
+<li>local analysis;</li>
+<li>filters and comments;</li>
+<li>familiar review.</li>
+</ul>
+<p>It prevents:</p>
+<ul>
+<li>uncontrolled copies;</li>
+<li>invisible semantic changes;</li>
+<li>implementation drift;</li>
+<li>unvalidated references;</li>
+<li>unaudited AI edits.</li>
+</ul>
+<p>The canonical model remains in version-controlled files.</p>
+<p>The workbook remains a generated or importable interface.</p>
+<p>---</p>
+<h1 id="why-not-store-everything-in-a-database-ui">Why not store everything in a database UI</h1>
+<p>A central application could solve part of the workbook problem.</p>
+<p>It might provide:</p>
+<ul>
+<li>forms;</li>
+<li>permissions;</li>
+<li>audit logs;</li>
+<li>workflows;</li>
+<li>validation.</li>
+</ul>
+<p>That can be useful.</p>
+<p>It also creates a new dependency:</p>
+<ul>
+<li>the UI becomes the only place where the model can be edited;</li>
+<li>exporting the complete model becomes difficult;</li>
+<li>automation depends on application APIs;</li>
+<li>local project use may become costly;</li>
+<li>AI agents require another hosted service;</li>
+<li>the organisation may inherit vendor lock-in.</li>
+</ul>
+<p>Martenweave’s local-first, file-canonical design avoids making the Workbench the owner of truth. The repository explicitly defines the Workbench as a local review and investigation surface over the backend model rather than an independent hosted application.</p>
+<p>The point is not that databases are wrong.</p>
+<p>The point is that the model should remain portable, reviewable and reconstructable outside one UI.</p>
+<p>---</p>
+<h1 id="the-economic-pain-behind-the-workbook">The economic pain behind the workbook</h1>
+<p>The technical debt creates measurable costs:</p>
+<ul>
+<li>repeated mapping workshops;</li>
+<li>manual comparison of workbook versions;</li>
+<li>uncertainty over which file is current;</li>
+<li>duplicate implementation;</li>
+<li>delayed impact analysis;</li>
+<li>defects rediscovered in each mock load;</li>
+<li>consultants spending time reconstructing decisions;</li>
+<li>fragile handover to AMS;</li>
+<li>weak reuse between migration waves.</li>
+</ul>
+<p>The workbook seems inexpensive because the software already exists.</p>
+<p>The cost appears later as coordination, rework and lost reasoning.</p>
+<p>A canonical registry does not remove the need for business discussion.</p>
+<p>It prevents each discussion from starting from incomplete memory.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Migration mapping workbooks are useful because they provide a flexible shared surface during uncertain work.</p>
+<p>They become technical debt when the programme expects them to behave like a governed model system.</p>
+<p>The Product planning workbook illustrates the transition.</p>
+<p>At first, it documents:</p>
+<pre><code class="language-text">Planner Group → MRP Controller</code></pre>
+<p>Later, it must also represent:</p>
+<ul>
+<li>Product Plant grain;</li>
+<li>Plant context;</li>
+<li>source authority;</li>
+<li>value mappings;</li>
+<li>fallback scope;</li>
+<li>expiry;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>affected population;</li>
+<li>downstream impact.</li>
+</ul>
+<p>At that point, the workbook is no longer a simple specification.</p>
+<p>It is an implicit model registry without reliable validation, identity or change control.</p>
+<p>The replacement should not eliminate the workbook.</p>
+<p>It should change its role:</p>
+<pre><code class="language-text">Workbook:
+human review and collaboration
+
+Martenweave:
+canonical model truth
+
+Validators:
+structural assurance
+
+AI:
+candidate proposals
+
+Git:
+approved history</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the programme regenerate the mapping workbook from a validated model, explain every important Mapping through stable objects and Evidence, and treat workbook edits as proposals rather than silent truth?</blockquote>
+<p>When the answer is yes, Excel remains useful without carrying the full governance burden.</p>
+<p>When the answer is:</p>
+<blockquote>The latest workbook is somewhere in the cutover folder,</blockquote>
+<p>the programme is operating a critical model through document archaeology.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>Its role is not to ban spreadsheets.</p>
+<p>Its role is to convert spreadsheet knowledge into:</p>
+<ul>
+<li>stable canonical objects;</li>
+<li>deterministic validation;</li>
+<li>traceable lineage;</li>
+<li>impact-aware change;</li>
+<li>reviewable proposals;</li>
+<li>reusable project memory.</li>
+</ul>
+<p>The workbook should remain familiar.</p>
+<p>The model underneath it should become dependable.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave currently states that spreadsheets, datasets, tickets, validation reports, Decisions and SAP context feed a canonical model layer with deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved PatchProposals.</p>
+<p>Its current principles define canonical Markdown and YAML files as the source of truth, generated SQLite and JSONL indexes as disposable, deterministic validation as mandatory before indexing and AI changes as proposal-first.</p>
+<p>The current documented pipeline moves from evidence and profiling through validation, indexing, gap detection, lineage and impact to proposals and human-reviewed Git work.</p>
+<p>An empirical study of operational spreadsheets found formula-cell errors across the audited spreadsheets and showed that the practical impact ranged from immaterial to substantial. Another experimental study found that error correction was related to how thoroughly users inspected spreadsheet cells. These studies do not prove that every migration workbook contains defects, but they support the general control concern that spreadsheet correctness depends heavily on human inspection and that material errors can survive in operational use.</p>
+<p>The workbook importer, round-trip export and proposed commands described here are product directions. They should not be interpreted as guarantees of the exact current importer, workbook schema or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or Microsoft.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html"><span>Previous</span>A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA.</a><a href="/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html"><span>Next</span>When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

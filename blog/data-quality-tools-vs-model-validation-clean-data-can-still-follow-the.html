@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules | Martenweave</title>
+    <meta
+      name="description"
+      content="A data-quality report can be completely green while the migration is still wrong."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html" />
+    <meta property="og:title" content="Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules | Martenweave" />
+    <meta property="og:description" content="A data-quality report can be completely green while the migration is still wrong." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules | Martenweave" />
+    <meta name="twitter:description" content="A data-quality report can be completely green while the migration is still wrong." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html#webpage",
+                        "url": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html",
+                        "name": "Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules | Martenweave",
+                        "description": "A data-quality report can be completely green while the migration is still wrong.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules",
+                                    "item": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html#content",
+                        "headline": "Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules",
+                        "name": "Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules",
+                        "description": "A data-quality report can be completely green while the migration is still wrong.",
+                        "url": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT16M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>Data Quality Tools vs Model Validation: Clean Data Can Still Follow the Wrong Rules</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 16 min read</p><p class="blog-summary">A data-quality report can be completely green while the migration is still wrong.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#data-quality-starts-after-someone-has-defined-good">Data quality starts after someone has defined “good”</a></li><li><a href="#the-dangerous-comfort-of-a-green-dashboard">The dangerous comfort of a green dashboard</a></li><li><a href="#a-practical-example-material-gross-weight">A practical example: material gross weight</a></li><li><a href="#data-quality-validates-instances">Data quality validates instances</a></li><li><a href="#model-validation-checks-the-structure-behind-the-instances">Model validation checks the structure behind the instances</a></li><li><a href="#the-difference-between-a-bad-value-and-a-bad-rule">The difference between a bad value and a bad rule</a></li><li><a href="#when-more-checks-make-the-problem-worse">When more checks make the problem worse</a></li><li><a href="#one-rule-can-be-correct-in-one-system-and-wrong-in-another">One rule can be correct in one system and wrong in another</a></li><li><a href="#dataset-profiling-is-not-dataset-readiness">Dataset profiling is not dataset readiness</a></li><li><a href="#a-second-example-customer-tax-numbers">A second example: customer tax numbers</a></li><li><a href="#clean-data-can-preserve-a-bad-decision">Clean data can preserve a bad decision</a></li><li><a href="#model-validation-should-happen-before-dataset-validation">Model validation should happen before dataset validation</a></li><li><a href="#different-teams-own-different-failures">Different teams own different failures</a></li><li><a href="#what-data-quality-tools-do-particularly-well">What data-quality tools do particularly well</a></li><li><a href="#what-model-validation-adds">What model validation adds</a></li></ol></nav></details></header>
+<p>A data-quality report can be completely green while the migration is still wrong.</p>
+<p>Every required field is populated.</p>
+<p>Dates follow the expected format.</p>
+<p>Codes belong to approved lists.</p>
+<p>Duplicates remain below the accepted threshold.</p>
+<p>Referential checks pass.</p>
+<p>The dataset satisfies every rule it was given.</p>
+<p>Then the first business test begins, and the team discovers that the wrong rule was implemented.</p>
+<p>This is not an unusual edge case. It is one of the central weaknesses in how enterprise programmes discuss data quality.</p>
+<p>Projects spend considerable effort checking whether data conforms to rules. They spend much less effort checking whether those rules form a coherent model.</p>
+<p>The distinction matters because a data-quality tool and a model validator answer different questions.</p>
+<p>A data-quality tool asks:</p>
+<blockquote>Does this dataset satisfy the defined expectations?</blockquote>
+<p>A model validator asks:</p>
+<blockquote>Are the expectations, mappings, fields, dependencies and decisions themselves consistent?</blockquote>
+<p>Both controls are necessary.</p>
+<p>Neither can safely replace the other.</p>
+<h2 id="data-quality-starts-after-someone-has-defined-good">Data quality starts after someone has defined “good”</h2>
+<p>Every data-quality check contains an assumption about the desired state.</p>
+<p>A field should not be empty.</p>
+<p>A date should fall within a valid range.</p>
+<p>A customer number should be unique.</p>
+<p>A country code should belong to an approved list.</p>
+<p>A material weight should be greater than zero.</p>
+<p>Great Expectations describes an Expectation as an explicit definition of the state to which data should conform. Expectations can then be grouped and run against a dataset to produce validation results.</p>
+<p>Soda follows a similar principle through checks over metrics such as missing values, freshness, distributions, schema, references and reconciliation.</p>
+<p>These tools are useful because they turn vague statements such as “the data should be clean” into executable checks.</p>
+<p>But they cannot escape the first question:</p>
+<p><strong>Who decided what the correct expectation is?</strong></p>
+<p>Suppose a project defines this rule:</p>
+<blockquote>Shipping condition must not be empty for every customer.</blockquote>
+<p>The tool can execute it perfectly.</p>
+<p>It can identify every empty value.</p>
+<p>It can block the load.</p>
+<p>It can produce a clear failure report.</p>
+<p>The rule may still be wrong.</p>
+<p>Perhaps shipping condition is mandatory only for customers with a sales-area extension.</p>
+<p>Perhaps it should be derived for one business unit.</p>
+<p>Perhaps local-pickup customers are allowed to leave it empty.</p>
+<p>Perhaps the field is no longer populated from the legacy system because SAP determines it through another rule.</p>
+<p>The data-quality tool has not failed.</p>
+<p>It has correctly enforced an incomplete model.</p>
+<h2 id="the-dangerous-comfort-of-a-green-dashboard">The dangerous comfort of a green dashboard</h2>
+<p>Managers understandably prefer clear status.</p>
+<p>A dashboard showing 99.8% data quality appears reassuring. A report containing thousands of rows and several unresolved definitions does not.</p>
+<p>This creates pressure to reduce complex readiness questions to a single score.</p>
+<p>The score may combine measures such as:</p>
+<ul>
+<li>completeness;</li>
+<li>validity;</li>
+<li>uniqueness;</li>
+<li>consistency;</li>
+<li>conformity;</li>
+<li>freshness.</li>
+</ul>
+<p>These are useful dimensions.</p>
+<p>But they measure the data against the rules that have been configured.</p>
+<p>They do not prove that:</p>
+<ul>
+<li>the correct source field was selected;</li>
+<li>the target attribute has the right meaning;</li>
+<li>the rule applies to the correct population;</li>
+<li>local exceptions have been represented;</li>
+<li>the mapping reflects the latest decision;</li>
+<li>downstream systems use the same definition;</li>
+<li>two checks do not contradict one another.</li>
+</ul>
+<p>A dataset can achieve excellent quality against the wrong target.</p>
+<p>This is the data equivalent of manufacturing a component with perfect precision from an outdated drawing.</p>
+<p>The production process may be controlled.</p>
+<p>The design is still wrong.</p>
+<h2 id="a-practical-example-material-gross-weight">A practical example: material gross weight</h2>
+<p>Consider a material migration into SAP S/4HANA.</p>
+<p>The project defines a quality rule:</p>
+<blockquote>Gross weight must be greater than zero.</blockquote>
+<p>The source dataset is checked.</p>
+<p>Several thousand materials fail because gross weight is empty.</p>
+<p>The business enriches the records.</p>
+<p>The next report is green.</p>
+<p>During warehouse testing, the team discovers that many values are technically valid but operationally meaningless.</p>
+<p>For some materials, weight was entered in grams while the weight-unit field says kilograms.</p>
+<p>For others, the source value describes one consumer package while SAP expects the base unit.</p>
+<p>A third group contains estimated values copied from a product family because no measured value was available.</p>
+<p>Every record satisfies the original check:</p>
+<ul>
+<li>gross weight is populated;</li>
+<li>gross weight is numeric;</li>
+<li>gross weight is greater than zero;</li>
+<li>weight unit contains an approved code.</li>
+</ul>
+<p>The data passes.</p>
+<p>The model does not.</p>
+<p>The project never defined clearly:</p>
+<ul>
+<li>what physical object the weight describes;</li>
+<li>which unit of measure provides the reference quantity;</li>
+<li>whether estimated values are allowed;</li>
+<li>which source system is authoritative;</li>
+<li>how packaging levels should be distinguished;</li>
+<li>which warehouse and transportation processes consume the value.</li>
+</ul>
+<p>Adding more row-level checks may catch some symptoms.</p>
+<p>It will not automatically produce the missing definition.</p>
+<h2 id="data-quality-validates-instances">Data quality validates instances</h2>
+<p>A dataset contains instances.</p>
+<p>A customer row is an instance of a customer model.</p>
+<p>A material row is an instance of a material model.</p>
+<p>A supplier record is an instance of a supplier model.</p>
+<p>Data-quality checks usually evaluate those instances.</p>
+<p>They ask questions such as:</p>
+<ul>
+<li>Is the value present?</li>
+<li>Does it have the expected format?</li>
+<li>Does it fall within an accepted range?</li>
+<li>Is it unique?</li>
+<li>Does it match a reference list?</li>
+<li>Is it consistent with another value?</li>
+<li>Has the dataset arrived on time?</li>
+</ul>
+<p>This is essential work.</p>
+<p>A migration cannot succeed if records are malformed, incomplete or internally inconsistent.</p>
+<p>But the checks assume that the project already knows what the fields mean, which rules apply and which relationships are correct.</p>
+<p>That assumption is often unsafe.</p>
+<h2 id="model-validation-checks-the-structure-behind-the-instances">Model validation checks the structure behind the instances</h2>
+<p>Model validation operates one level earlier.</p>
+<p>It checks whether the definitions used to assess the data are internally coherent.</p>
+<p>A model validator may verify that:</p>
+<ul>
+<li>every mapping references an existing source field;</li>
+<li>every target field belongs to a defined target object;</li>
+<li>every validation rule references a known attribute;</li>
+<li>every conditional rule uses defined conditions;</li>
+<li>every active mapping points to an approved transformation;</li>
+<li>every exception refers to an existing rule;</li>
+<li>every dataset expectation corresponds to a registered field;</li>
+<li>deprecated fields are not used by active mappings;</li>
+<li>identifiers are unique;</li>
+<li>required ownership and evidence are present;</li>
+<li>approved and proposed states are kept separate.</li>
+</ul>
+<p>These checks do not tell us whether a customer row contains a valid postal code.</p>
+<p>They tell us whether the postal-code rule is attached to a real attribute, applies to the intended population and remains connected to the current mapping.</p>
+<p>This is a different layer of control.</p>
+<h2 id="the-difference-between-a-bad-value-and-a-bad-rule">The difference between a bad value and a bad rule</h2>
+<p>Managers need to distinguish two failure types.</p>
+<h3 id="a-bad-value">A bad value</h3>
+<p>The rule says that payment terms must use an approved target code.</p>
+<p>A supplier record contains an unknown code.</p>
+<p>The model may be correct. The data is wrong or incomplete.</p>
+<h3 id="a-bad-rule">A bad rule</h3>
+<p>The project maps legacy code <code>30D</code> to one SAP payment term for every supplier.</p>
+<p>Later, it discovers that one business unit uses <code>30D</code> with a different baseline-date calculation.</p>
+<p>Every supplier record may contain a valid code.</p>
+<p>The rule itself is incomplete.</p>
+<p>The first problem can be solved through cleansing, enrichment or rejection.</p>
+<p>The second requires business analysis, model correction, impact review and approval.</p>
+<p>Treating both as ordinary data-quality failures leads to the wrong work.</p>
+<p>The data team keeps correcting records when the programme should be correcting the model.</p>
+<h2 id="when-more-checks-make-the-problem-worse">When more checks make the problem worse</h2>
+<p>A common response to migration defects is to add another validation rule.</p>
+<p>A field was missing, so a completeness check is introduced.</p>
+<p>A code failed in SAP, so a reference-list check is added.</p>
+<p>An interface rejected a value, so a format check is created.</p>
+<p>This is sensible when the underlying rule is understood.</p>
+<p>It becomes dangerous when each defect produces an isolated check without updating the model around it.</p>
+<p>Over time, the project accumulates validations that:</p>
+<ul>
+<li>use different names for the same concept;</li>
+<li>apply to overlapping populations;</li>
+<li>encode temporary workarounds;</li>
+<li>conflict with approved exceptions;</li>
+<li>refer to obsolete source fields;</li>
+<li>duplicate rules implemented elsewhere;</li>
+<li>cannot be traced to a business decision.</li>
+</ul>
+<p>The number of checks increases.</p>
+<p>Confidence should not necessarily increase with it.</p>
+<p>A large rule library is valuable only when the rules remain connected to clear definitions, ownership and evidence.</p>
+<p>Otherwise, the project creates what might be called <strong>validation debt</strong>: a growing collection of executable logic that nobody can confidently explain or change.</p>
+<h2 id="one-rule-can-be-correct-in-one-system-and-wrong-in-another">One rule can be correct in one system and wrong in another</h2>
+<p>Data quality is contextual.</p>
+<p>A value can be valid for the source system and unsuitable for the target.</p>
+<p>A blank field may be acceptable in the legacy system because the process derives it later. The SAP target may require the value during creation.</p>
+<p>A local supplier classification may be valid in one country but cannot be used in the global target model.</p>
+<p>A material description may meet source-system length limits but be truncated in an external warehouse.</p>
+<p>A technically valid date may violate a business sequence when combined with another event.</p>
+<p>This is why migration quality cannot be assessed only by profiling the source in isolation.</p>
+<p>The data must be checked against the intended target model and process context.</p>
+<p>That requires explicit relationships between:</p>
+<ul>
+<li>source fields;</li>
+<li>business attributes;</li>
+<li>target fields;</li>
+<li>transformations;</li>
+<li>rules;</li>
+<li>datasets;</li>
+<li>organisational conditions;</li>
+<li>external consumers.</li>
+</ul>
+<p>Without that model, the team can prove that the source data is internally clean and still fail to prove that it is fit for migration.</p>
+<h2 id="dataset-profiling-is-not-dataset-readiness">Dataset profiling is not dataset readiness</h2>
+<p>Profiling tells the team what a dataset contains.</p>
+<p>It may report:</p>
+<ul>
+<li>column names;</li>
+<li>datatypes;</li>
+<li>null percentages;</li>
+<li>distinct values;</li>
+<li>minimum and maximum values;</li>
+<li>common patterns;</li>
+<li>duplicate rates.</li>
+</ul>
+<p>This is valuable evidence.</p>
+<p>But profiling does not by itself determine readiness.</p>
+<p>Suppose a supplier extract contains 98 columns, low null rates and no duplicate supplier IDs.</p>
+<p>The profile looks healthy.</p>
+<p>The approved migration model expects an additional tax-classification field for suppliers in two countries.</p>
+<p>That field does not exist in the extract.</p>
+<p>Nothing in the profile is necessarily wrong.</p>
+<p>The dataset is still not ready.</p>
+<p>Readiness is relational.</p>
+<p>It compares the data that exists with the model that must be satisfied.</p>
+<p>This is one of the main reasons a model registry is useful around data-quality tooling.</p>
+<p>The quality tool can evaluate the supplied columns.</p>
+<p>The registry can determine whether the correct columns were supplied in the first place.</p>
+<h2 id="a-second-example-customer-tax-numbers">A second example: customer tax numbers</h2>
+<p>Consider a Business Partner migration.</p>
+<p>The programme defines several checks:</p>
+<ul>
+<li>tax number must not contain spaces;</li>
+<li>value must fit the target-field length;</li>
+<li>country-specific format must be respected;</li>
+<li>duplicates are not allowed within a tax-number category.</li>
+</ul>
+<p>The checks are implemented well.</p>
+<p>The dataset passes.</p>
+<p>During business validation, the tax team discovers that the project used the customer’s registration number where the target design expected a VAT number for one country.</p>
+<p>The values are real.</p>
+<p>They are correctly formatted.</p>
+<p>They are unique.</p>
+<p>They fit the target field.</p>
+<p>They represent the wrong business concept.</p>
+<p>No amount of generic profiling could have discovered this without an approved semantic definition and source-to-target relationship.</p>
+<p>The project needs to know:</p>
+<ul>
+<li>which tax identifier the source field represents;</li>
+<li>which SAP tax-number category should receive it;</li>
+<li>whether the rule differs for organisations and individuals;</li>
+<li>which countries use the field;</li>
+<li>which evidence supports the mapping;</li>
+<li>which interfaces consume the target value.</li>
+</ul>
+<p>The defect is not dirty data.</p>
+<p>It is semantic misalignment.</p>
+<h2 id="clean-data-can-preserve-a-bad-decision">Clean data can preserve a bad decision</h2>
+<p>A rule may be technically and semantically clear but based on an obsolete decision.</p>
+<p>Suppose a migration design states that every customer in a region should receive a particular delivery priority.</p>
+<p>The business later changes the policy.</p>
+<p>The decision is recorded in a ticket.</p>
+<p>The mapping workbook is updated, but the data-quality check still validates against the previous value.</p>
+<p>The dataset now fails because the validation is stale.</p>
+<p>Or worse: the dataset is produced using the old mapping and passes the old check.</p>
+<p>The whole control chain agrees with itself while disagreeing with the current business decision.</p>
+<p>This is why evidence and change history matter.</p>
+<p>A rule should not exist only as executable code.</p>
+<p>The team should be able to trace it to:</p>
+<ul>
+<li>the attribute it validates;</li>
+<li>the population to which it applies;</li>
+<li>the decision that authorised it;</li>
+<li>the model version in which it became active;</li>
+<li>the owner responsible for approving changes.</li>
+</ul>
+<p>Without this traceability, a passing test proves only that the data matches some rule—not that it matches the currently approved rule.</p>
+<h2 id="model-validation-should-happen-before-dataset-validation">Model validation should happen before dataset validation</h2>
+<p>The normal sequence is often:</p>
+<ol>
+<li>receive a dataset;</li>
+<li>run quality checks;</li>
+<li>review failures;</li>
+<li>correct data;</li>
+<li>repeat.</li>
+</ol>
+<p>A stronger sequence begins earlier:</p>
+<ol>
+<li>validate the model;</li>
+<li>confirm that mappings and rules are structurally coherent;</li>
+<li>build the expected dataset specification;</li>
+<li>compare the supplied dataset with that expectation;</li>
+<li>run record-level quality checks;</li>
+<li>review failures in their model context;</li>
+<li>approve any model changes separately from data corrections.</li>
+</ol>
+<p>This order avoids a basic waste: repeatedly validating records against an inconsistent design.</p>
+<p>It also helps classify findings correctly.</p>
+<p>When a check fails, the team can ask:</p>
+<ul>
+<li>Is the record wrong?</li>
+<li>Is the supplied dataset incomplete?</li>
+<li>Is the mapping wrong?</li>
+<li>Is the validation rule wrong?</li>
+<li>Is an exception missing?</li>
+<li>Has the model changed without the check being updated?</li>
+</ul>
+<p>That classification determines who should act.</p>
+<h2 id="different-teams-own-different-failures">Different teams own different failures</h2>
+<p>One reason data-quality programmes become overloaded is that every problem is routed to the data team.</p>
+<p>But not every failed check is a data-remediation task.</p>
+<p>Consider several examples:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Finding</th><th scope="col">Likely owner</th></tr></thead><tbody><tr><td>Missing value in a valid required field</td><td>Source-data owner</td></tr><tr><td>Source column absent from the extract</td><td>Extraction or source-system team</td></tr><tr><td>Target field incorrectly marked mandatory</td><td>Functional or solution-design owner</td></tr><tr><td>Legacy code has two business meanings</td><td>Business owner</td></tr><tr><td>Transformation references an obsolete field</td><td>Migration-development team</td></tr><tr><td>Approved exception missing from validation</td><td>Model or governance owner</td></tr><tr><td>Interface uses another code definition</td><td>Integration and business owners</td></tr></tbody></table></div>
+<p>The tool may detect the symptom.</p>
+<p>The model helps route the issue.</p>
+<p>Without that distinction, the data team becomes the project’s general repair department.</p>
+<h2 id="what-data-quality-tools-do-particularly-well">What data-quality tools do particularly well</h2>
+<p>The argument is not against data-quality tooling.</p>
+<p>These systems are strong where the problem is executable assessment of data.</p>
+<p>They can provide:</p>
+<ul>
+<li>reusable checks;</li>
+<li>repeatable validation;</li>
+<li>failed-record details;</li>
+<li>metrics and trends;</li>
+<li>alerts;</li>
+<li>pipeline integration;</li>
+<li>threshold-based acceptance;</li>
+<li>profiling;</li>
+<li>schema monitoring;</li>
+<li>reconciliation.</li>
+</ul>
+<p>Great Expectations, for example, ties data batches to collections of Expectations and returns detailed validation results, including failed counts and percentages.</p>
+<p>Soda supports a broad set of check types, including missing-value, numeric, freshness, schema, reference, distribution and reconciliation checks.</p>
+<p>OpenMetadata also places quality tests within a wider metadata and observability environment.</p>
+<p>These are useful capabilities for operating data pipelines and migration checks.</p>
+<p>A model registry should not attempt to rebuild all of them.</p>
+<h2 id="what-model-validation-adds">What model validation adds</h2>
+<p>A model registry adds the context that quality checks normally assume.</p>
+<p>It can establish that:</p>
+<ul>
+<li>the checked column corresponds to an approved business attribute;</li>
+<li>the attribute is expected in this dataset;</li>
+<li>the rule applies only under defined conditions;</li>
+<li>the value mapping has an owner;</li>
+<li>an exception has been approved;</li>
+<li>the field is used by several downstream objects;</li>
+<li>a proposed rule change affects other datasets;</li>
+<li>the current check reflects the latest model version.</li>
+</ul>
+<p>The quality engine executes the rule.</p>
+<p>The registry explains why the rule exists and whether it still belongs in the model.</p>
+<h2 id="the-two-layers-should-be-connected">The two layers should be connected</h2>
+<p>A practical architecture should not force teams to choose between data-quality checks and model validation.</p>
+<p>The systems should reinforce each other.</p>
+<p>The model registry can define:</p>
+<ul>
+<li>which attributes require checks;</li>
+<li>which dataset contains them;</li>
+<li>which conditions apply;</li>
+<li>which owner is responsible;</li>
+<li>which evidence supports the rule;</li>
+<li>which severity should be assigned;</li>
+<li>which model version introduced the rule.</li>
+</ul>
+<p>The quality tool can execute the checks and return:</p>
+<ul>
+<li>pass or fail status;</li>
+<li>failed counts;</li>
+<li>affected records;</li>
+<li>observed values;</li>
+<li>execution time;</li>
+<li>trend information.</li>
+</ul>
+<p>The result can then become evidence in the registry.</p>
+<p>This creates a useful loop:</p>
+<pre><code class="language-text">Approved model
+    → executable quality checks
+    → validation results
+    → model evidence
+    → proposed correction
+    → impact review
+    → approved model change</code></pre>
+<p>The registry should not replace the quality engine.</p>
+<p>The quality engine should not become the only place where the model exists.</p>
+<h2 id="what-managers-should-ask-when-a-quality-report-is-green">What managers should ask when a quality report is green</h2>
+<p>A green report should trigger confidence, but not automatic acceptance.</p>
+<p>Managers should ask five additional questions.</p>
+<h3 id="were-the-right-fields-checked">Were the right fields checked?</h3>
+<p>A report may cover every column in the supplied file while the file itself is missing an expected field.</p>
+<h3 id="were-the-right-rules-used">Were the right rules used?</h3>
+<p>The checks may be technically valid but based on an obsolete workbook or incomplete requirement.</p>
+<h3 id="were-the-rules-applied-to-the-right-population">Were the rules applied to the right population?</h3>
+<p>A global mandatory check may hide country, role, plant or customer-type conditions.</p>
+<h3 id="do-the-checks-agree-with-the-mappings-and-target-design">Do the checks agree with the mappings and target design?</h3>
+<p>A rule can validate one interpretation while the transformation implements another.</p>
+<h3 id="what-important-conditions-are-not-covered">What important conditions are not covered?</h3>
+<p>Not every business dependency is executable as a simple row-level check.</p>
+<p>The report should state its coverage and limitations.</p>
+<h2 id="what-managers-should-ask-when-a-quality-report-is-red">What managers should ask when a quality report is red</h2>
+<p>A failed check is not yet a diagnosis.</p>
+<p>Ask:</p>
+<ul>
+<li>Is the source value actually wrong?</li>
+<li>Is the dataset missing required context?</li>
+<li>Is the rule too broad?</li>
+<li>Is the target expectation correct?</li>
+<li>Does an approved exception exist?</li>
+<li>Did the model change after the check was implemented?</li>
+<li>Which team has authority to resolve the underlying issue?</li>
+</ul>
+<p>This prevents the common cycle in which analysts modify records simply to make the dashboard green.</p>
+<p>A corrected percentage is not the same as a resolved business problem.</p>
+<h2 id="how-martenweave-fits">How Martenweave fits</h2>
+<p>Martenweave is not intended to replace Great Expectations, Soda or enterprise data-quality platforms.</p>
+<p>Its role is to control the model around the checks.</p>
+<p>Canonical model files can describe objects, attributes, fields, mappings, datasets, rules, evidence and decisions. The core validates IDs, references and domain relationships before building its generated indexes. It can profile CSV and XLSX datasets, identify dataset-to-model gaps, trace dependencies and turn findings into reviewable patch proposals.</p>
+<p>This allows Martenweave to answer questions that a record-level check alone cannot:</p>
+<ul>
+<li>Is this field expected in the dataset?</li>
+<li>Which attribute does it represent?</li>
+<li>Which mapping populates it?</li>
+<li>Which rule should validate it?</li>
+<li>Which exception modifies the rule?</li>
+<li>Which decision approved the current definition?</li>
+<li>What else must be reviewed if the rule changes?</li>
+</ul>
+<p>The actual row-level validation may remain in a specialised quality tool.</p>
+<p>Martenweave provides the governed context and change model around it.</p>
+<h2 id="when-a-data-quality-tool-may-be-enough">When a data-quality tool may be enough</h2>
+<p>A separate model registry may add little value when:</p>
+<ul>
+<li>the data model is stable;</li>
+<li>one team owns both definitions and checks;</li>
+<li>mappings are simple;</li>
+<li>few systems are involved;</li>
+<li>rules rarely change;</li>
+<li>exceptions are limited;</li>
+<li>dataset schemas are controlled;</li>
+<li>quality checks are already traceable to approved requirements.</li>
+</ul>
+<p>In such an environment, adding another layer may create unnecessary maintenance.</p>
+<p>The smallest sufficient solution is usually the better one.</p>
+<h2 id="when-model-validation-becomes-necessary">When model validation becomes necessary</h2>
+<p>The need becomes stronger when:</p>
+<ul>
+<li>several source systems use different meanings;</li>
+<li>mappings change across migration waves;</li>
+<li>rules vary by country, plant or organisational level;</li>
+<li>business decisions live outside the quality tool;</li>
+<li>different teams maintain mappings and validations;</li>
+<li>datasets frequently change structure;</li>
+<li>external warehouses or 3PLs use the same fields differently;</li>
+<li>AI is generating candidate mappings or rules;</li>
+<li>the same failed checks return after supposed resolution;</li>
+<li>management cannot explain what the readiness score actually covers.</li>
+</ul>
+<p>At that point, the project is not dealing only with dirty data.</p>
+<p>It is dealing with model uncertainty.</p>
+<h2 id="the-management-rule">The management rule</h2>
+<p>The distinction can be reduced to two questions.</p>
+<p><strong>Data-quality validation asks:</strong></p>
+<blockquote>Does the data comply with the rules?</blockquote>
+<p><strong>Model validation asks:</strong></p>
+<blockquote>Are these the correct, complete and internally consistent rules for this data?</blockquote>
+<p>A mature programme needs both answers.</p>
+<p>Data-quality tools prevent invalid records from moving forward.</p>
+<p>Model validation prevents the programme from confidently validating the wrong design.</p>
+<p>Clean data is valuable.</p>
+<p>But clean data following the wrong rule is not readiness.</p>
+<p>It is a well-tested mistake.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html"><span>Previous</span>Data lineage is one of the most attractive ideas in data management.</a><a href="/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html"><span>Next</span>A message can be technically valid and still be wrong.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

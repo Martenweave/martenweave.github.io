@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently | Martenweave</title>
+    <meta
+      name="description"
+      content="The migration test reports that 4,860 supplier records failed the Tax Identifier rule."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html" />
+    <meta property="og:title" content="How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently | Martenweave" />
+    <meta property="og:description" content="The migration test reports that 4,860 supplier records failed the Tax Identifier rule." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently | Martenweave" />
+    <meta name="twitter:description" content="The migration test reports that 4,860 supplier records failed the Tax Identifier rule." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html",
+                        "name": "How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently | Martenweave",
+                        "description": "The migration test reports that 4,860 supplier records failed the Tax Identifier rule.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html#content",
+                        "headline": "How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently",
+                        "name": "How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently",
+                        "description": "The migration test reports that 4,860 supplier records failed the Tax Identifier rule.",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How to Build a Migration Finding Taxonomy That Business, Data and SAP Teams Use Consistently</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">The migration test reports that 4,860 supplier records failed the Tax Identifier rule.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#observation">Observation</a></li><li><a href="#finding">Finding</a></li><li><a href="#defect">Defect</a></li><li><a href="#gap">Gap</a></li><li><a href="#decision">Decision</a></li><li><a href="#exception">Exception</a></li><li><a href="#deviation">Deviation</a></li><li><a href="#action">Action</a></li><li><a href="#1-record-level-data-defect">1. Record-level data defect</a></li><li><a href="#2-source-capability-gap">2. Source capability gap</a></li><li><a href="#3-extraction-defect">3. Extraction defect</a></li><li><a href="#4-mapping-or-transformation-defect">4. Mapping or transformation defect</a></li><li><a href="#5-configuration-defect">5. Configuration defect</a></li><li><a href="#6-implementation-drift">6. Implementation drift</a></li><li><a href="#7-test-specification-defect">7. Test-specification defect</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The migration test reports that 4,860 supplier records failed the Tax Identifier rule.</p>
+<p>The business team calls them data-quality issues.</p>
+<p>The data team calls them source defects.</p>
+<p>The SAP team calls them validation errors.</p>
+<p>The country team calls them approved exceptions.</p>
+<p>The testing team calls them failed test cases.</p>
+<p>The programme manager calls them blockers.</p>
+<p>All six descriptions may be partly correct.</p>
+<p>They are not interchangeable.</p>
+<p>A record may fail a technical validation because the source is incomplete. Another may fail because SAP applies a global rule to the wrong partner category. A third may look invalid but fall under an approved local exemption. A fourth may expose a business situation that the target model has never defined.</p>
+<p>When every team uses its own category, the project loses control of the treatment.</p>
+<p>The same population can appear simultaneously in:</p>
+<ul>
+<li>a data-cleansing workbook;</li>
+<li>a Jira defect queue;</li>
+<li>an SAP configuration backlog;</li>
+<li>a country exception list;</li>
+<li>a migration risk register;</li>
+<li>an unresolved design-decision log.</li>
+</ul>
+<p>Counts no longer reconcile. Owners duplicate work. Issues are closed in one system while remaining unresolved in another.</p>
+<p>The problem is not a lack of tools.</p>
+<p>The problem is the absence of a shared language between observation and action.</p>
+<blockquote>A migration finding taxonomy should tell the programme what has been observed, what kind of problem it represents, which authority must decide it and what evidence is required to close it.</blockquote>
+<p>The taxonomy should not be designed only for reporting.</p>
+<p>It should control routing.</p>
+<p>A category is useful only when it changes what the programme does next.</p>
+<p>---</p>
+<h1 id="the-translation-problem">The translation problem</h1>
+<p>Business, data and technical teams naturally describe problems from different perspectives.</p>
+<p>A business owner sees:</p>
+<ul>
+<li>incorrect meaning;</li>
+<li>operational risk;</li>
+<li>missing accountability;</li>
+<li>invalid policy;</li>
+<li>unacceptable exception.</li>
+</ul>
+<p>A data analyst sees:</p>
+<ul>
+<li>nulls;</li>
+<li>invalid formats;</li>
+<li>duplicate keys;</li>
+<li>unmapped values;</li>
+<li>contradictory columns;</li>
+<li>population distributions.</li>
+</ul>
+<p>An SAP consultant sees:</p>
+<ul>
+<li>failed validation;</li>
+<li>missing configuration;</li>
+<li>derivation defect;</li>
+<li>workflow-routing problem;</li>
+<li>field-control mismatch.</li>
+</ul>
+<p>A migration lead sees:</p>
+<ul>
+<li>load failure;</li>
+<li>cutover risk;</li>
+<li>remediation volume;</li>
+<li>source dependency;</li>
+<li>wave readiness.</li>
+</ul>
+<p>None of these views should be discarded.</p>
+<p>The taxonomy must connect them.</p>
+<p>Consider a blank Supplier Risk value.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Perspective</th><th scope="col">Description</th></tr></thead><tbody><tr><td>Business</td><td>Final risk assessment is unavailable</td></tr><tr><td>Data</td><td>Target attribute is null</td></tr><tr><td>Source</td><td>Legacy process does not maintain the value</td></tr><tr><td>Migration</td><td>Applicable population cannot pass activation</td></tr><tr><td>SAP</td><td>Mandatory-field validation blocks the record</td></tr><tr><td>Governance</td><td>No approved temporary treatment exists</td></tr></tbody></table></div>
+<p>These are not six separate defects.</p>
+<p>They are six views of one finding.</p>
+<p>The taxonomy must preserve the views without creating six independent truths.</p>
+<p>---</p>
+<h1 id="do-not-start-with-categories">Do not start with categories</h1>
+<p>Many teams build a taxonomy by creating a drop-down list:</p>
+<ul>
+<li>Data Issue</li>
+<li>Process Issue</li>
+<li>System Issue</li>
+<li>Mapping Issue</li>
+<li>Business Issue</li>
+<li>Other</li>
+</ul>
+<p>This appears organised.</p>
+<p>It is almost useless.</p>
+<p>The categories overlap, and <code>Other</code> eventually becomes the largest group.</p>
+<p>Start with the questions the programme needs to answer.</p>
+<p>For every material result:</p>
+<ol>
+<li>What was observed?</li>
+<li>Against which rule, mapping or model expectation?</li>
+<li>Which population is affected?</li>
+<li>Can the case be evaluated with available evidence?</li>
+<li>Does the approved model already define the correct treatment?</li>
+<li>Does implementation match the model?</li>
+<li>Is a decision required?</li>
+<li>What type of action can close the finding?</li>
+</ol>
+<p>The taxonomy should emerge from these questions.</p>
+<p>---</p>
+<h1 id="eight-objects-that-teams-routinely-confuse">Eight objects that teams routinely confuse</h1>
+<p>A consistent operating model begins by separating eight different objects.</p>
+<h2 id="observation">Observation</h2>
+<p>A measured fact from a dataset, test, configuration comparison or process.</p>
+<p>Examples:</p>
+<ul>
+<li>1,284 records have blank Supplier Risk.</li>
+<li>SAP accepted 42 records without mandatory evidence.</li>
+<li>Source value <code>GOV</code> has no target mapping.</li>
+<li>two active rules overlap for Portuguese non-residents.</li>
+</ul>
+<p>An observation does not yet state the cause.</p>
+<h2 id="finding">Finding</h2>
+<p>A grouped interpretation of one or more observations that share a meaningful condition.</p>
+<p>Example:</p>
+<blockquote>ERP_B cannot provide Supplier Risk for active strategic suppliers in Wave 2.</blockquote>
+<p>The finding is the stable unit of investigation.</p>
+<h2 id="defect">Defect</h2>
+<p>A confirmed failure of data, extraction, transformation, configuration or software to implement an already approved expectation.</p>
+<p>A defect implies that the correct state is known.</p>
+<h2 id="gap">Gap</h2>
+<p>A difference between required and available model, data or evidence where the treatment may not yet be known.</p>
+<p>A gap can exist without a defect.</p>
+<p>For example:</p>
+<blockquote>No authoritative source for Customer Group has been approved.</blockquote>
+<h2 id="decision">Decision</h2>
+<p>An authorised choice between alternatives that changes or confirms model truth, context, ownership or treatment.</p>
+<h2 id="exception">Exception</h2>
+<p>An approved case in which the normal rule does not apply for a defined context.</p>
+<p>An exception is not a defect merely because it fails the default rule.</p>
+<h2 id="deviation">Deviation</h2>
+<p>A temporary departure from the intended model or control, with bounded scope and an end condition.</p>
+<h2 id="action">Action</h2>
+<p>Concrete delivery work:</p>
+<ul>
+<li>correct records;</li>
+<li>fix extraction;</li>
+<li>update configuration;</li>
+<li>investigate meaning;</li>
+<li>approve a mapping;</li>
+<li>implement a control;</li>
+<li>rerun a test.</li>
+</ul>
+<p>Confusing these objects causes most backlog pollution.</p>
+<p>A finding can produce several actions.</p>
+<p>A defect may exist without a decision.</p>
+<p>A gap may require a decision before any defect can be raised.</p>
+<p>An exception may produce no corrective action.</p>
+<p>---</p>
+<h1 id="the-primary-classification-question">The primary classification question</h1>
+<p>The most useful first question is:</p>
+<blockquote>Is the correct intended state already known and approved?</blockquote>
+<p>When the answer is yes, the finding probably belongs to an execution category:</p>
+<ul>
+<li>record defect;</li>
+<li>extraction defect;</li>
+<li>transformation defect;</li>
+<li>configuration defect;</li>
+<li>implementation drift.</li>
+</ul>
+<p>When the answer is no, the finding belongs to a governance category:</p>
+<ul>
+<li>model ambiguity;</li>
+<li>missing decision;</li>
+<li>unresolved source authority;</li>
+<li>conflicting rules;</li>
+<li>local–global scope question;</li>
+<li>unsupported value treatment.</li>
+</ul>
+<p>This one distinction prevents teams from raising technical defects for unanswered business questions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Observed:
+Source value GOV cannot be loaded.
+
+Approved target treatment:
+None.
+
+Classification:
+Decision gap, not mapping defect.</code></pre>
+<p>The mapping developer cannot fix a treatment that the business has not approved.</p>
+<p>---</p>
+<h1 id="the-taxonomy">The taxonomy</h1>
+<p>The categories below are deliberately based on treatment, not departmental ownership.</p>
+<h2 id="1-record-level-data-defect">1. Record-level data defect</h2>
+<p>The model, rule and implementation are correct. Specific records contain incorrect or incomplete values.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>isolated missing values;</li>
+<li>invalid date;</li>
+<li>malformed identifier;</li>
+<li>duplicate created by incorrect source entry;</li>
+<li>incorrect country assignment.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>source or business data owner.</li>
+</ul>
+<p>Normal treatment:</p>
+<ul>
+<li>record remediation;</li>
+<li>prevention control where recurrence matters.</li>
+</ul>
+<p>Closure evidence:</p>
+<ul>
+<li>affected population corrected;</li>
+<li>rerun passed;</li>
+<li>source correction or accepted residual documented.</li>
+</ul>
+<p>Do not use this category merely because the error appears in data.</p>
+<p>A large repeated population may indicate a source capability or model problem.</p>
+<p>---</p>
+<h2 id="2-source-capability-gap">2. Source capability gap</h2>
+<p>The approved model requires information the source process does not maintain or cannot provide reliably.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>field absent from the source;</li>
+<li>context maintained only outside the system;</li>
+<li>historical records lack required classification;</li>
+<li>source granularity differs from target granularity.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>source owner together with domain owner and migration lead.</li>
+</ul>
+<p>Possible treatments:</p>
+<ul>
+<li>source remediation;</li>
+<li>enrichment;</li>
+<li>derivation;</li>
+<li>exclusion;</li>
+<li>temporary deviation;</li>
+<li>model reconsideration.</li>
+</ul>
+<p>A source capability gap is not automatically a source defect.</p>
+<p>The legacy system may never have been designed to supply the new target concept.</p>
+<p>---</p>
+<h2 id="3-extraction-defect">3. Extraction defect</h2>
+<p>The source contains the approved information, but the extract fails to deliver it correctly.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>missing column;</li>
+<li>incorrect join;</li>
+<li>filter excludes applicable records;</li>
+<li>truncation;</li>
+<li>wrong date selection;</li>
+<li>lost leading zeros.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>extraction or data-engineering team.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>correct extraction;</li>
+<li>reconcile source and staging;</li>
+<li>rerun affected population.</li>
+</ul>
+<p>No model decision is normally required.</p>
+<p>---</p>
+<h2 id="4-mapping-or-transformation-defect">4. Mapping or transformation defect</h2>
+<p>Approved source and target semantics exist, but the implemented transformation is wrong.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>value mapped to wrong code;</li>
+<li>source field connected to wrong endpoint;</li>
+<li>context lost;</li>
+<li>obsolete default applied;</li>
+<li>conversion uses superseded decision.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>migration mapping or integration team.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>correct transformation;</li>
+<li>regression test;</li>
+<li>review affected downstream consumers.</li>
+</ul>
+<p>The canonical mapping should not be rewritten to match the defective implementation.</p>
+<p>---</p>
+<h2 id="5-configuration-defect">5. Configuration defect</h2>
+<p>SAP, an MDM platform or another operational system implements behaviour that differs from the approved model.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>validation applies to persons and organisations instead of organisations only;</li>
+<li>warning configured where blocking was approved;</li>
+<li>workflow skips required owner;</li>
+<li>retired value remains selectable;</li>
+<li>local rule applies globally.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>platform configuration owner.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>correct configuration;</li>
+<li>test positive, negative and contextual cases;</li>
+<li>verify implementation against the canonical rule.</li>
+</ul>
+<p>SAP currently positions MDG around governed models, collaborative workflows, validated values, business-rule monitoring, data-quality controls and auditable changes. Those capabilities enforce approved behaviour; they do not remove the need to distinguish configuration mismatch from model uncertainty.</p>
+<p>---</p>
+<h2 id="6-implementation-drift">6. Implementation drift</h2>
+<p>The implementation was once aligned but no longer matches the current model baseline.</p>
+<p>Typical causes:</p>
+<ul>
+<li>model decision changed;</li>
+<li>one interface remained on an old mapping;</li>
+<li>local configuration missed a global update;</li>
+<li>test script references a retired rule;</li>
+<li>operational procedure still follows a temporary migration treatment.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>depends on the drifted implementation.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>compare baselines;</li>
+<li>assess impact;</li>
+<li>update affected implementation;</li>
+<li>verify all related consumers.</li>
+</ul>
+<p>This differs from an initial configuration defect because the historical alignment matters for impact and closure.</p>
+<p>---</p>
+<h2 id="7-test-specification-defect">7. Test-specification defect</h2>
+<p>The test expectation is wrong or based on a superseded model.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>test uses central key for an organisational attribute;</li>
+<li>approved local exception is ignored;</li>
+<li>expected value comes from retired mapping;</li>
+<li>lifecycle stage is misunderstood.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>test owner together with model owner.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>update test;</li>
+<li>link scenario to current rule and baseline;</li>
+<li>rerun.</li>
+</ul>
+<p>A test failure does not prove that the product or data is wrong.</p>
+<p>The test itself is another implementation of the model.</p>
+<p>---</p>
+<h2 id="8-model-ambiguity">8. Model ambiguity</h2>
+<p>The current model does not describe the observed case precisely enough.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>lifecycle point not stated;</li>
+<li>global and local scopes overlap;</li>
+<li>cardinality unclear;</li>
+<li>source and target labels look similar but equivalence is not established;</li>
+<li>rule does not distinguish missing from non-applicable.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>domain owner or model-governance group.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>investigation;</li>
+<li>decision;</li>
+<li>canonical clarification;</li>
+<li>impact analysis.</li>
+</ul>
+<p>A model ambiguity should not be closed by allowing a developer or data analyst to choose a convenient interpretation.</p>
+<p>---</p>
+<h2 id="9-model-defect">9. Model defect</h2>
+<p>The approved model contains an incorrect or internally inconsistent design.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>one value list combines risk and workflow status;</li>
+<li>central attribute used for organisational meaning;</li>
+<li>contradictory active rules;</li>
+<li>wrong cardinality;</li>
+<li>local workaround represented as global policy.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>accountable model authority.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>reviewed PatchProposal;</li>
+<li>semantic diff;</li>
+<li>impact assessment;</li>
+<li>implementation migration;</li>
+<li>regression.</li>
+</ul>
+<p>This category should be used carefully.</p>
+<p>Not every inconvenient model requirement is a model defect.</p>
+<p>---</p>
+<h2 id="10-decision-gap">10. Decision gap</h2>
+<p>The programme has enough information to state the question but no authorised treatment.</p>
+<p>Typical examples:</p>
+<ul>
+<li>no approved default;</li>
+<li>no source selected as authoritative;</li>
+<li>local requirement not classified as global or contextual;</li>
+<li>two treatments remain viable;</li>
+<li>residual risk not accepted.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>role with business decision authority.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>decision record;</li>
+<li>alternatives;</li>
+<li>evidence;</li>
+<li>named approver;</li>
+<li>deadline driven by programme consequence.</li>
+</ul>
+<p>A decision gap should not be hidden inside an ordinary issue ticket titled “fix mapping.”</p>
+<p>---</p>
+<h2 id="11-rule-conflict">11. Rule conflict</h2>
+<p>Two or more approved or proposed rules produce incompatible or ambiguous outcomes in an overlapping context.</p>
+<p>Typical evidence:</p>
+<ul>
+<li>global mandatory rule and local optional rule;</li>
+<li>two exceptions overlap;</li>
+<li>permanent policy conflicts with migration concession;</li>
+<li>regional and country rules apply simultaneously.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>authorities responsible for the conflicting layers.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>normalise rules;</li>
+<li>calculate overlap;</li>
+<li>resolve precedence;</li>
+<li>produce one effective rule;</li>
+<li>update model and implementations.</li>
+</ul>
+<p>---</p>
+<h2 id="12-approved-exception">12. Approved exception</h2>
+<p>A normal rule is intentionally not applied to a bounded context.</p>
+<p>Required evidence:</p>
+<ul>
+<li>exact scope;</li>
+<li>approving authority;</li>
+<li>rationale;</li>
+<li>effective date;</li>
+<li>required substitute evidence;</li>
+<li>review trigger.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>no defect correction;</li>
+<li>verify that the exception is applied only within scope.</li>
+</ul>
+<p>The exception should remain visible in reporting so that apparent failure does not repeatedly return as defect noise.</p>
+<p>---</p>
+<h2 id="13-temporary-deviation">13. Temporary deviation</h2>
+<p>The target model remains valid, but a bounded programme condition permits temporary alternative behaviour.</p>
+<p>Required attributes:</p>
+<ul>
+<li>affected population;</li>
+<li>lifecycle stage;</li>
+<li>compensating control;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>convergence action.</li>
+</ul>
+<p>Example:</p>
+<blockquote>Wave 2 records may load without Supplier Risk into a controlled review queue, but activation remains blocked.</blockquote>
+<p>Primary treatment:</p>
+<ul>
+<li>operate control;</li>
+<li>track residual population;</li>
+<li>remove or formally extend before expiry.</li>
+</ul>
+<p>A deviation that has no expiry is an unapproved permanent change.</p>
+<p>---</p>
+<h2 id="14-unevaluable-population">14. Unevaluable population</h2>
+<p>The programme lacks the context needed to decide whether the rule applies or what result is correct.</p>
+<p>Typical causes:</p>
+<ul>
+<li>missing country;</li>
+<li>unknown strategic status;</li>
+<li>contradictory partner category;</li>
+<li>organisational key unavailable;</li>
+<li>effective date uncertain.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>usually source or model owner, depending on cause.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>obtain or resolve context;</li>
+<li>do not classify records prematurely as valid or invalid.</li>
+</ul>
+<p>This category deserves its own visibility.</p>
+<p>Unevaluable does not mean failed.</p>
+<p>It means the programme cannot yet make an evidence-based decision.</p>
+<p>---</p>
+<h2 id="15-expected-control-result">15. Expected control result</h2>
+<p>The system blocked or routed the record exactly as approved.</p>
+<p>Examples:</p>
+<ul>
+<li>pending review blocks activation;</li>
+<li>invalid code is rejected;</li>
+<li>missing evidence routes to stewardship;</li>
+<li>out-of-scope value is prevented.</li>
+</ul>
+<p>Treatment:</p>
+<ul>
+<li>retain as positive evidence;</li>
+<li>do not create a defect.</li>
+</ul>
+<p>A surprising amount of defect noise comes from reporting successful controls as failed business transactions.</p>
+<p>---</p>
+<h2 id="16-unexpected-pass">16. Unexpected pass</h2>
+<p>The record passed when it should have been blocked, reviewed or identified.</p>
+<p>Examples:</p>
+<ul>
+<li>missing classification defaulted silently;</li>
+<li>expired exception accepted;</li>
+<li>invalid code converted to a plausible value;</li>
+<li>context missing, causing the rule not to run;</li>
+<li>temporary status distributed as final value.</li>
+</ul>
+<p>Primary owner:</p>
+<ul>
+<li>depends on cause.</li>
+</ul>
+<p>Priority:</p>
+<ul>
+<li>often higher than a visible failure because the defect may propagate unnoticed.</li>
+</ul>
+<p>The taxonomy must capture false success, not only rejected records.</p>
+<p>---</p>
+<h1 id="use-primary-and-secondary-classifications">Use primary and secondary classifications</h1>
+<p>A finding may involve more than one problem.</p>
+<p>For example:</p>
+<blockquote>ERP_B cannot provide Supplier Risk, and the current migration default assigns <code>STANDARD</code>.</blockquote>
+<p>Primary classification:</p>
+<ul>
+<li>source capability gap.</li>
+</ul>
+<p>Secondary classification:</p>
+<ul>
+<li>transformation defect;</li>
+<li>unexpected pass;</li>
+<li>model-risk concern.</li>
+</ul>
+<p>Do not create an uncontrolled list of many equal categories.</p>
+<p>Choose one primary classification based on the first decision or action required.</p>
+<p>Secondary classifications provide context.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">classification:
+  primary: source_capability_gap
+  secondary:
+    - transformation_defect
+    - unexpected_pass</code></pre>
+<p>The primary category controls routing.</p>
+<p>---</p>
+<h1 id="categories-should-have-entry-criteria">Categories should have entry criteria</h1>
+<p>A taxonomy becomes political when teams can choose whichever category is most convenient.</p>
+<p>For each category, define minimum evidence.</p>
+<p>To classify as <code>configuration_defect</code>, require:</p>
+<ul>
+<li>approved model or rule;</li>
+<li>implementation evidence;</li>
+<li>demonstrated mismatch.</li>
+</ul>
+<p>To classify as <code>model_defect</code>, require:</p>
+<ul>
+<li>canonical object;</li>
+<li>observed contradiction or unsupported business behaviour;</li>
+<li>accountable model owner review.</li>
+</ul>
+<p>To classify as <code>approved_exception</code>, require:</p>
+<ul>
+<li>decision reference;</li>
+<li>explicit scope;</li>
+<li>current status.</li>
+</ul>
+<p>To classify as <code>record_defect</code>, require:</p>
+<ul>
+<li>correct expected value or rule;</li>
+<li>record-level evidence;</li>
+<li>no unresolved semantic question.</li>
+</ul>
+<p>These entry criteria stop teams from calling every difficult requirement a model problem or every business ambiguity a technical defect.</p>
+<p>---</p>
+<h1 id="categories-should-have-exit-criteria">Categories should have exit criteria</h1>
+<p>A finding is not closed merely because its primary ticket is closed.</p>
+<p>Each category needs category-specific closure.</p>
+<p>For a mapping defect:</p>
+<ul>
+<li>canonical mapping confirmed;</li>
+<li>implementation corrected;</li>
+<li>affected population rerun;</li>
+<li>regression passed.</li>
+</ul>
+<p>For a model ambiguity:</p>
+<ul>
+<li>decision approved;</li>
+<li>canonical model updated or explicitly confirmed;</li>
+<li>affected tests and implementations identified.</li>
+</ul>
+<p>For a temporary deviation:</p>
+<ul>
+<li>expired treatment removed or extension approved;</li>
+<li>residual population resolved;</li>
+<li>compensating control verified.</li>
+</ul>
+<p>For an unevaluable population:</p>
+<ul>
+<li>missing context supplied or records explicitly excluded by approved decision.</li>
+</ul>
+<p>The closure criteria follow the category.</p>
+<p>This is the main operational value of the taxonomy.</p>
+<p>---</p>
+<h1 id="who-may-classify-and-reclassify">Who may classify and reclassify</h1>
+<p>Classification is not a one-time administrative action.</p>
+<p>It is a controlled judgement that may change as evidence improves.</p>
+<p>A workable authority model is:</p>
+<h2 id="data-analyst">Data analyst</h2>
+<p>May identify:</p>
+<ul>
+<li>observation;</li>
+<li>population;</li>
+<li>data pattern;</li>
+<li>likely record, extraction or source issue.</li>
+</ul>
+<p>Should not independently declare:</p>
+<ul>
+<li>model defect;</li>
+<li>approved exception;</li>
+<li>business-policy change.</li>
+</ul>
+<h2 id="sap-or-mdm-consultant">SAP or MDM consultant</h2>
+<p>May identify:</p>
+<ul>
+<li>configuration mismatch;</li>
+<li>execution timing;</li>
+<li>workflow or validation behaviour;</li>
+<li>implementation limitation.</li>
+</ul>
+<p>Should not independently redefine:</p>
+<ul>
+<li>business meaning;</li>
+<li>global–local applicability;</li>
+<li>accepted residual risk.</li>
+</ul>
+<h2 id="business-or-domain-owner">Business or domain owner</h2>
+<p>May decide:</p>
+<ul>
+<li>semantic meaning;</li>
+<li>applicability;</li>
+<li>approved treatment;</li>
+<li>exception;</li>
+<li>ownership.</li>
+</ul>
+<p>Should not classify technical root cause without implementation evidence.</p>
+<h2 id="migration-lead">Migration lead</h2>
+<p>May classify:</p>
+<ul>
+<li>temporary delivery impact;</li>
+<li>wave treatment;</li>
+<li>readiness consequence;</li>
+<li>required containment.</li>
+</ul>
+<p>Should not turn a temporary need into permanent model truth.</p>
+<h2 id="model-governance-owner">Model-governance owner</h2>
+<p>Should control:</p>
+<ul>
+<li>taxonomy definition;</li>
+<li>cross-category consistency;</li>
+<li>decision and proposal routing;</li>
+<li>reclassification disputes;</li>
+<li>closure evidence requirements.</li>
+</ul>
+<p>This is a federated model.</p>
+<p>Collibra’s governance guidance emphasises operating models that define roles, responsibilities, domains and authority, including federated structures with multiple governance groups. A migration taxonomy needs the same explicit ownership discipline.</p>
+<p>---</p>
+<h1 id="the-triage-sequence">The triage sequence</h1>
+<p>Classification should happen in a fixed sequence.</p>
+<h2 id="1-preserve-the-observation">1. Preserve the observation</h2>
+<p>Do not edit the raw evidence to fit a category.</p>
+<p>Record:</p>
+<ul>
+<li>dataset or test run;</li>
+<li>rule;</li>
+<li>actual result;</li>
+<li>expected result where known;</li>
+<li>affected records;</li>
+<li>context;</li>
+<li>timestamp.</li>
+</ul>
+<h2 id="2-establish-evaluability">2. Establish evaluability</h2>
+<p>Can the rule be applied with available context?</p>
+<p>When no, classify <code>unevaluable_population</code> first.</p>
+<h2 id="3-check-whether-the-result-was-expected">3. Check whether the result was expected</h2>
+<p>When the control behaved correctly, classify <code>expected_control_result</code>.</p>
+<h2 id="4-confirm-the-approved-model">4. Confirm the approved model</h2>
+<p>Is the intended state documented and current?</p>
+<p>When no, use a governance category.</p>
+<h2 id="5-compare-implementation">5. Compare implementation</h2>
+<p>Does extraction, mapping, configuration or test logic match the approved model?</p>
+<h2 id="6-identify-the-treatment-unit">6. Identify the treatment unit</h2>
+<p>One record, one source population, one mapping, one rule, one model object or one decision?</p>
+<h2 id="7-assign-primary-category">7. Assign primary category</h2>
+<p>Choose based on the first accountable action required.</p>
+<h2 id="8-record-confidence">8. Record confidence</h2>
+<ul>
+<li>confirmed;</li>
+<li>strongly supported;</li>
+<li>provisional;</li>
+<li>unresolved.</li>
+</ul>
+<h2 id="9-route-to-the-proper-workflow">9. Route to the proper workflow</h2>
+<ul>
+<li>remediation;</li>
+<li>defect;</li>
+<li>investigation;</li>
+<li>decision;</li>
+<li>exception review;</li>
+<li>PatchProposal;</li>
+<li>risk acceptance.</li>
+</ul>
+<p>This sequence can be applied consistently by different teams.</p>
+<p>---</p>
+<h1 id="what-the-taxonomy-should-not-contain">What the taxonomy should not contain</h1>
+<p>Avoid vague categories such as:</p>
+<ul>
+<li>Functional issue;</li>
+<li>Technical issue;</li>
+<li>Business issue;</li>
+<li>Data issue;</li>
+<li>Process issue;</li>
+<li>Other.</li>
+</ul>
+<p>They describe organisational perspective rather than treatment.</p>
+<p>Also avoid an excessively detailed list tied to one project’s systems:</p>
+<ul>
+<li>SAP issue;</li>
+<li>MDG issue;</li>
+<li>ETL issue;</li>
+<li>Excel issue;</li>
+<li>Local issue.</li>
+</ul>
+<p>The platform where the symptom appears is not necessarily where the cause belongs.</p>
+<p>A failed SAP validation may originate in source capability or unresolved policy.</p>
+<p>A data-quality platform may detect a model ambiguity.</p>
+<p>A Jira issue may represent an approved exception.</p>
+<p>---</p>
+<h1 id="the-category-name-should-survive-tool-changes">The category name should survive tool changes</h1>
+<p>A taxonomy should remain valid whether the organisation uses:</p>
+<ul>
+<li>SAP MDG;</li>
+<li>another MDM platform;</li>
+<li>Collibra;</li>
+<li>Ataccama;</li>
+<li>Informatica;</li>
+<li>Jira;</li>
+<li>ServiceNow;</li>
+<li>GitHub;</li>
+<li>spreadsheets.</li>
+</ul>
+<p>This portability matters.</p>
+<p>SAP MDG provides governed master-data models, workflows, validated values, business-rule monitoring and auditable changes. Ataccama provides profiling, reusable governed rule libraries, monitoring, issue analysis and remediation. Collibra provides broader governance structures, data domains, ownership and quality context. Each platform can implement part of the operating model, but none should redefine the taxonomy simply through its internal status names.</p>
+<p>Map platform statuses to the taxonomy, not the taxonomy to one platform.</p>
+<p>---</p>
+<h1 id="the-minimum-fields-for-a-finding">The minimum fields for a finding</h1>
+<p>A finding should contain enough information to remain stable across tools and test runs.</p>
+<pre><code class="language-yaml">id: FIND-SUPPLIER-RISK-ERP-B-001
+
+title: ERP_B cannot provide Supplier Risk for applicable suppliers
+
+status: decision_required
+
+observation:
+  rule: RULE-SUPPLIER-RISK-ACTIVATION
+  dataset: ERP_B_supplier_extract_2026-07-12
+  affected_records: 1284
+  condition: supplier_risk_missing
+
+scope:
+  source_systems:
+    - ERP_B
+  countries:
+    - DE
+    - AT
+  population:
+    - active_strategic_supplier_organisations
+
+classification:
+  primary: source_capability_gap
+  secondary:
+    - temporary_treatment_required
+  confidence: confirmed
+
+model_assessment:
+  approved_model_exists: true
+  model_change_required: unresolved
+  implementation_matches_model: true
+
+decision:
+  required: true
+  question: &gt;
+    Select source remediation, controlled enrichment,
+    exclusion or temporary review treatment.
+
+owners:
+  source:
+    - ROLE-ERP-B-DATA-OWNER
+  business:
+    - ROLE-GLOBAL-SUPPLIER-RISK-OWNER
+  migration:
+    - ROLE-SUPPLIER-MIGRATION-LEAD
+
+evidence:
+  - EVID-ERP-B-RISK-PROFILE-2026-07</code></pre>
+<p>The schema can remain simpler in the first implementation.</p>
+<p>The essential fields are:</p>
+<ul>
+<li>identity;</li>
+<li>observation;</li>
+<li>scope;</li>
+<li>classification;</li>
+<li>confidence;</li>
+<li>model assessment;</li>
+<li>owner;</li>
+<li>decision state;</li>
+<li>evidence.</li>
+</ul>
+<p>---</p>
+<h1 id="reporting-should-use-findings-and-populations">Reporting should use findings and populations</h1>
+<p>Management needs several numbers, not one total.</p>
+<p>A useful report separates:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Category</th><th scope="col">Findings</th><th scope="col">Records</th><th scope="col">Decision required</th><th scope="col">Blocking</th></tr></thead><tbody><tr><td>Record defects</td><td>18</td><td>5,420</td><td>0</td><td>3</td></tr><tr><td>Extraction defects</td><td>4</td><td>2,140</td><td>0</td><td>4</td></tr><tr><td>Mapping defects</td><td>7</td><td>1,310</td><td>1</td><td>5</td></tr><tr><td>Configuration defects</td><td>5</td><td>740</td><td>0</td><td>4</td></tr><tr><td>Model ambiguity</td><td>6</td><td>3,880</td><td>6</td><td>5</td></tr><tr><td>Decision gaps</td><td>4</td><td>1,920</td><td>4</td><td>3</td></tr><tr><td>Approved exceptions</td><td>3</td><td>460</td><td>0</td><td>0</td></tr><tr><td>Temporary deviations</td><td>4</td><td>1,610</td><td>1</td><td>1</td></tr><tr><td>Unevaluable populations</td><td>5</td><td>2,940</td><td>3</td><td>4</td></tr><tr><td>Unexpected passes</td><td>2</td><td>2,110</td><td>2</td><td>2</td></tr></tbody></table></div>
+<p>This report answers several different questions:</p>
+<ul>
+<li>how much data is affected;</li>
+<li>how many distinct problems exist;</li>
+<li>where decisions are blocking progress;</li>
+<li>where controls failed silently;</li>
+<li>what kind of governance attention is required.</li>
+</ul>
+<p>A single defect count cannot do this.</p>
+<p>---</p>
+<h1 id="ataccama-collibra-and-sap-mdg-are-not-competing-answers-to-the-taxonomy">Ataccama, Collibra and SAP MDG are not competing answers to the taxonomy</h1>
+<p>Their strengths sit at different points.</p>
+<p>Ataccama states that its platform can profile datasets, maintain governed reusable rule libraries, monitor quality, generate issue lists and support prioritisation and remediation by owners.</p>
+<p>Collibra describes a broader governance operating model involving domains, business and technical ownership, glossaries, data dictionaries, quality scorecards, systems, policies and formal authority structures.</p>
+<p>SAP MDG focuses on governed master-data models, workflows, validated values, business-rule monitoring and auditable operational changes.</p>
+<p>A migration finding may move through all three kinds of capability:</p>
+<pre><code class="language-text">Ataccama detects a population issue.
+
+Martenweave classifies it against canonical model context.
+
+Collibra provides enterprise ownership or glossary authority.
+
+SAP MDG implements the approved operational treatment.</code></pre>
+<p>The exact products may differ.</p>
+<p>The separation of responsibilities remains useful.</p>
+<p>---</p>
+<h1 id="martenweave-s-role">Martenweave’s role</h1>
+<p>Martenweave should not become a generic issue-management system.</p>
+<p>Its role is to connect classification to model evidence.</p>
+<p>The current core already provides:</p>
+<ul>
+<li>canonical files as source of truth;</li>
+<li>deterministic validation;</li>
+<li>rebuildable indexes;</li>
+<li>dataset-gap detection;</li>
+<li>trace;</li>
+<li>impact analysis;</li>
+<li>proposal-first changes;</li>
+<li>GitHub-ready review output.</li>
+</ul>
+<p>Its public demo flow also shows dataset readiness producing combined validation, coverage, gap and readiness results, with the ability to promote findings into a pending-review PatchProposal or issue draft.</p>
+<p>The finding taxonomy should sit between detection and promotion:</p>
+<pre><code class="language-text">Dataset or test evidence
+→ Finding
+→ Classification
+→ Decision route
+→ Issue, remediation or PatchProposal</code></pre>
+<p>This prevents automatic issue creation from producing a cleaner version of the same defect noise.</p>
+<p>---</p>
+<h1 id="a-small-implementation-slice">A small implementation slice</h1>
+<p>A useful first version needs only:</p>
+<h2 id="a-finding-object">A <code>Finding</code> object</h2>
+<p>With:</p>
+<ul>
+<li>stable ID;</li>
+<li>observation;</li>
+<li>scope;</li>
+<li>primary and secondary classification;</li>
+<li>confidence;</li>
+<li>affected model objects;</li>
+<li>evidence;</li>
+<li>owner;</li>
+<li>decision requirement;</li>
+<li>linked actions.</li>
+</ul>
+<h2 id="a-controlled-category-registry">A controlled category registry</h2>
+<p>Each category defines:</p>
+<ul>
+<li>meaning;</li>
+<li>entry criteria;</li>
+<li>permitted statuses;</li>
+<li>required roles;</li>
+<li>closure evidence;</li>
+<li>allowed next actions.</li>
+</ul>
+<h2 id="a-classifier-command">A classifier command</h2>
+<p>Not an autonomous decision maker.</p>
+<p>It could:</p>
+<ul>
+<li>group dataset results;</li>
+<li>show previous similar findings;</li>
+<li>suggest candidate categories;</li>
+<li>identify missing evidence;</li>
+<li>require human confirmation.</li>
+</ul>
+<h2 id="validation">Validation</h2>
+<p>Check that:</p>
+<ul>
+<li>defects reference approved expectations;</li>
+<li>exceptions reference decisions;</li>
+<li>deviations have expiry;</li>
+<li>model defects link to proposals;</li>
+<li>closed findings include closure evidence;</li>
+<li>unevaluable populations are not marked passed;</li>
+<li>unexpected passes cannot be ignored as ordinary success.</li>
+</ul>
+<h2 id="report-generation">Report generation</h2>
+<p>Produce:</p>
+<ul>
+<li>findings by category;</li>
+<li>affected populations;</li>
+<li>decisions required;</li>
+<li>blocking findings;</li>
+<li>recurrence across runs;</li>
+<li>actions by owner.</li>
+</ul>
+<p>This is sufficient to prove whether the taxonomy improves delivery.</p>
+<p>---</p>
+<h1 id="a-classification-disagreement-is-itself-useful-evidence">A classification disagreement is itself useful evidence</h1>
+<p>Suppose the data team says:</p>
+<blockquote>Source capability gap.</blockquote>
+<p>The business owner says:</p>
+<blockquote>The field is not required for this population.</blockquote>
+<p>The SAP team says:</p>
+<blockquote>Configuration applies the rule globally.</blockquote>
+<p>This is not an administrative dispute.</p>
+<p>It reveals three competing hypotheses:</p>
+<ol>
+<li>source lacks required data;</li>
+<li>model applicability is narrower;</li>
+<li>implementation scope is wrong.</li>
+</ol>
+<p>The finding should remain <code>classification_disputed</code> until evidence resolves the question.</p>
+<p>Do not allow the highest-ranking participant to choose a category merely to move the ticket.</p>
+<p>A disputed classification should record:</p>
+<ul>
+<li>competing categories;</li>
+<li>evidence for each;</li>
+<li>decision owner;</li>
+<li>required next evidence;</li>
+<li>delivery consequence.</li>
+</ul>
+<p>---</p>
+<h1 id="naming-matters">Naming matters</h1>
+<p>Category names should be understandable without project-specific abbreviations.</p>
+<p>Good:</p>
+<ul>
+<li>Source capability gap</li>
+<li>Configuration defect</li>
+<li>Model ambiguity</li>
+<li>Approved exception</li>
+<li>Temporary deviation</li>
+<li>Unevaluable population</li>
+</ul>
+<p>Weak:</p>
+<ul>
+<li>DQ issue</li>
+<li>Functional gap</li>
+<li>CR problem</li>
+<li>Local defect</li>
+<li>Type 4</li>
+<li>Red issue</li>
+</ul>
+<p>People should understand the category six months later without locating the original project glossary.</p>
+<p>---</p>
+<h1 id="a-worked-triage">A worked triage</h1>
+<p>A test reports 5,200 Customer Group failures.</p>
+<p>The taxonomy produces the following findings.</p>
+<h2 id="finding-a-wrong-test-population">Finding A: wrong test population</h2>
+<p>Affected records: 2,640.</p>
+<p>Observation:</p>
+<ul>
+<li>customers without a sales-area record were expected to contain sales-area Customer Group.</li>
+</ul>
+<p>Classification:</p>
+<ul>
+<li>test-specification defect.</li>
+</ul>
+<p>Action:</p>
+<ul>
+<li>correct applicability and test key.</li>
+</ul>
+<p>No data remediation.</p>
+<h2 id="finding-b-central-source-used-for-organisational-target">Finding B: central source used for organisational target</h2>
+<p>Affected records: 1,430.</p>
+<p>Observation:</p>
+<ul>
+<li>one central CRM Segment is proposed for several sales areas.</li>
+</ul>
+<p>Classification:</p>
+<ul>
+<li>model ambiguity.</li>
+</ul>
+<p>Action:</p>
+<ul>
+<li>investigate semantic and granularity equivalence.</li>
+</ul>
+<p>No automatic mapping.</p>
+<h2 id="finding-c-missing-source-values-in-the-applicable-population">Finding C: missing source values in the applicable population</h2>
+<p>Affected records: 920.</p>
+<p>Observation:</p>
+<ul>
+<li>sales-area source records exist but Customer Group is blank.</li>
+</ul>
+<p>Classification:</p>
+<ul>
+<li>record defect with source-process recurrence.</li>
+</ul>
+<p>Action:</p>
+<ul>
+<li>remediate population and add source prevention.</li>
+</ul>
+<h2 id="finding-d-old-transformation">Finding D: old transformation</h2>
+<p>Affected records: 210.</p>
+<p>Observation:</p>
+<ul>
+<li>source code <code>05</code> maps to retired target code.</li>
+</ul>
+<p>Classification:</p>
+<ul>
+<li>mapping defect and implementation drift.</li>
+</ul>
+<p>Action:</p>
+<ul>
+<li>update transformation and regression test.</li>
+</ul>
+<p>The programme moves from 5,200 red rows to four governed findings.</p>
+<p>That is the purpose of the taxonomy.</p>
+<p>---</p>
+<h1 id="the-operating-rules">The operating rules</h1>
+<p>A taxonomy remains useful only when the programme enforces several rules.</p>
+<h3 id="no-finding-enters-delivery-without-a-primary-category">No finding enters delivery without a primary category</h3>
+<p>Provisional classification is acceptable.</p>
+<p>Missing classification is not.</p>
+<h3 id="no-category-is-selected-only-from-the-error-message">No category is selected only from the error message</h3>
+<p>Context and model evidence are required.</p>
+<h3 id="no-model-defect-is-closed-by-data-correction-alone">No model defect is closed by data correction alone</h3>
+<p>Canonical truth must be reviewed.</p>
+<h3 id="no-approved-exception-exists-without-a-decision-reference">No approved exception exists without a decision reference</h3>
+<p>An email or meeting comment is not enough.</p>
+<h3 id="no-temporary-deviation-exists-without-expiry-and-convergence">No temporary deviation exists without expiry and convergence</h3>
+<p>Otherwise it is permanent drift.</p>
+<h3 id="no-unevaluable-population-is-reported-as-passed">No unevaluable population is reported as passed</h3>
+<p>Lack of evidence is not compliance.</p>
+<h3 id="no-expected-control-result-becomes-a-defect">No expected control result becomes a defect</h3>
+<p>Successful prevention is positive evidence.</p>
+<h3 id="no-unexpected-pass-disappears-inside-load-success-statistics">No unexpected pass disappears inside load-success statistics</h3>
+<p>False success must remain visible.</p>
+<h3 id="no-closed-finding-loses-its-affected-population-and-baseline">No closed finding loses its affected population and baseline</h3>
+<p>Closure must be reproducible.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A migration finding taxonomy is not a reporting convenience.</p>
+<p>It is a control mechanism between evidence and change.</p>
+<p>Without it, the programme treats:</p>
+<ul>
+<li>observations as defects;</li>
+<li>defects as decisions;</li>
+<li>exceptions as data errors;</li>
+<li>temporary deviations as local policy;</li>
+<li>model ambiguity as technical implementation;</li>
+<li>successful controls as failed tests.</li>
+</ul>
+<p>The result is a large backlog and weak institutional learning.</p>
+<p>A useful taxonomy gives business, data and SAP teams different views of one governed finding while preserving one shared classification.</p>
+<p>It answers:</p>
+<ul>
+<li>What happened?</li>
+<li>What kind of problem is it?</li>
+<li>Is the intended state already known?</li>
+<li>Which authority must act?</li>
+<li>What is the correct treatment unit?</li>
+<li>What evidence proves closure?</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can three teams review the same failed population and agree whether it requires record remediation, source change, configuration correction, model decision, approved exception or temporary deviation?</blockquote>
+<p>When they can, the project has a common operating language.</p>
+<p>When they cannot, every tool will show a different version of the same problem.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>observations;</li>
+<li>dataset populations;</li>
+<li>canonical rules and mappings;</li>
+<li>findings;</li>
+<li>decisions;</li>
+<li>exceptions;</li>
+<li>deviations;</li>
+<li>impact;</li>
+<li>reviewable changes.</li>
+</ul>
+<p>It does not replace enterprise data-quality, governance, MDM or issue-management platforms.</p>
+<p>Its role is to preserve the classification and model context that allow those platforms to perform the right kind of work.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer that unifies master data, policy and metadata through governed models, semantic relationships, profiling, validated values, collaborative workflows, business-rule monitoring and auditable changes.</p>
+<p>Collibra describes data governance as an organisational discipline supported by an operating model defining roles, responsibilities, domains, ownership, business terms, policies and quality measures. It recognises both centralised and federated authority structures.</p>
+<p>Ataccama describes capabilities for dataset profiling, governed reusable rule libraries, automated monitoring, issue identification, prioritisation, remediation and rule reuse across systems and pipelines.</p>
+<p>Martenweave Core currently uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace, impact analysis and human-reviewed PatchProposal and ChangeRequest workflows.</p>
+<p>Its current demo workflow combines validation, dataset coverage, gap detection and readiness reporting and can promote findings into reviewable proposals or GitHub-ready issue drafts.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Collibra, Ataccama or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html"><span>Previous</span>The first migration-rule test produces 8,420 failures.</a><a href="/blog/how-to-route-migration-findings-to-the-right-owner-without-creating.html"><span>Next</span>A migration-readiness run identifies 1,284 strategic suppliers without Supplier Risk.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -455,4 +455,3 @@ This article was reviewed on 14 July 2026.
 - Martenweave SAP migration scenario, including mappings, context validation, dataset gap detection, lineage and impact analysis.
 
 SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates. Martenweave is an independent project and is not affiliated with or endorsed by SAP.
-

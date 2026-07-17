@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams | Martenweave</title>
+    <meta
+      name="description"
+      content="Many companies have a data-governance framework."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html" />
+    <meta property="og:title" content="Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams | Martenweave" />
+    <meta property="og:description" content="Many companies have a data-governance framework." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams | Martenweave" />
+    <meta name="twitter:description" content="Many companies have a data-governance framework." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html",
+                        "name": "Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams | Martenweave",
+                        "description": "Many companies have a data-governance framework.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams",
+                                    "item": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html#content",
+                        "headline": "Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams",
+                        "name": "Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams",
+                        "description": "Many companies have a data-governance framework.",
+                        "url": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>Why DAMA-Based Data Governance Fails to Reach SAP Migration Teams</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 17 min read</p><p class="blog-summary">Many companies have a data-governance framework.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#governance-is-usually-designed-above-the-project">Governance is usually designed above the project</a></li><li><a href="#the-governance-artefact-and-the-delivery-artefact-are-different-things">The governance artefact and the delivery artefact are different things</a></li><li><a href="#a-practical-example-one-material-attribute-six-interpretations">A practical example: one material attribute, six interpretations</a></li><li><a href="#why-the-business-glossary-is-not-enough">Why the business glossary is not enough</a></li><li><a href="#why-ownership-matrices-do-not-create-field-level-accountability">Why ownership matrices do not create field-level accountability</a></li><li><a href="#why-data-quality-governance-often-arrives-too-late">Why data-quality governance often arrives too late</a></li><li><a href="#why-governance-meetings-do-not-solve-model-drift">Why governance meetings do not solve model drift</a></li><li><a href="#why-sap-programmes-are-especially-difficult">Why SAP programmes are especially difficult</a></li><li><a href="#where-existing-tools-stop">Where existing tools stop</a></li><li><a href="#the-missing-control-a-governed-model-between-policy-and-execution">The missing control: a governed model between policy and execution</a></li><li><a href="#how-the-operating-model-changes">How the operating model changes</a></li><li><a href="#the-warehouse-unit-example-revisited">The warehouse-unit example revisited</a></li><li><a href="#this-is-not-dama-compliance">This is not “DAMA compliance”</a></li><li><a href="#where-martenweave-aligns-strongly-with-dama">Where Martenweave aligns strongly with DAMA</a></li><li><a href="#where-martenweave-should-remain-outside">Where Martenweave should remain outside</a></li></ol></nav></details></header>
+<p>Many companies have a data-governance framework.</p>
+<p>They have data owners, stewards, councils, policies, glossaries and quality principles. They may use DAMA-DMBOK as the common language for organising these responsibilities.</p>
+<p>Then an SAP migration begins.</p>
+<p>Within a few months, the programme is again governed through mapping spreadsheets, Jira tickets, workshop notes, validation scripts and the memory of senior consultants.</p>
+<p>The corporate governance model continues to exist. The migration team continues to deliver. The two operate beside each other.</p>
+<p>This is one of the most persistent problems in enterprise data management.</p>
+<p>The organisation has defined how data should be governed, but the project cannot reliably show:</p>
+<ul>
+<li>which business definition a migration field implements;</li>
+<li>which owner approved it;</li>
+<li>which source dataset can provide it;</li>
+<li>which transformation is current;</li>
+<li>which exceptions apply;</li>
+<li>whether the validation rule reflects the latest decision;</li>
+<li>what will be affected if the field changes.</li>
+</ul>
+<p>DAMA-DMBOK is not failing in this situation.</p>
+<p>DAMA describes the disciplines, roles and practices an organisation needs. It is intentionally vendor-neutral and non-prescriptive: it does not mandate a specific tool, operating workflow or technical implementation. Organisations are expected to adapt it to their own environments.</p>
+<p>The failure happens in the final step.</p>
+<p>The company adopts the language of governance but does not create a delivery mechanism that connects governance decisions to the fields, mappings, datasets and rules used by the SAP programme.</p>
+<p>The policy reaches the steering committee.</p>
+<p>It does not reach the mapping row.</p>
+<h2 id="governance-is-usually-designed-above-the-project">Governance is usually designed above the project</h2>
+<p>A typical data-governance operating model defines:</p>
+<ul>
+<li>data domains;</li>
+<li>accountable owners;</li>
+<li>data stewards;</li>
+<li>decision rights;</li>
+<li>approval bodies;</li>
+<li>standards;</li>
+<li>issue-escalation processes;</li>
+<li>quality responsibilities.</li>
+</ul>
+<p>These are necessary foundations.</p>
+<p>DAMA places accountability, policy and decision rights at the centre of data governance. It also treats metadata, quality, architecture, integration and interoperability as core data-management capabilities.</p>
+<p>The difficulty is that an SAP migration works at a much more detailed level.</p>
+<p>The programme must decide whether:</p>
+<ul>
+<li>legacy field <code>CUST_CLASS</code> represents customer segment or legal category;</li>
+<li>material gross weight applies to the base unit or packaging unit;</li>
+<li>a supplier field is mandatory globally or only for one purchasing organisation;</li>
+<li>an empty tax number is valid for a particular Business Partner type;</li>
+<li>a local shipping condition should be preserved or harmonised;</li>
+<li>a warehouse attribute should be supplied directly or derived.</li>
+</ul>
+<p>These decisions are rarely made by the data council.</p>
+<p>They are made during design workshops, mapping sessions, defect calls and test cycles.</p>
+<p>That is not necessarily wrong. Governance bodies should not approve every transformation rule.</p>
+<p>But there must be a controlled connection between the programme’s detailed decisions and the organisation’s governance model.</p>
+<p>Usually, that connection is weak.</p>
+<h2 id="the-governance-artefact-and-the-delivery-artefact-are-different-things">The governance artefact and the delivery artefact are different things</h2>
+<p>The governance organisation may maintain a business glossary containing the definition of “Customer Group.”</p>
+<p>The migration team maintains an Excel row mapping a legacy customer classification to SAP.</p>
+<p>The integration team maintains a middleware conversion.</p>
+<p>The reporting team uses its own grouping logic.</p>
+<p>The data-quality team validates an allowed code list.</p>
+<p>All five teams may believe they are using the same concept.</p>
+<p>They may not be.</p>
+<p>The business glossary is a governance artefact.</p>
+<p>The mapping row, transformation and validation are delivery artefacts.</p>
+<p>A governance programme fails operationally when it assumes that publishing the governance artefact automatically controls the delivery artefacts.</p>
+<p>It does not.</p>
+<p>Someone must connect them.</p>
+<p>The project must be able to show that:</p>
+<pre><code class="language-text">Business definition: Customer Group
+    → legacy source field
+    → approved source-to-target mapping
+    → SAP target attribute
+    → validation rule
+    → interface conversion
+    → reporting dependency
+    → accountable owner
+    → supporting decision</code></pre>
+<p>Without this chain, the glossary contains the approved words while the project implements a different reality.</p>
+<h2 id="a-practical-example-one-material-attribute-six-interpretations">A practical example: one material attribute, six interpretations</h2>
+<p>Consider a global SAP S/4HANA and EWM programme.</p>
+<p>The organisation has a product-data owner and established data-quality policies. The global template defines a warehouse unit of measure as an important product attribute.</p>
+<p>The first rollout begins.</p>
+<p>The migration team treats the field as optional because it is not mandatory for every product in the ERP load.</p>
+<p>The EWM team expects it for warehouse-relevant products.</p>
+<p>The packaging team believes it should be derived from packaging relationships.</p>
+<p>A country team maintains a local source field with a similar name.</p>
+<p>The 3PL expects another code in its product message.</p>
+<p>The quality team checks that any supplied value belongs to an approved unit list.</p>
+<p>Every team is following a reasonable local interpretation.</p>
+<p>The governance framework has not prevented disagreement.</p>
+<p>During testing, products reach EWM without the correct warehouse unit.</p>
+<p>The defect is assigned to migration.</p>
+<p>The migration team points to the optional status in its workbook.</p>
+<p>The EWM team points to the warehouse design.</p>
+<p>The packaging team explains that derivation works only for selected product groups.</p>
+<p>The country team says its local field was never included in the global extract.</p>
+<p>The quality team confirms that all populated unit values are valid.</p>
+<p>The organisation has:</p>
+<ul>
+<li>ownership;</li>
+<li>standards;</li>
+<li>metadata;</li>
+<li>data-quality controls;</li>
+<li>project approval processes.</li>
+</ul>
+<p>It still does not have one coherent model of the attribute.</p>
+<p>This is the point where governance must become more than roles and policies.</p>
+<h2 id="why-the-business-glossary-is-not-enough">Why the business glossary is not enough</h2>
+<p>A glossary is useful when teams use different terms or lack agreed definitions.</p>
+<p>It can establish that “Warehouse Unit of Measure” means the unit used for warehouse execution rather than the base unit used for inventory valuation.</p>
+<p>That removes one ambiguity.</p>
+<p>It does not answer:</p>
+<ul>
+<li>Which source field provides it?</li>
+<li>Which products require it?</li>
+<li>Which plants or warehouses are in scope?</li>
+<li>Can it be derived?</li>
+<li>Which packaging dataset supports the derivation?</li>
+<li>Which SAP field receives it?</li>
+<li>Which external message carries it?</li>
+<li>Which exception applies locally?</li>
+<li>Which validation tests the condition?</li>
+<li>Which change request introduced the current rule?</li>
+</ul>
+<p>The glossary defines the concept.</p>
+<p>The project still needs a controlled implementation model.</p>
+<p>Trying to put all implementation detail into the glossary is also a mistake. The glossary becomes overloaded, difficult to maintain and too technical for its original purpose.</p>
+<p>The better architecture connects the glossary term to the project model without making either system responsible for everything.</p>
+<h2 id="why-ownership-matrices-do-not-create-field-level-accountability">Why ownership matrices do not create field-level accountability</h2>
+<p>A governance organisation may assign a Product Data Owner.</p>
+<p>That is better than having no owner.</p>
+<p>But a domain can contain hundreds or thousands of attributes, rules and mappings.</p>
+<p>The owner cannot personally review every issue.</p>
+<p>Projects therefore rely on delegated experts, local stewards and functional leads.</p>
+<p>This creates several questions:</p>
+<ul>
+<li>Who can approve the global definition?</li>
+<li>Who can approve a local exception?</li>
+<li>Who confirms the source-system meaning?</li>
+<li>Who accepts a temporary migration workaround?</li>
+<li>Who reviews downstream impact?</li>
+<li>Who decides whether a failed quality check reflects bad data or a bad rule?</li>
+</ul>
+<p>A RACI spreadsheet rarely captures these distinctions at the level required by delivery.</p>
+<p>It may state that Product Management is accountable for product data.</p>
+<p>It does not show which person must review a proposed change to warehouse-unit derivation for one product group.</p>
+<p>The result is familiar: the migration lead asks several people for approval and records the final answer in a ticket.</p>
+<p>The governance framework exists, but the approval path is reconstructed manually for each issue.</p>
+<p>A stronger model connects ownership to the relevant object, attribute, rule or decision.</p>
+<p>The project can then determine who must review a specific change rather than asking the entire governance structure to participate.</p>
+<h2 id="why-data-quality-governance-often-arrives-too-late">Why data-quality governance often arrives too late</h2>
+<p>Data quality is usually the DAMA discipline that reaches SAP projects most visibly.</p>
+<p>Projects define completeness, validity, consistency and uniqueness checks. They create dashboards and track failed records.</p>
+<p>This is useful, but it often starts after the model has already been defined.</p>
+<p>The quality team receives a rule such as:</p>
+<blockquote>Shipping condition is mandatory.</blockquote>
+<p>It implements the check.</p>
+<p>Later, the project discovers that the field is mandatory only for customers with particular sales-area data and that local-pickup customers are exempt.</p>
+<p>The quality tool did not fail.</p>
+<p>The model supplied to the quality team was incomplete.</p>
+<p>This exposes an important boundary:</p>
+<ul>
+<li>data-quality execution checks records against rules;</li>
+<li>model governance checks whether those rules are correctly defined and connected.</li>
+</ul>
+<p>A DAMA-aligned programme needs both.</p>
+<p>Otherwise, the organisation can create sophisticated quality monitoring around an obsolete or oversimplified rule.</p>
+<h2 id="why-governance-meetings-do-not-solve-model-drift">Why governance meetings do not solve model drift</h2>
+<p>A programme may respond to inconsistency by adding governance checkpoints.</p>
+<p>Mappings are reviewed monthly.</p>
+<p>Data owners attend quality meetings.</p>
+<p>Critical changes are escalated.</p>
+<p>This can reduce some risks.</p>
+<p>It also creates a large coordination burden.</p>
+<p>Senior specialists spend time reviewing long lists because the project cannot determine which changes actually affect their domain.</p>
+<p>Meetings become a substitute for impact analysis.</p>
+<p>A field change is presented to ten people because nobody knows which three are relevant.</p>
+<p>The group discusses the issue.</p>
+<p>The decision is recorded.</p>
+<p>The project then relies on each workstream to update its own artefacts.</p>
+<p>The meeting may approve the correct rule while the model continues to drift.</p>
+<p>Governance should not be measured by the number of people invited or approvals collected.</p>
+<p>It should be measured by whether the approved decision reaches every affected mapping, validation, dataset and interface.</p>
+<h2 id="why-sap-programmes-are-especially-difficult">Why SAP programmes are especially difficult</h2>
+<p>SAP master data is distributed across domains and organisational levels.</p>
+<p>A Business Partner can include:</p>
+<ul>
+<li>general data;</li>
+<li>addresses;</li>
+<li>tax numbers;</li>
+<li>bank details;</li>
+<li>customer roles;</li>
+<li>supplier roles;</li>
+<li>company-code data;</li>
+<li>sales-area data;</li>
+<li>purchasing-organisation data;</li>
+<li>partner relationships.</li>
+</ul>
+<p>A product can include:</p>
+<ul>
+<li>basic data;</li>
+<li>units of measure;</li>
+<li>plant data;</li>
+<li>sales data;</li>
+<li>purchasing data;</li>
+<li>accounting data;</li>
+<li>classification;</li>
+<li>warehouse attributes;</li>
+<li>transportation attributes.</li>
+</ul>
+<p>Governance ownership does not always follow these technical boundaries.</p>
+<p>A global owner may define the business concept.</p>
+<p>A local team may own the source data.</p>
+<p>An SAP functional team may understand the target rule.</p>
+<p>An integration team may maintain the external representation.</p>
+<p>A migration team may implement the transformation.</p>
+<p>An AMS team may later diagnose operational failures.</p>
+<p>The data travels across organisational boundaries before it travels across systems.</p>
+<p>This makes field-level traceability essential.</p>
+<h2 id="where-existing-tools-stop">Where existing tools stop</h2>
+<p>Most SAP programmes already use several relevant tools.</p>
+<p>The problem is not the absence of tooling. It is the boundary between tools.</p>
+<h3 id="sap-mdg">SAP MDG</h3>
+<p>SAP MDG can govern productive master records, validations, workflows and change requests.</p>
+<p>It does not automatically govern every legacy source field, temporary migration mapping, dataset expectation or external project decision.</p>
+<h3 id="data-catalog">Data catalog</h3>
+<p>A catalog can identify technical assets, ownership and lineage.</p>
+<p>It may not contain the future-state SAP model, proposed mappings, local rollout exceptions or temporary migration logic.</p>
+<h3 id="data-quality-platform">Data-quality platform</h3>
+<p>A quality tool can execute checks over datasets.</p>
+<p>It normally assumes that someone has already defined the correct field, population and rule.</p>
+<h3 id="jira">Jira</h3>
+<p>Jira can preserve discussion, approval and implementation work.</p>
+<p>It does not automatically update the model elements affected by the decision.</p>
+<h3 id="confluence-or-sharepoint">Confluence or SharePoint</h3>
+<p>These systems store designs, meeting notes and workbooks.</p>
+<p>They do not usually validate whether the documents still agree.</p>
+<h3 id="excel">Excel</h3>
+<p>Excel remains effective for reviewing mappings with business users.</p>
+<p>It becomes unreliable when it is also expected to manage stable identity, references, evidence, dependencies and change impact.</p>
+<p>Each tool solves a valid problem.</p>
+<p>None necessarily owns the connected delivery model.</p>
+<h2 id="the-missing-control-a-governed-model-between-policy-and-execution">The missing control: a governed model between policy and execution</h2>
+<p>This is the role Martenweave is designed to fill.</p>
+<p>It does not implement DAMA-DMBOK as a complete software suite.</p>
+<p>It does not replace the governance organisation.</p>
+<p>It does not become SAP MDG, a data catalog, a quality platform or a migration engine.</p>
+<p>It maintains the model that connects their relevant outputs.</p>
+<p>Martenweave can represent:</p>
+<ul>
+<li>domains;</li>
+<li>entities;</li>
+<li>attributes;</li>
+<li>source and target fields;</li>
+<li>datasets;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>relationships;</li>
+<li>ownership;</li>
+<li>evidence;</li>
+<li>decisions;</li>
+<li>proposed changes.</li>
+</ul>
+<p>Canonical files remain the source of truth. Generated SQLite and search indexes can be rebuilt. References are validated before indexing, and AI-assisted modifications remain proposals until reviewed by people.</p>
+<p>That creates a practical bridge:</p>
+<pre><code class="language-text">DAMA principles and governance roles
+                ↓
+owners, definitions, policies and decisions
+                ↓
+       Martenweave model layer
+                ↓
+mappings, validations, datasets and impact
+                ↓
+SAP migration, MDG, integration and testing</code></pre>
+<p>The framework defines the management intent.</p>
+<p>Martenweave connects it to delivery objects that can be checked.</p>
+<h2 id="how-the-operating-model-changes">How the operating model changes</h2>
+<p>Without a model layer, a change often follows this path:</p>
+<ol>
+<li>A defect is found.</li>
+<li>A meeting is organised.</li>
+<li>A decision is made.</li>
+<li>A Jira ticket is closed.</li>
+<li>Teams update their own files.</li>
+<li>Another workstream continues using the old rule.</li>
+<li>The defect returns in another wave.</li>
+</ol>
+<p>With a governed model layer, the workflow becomes:</p>
+<ol>
+<li>New evidence is registered.</li>
+<li>A model change is proposed.</li>
+<li>The proposal identifies the attribute, mapping or rule affected.</li>
+<li>Structural validation checks the references.</li>
+<li>Impact analysis identifies connected datasets, validations and interfaces.</li>
+<li>The accountable owners review the change.</li>
+<li>The approved model is updated.</li>
+<li>Execution artefacts are aligned with the new model.</li>
+<li>Git records the reviewed change.</li>
+</ol>
+<p>Martenweave’s intended pipeline is explicitly proposal-first: evidence leads to a proposal, validation, gap and impact analysis, human review, and then a GitHub issue or pull request.</p>
+<p>The important improvement is not another approval.</p>
+<p>It is that the approval is attached to a defined model change with visible consequences.</p>
+<h2 id="the-warehouse-unit-example-revisited">The warehouse-unit example revisited</h2>
+<p>Return to the warehouse-unit problem.</p>
+<p>In Martenweave, the programme can register:</p>
+<h3 id="business-attribute">Business attribute</h3>
+<p><code>Warehouse Unit of Measure</code></p>
+<h3 id="definition">Definition</h3>
+<p>The unit used for warehouse execution and handling.</p>
+<h3 id="applicability">Applicability</h3>
+<p>Required for warehouse-relevant products in defined plants or warehouse numbers.</p>
+<h3 id="sources">Sources</h3>
+<ul>
+<li>legacy warehouse-unit field;</li>
+<li>packaging dataset;</li>
+<li>local product extract.</li>
+</ul>
+<h3 id="target-representations">Target representations</h3>
+<ul>
+<li>SAP product attribute;</li>
+<li>EWM product representation;</li>
+<li>3PL product-message field.</li>
+</ul>
+<h3 id="rules">Rules</h3>
+<ul>
+<li>direct mapping where the legacy field is trusted;</li>
+<li>derivation from packaging where approved;</li>
+<li>no derivation for unsupported product groups;</li>
+<li>explicit exception for one local process.</li>
+</ul>
+<h3 id="ownership">Ownership</h3>
+<ul>
+<li>global product-data owner;</li>
+<li>warehouse-process approver;</li>
+<li>local source steward.</li>
+</ul>
+<h3 id="evidence">Evidence</h3>
+<ul>
+<li>design decision;</li>
+<li>interface specification;</li>
+<li>test result;</li>
+<li>approved exception.</li>
+</ul>
+<p>Now the project can run several forms of control.</p>
+<p>It can detect that a mapping references a missing source field.</p>
+<p>It can compare the actual source extract with the expected fields.</p>
+<p>It can show that the derivation rule affects EWM and the 3PL interface.</p>
+<p>It can identify that the local exception lacks global approval.</p>
+<p>It can generate a proposal rather than silently changing the canonical definition.</p>
+<p>The DAMA principles have not changed.</p>
+<p>They have become connected to an operational object.</p>
+<h2 id="this-is-not-dama-compliance">This is not “DAMA compliance”</h2>
+<p>Martenweave should not claim that using the tool makes an organisation DAMA-compliant.</p>
+<p>DAMA-DMBOK is not a legally binding compliance framework or a prescriptive technical standard. It supplies generally accepted principles and practices that organisations adapt to their own needs.</p>
+<p>A company can use Martenweave poorly.</p>
+<p>It can assign owners who never review anything.</p>
+<p>It can create model objects with weak definitions.</p>
+<p>It can ignore validation failures.</p>
+<p>It can allow the canonical model to become stale.</p>
+<p>It can collect evidence without making decisions.</p>
+<p>Technology cannot create governance maturity on its own.</p>
+<p>The credible claim is narrower:</p>
+<blockquote>Martenweave can provide implementation evidence for selected DAMA-aligned practices within migration and model-change workflows.</blockquote>
+<p>For example, it can show that:</p>
+<ul>
+<li>important attributes have owners;</li>
+<li>mappings connect defined source and target fields;</li>
+<li>datasets are checked against model expectations;</li>
+<li>decisions are linked to affected objects;</li>
+<li>proposed changes pass validation and impact review;</li>
+<li>approved and proposed states remain separate;</li>
+<li>model history is versioned.</li>
+</ul>
+<p>That is useful evidence of operating governance.</p>
+<p>It is not a certificate of organisational maturity.</p>
+<h2 id="where-martenweave-aligns-strongly-with-dama">Where Martenweave aligns strongly with DAMA</h2>
+<p>The strongest overlap is in five areas.</p>
+<h3 id="data-governance">Data governance</h3>
+<p>Martenweave records ownership, approval state, decisions and controlled proposals.</p>
+<p>It does not define the organisation’s decision rights, but it makes them actionable at model level.</p>
+<h3 id="metadata-management">Metadata management</h3>
+<p>It connects business concepts, technical fields, mappings, rules, evidence and dependencies.</p>
+<p>It does not replace enterprise-wide metadata discovery.</p>
+<h3 id="data-modelling-and-design">Data modelling and design</h3>
+<p>It gives model elements stable identity and validates their relationships.</p>
+<p>It does not replace every conceptual or enterprise-modelling method.</p>
+<h3 id="data-quality">Data quality</h3>
+<p>It checks model consistency and compares real datasets with expected fields and mappings.</p>
+<p>It does not replace industrial-scale cleansing or observability.</p>
+<h3 id="integration-and-interoperability">Integration and interoperability</h3>
+<p>It records how the same concept is represented across SAP, legacy systems, warehouses and external providers.</p>
+<p>It does not execute runtime integrations.</p>
+<p>This limited alignment is more credible than claiming coverage of the entire DAMA wheel.</p>
+<h2 id="where-martenweave-should-remain-outside">Where Martenweave should remain outside</h2>
+<p>Several DAMA knowledge areas should remain primarily outside Martenweave:</p>
+<ul>
+<li>data security enforcement;</li>
+<li>privacy operations;</li>
+<li>database administration;</li>
+<li>enterprise architecture management;</li>
+<li>data warehousing and analytics;</li>
+<li>document lifecycle management;</li>
+<li>productive master-data stewardship;</li>
+<li>organisation-wide compliance management.</li>
+</ul>
+<p>Martenweave may reference evidence from these areas.</p>
+<p>A field may carry a security classification.</p>
+<p>A decision may cite a privacy requirement.</p>
+<p>A model may reference an MDM object.</p>
+<p>That does not make Martenweave the operating platform for those disciplines.</p>
+<p>A focused tool is more useful than a weak imitation of an enterprise governance suite.</p>
+<h2 id="why-this-matters-economically">Why this matters economically</h2>
+<p>Governance initiatives are often criticised as overhead because their effect is difficult to connect to project delivery.</p>
+<p>The programme pays for:</p>
+<ul>
+<li>governance roles;</li>
+<li>glossary implementation;</li>
+<li>policy creation;</li>
+<li>workshops;</li>
+<li>stewardship processes.</li>
+</ul>
+<p>Migration teams may still repeat the same mapping analysis and defects.</p>
+<p>This creates a legitimate management question:</p>
+<blockquote>What delivery cost is the governance model actually reducing?</blockquote>
+<p>A model layer makes the answer more measurable.</p>
+<p>The programme can track:</p>
+<ul>
+<li>time required to find an owner;</li>
+<li>time required to trace an old decision;</li>
+<li>mapping changes implemented without full impact review;</li>
+<li>repeated defects across rollout waves;</li>
+<li>dataset gaps found before test loads;</li>
+<li>local exceptions lacking approval;</li>
+<li>manual effort used to reconcile mappings and validations.</li>
+</ul>
+<p>If these measures improve, governance is reaching delivery.</p>
+<p>If they do not, the programme may have created additional roles without changing how the model is controlled.</p>
+<h2 id="a-practical-adoption-path">A practical adoption path</h2>
+<p>The company should not begin by attempting to encode the entire DAMA framework.</p>
+<p>Start with one painful migration area.</p>
+<p>For example:</p>
+<blockquote>Supplier mappings and country-specific rules repeatedly diverge across rollout waves.</blockquote>
+<p>Then implement only the controls needed for that problem.</p>
+<h3 id="define-the-governed-scope">Define the governed scope</h3>
+<p>Identify:</p>
+<ul>
+<li>supplier objects;</li>
+<li>critical attributes;</li>
+<li>responsible owners;</li>
+<li>source systems;</li>
+<li>target representations;</li>
+<li>affected countries.</li>
+</ul>
+<h3 id="import-the-current-model">Import the current model</h3>
+<p>Bring in:</p>
+<ul>
+<li>mapping workbooks;</li>
+<li>dataset structures;</li>
+<li>validation rules;</li>
+<li>relevant decisions;</li>
+<li>known exceptions.</li>
+</ul>
+<p>Do not hide contradictions during import.</p>
+<p>Represent them as gaps.</p>
+<h3 id="establish-stable-identity">Establish stable identity</h3>
+<p>Give important attributes, fields, mappings and rules stable IDs.</p>
+<p>This allows relationships to survive naming changes.</p>
+<h3 id="validate-the-model">Validate the model</h3>
+<p>Check:</p>
+<ul>
+<li>missing references;</li>
+<li>duplicate identifiers;</li>
+<li>undefined fields;</li>
+<li>absent ownership;</li>
+<li>incomplete mappings;</li>
+<li>conflicting active definitions.</li>
+</ul>
+<h3 id="test-a-real-dataset">Test a real dataset</h3>
+<p>Compare an actual supplier extract with the approved expectations.</p>
+<p>This proves whether the model can influence delivery rather than remaining a documentation exercise.</p>
+<h3 id="process-one-change">Process one change</h3>
+<p>Take a real proposed mapping or rule change through:</p>
+<ul>
+<li>evidence;</li>
+<li>proposal;</li>
+<li>validation;</li>
+<li>impact analysis;</li>
+<li>review;</li>
+<li>approval.</li>
+</ul>
+<h3 id="measure-the-result">Measure the result</h3>
+<p>Compare the time and people required with the previous process.</p>
+<p>Expand only when the control demonstrably reduces uncertainty or repeated work.</p>
+<h2 id="questions-managers-should-ask">Questions managers should ask</h2>
+<p>A manager does not need to inspect every mapping.</p>
+<p>They should ask whether governance reaches the implementation.</p>
+<h3 id="can-we-trace-a-critical-field-from-definition-to-execution">Can we trace a critical field from definition to execution?</h3>
+<p>The answer should include the business concept, source, mapping, target, rule and owner.</p>
+<h3 id="can-we-distinguish-approved-rules-from-assumptions">Can we distinguish approved rules from assumptions?</h3>
+<p>A comment marked “TBD” should not quietly become transformation logic.</p>
+<h3 id="does-the-latest-dataset-satisfy-the-approved-model">Does the latest dataset satisfy the approved model?</h3>
+<p>Not merely whether the file is complete, but whether it contains the fields and context required by the model.</p>
+<h3 id="does-a-decision-update-every-affected-artefact">Does a decision update every affected artefact?</h3>
+<p>The project should show which mappings, validations and interfaces require alignment.</p>
+<h3 id="can-local-deviations-be-separated-from-the-global-baseline">Can local deviations be separated from the global baseline?</h3>
+<p>Otherwise, every rollout gradually creates its own governance model.</p>
+<h3 id="do-ai-generated-changes-remain-proposals">Do AI-generated changes remain proposals?</h3>
+<p>AI can accelerate modelling, but it should not silently redefine governed data.</p>
+<h3 id="can-we-reproduce-the-readiness-result">Can we reproduce the readiness result?</h3>
+<p>The same model and dataset should produce the same structural assessment.</p>
+<p>These questions test operational governance more effectively than asking how many glossary terms or policies have been published.</p>
+<h2 id="the-central-lesson">The central lesson</h2>
+<p>DAMA-based data governance often fails to reach SAP migration teams because it remains organised around frameworks, roles and documents while delivery operates through fields, mappings, datasets and urgent changes.</p>
+<p>The gap is not solved by more governance language.</p>
+<p>It is solved by connecting governance decisions to the model elements that projects actually change.</p>
+<p>DAMA-DMBOK explains why ownership, metadata, quality, modelling and interoperability matter. It intentionally leaves organisations to choose how those principles should be implemented.</p>
+<p>Martenweave provides one possible implementation for a narrow, high-friction part of that problem.</p>
+<p>It does not replace DAMA.</p>
+<p>It does not replace governance leadership.</p>
+<p>It does not replace SAP MDG, migration tooling, catalogs or quality platforms.</p>
+<p>It creates a controlled bridge between them.</p>
+<p>The owner becomes connected to the attribute.</p>
+<p>The decision becomes connected to the mapping.</p>
+<p>The rule becomes connected to the dataset.</p>
+<p>The change becomes connected to its impact.</p>
+<p>That is the point where governance stops being a presentation about how data should be managed and starts influencing how an SAP programme actually works.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-data-governance-frameworks-stay-on-paper-during-sap-programmes.html"><span>Previous</span>Many organisations already know what good data management should look like.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

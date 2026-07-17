@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why an SAP MDG Implementation Needs an Independent Model Specification | Martenweave</title>
+    <meta
+      name="description"
+      content="An SAP MDG implementation contains several versions of the model."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html" />
+    <meta property="og:title" content="Why an SAP MDG Implementation Needs an Independent Model Specification | Martenweave" />
+    <meta property="og:description" content="An SAP MDG implementation contains several versions of the model." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why an SAP MDG Implementation Needs an Independent Model Specification | Martenweave" />
+    <meta name="twitter:description" content="An SAP MDG implementation contains several versions of the model." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html",
+                        "name": "Why an SAP MDG Implementation Needs an Independent Model Specification | Martenweave",
+                        "description": "An SAP MDG implementation contains several versions of the model.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why an SAP MDG Implementation Needs an Independent Model Specification",
+                                    "item": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html#content",
+                        "headline": "Why an SAP MDG Implementation Needs an Independent Model Specification",
+                        "name": "Why an SAP MDG Implementation Needs an Independent Model Specification",
+                        "description": "An SAP MDG implementation contains several versions of the model.",
+                        "url": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why an SAP MDG Implementation Needs an Independent Model Specification</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>Why an SAP MDG Implementation Needs an Independent Model Specification</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">An SAP MDG implementation contains several versions of the model.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-configured-system-is-necessary-but-it-is-not-the-complete-specification">The configured system is necessary, but it is not the complete specification</a></li><li><a href="#a-model-specification-is-not-another-design-document">A model specification is not another design document</a></li><li><a href="#why-the-sap-configuration-alone-is-not-enough">Why the SAP configuration alone is not enough</a></li><li><a href="#why-the-requirements-document-is-not-enough">Why the requirements document is not enough</a></li><li><a href="#why-the-mapping-workbook-is-not-enough">Why the mapping workbook is not enough</a></li><li><a href="#why-jira-and-confluence-are-not-enough">Why Jira and Confluence are not enough</a></li><li><a href="#the-specification-should-sit-between-intent-and-implementation">The specification should sit between intent and implementation</a></li><li><a href="#what-should-be-inside-the-specification">What should be inside the specification</a></li><li><a href="#business-entities">Business entities</a></li><li><a href="#attributes">Attributes</a></li><li><a href="#contexts">Contexts</a></li><li><a href="#source-and-target-endpoints">Source and target endpoints</a></li><li><a href="#mappings-and-transformations">Mappings and transformations</a></li><li><a href="#value-lists-and-mappings">Value lists and mappings</a></li><li><a href="#rules">Rules</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>An SAP MDG implementation contains several versions of the model.</p>
+<p>There is the model described in requirements. There is the model discussed during design workshops. There is the model recorded in mapping workbooks. There is the model configured in SAP. There is the model assumed by migration routines, integrations and test cases.</p>
+<p>Ideally, these versions remain aligned.</p>
+<p>In a real programme, they begin to diverge.</p>
+<p>A field is added during configuration but not reflected in the mapping. A country exception is approved in a ticket but never enters the global design. A migration default becomes part of the loaded data without becoming part of the governance model. A validation rule is changed after testing, while the original design document remains marked as approved.</p>
+<p>The system may still work. The project may continue to report progress. But the programme gradually loses the ability to answer a basic question:</p>
+<blockquote>What is the currently approved model?</blockquote>
+<p>We recommend maintaining an independent model specification throughout an SAP MDG implementation.</p>
+<p>By independent, we do not mean disconnected from SAP MDG. We mean that the approved model should exist in a form that is not dependent on one configuration environment, one workbook, one vendor or one project-management tool.</p>
+<p>It should describe the model the programme intends to govern and provide a stable reference against which configuration, migration and changes can be checked.</p>
+<h2 id="the-configured-system-is-necessary-but-it-is-not-the-complete-specification">The configured system is necessary, but it is not the complete specification</h2>
+<p>SAP positions SAP Master Data Governance as a central governance layer for master data. It supports governed models, golden records, matching and consolidation, change-request workflows, validated values, data-quality monitoring, mass processing and auditable changes.</p>
+<p>That makes SAP MDG the operational system for governed master data.</p>
+<p>It does not automatically make the configured system the best place to preserve every element of implementation intent.</p>
+<p>Configuration can tell us what currently exists in a particular environment. It may not explain:</p>
+<ul>
+<li>which business requirement created an attribute;</li>
+<li>why one design option was selected over another;</li>
+<li>which source systems can populate the attribute;</li>
+<li>which countries use different definitions;</li>
+<li>which migration transformations were approved;</li>
+<li>which rules are temporary;</li>
+<li>which downstream consumers depend on the field;</li>
+<li>which evidence supports a decision;</li>
+<li>which changes are planned but not yet transported;</li>
+<li>whether production, quality and development represent the same design state.</li>
+</ul>
+<p>The system contains the implemented result.</p>
+<p>The programme also needs to preserve the meaning, context and history surrounding that result.</p>
+<h2 id="a-model-specification-is-not-another-design-document">A model specification is not another design document</h2>
+<p>The phrase “model specification” can suggest a large document that is approved once and then becomes outdated.</p>
+<p>That is not what we recommend.</p>
+<p>A useful model specification is structured, versioned and connected to delivery.</p>
+<p>It should contain identifiable model objects such as:</p>
+<ul>
+<li>domains;</li>
+<li>business entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>organisational contexts;</li>
+<li>source fields;</li>
+<li>target endpoints;</li>
+<li>mappings;</li>
+<li>value lists;</li>
+<li>validation rules;</li>
+<li>owners;</li>
+<li>decisions;</li>
+<li>issues;</li>
+<li>evidence;</li>
+<li>change proposals.</li>
+</ul>
+<p>Each object should have a stable identity.</p>
+<p>The specification should allow the programme to answer:</p>
+<ul>
+<li>What does this object mean?</li>
+<li>Where is it used?</li>
+<li>Who owns it?</li>
+<li>Which source data supports it?</li>
+<li>Which rules apply?</li>
+<li>Which decisions changed it?</li>
+<li>What will be affected if it changes?</li>
+<li>Is the configured implementation aligned with it?</li>
+</ul>
+<p>This is different from a 200-page design document.</p>
+<p>A document explains the design to a reader. A model specification gives the programme a controlled representation that can be reviewed, validated and compared.</p>
+<p>The programme may still generate documents, workbooks and diagrams from that representation. Those outputs become views of the model rather than competing sources of truth.</p>
+<h2 id="why-the-sap-configuration-alone-is-not-enough">Why the SAP configuration alone is not enough</h2>
+<p>There are several practical reasons.</p>
+<h3 id="configuration-reflects-a-technical-state">Configuration reflects a technical state</h3>
+<p>A configured field or rule shows that something was built.</p>
+<p>It does not necessarily show that the corresponding business decision is final.</p>
+<p>During implementation, teams often configure options for testing before all decisions are closed. Temporary logic may be introduced. A workaround may be transported to keep a test cycle moving.</p>
+<p>If the configured environment is treated as the sole specification, temporary implementation choices can quietly become approved architecture.</p>
+<h3 id="environments-may-differ">Environments may differ</h3>
+<p>Development, quality and production do not always contain identical states.</p>
+<p>Transports may be pending. Emergency corrections may have been applied. A configuration change may exist in one environment while related documentation and mappings reflect another.</p>
+<p>The programme therefore needs a reference that distinguishes:</p>
+<ul>
+<li>approved design;</li>
+<li>current implementation;</li>
+<li>planned implementation;</li>
+<li>temporary deviation;</li>
+<li>production reality.</li>
+</ul>
+<p>Without this distinction, teams can argue about which environment represents the truth.</p>
+<h3 id="some-knowledge-exists-outside-sap">Some knowledge exists outside SAP</h3>
+<p>An MDG model depends on information that may never be stored directly in the platform:</p>
+<ul>
+<li>legacy source fields;</li>
+<li>migration transformations;</li>
+<li>dataset profiles;</li>
+<li>local requirements;</li>
+<li>rejected alternatives;</li>
+<li>project decisions;</li>
+<li>test evidence;</li>
+<li>remediation obligations;</li>
+<li>interface assumptions;</li>
+<li>planned decommissioning of source systems.</li>
+</ul>
+<p>This knowledge still affects the correctness of the implementation.</p>
+<p>A target attribute may be configured perfectly while the migration team cannot populate it. A validation rule may work correctly while no business owner accepts responsibility for the exceptions.</p>
+<p>The configured system cannot be the complete specification because the implementation problem extends beyond the configured system.</p>
+<h2 id="why-the-requirements-document-is-not-enough">Why the requirements document is not enough</h2>
+<p>Requirements are essential, but they operate at a different level.</p>
+<p>A requirement might state:</p>
+<blockquote>Customer classification must be governed globally.</blockquote>
+<p>The model specification must make that statement implementable.</p>
+<p>It needs to show:</p>
+<ul>
+<li>which business attribute represents the classification;</li>
+<li>whether there are several classification contexts;</li>
+<li>which target fields store it;</li>
+<li>which values are permitted;</li>
+<li>which countries require exceptions;</li>
+<li>which sources currently provide it;</li>
+<li>which mappings and transformations are needed;</li>
+<li>which validation rules apply;</li>
+<li>who owns the definition;</li>
+<li>which processes consume it.</li>
+</ul>
+<p>Requirements explain what the organisation wants.</p>
+<p>The specification connects that intention to the actual model.</p>
+<p>Requirements also change.</p>
+<p>If a requirement is updated, the programme needs to know which attributes, mappings, rules, interfaces and tests are affected. That relationship is difficult to maintain through document references alone.</p>
+<h2 id="why-the-mapping-workbook-is-not-enough">Why the mapping workbook is not enough</h2>
+<p>A mapping workbook focuses on movement from source to target.</p>
+<p>That is necessary, especially during migration.</p>
+<p>But a mapping does not fully define the governed object.</p>
+<p>The same business attribute may:</p>
+<ul>
+<li>be populated from several sources;</li>
+<li>use different mappings by country;</li>
+<li>be maintained manually after go-live;</li>
+<li>participate in matching;</li>
+<li>trigger workflow routing;</li>
+<li>be mandatory only in specific contexts;</li>
+<li>use a governed value list;</li>
+<li>affect downstream integrations.</li>
+</ul>
+<p>The workbook may record some of this information in columns and comments. As the programme grows, the row becomes an increasingly compressed representation of several different objects.</p>
+<p>An independent specification separates the attribute, endpoint, mapping, context, rule and decision while preserving the relationships between them.</p>
+<p>That allows one element to change without rewriting the meaning of the others.</p>
+<h2 id="why-jira-and-confluence-are-not-enough">Why Jira and Confluence are not enough</h2>
+<p>Jira, Azure DevOps, Confluence and SharePoint are useful project tools.</p>
+<p>We use and recommend them for the purposes they serve well.</p>
+<p>Tickets are good for assigning work, discussing defects and tracking delivery. Documentation platforms are good for narrative explanations, meeting notes and accessible project communication.</p>
+<p>They are not naturally structured around the model itself.</p>
+<p>A Jira issue can state that a validation rule must change. It does not automatically know:</p>
+<ul>
+<li>which attributes use the rule;</li>
+<li>which mappings are affected;</li>
+<li>which datasets must be rechecked;</li>
+<li>which tests must be repeated;</li>
+<li>which countries rely on the current behaviour.</li>
+</ul>
+<p>A Confluence page can describe a domain model. It does not automatically validate broken references or detect that a target field has no corresponding source mapping.</p>
+<p>The problem is not the quality of the tools. The problem is asking them to perform model control indirectly through links and prose.</p>
+<p>We prefer to keep issues in the issue system and documentation in the documentation system, while connecting both to stable model objects.</p>
+<h2 id="the-specification-should-sit-between-intent-and-implementation">The specification should sit between intent and implementation</h2>
+<p>A useful architecture looks like this:</p>
+<pre><code class="language-text">Business requirements and decisions
+                 ↓
+Independent model specification
+                 ↓
+SAP MDG configuration and workflows
+                 ↓
+Migration, integration and testing
+                 ↓
+Operational governance and AMS</code></pre>
+<p>The specification is not a replacement for any layer.</p>
+<p>It translates between them.</p>
+<p>From the business side, it receives definitions, ownership, policies and decisions.</p>
+<p>From the technical side, it connects those concepts to SAP fields, contexts, rules, mappings and interfaces.</p>
+<p>From migration, it receives evidence about source-data availability and transformation needs.</p>
+<p>From testing, it receives evidence that the intended behaviour has been verified.</p>
+<p>From AMS, it receives model changes and operational findings.</p>
+<p>This creates a controlled feedback loop instead of a one-directional handover from requirements to configuration.</p>
+<h2 id="what-should-be-inside-the-specification">What should be inside the specification</h2>
+<p>The exact structure will vary by domain, but several elements are consistently useful.</p>
+<h2 id="business-entities">Business entities</h2>
+<p>The specification should identify the main business objects and their boundaries.</p>
+<p>For Business Partner, that may include:</p>
+<ul>
+<li>person or organisation;</li>
+<li>customer role;</li>
+<li>supplier role;</li>
+<li>address;</li>
+<li>tax registration;</li>
+<li>bank details;</li>
+<li>relationships;</li>
+<li>organisational assignments.</li>
+</ul>
+<p>For Material or Product, the structure will be different.</p>
+<p>The important point is that the entity model should be explicit rather than assumed from field groupings.</p>
+<h2 id="attributes">Attributes</h2>
+<p>Attributes should have:</p>
+<ul>
+<li>stable identifiers;</li>
+<li>clear definitions;</li>
+<li>ownership;</li>
+<li>data type or value domain;</li>
+<li>lifecycle status;</li>
+<li>relevant contexts;</li>
+<li>sensitivity or regulatory relevance where applicable.</li>
+</ul>
+<p>A business attribute should not be confused with one physical field.</p>
+<p>One attribute may be represented by several source and target endpoints.</p>
+<h2 id="contexts">Contexts</h2>
+<p>SAP master data often varies by organisational level.</p>
+<p>The specification should represent contexts such as:</p>
+<ul>
+<li>company code;</li>
+<li>sales area;</li>
+<li>purchasing organisation;</li>
+<li>plant;</li>
+<li>country;</li>
+<li>business process;</li>
+<li>partner role.</li>
+</ul>
+<p>Context should not exist only in a note.</p>
+<p>A rule applying to one sales area is not the same rule as a global requirement with an informal exception.</p>
+<h2 id="source-and-target-endpoints">Source and target endpoints</h2>
+<p>The specification should connect the business model to physical implementation.</p>
+<p>This includes:</p>
+<ul>
+<li>legacy tables and columns;</li>
+<li>files and datasets;</li>
+<li>SAP tables and fields;</li>
+<li>APIs;</li>
+<li>message attributes;</li>
+<li>interface structures;</li>
+<li>MDG entities and attributes where relevant.</li>
+</ul>
+<p>Endpoints can change without changing the business meaning.</p>
+<p>That is another reason to keep them separate from the attribute itself.</p>
+<h2 id="mappings-and-transformations">Mappings and transformations</h2>
+<p>Mappings should describe the relationship between source and target.</p>
+<p>They should include:</p>
+<ul>
+<li>applicable context;</li>
+<li>transformation logic;</li>
+<li>defaulting;</li>
+<li>filtering;</li>
+<li>concatenation or splitting;</li>
+<li>derivation;</li>
+<li>status;</li>
+<li>owner;</li>
+<li>evidence;</li>
+<li>known exceptions.</li>
+</ul>
+<p>A transformation that changes business meaning should require business approval, not only technical review.</p>
+<h2 id="value-lists-and-mappings">Value lists and mappings</h2>
+<p>Code lists deserve separate treatment.</p>
+<p>The specification should show:</p>
+<ul>
+<li>permitted target values;</li>
+<li>source values;</li>
+<li>translations;</li>
+<li>inactive values;</li>
+<li>unmapped values;</li>
+<li>defaults;</li>
+<li>local variants;</li>
+<li>effective dates;</li>
+<li>owner.</li>
+</ul>
+<p>A field mapping can be complete while the value mapping remains unusable.</p>
+<h2 id="rules">Rules</h2>
+<p>Rules should have a business definition independent from their technical implementation.</p>
+<p>A rule may be implemented in:</p>
+<ul>
+<li>SAP MDG validation;</li>
+<li>derivation logic;</li>
+<li>migration code;</li>
+<li>an interface;</li>
+<li>source-system controls;</li>
+<li>reporting;</li>
+<li>manual stewardship procedures.</li>
+</ul>
+<p>The specification should make clear where the rule is expected to operate and why.</p>
+<h2 id="decisions">Decisions</h2>
+<p>Important decisions should be attached to affected objects.</p>
+<p>A useful decision record contains:</p>
+<ul>
+<li>the issue being decided;</li>
+<li>alternatives considered;</li>
+<li>selected option;</li>
+<li>rationale;</li>
+<li>evidence;</li>
+<li>approver;</li>
+<li>applicable context;</li>
+<li>review condition.</li>
+</ul>
+<p>This prevents the approved model from becoming a collection of unexplained outcomes.</p>
+<h2 id="evidence">Evidence</h2>
+<p>Evidence may include:</p>
+<ul>
+<li>data profiles;</li>
+<li>legal requirements;</li>
+<li>business-process documentation;</li>
+<li>test results;</li>
+<li>defect analysis;</li>
+<li>interface specifications;</li>
+<li>workshop outcomes;</li>
+<li>source-system extracts.</li>
+</ul>
+<p>Not every detail needs to be copied into the specification.</p>
+<p>The model should retain enough context to locate and evaluate the supporting material.</p>
+<h2 id="how-the-specification-should-behave">How the specification should behave</h2>
+<p>A specification is useful only if it remains operational.</p>
+<p>We expect it to support several behaviours.</p>
+<h3 id="it-should-be-versioned">It should be versioned</h3>
+<p>The team should be able to compare two approved states.</p>
+<p>A model change should show:</p>
+<ul>
+<li>what was added;</li>
+<li>what was removed;</li>
+<li>what was modified;</li>
+<li>which relationships changed;</li>
+<li>who approved it;</li>
+<li>why it changed.</li>
+</ul>
+<p>File names such as <code>final_v9_updated</code> are not sufficient change control.</p>
+<h3 id="it-should-be-validatable">It should be validatable</h3>
+<p>The programme should automatically detect structural problems such as:</p>
+<ul>
+<li>duplicate identifiers;</li>
+<li>missing references;</li>
+<li>invalid object types;</li>
+<li>mappings without endpoints;</li>
+<li>rules without owners;</li>
+<li>references to retired objects;</li>
+<li>missing mandatory context.</li>
+</ul>
+<p>Validation does not replace architecture review.</p>
+<p>It prevents architects from spending time on errors that a deterministic check can identify.</p>
+<h3 id="it-should-be-searchable">It should be searchable</h3>
+<p>An architect should be able to search for a business term, SAP field, source column, decision or identifier and find the connected objects.</p>
+<p>Search is especially important when domains contain hundreds or thousands of elements.</p>
+<h3 id="it-should-support-lineage">It should support lineage</h3>
+<p>The programme should be able to trace:</p>
+<pre><code class="language-text">Legacy field
+→ mapping
+→ business attribute
+→ SAP target endpoint
+→ validation rule
+→ consuming process</code></pre>
+<p>The exact chain varies by scenario.</p>
+<p>The principle is that relationships should be explicit enough to follow.</p>
+<h3 id="it-should-support-impact-analysis">It should support impact analysis</h3>
+<p>Before changing an attribute or rule, the programme should identify likely downstream effects.</p>
+<p>Impact analysis should help answer:</p>
+<ul>
+<li>Which mappings depend on this attribute?</li>
+<li>Which datasets contain it?</li>
+<li>Which rules refer to it?</li>
+<li>Which countries use it?</li>
+<li>Which interfaces consume it?</li>
+<li>Which tests should be repeated?</li>
+<li>Which decisions may need review?</li>
+</ul>
+<p>The result is a starting point for architectural judgement, not an automatic approval.</p>
+<h3 id="it-should-produce-role-specific-views">It should produce role-specific views</h3>
+<p>Business owners should not need to inspect technical model files.</p>
+<p>Migration teams need mapping and dataset views.</p>
+<p>Architects need relationships and impact.</p>
+<p>Managers need readiness and risk summaries.</p>
+<p>AMS needs understandable operational context.</p>
+<p>One specification can produce several outputs while keeping the underlying model consistent.</p>
+<h2 id="independence-protects-the-client">Independence protects the client</h2>
+<p>An independent specification has an organisational value beyond documentation.</p>
+<p>It reduces dependence on:</p>
+<ul>
+<li>one implementation partner;</li>
+<li>one product configuration team;</li>
+<li>one spreadsheet owner;</li>
+<li>one architect;</li>
+<li>one environment;</li>
+<li>one proprietary documentation format.</li>
+</ul>
+<p>The client retains a representation of its own model and the reasoning behind it.</p>
+<p>This does not eliminate the need for experienced SAP MDG specialists. It makes their work more transferable and reviewable.</p>
+<p>A programme should not have to rehire the original implementation team simply to understand why a field, rule or exception exists.</p>
+<h2 id="independence-also-protects-the-implementation-partner">Independence also protects the implementation partner</h2>
+<p>This is not only a client-control argument.</p>
+<p>A clear specification helps an implementation partner demonstrate:</p>
+<ul>
+<li>what was approved;</li>
+<li>what remains open;</li>
+<li>which assumptions were provided by the client;</li>
+<li>which changes affected scope;</li>
+<li>which data limitations caused rework;</li>
+<li>which configuration corresponds to which decision.</li>
+</ul>
+<p>Without a shared specification, disputes often become arguments about documents and meeting memory.</p>
+<p>A controlled model makes responsibilities and changes more explicit.</p>
+<h2 id="the-specification-should-not-become-a-second-mdg-implementation">The specification should not become a second MDG implementation</h2>
+<p>There is an obvious risk.</p>
+<p>A team may attempt to model every technical detail, every configuration setting and every project artefact in an external repository.</p>
+<p>That creates duplication and administrative overhead.</p>
+<p>We avoid this by using a simple rule:</p>
+<blockquote>Store the model knowledge required to understand, validate and change the implementation. Do not reproduce information that another system already governs reliably.</blockquote>
+<p>For example, the independent specification may need to know that an attribute uses a particular approval rule. It may not need to reproduce every technical workflow node.</p>
+<p>It may need to know that a target endpoint exists. It does not need to become a complete copy of the SAP data dictionary.</p>
+<p>It may link to a test case. It does not need to replace the test-management system.</p>
+<p>The specification is a control layer, not an archive of everything.</p>
+<h2 id="how-to-keep-the-specification-aligned-with-sap-mdg">How to keep the specification aligned with SAP MDG</h2>
+<p>Alignment requires a defined process.</p>
+<p>We recommend the following cycle.</p>
+<h3 id="1-propose-the-model-change">1. Propose the model change</h3>
+<p>The change should identify:</p>
+<ul>
+<li>affected objects;</li>
+<li>rationale;</li>
+<li>expected outcome;</li>
+<li>relevant evidence;</li>
+<li>requester.</li>
+</ul>
+<h3 id="2-analyse-impact">2. Analyse impact</h3>
+<p>Architects and delivery teams review:</p>
+<ul>
+<li>configuration impact;</li>
+<li>migration impact;</li>
+<li>data impact;</li>
+<li>integration impact;</li>
+<li>test impact;</li>
+<li>operational impact.</li>
+</ul>
+<h3 id="3-approve-the-model-change">3. Approve the model change</h3>
+<p>The appropriate owners approve the intended model state.</p>
+<p>This should happen before the implementation becomes the de facto decision.</p>
+<h3 id="4-implement-the-change">4. Implement the change</h3>
+<p>The MDG team configures the approved change.</p>
+<p>Migration, integration and testing teams update their corresponding artefacts.</p>
+<h3 id="5-verify-alignment">5. Verify alignment</h3>
+<p>The programme checks that:</p>
+<ul>
+<li>the configured implementation matches the approved model;</li>
+<li>related mappings were updated;</li>
+<li>validation and tests reflect the change;</li>
+<li>unresolved deviations are visible.</li>
+</ul>
+<h3 id="6-record-evidence">6. Record evidence</h3>
+<p>Test results, deployment references and relevant decisions are connected to the changed objects.</p>
+<p>This cycle can be lightweight for minor changes and more formal for high-impact changes.</p>
+<p>The important part is the sequence: approve intent, implement, verify.</p>
+<h2 id="common-objections">Common objections</h2>
+<h2 id="sap-mdg-already-contains-the-model">“SAP MDG already contains the model”</h2>
+<p>It contains the configured operational model.</p>
+<p>The independent specification contains the approved implementation intent and its relationships to sources, mappings, decisions, evidence and changes.</p>
+<p>They overlap, but they are not identical.</p>
+<h2 id="this-creates-duplicate-maintenance">“This creates duplicate maintenance”</h2>
+<p>It can, if the specification reproduces technical details indiscriminately.</p>
+<p>A well-designed specification stores only the elements required for control and traceability.</p>
+<p>The cost should also be compared with the current alternative: repeated workbook reconciliation, manual impact analysis, outdated documentation and knowledge reconstruction.</p>
+<h2 id="our-documentation-is-already-in-confluence">“Our documentation is already in Confluence”</h2>
+<p>Confluence may remain the right place for readable architecture documentation.</p>
+<p>The question is whether the underlying model can be validated, compared and traced.</p>
+<p>A document page and a structured specification serve different purposes.</p>
+<h2 id="the-model-will-change-too-often">“The model will change too often”</h2>
+<p>Frequent change is a reason for versioned model control, not an argument against it.</p>
+<p>A static document becomes obsolete quickly. A structured specification can show how the model evolved.</p>
+<h2 id="business-users-will-not-work-with-model-files">“Business users will not work with model files”</h2>
+<p>They should not have to.</p>
+<p>Business users can review generated tables, workbooks, reports and diagrams.</p>
+<p>The canonical representation exists to maintain consistency, not to impose a technical interface on every participant.</p>
+<h2 id="a-practical-example">A practical example</h2>
+<p>Consider a global supplier-governance implementation.</p>
+<p>The programme defines a supplier risk classification.</p>
+<p>The approved business concept appears simple:</p>
+<ul>
+<li>Low;</li>
+<li>Medium;</li>
+<li>High.</li>
+</ul>
+<p>During implementation, the team discovers:</p>
+<ul>
+<li>one country uses four risk levels;</li>
+<li>another system stores a numeric score;</li>
+<li>one source has no classification;</li>
+<li>the approval workflow depends on the risk level;</li>
+<li>a downstream procurement application expects legacy codes;</li>
+<li>migration proposes defaulting missing values to Medium;</li>
+<li>compliance requires High-risk suppliers to receive additional review.</li>
+</ul>
+<p>If the information remains distributed, the programme may end with:</p>
+<ul>
+<li>one definition in Confluence;</li>
+<li>one field in SAP MDG;</li>
+<li>one value mapping in Excel;</li>
+<li>one default in migration code;</li>
+<li>one workflow condition in configuration;</li>
+<li>one compliance decision in a ticket;</li>
+<li>one interface translation in middleware.</li>
+</ul>
+<p>Each component may work.</p>
+<p>The programme still lacks a coherent representation of the classification.</p>
+<p>An independent specification connects:</p>
+<ul>
+<li>the business attribute;</li>
+<li>its allowed values;</li>
+<li>local variants;</li>
+<li>source fields;</li>
+<li>score transformation;</li>
+<li>defaulting decision;</li>
+<li>workflow impact;</li>
+<li>compliance rule;</li>
+<li>target endpoint;</li>
+<li>interface mapping;</li>
+<li>tests;</li>
+<li>affected owners.</li>
+</ul>
+<p>A change to the classification can then be reviewed as a model change rather than a collection of unrelated technical updates.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave as this type of independent model-control layer.</p>
+<p>Martenweave stores model knowledge from spreadsheets, datasets, tickets, validation reports, decisions and SAP context as structured objects. The model can include attributes, contexts, source and target endpoints, mappings, rules, value lists, issues, decisions and change proposals.</p>
+<p>The current core supports:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured queries;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>ownership, audit and readiness reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>reviewable PatchProposal and ChangeRequest lifecycles.</li>
+</ul>
+<p>The canonical files remain the approved source of model truth. Generated indexes and reports can be rebuilt from them.</p>
+<p>This architecture is deliberate.</p>
+<p>It means the model is:</p>
+<ul>
+<li>readable;</li>
+<li>versionable;</li>
+<li>portable;</li>
+<li>reviewable;</li>
+<li>independent from one database or UI;</li>
+<li>suitable for Git-based change control;</li>
+<li>usable by automation and AI without allowing silent mutation.</li>
+</ul>
+<p>SAP MDG remains the operational governance platform. Martenweave records and validates the model knowledge used to design, migrate, test and maintain it.</p>
+<h2 id="a-minimum-viable-independent-specification">A minimum viable independent specification</h2>
+<p>A programme does not need to model the whole enterprise on day one.</p>
+<p>We recommend starting with one domain and the objects carrying the greatest delivery risk.</p>
+<p>For example:</p>
+<ul>
+<li>20–50 critical business attributes;</li>
+<li>relevant organisational contexts;</li>
+<li>source fields from one or two systems;</li>
+<li>SAP target endpoints;</li>
+<li>important mappings;</li>
+<li>governed value lists;</li>
+<li>high-risk validation rules;</li>
+<li>open decisions;</li>
+<li>known dataset gaps;</li>
+<li>ownership.</li>
+</ul>
+<p>This is enough to test the operating model.</p>
+<p>The team should then verify that it can:</p>
+<ol>
+<li>validate the model;</li>
+<li>compare it with a real dataset;</li>
+<li>trace source to target;</li>
+<li>identify the impact of one change;</li>
+<li>produce a business-readable review;</li>
+<li>preserve an approved decision;</li>
+<li>update the model through controlled review.</li>
+</ol>
+<p>If these actions work, the specification can expand with the programme.</p>
+<h2 id="what-management-should-expect">What management should expect</h2>
+<p>Management does not need another large documentation deliverable.</p>
+<p>It should expect a controlled capability.</p>
+<p>The programme should be able to demonstrate:</p>
+<ul>
+<li>a clearly identified approved model;</li>
+<li>traceability from business concept to SAP implementation;</li>
+<li>visibility of source-data gaps;</li>
+<li>connection between decisions and affected objects;</li>
+<li>controlled model changes;</li>
+<li>impact analysis before implementation;</li>
+<li>evidence that configuration reflects the approved model;</li>
+<li>an understandable handover to AMS.</li>
+</ul>
+<p>These outcomes are more valuable than the number of completed design pages.</p>
+<h2 id="how-this-reduces-delivery-time">How this reduces delivery time</h2>
+<p>Maintaining an independent specification requires effort.</p>
+<p>But it replaces repeated work that already exists:</p>
+<ul>
+<li>reconciling mapping workbooks;</li>
+<li>comparing environments manually;</li>
+<li>rebuilding the context behind old tickets;</li>
+<li>repeating design workshops after team changes;</li>
+<li>searching for affected interfaces and tests;</li>
+<li>preparing handover documents from scratch;</li>
+<li>explaining why configuration differs from documentation.</li>
+</ul>
+<p>The goal is not to eliminate discussion.</p>
+<p>It is to ensure that discussions begin from an accurate model rather than from fragmented memories.</p>
+<p>The largest time saving comes from avoiding repeated discovery.</p>
+<p>A model decision should be analysed once, recorded properly and reused whenever the object is reviewed or changed.</p>
+<h2 id="what-the-specification-cannot-do">What the specification cannot do</h2>
+<p>An independent specification does not create good architecture by itself.</p>
+<p>It cannot replace:</p>
+<ul>
+<li>qualified SAP MDG design;</li>
+<li>business ownership;</li>
+<li>data stewardship;</li>
+<li>migration engineering;</li>
+<li>integration design;</li>
+<li>testing;</li>
+<li>organisational change.</li>
+</ul>
+<p>It can represent weak decisions just as accurately as strong ones.</p>
+<p>Its value is that those decisions become visible, reviewable and traceable.</p>
+<p>That gives the programme a chance to correct them before they become embedded across configuration, migration and operations.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>An SAP MDG implementation needs two forms of truth.</p>
+<p>The first is operational truth: the governed master data and active behaviour of the platform.</p>
+<p>The second is implementation truth: the approved model, its meaning, its sources, its mappings, its decisions and its expected effects.</p>
+<p>SAP MDG is designed to govern the first.</p>
+<p>The programme must deliberately preserve the second.</p>
+<p>We recommend an independent model specification because no single configuration environment, workbook, ticket system or design document can reliably carry the complete implementation model.</p>
+<p>The specification should not compete with SAP MDG.</p>
+<p>It should make the implementation easier to design, validate, change and hand over.</p>
+<p>Our test is simple:</p>
+<blockquote>If the configuration team, migration team and business owner give different answers about what the model contains, the programme does not yet have an approved model—it has several interpretations.</blockquote>
+<p>A controlled specification turns those interpretations into one reviewable structure.</p>
+<p>That is not additional architecture for its own sake.</p>
+<p>It is a practical way to reduce rework, expose risk earlier and make the organisation less dependent on the people who happened to be present during the original implementation.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping architects and delivery teams maintain an independent, validated representation of the model connecting business intent, source data, SAP implementation and operational change.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a central governance hub supporting governed models, golden records, matching and consolidation, collaborative workflows, validated values, data-quality monitoring, mass processing and auditable changes.</p>
+<p>SAP also recommends curating master data before an SAP S/4HANA implementation because automated target processes depend on clean and correct master data.</p>
+<p>Martenweave’s public product materials describe its structured model objects, canonical files, deterministic validation, generated indexes, dataset profiling, gap detection, traceability, impact analysis and controlled change-proposal workflow.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html"><span>Previous</span>SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a><a href="/blog/sap-data-migration-readiness-checklist.html"><span>Next</span>A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

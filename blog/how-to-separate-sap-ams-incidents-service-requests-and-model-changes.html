@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability | Martenweave</title>
+    <meta
+      name="description"
+      content="A user reports that a supplier cannot be activated in SAP."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html" />
+    <meta property="og:title" content="How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability | Martenweave" />
+    <meta property="og:description" content="A user reports that a supplier cannot be activated in SAP." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability | Martenweave" />
+    <meta name="twitter:description" content="A user reports that a supplier cannot be activated in SAP." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html",
+                        "name": "How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability | Martenweave",
+                        "description": "A user reports that a supplier cannot be activated in SAP.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability",
+                                    "item": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html#content",
+                        "headline": "How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability",
+                        "name": "How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability",
+                        "description": "A user reports that a supplier cannot be activated in SAP.",
+                        "url": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Separate SAP AMS Incidents, Service Requests and Model Changes Without Losing Traceability</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 18 min read</p><p class="blog-summary">A user reports that a supplier cannot be activated in SAP.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#envelope-1-something-is-not-working">Envelope 1: Something is not working</a></li><li><a href="#envelope-2-a-user-wants-a-known-service">Envelope 2: A user wants a known service</a></li><li><a href="#envelope-3-the-organisation-may-need-a-different-model">Envelope 3: The organisation may need a different model</a></li><li><a href="#incident">Incident</a></li><li><a href="#service-request">Service request</a></li><li><a href="#model-change">Model change</a></li><li><a href="#incident-2">Incident</a></li><li><a href="#temporary-containment">Temporary containment</a></li><li><a href="#model-finding">Model finding</a></li><li><a href="#model-decision">Model decision</a></li><li><a href="#service-request-2">Service request</a></li><li><a href="#implementation-change">Implementation change</a></li><li><a href="#service-closure">Service closure</a></li><li><a href="#request-closure">Request closure</a></li><li><a href="#technical-change-closure">Technical-change closure</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A user reports that a supplier cannot be activated in SAP.</p>
+<p>The service desk creates an incident.</p>
+<p>The AMS analyst finds that Supplier Risk is blank and asks the business to provide a value.</p>
+<p>The business replies:</p>
+<blockquote>This new supplier category should not require Supplier Risk.</blockquote>
+<p>The incident now contains two different questions:</p>
+<ol>
+<li>How should service be restored for the blocked supplier?</li>
+<li>Should the Supplier Risk rule apply to this category at all?</li>
+</ol>
+<p>The first question belongs to incident management.</p>
+<p>The second is a model decision.</p>
+<p>A third question may also appear:</p>
+<blockquote>Can the business request a controlled review process for this supplier category?</blockquote>
+<p>That may become a service request once the service and approval path are defined.</p>
+<p>If all three questions remain inside one incident ticket, several outcomes are likely:</p>
+<ul>
+<li>the analyst changes validation to resolve the incident;</li>
+<li>the business request is implemented as an informal workaround;</li>
+<li>the ticket closes after activation succeeds;</li>
+<li>no canonical model decision is recorded;</li>
+<li>the same question returns with the next supplier.</li>
+</ul>
+<p>The incident was resolved.</p>
+<p>The model was changed without admitting that a model change occurred.</p>
+<blockquote>Traceability is not achieved by putting every discussion in one ticket. It is achieved by preserving explicit relationships between different kinds of work.</blockquote>
+<p>An effective AMS operating model should distinguish:</p>
+<ul>
+<li>an unplanned service failure;</li>
+<li>a request for a known service;</li>
+<li>a proposed change to model truth;</li>
+<li>the technical change required to implement an approved decision.</li>
+</ul>
+<p>These records should remain linked.</p>
+<p>They should not be collapsed into one workflow.</p>
+<p>---</p>
+<h1 id="three-envelopes">Three envelopes</h1>
+<p>A useful way to understand the distinction is to imagine three envelopes arriving at the AMS team.</p>
+<h2 id="envelope-1-something-is-not-working">Envelope 1: Something is not working</h2>
+<p>Examples:</p>
+<ul>
+<li>supplier activation fails;</li>
+<li>an interface rejects records;</li>
+<li>replication stops;</li>
+<li>a validation behaves incorrectly;</li>
+<li>a workflow sends the request to the wrong team;</li>
+<li>users cannot maintain an approved value.</li>
+</ul>
+<p>This is an incident candidate.</p>
+<p>The immediate purpose is to restore expected service or reduce operational impact.</p>
+<p>Atlassian defines incident management around responding to an unplanned interruption or reduction in service quality and restoring the service to its operational state. It distinguishes the incident from the underlying problem that may be causing repeated incidents.</p>
+<p>ServiceNow similarly positions incident management around tracking and resolving issues, restoring services and routing incidents to appropriate support groups.</p>
+<h2 id="envelope-2-a-user-wants-a-known-service">Envelope 2: A user wants a known service</h2>
+<p>Examples:</p>
+<ul>
+<li>create a new approved value;</li>
+<li>onboard a supplier through an existing process;</li>
+<li>request a mass correction;</li>
+<li>add an authorised local mapping;</li>
+<li>request a standard report;</li>
+<li>assign an approved role.</li>
+</ul>
+<p>This is a service-request candidate.</p>
+<p>The required service already exists, and the organisation knows:</p>
+<ul>
+<li>who may request it;</li>
+<li>what information is needed;</li>
+<li>who approves it;</li>
+<li>how it is fulfilled;</li>
+<li>what result is expected.</li>
+</ul>
+<p>Atlassian describes service-request management as a distinct workstream used to standardise how organisations receive, coordinate and fulfil requests.</p>
+<p>ServiceNow similarly positions request management around published services, request workflows, approvals and service-level commitments.</p>
+<h2 id="envelope-3-the-organisation-may-need-a-different-model">Envelope 3: The organisation may need a different model</h2>
+<p>Examples:</p>
+<ul>
+<li>a new attribute is proposed;</li>
+<li>a mandatory rule should become contextual;</li>
+<li>a source should become authoritative;</li>
+<li>a value list needs another semantic dimension;</li>
+<li>a temporary exception should become permanent;</li>
+<li>a local concept should become global;</li>
+<li>two rules conflict.</li>
+</ul>
+<p>This is a model-change candidate.</p>
+<p>Its purpose is not to restore a service or fulfil a predefined request.</p>
+<p>Its purpose is to determine whether approved model truth should change.</p>
+<p>This third envelope is often missing from ordinary AMS operating models.</p>
+<p>As a result, incidents and service requests become informal containers for design decisions.</p>
+<p>---</p>
+<h1 id="the-three-records-answer-different-questions">The three records answer different questions</h1>
+<p>The distinction becomes clearer when each record is expressed as a question.</p>
+<h2 id="incident">Incident</h2>
+<blockquote>What stopped working, what is the impact, and how do we restore expected service?</blockquote>
+<h2 id="service-request">Service request</h2>
+<blockquote>Which predefined service does the user need, and how do we fulfil it under the approved process?</blockquote>
+<h2 id="model-change">Model change</h2>
+<blockquote>Which definition, rule, mapping, source, context or ownership relationship should become different?</blockquote>
+<p>These questions have different closure conditions.</p>
+<p>An incident may close when service is restored.</p>
+<p>A service request may close when the requested outcome is delivered.</p>
+<p>A model change may close only after:</p>
+<ul>
+<li>a decision is approved;</li>
+<li>canonical model state is updated;</li>
+<li>impact is assessed;</li>
+<li>implementations are aligned;</li>
+<li>evidence confirms the new state.</li>
+</ul>
+<p>Closing one record does not automatically close the others.</p>
+<p>---</p>
+<h1 id="one-business-event-may-create-several-linked-records">One business event may create several linked records</h1>
+<p>Consider the blocked supplier again.</p>
+<h2 id="incident-2">Incident</h2>
+<pre><code class="language-text">INC-4821
+
+Symptom:
+Supplier cannot be activated.
+
+Immediate cause:
+Supplier Risk is blank.
+
+Impact:
+Urgent supplier onboarding is blocked.</code></pre>
+<h2 id="temporary-containment">Temporary containment</h2>
+<pre><code class="language-text">Record remains blocked.
+Business review is initiated.
+No default value is created.</code></pre>
+<h2 id="model-finding">Model finding</h2>
+<pre><code class="language-text">FIND-017
+
+Question:
+Does the Supplier Risk rule apply to the new supplier category?
+
+Current model:
+Supplier Risk is required for active strategic suppliers.
+
+Uncertainty:
+The new category has not been classified as strategic or non-strategic.</code></pre>
+<h2 id="model-decision">Model decision</h2>
+<pre><code class="language-text">DEC-029
+
+Decision:
+The new category remains subject to Supplier Risk.
+
+Treatment:
+Introduce controlled review before activation.
+
+No semantic exception is approved.</code></pre>
+<h2 id="service-request-2">Service request</h2>
+<p>Once the process is defined:</p>
+<pre><code class="language-text">REQ-SUPPLIER-RISK-REVIEW
+
+Service:
+Request risk assessment for a supplier without final classification.
+
+Approver:
+Supplier Risk Owner.
+
+Outcome:
+Approved risk value or rejected activation.</code></pre>
+<h2 id="implementation-change">Implementation change</h2>
+<pre><code class="language-text">CHG-9132
+
+Implement:
+- review status;
+- workflow;
+- activation control;
+- operational notifications.</code></pre>
+<p>The incident, request, decision and change remain related.</p>
+<p>None of them needs to contain the complete history of every other record.</p>
+<p>---</p>
+<h1 id="incident-status-must-not-become-model-status">Incident status must not become model status</h1>
+<p>An incident commonly uses statuses such as:</p>
+<ul>
+<li>New;</li>
+<li>In progress;</li>
+<li>Resolved;</li>
+<li>Closed.</li>
+</ul>
+<p>These statuses describe service restoration.</p>
+<p>They should not be used to infer that a model question is resolved.</p>
+<p>Example:</p>
+<pre><code class="language-text">Incident:
+Resolved
+
+Service:
+Supplier activated through approved temporary review.
+
+Model finding:
+Still open
+
+Permanent question:
+Should the review treatment become a standard service?</code></pre>
+<p>The service may be restored while the structural issue remains.</p>
+<p>This is not a failure of incident management.</p>
+<p>It becomes a failure only when the organisation treats incident closure as proof that the model no longer needs attention.</p>
+<p>---</p>
+<h1 id="service-requests-should-be-repetitive-by-design">Service requests should be repetitive by design</h1>
+<p>A service request is useful when the organisation wants the same kind of work to happen consistently.</p>
+<p>For example:</p>
+<blockquote>Request addition of an already approved local value to a country-specific list.</blockquote>
+<p>A mature request definition can specify:</p>
+<ul>
+<li>permitted requester;</li>
+<li>required evidence;</li>
+<li>applicable context;</li>
+<li>approval role;</li>
+<li>implementation steps;</li>
+<li>expected completion;</li>
+<li>validation.</li>
+</ul>
+<p>A service request should not ask the fulfiller to invent policy.</p>
+<p>Weak request:</p>
+<pre><code class="language-text">Please add PUBLIC_SECTOR to Supplier Type.</code></pre>
+<p>Stronger request:</p>
+<pre><code class="language-text">Please implement approved value PUBLIC_SECTOR
+under Legal Sector for Portugal.
+
+Decision:
+DEC-LEGAL-SECTOR-014
+
+Approved scope:
+Country = PT
+
+Required implementation:
+SAP field, source mapping and reporting.</code></pre>
+<p>The second request fulfils an approved change.</p>
+<p>The first asks the fulfiller to decide whether the model should change.</p>
+<p>---</p>
+<h1 id="model-changes-begin-where-the-catalogue-ends">Model changes begin where the catalogue ends</h1>
+<p>A request catalogue can standardise known services.</p>
+<p>It cannot safely predefine every future model question.</p>
+<p>A model-change process is required when the requester asks for something that the current catalogue cannot fulfil without changing:</p>
+<ul>
+<li>semantics;</li>
+<li>applicability;</li>
+<li>value identity;</li>
+<li>granularity;</li>
+<li>cardinality;</li>
+<li>ownership;</li>
+<li>source authority;</li>
+<li>lifecycle;</li>
+<li>permanent exception policy.</li>
+</ul>
+<p>Examples:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">User wording</th><th scope="col">Actual work type</th></tr></thead><tbody><tr><td>Add a value</td><td>Possibly a model change</td></tr><tr><td>Make field optional</td><td>Rule applicability decision</td></tr><tr><td>Copy value from source field</td><td>Semantic mapping decision</td></tr><tr><td>Create local exception</td><td>Contextual model decision</td></tr><tr><td>Fix validation</td><td>Incident or configuration defect</td></tr><tr><td>Add another approval</td><td>Possibly service or model change</td></tr><tr><td>Upload corrected values</td><td>Service request or remediation</td></tr></tbody></table></div>
+<p>The wording of the request does not determine the work type.</p>
+<p>Classification does.</p>
+<p>---</p>
+<h1 id="the-branching-point">The branching point</h1>
+<p>Every AMS intake should include one branching question:</p>
+<blockquote>Can this work be completed without changing approved model meaning or policy?</blockquote>
+<p>When yes, continue through incident, request or implementation-change handling.</p>
+<p>When no or uncertain, create a linked model finding.</p>
+<p>A compact decision tree is enough.</p>
+<pre><code class="language-text">Is service unexpectedly degraded?
+    Yes → incident
+
+Is the requested outcome already approved and repeatable?
+    Yes → service request
+
+Does delivery require changing meaning, applicability,
+source authority, values or ownership?
+    Yes or uncertain → model finding/change proposal
+
+Does approved implementation need technical deployment?
+    Yes → implementation change</code></pre>
+<p>The branches are not mutually exclusive.</p>
+<p>An incident may lead to a model finding and an implementation change.</p>
+<p>A service request may require an implementation change.</p>
+<p>A model decision may create a new future service request.</p>
+<p>---</p>
+<h1 id="preserve-the-operational-origin">Preserve the operational origin</h1>
+<p>When a model finding is created from an incident, do not remove the incident context.</p>
+<p>The finding should record:</p>
+<ul>
+<li>originating ticket;</li>
+<li>observed symptom;</li>
+<li>affected service;</li>
+<li>affected records;</li>
+<li>operational impact;</li>
+<li>containment;</li>
+<li>current SLA or business deadline.</li>
+</ul>
+<p>This matters because the same model issue may appear through several incidents.</p>
+<p>For example:</p>
+<pre><code class="language-text">FIND-SUPPLIER-REVIEW-001
+├── INC-4821: supplier activation blocked
+├── INC-4930: interface rejected supplier
+├── INC-5014: local team applied manual default
+└── REQ-2088: request to add UNDER_REVIEW value</code></pre>
+<p>The finding shows that apparently separate tickets share one underlying model problem.</p>
+<p>This is where AMS begins to generate model intelligence rather than only close individual cases.</p>
+<p>---</p>
+<h1 id="preserve-the-model-origin-in-operational-work">Preserve the model origin in operational work</h1>
+<p>Traceability must work in the other direction too.</p>
+<p>An incident or request involving governed data should reference:</p>
+<ul>
+<li>canonical object;</li>
+<li>rule;</li>
+<li>mapping;</li>
+<li>source;</li>
+<li>active decision;</li>
+<li>model baseline.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Affected attribute:
+ATTR-SUPPLIER-RISK
+
+Effective rule:
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Implementation:
+SAP MDG validation Z_SUPP_RISK_04
+
+Current decision:
+DEC-SUPPLIER-RISK-017
+
+Model baseline:
+supplier-model-v3.4</code></pre>
+<p>The AMS analyst should not need to identify the governing model from field labels and custom code.</p>
+<p>---</p>
+<h1 id="the-four-closures">The four closures</h1>
+<p>A complex AMS case may require four separate closures.</p>
+<h2 id="service-closure">Service closure</h2>
+<p>The user can continue working or the operational impact is contained.</p>
+<h2 id="request-closure">Request closure</h2>
+<p>The approved service has been delivered.</p>
+<h2 id="technical-change-closure">Technical-change closure</h2>
+<p>The planned implementation has been deployed and verified.</p>
+<h2 id="model-closure">Model closure</h2>
+<p>The canonical model, decision, ownership and implementation evidence agree.</p>
+<p>For a simple incident, only the first may be needed.</p>
+<p>For a model-driven incident, all four may be relevant.</p>
+<p>This prevents a common false state:</p>
+<pre><code class="language-text">Incident closed
+Change deployed
+Model documentation still obsolete
+Temporary workaround still active</code></pre>
+<p>Operational success should not conceal model debt.</p>
+<p>---</p>
+<h1 id="a-model-change-should-not-inherit-the-incident-sla-blindly">A model change should not inherit the incident SLA blindly</h1>
+<p>Incidents are often urgent.</p>
+<p>Model decisions may require evidence and accountable review.</p>
+<p>Applying the incident SLA directly to the permanent model decision creates pressure to approve weak changes.</p>
+<p>The organisation needs two clocks.</p>
+<h2 id="restoration-clock">Restoration clock</h2>
+<p>How quickly must service impact be reduced?</p>
+<h2 id="governance-clock">Governance clock</h2>
+<p>By when must the permanent decision be made?</p>
+<p>Example:</p>
+<pre><code class="language-text">Operational containment:
+Within four hours
+
+Permanent model decision:
+Within ten business days
+
+Temporary treatment expiry:
+Fifteen business days</code></pre>
+<p>The exact durations are organisation-specific.</p>
+<p>The principle is to separate immediate containment from permanent meaning.</p>
+<p>---</p>
+<h1 id="a-service-request-should-not-become-a-back-door-around-governance">A service request should not become a back door around governance</h1>
+<p>Users learn which request types produce fast results.</p>
+<p>They may submit:</p>
+<blockquote>Update reference data</blockquote>
+<p>when the real request is:</p>
+<blockquote>Create a new classification concept.</blockquote>
+<p>The service team should be allowed to reject or reroute requests that exceed the approved service definition.</p>
+<p>A request catalogue item should specify its semantic boundary.</p>
+<p>Example:</p>
+<pre><code class="language-text">Service:
+Add approved local reference value
+
+Permitted:
+- value already approved;
+- existing classification dimension;
+- explicit country context;
+- current owner.
+
+Not permitted:
+- new classification dimension;
+- global value;
+- change to meaning;
+- change to applicability.</code></pre>
+<p>This protects both the service team and the model.</p>
+<p>---</p>
+<h1 id="a-model-change-should-not-become-another-itsm-megaworkflow">A model change should not become another ITSM megaworkflow</h1>
+<p>The solution is not to add dozens of model-governance states to the incident system.</p>
+<p>A model finding needs only a small lifecycle:</p>
+<pre><code class="language-text">Observed
+→ Classified
+→ Decision required
+→ Approved or rejected
+→ Implementing
+→ Verified
+→ Closed</code></pre>
+<p>Some organisations may need additional states, but the process should remain smaller than a full project lifecycle.</p>
+<p>The model record should preserve:</p>
+<ul>
+<li>question;</li>
+<li>current state;</li>
+<li>evidence;</li>
+<li>scope;</li>
+<li>decision;</li>
+<li>impact;</li>
+<li>verification.</li>
+</ul>
+<p>The ITSM platform can continue to manage operational work.</p>
+<p>---</p>
+<h1 id="the-role-of-problem-management">The role of problem management</h1>
+<p>Repeated incidents may indicate a shared underlying cause.</p>
+<p>Atlassian’s incident-management guidance distinguishes incidents from problems and supports linking multiple incident records to a larger problem record. It also describes post-incident reviews as a way to feed longer-term fixes back into planning.</p>
+<p>For SAP AMS, problem management can serve as an intermediate layer.</p>
+<p>Example:</p>
+<pre><code class="language-text">Incidents:
+Several supplier activations fail.
+
+Problem:
+Supplier Risk process does not cover the new supplier category.
+
+Model finding:
+Applicability and lifecycle are undefined.</code></pre>
+<p>The problem record investigates recurrence and operational cause.</p>
+<p>The model finding determines whether model truth should change.</p>
+<p>These may be linked but remain distinct.</p>
+<p>A problem is not automatically a model defect.</p>
+<p>It may ultimately reveal:</p>
+<ul>
+<li>source weakness;</li>
+<li>training issue;</li>
+<li>incorrect configuration;</li>
+<li>model ambiguity;</li>
+<li>poor operational procedure.</li>
+</ul>
+<p>---</p>
+<h1 id="the-role-of-implementation-change-management">The role of implementation change management</h1>
+<p>Once a model decision is approved, technical delivery may require a formal change record.</p>
+<p>ServiceNow positions change management around tailored change models, approval policies, risk assessment, scheduling, impact visibility and controlled deployment.</p>
+<p>That is the appropriate place to govern:</p>
+<ul>
+<li>transport;</li>
+<li>deployment window;</li>
+<li>technical risk;</li>
+<li>rollback;</li>
+<li>conflicts;</li>
+<li>release dependency.</li>
+</ul>
+<p>The model record should not replicate those details.</p>
+<p>It should provide:</p>
+<ul>
+<li>approved target behaviour;</li>
+<li>affected objects;</li>
+<li>semantic impact;</li>
+<li>required verification.</li>
+</ul>
+<p>The change record governs how the implementation enters production.</p>
+<p>---</p>
+<h1 id="semantic-impact-and-operational-impact-are-separate">Semantic impact and operational impact are separate</h1>
+<p>A useful routing matrix has two axes.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Semantic impact</th><th scope="col">Operational impact</th><th scope="col">Example</th><th scope="col">Required control</th></tr></thead><tbody><tr><td>Low</td><td>Low</td><td>Correct label</td><td>Standard request/change</td></tr><tr><td>Low</td><td>High</td><td>Replace broken interface</td><td>Incident and technical change</td></tr><tr><td>High</td><td>Low</td><td>Add one global value</td><td>Model approval</td></tr><tr><td>High</td><td>High</td><td>Change global cardinality</td><td>Model and technical governance</td></tr></tbody></table></div>
+<p>The number of configuration lines is not a measure of semantic impact.</p>
+<p>Adding one value can be more significant than replacing an entire technical component.</p>
+<p>The model process governs semantic impact.</p>
+<p>The ITSM process governs operational implementation impact.</p>
+<p>---</p>
+<h1 id="worked-case-validation-is-incorrectly-global">Worked case: validation is incorrectly global</h1>
+<p>A Portuguese validation applies to all countries.</p>
+<h2 id="incident-3">Incident</h2>
+<p>German suppliers cannot be activated.</p>
+<h2 id="investigation">Investigation</h2>
+<p>The approved decision states that the validation is Portugal-specific.</p>
+<h2 id="classification">Classification</h2>
+<p>Configuration defect.</p>
+<h2 id="model-change-2">Model change</h2>
+<p>None.</p>
+<h2 id="technical-change">Technical change</h2>
+<p>Restrict SAP validation to Portugal.</p>
+<h2 id="closure">Closure</h2>
+<ul>
+<li>service restored;</li>
+<li>configuration corrected;</li>
+<li>global regression passed;</li>
+<li>existing model remains unchanged.</li>
+</ul>
+<p>Creating a new model proposal would add unnecessary bureaucracy.</p>
+<p>---</p>
+<h1 id="worked-case-local-team-requests-a-new-value">Worked case: local team requests a new value</h1>
+<p>The request says:</p>
+<blockquote>Add <code>UNDER_REVIEW</code> to Supplier Risk.</blockquote>
+<h2 id="service-request-3">Service request</h2>
+<p>Rejected as outside the permitted value-maintenance service.</p>
+<h2 id="model-finding-2">Model finding</h2>
+<p><code>UNDER_REVIEW</code> appears to represent workflow status rather than final risk classification.</p>
+<h2 id="decision">Decision</h2>
+<p>Create Supplier Review Status as a separate concept.</p>
+<h2 id="technical-changes">Technical changes</h2>
+<ul>
+<li>SAP field and workflow;</li>
+<li>migration treatment;</li>
+<li>reporting;</li>
+<li>interface mapping.</li>
+</ul>
+<h2 id="future-service-request">Future service request</h2>
+<p>After implementation, the business may use a standard request to initiate supplier review.</p>
+<p>The original request did not simply fulfil a service.</p>
+<p>It revealed a missing model concept.</p>
+<p>---</p>
+<h1 id="worked-case-urgent-supplier-onboarding">Worked case: urgent supplier onboarding</h1>
+<p>A critical supplier lacks a final classification.</p>
+<h2 id="incident-4">Incident</h2>
+<p>Business operation is blocked.</p>
+<h2 id="containment">Containment</h2>
+<p>Manual expedited review is initiated. Activation remains blocked until approval.</p>
+<h2 id="service-request-4">Service request</h2>
+<p>Expedited risk review may already be a defined service.</p>
+<h2 id="model-change-3">Model change</h2>
+<p>None when the existing rule and service cover the situation.</p>
+<p>The presence of urgency does not automatically justify a model exception.</p>
+<p>---</p>
+<h1 id="worked-case-repeated-manual-enrichment">Worked case: repeated manual enrichment</h1>
+<p>Every month, AMS receives a spreadsheet to populate a local status.</p>
+<h2 id="service-requests">Service requests</h2>
+<p>Each upload is processed successfully.</p>
+<h2 id="problem">Problem</h2>
+<p>The recurring service creates operational effort and risk.</p>
+<h2 id="model-finding-3">Model finding</h2>
+<p>The status may represent a persistent contextual concept and source relationship.</p>
+<h2 id="decision-2">Decision</h2>
+<p>Either:</p>
+<ul>
+<li>formalise it as an approved local source and service;</li>
+<li>integrate the process;</li>
+<li>retire the status;</li>
+<li>replace it with a global concept.</li>
+</ul>
+<p>The service requests remain valid evidence.</p>
+<p>They should not remain the permanent design.</p>
+<p>---</p>
+<h1 id="the-minimum-relationship-model">The minimum relationship model</h1>
+<p>Martenweave does not need to become an ITSM database.</p>
+<p>It needs stable references.</p>
+<p>A model finding could store:</p>
+<pre><code class="language-yaml">id: FIND-SUPPLIER-RISK-017
+origin:
+  incidents:
+    - INC-4821
+    - INC-4930
+  requests:
+    - REQ-2088
+  problems:
+    - PRB-0142
+
+affected_objects:
+  - ATTR-SUPPLIER-RISK
+  - RULE-SUPPLIER-RISK-ACTIVATION
+
+decision:
+  - DEC-SUPPLIER-REVIEW-029
+
+implementation_changes:
+  - CHG-9132
+
+verification:
+  - TEST-SUPPLIER-REVIEW-044</code></pre>
+<p>This is a conceptual direction, not a claim about the current Martenweave schema.</p>
+<p>The external records remain in their operational systems.</p>
+<p>Martenweave preserves the model-level chain.</p>
+<p>---</p>
+<h1 id="one-chain-several-systems-of-record">One chain, several systems of record</h1>
+<p>A sensible division is:</p>
+<h2 id="itsm-system">ITSM system</h2>
+<p>Authoritative for:</p>
+<ul>
+<li>incident status;</li>
+<li>request fulfilment;</li>
+<li>problem investigation;</li>
+<li>implementation change;</li>
+<li>SLA;</li>
+<li>operational communication.</li>
+</ul>
+<h2 id="martenweave">Martenweave</h2>
+<p>Authoritative for:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>model findings;</li>
+<li>decision context;</li>
+<li>semantic impact;</li>
+<li>proposal;</li>
+<li>model verification.</li>
+</ul>
+<h2 id="sap-mdg-or-another-mdm-platform">SAP MDG or another MDM platform</h2>
+<p>Authoritative for:</p>
+<ul>
+<li>operational master-data workflow;</li>
+<li>configured rules;</li>
+<li>approved master-data changes;</li>
+<li>activation;</li>
+<li>data-quality execution where implemented.</li>
+</ul>
+<p>SAP describes MDG as supporting governed models, preserved semantics and relationships, validated values, attribute ownership, collaborative workflows and quality monitoring.</p>
+<h2 id="git">Git</h2>
+<p>Authoritative for:</p>
+<ul>
+<li>exact canonical diff;</li>
+<li>review history;</li>
+<li>approved model baseline.</li>
+</ul>
+<p>Martenweave’s current core explicitly treats canonical Markdown and YAML files as the source of truth, generated indexes as rebuildable, and AI-produced changes as reviewable proposals rather than silent mutations.</p>
+<p>---</p>
+<h1 id="do-not-duplicate-operational-data-unnecessarily">Do not duplicate operational data unnecessarily</h1>
+<p>Martenweave does not need to copy:</p>
+<ul>
+<li>every incident comment;</li>
+<li>SLA calculations;</li>
+<li>user communications;</li>
+<li>assignment history;</li>
+<li>change calendar;</li>
+<li>work notes.</li>
+</ul>
+<p>It needs enough evidence to retain model context:</p>
+<ul>
+<li>external ID;</li>
+<li>record type;</li>
+<li>title or summary;</li>
+<li>current status where imported;</li>
+<li>relevant excerpt or evidence;</li>
+<li>relationship to canonical objects;</li>
+<li>link to the source system.</li>
+</ul>
+<p>The integration principle is:</p>
+<blockquote>Reference operational work. Preserve model meaning.</blockquote>
+<p>This keeps Martenweave backend-first and prevents it from becoming another service-management platform.</p>
+<p>The core currently positions itself as a model-governance pipeline rather than a generic workflow engine or hosted MDM product.</p>
+<p>---</p>
+<h1 id="when-an-incident-should-create-a-model-finding">When an incident should create a model finding</h1>
+<p>Not every incident requires model governance.</p>
+<p>Create a model finding when at least one of these is true:</p>
+<ul>
+<li>approved intent is unclear;</li>
+<li>the same issue recurs;</li>
+<li>containment changes model behaviour;</li>
+<li>a new value, rule or attribute is proposed;</li>
+<li>local and global rules conflict;</li>
+<li>current configuration may be correct but business outcome is disputed;</li>
+<li>a temporary workaround may become permanent;</li>
+<li>several systems implement different interpretations;</li>
+<li>the incident exposes an ownerless critical concept.</li>
+</ul>
+<p>A normal technical incident should remain a normal technical incident.</p>
+<p>That boundary is essential to keeping the model process lightweight.</p>
+<p>---</p>
+<h1 id="when-a-service-request-should-create-a-model-finding">When a service request should create a model finding</h1>
+<p>Create a linked finding when fulfilment would require:</p>
+<ul>
+<li>an unapproved value;</li>
+<li>a new semantic attribute;</li>
+<li>a new source relationship;</li>
+<li>a change to mandatory applicability;</li>
+<li>a new permanent exception;</li>
+<li>a change to global or local inheritance;</li>
+<li>a choice between several plausible mappings.</li>
+</ul>
+<p>Do not ask service agents to decide these questions inside fulfilment comments.</p>
+<p>---</p>
+<h1 id="when-a-model-finding-should-create-a-service-request">When a model finding should create a service request</h1>
+<p>After a model decision is approved, it may define a new repeatable service.</p>
+<p>Examples:</p>
+<ul>
+<li>request supplier risk review;</li>
+<li>request local regulatory classification;</li>
+<li>request approved value extension;</li>
+<li>request source-authority reassessment;</li>
+<li>request exception renewal.</li>
+</ul>
+<p>The service catalogue should evolve from governed decisions.</p>
+<p>It should not evolve from accumulated workarounds.</p>
+<p>---</p>
+<h1 id="traceability-across-closure">Traceability across closure</h1>
+<p>The key relationship should remain queryable after every operational ticket closes.</p>
+<p>A future analyst should be able to ask:</p>
+<ul>
+<li>Which incidents led to this rule change?</li>
+<li>Which decision authorised this value?</li>
+<li>Which technical change implemented it?</li>
+<li>Which service request now operationalises the process?</li>
+<li>Which model objects were affected?</li>
+<li>Which test evidence proved alignment?</li>
+<li>Is the original temporary containment still active?</li>
+</ul>
+<p>This is more valuable than retaining one enormous ticket.</p>
+<p>---</p>
+<h1 id="reporting-without-double-counting">Reporting without double counting</h1>
+<p>Linked records create a reporting risk.</p>
+<p>One underlying problem may appear as:</p>
+<ul>
+<li>five incidents;</li>
+<li>one problem;</li>
+<li>one model finding;</li>
+<li>one decision;</li>
+<li>three technical changes;</li>
+<li>one new service request.</li>
+</ul>
+<p>These are not eleven independent business problems.</p>
+<p>Reports should distinguish:</p>
+<h2 id="operational-volume">Operational volume</h2>
+<p>How many incidents and requests occurred?</p>
+<h2 id="structural-findings">Structural findings</h2>
+<p>How many distinct model questions were identified?</p>
+<h2 id="decisions">Decisions</h2>
+<p>How many changes to model truth were approved?</p>
+<h2 id="implementations">Implementations</h2>
+<p>How many technical changes were required?</p>
+<h2 id="recurrence">Recurrence</h2>
+<p>Did the operational volume fall after the structural treatment?</p>
+<p>This prevents management from interpreting every linked record as another unique defect.</p>
+<p>---</p>
+<h1 id="deterministic-checks-martenweave-could-add">Deterministic checks Martenweave could add</h1>
+<p>A focused integration layer could validate that:</p>
+<ul>
+<li>every permanent model change references a finding or explicit rationale;</li>
+<li>findings created from incidents preserve the origin reference;</li>
+<li>service requests cannot implement unapproved values where policy requires approval;</li>
+<li>temporary containment has expiry;</li>
+<li>closed findings reference verification;</li>
+<li>external changes identify the approved decision;</li>
+<li>repeated incidents can be grouped under one finding;</li>
+<li>implementation changes reference the affected canonical objects;</li>
+<li>model updates do not claim that external ITSM records are closed unless status evidence is available.</li>
+</ul>
+<p>These checks improve traceability without reproducing ITSM workflows.</p>
+<p>---</p>
+<h1 id="what-ai-may-assist-with">What AI may assist with</h1>
+<p>AI can help:</p>
+<ul>
+<li>summarise incident evidence;</li>
+<li>identify likely canonical objects;</li>
+<li>detect repeated tickets describing the same model question;</li>
+<li>suggest whether a request exceeds the current service definition;</li>
+<li>draft a model finding;</li>
+<li>propose links between incident, decision and implementation change;</li>
+<li>identify missing closure evidence.</li>
+</ul>
+<p>AI should not decide that:</p>
+<ul>
+<li>a service request is authorised;</li>
+<li>an incident justifies permanent exception;</li>
+<li>a repeated workaround is approved policy;</li>
+<li>a model change is complete because the operational ticket is closed.</li>
+</ul>
+<p>The current Martenweave principle remains appropriate:</p>
+<blockquote>Agents propose. Validators verify. Humans approve. Git records.</blockquote>
+<p>---</p>
+<h1 id="an-operating-policy-in-six-lines">An operating policy in six lines</h1>
+<p>A practical organisation can state the policy simply.</p>
+<h3 id="1-incidents-restore-expected-service">1. Incidents restore expected service.</h3>
+<p>They may use reversible containment but do not redefine model truth.</p>
+<h3 id="2-service-requests-fulfil-approved-repeatable-services">2. Service requests fulfil approved, repeatable services.</h3>
+<p>They do not invent new semantics.</p>
+<h3 id="3-model-findings-capture-unresolved-questions-about-meaning-scope-ownership-or-source-authority">3. Model findings capture unresolved questions about meaning, scope, ownership or source authority.</h3>
+<h3 id="4-model-decisions-approve-or-reject-changes-to-canonical-truth">4. Model decisions approve or reject changes to canonical truth.</h3>
+<h3 id="5-implementation-changes-deploy-approved-behaviour">5. Implementation changes deploy approved behaviour.</h3>
+<h3 id="6-every-record-remains-linked-to-the-evidence-chain-that-created-it">6. Every record remains linked to the evidence chain that created it.</h3>
+<p>This is enough to establish a strong separation.</p>
+<p>The details can be adapted to the organisation’s ITSM platform.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>The mistake is not using incidents, requests or technical changes.</p>
+<p>The mistake is expecting one of them to carry every kind of truth.</p>
+<p>An incident is designed to restore service.</p>
+<p>A service request is designed to fulfil an approved service.</p>
+<p>A technical change is designed to deploy controlled implementation.</p>
+<p>A model change is designed to alter or confirm meaning.</p>
+<p>These records belong to the same operational story but answer different questions.</p>
+<p>ServiceNow and Jira Service Management both distinguish incident, request and change-oriented workflows because each has a different operational purpose. ServiceNow presents incident management around service restoration, request management around published services and fulfilment, and change management around controlled changes, risk and approval.</p>
+<p>Martenweave should not replace those workflows.</p>
+<p>Its role is to preserve the missing semantic chain:</p>
+<blockquote>Operational signal → model finding → decision → canonical diff → implementation → verification.</blockquote>
+<p>The practical test is:</p>
+<blockquote>Can the organisation close an incident without losing the unresolved model question, fulfil a service request without granting it design authority, and implement a model decision without copying the complete ITSM workflow into the model registry?</blockquote>
+<p>When the answer is yes, operational efficiency and model governance can coexist.</p>
+<p>When the answer is no, the organisation will either overload its service desk with architecture work or continue changing model truth through closed support tickets.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>incidents and requests;</li>
+<li>model findings;</li>
+<li>canonical rules and mappings;</li>
+<li>decisions;</li>
+<li>implementation changes;</li>
+<li>impact;</li>
+<li>verification evidence;</li>
+<li>Git-recorded model state.</li>
+</ul>
+<p>It does not replace ITSM platforms, SAP MDG, service catalogues or change-management systems.</p>
+<p>Its purpose is to keep model truth traceable while operational work moves through the systems already designed to manage it.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Atlassian defines incident management as the practice of responding to unplanned service interruptions or reductions in service quality and restoring the service to its operational state. Its guidance also distinguishes incidents from underlying problems and supports post-incident reviews and linked problem records.</p>
+<p>Atlassian describes service-request management as a distinct workstream for standardising the intake, coordination and fulfilment of customer or employee requests through defined workflows, approvals, queues and service-level targets.</p>
+<p>ServiceNow positions Incident Management around service restoration and issue resolution, Request Management around published services and automated fulfilment, and Change Management around differentiated change models, approval policies, risk assessment, scheduling and impact visibility.</p>
+<p>SAP currently describes SAP Master Data Governance as providing a governed model across business entities while preserving semantics and relationships.</p>
+<p>Martenweave Core currently uses canonical model files, deterministic validation, rebuildable generated indexes and proposal-first changes requiring human review.</p>
+<p>Its documented pipeline connects evidence, proposals, validation, gap and impact analysis, human review and GitHub issue or pull-request output, while explicitly avoiding the role of a generic workflow engine or direct SAP write-back platform.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, ServiceNow, Atlassian or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-build-an-ams-model-change-process-that-does-not-recreate-the-sap.html"><span>Previous</span>Six months after go-live, a country requests a new Supplier Classification value.</a><a href="/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html"><span>Next</span>A supplier cannot be activated because its final risk classification is missing.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Define Data Ownership That Still Works After the SAP Programme Ends | Martenweave</title>
+    <meta
+      name="description"
+      content="Three months after go-live, an AMS analyst receives an incident."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html" />
+    <meta property="og:title" content="How to Define Data Ownership That Still Works After the SAP Programme Ends | Martenweave" />
+    <meta property="og:description" content="Three months after go-live, an AMS analyst receives an incident." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Define Data Ownership That Still Works After the SAP Programme Ends | Martenweave" />
+    <meta name="twitter:description" content="Three months after go-live, an AMS analyst receives an incident." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html",
+                        "name": "How to Define Data Ownership That Still Works After the SAP Programme Ends | Martenweave",
+                        "description": "Three months after go-live, an AMS analyst receives an incident.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Define Data Ownership That Still Works After the SAP Programme Ends",
+                                    "item": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html#content",
+                        "headline": "How to Define Data Ownership That Still Works After the SAP Programme Ends",
+                        "name": "How to Define Data Ownership That Still Works After the SAP Programme Ends",
+                        "description": "Three months after go-live, an AMS analyst receives an incident.",
+                        "url": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Define Data Ownership That Still Works After the SAP Programme Ends</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Define Data Ownership That Still Works After the SAP Programme Ends</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 18 min read</p><p class="blog-summary">Three months after go-live, an AMS analyst receives an incident.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-day-after-the-programme-ends">The day after the programme ends</a></li><li><a href="#the-programme-clock">The programme clock</a></li><li><a href="#the-operational-clock">The operational clock</a></li><li><a href="#the-model-clock">The model clock</a></li><li><a href="#semantic-authority">Semantic authority</a></li><li><a href="#applicability-authority">Applicability authority</a></li><li><a href="#source-authority">Source authority</a></li><li><a href="#quality-authority">Quality authority</a></li><li><a href="#exception-authority">Exception authority</a></li><li><a href="#risk-authority">Risk authority</a></li><li><a href="#implementation-authority">Implementation authority</a></li><li><a href="#operational-stewardship">Operational stewardship</a></li><li><a href="#1-domain-owner">1. Domain owner</a></li><li><a href="#2-attribute-or-rule-owner">2. Attribute or rule owner</a></li><li><a href="#3-contextual-owner">3. Contextual owner</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>Three months after go-live, an AMS analyst receives an incident.</p>
+<p>A new supplier cannot be activated because Supplier Risk is blank.</p>
+<p>The validation was introduced during the SAP programme. The configuration is working as designed.</p>
+<p>The analyst searches the handover material.</p>
+<p>The solution document says Supplier Risk is mandatory. The mapping workbook identifies a legacy source that no longer exists. A decision log names the programme’s Global Supplier Lead, who has left the company. The local data owner listed for Germany belonged to the implementation partner. The source-remediation ticket was closed during cutover.</p>
+<p>Nobody currently has authority to answer the actual question:</p>
+<blockquote>Should the new supplier be blocked, enriched, placed under review or treated as outside the rule’s applicable population?</blockquote>
+<p>The AMS team can resolve the technical incident in several ways:</p>
+<ul>
+<li>change the validation;</li>
+<li>ask the business user to enter a value;</li>
+<li>copy the value from a similar supplier;</li>
+<li>create a temporary exception;</li>
+<li>escalate to the service manager.</li>
+</ul>
+<p>None of these options establishes who owns the model decision.</p>
+<p>The project had named owners.</p>
+<p>The operating organisation inherited names, documents and configuration, but not durable decision rights.</p>
+<p>This is why many ownership models fail shortly after go-live. They are designed to help a programme deliver, not to help an organisation govern the model after the programme disappears.</p>
+<blockquote>Sustainable data ownership is not a list of people responsible during implementation. It is an operating contract that remains valid when projects, suppliers, systems and individuals change.</blockquote>
+<p>That contract must define:</p>
+<ul>
+<li>which decisions belong to which role;</li>
+<li>what evidence the role is expected to review;</li>
+<li>which work can be delegated;</li>
+<li>how ownership transfers;</li>
+<li>how AMS and business operations interact;</li>
+<li>who acts when the named owner is absent;</li>
+<li>how an unresolved ownership gap becomes visible.</li>
+</ul>
+<p>Without these elements, “data owner” becomes a title attached to someone who receives escalations but lacks the time, evidence or authority to resolve them.</p>
+<p>---</p>
+<h2 id="the-day-after-the-programme-ends">The day after the programme ends</h2>
+<p>During a large SAP migration or MDG implementation, ownership often appears stronger than it really is.</p>
+<p>The programme has:</p>
+<ul>
+<li>domain leads;</li>
+<li>migration object leads;</li>
+<li>process owners;</li>
+<li>country representatives;</li>
+<li>architects;</li>
+<li>data stewards;</li>
+<li>workstream leads;</li>
+<li>design authorities.</li>
+</ul>
+<p>Questions can be pushed into workshops. Consultants assemble evidence. Programme managers chase decisions. Senior sponsors resolve deadlocks.</p>
+<p>This creates a temporary governance capacity.</p>
+<p>When the programme ends, several things happen at once:</p>
+<ol>
+<li>The migration team is dissolved.</li>
+<li>External consultants leave.</li>
+<li>Design authorities stop meeting.</li>
+<li>Local representatives return to operational roles.</li>
+<li>Decision logs become archive material.</li>
+<li>Responsibility shifts to AMS, shared services or business operations.</li>
+<li>New records and new requirements appear outside the migration scope.</li>
+</ol>
+<p>The master-data model continues to change, even when nobody calls the changes “model changes.”</p>
+<p>Examples include:</p>
+<ul>
+<li>new source values;</li>
+<li>new country requirements;</li>
+<li>reorganisations;</li>
+<li>new interfaces;</li>
+<li>regulatory updates;</li>
+<li>field retirements;</li>
+<li>recurring incidents;</li>
+<li>manual workarounds;</li>
+<li>mass corrections;</li>
+<li>new reporting needs.</li>
+</ul>
+<p>If the operating ownership model cannot process these changes, the organisation will still make decisions. They will simply be made through:</p>
+<ul>
+<li>incident resolution;</li>
+<li>configuration changes;</li>
+<li>local spreadsheets;</li>
+<li>email approvals;</li>
+<li>emergency workarounds;</li>
+<li>undocumented defaults.</li>
+</ul>
+<p>Ownership does not disappear.</p>
+<p>It becomes implicit.</p>
+<p>---</p>
+<h1 id="three-clocks-of-ownership">Three clocks of ownership</h1>
+<p>A sustainable model must work across three different clocks.</p>
+<h2 id="the-programme-clock">The programme clock</h2>
+<p>Measured in:</p>
+<ul>
+<li>sprints;</li>
+<li>mock loads;</li>
+<li>design cycles;</li>
+<li>cutover milestones;</li>
+<li>defect deadlines.</li>
+</ul>
+<p>The priority is delivery.</p>
+<h2 id="the-operational-clock">The operational clock</h2>
+<p>Measured in:</p>
+<ul>
+<li>incidents;</li>
+<li>service requests;</li>
+<li>onboarding cases;</li>
+<li>daily data maintenance;</li>
+<li>business deadlines;</li>
+<li>SLA targets.</li>
+</ul>
+<p>The priority is continuity.</p>
+<h2 id="the-model-clock">The model clock</h2>
+<p>Measured in:</p>
+<ul>
+<li>semantic changes;</li>
+<li>policy revisions;</li>
+<li>source transitions;</li>
+<li>lifecycle changes;</li>
+<li>accumulated exceptions;</li>
+<li>repeated evidence.</li>
+</ul>
+<p>The priority is maintaining coherent truth.</p>
+<p>These clocks do not naturally align.</p>
+<p>AMS may need an answer today.</p>
+<p>The model owner may need an investigation before changing the rule.</p>
+<p>The business may need to onboard a critical supplier immediately.</p>
+<p>A useful ownership model does not pretend these tensions can be removed. It defines who may make which kind of decision under which conditions.</p>
+<p>---</p>
+<h1 id="ownership-is-a-bundle-of-decision-rights">Ownership is a bundle of decision rights</h1>
+<p>The term “data owner” is often used as though it describes one universal job.</p>
+<p>In practice, ownership contains several distinct rights.</p>
+<h2 id="semantic-authority">Semantic authority</h2>
+<p>Who decides what the attribute or entity means?</p>
+<p>For Supplier Risk, this includes:</p>
+<ul>
+<li>whether it represents final classification;</li>
+<li>how it differs from review status;</li>
+<li>its granularity;</li>
+<li>its lifecycle;</li>
+<li>its permitted values.</li>
+</ul>
+<h2 id="applicability-authority">Applicability authority</h2>
+<p>Who decides where the rule applies?</p>
+<p>For example:</p>
+<ul>
+<li>active suppliers only;</li>
+<li>strategic suppliers;</li>
+<li>organisations but not persons;</li>
+<li>one country;</li>
+<li>one purchasing organisation;</li>
+<li>one regulatory population.</li>
+</ul>
+<h2 id="source-authority">Source authority</h2>
+<p>Who confirms which system, process or evidence may provide the value?</p>
+<h2 id="quality-authority">Quality authority</h2>
+<p>Who defines acceptable completeness, validity and remediation expectations?</p>
+<h2 id="exception-authority">Exception authority</h2>
+<p>Who may approve a bounded case in which the normal rule does not apply?</p>
+<h2 id="risk-authority">Risk authority</h2>
+<p>Who may accept temporary exposure when the intended control cannot be satisfied?</p>
+<h2 id="implementation-authority">Implementation authority</h2>
+<p>Who can change SAP MDG, migration logic, interfaces, validation or workflow?</p>
+<h2 id="operational-stewardship">Operational stewardship</h2>
+<p>Who corrects records, manages queues and follows up with users?</p>
+<p>These rights should not all be assigned to one person.</p>
+<p>A business domain owner may define Supplier Risk but should not be expected to maintain every record.</p>
+<p>An AMS consultant may implement a validation change but should not redefine the business policy.</p>
+<p>A steward may correct data but should not approve a new exception class.</p>
+<p>---</p>
+<h1 id="the-six-roles-that-usually-survive-go-live">The six roles that usually survive go-live</h1>
+<p>The exact titles vary, but a durable operating model normally needs six types of role.</p>
+<h2 id="1-domain-owner">1. Domain owner</h2>
+<p>Owns the business meaning and overall policy for a domain such as Supplier, Customer, Product or Business Partner.</p>
+<p>This role should decide:</p>
+<ul>
+<li>definitions;</li>
+<li>global semantic boundaries;</li>
+<li>shared lifecycle;</li>
+<li>major ownership conflicts;</li>
+<li>enterprise-level changes.</li>
+</ul>
+<p>The role should not be the default assignee for every operational issue.</p>
+<h2 id="2-attribute-or-rule-owner">2. Attribute or rule owner</h2>
+<p>Owns a narrower critical concept.</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier Risk;</li>
+<li>Customer Group;</li>
+<li>Tax Identifier;</li>
+<li>Payment Terms;</li>
+<li>Product Classification.</li>
+</ul>
+<p>This level is useful when one domain contains too many specialised decisions for one domain owner.</p>
+<h2 id="3-contextual-owner">3. Contextual owner</h2>
+<p>Owns legitimate country, business-unit or regulatory applicability.</p>
+<p>This role may approve decisions within a defined boundary but should not silently alter global semantics.</p>
+<h2 id="4-operational-steward">4. Operational steward</h2>
+<p>Manages day-to-day records, queues, evidence collection and remediation.</p>
+<p>This role needs clear procedures and escalation rights.</p>
+<p>It should not be treated as the final authority for unresolved model questions.</p>
+<h2 id="5-platform-or-implementation-owner">5. Platform or implementation owner</h2>
+<p>Owns SAP MDG configuration, MDM workflows, interfaces, rules or other technical implementations.</p>
+<p>The role confirms what the system does and implements approved changes.</p>
+<h2 id="6-service-owner">6. Service owner</h2>
+<p>Owns the operational service across incidents, changes, SLAs and support processes.</p>
+<p>This role ensures that findings reach the proper semantic, business or implementation authority instead of circulating indefinitely through AMS.</p>
+<p>SAP’s current MDG positioning explicitly includes ownership of specific master-data attributes, collaborative routing, notifications, validated values, monitoring and auditable changes. These capabilities can support an operating ownership model, but they do not define the organisation’s decision rights by themselves.</p>
+<p>---</p>
+<h1 id="the-owner-must-have-a-defined-object">The owner must have a defined object</h1>
+<p>“Owner of supplier data” is usually too broad.</p>
+<p>Ownership should attach to something concrete:</p>
+<ul>
+<li>domain;</li>
+<li>entity;</li>
+<li>attribute;</li>
+<li>relationship;</li>
+<li>rule;</li>
+<li>value list;</li>
+<li>source;</li>
+<li>country context;</li>
+<li>process stage.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Role:
+Global Supplier Risk Owner
+
+Owns:
+- ATTR-SUPPLIER-RISK
+- RULE-SUPPLIER-RISK-ACTIVATION
+- global risk value semantics
+
+Does not own:
+- record-level assessment
+- ERP_B extraction
+- SAP transport execution
+- Portuguese compliance-review workflow</code></pre>
+<p>This boundary matters after go-live.</p>
+<p>When the AMS analyst receives the incident, the system can distinguish:</p>
+<ul>
+<li>semantic question → Supplier Risk Owner;</li>
+<li>incorrect validation → SAP MDG owner;</li>
+<li>incomplete record → operational steward;</li>
+<li>source field missing → source owner;</li>
+<li>urgent temporary exposure → service and risk owner.</li>
+</ul>
+<p>Without object-level ownership, every issue is routed to a large domain mailbox.</p>
+<p>---</p>
+<h1 id="ownership-must-attach-to-roles-not-programme-participants">Ownership must attach to roles, not programme participants</h1>
+<p>A handover package often contains names:</p>
+<ul>
+<li>Jane — Customer Data Lead;</li>
+<li>Michael — Migration Mapping Lead;</li>
+<li>Anna — Portugal Business Representative.</li>
+</ul>
+<p>Names age quickly.</p>
+<p>A durable record should state:</p>
+<pre><code class="language-text">Canonical role:
+Portugal Supplier Compliance Owner
+
+Current holder:
+Anna Silva
+
+Delegate:
+Portugal Supplier Governance Deputy
+
+Authority:
+- define local compliance applicability;
+- approve local evidence requirements;
+- propose contextual model changes.
+
+Escalation:
+Global Supplier Domain Owner</code></pre>
+<p>The role remains even when the holder changes.</p>
+<p>Collibra’s governance guidance treats an operating model as the foundation for data governance, defining roles, responsibilities, business terms and domains. It also distinguishes business stewards, who own data concerns, from technical stewards, who own supporting infrastructure, within centralised or federated authority structures.</p>
+<p>That distinction is important for SAP programmes: business authority and technical capability should remain connected without being collapsed into one role.</p>
+<p>---</p>
+<h1 id="handover-must-transfer-authority-not-only-knowledge">Handover must transfer authority, not only knowledge</h1>
+<p>A conventional handover focuses on:</p>
+<ul>
+<li>solution documentation;</li>
+<li>configuration;</li>
+<li>interfaces;</li>
+<li>support procedures;</li>
+<li>known errors;</li>
+<li>open defects.</li>
+</ul>
+<p>A model-governance handover should also transfer:</p>
+<ul>
+<li>active decisions;</li>
+<li>temporary deviations;</li>
+<li>ownership roles;</li>
+<li>escalation paths;</li>
+<li>unresolved investigations;</li>
+<li>pending source-remediation commitments;</li>
+<li>review triggers;</li>
+<li>affected populations;</li>
+<li>model baselines.</li>
+</ul>
+<p>The receiving organisation should explicitly accept:</p>
+<blockquote>We now own these model decisions and these unresolved obligations.</blockquote>
+<p>Otherwise, the programme closes while its governance debt remains unowned.</p>
+<p>A useful acceptance record might state:</p>
+<pre><code class="language-text">Transferred to operations:
+
+Current Supplier Risk policy:
+Accepted
+
+Open ERP_B source gap:
+Accepted with remediation owner
+
+Wave 2 temporary deviation:
+Accepted until 30 September
+
+Portuguese contextual rule:
+Accepted by local owner
+
+Unresolved Customer Group source decision:
+Not accepted; programme closure blocked</code></pre>
+<p>The handover is incomplete when operational ownership exists only in theory.</p>
+<p>---</p>
+<h1 id="temporary-programme-roles-must-be-mapped-to-permanent-roles">Temporary programme roles must be mapped to permanent roles</h1>
+<p>Programme roles often do not have direct operational equivalents.</p>
+<p>For example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Programme role</th><th scope="col">Permanent destination</th></tr></thead><tbody><tr><td>Migration Object Lead</td><td>Domain or attribute owner</td></tr><tr><td>Country Data Lead</td><td>Contextual owner</td></tr><tr><td>Data Cleansing Lead</td><td>Operational stewardship lead</td></tr><tr><td>Solution Architect</td><td>Platform or model architecture owner</td></tr><tr><td>Cutover Lead</td><td>Service transition owner</td></tr><tr><td>Design Authority</td><td>Standing governance forum or domain authority</td></tr><tr><td>Defect Manager</td><td>Service-management process</td></tr></tbody></table></div>
+<p>This mapping should happen before cutover, not after hypercare.</p>
+<p>Where no permanent destination exists, the programme has found an ownership gap.</p>
+<p>That gap should be resolved explicitly rather than assigned temporarily to AMS.</p>
+<p>---</p>
+<h1 id="the-ams-contract-must-state-what-ams-may-decide">The AMS contract must state what AMS may decide</h1>
+<p>AMS is often given responsibility without authority.</p>
+<p>The service is expected to:</p>
+<ul>
+<li>resolve incidents;</li>
+<li>meet SLAs;</li>
+<li>maintain configuration;</li>
+<li>support users;</li>
+<li>execute changes.</li>
+</ul>
+<p>But the contract may not state whether AMS can:</p>
+<ul>
+<li>change a mandatory rule;</li>
+<li>add a value;</li>
+<li>approve a default;</li>
+<li>reinterpret a local exception;</li>
+<li>retire an attribute;</li>
+<li>accept missing evidence.</li>
+</ul>
+<p>This ambiguity produces two bad outcomes.</p>
+<h3 id="overreach">Overreach</h3>
+<p>AMS changes model behaviour to resolve incidents quickly.</p>
+<h3 id="paralysis">Paralysis</h3>
+<p>AMS escalates every question because no decision boundary is defined.</p>
+<p>A practical authority matrix could state:</p>
+<h2 id="ams-may-do-without-model-approval">AMS may do without model approval</h2>
+<ul>
+<li>correct implementation to match an approved rule;</li>
+<li>repair extraction defects;</li>
+<li>restore failed interfaces;</li>
+<li>correct record-level technical errors;</li>
+<li>apply documented operational procedures.</li>
+</ul>
+<h2 id="ams-requires-domain-approval">AMS requires domain approval</h2>
+<ul>
+<li>change applicability;</li>
+<li>add or remove values;</li>
+<li>introduce a default;</li>
+<li>change cardinality;</li>
+<li>redefine source authority;</li>
+<li>create a permanent exception.</li>
+</ul>
+<h2 id="ams-requires-risk-approval">AMS requires risk approval</h2>
+<ul>
+<li>extend a temporary deviation;</li>
+<li>permit activation without required evidence;</li>
+<li>bypass a critical control.</li>
+</ul>
+<p>This boundary should be included in the service model, not discovered incident by incident.</p>
+<p>---</p>
+<h1 id="knowledge-management-is-not-ownership">Knowledge management is not ownership</h1>
+<p>An organisation may have excellent support articles and still lack decision authority.</p>
+<p>ServiceNow’s current Knowledge Center positioning includes article quality management, gap detection, reusable knowledge blocks, analytics and group ownership for routing feedback and maintenance. These capabilities are useful for preserving operational guidance and assigning responsibility for content.</p>
+<p>But ownership of an article is not ownership of the model rule described by the article.</p>
+<p>For example:</p>
+<ul>
+<li>the knowledge team may own the article explaining Supplier Risk errors;</li>
+<li>the service team may own the incident process;</li>
+<li>the domain owner still owns the meaning and applicability of Supplier Risk.</li>
+</ul>
+<p>The relationships should be explicit:</p>
+<pre><code class="language-text">Knowledge article:
+How to resolve missing Supplier Risk
+
+Operational owner:
+Supplier Data Support Team
+
+Governed rule:
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Semantic owner:
+Global Supplier Risk Owner</code></pre>
+<p>This prevents support documentation from quietly becoming policy.</p>
+<p>---</p>
+<h1 id="a-data-catalogue-can-hold-enterprise-ownership-but-delivery-ownership-remains-more-granular">A data catalogue can hold enterprise ownership, but delivery ownership remains more granular</h1>
+<p>Enterprise governance platforms can represent:</p>
+<ul>
+<li>domains;</li>
+<li>owners;</li>
+<li>business terms;</li>
+<li>critical data elements;</li>
+<li>policies;</li>
+<li>systems;</li>
+<li>quality scorecards.</li>
+</ul>
+<p>Collibra’s published guidance places owners, business glossaries, dictionaries, processes, systems, policies and quality measures inside domain-level governance structures.</p>
+<p>That provides a strong enterprise layer.</p>
+<p>A migration and AMS model still needs more specific links:</p>
+<pre><code class="language-text">Enterprise term:
+Supplier Risk
+
+Canonical model object:
+ATTR-SUPPLIER-RISK
+
+SAP endpoint:
+Supplier master implementation field
+
+Global rule:
+Required before activation for applicable suppliers
+
+Source owners:
+ERP_A, ERP_B, MDM_C
+
+Contextual owners:
+Portugal, Germany
+
+AMS implementation owner:
+SAP MDG Support Team</code></pre>
+<p>Martenweave should not replace the enterprise catalogue.</p>
+<p>It should preserve the delivery and change-control relationships that the catalogue may not hold at this level of detail.</p>
+<p>---</p>
+<h1 id="ownership-must-include-recurring-obligations">Ownership must include recurring obligations</h1>
+<p>An owner should not exist only to approve changes.</p>
+<p>The role should have a small set of recurring obligations.</p>
+<p>For a critical attribute owner:</p>
+<ul>
+<li>review unresolved model findings;</li>
+<li>review repeated exceptions;</li>
+<li>confirm source authority;</li>
+<li>approve semantic changes;</li>
+<li>monitor ownership coverage;</li>
+<li>review expired deviations;</li>
+<li>respond to material incidents;</li>
+<li>confirm successor or delegate.</li>
+</ul>
+<p>For an operational steward:</p>
+<ul>
+<li>process remediation queues;</li>
+<li>maintain evidence;</li>
+<li>identify recurring defects;</li>
+<li>escalate model ambiguity;</li>
+<li>confirm closure populations.</li>
+</ul>
+<p>For a platform owner:</p>
+<ul>
+<li>maintain implementation alignment;</li>
+<li>document configuration changes;</li>
+<li>provide traceable deployment evidence;</li>
+<li>monitor drift from canonical rules.</li>
+</ul>
+<p>Ownership becomes real when the role has an operating rhythm.</p>
+<p>---</p>
+<h1 id="avoid-the-governance-calendar-trap">Avoid the governance calendar trap</h1>
+<p>A common solution is to create more meetings:</p>
+<ul>
+<li>monthly data council;</li>
+<li>weekly stewardship forum;</li>
+<li>country governance call;</li>
+<li>quarterly model review.</li>
+</ul>
+<p>Meetings are not ownership.</p>
+<p>A durable operating model should resolve most findings without requiring a committee.</p>
+<p>Use standing forums only for:</p>
+<ul>
+<li>cross-domain changes;</li>
+<li>global–local conflicts;</li>
+<li>material risk acceptance;</li>
+<li>repeated local patterns;</li>
+<li>unresolved authority;</li>
+<li>retirement of shared concepts.</li>
+</ul>
+<p>Routine work should flow directly through role-based decision rights.</p>
+<p>A useful principle is:</p>
+<blockquote>Most ownership should be exercised asynchronously through bounded review packages. Meetings should handle conflicts, not ordinary approvals.</blockquote>
+<p>---</p>
+<h1 id="the-owner-needs-evidence-not-a-raw-ticket">The owner needs evidence, not a raw ticket</h1>
+<p>A sustainable model reduces the effort required to make a responsible decision.</p>
+<p>A good review package contains:</p>
+<ul>
+<li>decision required;</li>
+<li>affected model object;</li>
+<li>current approved state;</li>
+<li>observed evidence;</li>
+<li>applicable population;</li>
+<li>alternatives;</li>
+<li>downstream impact;</li>
+<li>recommendation;</li>
+<li>deadline;</li>
+<li>required authority.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Decision required:
+Approve permanent treatment for suppliers without final risk.
+
+Affected population:
+1,284 ERP_B strategic supplier organisations.
+
+Current policy:
+Final risk required before activation.
+
+Temporary state:
+Controlled review allowed until 30 September.
+
+Alternatives:
+1. Source enhancement
+2. Business enrichment
+3. Approved derivation
+4. Exclusion
+
+Recommendation:
+Source enhancement plus continued controlled enrichment.
+
+Decision consequence:
+Temporary deviation expires before next release.</code></pre>
+<p>A data owner who receives this packet can exercise authority.</p>
+<p>A data owner who receives “please review defect 8421” will become a routing point.</p>
+<p>---</p>
+<h1 id="ownership-should-be-tested-before-go-live">Ownership should be tested before go-live</h1>
+<p>Do not assume that assigning roles proves the model works.</p>
+<p>Run ownership drills.</p>
+<h2 id="drill-1-missing-critical-attribute">Drill 1: missing critical attribute</h2>
+<p>A new operational record lacks Supplier Risk.</p>
+<p>Can the support team determine:</p>
+<ul>
+<li>whether the rule applies;</li>
+<li>who decides the treatment;</li>
+<li>who corrects the data;</li>
+<li>who changes configuration if needed?</li>
+</ul>
+<h2 id="drill-2-new-local-requirement">Drill 2: new local requirement</h2>
+<p>A country requests a new classification.</p>
+<p>Can the organisation determine:</p>
+<ul>
+<li>local or global authority;</li>
+<li>evidence required;</li>
+<li>review path;</li>
+<li>implementation owner?</li>
+</ul>
+<h2 id="drill-3-expired-deviation">Drill 3: expired deviation</h2>
+<p>A temporary migration exception expires.</p>
+<p>Does someone receive the obligation to:</p>
+<ul>
+<li>close it;</li>
+<li>extend it;</li>
+<li>propose permanent change?</li>
+</ul>
+<h2 id="drill-4-owner-leaves">Drill 4: owner leaves</h2>
+<p>The current attribute owner changes role.</p>
+<p>Does the canonical role continue with:</p>
+<ul>
+<li>delegate;</li>
+<li>successor;</li>
+<li>authority;</li>
+<li>open decisions?</li>
+</ul>
+<h2 id="drill-5-repeated-incident">Drill 5: repeated incident</h2>
+<p>The same validation issue returns five times.</p>
+<p>Can the service process escalate from incident resolution to model investigation?</p>
+<p>An ownership model that fails these drills is not ready for handover.</p>
+<p>---</p>
+<h1 id="the-ninety-day-transfer">The ninety-day transfer</h1>
+<p>Ownership transition should begin before cutover and continue through early operations.</p>
+<h2 id="before-cutover">Before cutover</h2>
+<ul>
+<li>identify permanent roles;</li>
+<li>map programme roles to operational roles;</li>
+<li>resolve ownerless critical objects;</li>
+<li>document decision rights;</li>
+<li>catalogue temporary deviations;</li>
+<li>define AMS boundaries.</li>
+</ul>
+<h2 id="during-hypercare">During hypercare</h2>
+<ul>
+<li>permanent owners join finding triage;</li>
+<li>programme owners act as advisers, not final authorities;</li>
+<li>operational teams practise evidence-based decisions;</li>
+<li>unresolved ownership gaps remain visible.</li>
+</ul>
+<h2 id="first-thirty-days">First thirty days</h2>
+<ul>
+<li>review all active deviations;</li>
+<li>review recurring incidents;</li>
+<li>confirm delegates;</li>
+<li>compare canonical model with production configuration;</li>
+<li>confirm source-remediation commitments.</li>
+</ul>
+<h2 id="days-thirty-to-ninety">Days thirty to ninety</h2>
+<ul>
+<li>transfer remaining decisions;</li>
+<li>retire programme-only roles;</li>
+<li>verify that operational owners have acted;</li>
+<li>measure routing accuracy and decision delay;</li>
+<li>close or reapprove temporary treatments.</li>
+</ul>
+<h2 id="after-ninety-days">After ninety days</h2>
+<p>The programme should no longer be the default authority.</p>
+<p>Any remaining dependence on former project leads should be treated as transition failure.</p>
+<p>---</p>
+<h1 id="what-happens-when-no-owner-accepts-responsibility">What happens when no owner accepts responsibility</h1>
+<p>This situation should be represented honestly.</p>
+<p>Do not assign the object to:</p>
+<ul>
+<li>project manager;</li>
+<li>data governance mailbox;</li>
+<li>AMS lead;</li>
+<li>enterprise architect;</li>
+</ul>
+<p>unless that role has accepted authority.</p>
+<p>Create an ownership gap:</p>
+<pre><code class="language-text">Object:
+ATTR-CUSTOMER-GROUP
+
+Missing authority:
+No role owns semantic definition across sales areas.
+
+Operational consequence:
+AMS cannot approve mapping or validation changes.
+
+Escalation:
+Customer Domain Sponsor
+
+Required resolution:
+Appoint role and approve authority scope.</code></pre>
+<p>An ownerless critical object should affect governance health and readiness.</p>
+<p>Martenweave’s current command set includes ownership coverage and steward-workload reporting, while its governance health and scorecard outputs are intended to surface ownership and readiness signals.</p>
+<p>That makes ownership gaps visible as product data, not organisational folklore.</p>
+<p>---</p>
+<h1 id="successor-planning-belongs-in-the-model">Successor planning belongs in the model</h1>
+<p>For critical roles, record:</p>
+<ul>
+<li>current holder;</li>
+<li>delegate;</li>
+<li>organisational unit;</li>
+<li>effective dates;</li>
+<li>escalation role;</li>
+<li>last confirmed date.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">id: ROLE-GLOBAL-SUPPLIER-RISK-OWNER
+type: GovernanceRole
+
+authority:
+  - approve_attribute_definition
+  - approve_global_values
+  - approve_applicability
+  - approve_semantic_exception
+
+current_holder: PERSON-1042
+delegate: PERSON-1180
+organisation: Global Procurement Governance
+escalates_to: ROLE-SUPPLIER-DOMAIN-SPONSOR
+effective_from: 2026-07-01
+review_by: 2027-01-01</code></pre>
+<p>This is a conceptual direction rather than a claim about the current Martenweave schema.</p>
+<p>The owner relationship is part of model reliability.</p>
+<p>A role with no current holder should be detectable.</p>
+<p>---</p>
+<h1 id="measure-behaviour-not-coverage-alone">Measure behaviour, not coverage alone</h1>
+<p>A dashboard may report:</p>
+<blockquote>98% of critical attributes have owners.</blockquote>
+<p>That is useful but incomplete.</p>
+<p>Better indicators include:</p>
+<h2 id="ownership-coverage">Ownership coverage</h2>
+<p>Which objects have no accountable role?</p>
+<h2 id="authority-completeness">Authority completeness</h2>
+<p>Does the role have defined decision rights?</p>
+<h2 id="owner-activity">Owner activity</h2>
+<p>Has the role reviewed or decided anything recently?</p>
+<h2 id="decision-delay">Decision delay</h2>
+<p>How long do evidence-ready findings wait?</p>
+<h2 id="handover-dependency">Handover dependency</h2>
+<p>How many decisions still require former programme members?</p>
+<h2 id="reassignment-rate">Reassignment rate</h2>
+<p>How often are findings moved because the initial route was wrong?</p>
+<h2 id="delegate-coverage">Delegate coverage</h2>
+<p>Which critical roles have no backup?</p>
+<h2 id="expired-ownership">Expired ownership</h2>
+<p>Which assignments are no longer current?</p>
+<h2 id="ams-escalation-quality">AMS escalation quality</h2>
+<p>How many incidents correctly escalate into model findings?</p>
+<p>A nominal owner who never receives evidence or exercises authority is not functioning ownership.</p>
+<p>---</p>
+<h1 id="how-martenweave-should-divide-responsibilities-with-other-applications">How Martenweave should divide responsibilities with other applications</h1>
+<h2 id="sap-mdg-or-another-mdm-platform">SAP MDG or another MDM platform</h2>
+<p>Use it to:</p>
+<ul>
+<li>enforce approved rules;</li>
+<li>route operational change requests;</li>
+<li>support stewardship;</li>
+<li>maintain auditable master-data changes;</li>
+<li>monitor data quality.</li>
+</ul>
+<p>SAP describes MDG as a central governance layer providing governed models, attribute ownership, collaborative workflows, validated values, monitoring and auditability.</p>
+<p>Martenweave should preserve why those rules and owners exist and how they relate to source evidence, migration decisions and change proposals.</p>
+<h2 id="enterprise-governance-platform">Enterprise governance platform</h2>
+<p>Use it for:</p>
+<ul>
+<li>enterprise domains;</li>
+<li>business glossary;</li>
+<li>policy;</li>
+<li>broad ownership;</li>
+<li>stewardship organisation;</li>
+<li>catalogue and lineage context.</li>
+</ul>
+<p>Collibra’s published guidance emphasises operating models, formalised ownership, data domains and the distinction between business and technical stewardship.</p>
+<p>Martenweave should link those enterprise roles to concrete model objects, mappings, rules and findings.</p>
+<h2 id="servicenow-or-another-itsm-platform">ServiceNow or another ITSM platform</h2>
+<p>Use it for:</p>
+<ul>
+<li>incidents;</li>
+<li>service requests;</li>
+<li>changes;</li>
+<li>knowledge articles;</li>
+<li>operational workflow;</li>
+<li>SLA management.</li>
+</ul>
+<p>ServiceNow’s Knowledge Center includes group ownership for routing article feedback and maintenance, alongside knowledge quality, reuse and analytics.</p>
+<p>Martenweave should ensure that operational articles and tickets point back to the authoritative model rule and owner.</p>
+<h2 id="git-and-github">Git and GitHub</h2>
+<p>Use them to:</p>
+<ul>
+<li>preserve canonical diffs;</li>
+<li>review proposals;</li>
+<li>record approvals;</li>
+<li>maintain version history.</li>
+</ul>
+<p>Martenweave’s current product principles treat canonical files as source of truth, generated indexes as disposable, AI output as reviewable proposals and Git as the durable change record.</p>
+<p>Git records the change.</p>
+<p>The ownership model determines who may approve it.</p>
+<p>---</p>
+<h1 id="a-small-martenweave-ownership-slice">A small Martenweave ownership slice</h1>
+<p>A useful implementation does not need a complete enterprise organisation model.</p>
+<p>Start with:</p>
+<ol>
+<li><code>GovernanceRole</code>;</li>
+<li>ownership relationships for domains, attributes, rules and sources;</li>
+<li>authority types;</li>
+<li>current holder and delegate;</li>
+<li>escalation parent;</li>
+<li>ownership validation;</li>
+<li>owner-aware finding routing;</li>
+<li>workload and coverage report.</li>
+</ol>
+<p>The first vertical scenario could be:</p>
+<blockquote>A Supplier Risk finding is classified as a source capability gap. Martenweave identifies the global rule owner as decision authority, the ERP_B owner as evidence and remediation contributor, the SAP MDG team as implementation owner and the Supplier Domain Sponsor as fallback. When the current holder is removed, the delegate or escalation route remains valid.</blockquote>
+<p>This proves durable ownership better than a large organisation chart.</p>
+<p>---</p>
+<h1 id="the-final-test">The final test</h1>
+<p>A post-programme ownership model is working when an operational team can answer five questions without calling the former project lead:</p>
+<ol>
+<li>What model object or rule governs this issue?</li>
+<li>Who has authority to decide its meaning or applicability?</li>
+<li>Who owns the evidence or source?</li>
+<li>Who implements the approved treatment?</li>
+<li>Who may accept temporary risk?</li>
+</ol>
+<p>The answer should not be “the data owner.”</p>
+<p>It should identify distinct roles.</p>
+<p>The purpose of ownership is not to ensure that every issue has someone’s name attached.</p>
+<p>It is to ensure that the organisation can continue making controlled model decisions after the temporary governance machinery of the SAP programme has gone.</p>
+<p>A project can hand over configuration in one week.</p>
+<p>It takes more discipline to hand over authority.</p>
+<p>That is the part that determines whether the model remains governed after go-live.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>governance roles;</li>
+<li>source ownership;</li>
+<li>findings;</li>
+<li>decisions;</li>
+<li>temporary deviations;</li>
+<li>implementation actions;</li>
+<li>reviewed model changes.</li>
+</ul>
+<p>The purpose is not to create another organisational directory.</p>
+<p>It is to ensure that model authority remains traceable when programme roles, employees, implementation partners and operational systems change.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer with one governed model, preserved semantics and relationships, attribute ownership, collaborative workflow routing, validated values, quality monitoring and auditable change.</p>
+<p>Collibra’s published governance guidance describes an operating model as the basis of governance, defining roles, responsibilities, domains and business terms. It also distinguishes business stewards from technical stewards and discusses centralised and federated authority structures.</p>
+<p>ServiceNow’s current Knowledge Center offering includes knowledge quality management, gap detection, reusable content, analytics and group ownership for article feedback and maintenance.</p>
+<p>Martenweave Core currently includes ownership coverage and steward-workload reporting alongside health, scorecard, validation, gap, trace and impact capabilities.</p>
+<p>Its public demo describes governance health and scorecards as providing ownership, readiness, coverage and model-side gap signals.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Collibra, ServiceNow or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-route-migration-findings-to-the-right-owner-without-creating.html"><span>Previous</span>A migration-readiness run identifies 1,284 strategic suppliers without Supplier Risk.</a><a href="/blog/how-to-build-an-ams-model-change-process-that-does-not-recreate-the-sap.html"><span>Next</span>Six months after go-live, a country requests a new Supplier Classification value.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

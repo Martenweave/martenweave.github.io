@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Define Exit Criteria for SAP Migration Model Risks | Martenweave</title>
+    <meta
+      name="description"
+      content="The programme has completed the remediation task."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html" />
+    <meta property="og:title" content="How to Define Exit Criteria for SAP Migration Model Risks | Martenweave" />
+    <meta property="og:description" content="The programme has completed the remediation task." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Define Exit Criteria for SAP Migration Model Risks | Martenweave" />
+    <meta name="twitter:description" content="The programme has completed the remediation task." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html",
+                        "name": "How to Define Exit Criteria for SAP Migration Model Risks | Martenweave",
+                        "description": "The programme has completed the remediation task.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Define Exit Criteria for SAP Migration Model Risks",
+                                    "item": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html#content",
+                        "headline": "How to Define Exit Criteria for SAP Migration Model Risks",
+                        "name": "How to Define Exit Criteria for SAP Migration Model Risks",
+                        "description": "The programme has completed the remediation task.",
+                        "url": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Define Exit Criteria for SAP Migration Model Risks</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Define Exit Criteria for SAP Migration Model Risks</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">The programme has completed the remediation task.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#completion-and-risk-closure-are-different-events">Completion and risk closure are different events</a></li><li><a href="#exit-criteria-define-the-state-that-must-be-true">Exit criteria define the state that must be true</a></li><li><a href="#exit-criteria-should-be-agreed-when-the-risk-is-opened">Exit criteria should be agreed when the risk is opened</a></li><li><a href="#not-every-risk-exits-by-becoming-zero">Not every risk exits by becoming zero</a></li><li><a href="#resolved">Resolved</a></li><li><a href="#reduced-to-an-accepted-residual-level">Reduced to an accepted residual level</a></li><li><a href="#transferred-into-an-operational-control">Transferred into an operational control</a></li><li><a href="#superseded">Superseded</a></li><li><a href="#converted-into-a-known-issue-or-model-debt">Converted into a known issue or model debt</a></li><li><a href="#exit-criteria-must-match-the-risk-type">Exit criteria must match the risk type</a></li><li><a href="#source-risk">Source risk</a></li><li><a href="#mapping-risk">Mapping risk</a></li><li><a href="#rule-risk">Rule risk</a></li><li><a href="#value-list-risk">Value-list risk</a></li><li><a href="#ownership-risk">Ownership risk</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The programme has completed the remediation task.</p>
+<p>A missing Supplier Classification was added to the migration file. The mapping ticket is closed. The SAP validation passed in the latest test. The risk register now shows:</p>
+<pre><code class="language-text">Status:
+Resolved</code></pre>
+<p>Two weeks later, the same gap appears in a new extract.</p>
+<p>The source system was never corrected. The migration team fixed only the current file. New records still arrive without classification. The temporary default remains available, and nobody has confirmed whether downstream systems interpret it correctly.</p>
+<p>The task was completed.</p>
+<p>The risk was not removed.</p>
+<p>This happens frequently in SAP migration and MDG programmes because teams use delivery activity as evidence of risk closure.</p>
+<p>They ask:</p>
+<ul>
+<li>Was the ticket completed?</li>
+<li>Was the configuration transported?</li>
+<li>Did the latest load succeed?</li>
+<li>Was the workbook updated?</li>
+<li>Did the owner approve the mitigation?</li>
+</ul>
+<p>These are useful milestones.</p>
+<p>They do not necessarily prove that the underlying exposure has ended.</p>
+<blockquote>A model risk should leave the active register only when predefined evidence shows that its cause, affected population, model dependencies and residual exposure have reached an approved state.</blockquote>
+<p>That evidence is the risk’s exit criteria.</p>
+<p>Without explicit exit criteria, risks tend to close when the programme becomes tired of discussing them.</p>
+<h2 id="completion-and-risk-closure-are-different-events">Completion and risk closure are different events</h2>
+<p>A backlog item can be complete while the parent risk remains open.</p>
+<p>Consider this sequence:</p>
+<pre><code class="language-text">Risk:
+Supplier Classification is unavailable for ERP_B records.
+
+Task:
+Add classifications to the Wave 2 migration file.
+
+Task result:
+Completed.
+
+Remaining condition:
+The next ERP_B extract will still omit the field.</code></pre>
+<p>The task reduced immediate migration exposure.</p>
+<p>It did not resolve the source-model risk.</p>
+<p>A better status would be:</p>
+<pre><code class="language-text">Risk status:
+Mitigated for Wave 2
+
+Residual risk:
+New and changed ERP_B suppliers remain unsupported
+
+Next exit condition:
+Operational source or controlled enrichment process implemented</code></pre>
+<p>This distinction prevents temporary success from being reported as permanent resolution.</p>
+<h2 id="exit-criteria-define-the-state-that-must-be-true">Exit criteria define the state that must be true</h2>
+<p>Acceptance criteria usually describe what a delivery item must produce.</p>
+<p>Exit criteria describe what must be true before a risk can leave a defined lifecycle stage.</p>
+<p>For example:</p>
+<h3 id="task-acceptance-criterion">Task acceptance criterion</h3>
+<blockquote>Update the mapping so source value <code>STRAT</code> converts to <code>STRATEGIC</code>.</blockquote>
+<h3 id="risk-exit-criterion">Risk exit criterion</h3>
+<blockquote>Every source value observed in the agreed population has an approved target treatment, and the mapping remains valid against the current source dataset.</blockquote>
+<p>The first proves that one change was made.</p>
+<p>The second proves that the mapping risk has reached an acceptable state.</p>
+<h2 id="exit-criteria-should-be-agreed-when-the-risk-is-opened">Exit criteria should be agreed when the risk is opened</h2>
+<p>Teams often define closure evidence at the end.</p>
+<p>This creates a conflict of interest.</p>
+<p>By then:</p>
+<ul>
+<li>deadlines are near;</li>
+<li>owners want to close items;</li>
+<li>the remaining exposure is inconvenient;</li>
+<li>evidence may be expensive to produce;</li>
+<li>temporary controls have become normal.</li>
+</ul>
+<p>Define exit criteria when the risk is assessed and the treatment is selected.</p>
+<p>At that point, reviewers should answer:</p>
+<blockquote>What evidence would convince us that this risk is no longer active—or has been reduced to an explicitly accepted residual level?</blockquote>
+<p>This makes the expected outcome visible before work begins.</p>
+<h2 id="not-every-risk-exits-by-becoming-zero">Not every risk exits by becoming zero</h2>
+<p>Many enterprise risks cannot be eliminated completely.</p>
+<p>A risk may leave active treatment through several valid outcomes.</p>
+<h2 id="resolved">Resolved</h2>
+<p>The cause and material exposure have been removed.</p>
+<p>Example:</p>
+<ul>
+<li>retired endpoint replaced;</li>
+<li>all active mappings updated;</li>
+<li>tests passed;</li>
+<li>old endpoint no longer referenced.</li>
+</ul>
+<h2 id="reduced-to-an-accepted-residual-level">Reduced to an accepted residual level</h2>
+<p>Some exposure remains, but responsible authorities approve it.</p>
+<p>Example:</p>
+<ul>
+<li>25 historical inactive records remain incomplete;</li>
+<li>they cannot be activated;</li>
+<li>the business owner accepts no further remediation.</li>
+</ul>
+<h2 id="transferred-into-an-operational-control">Transferred into an operational control</h2>
+<p>The risk becomes part of a stable process.</p>
+<p>Example:</p>
+<ul>
+<li>source cannot provide a field automatically;</li>
+<li>a controlled stewardship process now maintains it;</li>
+<li>ownership, service level and monitoring are established.</li>
+</ul>
+<h2 id="superseded">Superseded</h2>
+<p>The affected scope or model is no longer relevant.</p>
+<p>Example:</p>
+<ul>
+<li>migration wave cancelled;</li>
+<li>legacy source decommissioned;</li>
+<li>target attribute removed through another approved decision.</li>
+</ul>
+<h2 id="converted-into-a-known-issue-or-model-debt">Converted into a known issue or model debt</h2>
+<p>The programme cannot resolve the exposure before handover.</p>
+<p>It remains visible with:</p>
+<ul>
+<li>owner;</li>
+<li>operational control;</li>
+<li>expiry or review date;</li>
+<li>AMS treatment.</li>
+</ul>
+<p>This is not the same as resolution.</p>
+<p>The exit is from one programme process into another explicitly governed process.</p>
+<h2 id="exit-criteria-must-match-the-risk-type">Exit criteria must match the risk type</h2>
+<p>A generic criterion such as:</p>
+<blockquote>Owner confirms resolution.</blockquote>
+<p>is weak.</p>
+<p>Different risks require different evidence.</p>
+<h2 id="source-risk">Source risk</h2>
+<p>Example risk:</p>
+<blockquote>The source system does not reliably provide Tax Registration Identifier.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>authoritative source confirmed;</li>
+<li>field definition approved;</li>
+<li>current extract contains the expected column;</li>
+<li>completeness meets the approved contextual requirement;</li>
+<li>source owner accepts ongoing responsibility;</li>
+<li>extraction is reproducible;</li>
+<li>unresolved populations have approved treatment.</li>
+</ul>
+<p>A one-time corrected file is insufficient when the source process remains unchanged.</p>
+<h2 id="mapping-risk">Mapping risk</h2>
+<p>Example risk:</p>
+<blockquote>Several source values have no approved target treatment.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>all observed values are profiled;</li>
+<li>each material value has an approved mapping or explicit gap treatment;</li>
+<li>transformation is linked to active source and target endpoints;</li>
+<li>no unrestricted default remains;</li>
+<li>sample conversion passes;</li>
+<li>mapping is approved by the responsible business and technical owners.</li>
+</ul>
+<h2 id="rule-risk">Rule risk</h2>
+<p>Example risk:</p>
+<blockquote>A mandatory validation applies too broadly.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>applicability is represented explicitly;</li>
+<li>approved model contains the correct context;</li>
+<li>SAP configuration matches it;</li>
+<li>positive, negative and exception tests pass;</li>
+<li>affected populations are reassessed;</li>
+<li>no active unapproved deviation remains.</li>
+</ul>
+<h2 id="value-list-risk">Value-list risk</h2>
+<p>Example risk:</p>
+<blockquote>Temporary value <code>MIGRATION_REVIEW</code> is being treated as a normal classification.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>new operational use is blocked;</li>
+<li>remaining records are identified;</li>
+<li>remediation is complete or formally accepted;</li>
+<li>downstream reports and interfaces no longer treat the value as final;</li>
+<li>the value is retired or clearly restricted;</li>
+<li>no active mapping produces it outside approved scope.</li>
+</ul>
+<h2 id="ownership-risk">Ownership risk</h2>
+<p>Example risk:</p>
+<blockquote>No accountable owner exists for Supplier Risk values.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>governance role is defined;</li>
+<li>accountable role accepts responsibility;</li>
+<li>operational assignee is identified;</li>
+<li>approval authority is documented;</li>
+<li>review cadence is established;</li>
+<li>open changes and exceptions are transferred to the owner.</li>
+</ul>
+<p>Naming a person in a spreadsheet is not enough if the role and authority remain unclear.</p>
+<h2 id="context-risk">Context risk</h2>
+<p>Example risk:</p>
+<blockquote>A German validation is represented as a global rule.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>global and local treatments are separated;</li>
+<li>applicable country and entity context is explicit;</li>
+<li>configuration is verified;</li>
+<li>other countries are assessed for unintended impact;</li>
+<li>regression tests prove global and local behaviour.</li>
+</ul>
+<h2 id="implementation-alignment-risk">Implementation-alignment risk</h2>
+<p>Example risk:</p>
+<blockquote>SAP configuration does not match the approved model.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>approved model baseline identified;</li>
+<li>configuration difference documented;</li>
+<li>correction or approved deviation implemented;</li>
+<li>verification evidence attached;</li>
+<li>current model and configuration states are reconciled;</li>
+<li>related tests refer to the same baseline.</li>
+</ul>
+<h2 id="traceability-risk">Traceability risk</h2>
+<p>Example risk:</p>
+<blockquote>A critical target field cannot be traced to its source and decision.</blockquote>
+<p>Possible exit criteria:</p>
+<ul>
+<li>source and target endpoints are identified;</li>
+<li>mapping and transformation are connected;</li>
+<li>applicable rule and owner are linked;</li>
+<li>decision or accepted rationale is available;</li>
+<li>current dataset evidence is attached;</li>
+<li>trace passes structural validation.</li>
+</ul>
+<h2 id="exit-criteria-should-cover-five-dimensions">Exit criteria should cover five dimensions</h2>
+<p>For material model risks, we recommend checking five dimensions.</p>
+<h2 id="1-model-state">1. Model state</h2>
+<p>Has the approved model been corrected or clarified?</p>
+<p>Evidence may include:</p>
+<ul>
+<li>approved attribute definition;</li>
+<li>mapping;</li>
+<li>rule;</li>
+<li>context;</li>
+<li>lifecycle status;</li>
+<li>decision.</li>
+</ul>
+<h2 id="2-data-state">2. Data state</h2>
+<p>Does the affected population now satisfy the approved treatment?</p>
+<p>Evidence may include:</p>
+<ul>
+<li>current profile;</li>
+<li>completeness;</li>
+<li>value coverage;</li>
+<li>duplicate analysis;</li>
+<li>remediation reconciliation.</li>
+</ul>
+<h2 id="3-implementation-state">3. Implementation state</h2>
+<p>Do SAP and connected systems implement the approved model?</p>
+<p>Evidence may include:</p>
+<ul>
+<li>configuration reference;</li>
+<li>interface test;</li>
+<li>transformation result;</li>
+<li>successful activation;</li>
+<li>release baseline.</li>
+</ul>
+<h2 id="4-control-state">4. Control state</h2>
+<p>Can the problem reappear without detection?</p>
+<p>Evidence may include:</p>
+<ul>
+<li>source validation;</li>
+<li>monitoring;</li>
+<li>ownership;</li>
+<li>exception process;</li>
+<li>automated check;</li>
+<li>operating procedure.</li>
+</ul>
+<h2 id="5-residual-risk-state">5. Residual-risk state</h2>
+<p>What exposure remains, and who has accepted it?</p>
+<p>Evidence may include:</p>
+<ul>
+<li>remaining record count;</li>
+<li>scope restrictions;</li>
+<li>compensating control;</li>
+<li>approver;</li>
+<li>review date.</li>
+</ul>
+<p>A risk should not be called resolved when only one dimension has changed.</p>
+<h2 id="use-measurable-population-criteria">Use measurable population criteria</h2>
+<p>Many risks concern a population of records.</p>
+<p>Exit criteria should state:</p>
+<ul>
+<li>which population;</li>
+<li>which baseline;</li>
+<li>which measurement;</li>
+<li>what unresolved treatment is permitted.</li>
+</ul>
+<p>Weak criterion:</p>
+<blockquote>Data quality improved.</blockquote>
+<p>Stronger criterion:</p>
+<blockquote>All active German supplier organisations in the approved Wave 3 extract contain either a valid Tax Registration Identifier or an approved exemption code.</blockquote>
+<p>Another:</p>
+<blockquote>At least 99% of applicable records map to approved target values, and every remaining record is listed in a signed exception register.</blockquote>
+<p>Thresholds should be programme policies, not universal industry rules.</p>
+<p>The critical point is that the population and allowed exceptions are explicit.</p>
+<h2 id="do-not-use-percentages-without-materiality">Do not use percentages without materiality</h2>
+<p>A 99.9% result can still hide a serious problem.</p>
+<p>The remaining 0.1% may contain:</p>
+<ul>
+<li>the largest customers;</li>
+<li>regulated suppliers;</li>
+<li>records required for cutover;</li>
+<li>parent entities in important relationships;</li>
+<li>high-risk bank details.</li>
+</ul>
+<p>Exit criteria should therefore combine percentage and material checks.</p>
+<p>For example:</p>
+<pre><code class="language-text">Completeness:
+At least 99%
+
+And:
+
+No missing values for suppliers with active purchase orders
+or regulated supplier status</code></pre>
+<p>This prevents averages from hiding critical exceptions.</p>
+<h2 id="define-the-relevant-baseline">Define the relevant baseline</h2>
+<p>Evidence has meaning only relative to a known state.</p>
+<p>A risk exit should identify:</p>
+<ul>
+<li>model baseline;</li>
+<li>dataset version;</li>
+<li>mapping version;</li>
+<li>SAP release or transport;</li>
+<li>test cycle.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Model baseline:
+supplier-model-v2.7
+
+Dataset:
+ERP_B_supplier_extract_2026-09-01
+
+Implementation release:
+MDG-R4
+
+Test cycle:
+UAT-2</code></pre>
+<p>Without baseline alignment, teams may close a risk using:</p>
+<ul>
+<li>an old dataset;</li>
+<li>a previous mapping;</li>
+<li>configuration not yet in the target environment;</li>
+<li>test results from a superseded rule.</li>
+</ul>
+<h2 id="require-current-evidence">Require current evidence</h2>
+<p>A risk discovered from a July dataset should not necessarily close based on the same July dataset after a manual correction.</p>
+<p>Ask whether evidence reflects the current process.</p>
+<p>Useful rules include:</p>
+<ul>
+<li>rerun profile after source remediation;</li>
+<li>use a fresh extract;</li>
+<li>verify after transport deployment;</li>
+<li>test after interface change;</li>
+<li>confirm after data conversion.</li>
+</ul>
+<p>The evidence does not need to be generated on the day of closure.</p>
+<p>It should be current enough to prove the new state rather than the old problem.</p>
+<h2 id="distinguish-one-time-remediation-from-recurring-prevention">Distinguish one-time remediation from recurring prevention</h2>
+<p>Suppose 8,000 records are corrected manually.</p>
+<p>The current population is now clean.</p>
+<p>If the source continues producing bad values, the risk remains.</p>
+<p>Exit criteria should distinguish:</p>
+<h3 id="remediation-evidence">Remediation evidence</h3>
+<p>Existing affected records corrected.</p>
+<h3 id="prevention-evidence">Prevention evidence</h3>
+<p>New or changed records cannot reproduce the same uncontrolled condition—or the condition will be detected and routed.</p>
+<p>A complete exit may require both.</p>
+<pre><code class="language-text">Existing population:
+Reconciled
+
+Future prevention:
+Source validation active and monitored</code></pre>
+<h2 id="verify-that-temporary-controls-have-been-removed-or-formalised">Verify that temporary controls have been removed or formalised</h2>
+<p>Risks often accumulate temporary treatments:</p>
+<ul>
+<li>warning instead of error;</li>
+<li>manual approval;</li>
+<li>special load exclusion;</li>
+<li>temporary value;</li>
+<li>local script;</li>
+<li>default;</li>
+<li>additional spreadsheet check.</li>
+</ul>
+<p>Before closure, ask:</p>
+<ul>
+<li>Is the temporary control still needed?</li>
+<li>Has it become part of the permanent operating model?</li>
+<li>Was it removed?</li>
+<li>Does it have an owner?</li>
+<li>Is it documented?</li>
+<li>Could it create another risk?</li>
+</ul>
+<p>A risk should not close while an unmanaged workaround remains active.</p>
+<h2 id="use-negative-evidence">Use negative evidence</h2>
+<p>Positive evidence shows that expected behaviour works.</p>
+<p>Negative evidence shows that invalid behaviour is prevented.</p>
+<p>For a mandatory-rule risk, test:</p>
+<h3 id="positive">Positive</h3>
+<p>A valid applicable record succeeds.</p>
+<h3 id="negative">Negative</h3>
+<p>An invalid applicable record fails.</p>
+<h3 id="exception">Exception</h3>
+<p>An approved exempt record succeeds.</p>
+<h3 id="out-of-scope">Out-of-scope</h3>
+<p>A record outside the rule’s context is not blocked.</p>
+<p>This is more reliable than showing only one successful test case.</p>
+<h2 id="test-dependencies-not-only-the-changed-component">Test dependencies, not only the changed component</h2>
+<p>A value-list risk is not closed merely because the new value appears in SAP MDG.</p>
+<p>Check:</p>
+<ul>
+<li>mappings;</li>
+<li>workflow;</li>
+<li>interface payload;</li>
+<li>consumers;</li>
+<li>reports;</li>
+<li>tests;</li>
+<li>remediation.</li>
+</ul>
+<p>A source-field replacement is not closed merely because the extract contains the new column.</p>
+<p>Check:</p>
+<ul>
+<li>semantic equivalence;</li>
+<li>transformation;</li>
+<li>organisational level;</li>
+<li>value coverage;</li>
+<li>target behaviour.</li>
+</ul>
+<p>Impact analysis should define which dependencies require evidence.</p>
+<p>The current Martenweave core supports canonical model validation, trace, impact analysis, dataset profiling and gap detection, which can help identify the objects that should be included in closure evidence.</p>
+<h2 id="exit-criteria-should-be-binary-where-possible">Exit criteria should be binary where possible</h2>
+<p>A criterion should allow a reviewer to decide whether it is met.</p>
+<p>Weak:</p>
+<blockquote>Mapping quality acceptable.</blockquote>
+<p>Stronger:</p>
+<ul>
+<li>active source endpoint confirmed;</li>
+<li>all observed values have treatment;</li>
+<li>no unrestricted default;</li>
+<li>mapping passes validation;</li>
+<li>sample conversion approved.</li>
+</ul>
+<p>Some judgements will remain qualitative.</p>
+<p>Even then, record the responsible decision.</p>
+<p>For example:</p>
+<blockquote>The Global Customer Data Owner confirms that the remaining difference between source and target definitions is understood and acceptable for the stated context.</blockquote>
+<h2 id="avoid-criteria-that-depend-only-on-status-fields">Avoid criteria that depend only on status fields</h2>
+<p>Weak exit evidence includes:</p>
+<ul>
+<li>Jira item closed;</li>
+<li>risk marked green;</li>
+<li>owner says complete;</li>
+<li>transport imported;</li>
+<li>workshop held;</li>
+<li>document updated.</li>
+</ul>
+<p>These may be part of the evidence.</p>
+<p>They do not prove the underlying state.</p>
+<p>A transport can be imported with incorrect configuration.</p>
+<p>A workbook can be updated with an unsupported mapping.</p>
+<p>A workshop can end without a durable decision.</p>
+<h2 id="assign-an-exit-criteria-owner">Assign an exit-criteria owner</h2>
+<p>The risk owner remains accountable for closure.</p>
+<p>Different people may provide evidence:</p>
+<ul>
+<li>source owner;</li>
+<li>migration lead;</li>
+<li>SAP architect;</li>
+<li>integration owner;</li>
+<li>test lead;</li>
+<li>business owner.</li>
+</ul>
+<p>The risk record should state who confirms each dimension.</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Exit dimension</th><th scope="col">Evidence owner</th></tr></thead><tbody><tr><td>Business meaning</td><td>Supplier Data Owner</td></tr><tr><td>Source availability</td><td>ERP_B Owner</td></tr><tr><td>Dataset state</td><td>Migration Data Lead</td></tr><tr><td>SAP implementation</td><td>MDG Architect</td></tr><tr><td>Regression evidence</td><td>Test Lead</td></tr><tr><td>Residual-risk acceptance</td><td>Programme Data Owner</td></tr></tbody></table></div>
+<p>This prevents the person completing the last technical task from closing the entire risk unilaterally.</p>
+<h2 id="use-independent-verification-for-high-risk-items">Use independent verification for high-risk items</h2>
+<p>For critical risks, the person implementing the treatment should not be the only person verifying closure.</p>
+<p>Independent review may include:</p>
+<ul>
+<li>another architect;</li>
+<li>data owner;</li>
+<li>test lead;</li>
+<li>audit or control function;</li>
+<li>receiving AMS team.</li>
+</ul>
+<p>This is especially important for changes involving:</p>
+<ul>
+<li>legal identifiers;</li>
+<li>bank data;</li>
+<li>enterprise keys;</li>
+<li>global mandatory rules;</li>
+<li>destructive transformations;</li>
+<li>low-detectability defaults;</li>
+<li>large migration populations.</li>
+</ul>
+<p>Independent verification does not mean recreating the whole analysis.</p>
+<p>It confirms that the agreed evidence supports closure.</p>
+<h2 id="define-hard-blockers-to-closure">Define hard blockers to closure</h2>
+<p>Some conditions should prevent closure automatically.</p>
+<p>Examples:</p>
+<ul>
+<li>critical affected object has no owner;</li>
+<li>unresolved active mapping points to a retired endpoint;</li>
+<li>temporary deviation has no expiry;</li>
+<li>current dataset has not been rechecked;</li>
+<li>implementation differs from the approved model;</li>
+<li>high-risk residual exposure has no formal acceptance;</li>
+<li>required negative test failed;</li>
+<li>affected population cannot be identified;</li>
+<li>rollback or remediation tracking has been lost.</li>
+</ul>
+<p>These blockers should be programme policy.</p>
+<p>They should not be waived informally during status meetings.</p>
+<h2 id="allow-conditional-exit">Allow conditional exit</h2>
+<p>Sometimes a risk can leave one stage with conditions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Exit from migration-design risk:
+Approved
+
+Conditions:
+- ERP_B enrichment complete before Mock Load 3
+- blocking validation remains disabled until coverage reaches the approved level
+- weekly gap report continues</code></pre>
+<p>This is not full resolution.</p>
+<p>It is a controlled transition.</p>
+<p>Useful statuses include:</p>
+<ul>
+<li>exited design phase with conditions;</li>
+<li>accepted for test;</li>
+<li>accepted for cutover;</li>
+<li>transferred to AMS;</li>
+<li>permanently resolved.</li>
+</ul>
+<p>This provides more precision than one final <code>Closed</code> status.</p>
+<h2 id="define-exit-criteria-for-migration-gates">Define exit criteria for migration gates</h2>
+<h2 id="exit-from-model-design">Exit from model design</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>business meaning approved;</li>
+<li>scope and context defined;</li>
+<li>owner assigned;</li>
+<li>source and target endpoints identified;</li>
+<li>structural validation passes;</li>
+<li>unresolved assumptions documented.</li>
+</ul>
+<h2 id="exit-from-mapping-design">Exit from mapping design</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>transformations approved;</li>
+<li>observed values covered;</li>
+<li>defaults controlled;</li>
+<li>local variations explicit;</li>
+<li>current dataset tested.</li>
+</ul>
+<h2 id="exit-from-remediation">Exit from remediation</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>affected population identified;</li>
+<li>corrected records reconciled;</li>
+<li>residual records classified;</li>
+<li>prevention control implemented;</li>
+<li>owner accepts remaining exceptions.</li>
+</ul>
+<h2 id="exit-from-testing">Exit from testing</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>positive, negative and exception scenarios pass;</li>
+<li>failed records explained;</li>
+<li>expected results use the approved baseline;</li>
+<li>critical integrations verified;</li>
+<li>no unresolved blocking defect remains.</li>
+</ul>
+<h2 id="exit-for-cutover">Exit for cutover</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>critical risks resolved or formally accepted;</li>
+<li>accepted conditions have controls and owners;</li>
+<li>temporary treatments are identifiable;</li>
+<li>rollback or contingency exists;</li>
+<li>reconciliation process approved;</li>
+<li>AMS receives remaining risks.</li>
+</ul>
+<h2 id="exit-from-hypercare">Exit from hypercare</h2>
+<p>Possible criteria:</p>
+<ul>
+<li>recurring incidents assessed;</li>
+<li>emergency changes reconciled;</li>
+<li>temporary workarounds removed or formalised;</li>
+<li>operational baseline updated;</li>
+<li>residual model risks transferred to named AMS owners.</li>
+</ul>
+<h2 id="a-risk-should-not-close-because-the-milestone-passed">A risk should not close because the milestone passed</h2>
+<p>A programme may reach cutover while risks remain.</p>
+<p>The risk register should not be cleaned up merely because the migration phase ends.</p>
+<p>Possible outcomes are:</p>
+<ul>
+<li>resolved;</li>
+<li>accepted for cutover;</li>
+<li>transferred to hypercare;</li>
+<li>transferred to AMS;</li>
+<li>superseded by another risk;</li>
+<li>reopened after new evidence.</li>
+</ul>
+<p>Preserve the continuity.</p>
+<p>Otherwise, post-go-live support inherits the exposure without the original rationale or evidence.</p>
+<h2 id="transfer-criteria-are-as-important-as-closure-criteria">Transfer criteria are as important as closure criteria</h2>
+<p>When a risk moves from project to AMS, define what must be transferred.</p>
+<p>Possible criteria include:</p>
+<ul>
+<li>current risk statement;</li>
+<li>affected model objects;</li>
+<li>remaining population;</li>
+<li>temporary controls;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>monitoring method;</li>
+<li>linked incidents;</li>
+<li>approved residual risk;</li>
+<li>next review date.</li>
+</ul>
+<p>The receiving team should confirm that it can operate the control.</p>
+<p>A risk is not transferred merely because the project document was uploaded.</p>
+<h2 id="reopen-risks-when-the-evidence-changes">Reopen risks when the evidence changes</h2>
+<p>Closure should not make a risk invisible forever.</p>
+<p>Reopening triggers may include:</p>
+<ul>
+<li>new source values;</li>
+<li>data-quality regression;</li>
+<li>configuration change;</li>
+<li>new country rollout;</li>
+<li>changed legal requirement;</li>
+<li>repeated incidents;</li>
+<li>expired control;</li>
+<li>source-system replacement;</li>
+<li>evidence that the original assumption was wrong.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Risk closed:
+ERP_A mapping covers all approved values.
+
+Reopening trigger:
+New source value observed without approved treatment.</code></pre>
+<p>The trigger can become a deterministic or monitoring rule.</p>
+<h2 id="connect-exit-criteria-to-deterministic-validation">Connect exit criteria to deterministic validation</h2>
+<p>Some criteria can be checked automatically.</p>
+<p>Examples:</p>
+<ul>
+<li>no active reference to retired object;</li>
+<li>every critical mapping has source, target and owner;</li>
+<li>temporary deviation has expiry;</li>
+<li>no approved object depends on draft object;</li>
+<li>local override identifies parent;</li>
+<li>required evidence reference exists.</li>
+</ul>
+<p>Martenweave’s current principles place deterministic validation before indexing and treat generated indexes as rebuildable from canonical files.</p>
+<p>This supports repeatable structural exit checks.</p>
+<p>Automation should not approve semantic or business-risk criteria.</p>
+<p>It can show whether the model meets the rules the programme has already defined.</p>
+<h2 id="connect-exit-criteria-to-dataset-readiness">Connect exit criteria to dataset readiness</h2>
+<p>For data-related risks, current profiling is often essential.</p>
+<p>The current Martenweave core documents dataset profiling, model-to-dataset gap detection and a dataset-readiness workflow.</p>
+<p>A data-risk exit might require:</p>
+<pre><code class="language-text">Expected column:
+Present
+
+Applicable completeness:
+Meets approved programme threshold
+
+Value coverage:
+All material observed values treated
+
+Key integrity:
+No unresolved critical failures
+
+Remaining exceptions:
+Listed with owners</code></pre>
+<p>The report should reference the same model baseline and population used for approval.</p>
+<h2 id="connect-exit-criteria-to-impact-analysis">Connect exit criteria to impact analysis</h2>
+<p>Before closing a change-related risk, confirm that affected dependencies were reviewed.</p>
+<p>For example:</p>
+<pre><code class="language-text">Changed object:
+VLIST-SUPPLIER-RISK
+
+Reviewed dependencies:
+- mappings;
+- rules;
+- workflows;
+- interfaces;
+- tests;
+- reports.</code></pre>
+<p>The current Martenweave CLI includes trace and impact commands over the canonical model.</p>
+<p>The impact result does not prove every external dependency exists in the registry.</p>
+<p>It proves that the dependencies represented in the approved model were considered.</p>
+<p>Known coverage limits should be stated.</p>
+<h2 id="a-conceptual-exit-record">A conceptual exit record</h2>
+<pre><code class="language-yaml">risk_id: MRISK-0048
+status: ready_for_closure
+
+model_baseline: supplier-model-v2.8
+dataset_baseline: ERP_B_supplier_extract_2026-09-01
+
+exit_criteria:
+  - criterion: Unrestricted default removed
+    status: met
+    evidence: CHANGE-SUPPLIER-RISK-021
+
+  - criterion: Current active population has approved treatment
+    status: met
+    evidence: READINESS-ERP-B-2026-09-01
+
+  - criterion: Future source process is controlled
+    status: met
+    evidence: SOURCE-CONTROL-ERP-B-17
+
+  - criterion: SAP rule matches approved context
+    status: met
+    evidence: TEST-MDG-R4-118
+
+  - criterion: Residual records accepted
+    status: met
+    evidence: DEC-ERP-B-EXCEPTIONS-04
+
+residual_population: 42
+residual_risk: low
+accepted_by: ROLE-GLOBAL-SUPPLIER-DATA-OWNER
+review_date: 2026-12-01</code></pre>
+<p>This is a conceptual representation rather than a statement of one mandatory Martenweave schema.</p>
+<p>The value lies in the explicit evidence chain.</p>
+<h2 id="a-worked-example-missing-source-attribute">A worked example: missing source attribute</h2>
+<h3 id="risk">Risk</h3>
+<p>ERP_B cannot provide Supplier Classification.</p>
+<h3 id="weak-closure">Weak closure</h3>
+<p>The Wave 2 file was manually enriched and loaded successfully.</p>
+<h3 id="remaining-exposure">Remaining exposure</h3>
+<ul>
+<li>future extracts remain incomplete;</li>
+<li>new suppliers remain unsupported;</li>
+<li>enrichment logic is not controlled;</li>
+<li>operational owner is unclear.</li>
+</ul>
+<h3 id="better-exit-criteria">Better exit criteria</h3>
+<ul>
+<li>target definition approved;</li>
+<li>authoritative source or enrichment method approved;</li>
+<li>current dataset meets agreed coverage;</li>
+<li>enrichment process is reproducible;</li>
+<li>owner and service level assigned;</li>
+<li>no uncontrolled default remains;</li>
+<li>future gaps are detected automatically;</li>
+<li>residual population formally accepted.</li>
+</ul>
+<h3 id="possible-outcome">Possible outcome</h3>
+<p>Risk is not fully resolved at Wave 2.</p>
+<p>It is marked:</p>
+<blockquote>Mitigated for migration and transferred to operational data stewardship.</blockquote>
+<p>That is more honest and more useful.</p>
+<h2 id="a-worked-example-incorrect-mandatory-rule">A worked example: incorrect mandatory rule</h2>
+<h3 id="risk-2">Risk</h3>
+<p>Customer Group validation blocks inactive customers and countries where the attribute is not used.</p>
+<h3 id="treatment">Treatment</h3>
+<p>Introduce contextual applicability.</p>
+<h3 id="exit-criteria">Exit criteria</h3>
+<ul>
+<li>approved business contexts recorded;</li>
+<li>global rule replaced by contextual rule;</li>
+<li>SAP configuration updated;</li>
+<li>active applicable records fail when missing;</li>
+<li>inactive or out-of-scope records are not blocked;</li>
+<li>country-specific exceptions pass;</li>
+<li>no broader workflow impact found;</li>
+<li>current model baseline published.</li>
+</ul>
+<h3 id="closure-evidence">Closure evidence</h3>
+<ul>
+<li>model diff;</li>
+<li>configuration reference;</li>
+<li>positive and negative test results;</li>
+<li>country-owner approval.</li>
+</ul>
+<h2 id="a-worked-example-retired-target-endpoint">A worked example: retired target endpoint</h2>
+<h3 id="risk-3">Risk</h3>
+<p>Active mappings reference a target endpoint scheduled for retirement.</p>
+<h3 id="weak-closure-2">Weak closure</h3>
+<p>A replacement field was added to the mapping workbook.</p>
+<h3 id="better-exit-criteria-2">Better exit criteria</h3>
+<ul>
+<li>replacement business meaning confirmed;</li>
+<li>target endpoint active;</li>
+<li>every dependent mapping updated;</li>
+<li>transformation consequences assessed;</li>
+<li>interfaces reviewed;</li>
+<li>old endpoint has no active dependencies;</li>
+<li>tests updated;</li>
+<li>target retirement completed or formally scheduled;</li>
+<li>impact report shows no unaddressed critical path.</li>
+</ul>
+<p>The risk closes only after the old dependency has been removed from the applicable model state.</p>
+<h2 id="a-worked-example-temporary-migration-value">A worked example: temporary migration value</h2>
+<h3 id="risk-4">Risk</h3>
+<p><code>MIGRATION_REVIEW</code> is treated as a normal Supplier Classification.</p>
+<h3 id="exit-criteria-2">Exit criteria</h3>
+<ul>
+<li>operational creation cannot assign the value;</li>
+<li>all records containing it are identified;</li>
+<li>remediation treatment approved;</li>
+<li>records converted or accepted as exceptions;</li>
+<li>downstream reports no longer treat it as final;</li>
+<li>mappings no longer generate it;</li>
+<li>value retired from active model;</li>
+<li>no active rule depends on it.</li>
+</ul>
+<p>If 20 records remain under an approved legal hold, the risk may close with a documented residual population rather than requiring artificial zero.</p>
+<h2 id="a-worked-example-unclear-ownership">A worked example: unclear ownership</h2>
+<h3 id="risk-5">Risk</h3>
+<p>No accountable owner exists for Customer Group mappings.</p>
+<h3 id="weak-closure-3">Weak closure</h3>
+<p>A consultant is assigned to review the current workbook.</p>
+<h3 id="better-exit-criteria-3">Better exit criteria</h3>
+<ul>
+<li>business ownership role defined;</li>
+<li>role authority documented;</li>
+<li>operational assignee named;</li>
+<li>current mappings reviewed;</li>
+<li>open decisions transferred;</li>
+<li>future change process includes the owner;</li>
+<li>backup or escalation route established.</li>
+</ul>
+<p>The consultant may perform the analysis.</p>
+<p>They should not become the permanent governance model by default.</p>
+<h2 id="use-a-closure-review-not-an-administrative-status-update">Use a closure review, not an administrative status update</h2>
+<p>For material risks, conduct a short closure review.</p>
+<p>The reviewer should see:</p>
+<ol>
+<li>Original risk statement.</li>
+<li>Approved treatment.</li>
+<li>Exit criteria.</li>
+<li>Evidence for each criterion.</li>
+<li>Current residual exposure.</li>
+<li>Remaining assumptions.</li>
+<li>Required monitoring or reopening trigger.</li>
+<li>Proposed final status.</li>
+</ol>
+<p>The review should answer:</p>
+<blockquote>Has the exposure changed enough to justify the proposed status?</blockquote>
+<p>It should not become a general project presentation.</p>
+<h2 id="record-unmet-criteria-explicitly">Record unmet criteria explicitly</h2>
+<p>A risk may be close to resolution.</p>
+<p>Do not hide the remaining gap.</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Criterion</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Current population remediated</td><td>Met</td></tr><tr><td>Uncontrolled default removed</td><td>Met</td></tr><tr><td>Future source process corrected</td><td>Not met</td></tr><tr><td>Operational owner assigned</td><td>Met</td></tr><tr><td>Monitoring active</td><td>Partial</td></tr></tbody></table></div>
+<p>Proposed status:</p>
+<blockquote>Mitigated, not resolved.</blockquote>
+<p>This gives management a truthful decision surface.</p>
+<h2 id="use-waivers-sparingly">Use waivers sparingly</h2>
+<p>Sometimes the programme needs to close or transfer a risk with an unmet criterion.</p>
+<p>The waiver should identify:</p>
+<ul>
+<li>criterion not met;</li>
+<li>reason;</li>
+<li>consequence;</li>
+<li>compensating control;</li>
+<li>approver;</li>
+<li>expiry;</li>
+<li>reopening trigger.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Unmet criterion:
+ERP_B source process corrected
+
+Waiver:
+Accepted for cutover because affected records remain blocked
+and source correction is scheduled for the first post-go-live release.
+
+Expiry:
+30 November 2026</code></pre>
+<p>A waiver without expiry is usually permanent acceptance disguised as temporary relief.</p>
+<h2 id="ai-can-help-assemble-closure-evidence">AI can help assemble closure evidence</h2>
+<p>AI may assist with:</p>
+<ul>
+<li>summarising completed tasks;</li>
+<li>comparing risk criteria with available evidence;</li>
+<li>identifying missing proof;</li>
+<li>grouping test results;</li>
+<li>drafting closure reports;</li>
+<li>finding contradictory status updates;</li>
+<li>suggesting reopening triggers.</li>
+</ul>
+<p>AI should not decide that a risk is closed.</p>
+<p>It cannot independently determine:</p>
+<ul>
+<li>whether evidence is materially sufficient;</li>
+<li>whether residual business risk is acceptable;</li>
+<li>whether a local legal exception is valid;</li>
+<li>whether an owner has accepted responsibility.</li>
+</ul>
+<p>The safe boundary is:</p>
+<pre><code class="language-text">AI assembles and challenges evidence.
+Validators check deterministic criteria.
+Accountable owners approve the final status.</code></pre>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved patch proposals.</p>
+<p>Its operating pipeline is:</p>
+<pre><code class="language-text">evidence
+→ proposal
+→ validation
+→ gaps and impact
+→ review
+→ GitHub issue or pull request</code></pre>
+<p>For model-risk exit, Martenweave can help preserve:</p>
+<ul>
+<li>affected model objects;</li>
+<li>approved model baseline;</li>
+<li>validation results;</li>
+<li>dataset-readiness evidence;</li>
+<li>impact relationships;</li>
+<li>decisions;</li>
+<li>reviewable model changes;</li>
+<li>issue and change history.</li>
+</ul>
+<p>Martenweave should not become a general enterprise risk-management platform.</p>
+<p>Its role is to make model-risk evidence traceable to the model state that created or resolved the exposure.</p>
+<h2 id="a-martenweave-risk-exit-flow">A Martenweave risk-exit flow</h2>
+<pre><code class="language-text">Model risk
+        ↓
+Approved treatment
+        ↓
+Exit criteria attached to affected objects
+        ↓
+Model, data and implementation work completed
+        ↓
+Deterministic validation
+        ↓
+Dataset readiness and impact evidence
+        ↓
+Residual-risk assessment
+        ↓
+Human closure or transfer decision
+        ↓
+Current baseline and monitoring updated</code></pre>
+<p>The core principle is:</p>
+<blockquote>Closing the ticket records completed work. Closing the risk records proven change in exposure.</blockquote>
+<h2 id="a-minimum-exit-criteria-template">A minimum exit-criteria template</h2>
+<h3 id="risk-identification">Risk identification</h3>
+<ul>
+<li>risk ID;</li>
+<li>affected model objects;</li>
+<li>applicable scope;</li>
+<li>original risk statement.</li>
+</ul>
+<h3 id="approved-treatment">Approved treatment</h3>
+<ul>
+<li>selected response;</li>
+<li>owner;</li>
+<li>decision reference.</li>
+</ul>
+<h3 id="required-model-state">Required model state</h3>
+<ul>
+<li>approved definition;</li>
+<li>mapping;</li>
+<li>rule;</li>
+<li>context;</li>
+<li>lifecycle state.</li>
+</ul>
+<h3 id="required-data-state">Required data state</h3>
+<ul>
+<li>population;</li>
+<li>measurement;</li>
+<li>threshold or treatment;</li>
+<li>exception policy.</li>
+</ul>
+<h3 id="required-implementation-state">Required implementation state</h3>
+<ul>
+<li>configuration;</li>
+<li>integration;</li>
+<li>transformation;</li>
+<li>release.</li>
+</ul>
+<h3 id="required-control-state">Required control state</h3>
+<ul>
+<li>prevention;</li>
+<li>detection;</li>
+<li>owner;</li>
+<li>monitoring.</li>
+</ul>
+<h3 id="required-evidence">Required evidence</h3>
+<ul>
+<li>model baseline;</li>
+<li>dataset baseline;</li>
+<li>validation;</li>
+<li>tests;</li>
+<li>reconciliation;</li>
+<li>approvals.</li>
+</ul>
+<h3 id="residual-risk">Residual risk</h3>
+<ul>
+<li>remaining exposure;</li>
+<li>affected population;</li>
+<li>approver;</li>
+<li>expiry or review date.</li>
+</ul>
+<h3 id="reopening-triggers">Reopening triggers</h3>
+<ul>
+<li>new value;</li>
+<li>regression;</li>
+<li>source change;</li>
+<li>incident threshold;</li>
+<li>expired control.</li>
+</ul>
+<h3 id="final-decision">Final decision</h3>
+<ul>
+<li>resolved;</li>
+<li>accepted;</li>
+<li>transferred;</li>
+<li>superseded;</li>
+<li>remains open.</li>
+</ul>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>What exact state must be true before this risk closes?</li>
+<li>Were exit criteria agreed before treatment began?</li>
+<li>Does the evidence use the current model and dataset baseline?</li>
+<li>Was the underlying cause corrected, or only the current population?</li>
+<li>Can the condition reappear?</li>
+<li>Were affected dependencies tested?</li>
+<li>Have temporary controls been removed or formalised?</li>
+<li>What residual population remains?</li>
+<li>Who accepted the residual risk?</li>
+<li>Does the risk need transfer rather than closure?</li>
+<li>What event should reopen it?</li>
+<li>Has AMS received any remaining control?</li>
+<li>Are deterministic and semantic criteria clearly separated?</li>
+<li>Can another reviewer reproduce the closure conclusion?</li>
+</ol>
+<p>If the only evidence is a closed ticket or successful load, the exit criteria are probably incomplete.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="closing-risk-when-the-mitigation-task-closes">Closing risk when the mitigation task closes</h3>
+<p>Activity completion does not prove changed exposure.</p>
+<h3 id="using-one-successful-migration-load-as-permanent-evidence">Using one successful migration load as permanent evidence</h3>
+<p>The next source extract may reproduce the problem.</p>
+<h3 id="requiring-zero-defects-without-defining-materiality">Requiring zero defects without defining materiality</h3>
+<p>Teams may hide or reclassify legitimate residual exceptions.</p>
+<h3 id="using-percentages-without-examining-critical-records">Using percentages without examining critical records</h3>
+<p>Small residual populations can still carry high risk.</p>
+<h3 id="ignoring-prevention">Ignoring prevention</h3>
+<p>Corrected records do not guarantee future control.</p>
+<h3 id="leaving-temporary-workarounds-active">Leaving temporary workarounds active</h3>
+<p>The original risk may be replaced by model debt.</p>
+<h3 id="closing-before-implementation-alignment-is-verified">Closing before implementation alignment is verified</h3>
+<p>The model may be correct while SAP remains different.</p>
+<h3 id="treating-transfer-to-ams-as-resolution">Treating transfer to AMS as resolution</h3>
+<p>Transferred risks need owners, controls and review dates.</p>
+<h3 id="allowing-the-implementer-to-self-certify-every-criterion">Allowing the implementer to self-certify every criterion</h3>
+<p>High-risk closure benefits from independent review.</p>
+<h3 id="letting-ai-infer-final-closure">Letting AI infer final closure</h3>
+<p>Residual-risk acceptance remains a human governance decision.</p>
+<h2 id="when-a-lightweight-approach-is-sufficient">When a lightweight approach is sufficient</h2>
+<p>A small programme may manage exit criteria in a controlled spreadsheet.</p>
+<p>Useful fields include:</p>
+<ul>
+<li>risk ID;</li>
+<li>exit criterion;</li>
+<li>evidence;</li>
+<li>evidence owner;</li>
+<li>status;</li>
+<li>residual exposure;</li>
+<li>approver;</li>
+<li>reopening trigger.</li>
+</ul>
+<p>This may be sufficient when:</p>
+<ul>
+<li>one domain is involved;</li>
+<li>dependencies are simple;</li>
+<li>risks are few;</li>
+<li>one team owns treatment and verification.</li>
+</ul>
+<p>A registry-based approach becomes more useful when:</p>
+<ul>
+<li>one risk affects many model objects;</li>
+<li>several sources and countries are involved;</li>
+<li>dataset evidence changes by cycle;</li>
+<li>risks move from project to AMS;</li>
+<li>trace and impact analysis are required;</li>
+<li>several implementation partners provide closure evidence;</li>
+<li>AI assists with evidence processing.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>A risk is not closed because the programme has done something.</p>
+<p>It is closed—or consciously transferred or accepted—because evidence shows that the relevant exposure has reached an approved state.</p>
+<p>Good exit criteria connect:</p>
+<ul>
+<li>the original cause;</li>
+<li>affected model objects;</li>
+<li>current data population;</li>
+<li>implementation;</li>
+<li>preventive controls;</li>
+<li>residual risk;</li>
+<li>accountable approval.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Could another qualified reviewer examine the stated criteria and evidence and reach the same conclusion about whether the risk is resolved?</blockquote>
+<p>When the answer is yes, closure is evidence-based.</p>
+<p>When the answer depends on the risk owner saying “the task is done,” the programme has recorded progress but not proven risk reduction.</p>
+<p>The purpose of exit criteria is not to make risk closure bureaucratic.</p>
+<p>It is to prevent incomplete treatments, temporary workarounds and one successful test cycle from being mistaken for durable model control.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.</p>
+<p>Martenweave connects canonical model objects, datasets, mappings, rules, risks, decisions and reviewable changes. This creates a traceable evidence layer for showing not only that remediation work was completed, but that the underlying model exposure actually changed.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as the governance layer of a business data fabric, with governed models, preserved semantics and relationships, collaborative workflows, validated values, business-rule monitoring, mass changes and auditable data changes. SAP also recommends curating clean and correct master data early, before an SAP S/4HANA implementation, because more automated processes rely heavily on it.</p>
+<p>The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.</p>
+<p>Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>The current core documents validation, trace, impact and dataset-readiness commands that can support reproducible risk-exit evidence.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-turn-model-risks-into-an-actionable-sap-migration-backlog.html"><span>Previous</span>The migration programme has identified a serious risk:</a><a href="/blog/how-to-prove-that-an-sap-migration-risk-is-really-closed.html"><span>Next</span>The steering committee asks whether a critical migration risk has been closed.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

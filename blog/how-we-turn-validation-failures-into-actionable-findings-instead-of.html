@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Turn Validation Failures into Actionable Findings Instead of Another Error Report | Martenweave</title>
+    <meta
+      name="description"
+      content="We run a validation against a Supplier bank-data migration dataset."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html" />
+    <meta property="og:title" content="How We Turn Validation Failures into Actionable Findings Instead of Another Error Report | Martenweave" />
+    <meta property="og:description" content="We run a validation against a Supplier bank-data migration dataset." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Turn Validation Failures into Actionable Findings Instead of Another Error Report | Martenweave" />
+    <meta name="twitter:description" content="We run a validation against a Supplier bank-data migration dataset." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html",
+                        "name": "How We Turn Validation Failures into Actionable Findings Instead of Another Error Report | Martenweave",
+                        "description": "We run a validation against a Supplier bank-data migration dataset.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Turn Validation Failures into Actionable Findings Instead of Another Error Report",
+                                    "item": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html#content",
+                        "headline": "How We Turn Validation Failures into Actionable Findings Instead of Another Error Report",
+                        "name": "How We Turn Validation Failures into Actionable Findings Instead of Another Error Report",
+                        "description": "We run a validation against a Supplier bank-data migration dataset.",
+                        "url": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Turn Validation Failures into Actionable Findings Instead of Another Error Report</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Turn Validation Failures into Actionable Findings Instead of Another Error Report</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 18 min read</p><p class="blog-summary">We run a validation against a Supplier bank-data migration dataset.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#data-defect">Data defect</a></li><li><a href="#dataset-gap">Dataset gap</a></li><li><a href="#mapping-defect">Mapping defect</a></li><li><a href="#model-gap">Model gap</a></li><li><a href="#implementation-drift">Implementation drift</a></li><li><a href="#evidence-gap">Evidence gap</a></li><li><a href="#authority-conflict">Authority conflict</a></li><li><a href="#scope-defect">Scope defect</a></li><li><a href="#controlled-exception">Controlled exception</a></li><li><a href="#target-mismatch">Target mismatch</a></li><li><a href="#confirmed">Confirmed</a></li><li><a href="#inferred">Inferred</a></li><li><a href="#unknown">Unknown</a></li><li><a href="#source-remediation">Source remediation</a></li><li><a href="#dataset-remediation">Dataset remediation</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>We run a validation against a Supplier bank-data migration dataset.</p>
+<p>The result contains 3,400 failed records.</p>
+<p>The report says:</p>
+<pre><code>RULE-SUPPLIER-BANK-VERIFICATION failed.
+
+Expected:
+BANK_VERIFICATION_STATUS = VERIFIED</code></pre>
+<p>Technically, the validator did its job.</p>
+<p>It evaluated the declared condition and identified records that did not satisfy it.</p>
+<p>Operationally, the report is almost useless.</p>
+<p>It does not tell us:</p>
+<ul>
+<li>whether all 3,400 records failed for the same reason;</li>
+<li>whether the source data is wrong;</li>
+<li>whether the required verification file was omitted;</li>
+<li>whether the Mapping is incomplete;</li>
+<li>whether the business Rule is incorrectly scoped;</li>
+<li>whether some Suppliers are covered by an approved exception;</li>
+<li>who must act;</li>
+<li>what must change;</li>
+<li>whether the model, dataset or implementation should be corrected;</li>
+<li>which downstream processes are affected.</li>
+</ul>
+<p>The migration team now has a large error list, but it does not yet have a manageable problem.</p>
+<p>This distinction matters.</p>
+<blockquote>A validation failure is an observation. A Finding is an interpreted, bounded and actionable explanation of what that observation means.</blockquote>
+<p>We do not want Martenweave to become another tool that produces thousands of red rows.</p>
+<p>Existing validators, ETL tools, data-quality platforms and SAP load utilities can already generate errors.</p>
+<p>Our product opportunity begins after the test runs.</p>
+<p>We want to connect the result to:</p>
+<ul>
+<li>the canonical Rule;</li>
+<li>the affected business Attribute;</li>
+<li>source and target lineage;</li>
+<li>the migration population;</li>
+<li>relevant Evidence;</li>
+<li>existing Decisions;</li>
+<li>accepted Exceptions;</li>
+<li>business impact;</li>
+<li>accountable ownership;</li>
+<li>a reviewable remediation path.</li>
+</ul>
+<p>The useful workflow is:</p>
+<pre><code>Validation result
+→ classification
+→ grouped Finding
+→ impact analysis
+→ remediation decision
+→ PatchProposal or implementation task
+→ new Evidence
+→ closure</code></pre>
+<p>Martenweave’s current architecture already provides canonical model files, deterministic validation, dataset-gap reporting, lineage, impact analysis and human-approved patch proposals. Its documented pipeline moves from Evidence and profiling through validation and gaps to impact analysis and reviewed Git work.</p>
+<p>What we need to strengthen is the layer between a failed check and a proposed change.</p>
+<p>That layer is the Finding.</p>
+<p>---</p>
+<h1 id="the-report-tells-us-what-failed-not-what-the-problem-is">The report tells us what failed, not what the problem is</h1>
+<p>The Supplier bank-verification Rule says:</p>
+<blockquote>A payment-active Supplier must have current verification Evidence for the bank account used for payment.</blockquote>
+<p>The validator checks the migration dataset and returns 3,400 failures.</p>
+<p>A weak workflow creates 3,400 issues.</p>
+<p>That creates noise.</p>
+<p>Most of those records may share one underlying cause.</p>
+<p>After investigation, we discover:</p>
+<ul>
+<li>3,200 records come from the same legacy source;</li>
+<li>their Treasury verification exists in a separate file;</li>
+<li>the file was not included in the migration dataset;</li>
+<li>200 records contain a legacy <code>VERIFIED</code> flag;</li>
+<li>that flag is not backed by an authorised Treasury review;</li>
+<li>80 of those 200 Suppliers are already payment-blocked;</li>
+<li>120 are expected to become payment-active at cutover.</li>
+</ul>
+<p>The original output represented one failed technical condition.</p>
+<p>The actual situation contains two different problems:</p>
+<pre><code>Problem 1:
+Required verification Evidence exists,
+but the authoritative dataset is missing from the migration path.
+
+Problem 2:
+A legacy status claims verification,
+but the source is not authorised to establish it.</code></pre>
+<p>These problems need different owners and different remediation.</p>
+<p>The first is primarily a dataset and Mapping gap.</p>
+<p>The second is a governance and risk issue.</p>
+<p>If we keep them in one error bucket, we obscure both.</p>
+<p>---</p>
+<h1 id="we-preserve-the-raw-validation-result">We preserve the raw validation result</h1>
+<p>We do not replace the original report with an AI summary.</p>
+<p>The raw result remains Evidence.</p>
+<p>We preserve:</p>
+<ul>
+<li>Rule ID;</li>
+<li>validator ID and version;</li>
+<li>model baseline;</li>
+<li>dataset fingerprint;</li>
+<li>execution timestamp;</li>
+<li>evaluated population;</li>
+<li>failed records;</li>
+<li>result categories;</li>
+<li>command or process that produced the report.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code>Validation execution:
+VALRUN-SUPPLIER-BANK-RC4
+
+Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Dataset:
+SUPPLIER-BANK-CUTOVER-RC4
+
+Model commit:
+abc123
+
+Population:
+50,000
+
+Failed:
+3,400</code></pre>
+<p>This provides a reproducible starting point.</p>
+<p>The Finding does not alter what the validator observed.</p>
+<p>It interprets the result in model and business context.</p>
+<p>That separation prevents a convenient explanation from replacing the underlying evidence.</p>
+<p>---</p>
+<h1 id="we-determine-the-subject-of-the-failure">We determine the subject of the failure</h1>
+<p>Before classifying a Finding, we ask what actually failed.</p>
+<p>Possible subjects include:</p>
+<ul>
+<li>canonical model;</li>
+<li>source dataset schema;</li>
+<li>source records;</li>
+<li>Mapping;</li>
+<li>transformation implementation;</li>
+<li>Evidence availability;</li>
+<li>target validation;</li>
+<li>business policy;</li>
+<li>exception control.</li>
+</ul>
+<p>For the 3,200 Suppliers, the bank records themselves may be correct.</p>
+<p>The failure occurs because the migration path does not include the authoritative Treasury review dataset.</p>
+<p>The subject is therefore not simply:</p>
+<pre><code>Supplier record</code></pre>
+<p>It is:</p>
+<pre><code>Migration dataset and source-to-target evidence path</code></pre>
+<p>For the remaining 200 records, the subject is different:</p>
+<pre><code>Verification authority</code></pre>
+<p>This distinction controls the next action.</p>
+<p>If we misclassify a missing input dataset as bad record quality, we may ask local teams to correct thousands of Suppliers manually.</p>
+<p>That would treat the symptom and ignore the model gap.</p>
+<p>---</p>
+<h1 id="we-classify-the-failure-before-proposing-remediation">We classify the failure before proposing remediation</h1>
+<p>We need a small, practical failure taxonomy.</p>
+<p>We should not build an elaborate enterprise defect ontology.</p>
+<p>For Martenweave, a useful initial classification might include:</p>
+<h2 id="data-defect">Data defect</h2>
+<p>The source contains a value that violates the accepted Rule.</p>
+<h2 id="dataset-gap">Dataset gap</h2>
+<p>A required field or dataset is absent from the supplied evidence.</p>
+<h2 id="mapping-defect">Mapping defect</h2>
+<p>The required input exists, but the Mapping does not use it correctly.</p>
+<h2 id="model-gap">Model gap</h2>
+<p>The canonical model does not represent a necessary Attribute, Rule, relationship or authority decision.</p>
+<h2 id="implementation-drift">Implementation drift</h2>
+<p>The transformation behaves differently from the approved Mapping.</p>
+<h2 id="evidence-gap">Evidence gap</h2>
+<p>A claim may be true, but the required supporting Evidence is unavailable or stale.</p>
+<h2 id="authority-conflict">Authority conflict</h2>
+<p>Multiple sources claim to provide the same value, and the accepted authority is missing or contradicted.</p>
+<h2 id="scope-defect">Scope defect</h2>
+<p>The Rule or validator was applied to records outside its intended population.</p>
+<h2 id="controlled-exception">Controlled exception</h2>
+<p>The Rule failed, but an approved, current and bounded Exception governs the affected records.</p>
+<h2 id="target-mismatch">Target mismatch</h2>
+<p>The target system or validation behaviour differs from the canonical model assumption.</p>
+<p>Our Supplier case produces two classifications:</p>
+<pre><code>Finding A:
+Dataset gap
+
+Finding B:
+Authority conflict and evidence gap</code></pre>
+<p>This is already more useful than 3,400 identical error messages.</p>
+<p>---</p>
+<h1 id="we-group-failures-by-cause-not-only-by-error-code">We group failures by cause, not only by error code</h1>
+<p>All 3,400 records failed the same Rule.</p>
+<p>That does not mean they should become one Finding.</p>
+<p>It also does not mean they should become 3,400 Findings.</p>
+<p>We group records when they share:</p>
+<ul>
+<li>the same underlying cause;</li>
+<li>the same affected model objects;</li>
+<li>the same owner;</li>
+<li>the same remediation;</li>
+<li>the same risk treatment.</li>
+</ul>
+<p>The 3,200 records belong together because:</p>
+<ul>
+<li>they come from the same source path;</li>
+<li>they lack the same Treasury input;</li>
+<li>one dataset integration can resolve them;</li>
+<li>one team owns that integration.</li>
+</ul>
+<p>The 200 records require a separate Finding because their legacy verification claim is semantically weak.</p>
+<p>A practical grouping key may combine:</p>
+<pre><code>Rule
++
+failure classification
++
+source system
++
+affected Mapping
++
+recommended owner</code></pre>
+<p>Grouping should remain explainable.</p>
+<p>We should not let an AI clustering model create opaque categories that reviewers cannot reproduce.</p>
+<p>AI can suggest the grouping.</p>
+<p>The final Finding should state why the records belong together.</p>
+<p>---</p>
+<h1 id="we-write-the-finding-as-a-problem-statement">We write the Finding as a problem statement</h1>
+<p>A Finding should not merely repeat the failed check.</p>
+<p>Weak:</p>
+<pre><code>3,200 Suppliers failed bank verification.</code></pre>
+<p>Stronger:</p>
+<blockquote>The current Supplier bank migration dataset does not include the Treasury Review Dataset required to establish authorised bank verification for 3,200 payment-active Suppliers from <code>LEGACY-EU</code>. The bank values are present, but the canonical verification obligation cannot be evidenced.</blockquote>
+<p>This tells us:</p>
+<ul>
+<li>what is wrong;</li>
+<li>where;</li>
+<li>for whom;</li>
+<li>why the Rule failed;</li>
+<li>what is not being claimed.</li>
+</ul>
+<p>It avoids saying that all 3,200 bank accounts are incorrect.</p>
+<p>They may be correct.</p>
+<p>They are not sufficiently evidenced for the intended use.</p>
+<p>That precision prevents unnecessary remediation.</p>
+<p>---</p>
+<h1 id="we-connect-the-finding-to-canonical-objects">We connect the Finding to canonical objects</h1>
+<p>The Finding should reference the model, not only the report.</p>
+<p>For our case:</p>
+<pre><code>Affected Entity:
+Supplier
+
+Affected Attribute:
+Supplier Bank Verification
+
+Affected Rule:
+Payment-active Supplier requires verified bank account
+
+Affected Dataset:
+Supplier Bank Cutover RC4
+
+Missing Dataset:
+Treasury Review Dataset
+
+Affected Mapping:
+Treasury verification to canonical verification status
+
+Target consequence:
+Payment activation cannot be approved
+without payment block or verified evidence</code></pre>
+<p>These references make the Finding useful for:</p>
+<ul>
+<li>trace;</li>
+<li>impact analysis;</li>
+<li>proposal generation;</li>
+<li>Workbench rendering;</li>
+<li>issue creation;</li>
+<li>later AMS investigation.</li>
+</ul>
+<p>A free-text ticket cannot provide this reliably unless someone manually reconstructs the relationships.</p>
+<p>---</p>
+<h1 id="we-separate-severity-from-scale">We separate severity from scale</h1>
+<p>A Finding affecting 3,200 records is not automatically more severe than one affecting 20 records.</p>
+<p>Scale is one dimension.</p>
+<p>Other factors include:</p>
+<ul>
+<li>business criticality;</li>
+<li>operational consequence;</li>
+<li>legal or financial exposure;</li>
+<li>cutover timing;</li>
+<li>availability of a safe fallback;</li>
+<li>concentration in critical organisational units;</li>
+<li>reversibility;</li>
+<li>evidence confidence.</li>
+</ul>
+<p>For Supplier bank verification, even a small population can be critical if those Suppliers are scheduled for high-value payments.</p>
+<p>We therefore record dimensions separately:</p>
+<pre><code>Affected records:
+3,200
+
+Business criticality:
+High
+
+Cutover consequence:
+Payment activation blocked
+
+Safe fallback:
+Migrate with payment block
+
+Reversibility:
+Moderate
+
+Evidence confidence:
+High</code></pre>
+<p>We may calculate a priority later.</p>
+<p>We should not hide the basis of that priority behind one unexplained score.</p>
+<p>---</p>
+<h1 id="we-distinguish-business-impact-from-technical-failure">We distinguish business impact from technical failure</h1>
+<p>The technical failure is:</p>
+<pre><code>No matching authorised verification record.</code></pre>
+<p>The business impact is:</p>
+<pre><code>The programme cannot demonstrate that the bank account
+is approved for outgoing payment.</code></pre>
+<p>The migration consequence is:</p>
+<pre><code>Supplier may migrate only with payment block,
+or must remain outside the payment-active population.</code></pre>
+<p>The delivery consequence is:</p>
+<pre><code>Treasury Review Dataset must be integrated
+before cutover readiness can be approved.</code></pre>
+<p>These layers matter because different stakeholders need different explanations.</p>
+<p>A developer needs the missing join path.</p>
+<p>Treasury needs the unverified payment exposure.</p>
+<p>The migration lead needs the cutover impact.</p>
+<p>The data owner needs the affected population.</p>
+<p>The Finding should preserve all four without forcing everyone to read the raw validation report.</p>
+<p>---</p>
+<h1 id="we-attach-a-probable-cause-without-pretending-certainty">We attach a probable cause without pretending certainty</h1>
+<p>At the first investigation stage, we may believe that the Treasury file was omitted.</p>
+<p>We should distinguish:</p>
+<pre><code>Confirmed cause</code></pre>
+<p>from:</p>
+<pre><code>Probable cause</code></pre>
+<p>A Finding might state:</p>
+<pre><code>Probable cause:
+Treasury Review Dataset is absent from the readiness input.
+
+Confidence:
+High
+
+Still to confirm:
+Whether all 3,200 Suppliers have Treasury records
+in the external review file.</code></pre>
+<p>This is better than asserting:</p>
+<blockquote>Integrate the Treasury file and the problem is solved.</blockquote>
+<p>The file may itself be incomplete.</p>
+<p>The Finding can evolve as new Evidence arrives.</p>
+<p>---</p>
+<h1 id="we-make-uncertainty-visible">We make uncertainty visible</h1>
+<p>A high-quality Finding may include:</p>
+<h2 id="confirmed">Confirmed</h2>
+<ul>
+<li>3,200 payment-active Suppliers lack linked verification Evidence.</li>
+<li>All come from the <code>LEGACY-EU</code> migration population.</li>
+<li>The current dataset does not include the Treasury review source.</li>
+</ul>
+<h2 id="inferred">Inferred</h2>
+<ul>
+<li>Most failures may be resolved by importing the Treasury file.</li>
+</ul>
+<h2 id="unknown">Unknown</h2>
+<ul>
+<li>Whether every affected bank account has already been reviewed.</li>
+<li>Whether the Treasury file uses the same canonical Supplier identifier.</li>
+<li>Whether verification refers to the current account version.</li>
+</ul>
+<p>This allows reviewers to make a decision without confusing inference with fact.</p>
+<p>---</p>
+<h1 id="we-do-not-jump-directly-to-a-model-patch">We do not jump directly to a model patch</h1>
+<p>Not every Finding requires changing the canonical model.</p>
+<p>For the 3,200-record dataset gap, the current model may already be correct.</p>
+<p>It says that authorised verification Evidence is required.</p>
+<p>The failure exists because the expected input is missing from the migration package.</p>
+<p>The correct remediation may be:</p>
+<ul>
+<li>add the Treasury dataset to the pipeline;</li>
+<li>implement the approved Mapping;</li>
+<li>rerun validation.</li>
+</ul>
+<p>No canonical policy change is needed.</p>
+<p>For the 200 legacy-flag records, we may discover that the model never explicitly defined verification authority.</p>
+<p>That is a model gap.</p>
+<p>A PatchProposal may be appropriate:</p>
+<pre><code>Add Treasury Review Dataset as the authorised
+verification source.
+
+Classify the legacy Finance verified flag
+as supporting evidence only.
+
+Require payment block when authorised
+verification is absent.</code></pre>
+<p>The Finding decides what kind of action is justified.</p>
+<p>It prevents every validation failure from becoming an unnecessary model edit.</p>
+<p>---</p>
+<h1 id="we-distinguish-remediation-types">We distinguish remediation types</h1>
+<p>A Finding should identify the likely remediation category.</p>
+<h2 id="source-remediation">Source remediation</h2>
+<p>Correct or enrich the source data.</p>
+<h2 id="dataset-remediation">Dataset remediation</h2>
+<p>Add a missing field, file or extraction scope.</p>
+<h2 id="mapping-remediation">Mapping remediation</h2>
+<p>Correct transformation or source-to-target linkage.</p>
+<h2 id="model-remediation">Model remediation</h2>
+<p>Add or change canonical Attributes, Rules, authority or relationships.</p>
+<h2 id="implementation-remediation">Implementation remediation</h2>
+<p>Align code with the approved model.</p>
+<h2 id="evidence-remediation">Evidence remediation</h2>
+<p>Produce, refresh or link the required proof.</p>
+<h2 id="governance-decision">Governance decision</h2>
+<p>Resolve authority, scope, acceptable fallback or risk.</p>
+<h2 id="exception-request">Exception request</h2>
+<p>Permit a bounded deviation under controls.</p>
+<p>For our main Finding:</p>
+<pre><code>Primary remediation:
+Dataset remediation
+
+Secondary remediation:
+Mapping implementation
+
+No policy change proposed.</code></pre>
+<p>This gives the delivery team a clear direction.</p>
+<p>---</p>
+<h1 id="we-assign-ownership-by-cause">We assign ownership by cause</h1>
+<p>The failed Rule may be owned by Treasury.</p>
+<p>That does not mean Treasury owns every remediation task.</p>
+<p>For the missing Treasury dataset:</p>
+<h2 id="business-owner">Business owner</h2>
+<p>Treasury Data Owner</p>
+<p>Confirms what qualifies as authorised verification.</p>
+<h2 id="data-owner">Data owner</h2>
+<p>Treasury Review Dataset Owner</p>
+<p>Confirms coverage and data semantics.</p>
+<h2 id="implementation-owner">Implementation owner</h2>
+<p>Migration Integration Team</p>
+<p>Adds the dataset and join path.</p>
+<h2 id="migration-owner">Migration owner</h2>
+<p>Supplier Migration Lead</p>
+<p>Recalculates readiness and cutover scope.</p>
+<p>One Finding can record these responsibilities without pretending that one assignee can solve the entire problem.</p>
+<p>The implementation issue can then be assigned to the appropriate delivery owner.</p>
+<p>---</p>
+<h1 id="we-define-closure-before-creating-the-task">We define closure before creating the task</h1>
+<p>A Finding should not close when someone adds a comment saying “fixed.”</p>
+<p>For the missing Treasury dataset, closure requires:</p>
+<ol>
+<li>the Treasury Review Dataset is registered;</li>
+<li>the Supplier join is defined;</li>
+<li>the Mapping validates;</li>
+<li>the candidate dataset is regenerated;</li>
+<li>the bank-verification Rule is rerun;</li>
+<li>unresolved records are classified;</li>
+<li>payment-block treatment is confirmed;</li>
+<li>new Evidence is linked.</li>
+</ol>
+<p>The closure test is outcome-based:</p>
+<pre><code>The expected authorised verification path exists,
+and every in-scope Supplier is either verified
+or governed by an approved payment-block treatment.</code></pre>
+<p>This prevents a code change from being mistaken for a resolved business problem.</p>
+<p>---</p>
+<h1 id="we-keep-the-finding-open-across-multiple-executions">We keep the Finding open across multiple executions</h1>
+<p>Mock Load 3 may reduce the affected population:</p>
+<pre><code>Original:
+3,200 records
+
+After Treasury dataset integration:
+180 records</code></pre>
+<p>We should not create an unrelated new Finding automatically.</p>
+<p>The same Finding can record its progression:</p>
+<pre><code>Observed in RC4:
+3,200
+
+After remediation attempt 1:
+180
+
+Remaining cause:
+Treasury file contains no current-account match
+for affected Suppliers.</code></pre>
+<p>The Finding’s core cause may have changed.</p>
+<p>At that point, we can:</p>
+<ul>
+<li>update the Finding with new Evidence;</li>
+<li>split the remaining population into a new Finding if it now has a distinct cause;</li>
+<li>close the original dataset-gap Finding when the missing-input problem is resolved.</li>
+</ul>
+<p>The lifecycle must preserve the reasoning.</p>
+<p>---</p>
+<h1 id="we-split-findings-when-the-remediation-diverges">We split Findings when the remediation diverges</h1>
+<p>After importing the Treasury file, the remaining 180 records divide into:</p>
+<ul>
+<li>140 bank accounts changed after verification;</li>
+<li>40 Suppliers have no Treasury record.</li>
+</ul>
+<p>These require different action.</p>
+<p>We close the original Finding:</p>
+<pre><code>Treasury Review Dataset missing from migration path</code></pre>
+<p>Then create two derived Findings:</p>
+<pre><code>Verification is stale for 140 current bank accounts.</code></pre>
+<p>and:</p>
+<pre><code>No authorised verification Evidence exists
+for 40 payment-active Suppliers.</code></pre>
+<p>The derived Findings reference the original validation and investigation history.</p>
+<p>This creates a problem tree rather than an endless error list.</p>
+<p>GitHub Issues supports hierarchical work through sub-issues and dependencies, and issue templates can standardise the information collected for recurring work types. We can use those delivery mechanisms after Martenweave has defined the semantic Finding and its required remediation.</p>
+<p>---</p>
+<h1 id="we-prevent-duplicate-findings">We prevent duplicate Findings</h1>
+<p>The same underlying problem may appear in:</p>
+<ul>
+<li>dataset readiness;</li>
+<li>mock-load validation;</li>
+<li>target rejection;</li>
+<li>reconciliation;</li>
+<li>an AMS incident.</li>
+</ul>
+<p>Without deduplication, each execution creates another issue.</p>
+<p>We can derive a stable Finding fingerprint from:</p>
+<pre><code>Rule
++
+failure classification
++
+affected source path
++
+affected model object
++
+scope
++
+probable cause</code></pre>
+<p>New Evidence can then attach to the existing Finding.</p>
+<p>We should still allow separate Findings when the business treatment differs.</p>
+<p>Deduplication must reduce noise, not merge unrelated risks.</p>
+<p>---</p>
+<h1 id="we-preserve-record-level-evidence-without-making-the-finding-enormous">We preserve record-level evidence without making the Finding enormous</h1>
+<p>A Finding should summarise the problem.</p>
+<p>It should not embed thousands of record rows in the canonical Markdown file.</p>
+<p>We can store:</p>
+<ul>
+<li>affected count;</li>
+<li>population definition;</li>
+<li>dataset fingerprint;</li>
+<li>external or generated record-list reference;</li>
+<li>sample records;</li>
+<li>aggregation by company code, Plant or source system.</li>
+</ul>
+<p>For example:</p>
+<pre><code>Affected population:
+3,200
+
+Population definition:
+payment-active LEGACY-EU Suppliers
+with current bank account
+and no authorised Treasury verification match
+
+Evidence artifact:
+bank-verification-failures-rc4.parquet
+
+Top organisational concentration:
+DE01: 1,820
+DE02: 940
+NL01: 440</code></pre>
+<p>The canonical Finding remains readable.</p>
+<p>The detailed Evidence remains reproducible.</p>
+<p>---</p>
+<h1 id="we-let-validators-produce-structured-results">We let validators produce structured results</h1>
+<p>The W3C SHACL validation model offers a useful precedent: validation reports can contain individual results with a focus node, result path, source constraint, message, detail and severity.</p>
+<p>We do not need to use RDF or adopt SHACL directly.</p>
+<p>We should preserve similar structure in Martenweave validation output:</p>
+<pre><code>subject
+path
+rule
+validator
+observed value
+expected condition
+severity
+message
+details</code></pre>
+<p>Structured results make reliable grouping possible.</p>
+<p>If validators emit only free-text messages, Finding generation becomes fragile.</p>
+<p>---</p>
+<h1 id="we-use-ai-for-interpretation-not-invention">We use AI for interpretation, not invention</h1>
+<p>AI can help us:</p>
+<ul>
+<li>summarise failure patterns;</li>
+<li>identify likely common causes;</li>
+<li>group similar records;</li>
+<li>retrieve relevant Mappings and Decisions;</li>
+<li>propose owners;</li>
+<li>draft a Finding;</li>
+<li>suggest remediation alternatives;</li>
+<li>prepare an implementation issue.</li>
+</ul>
+<p>AI should not:</p>
+<ul>
+<li>fabricate a cause when Evidence is weak;</li>
+<li>change Rule scope to reduce failure count;</li>
+<li>label a source authoritative without a Decision;</li>
+<li>convert an unresolved failure into an approved exception;</li>
+<li>close a Finding because the score improved;</li>
+<li>modify canonical model files silently.</li>
+</ul>
+<p>The AI output should remain a proposal:</p>
+<pre><code>Candidate classification:
+Dataset gap
+
+Supporting Evidence:
+Treasury dataset absent from input manifest
+
+Confidence:
+High
+
+Unresolved:
+Coverage of external Treasury file
+
+Suggested next action:
+Register and profile the Treasury dataset</code></pre>
+<p>Human review establishes the accepted interpretation.</p>
+<p>---</p>
+<h1 id="we-distinguish-a-finding-from-an-issue">We distinguish a Finding from an issue</h1>
+<p>A Finding and a GitHub or ITSM issue are related.</p>
+<p>They are not the same object.</p>
+<h2 id="finding">Finding</h2>
+<p>Represents the governed understanding of a problem.</p>
+<p>It contains:</p>
+<ul>
+<li>cause;</li>
+<li>affected model objects;</li>
+<li>Evidence;</li>
+<li>impact;</li>
+<li>remediation class;</li>
+<li>closure criteria.</li>
+</ul>
+<h2 id="issue">Issue</h2>
+<p>Coordinates delivery work.</p>
+<p>It contains:</p>
+<ul>
+<li>assignee;</li>
+<li>status;</li>
+<li>milestone;</li>
+<li>task breakdown;</li>
+<li>implementation discussion.</li>
+</ul>
+<p>A Finding may create:</p>
+<ul>
+<li>one issue;</li>
+<li>several issues;</li>
+<li>no issue when the result is accepted Evidence only.</li>
+</ul>
+<p>An issue may also implement part of several Findings.</p>
+<p>GitHub documents Issues as tools for tracking work, discussing specific problems, assigning status and breaking large work into smaller tasks.</p>
+<p>We use GitHub for delivery.</p>
+<p>We use Martenweave to preserve model meaning.</p>
+<p>---</p>
+<h1 id="we-generate-an-agent-ready-implementation-issue">We generate an agent-ready implementation issue</h1>
+<p>Once the Finding is approved, Martenweave can generate a precise issue.</p>
+<pre><code>Goal
+
+Integrate authorised Treasury bank-verification evidence
+into the Supplier migration readiness path.
+
+Scope
+
+- Register the Treasury Review Dataset.
+- Map Treasury Supplier identifiers to canonical Supplier IDs.
+- Match verification to the current bank-account fingerprint.
+- Preserve payment block where verification is unavailable.
+- Rerun Supplier bank readiness.
+
+Acceptance criteria
+
+- The Treasury Dataset is represented in the canonical model.
+- All references validate.
+- No Supplier is marked verified solely from the legacy flag.
+- Every payment-active Supplier is either verified
+  or covered by an approved payment-block treatment.
+- New validation Evidence is linked to the Finding.
+
+Validation command
+
+martenweave validate --repo ./model</code></pre>
+<p>This issue is actionable because the Finding already established the cause and semantic outcome.</p>
+<p>---</p>
+<h1 id="we-connect-the-finding-to-impact">We connect the Finding to impact</h1>
+<p>For the 3,200 affected Suppliers, impact analysis should reveal more than the record count.</p>
+<p>The Finding may affect:</p>
+<ul>
+<li>Supplier Bank Verification Attribute;</li>
+<li>Treasury verification Mapping;</li>
+<li>payment-readiness Rule;</li>
+<li>payment-block Rule;</li>
+<li>cutover dataset;</li>
+<li>SAP Business Partner bank-data handoff;</li>
+<li>Treasury approval Evidence;</li>
+<li>Supplier migration scorecard.</li>
+</ul>
+<p>The impact view should help us answer:</p>
+<ul>
+<li>Which cutover gate is blocked?</li>
+<li>Which Evidence becomes stale after remediation?</li>
+<li>Which teams must review the change?</li>
+<li>Which downstream reports currently treat the records as ready?</li>
+<li>Which accepted Exceptions overlap with the population?</li>
+</ul>
+<p>This turns the Finding into a planning object without turning Martenweave into a general project-management platform.</p>
+<p>---</p>
+<h1 id="we-distinguish-finding-status-from-implementation-status">We distinguish Finding status from implementation status</h1>
+<p>An issue may be marked done because the Treasury dataset was added.</p>
+<p>The Finding may remain open because 180 records still lack current verification.</p>
+<p>We therefore keep separate states.</p>
+<h2 id="finding-states">Finding states</h2>
+<ul>
+<li>observed;</li>
+<li>investigating;</li>
+<li>confirmed;</li>
+<li>remediation proposed;</li>
+<li>controlled;</li>
+<li>resolved;</li>
+<li>accepted risk;</li>
+<li>superseded.</li>
+</ul>
+<h2 id="delivery-states">Delivery states</h2>
+<ul>
+<li>backlog;</li>
+<li>in progress;</li>
+<li>review;</li>
+<li>done.</li>
+</ul>
+<p>A completed task is Evidence of work.</p>
+<p>It is not automatic proof that the underlying Finding is resolved.</p>
+<p>---</p>
+<h1 id="we-close-through-revalidation">We close through revalidation</h1>
+<p>The strongest closure Evidence is a new execution against the accepted model.</p>
+<p>For our case:</p>
+<pre><code>Original failure:
+3,200
+
+After integration:
+180
+
+After Treasury remediation:
+0 unresolved
+
+Controlled payment-block exceptions:
+40
+
+Final status:
+Resolved for cutover baseline RC6</code></pre>
+<p>The Finding can close when:</p>
+<ul>
+<li>the required path exists;</li>
+<li>the Rule was rerun;</li>
+<li>remaining exceptions are explicitly governed;</li>
+<li>the result is tied to the current model and dataset baseline.</li>
+</ul>
+<p>Closure should record:</p>
+<ul>
+<li>resolution summary;</li>
+<li>new Evidence;</li>
+<li>model commit;</li>
+<li>dataset fingerprint;</li>
+<li>approved remaining exceptions;</li>
+<li>date and reviewer.</li>
+</ul>
+<p>---</p>
+<h1 id="we-reopen-when-the-problem-returns-under-a-new-baseline">We reopen when the problem returns under a new baseline</h1>
+<p>After cutover, a new Supplier dataset is generated.</p>
+<p>The same Treasury input is omitted.</p>
+<p>The validator fails again.</p>
+<p>Should we reopen the old Finding or create a new one?</p>
+<p>We use scope and cause.</p>
+<p>If the same pipeline defect returned, we may reopen or derive a recurrence linked to the original Finding.</p>
+<p>If a different source system has the same symptom but another cause, we create a new Finding.</p>
+<p>The history should reveal recurring failure patterns.</p>
+<p>Repeated recurrence may indicate:</p>
+<ul>
+<li>weak pipeline controls;</li>
+<li>missing ownership;</li>
+<li>an incomplete canonical dependency;</li>
+<li>a check that runs too late.</li>
+</ul>
+<p>---</p>
+<h1 id="a-conceptual-finding-object">A conceptual Finding object</h1>
+<p>A focused Finding could look like:</p>
+<pre><code>---
+id: FIND-SUPPLIER-BANK-VERIFICATION-DATASET-GAP
+type: Finding
+status: confirmed
+
+title:
+  Treasury verification dataset missing
+  from Supplier bank readiness path
+
+triggered_by:
+  - VALRUN-SUPPLIER-BANK-RC4
+
+classification:
+  dataset_gap
+
+affects:
+  - RULE-SUPPLIER-BANK-VERIFICATION
+  - ATTR-SUPPLIER-BANK-VERIFICATION
+  - MAP-TREASURY-BANK-VERIFICATION
+  - DATASET-SUPPLIER-BANK-CUTOVER
+
+scope:
+  source_system: LEGACY-EU
+  migration_wave: WAVE-1
+  affected_records: 3200
+
+business_impact:
+  Payment activation cannot be approved
+  without verified evidence or payment block.
+
+probable_cause:
+  Treasury Review Dataset was omitted
+  from the migration input package.
+
+owner:
+  ROLE-SUPPLIER-MIGRATION-LEAD
+
+remediation_type:
+  dataset_and_mapping
+
+closure_criteria:
+  - treasury_dataset_registered
+  - current_account_match_implemented
+  - verification_rule_rerun
+  - unresolved_population_governed
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>Our current repository describes dataset gaps, deterministic validation, lineage, impact analysis and PatchProposals, but our inspection did not establish a complete first-class Finding lifecycle matching the design above.</p>
+<p>We should therefore describe Finding management as the next focused layer, not as finished functionality.</p>
+<p>---</p>
+<h1 id="the-workbench-should-show-the-problem-not-only-the-count">The Workbench should show the problem, not only the count</h1>
+<p>A useful Finding page should answer:</p>
+<h2 id="what-happened">What happened?</h2>
+<p>The bank-verification Rule failed for 3,200 Suppliers.</p>
+<h2 id="why">Why?</h2>
+<p>The authoritative Treasury dataset is missing from the migration path.</p>
+<h2 id="what-is-affected">What is affected?</h2>
+<p>Supplier payment readiness for the <code>LEGACY-EU</code> Wave 1 population.</p>
+<h2 id="what-do-we-know">What do we know?</h2>
+<p>The bank accounts exist, but authorised verification Evidence is unavailable.</p>
+<h2 id="what-remains-uncertain">What remains uncertain?</h2>
+<p>Coverage and key compatibility of the external Treasury file.</p>
+<h2 id="what-should-change">What should change?</h2>
+<p>Register the dataset, implement the Mapping and rerun readiness.</p>
+<h2 id="who-owns-the-decision">Who owns the decision?</h2>
+<p>Treasury defines verification authority; the migration team owns integration.</p>
+<h2 id="how-will-we-know-it-is-resolved">How will we know it is resolved?</h2>
+<p>The Rule passes or remaining failures are covered by approved payment-block Exceptions.</p>
+<p>This is more useful than a red badge saying:</p>
+<pre><code>3,200 errors</code></pre>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next Martenweave capability should be <strong>Validation Result to Finding Promotion</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Turn structured validation failures into deduplicated, model-aware and reviewable Findings.</p>
+<h2 id="initial-scope">Initial scope</h2>
+<p>Support:</p>
+<ul>
+<li>validation-run reference;</li>
+<li>Rule and validator references;</li>
+<li>failure classification;</li>
+<li>affected model objects;</li>
+<li>population definition;</li>
+<li>affected count;</li>
+<li>business impact;</li>
+<li>cause and confidence;</li>
+<li>remediation type;</li>
+<li>owners;</li>
+<li>closure criteria;</li>
+<li>Evidence history;</li>
+<li>related issues and PatchProposals.</li>
+</ul>
+<h2 id="promotion-workflow">Promotion workflow</h2>
+<ol>
+<li>run validation;</li>
+<li>group results;</li>
+<li>suggest Finding candidates;</li>
+<li>review classification and cause;</li>
+<li>confirm or reject the Finding;</li>
+<li>calculate impact;</li>
+<li>choose remediation path;</li>
+<li>create PatchProposal or implementation issue;</li>
+<li>rerun validation;</li>
+<li>close with Evidence.</li>
+</ol>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave findings suggest \
+  --from ./reports/bank-validation.json \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings show \
+  FIND-SUPPLIER-BANK-VERIFICATION-DATASET-GAP \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings impact \
+  FIND-SUPPLIER-BANK-VERIFICATION-DATASET-GAP \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings promote \
+  FIND-SUPPLIER-BANK-VERIFICATION-DATASET-GAP \
+  --to github-issue \
+  --dry-run</code></pre>
+<pre><code>martenweave findings verify-closure \
+  FIND-SUPPLIER-BANK-VERIFICATION-DATASET-GAP \
+  --evidence EVID-SUPPLIER-BANK-RC6</code></pre>
+<p>These commands are recommended product directions, not claims about the current published CLI.</p>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a generic defect-management platform;</li>
+<li>a replacement for GitHub Issues, Jira or ServiceNow;</li>
+<li>a high-volume record-remediation UI;</li>
+<li>a data-observability platform;</li>
+<li>an autonomous root-cause engine;</li>
+<li>a general workflow system.</li>
+</ul>
+<p>The Finding exists to connect validation Evidence to canonical model change and delivery work.</p>
+<p>That narrow boundary is enough to produce significant value.</p>
+<p>---</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Validation reports usually create work for senior people.</p>
+<p>Someone must:</p>
+<ul>
+<li>interpret the error;</li>
+<li>identify the real cause;</li>
+<li>find the right owner;</li>
+<li>determine business impact;</li>
+<li>decide whether the model should change;</li>
+<li>write a useful task;</li>
+<li>later verify closure.</li>
+</ul>
+<p>That interpretation is repeated across mock loads and migration waves.</p>
+<p>By making Findings explicit, we preserve the reasoning.</p>
+<p>We reduce:</p>
+<ul>
+<li>thousands of duplicate tickets;</li>
+<li>false record-level remediation;</li>
+<li>repeated root-cause analysis;</li>
+<li>vague ownership;</li>
+<li>readiness scores disconnected from business impact;</li>
+<li>patches that treat symptoms rather than causes;</li>
+<li>closed tasks with unresolved data risk.</li>
+</ul>
+<p>The value is not a prettier error report.</p>
+<p>It is a shorter path from observed failure to governed resolution.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>We do not want Martenweave to stop at:</p>
+<pre><code>Rule failed for 3,400 records.</code></pre>
+<p>We want it to help the programme establish:</p>
+<pre><code>3,200 records failed because the authoritative
+Treasury dataset is missing from the migration path.
+
+200 records contain an unauthorised legacy status.
+
+The first problem requires dataset and Mapping remediation.
+
+The second requires Treasury review,
+payment-block treatment or a governance decision.</code></pre>
+<p>That is the difference between errors and Findings.</p>
+<p>The practical test is:</p>
+<blockquote>Can we explain the shared cause, affected model path, business consequence, accountable owner and closure condition without asking someone to inspect thousands of rows manually?</blockquote>
+<p>When the answer is yes, validation creates controlled work.</p>
+<p>When the answer is:</p>
+<blockquote>The errors are attached to the ticket,</blockquote>
+<p>we have moved the report but not resolved the interpretation problem.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that validation failures become reusable project knowledge rather than disposable error files.</p>
+<p>Our operating model is:</p>
+<pre><code>Validators observe.
+
+Findings explain.
+
+Impact analysis shows consequences.
+
+AI proposes remediation.
+
+Humans approve model changes.
+
+Delivery tools track implementation.
+
+New Evidence proves closure.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a pipeline that turns datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved PatchProposals.</p>
+<p>The current documented workflow moves from Evidence and profiling through validation, gap detection, lineage and impact analysis to AI proposals and human-reviewed GitHub issues or pull requests.</p>
+<p>The W3C SHACL Recommendation defines structured validation reports and results with concepts such as focus node, result path, source constraint, details, message and severity. Martenweave does not need to adopt RDF or SHACL, but this structure supports reliable conversion of raw validation output into grouped Findings.</p>
+<p>GitHub documents Issues as a way to track work, discuss specific problems, classify tasks, use templates, establish dependencies and break larger work into sub-issues. In the design described here, GitHub remains the delivery system, while Martenweave preserves the model-aware Finding that gives the issue its meaning and acceptance criteria.</p>
+<p>A dedicated Finding object, Finding deduplication, cause classification, validation-result promotion and the proposed commands are product directions. Our repository inspection did not confirm a complete current first-class Finding lifecycle matching this design. These capabilities should not be treated as released functionality until implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, W3C or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html"><span>Previous</span>A migration programme is preparing Supplier bank data for SAP.</a><a href="/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html"><span>Next</span>A Supplier bank-data validation fails for 3,400 records.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -226,56 +226,51 @@ const docRoutes = [
   },
 ];
 
-const blogArticles = [
-  {
-    source: "blog/001-sap-mdg-manages-master-data-who-manages-the-implementation-knowledge.md",
-    slug: "sap-mdg-implementation-knowledge",
-    topic: "SAP MDG and MDM",
-    description: "Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change.",
-  },
-  {
-    source: "blog/002-why-sap-migration-mapping-spreadsheets-break-down.md",
-    slug: "sap-migration-mapping-spreadsheets",
-    topic: "Migration readiness",
-    description: "Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation.",
-  },
-  {
-    source: "blog/009-how-to-detect-dataset-gaps-before-sap-migration-testing.md",
-    slug: "detect-dataset-gaps-before-sap-migration-testing",
-    topic: "Migration readiness",
-    description: "How to compare representative datasets with an approved model before SAP migration testing begins.",
-  },
-  {
-    source: "blog/010-how-to-perform-impact-analysis-for-an-sap-field-change.md",
-    slug: "impact-analysis-sap-field-change",
-    topic: "Lineage and impact",
-    description: "A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list.",
-  },
-  {
-    source: "blog/011-how-to-trace-a-legacy-field-to-an-sap-target-field.md",
-    slug: "trace-legacy-field-to-sap-target",
-    topic: "Lineage and impact",
-    description: "How to trace a legacy field through mappings, business attributes, and SAP target endpoints.",
-  },
-  {
-    source: "blog/021-how-deterministic-validation-reduces-migration-risk.md",
-    slug: "deterministic-validation-migration-risk",
-    topic: "Validation and governance",
-    description: "Why deterministic validation makes migration model risk visible before derived indexes and reports are published.",
-  },
-  {
-    source: "blog/025-how-to-build-an-evidence-based-migration-readiness-report.md",
-    slug: "evidence-based-migration-readiness-report",
-    topic: "Migration readiness",
-    description: "How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions.",
-  },
-  {
-    source: "blog/062-how-deterministic-model-validation-works.md",
-    slug: "how-deterministic-model-validation-works",
-    topic: "Validation and governance",
-    description: "How deterministic model validation works and why semantic authority must remain explicit and reviewable.",
-  },
-];
+const legacyBlogSlugs = {
+  "001-sap-mdg-manages-master-data-who-manages-the-implementation-knowledge.md": "sap-mdg-implementation-knowledge",
+  "002-why-sap-migration-mapping-spreadsheets-break-down.md": "sap-migration-mapping-spreadsheets",
+  "009-how-to-detect-dataset-gaps-before-sap-migration-testing.md": "detect-dataset-gaps-before-sap-migration-testing",
+  "010-how-to-perform-impact-analysis-for-an-sap-field-change.md": "impact-analysis-sap-field-change",
+  "011-how-to-trace-a-legacy-field-to-an-sap-target-field.md": "trace-legacy-field-to-sap-target",
+  "021-how-deterministic-validation-reduces-migration-risk.md": "deterministic-validation-migration-risk",
+  "025-how-to-build-an-evidence-based-migration-readiness-report.md": "evidence-based-migration-readiness-report",
+  "062-how-deterministic-model-validation-works.md": "how-deterministic-model-validation-works",
+};
+
+function articleSlug(filename) {
+  return legacyBlogSlugs[filename] ?? filename.replace(/^\d+-/, "").replace(/\.md$/, "");
+}
+
+function articleTopic(markdown) {
+  const value = extractTitle(markdown).toLowerCase();
+  if (/logistics|warehouse|ewm|material|transport/.test(value)) return "Logistics data";
+  if (/lineage|impact|trace|dependency/.test(value)) return "Lineage and impact";
+  if (/validation|dataset gap|data quality|finding/.test(value)) return "Validation and readiness";
+  if (/mdg|master data governance/.test(value)) return "SAP MDG and MDM";
+  if (/ams|support|handover/.test(value)) return "AMS and continuity";
+  if (/mapping|migration|cutover/.test(value)) return "Migration readiness";
+  if (/ai|patchproposal/.test(value)) return "AI governance";
+  return "Model governance";
+}
+
+function articleDescription(markdown) {
+  const body = markdown.replace(/^#\s+.+\n?/m, "").replace(/\*\*Reviewed:[^*]+\*\*\n?/, "");
+  const paragraph = body.split(/\n\s*\n/).map(textFromMarkdown).find(Boolean) ?? "";
+  return paragraph.length > 170 ? `${paragraph.slice(0, 167).trim()}…` : paragraph;
+}
+
+const blogArticles = readdirSync(join(docsDir, "blog"))
+  .filter((filename) => /^\d+-.*\.md$/.test(filename))
+  .sort((left, right) => Number(left.match(/^\d+/)[0]) - Number(right.match(/^\d+/)[0]))
+  .map((filename) => {
+    const markdown = readFileSync(join(docsDir, "blog", filename), "utf8");
+    return {
+      source: `blog/${filename}`,
+      slug: articleSlug(filename),
+      topic: articleTopic(markdown),
+      description: articleDescription(markdown),
+    };
+  });
 
 const blogRoutes = [
   {
@@ -524,14 +519,14 @@ function reviewedDate(markdown) {
 
 function publicationDate(markdown) {
   const reviewed = reviewedDate(markdown);
-  if (!reviewed) return null;
+  if (!reviewed) return "2026-07-15";
   const match = reviewed.match(/^(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{4})$/);
-  if (!match) return null;
+  if (!match) return "2026-07-15";
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const day = Number(match[1]);
   const month = months.indexOf(match[2]);
   const year = Number(match[3]);
-  if (month < 0 || day < 1 || day > 31) return null;
+  if (month < 0 || day < 1 || day > 31) return "2026-07-15";
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
@@ -711,16 +706,40 @@ function blogNeighbors(slug) {
 }
 
 function renderBlogCollection() {
+  const topics = [...new Set(blogArticles.map((article) => article.topic))].sort();
   const cards = blogArticles
     .map((article, index) => {
       const markdown = readFileSync(join(docsDir, article.source), "utf8");
       const title = extractTitle(markdown);
       const published = publicationDate(markdown);
-      const dateLabel = published ? escapeHtml(reviewedDate(markdown)) : "Reviewed article";
-      return `<a class="blog-card${index === 0 ? " is-featured" : ""}" href="/blog/${article.slug}.html"><span class="section-kicker">${escapeHtml(article.topic)}</span><strong>${escapeHtml(title)}</strong><p>${escapeHtml(article.description)}</p><small>${dateLabel} · ${readingTime(markdown)} min read</small></a>`;
+      const dateLabel = published ? escapeHtml(reviewedDate(markdown) ?? "15 July 2026") : "15 July 2026";
+      const search = `${title} ${article.description} ${article.topic}`.toLowerCase();
+      return `<a class="blog-card${index === 0 ? " is-featured" : ""}" href="/blog/${article.slug}.html" data-blog-card data-topic="${escapeAttribute(article.topic)}" data-search="${escapeAttribute(search)}"><span class="section-kicker">${escapeHtml(article.topic)}</span><strong>${escapeHtml(title)}</strong><p>${escapeHtml(article.description)}</p><small>${dateLabel} · ${readingTime(markdown)} min read</small></a>`;
     })
     .join("");
-  return `<header class="blog-index-header"><p class="section-kicker">Martenweave journal</p><h1>Practical notes for model work that has to survive delivery.</h1><p>Read field-tested perspectives on SAP migration, MDM and MDG delivery, data governance, lineage, impact, and deterministic validation.</p></header><section class="blog-grid" aria-label="Articles">${cards}</section>`;
+  const filters = topics
+    .map((topic) => `<button type="button" class="blog-filter" data-topic-filter="${escapeAttribute(topic)}">${escapeHtml(topic)}</button>`)
+    .join("");
+  const behaviour = `<script>(() => {
+    const cards = [...document.querySelectorAll('[data-blog-card]')];
+    const search = document.querySelector('[data-blog-search]');
+    const filters = [...document.querySelectorAll('[data-topic-filter]')];
+    const count = document.querySelector('[data-blog-count]');
+    const pagination = document.querySelector('[data-blog-pagination]');
+    const pageSize = 12; let topic = ''; let page = 1;
+    const render = () => {
+      const query = search.value.trim().toLowerCase();
+      const matches = cards.filter((card) => (!topic || card.dataset.topic === topic) && (!query || card.dataset.search.includes(query)));
+      const pages = Math.max(1, Math.ceil(matches.length / pageSize)); page = Math.min(page, pages);
+      cards.forEach((card) => { card.hidden = !matches.slice((page - 1) * pageSize, page * pageSize).includes(card); });
+      count.textContent = matches.length + ' article' + (matches.length === 1 ? '' : 's') + (topic ? ' in ' + topic : '');
+      pagination.innerHTML = pages > 1 ? Array.from({length: pages}, (_, index) => '<button type="button" class="' + (index + 1 === page ? 'is-current' : '') + '" aria-label="Page ' + (index + 1) + '" aria-current="' + (index + 1 === page ? 'page' : 'false') + '">' + (index + 1) + '</button>').join('') : '';
+      [...pagination.querySelectorAll('button')].forEach((button, index) => button.addEventListener('click', () => { page = index + 1; render(); pagination.focus(); }));
+    };
+    filters.forEach((button) => button.addEventListener('click', () => { topic = button.dataset.topicFilter; page = 1; filters.forEach((item) => item.classList.toggle('is-active', item === button)); render(); }));
+    search.addEventListener('input', () => { page = 1; render(); }); render();
+  })();</script>`;
+  return `<header class="blog-index-header"><p class="section-kicker">Martenweave journal</p><h1>Practical notes for model work that has to survive delivery.</h1><p>${blogArticles.length} articles on SAP migration, MDM and MDG delivery, data governance, logistics, lineage, impact, and deterministic validation.</p></header><section class="blog-controls" aria-label="Find an article"><label class="blog-search"><span>Search the journal</span><input type="search" placeholder="Try migration, lineage, warehouse…" data-blog-search /></label><div class="blog-filters" aria-label="Filter by topic"><button type="button" class="blog-filter is-active" data-topic-filter="">All topics</button>${filters}</div><p class="blog-result-count" data-blog-count aria-live="polite"></p></section><section class="blog-grid" aria-label="Articles" data-blog-grid>${cards}</section><nav class="blog-pagination" aria-label="Article pages" data-blog-pagination></nav>${behaviour}`;
 }
 
 function buildRssFeed() {
@@ -816,7 +835,7 @@ function renderPage(route) {
   const jsonLd = renderJsonLd(pageRoute, markdown, title, canonicalUrl);
   const published = publicationDate(markdown);
   const blogIntro = pageRoute.blog
-    ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><h1>${escapeHtml(title)}</h1><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown))}</time>` : ""} · ${readingTime(markdown)} min read</p><p class="blog-summary">${escapeHtml(pageRoute.description)}</p>${contentsNavigation(body)}</header>`
+    ? `<header class="blog-header"><p class="section-kicker">${escapeHtml(pageRoute.topic)}</p><h1>${escapeHtml(title)}</h1><p class="blog-meta">By ${authorName}${published ? ` · Published <time datetime="${published}">${escapeHtml(reviewedDate(markdown) ?? "15 July 2026")}</time>` : ""} · ${readingTime(markdown)} min read</p><p class="blog-summary">${escapeHtml(pageRoute.description)}</p>${contentsNavigation(body)}</header>`
     : "";
   const related = pageRoute.blog
     ? blogArticles

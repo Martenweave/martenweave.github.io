@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why AI Should Propose Model Changes but Never Approve Them | Martenweave</title>
+    <meta
+      name="description"
+      content="A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE ."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html" />
+    <meta property="og:title" content="Why AI Should Propose Model Changes but Never Approve Them | Martenweave" />
+    <meta property="og:description" content="A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE ." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why AI Should Propose Model Changes but Never Approve Them | Martenweave" />
+    <meta name="twitter:description" content="A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE ." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html",
+                        "name": "Why AI Should Propose Model Changes but Never Approve Them | Martenweave",
+                        "description": "A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE .",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why AI Should Propose Model Changes but Never Approve Them",
+                                    "item": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html#content",
+                        "headline": "Why AI Should Propose Model Changes but Never Approve Them",
+                        "name": "Why AI Should Propose Model Changes but Never Approve Them",
+                        "description": "A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE .",
+                        "url": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-ai-should-propose-model-changes-but-never-approve-them.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "AI governance",
+                        "keywords": "AI governance",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why AI Should Propose Model Changes but Never Approve Them</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AI governance</p><h1>Why AI Should Propose Model Changes but Never Approve Them</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 18 min read</p><p class="blog-summary">A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE .</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#analytical-authority">Analytical authority</a></li><li><a href="#validation-authority">Validation authority</a></li><li><a href="#decision-authority">Decision authority</a></li><li><a href="#production-planning-owner">Production Planning owner</a></li><li><a href="#source-data-owner">Source data owner</a></li><li><a href="#migration-lead">Migration lead</a></li><li><a href="#technical-reviewer">Technical reviewer</a></li><li><a href="#evidence-agent">Evidence agent</a></li><li><a href="#proposal-agent">Proposal agent</a></li><li><a href="#deterministic-validator">Deterministic validator</a></li><li><a href="#impact-engine">Impact engine</a></li><li><a href="#human-reviewers">Human reviewers</a></li><li><a href="#application-service">Application service</a></li><li><a href="#git">Git</a></li><li><a href="#what-was-observed">What was observed</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A Product migration dataset contains <code>PLANNER_GROUP</code>, <code>MRP_TYPE</code> and <code>PROCUREMENT_TYPE</code>.</p>
+<p>It does not contain Plant.</p>
+<p>Martenweave compares the dataset with the canonical model and identifies a problem:</p>
+<pre><code class="language-text">Product planning values are expected at Product Plant level.
+
+The dataset identifies only Product.
+
+The current Mapping cannot determine which plant-specific conversion applies.</code></pre>
+<p>An AI agent inspects:</p>
+<ul>
+<li>the source columns;</li>
+<li>existing Product Plant Attributes;</li>
+<li>the current Mappings;</li>
+<li>earlier mock-load reports;</li>
+<li>a workshop note mentioning plant-specific planning responsibility;</li>
+<li>a temporary default that assigns MRP Controller <code>001</code>.</li>
+</ul>
+<p>The agent produces a sensible proposal:</p>
+<pre><code class="language-text">Add Plant as a required contextual input.
+
+Change the MRP Controller Mapping from global to plant-specific.
+
+Remove the temporary default for PL20 and PL30.</code></pre>
+<p>The proposal is plausible.</p>
+<p>It may even be correct.</p>
+<p>The AI should still not approve it.</p>
+<p>The reason is not simply that “humans should remain in the loop.”</p>
+<p>That phrase is too vague to define a product.</p>
+<p>The real reason is that the proposal contains several decisions that cannot be established through pattern recognition or structural validation alone:</p>
+<ul>
+<li>whether Plant is the correct governing context;</li>
+<li>whether the available Plant field is authoritative;</li>
+<li>whether the source covers every relevant Product Plant;</li>
+<li>whether controller <code>001</code> may remain as a fallback;</li>
+<li>whether PL20 and PL30 are in the current migration wave;</li>
+<li>whether removing the fallback creates an unacceptable cutover risk;</li>
+<li>whether Production Planning accepts the resulting ownership model;</li>
+<li>whether existing evidence must be repeated.</li>
+</ul>
+<p>The AI can assemble the evidence.</p>
+<p>It can identify the inconsistency.</p>
+<p>It can draft the smallest candidate change.</p>
+<p>It can apply that change to an isolated candidate model.</p>
+<p>It can run validation and calculate impact.</p>
+<p>It cannot assume the authority to decide what the enterprise model now means.</p>
+<blockquote>AI can produce a reasoned candidate state. Approval establishes organisational truth.</blockquote>
+<p>That distinction is central to Martenweave.</p>
+<p>Martenweave Core currently treats canonical model files as the source of truth, requires deterministic validation before indexing, and defines AI output as reviewable <code>PatchProposal</code> objects rather than silent mutations. Approved proposals become controlled change objects instead of bypassing human review.</p>
+<p>The product is therefore not built around the claim that an agent can maintain the model autonomously.</p>
+<p>It is built around a more defensible claim:</p>
+<blockquote>An agent can reduce the work required to investigate, formulate and validate a model change without taking ownership of the final decision.</blockquote>
+<p>---</p>
+<h1 id="the-pain-is-not-insufficient-automation">The pain is not insufficient automation</h1>
+<p>Migration programmes already contain substantial automation.</p>
+<p>Scripts compare schemas.</p>
+<p>Profilers detect missing fields.</p>
+<p>ETL jobs transform values.</p>
+<p>Data-quality tools identify invalid records.</p>
+<p>Issue trackers assign remediation tasks.</p>
+<p>AI can now read workbooks, summarise tickets and suggest mappings.</p>
+<p>The persistent problem is not that nobody can generate a change.</p>
+<p>The problem is that the change often crosses boundaries that the automation cannot see clearly.</p>
+<p>In the Product planning case, adding Plant appears technical.</p>
+<p>It is not only technical.</p>
+<p>It changes:</p>
+<ul>
+<li>the grain of the planning model;</li>
+<li>the expected source dataset;</li>
+<li>the applicability of several Mappings;</li>
+<li>responsibility for MRP Controller values;</li>
+<li>the fallback policy;</li>
+<li>the evidence required for migration readiness;</li>
+<li>the population that can be loaded safely.</li>
+</ul>
+<p>A quick automated fix may produce better-looking data while weakening governance.</p>
+<p>A conservative organisation may respond by prohibiting AI-generated changes entirely.</p>
+<p>That also wastes value.</p>
+<p>Analysts continue to reconstruct the same dependencies manually.</p>
+<p>Reviewers receive vague tickets rather than validated candidate states.</p>
+<p>The productive middle is proposal-first automation.</p>
+<p>---</p>
+<h1 id="three-different-kinds-of-authority">Three different kinds of authority</h1>
+<p>The Product planning case exposes three forms of authority that should not be collapsed.</p>
+<h2 id="analytical-authority">Analytical authority</h2>
+<p>The ability to inspect evidence and form a reasonable hypothesis.</p>
+<p>AI can be strong here.</p>
+<p>It can recognise that:</p>
+<ul>
+<li>Product Plant Attributes require Plant context;</li>
+<li>the dataset has no Plant;</li>
+<li>the current default is covering the gap;</li>
+<li>earlier evidence shows different controller assignments by Plant.</li>
+</ul>
+<h2 id="validation-authority">Validation authority</h2>
+<p>The ability to determine whether a candidate model complies with explicit structural and domain rules.</p>
+<p>Deterministic software should own this layer.</p>
+<p>It can test:</p>
+<ul>
+<li>whether referenced objects exist;</li>
+<li>whether input roles are allowed;</li>
+<li>whether the target Attribute belongs to Product Plant;</li>
+<li>whether the proposed Mapping creates broken references;</li>
+<li>whether required properties are present;</li>
+<li>whether the candidate graph remains coherent.</li>
+</ul>
+<h2 id="decision-authority">Decision authority</h2>
+<p>The ability to accept the meaning, scope, risk and ownership consequences of the change.</p>
+<p>This belongs to accountable people.</p>
+<p>Only the relevant owners can decide:</p>
+<ul>
+<li>that Plant is the governing business context;</li>
+<li>that the proposed source is authoritative;</li>
+<li>that the fallback can be removed;</li>
+<li>that the migration can accept the resulting uncovered population;</li>
+<li>that the planning organisation accepts the new assignments.</li>
+</ul>
+<p>AI can support all three layers.</p>
+<p>It should own only the first.</p>
+<p>Validators should own the second.</p>
+<p>Humans must retain the third.</p>
+<p>This is more precise than a generic human-in-the-loop statement.</p>
+<p>---</p>
+<h1 id="why-validation-is-not-approval">Why validation is not approval</h1>
+<p>Assume the AI-generated candidate passes every deterministic check.</p>
+<p>The model is structurally valid:</p>
+<pre><code class="language-text">Product Plant MRP Controller
+
+Inputs:
+- Planner Group
+- Plant
+
+Transformation:
+plant-specific lookup
+
+Target:
+SAP Product Plant MRP Controller</code></pre>
+<p>No references are broken.</p>
+<p>The Entity grain is consistent.</p>
+<p>The default Mapping has been removed cleanly.</p>
+<p>The impact report identifies all affected objects.</p>
+<p>The candidate is valid.</p>
+<p>That still does not prove it is acceptable.</p>
+<p>Validation can confirm that the proposal conforms to rules already encoded in the system.</p>
+<p>It cannot establish every business premise that those rules depend on.</p>
+<p>For example, validation may confirm that a Plant endpoint exists.</p>
+<p>It cannot determine from existence alone that:</p>
+<ul>
+<li>the Plant value is complete;</li>
+<li>it is sourced from the right system;</li>
+<li>it represents the target Plant rather than a legacy location;</li>
+<li>it is approved for the migration wave;</li>
+<li>local planning owners accept the conversion.</li>
+</ul>
+<p>A validator can prove consistency with declared constraints.</p>
+<p>Approval establishes that the declarations themselves are accepted.</p>
+<p>The distinction matters because a perfectly consistent model can still encode the wrong business decision.</p>
+<p>---</p>
+<h1 id="why-a-successful-test-is-not-approval">Why a successful test is not approval</h1>
+<p>The candidate Mapping is tested against Mock Load 3.</p>
+<p>Results improve:</p>
+<pre><code class="language-text">Approved plant-specific derivation:
+94%
+
+Unmapped:
+6%
+
+Global fallback:
+0%</code></pre>
+<p>Previously:</p>
+<pre><code class="language-text">Approved derivation:
+82%
+
+Global fallback:
+18%</code></pre>
+<p>The new proposal clearly improves lineage quality.</p>
+<p>It also leaves six percent of Product Plant records without an MRP Controller.</p>
+<p>The AI could calculate that:</p>
+<ul>
+<li>1,840 records are affected;</li>
+<li>PL20 and PL30 contain most of them;</li>
+<li>the first MRP run is approaching;</li>
+<li>the removed fallback previously kept the target field complete.</li>
+</ul>
+<p>It cannot decide whether:</p>
+<ul>
+<li>the six percent should block cutover;</li>
+<li>the fallback should remain temporarily;</li>
+<li>affected Plants should be deferred;</li>
+<li>local owners should complete the conversion manually;</li>
+<li>controller <code>001</code> is operationally acceptable for a bounded period.</li>
+</ul>
+<p>These are risk-acceptance decisions.</p>
+<p>The test tells the organisation what happens.</p>
+<p>It does not decide whether the outcome is acceptable.</p>
+<p>---</p>
+<h1 id="why-business-approval-cannot-be-inferred-from-previous-behaviour">Why business approval cannot be inferred from previous behaviour</h1>
+<p>The AI sees that controller <code>001</code> was used during two mock loads.</p>
+<p>It may infer:</p>
+<pre><code class="language-text">Controller 001 is an accepted fallback.</code></pre>
+<p>That inference may be wrong.</p>
+<p>The value may have been:</p>
+<ul>
+<li>a technical placeholder;</li>
+<li>an emergency test default;</li>
+<li>accepted only for one mock load;</li>
+<li>tolerated because records were not operational;</li>
+<li>assigned without the planning owner’s knowledge;</li>
+<li>scheduled for removal before cutover.</li>
+</ul>
+<p>Observed use is evidence of behaviour.</p>
+<p>It is not automatically evidence of authority.</p>
+<p>This is the same distinction Martenweave makes between observed runtime evidence and approved model truth.</p>
+<p>The agent should report:</p>
+<pre><code class="language-text">Controller 001 was observed as a fallback in Mock Loads 2 and 3.
+
+No current Decision authorising production use was found.</code></pre>
+<p>It should not silently convert historical behaviour into policy.</p>
+<p>---</p>
+<h1 id="approval-is-a-change-in-organisational-commitment">Approval is a change in organisational commitment</h1>
+<p>Before approval, the proposed Mapping means:</p>
+<blockquote>This is a candidate interpretation supported by current evidence.</blockquote>
+<p>After approval, it means:</p>
+<blockquote>This is the model the organisation has agreed to use for the declared scope.</blockquote>
+<p>That transition carries consequences.</p>
+<p>Teams may:</p>
+<ul>
+<li>build transformation code from it;</li>
+<li>block datasets that do not satisfy it;</li>
+<li>use it during cutover;</li>
+<li>rely on it during AMS investigations;</li>
+<li>reject alternate source interpretations;</li>
+<li>apply it in later migration waves;</li>
+<li>train agents to treat it as accepted context.</li>
+</ul>
+<p>Approval is therefore not a quality score.</p>
+<p>It is an organisational commitment.</p>
+<p>An AI system has no independent mandate to make that commitment.</p>
+<p>---</p>
+<h1 id="accountability-cannot-be-delegated-to-a-probability">Accountability cannot be delegated to a probability</h1>
+<p>Suppose the proposal later causes planning assignments to route to the wrong team.</p>
+<p>The organisation will need to answer:</p>
+<ul>
+<li>Who approved Plant as the context?</li>
+<li>Who accepted the source Mapping?</li>
+<li>Who accepted removal of the fallback?</li>
+<li>Which evidence supported the decision?</li>
+<li>What scope was approved?</li>
+<li>Which conditions applied?</li>
+<li>Was the proposal changed after review?</li>
+</ul>
+<p>“AI confidence was 91 percent” is not an adequate governance record.</p>
+<p>Confidence can help reviewers understand uncertainty.</p>
+<p>It cannot replace accountable approval.</p>
+<p>NIST’s AI Risk Management Framework is intended to help organisations incorporate trustworthiness considerations into the design, use and evaluation of AI systems. The framework’s purpose is risk management, not the transfer of organisational accountability to the model producing the recommendation.</p>
+<p>For Martenweave, that means every accepted model change should have:</p>
+<ul>
+<li>an identifiable proposal;</li>
+<li>supporting evidence;</li>
+<li>deterministic validation;</li>
+<li>named reviewers;</li>
+<li>a recorded decision;</li>
+<li>an applied Git change;</li>
+<li>post-application verification.</li>
+</ul>
+<p>---</p>
+<h1 id="the-ai-s-real-job-is-larger-than-generating-yaml">The AI’s real job is larger than generating YAML</h1>
+<p>A weak AI integration would take a note and produce a file edit.</p>
+<p>For example:</p>
+<pre><code class="language-text">“Plant is missing. Fix the MRP Controller mapping.”</code></pre>
+<p>The agent changes the Mapping file and opens a pull request.</p>
+<p>That is faster typing.</p>
+<p>It does not solve the governance problem.</p>
+<p>The useful AI role is broader.</p>
+<p>For the Product planning gap, the agent should:</p>
+<ol>
+<li>identify the Finding;</li>
+<li>retrieve the affected Attribute and Mapping;</li>
+<li>locate relevant source endpoints;</li>
+<li>inspect previous Decisions and Evidence;</li>
+<li>detect the current fallback;</li>
+<li>formulate a bounded proposal;</li>
+<li>state its assumptions;</li>
+<li>generate the candidate state;</li>
+<li>run deterministic validation;</li>
+<li>calculate lineage and impact differences;</li>
+<li>identify stale Evidence;</li>
+<li>identify required reviewers;</li>
+<li>explain unresolved questions;</li>
+<li>prepare a Git-ready change only after approval.</li>
+</ol>
+<p>The value is not that AI writes a few lines of YAML.</p>
+<p>The value is that it compresses investigation and prepares a decision.</p>
+<p>---</p>
+<h1 id="the-smallest-defensible-proposal">The smallest defensible proposal</h1>
+<p>An AI agent should not use one gap as permission to redesign an entire domain.</p>
+<p>In the Product planning case, it may discover related weaknesses:</p>
+<ul>
+<li>Procurement Type also needs Plant;</li>
+<li>Profit Centre has a similar context issue;</li>
+<li>MRP Type uses a broad default;</li>
+<li>several planning Rules have weak ownership.</li>
+</ul>
+<p>A large proposal could attempt to solve everything.</p>
+<p>That would be difficult to validate and harder to review.</p>
+<p>The safer proposal is:</p>
+<pre><code class="language-text">Add Plant as a conditional input
+to the Product Plant MRP Controller Mapping.
+
+Do not change Procurement Type or Profit Centre
+in this proposal.
+
+Flag those paths as separate Findings.</code></pre>
+<p>This is the smallest defensible change that addresses the current evidence.</p>
+<p>Small proposals reduce:</p>
+<ul>
+<li>hidden assumptions;</li>
+<li>reviewer burden;</li>
+<li>conflicting ownership;</li>
+<li>accidental scope growth;</li>
+<li>rollback complexity.</li>
+</ul>
+<p>AI should optimise for bounded correctness, not maximal activity.</p>
+<p>---</p>
+<h1 id="the-proposal-must-state-what-it-does-not-know">The proposal must state what it does not know</h1>
+<p>A high-quality proposal should include uncertainty explicitly.</p>
+<p>For example:</p>
+<pre><code class="language-text">Confirmed:
+- MRP Controller belongs to Product Plant.
+- Current Mapping lacks Plant context.
+- Global default is active for PL20 and PL30.
+
+Unresolved:
+- Whether the source Plant field is authoritative.
+- Whether all Wave 1 records contain Plant.
+- Whether controller 001 remains acceptable temporarily.
+- Whether PL30 is included in the first planning cycle.</code></pre>
+<p>An agent that hides these uncertainties produces a cleaner-looking proposal and a weaker decision.</p>
+<p>The purpose of the proposal is not to persuade reviewers that the AI is correct.</p>
+<p>It is to make the decision surface complete.</p>
+<p>---</p>
+<h1 id="sometimes-the-correct-output-is-no-proposal">Sometimes the correct output is no proposal</h1>
+<p>The AI may find two plausible Plant sources:</p>
+<pre><code class="language-text">Legacy Site Code
+
+Central Plant Cross-Reference</code></pre>
+<p>Both cover most records.</p>
+<p>Their values disagree for part of the population.</p>
+<p>No approved source-authority Decision exists.</p>
+<p>The correct result is:</p>
+<pre><code class="language-text">Finding confirmed.
+
+No safe model patch generated.
+
+Reason:
+Plant source authority is unresolved.
+
+Required decision:
+Migration Architecture and Production Planning must select
+the authoritative Plant source for Wave 1.</code></pre>
+<p>This is not agent failure.</p>
+<p>It is the system correctly refusing to manufacture certainty.</p>
+<p>A proposal-first product must make “insufficient evidence” a valid outcome.</p>
+<p>Otherwise, every investigation becomes pressure to generate a patch whether or not one is justified.</p>
+<p>---</p>
+<h1 id="deterministic-checks-should-constrain-the-agent">Deterministic checks should constrain the agent</h1>
+<p>The AI should not be trusted to remember every modelling rule.</p>
+<p>It should work inside constraints enforced by software.</p>
+<p>For the Product planning proposal, validators can check:</p>
+<ul>
+<li>the Mapping exists;</li>
+<li>the proposed input exists;</li>
+<li>the input is allowed for the Domain;</li>
+<li>the Attribute belongs to Product Plant;</li>
+<li>the relationship type is valid;</li>
+<li>the candidate contains no duplicate active Mapping;</li>
+<li>the fallback removal does not create an invalid reference;</li>
+<li>the model index can be rebuilt;</li>
+<li>the proposal references a current base commit.</li>
+</ul>
+<p>This division is important.</p>
+<p>AI handles ambiguous evidence and language.</p>
+<p>Validators handle explicit invariants.</p>
+<p>Humans handle authority and risk.</p>
+<p>Martenweave’s current product contract already follows this sequence: evidence enters the pipeline, canonical files are validated, generated indexes are rebuilt, gaps and impact are calculated, AI produces proposals, and GitHub issues or pull requests are created for human review rather than automatic acceptance.</p>
+<p>---</p>
+<h1 id="approval-should-be-role-specific">Approval should be role-specific</h1>
+<p>The Product planning proposal should not be approved by any available user.</p>
+<p>Different parts require different authority.</p>
+<h2 id="production-planning-owner">Production Planning owner</h2>
+<p>Approves:</p>
+<ul>
+<li>the meaning of MRP Controller;</li>
+<li>Plant-specific applicability;</li>
+<li>planning responsibility;</li>
+<li>fallback acceptability.</li>
+</ul>
+<h2 id="source-data-owner">Source data owner</h2>
+<p>Confirms:</p>
+<ul>
+<li>the Plant source;</li>
+<li>coverage;</li>
+<li>data maintenance;</li>
+<li>effective timing.</li>
+</ul>
+<h2 id="migration-lead">Migration lead</h2>
+<p>Confirms:</p>
+<ul>
+<li>wave scope;</li>
+<li>cutover feasibility;</li>
+<li>remediation capacity;</li>
+<li>evidence plan.</li>
+</ul>
+<h2 id="technical-reviewer">Technical reviewer</h2>
+<p>Confirms:</p>
+<ul>
+<li>implementation mapping;</li>
+<li>target compatibility;</li>
+<li>validation;</li>
+<li>deployment implications.</li>
+</ul>
+<p>One individual may hold several roles.</p>
+<p>The product should still record which authority was exercised.</p>
+<p>This is stronger than a generic “approved by user” event.</p>
+<p>---</p>
+<h1 id="approval-can-be-conditional">Approval can be conditional</h1>
+<p>The reviewers may accept the proposal under specific conditions:</p>
+<pre><code class="language-text">Approved for PL10 and PL20.
+
+PL30 remains on the current fallback
+until the local conversion is completed.
+
+Fallback expires before the first full MRP run.
+
+Affected records must remain identifiable.</code></pre>
+<p>This is not a simple approve/reject decision.</p>
+<p>The resulting accepted model may require:</p>
+<ul>
+<li>narrower applicability;</li>
+<li>effective dates;</li>
+<li>a retained fallback;</li>
+<li>a new Rule;</li>
+<li>remediation evidence.</li>
+</ul>
+<p>Martenweave should support approval conditions as model content, not merely as a comment beside the proposal.</p>
+<p>Otherwise, the patch may be approved while the conditions remain disconnected from the canonical model.</p>
+<p>---</p>
+<h1 id="approval-should-be-invalidated-by-material-change">Approval should be invalidated by material change</h1>
+<p>Assume the proposal was reviewed against:</p>
+<pre><code class="language-text">Model commit:
+abc123</code></pre>
+<p>Before it is applied, another accepted change updates the Product Plant model.</p>
+<p>The proposal may now have different impact.</p>
+<p>Approval should not survive every model change automatically.</p>
+<p>The system should check:</p>
+<ul>
+<li>whether proposal targets changed;</li>
+<li>whether assumptions still hold;</li>
+<li>whether new conflicting paths exist;</li>
+<li>whether affected population changed;</li>
+<li>whether evidence remains current.</li>
+</ul>
+<p>A stale approved proposal should return to review when material conditions change.</p>
+<p>This is similar to the logic behind protected pull-request reviews: repositories can require approving reviews and dismiss stale approvals when new commits materially change the proposed code. GitHub’s review model distinguishes comments, approval and requested changes before merge.</p>
+<p>Martenweave should apply the same principle to semantic model changes.</p>
+<p>---</p>
+<h1 id="approval-and-application-must-remain-separate">Approval and application must remain separate</h1>
+<p>A reviewer may approve the proposal.</p>
+<p>The system then attempts to apply it.</p>
+<p>Application may fail because:</p>
+<ul>
+<li>the base commit changed;</li>
+<li>a referenced object was retired;</li>
+<li>another proposal changed the Mapping;</li>
+<li>the generated patch no longer applies cleanly;</li>
+<li>post-application validation detects a new conflict.</li>
+</ul>
+<p>The product should preserve separate states:</p>
+<pre><code class="language-text">proposed
+validated
+approved
+applied
+verified</code></pre>
+<p>An approved proposal is not complete until:</p>
+<ul>
+<li>the intended operations are applied;</li>
+<li>validation passes again;</li>
+<li>the index rebuilds;</li>
+<li>impact is recalculated;</li>
+<li>the resulting commit is recorded.</li>
+</ul>
+<p>This prevents approval from becoming a ceremonial button detached from actual model state.</p>
+<p>---</p>
+<h1 id="what-happens-when-ai-can-approve-its-own-work">What happens when AI can approve its own work</h1>
+<p>Allowing the same agent to propose and approve creates a circular control.</p>
+<p>The agent:</p>
+<ol>
+<li>interprets the evidence;</li>
+<li>selects an explanation;</li>
+<li>generates a change;</li>
+<li>validates the change against known rules;</li>
+<li>declares the result acceptable;</li>
+<li>changes the source of truth.</li>
+</ol>
+<p>Any mistaken assumption can pass through the whole sequence without an independent challenge.</p>
+<p>In the Product planning case, the AI may assume:</p>
+<pre><code class="language-text">Every legacy Site Code maps one-to-one to SAP Plant.</code></pre>
+<p>The candidate validates structurally.</p>
+<p>The Mapping produces target values.</p>
+<p>The test dataset looks good.</p>
+<p>The assumption is still false for one acquired business unit.</p>
+<p>Self-approval turns the agent’s hypothesis into canonical truth before the missing business context is exposed.</p>
+<p>The danger is not that AI always makes obvious errors.</p>
+<p>The more serious danger is that it can produce a coherent, plausible and well-documented wrong model.</p>
+<p>---</p>
+<h1 id="separation-of-duties-for-agentic-model-change">Separation of duties for agentic model change</h1>
+<p>A safe architecture separates responsibilities.</p>
+<h2 id="evidence-agent">Evidence agent</h2>
+<p>Extracts relevant facts from datasets, tickets, reports and notes.</p>
+<h2 id="proposal-agent">Proposal agent</h2>
+<p>Forms one or more bounded candidate changes.</p>
+<h2 id="deterministic-validator">Deterministic validator</h2>
+<p>Checks schemas, references, constraints and candidate coherence.</p>
+<h2 id="impact-engine">Impact engine</h2>
+<p>Calculates affected model paths and evidence.</p>
+<h2 id="human-reviewers">Human reviewers</h2>
+<p>Decide meaning, authority, scope and risk.</p>
+<h2 id="application-service">Application service</h2>
+<p>Applies only approved operations against the expected base.</p>
+<h2 id="git">Git</h2>
+<p>Records the accepted state and history.</p>
+<p>These can be implemented as services, commands or agent tools.</p>
+<p>They should not collapse into one autonomous “model manager.”</p>
+<p>Martenweave remains backend-first precisely because these controls belong in a dependable model layer rather than inside a conversational interface.</p>
+<p>---</p>
+<h1 id="the-workbench-should-make-approval-difficult-in-the-right-ways">The Workbench should make approval difficult in the right ways</h1>
+<p>Martenweave Workbench is currently positioned as a local browser UI for assessment, investigation, review, reports and controlled changes. It reads from the local API and does not maintain independent model truth outside the canonical files.</p>
+<p>For the Product planning proposal, the review screen should show:</p>
+<h2 id="what-was-observed">What was observed</h2>
+<p>Plant context is missing from the current dataset path.</p>
+<h2 id="what-ai-proposes">What AI proposes</h2>
+<p>Add Plant to the MRP Controller Mapping and restrict the default.</p>
+<h2 id="what-changes">What changes</h2>
+<p>Current and candidate lineage.</p>
+<h2 id="why">Why</h2>
+<p>Evidence and Finding.</p>
+<h2 id="what-is-affected">What is affected</h2>
+<p>Product Plant records, fallback coverage, Rules and test evidence.</p>
+<h2 id="what-validation-proved">What validation proved</h2>
+<p>Structural and domain consistency.</p>
+<h2 id="what-remains-unresolved">What remains unresolved</h2>
+<p>Authority, scope and fallback acceptability.</p>
+<h2 id="who-must-approve">Who must approve</h2>
+<p>Named roles and owners.</p>
+<h2 id="what-happens-after-approval">What happens after approval</h2>
+<p>Candidate application, revalidation and Git commit.</p>
+<p>The UI should not reduce this to:</p>
+<pre><code class="language-text">AI recommendation: 91% confidence
+
+Approve
+Reject</code></pre>
+<p>That would make approval fast and weak.</p>
+<p>The Workbench should make the reasoning inspectable while keeping the decision focused.</p>
+<p>---</p>
+<h1 id="this-is-not-anti-automation">This is not anti-automation</h1>
+<p>Requiring approval does not mean requiring people to perform every analytical step manually.</p>
+<p>The human should not need to:</p>
+<ul>
+<li>search through every Mapping;</li>
+<li>calculate all downstream impact;</li>
+<li>compare every file;</li>
+<li>find stale evidence;</li>
+<li>build the patch;</li>
+<li>identify all validators;</li>
+<li>write the issue.</li>
+</ul>
+<p>Those are appropriate automation tasks.</p>
+<p>Human effort should concentrate on the irreducible decisions:</p>
+<ul>
+<li>meaning;</li>
+<li>authority;</li>
+<li>acceptable risk;</li>
+<li>scope;</li>
+<li>ownership.</li>
+</ul>
+<p>The system is successful when a two-day investigation becomes a focused 20-minute review—not when the review disappears entirely.</p>
+<p>---</p>
+<h1 id="the-business-value-of-the-boundary">The business value of the boundary</h1>
+<p>The separation between proposal and approval creates several practical benefits.</p>
+<h2 id="faster-investigation">Faster investigation</h2>
+<p>AI assembles relevant evidence and model context.</p>
+<h2 id="safer-change">Safer change</h2>
+<p>Deterministic checks prevent structurally invalid candidates.</p>
+<h2 id="better-review">Better review</h2>
+<p>Humans see a bounded decision rather than scattered documents.</p>
+<h2 id="traceability">Traceability</h2>
+<p>Accepted changes retain their evidence and rationale.</p>
+<h2 id="reusability">Reusability</h2>
+<p>Later migration waves inherit approved model knowledge.</p>
+<h2 id="agent-safety">Agent safety</h2>
+<p>AI cannot convert an unsupported hypothesis directly into source-of-truth data.</p>
+<h2 id="accountability">Accountability</h2>
+<p>The organisation knows who accepted the meaning and risk.</p>
+<p>This is the commercial and operational value—not simply “AI governance.”</p>
+<p>---</p>
+<h1 id="a-concrete-product-slice-for-martenweave">A concrete Product slice for Martenweave</h1>
+<p>The most useful next vertical slice should use the Product planning case end to end.</p>
+<h2 id="input">Input</h2>
+<p>A dataset-readiness report identifies that Plant is missing from the Product planning dataset.</p>
+<h2 id="finding">Finding</h2>
+<p>Product Plant MRP Controller cannot be derived through the approved Mapping.</p>
+<h2 id="ai-proposal">AI proposal</h2>
+<p>Add Plant as a conditional Mapping input and restrict the global default.</p>
+<h2 id="candidate-model">Candidate model</h2>
+<p>The proposal is applied to an isolated repository state.</p>
+<h2 id="deterministic-checks">Deterministic checks</h2>
+<ul>
+<li>model validation;</li>
+<li>reference validation;</li>
+<li>Entity-grain checks;</li>
+<li>fallback coverage;</li>
+<li>index rebuild;</li>
+<li>lineage comparison;</li>
+<li>impact calculation.</li>
+</ul>
+<h2 id="review-package">Review package</h2>
+<ul>
+<li>before and after;</li>
+<li>affected population;</li>
+<li>lost fallback coverage;</li>
+<li>stale evidence;</li>
+<li>unresolved authority questions;</li>
+<li>required reviewers.</li>
+</ul>
+<h2 id="human-outcome">Human outcome</h2>
+<ul>
+<li>approve;</li>
+<li>approve with conditions;</li>
+<li>request changes;</li>
+<li>reject;</li>
+<li>defer.</li>
+</ul>
+<h2 id="application">Application</h2>
+<p>Approved operations are applied only if the base state still matches.</p>
+<h2 id="verification">Verification</h2>
+<p>The model is validated again and Git records the accepted change.</p>
+<p>This one slice would demonstrate Martenweave’s core thesis more clearly than a broader autonomous-agent feature.</p>
+<p>---</p>
+<h1 id="required-product-rules">Required product rules</h1>
+<p>The proposal workflow should enforce several non-negotiable rules.</p>
+<h2 id="ai-cannot-set-approval-state">AI cannot set approval state</h2>
+<p>Only an authenticated human reviewer with an allowed role can approve.</p>
+<h2 id="ai-cannot-modify-canonical-files-directly">AI cannot modify canonical files directly</h2>
+<p>It operates through PatchProposals and candidate states.</p>
+<h2 id="validation-cannot-imply-approval">Validation cannot imply approval</h2>
+<p>A green validation result means structurally acceptable, not organisationally accepted.</p>
+<h2 id="approval-is-bound-to-a-model-baseline">Approval is bound to a model baseline</h2>
+<p>Material changes can invalidate approval.</p>
+<h2 id="conditions-must-be-structured">Conditions must be structured</h2>
+<p>Conditional approval must change applicability, effective dates, Rules or obligations—not remain only in comments.</p>
+<h2 id="application-must-be-deterministic">Application must be deterministic</h2>
+<p>Approved operations should not require fresh AI interpretation.</p>
+<h2 id="post-application-validation-is-mandatory">Post-application validation is mandatory</h2>
+<p>The accepted result must be verified again.</p>
+<h2 id="every-accepted-change-must-retain-provenance">Every accepted change must retain provenance</h2>
+<p>Finding, Evidence, reviewers, decision and commit remain linked.</p>
+<p>These rules form the actual product boundary.</p>
+<p>---</p>
+<h1 id="existing-and-proposed-martenweave-capability">Existing and proposed Martenweave capability</h1>
+<p>Martenweave Core already documents the main principles required for this design:</p>
+<ul>
+<li>Markdown and YAML canonical files own model truth;</li>
+<li>generated indexes are disposable;</li>
+<li>deterministic validation happens before indexing;</li>
+<li>AI produces <code>PatchProposal</code> objects;</li>
+<li>approved proposals become controlled changes;</li>
+<li>the pipeline runs from evidence through gaps and impact to human-reviewed Git work.</li>
+</ul>
+<p>The CLI also currently documents <code>propose-patch</code> alongside validation, repository diff, trace, impact, health and dataset-readiness commands.</p>
+<p>The following capabilities remain the important product direction:</p>
+<ul>
+<li>role-aware approval;</li>
+<li>candidate-state rendering;</li>
+<li>structured approval conditions;</li>
+<li>stale-approval detection;</li>
+<li>proposal conflicts and dependencies;</li>
+<li>deterministic application;</li>
+<li>post-application verification;</li>
+<li>Workbench review experience.</li>
+</ul>
+<p>These are more important than adding a more autonomous agent.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>AI is valuable because enterprise model work contains large amounts of fragmented evidence and repetitive analysis.</p>
+<p>It can:</p>
+<ul>
+<li>read;</li>
+<li>compare;</li>
+<li>retrieve;</li>
+<li>classify;</li>
+<li>propose;</li>
+<li>validate;</li>
+<li>explain.</li>
+</ul>
+<p>It should not approve its own interpretation of organisational truth.</p>
+<p>The correct operating model is:</p>
+<pre><code class="language-text">AI proposes.
+
+Validators verify.
+
+Humans approve.
+
+Git records.</code></pre>
+<p>That sequence is not a slogan attached to the product.</p>
+<p>It is the product architecture.</p>
+<p>The practical test is:</p>
+<blockquote>Can the agent prepare a complete, validated and impact-aware Product Plant Mapping proposal while remaining unable to declare the Plant source authoritative, accept the fallback risk or modify the canonical model without accountable review?</blockquote>
+<p>When the answer is yes, the organisation gains useful agentic automation.</p>
+<p>When the answer is no, it has built an autonomous mechanism for turning plausible assumptions into permanent model drift.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It is designed to turn scattered evidence into precise model proposals while preserving deterministic validation, human authority and Git-based history.</p>
+<p>The purpose is not to keep AI outside enterprise data work.</p>
+<p>It is to put AI where it creates leverage and keep approval where accountability belongs.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines canonical files as the source of truth, generated indexes as disposable, deterministic validation as the first control and AI-generated <code>PatchProposal</code> objects as reviewable changes rather than silent mutations.</p>
+<p>Its documented pipeline moves from evidence and profiling through validation, dataset/model gaps, lineage and impact analysis to AI proposals and human-reviewed GitHub issues or pull requests.</p>
+<p>Martenweave Workbench is documented as a local browser interface for assessment, investigation, review, reports and controlled changes. It reads through the local API and does not store canonical truth independently of the model files.</p>
+<p>NIST describes the AI Risk Management Framework as a voluntary framework intended to help organisations incorporate trustworthiness considerations into the design, development, use and evaluation of AI systems. NIST also notes that the AI RMF is currently being revised.</p>
+<p>GitHub pull-request reviews distinguish comments, approval and requested changes before merge. That review model is a useful implementation pattern for Martenweave, although semantic model approval requires additional business context beyond a code diff.</p>
+<p>The role-aware approval model, stale-approval detection, structured conditions and candidate-state review workflow described here are recommended Martenweave directions. They should not be interpreted as guarantees of the exact current PatchProposal schema, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, NIST or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-ai-should-propose-model-changes-but-never-apply-them-directly.html">An AI agent reviews a migration workbook and finds an obvious inconsistency.</a></li><li><a href="/blog/why-canonical-model-files-should-remain-the-source-of-truth.html">A business owner updates Customer Group in an Excel review file.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html"><span>Previous</span>A profiling script finds that the Product migration dataset has no Plant field.</a><a href="/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html"><span>Next</span>A migration team is preparing Product data for SAP S/4HANA.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

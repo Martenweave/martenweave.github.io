@@ -1,0 +1,1547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Turn Migration Gap Findings into Reviewable Patch Proposals | Martenweave</title>
+    <meta
+      name="description"
+      content="A profiling script finds that the Product migration dataset has no Plant field."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html" />
+    <meta property="og:title" content="How to Turn Migration Gap Findings into Reviewable Patch Proposals | Martenweave" />
+    <meta property="og:description" content="A profiling script finds that the Product migration dataset has no Plant field." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Turn Migration Gap Findings into Reviewable Patch Proposals | Martenweave" />
+    <meta name="twitter:description" content="A profiling script finds that the Product migration dataset has no Plant field." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html",
+                        "name": "How to Turn Migration Gap Findings into Reviewable Patch Proposals | Martenweave",
+                        "description": "A profiling script finds that the Product migration dataset has no Plant field.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Turn Migration Gap Findings into Reviewable Patch Proposals",
+                                    "item": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html#content",
+                        "headline": "How to Turn Migration Gap Findings into Reviewable Patch Proposals",
+                        "name": "How to Turn Migration Gap Findings into Reviewable Patch Proposals",
+                        "description": "A profiling script finds that the Product migration dataset has no Plant field.",
+                        "url": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT25M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Turn Migration Gap Findings into Reviewable Patch Proposals</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How to Turn Migration Gap Findings into Reviewable Patch Proposals</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 25 min read</p><p class="blog-summary">A profiling script finds that the Product migration dataset has no Plant field.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#nothing-changes">Nothing changes</a></li><li><a href="#changes-happen-too-quickly">Changes happen too quickly</a></li><li><a href="#unstructured-evidence">Unstructured evidence</a></li><li><a href="#finding">Finding</a></li><li><a href="#patchproposal">PatchProposal</a></li><li><a href="#candidate-model">Candidate model</a></li><li><a href="#validation">Validation</a></li><li><a href="#impact-assessment">Impact assessment</a></li><li><a href="#human-decision">Human decision</a></li><li><a href="#canonical-change">Canonical change</a></li><li><a href="#proposal-a-extend-the-source-extract">Proposal A: extend the source extract</a></li><li><a href="#proposal-b-derive-from-existing-fields">Proposal B: derive from existing fields</a></li><li><a href="#proposal-c-use-manual-enrichment">Proposal C: use manual enrichment</a></li><li><a href="#proposal-d-defer-affected-suppliers">Proposal D: defer affected Suppliers</a></li><li><a href="#evidence">Evidence</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A profiling script finds that the Product migration dataset has no Plant field.</p>
+<p>A validation report finds 1,840 records using an unapproved Profit Centre default.</p>
+<p>A business workshop concludes that the Supplier Payment Method must be maintained by Company Code rather than centrally.</p>
+<p>An AMS ticket shows that an outbound interface still reads a retired custom field.</p>
+<p>A tax specialist explains in an email that one country requires two different tax-number categories.</p>
+<p>All five findings may be correct.</p>
+<p>None of them changes the model.</p>
+<p>They remain distributed across:</p>
+<ul>
+<li>Excel workbooks;</li>
+<li>PowerPoint action lists;</li>
+<li>Jira or ServiceNow tickets;</li>
+<li>validation reports;</li>
+<li>emails;</li>
+<li>meeting minutes;</li>
+<li>chat conversations;</li>
+<li>transformation code;</li>
+<li>individual memory.</li>
+</ul>
+<p>A week later, the same problem appears in another discussion.</p>
+<p>Someone creates a new spreadsheet column.</p>
+<p>Someone else changes the transformation script.</p>
+<p>A third person updates an SAP configuration document.</p>
+<p>The canonical model still describes the old state.</p>
+<p>This is one of the most persistent problems in migration and data-governance work:</p>
+<blockquote>Detecting a problem is much easier than turning it into a precise, validated and reviewable change to model truth.</blockquote>
+<p>Most programmes have tools for identifying defects.</p>
+<p>They have fewer controls for answering:</p>
+<ul>
+<li>What exactly should change?</li>
+<li>Which canonical object owns the change?</li>
+<li>Is the finding evidence or merely an interpretation?</li>
+<li>Does the proposed correction preserve historical meaning?</li>
+<li>What other mappings, rules and datasets would be affected?</li>
+<li>Does the candidate model still validate?</li>
+<li>Who is qualified to approve the change?</li>
+<li>How do we prevent an AI agent or hurried developer from silently rewriting the model?</li>
+<li>How do we know that the proposal is still valid when it is finally reviewed?</li>
+</ul>
+<p>This is the product problem that PatchProposals are meant to solve.</p>
+<p>Martenweave is built around a controlled sequence in which evidence leads to a proposal, the proposal is validated against the model, gaps and impact are recalculated, and only then is the change presented for human review. Canonical files remain authoritative, generated indexes are disposable, and AI must not modify model truth silently.</p>
+<p>A PatchProposal is therefore not an AI-generated edit.</p>
+<p>It is a governed candidate state.</p>
+<p>---</p>
+<h1 id="the-missing-middle-between-a-finding-and-a-model-change">The missing middle between a finding and a model change</h1>
+<p>Most enterprise programmes already have two ends of the process.</p>
+<p>At one end, they have evidence:</p>
+<pre><code class="language-text">The Plant key is missing.
+The source value list contains an unknown code.
+The target Rule rejected 600 records.
+The custom field is no longer used.
+The business owner wants a new definition.</code></pre>
+<p>At the other end, they have implementation:</p>
+<pre><code class="language-text">Change the workbook.
+Update the Mapping.
+Modify the validation Rule.
+Add a field.
+Remove the custom endpoint.
+Change the transformation script.</code></pre>
+<p>The missing middle is the disciplined reasoning that connects them.</p>
+<p>That middle must preserve:</p>
+<ol>
+<li>the original evidence;</li>
+<li>the interpretation of the evidence;</li>
+<li>the proposed model change;</li>
+<li>the assumptions behind the proposal;</li>
+<li>the candidate-state validation;</li>
+<li>the expected impact;</li>
+<li>the required reviewers;</li>
+<li>the final decision.</li>
+</ol>
+<p>Without this layer, organisations tend to choose one of two unsafe operating modes.</p>
+<h2 id="nothing-changes">Nothing changes</h2>
+<p>The team records gaps but never incorporates the accepted learning into the reusable model.</p>
+<p>The next wave rediscovers the same issue.</p>
+<h2 id="changes-happen-too-quickly">Changes happen too quickly</h2>
+<p>A developer, analyst or AI agent changes a Mapping because the correction appears obvious.</p>
+<p>The change solves one visible case but creates:</p>
+<ul>
+<li>a new source-authority conflict;</li>
+<li>a broken historical path;</li>
+<li>an unintended value conversion;</li>
+<li>a downstream interface defect;</li>
+<li>an invalid Rule;</li>
+<li>a model that no longer explains earlier evidence.</li>
+</ul>
+<p>Patch proposals exist to make model learning actionable without making model truth easy to corrupt.</p>
+<p>---</p>
+<h1 id="why-a-ticket-is-not-enough">Why a ticket is not enough</h1>
+<p>A ticket is useful for assigning work.</p>
+<p>It usually does not define a candidate model state precisely enough.</p>
+<p>Consider this ticket:</p>
+<pre><code class="language-text">Add Plant to Product planning mapping.</code></pre>
+<p>It does not answer:</p>
+<ul>
+<li>Which Dataset object changes?</li>
+<li>Is Plant a direct input, a conditional input or a key?</li>
+<li>Which Mappings require it?</li>
+<li>Does the Attribute belong to Product or Product Plant?</li>
+<li>Which Plants are in scope?</li>
+<li>Does the source contain a reliable Plant identifier?</li>
+<li>Which fallback should be removed?</li>
+<li>Which evidence becomes stale?</li>
+<li>Which validation commands prove the change?</li>
+</ul>
+<p>The ticket can point to the work.</p>
+<p>The PatchProposal should describe the model delta.</p>
+<p>The relationship should be:</p>
+<pre><code class="language-text">Finding
+→ PatchProposal
+→ validated candidate
+→ issue or pull request</code></pre>
+<p>not:</p>
+<pre><code class="language-text">Finding
+→ vague ticket
+→ developer interpretation
+→ direct edit</code></pre>
+<p>GitHub pull requests provide a useful review pattern because proposed changes can be commented on, approved or rejected before they are merged, and repositories can require reviews before acceptance.</p>
+<p>Martenweave applies the same principle one level earlier: before a pull request changes canonical files, the intended semantic change should already be explicit and validated.</p>
+<p>---</p>
+<h1 id="a-patchproposal-is-not-the-same-as-a-git-diff">A PatchProposal is not the same as a Git diff</h1>
+<p>A Git diff shows textual changes.</p>
+<p>A PatchProposal explains why those changes form a coherent model change.</p>
+<p>Suppose a proposal updates three files:</p>
+<pre><code class="language-text">Product Plant MRP Controller Attribute
+Planner Group to MRP Controller Mapping
+Plant planning Rule</code></pre>
+<p>The Git diff can show the modified lines.</p>
+<p>It cannot, by itself, explain:</p>
+<ul>
+<li>which gap triggered the change;</li>
+<li>why Plant became a required context;</li>
+<li>which populations are affected;</li>
+<li>which fallback becomes invalid;</li>
+<li>which downstream planning process needs retesting;</li>
+<li>which business owner must approve the new meaning.</li>
+</ul>
+<p>A useful PatchProposal contains both:</p>
+<pre><code class="language-text">machine-applicable change
++
+human-reviewable intent</code></pre>
+<p>The textual diff remains necessary.</p>
+<p>It is not sufficient.</p>
+<p>---</p>
+<h1 id="the-core-product-promise">The core product promise</h1>
+<p>Martenweave should make the following transition reliable:</p>
+<pre><code class="language-text">unstructured evidence
+→ structured Finding
+→ bounded PatchProposal
+→ candidate model
+→ deterministic validation
+→ impact assessment
+→ accountable review
+→ accepted canonical change</code></pre>
+<p>Each stage solves a different failure mode.</p>
+<h2 id="unstructured-evidence">Unstructured evidence</h2>
+<p>Captures reality but may be ambiguous.</p>
+<h2 id="finding">Finding</h2>
+<p>States what appears wrong or incomplete without pretending the correction is already known.</p>
+<h2 id="patchproposal">PatchProposal</h2>
+<p>Defines one candidate correction.</p>
+<h2 id="candidate-model">Candidate model</h2>
+<p>Shows what the repository would look like if the proposal were accepted.</p>
+<h2 id="validation">Validation</h2>
+<p>Determines whether the candidate is structurally coherent.</p>
+<h2 id="impact-assessment">Impact assessment</h2>
+<p>Shows what else may change or require review.</p>
+<h2 id="human-decision">Human decision</h2>
+<p>Establishes model authority.</p>
+<h2 id="canonical-change">Canonical change</h2>
+<p>Records the approved truth in Git.</p>
+<p>This is not a generic workflow engine.</p>
+<p>It is a narrow governance loop for model change.</p>
+<p>That focus is important.</p>
+<p>---</p>
+<h1 id="findings-should-not-contain-hidden-solutions">Findings should not contain hidden solutions</h1>
+<p>A Finding should describe the observed problem.</p>
+<p>Example:</p>
+<pre><code class="language-text">Finding:
+Product planning dataset contains Planner Group
+but does not contain Plant.
+
+Consequence:
+The approved Product Plant MRP Controller Mapping
+cannot select a plant-specific conversion.</code></pre>
+<p>A weak Finding might say:</p>
+<pre><code class="language-text">Add Plant column and use mapping table version 4.</code></pre>
+<p>That statement already assumes:</p>
+<ul>
+<li>Plant is available;</li>
+<li>the correct solution is source extraction;</li>
+<li>mapping table version 4 is approved;</li>
+<li>no alternate source should be used.</li>
+</ul>
+<p>Those assumptions belong in a proposal.</p>
+<p>Separating Finding from PatchProposal preserves the difference between:</p>
+<pre><code class="language-text">what we observed</code></pre>
+<p>and:</p>
+<pre><code class="language-text">what we think should change</code></pre>
+<p>That difference is essential when AI is involved.</p>
+<p>---</p>
+<h1 id="one-finding-may-produce-several-proposals">One Finding may produce several proposals</h1>
+<p>Suppose a Supplier dataset lacks Payment Method.</p>
+<p>The programme might consider four responses.</p>
+<h2 id="proposal-a-extend-the-source-extract">Proposal A: extend the source extract</h2>
+<p>Add the authoritative source payment instruction and Company Code context.</p>
+<h2 id="proposal-b-derive-from-existing-fields">Proposal B: derive from existing fields</h2>
+<p>Use country, payment channel and Supplier category.</p>
+<h2 id="proposal-c-use-manual-enrichment">Proposal C: use manual enrichment</h2>
+<p>Require Accounts Payable review for affected records.</p>
+<h2 id="proposal-d-defer-affected-suppliers">Proposal D: defer affected Suppliers</h2>
+<p>Exclude them from the first migration wave.</p>
+<p>The Finding is stable:</p>
+<pre><code class="language-text">No approved source path covers Supplier Company Code Payment Method.</code></pre>
+<p>The proposals represent competing responses.</p>
+<p>Martenweave should not force the first generated proposal to become the only interpretation.</p>
+<p>Reviewers need to compare alternatives.</p>
+<p>---</p>
+<h1 id="example-1-product-plant-context-is-missing">Example 1: Product Plant context is missing</h1>
+<h2 id="evidence">Evidence</h2>
+<p>A source dataset contains:</p>
+<pre><code class="language-text">PRODUCT_ID
+PLANNER_GROUP
+MRP_TYPE
+PROCUREMENT_TYPE</code></pre>
+<p>It does not contain Plant.</p>
+<h2 id="finding-2">Finding</h2>
+<p>Several target Attributes belong to Product Plant, but the dataset can identify only Product.</p>
+<h2 id="business-pain">Business pain</h2>
+<p>The migration team has a workbook full of plausible planning values.</p>
+<p>It cannot assign them safely.</p>
+<p>The usual emergency responses are:</p>
+<ul>
+<li>copy the same values to every Plant;</li>
+<li>apply global defaults;</li>
+<li>reject all records;</li>
+<li>ask local teams to correct the values manually after load.</li>
+</ul>
+<p>Each response creates cost or risk.</p>
+<h2 id="candidate-proposal">Candidate proposal</h2>
+<pre><code class="language-text">Add Plant as a required DatasetField.
+
+Update the following Mappings to require Plant context:
+- MRP Controller
+- Procurement Type
+- Profit Centre
+
+Retire the global MRP Controller default
+for Plants PL20 and PL30.</code></pre>
+<h2 id="candidate-state-questions">Candidate-state questions</h2>
+<ul>
+<li>Does every source record now identify a valid Plant?</li>
+<li>Are Product-to-Plant relationships present?</li>
+<li>Do all referenced Mappings remain valid?</li>
+<li>Which records lose fallback coverage?</li>
+<li>Which mock-load evidence becomes stale?</li>
+<li>Which planning scenarios must be repeated?</li>
+</ul>
+<p>The proposal is not “add one column.”</p>
+<p>It is a controlled change to target grain and several dependent paths.</p>
+<p>---</p>
+<h1 id="the-proposal-must-target-stable-model-objects">The proposal must target stable model objects</h1>
+<p>A PatchProposal should refer to canonical IDs, not only labels or file paths.</p>
+<p>Weak:</p>
+<pre><code class="language-text">Change MRP Controller mapping.</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">Update:
+MAP-PRODUCT-PLANT-MRP-CONTROLLER
+
+Add input:
+FEP-LEGACY-PLANT
+
+Input role:
+conditional_context</code></pre>
+<p>Stable object references make it possible to:</p>
+<ul>
+<li>validate the target;</li>
+<li>calculate impact;</li>
+<li>detect stale proposals;</li>
+<li>link Evidence;</li>
+<li>assign reviewers;</li>
+<li>generate a precise diff;</li>
+<li>preserve history when files move.</li>
+</ul>
+<p>Labels can change.</p>
+<p>Paths can change.</p>
+<p>Stable IDs preserve intent.</p>
+<p>---</p>
+<h1 id="a-proposal-needs-a-base-state">A proposal needs a base state</h1>
+<p>A proposal is valid only relative to a known model version.</p>
+<p>Suppose an agent proposes:</p>
+<pre><code class="language-text">Replace Supplier Review Status custom endpoint
+with the standard SAP endpoint.</code></pre>
+<p>Before review, another change already:</p>
+<ul>
+<li>retired the custom endpoint;</li>
+<li>updated the Attribute;</li>
+<li>moved one interface;</li>
+<li>changed the value list.</li>
+</ul>
+<p>The original proposal is now stale.</p>
+<p>Applying it blindly may:</p>
+<ul>
+<li>duplicate relationships;</li>
+<li>restore retired objects;</li>
+<li>overwrite newer decisions;</li>
+<li>remove valid changes.</li>
+</ul>
+<p>A PatchProposal should therefore record:</p>
+<pre><code class="language-text">base commit
+base model version
+expected current values</code></pre>
+<p>This is analogous to applying a structured patch against an expected target state.</p>
+<p>JSON Patch, for example, defines ordered operations such as add, remove, replace and test against a target document; its <code>test</code> operation can verify that an expected value exists before later operations proceed.</p>
+<p>Martenweave does not need to use JSON Patch as its canonical proposal format.</p>
+<p>It does need the same safety concept:</p>
+<blockquote>Apply the proposal only if the assumptions about the base state still hold.</blockquote>
+<p>---</p>
+<h1 id="test-before-replace">Test before replace</h1>
+<p>Consider a proposal that changes a Rule severity:</p>
+<pre><code class="language-text">Current:
+warning
+
+Proposed:
+error</code></pre>
+<p>The proposal should assert:</p>
+<pre><code class="language-text">The current Rule severity is still warning.</code></pre>
+<p>If the Rule has already been changed to:</p>
+<pre><code class="language-text">critical_error</code></pre>
+<p>the proposal should fail as stale rather than overwrite the newer state.</p>
+<p>The same principle applies to:</p>
+<ul>
+<li>source authority;</li>
+<li>object status;</li>
+<li>value lists;</li>
+<li>Mapping inputs;</li>
+<li>target endpoints;</li>
+<li>ownership;</li>
+<li>effective dates.</li>
+</ul>
+<p>A proposal without preconditions is a delayed direct edit.</p>
+<p>---</p>
+<h1 id="example-2-supplier-tax-category">Example 2: Supplier tax category</h1>
+<h2 id="evidence-2">Evidence</h2>
+<p>The source dataset contains Country and Tax Identifier.</p>
+<p>No source field distinguishes between two legally different identifier categories in one jurisdiction.</p>
+<h2 id="finding-3">Finding</h2>
+<p>Country-only derivation cannot determine the correct target category for 1,240 Suppliers.</p>
+<h2 id="product-pain">Product pain</h2>
+<p>In a traditional programme, the problem may produce:</p>
+<ul>
+<li>an Excel comment;</li>
+<li>a tax-team email;</li>
+<li>a temporary transformation rule;</li>
+<li>a generic Jira ticket;</li>
+<li>a manual correction list.</li>
+</ul>
+<p>None becomes reusable model knowledge.</p>
+<h2 id="proposal-a">Proposal A</h2>
+<p>Create a manual enrichment DatasetField for Tax Identifier Category.</p>
+<p>Require Tax owner approval.</p>
+<h2 id="proposal-b">Proposal B</h2>
+<p>Add a second authoritative source from the national registry.</p>
+<h2 id="proposal-c">Proposal C</h2>
+<p>Split the population using Supplier legal type, subject to evidence.</p>
+<h2 id="review-requirement">Review requirement</h2>
+<p>Tax experts decide semantic validity.</p>
+<p>Migration developers decide technical feasibility.</p>
+<p>The PatchProposal keeps these responsibilities separate.</p>
+<p>An AI agent may identify that legal type appears correlated with category.</p>
+<p>It must not promote correlation into model truth without review.</p>
+<p>---</p>
+<h1 id="a-proposal-should-explain-why-alternatives-were-rejected">A proposal should explain why alternatives were rejected</h1>
+<p>A good proposal does not only describe the selected change.</p>
+<p>It records the important alternatives.</p>
+<p>Example:</p>
+<pre><code class="language-text">Rejected alternative:
+Use generic tax category for all affected Suppliers.
+
+Reason:
+Generic category would satisfy target format
+but would not preserve the country-specific legal meaning.</code></pre>
+<p>Another:</p>
+<pre><code class="language-text">Rejected alternative:
+Copy central Payment Terms to all Company Codes.
+
+Reason:
+Three Company Codes maintain approved local terms.</code></pre>
+<p>Rejected alternatives prevent the same unsafe idea from returning in:</p>
+<ul>
+<li>another wave;</li>
+<li>another ticket;</li>
+<li>another AI session;</li>
+<li>a later support incident.</li>
+</ul>
+<p>This is a meaningful product advantage.</p>
+<p>Martenweave is not only storing the accepted answer.</p>
+<p>It is retaining decision boundaries.</p>
+<p>---</p>
+<h1 id="a-patchproposal-must-state-the-business-effect">A PatchProposal must state the business effect</h1>
+<p>Reviewers should not be asked to approve raw model operations without understanding their consequence.</p>
+<p>A proposal to add a Mapping input should say:</p>
+<pre><code class="language-text">Business effect:
+MRP Controller will be derived per Product Plant
+instead of copied globally.</code></pre>
+<p>A proposal to replace a target endpoint should say:</p>
+<pre><code class="language-text">Business effect:
+Supplier Review Status will remain the same business Attribute,
+but the standard SAP field becomes the active implementation.</code></pre>
+<p>A proposal to change a value list should say:</p>
+<pre><code class="language-text">Business effect:
+Two valuation categories previously treated separately
+will become one target value for valuation area A100.</code></pre>
+<p>The semantic summary is what business owners approve.</p>
+<p>The operations are what validators and developers verify.</p>
+<p>---</p>
+<h1 id="example-3-replacing-a-custom-sap-field">Example 3: replacing a custom SAP field</h1>
+<h2 id="evidence-3">Evidence</h2>
+<p>A standard SAP field now supports the required Supplier Review Status.</p>
+<p>The old custom field remains connected to:</p>
+<ul>
+<li>one Mapping;</li>
+<li>one validation Rule;</li>
+<li>one report;</li>
+<li>one outbound interface;</li>
+<li>two mock-load reports.</li>
+</ul>
+<h2 id="finding-4">Finding</h2>
+<p>The model contains competing active implementations of the same business Attribute.</p>
+<h2 id="naive-change">Naive change</h2>
+<p>Delete the custom endpoint and point the Attribute to the standard field.</p>
+<h2 id="product-aware-proposal">Product-aware proposal</h2>
+<ol>
+<li>Mark the standard endpoint as the candidate active implementation.</li>
+<li>Redirect current Mappings.</li>
+<li>update Rule implementation references.</li>
+<li>mark the old endpoint as deprecated.</li>
+<li>preserve historical Evidence on the old endpoint.</li>
+<li>identify report and interface changes.</li>
+<li>define the coexistence period.</li>
+<li>define retirement criteria.</li>
+</ol>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>The technical field replacement is easy.</p>
+<p>The difficult part is preserving:</p>
+<ul>
+<li>historical interpretation;</li>
+<li>downstream compatibility;</li>
+<li>Rule continuity;</li>
+<li>evidence validity;</li>
+<li>rollback options.</li>
+</ul>
+<p>This is exactly where a model registry adds value beyond a data catalogue or field mapping workbook.</p>
+<p>---</p>
+<h1 id="candidate-state-validation">Candidate-state validation</h1>
+<p>A proposal should be applied to a temporary candidate model before approval.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">current canonical repository
++
+PatchProposal
+=
+candidate repository</code></pre>
+<p>Then run:</p>
+<pre><code class="language-text">schema validation
+reference validation
+domain-context validation
+orphan checks
+lineage checks
+impact analysis
+dataset-gap recalculation
+health and scorecard</code></pre>
+<p>The candidate may be rejected even when every individual operation is syntactically valid.</p>
+<p>Example:</p>
+<ul>
+<li>the proposed Mapping target exists;</li>
+<li>the source exists;</li>
+<li>both IDs are valid;</li>
+<li>but their Entity grains are incompatible.</li>
+</ul>
+<p>Another:</p>
+<ul>
+<li>the proposal retires a custom field;</li>
+<li>all direct references are updated;</li>
+<li>but one critical interface remains dependent on it.</li>
+</ul>
+<p>Candidate-state validation turns review from speculation into evidence.</p>
+<p>---</p>
+<h1 id="validation-is-not-approval">Validation is not approval</h1>
+<p>A candidate model can validate successfully and still be wrong.</p>
+<p>Validation can prove:</p>
+<ul>
+<li>IDs resolve;</li>
+<li>object types are allowed;</li>
+<li>required properties exist;</li>
+<li>structural Rules pass;</li>
+<li>graph paths remain coherent;</li>
+<li>no declared invariant is broken.</li>
+</ul>
+<p>Validation cannot independently prove:</p>
+<ul>
+<li>the business meaning is correct;</li>
+<li>a source is authoritative;</li>
+<li>a legal interpretation is acceptable;</li>
+<li>a fallback risk is tolerable;</li>
+<li>Finance accepts the Profit Centre result;</li>
+<li>Operations accepts the planning outcome.</li>
+</ul>
+<p>The review loop must preserve both:</p>
+<pre><code class="language-text">machine validity
++
+human authority</code></pre>
+<p>Martenweave’s product principle is explicit: agents propose, validators verify, humans approve, and Git records the result.</p>
+<p>---</p>
+<h1 id="example-4-product-unit-conversion">Example 4: Product unit conversion</h1>
+<h2 id="evidence-4">Evidence</h2>
+<p>Products contain Base Unit and Sales Unit, but no conversion ratio.</p>
+<h2 id="finding-5">Finding</h2>
+<p>The model cannot establish how many base units belong to one sales unit.</p>
+<h2 id="proposed-change">Proposed change</h2>
+<p>Add an alternative-unit conversion relationship sourced from packaging data.</p>
+<h2 id="candidate-validation">Candidate validation</h2>
+<ul>
+<li>Base Unit exists.</li>
+<li>Alternative Unit exists.</li>
+<li>numerator and denominator are positive.</li>
+<li>no circular conversion is introduced.</li>
+<li>target unit codes are valid.</li>
+</ul>
+<h2 id="business-review">Business review</h2>
+<ul>
+<li>Does the packaging relationship represent actual order quantity?</li>
+<li>Is conversion different by Plant or market?</li>
+<li>Does the warehouse use the same unit?</li>
+<li>Can existing stock be interpreted safely?</li>
+</ul>
+<h2 id="impact">Impact</h2>
+<ul>
+<li>sales orders;</li>
+<li>warehouse messages;</li>
+<li>pricing;</li>
+<li>quantity conversion;</li>
+<li>reports;</li>
+<li>open transactional data.</li>
+</ul>
+<p>The PatchProposal must carry this impact into review.</p>
+<p>Otherwise, reviewers see a harmless pair of numbers.</p>
+<p>---</p>
+<h1 id="impact-should-be-calculated-before-review-not-after-merge">Impact should be calculated before review, not after merge</h1>
+<p>A common process is:</p>
+<ol>
+<li>approve the apparent fix;</li>
+<li>implement it;</li>
+<li>discover downstream consequences;</li>
+<li>create more tickets.</li>
+</ol>
+<p>A better process is:</p>
+<ol>
+<li>generate candidate change;</li>
+<li>calculate impact;</li>
+<li>identify required reviewers;</li>
+<li>validate;</li>
+<li>approve with known consequences.</li>
+</ol>
+<p>Impact categories can include:</p>
+<h2 id="must-change">Must change</h2>
+<p>The dependent object becomes invalid.</p>
+<h2 id="must-retest">Must retest</h2>
+<p>The object may remain correct, but existing Evidence is stale.</p>
+<h2 id="must-review">Must review</h2>
+<p>Business compatibility is uncertain.</p>
+<h2 id="historical-only">Historical only</h2>
+<p>Preserve the existing reference.</p>
+<h2 id="notify">Notify</h2>
+<p>No model change expected, but an owner should know.</p>
+<p>This classification reduces reviewer overload.</p>
+<p>---</p>
+<h1 id="the-proposal-should-select-reviewers-from-the-model">The proposal should select reviewers from the model</h1>
+<p>A change to Supplier Bank Account may require:</p>
+<ul>
+<li>Treasury;</li>
+<li>Accounts Payable;</li>
+<li>Supplier data owner;</li>
+<li>SAP functional owner;</li>
+<li>migration lead.</li>
+</ul>
+<p>A Product MRP Type proposal may require:</p>
+<ul>
+<li>Production Planning;</li>
+<li>Plant data owner;</li>
+<li>migration lead.</li>
+</ul>
+<p>A tax-category proposal may require:</p>
+<ul>
+<li>Tax;</li>
+<li>local legal or compliance owner;</li>
+<li>SAP Business Partner owner.</li>
+</ul>
+<p>Reviewer selection should derive from:</p>
+<ul>
+<li>affected Attribute;</li>
+<li>Domain;</li>
+<li>organisational scope;</li>
+<li>Rule authority;</li>
+<li>impacted interfaces;</li>
+<li>risk level.</li>
+</ul>
+<p>The user should not need to remember the full stakeholder map every time.</p>
+<p>This is a concrete product capability, not only process advice.</p>
+<p>---</p>
+<h1 id="example-5-cost-centre-valid-from-date">Example 5: Cost Centre valid-from date</h1>
+<h2 id="evidence-5">Evidence</h2>
+<p>The source file lacks <code>VALID_FROM</code>.</p>
+<p>Mock Load 2 defaulted it to the extract date.</p>
+<p>Seventy-four Cost Centres are not valid on the intended go-live date.</p>
+<h2 id="finding-6">Finding</h2>
+<p>The source does not provide a reliable effective-start date for the affected Cost Centres.</p>
+<h2 id="proposal-a-2">Proposal A</h2>
+<p>Use the programme go-live date for currently active Cost Centres.</p>
+<h2 id="proposal-b-2">Proposal B</h2>
+<p>Obtain authoritative validity dates from Finance.</p>
+<h2 id="proposal-c-2">Proposal C</h2>
+<p>Defer future Cost Centres and migrate only active ones.</p>
+<h2 id="candidate-impact">Candidate impact</h2>
+<ul>
+<li>posting readiness;</li>
+<li>Cost Centre hierarchy;</li>
+<li>dependent internal orders;</li>
+<li>historical reporting;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="required-decision">Required decision</h2>
+<p>Finance must decide whether go-live date is a valid business default.</p>
+<p>The migration developer cannot determine this from the dataset.</p>
+<p>The PatchProposal should make the decision boundary visible.</p>
+<p>---</p>
+<h1 id="proposal-size-matters">Proposal size matters</h1>
+<p>A proposal should be small enough to review coherently.</p>
+<p>Bad proposal:</p>
+<pre><code class="language-text">Fix all Supplier data gaps.</code></pre>
+<p>It might change:</p>
+<ul>
+<li>tax categories;</li>
+<li>bank verification;</li>
+<li>Payment Methods;</li>
+<li>purchasing blocks;</li>
+<li>source authority;</li>
+<li>several value lists.</li>
+</ul>
+<p>Different owners are required.</p>
+<p>Different risks apply.</p>
+<p>A better approach is to create bounded proposals:</p>
+<pre><code class="language-text">Add Company Code context to Payment Method Mapping.
+
+Define Tax Category enrichment for Portugal.
+
+Add bank-verification Evidence requirement.
+
+Retire obsolete Purchasing Block conversion.</code></pre>
+<p>Small proposals support:</p>
+<ul>
+<li>focused validation;</li>
+<li>clear impact;</li>
+<li>correct reviewers;</li>
+<li>easier rejection;</li>
+<li>safer merging;</li>
+<li>better historical explanation.</li>
+</ul>
+<p>Do not confuse small proposal scope with small business importance.</p>
+<p>---</p>
+<h1 id="one-proposal-should-represent-one-coherent-decision">One proposal should represent one coherent decision</h1>
+<p>A useful rule is:</p>
+<blockquote>If reviewers could reasonably approve one part and reject another, the proposal is probably too large.</blockquote>
+<p>Exceptions exist when several changes are inseparable.</p>
+<p>Example:</p>
+<pre><code class="language-text">Replace custom Supplier Review Status endpoint
+and update its Mapping, Rule implementation and interface contract.</code></pre>
+<p>These changes may belong together because partial acceptance would create an invalid transition.</p>
+<p>The proposal should explain why they are atomic.</p>
+<p>---</p>
+<h1 id="proposal-operations">Proposal operations</h1>
+<p>A PatchProposal may contain operations such as:</p>
+<pre><code class="language-text">create object
+update property
+add relationship
+remove relationship
+deprecate object
+retire object
+replace implementation
+change applicability
+change value-list membership
+add owner
+attach Evidence
+supersede Decision</code></pre>
+<p>The operations should use domain language where possible.</p>
+<p>A reviewer understands:</p>
+<pre><code class="language-text">deprecate old endpoint</code></pre>
+<p>better than:</p>
+<pre><code class="language-text">replace YAML status value at line 17</code></pre>
+<p>The system can translate domain operations into file changes.</p>
+<p>That translation is part of the product value.</p>
+<p>---</p>
+<h1 id="semantic-operations-versus-textual-operations">Semantic operations versus textual operations</h1>
+<p>Consider:</p>
+<pre><code class="language-text">Move Attribute to Product Plant context.</code></pre>
+<p>This semantic operation may require:</p>
+<ul>
+<li>changing the Attribute parent;</li>
+<li>updating Mappings;</li>
+<li>updating Rules;</li>
+<li>updating examples;</li>
+<li>invalidating Evidence;</li>
+<li>changing target relationships.</li>
+</ul>
+<p>A raw text patch cannot know the full intent.</p>
+<p>A semantic PatchProposal can calculate the required candidate changes and surface unresolved consequences.</p>
+<p>Martenweave should remain cautious here.</p>
+<p>It should not automatically invent every dependent edit.</p>
+<p>It should identify required follow-up and fail validation where the candidate remains incomplete.</p>
+<p>---</p>
+<h1 id="example-6-customer-partner-functions">Example 6: Customer partner functions</h1>
+<h2 id="evidence-6">Evidence</h2>
+<p>Partner role and Partner ID exist.</p>
+<p>Sales Area keys are missing.</p>
+<p>The migration currently applies self-Payer fallback broadly.</p>
+<h2 id="finding-7">Finding</h2>
+<p>The dataset cannot reconstruct Sales Area-specific Payer relationships.</p>
+<h2 id="candidate-proposal-2">Candidate proposal</h2>
+<ul>
+<li>add Sales Area key fields to the Dataset definition;</li>
+<li>change Payer Mapping applicability to Customer Sales Area;</li>
+<li>restrict self-Payer fallback to records with approved exception;</li>
+<li>add a Rule requiring unresolved external Payers to remain blocked.</li>
+</ul>
+<h2 id="impact-2">Impact</h2>
+<ul>
+<li>billing;</li>
+<li>invoice routing;</li>
+<li>credit processing;</li>
+<li>customer interfaces;</li>
+<li>historical mock-load evidence.</li>
+</ul>
+<h2 id="reviewers">Reviewers</h2>
+<ul>
+<li>Order-to-Cash process owner;</li>
+<li>Customer data owner;</li>
+<li>local sales owners for affected organisations.</li>
+</ul>
+<p>The proposal translates a spreadsheet gap into a controlled relationship-model change.</p>
+<p>---</p>
+<h1 id="evidence-must-travel-with-the-proposal">Evidence must travel with the proposal</h1>
+<p>A reviewer should not need to search through multiple systems to understand why a proposal exists.</p>
+<p>The proposal should link:</p>
+<ul>
+<li>original dataset profile;</li>
+<li>sample affected records;</li>
+<li>validation report;</li>
+<li>business Decision or workshop note;</li>
+<li>incident or ticket;</li>
+<li>previous rejected alternatives;</li>
+<li>current model baseline.</li>
+</ul>
+<p>Do not copy sensitive production data unnecessarily.</p>
+<p>Use:</p>
+<ul>
+<li>aggregate results;</li>
+<li>hashes;</li>
+<li>redacted samples;</li>
+<li>restricted references;</li>
+<li>stable external identifiers.</li>
+</ul>
+<p>The proposal should remain reviewable without becoming a data leak.</p>
+<p>---</p>
+<h1 id="evidence-can-support-different-parts-of-the-proposal">Evidence can support different parts of the proposal</h1>
+<p>One Evidence object may support the problem.</p>
+<p>Another supports the proposed solution.</p>
+<p>Example:</p>
+<pre><code class="language-text">Evidence A:
+Plant is missing from the source extract.
+
+Evidence B:
+A separate Plant-assignment dataset exists.
+
+Evidence C:
+Mock Load 3 shows different Planner Group conversions by Plant.</code></pre>
+<p>Together they support:</p>
+<pre><code class="language-text">Use Plant-assignment dataset as a contextual input.</code></pre>
+<p>A proposal supported only by Evidence A may establish the gap but not the correction.</p>
+<p>This distinction should be visible.</p>
+<p>---</p>
+<h1 id="proposal-confidence">Proposal confidence</h1>
+<p>AI-generated proposals should carry confidence at the level of claims.</p>
+<p>Example:</p>
+<pre><code class="language-text">High confidence:
+Plant is required by the current Mapping.
+
+Medium confidence:
+Plant-assignment dataset is the correct alternate source.
+
+Low confidence:
+All existing defaults can be retired immediately.</code></pre>
+<p>Do not compress these into:</p>
+<pre><code class="language-text">proposal confidence: 82%</code></pre>
+<p>Reviewers need to know where uncertainty resides.</p>
+<p>---</p>
+<h1 id="ai-should-propose-the-smallest-defensible-change">AI should propose the smallest defensible change</h1>
+<p>An agent may find that Product planning lacks Plant context.</p>
+<p>A reckless proposal could:</p>
+<ul>
+<li>redesign the Product model;</li>
+<li>create new Attributes;</li>
+<li>change several Mappings;</li>
+<li>remove defaults;</li>
+<li>add Rules;</li>
+<li>update documentation.</li>
+</ul>
+<p>A safer agent asks:</p>
+<blockquote>What is the smallest candidate change that resolves the observed gap without making unsupported assumptions?</blockquote>
+<p>That might be:</p>
+<pre><code class="language-text">Add Plant as a required context field
+for one existing MRP Controller Mapping.</code></pre>
+<p>Further changes can follow after validation.</p>
+<p>This approach limits hallucination and review burden.</p>
+<p>---</p>
+<h1 id="ai-should-be-allowed-to-say-insufficient-evidence">AI should be allowed to say “insufficient evidence”</h1>
+<p>A proposal generator should not always produce a patch.</p>
+<p>Possible result:</p>
+<pre><code class="language-text">Finding confirmed.
+
+No safe PatchProposal generated.
+
+Reason:
+Two plausible source-authority interpretations remain unresolved.
+
+Required next step:
+Tax owner decision.</code></pre>
+<p>This is a successful product outcome.</p>
+<p>Refusing to fabricate a model change is part of agent safety.</p>
+<p>---</p>
+<h1 id="proposal-review-should-show-before-and-after">Proposal review should show before and after</h1>
+<p>Reviewers need to compare the current and candidate states.</p>
+<h2 id="current">Current</h2>
+<pre><code class="language-text">Product MRP Controller:
+global default used when Planner Group conversion is missing.</code></pre>
+<h2 id="candidate">Candidate</h2>
+<pre><code class="language-text">Product MRP Controller:
+derived by Plant-specific conversion.
+No fallback for PL20 or PL30.</code></pre>
+<h2 id="consequence">Consequence</h2>
+<pre><code class="language-text">1,840 records lose current fallback coverage
+until new conversions are supplied.</code></pre>
+<p>A raw file diff may not make this consequence obvious.</p>
+<p>The Workbench or generated report should.</p>
+<p>Martenweave Workbench is currently positioned as a local browser interface for assessment, investigation, review, reports and controlled changes, while canonical truth remains in the model files.</p>
+<p>This review experience is where the Workbench can add real value without becoming a hosted MDM platform.</p>
+<p>---</p>
+<h1 id="proposal-review-should-show-unresolved-questions">Proposal review should show unresolved questions</h1>
+<p>A candidate can be structurally valid while still needing decisions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Unresolved:
+- Is Plant PL30 in Wave 1 scope?
+- Who owns fallback approval?
+- Must previous mock-load evidence be rerun?
+- Does the downstream planning interface consume MRP Controller?</code></pre>
+<p>The proposal should not hide these because validation passed.</p>
+<p>A review page that shows only green checks encourages premature approval.</p>
+<p>---</p>
+<h1 id="review-outcomes">Review outcomes</h1>
+<p>A proposal should support more than approve or reject.</p>
+<p>Useful outcomes include:</p>
+<h2 id="approve">Approve</h2>
+<p>The candidate is accepted.</p>
+<h2 id="approve-with-conditions">Approve with conditions</h2>
+<p>The change is accepted subject to explicit controls or follow-up.</p>
+<h2 id="request-changes">Request changes</h2>
+<p>The proposal direction is valid, but the candidate must be revised.</p>
+<h2 id="reject">Reject</h2>
+<p>The proposed correction is not acceptable.</p>
+<h2 id="supersede">Supersede</h2>
+<p>Another proposal or Decision replaces it.</p>
+<h2 id="defer">Defer</h2>
+<p>The proposal remains valid but is outside the current baseline or wave.</p>
+<p>These outcomes preserve governance history.</p>
+<p>---</p>
+<h1 id="approved-proposal-versus-applied-change">Approved proposal versus applied change</h1>
+<p>Approval does not necessarily mean the files were changed successfully.</p>
+<p>Separate states:</p>
+<pre><code class="language-text">proposed
+validated
+reviewed
+approved
+applied
+verified</code></pre>
+<p>Possible failure:</p>
+<ul>
+<li>proposal approved;</li>
+<li>branch changed in the meantime;</li>
+<li>application fails;</li>
+<li>validation after application fails.</li>
+</ul>
+<p>The system should not record the proposal as complete merely because someone clicked Approve.</p>
+<p>The accepted operations must be applied against the expected base and validated again.</p>
+<p>---</p>
+<h1 id="post-application-verification">Post-application verification</h1>
+<p>After applying an approved proposal:</p>
+<ol>
+<li>validate canonical files;</li>
+<li>rebuild the index;</li>
+<li>rerun health checks;</li>
+<li>recalculate lineage and impact;</li>
+<li>rerun affected dataset readiness;</li>
+<li>confirm no unexpected gaps appeared;</li>
+<li>record the commit;</li>
+<li>update proposal state.</li>
+</ol>
+<p>The applied model can differ from the reviewed candidate if:</p>
+<ul>
+<li>merge conflicts occurred;</li>
+<li>another proposal landed first;</li>
+<li>manual edits were added;</li>
+<li>files were reformatted incorrectly.</li>
+</ul>
+<p>Verification closes the loop.</p>
+<p>---</p>
+<h1 id="example-7-expired-product-profit-centre-fallback">Example 7: expired Product Profit Centre fallback</h1>
+<h2 id="evidence-7">Evidence</h2>
+<p>Plant PL30 Product records use a regional Profit Centre.</p>
+<p>The fallback was approved only until first month-end close.</p>
+<p>The deadline has passed.</p>
+<h2 id="finding-8">Finding</h2>
+<p>An expired fallback remains active for 1,842 Product Plant records.</p>
+<h2 id="proposal">Proposal</h2>
+<ul>
+<li>add the missing plant-specific derivation;</li>
+<li>identify affected records;</li>
+<li>retire the regional fallback for new records;</li>
+<li>create a remediation requirement for existing records;</li>
+<li>add a Rule preventing future fallback use.</li>
+</ul>
+<h2 id="candidate-impact-2">Candidate impact</h2>
+<ul>
+<li>inventory postings;</li>
+<li>finance reporting;</li>
+<li>Product Plant records;</li>
+<li>first-close evidence;</li>
+<li>local Finance ownership.</li>
+</ul>
+<h2 id="why-a-patchproposal-matters">Why a PatchProposal matters</h2>
+<p>A direct data correction would fix current records.</p>
+<p>It would not prevent new records from using the expired fallback.</p>
+<p>The proposal changes both:</p>
+<pre><code class="language-text">current data-remediation expectation
++
+future model behaviour</code></pre>
+<p>Martenweave’s scope remains model truth and governed change.</p>
+<p>It should not perform direct SAP write-back.</p>
+<p>---</p>
+<h1 id="proposal-staleness">Proposal staleness</h1>
+<p>A proposal can become stale because:</p>
+<ul>
+<li>target object changed;</li>
+<li>Mapping was already updated;</li>
+<li>Finding was disproved;</li>
+<li>affected scope changed;</li>
+<li>another proposal was approved;</li>
+<li>baseline advanced;</li>
+<li>evidence expired;</li>
+<li>source system was replaced.</li>
+</ul>
+<p>Staleness should be detectable before review.</p>
+<p>Possible diagnostics:</p>
+<pre><code class="language-text">Proposal target no longer matches expected state.
+
+Proposal impact changed after baseline update.
+
+Proposal references retired Evidence.
+
+Proposal conflicts with approved Decision.
+
+Proposal has been functionally superseded.</code></pre>
+<p>A stale proposal should not remain in a generic Open state indefinitely.</p>
+<p>---</p>
+<h1 id="conflicting-proposals">Conflicting proposals</h1>
+<p>Two proposals may modify the same model path.</p>
+<p>Example:</p>
+<h2 id="proposal-a-3">Proposal A</h2>
+<p>Use Plant-specific MRP Controller conversion.</p>
+<h2 id="proposal-b-3">Proposal B</h2>
+<p>Make MRP Controller manually maintained in SAP.</p>
+<p>Both may be valid alternatives.</p>
+<p>They should be presented as a conflict requiring a Decision.</p>
+<p>Do not apply them in sequence merely because both validate independently.</p>
+<p>Conflict detection should consider:</p>
+<ul>
+<li>same object property;</li>
+<li>overlapping applicability;</li>
+<li>competing source authority;</li>
+<li>contradictory Rules;</li>
+<li>mutually exclusive target implementations.</li>
+</ul>
+<p>---</p>
+<h1 id="proposal-dependencies">Proposal dependencies</h1>
+<p>Some proposals must be applied in sequence.</p>
+<p>Example:</p>
+<pre><code class="language-text">Proposal 1:
+Create Plant-assignment Dataset.
+
+Proposal 2:
+Use Plant assignment in MRP Controller Mapping.
+
+Proposal 3:
+Retire global default.</code></pre>
+<p>Proposal 3 should not be approved as immediately applicable if Proposal 1 and Proposal 2 are not accepted.</p>
+<p>Dependencies should be explicit.</p>
+<p>This prevents a proposal from producing a valid-looking but unusable candidate state.</p>
+<p>---</p>
+<h1 id="review-burden-is-a-product-problem">Review burden is a product problem</h1>
+<p>Enterprise model changes can generate too much review information.</p>
+<p>A useful proposal should not present every downstream object equally.</p>
+<p>It should highlight:</p>
+<ul>
+<li>critical direct changes;</li>
+<li>broken paths;</li>
+<li>stale Evidence;</li>
+<li>required retests;</li>
+<li>uncertain business interpretations;</li>
+<li>impacted owners.</li>
+</ul>
+<p>Allow deeper expansion for technical detail.</p>
+<p>The objective is not maximum information on one screen.</p>
+<p>It is sufficient information for a defensible decision.</p>
+<p>---</p>
+<h1 id="proposal-quality-gates">Proposal quality gates</h1>
+<p>Before a PatchProposal reaches a business reviewer, it should satisfy basic quality checks.</p>
+<h2 id="evidence-gate">Evidence gate</h2>
+<p>The proposal references a real Finding or Decision.</p>
+<h2 id="scope-gate">Scope gate</h2>
+<p>Affected objects and contexts are explicit.</p>
+<h2 id="operation-gate">Operation gate</h2>
+<p>Requested changes are machine-interpretable.</p>
+<h2 id="preconditions-gate">Preconditions gate</h2>
+<p>Expected base state is recorded.</p>
+<h2 id="validation-gate">Validation gate</h2>
+<p>Candidate structure passes deterministic checks.</p>
+<h2 id="impact-gate">Impact gate</h2>
+<p>Affected paths are calculated.</p>
+<h2 id="ownership-gate">Ownership gate</h2>
+<p>Required reviewers are identified.</p>
+<h2 id="explanation-gate">Explanation gate</h2>
+<p>Business effect is understandable.</p>
+<p>A proposal that fails these gates is a draft, not a review-ready change.</p>
+<p>---</p>
+<h1 id="suggested-patchproposal-structure">Suggested PatchProposal structure</h1>
+<p>A conceptual proposal might contain:</p>
+<pre><code class="language-yaml">id: PP-PRODUCT-MRP-CONTROLLER-PLANT-CONTEXT
+type: PatchProposal
+
+based_on:
+  model_commit: abc123
+  findings:
+    - FIND-PRODUCT-PLANT-CONTEXT-MISSING
+  evidence:
+    - EVID-MOCK3-PLANNING-PROFILE
+
+summary:
+  Add Plant as required context for Product Plant
+  MRP Controller derivation.
+
+operations:
+  - action: add_mapping_input
+    target: MAP-PRODUCT-PLANT-MRP-CONTROLLER
+    input: FEP-LEGACY-PLANT
+    role: conditional_context
+
+  - action: restrict_fallback
+    target: MAP-MRP-CONTROLLER-DEFAULT
+    scope:
+      exclude:
+        - PL20
+        - PL30
+
+preconditions:
+  - object: MAP-PRODUCT-PLANT-MRP-CONTROLLER
+    expected_status: approved
+
+review:
+  required_roles:
+    - Production Planning Data Owner
+    - Plant Data Owner
+
+validation:
+  status: passed
+
+impact:
+  affected_records: 1840
+  retest:
+    - MRP planning scenario</code></pre>
+<p>This is a recommended modelling direction, not a claim about the exact current schema.</p>
+<p>The key is the separation between:</p>
+<ul>
+<li>evidence;</li>
+<li>intent;</li>
+<li>operations;</li>
+<li>assumptions;</li>
+<li>validation;</li>
+<li>impact;</li>
+<li>review.</li>
+</ul>
+<p>---</p>
+<h1 id="patch-operations-should-be-deterministic">Patch operations should be deterministic</h1>
+<p>Once a proposal is approved, applying it should not require another round of interpretation.</p>
+<p>Weak operation:</p>
+<pre><code class="language-text">Improve the Supplier Payment Method Mapping.</code></pre>
+<p>Strong operation:</p>
+<pre><code class="language-text">Add FEP-LEGACY-PAYMENT-INSTRUCTION
+as a direct input to
+MAP-SUPPLIER-COMPANY-CODE-PAYMENT-METHOD.</code></pre>
+<p>Weak operation:</p>
+<pre><code class="language-text">Fix Review Status.</code></pre>
+<p>Strong operation:</p>
+<pre><code class="language-text">Replace the active implementation relationship
+from FEP-S4-ZZ-REVIEW-STATUS
+to FEP-S4-STANDARD-REVIEW-STATUS
+effective from baseline RELEASE-2026-10.</code></pre>
+<p>Ambiguous proposals are just another form of ticket.</p>
+<p>---</p>
+<h1 id="the-proposal-is-also-a-knowledge-object">The proposal is also a knowledge object</h1>
+<p>A PatchProposal should remain useful after it is closed.</p>
+<p>Later teams should be able to ask:</p>
+<ul>
+<li>Why was Plant added?</li>
+<li>Why was the generic tax category rejected?</li>
+<li>Why did the standard endpoint replace the custom field?</li>
+<li>Which evidence justified the change?</li>
+<li>Which alternatives were considered?</li>
+<li>Which impact was expected?</li>
+<li>Which reviewers approved it?</li>
+</ul>
+<p>The proposal becomes part of project memory.</p>
+<p>This reduces dependence on the people who happened to attend the original workshop.</p>
+<p>---</p>
+<h1 id="how-this-differentiates-martenweave">How this differentiates Martenweave</h1>
+<p>Many adjacent tools solve parts of the problem.</p>
+<h2 id="spreadsheets">Spreadsheets</h2>
+<p>Good for collaborative inspection.</p>
+<p>Weak as a durable typed change model.</p>
+<h2 id="itsm-and-issue-trackers">ITSM and issue trackers</h2>
+<p>Good for assignment and status.</p>
+<p>Weak at expressing candidate model state and validating references.</p>
+<h2 id="data-catalogues">Data catalogues</h2>
+<p>Good for discovery and ownership.</p>
+<p>Often weaker at proposal-first modification of a canonical migration model.</p>
+<h2 id="data-quality-platforms">Data-quality platforms</h2>
+<p>Good for detecting anomalies and executing checks.</p>
+<p>They do not necessarily determine which governed model object should change.</p>
+<h2 id="sap-mdg">SAP MDG</h2>
+<p>Good for governing operational master-data creation and change in supported domains and processes.</p>
+<p>It does not automatically preserve the migration programme’s external source evidence, mapping reasoning, dataset gaps and Git-based model repository.</p>
+<h2 id="git-pull-requests">Git pull requests</h2>
+<p>Good for reviewing textual changes.</p>
+<p>They do not independently explain business meaning or generate semantic impact from the model.</p>
+<p>Martenweave’s product position is the connective layer:</p>
+<pre><code class="language-text">evidence from existing tools
+→ canonical model reasoning
+→ validated semantic proposal
+→ human-approved Git change</code></pre>
+<p>It complements those systems rather than replacing them.</p>
+<p>---</p>
+<h1 id="the-first-product-wedge">The first product wedge</h1>
+<p>The strongest initial use case is not:</p>
+<blockquote>Build a complete enterprise data-governance platform.</blockquote>
+<p>It is:</p>
+<blockquote>Take one real migration gap report and turn selected findings into validated, reviewable model changes.</blockquote>
+<p>A useful pilot can demonstrate:</p>
+<ol>
+<li>profile one migration dataset;</li>
+<li>detect several model gaps;</li>
+<li>connect each gap to affected Attributes and Mappings;</li>
+<li>select one meaningful Finding;</li>
+<li>generate a PatchProposal;</li>
+<li>validate the candidate model;</li>
+<li>show impact;</li>
+<li>approve or reject;</li>
+<li>produce a Git-ready change.</li>
+</ol>
+<p>That is a complete vertical slice.</p>
+<p>It is understandable to a migration lead.</p>
+<p>It creates value without requiring a large platform deployment.</p>
+<p>---</p>
+<h1 id="a-measurable-product-outcome">A measurable product outcome</h1>
+<p>The value of PatchProposals can be measured through operational questions.</p>
+<p>Before Martenweave:</p>
+<ul>
+<li>How long does it take to determine what should change?</li>
+<li>How often are gaps reopened?</li>
+<li>How many model edits have no linked evidence?</li>
+<li>How often do reviewers discover impact after implementation?</li>
+<li>How many temporary defaults remain undocumented?</li>
+<li>How many decisions depend on unavailable individuals?</li>
+</ul>
+<p>After Martenweave:</p>
+<ul>
+<li>percentage of accepted changes with linked Evidence;</li>
+<li>percentage validated before review;</li>
+<li>time from Finding to decision;</li>
+<li>number of stale proposals caught;</li>
+<li>number of impacted objects identified before merge;</li>
+<li>number of rejected alternatives retained;</li>
+<li>number of recurring gaps linked to prior decisions.</li>
+</ul>
+<p>These metrics describe governance throughput, not generic AI productivity.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already declares the essential product contract:</p>
+<ul>
+<li>canonical files own truth;</li>
+<li>deterministic validation happens first;</li>
+<li>AI creates PatchProposals rather than silently changing files;</li>
+<li>approved proposals become controlled changes;</li>
+<li>evidence, gaps, lineage and impact precede GitHub issue or pull-request review.</li>
+</ul>
+<p>The next product slice should make that contract visible end to end.</p>
+<h2 id="goal">Goal</h2>
+<p>Turn one structured Finding into a candidate model change that can be understood, validated and approved without manual reconstruction.</p>
+<h2 id="initial-capabilities">Initial capabilities</h2>
+<ol>
+<li>Select a Finding.</li>
+<li>Generate one or more candidate PatchProposals.</li>
+<li>Record base commit and preconditions.</li>
+<li>Apply proposal to an isolated candidate state.</li>
+<li>Run deterministic validation.</li>
+<li>calculate lineage and impact differences.</li>
+<li>identify required reviewers.</li>
+<li>show before-and-after business explanation.</li>
+<li>approve, reject, request changes or supersede.</li>
+<li>generate a Git-ready patch only after approval.</li>
+</ol>
+<h2 id="required-proposal-fields">Required proposal fields</h2>
+<ul>
+<li>proposal ID;</li>
+<li>source Finding;</li>
+<li>linked Evidence;</li>
+<li>base model version;</li>
+<li>business summary;</li>
+<li>exact operations;</li>
+<li>preconditions;</li>
+<li>affected scope;</li>
+<li>validation result;</li>
+<li>impact result;</li>
+<li>unresolved questions;</li>
+<li>reviewers;</li>
+<li>status.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The workflow must distinguish:</p>
+<pre><code class="language-text">Finding:
+Plant context is missing.</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Proposal:
+Add Plant as a conditional Mapping input.</code></pre>
+<p>It must allow competing proposals for the same Finding.</p>
+<p>It must refuse to apply a proposal when the base state no longer matches.</p>
+<p>It must show when a candidate validates structurally but still requires business approval.</p>
+<p>It must preserve historical Evidence when an implementation endpoint is replaced.</p>
+<p>It must not write directly to SAP.</p>
+<h2 id="existing-command">Existing command</h2>
+<pre><code class="language-text">martenweave propose-patch \
+  --from ./note.md \
+  --repo ./model</code></pre>
+<p>The repository currently documents <code>propose-patch</code> as part of its CLI workflow.</p>
+<h2 id="recommended-next-command-set">Recommended next command set</h2>
+<pre><code class="language-text">martenweave proposal validate \
+  PP-PRODUCT-MRP-CONTROLLER-PLANT-CONTEXT \
+  --repo ./model
+
+martenweave proposal impact \
+  PP-PRODUCT-MRP-CONTROLLER-PLANT-CONTEXT \
+  --repo ./model
+
+martenweave proposal render \
+  PP-PRODUCT-MRP-CONTROLLER-PLANT-CONTEXT \
+  --audience business-owner \
+  --repo ./model
+
+martenweave proposal apply \
+  PP-PRODUCT-MRP-CONTROLLER-PLANT-CONTEXT \
+  --repo ./model \
+  --dry-run</code></pre>
+<p>These focused commands describe a recommended product direction rather than the current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>The fundamental pain is not that migration teams cannot find problems.</p>
+<p>They find problems constantly.</p>
+<p>The pain is that accepted learning does not move reliably into reusable model truth.</p>
+<p>Findings remain in reports.</p>
+<p>Decisions remain in meetings.</p>
+<p>Workarounds remain in code.</p>
+<p>Temporary defaults remain in production.</p>
+<p>The next team has to reconstruct the reasoning.</p>
+<p>A PatchProposal creates a controlled bridge:</p>
+<pre><code class="language-text">we observed something
+→ we interpreted it
+→ we propose a precise change
+→ we test the candidate
+→ we understand the impact
+→ the right people approve
+→ Git records the new truth</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can a reviewer see exactly what will change, why it should change, what evidence supports it, which assumptions must still hold and what else will be affected—before the canonical model is modified?</blockquote>
+<p>When the answer is yes, AI assistance becomes useful without becoming dangerous.</p>
+<p>When the answer is:</p>
+<blockquote>The agent updated the Mapping because the field looked similar,</blockquote>
+<p>the organisation has automated model drift.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>Its product purpose is to turn scattered operational evidence into canonical, validated and reviewable model change.</p>
+<p>The PatchProposal is central to that purpose.</p>
+<p>It prevents two equally damaging outcomes:</p>
+<ul>
+<li>useful findings that never improve the model;</li>
+<li>plausible automated changes that bypass governance.</li>
+</ul>
+<p>Martenweave Workbench provides a local browser interface for investigation, review, reports and controlled changes, while the canonical files remain authoritative through the backend-first core.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines canonical files as the source of truth, generated indexes as disposable, deterministic validation as the first control and AI PatchProposals as reviewable objects rather than silent mutations.</p>
+<p>Its documented workflow runs from evidence and profiling through validation, gap detection, lineage, impact analysis and AI proposals to human-reviewed GitHub issues or pull requests.</p>
+<p>The current CLI documents a <code>propose-patch</code> operation alongside repository validation, diffing, trace, impact, health, scorecard and dataset-readiness commands.</p>
+<p>GitHub pull-request reviews allow reviewers to comment, approve or request changes before merging, and repositories can require approvals before acceptance. This provides a useful external review pattern, while Martenweave’s PatchProposal layer is intended to make the semantic model change explicit before or alongside the Git diff.</p>
+<p>RFC 6902 defines JSON Patch as an ordered sequence of operations such as add, remove, replace, move, copy and test. Its precondition-like <code>test</code> operation illustrates the broader safety principle that a patch should verify its expected target state before modifying it. Martenweave proposals may use another representation, but should preserve that principle.</p>
+<p>The candidate-state workflow, proposal operations, review states and recommended proposal command set described here are product directions. They should not be interpreted as guarantees of the exact current PatchProposal schema, Workbench implementation or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, GitHub or the IETF.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html"><span>Previous</span>A readiness report identifies 137 data gaps.</a><a href="/blog/why-ai-should-propose-model-changes-but-never-approve-them.html"><span>Next</span>A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE .</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

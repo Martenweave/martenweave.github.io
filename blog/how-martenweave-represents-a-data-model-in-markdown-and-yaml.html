@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Martenweave Represents a Data Model in Markdown and YAML | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration team needs to confirm the meaning of Customer Group ."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html" />
+    <meta property="og:title" content="How Martenweave Represents a Data Model in Markdown and YAML | Martenweave" />
+    <meta property="og:description" content="A migration team needs to confirm the meaning of Customer Group ." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Martenweave Represents a Data Model in Markdown and YAML | Martenweave" />
+    <meta name="twitter:description" content="A migration team needs to confirm the meaning of Customer Group ." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html",
+                        "name": "How Martenweave Represents a Data Model in Markdown and YAML | Martenweave",
+                        "description": "A migration team needs to confirm the meaning of Customer Group .",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Martenweave Represents a Data Model in Markdown and YAML",
+                                    "item": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html#content",
+                        "headline": "How Martenweave Represents a Data Model in Markdown and YAML",
+                        "name": "How Martenweave Represents a Data Model in Markdown and YAML",
+                        "description": "A migration team needs to confirm the meaning of Customer Group .",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Martenweave Represents a Data Model in Markdown and YAML</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How Martenweave Represents a Data Model in Markdown and YAML</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A migration team needs to confirm the meaning of Customer Group .</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-model-is-not-one-document">The model is not one document</a></li><li><a href="#it-prevents-hidden-state">It prevents hidden state</a></li><li><a href="#it-exposes-incomplete-canonical-files">It exposes incomplete canonical files</a></li><li><a href="#it-improves-reproducibility">It improves reproducibility</a></li><li><a href="#it-simplifies-review">It simplifies review</a></li><li><a href="#it-supports-portability">It supports portability</a></li><li><a href="#one-giant-file">One giant file</a></li><li><a href="#thousands-of-trivial-fragments">Thousands of trivial fragments</a></li><li><a href="#1-parse">1. Parse</a></li><li><a href="#2-validate-the-object">2. Validate the object</a></li><li><a href="#3-validate-references">3. Validate references</a></li><li><a href="#4-validate-repository-context">4. Validate repository context</a></li><li><a href="#5-rebuild-or-refresh-generated-indexes">5. Rebuild or refresh generated indexes</a></li><li><a href="#6-run-impact-analysis">6. Run impact analysis</a></li><li><a href="#7-review-the-semantic-diff">7. Review the semantic diff</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration team needs to confirm the meaning of <code>Customer Group</code>.</p>
+<p>The answer appears to exist in several places:</p>
+<ul>
+<li>an Excel mapping workbook says it comes from CRM Segment;</li>
+<li>an SAP design document describes it as sales-area-specific;</li>
+<li>a Jira decision says the central source cannot be used without enrichment;</li>
+<li>a validation report shows that 18% of applicable records are blank;</li>
+<li>the SAP target field is <code>KNVV-KDGRP</code>;</li>
+<li>a local team maintains exceptions in another spreadsheet.</li>
+</ul>
+<p>None of these artefacts is necessarily wrong.</p>
+<p>The problem is that none of them represents the complete governed object.</p>
+<p>The team does not merely need another document titled “Customer Group.” It needs a model object that can answer:</p>
+<ul>
+<li>What does the attribute mean?</li>
+<li>At which business and organisational level does it exist?</li>
+<li>Which entity owns it?</li>
+<li>Which source and target endpoints are connected to it?</li>
+<li>Which mappings implement it?</li>
+<li>Which rules govern it?</li>
+<li>Which decisions changed its interpretation?</li>
+<li>Which datasets provide evidence about it?</li>
+<li>Which objects would be affected if it changed?</li>
+</ul>
+<p>A conventional document can explain some of this.</p>
+<p>A conventional database can store some of this.</p>
+<p>Martenweave uses a different arrangement:</p>
+<blockquote>Each governed model object is represented as a canonical, human-readable file containing structured YAML metadata and explanatory Markdown content.</blockquote>
+<p>The YAML frontmatter carries the structure that machines must validate and connect.</p>
+<p>The Markdown body carries the explanation that humans must understand and review.</p>
+<p>The file itself becomes the smallest durable unit of model truth.</p>
+<p>Martenweave’s current core explicitly treats Markdown files with YAML frontmatter under <code>model/</code> as the source of truth. SQLite and JSONL outputs are generated from those files and are intended to be rebuildable rather than independently authoritative.</p>
+<p>This choice sounds simple.</p>
+<p>Its consequences are significant.</p>
+<p>---</p>
+<h2 id="the-model-is-not-one-document">The model is not one document</h2>
+<p>Enterprise model specifications often begin as one large workbook or one large document.</p>
+<p>That approach is attractive because everything appears to be in one place.</p>
+<p>Over time, the file becomes difficult to govern:</p>
+<ul>
+<li>different teams edit different sections;</li>
+<li>references exist only as labels;</li>
+<li>one change creates unrelated review noise;</li>
+<li>merge conflicts become difficult to interpret;</li>
+<li>historical decisions are mixed with current state;</li>
+<li>automated validation requires custom parsing;</li>
+<li>ownership remains document-level rather than object-level.</li>
+</ul>
+<p>A model registry should not treat “the supplier model” or “the customer workbook” as the smallest controlled item.</p>
+<p>The meaningful unit is usually smaller:</p>
+<ul>
+<li>one domain;</li>
+<li>one entity;</li>
+<li>one attribute;</li>
+<li>one relationship;</li>
+<li>one rule;</li>
+<li>one mapping;</li>
+<li>one decision;</li>
+<li>one evidence item;</li>
+<li>one change proposal.</li>
+</ul>
+<p>The current Martenweave product description lists generic model concepts including domains, entities, attributes, relationships, datasets, mappings, rules, evidence, decisions and change proposals. SAP migration and MDM are the first proof domain rather than the limit of the underlying model.</p>
+<p>Each object should therefore have:</p>
+<ul>
+<li>stable identity;</li>
+<li>declared type;</li>
+<li>explicit references;</li>
+<li>controlled metadata;</li>
+<li>readable explanation;</li>
+<li>independent change history.</li>
+</ul>
+<p>This is why the model is represented as a repository of related objects rather than one monolithic specification.</p>
+<p>---</p>
+<h1 id="one-file-two-audiences">One file, two audiences</h1>
+<p>A canonical model file needs to serve both humans and machines.</p>
+<p>These audiences need different things.</p>
+<p>A machine needs:</p>
+<ul>
+<li>predictable fields;</li>
+<li>identifiers;</li>
+<li>types;</li>
+<li>lists;</li>
+<li>references;</li>
+<li>dates;</li>
+<li>statuses;</li>
+<li>validation constraints.</li>
+</ul>
+<p>A human needs:</p>
+<ul>
+<li>context;</li>
+<li>rationale;</li>
+<li>examples;</li>
+<li>boundaries;</li>
+<li>uncertainty;</li>
+<li>implications;</li>
+<li>explanation of rejected alternatives.</li>
+</ul>
+<p>Pure YAML is strong for structure but weak for extended explanation.</p>
+<p>Pure Markdown is readable but unreliable for deterministic interpretation.</p>
+<p>Combining them creates a useful separation.</p>
+<p>A conceptual file may look like this:</p>
+<pre><code class="language-markdown">---
+id: ATTR-CUSTOMER-GROUP
+type: Attribute
+name: Customer Group
+domain: DOMAIN-CUSTOMER
+entity: ENTITY-CUSTOMER-SALES-AREA
+status: approved
+
+owners:
+  - ROLE-GLOBAL-CUSTOMER-DATA-OWNER
+
+field_endpoints:
+  - FEP-S4-KNVV-KDGRP
+
+rules:
+  - RULE-CUSTOMER-GROUP-REQUIRED
+
+mappings:
+  - MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+---
+
+# Customer Group
+
+Customer Group is a sales-area-level commercial classification used
+for approved downstream sales and reporting processes.
+
+It must not be treated as automatically equivalent to the central CRM
+Segment. Any derivation from CRM Segment requires an approved mapping
+for the applicable sales-area context.
+
+## Known constraints
+
+The current source landscape does not provide a reliable organisational
+value for every customer and sales area.
+
+## Open evidence
+
+The ERP_B migration dataset contains records for which the sales-area
+assignment exists but Customer Group remains unavailable.</code></pre>
+<p>This example is conceptual and should not be treated as the exact current Martenweave schema.</p>
+<p>It demonstrates the division of responsibility.</p>
+<p>The frontmatter says what the object is and how it connects.</p>
+<p>The body explains what the object means and why those connections exist.</p>
+<p>---</p>
+<h1 id="yaml-should-carry-facts-that-must-be-validated">YAML should carry facts that must be validated</h1>
+<p>A useful design rule is:</p>
+<blockquote>If the system must validate, query, compare or traverse it, the information should be structured.</blockquote>
+<p>Examples include:</p>
+<ul>
+<li>object ID;</li>
+<li>object type;</li>
+<li>domain;</li>
+<li>entity;</li>
+<li>status;</li>
+<li>owner;</li>
+<li>references;</li>
+<li>applicability;</li>
+<li>effective date;</li>
+<li>superseded objects;</li>
+<li>source and target endpoints;</li>
+<li>linked decisions;</li>
+<li>linked evidence.</li>
+</ul>
+<p>Consider ownership.</p>
+<p>Weak representation:</p>
+<pre><code class="language-markdown">The Customer Data Owner is responsible for this field.</code></pre>
+<p>The sentence is readable, but the system cannot reliably determine:</p>
+<ul>
+<li>which owner role is meant;</li>
+<li>whether that role exists;</li>
+<li>whether the assignment is current;</li>
+<li>whether another object references the same role;</li>
+<li>whether the role owns global meaning or only local maintenance.</li>
+</ul>
+<p>Structured representation is stronger:</p>
+<pre><code class="language-yaml">owners:
+  semantic:
+    - ROLE-GLOBAL-CUSTOMER-DATA-OWNER
+  operational:
+    - ROLE-CUSTOMER-DATA-STEWARD</code></pre>
+<p>The Markdown can still explain the distinction.</p>
+<p>The YAML makes it testable.</p>
+<p>---</p>
+<h1 id="markdown-should-carry-meaning-that-should-not-be-compressed-into-fields">Markdown should carry meaning that should not be compressed into fields</h1>
+<p>The opposite mistake is placing everything into YAML.</p>
+<p>A technically complete but unreadable object may contain dozens of fields:</p>
+<pre><code class="language-yaml">definition: &quot;...&quot;
+rationale: &quot;...&quot;
+usage_notes: &quot;...&quot;
+limitations: &quot;...&quot;
+examples: &quot;...&quot;
+non_examples: &quot;...&quot;
+migration_notes: &quot;...&quot;
+local_notes: &quot;...&quot;</code></pre>
+<p>This creates the appearance of structure while turning long-form reasoning into escaped text.</p>
+<p>Markdown is better for:</p>
+<ul>
+<li>definitions;</li>
+<li>rationale;</li>
+<li>examples;</li>
+<li>decision context;</li>
+<li>migration notes;</li>
+<li>business consequences;</li>
+<li>known uncertainties;</li>
+<li>implementation guidance;</li>
+<li>explanations of non-equivalence.</li>
+</ul>
+<p>A model object is not only a database row.</p>
+<p>It is an explanation with a machine-checkable identity and structure.</p>
+<p>The design should preserve both.</p>
+<p>---</p>
+<h1 id="critical-truth-must-not-exist-only-in-prose">Critical truth must not exist only in prose</h1>
+<p>Markdown is useful, but it can become another hiding place.</p>
+<p>Suppose a rule object says in its body:</p>
+<blockquote>This rule applies only to supplier organisations in Portugal after final activation.</blockquote>
+<p>But its structured metadata contains only:</p>
+<pre><code class="language-yaml">type: Rule
+entity: ENTITY-SUPPLIER</code></pre>
+<p>The system cannot test the real applicability.</p>
+<p>It cannot detect overlap with another rule.</p>
+<p>It cannot generate the correct population.</p>
+<p>It cannot identify whether a local override exists.</p>
+<p>The rule’s most important constraints have been left in prose.</p>
+<p>Therefore:</p>
+<ul>
+<li>explanation belongs in Markdown;</li>
+<li>governing dimensions belong in YAML;</li>
+<li>the two must agree.</li>
+</ul>
+<p>Where that agreement cannot be validated automatically, review should make the limitation explicit.</p>
+<p>---</p>
+<h1 id="stable-ids-matter-more-than-file-names">Stable IDs matter more than file names</h1>
+<p>Human-readable file names are useful.</p>
+<p>They are not sufficient as object identity.</p>
+<p>A file may be renamed because:</p>
+<ul>
+<li>terminology improves;</li>
+<li>naming conventions change;</li>
+<li>the object moves between folders;</li>
+<li>the label becomes more precise;</li>
+<li>localisation is introduced.</li>
+</ul>
+<p>The identity should survive.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP</code></pre>
+<p>The filename might initially be:</p>
+<pre><code class="language-text">customer-group.md</code></pre>
+<p>Later it may become:</p>
+<pre><code class="language-text">sales-area-customer-group.md</code></pre>
+<p>The ID remains stable.</p>
+<p>This is essential because other objects may reference it:</p>
+<pre><code class="language-yaml">attributes:
+  - ATTR-CUSTOMER-GROUP</code></pre>
+<p>Stable IDs make it possible to distinguish:</p>
+<ul>
+<li>a rename;</li>
+<li>a semantic change;</li>
+<li>a replacement;</li>
+<li>a deletion;</li>
+<li>a new object.</li>
+</ul>
+<p>Without stable identity, comparison becomes dependent on labels and paths.</p>
+<p>---</p>
+<h1 id="an-id-should-identify-the-concept-not-its-current-implementation">An ID should identify the concept, not its current implementation</h1>
+<p>A common modelling error is tying business identity directly to a technical endpoint.</p>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-KNVV-KDGRP</code></pre>
+<p>This makes the object appear to be the SAP field.</p>
+<p>But the business attribute may:</p>
+<ul>
+<li>exist before SAP;</li>
+<li>map from several sources;</li>
+<li>move to another endpoint;</li>
+<li>be represented differently in another target;</li>
+<li>require a separate semantic definition.</li>
+</ul>
+<p>A stronger separation is:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+FEP-S4-KNVV-KDGRP</code></pre>
+<p>The first identifies the business attribute.</p>
+<p>The second identifies the physical field endpoint.</p>
+<p>A mapping or relationship connects them.</p>
+<p>This separation allows Martenweave to answer:</p>
+<ul>
+<li>What business concept does the SAP field implement?</li>
+<li>Which other fields implement the same concept?</li>
+<li>What happens if the SAP endpoint changes?</li>
+<li>Which mappings and rules depend on the business attribute?</li>
+</ul>
+<p>The repository’s current examples and command documentation explicitly distinguish trace and impact operations for business attributes and field endpoints.</p>
+<p>---</p>
+<h1 id="references-should-be-explicit-not-inferred-from-text">References should be explicit, not inferred from text</h1>
+<p>Suppose a mapping file contains:</p>
+<pre><code class="language-markdown">This mapping sends Customer Group to KNVV-KDGRP.</code></pre>
+<p>A human understands the relationship.</p>
+<p>A machine may need to guess:</p>
+<ul>
+<li>which Customer Group object;</li>
+<li>which system contains the field;</li>
+<li>which organisational context applies;</li>
+<li>whether this is the current approved endpoint.</li>
+</ul>
+<p>Explicit references are safer:</p>
+<pre><code class="language-yaml">source:
+  attribute: ATTR-CRM-SEGMENT
+
+target:
+  attribute: ATTR-CUSTOMER-GROUP
+  endpoint: FEP-S4-KNVV-KDGRP
+
+decision:
+  - DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>Deterministic validation can then check:</p>
+<ul>
+<li>whether the referenced objects exist;</li>
+<li>whether object types are compatible;</li>
+<li>whether the mapping remains active;</li>
+<li>whether the decision is superseded;</li>
+<li>whether domain and context rules are satisfied.</li>
+</ul>
+<p>Martenweave’s core principle is to validate IDs, types, references and domain-context rules before building its indexes.</p>
+<p>---</p>
+<h1 id="files-should-express-a-graph-without-requiring-a-graph-database">Files should express a graph without requiring a graph database</h1>
+<p>Enterprise model knowledge is relational.</p>
+<p>An attribute connects to:</p>
+<ul>
+<li>entity;</li>
+<li>domain;</li>
+<li>owner;</li>
+<li>source field;</li>
+<li>target field;</li>
+<li>mapping;</li>
+<li>rule;</li>
+<li>evidence;</li>
+<li>decision;</li>
+<li>dataset;</li>
+<li>proposal.</li>
+</ul>
+<p>This forms a graph.</p>
+<p>That does not mean a graph database must be the canonical source of truth.</p>
+<p>The canonical files can declare references.</p>
+<p>The generated index can resolve them into edges for:</p>
+<ul>
+<li>search;</li>
+<li>trace;</li>
+<li>impact;</li>
+<li>viewer generation;</li>
+<li>reporting.</li>
+</ul>
+<p>Martenweave’s demo workflow generates a SQLite database together with search and lineage JSONL outputs from the canonical model repository. Those generated artefacts are described as disposable and rebuildable.</p>
+<p>This is an important architectural boundary.</p>
+<p>The repository stores truth.</p>
+<p>The index optimises access.</p>
+<p>The index can be rebuilt.</p>
+<p>---</p>
+<h1 id="why-the-generated-database-is-not-the-source-of-truth">Why the generated database is not the source of truth</h1>
+<p>SQLite is useful for:</p>
+<ul>
+<li>indexed queries;</li>
+<li>joins;</li>
+<li>full-text search;</li>
+<li>aggregated reports;</li>
+<li>trace traversal;</li>
+<li>viewer generation;</li>
+<li>API access.</li>
+</ul>
+<p>It is not the preferred place for human review of canonical changes.</p>
+<p>If the generated database were independently editable, the project would create two truths:</p>
+<pre><code class="language-text">Canonical files
+vs.
+Database state</code></pre>
+<p>The same problem would appear with any search index or graph database.</p>
+<p>The safer direction is one-way:</p>
+<pre><code class="language-text">Canonical files
+→ deterministic validation
+→ generated SQLite and JSONL indexes
+→ reports, APIs and views</code></pre>
+<p>If the generated artefacts are deleted, the model remains.</p>
+<p>If the canonical files are lost, the model has lost its governed source.</p>
+<p>The README states that <code>build-index</code> performs a full rebuild of SQLite and JSONL outputs from the canonical files in order to keep index generation deterministic.</p>
+<p>---</p>
+<h1 id="rebuildability-is-a-governance-feature">Rebuildability is a governance feature</h1>
+<p>Rebuildability may look like a technical implementation detail.</p>
+<p>It provides several governance benefits.</p>
+<h2 id="it-prevents-hidden-state">It prevents hidden state</h2>
+<p>No manual database edit should become authoritative.</p>
+<h2 id="it-exposes-incomplete-canonical-files">It exposes incomplete canonical files</h2>
+<p>If the index cannot be rebuilt, the repository is not self-contained.</p>
+<h2 id="it-improves-reproducibility">It improves reproducibility</h2>
+<p>Two users can build from the same model baseline and expect equivalent generated state.</p>
+<h2 id="it-simplifies-review">It simplifies review</h2>
+<p>Reviewers inspect canonical diffs rather than opaque database changes.</p>
+<h2 id="it-supports-portability">It supports portability</h2>
+<p>The model is not trapped in one deployed database instance.</p>
+<p>This is especially valuable in consulting, migration and AMS environments where:</p>
+<ul>
+<li>client access changes;</li>
+<li>teams rotate;</li>
+<li>environments are temporary;</li>
+<li>SaaS procurement may be difficult;</li>
+<li>long-term evidence must remain portable.</li>
+</ul>
+<p>---</p>
+<h1 id="validation-must-happen-before-indexing">Validation must happen before indexing</h1>
+<p>A search index can make invalid objects appear usable.</p>
+<p>For example:</p>
+<ul>
+<li>a mapping references a missing attribute;</li>
+<li>a rule points to a retired value list;</li>
+<li>an owner ID does not exist;</li>
+<li>two objects share one ID;</li>
+<li>a decision refers to an unknown proposal.</li>
+</ul>
+<p>If these objects are indexed without a validation gate, users may query and report on inconsistent state.</p>
+<p>The correct order is:</p>
+<pre><code class="language-text">Parse
+→ validate object structure
+→ validate references
+→ validate contextual constraints
+→ build index</code></pre>
+<p>Martenweave describes deterministic validation as the first gate and exposes a <code>validate</code> command before <code>build-index</code> in its documented workflow.</p>
+<p>The current package also declares Pydantic and PyYAML among its dependencies, supporting typed Python processing of YAML-backed data.</p>
+<p>Validation should remain conservative.</p>
+<p>It should detect contradictions and missing structure.</p>
+<p>It should not invent business meaning.</p>
+<p>---</p>
+<h1 id="structural-validation-is-not-semantic-approval">Structural validation is not semantic approval</h1>
+<p>A file may pass every schema check and still describe a poor model.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">id: ATTR-SUPPLIER-RISK
+type: Attribute
+name: Supplier Risk
+allowed_values:
+  - LOW
+  - HIGH
+  - UNDER_REVIEW</code></pre>
+<p>The file may be structurally valid.</p>
+<p>Semantically, it may mix:</p>
+<ul>
+<li>final risk classification;</li>
+<li>workflow state.</li>
+</ul>
+<p>Deterministic validation can detect only what has been encoded as a rule.</p>
+<p>It might flag the issue when:</p>
+<ul>
+<li>value dimensions are explicitly declared;</li>
+<li>status values are prohibited for classification attributes;</li>
+<li>another object already defines Review Status;</li>
+<li>a decision marks the value as rejected.</li>
+</ul>
+<p>Otherwise, human review remains necessary.</p>
+<p>Martenweave should not claim that machine-valid YAML automatically produces a correct enterprise model.</p>
+<p>The stronger principle is:</p>
+<blockquote>Validators establish structural and declared consistency. Accountable humans establish meaning.</blockquote>
+<p>---</p>
+<h1 id="file-structure-should-support-narrow-changes">File structure should support narrow changes</h1>
+<p>Suppose one decision changes the source treatment for Customer Group.</p>
+<p>In a monolithic workbook, the diff may include:</p>
+<ul>
+<li>formatting changes;</li>
+<li>recalculated cells;</li>
+<li>unrelated sheets;</li>
+<li>generated metadata;</li>
+<li>comments.</li>
+</ul>
+<p>In an object-based repository, the change can be narrow:</p>
+<pre><code class="language-text">model/mappings/customer-group-source.md
+model/decisions/customer-group-source-decision.md</code></pre>
+<p>The reviewer can see:</p>
+<ul>
+<li>which objects changed;</li>
+<li>which references were added;</li>
+<li>which status moved;</li>
+<li>which wording was updated.</li>
+</ul>
+<p>Narrow files improve:</p>
+<ul>
+<li>review quality;</li>
+<li>Git history;</li>
+<li>ownership;</li>
+<li>mergeability;</li>
+<li>impact analysis;</li>
+<li>rollback.</li>
+</ul>
+<p>This does not mean every sentence needs its own file.</p>
+<p>The object boundary should follow governance identity.</p>
+<p>---</p>
+<h1 id="one-file-per-object-is-a-useful-default-not-a-religion">One file per object is a useful default, not a religion</h1>
+<p>Very small objects may sometimes be grouped.</p>
+<p>Very large objects may need supporting files.</p>
+<p>The important constraints are:</p>
+<ul>
+<li>stable identity;</li>
+<li>clear review boundary;</li>
+<li>deterministic parsing;</li>
+<li>explicit references;</li>
+<li>manageable ownership.</li>
+</ul>
+<p>Avoid both extremes.</p>
+<h2 id="one-giant-file">One giant file</h2>
+<p>Problems:</p>
+<ul>
+<li>noisy diffs;</li>
+<li>broad ownership;</li>
+<li>hard merges;</li>
+<li>weak object history.</li>
+</ul>
+<h2 id="thousands-of-trivial-fragments">Thousands of trivial fragments</h2>
+<p>Problems:</p>
+<ul>
+<li>difficult navigation;</li>
+<li>excessive references;</li>
+<li>unnecessary administrative overhead;</li>
+<li>reduced readability.</li>
+</ul>
+<p>A practical object should contain one coherent governed concept or evidence item.</p>
+<p>---</p>
+<h1 id="folders-help-humans-ids-protect-machines">Folders help humans, IDs protect machines</h1>
+<p>A repository may organise files into directories:</p>
+<pre><code class="language-text">model/
+  domains/
+  entities/
+  attributes/
+  relationships/
+  mappings/
+  rules/
+  evidence/
+  decisions/
+  patch-proposals/</code></pre>
+<p>This makes the repository understandable.</p>
+<p>The folder path should not be the only type system.</p>
+<p>The object should still declare its type:</p>
+<pre><code class="language-yaml">type: Attribute</code></pre>
+<p>This allows validation to detect:</p>
+<ul>
+<li>an Attribute placed in the wrong folder;</li>
+<li>a file renamed or moved;</li>
+<li>an unsupported object type;</li>
+<li>an incorrect reference.</li>
+</ul>
+<p>Folders are navigation.</p>
+<p>Metadata is identity and structure.</p>
+<p>---</p>
+<h1 id="decisions-should-be-objects-not-comments">Decisions should be objects, not comments</h1>
+<p>A model frequently changes because someone decided:</p>
+<ul>
+<li>two terms are not equivalent;</li>
+<li>one source is authoritative;</li>
+<li>a rule applies only at activation;</li>
+<li>a local exception is valid;</li>
+<li>a temporary deviation expires;</li>
+<li>a field should be split.</li>
+</ul>
+<p>If the decision exists only in:</p>
+<ul>
+<li>email;</li>
+<li>ticket comment;</li>
+<li>meeting notes;</li>
+<li>pull-request discussion;</li>
+</ul>
+<p>the model may show what changed but not why.</p>
+<p>A Decision object should preserve:</p>
+<ul>
+<li>question;</li>
+<li>alternatives;</li>
+<li>evidence;</li>
+<li>chosen outcome;</li>
+<li>authority;</li>
+<li>date;</li>
+<li>affected objects;</li>
+<li>superseded decisions.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-markdown">---
+id: DEC-CUSTOMER-GROUP-SOURCE-017
+type: Decision
+status: approved
+owners:
+  - ROLE-GLOBAL-CUSTOMER-DATA-OWNER
+affects:
+  - ATTR-CUSTOMER-GROUP
+  - MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+supersedes:
+  - DEC-CUSTOMER-GROUP-SOURCE-008
+---
+
+# CRM Segment is not automatically equivalent to Customer Group
+
+The central CRM Segment does not provide sufficient organisational
+context to determine Customer Group for every sales area.
+
+Direct replication is therefore rejected.
+
+A governed enrichment or sales-area-specific mapping is required.</code></pre>
+<p>This example is conceptual.</p>
+<p>The design principle is essential:</p>
+<blockquote>Current truth and the decision that produced it should remain connected.</blockquote>
+<p>---</p>
+<h1 id="evidence-should-be-referenced-not-copied-indiscriminately">Evidence should be referenced, not copied indiscriminately</h1>
+<p>A model repository should not become a dumping ground for:</p>
+<ul>
+<li>production datasets;</li>
+<li>confidential spreadsheets;</li>
+<li>complete ticket histories;</li>
+<li>large validation exports;</li>
+<li>sensitive emails.</li>
+</ul>
+<p>Evidence objects can preserve:</p>
+<ul>
+<li>source reference;</li>
+<li>description;</li>
+<li>checksum or stable identifier;</li>
+<li>extracted facts;</li>
+<li>date;</li>
+<li>owner;</li>
+<li>confidence;</li>
+<li>affected model objects.</li>
+</ul>
+<p>The repository stores enough to explain and reproduce the decision where appropriate.</p>
+<p>Sensitive or operational evidence can remain in its source system.</p>
+<p>This separation supports a backend-first model registry without turning it into a document-management platform.</p>
+<p>---</p>
+<h1 id="proposals-should-remain-separate-from-approved-truth">Proposals should remain separate from approved truth</h1>
+<p>An AI agent, analyst or imported spreadsheet may suggest:</p>
+<ul>
+<li>new mapping;</li>
+<li>new rule;</li>
+<li>changed ownership;</li>
+<li>new attribute;</li>
+<li>changed definition.</li>
+</ul>
+<p>The proposal should not overwrite the canonical approved object immediately.</p>
+<p>Martenweave’s current design explicitly states that AI must not silently mutate the model. AI creates <code>PatchProposal</code> objects for human review, and approved changes become <code>ChangeRequest</code>s.</p>
+<p>This separation allows the repository to contain:</p>
+<ul>
+<li>current approved state;</li>
+<li>proposed change;</li>
+<li>supporting evidence;</li>
+<li>review status;</li>
+<li>eventual decision.</li>
+</ul>
+<p>The workflow can be expressed as:</p>
+<pre><code class="language-text">Evidence
+→ PatchProposal
+→ deterministic validation
+→ impact analysis
+→ human review
+→ approved change</code></pre>
+<p>The README summarises the broader pipeline as evidence moving through proposal, validation, gaps and impact analysis to human-reviewed GitHub issues or pull requests.</p>
+<p>---</p>
+<h1 id="git-provides-history-but-the-model-must-remain-explicit">Git provides history, but the model must remain explicit</h1>
+<p>Git can show:</p>
+<ul>
+<li>who changed a file;</li>
+<li>when it changed;</li>
+<li>what lines changed;</li>
+<li>which review approved the change.</li>
+</ul>
+<p>That does not remove the need for model-level status and decision objects.</p>
+<p>A Git commit such as:</p>
+<pre><code class="language-text">Update customer model</code></pre>
+<p>cannot reliably explain:</p>
+<ul>
+<li>which business decision was approved;</li>
+<li>whether the change is global or local;</li>
+<li>which evidence supported it;</li>
+<li>whether a previous decision was superseded;</li>
+<li>which implementations must align.</li>
+</ul>
+<p>Use Git for durable technical history.</p>
+<p>Use canonical objects for durable model meaning.</p>
+<p>---</p>
+<h1 id="markdown-and-yaml-are-not-automatically-business-friendly">Markdown and YAML are not automatically business-friendly</h1>
+<p>Human-readable source files are more approachable than database records.</p>
+<p>That does not mean every business owner should edit YAML directly.</p>
+<p>Some users will prefer:</p>
+<ul>
+<li>Excel;</li>
+<li>Google Sheets;</li>
+<li>forms;</li>
+<li>generated reports;</li>
+<li>a frontend;</li>
+<li>reviewed issue comments.</li>
+</ul>
+<p>Martenweave’s current command set includes import and export paths for spreadsheets and Google Sheets, including importing spreadsheet edits as proposals rather than treating them as direct canonical mutations.</p>
+<p>This is the right boundary:</p>
+<ul>
+<li>business users may review and propose through familiar formats;</li>
+<li>canonical truth remains represented in deterministic model objects;</li>
+<li>imported changes become proposals;</li>
+<li>validators and reviewers control acceptance.</li>
+</ul>
+<p>The file format is the governance substrate.</p>
+<p>It does not need to be every user’s primary editing interface.</p>
+<p>---</p>
+<h1 id="canonical-does-not-mean-universally-complete">Canonical does not mean universally complete</h1>
+<p>A canonical model repository should not attempt to contain every fact about the enterprise.</p>
+<p>It should contain the facts needed to govern model meaning and change.</p>
+<p>It may reference:</p>
+<ul>
+<li>SAP configuration;</li>
+<li>data catalogues;</li>
+<li>MDM platforms;</li>
+<li>ITSM systems;</li>
+<li>data-quality tools;</li>
+<li>source repositories;</li>
+<li>test-management systems.</li>
+</ul>
+<p>Martenweave is not intended to replace all these applications. The current README explicitly describes it as a backend-first model-governance pipeline rather than a hosted MDM platform, generic workflow engine, chatbot or direct SAP write-back solution.</p>
+<p>The canonical repository should answer:</p>
+<ul>
+<li>What is the governed object?</li>
+<li>How is it connected?</li>
+<li>Which evidence and decision support it?</li>
+<li>What is proposed to change?</li>
+<li>What could be affected?</li>
+</ul>
+<p>It does not need to operate every downstream process.</p>
+<p>---</p>
+<h1 id="a-complete-object-chain">A complete object chain</h1>
+<p>Consider one SAP Customer Group scenario.</p>
+<p>A coherent repository might contain:</p>
+<pre><code class="language-text">DOMAIN-CUSTOMER
+└── ENTITY-CUSTOMER-SALES-AREA
+    └── ATTR-CUSTOMER-GROUP
+        ├── FEP-CRM-CUSTOMER-SEGMENT
+        ├── FEP-S4-KNVV-KDGRP
+        ├── MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+        ├── RULE-CUSTOMER-GROUP-REQUIRED
+        ├── EVID-ERP-B-CUSTOMER-GROUP-PROFILE
+        ├── DEC-CUSTOMER-GROUP-SOURCE-017
+        └── PATCH-CUSTOMER-GROUP-ENRICHMENT-004</code></pre>
+<p>Each line represents a separate governed object or reference.</p>
+<p>The generated index can then answer:</p>
+<ul>
+<li>show all evidence for Customer Group;</li>
+<li>trace from CRM source to SAP endpoint;</li>
+<li>identify the active mapping;</li>
+<li>show the decision that rejected direct equivalence;</li>
+<li>list open proposals;</li>
+<li>calculate downstream impact.</li>
+</ul>
+<p>The repository remains readable.</p>
+<p>The index provides efficient query.</p>
+<p>---</p>
+<h1 id="what-should-happen-when-a-file-changes">What should happen when a file changes</h1>
+<p>A controlled change should trigger a deterministic sequence.</p>
+<h2 id="1-parse">1. Parse</h2>
+<p>Read the YAML frontmatter and Markdown body.</p>
+<h2 id="2-validate-the-object">2. Validate the object</h2>
+<p>Check required fields, types and declared constraints.</p>
+<h2 id="3-validate-references">3. Validate references</h2>
+<p>Confirm that linked IDs exist and are compatible.</p>
+<h2 id="4-validate-repository-context">4. Validate repository context</h2>
+<p>Check uniqueness, domain rules, statuses and lifecycle consistency.</p>
+<h2 id="5-rebuild-or-refresh-generated-indexes">5. Rebuild or refresh generated indexes</h2>
+<p>Produce SQLite and JSONL representations from canonical state.</p>
+<h2 id="6-run-impact-analysis">6. Run impact analysis</h2>
+<p>Identify dependent objects and implementations.</p>
+<h2 id="7-review-the-semantic-diff">7. Review the semantic diff</h2>
+<p>Determine whether the change is merely editorial or modifies model truth.</p>
+<h2 id="8-approve-and-record">8. Approve and record</h2>
+<p>Use human review and Git history.</p>
+<p>The current CLI exposes commands for validation, index building, freshness checking, diffing, trace, impact analysis, ownership reporting, dataset readiness and proposal creation.</p>
+<p>---</p>
+<h1 id="semantic-diff-matters-more-than-line-diff">Semantic diff matters more than line diff</h1>
+<p>Git shows line-level change.</p>
+<p>Model governance needs semantic interpretation.</p>
+<p>Consider:</p>
+<pre><code class="language-diff">- required: false
++ required: true</code></pre>
+<p>This may be a one-line change.</p>
+<p>Its impact may include:</p>
+<ul>
+<li>source remediation;</li>
+<li>SAP validation;</li>
+<li>migration readiness;</li>
+<li>workflow;</li>
+<li>business process;</li>
+<li>test cases;</li>
+<li>local exceptions.</li>
+</ul>
+<p>Another change may rewrite several paragraphs without changing governed behaviour.</p>
+<p>A useful model diff should distinguish:</p>
+<ul>
+<li>editorial change;</li>
+<li>metadata correction;</li>
+<li>relationship change;</li>
+<li>applicability change;</li>
+<li>value-list change;</li>
+<li>ownership change;</li>
+<li>lifecycle change;</li>
+<li>breaking semantic change.</li>
+</ul>
+<p>The canonical file format makes this analysis possible because critical fields are structured.</p>
+<p>---</p>
+<h1 id="common-mistakes">Common mistakes</h1>
+<h2 id="treating-markdown-as-authoritative-prose-without-structured-references">Treating Markdown as authoritative prose without structured references</h2>
+<p>The repository becomes searchable documentation, not a validated model.</p>
+<h2 id="treating-yaml-as-a-complete-substitute-for-explanation">Treating YAML as a complete substitute for explanation</h2>
+<p>The model becomes technically precise but difficult to review responsibly.</p>
+<h2 id="using-filenames-as-identity">Using filenames as identity</h2>
+<p>Renames appear as delete-and-create operations.</p>
+<h2 id="using-sap-fields-as-business-object-identity">Using SAP fields as business-object identity</h2>
+<p>Business meaning becomes coupled to one implementation.</p>
+<h2 id="allowing-manual-database-edits">Allowing manual database edits</h2>
+<p>Generated and canonical state diverge.</p>
+<h2 id="copying-every-source-document-into-the-repository">Copying every source document into the repository</h2>
+<p>The registry becomes an unmanaged archive.</p>
+<h2 id="allowing-imported-spreadsheets-to-overwrite-canonical-state">Allowing imported spreadsheets to overwrite canonical state</h2>
+<p>Business convenience bypasses review.</p>
+<h2 id="storing-proposed-and-approved-truth-in-the-same-object-without-status">Storing proposed and approved truth in the same object without status</h2>
+<p>Review boundaries disappear.</p>
+<h2 id="creating-object-types-without-clear-governance-purpose">Creating object types without clear governance purpose</h2>
+<p>The schema expands faster than product value.</p>
+<p>---</p>
+<h1 id="the-smallest-useful-repository">The smallest useful repository</h1>
+<p>A pilot does not need hundreds of object types.</p>
+<p>A useful first scope may include:</p>
+<ul>
+<li>one domain;</li>
+<li>one or two entities;</li>
+<li>ten critical attributes;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>a small set of rules;</li>
+<li>evidence from one dataset;</li>
+<li>decisions;</li>
+<li>one proposal.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Customer
+→ Customer Sales Area
+→ Customer Group
+→ CRM Segment
+→ KNVV-KDGRP
+→ source mapping
+→ readiness evidence
+→ approved decision</code></pre>
+<p>This is sufficient to demonstrate:</p>
+<ul>
+<li>canonical representation;</li>
+<li>validation;</li>
+<li>indexing;</li>
+<li>trace;</li>
+<li>impact;</li>
+<li>reviewable change.</li>
+</ul>
+<p>The architecture should prove value on one real chain before expanding into an enterprise metamodel.</p>
+<p>---</p>
+<h1 id="where-the-approach-is-weak">Where the approach is weak</h1>
+<p>Markdown and YAML have limitations.</p>
+<h2 id="large-scale-manual-editing">Large-scale manual editing</h2>
+<p>Thousands of objects may require generated or assisted authoring.</p>
+<h2 id="business-user-accessibility">Business-user accessibility</h2>
+<p>Not every owner is comfortable reviewing source files.</p>
+<h2 id="complex-transactional-workflows">Complex transactional workflows</h2>
+<p>Files are not a replacement for operational MDM workflow.</p>
+<h2 id="fine-grained-access-control">Fine-grained access control</h2>
+<p>Git repository permissions may be too broad for some organisational models.</p>
+<h2 id="real-time-runtime-enforcement">Real-time runtime enforcement</h2>
+<p>Canonical files define truth but do not enforce SAP transactions directly.</p>
+<h2 id="cross-repository-consistency">Cross-repository consistency</h2>
+<p>Large organisations may need stronger tooling for dependencies between repositories.</p>
+<p>These are legitimate constraints.</p>
+<p>They do not invalidate the architecture.</p>
+<p>They define where Martenweave should integrate with:</p>
+<ul>
+<li>user-facing review tools;</li>
+<li>enterprise catalogues;</li>
+<li>MDM platforms;</li>
+<li>ITSM systems;</li>
+<li>CI pipelines;</li>
+<li>agent workflows.</li>
+</ul>
+<p>---</p>
+<h1 id="why-this-architecture-fits-martenweave">Why this architecture fits Martenweave</h1>
+<p>Martenweave’s north star is not to become another place where model information is manually re-entered.</p>
+<p>Its purpose is to convert scattered evidence into a traceable, validated and reviewable model layer.</p>
+<p>Markdown and YAML support that purpose because they are:</p>
+<ul>
+<li>portable;</li>
+<li>inspectable;</li>
+<li>diffable;</li>
+<li>versionable;</li>
+<li>scriptable;</li>
+<li>independent of one hosted application.</li>
+</ul>
+<p>SQLite and JSONL support the operational side because they are:</p>
+<ul>
+<li>queryable;</li>
+<li>indexable;</li>
+<li>rebuildable;</li>
+<li>suitable for search, APIs and generated views.</li>
+</ul>
+<p>Git supports the change record.</p>
+<p>Validators support consistency.</p>
+<p>AI and imports create proposals.</p>
+<p>Humans approve meaning.</p>
+<p>The parts have distinct responsibilities:</p>
+<pre><code class="language-text">Markdown:
+Explanation
+
+YAML:
+Governed structure
+
+Canonical repository:
+Source of truth
+
+Validators:
+Declared consistency
+
+SQLite and JSONL:
+Generated access layer
+
+AI:
+Proposal assistance
+
+Humans:
+Authority and approval
+
+Git:
+Durable change history</code></pre>
+<p>This division is the architecture.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>The value of Markdown and YAML is not that they are simple file formats.</p>
+<p>The value is that they allow model truth to remain:</p>
+<ul>
+<li>reviewable by humans;</li>
+<li>processable by machines;</li>
+<li>testable before publication;</li>
+<li>portable across environments;</li>
+<li>versioned through explicit changes;</li>
+<li>independent of generated indexes and user interfaces.</li>
+</ul>
+<p>A Martenweave model file should not be merely a page of documentation.</p>
+<p>It should be a governed object.</p>
+<p>Its YAML should state enough structure for deterministic validation and graph construction.</p>
+<p>Its Markdown should explain enough meaning for responsible human review.</p>
+<p>Its ID should remain stable.</p>
+<p>Its references should be explicit.</p>
+<p>Its generated database representation should be disposable.</p>
+<p>Its proposed changes should remain separate until approved.</p>
+<p>The practical test is:</p>
+<blockquote>If the generated database, search index and viewer disappeared today, could the organisation rebuild them—and still understand the meaning, ownership, evidence and history of every important model object from the canonical repository?</blockquote>
+<p>When the answer is yes, the files are the source of truth.</p>
+<p>When the answer is no, the repository is only another export from the real system.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It represents model knowledge as canonical, reviewable objects and derives searchable indexes, lineage, impact reports and change proposals from them.</p>
+<p>The objective is not to replace enterprise MDM, data catalogues or workflow platforms.</p>
+<p>It is to give their shared model knowledge a durable, validated and AI-ready source of truth.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently describes itself as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It connects spreadsheets, datasets, tickets, validation reports, decisions and SAP context to canonical model files, deterministic validation, dataset-gap reporting, lineage, impact analysis and human-approved proposals.</p>
+<p>The current core defines Markdown files with YAML frontmatter under <code>model/</code> as the source of truth. Generated SQLite and JSONL artefacts are rebuildable, validation precedes indexing, and AI-generated changes remain reviewable proposals requiring human approval.</p>
+<p>The documented workflow moves from evidence to proposal, validation, gap and impact analysis, human review and GitHub issue or pull-request output. Martenweave explicitly does not position itself as a generic workflow platform, hosted MDM product or direct SAP write-back mechanism.</p>
+<p>The current package declares Python 3.11 or later and includes Pydantic, PyYAML, Typer, Rich, OpenPyXL, FastAPI and Uvicorn among its core dependencies.</p>
+<p>The public demo flow generates a rebuildable SQLite database, search-document JSONL and lineage-edge JSONL from canonical model files and uses those outputs for search, trace, impact and generated local views.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or other vendors discussed in the broader article series.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html"><span>Previous</span>The AMS dashboard shows progress.</a><a href="/blog/why-canonical-model-files-should-remain-the-source-of-truth.html"><span>Next</span>A business owner updates Customer Group in an Excel review file.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

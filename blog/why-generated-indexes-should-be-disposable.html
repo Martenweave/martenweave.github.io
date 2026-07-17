@@ -1,0 +1,1343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why Generated Indexes Should Be Disposable | Martenweave</title>
+    <meta
+      name="description"
+      content="A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html" />
+    <meta property="og:title" content="Why Generated Indexes Should Be Disposable | Martenweave" />
+    <meta property="og:description" content="A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why Generated Indexes Should Be Disposable | Martenweave" />
+    <meta name="twitter:description" content="A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html",
+                        "name": "Why Generated Indexes Should Be Disposable | Martenweave",
+                        "description": "A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why Generated Indexes Should Be Disposable",
+                                    "item": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html#content",
+                        "headline": "Why Generated Indexes Should Be Disposable",
+                        "name": "Why Generated Indexes Should Be Disposable",
+                        "description": "A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite.",
+                        "url": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-generated-indexes-should-be-disposable.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why Generated Indexes Should Be Disposable</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Why Generated Indexes Should Be Disposable</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#canonical-fact">Canonical fact</a></li><li><a href="#reproducible-derivation">Reproducible derivation</a></li><li><a href="#external-operational-state">External operational state</a></li><li><a href="#ephemeral-ui-preference">Ephemeral UI preference</a></li><li><a href="#fresh">Fresh</a></li><li><a href="#stale">Stale</a></li><li><a href="#missing">Missing</a></li><li><a href="#incompatible">Incompatible</a></li><li><a href="#unknown">Unknown</a></li><li><a href="#1-identify-the-canonical-baseline">1. Identify the canonical baseline</a></li><li><a href="#2-validate">2. Validate</a></li><li><a href="#3-build-into-clean-generated-state">3. Build into clean generated state</a></li><li><a href="#4-check-freshness">4. Check freshness</a></li><li><a href="#5-run-semantic-smoke-checks">5. Run semantic smoke checks</a></li><li><a href="#6-generate-views-and-reports">6. Generate views and reports</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A Martenweave user opens <code>modelops.db</code> and corrects the name of an Attribute directly in SQLite.</p>
+<p>The search results immediately look better.</p>
+<p>The generated viewer now displays the corrected term.</p>
+<p>The canonical Markdown file still contains the old name.</p>
+<p>A week later, another team member runs:</p>
+<pre><code class="language-bash">martenweave build-index --repo ./model --jsonl</code></pre>
+<p>The correction disappears.</p>
+<p>This may look like a software defect.</p>
+<p>It is actually the architecture working as intended.</p>
+<p>The edit was made in the wrong layer.</p>
+<p>Martenweave separates two kinds of state:</p>
+<pre><code class="language-text">Canonical state:
+the approved model objects and their meaning
+
+Generated state:
+representations built to make canonical state faster or easier to use</code></pre>
+<p>Canonical model files are authoritative.</p>
+<p>The SQLite database, search documents, lineage edges, static viewer and generated reports are derived artefacts.</p>
+<p>They may be important.</p>
+<p>They may be distributed to users.</p>
+<p>They may take time to build.</p>
+<p>They may support nearly every visible product capability.</p>
+<p>They should still be disposable.</p>
+<blockquote>A generated artefact is disposable when it can be deleted and recreated from declared canonical inputs without losing approved model meaning, identity, relationships or governance history.</blockquote>
+<p>Martenweave’s current public workflow generates:</p>
+<pre><code class="language-text">generated/modelops.db
+generated/search_documents.jsonl
+generated/lineage_edges.jsonl</code></pre>
+<p>from canonical model files. Its documentation explicitly describes those outputs as disposable and rebuildable.</p>
+<p>This is not housekeeping terminology.</p>
+<p>It is an architectural constraint that protects the source of truth.</p>
+<p>---</p>
+<h1 id="disposable-does-not-mean-temporary">Disposable does not mean temporary</h1>
+<p>The word can be misleading.</p>
+<p>A generated index may remain in use for months.</p>
+<p>It may support:</p>
+<ul>
+<li>search;</li>
+<li>structured queries;</li>
+<li>lineage;</li>
+<li>impact analysis;</li>
+<li>local APIs;</li>
+<li>static documentation;</li>
+<li>dashboards;</li>
+<li>agent retrieval;</li>
+<li>readiness reports.</li>
+</ul>
+<p>It may be included in a release package.</p>
+<p>It may be backed up for operational convenience.</p>
+<p>None of this makes it canonical.</p>
+<p>The distinction is not based on lifespan.</p>
+<p>It is based on recoverability and authority.</p>
+<p>A useful generated artefact can be long-lived.</p>
+<p>A canonical artefact can be small.</p>
+<p>The question is:</p>
+<blockquote>If this file disappeared, would the organisation lose approved model truth—or only need to rebuild an access layer?</blockquote>
+<p>For <code>modelops.db</code>, the intended answer is the second.</p>
+<p>---</p>
+<h1 id="the-deletion-test">The deletion test</h1>
+<p>The simplest architectural test is destructive.</p>
+<p>Start with a valid repository.</p>
+<p>Delete:</p>
+<pre><code class="language-text">generated/modelops.db
+generated/search_documents.jsonl
+generated/lineage_edges.jsonl
+generated/site/
+generated/reports/</code></pre>
+<p>Then run the documented build process again:</p>
+<pre><code class="language-bash">martenweave validate --repo ./model
+martenweave build-index --repo ./model --jsonl
+martenweave docs-build --repo ./model --site ./generated/site</code></pre>
+<p>After the rebuild, the system should recover:</p>
+<ul>
+<li>the same canonical objects;</li>
+<li>the same stable IDs;</li>
+<li>the same approved relationships;</li>
+<li>the same lineage topology;</li>
+<li>equivalent searchable content;</li>
+<li>equivalent model-level query results.</li>
+</ul>
+<p>Some non-semantic metadata may differ:</p>
+<ul>
+<li>build timestamp;</li>
+<li>local path;</li>
+<li>tool-runtime information;</li>
+<li>output ordering where not guaranteed.</li>
+</ul>
+<p>The governed meaning should not.</p>
+<p>If the rebuilt result is missing information that existed only in the deleted database, the database was not truly generated.</p>
+<p>It was a hidden source of truth.</p>
+<p>---</p>
+<h1 id="the-clean-checkout-test">The clean-checkout test</h1>
+<p>Deletion inside one working directory is not enough.</p>
+<p>A stronger test begins from a clean checkout:</p>
+<pre><code class="language-text">1. Clone or check out the approved repository baseline.
+2. Install the supported Martenweave version.
+3. Validate the canonical files.
+4. Rebuild all indexes and views.
+5. Compare semantic outputs with the published baseline.</code></pre>
+<p>This test detects hidden dependencies such as:</p>
+<ul>
+<li>manually repaired database rows;</li>
+<li>local configuration that changes model meaning;</li>
+<li>ignored files required for indexing;</li>
+<li>UI-only decisions;</li>
+<li>environment-specific aliases;</li>
+<li>cached relationships not derivable from source;</li>
+<li>undocumented import steps.</li>
+</ul>
+<p>A repository is self-contained only when another authorised environment can reproduce its usable model state.</p>
+<p>---</p>
+<h1 id="generated-state-is-a-projection">Generated state is a projection</h1>
+<p>The canonical repository contains object-oriented truth:</p>
+<ul>
+<li>Domains;</li>
+<li>Entities;</li>
+<li>Attributes;</li>
+<li>Relationships;</li>
+<li>Rules;</li>
+<li>Mappings;</li>
+<li>FieldEndpoints;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>PatchProposals.</li>
+</ul>
+<p>The generated database reorganises that truth for efficient access.</p>
+<p>For example, the canonical files may declare only forward references:</p>
+<pre><code class="language-text">Mapping
+→ source FieldEndpoint
+→ target FieldEndpoint
+→ business Attribute</code></pre>
+<p>The generated index can add reverse navigation:</p>
+<pre><code class="language-text">FieldEndpoint
+← targeted by Mapping
+
+Attribute
+← implemented by FieldEndpoint
+
+Decision
+← referenced by Mapping</code></pre>
+<p>It may also calculate:</p>
+<ul>
+<li>full-text-search documents;</li>
+<li>reverse relationships;</li>
+<li>graph edges;</li>
+<li>aggregate counts;</li>
+<li>object summaries;</li>
+<li>coverage signals;</li>
+<li>derived risk indicators.</li>
+</ul>
+<p>These projections are valuable precisely because they are not constrained to look like the canonical files.</p>
+<p>They can be optimised for their consumers.</p>
+<p>But every derived fact must either:</p>
+<ol>
+<li>be reproducibly calculated from canonical input; or</li>
+<li>be clearly identified as runtime or analytical output rather than approved model truth.</li>
+</ol>
+<p>---</p>
+<h1 id="why-a-database-is-useful-without-being-authoritative">Why a database is useful without being authoritative</h1>
+<p>SQLite gives Martenweave a compact relational representation suitable for local querying.</p>
+<p>An SQLite database generally stores its main state in a database file, while rollback journals or write-ahead logs may participate in transaction recovery. SQLite also maintains internal schema and change metadata inside its file format.</p>
+<p>That makes SQLite practical for:</p>
+<ul>
+<li>indexed lookups;</li>
+<li>joins;</li>
+<li>reverse references;</li>
+<li>local APIs;</li>
+<li>static-site generation;</li>
+<li>report production.</li>
+</ul>
+<p>Its technical reliability does not determine its governance role.</p>
+<p>A database can be highly durable and still be derived.</p>
+<p>A Markdown file can be plain text and still be canonical.</p>
+<p>Authority comes from the architecture and change process—not from the sophistication of the storage engine.</p>
+<p>---</p>
+<h1 id="the-danger-of-an-editable-generated-database">The danger of an editable generated database</h1>
+<p>Once a frontend is connected to SQLite, direct editing becomes tempting.</p>
+<p>The path seems efficient:</p>
+<pre><code class="language-text">UI form
+→ UPDATE objects
+→ instant visible result</code></pre>
+<p>But that introduces several unresolved questions:</p>
+<ul>
+<li>Which canonical file should change?</li>
+<li>How is explanatory Markdown updated?</li>
+<li>How is the Git diff produced?</li>
+<li>Which evidence supports the edit?</li>
+<li>Which Decision authorises it?</li>
+<li>What happens if the repository changed simultaneously?</li>
+<li>Does the database overwrite the file?</li>
+<li>Does the next rebuild overwrite the database?</li>
+<li>Which copy wins during conflict?</li>
+</ul>
+<p>The system has moved from one-way generation to bidirectional synchronisation.</p>
+<p>That is a different architecture.</p>
+<p>It requires:</p>
+<ul>
+<li>conflict detection;</li>
+<li>provenance preservation;</li>
+<li>transaction boundaries across files and database;</li>
+<li>reverse serialisation;</li>
+<li>merge policy;</li>
+<li>approval workflow;</li>
+<li>recovery from partial writes.</li>
+</ul>
+<p>Martenweave does not need this complexity merely to offer an editing UI.</p>
+<p>A safer route is:</p>
+<pre><code class="language-text">UI edit
+→ PatchProposal
+→ deterministic validation
+→ semantic diff
+→ human approval
+→ canonical file change
+→ index rebuild</code></pre>
+<p>The user still receives an editing experience.</p>
+<p>The generated database remains a projection.</p>
+<p>---</p>
+<h1 id="a-generated-viewer-should-also-be-disposable">A generated viewer should also be disposable</h1>
+<p>The current Martenweave demo can generate a static local viewer from <code>modelops.db</code>.</p>
+<p>The documented outputs include:</p>
+<ul>
+<li>index page;</li>
+<li>object lists;</li>
+<li>object detail pages;</li>
+<li>gap pages;</li>
+<li>decision pages;</li>
+<li>owner pages;</li>
+<li>search index;</li>
+<li>viewer manifest;</li>
+<li>static assets.</li>
+</ul>
+<p>The viewer is described as local, static and read-only, while canonical files remain authoritative.</p>
+<p>The viewer should therefore be treated like compiled documentation.</p>
+<p>Changing:</p>
+<pre><code class="language-text">generated/site/objects/customer-group.html</code></pre>
+<p>must not change the model.</p>
+<p>The edit will disappear on regeneration.</p>
+<p>That is desirable.</p>
+<p>If a page is wrong, correct:</p>
+<ul>
+<li>the canonical object;</li>
+<li>the rendering logic;</li>
+<li>the viewer template;</li>
+<li>the search projection.</li>
+</ul>
+<p>Do not repair the generated page as though it were source content.</p>
+<p>---</p>
+<h1 id="reports-need-the-same-boundary">Reports need the same boundary</h1>
+<p>A readiness report may state:</p>
+<pre><code class="language-text">Customer Group readiness: blocked</code></pre>
+<p>A later analyst may believe the verdict should be:</p>
+<pre><code class="language-text">ready with warnings</code></pre>
+<p>Editing the Markdown report directly does not change the underlying evidence.</p>
+<p>A generated report should remain connected to:</p>
+<ul>
+<li>canonical baseline;</li>
+<li>dataset fingerprint;</li>
+<li>validation profile;</li>
+<li>tool version;</li>
+<li>execution time;</li>
+<li>report parameters.</li>
+</ul>
+<p>Changing the verdict requires changing or re-evaluating one of those inputs.</p>
+<p>Reports are evidence products.</p>
+<p>They are not a backdoor for model decisions.</p>
+<p>Martenweave’s current dataset-readiness flow combines validation, indexing, profiling and gap analysis into generated JSON and Markdown reports. It can also promote findings into a draft <code>PatchProposal</code>, preserving the distinction between an observation and an approved model change.</p>
+<p>---</p>
+<h1 id="generated-issues-are-drafts-not-model-truth">Generated issues are drafts, not model truth</h1>
+<p>A readiness run can create a GitHub-ready issue draft.</p>
+<p>That draft may contain:</p>
+<ul>
+<li>gap summary;</li>
+<li>affected fields;</li>
+<li>evidence;</li>
+<li>suggested actions;</li>
+<li>validation output.</li>
+</ul>
+<p>The draft is generated from current evidence.</p>
+<p>It should not be treated as the canonical model.</p>
+<p>Publishing the issue creates an operational work item.</p>
+<p>Closing the issue does not automatically change the model either.</p>
+<p>The controlled sequence remains:</p>
+<pre><code class="language-text">Generated finding
+→ issue or proposal
+→ investigation
+→ Decision
+→ approved canonical change</code></pre>
+<p>Each layer has a role.</p>
+<p>---</p>
+<h1 id="search-indexes-must-be-replaceable">Search indexes must be replaceable</h1>
+<p>Search implementation evolves.</p>
+<p>A product may move from:</p>
+<ul>
+<li>basic substring search;</li>
+<li>SQL filtering;</li>
+<li>SQLite full-text search;</li>
+<li>hybrid lexical ranking;</li>
+<li>semantic retrieval;</li>
+<li>external search engine.</li>
+</ul>
+<p>The canonical model should not need to change merely because ranking improves.</p>
+<p>A search document may contain:</p>
+<pre><code class="language-text">object ID
+type
+name
+aliases
+definition
+references
+status
+domain</code></pre>
+<p>The search engine can index, tokenise and rank these fields differently over time.</p>
+<p>Search rankings are generated behaviour.</p>
+<p>They are not model truth.</p>
+<p>A new search version may return Customer Group before a related Decision where an older version did the opposite.</p>
+<p>Both can represent the same canonical repository.</p>
+<p>---</p>
+<h1 id="embeddings-must-be-disposable-too">Embeddings must be disposable too</h1>
+<p>If Martenweave later introduces vector embeddings for semantic retrieval, those vectors should be treated as another generated projection.</p>
+<p>An embedding depends on:</p>
+<ul>
+<li>source text;</li>
+<li>chunking method;</li>
+<li>embedding model;</li>
+<li>model version;</li>
+<li>preprocessing;</li>
+<li>dimensionality;</li>
+<li>normalisation.</li>
+</ul>
+<p>Changing any of these may require a complete rebuild.</p>
+<p>The repository should not depend on preserving one opaque vector forever.</p>
+<p>A retrieval record should remain traceable to:</p>
+<ul>
+<li>canonical object ID;</li>
+<li>canonical baseline;</li>
+<li>source field or content section;</li>
+<li>embedding configuration.</li>
+</ul>
+<p>The vector accelerates similarity search.</p>
+<p>It does not become the only representation of meaning.</p>
+<p>---</p>
+<h1 id="lineage-edges-must-be-reproducible">Lineage edges must be reproducible</h1>
+<p>The generated <code>lineage_edges.jsonl</code> should contain relationships derived from canonical object references.</p>
+<p>Examples:</p>
+<pre><code class="language-text">source FieldEndpoint
+→ Mapping
+
+Mapping
+→ business Attribute
+
+business Attribute
+→ target FieldEndpoint</code></pre>
+<p>If a lineage edge exists only because someone inserted it manually into JSONL, it will disappear during rebuild.</p>
+<p>The correct response is not to preserve the manual JSONL edit.</p>
+<p>The team should determine whether:</p>
+<ul>
+<li>a canonical Relationship is missing;</li>
+<li>a Mapping lacks a reference;</li>
+<li>the lineage-generation rule is incomplete;</li>
+<li>the edge should not exist.</li>
+</ul>
+<p>Lineage is trustworthy only when its origin can be explained.</p>
+<p>Martenweave’s public demo uses the generated graph for <code>trace</code> and <code>impact</code> operations across Attributes, physical endpoints, Mappings, Decisions and Evidence.</p>
+<p>---</p>
+<h1 id="derived-facts-need-provenance">Derived facts need provenance</h1>
+<p>Not every generated field is a simple copy.</p>
+<p>An index may derive:</p>
+<pre><code class="language-text">object has no owner
+object has three downstream mappings
+decision evidence is stale
+field is on a critical path
+proposal affects twelve objects</code></pre>
+<p>Each derived fact should be explainable.</p>
+<p>For example:</p>
+<pre><code class="language-text">Derived signal:
+unowned_attribute
+
+Based on:
+ATTR-CUSTOMER-GROUP.owners is empty
+
+Rule:
+MW-OWN-001
+
+Baseline:
+commit abc123</code></pre>
+<p>This enables:</p>
+<ul>
+<li>reproduction;</li>
+<li>debugging;</li>
+<li>review;</li>
+<li>rule evolution;</li>
+<li>agent explanation.</li>
+</ul>
+<p>A generated score without provenance is difficult to trust and difficult to rebuild consistently.</p>
+<p>---</p>
+<h1 id="disposable-indexes-expose-incomplete-canonical-models">Disposable indexes expose incomplete canonical models</h1>
+<p>Suppose the team deletes the generated index and discovers that it cannot recreate:</p>
+<ul>
+<li>business aliases;</li>
+<li>reverse mappings;</li>
+<li>local ownership;</li>
+<li>proposal-review status.</li>
+</ul>
+<p>This indicates that those facts were stored only in operational state.</p>
+<p>The deletion test has found a modelling gap.</p>
+<p>The response is to classify each missing item:</p>
+<h2 id="canonical-fact">Canonical fact</h2>
+<p>Move or represent it in canonical model files.</p>
+<h2 id="reproducible-derivation">Reproducible derivation</h2>
+<p>Implement the build rule.</p>
+<h2 id="external-operational-state">External operational state</h2>
+<p>Keep a reference to the authoritative external system.</p>
+<h2 id="ephemeral-ui-preference">Ephemeral UI preference</h2>
+<p>Do not treat it as model state.</p>
+<p>This classification strengthens the architecture.</p>
+<p>---</p>
+<h1 id="full-rebuild-reduces-stale-data-risk">Full rebuild reduces stale-data risk</h1>
+<p>Incremental synchronisation is efficient when implemented correctly.</p>
+<p>It creates several failure modes:</p>
+<ul>
+<li>deleted objects remain indexed;</li>
+<li>reverse relationships are not recalculated;</li>
+<li>renamed files create duplicates;</li>
+<li>partial updates leave mixed baselines;</li>
+<li>failed events are not replayed;</li>
+<li>dependency changes do not invalidate related rows.</li>
+</ul>
+<p>A full rebuild begins from the complete current canonical state.</p>
+<p>Martenweave’s current core documents <code>build-index</code> as dropping and recreating generated tables to keep indexing deterministic.</p>
+<p>For a repository-sized model registry, this is a rational starting point.</p>
+<p>It favours correctness and explainability over premature incremental complexity.</p>
+<p>---</p>
+<h1 id="full-rebuild-is-not-always-the-final-scaling-strategy">Full rebuild is not always the final scaling strategy</h1>
+<p>A large repository may eventually make full rebuilds expensive.</p>
+<p>Possible future optimisations include:</p>
+<ul>
+<li>content-addressed parsing cache;</li>
+<li>incremental object normalisation;</li>
+<li>dependency-aware edge regeneration;</li>
+<li>partitioned indexes;</li>
+<li>domain-specific builds;</li>
+<li>immutable build layers;</li>
+<li>background index refresh.</li>
+</ul>
+<p>These are build strategies.</p>
+<p>They do not change the source-of-truth rule.</p>
+<p>An incrementally maintained index can remain disposable when:</p>
+<ul>
+<li>every row can still be reproduced;</li>
+<li>deletion and invalidation are reliable;</li>
+<li>a complete rebuild remains possible;</li>
+<li>no independent edits are accepted;</li>
+<li>freshness is verifiable.</li>
+</ul>
+<p>The important distinction is:</p>
+<pre><code class="language-text">Disposable:
+governance and recoverability property
+
+Full rebuild:
+one implementation strategy</code></pre>
+<p>Do not confuse them.</p>
+<p>---</p>
+<h1 id="atomic-publication-protects-readers">Atomic publication protects readers</h1>
+<p>A rebuild may take time.</p>
+<p>Readers should not observe:</p>
+<ul>
+<li>new objects with old relationships;</li>
+<li>updated search documents with stale metadata;</li>
+<li>half-populated tables;</li>
+<li>missing indexes;</li>
+<li>incomplete viewer pages.</li>
+</ul>
+<p>A safer build sequence is:</p>
+<pre><code class="language-text">1. Validate canonical input.
+2. Build into a temporary database or output directory.
+3. Verify expected artefacts.
+4. Record build metadata.
+5. Publish or replace the previous output as one completed unit.</code></pre>
+<p>SQLite provides transactional mechanisms designed to preserve consistent database state across changes and recovery scenarios.</p>
+<p>Martenweave’s specific implementation may evolve, but the product contract should remain:</p>
+<blockquote>A failed rebuild must not publish a generated state that appears complete.</blockquote>
+<p>---</p>
+<h1 id="backups-are-useful-even-for-disposable-state">Backups are useful even for disposable state</h1>
+<p>Calling an index disposable does not mean backups are prohibited.</p>
+<p>A backup may save time when:</p>
+<ul>
+<li>the repository is large;</li>
+<li>rebuild dependencies are temporarily unavailable;</li>
+<li>a client package must be restored quickly;</li>
+<li>an investigation needs the exact historical generated output;</li>
+<li>performance regression analysis is required.</li>
+</ul>
+<p>SQLite provides an official backup interface for copying a live database safely into another database file.</p>
+<p>The governance distinction remains:</p>
+<pre><code class="language-text">Backup purpose:
+operational recovery or historical evidence
+
+Canonical authority:
+model repository baseline</code></pre>
+<p>If a backup conflicts with a clean rebuild from the same declared baseline, the difference must be investigated.</p>
+<p>The backup does not automatically win.</p>
+<p>---</p>
+<h1 id="historical-generated-artefacts-can-still-be-valuable">Historical generated artefacts can still be valuable</h1>
+<p>A generated index from a past baseline may preserve:</p>
+<ul>
+<li>exact search behaviour at the time;</li>
+<li>an older derivation algorithm;</li>
+<li>the viewer used in an approval;</li>
+<li>a specific readiness report;</li>
+<li>release evidence.</li>
+</ul>
+<p>It may be retained as part of a release package.</p>
+<p>This does not make it canonical.</p>
+<p>The package should identify:</p>
+<pre><code class="language-text">canonical commit
+Martenweave version
+schema version
+build timestamp
+validation result
+build configuration</code></pre>
+<p>The canonical repository explains the model.</p>
+<p>The archived generated artefact helps reproduce the user experience and analytical outputs of that release.</p>
+<p>---</p>
+<h1 id="generated-state-must-identify-its-input">Generated state must identify its input</h1>
+<p>Every generated artefact should carry or be accompanied by build metadata.</p>
+<p>A manifest can conceptually include:</p>
+<pre><code class="language-yaml">canonical_commit: abc123
+canonical_schema: &quot;1.0&quot;
+martenweave_version: &quot;0.5.0&quot;
+built_at: 2026-07-14T15:30:00Z
+validation:
+  errors: 0
+  warnings: 3
+outputs:
+  database: generated/modelops.db
+  search: generated/search_documents.jsonl
+  lineage: generated/lineage_edges.jsonl</code></pre>
+<p>This enables several checks:</p>
+<ul>
+<li>Does this index represent the current commit?</li>
+<li>Was it built before or after a Decision?</li>
+<li>Which validation profile was used?</li>
+<li>Which tool release generated it?</li>
+<li>Can the outputs be compared with another build?</li>
+</ul>
+<p>Without an input identity, “generated” becomes difficult to prove.</p>
+<p>---</p>
+<h1 id="freshness-is-a-first-class-state">Freshness is a first-class state</h1>
+<p>Martenweave currently exposes <code>index-fresh</code> after <code>build-index</code> in its public demo flow.</p>
+<p>The index should be able to report:</p>
+<pre><code class="language-text">fresh
+stale
+missing
+incompatible
+unknown</code></pre>
+<h2 id="fresh">Fresh</h2>
+<p>The index matches the declared canonical baseline and supported build configuration.</p>
+<h2 id="stale">Stale</h2>
+<p>Canonical input changed after the build.</p>
+<h2 id="missing">Missing</h2>
+<p>No generated index exists.</p>
+<h2 id="incompatible">Incompatible</h2>
+<p>The index was created by an unsupported schema or tool version.</p>
+<h2 id="unknown">Unknown</h2>
+<p>The artefact lacks enough metadata to prove its origin.</p>
+<p>A stale index should not silently answer governance questions as though it represented current state.</p>
+<p>---</p>
+<h1 id="freshness-is-not-based-only-on-timestamps">Freshness is not based only on timestamps</h1>
+<p>Filesystem modification time is convenient.</p>
+<p>It is not always reliable enough.</p>
+<p>Files can be:</p>
+<ul>
+<li>copied;</li>
+<li>restored;</li>
+<li>checked out;</li>
+<li>generated with preserved timestamps;</li>
+<li>modified through tools that alter metadata unexpectedly.</li>
+</ul>
+<p>A stronger freshness mechanism can use:</p>
+<ul>
+<li>repository commit;</li>
+<li>content fingerprint;</li>
+<li>sorted canonical-file hashes;</li>
+<li>schema version;</li>
+<li>build configuration;</li>
+<li>tool version.</li>
+</ul>
+<p>The exact mechanism depends on the product contract.</p>
+<p>The important point is that freshness should reflect declared input identity rather than only clock comparison.</p>
+<p>---</p>
+<h1 id="generated-databases-should-be-read-only-by-policy">Generated databases should be read-only by policy</h1>
+<p>SQLite itself supports writes.</p>
+<p>Martenweave can still treat <code>modelops.db</code> as read-only at the application level.</p>
+<p>Possible safeguards include:</p>
+<ul>
+<li>read-only API access;</li>
+<li>generated-directory warnings;</li>
+<li>integrity checks before use;</li>
+<li>file regeneration during standard workflows;</li>
+<li>no supported canonical-write commands against SQLite;</li>
+<li>clear documentation;</li>
+<li>build manifest comparison.</li>
+</ul>
+<p>Technical write protection may not always be practical.</p>
+<p>The product boundary must still be explicit.</p>
+<p>A user who edits the database manually has changed an unsupported projection, not the model.</p>
+<p>---</p>
+<h1 id="never-reverse-generate-canonical-files-as-the-normal-workflow">Never reverse-generate canonical files as the normal workflow</h1>
+<p>It may be possible to reconstruct some canonical YAML from database rows.</p>
+<p>That does not make reverse generation safe.</p>
+<p>The database may not preserve:</p>
+<ul>
+<li>Markdown formatting;</li>
+<li>comments;</li>
+<li>deliberate field ordering;</li>
+<li>nuanced explanation;</li>
+<li>proposal context;</li>
+<li>unresolved drafts;</li>
+<li>source-file organisation;</li>
+<li>historical editorial structure.</li>
+</ul>
+<p>A database-to-files reconstruction is potentially lossy.</p>
+<p>It can be useful for emergency recovery.</p>
+<p>It should not become ordinary synchronisation.</p>
+<p>The normal direction remains:</p>
+<pre><code class="language-text">canonical files
+→ validation
+→ generated index</code></pre>
+<p>not:</p>
+<pre><code class="language-text">database edits
+→ regenerate canonical truth</code></pre>
+<p>---</p>
+<h1 id="the-ui-can-store-its-own-non-canonical-state">The UI can store its own non-canonical state</h1>
+<p>Not every piece of application state belongs in canonical files.</p>
+<p>A workbench may store:</p>
+<ul>
+<li>last-opened object;</li>
+<li>panel layout;</li>
+<li>search history;</li>
+<li>filter preference;</li>
+<li>table width;</li>
+<li>dismissed hint;</li>
+<li>temporary draft text.</li>
+</ul>
+<p>These are legitimate UI concerns.</p>
+<p>They should be clearly separated from model truth.</p>
+<p>A useful classification is:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">State</th><th scope="col">Canonical?</th><th scope="col">Rebuildable?</th></tr></thead><tbody><tr><td>Attribute definition</td><td>Yes</td><td>Primary source</td></tr><tr><td>Mapping reference</td><td>Yes</td><td>Primary source</td></tr><tr><td>Reverse relationship</td><td>No</td><td>Yes</td></tr><tr><td>Search ranking</td><td>No</td><td>Yes</td></tr><tr><td>Viewer HTML</td><td>No</td><td>Yes</td></tr><tr><td>Readiness verdict</td><td>No</td><td>Yes, from declared inputs</td></tr><tr><td>Pending unsaved form text</td><td>No</td><td>Not necessarily</td></tr><tr><td>User layout preference</td><td>No</td><td>Not relevant</td></tr><tr><td>Approved Decision</td><td>Yes</td><td>Primary source</td></tr><tr><td>API cache</td><td>No</td><td>Yes</td></tr></tbody></table></div>
+<p>Not every non-canonical state must be rebuildable.</p>
+<p>Only model-derived state should be expected to reproduce from the canonical model.</p>
+<p>---</p>
+<h1 id="external-operational-state-should-remain-external">External operational state should remain external</h1>
+<p>Some Martenweave views may include information from:</p>
+<ul>
+<li>GitHub issues;</li>
+<li>ServiceNow changes;</li>
+<li>Jira tickets;</li>
+<li>SAP transports;</li>
+<li>CI results;</li>
+<li>external datasets.</li>
+</ul>
+<p>This state may not be rebuildable from canonical model files alone.</p>
+<p>The index should record:</p>
+<ul>
+<li>external reference;</li>
+<li>retrieval time;</li>
+<li>source authority;</li>
+<li>optional cached projection.</li>
+</ul>
+<p>The cache remains disposable.</p>
+<p>The external system remains authoritative for its own operational state.</p>
+<p>For example:</p>
+<pre><code class="language-text">Canonical model:
+Rule definition and affected objects
+
+ServiceNow:
+change implementation status
+
+Generated index:
+joined view of both</code></pre>
+<p>Deleting the generated join should not lose either authoritative source.</p>
+<p>---</p>
+<h1 id="do-not-copy-production-data-into-the-index-unnecessarily">Do not copy production data into the index unnecessarily</h1>
+<p>A model registry needs metadata and evidence.</p>
+<p>It does not need every customer, supplier or product record.</p>
+<p>Copying production data into the generated index creates:</p>
+<ul>
+<li>security exposure;</li>
+<li>larger builds;</li>
+<li>access-control complexity;</li>
+<li>retention obligations;</li>
+<li>confusion between model and instance data.</li>
+</ul>
+<p>Dataset profiling can generate summaries:</p>
+<ul>
+<li>field presence;</li>
+<li>datatype;</li>
+<li>value distribution;</li>
+<li>completeness;</li>
+<li>gap evidence.</li>
+</ul>
+<p>The generated index may reference those summaries.</p>
+<p>It should not become a shadow master-data store.</p>
+<p>---</p>
+<h1 id="disposable-does-not-excuse-poor-quality">Disposable does not excuse poor quality</h1>
+<p>A rebuildable artefact can still be wrong.</p>
+<p>Possible defects include:</p>
+<ul>
+<li>missing objects;</li>
+<li>incorrect reverse edges;</li>
+<li>duplicate search documents;</li>
+<li>unstable ordering;</li>
+<li>stale aliases;</li>
+<li>wrong status filters;</li>
+<li>incomplete viewer pages.</li>
+</ul>
+<p>“Just rebuild it” is not a substitute for testing.</p>
+<p>A trustworthy generated layer needs:</p>
+<ul>
+<li>deterministic build tests;</li>
+<li>example repositories;</li>
+<li>count checks;</li>
+<li>relationship assertions;</li>
+<li>stable output contracts;</li>
+<li>freshness checks;</li>
+<li>release smoke tests.</li>
+</ul>
+<p>The current Martenweave demo documents a release smoke command that executes a release-grade command matrix against bundled examples and asserts stable JSON output.</p>
+<p>Disposable means recoverable.</p>
+<p>It does not mean untested.</p>
+<p>---</p>
+<h1 id="semantic-reproducibility-matters-more-than-byte-equality">Semantic reproducibility matters more than byte equality</h1>
+<p>Two valid builds may differ at byte level because of:</p>
+<ul>
+<li>timestamps;</li>
+<li>database page layout;</li>
+<li>insertion order;</li>
+<li>local paths;</li>
+<li>tool-library versions;</li>
+<li>generated asset hashes.</li>
+</ul>
+<p>The important question is whether they represent the same model state.</p>
+<p>Useful semantic comparisons include:</p>
+<ul>
+<li>object ID set;</li>
+<li>object types;</li>
+<li>canonical properties;</li>
+<li>relationship set;</li>
+<li>search-document content;</li>
+<li>lineage-edge set;</li>
+<li>query results;</li>
+<li>validation outcomes.</li>
+</ul>
+<p>Where byte-for-byte reproducibility is required, variable metadata should be isolated or normalised.</p>
+<p>Do not claim deterministic governance merely because two database files have the same checksum.</p>
+<p>Do not reject equivalent builds merely because internal page layout differs.</p>
+<p>---</p>
+<h1 id="the-build-function-should-be-conceptually-pure">The build function should be conceptually pure</h1>
+<p>A useful mental model is:</p>
+<pre><code class="language-text">generated_state =
+build(
+    canonical_repository,
+    schema_version,
+    tool_version,
+    build_configuration
+)</code></pre>
+<p>The output should not depend on hidden mutable state.</p>
+<p>Problematic hidden inputs include:</p>
+<ul>
+<li>previous database contents;</li>
+<li>local manual corrections;</li>
+<li>undocumented environment variables;</li>
+<li>stale remote caches;</li>
+<li>user-specific defaults;</li>
+<li>uncontrolled current time affecting semantic state;</li>
+<li>network calls that alter object meaning.</li>
+</ul>
+<p>Some runtime metadata will naturally vary.</p>
+<p>The governed model projection should remain reproducible from declared inputs.</p>
+<p>---</p>
+<h1 id="data-migrations-inside-generated-storage-should-be-questioned">Data migrations inside generated storage should be questioned</h1>
+<p>Suppose the SQLite schema changes between Martenweave releases.</p>
+<p>A traditional application might migrate the existing database in place through many historical migrations.</p>
+<p>For a disposable index, a simpler approach may be safer:</p>
+<pre><code class="language-text">delete generated database
+→ rebuild using the new index schema</code></pre>
+<p>This avoids preserving years of generated-database migration complexity.</p>
+<p>Canonical schema migrations still matter because canonical files carry authoritative data.</p>
+<p>Generated-schema migrations are needed only when operational requirements make rebuild impractical.</p>
+<p>This is another benefit of disposability:</p>
+<blockquote>It reduces the amount of state the product must preserve indefinitely.</blockquote>
+<p>---</p>
+<h1 id="disposability-limits-vendor-and-platform-lock-in">Disposability limits vendor and platform lock-in</h1>
+<p>A model repository whose truth exists only inside:</p>
+<ul>
+<li>one database schema;</li>
+<li>one hosted search index;</li>
+<li>one proprietary graph;</li>
+<li>one SaaS tenant;</li>
+</ul>
+<p>is difficult to move.</p>
+<p>When canonical files remain authoritative, the generated layer can change.</p>
+<p>Today:</p>
+<pre><code class="language-text">SQLite + JSONL</code></pre>
+<p>Later, where justified:</p>
+<pre><code class="language-text">PostgreSQL
+OpenSearch
+graph database
+embedded analytics store</code></pre>
+<p>The model survives because the storage projection is replaceable.</p>
+<p>Martenweave’s current principles explicitly describe the core as local-first, with canonical files and disposable generated indexes rather than a hosted MDM platform or SaaS dependency.</p>
+<p>---</p>
+<h1 id="why-not-use-the-canonical-files-directly-for-everything">Why not use the canonical files directly for everything?</h1>
+<p>For a very small repository, the CLI could parse files on every operation.</p>
+<p>This avoids generated state.</p>
+<p>It introduces other costs:</p>
+<ul>
+<li>repeated parsing;</li>
+<li>repeated validation;</li>
+<li>slow reverse lookup;</li>
+<li>expensive graph construction;</li>
+<li>weak full-text search;</li>
+<li>duplicated processing across tools;</li>
+<li>harder API integration.</li>
+</ul>
+<p>The generated index is a performance and access optimisation.</p>
+<p>It allows canonical files to remain designed for review and governance rather than query execution.</p>
+<p>The correct architecture is not:</p>
+<pre><code class="language-text">Files good
+Database bad</code></pre>
+<p>It is:</p>
+<pre><code class="language-text">Files for authority
+Database for access</code></pre>
+<p>---</p>
+<h1 id="a-practical-release-workflow">A practical release workflow</h1>
+<p>A release-grade model workflow can use the following sequence.</p>
+<h2 id="1-identify-the-canonical-baseline">1. Identify the canonical baseline</h2>
+<p>Use an approved branch, commit or tag.</p>
+<h2 id="2-validate">2. Validate</h2>
+<pre><code class="language-bash">martenweave validate --repo ./model</code></pre>
+<p>No blocking structural errors should remain.</p>
+<h2 id="3-build-into-clean-generated-state">3. Build into clean generated state</h2>
+<pre><code class="language-bash">rm -rf ./model/generated
+martenweave build-index --repo ./model --jsonl</code></pre>
+<h2 id="4-check-freshness">4. Check freshness</h2>
+<pre><code class="language-bash">martenweave index-fresh --repo ./model</code></pre>
+<h2 id="5-run-semantic-smoke-checks">5. Run semantic smoke checks</h2>
+<p>Examples:</p>
+<pre><code class="language-bash">martenweave search &quot;Customer Group&quot; --repo ./model
+martenweave trace ATTR-CUSTOMER-GROUP --repo ./model
+martenweave impact FEP-S4-KNVV-KDGRP --repo ./model</code></pre>
+<h2 id="6-generate-views-and-reports">6. Generate views and reports</h2>
+<pre><code class="language-bash">martenweave docs-build --repo ./model --site ./generated/site</code></pre>
+<h2 id="7-record-build-metadata">7. Record build metadata</h2>
+<p>Include:</p>
+<ul>
+<li>commit;</li>
+<li>schema version;</li>
+<li>Martenweave version;</li>
+<li>validation summary;</li>
+<li>artefact checksums where useful.</li>
+</ul>
+<h2 id="8-package-or-publish">8. Package or publish</h2>
+<p>Distribute generated artefacts as a representation of that baseline.</p>
+<p>---</p>
+<h1 id="the-release-package-should-prove-rebuildability">The release package should prove rebuildability</h1>
+<p>A model handover should include enough information for another team to reproduce the generated layer.</p>
+<p>At minimum:</p>
+<ul>
+<li>canonical repository;</li>
+<li>baseline identifier;</li>
+<li>supported Martenweave version;</li>
+<li>dependency instructions;</li>
+<li>validation command;</li>
+<li>index-build command;</li>
+<li>expected artefact list;</li>
+<li>release smoke command;</li>
+<li>known warnings.</li>
+</ul>
+<p>A generated database alone is not an adequate handover.</p>
+<p>It provides access.</p>
+<p>It does not provide durable governance truth.</p>
+<p>---</p>
+<h1 id="a-disaster-recovery-scenario">A disaster-recovery scenario</h1>
+<p>Assume an AMS server is lost.</p>
+<p>The server contained:</p>
+<ul>
+<li><code>modelops.db</code>;</li>
+<li>generated viewer;</li>
+<li>cached reports;</li>
+<li>local API process.</li>
+</ul>
+<p>The Git repository remains available.</p>
+<p>Recovery should be:</p>
+<pre><code class="language-text">1. Restore the approved canonical repository.
+2. Install the supported Martenweave release.
+3. Validate the repository.
+4. Rebuild indexes.
+5. Recreate the viewer.
+6. Verify semantic outputs.
+7. Resume access.</code></pre>
+<p>No manual database reconstruction should be required.</p>
+<p>If recovery depends on restoring one special SQLite backup because model facts were edited there, the architecture has accumulated hidden canonical state.</p>
+<p>---</p>
+<h1 id="a-drift-scenario">A drift scenario</h1>
+<p>Suppose the canonical files say:</p>
+<pre><code class="language-text">Customer Group:
+sales-area-specific</code></pre>
+<p>but the generated database says:</p>
+<pre><code class="language-text">Customer Group:
+central</code></pre>
+<p>Possible causes include:</p>
+<ul>
+<li>stale index;</li>
+<li>manual database edit;</li>
+<li>failed partial rebuild;</li>
+<li>indexer defect;</li>
+<li>wrong repository baseline;</li>
+<li>wrong build configuration.</li>
+</ul>
+<p>The resolution process should be:</p>
+<ol>
+<li>identify canonical commit;</li>
+<li>run validation;</li>
+<li>perform clean rebuild;</li>
+<li>compare output;</li>
+<li>investigate builder defect if divergence remains.</li>
+</ol>
+<p>The database should not be manually reconciled with the files.</p>
+<p>It should be replaced.</p>
+<p>---</p>
+<h1 id="an-agent-scenario">An agent scenario</h1>
+<p>An AI agent searches the index and finds a Mapping.</p>
+<p>Before proposing a change, the agent should retain:</p>
+<ul>
+<li>stable object ID;</li>
+<li>canonical source path;</li>
+<li>baseline;</li>
+<li>related evidence;</li>
+<li>current status.</li>
+</ul>
+<p>The safe flow is:</p>
+<pre><code class="language-text">Generated index:
+find candidate context quickly
+
+Canonical files:
+verify authoritative model state
+
+Agent:
+produce PatchProposal
+
+Validator:
+check candidate state
+
+Human:
+approve or reject</code></pre>
+<p>The index is a retrieval accelerator.</p>
+<p>It must not become opaque agent memory detached from source objects.</p>
+<p>Martenweave’s current operating principle remains:</p>
+<blockquote>Agents propose. Validators verify. Humans approve. Git records.</blockquote>
+<p>Disposable generated state supports that boundary because an agent cannot establish model truth merely by writing to its retrieval database.</p>
+<p>---</p>
+<h1 id="warning-signs-that-generated-state-has-become-canonical">Warning signs that generated state has become canonical</h1>
+<p>Several symptoms indicate architectural drift.</p>
+<h2 id="do-not-rebuild-we-will-lose-corrections">“Do not rebuild; we will lose corrections.”</h2>
+<p>The database contains manual truth.</p>
+<h2 id="this-field-exists-only-in-the-ui">“This field exists only in the UI.”</h2>
+<p>The canonical model is incomplete.</p>
+<h2 id="the-repository-is-updated-from-the-database-once-a-month">“The repository is updated from the database once a month.”</h2>
+<p>Two-way synchronisation has replaced source-of-truth discipline.</p>
+<h2 id="the-static-viewer-is-the-approved-document">“The static viewer is the approved document.”</h2>
+<p>Generated HTML has become governance evidence without its source baseline.</p>
+<h2 id="the-issue-was-closed-so-the-model-is-updated">“The issue was closed, so the model is updated.”</h2>
+<p>Operational workflow is being confused with canonical change.</p>
+<h2 id="search-knows-about-it-but-the-files-do-not">“Search knows about it, but the files do not.”</h2>
+<p>The index contains unsupported enrichment or hidden state.</p>
+<h2 id="nobody-knows-which-commit-created-this-database">“Nobody knows which commit created this database.”</h2>
+<p>The artefact has no reproducible provenance.</p>
+<h2 id="the-old-index-cannot-be-rebuilt-with-the-current-model">“The old index cannot be rebuilt with the current model.”</h2>
+<p>Historical inputs or tool versions were not preserved.</p>
+<p>---</p>
+<h1 id="what-should-remain-non-disposable">What should remain non-disposable?</h1>
+<p>The following must not be treated as generated cache when they carry approved truth:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>approved Decisions;</li>
+<li>stable identities;</li>
+<li>explicit Relationships;</li>
+<li>current Rules;</li>
+<li>source-to-target Mappings;</li>
+<li>evidence references required to justify decisions;</li>
+<li>approval records or durable links to them;</li>
+<li>model baseline metadata;</li>
+<li>schema migration history;</li>
+<li>human-reviewed change records.</li>
+</ul>
+<p>These are the materials from which generated access layers can be recreated and understood.</p>
+<p>---</p>
+<h1 id="what-can-safely-remain-disposable">What can safely remain disposable?</h1>
+<p>Examples include:</p>
+<ul>
+<li>SQLite index;</li>
+<li>reverse-reference tables;</li>
+<li>search documents;</li>
+<li>lineage-edge export;</li>
+<li>search ranking data;</li>
+<li>static viewer pages;</li>
+<li>generated object summaries;</li>
+<li>aggregate scorecards;</li>
+<li>API cache;</li>
+<li>report rendering;</li>
+<li>vector embeddings;</li>
+<li>temporary import staging;</li>
+<li>build logs after required evidence is retained elsewhere.</li>
+</ul>
+<p>Some generated reports may be archived for audit or release evidence.</p>
+<p>Their authority still comes from their declared inputs and generation process.</p>
+<p>---</p>
+<h1 id="a-disposability-checklist">A disposability checklist</h1>
+<p>A generated artefact is properly disposable when all of the following are true.</p>
+<h2 id="rebuild-source-exists">Rebuild source exists</h2>
+<p>The canonical inputs are versioned and accessible.</p>
+<h2 id="build-process-is-documented">Build process is documented</h2>
+<p>Another authorised environment can execute it.</p>
+<h2 id="validation-precedes-generation">Validation precedes generation</h2>
+<p>Invalid model state is not silently indexed.</p>
+<h2 id="input-identity-is-recorded">Input identity is recorded</h2>
+<p>Commit, schema and tool version are known.</p>
+<h2 id="no-supported-direct-canonical-writes-exist">No supported direct canonical writes exist</h2>
+<p>Edits enter through proposals or canonical files.</p>
+<h2 id="reverse-derivation-is-unnecessary">Reverse derivation is unnecessary</h2>
+<p>Canonical files are not reconstructed routinely from the index.</p>
+<h2 id="freshness-is-checkable">Freshness is checkable</h2>
+<p>The system can identify stale output.</p>
+<h2 id="failure-is-safe">Failure is safe</h2>
+<p>A failed build does not publish partial output as complete.</p>
+<h2 id="semantic-results-are-testable">Semantic results are testable</h2>
+<p>Objects and relationships can be compared after rebuild.</p>
+<h2 id="generated-state-contains-no-unique-approved-facts">Generated state contains no unique approved facts</h2>
+<p>Deleting it loses convenience, not model truth.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-strengthen-next">What Martenweave should strengthen next</h1>
+<p>The current architecture already has:</p>
+<ul>
+<li>canonical files;</li>
+<li>full index rebuild;</li>
+<li>disposable SQLite and JSONL outputs;</li>
+<li>freshness checking;</li>
+<li>release smoke testing;</li>
+<li>generated static viewer;</li>
+<li>proposal-first changes.</li>
+</ul>
+<p>A focused next slice could strengthen the contract with:</p>
+<h2 id="build-manifest">Build manifest</h2>
+<p>Record canonical commit, schema, tool version and validation result.</p>
+<h2 id="clean-rebuild-command">Clean-rebuild command</h2>
+<p>Delete and rebuild all generated artefacts in one controlled operation.</p>
+<h2 id="semantic-output-verification">Semantic output verification</h2>
+<p>Compare object and edge fingerprints rather than only file bytes.</p>
+<h2 id="read-only-index-guard">Read-only index guard</h2>
+<p>Detect unsupported modifications where practical.</p>
+<h2 id="atomic-publication">Atomic publication</h2>
+<p>Build into a temporary location, verify and then publish.</p>
+<h2 id="provenance-endpoint">Provenance endpoint</h2>
+<p>Allow CLI, API and viewer users to see which baseline produced the current output.</p>
+<h2 id="release-reproducibility-test">Release reproducibility test</h2>
+<p>Rebuild a tagged example from a clean checkout and verify expected semantic state.</p>
+<p>These features are practical.</p>
+<p>They do not require a distributed platform.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Generated indexes are not a secondary afterthought in Martenweave.</p>
+<p>They are what make the canonical model usable for:</p>
+<ul>
+<li>search;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>local APIs;</li>
+<li>generated documentation;</li>
+<li>agent retrieval.</li>
+</ul>
+<p>Their value does not require them to become authoritative.</p>
+<p>The architecture is stronger when generated state is:</p>
+<ul>
+<li>fast;</li>
+<li>rich;</li>
+<li>inspectable;</li>
+<li>testable;</li>
+<li>reproducible;</li>
+<li>replaceable.</li>
+</ul>
+<p>The canonical repository should preserve:</p>
+<ul>
+<li>identity;</li>
+<li>meaning;</li>
+<li>relationships;</li>
+<li>evidence;</li>
+<li>decisions;</li>
+<li>approved change history.</li>
+</ul>
+<p>The generated layer should provide:</p>
+<ul>
+<li>access;</li>
+<li>acceleration;</li>
+<li>derived navigation;</li>
+<li>reporting;</li>
+<li>presentation.</li>
+</ul>
+<p>The practical test is direct:</p>
+<blockquote>Can the organisation delete every generated Martenweave artefact, start from a clean approved repository baseline and reconstruct an equivalent searchable model without manual repair?</blockquote>
+<p>When the answer is yes, the generated layer is disposable.</p>
+<p>When the answer is “do not delete the database because some corrections exist only there,” the database has quietly become another source of truth.</p>
+<p>That is precisely the architecture Martenweave is designed to avoid.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It keeps approved model truth in canonical files and generates SQLite, JSONL, lineage, search, viewer and reporting artefacts from that source.</p>
+<p>Generated outputs make the model operationally useful.</p>
+<p>Their disposability keeps the model governable.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave’s current public demo validates canonical model files and then generates <code>modelops.db</code>, <code>search_documents.jsonl</code> and <code>lineage_edges.jsonl</code>. The documentation explicitly describes these files as disposable and rebuildable.</p>
+<p>The generated static viewer is built from <code>modelops.db</code>, remains read-only and does not replace canonical files as the source of truth.</p>
+<p>Martenweave Core currently documents full index rebuilding as a deliberate strategy for deterministic generated state. It validates object IDs, types, references and domain-context rules before indexing.</p>
+<p>The current dataset-readiness flow produces generated readiness reports and can promote detected gaps into a draft <code>PatchProposal</code>, preserving the distinction between analytical output and approved model change.</p>
+<p>SQLite’s official file-format documentation explains that the complete database state is generally stored in the main database file, with rollback journals or write-ahead logs participating in transaction recovery. It also documents internal schema, change and application metadata available in the database format.</p>
+<p>SQLite’s official documentation separately describes its atomic-commit mechanisms and backup interface. These capabilities make SQLite a reliable generated access format, but they do not determine whether an application treats the database as canonical or derived.</p>
+<p>The build-manifest, read-only guard and semantic-reproducibility mechanisms proposed in this article describe recommended product improvements. They should not be interpreted as guarantees that every mechanism is already implemented in the current Martenweave release.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or SQLite.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-design-stable-ids-for-enterprise-data-model-objects.html"><span>Previous</span>A Customer Group attribute begins its life in one migration workbook.</a><a href="/blog/how-to-package-and-transfer-a-martenweave-model-repository.html"><span>Next</span>An SAP migration programme reaches handover.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

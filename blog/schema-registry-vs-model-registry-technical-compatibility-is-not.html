@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning | Martenweave</title>
+    <meta
+      name="description"
+      content="A message can be technically valid and still be wrong."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html" />
+    <meta property="og:title" content="Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning | Martenweave" />
+    <meta property="og:description" content="A message can be technically valid and still be wrong." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning | Martenweave" />
+    <meta name="twitter:description" content="A message can be technically valid and still be wrong." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html#webpage",
+                        "url": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html",
+                        "name": "Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning | Martenweave",
+                        "description": "A message can be technically valid and still be wrong.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning",
+                                    "item": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html#content",
+                        "headline": "Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning",
+                        "name": "Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning",
+                        "description": "A message can be technically valid and still be wrong.",
+                        "url": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT14M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Schema Registry vs Model Registry: Technical Compatibility Is Not Business Meaning</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 14 min read</p><p class="blog-summary">A message can be technically valid and still be wrong.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-a-schema-registry-protects">What a schema registry protects</a></li><li><a href="#the-field-can-remain-compatible-while-its-meaning-changes">The field can remain compatible while its meaning changes</a></li><li><a href="#compatibility-is-a-narrower-promise-than-people-assume">Compatibility is a narrower promise than people assume</a></li><li><a href="#a-practical-example-product-weight">A practical example: product weight</a></li><li><a href="#what-a-model-registry-adds">What a model registry adds</a></li><li><a href="#a-schema-is-not-a-source-to-target-mapping">A schema is not a source-to-target mapping</a></li><li><a href="#a-model-registry-is-not-a-better-schema-registry">A model registry is not a better schema registry</a></li><li><a href="#the-two-registries-manage-different-kinds-of-change">The two registries manage different kinds of change</a></li><li><a href="#one-schema-field-can-represent-several-business-attributes">One schema field can represent several business attributes</a></li><li><a href="#several-schema-fields-can-represent-one-business-attribute">Several schema fields can represent one business attribute</a></li><li><a href="#why-this-matters-in-sap-landscapes">Why this matters in SAP landscapes</a></li><li><a href="#a-second-example-supplier-status">A second example: supplier status</a></li><li><a href="#data-contracts-sit-between-the-two">Data contracts sit between the two</a></li><li><a href="#technical-enforcement-and-business-approval-are-different-controls">Technical enforcement and business approval are different controls</a></li><li><a href="#why-ai-makes-the-distinction-more-important">Why AI makes the distinction more important</a></li></ol></nav></details></header>
+<p>A message can be technically valid and still be wrong.</p>
+<p>It may contain every required field.</p>
+<p>The JSON may match the approved schema.</p>
+<p>The Avro record may pass compatibility checks.</p>
+<p>The API may return a successful response.</p>
+<p>The receiving system may process the payload without an error.</p>
+<p>And yet the business meaning of the message may be incorrect.</p>
+<p>This is the boundary between a schema registry and a model registry.</p>
+<p>A schema registry controls technical data structures exchanged between systems. It helps producers and consumers agree on field names, datatypes, required properties and compatible schema changes.</p>
+<p>A model registry controls a wider question:</p>
+<blockquote>What do those fields mean, how should they be populated, which rules apply, and what else depends on them?</blockquote>
+<p>Both forms of control matter.</p>
+<p>The mistake is assuming that one automatically provides the other.</p>
+<h2 id="what-a-schema-registry-protects">What a schema registry protects</h2>
+<p>Modern enterprise systems exchange large numbers of messages.</p>
+<p>An application publishes an order event.</p>
+<p>A warehouse receives a product update.</p>
+<p>A carrier platform receives a shipment request.</p>
+<p>A finance system consumes a customer change.</p>
+<p>Each participant needs to understand the technical structure of the message.</p>
+<p>A schema might define that a shipment event contains:</p>
+<ul>
+<li>a shipment identifier;</li>
+<li>a customer identifier;</li>
+<li>a shipping condition;</li>
+<li>a planned dispatch date;</li>
+<li>a unit of measure;</li>
+<li>a list of delivery positions.</li>
+</ul>
+<p>It may also define:</p>
+<ul>
+<li>which fields are strings;</li>
+<li>which fields are numeric;</li>
+<li>which fields are required;</li>
+<li>which enumerations are accepted;</li>
+<li>how nested objects are structured;</li>
+<li>whether new fields can be introduced safely.</li>
+</ul>
+<p>The registry gives producers and consumers a controlled reference for that technical contract.</p>
+<p>This prevents a common class of integration failure.</p>
+<p>A producer cannot silently change a numeric field into free text without consequences.</p>
+<p>A required property cannot simply disappear.</p>
+<p>A new schema version can be checked against compatibility rules before it is released.</p>
+<p>This is valuable engineering discipline.</p>
+<p>It is especially important in event-driven architectures, APIs and integration landscapes where many applications evolve independently.</p>
+<p>But a schema registry protects structure.</p>
+<p>It does not automatically protect interpretation.</p>
+<h2 id="the-field-can-remain-compatible-while-its-meaning-changes">The field can remain compatible while its meaning changes</h2>
+<p>Suppose a message contains this field:</p>
+<pre><code class="language-text">shippingCondition: string</code></pre>
+<p>Version one uses the following values:</p>
+<pre><code class="language-text">STANDARD
+EXPRESS
+PICKUP</code></pre>
+<p>Later, the business changes its fulfilment model.</p>
+<p><code>EXPRESS</code> no longer means a guaranteed express service. It now means that the order should be prioritised for warehouse processing, while the final carrier service is selected separately.</p>
+<p>The technical field remains a string.</p>
+<p>The same values may remain allowed.</p>
+<p>The schema does not need to change.</p>
+<p>Every producer and consumer remains technically compatible.</p>
+<p>But the meaning has changed.</p>
+<p>A warehouse may interpret <code>EXPRESS</code> as a picking priority.</p>
+<p>A 3PL may continue interpreting it as a carrier-service instruction.</p>
+<p>A reporting system may classify it as premium delivery.</p>
+<p>A migration mapping may still assign the value based on the customer master.</p>
+<p>Nothing in the technical schema necessarily reveals the conflict.</p>
+<p>This is not schema incompatibility.</p>
+<p>It is semantic incompatibility.</p>
+<h2 id="compatibility-is-a-narrower-promise-than-people-assume">Compatibility is a narrower promise than people assume</h2>
+<p>When an integration team says that two schema versions are compatible, managers may hear:</p>
+<blockquote>The change is safe.</blockquote>
+<p>What the technical statement often means is narrower:</p>
+<blockquote>Existing consumers should still be able to parse the structure.</blockquote>
+<p>That is useful, but it does not prove that:</p>
+<ul>
+<li>consumers interpret the values correctly;</li>
+<li>the business definition has remained stable;</li>
+<li>source-to-target mappings still apply;</li>
+<li>validation rules remain current;</li>
+<li>required fields are populated from the correct source;</li>
+<li>regional exceptions have been considered;</li>
+<li>downstream processes still behave as expected.</li>
+</ul>
+<p>Technical compatibility reduces the risk of software breakage.</p>
+<p>It does not remove the risk of business misinterpretation.</p>
+<p>The distinction matters because business misinterpretation can be more dangerous than a visible technical error.</p>
+<p>A rejected message is investigated.</p>
+<p>A successfully processed message containing the wrong meaning may remain unnoticed until it affects deliveries, invoices, inventory or reporting.</p>
+<h2 id="a-practical-example-product-weight">A practical example: product weight</h2>
+<p>Consider a product message sent from SAP to a warehouse system.</p>
+<p>The schema defines:</p>
+<pre><code class="language-text">weight: decimal
+weightUnit: string</code></pre>
+<p>The schema may also restrict the unit to approved values such as kilograms and grams.</p>
+<p>From a technical perspective, the contract is clear.</p>
+<p>Now consider the business questions.</p>
+<p>Does <code>weight</code> describe:</p>
+<ul>
+<li>one base unit;</li>
+<li>one sales unit;</li>
+<li>one consumer package;</li>
+<li>one carton;</li>
+<li>one pallet;</li>
+<li>gross weight;</li>
+<li>net weight?</li>
+</ul>
+<p>A value of <code>12.5 KG</code> can be structurally perfect and still be meaningless without that context.</p>
+<p>Suppose SAP sends the gross weight of the base unit.</p>
+<p>The warehouse assumes the value describes one carton.</p>
+<p>The 3PL uses it for freight calculation.</p>
+<p>All systems accept the message.</p>
+<p>The schema validation passes.</p>
+<p>The transport cost is wrong.</p>
+<p>The schema registry did its job.</p>
+<p>The model was incomplete.</p>
+<h2 id="what-a-model-registry-adds">What a model registry adds</h2>
+<p>A model registry connects the technical field to the wider business model.</p>
+<p>For the weight example, it could describe:</p>
+<pre><code class="language-text">Business attribute: Product Gross Weight
+Reference quantity: One base unit
+Source field: Legacy material extract GROSS_WEIGHT
+Source unit field: WEIGHT_UNIT
+Target field: SAP product gross weight
+Outbound field: ProductMessage.weight
+Applicability: Physical products only
+Validation: Greater than zero when transportation-relevant
+Owner: Product Data Governance
+Evidence: Approved logistics design decision
+Consumers: SAP, warehouse system, freight-planning interface</code></pre>
+<p>This gives the field a place in a controlled network of definitions.</p>
+<p>The model can now answer questions that the schema alone cannot:</p>
+<ul>
+<li>Which business concept does this message field represent?</li>
+<li>Which source field populates it?</li>
+<li>Which transformation applies?</li>
+<li>Which population requires it?</li>
+<li>Who owns the definition?</li>
+<li>Which decision approved the interpretation?</li>
+<li>Which systems depend on it?</li>
+<li>What must be reviewed if its meaning changes?</li>
+</ul>
+<p>The schema says that the field is a decimal.</p>
+<p>The model says what the decimal means.</p>
+<h2 id="a-schema-is-not-a-source-to-target-mapping">A schema is not a source-to-target mapping</h2>
+<p>Another common confusion appears during migration and integration design.</p>
+<p>A target API publishes a clear schema.</p>
+<p>The project knows the expected field names and datatypes.</p>
+<p>The team assumes that half the mapping work is already complete.</p>
+<p>In reality, the schema defines only the receiving structure.</p>
+<p>It does not determine:</p>
+<ul>
+<li>which legacy field should supply each target property;</li>
+<li>whether several source fields must be combined;</li>
+<li>how local codes map to global codes;</li>
+<li>which default values are permitted;</li>
+<li>when an empty field is acceptable;</li>
+<li>how conflicting source values should be resolved;</li>
+<li>which business owner approves the transformation.</li>
+</ul>
+<p>Suppose a target schema requires:</p>
+<pre><code class="language-text">customerCategory: string</code></pre>
+<p>The source landscape contains:</p>
+<ul>
+<li>customer class;</li>
+<li>account group;</li>
+<li>market segment;</li>
+<li>legal entity type;</li>
+<li>local customer category.</li>
+</ul>
+<p>All are strings.</p>
+<p>All could technically populate the target field.</p>
+<p>Only one may represent the intended concept.</p>
+<p>The schema cannot select it.</p>
+<p>That requires model knowledge.</p>
+<h2 id="a-model-registry-is-not-a-better-schema-registry">A model registry is not a better schema registry</h2>
+<p>The distinction also works in the other direction.</p>
+<p>A model registry should not try to replace technical schema management.</p>
+<p>A model file may state that <code>shippingCondition</code> is a controlled business attribute.</p>
+<p>That does not provide all the capabilities needed for runtime integration governance.</p>
+<p>A specialised schema registry may be needed to:</p>
+<ul>
+<li>store machine-readable schemas;</li>
+<li>version message contracts;</li>
+<li>enforce compatibility rules;</li>
+<li>support serialisation formats;</li>
+<li>integrate with producer and consumer applications;</li>
+<li>prevent incompatible deployments;</li>
+<li>distribute schemas at runtime.</li>
+</ul>
+<p>These are engineering responsibilities.</p>
+<p>Rebuilding them inside a migration or model-governance product would add complexity without solving the model problem better.</p>
+<p>A model registry should reference technical schemas where useful.</p>
+<p>It should not become the runtime infrastructure for every message exchange.</p>
+<h2 id="the-two-registries-manage-different-kinds-of-change">The two registries manage different kinds of change</h2>
+<p>The easiest way to understand the difference is to examine what each system considers a change.</p>
+<h3 id="schema-change">Schema change</h3>
+<p>Examples include:</p>
+<ul>
+<li>adding a field;</li>
+<li>removing a field;</li>
+<li>changing a datatype;</li>
+<li>renaming a property;</li>
+<li>modifying a nested structure;</li>
+<li>changing whether a field is required;</li>
+<li>updating an enumeration.</li>
+</ul>
+<p>The concern is whether producers and consumers remain technically compatible.</p>
+<h3 id="model-change">Model change</h3>
+<p>Examples include:</p>
+<ul>
+<li>redefining what a field means;</li>
+<li>changing the authoritative source;</li>
+<li>replacing a value mapping;</li>
+<li>introducing a country exception;</li>
+<li>changing a mandatory condition;</li>
+<li>assigning a new owner;</li>
+<li>connecting the attribute to another process;</li>
+<li>withdrawing an earlier business decision.</li>
+</ul>
+<p>Some model changes require a schema change.</p>
+<p>Many do not.</p>
+<p>A field may retain the same name and datatype while its source, meaning or conditions change completely.</p>
+<p>That is why schema versioning alone cannot provide full change control.</p>
+<h2 id="one-schema-field-can-represent-several-business-attributes">One schema field can represent several business attributes</h2>
+<p>Technical models often optimise for message structure rather than conceptual purity.</p>
+<p>A generic property may be reused across process variants.</p>
+<p>For example:</p>
+<pre><code class="language-text">priorityCode: string</code></pre>
+<p>In one message, it may refer to warehouse picking priority.</p>
+<p>In another, it may describe customer service level.</p>
+<p>In a third, it may influence transportation planning.</p>
+<p>Technically, each message uses the same datatype and perhaps the same code format.</p>
+<p>Business users may assume that the values are comparable.</p>
+<p>They may not be.</p>
+<p>A model registry should make the contextual distinction explicit.</p>
+<p>The business attribute is not simply <code>priorityCode</code>.</p>
+<p>It may be:</p>
+<ul>
+<li>warehouse execution priority;</li>
+<li>customer delivery priority;</li>
+<li>transport planning priority.</li>
+</ul>
+<p>Each can then reference the relevant technical field in its own context.</p>
+<p>Without this separation, technical reuse gradually creates semantic confusion.</p>
+<h2 id="several-schema-fields-can-represent-one-business-attribute">Several schema fields can represent one business attribute</h2>
+<p>The opposite pattern is equally common.</p>
+<p>The business concept “customer delivery priority” may appear as:</p>
+<ul>
+<li>a field in a legacy customer table;</li>
+<li>a property in a migration file;</li>
+<li>an SAP master-data field;</li>
+<li>a value in an outbound delivery message;</li>
+<li>a code used by a 3PL;</li>
+<li>a reporting dimension.</li>
+</ul>
+<p>The technical names may all differ.</p>
+<p>A schema registry can manage each structure separately.</p>
+<p>It does not automatically know that all these fields represent the same business concept.</p>
+<p>A model registry can connect them.</p>
+<p>This creates a traceable chain:</p>
+<pre><code class="language-text">Business attribute
+    → legacy source field
+    → migration mapping
+    → SAP target field
+    → outbound message field
+    → external provider code</code></pre>
+<p>Now a proposed definition change can be assessed across the whole chain.</p>
+<h2 id="why-this-matters-in-sap-landscapes">Why this matters in SAP landscapes</h2>
+<p>SAP programmes are particularly exposed to the gap between technical and business compatibility.</p>
+<p>A business attribute may be represented through:</p>
+<ul>
+<li>SAP tables;</li>
+<li>CDS views;</li>
+<li>IDocs;</li>
+<li>APIs;</li>
+<li>migration templates;</li>
+<li>middleware mappings;</li>
+<li>warehouse messages;</li>
+<li>external-provider payloads.</li>
+</ul>
+<p>Each interface may have a valid technical schema.</p>
+<p>The difficult questions remain:</p>
+<ul>
+<li>Which SAP field is authoritative?</li>
+<li>Does the field have the same meaning in every process?</li>
+<li>Which organisational level applies?</li>
+<li>Is the value global, plant-specific or sales-area-specific?</li>
+<li>Which local exceptions exist?</li>
+<li>Is the value entered, derived or defaulted?</li>
+<li>Which downstream process consumes it?</li>
+<li>Who may approve a change?</li>
+</ul>
+<p>The schema is necessary for moving data between applications.</p>
+<p>The model is necessary for understanding what is being moved.</p>
+<h2 id="a-second-example-supplier-status">A second example: supplier status</h2>
+<p>Suppose a supplier interface contains:</p>
+<pre><code class="language-text">status: string</code></pre>
+<p>The accepted values are:</p>
+<pre><code class="language-text">ACTIVE
+BLOCKED
+INACTIVE</code></pre>
+<p>The schema is clear.</p>
+<p>But what does <code>BLOCKED</code> mean?</p>
+<p>It might mean:</p>
+<ul>
+<li>blocked for purchasing;</li>
+<li>blocked for posting;</li>
+<li>blocked for one company code;</li>
+<li>blocked for one purchasing organisation;</li>
+<li>globally blocked;</li>
+<li>temporarily blocked pending review.</li>
+</ul>
+<p>A single technical status may be unable to represent the required business distinctions.</p>
+<p>Or different systems may collapse several SAP statuses into one external field.</p>
+<p>The integration may still be technically valid.</p>
+<p>A model registry should document:</p>
+<ul>
+<li>which source statuses contribute;</li>
+<li>how the target value is derived;</li>
+<li>which organisational levels are considered;</li>
+<li>what information is lost;</li>
+<li>which processes may rely on the simplified status;</li>
+<li>which owner accepted the design.</li>
+</ul>
+<p>This is not only documentation.</p>
+<p>It is a record of an intentional semantic compromise.</p>
+<p>Without it, future teams may treat the simplified interface value as equivalent to the full SAP status model.</p>
+<h2 id="data-contracts-sit-between-the-two">Data contracts sit between the two</h2>
+<p>The term <strong>data contract</strong> is increasingly used to describe an agreement between data producers and consumers.</p>
+<p>A mature data contract can include more than a technical schema.</p>
+<p>It may define:</p>
+<ul>
+<li>field structure;</li>
+<li>semantics;</li>
+<li>quality expectations;</li>
+<li>ownership;</li>
+<li>service-level expectations;</li>
+<li>change procedures.</li>
+</ul>
+<p>This brings data contracts closer to model governance.</p>
+<p>But the same caution applies.</p>
+<p>A contract is only as complete as the information represented in it.</p>
+<p>A contract may define one dataset or message well while the wider migration model remains fragmented.</p>
+<p>It may not connect the field to:</p>
+<ul>
+<li>other source datasets;</li>
+<li>SAP target mappings;</li>
+<li>project decisions;</li>
+<li>country exceptions;</li>
+<li>support incidents;</li>
+<li>proposed model changes.</li>
+</ul>
+<p>A model registry can use data contracts as important evidence.</p>
+<p>It can also connect several contracts to the wider domain model.</p>
+<p>The categories overlap.</p>
+<p>The management responsibility is to understand which relationships remain uncontrolled.</p>
+<h2 id="technical-enforcement-and-business-approval-are-different-controls">Technical enforcement and business approval are different controls</h2>
+<p>A schema registry can often enforce rules automatically.</p>
+<p>A deployment may be rejected because the new schema is incompatible with an earlier version.</p>
+<p>This is strong preventive control.</p>
+<p>Business-model changes are harder to automate fully.</p>
+<p>A system can detect that a mapping references an unknown field.</p>
+<p>It can detect that a mandatory rule conflicts structurally with an exception.</p>
+<p>It can show that several interfaces depend on the attribute.</p>
+<p>It cannot independently decide whether the company should redefine the business concept.</p>
+<p>That requires ownership and approval.</p>
+<p>A practical model-change workflow therefore looks different:</p>
+<pre><code class="language-text">New evidence
+    → proposed model change
+    → deterministic validation
+    → dependency and impact analysis
+    → business review
+    → approved model update</code></pre>
+<p>Technical compatibility can often be evaluated by rules.</p>
+<p>Business meaning must remain accountable to people.</p>
+<h2 id="why-ai-makes-the-distinction-more-important">Why AI makes the distinction more important</h2>
+<p>AI systems can generate mappings, infer field relationships and propose schema changes quickly.</p>
+<p>This is useful.</p>
+<p>It also increases the risk of plausible but incorrect alignment.</p>
+<p>An AI model may infer that <code>CUST_TYPE</code> maps to <code>customerCategory</code> because the names are similar.</p>
+<p>The datatypes match.</p>
+<p>The schema accepts the value.</p>
+<p>The mapping may still be wrong because <code>CUST_TYPE</code> represents legal form while the target field represents market segmentation.</p>
+<p>A schema validator will not detect that semantic error.</p>
+<p>An AI-generated proposal therefore needs:</p>
+<ul>
+<li>source evidence;</li>
+<li>model context;</li>
+<li>deterministic validation;</li>
+<li>impact analysis;</li>
+<li>human approval.</li>
+</ul>
+<p>AI can propose.</p>
+<p>The registry should show what the proposal affects.</p>
+<p>The schema infrastructure should ensure that approved technical changes remain compatible.</p>
+<p>Each control has a separate role.</p>
+<h2 id="what-managers-should-ask-about-schema-governance">What managers should ask about schema governance</h2>
+<p>Managers do not need to become specialists in Avro, JSON Schema or Protobuf.</p>
+<p>They should still ask several questions.</p>
+<h3 id="which-technical-contracts-are-controlled">Which technical contracts are controlled?</h3>
+<p>Not every interface in the landscape may use the registry.</p>
+<p>Coverage matters.</p>
+<h3 id="what-compatibility-rules-are-enforced">What compatibility rules are enforced?</h3>
+<p>Backward compatibility, forward compatibility and full compatibility protect different deployment scenarios.</p>
+<p>The technical team should explain which one is required and why.</p>
+<h3 id="who-owns-schema-changes">Who owns schema changes?</h3>
+<p>A technically compatible addition may still create business obligations for consumers.</p>
+<h3 id="are-field-descriptions-treated-as-documentation-or-as-governed-meaning">Are field descriptions treated as documentation or as governed meaning?</h3>
+<p>A short schema description may not be enough for a critical business attribute.</p>
+<h3 id="how-are-schema-changes-connected-to-testing-and-release-management">How are schema changes connected to testing and release management?</h3>
+<p>Registration alone does not prove that every consumer behaves correctly.</p>
+<h2 id="what-managers-should-ask-about-model-governance">What managers should ask about model governance</h2>
+<p>The wider model requires another set of questions.</p>
+<h3 id="what-business-attribute-does-the-field-represent">What business attribute does the field represent?</h3>
+<p>The technical name is not sufficient.</p>
+<h3 id="where-does-the-value-originate">Where does the value originate?</h3>
+<p>The current producer may itself derive the value from several sources.</p>
+<h3 id="which-rules-and-exceptions-apply">Which rules and exceptions apply?</h3>
+<p>These may differ by region, organisation or process.</p>
+<h3 id="who-owns-the-meaning">Who owns the meaning?</h3>
+<p>The integration developer should not become the accidental business owner.</p>
+<h3 id="what-depends-on-the-definition">What depends on the definition?</h3>
+<p>This includes mappings, validations, processes, reports and external consumers.</p>
+<h3 id="how-is-a-proposed-meaning-change-reviewed">How is a proposed meaning change reviewed?</h3>
+<p>A schema-compatible semantic change can still require broad approval and retesting.</p>
+<h2 id="when-a-schema-registry-is-enough">When a schema registry is enough</h2>
+<p>A schema registry may be sufficient when:</p>
+<ul>
+<li>the business meaning is already stable;</li>
+<li>the main risk is technical contract evolution;</li>
+<li>producers and consumers agree on semantics;</li>
+<li>source-to-target mappings are simple;</li>
+<li>organisational exceptions are limited;</li>
+<li>the architecture is primarily event or API driven;</li>
+<li>model decisions are governed elsewhere.</li>
+</ul>
+<p>In that environment, adding a separate model registry may create duplicate maintenance.</p>
+<p>The objective is not to register every possible kind of knowledge.</p>
+<p>It is to close real control gaps.</p>
+<h2 id="when-a-model-registry-becomes-necessary">When a model registry becomes necessary</h2>
+<p>The case becomes stronger when:</p>
+<ul>
+<li>the same concept appears in many systems;</li>
+<li>technical fields have ambiguous meanings;</li>
+<li>several source systems use different codes;</li>
+<li>migration mappings change frequently;</li>
+<li>business rules vary by country or organisation;</li>
+<li>schemas remain stable while semantics evolve;</li>
+<li>decisions live in tickets and spreadsheets;</li>
+<li>external providers interpret values differently;</li>
+<li>the programme needs impact analysis before changing definitions;</li>
+<li>AI is proposing mappings or model changes.</li>
+</ul>
+<p>At that point, technical compatibility is only one part of the problem.</p>
+<h2 id="how-the-two-can-work-together">How the two can work together</h2>
+<p>A sensible architecture does not force a choice.</p>
+<h3 id="the-schema-registry-controls">The schema registry controls</h3>
+<ul>
+<li>machine-readable message structures;</li>
+<li>schema versions;</li>
+<li>datatypes;</li>
+<li>required properties;</li>
+<li>compatibility;</li>
+<li>producer and consumer integration.</li>
+</ul>
+<h3 id="the-model-registry-controls">The model registry controls</h3>
+<ul>
+<li>business attributes;</li>
+<li>source and target relationships;</li>
+<li>mappings;</li>
+<li>transformations;</li>
+<li>rules;</li>
+<li>exceptions;</li>
+<li>decisions;</li>
+<li>ownership;</li>
+<li>impact;</li>
+<li>proposed changes.</li>
+</ul>
+<p>The model registry can reference the schema and its fields.</p>
+<p>The schema registry can remain the technical enforcement point.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business attribute: Delivery Priority
+    → SAP source field
+    → approved transformation
+    → schema: ShipmentEvent v4
+    → field: priorityCode
+    → consumer: 3PL platform</code></pre>
+<p>A schema change can trigger model-impact analysis.</p>
+<p>A model change can indicate whether the schema and consumers need to be updated.</p>
+<p>That is a useful division of responsibility.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave is not intended to replace runtime schema infrastructure.</p>
+<p>Its role is to govern the wider model around technical fields.</p>
+<p>Canonical files can describe domains, entities, attributes, field endpoints, mappings, datasets, rules, evidence, decisions and change proposals. References are validated before generated indexes are built. Dataset gaps, lineage and change impact can then be assessed against the approved model.</p>
+<p>This allows a technical schema field to be connected to:</p>
+<ul>
+<li>its business meaning;</li>
+<li>its approved source;</li>
+<li>the transformation that populates it;</li>
+<li>the validation rules that apply;</li>
+<li>the systems that consume it;</li>
+<li>the evidence supporting the design;</li>
+<li>the proposal that seeks to change it.</li>
+</ul>
+<p>Martenweave should integrate with schema registries where appropriate.</p>
+<p>It should not reproduce their runtime responsibilities.</p>
+<h2 id="the-management-rule">The management rule</h2>
+<p>The distinction can be reduced to two questions.</p>
+<p><strong>A schema registry asks:</strong></p>
+<blockquote>Can systems continue to exchange and parse this data safely?</blockquote>
+<p><strong>A model registry asks:</strong></p>
+<blockquote>Are the meaning, source, rules and dependencies of this data still correct?</blockquote>
+<p>A mature architecture needs both answers.</p>
+<p>A technically incompatible change usually fails visibly.</p>
+<p>A semantically incompatible change may pass quietly through every system.</p>
+<p>That is why technical compatibility is necessary but insufficient.</p>
+<p>The message must be valid.</p>
+<p>The model behind the message must also be true.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html"><span>Previous</span>A data-quality report can be completely green while the migration is still wrong.</a><a href="/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html"><span>Next</span>An SAP migration programme may have every major tool it is supposed to have.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

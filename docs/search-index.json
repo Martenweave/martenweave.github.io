@@ -165,48 +165,780 @@
     "url": "/blog/sap-mdg-implementation-knowledge.html",
     "title": "sap mdg implementation knowledge | Martenweave",
     "category": "SAP MDG and MDM",
-    "excerpt": "Why SAP MDG needs a connected implementation-knowledge layer for mappings, decisions, evidence, and controlled change."
+    "excerpt": "SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data."
   },
   {
     "url": "/blog/sap-migration-mapping-spreadsheets.html",
     "title": "sap migration mapping spreadsheets | Martenweave",
     "category": "Migration readiness",
-    "excerpt": "Why mapping spreadsheets break down in SAP migration and how a controlled model layer reduces repeated reconciliation."
+    "excerpt": "Most SAP migration programmes begin with a mapping spreadsheet."
+  },
+  {
+    "url": "/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html",
+    "title": "what to prepare before starting an sap mdg implementation | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "An SAP MDG implementation often appears to begin with the platform."
+  },
+  {
+    "url": "/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html",
+    "title": "how sap data migration and mdg implementation should work together | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "SAP data migration and SAP Master Data Governance are often organised as separate workstreams."
+  },
+  {
+    "url": "/blog/why-an-sap-mdg-implementation-needs-an-independent-model-specification.html",
+    "title": "why an sap mdg implementation needs an independent model specification | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "An SAP MDG implementation contains several versions of the model."
+  },
+  {
+    "url": "/blog/sap-data-migration-readiness-checklist.html",
+    "title": "sap data migration readiness checklist | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration."
+  },
+  {
+    "url": "/blog/why-mapping-completion-is-not-migration-readiness.html",
+    "title": "why mapping completion is not migration readiness | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A migration programme reports that 96% of mappings are complete."
+  },
+  {
+    "url": "/blog/how-to-build-a-single-source-of-truth-for-sap-mappings.html",
+    "title": "how to build a single source of truth for sap mappings | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "Most SAP programmes claim to have a single source of truth for mappings."
   },
   {
     "url": "/blog/detect-dataset-gaps-before-sap-migration-testing.html",
     "title": "detect dataset gaps before sap migration testing | Martenweave",
-    "category": "Migration readiness",
-    "excerpt": "How to compare representative datasets with an approved model before SAP migration testing begins."
+    "category": "Validation and readiness",
+    "excerpt": "Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data."
   },
   {
     "url": "/blog/impact-analysis-sap-field-change.html",
     "title": "impact analysis sap field change | Martenweave",
     "category": "Lineage and impact",
-    "excerpt": "A practical guide to tracing downstream effects before changing an SAP field, mapping, rule, or value list."
+    "excerpt": "On Monday, a country team asks for one SAP field to become mandatory."
   },
   {
     "url": "/blog/trace-legacy-field-to-sap-target.html",
     "title": "trace legacy field to sap target | Martenweave",
     "category": "Lineage and impact",
-    "excerpt": "How to trace a legacy field through mappings, business attributes, and SAP target endpoints."
+    "excerpt": "A defect appears during the second mock load."
+  },
+  {
+    "url": "/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html",
+    "title": "how to keep sap mdg design and configuration aligned | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The design document says the field is optional."
+  },
+  {
+    "url": "/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html",
+    "title": "how to reduce rework during an sap mdg implementation | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The programme has already approved the model."
+  },
+  {
+    "url": "/blog/what-an-sap-mdg-handover-package-should-contain.html",
+    "title": "what an sap mdg handover package should contain | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The SAP MDG programme goes live on Friday."
+  },
+  {
+    "url": "/blog/why-project-knowledge-disappears-after-go-live.html",
+    "title": "why project knowledge disappears after go live | Martenweave",
+    "category": "Model governance",
+    "excerpt": "Six months after go-live, an SAP MDG validation starts rejecting supplier changes."
+  },
+  {
+    "url": "/blog/how-martenweave-complements-sap-mdg.html",
+    "title": "how martenweave complements sap mdg | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "A company has already invested in SAP Master Data Governance."
+  },
+  {
+    "url": "/blog/martenweave-vs-excel-jira-and-confluence.html",
+    "title": "martenweave vs excel jira and confluence | Martenweave",
+    "category": "Model governance",
+    "excerpt": "The programme already has an approved toolset."
+  },
+  {
+    "url": "/blog/data-model-registry-vs-mdm-platform.html",
+    "title": "data model registry vs mdm platform | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A company has a data problem."
+  },
+  {
+    "url": "/blog/data-model-registry-vs-data-catalog.html",
+    "title": "data model registry vs data catalog | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration manager searches the enterprise data catalogue for a customer field."
+  },
+  {
+    "url": "/blog/why-ai-should-propose-model-changes-but-never-apply-them-directly.html",
+    "title": "why ai should propose model changes but never apply them directly | Martenweave",
+    "category": "AI governance",
+    "excerpt": "An AI agent reviews a migration workbook and finds an obvious inconsistency."
   },
   {
     "url": "/blog/deterministic-validation-migration-risk.html",
     "title": "deterministic validation migration risk | Martenweave",
-    "category": "Validation and governance",
-    "excerpt": "Why deterministic validation makes migration model risk visible before derived indexes and reports are published."
+    "category": "Validation and readiness",
+    "excerpt": "The migration workbook looks complete."
+  },
+  {
+    "url": "/blog/how-to-manage-global-and-local-requirements-in-sap-mdg.html",
+    "title": "how to manage global and local requirements in sap mdg | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The global template says the field is mandatory."
+  },
+  {
+    "url": "/blog/how-to-track-sap-mdg-model-decisions.html",
+    "title": "how to track sap mdg model decisions | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "During a design workshop, the programme agrees that a supplier classification should be mandatory."
+  },
+  {
+    "url": "/blog/how-to-validate-that-sap-mdg-configuration-matches-the-approved-model.html",
+    "title": "how to validate that sap mdg configuration matches the approved model | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The design review is complete."
   },
   {
     "url": "/blog/evidence-based-migration-readiness-report.html",
     "title": "evidence based migration readiness report | Martenweave",
     "category": "Migration readiness",
-    "excerpt": "How to build readiness reporting that connects claims to model baselines, evidence, ownership, and decisions."
+    "excerpt": "The steering committee sees a green dashboard."
+  },
+  {
+    "url": "/blog/how-better-model-traceability-reduces-rework.html",
+    "title": "how better model traceability reduces rework | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration defect appears during UAT."
+  },
+  {
+    "url": "/blog/how-to-reduce-key-person-risk-in-sap-programmes.html",
+    "title": "how to reduce key person risk in sap programmes | Martenweave",
+    "category": "Model governance",
+    "excerpt": "The programme has one person who knows how everything fits together."
+  },
+  {
+    "url": "/blog/how-much-of-an-mdg-programme-happens-outside-the-mdg-platform.html",
+    "title": "how much of an mdg programme happens outside the mdg platform | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The programme has selected SAP Master Data Governance."
+  },
+  {
+    "url": "/blog/how-a-small-martenweave-pilot-can-de-risk-a-large-mdg-investment.html",
+    "title": "how a small martenweave pilot can de risk a large mdg investment | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The organisation is preparing a major SAP Master Data Governance programme."
+  },
+  {
+    "url": "/blog/how-metalhatscats-helps-teams-establish-model-governance.html",
+    "title": "how metalhatscats helps teams establish model governance | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "A programme has already created most of the artefacts it needs."
+  },
+  {
+    "url": "/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html",
+    "title": "how to turn model governance into an ams capability after go live | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "The implementation programme has ended."
+  },
+  {
+    "url": "/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html",
+    "title": "how to use github as a change control layer for sap data models | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A country team changes one row in a mapping workbook."
+  },
+  {
+    "url": "/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html",
+    "title": "how to govern spreadsheet changes without forcing business users into | Martenweave",
+    "category": "Model governance",
+    "excerpt": "The business owner receives a mapping workbook."
+  },
+  {
+    "url": "/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html",
+    "title": "how to design a model change request that business and technical teams | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "A business owner requests a change:"
+  },
+  {
+    "url": "/blog/how-to-prioritise-model-changes-by-business-risk-instead-of-ticket.html",
+    "title": "how to prioritise model changes by business risk instead of ticket | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A senior stakeholder opens a ticket:"
+  },
+  {
+    "url": "/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html",
+    "title": "how to build a model risk register for sap migration and mdg | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The programme risk register looks healthy."
+  },
+  {
+    "url": "/blog/how-to-turn-model-risks-into-an-actionable-sap-migration-backlog.html",
+    "title": "how to turn model risks into an actionable sap migration backlog | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The migration programme has identified a serious risk:"
+  },
+  {
+    "url": "/blog/how-to-define-exit-criteria-for-sap-migration-model-risks.html",
+    "title": "how to define exit criteria for sap migration model risks | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The programme has completed the remediation task."
+  },
+  {
+    "url": "/blog/how-to-prove-that-an-sap-migration-risk-is-really-closed.html",
+    "title": "how to prove that an sap migration risk is really closed | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The steering committee asks whether a critical migration risk has been closed."
+  },
+  {
+    "url": "/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html",
+    "title": "how to design a closure evidence workspace for sap migration and mdg | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "The programme is preparing for a risk-closure meeting."
+  },
+  {
+    "url": "/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html",
+    "title": "how to connect martenweaves ui to live model dataset and proposal data | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration architect opens Martenweave and searches for Customer Group ."
+  },
+  {
+    "url": "/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html",
+    "title": "how to investigate an sap data model problem before changing the system | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration test fails because Customer Group is missing."
+  },
+  {
+    "url": "/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html",
+    "title": "how to structure a model investigation case so the finding can be reused | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably."
+  },
+  {
+    "url": "/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html",
+    "title": "how to build a reusable decision library for sap migration and mdm | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A programme has an approved decision:"
+  },
+  {
+    "url": "/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html",
+    "title": "how to prevent local sap decisions from fragmenting the global data | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A country team raises a reasonable request."
+  },
+  {
+    "url": "/blog/how-to-decide-whether-a-local-sap-requirement-belongs-in-the-global.html",
+    "title": "how to decide whether a local sap requirement belongs in the global | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A country team requests a new field:"
+  },
+  {
+    "url": "/blog/how-to-design-global-and-local-model-inheritance-without-creating.html",
+    "title": "how to design global and local model inheritance without creating | Martenweave",
+    "category": "Model governance",
+    "excerpt": "The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers."
+  },
+  {
+    "url": "/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html",
+    "title": "how to resolve conflicting global and local rules before they reach sap | Martenweave",
+    "category": "Model governance",
+    "excerpt": "The global design states:"
+  },
+  {
+    "url": "/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html",
+    "title": "how to test global and local sap rules against real migration data | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The global design says that Supplier Risk is mandatory for every active strategic supplier."
+  },
+  {
+    "url": "/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html",
+    "title": "how to turn migration rule test results into model decisions instead of | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The first migration-rule test produces 8,420 failures."
+  },
+  {
+    "url": "/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html",
+    "title": "how to build a migration finding taxonomy that business data and sap | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "The migration test reports that 4,860 supplier records failed the Tax Identifier rule."
+  },
+  {
+    "url": "/blog/how-to-route-migration-findings-to-the-right-owner-without-creating.html",
+    "title": "how to route migration findings to the right owner without creating | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "A migration-readiness run identifies 1,284 strategic suppliers without Supplier Risk."
+  },
+  {
+    "url": "/blog/how-to-define-data-ownership-that-still-works-after-the-sap-programme.html",
+    "title": "how to define data ownership that still works after the sap programme | Martenweave",
+    "category": "Model governance",
+    "excerpt": "Three months after go-live, an AMS analyst receives an incident."
+  },
+  {
+    "url": "/blog/how-to-build-an-ams-model-change-process-that-does-not-recreate-the-sap.html",
+    "title": "how to build an ams model change process that does not recreate the sap | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "Six months after go-live, a country requests a new Supplier Classification value."
+  },
+  {
+    "url": "/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html",
+    "title": "how to separate sap ams incidents service requests and model changes | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A user reports that a supplier cannot be activated in SAP."
+  },
+  {
+    "url": "/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html",
+    "title": "how to detect when an sap ams workaround has become an unapproved data | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "A supplier cannot be activated because its final risk classification is missing."
+  },
+  {
+    "url": "/blog/how-to-retire-sap-ams-workarounds-without-breaking-the-business-process.html",
+    "title": "how to retire sap ams workarounds without breaking the business process | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "A temporary Supplier Risk workaround has been running for nine months."
+  },
+  {
+    "url": "/blog/how-to-use-ams-incident-patterns-to-improve-the-sap-data-model-instead.html",
+    "title": "how to use ams incident patterns to improve the sap data model instead | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "The AMS dashboard shows progress."
+  },
+  {
+    "url": "/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html",
+    "title": "how martenweave represents a data model in markdown and yaml | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration team needs to confirm the meaning of Customer Group ."
+  },
+  {
+    "url": "/blog/why-canonical-model-files-should-remain-the-source-of-truth.html",
+    "title": "why canonical model files should remain the source of truth | Martenweave",
+    "category": "AI governance",
+    "excerpt": "A business owner updates Customer Group in an Excel review file."
+  },
+  {
+    "url": "/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html",
+    "title": "how martenweave builds a searchable sqlite model index | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration analyst searches for:"
   },
   {
     "url": "/blog/how-deterministic-model-validation-works.html",
     "title": "how deterministic model validation works | Martenweave",
-    "category": "Validation and governance",
-    "excerpt": "How deterministic model validation works and why semantic authority must remain explicit and reviewable."
+    "category": "Validation and readiness",
+    "excerpt": "A migration analyst adds a new mapping:"
+  },
+  {
+    "url": "/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html",
+    "title": "how martenweave represents entities attributes rules and relationships | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A migration workbook contains one row:"
+  },
+  {
+    "url": "/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html",
+    "title": "how to version a data model without turning it into documentation chaos | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A Customer Group rule changes during an SAP programme."
+  },
+  {
+    "url": "/blog/how-model-diffing-should-work-across-sap-releases.html",
+    "title": "how model diffing should work across sap releases | Martenweave",
+    "category": "Model governance",
+    "excerpt": "An SAP programme compares its Wave 2 and Wave 3 model repositories."
+  },
+  {
+    "url": "/blog/how-to-design-stable-ids-for-enterprise-data-model-objects.html",
+    "title": "how to design stable ids for enterprise data model objects | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A Customer Group attribute begins its life in one migration workbook."
+  },
+  {
+    "url": "/blog/why-generated-indexes-should-be-disposable.html",
+    "title": "why generated indexes should be disposable | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A Martenweave user opens modelops.db and corrects the name of an Attribute directly in SQLite."
+  },
+  {
+    "url": "/blog/how-to-package-and-transfer-a-martenweave-model-repository.html",
+    "title": "how to package and transfer a martenweave model repository | Martenweave",
+    "category": "Model governance",
+    "excerpt": "An SAP migration programme reaches handover."
+  },
+  {
+    "url": "/blog/how-to-build-field-level-lineage-for-an-sap-migration.html",
+    "title": "how to build field level lineage for an sap migration | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration programme says that it has lineage."
+  },
+  {
+    "url": "/blog/why-table-level-lineage-is-not-enough-for-master-data.html",
+    "title": "why table level lineage is not enough for master data | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration architect opens the lineage view and sees:"
+  },
+  {
+    "url": "/blog/how-to-trace-a-business-attribute-across-source-systems-mappings-and.html",
+    "title": "how to trace a business attribute across source systems mappings and | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A business owner asks:"
+  },
+  {
+    "url": "/blog/how-to-calculate-downstream-impact-before-changing-an-sap-field.html",
+    "title": "how to calculate downstream impact before changing an sap field | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A technical team proposes a simple change:"
+  },
+  {
+    "url": "/blog/how-impact-analysis-should-work-for-rules-mappings-and-value-lists.html",
+    "title": "how impact analysis should work for rules mappings and value lists | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A team proposes three changes:"
+  },
+  {
+    "url": "/blog/how-to-detect-orphaned-fields-rules-and-mappings.html",
+    "title": "how to detect orphaned fields rules and mappings | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A repository validates successfully."
+  },
+  {
+    "url": "/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html",
+    "title": "how to detect broken lineage after a source or target system change | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A source system is retired."
+  },
+  {
+    "url": "/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html",
+    "title": "how to model source authority and fallback paths without creating | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration team traces Customer Group upstream and finds four possible sources:"
+  },
+  {
+    "url": "/blog/how-to-separate-design-time-lineage-from-runtime-evidence.html",
+    "title": "how to separate design time lineage from runtime evidence | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration design states:"
+  },
+  {
+    "url": "/blog/how-to-use-lineage-evidence-during-mock-loads-cutover-and-hypercare.html",
+    "title": "how to use lineage evidence during mock loads cutover and hypercare | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "Lineage is often treated as design documentation."
+  },
+  {
+    "url": "/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html",
+    "title": "how to build a lineage based migration readiness score without hiding | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration dashboard shows:"
+  },
+  {
+    "url": "/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html",
+    "title": "how to explain lineage and impact to business owners without showing | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A data architect opens a lineage viewer during a business review."
+  },
+  {
+    "url": "/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html",
+    "title": "how lineage supports ams root cause analysis after go live | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A production incident arrives in the AMS queue:"
+  },
+  {
+    "url": "/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html",
+    "title": "how to connect dataset gaps to lineage and business impact | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A dataset-readiness report says:"
+  },
+  {
+    "url": "/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html",
+    "title": "how to prioritize migration gaps by business risk instead of field count | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A readiness report identifies 137 data gaps."
+  },
+  {
+    "url": "/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html",
+    "title": "how to turn migration gap findings into reviewable patch proposals | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "A profiling script finds that the Product migration dataset has no Plant field."
+  },
+  {
+    "url": "/blog/why-ai-should-propose-model-changes-but-never-approve-them.html",
+    "title": "why ai should propose model changes but never approve them | Martenweave",
+    "category": "AI governance",
+    "excerpt": "A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE ."
+  },
+  {
+    "url": "/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html",
+    "title": "why a data catalogue is not enough for migration model governance | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A migration team is preparing Product data for SAP S/4HANA."
+  },
+  {
+    "url": "/blog/why-sap-mdg-is-not-a-replacement-for-a-migration-model-registry.html",
+    "title": "why sap mdg is not a replacement for a migration model registry | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "A programme is migrating Supplier bank data into SAP S/4HANA."
+  },
+  {
+    "url": "/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html",
+    "title": "how martenweave should work alongside sap mdg during a migration | Martenweave",
+    "category": "SAP MDG and MDM",
+    "excerpt": "A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA."
+  },
+  {
+    "url": "/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html",
+    "title": "why migration mapping workbooks become technical debt and what should | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "A migration programme creates a mapping workbook for Product planning data."
+  },
+  {
+    "url": "/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html",
+    "title": "how we convert a mapping workbook into a canonical model without losing | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML."
+  },
+  {
+    "url": "/blog/how-we-keep-business-decisions-traceable-after-the-mapping-workbook-is.html",
+    "title": "how we keep business decisions traceable after the mapping workbook is | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "A migration team decides that MRP Controller must be derived differently for Plant PL30."
+  },
+  {
+    "url": "/blog/how-we-prevent-temporary-migration-exceptions-from-becoming-permanent.html",
+    "title": "how we prevent temporary migration exceptions from becoming permanent | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "During Mock Load 2, the Product planning migration has a coverage problem."
+  },
+  {
+    "url": "/blog/how-we-model-data-quality-rules-without-mixing-business-policy-and.html",
+    "title": "how we model data quality rules without mixing business policy and | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "A migration programme is preparing Supplier bank data for SAP."
+  },
+  {
+    "url": "/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html",
+    "title": "how we turn validation failures into actionable findings instead of | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "We run a validation against a Supplier bank-data migration dataset."
+  },
+  {
+    "url": "/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html",
+    "title": "how we decide whether a finding requires data correction a mapping | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "A Supplier bank-data validation fails for 3,400 records."
+  },
+  {
+    "url": "/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html",
+    "title": "how we prioritize findings by business impact instead of error count | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "We complete a Supplier bank-data validation run."
+  },
+  {
+    "url": "/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html",
+    "title": "how we prevent duplicate findings across mock loads and migration waves | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "We run the Supplier bank-verification check during Mock Load 2."
+  },
+  {
+    "url": "/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html",
+    "title": "how we connect findings to owners without building another workflow | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "We confirm a critical Supplier bank-data Finding."
+  },
+  {
+    "url": "/blog/how-we-prove-that-a-finding-is-actually-resolved.html",
+    "title": "how we prove that a finding is actually resolved | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "We identify a critical Supplier bank-data Finding."
+  },
+  {
+    "url": "/blog/how-we-detect-when-evidence-has-become-stale.html",
+    "title": "how we detect when evidence has become stale | Martenweave",
+    "category": "Model governance",
+    "excerpt": "We resolve a critical Supplier bank-data Finding during Cutover Rehearsal 5."
+  },
+  {
+    "url": "/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html",
+    "title": "how we build a migration readiness view that does not hide exceptions | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The Supplier migration dashboard shows:"
+  },
+  {
+    "url": "/blog/how-we-separate-technical-completeness-from-business-readiness.html",
+    "title": "how we separate technical completeness from business readiness | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A Supplier migration load finishes successfully."
+  },
+  {
+    "url": "/blog/how-we-use-model-evidence-during-cutover-approval.html",
+    "title": "how we use model evidence during cutover approval | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The Supplier migration team completes the final rehearsal."
+  },
+  {
+    "url": "/blog/why-a-successfully-loaded-material-may-still-be-unusable.html",
+    "title": "why a successfully loaded material may still be unusable | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "The material migration report looks successful."
+  },
+  {
+    "url": "/blog/how-we-detect-missing-material-extensions-before-cutover.html",
+    "title": "how we detect missing material extensions before cutover | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "The material migration team reports:"
+  },
+  {
+    "url": "/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html",
+    "title": "why units of measure are one of the most dangerous logistics migration | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "The unit-of-measure migration report looks harmless."
+  },
+  {
+    "url": "/blog/how-we-model-packaging-hierarchies-without-losing-logistics-meaning.html",
+    "title": "how we model packaging hierarchies without losing logistics meaning | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "The material migration team reports that packaging data is complete."
+  },
+  {
+    "url": "/blog/why-s4-material-readiness-does-not-prove-ewm-readiness.html",
+    "title": "why s4 material readiness does not prove ewm readiness | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "The material migration dashboard is green."
+  },
+  {
+    "url": "/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html",
+    "title": "how we create a canonical location model across erp ewm tm and external | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?"
+  },
+  {
+    "url": "/blog/how-we-govern-lead-times-across-procurement-production-warehouse-and.html",
+    "title": "how we govern lead times across procurement production warehouse and | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "What exactly are we promising when we say the lead time is 12 days?"
+  },
+  {
+    "url": "/blog/why-sap-data-programmes-pay-consultants-to-rediscover-the-same-knowledge.html",
+    "title": "why sap data programmes pay consultants to rediscover the same knowledge | Martenweave",
+    "category": "Model governance",
+    "excerpt": "Why are we paying senior consultants to answer the same question for the fourth time?"
+  },
+  {
+    "url": "/blog/how-a-canonical-data-and-interface-registry-reduces-change-impact.html",
+    "title": "how a canonical data and interface registry reduces change impact | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "Why can changing one master-data field require six weeks of analysis?"
+  },
+  {
+    "url": "/blog/why-mapping-workbooks-become-a-recurring-consulting-cost.html",
+    "title": "why mapping workbooks become a recurring consulting cost | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "How many times should a transformation programme pay to map the same 1,400 legacy codes?"
+  },
+  {
+    "url": "/blog/how-much-does-a-green-dashboard-cost-when-every-team-rebuilds-the.html",
+    "title": "how much does a green dashboard cost when every team rebuilds the | Martenweave",
+    "category": "Model governance",
+    "excerpt": "How much consulting effort sits behind one green status on a steering-committee slide?"
+  },
+  {
+    "url": "/blog/why-consultant-turnover-makes-sap-programmes-pay-twice-for-the-same.html",
+    "title": "why consultant turnover makes sap programmes pay twice for the same | Martenweave",
+    "category": "Model governance",
+    "excerpt": "What exactly leaves the programme when an experienced consultant leaves?"
+  },
+  {
+    "url": "/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html",
+    "title": "where martenweave fits in logistics managing the data behind operations | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "Logistics problems are often described as operational problems."
+  },
+  {
+    "url": "/blog/logistics-problems-rarely-start-in-logistics.html",
+    "title": "logistics problems rarely start in logistics | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "When a delivery fails, people usually look at the delivery."
+  },
+  {
+    "url": "/blog/sap-logistics-data-migration-problems-usually-appear-too-late.html",
+    "title": "sap logistics data migration problems usually appear too late | Martenweave",
+    "category": "Logistics data",
+    "excerpt": "Most SAP logistics migration problems are discovered at the worst possible moment."
+  },
+  {
+    "url": "/blog/what-is-a-data-model-registry-a-practical-guide-for-managers.html",
+    "title": "what is a data model registry a practical guide for managers | Martenweave",
+    "category": "Model governance",
+    "excerpt": "Most companies do not lack documentation."
+  },
+  {
+    "url": "/blog/why-data-migration-projects-need-a-model-registry.html",
+    "title": "why data migration projects need a model registry | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "Most migration programmes do not fail because nobody created a mapping."
+  },
+  {
+    "url": "/blog/from-mapping-spreadsheet-to-governed-data-model.html",
+    "title": "from mapping spreadsheet to governed data model | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "Most migration programmes begin with a spreadsheet."
+  },
+  {
+    "url": "/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html",
+    "title": "data lineage vs impact analysis why seeing the flow is not enough | Martenweave",
+    "category": "Lineage and impact",
+    "excerpt": "Data lineage is one of the most attractive ideas in data management."
+  },
+  {
+    "url": "/blog/data-quality-tools-vs-model-validation-clean-data-can-still-follow-the.html",
+    "title": "data quality tools vs model validation clean data can still follow the | Martenweave",
+    "category": "Validation and readiness",
+    "excerpt": "A data-quality report can be completely green while the migration is still wrong."
+  },
+  {
+    "url": "/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html",
+    "title": "schema registry vs model registry technical compatibility is not | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A message can be technically valid and still be wrong."
+  },
+  {
+    "url": "/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html",
+    "title": "why sap migration teams still lose control even with the right tools | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "An SAP migration programme may have every major tool it is supposed to have."
+  },
+  {
+    "url": "/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html",
+    "title": "mapping version drift why sap migration teams keep reopening the same | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "Most migration teams believe they have a mapping problem only when a field is missing."
+  },
+  {
+    "url": "/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html",
+    "title": "sap migration tco how model governance reduces rework and project cost | Martenweave",
+    "category": "Migration readiness",
+    "excerpt": "The licence fee is rarely the most dangerous part of migration cost."
+  },
+  {
+    "url": "/blog/why-martenweave-creates-more-value-across-a-programme-than-in-a-single.html",
+    "title": "why martenweave creates more value across a programme than in a single | Martenweave",
+    "category": "Model governance",
+    "excerpt": "A small migration project may not need Martenweave."
+  },
+  {
+    "url": "/blog/why-data-governance-frameworks-stay-on-paper-during-sap-programmes.html",
+    "title": "why data governance frameworks stay on paper during sap programmes | Martenweave",
+    "category": "Model governance",
+    "excerpt": "Many organisations already know what good data management should look like."
+  },
+  {
+    "url": "/blog/why-dama-based-data-governance-fails-to-reach-sap-migration-teams.html",
+    "title": "why dama based data governance fails to reach sap migration teams | Martenweave",
+    "category": "AMS and continuity",
+    "excerpt": "Many companies have a data-governance framework."
   }
 ]

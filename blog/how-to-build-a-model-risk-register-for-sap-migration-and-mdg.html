@@ -1,0 +1,1617 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build a Model Risk Register for SAP Migration and MDG | Martenweave</title>
+    <meta
+      name="description"
+      content="The programme risk register looks healthy."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html" />
+    <meta property="og:title" content="How to Build a Model Risk Register for SAP Migration and MDG | Martenweave" />
+    <meta property="og:description" content="The programme risk register looks healthy." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build a Model Risk Register for SAP Migration and MDG | Martenweave" />
+    <meta name="twitter:description" content="The programme risk register looks healthy." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html",
+                        "name": "How to Build a Model Risk Register for SAP Migration and MDG | Martenweave",
+                        "description": "The programme risk register looks healthy.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build a Model Risk Register for SAP Migration and MDG",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html#content",
+                        "headline": "How to Build a Model Risk Register for SAP Migration and MDG",
+                        "name": "How to Build a Model Risk Register for SAP Migration and MDG",
+                        "description": "The programme risk register looks healthy.",
+                        "url": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-a-model-risk-register-for-sap-migration-and-mdg.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build a Model Risk Register for SAP Migration and MDG</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Build a Model Risk Register for SAP Migration and MDG</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">The programme risk register looks healthy.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#programme-risks-are-usually-too-broad-for-model-decisions">Programme risks are usually too broad for model decisions</a></li><li><a href="#write-risk-statements-using-cause-event-and-consequence">Write risk statements using cause, event and consequence</a></li><li><a href="#separate-inherent-and-residual-risk">Separate inherent and residual risk</a></li><li><a href="#assess-likelihood-carefully">Assess likelihood carefully</a></li><li><a href="#assign-an-accountable-risk-owner">Assign an accountable risk owner</a></li><li><a href="#distinguish-mitigation-from-workaround">Distinguish mitigation from workaround</a></li><li><a href="#record-dependencies-between-risks">Record dependencies between risks</a></li><li><a href="#link-risk-to-decisions-and-accepted-deviations">Link risk to decisions and accepted deviations</a></li><li><a href="#build-the-first-register-from-existing-evidence">Build the first register from existing evidence</a></li><li><a href="#sources-of-model-risks">Sources of model risks</a></li><li><a href="#use-risk-thresholds-carefully">Use risk thresholds carefully</a></li><li><a href="#do-not-measure-readiness-by-risk-count-alone">Do not measure readiness by risk count alone</a></li><li><a href="#create-role-specific-views">Create role-specific views</a></li><li><a href="#integrate-with-the-programme-risk-register">Integrate with the programme risk register</a></li><li><a href="#ai-can-help-prepare-the-register">AI can help prepare the register</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The programme risk register looks healthy.</p>
+<p>Most items are familiar:</p>
+<ul>
+<li>environments may be delivered late;</li>
+<li>business resources may not be available;</li>
+<li>integration testing may slip;</li>
+<li>data cleansing may require more effort;</li>
+<li>country decisions may take longer than planned.</li>
+</ul>
+<p>Each risk has an owner, probability, impact and mitigation.</p>
+<p>The status is discussed every week.</p>
+<p>Elsewhere, the migration team has discovered that a mandatory SAP target attribute has no reliable source in two legacy systems.</p>
+<p>A local workbook contains an unapproved default.</p>
+<p>Several mappings point to an endpoint that the architecture team intends to retire.</p>
+<p>A temporary value introduced for the first mock load is now used in operational test data.</p>
+<p>A country-specific validation has been copied into the global design.</p>
+<p>None of these appears in the programme risk register.</p>
+<p>They exist as:</p>
+<ul>
+<li>mapping comments;</li>
+<li>Jira defects;</li>
+<li>data-quality findings;</li>
+<li>meeting actions;</li>
+<li>temporary decisions;</li>
+<li>knowledge held by individual consultants.</li>
+</ul>
+<p>The programme can see general delivery risk.</p>
+<p>It cannot see concentrated risk inside the model.</p>
+<p>This is why an SAP migration or MDG programme may report a manageable overall risk position while carrying unresolved structural problems in the fields, mappings, rules and decisions that determine whether the solution will work.</p>
+<blockquote>A model risk register connects risk to the exact model objects, populations, decisions and dependencies that create the exposure.</blockquote>
+<p>It does not replace the programme risk register.</p>
+<p>It supplies the model-level evidence that broad programme risks often lack.</p>
+<h2 id="programme-risks-are-usually-too-broad-for-model-decisions">Programme risks are usually too broad for model decisions</h2>
+<p>A programme register may contain an item such as:</p>
+<blockquote>Data quality may delay migration.</blockquote>
+<p>This is directionally useful.</p>
+<p>It does not tell the migration or governance teams:</p>
+<ul>
+<li>which attributes are affected;</li>
+<li>which source systems are responsible;</li>
+<li>how many records are exposed;</li>
+<li>whether mappings exist;</li>
+<li>which countries are involved;</li>
+<li>which target rules will fail;</li>
+<li>when the risk becomes critical;</li>
+<li>what decision is required.</li>
+</ul>
+<p>The result is a risk that everyone recognises but nobody can act on precisely.</p>
+<p>A model risk register translates the broad concern into operationally useful records.</p>
+<p>For example:</p>
+<p>```text id=&quot;model-risk-01&quot; Risk: ERP_B cannot provide Supplier Classification for active suppliers.</p>
+<p>Affected model objects: ATTR-SUPPLIER-CLASSIFICATION MAP-ERP-B-SUPPLIER-CLASSIFICATION RULE-SUPPLIER-CLASSIFICATION-REQUIRED</p>
+<p>Affected population: 18,420 active suppliers.</p>
+<p>Programme consequence: Mock Load 3 will reject records if the target validation becomes blocking.</p>
+<p>Decision required: Approve source remediation, controlled enrichment or contextual exception.</p>
+<pre><code>
+The programme risk remains:
+
+&gt; Data quality may delay migration.
+
+The model risk explains where and why.
+
+## A model risk register is not another defect backlog
+
+Defects describe observed failures.
+
+Risks describe uncertain or unresolved conditions that may cause future harm.
+
+A defect might say:
+
+&gt; Mapping for Customer Group produced the wrong target value in Mock Load 2.
+
+A related model risk might say:
+
+&gt; Customer Group is represented at different organisational levels in CRM_A and SAP. Correcting the current defect without resolving the semantic difference may produce further incorrect mappings in later waves.
+
+The defect needs correction.
+
+The risk needs a decision about the model.
+
+Some risks are discovered through defects.
+
+Others appear before anything has failed:
+
+- a source field is scheduled for retirement;
+- a mandatory target has weak source coverage;
+- a value has no owner;
+- local rules conflict with a global definition;
+- a temporary exception has no expiry;
+- a critical attribute has no current test evidence.
+
+A model risk register should therefore include more than production and test failures.
+
+## Why model risk matters in SAP MDG
+
+SAP currently describes SAP Master Data Governance as a central governance layer that combines master data, policy and metadata. Its capabilities include governed models, preservation of semantics and relationships, collaborative workflows, validated values, monitored business rules, mass changes and auditable data changes.
+
+These capabilities depend on decisions about:
+
+- which model is governed;
+- which values are valid;
+- which rules apply;
+- who owns attributes;
+- how data is sourced and distributed.
+
+An operational governance platform can enforce an approved rule.
+
+It cannot determine that the rule is based on an incomplete source, an ambiguous definition or an expired migration exception unless the programme identifies and governs that risk.
+
+SAP also recommends curating master data well before an SAP S/4HANA implementation because more automated processes depend heavily on clean and correct master data.
+
+A model risk register helps turn this broad preparation principle into a controlled list of specific exposures.
+
+## Risk assessment should support accountable action
+
+NIST describes risk assessments as part of an overall risk-management process that provides leaders with information needed to choose appropriate courses of action.
+
+Although NIST SP 800-30 addresses information-system risk rather than SAP model governance specifically, the general principle is useful:
+
+&gt; The purpose of risk information is to support decisions.
+
+A model risk register should therefore not become a long list of concerns with red, amber and green labels.
+
+Every material entry should help the organisation decide whether to:
+
+- avoid the risk;
+- reduce it;
+- transfer responsibility;
+- accept it temporarily;
+- gather more evidence;
+- change the model;
+- change the implementation sequence;
+- stop the affected work.
+
+## Define what counts as model risk
+
+Model risk is the possibility that an incorrect, incomplete, ambiguous, unsupported or uncontrolled model state causes business, migration, implementation or operational harm.
+
+It can arise from:
+
+- business meaning;
+- data availability;
+- mappings;
+- rules;
+- contexts;
+- ownership;
+- lifecycle;
+- implementation alignment;
+- change control.
+
+A useful model risk is specific enough to connect to identifiable objects and evidence.
+
+Weak risk statement:
+
+&gt; Supplier data may be poor.
+
+Stronger risk statement:
+
+&gt; ERP_B has no reliable source for Supplier Risk Classification. If the global mandatory rule is implemented without an approved exception, 6,840 active suppliers will fail migration validation.
+
+The second statement makes action possible.
+
+## The main categories of model risk
+
+A practical register should classify risks so teams can identify patterns.
+
+## 1. Semantic risk
+
+The business meaning is unclear, inconsistent or incorrectly represented.
+
+Examples:
+
+- two systems use “Customer Group” for different concepts;
+- one value combines several meanings;
+- a local definition conflicts with the global attribute;
+- a target field is selected because its label resembles the source field.
+
+Potential consequences:
+
+- incorrect mapping;
+- misleading reporting;
+- invalid global standardisation;
+- repeated local exceptions.
+
+## 2. Source risk
+
+The expected source is unavailable, incomplete, unreliable or at the wrong level.
+
+Examples:
+
+- mandatory attribute absent from one legacy system;
+- source field is being retired;
+- source is global while target is organisational;
+- several systems claim authority.
+
+Potential consequences:
+
+- migration gaps;
+- manual enrichment;
+- uncontrolled defaults;
+- operational maintenance burden.
+
+## 3. Mapping risk
+
+Source-to-target treatment is missing, inconsistent or unsupported.
+
+Examples:
+
+- active source values have no target mapping;
+- different countries map the same source value differently without context;
+- transformation logic exists only in code;
+- mapping points to a retired target endpoint.
+
+Potential consequences:
+
+- load failures;
+- incorrect conversions;
+- duplicated remediation;
+- hidden loss of business distinctions.
+
+## 4. Rule risk
+
+Validation, derivation or policy logic is incomplete or misapplied.
+
+Examples:
+
+- global rule ignores country differences;
+- mandatory rule includes historical records unintentionally;
+- warning should be an error—or the reverse;
+- derivation creates values that look authoritative but are not.
+
+Potential consequences:
+
+- valid records blocked;
+- invalid records activated;
+- high incident volume;
+- compliance exposure.
+
+## 5. Value-list risk
+
+Allowed values are incomplete, duplicated or semantically unstable.
+
+Examples:
+
+- source values have no approved target;
+- temporary values remain active;
+- local values are visible globally;
+- two values overlap in meaning.
+
+Potential consequences:
+
+- inconsistent classification;
+- downstream rejection;
+- inaccurate analytics;
+- unremediated temporary data.
+
+## 6. Context risk
+
+The model does not represent where a rule or attribute applies.
+
+Examples:
+
+- country exception stored only in a comment;
+- company-code rule implemented globally;
+- person and organisation requirements mixed;
+- migration-only treatment used operationally.
+
+Potential consequences:
+
+- overvalidation;
+- inconsistent country behaviour;
+- duplicated local models;
+- difficult testing.
+
+## 7. Ownership risk
+
+No role has clear authority or operational responsibility.
+
+Examples:
+
+- nobody owns a value list;
+- global and local owners disagree;
+- implementation partner acts as permanent decision owner;
+- key attribute depends on one individual.
+
+Potential consequences:
+
+- delayed decisions;
+- unmanaged exceptions;
+- weak handover;
+- repeated disputes.
+
+## 8. Evidence risk
+
+A model decision is based on old, incomplete or unverified evidence.
+
+Examples:
+
+- dataset profile is six months old;
+- mapping was never tested against current values;
+- legal interpretation is referenced but unavailable;
+- configuration documentation does not match production.
+
+Potential consequences:
+
+- false readiness;
+- weak approval;
+- incorrect impact analysis;
+- rework after new evidence appears.
+
+## 9. Implementation-alignment risk
+
+Approved model and implemented behaviour differ.
+
+Examples:
+
+- SAP validation uses broader context;
+- interface omits approved field;
+- migration code uses an old mapping;
+- tests reflect a superseded baseline.
+
+Potential consequences:
+
+- production inconsistency;
+- repeated defects;
+- audit difficulty;
+- misleading documentation.
+
+## 10. Change-control risk
+
+Model changes can enter without proper review.
+
+Examples:
+
+- direct spreadsheet overwrite;
+- direct push to canonical branch;
+- AI-generated patch applied automatically;
+- emergency configuration change never reconciled.
+
+Potential consequences:
+
+- silent model drift;
+- weak auditability;
+- inconsistent artefacts;
+- inability to reconstruct decisions.
+
+## 11. Lifecycle risk
+
+Temporary, deprecated or retired elements remain active incorrectly.
+
+Examples:
+
+- expired migration default;
+- retired source endpoint still referenced;
+- obsolete local override still enabled;
+- old test evidence treated as current.
+
+Potential consequences:
+
+- hidden operational debt;
+- future release failure;
+- incorrect impact results;
+- accumulating complexity.
+
+## 12. Traceability risk
+
+Critical relationships are missing or unreliable.
+
+Examples:
+
+- target field cannot be traced to source;
+- rule has no linked decision;
+- change has no affected tests;
+- incident cannot be connected to the model object.
+
+Potential consequences:
+
+- repeated investigation;
+- missed dependencies;
+- weak handover;
+- excessive regression testing.
+
+## Model risk should attach to model objects
+
+A model risk register becomes useful when each risk links to the exact objects involved.
+
+For example:
+
+```text id=&quot;model-risk-02&quot;
+Risk ID:
+MRISK-0048
+
+Title:
+Unapproved default for Supplier Risk
+
+Affected objects:
+- ATTR-SUPPLIER-RISK
+- MAP-ERP-B-SUPPLIER-RISK
+- VLIST-SUPPLIER-RISK
+- RULE-SUPPLIER-RISK-REQUIRED
+
+Affected dataset:
+DATASET-ERP-B-SUPPLIERS-WAVE-2
+
+Related decision:
+DEC-SUPPLIER-RISK-DEFAULT-01
+
+Related issues:
+MIG-1842
+MDG-763</code></pre>
+<p>This allows the programme to answer:</p>
+<ul>
+<li>Which critical attributes carry the most risk?</li>
+<li>Which mappings have several unresolved risks?</li>
+<li>Which source systems generate repeated exposure?</li>
+<li>Which decisions are blocked by weak evidence?</li>
+<li>Which risks affect the same target release?</li>
+</ul>
+<p>A generic risk register cannot provide this view unless it knows the model structure.</p>
+<h2 id="write-risk-statements-using-cause-event-and-consequence">Write risk statements using cause, event and consequence</h2>
+<p>A disciplined risk statement can follow:</p>
+<p>```text id=&quot;model-risk-03&quot; Because [cause], there is a risk that [event], which may result in [consequence].</p>
+<pre><code>
+Example:
+
+&gt; Because ERP_B does not maintain Supplier Classification for all active suppliers, there is a risk that the global mandatory rule will reject a significant migration population, resulting in delayed loading, manual enrichment and cutover pressure.
+
+Another:
+
+&gt; Because the temporary value `MIGRATION_REVIEW` remains available to operational users, there is a risk that unresolved records will be treated as valid classified suppliers, resulting in incorrect workflow and reporting.
+
+This format separates the condition from the harm.
+
+It also makes mitigation more precise.
+
+## Describe the current exposure
+
+Every risk should identify what is exposed now.
+
+Useful fields include:
+
+- affected domain;
+- affected objects;
+- applicable context;
+- affected records;
+- source systems;
+- consuming systems;
+- migration waves;
+- target release;
+- current controls.
+
+For example:
+
+```text id=&quot;model-risk-04&quot;
+Applicable context:
+Portugal, supplier organisations, active records
+
+Affected population:
+3,620 records
+
+Current control:
+Manual review before activation
+
+Control weakness:
+Review is not represented in workflow and cannot be monitored reliably</code></pre>
+<p>This helps reviewers distinguish a theoretical concern from an active programme exposure.</p>
+<h2 id="separate-inherent-and-residual-risk">Separate inherent and residual risk</h2>
+<p>Inherent risk describes the exposure before considering controls.</p>
+<p>Residual risk describes what remains after current controls.</p>
+<p>Example:</p>
+<p>```text id=&quot;model-risk-05&quot; Inherent risk: High</p>
+<p>Reason: Missing supplier classifications can bypass compliance routing.</p>
+<p>Current control: Manual pre-load review of affected records.</p>
+<p>Residual risk: Medium</p>
+<p>Control limitation: Manual review covers migration only and does not prevent operational creation.</p>
+<pre><code>
+The distinction matters because a high inherent risk may be temporarily manageable through a strong control.
+
+It also prevents a manual workaround from making the underlying structural issue disappear from the register.
+
+## Record evidence, not only assessment
+
+A risk rating should be grounded in evidence where possible.
+
+Useful evidence includes:
+
+- dataset profile;
+- value frequency;
+- mapping coverage;
+- failed test;
+- interface specification;
+- configuration comparison;
+- incident history;
+- approved decision;
+- expert review.
+
+For example:
+
+```text id=&quot;model-risk-06&quot;
+Evidence:
+- 8,420 blank values in current active population
+- 27 related incidents in previous quarter
+- no approved source field in ERP_B
+- target rule configured as blocking in test</code></pre>
+<p>Also record evidence confidence:</p>
+<ul>
+<li>confirmed;</li>
+<li>representative;</li>
+<li>expert judgement;</li>
+<li>assumption;</li>
+<li>unknown.</li>
+</ul>
+<p>Low-confidence evidence may increase the need for investigation.</p>
+<p>It should not be hidden behind a confident risk score.</p>
+<h2 id="assess-likelihood-carefully">Assess likelihood carefully</h2>
+<p>Likelihood should refer to the risk event, not merely the presence of the cause.</p>
+<p>For example:</p>
+<p>Cause:</p>
+<blockquote>Source completeness is 70%.</blockquote>
+<p>Risk event:</p>
+<blockquote>Records fail the next migration load.</blockquote>
+<p>Likelihood depends on:</p>
+<ul>
+<li>whether the target rule will be active;</li>
+<li>whether the affected population is included;</li>
+<li>whether remediation occurs first;</li>
+<li>whether a controlled exception exists.</li>
+</ul>
+<p>Avoid treating an existing gap as automatically equal to a future failure.</p>
+<p>Document the conditions.</p>
+<p>Example:</p>
+<p>```text id=&quot;model-risk-07&quot; Likelihood: High if blocking validation is activated before remediation.</p>
+<p>Likelihood: Low for Mock Load 2 because the rule remains a warning.</p>
+<pre><code>
+This improves sequencing decisions.
+
+## Assess impact across several dimensions
+
+Impact may include:
+
+### Business impact
+
+- blocked sales or procurement;
+- incorrect compliance handling;
+- reporting distortion;
+- financial error.
+
+### Migration impact
+
+- rejected records;
+- delayed wave;
+- manual remediation;
+- load reconciliation difficulty.
+
+### Operational impact
+
+- incident volume;
+- manual stewardship;
+- workflow disruption;
+- poor user adoption.
+
+### Architecture impact
+
+- duplicated models;
+- inconsistent semantics;
+- increased integration complexity.
+
+### Audit and control impact
+
+- weak evidence;
+- unclear authority;
+- inability to explain decisions.
+
+A single overall rating may still be used.
+
+The dimensions explain why.
+
+## Include detectability
+
+Some model failures are visible immediately.
+
+Others create plausible but incorrect data.
+
+Example:
+
+### Highly detectable
+
+An invalid code causes an interface error.
+
+### Poorly detectable
+
+A default value is accepted and appears legitimate.
+
+Poor detectability can make a risk more serious even when failure probability is moderate.
+
+The register should ask:
+
+- Would the error be rejected?
+- Would reconciliation find it?
+- Would users recognise it?
+- Could it persist until reporting or audit?
+- Can affected records be identified later?
+
+## Include reversibility
+
+The programme should know whether the consequence can be undone.
+
+Low reversibility examples include:
+
+- merging distinct source values;
+- overwriting original identifiers;
+- deleting historical relationships;
+- distributing an incorrect classification to many systems;
+- losing the ability to identify defaulted records.
+
+If recovery requires manual reconstruction, the risk deserves stronger control.
+
+## Include time exposure
+
+A risk register must show when exposure changes.
+
+Relevant dates include:
+
+- source retirement;
+- mock load;
+- mapping freeze;
+- UAT;
+- legal effective date;
+- cutover;
+- remediation deadline;
+- exception expiry.
+
+Example:
+
+```text id=&quot;model-risk-08&quot;
+Risk becomes critical:
+15 September 2026
+
+Reason:
+Mock Load 3 activates blocking validation.
+
+Latest safe decision date:
+31 August 2026
+
+Source remediation lead time:
+Ten working days</code></pre>
+<p>This is more useful than marking the risk amber until it suddenly becomes red.</p>
+<h2 id="assign-an-accountable-risk-owner">Assign an accountable risk owner</h2>
+<p>The risk owner is the person or role accountable for ensuring the risk is managed.</p>
+<p>They do not need to perform every mitigation task.</p>
+<p>For example:</p>
+<p>```text id=&quot;model-risk-09&quot; Risk owner: Global Supplier Data Owner</p>
+<p>Mitigation task owners:</p>
+<ul>
+<li>ERP_B Source Owner</li>
+<li>Migration Lead</li>
+<li>SAP MDG Architect</li>
+</ul>
+<pre><code>
+Avoid assigning every model risk to:
+
+- project manager;
+- data migration lead;
+- external consultant;
+- generic workstream mailbox.
+
+The owner should have authority to choose or escalate the treatment.
+
+## Assign model ownership separately
+
+Risk ownership and model ownership may differ.
+
+The Global Supplier Data Owner may own the risk.
+
+The Supplier Classification attribute may be maintained by a data architect.
+
+The SAP validation may be implemented by the MDG team.
+
+The register should identify these roles separately.
+
+This avoids assuming that the person who owns a field also owns every programme consequence.
+
+## Record the required decision
+
+A risk should state what must be decided.
+
+Examples:
+
+- approve source remediation;
+- approve temporary exception;
+- select target concept;
+- assign global owner;
+- retire temporary value;
+- defer mandatory rule;
+- accept residual risk;
+- stop affected migration scope.
+
+Without a decision field, risks remain descriptive.
+
+Example:
+
+```text id=&quot;model-risk-10&quot;
+Decision required:
+Choose one of the following before 31 August:
+
+1. Remediate ERP_B source.
+2. Introduce controlled enrichment.
+3. Narrow mandatory rule by source.
+4. Accept exclusion of affected suppliers from Wave 2.</code></pre>
+<h2 id="distinguish-mitigation-from-workaround">Distinguish mitigation from workaround</h2>
+<p>A mitigation reduces likelihood or consequence.</p>
+<p>A workaround enables work to continue.</p>
+<p>Example:</p>
+<p>Risk:</p>
+<blockquote>Source cannot provide required classification.</blockquote>
+<p>Workaround:</p>
+<blockquote>Enter <code>UNKNOWN</code>.</blockquote>
+<p>Mitigation:</p>
+<blockquote>Profile affected population, assign remediation owner and introduce a controlled review status.</blockquote>
+<p>The workaround may create new risk.</p>
+<p>The register should not close the original item merely because delivery can continue temporarily.</p>
+<h2 id="record-dependencies-between-risks">Record dependencies between risks</h2>
+<p>Model risks often interact.</p>
+<p>For example:</p>
+<p>```text id=&quot;model-risk-11&quot; MRISK-0048: Source classification missing</p>
+<p>depends on</p>
+<p>MRISK-0051: Business definition of Supplier Classification unresolved</p>
+<pre><code>
+Remediating the source before resolving the definition may create rework.
+
+Another example:
+
+```text id=&quot;model-risk-12&quot;
+MRISK-0062:
+Temporary value still active
+
+increases
+
+MRISK-0064:
+Downstream reporting treats temporary state as final classification</code></pre>
+<p>Risk relationships help the programme address root causes rather than several symptoms independently.</p>
+<h2 id="link-risk-to-decisions-and-accepted-deviations">Link risk to decisions and accepted deviations</h2>
+<p>When a risk is accepted, record:</p>
+<ul>
+<li>accountable approver;</li>
+<li>accepted residual exposure;</li>
+<li>temporary controls;</li>
+<li>expiry;</li>
+<li>review trigger;</li>
+<li>affected objects.</li>
+</ul>
+<p>Example:</p>
+<p>```text id=&quot;model-risk-13&quot; Decision: Accept incomplete ERP_B classification for Mock Load 2.</p>
+<p>Control: Affected records remain blocked from activation.</p>
+<p>Approver: Migration Director and Supplier Data Owner.</p>
+<p>Expiry: Before UAT Cycle 1.</p>
+<p>Review trigger: Completion of ERP_B enrichment extract.</p>
+<pre><code>
+Risk acceptance should not mean moving the item to a closed archive.
+
+The exposure remains active until the condition is resolved or permanently accepted.
+
+## Include risk status that reflects lifecycle
+
+Useful statuses include:
+
+- identified;
+- assessing;
+- decision required;
+- mitigation planned;
+- mitigating;
+- accepted temporarily;
+- monitoring;
+- resolved;
+- superseded.
+
+Avoid only:
+
+- open;
+- closed.
+
+A risk may have an approved treatment but remain exposed while implementation is underway.
+
+## Define resolution evidence
+
+A risk should not close merely because a task was completed.
+
+Resolution should require proof that the exposure has changed.
+
+Examples:
+
+### Source risk
+
+- current dataset shows required completeness;
+- ownership confirmed;
+- extraction tested.
+
+### Mapping risk
+
+- all observed values covered;
+- mapping approved;
+- target load verified.
+
+### Rule risk
+
+- context corrected;
+- positive and negative tests passed;
+- production behaviour confirmed.
+
+### Temporary-value risk
+
+- new use blocked;
+- affected records remediated;
+- value retired;
+- downstream consumers verified.
+
+The resolution evidence should link to the same model objects as the risk.
+
+## Use a practical risk-register schema
+
+A model risk record might contain:
+
+```yaml id=&quot;model-risk-14&quot;
+id: MRISK-0048
+title: Unapproved Supplier Risk default
+status: mitigating
+
+risk_statement: &gt;
+  Because ERP_B cannot populate Supplier Risk,
+  there is a risk that migration assigns STANDARD by default,
+  resulting in apparently valid but unreviewed classifications.
+
+affected_objects:
+  - ATTR-SUPPLIER-RISK
+  - MAP-ERP-B-SUPPLIER-RISK
+  - VLIST-SUPPLIER-RISK
+
+context:
+  source_system: ERP_B
+  population: active_suppliers
+  wave: WAVE_2
+
+affected_records: 10240
+evidence_confidence: confirmed
+inherent_risk: high
+residual_risk: medium
+detectability: low
+reversibility: medium
+
+owner: ROLE-GLOBAL-SUPPLIER-DATA-OWNER
+decision_due: 2026-08-31
+
+current_control:
+  Identify defaulted records by migration batch ID.
+
+treatment:
+  Stop unrestricted defaulting and remediate the affected population.
+
+expiry:
+  2026-10-01</code></pre>
+<p>This is a conceptual example rather than a claim about one mandatory Martenweave schema.</p>
+<p>The precise schema should remain small enough that teams maintain it.</p>
+<h2 id="build-the-first-register-from-existing-evidence">Build the first register from existing evidence</h2>
+<p>Do not begin with a large risk-identification workshop asking participants to imagine every possible problem.</p>
+<p>Start with current evidence:</p>
+<ul>
+<li>failed tests;</li>
+<li>gap reports;</li>
+<li>incomplete mappings;</li>
+<li>unresolved decisions;</li>
+<li>expired deviations;</li>
+<li>repeated incidents;</li>
+<li>configuration differences;</li>
+<li>unsupported values;</li>
+<li>unowned critical objects.</li>
+</ul>
+<p>Then ask which of these findings creates material future exposure.</p>
+<p>This produces a more grounded register.</p>
+<h2 id="sources-of-model-risks">Sources of model risks</h2>
+<h3 id="dataset-profiling">Dataset profiling</h3>
+<p>Can reveal:</p>
+<ul>
+<li>missing columns;</li>
+<li>low completeness;</li>
+<li>unsupported values;</li>
+<li>duplicate keys;</li>
+<li>relationship gaps.</li>
+</ul>
+<h3 id="deterministic-validation">Deterministic validation</h3>
+<p>Can reveal:</p>
+<ul>
+<li>broken references;</li>
+<li>invalid lifecycle states;</li>
+<li>active dependencies on retired objects;</li>
+<li>missing ownership;</li>
+<li>incomplete mappings.</li>
+</ul>
+<h3 id="impact-analysis">Impact analysis</h3>
+<p>Can reveal:</p>
+<ul>
+<li>hidden consumers;</li>
+<li>local variants;</li>
+<li>tests affected by a change;</li>
+<li>transitive dependencies.</li>
+</ul>
+<h3 id="decision-review">Decision review</h3>
+<p>Can reveal:</p>
+<ul>
+<li>expired conditions;</li>
+<li>missing approval;</li>
+<li>temporary logic treated as permanent.</li>
+</ul>
+<h3 id="ams-incidents">AMS incidents</h3>
+<p>Can reveal:</p>
+<ul>
+<li>repeated model ambiguity;</li>
+<li>configuration drift;</li>
+<li>weak source responsibility.</li>
+</ul>
+<h3 id="configuration-comparison">Configuration comparison</h3>
+<p>Can reveal:</p>
+<ul>
+<li>approved model not implemented;</li>
+<li>production changes not reconciled.</li>
+</ul>
+<h2 id="use-risk-thresholds-carefully">Use risk thresholds carefully</h2>
+<p>A model-risk register may define thresholds such as:</p>
+<ul>
+<li>more than 5% incomplete critical population;</li>
+<li>more than one active consumer without confirmed compatibility;</li>
+<li>exception overdue by 30 days;</li>
+<li>critical attribute without owner;</li>
+<li>mandatory target without source treatment.</li>
+</ul>
+<p>These should be programme policies, not universal truths.</p>
+<p>For example, 1% missing bank data may be more serious than 20% missing optional descriptions.</p>
+<p>Thresholds should consider object criticality and context.</p>
+<h2 id="do-not-measure-readiness-by-risk-count-alone">Do not measure readiness by risk count alone</h2>
+<p>A programme with 100 documented risks may be better controlled than one reporting only 10.</p>
+<p>Useful measures include:</p>
+<ul>
+<li>critical risks without owner;</li>
+<li>high risks without treatment;</li>
+<li>risks past decision date;</li>
+<li>accepted risks past expiry;</li>
+<li>risks with low evidence confidence;</li>
+<li>risks concentrated on critical objects;</li>
+<li>risks that block the next milestone;</li>
+<li>recurring risks across countries or waves.</li>
+</ul>
+<p>The goal is not to reduce the number by closing items administratively.</p>
+<p>It is to reduce real exposure.</p>
+<h2 id="create-role-specific-views">Create role-specific views</h2>
+<h3 id="programme-management-view">Programme management view</h3>
+<ul>
+<li>critical and high residual risks;</li>
+<li>milestone exposure;</li>
+<li>decision deadlines;</li>
+<li>accepted conditions;</li>
+<li>accountable owners.</li>
+</ul>
+<h3 id="domain-owner-view">Domain-owner view</h3>
+<ul>
+<li>risks by attribute, rule and value list;</li>
+<li>unresolved semantic decisions;</li>
+<li>ownership gaps.</li>
+</ul>
+<h3 id="migration-view">Migration view</h3>
+<ul>
+<li>source and mapping risks;</li>
+<li>affected populations;</li>
+<li>wave and cutover impact;</li>
+<li>remediation status.</li>
+</ul>
+<h3 id="sap-mdg-view">SAP MDG view</h3>
+<ul>
+<li>rules;</li>
+<li>contexts;</li>
+<li>workflow and configuration alignment;</li>
+<li>implementation dependencies.</li>
+</ul>
+<h3 id="ams-view">AMS view</h3>
+<ul>
+<li>operational deviations;</li>
+<li>recurring incidents;</li>
+<li>temporary values;</li>
+<li>post-go-live model debt.</li>
+</ul>
+<p>These views should be generated from one register.</p>
+<p>Separate spreadsheets for each audience will quickly diverge.</p>
+<h2 id="integrate-with-the-programme-risk-register">Integrate with the programme risk register</h2>
+<p>Not every model risk belongs in the executive programme register.</p>
+<p>A practical escalation rule may include:</p>
+<ul>
+<li>critical business or compliance consequence;</li>
+<li>impact across several workstreams;</li>
+<li>threat to a major milestone;</li>
+<li>unresolved decision outside workstream authority;</li>
+<li>accepted high residual risk;</li>
+<li>dependency on executive funding or scope decision.</li>
+</ul>
+<p>The programme risk can reference one or more detailed model risks.</p>
+<p>Example:</p>
+<p>```text id=&quot;model-risk-15&quot; Programme risk: Wave 2 supplier migration may miss cutover.</p>
+<p>Supporting model risks:</p>
+<ul>
+<li>MRISK-0048: Supplier Risk source gap</li>
+<li>MRISK-0052: Payment Terms mapping conflict</li>
+<li>MRISK-0061: Local tax validation incomplete</li>
+</ul>
+<pre><code>
+This gives programme management a concise view without losing detail.
+
+## Where Martenweave fits
+
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved patch proposals.
+
+Its current principles include:
+
+- canonical Markdown and YAML files as source of truth;
+- rebuildable SQLite and JSONL indexes;
+- deterministic validation before indexing;
+- AI-generated PatchProposals requiring human review;
+- local-first operation.
+
+Its current workflow includes evidence import or profiling, validation, index generation, dataset/model gap detection, lineage and impact analysis, proposal creation and GitHub-ready review outputs.
+
+This provides much of the evidence needed for a model risk register.
+
+Martenweave can help connect a risk to:
+
+- attributes;
+- endpoints;
+- mappings;
+- rules;
+- datasets;
+- decisions;
+- owners;
+- change proposals.
+
+It should not autonomously decide business risk or acceptance.
+
+## A Martenweave risk workflow
+
+```text id=&quot;model-risk-16&quot;
+Evidence or validator finding
+        ↓
+Affected model objects identified
+        ↓
+Risk statement created
+        ↓
+Population and dependencies analysed
+        ↓
+Owner and decision date assigned
+        ↓
+Treatment or acceptance approved
+        ↓
+PatchProposal or implementation tasks created
+        ↓
+Resolution evidence validated
+        ↓
+Risk closed or residual risk accepted</code></pre>
+<p>This separates risk management from model mutation.</p>
+<p>A finding may create a risk.</p>
+<p>A risk decision may create a change proposal.</p>
+<p>Only the approved proposal changes the canonical model.</p>
+<h2 id="ai-can-help-prepare-the-register">AI can help prepare the register</h2>
+<p>AI can assist with:</p>
+<ul>
+<li>extracting candidate risks from tickets and reports;</li>
+<li>grouping duplicate findings;</li>
+<li>drafting cause-event-consequence statements;</li>
+<li>identifying likely affected objects;</li>
+<li>summarising evidence;</li>
+<li>suggesting dependency relationships;</li>
+<li>preparing management views;</li>
+<li>flagging overdue decisions.</li>
+</ul>
+<p>AI should not autonomously determine:</p>
+<ul>
+<li>business criticality;</li>
+<li>legal consequence;</li>
+<li>final likelihood;</li>
+<li>acceptable residual risk;</li>
+<li>risk ownership;</li>
+<li>approval.</li>
+</ul>
+<p>AI-generated risks should remain candidate records until responsible reviewers confirm them.</p>
+<p>The safe pattern is:</p>
+<p>```text id=&quot;model-risk-17&quot; AI proposes the risk record. Validators check references and structure. Owners assess exposure. Authorities accept or require treatment.</p>
+<pre><code>
+## A worked example: global mandatory rule
+
+### Finding
+
+The proposed MDG design makes Customer Group mandatory globally.
+
+### Evidence
+
+- CRM_A is 98% complete;
+- ERP_B is 61% complete;
+- several countries do not use the attribute operationally;
+- target field is sales-area-specific;
+- one source provides only a central value.
+
+### Risk statement
+
+&gt; Because source availability and organisational meaning differ by system and country, there is a risk that a global mandatory rule will reject legitimate records or populate repeated values at the wrong level, causing migration failure and misleading sales data.
+
+### Inherent risk
+
+High.
+
+### Current control
+
+Rule remains a warning in the current test release.
+
+### Residual risk
+
+Medium until final configuration decision.
+
+### Required decision
+
+Choose between:
+
+- contextual mandatory rule;
+- source remediation;
+- enrichment;
+- scope reduction.
+
+### Treatment
+
+Run country-level population analysis and approve context-specific rules.
+
+### Resolution evidence
+
+- approved contexts;
+- validated source treatments;
+- successful migration tests;
+- confirmed downstream consumers.
+
+## A worked example: temporary migration value
+
+### Finding
+
+`MIGRATION_REVIEW` was introduced for Mock Load 1.
+
+### Current state
+
+- 7,200 records still contain it;
+- users can select it operationally;
+- one report counts it as a final classification;
+- no expiry is recorded.
+
+### Risk statement
+
+&gt; Because a migration-only value remains active and is interpreted as valid classification, there is a risk that unresolved suppliers will bypass final review and produce misleading compliance reporting.
+
+### Detectability
+
+Low.
+
+### Reversibility
+
+Medium because affected records remain identifiable.
+
+### Treatment
+
+- prevent new operational use;
+- identify existing records;
+- define remediation owner;
+- update reporting;
+- retire the value after remediation.
+
+### Escalation
+
+Programme-level due to compliance and post-go-live impact.
+
+## A worked example: retired source endpoint
+
+### Finding
+
+A source field will be removed during legacy-system upgrade.
+
+### Dependencies
+
+- 18 mappings;
+- two migration waves;
+- one reconciliation report;
+- six tests.
+
+### Risk statement
+
+&gt; Because the current mappings depend on a source endpoint scheduled for retirement, there is a risk that future extracts will no longer populate approved target attributes, resulting in load failure and repeated design work.
+
+### Time exposure
+
+Critical in eight weeks.
+
+### Treatment
+
+- assess replacement source;
+- validate semantics;
+- update mappings;
+- rerun dataset coverage;
+- update tests.
+
+This risk should be prioritised before the field disappears, not after the first failed load.
+
+## Review the register on a fixed cadence
+
+### Weekly delivery review
+
+Focus on:
+
+- new critical risks;
+- milestone threats;
+- decisions due;
+- mitigation blockers.
+
+### Monthly model-risk review
+
+Focus on:
+
+- high residual risks;
+- repeated risks by model object;
+- expired exceptions;
+- ownership and evidence gaps.
+
+### Before each migration cycle
+
+Focus on:
+
+- source and mapping risk;
+- population;
+- validation readiness;
+- accepted conditions.
+
+### Before each release
+
+Focus on:
+
+- change impact;
+- implementation alignment;
+- test evidence;
+- emergency changes.
+
+### After major incidents
+
+Focus on:
+
+- whether the incident exposed a new model risk;
+- whether existing risk assessment was incomplete;
+- which control should be added.
+
+The register should stay connected to delivery rather than becoming a quarterly reporting exercise.
+
+## What management should ask
+
+1. Which model objects carry the highest residual risk?
+2. Which critical risks have no accountable owner?
+3. Which source and mapping risks threaten the next migration milestone?
+4. Which temporary deviations have expired?
+5. Which risks depend on unresolved business definitions?
+6. Which high-risk items have weak evidence?
+7. Which failures would be difficult to detect?
+8. Which changes would be difficult to reverse?
+9. Which risks are concentrated in one source system or country?
+10. Which accepted risks need renewed approval?
+11. Which programme risks are supported by detailed model evidence?
+12. Which model risks should be escalated to programme level?
+13. Which mitigation tasks are complete but lack resolution evidence?
+14. Can each risk be traced to affected objects, decisions and datasets?
+
+If the register cannot answer these questions, it is probably tracking concerns rather than controlling model risk.
+
+## Common mistakes
+
+### Recording broad risks with no affected objects
+
+The team cannot act precisely.
+
+### Treating every defect as a separate risk
+
+The register becomes a copy of the issue backlog.
+
+### Using only probability and impact
+
+Detectability, reversibility, evidence and time exposure matter.
+
+### Closing risks when a workaround is implemented
+
+The underlying exposure may remain.
+
+### Assigning risks to generic project roles
+
+Accountability becomes unclear.
+
+### Ignoring temporary values and deviations
+
+They are common sources of long-term model debt.
+
+### Storing risk only in programme slides
+
+The relationship to mappings, rules and datasets disappears.
+
+### Using risk count as a maturity metric
+
+More documented risks may indicate better control.
+
+### Allowing AI to assign final risk ratings
+
+Business consequence and acceptance require accountable human judgement.
+
+### Failing to connect resolution evidence
+
+Tasks may close while the risk remains.
+
+## When a spreadsheet risk register is sufficient
+
+A controlled spreadsheet may be enough when:
+
+- one domain is involved;
+- the number of model objects is small;
+- dependencies are simple;
+- one team owns the risks;
+- changes are infrequent.
+
+At minimum, include:
+
+- stable risk ID;
+- affected model IDs;
+- risk statement;
+- population;
+- owner;
+- treatment;
+- decision date;
+- residual risk;
+- expiry;
+- evidence.
+
+A registry-based approach becomes more useful when:
+
+- several domains and countries are involved;
+- risks depend on model relationships;
+- dataset profiles change frequently;
+- several implementation partners maintain separate backlogs;
+- trace and impact analysis are required;
+- risks must survive from migration into AMS;
+- AI is used to process evidence.
+
+## Our conclusion
+
+A programme risk register can show that data quality is a concern.
+
+A model risk register shows:
+
+- which data;
+- which field;
+- which mapping;
+- which rule;
+- which records;
+- which systems;
+- which decision;
+- which date.
+
+That level of precision changes risk management from reporting into action.
+
+The practical test is:
+
+&gt; Can the programme take one high-risk item and trace it to the exact model objects, evidence, affected population, owner, treatment, decision deadline and resolution proof?
+
+When the answer is yes, the register supports delivery and governance.
+
+When the answer is no, the programme may know that “data is risky” while still discovering the real consequences during migration testing, cutover or production support.
+
+The purpose of a model risk register is not to create another administrative layer.
+
+It is to prevent important structural risks from disappearing between mapping workbooks, dataset reports, Jira tickets, SAP configuration and individual memory.
+
+## About the authors
+
+Martenweave is maintained by Dzmitryi Kharlanau.
+
+We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.
+
+Martenweave connects canonical model objects, datasets, mappings, rules, evidence, decisions and change proposals. This creates the foundation for a model risk register that is traceable to the real implementation rather than maintained only as programme-level narrative.
+
+## Sources and notes
+
+This article was reviewed on 14 July 2026.
+
+SAP currently describes SAP Master Data Governance as a central governance layer combining master data, policy and metadata. Its capabilities include governed models, preservation of semantics and relationships, collaborative workflows, validated values, monitored business rules, mass changes and auditable data changes. SAP also recommends curating master data early before an SAP S/4HANA implementation because automated processes rely heavily on clean and correct master data.
+
+NIST SP 800-30 Rev. 1 describes risk assessments as part of an overall risk-management process that provides leaders with information needed to determine appropriate courses of action. This article applies that general principle to model risks in SAP migration and MDG programmes; it does not imply that NIST defines the model-risk method presented here.
+
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+
+Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
+
+Martenweave is an independent project and is not affiliated with or endorsed by SAP or NIST. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.
+</code></pre>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-prioritise-model-changes-by-business-risk-instead-of-ticket.html"><span>Previous</span>A senior stakeholder opens a ticket:</a><a href="/blog/how-to-turn-model-risks-into-an-actionable-sap-migration-backlog.html"><span>Next</span>The migration programme has identified a serious risk:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

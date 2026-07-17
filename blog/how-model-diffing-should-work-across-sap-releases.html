@@ -1,0 +1,1633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Model Diffing Should Work Across SAP Releases | Martenweave</title>
+    <meta
+      name="description"
+      content="An SAP programme compares its Wave 2 and Wave 3 model repositories."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html" />
+    <meta property="og:title" content="How Model Diffing Should Work Across SAP Releases | Martenweave" />
+    <meta property="og:description" content="An SAP programme compares its Wave 2 and Wave 3 model repositories." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Model Diffing Should Work Across SAP Releases | Martenweave" />
+    <meta name="twitter:description" content="An SAP programme compares its Wave 2 and Wave 3 model repositories." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html",
+                        "name": "How Model Diffing Should Work Across SAP Releases | Martenweave",
+                        "description": "An SAP programme compares its Wave 2 and Wave 3 model repositories.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Model Diffing Should Work Across SAP Releases",
+                                    "item": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html#content",
+                        "headline": "How Model Diffing Should Work Across SAP Releases",
+                        "name": "How Model Diffing Should Work Across SAP Releases",
+                        "description": "An SAP programme compares its Wave 2 and Wave 3 model repositories.",
+                        "url": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-model-diffing-should-work-across-sap-releases.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Model Diffing Should Work Across SAP Releases</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How Model Diffing Should Work Across SAP Releases</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">An SAP programme compares its Wave 2 and Wave 3 model repositories.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#1-inventory">1. Inventory</a></li><li><a href="#2-properties">2. Properties</a></li><li><a href="#3-relationships">3. Relationships</a></li><li><a href="#4-rules">4. Rules</a></li><li><a href="#5-mappings-and-lineage">5. Mappings and lineage</a></li><li><a href="#6-governance">6. Governance</a></li><li><a href="#7-compatibility-and-impact">7. Compatibility and impact</a></li><li><a href="#canonical-and-production-agree-target-changes">Canonical and production agree; target changes</a></li><li><a href="#canonical-differs-from-production-target-matches-canonical">Canonical differs from production; target matches canonical</a></li><li><a href="#canonical-matches-target-production-remains-old">Canonical matches target; production remains old</a></li><li><a href="#production-and-target-agree-canonical-differs">Production and target agree; canonical differs</a></li><li><a href="#all-three-differ">All three differ</a></li><li><a href="#low">Low</a></li><li><a href="#moderate">Moderate</a></li><li><a href="#high">High</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>An SAP programme compares its Wave 2 and Wave 3 model repositories.</p>
+<p>Git reports:</p>
+<pre><code class="language-text">14 files changed
+96 insertions
+41 deletions</code></pre>
+<p>The technical summary is correct.</p>
+<p>It does not answer the questions that matter:</p>
+<ul>
+<li>Did a business concept change meaning?</li>
+<li>Was an Attribute moved to another Entity?</li>
+<li>Did an SAP field disappear, or was it merely renamed?</li>
+<li>Did a global Rule gain a local exception?</li>
+<li>Did a Mapping change from direct transfer to enrichment?</li>
+<li>Does an existing dataset remain compatible?</li>
+<li>Which interfaces, reports and validation rules must be retested?</li>
+<li>Is the difference caused by an SAP product release, a project decision or implementation drift?</li>
+</ul>
+<p>A line diff shows textual modifications.</p>
+<p>A model diff must explain semantic and operational consequences.</p>
+<p>Consider a one-line change:</p>
+<pre><code class="language-diff">- severity: warning
++ severity: error</code></pre>
+<p>Git sees one replacement.</p>
+<p>The programme may need to reconsider:</p>
+<ul>
+<li>migration readiness;</li>
+<li>source-data completeness;</li>
+<li>activation behaviour;</li>
+<li>test coverage;</li>
+<li>exception handling;</li>
+<li>cutover sequencing;</li>
+<li>AMS procedures.</li>
+</ul>
+<p>Now consider a fifty-line rewrite of explanatory Markdown that does not change any structured property or business meaning.</p>
+<p>Git sees a large diff.</p>
+<p>The model may be unchanged.</p>
+<blockquote>Model diffing should compare governed objects and their relationships, not merely files and lines.</blockquote>
+<p>Git remains essential. It provides the exact textual evidence and can compare arbitrary repository states. The official <code>git diff</code> documentation describes comparisons between working trees, indexes, commits, trees and files.</p>
+<p>Martenweave needs to add another interpretation layer:</p>
+<pre><code class="language-text">Text diff
+→ object diff
+→ relationship diff
+→ semantic classification
+→ compatibility assessment
+→ impact report</code></pre>
+<p>The purpose is not to replace Git.</p>
+<p>It is to explain what the Git change means for an SAP data model.</p>
+<p>---</p>
+<h1 id="begin-with-two-explicit-baselines">Begin with two explicit baselines</h1>
+<p>A useful comparison requires two identified states.</p>
+<p>Weak request:</p>
+<pre><code class="language-text">Compare the old model with the new one.</code></pre>
+<p>Stronger request:</p>
+<pre><code class="language-text">Before:
+MODEL-CUSTOMER-WAVE-2-APPROVED
+commit 4f7a9c2
+
+After:
+MODEL-CUSTOMER-WAVE-3-CANDIDATE
+commit 91d2be8</code></pre>
+<p>The comparison should also state:</p>
+<ul>
+<li>canonical schema version;</li>
+<li>Martenweave version;</li>
+<li>active domain packs;</li>
+<li>applicable scope;</li>
+<li>comparison purpose.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">comparison:
+  before:
+    baseline: MODEL-CUSTOMER-WAVE-2-APPROVED
+    commit: 4f7a9c2
+    schema_version: &quot;1.0&quot;
+
+  after:
+    baseline: MODEL-CUSTOMER-WAVE-3-CANDIDATE
+    commit: 91d2be8
+    schema_version: &quot;1.0&quot;
+
+  scope:
+    domains:
+      - DOMAIN-CUSTOMER
+      - DOMAIN-BUSINESS-PARTNER
+
+  purpose:
+    - migration_wave_assessment
+    - implementation_impact</code></pre>
+<p>This is a conceptual representation rather than a guarantee of the current Martenweave comparison schema.</p>
+<p>The comparison must not depend on whichever local directory happens to be called <code>latest</code>.</p>
+<p>---</p>
+<h1 id="validate-both-sides-before-comparing-them">Validate both sides before comparing them</h1>
+<p>A diff between two invalid repositories can produce misleading results.</p>
+<p>Suppose the newer baseline contains:</p>
+<ul>
+<li>duplicate IDs;</li>
+<li>broken references;</li>
+<li>an unsupported schema;</li>
+<li>an Attribute pointing to a missing Entity.</li>
+</ul>
+<p>The comparison may report that several relationships disappeared.</p>
+<p>The real cause is that the new model cannot be resolved correctly.</p>
+<p>The safer sequence is:</p>
+<pre><code class="language-text">Validate baseline A
+→ validate baseline B
+→ normalise compatible schemas
+→ compare objects</code></pre>
+<p>The report should expose validation status for both sides.</p>
+<pre><code class="language-text">Baseline A:
+valid
+
+Baseline B:
+3 errors
+comparison completeness:
+partial</code></pre>
+<p>A partial comparison may still be useful.</p>
+<p>It should not claim complete semantic coverage.</p>
+<p>Martenweave currently defines deterministic validation as the first gate before generated indexing and analysis.</p>
+<p>---</p>
+<h1 id="schema-migration-must-not-masquerade-as-model-change">Schema migration must not masquerade as model change</h1>
+<p>The two baselines may use different canonical schemas.</p>
+<p>Example:</p>
+<p>Before:</p>
+<pre><code class="language-yaml">schema_version: &quot;0.9&quot;
+owner: ROLE-CUSTOMER-DATA-OWNER</code></pre>
+<p>After:</p>
+<pre><code class="language-yaml">schema_version: &quot;1.0&quot;
+owners:
+  semantic:
+    - ROLE-CUSTOMER-DATA-OWNER</code></pre>
+<p>The text and object structure changed.</p>
+<p>The business authority may not have changed.</p>
+<p>Comparing raw files would produce noise.</p>
+<p>A model-aware process should:</p>
+<ol>
+<li>detect schema differences;</li>
+<li>migrate or normalise both sides into a common comparison form;</li>
+<li>preserve migration warnings;</li>
+<li>compare the normalised semantic state.</li>
+</ol>
+<p>Martenweave’s changelog records schema-version migration support and normalisation of example objects to schema version 1.0.</p>
+<p>The comparison report should distinguish:</p>
+<pre><code class="language-text">Schema-format change:
+yes
+
+Intended business-semantic change:
+none detected</code></pre>
+<p>This prevents technical repository maintenance from being mistaken for an SAP design change.</p>
+<p>---</p>
+<h1 id="match-objects-by-stable-identity">Match objects by stable identity</h1>
+<p>The safest comparison key is the canonical object ID.</p>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>File path and display name may change:</p>
+<pre><code class="language-text">Before path:
+model/attributes/customer-group.md
+
+After path:
+model/customer/sales-area/customer-group.md</code></pre>
+<p>The object remains the same when its stable ID remains unchanged.</p>
+<p>This can be classified as:</p>
+<pre><code class="language-text">Object moved
+No identity change</code></pre>
+<p>The same applies to a rename:</p>
+<pre><code class="language-diff">- name: Customer Classification Group
++ name: Customer Group</code></pre>
+<p>With a stable ID and unchanged meaning, this is a label change.</p>
+<p>Matching by filenames would incorrectly report:</p>
+<ul>
+<li>old object deleted;</li>
+<li>new object added.</li>
+</ul>
+<p>Stable IDs make the diff more accurate.</p>
+<p>---</p>
+<h1 id="not-every-deletion-and-addition-is-unrelated">Not every deletion and addition is unrelated</h1>
+<p>Sometimes identity really does change.</p>
+<p>Suppose an overloaded Attribute is replaced:</p>
+<pre><code class="language-text">Removed:
+ATTR-SUPPLIER-CLASSIFICATION
+
+Added:
+ATTR-SUPPLIER-RISK
+ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>This may be a split rather than one deletion and two unrelated additions.</p>
+<p>The model should provide explicit transition evidence:</p>
+<pre><code class="language-yaml">id: DEC-SPLIT-SUPPLIER-CLASSIFICATION
+replaces:
+  - ATTR-SUPPLIER-CLASSIFICATION
+creates:
+  - ATTR-SUPPLIER-RISK
+  - ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>A semantic diff can then report:</p>
+<pre><code class="language-text">Change type:
+object_split
+
+Previous concept:
+Supplier Classification
+
+New concepts:
+Supplier Risk
+Supplier Review Status
+
+Compatibility:
+breaking</code></pre>
+<p>Without explicit supersession or decision links, automated detection should remain conservative:</p>
+<pre><code class="language-text">Possible replacement detected
+Human confirmation required</code></pre>
+<p>Similarity is evidence.</p>
+<p>It is not identity.</p>
+<p>---</p>
+<h1 id="the-seven-layers-of-a-model-diff">The seven layers of a model diff</h1>
+<p>A complete comparison should examine seven layers.</p>
+<h2 id="1-inventory">1. Inventory</h2>
+<p>Which objects were:</p>
+<ul>
+<li>added;</li>
+<li>removed;</li>
+<li>retained;</li>
+<li>moved;</li>
+<li>renamed?</li>
+</ul>
+<h2 id="2-properties">2. Properties</h2>
+<p>Which structured properties changed?</p>
+<p>Examples:</p>
+<ul>
+<li>name;</li>
+<li>status;</li>
+<li>owner;</li>
+<li>Entity;</li>
+<li>datatype;</li>
+<li>cardinality;</li>
+<li>applicability;</li>
+<li>effective period.</li>
+</ul>
+<h2 id="3-relationships">3. Relationships</h2>
+<p>Which edges were:</p>
+<ul>
+<li>added;</li>
+<li>removed;</li>
+<li>redirected;</li>
+<li>retyped?</li>
+</ul>
+<h2 id="4-rules">4. Rules</h2>
+<p>Which behaviour changed?</p>
+<p>Examples:</p>
+<ul>
+<li>required versus optional;</li>
+<li>warning versus error;</li>
+<li>creation versus activation;</li>
+<li>global versus contextual.</li>
+</ul>
+<h2 id="5-mappings-and-lineage">5. Mappings and lineage</h2>
+<p>Which source-to-target paths changed?</p>
+<h2 id="6-governance">6. Governance</h2>
+<p>Which Decisions, Evidence, ownership and approval references changed?</p>
+<h2 id="7-compatibility-and-impact">7. Compatibility and impact</h2>
+<p>Which consumers, datasets and implementations may no longer align?</p>
+<p>A report that stops after inventory is a repository diff.</p>
+<p>A report that completes all seven layers is a model diff.</p>
+<p>---</p>
+<h1 id="inventory-diff">Inventory diff</h1>
+<p>The first layer is straightforward.</p>
+<p>Example:</p>
+<pre><code class="language-text">Added:
+ATTR-SUPPLIER-REVIEW-STATUS
+RULE-REVIEW-STATUS-TRANSITION
+FEP-S4-ZZ_REVIEW_STATUS
+
+Removed:
+VALUE-SUPPLIER-RISK-UNDER-REVIEW
+
+Changed:
+ATTR-SUPPLIER-RISK
+RULE-SUPPLIER-RISK-ACTIVATION
+
+Unchanged:
+ENTITY-SUPPLIER
+DOMAIN-SUPPLIER</code></pre>
+<p>This gives the reviewer a map.</p>
+<p>It does not yet explain whether the change is safe.</p>
+<p>---</p>
+<h1 id="property-diff">Property diff</h1>
+<p>Property comparison should be type-aware.</p>
+<p>For an Attribute, significant properties may include:</p>
+<ul>
+<li>parent Entity;</li>
+<li>datatype;</li>
+<li>cardinality;</li>
+<li>value list;</li>
+<li>owner;</li>
+<li>applicability;</li>
+<li>status.</li>
+</ul>
+<p>For a Rule:</p>
+<ul>
+<li>affected objects;</li>
+<li>lifecycle stage;</li>
+<li>severity;</li>
+<li>expression;</li>
+<li>context.</li>
+</ul>
+<p>For a Mapping:</p>
+<ul>
+<li>source;</li>
+<li>target;</li>
+<li>transformation;</li>
+<li>scope;</li>
+<li>fallback;</li>
+<li>status.</li>
+</ul>
+<p>The same field name may carry different significance by object type.</p>
+<p>Example:</p>
+<pre><code class="language-diff">Object:
+ATTR-CUSTOMER-GROUP
+
+- entity: ENTITY-CUSTOMER
++ entity: ENTITY-CUSTOMER-SALES-AREA</code></pre>
+<p>Classification:</p>
+<pre><code class="language-text">Property:
+entity
+
+Change:
+granularity change
+
+Severity:
+breaking
+
+Reason:
+Existing central mappings and datasets may lack Sales Area keys.</code></pre>
+<p>This is more useful than reporting only two changed strings.</p>
+<p>---</p>
+<h1 id="relationship-diff">Relationship diff</h1>
+<p>Some important changes do not modify an object’s definition.</p>
+<p>They modify how objects connect.</p>
+<p>Before:</p>
+<pre><code class="language-text">CRM Segment
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>After:</p>
+<pre><code class="language-text">CRM Segment
+→ enrichment process
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>The Customer Group Attribute and SAP endpoint may remain unchanged.</p>
+<p>The lineage path changed materially.</p>
+<p>A relationship diff should identify:</p>
+<pre><code class="language-text">Removed edge:
+FEP-CRM-SEGMENT
+DIRECTLY_MAPS_TO
+ATTR-CUSTOMER-GROUP
+
+Added edges:
+FEP-CRM-SEGMENT
+PROVIDES_INPUT_TO
+MAP-CUSTOMER-GROUP-ENRICHMENT
+
+MAP-CUSTOMER-GROUP-ENRICHMENT
+POPULATES
+ATTR-CUSTOMER-GROUP</code></pre>
+<p>This exposes the new operational dependency.</p>
+<p>Martenweave’s current model already generates lineage-edge output and provides trace and impact commands connecting business Attributes, physical endpoints, Mappings, Decisions and Evidence.</p>
+<p>---</p>
+<h1 id="a-graph-diff-is-not-just-an-edge-count">A graph diff is not just an edge count</h1>
+<p>The report should interpret graph changes.</p>
+<p>Possible categories include:</p>
+<ul>
+<li>new upstream source;</li>
+<li>removed target endpoint;</li>
+<li>changed authoritative path;</li>
+<li>additional transformation step;</li>
+<li>broken path;</li>
+<li>new local override;</li>
+<li>reduced traceability;</li>
+<li>new dependency;</li>
+<li>detached object.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Path before:
+ERP_B.SEGMENT → KNVV-KDGRP
+
+Path after:
+ERP_B.SEGMENT
+→ manual enrichment
+→ Customer Group
+→ KNVV-KDGRP
+
+Interpretation:
+The target is no longer directly source-derived.
+
+New operational dependency:
+Customer Data Steward
+
+New readiness requirement:
+Enrichment must be complete before load.</code></pre>
+<p>This turns topology into delivery information.</p>
+<p>---</p>
+<h1 id="rule-diff">Rule diff</h1>
+<p>Rules require their own comparison logic because small textual changes can alter control behaviour.</p>
+<p>Consider:</p>
+<pre><code class="language-diff">- lifecycle_stage: creation
++ lifecycle_stage: activation</code></pre>
+<p>This may reduce early blocking while preserving the final control.</p>
+<p>Another change:</p>
+<pre><code class="language-diff">- severity: warning
++ severity: error</code></pre>
+<p>may introduce a hard stop.</p>
+<p>A useful Rule diff should report:</p>
+<ul>
+<li>previous behaviour;</li>
+<li>new behaviour;</li>
+<li>affected population;</li>
+<li>control direction;</li>
+<li>implementation consequence;</li>
+<li>evidence and Decision.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Rule:
+RULE-SUPPLIER-RISK-REQUIRED
+
+Before:
+Warning during activation
+
+After:
+Error during activation
+
+Change class:
+restrictive
+
+Potential impact:
+- incomplete records will block;
+- source readiness becomes critical;
+- existing deviations must be reviewed;
+- regression testing required.</code></pre>
+<p>---</p>
+<h1 id="compare-rule-meaning-not-only-expressions">Compare rule meaning, not only expressions</h1>
+<p>Two expressions may be textually different but logically equivalent.</p>
+<p>Before:</p>
+<pre><code class="language-text">country = &quot;PT&quot; AND partner_type = &quot;ORG&quot;</code></pre>
+<p>After:</p>
+<pre><code class="language-text">partner_type = &quot;ORG&quot; AND country = &quot;PT&quot;</code></pre>
+<p>A raw diff reports a change.</p>
+<p>A normalised logical comparison may report:</p>
+<pre><code class="language-text">No semantic condition change detected
+Expression reordered</code></pre>
+<p>Conversely, one character can change scope:</p>
+<pre><code class="language-diff">- country = &quot;PT&quot;
++ country != &quot;PT&quot;</code></pre>
+<p>The diff must classify this as a major behavioural change.</p>
+<p>A first implementation does not need a full theorem prover.</p>
+<p>It can normalise:</p>
+<ul>
+<li>order-insensitive lists;</li>
+<li>Boolean condition order where supported;</li>
+<li>value casing;</li>
+<li>explicit defaults.</li>
+</ul>
+<p>For complex free-text or executable rules, the report should state its limits.</p>
+<p>---</p>
+<h1 id="mapping-diff">Mapping diff</h1>
+<p>Mapping comparisons should identify more than changed source and target IDs.</p>
+<p>Important dimensions include:</p>
+<ul>
+<li>direct versus conditional;</li>
+<li>direct versus derived;</li>
+<li>default introduced or removed;</li>
+<li>lookup table changed;</li>
+<li>value conversion changed;</li>
+<li>source authority changed;</li>
+<li>granularity changed;</li>
+<li>fallback changed;</li>
+<li>unmapped condition added.</li>
+</ul>
+<p>Example:</p>
+<p>Before:</p>
+<pre><code class="language-yaml">source: FEP-CRM-SEGMENT
+target: FEP-S4-KNVV-KDGRP
+strategy: direct</code></pre>
+<p>After:</p>
+<pre><code class="language-yaml">source:
+  - FEP-CRM-SEGMENT
+  - FEP-LEGACY-SALES-AREA
+target: FEP-S4-KNVV-KDGRP
+strategy: enrichment</code></pre>
+<p>Classification:</p>
+<pre><code class="language-text">Mapping strategy:
+direct → enrichment
+
+New source dependency:
+Legacy Sales Area
+
+Compatibility:
+breaking for datasets without Sales Area
+
+Testing:
+new value combinations required</code></pre>
+<p>This is the information a migration team needs.</p>
+<p>---</p>
+<h1 id="value-list-diff">Value-list diff</h1>
+<p>Reference values deserve dedicated handling.</p>
+<p>Possible changes include:</p>
+<ul>
+<li>value added;</li>
+<li>value retired;</li>
+<li>code changed;</li>
+<li>label changed;</li>
+<li>meaning changed;</li>
+<li>several values merged;</li>
+<li>one value split;</li>
+<li>applicability changed.</li>
+</ul>
+<p>These are not equivalent.</p>
+<p>Example:</p>
+<pre><code class="language-diff">- code: UNDER_REVIEW
+- meaning: Supplier assessment is incomplete</code></pre>
+<p>If the state moves to another Attribute, the diff should explain:</p>
+<pre><code class="language-text">Value retired from:
+ATTR-SUPPLIER-RISK
+
+Replacement:
+ATTR-SUPPLIER-REVIEW-STATUS = PENDING
+
+Data conversion required:
+yes</code></pre>
+<p>A label-only change may require no data conversion.</p>
+<p>A code change may require interface and dataset changes even when meaning remains stable.</p>
+<p>A meaning change under the same code is especially dangerous because existing data becomes ambiguous.</p>
+<p>---</p>
+<h1 id="entity-and-granularity-diff">Entity and granularity diff</h1>
+<p>Moving an Attribute between Entities is one of the most significant model changes.</p>
+<p>Example:</p>
+<pre><code class="language-text">Before:
+Customer Group belongs to Customer.
+
+After:
+Customer Group belongs to Customer Sales Area.</code></pre>
+<p>The change affects more than documentation.</p>
+<p>Potential consequences:</p>
+<ul>
+<li>source requires organisational keys;</li>
+<li>one Customer can now have several values;</li>
+<li>central completeness metrics become invalid;</li>
+<li>migration file structure changes;</li>
+<li>SAP mapping may remain the same physically but gain context;</li>
+<li>reports must aggregate differently;</li>
+<li>ownership may shift.</li>
+</ul>
+<p>The diff should classify:</p>
+<pre><code class="language-text">Change type:
+attribute_reparented
+
+Cardinality effect:
+one value per Customer
+→ potentially one value per Customer Sales Area
+
+Dataset compatibility:
+existing central extracts insufficient
+
+Risk:
+high</code></pre>
+<p>---</p>
+<h1 id="cardinality-diff">Cardinality diff</h1>
+<p>Relationship cardinality changes should be treated as structural changes.</p>
+<p>Before:</p>
+<pre><code class="language-text">Supplier has zero or one Risk Assessment.</code></pre>
+<p>After:</p>
+<pre><code class="language-text">Supplier has zero or many Risk Assessments over time.</code></pre>
+<p>This may require:</p>
+<ul>
+<li>new Entity identity;</li>
+<li>effective dates;</li>
+<li>history handling;</li>
+<li>table or interface redesign;</li>
+<li>migration of existing scalar values.</li>
+</ul>
+<p>A diff should not reduce this to:</p>
+<pre><code class="language-diff">- max: 1
++ max: many</code></pre>
+<p>It should describe the operational consequence.</p>
+<p>---</p>
+<h1 id="status-and-lifecycle-diff">Status and lifecycle diff</h1>
+<p>Changing object lifecycle can affect whether something is active.</p>
+<p>Examples:</p>
+<pre><code class="language-text">draft → approved
+approved → deprecated
+deprecated → retired
+pending_review → rejected</code></pre>
+<p>These transitions have different consequences.</p>
+<p>An approved Mapping becoming retired may leave active dependants.</p>
+<p>A Decision becoming superseded may require review of all objects that reference it.</p>
+<p>A Rule moving from draft to approved may introduce no implementation change until deployment.</p>
+<p>The report should distinguish:</p>
+<pre><code class="language-text">Canonical activation
+from
+implementation activation.</code></pre>
+<p>---</p>
+<h1 id="ownership-diff">Ownership diff</h1>
+<p>Ownership changes are often treated as administrative.</p>
+<p>They can be governance changes.</p>
+<p>Example:</p>
+<pre><code class="language-diff">- semantic_owner: ROLE-GLOBAL-CUSTOMER-DATA-OWNER
++ semantic_owner: ROLE-SALES-OPERATIONS</code></pre>
+<p>Questions include:</p>
+<ul>
+<li>Has semantic authority moved?</li>
+<li>Is this only a contact change?</li>
+<li>Does the new owner have global scope?</li>
+<li>Do approval routes change?</li>
+<li>Which pending proposals need rerouting?</li>
+</ul>
+<p>The diff should classify ownership changes by role:</p>
+<pre><code class="language-text">Semantic ownership:
+changed
+
+Technical ownership:
+unchanged
+
+Operational stewardship:
+unchanged</code></pre>
+<p>This prevents one generic <code>owner changed</code> message from hiding the nature of the transition.</p>
+<p>---</p>
+<h1 id="decision-diff">Decision diff</h1>
+<p>Decisions should generally not be rewritten after approval.</p>
+<p>A later conclusion should create a new Decision that supersedes the old one.</p>
+<p>A diff can then report:</p>
+<pre><code class="language-text">Superseded:
+DEC-CUSTOMER-GROUP-SOURCE-017
+
+New:
+DEC-CUSTOMER-GROUP-SOURCE-026
+
+Change:
+Direct CRM derivation now permitted after source redesign.</code></pre>
+<p>If an approved Decision file is edited in place to reverse its conclusion, the validator or diff should warn:</p>
+<pre><code class="language-text">Approved historical Decision modified in place.
+
+Recommended:
+create a superseding Decision.</code></pre>
+<p>This protects the evidence chain.</p>
+<p>---</p>
+<h1 id="evidence-diff">Evidence diff</h1>
+<p>Evidence additions do not necessarily change the model.</p>
+<p>Example:</p>
+<pre><code class="language-text">Added:
+EVID-MOCK-LOAD-3-CUSTOMER-GROUP</code></pre>
+<p>Possible classifications:</p>
+<ul>
+<li>supporting evidence only;</li>
+<li>evidence contradicts current model;</li>
+<li>evidence closes a gap;</li>
+<li>evidence triggers proposal.</li>
+</ul>
+<p>The diff should avoid marking every evidence addition as a semantic release.</p>
+<p>It should show whether the evidence changes confidence or closure status.</p>
+<p>---</p>
+<h1 id="sap-product-changes-and-customer-model-changes-are-different-inputs">SAP product changes and customer-model changes are different inputs</h1>
+<p>An SAP product release may introduce:</p>
+<ul>
+<li>a new field;</li>
+<li>a deprecated interface;</li>
+<li>changed validation behaviour;</li>
+<li>a new API property;</li>
+<li>a changed domain value;</li>
+<li>a replacement application or process.</li>
+</ul>
+<p>These are external implementation changes.</p>
+<p>They do not become part of the organisation’s canonical model automatically.</p>
+<p>The flow should be:</p>
+<pre><code class="language-text">SAP release information
+→ external evidence
+→ affected endpoint assessment
+→ model or implementation finding
+→ decision
+→ canonical proposal where required</code></pre>
+<p>For example, SAP may provide a new standard field that could replace a custom field.</p>
+<p>Possible outcomes:</p>
+<ol>
+<li>adopt the standard field and change the canonical endpoint;</li>
+<li>retain the custom field for justified reasons;</li>
+<li>use both temporarily;</li>
+<li>defer the change.</li>
+</ol>
+<p>The release note is evidence.</p>
+<p>The organisation’s Decision establishes its model response.</p>
+<p>---</p>
+<h1 id="do-not-compare-only-sap-metadata">Do not compare only SAP metadata</h1>
+<p>A technical upgrade comparison may detect:</p>
+<pre><code class="language-text">Field added
+Field removed
+API changed
+Table changed</code></pre>
+<p>That is valuable.</p>
+<p>It does not show:</p>
+<ul>
+<li>which business Attribute the field implements;</li>
+<li>whether the field is actually used;</li>
+<li>which local Mapping depends on it;</li>
+<li>which migration datasets contain it;</li>
+<li>which Decision approved it;</li>
+<li>whether the replacement preserves semantics.</li>
+</ul>
+<p>Martenweave’s role is to connect the SAP endpoint difference to the governed model.</p>
+<pre><code class="language-text">SAP endpoint change
+→ business Attribute
+→ Mapping
+→ Rule
+→ dataset
+→ implementation owner</code></pre>
+<p>This is why the registry needs both semantic objects and FieldEndpoints.</p>
+<p>---</p>
+<h1 id="sap-release-diff-is-not-always-chronological-model-progress">SAP release diff is not always chronological model progress</h1>
+<p>A newer SAP product release does not necessarily mean the customer’s model should change in the same direction.</p>
+<p>The customer may:</p>
+<ul>
+<li>not activate the feature;</li>
+<li>retain an earlier process;</li>
+<li>defer migration;</li>
+<li>use a custom extension;</li>
+<li>adopt only part of the new standard;</li>
+<li>have legal or regional constraints.</li>
+</ul>
+<p>Therefore:</p>
+<pre><code class="language-text">Newer SAP capability
+≠
+automatically newer approved customer model</code></pre>
+<p>The diff must compare actual customer baselines and declared implementation targets.</p>
+<p>---</p>
+<h1 id="three-way-comparison-is-often-required">Three-way comparison is often required</h1>
+<p>Across SAP releases, two-way comparison may be insufficient.</p>
+<p>A useful analysis may need:</p>
+<pre><code class="language-text">A:
+Current canonical model
+
+B:
+Current production implementation
+
+C:
+Target SAP release capabilities</code></pre>
+<p>This exposes several cases.</p>
+<h2 id="canonical-and-production-agree-target-changes">Canonical and production agree; target changes</h2>
+<p>The upgrade creates a future impact.</p>
+<h2 id="canonical-differs-from-production-target-matches-canonical">Canonical differs from production; target matches canonical</h2>
+<p>The upgrade may help remove existing drift.</p>
+<h2 id="canonical-matches-target-production-remains-old">Canonical matches target; production remains old</h2>
+<p>Implementation work is required.</p>
+<h2 id="production-and-target-agree-canonical-differs">Production and target agree; canonical differs</h2>
+<p>The repository may be stale or the implementation may be unapproved.</p>
+<h2 id="all-three-differ">All three differ</h2>
+<p>A design decision is required before upgrade work continues.</p>
+<p>Martenweave should not reduce these situations to one red or green status.</p>
+<p>---</p>
+<h1 id="four-way-comparison-may-be-needed-during-migration">Four-way comparison may be needed during migration</h1>
+<p>Migration programmes often add a dataset baseline:</p>
+<pre><code class="language-text">A:
+canonical model
+
+B:
+source dataset
+
+C:
+current SAP implementation
+
+D:
+target SAP release</code></pre>
+<p>Example:</p>
+<ul>
+<li>canonical Customer Group is sales-area-specific;</li>
+<li>source dataset is central;</li>
+<li>current SAP endpoint is sales-area-specific;</li>
+<li>target release retains the endpoint.</li>
+</ul>
+<p>The SAP upgrade changes nothing.</p>
+<p>The migration gap remains.</p>
+<p>This prevents teams from incorrectly blaming an SAP release for a pre-existing model-source mismatch.</p>
+<p>---</p>
+<h1 id="impact-should-follow-the-changed-objects">Impact should follow the changed objects</h1>
+<p>Once changes are classified, impact analysis should traverse outward.</p>
+<p>For an Attribute change, inspect:</p>
+<ul>
+<li>Rules;</li>
+<li>Mappings;</li>
+<li>FieldEndpoints;</li>
+<li>datasets;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>proposals;</li>
+<li>integrations;</li>
+<li>reports;</li>
+<li>owners.</li>
+</ul>
+<p>For a FieldEndpoint change, inspect:</p>
+<ul>
+<li>source or target mappings;</li>
+<li>interfaces;</li>
+<li>datasets;</li>
+<li>implementation tests;</li>
+<li>lineage;</li>
+<li>custom code references.</li>
+</ul>
+<p>For a Rule change, inspect:</p>
+<ul>
+<li>affected population;</li>
+<li>source readiness;</li>
+<li>validation implementation;</li>
+<li>deviations;</li>
+<li>test cases;</li>
+<li>operational procedures.</li>
+</ul>
+<p>Martenweave’s changelog records BFS-based proposal impact analysis as an existing capability, while its current CLI exposes impact and trace commands.</p>
+<p>The current capability is a foundation.</p>
+<p>A semantic release diff should explain why each dependent appears.</p>
+<p>---</p>
+<h1 id="direct-and-transitive-impact-should-be-separated">Direct and transitive impact should be separated</h1>
+<p>Suppose Customer Group changes granularity.</p>
+<p>Direct impact:</p>
+<pre><code class="language-text">Attribute
+Mapping
+SAP endpoint
+Rule</code></pre>
+<p>Transitive impact:</p>
+<pre><code class="language-text">migration dataset
+pricing report
+downstream interface
+test scenario
+local override</code></pre>
+<p>A report should distinguish:</p>
+<pre><code class="language-text">Distance 1:
+direct dependency
+
+Distance 2:
+dependency through Mapping or Rule
+
+Distance 3:
+downstream consumer</code></pre>
+<p>Otherwise, a broad graph may produce an overwhelming list without priority.</p>
+<p>---</p>
+<h1 id="impact-is-not-certainty">Impact is not certainty</h1>
+<p>Graph traversal identifies possible consequences.</p>
+<p>It does not prove every connected object must change.</p>
+<p>Example:</p>
+<pre><code class="language-text">Customer Group definition changed.
+
+Connected report:
+Customer Sales Dashboard.</code></pre>
+<p>The report may already consume the correct sales-area field.</p>
+<p>It still deserves review.</p>
+<p>The impact report should use language such as:</p>
+<ul>
+<li>affected;</li>
+<li>potentially affected;</li>
+<li>requires review;</li>
+<li>confirmed incompatible;</li>
+<li>unaffected after verification.</li>
+</ul>
+<p>Do not label every graph neighbour as broken.</p>
+<p>---</p>
+<h1 id="compatibility-should-be-assessed-per-consumer">Compatibility should be assessed per consumer</h1>
+<p>A model change may be compatible for one consumer and breaking for another.</p>
+<p>Example:</p>
+<p>Adding a new optional value:</p>
+<ul>
+<li>SAP storage accepts it;</li>
+<li>interface rejects unknown codes;</li>
+<li>report groups it under “Other”;</li>
+<li>migration dataset does not contain it;</li>
+<li>data-quality rule flags it as invalid.</li>
+</ul>
+<p>Therefore, compatibility should not be one global Boolean.</p>
+<p>A matrix is stronger:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Consumer</th><th scope="col">Compatibility</th><th scope="col">Reason</th></tr></thead><tbody><tr><td>SAP endpoint</td><td>Compatible</td><td>Field accepts value</td></tr><tr><td>Interface A</td><td>Breaking</td><td>Fixed code list</td></tr><tr><td>Report B</td><td>Review</td><td>Falls into default group</td></tr><tr><td>Migration dataset</td><td>Compatible</td><td>Value optional</td></tr><tr><td>Validation rule</td><td>Breaking</td><td>Value not registered</td></tr></tbody></table></div>
+<p>The model diff identifies the change.</p>
+<p>Consumer evidence determines compatibility.</p>
+<p>---</p>
+<h1 id="risk-classification">Risk classification</h1>
+<p>A semantic diff can support risk triage.</p>
+<p>Possible factors:</p>
+<ul>
+<li>object criticality;</li>
+<li>change class;</li>
+<li>number of dependants;</li>
+<li>affected contexts;</li>
+<li>dataset compatibility;</li>
+<li>implementation spread;</li>
+<li>reversibility;</li>
+<li>evidence quality;</li>
+<li>active deviations.</li>
+</ul>
+<p>A simple classification may be:</p>
+<h2 id="low">Low</h2>
+<p>Editorial or evidence-only change.</p>
+<h2 id="moderate">Moderate</h2>
+<p>Compatible addition with known consumers.</p>
+<h2 id="high">High</h2>
+<p>Rule, mapping, ownership or endpoint change affecting active processes.</p>
+<h2 id="critical">Critical</h2>
+<p>Meaning, granularity, identity or mandatory-control change across several implementations.</p>
+<p>Avoid pretending that a calculated score replaces review.</p>
+<p>The score should route attention.</p>
+<p>---</p>
+<h1 id="a-worked-example-customer-group-between-wave-2-and-wave-3">A worked example: Customer Group between Wave 2 and Wave 3</h1>
+<h2 id="wave-2">Wave 2</h2>
+<pre><code class="language-text">Attribute:
+Customer Group
+
+Entity:
+Customer
+
+Source:
+CRM Segment
+
+Mapping:
+Direct
+
+Target:
+KNVV-KDGRP
+
+Rule:
+Required for active Customer</code></pre>
+<h2 id="wave-3">Wave 3</h2>
+<pre><code class="language-text">Attribute:
+Customer Group
+
+Entity:
+Customer Sales Area
+
+Source:
+CRM Segment + Sales Area enrichment
+
+Mapping:
+Conditional enrichment
+
+Target:
+KNVV-KDGRP
+
+Rule:
+Required before Customer Sales Area activation</code></pre>
+<h2 id="raw-git-summary">Raw Git summary</h2>
+<pre><code class="language-text">4 files changed
+22 insertions
+9 deletions</code></pre>
+<h2 id="model-aware-summary">Model-aware summary</h2>
+<pre><code class="language-text">Breaking semantic change
+
+1. Attribute granularity changed:
+   Customer → Customer Sales Area
+
+2. Mapping strategy changed:
+   direct → enrichment
+
+3. New source dependency:
+   Sales Area context
+
+4. Rule lifecycle changed:
+   Customer activation
+   → Customer Sales Area activation
+
+5. Physical SAP target:
+   unchanged
+
+6. Dataset compatibility:
+   Wave 2 central extract insufficient
+
+7. Required review:
+   migration mapping
+   source enrichment
+   readiness checks
+   reporting aggregation</code></pre>
+<p>This is what a release review needs.</p>
+<p>---</p>
+<h1 id="a-worked-example-standard-field-replaces-custom-field">A worked example: standard field replaces custom field</h1>
+<h2 id="before">Before</h2>
+<pre><code class="language-text">Business Attribute:
+Supplier Review Status
+
+SAP endpoint:
+ZZ_SUPP_REVIEW</code></pre>
+<h2 id="target-release-evidence">Target release evidence</h2>
+<p>A standard SAP endpoint becomes available.</p>
+<h2 id="proposed-after-state">Proposed after-state</h2>
+<pre><code class="language-text">Business Attribute:
+unchanged
+
+SAP endpoint:
+standard endpoint
+
+Custom endpoint:
+deprecated</code></pre>
+<h2 id="model-diff">Model diff</h2>
+<pre><code class="language-text">Semantic meaning:
+unchanged
+
+Physical implementation:
+changed
+
+Lineage:
+target endpoint redirected
+
+Compatibility:
+breaking for direct custom-field consumers
+
+Data conversion:
+required
+
+Historical interpretation:
+custom endpoint retained as retired reference</code></pre>
+<p>The model should not create a new business Attribute merely because the physical field changed.</p>
+<p>---</p>
+<h1 id="a-worked-example-sap-release-adds-an-unused-field">A worked example: SAP release adds an unused field</h1>
+<p>A new standard field appears.</p>
+<p>No current model object references it.</p>
+<p>Model diff:</p>
+<pre><code class="language-text">External endpoint discovered:
+yes
+
+Canonical model change:
+none
+
+Impact:
+none confirmed
+
+Action:
+evaluate for possible future use</code></pre>
+<p>This prevents technical metadata growth from automatically expanding the governed model.</p>
+<p>---</p>
+<h1 id="a-worked-example-mandatory-rule-changed">A worked example: mandatory rule changed</h1>
+<p>Before:</p>
+<pre><code class="language-text">Tax Identifier required at creation.</code></pre>
+<p>After:</p>
+<pre><code class="language-text">Tax Identifier required before activation.</code></pre>
+<p>Possible interpretation:</p>
+<ul>
+<li>early process becomes more flexible;</li>
+<li>final control remains;</li>
+<li>source enrichment window increases;</li>
+<li>creation datasets may remain incomplete;</li>
+<li>activation readiness becomes critical.</li>
+</ul>
+<p>Classification:</p>
+<pre><code class="language-text">Rule applicability change
+Potentially compatible for creation
+Restrictive at activation</code></pre>
+<p>The report should not simply say:</p>
+<pre><code class="language-text">required condition changed</code></pre>
+<p>---</p>
+<h1 id="diffing-global-and-local-overlays">Diffing global and local overlays</h1>
+<p>Suppose the global Rule changes.</p>
+<p>A Portugal override exists.</p>
+<p>The comparison should ask:</p>
+<ul>
+<li>Does the override still reference the correct parent?</li>
+<li>Is its condition still meaningful?</li>
+<li>Does the global change make the override redundant?</li>
+<li>Does it create a conflict?</li>
+<li>Does the local Decision remain valid?</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Global Rule:
+Tax Identifier required before activation.
+
+Portugal override:
+Exemption allowed with approved legal evidence.
+
+Result:
+Override remains applicable.
+
+Required review:
+No structural conflict detected.
+Legal evidence requirement unchanged.</code></pre>
+<p>Another case:</p>
+<pre><code class="language-text">Global Rule now includes the Portugal exemption.
+
+Result:
+Local override may be redundant.
+Retirement review required.</code></pre>
+<p>This is more valuable than comparing the two files independently.</p>
+<p>---</p>
+<h1 id="detecting-drift-during-release-comparison">Detecting drift during release comparison</h1>
+<p>The target canonical baseline may be correct, while the implementation remains on the old state.</p>
+<p>A release report should track:</p>
+<pre><code class="language-text">Canonical diff:
+approved
+
+SAP implementation:
+pending
+
+Migration transformation:
+aligned
+
+Source system:
+not ready
+
+Report:
+unknown</code></pre>
+<p>This separates model change from implementation progress.</p>
+<p>A model release should not be marked fully complete merely because the canonical files were merged.</p>
+<p>---</p>
+<h1 id="the-output-should-serve-several-audiences">The output should serve several audiences</h1>
+<p>One comparison can generate several views.</p>
+<h2 id="executive-summary">Executive summary</h2>
+<ul>
+<li>number of material changes;</li>
+<li>highest risks;</li>
+<li>affected domains;</li>
+<li>readiness recommendation.</li>
+</ul>
+<h2 id="model-owner-report">Model-owner report</h2>
+<ul>
+<li>definitions;</li>
+<li>Rules;</li>
+<li>Relationships;</li>
+<li>Decisions;</li>
+<li>ownership.</li>
+</ul>
+<h2 id="technical-impact">Technical impact</h2>
+<ul>
+<li>FieldEndpoints;</li>
+<li>Mappings;</li>
+<li>interfaces;</li>
+<li>datasets;</li>
+<li>tests.</li>
+</ul>
+<h2 id="migration-report">Migration report</h2>
+<ul>
+<li>required columns;</li>
+<li>transformations;</li>
+<li>defaults;</li>
+<li>conversion populations;</li>
+<li>wave impact.</li>
+</ul>
+<h2 id="machine-readable-diff">Machine-readable diff</h2>
+<ul>
+<li>object operations;</li>
+<li>property deltas;</li>
+<li>edge deltas;</li>
+<li>classifications;</li>
+<li>references.</li>
+</ul>
+<p>The reports should be derived from the same comparison result.</p>
+<p>---</p>
+<h1 id="example-semantic-diff-output">Example semantic diff output</h1>
+<pre><code class="language-yaml">comparison:
+  before: MODEL-CUSTOMER-WAVE-2
+  after: MODEL-CUSTOMER-WAVE-3
+
+summary:
+  added: 3
+  removed: 1
+  changed: 4
+  breaking: 2
+  review_required: 5
+
+changes:
+  - object_id: ATTR-CUSTOMER-GROUP
+    object_type: Attribute
+    class: semantic_breaking
+    properties:
+      entity:
+        before: ENTITY-CUSTOMER
+        after: ENTITY-CUSTOMER-SALES-AREA
+    impact:
+      - MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+      - RULE-CUSTOMER-GROUP-REQUIRED
+      - DATASET-WAVE-2-CUSTOMER</code></pre>
+<p>This is a recommended output shape, not a claim about the current CLI format.</p>
+<p>The machine-readable form can feed:</p>
+<ul>
+<li>CI;</li>
+<li>issue generation;</li>
+<li>release reports;</li>
+<li>agent review;</li>
+<li>dashboards.</li>
+</ul>
+<p>---</p>
+<h1 id="exit-codes-should-reflect-comparison-outcomes-carefully">Exit codes should reflect comparison outcomes carefully</h1>
+<p>A diff command can complete successfully even when it finds breaking changes.</p>
+<p>Possible semantics:</p>
+<pre><code class="language-text">0:
+comparison completed, no differences
+
+1:
+comparison completed, differences found
+
+2:
+comparison failed or incomplete</code></pre>
+<p>A governance wrapper may apply stricter policy:</p>
+<pre><code class="language-text">Block release when:
+- unapproved breaking change exists;
+- reference integrity fails;
+- critical implementation impact has no owner;
+- target baseline is invalid.</code></pre>
+<p>The comparison engine discovers and classifies.</p>
+<p>Release policy decides what blocks.</p>
+<p>---</p>
+<h1 id="diffing-generated-indexes-can-be-useful-but-secondary">Diffing generated indexes can be useful—but secondary</h1>
+<p>Comparing <code>modelops.db</code> or generated JSONL outputs can detect:</p>
+<ul>
+<li>unexpected build changes;</li>
+<li>search-projection differences;</li>
+<li>edge-generation regressions;</li>
+<li>index-schema changes.</li>
+</ul>
+<p>That is useful for Martenweave engineering.</p>
+<p>It should not replace canonical comparison.</p>
+<p>Generated output may change because:</p>
+<ul>
+<li>Martenweave version changed;</li>
+<li>tokenisation changed;</li>
+<li>derived metadata changed;</li>
+<li>ordering changed.</li>
+</ul>
+<p>The semantic source remains the canonical repository.</p>
+<p>---</p>
+<h1 id="avoid-false-precision">Avoid false precision</h1>
+<p>A diff engine should state when it cannot determine meaning.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Markdown definition changed substantially.
+Semantic effect:
+human review required
+
+Rule expression uses unsupported free-form syntax.
+Logical equivalence:
+not evaluated
+
+Possible object replacement:
+confidence medium</code></pre>
+<p>It is better to expose uncertainty than to declare a non-breaking change without sufficient evidence.</p>
+<p>---</p>
+<h1 id="ai-can-assist-but-should-not-own-the-diff">AI can assist, but should not own the diff</h1>
+<p>AI is useful for:</p>
+<ul>
+<li>summarising long definition changes;</li>
+<li>suggesting semantic categories;</li>
+<li>identifying likely replacements;</li>
+<li>explaining impact chains;</li>
+<li>drafting release notes;</li>
+<li>comparing SAP release evidence with canonical objects.</li>
+</ul>
+<p>Deterministic code should establish:</p>
+<ul>
+<li>object identity;</li>
+<li>exact property changes;</li>
+<li>reference changes;</li>
+<li>edge changes;</li>
+<li>lifecycle transitions;</li>
+<li>validation status.</li>
+</ul>
+<p>Humans should approve:</p>
+<ul>
+<li>semantic equivalence;</li>
+<li>compatibility;</li>
+<li>business impact;</li>
+<li>release readiness.</li>
+</ul>
+<p>The safe division is:</p>
+<pre><code class="language-text">Deterministic diff:
+what changed
+
+AI assistance:
+what the change may mean
+
+Impact engine:
+what is connected
+
+Human review:
+what is approved and acceptable</code></pre>
+<p>---</p>
+<h1 id="what-martenweave-already-has">What Martenweave already has</h1>
+<p>Martenweave Core’s changelog records an existing repository diff command, schema-version migration, BFS-based proposal impact analysis, search and query, system-lineage objects and approval workflows.</p>
+<p>The public CLI also exposes trace, impact and repository diff operations.</p>
+<p>These are the correct foundations.</p>
+<p>The next product step should not be a larger generic comparison UI.</p>
+<p>It should be a semantic diff layer that classifies changes to:</p>
+<ul>
+<li>object identity;</li>
+<li>granularity;</li>
+<li>applicability;</li>
+<li>lifecycle;</li>
+<li>Mapping strategy;</li>
+<li>physical endpoints;</li>
+<li>global/local inheritance;</li>
+<li>governance authority.</li>
+</ul>
+<p>---</p>
+<h1 id="a-focused-implementation-slice">A focused implementation slice</h1>
+<p>A practical first semantic-diff increment could support five object types:</p>
+<ul>
+<li>Entity;</li>
+<li>Attribute;</li>
+<li>Rule;</li>
+<li>Mapping;</li>
+<li>FieldEndpoint.</li>
+</ul>
+<h2 id="inputs">Inputs</h2>
+<p>Two valid repository baselines.</p>
+<h2 id="deterministic-outputs">Deterministic outputs</h2>
+<ul>
+<li>added objects;</li>
+<li>removed objects;</li>
+<li>changed objects;</li>
+<li>property deltas;</li>
+<li>relationship deltas;</li>
+<li>lifecycle deltas.</li>
+</ul>
+<h2 id="first-classifications">First classifications</h2>
+<ul>
+<li>editorial;</li>
+<li>additive;</li>
+<li>restrictive;</li>
+<li>semantic;</li>
+<li>physical implementation;</li>
+<li>retirement.</li>
+</ul>
+<h2 id="impact">Impact</h2>
+<p>Traverse direct dependants for materially changed objects.</p>
+<h2 id="output">Output</h2>
+<ul>
+<li>JSON;</li>
+<li>Markdown summary;</li>
+<li>release-gate verdict.</li>
+</ul>
+<h2 id="acceptance-example">Acceptance example</h2>
+<p>Changing an Attribute’s Entity must be classified as a granularity change and identify dependent Mappings, Rules and DatasetFields.</p>
+<p>This would create immediate value without attempting full logical equivalence across every possible Rule language.</p>
+<p>---</p>
+<h1 id="release-gate-questions">Release gate questions</h1>
+<p>Before adopting the target model baseline, ask:</p>
+<ol>
+<li>Are both baselines valid?</li>
+<li>Were schema differences normalised?</li>
+<li>Were objects matched by stable identity?</li>
+<li>Were additions, removals, splits and replacements distinguished?</li>
+<li>Were Relationship and lineage changes compared?</li>
+<li>Were Rule behaviour and applicability assessed?</li>
+<li>Were Mapping strategy and source authority assessed?</li>
+<li>Were global and local overrides re-evaluated?</li>
+<li>Were direct and transitive impacts identified?</li>
+<li>Was compatibility assessed by consumer?</li>
+<li>Are implementation owners assigned?</li>
+<li>Is the change supported by a Decision?</li>
+<li>Can historical datasets still be interpreted?</li>
+<li>Is the target model actually ready for the SAP release or migration wave?</li>
+</ol>
+<p>A line diff can answer none of these by itself.</p>
+<p>---</p>
+<h1 id="common-anti-patterns">Common anti-patterns</h1>
+<h2 id="counting-changed-files-as-impact">Counting changed files as impact</h2>
+<p>One changed file can have enterprise-wide consequences.</p>
+<h2 id="treating-every-markdown-rewrite-as-semantic">Treating every Markdown rewrite as semantic</h2>
+<p>Editorial work creates false release noise.</p>
+<h2 id="matching-objects-by-path">Matching objects by path</h2>
+<p>Moves and renames look like deletion and creation.</p>
+<h2 id="treating-new-sap-fields-as-automatic-model-additions">Treating new SAP fields as automatic model additions</h2>
+<p>External capability bypasses governance.</p>
+<h2 id="comparing-only-active-objects">Comparing only active objects</h2>
+<p>Historical compatibility and retirement effects disappear.</p>
+<h2 id="ignoring-relationship-changes">Ignoring relationship changes</h2>
+<p>Objects appear unchanged while lineage is redesigned.</p>
+<h2 id="one-compatibility-flag-for-the-whole-release">One compatibility flag for the whole release</h2>
+<p>Different consumers behave differently.</p>
+<h2 id="diffing-invalid-baselines">Diffing invalid baselines</h2>
+<p>Broken references distort the result.</p>
+<h2 id="allowing-ai-to-declare-equivalence">Allowing AI to declare equivalence</h2>
+<p>Plausible language replaces accountable review.</p>
+<h2 id="updating-decisions-in-place">Updating Decisions in place</h2>
+<p>The rationale for earlier releases disappears.</p>
+<h2 id="assuming-newer-sap-release-means-better-model">Assuming newer SAP release means better model</h2>
+<p>Customer applicability and adoption are ignored.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A useful SAP release comparison should not begin with:</p>
+<blockquote>Which files changed?</blockquote>
+<p>It should begin with:</p>
+<blockquote>Which governed meanings, relationships, controls and implementation contracts are different between these two approved states?</blockquote>
+<p>Git provides the exact textual comparison.</p>
+<p>Martenweave should interpret it through stable model objects.</p>
+<p>The complete chain is:</p>
+<pre><code class="language-text">Repository baseline A
+vs.
+Repository baseline B
+
+→ validate
+→ normalise schemas
+→ match stable IDs
+→ compare properties
+→ compare relationships
+→ classify semantic change
+→ traverse impact
+→ assess compatibility
+→ connect implementation releases
+→ produce review evidence</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the programme explain why Wave 3 differs from Wave 2 without asking reviewers to inspect dozens of YAML files, spreadsheets and SAP release notes manually?</blockquote>
+<p>A good diff should state:</p>
+<ul>
+<li>Customer Group changed granularity;</li>
+<li>direct source equivalence was removed;</li>
+<li>the SAP target endpoint stayed the same;</li>
+<li>the migration dataset now requires Sales Area context;</li>
+<li>three Mappings and two Rules need review;</li>
+<li>one report is potentially incompatible;</li>
+<li>the change is supported by Decision 021;</li>
+<li>the SAP implementation remains pending.</li>
+</ul>
+<p>That is a model diff.</p>
+<p>“Four files changed” is only the beginning.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects canonical model baselines, deterministic validation, repository comparison, lineage, impact analysis, Decisions and reviewable proposals.</p>
+<p>Its purpose is not to replace Git or SAP release documentation.</p>
+<p>It is to explain how changes in repositories and SAP implementations affect governed model meaning.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Git’s official <code>git diff</code> documentation describes comparison across working trees, indexes, commits, trees, blobs and filesystem paths. Git provides the exact textual foundation for model comparison, while semantic interpretation must come from the governed object model.</p>
+<p>Martenweave Core currently records repository diffing, schema-version migration, BFS-based proposal impact analysis, system-lineage objects, search and query and approval workflows as existing capabilities.</p>
+<p>The current public demo generates searchable and lineage projections from canonical files and provides <code>trace</code> and <code>impact</code> commands connecting business Attributes, physical FieldEndpoints, Mappings, Decisions and Evidence.</p>
+<p>Martenweave currently defines canonical Markdown and YAML files as the source of truth, deterministic validation as the first gate and generated indexes as rebuildable outputs.</p>
+<p>The semantic classifications, three-way release comparison and proposed machine-readable diff structures in this article describe a recommended product direction. They should not be treated as guarantees of the exact current <code>diff</code> command output.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or Git.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html"><span>Previous</span>A Customer Group rule changes during an SAP programme.</a><a href="/blog/how-to-design-stable-ids-for-enterprise-data-model-objects.html"><span>Next</span>A Customer Group attribute begins its life in one migration workbook.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

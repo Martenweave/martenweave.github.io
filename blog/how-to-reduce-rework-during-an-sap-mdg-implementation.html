@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Reduce Rework During an SAP MDG Implementation | Martenweave</title>
+    <meta
+      name="description"
+      content="The programme has already approved the model."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html" />
+    <meta property="og:title" content="How to Reduce Rework During an SAP MDG Implementation | Martenweave" />
+    <meta property="og:description" content="The programme has already approved the model." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Reduce Rework During an SAP MDG Implementation | Martenweave" />
+    <meta name="twitter:description" content="The programme has already approved the model." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html",
+                        "name": "How to Reduce Rework During an SAP MDG Implementation | Martenweave",
+                        "description": "The programme has already approved the model.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Reduce Rework During an SAP MDG Implementation",
+                                    "item": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html#content",
+                        "headline": "How to Reduce Rework During an SAP MDG Implementation",
+                        "name": "How to Reduce Rework During an SAP MDG Implementation",
+                        "description": "The programme has already approved the model.",
+                        "url": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Reduce Rework During an SAP MDG Implementation</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Reduce Rework During an SAP MDG Implementation</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">The programme has already approved the model.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#not-all-repeated-work-is-waste">Not all repeated work is waste</a></li><li><a href="#why-sap-mdg-programmes-are-especially-exposed">Why SAP MDG programmes are especially exposed</a></li><li><a href="#the-first-source-of-rework-unresolved-decisions-disguised-as-design">The first source of rework: unresolved decisions disguised as design</a></li><li><a href="#the-second-source-model-changes-are-communicated-as-messages">The second source: model changes are communicated as messages</a></li><li><a href="#the-third-source-every-team-maintains-its-own-interpretation">The third source: every team maintains its own interpretation</a></li><li><a href="#the-fourth-source-design-and-actual-data-meet-too-late">The fourth source: design and actual data meet too late</a></li><li><a href="#the-fifth-source-status-hides-different-stages-of-completion">The fifth source: status hides different stages of completion</a></li><li><a href="#the-sixth-source-local-exceptions-are-handled-as-detached-copies">The sixth source: local exceptions are handled as detached copies</a></li><li><a href="#the-seventh-source-implementation-becomes-the-decision">The seventh source: implementation becomes the decision</a></li><li><a href="#the-eighth-source-defects-are-fixed-without-updating-the-model">The eighth source: defects are fixed without updating the model</a></li><li><a href="#rework-begins-before-configuration">Rework begins before configuration</a></li><li><a href="#the-controls-that-reduce-rework">The controls that reduce rework</a></li><li><a href="#2-give-important-objects-stable-identifiers">2. Give important objects stable identifiers</a></li><li><a href="#3-compare-the-model-with-actual-datasets-early">3. Compare the model with actual datasets early</a></li><li><a href="#4-use-explicit-change-proposals">4. Use explicit change proposals</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The programme has already approved the model.</p>
+<p>Workflows are being configured. Migration mappings are mostly complete. Testing has started. The dashboard shows steady progress.</p>
+<p>Then one business decision changes.</p>
+<p>A field that was optional becomes mandatory. A country requests a local exception. A source system turns out to use the attribute differently. A value list needs another code. A validation blocks records that the migration team expected to load.</p>
+<p>The change itself may be reasonable.</p>
+<p>The problem is what happens next.</p>
+<p>The MDG team updates configuration. The migration team revises its workbook. Testing reopens several cases. Integration checks downstream consumers. The global design document waits for its next scheduled update. A local team continues working from an older export.</p>
+<p>The same question is analysed several times by different people.</p>
+<p>This is where much of the cost of an SAP MDG implementation accumulates: not in creating the first version of the model, but in repeatedly reconciling all the versions that follow.</p>
+<p>We do not think rework can be eliminated. Complex programmes learn as they progress. Data reveals problems. Business requirements improve. Configuration exposes constraints. Local teams identify legitimate differences.</p>
+<p>The objective is different:</p>
+<blockquote>Reduce the amount of work that has to be repeated because the programme cannot see, validate or propagate a decision consistently.</blockquote>
+<p>That requires more than good project management. It requires control of the model knowledge connecting design, configuration, migration, testing and operations.</p>
+<h2 id="not-all-repeated-work-is-waste">Not all repeated work is waste</h2>
+<p>Some rework is necessary.</p>
+<p>A team may need to revisit a design because:</p>
+<ul>
+<li>a legal requirement was initially missed;</li>
+<li>source-data evidence disproves an assumption;</li>
+<li>users reject an impractical workflow;</li>
+<li>a standard SAP capability behaves differently than expected;</li>
+<li>testing reveals an invalid rule;</li>
+<li>an interface dependency becomes visible;</li>
+<li>the business model has genuinely changed.</li>
+</ul>
+<p>This is the programme learning.</p>
+<p>We would be concerned if a large MDG implementation never changed its initial design. That would usually mean either the discovery was unusually complete or the programme was not listening to evidence.</p>
+<p>The expensive rework is different.</p>
+<p>It happens when the programme repeats analysis that it has already performed, or corrects inconsistencies that its own delivery process created.</p>
+<p>Examples include:</p>
+<ul>
+<li>rediscovering why a field was made mandatory;</li>
+<li>comparing several mapping files to find the approved rule;</li>
+<li>rebuilding impact analysis for the same attribute;</li>
+<li>correcting migration code after an uncommunicated target change;</li>
+<li>retesting unaffected scenarios because dependencies are unclear;</li>
+<li>reopening a business decision because its evidence was lost;</li>
+<li>documenting configuration manually at the end of the project;</li>
+<li>asking the original consultant to explain a rule months later;</li>
+<li>repeating local workshops because the global model does not show previous exceptions.</li>
+</ul>
+<p>This is avoidable rework.</p>
+<h2 id="why-sap-mdg-programmes-are-especially-exposed">Why SAP MDG programmes are especially exposed</h2>
+<p>SAP MDG implementations connect several disciplines that naturally move at different speeds:</p>
+<ul>
+<li>business governance;</li>
+<li>data architecture;</li>
+<li>SAP configuration;</li>
+<li>migration;</li>
+<li>integration;</li>
+<li>data quality;</li>
+<li>testing;</li>
+<li>organisational change;</li>
+<li>release management;</li>
+<li>AMS preparation.</li>
+</ul>
+<p>SAP positions MDG as a central governance layer supporting governed models, golden records, profiling, matching and consolidation, workflow-based changes, validated values, data-quality monitoring and auditable data changes.</p>
+<p>That operational scope means a design decision can affect much more than one field.</p>
+<p>A change to an attribute may affect:</p>
+<ul>
+<li>the governed model;</li>
+<li>change-request workflow;</li>
+<li>validation and derivation;</li>
+<li>matching;</li>
+<li>source-to-target mappings;</li>
+<li>initial migration;</li>
+<li>replication;</li>
+<li>local processes;</li>
+<li>data-quality reporting;</li>
+<li>existing records;</li>
+<li>support procedures.</li>
+</ul>
+<p>The implementation is therefore not one linear build.</p>
+<p>It is a network of connected workstreams.</p>
+<p>Rework increases when those connections remain implicit.</p>
+<h2 id="the-first-source-of-rework-unresolved-decisions-disguised-as-design">The first source of rework: unresolved decisions disguised as design</h2>
+<p>A design can look complete while still containing assumptions.</p>
+<p>Typical examples include:</p>
+<ul>
+<li>“Business to confirm.”</li>
+<li>“Use local logic.”</li>
+<li>“Default where missing.”</li>
+<li>“Existing validation applies.”</li>
+<li>“Country exception may be required.”</li>
+<li>“Source to be confirmed.”</li>
+<li>“Follow standard SAP behaviour.”</li>
+</ul>
+<p>These statements are understandable during early discovery.</p>
+<p>They become dangerous when the corresponding object is reported as approved.</p>
+<p>The configuration team then has to interpret the gap.</p>
+<p>The migration team may make another interpretation.</p>
+<p>Testing eventually compares the two implementations rather than verifying one agreed rule.</p>
+<p>We separate three states:</p>
+<h3 id="decided">Decided</h3>
+<p>The programme has selected and approved a clear treatment.</p>
+<h3 id="assumed">Assumed</h3>
+<p>The team is proceeding with a working interpretation that has not yet been approved.</p>
+<h3 id="unresolved">Unresolved</h3>
+<p>No reliable treatment exists.</p>
+<p>An assumption may be necessary to keep work moving. It should remain visible as an assumption.</p>
+<p>The programme creates rework when it hides uncertainty inside apparently completed artefacts.</p>
+<h2 id="the-second-source-model-changes-are-communicated-as-messages">The second source: model changes are communicated as messages</h2>
+<p>A field changes.</p>
+<p>Someone writes in Teams:</p>
+<blockquote>Please use the new code from now on.</blockquote>
+<p>A Jira comment says the field is no longer mandatory for one country.</p>
+<p>An email confirms that migration may use a default.</p>
+<p>These messages can be operationally useful. They are not controlled model changes.</p>
+<p>The recipients may update:</p>
+<ul>
+<li>configuration;</li>
+<li>one mapping file;</li>
+<li>one test case;</li>
+<li>one local workbook.</li>
+</ul>
+<p>Other dependent artefacts remain unchanged because nobody identified them.</p>
+<p>The programme then discovers the inconsistency through defects.</p>
+<p>A material model change should identify:</p>
+<ul>
+<li>the object being changed;</li>
+<li>current state;</li>
+<li>proposed state;</li>
+<li>reason;</li>
+<li>affected contexts;</li>
+<li>affected mappings;</li>
+<li>affected datasets;</li>
+<li>affected rules;</li>
+<li>affected tests;</li>
+<li>owner;</li>
+<li>approval;</li>
+<li>effective version.</li>
+</ul>
+<p>Communication should follow the model change. It should not be the only representation of it.</p>
+<h2 id="the-third-source-every-team-maintains-its-own-interpretation">The third source: every team maintains its own interpretation</h2>
+<p>The MDG team sees entities, attributes, rules and workflows.</p>
+<p>The migration team sees sources, targets, transformations and load objects.</p>
+<p>Business teams see definitions, policies and exceptions.</p>
+<p>Testing sees expected results.</p>
+<p>Integration sees messages, APIs and consumers.</p>
+<p>Each view is necessary.</p>
+<p>The problem begins when each view becomes a separate model.</p>
+<p>For example:</p>
+<ul>
+<li>the business glossary says “Supplier Risk Category”;</li>
+<li>MDG configuration calls it “Risk Class”;</li>
+<li>migration maps <code>VENDOR_GRADE</code>;</li>
+<li>an interface sends <code>SUPPLIER_SEGMENT</code>;</li>
+<li>testing uses “Compliance Level.”</li>
+</ul>
+<p>These may refer to the same attribute.</p>
+<p>They may also refer to related but different attributes.</p>
+<p>Without stable identity and explicit relationships, every review requires teams to reconstruct equivalence from names and context.</p>
+<p>This consumes expert time and introduces errors.</p>
+<p>We prefer one identifiable business attribute connected to multiple physical representations.</p>
+<pre><code class="language-text">Business attribute
+├── legacy source field
+├── SAP MDG attribute
+├── SAP target field
+├── interface field
+├── migration mapping
+├── validation rule
+└── test evidence</code></pre>
+<p>Teams may continue working through their own views. The underlying object remains the same.</p>
+<h2 id="the-fourth-source-design-and-actual-data-meet-too-late">The fourth source: design and actual data meet too late</h2>
+<p>A target model can appear coherent until it is compared with representative source data.</p>
+<p>The design may assume that:</p>
+<ul>
+<li>a field is widely populated;</li>
+<li>one code list is shared globally;</li>
+<li>identifiers are unique;</li>
+<li>relationships can be constructed;</li>
+<li>country differences are minor;</li>
+<li>a value can be derived reliably.</li>
+</ul>
+<p>The dataset may show otherwise.</p>
+<p>SAP recommends curating master data early, before an S/4HANA implementation, because automated target processes depend heavily on clean and correct master data.</p>
+<p>For us, early curation includes more than a general data-quality assessment.</p>
+<p>It means comparing the proposed governed model against actual source populations while design choices are still inexpensive to change.</p>
+<p>If this comparison happens only during mock loading, the programme may need to redo:</p>
+<ul>
+<li>the model;</li>
+<li>mappings;</li>
+<li>validation rules;</li>
+<li>value lists;</li>
+<li>configuration;</li>
+<li>migration routines;</li>
+<li>test data;</li>
+<li>test cases;</li>
+<li>business approvals.</li>
+</ul>
+<p>The same source limitation discovered two months earlier might have required only a design decision.</p>
+<h2 id="the-fifth-source-status-hides-different-stages-of-completion">The fifth source: status hides different stages of completion</h2>
+<p>A field or mapping is marked complete.</p>
+<p>But complete may mean:</p>
+<ul>
+<li>defined;</li>
+<li>approved;</li>
+<li>configured;</li>
+<li>mapped;</li>
+<li>implemented;</li>
+<li>tested;</li>
+<li>accepted for cutover.</li>
+</ul>
+<p>These are different states.</p>
+<p>A programme creates rework when downstream teams assume a stronger state than the upstream team intended.</p>
+<p>For critical objects, we use a lifecycle such as:</p>
+<pre><code class="language-text">Identified
+→ Defined
+→ Approved
+→ Implemented
+→ Dataset-validated
+→ Tested
+→ Ready</code></pre>
+<p>This allows work to proceed without claiming that all evidence already exists.</p>
+<p>A mapping can be defined while still awaiting value coverage.</p>
+<p>A rule can be configured while still awaiting testing.</p>
+<p>A target attribute can be approved while the source-data treatment remains unresolved.</p>
+<p>Clear status reduces false handovers between teams.</p>
+<h2 id="the-sixth-source-local-exceptions-are-handled-as-detached-copies">The sixth source: local exceptions are handled as detached copies</h2>
+<p>Global MDG programmes need to support legitimate local variation.</p>
+<p>The typical workaround is to copy a global workbook or design and let the country team maintain its own version.</p>
+<p>This solves an immediate collaboration problem.</p>
+<p>It creates future reconciliation work.</p>
+<p>Local changes may include:</p>
+<ul>
+<li>additional attributes;</li>
+<li>different mandatory rules;</li>
+<li>local code translations;</li>
+<li>regulatory exceptions;</li>
+<li>alternative source fields;</li>
+<li>different ownership;</li>
+<li>temporary migration treatments.</li>
+</ul>
+<p>When these remain in detached files, the global team cannot see whether a local change:</p>
+<ul>
+<li>extends the model;</li>
+<li>overrides it;</li>
+<li>contradicts it;</li>
+<li>is temporary;</li>
+<li>should become global;</li>
+<li>is already solved elsewhere.</li>
+</ul>
+<p>We represent local variation as an explicit relationship to the global model.</p>
+<pre><code class="language-text">Global attribute
+├── standard rule
+├── country extension
+├── approved local override
+└── temporary migration exception</code></pre>
+<p>This does not eliminate local work.</p>
+<p>It reduces repeated comparison and prevents local knowledge from disappearing into file versions.</p>
+<h2 id="the-seventh-source-implementation-becomes-the-decision">The seventh source: implementation becomes the decision</h2>
+<p>A configuration issue appears during testing.</p>
+<p>The technical team adjusts the rule so the process can continue.</p>
+<p>This may be the correct immediate response.</p>
+<p>The risk is that the implementation change is never reconciled with the model.</p>
+<p>The new behaviour then becomes accepted because it exists.</p>
+<p>Later, the programme updates its documentation to match configuration, without reconsidering whether the configuration reflects the intended governance policy.</p>
+<p>We use a stricter distinction:</p>
+<ul>
+<li>the approved model describes intended behaviour;</li>
+<li>configuration implements that behaviour;</li>
+<li>an implementation deviation remains a deviation until reviewed.</li>
+</ul>
+<p>Emergency or test workarounds should include:</p>
+<ul>
+<li>affected object;</li>
+<li>reason;</li>
+<li>environment;</li>
+<li>risk;</li>
+<li>owner;</li>
+<li>review date;</li>
+<li>intended final treatment.</li>
+</ul>
+<p>A temporary configuration that has no reconciliation date is likely to become permanent architecture.</p>
+<h2 id="the-eighth-source-defects-are-fixed-without-updating-the-model">The eighth source: defects are fixed without updating the model</h2>
+<p>A defect may reveal that:</p>
+<ul>
+<li>the source mapping is wrong;</li>
+<li>the target rule is wrong;</li>
+<li>the definition is ambiguous;</li>
+<li>the value list is incomplete;</li>
+<li>the local context is missing;</li>
+<li>the dataset is unreliable;</li>
+<li>the implementation differs from the design.</li>
+</ul>
+<p>The defect is corrected and closed.</p>
+<p>But only the immediate technical artefact is updated.</p>
+<p>If the underlying model does not change, the same issue can reappear in:</p>
+<ul>
+<li>another country;</li>
+<li>another migration wave;</li>
+<li>another interface;</li>
+<li>another environment;</li>
+<li>post-go-live support.</li>
+</ul>
+<p>We classify defects by cause:</p>
+<ul>
+<li>source-data defect;</li>
+<li>extraction defect;</li>
+<li>mapping defect;</li>
+<li>model defect;</li>
+<li>configuration defect;</li>
+<li>rule defect;</li>
+<li>integration defect;</li>
+<li>test-data defect;</li>
+<li>decision gap.</li>
+</ul>
+<p>When the cause is model-related, closing the defect should require an approved model update or an explicit decision not to change the model.</p>
+<p>Otherwise, the team fixes one occurrence while preserving the cause.</p>
+<h2 id="rework-begins-before-configuration">Rework begins before configuration</h2>
+<p>It is tempting to treat rework as an execution problem.</p>
+<p>Much of it begins during discovery.</p>
+<p>A weak discovery phase can produce:</p>
+<ul>
+<li>duplicate attributes;</li>
+<li>unclear definitions;</li>
+<li>hidden local variation;</li>
+<li>incomplete ownership;</li>
+<li>inconsistent code lists;</li>
+<li>unsupported mandatory fields;</li>
+<li>undefined remediation responsibility.</li>
+</ul>
+<p>These issues move into design and configuration, where they become more expensive to resolve.</p>
+<p>We do not recommend an endless discovery phase.</p>
+<p>The programme does not need a complete enterprise model before starting.</p>
+<p>It does need enough evidence to distinguish:</p>
+<ul>
+<li>known design;</li>
+<li>known gaps;</li>
+<li>assumptions;</li>
+<li>open decisions;</li>
+<li>excluded scope.</li>
+</ul>
+<p>The smallest useful preparation is better than a large document that hides uncertainty.</p>
+<h2 id="the-controls-that-reduce-rework">The controls that reduce rework</h2>
+<p>We use a small set of controls across the implementation lifecycle.</p>
+<h1 id="1-maintain-an-independent-approved-model">1. Maintain an independent approved model</h1>
+<p>The programme needs a model baseline independent from one environment, workbook or implementation partner.</p>
+<p>It should include the model knowledge required to understand and change the implementation:</p>
+<ul>
+<li>entities;</li>
+<li>attributes;</li>
+<li>contexts;</li>
+<li>relationships;</li>
+<li>mappings;</li>
+<li>value lists;</li>
+<li>rules;</li>
+<li>owners;</li>
+<li>decisions;</li>
+<li>exceptions.</li>
+</ul>
+<p>The configured platform remains operational truth.</p>
+<p>The independent model preserves implementation intent and its connection to surrounding work.</p>
+<h2 id="2-give-important-objects-stable-identifiers">2. Give important objects stable identifiers</h2>
+<p>Stable identifiers allow the same object to be referenced across:</p>
+<ul>
+<li>design;</li>
+<li>configuration documentation;</li>
+<li>mappings;</li>
+<li>tickets;</li>
+<li>datasets;</li>
+<li>tests;</li>
+<li>defects;</li>
+<li>change requests;</li>
+<li>AMS.</li>
+</ul>
+<p>Names can remain business-friendly.</p>
+<p>Identifiers preserve continuity when names change or repeat.</p>
+<h2 id="3-compare-the-model-with-actual-datasets-early">3. Compare the model with actual datasets early</h2>
+<p>For every critical attribute, check:</p>
+<ul>
+<li>source availability;</li>
+<li>completeness;</li>
+<li>observed values;</li>
+<li>context coverage;</li>
+<li>relationship integrity;</li>
+<li>source-system variation.</li>
+</ul>
+<p>The comparison should happen during design and repeat when datasets or scope change.</p>
+<h2 id="4-use-explicit-change-proposals">4. Use explicit change proposals</h2>
+<p>A change proposal should show:</p>
+<ul>
+<li>what changes;</li>
+<li>why;</li>
+<li>affected objects;</li>
+<li>evidence;</li>
+<li>impact;</li>
+<li>required reviewers;</li>
+<li>proposed effective version.</li>
+</ul>
+<p>This is more useful than forwarding an updated workbook and asking everyone to find the difference.</p>
+<h2 id="5-run-impact-analysis-before-implementation">5. Run impact analysis before implementation</h2>
+<p>For a field, rule or value-list change, identify likely effects on:</p>
+<ul>
+<li>source data;</li>
+<li>mappings;</li>
+<li>configuration;</li>
+<li>workflows;</li>
+<li>integrations;</li>
+<li>datasets;</li>
+<li>tests;</li>
+<li>existing records;</li>
+<li>AMS procedures.</li>
+</ul>
+<p>Impact analysis does not need to be perfect.</p>
+<p>It should be good enough to prevent obvious downstream teams from discovering the change accidentally.</p>
+<h2 id="6-validate-structure-automatically">6. Validate structure automatically</h2>
+<p>Architects should not spend review time finding:</p>
+<ul>
+<li>duplicate identifiers;</li>
+<li>broken references;</li>
+<li>missing endpoints;</li>
+<li>retired objects still in use;</li>
+<li>mappings without context;</li>
+<li>rules without owners;</li>
+<li>value mappings using obsolete lists.</li>
+</ul>
+<p>These are deterministic checks.</p>
+<p>Automating them leaves human review for meaning, trade-offs and risk.</p>
+<h2 id="7-connect-test-evidence-to-model-versions">7. Connect test evidence to model versions</h2>
+<p>Test evidence should identify:</p>
+<ul>
+<li>approved model baseline;</li>
+<li>configuration or release version;</li>
+<li>dataset;</li>
+<li>context;</li>
+<li>expected result;</li>
+<li>actual result.</li>
+</ul>
+<p>When the model changes, the programme can see which evidence requires renewal.</p>
+<h2 id="8-reconcile-configuration-after-each-material-cycle">8. Reconcile configuration after each material cycle</h2>
+<p>Before a major mock load, UAT cycle or release, compare:</p>
+<ul>
+<li>approved model;</li>
+<li>intended configuration;</li>
+<li>actual environment;</li>
+<li>migration mappings;</li>
+<li>open deviations;</li>
+<li>current test evidence.</li>
+</ul>
+<p>This does not require checking every technical parameter manually.</p>
+<p>Focus on high-risk and recently changed model objects.</p>
+<h2 id="9-preserve-decisions-not-every-discussion">9. Preserve decisions, not every discussion</h2>
+<p>We do not need to store every meeting transcript.</p>
+<p>We do need to preserve significant decisions:</p>
+<ul>
+<li>issue;</li>
+<li>alternatives;</li>
+<li>selected option;</li>
+<li>rationale;</li>
+<li>evidence;</li>
+<li>approver;</li>
+<li>affected objects;</li>
+<li>review condition.</li>
+</ul>
+<p>This prevents repeated workshops whose only purpose is to reconstruct the original reasoning.</p>
+<h2 id="10-prepare-handover-continuously">10. Prepare handover continuously</h2>
+<p>Do not wait until go-live to explain the model to AMS.</p>
+<p>AMS-relevant knowledge should accumulate during delivery:</p>
+<ul>
+<li>current model;</li>
+<li>rules;</li>
+<li>dependencies;</li>
+<li>accepted exceptions;</li>
+<li>unresolved remediation;</li>
+<li>decision history;</li>
+<li>operational ownership;</li>
+<li>known deviations.</li>
+</ul>
+<p>Continuous handover reduces the final documentation exercise and improves the quality of operational knowledge.</p>
+<h2 id="a-practical-delivery-loop">A practical delivery loop</h2>
+<p>We use a repeated loop rather than treating design, build and test as isolated phases.</p>
+<pre><code class="language-text">Evidence from business, data or testing
+                ↓
+Model issue or change proposal
+                ↓
+Impact and validation
+                ↓
+Human decision
+                ↓
+Configuration, mapping and test updates
+                ↓
+Verification
+                ↓
+New approved baseline</code></pre>
+<p>The loop may run quickly for a small change.</p>
+<p>A major cross-country change may require formal governance.</p>
+<p>The structure remains the same.</p>
+<p>This gives the programme a predictable place for learning to enter the implementation.</p>
+<h2 id="a-worked-example-adding-a-supplier-classification">A worked example: adding a supplier classification</h2>
+<p>A procurement team requests a new supplier classification.</p>
+<p>The initial estimate is small:</p>
+<ul>
+<li>add the attribute;</li>
+<li>add a value list;</li>
+<li>include it in the workflow.</li>
+</ul>
+<p>Without coordinated model control, the work may unfold like this:</p>
+<ol>
+<li>MDG adds the attribute.</li>
+<li>Migration learns about it two weeks later.</li>
+<li>Two legacy systems have no equivalent field.</li>
+<li>One country already maintains a similar classification under another name.</li>
+<li>The team introduces a default.</li>
+<li>Compliance says one value requires additional approval.</li>
+<li>Workflow is revised.</li>
+<li>An outbound interface rejects the new code.</li>
+<li>Testing creates several defects.</li>
+<li>Documentation is updated after UAT.</li>
+</ol>
+<p>The programme has touched the same concept repeatedly.</p>
+<p>A controlled approach begins differently.</p>
+<h3 id="frame-the-requirement">Frame the requirement</h3>
+<p>Why is the classification needed?</p>
+<p>Which decision or process uses it?</p>
+<h3 id="check-existing-model-objects">Check existing model objects</h3>
+<p>Does a similar attribute already exist?</p>
+<p>Is the country field truly different?</p>
+<h3 id="profile-source-data">Profile source data</h3>
+<p>Which systems contain relevant evidence?</p>
+<p>Can the value be derived reliably?</p>
+<h3 id="design-the-value-list">Design the value list</h3>
+<p>Who owns it?</p>
+<p>Are local variants needed?</p>
+<h3 id="assess-impact">Assess impact</h3>
+<p>Which workflows, mappings, interfaces and reports are affected?</p>
+<h3 id="approve-the-model-change">Approve the model change</h3>
+<p>Record definitions, contexts, rules and treatment for missing data.</p>
+<h3 id="implement-across-workstreams">Implement across workstreams</h3>
+<p>Update configuration, migration, integration and tests against the same approved state.</p>
+<h3 id="verify">Verify</h3>
+<p>Confirm that actual datasets and operational scenarios support the design.</p>
+<p>There may still be substantial work.</p>
+<p>The difference is that the work is performed once around a shared decision rather than several times around fragmented discoveries.</p>
+<h2 id="a-second-example-changing-a-validation-from-warning-to-error">A second example: changing a validation from warning to error</h2>
+<p>A data-quality review finds that a critical customer attribute is often blank.</p>
+<p>The programme proposes changing the MDG validation from warning to error.</p>
+<p>The configuration change is trivial.</p>
+<p>The impact is not.</p>
+<p>The programme should ask:</p>
+<ul>
+<li>How many existing records are blank?</li>
+<li>Can migration populate the field?</li>
+<li>Does every country use the same requirement?</li>
+<li>Will interfaces creating records fail?</li>
+<li>What happens to existing records when edited?</li>
+<li>Who owns remediation?</li>
+<li>Is a phased transition needed?</li>
+<li>Does the business process have a valid exception?</li>
+<li>Which tests must change?</li>
+</ul>
+<p>Without this analysis, the error may be removed again after it blocks testing.</p>
+<p>That is classic rework: configure, discover, reverse, redesign, configure again.</p>
+<p>The better sequence is to quantify and decide first.</p>
+<h2 id="use-rework-indicators-not-only-defect-counts">Use rework indicators, not only defect counts</h2>
+<p>Defect counts do not show how much work the programme is repeating.</p>
+<p>We recommend tracking several indicators.</p>
+<h3 id="reopened-model-decisions">Reopened model decisions</h3>
+<p>How often are previously approved decisions reconsidered because evidence or rationale is missing?</p>
+<h3 id="mapping-changes-after-approval">Mapping changes after approval</h3>
+<p>How many approved mappings change because the target model or source assumptions were incomplete?</p>
+<h3 id="defects-caused-by-model-divergence">Defects caused by model divergence</h3>
+<p>How many defects result from teams using different definitions, values or versions?</p>
+<h3 id="repeated-impact-analyses">Repeated impact analyses</h3>
+<p>How often does the programme manually rebuild the same dependency view?</p>
+<h3 id="unplanned-configuration-reversals">Unplanned configuration reversals</h3>
+<p>How many rules or fields are configured and later reverted?</p>
+<h3 id="test-cases-invalidated-by-uncontrolled-change">Test cases invalidated by uncontrolled change</h3>
+<p>How much evidence must be repeated because the tested baseline is unclear?</p>
+<h3 id="knowledge-reconstruction">Knowledge reconstruction</h3>
+<p>How often do teams need former consultants or old meeting participants to explain current behaviour?</p>
+<h3 id="post-go-live-design-clarification">Post-go-live design clarification</h3>
+<p>How many AMS incidents require reopening implementation design questions?</p>
+<p>These indicators reveal process problems behind the defect backlog.</p>
+<h2 id="management-has-a-role-in-reducing-rework">Management has a role in reducing rework</h2>
+<p>Many rework patterns are encouraged by programme reporting.</p>
+<p>If management rewards only visible build progress, teams may:</p>
+<ul>
+<li>mark assumptions as complete;</li>
+<li>configure before decisions are ready;</li>
+<li>hide unresolved local differences;</li>
+<li>defer model reconciliation;</li>
+<li>treat documentation as end-of-project work.</li>
+</ul>
+<p>Managers can ask better questions:</p>
+<ol>
+<li>Which approved model baseline are we implementing?</li>
+<li>Which material assumptions remain open?</li>
+<li>Which recent decisions affected several workstreams?</li>
+<li>Which source-data findings changed the target model?</li>
+<li>Which configured deviations are temporary?</li>
+<li>Which mappings were invalidated by target changes?</li>
+<li>Which defects indicate a model problem rather than an implementation error?</li>
+<li>Which tests refer to the current baseline?</li>
+<li>Which local exceptions remain outside the global model?</li>
+<li>Which knowledge still depends on specific individuals?</li>
+</ol>
+<p>These questions shift attention from activity volume to implementation coherence.</p>
+<h2 id="do-not-overcorrect-with-heavy-governance">Do not overcorrect with heavy governance</h2>
+<p>A programme can also create rework through excessive process.</p>
+<p>If every field description change requires a large review board, teams will bypass governance or wait unnecessarily.</p>
+<p>We classify changes by risk.</p>
+<h3 id="minor-technical-correction">Minor technical correction</h3>
+<p>No change to meaning, context, values or downstream behaviour.</p>
+<p>Use lightweight review.</p>
+<h3 id="controlled-model-change">Controlled model change</h3>
+<p>Affects a mapping, rule, value list, owner or limited context.</p>
+<p>Require targeted impact analysis and relevant owners.</p>
+<h3 id="major-governance-change">Major governance change</h3>
+<p>Affects definitions, identifiers, several countries, operational workflow, matching or major integrations.</p>
+<p>Require formal architecture and business approval.</p>
+<p>The objective is not maximum process.</p>
+<p>It is the minimum control needed to avoid downstream reconstruction.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave around the problem of fragmented model knowledge.</p>
+<p>The current product model connects fields, attributes, rules, owners, issues and decisions; validates references; detects model and dataset gaps; traces impact; and supports reviewable change proposals.</p>
+<p>The current core includes:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured queries;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>health, ownership, audit and scorecard reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>PatchProposal and ChangeRequest lifecycles.</li>
+</ul>
+<p>Martenweave is not intended to replace SAP MDG, Jira, Confluence or migration execution. Its own product boundaries describe it as a validated model registry that can work beside these tools.</p>
+<p>For an SAP MDG programme, the intended flow is:</p>
+<pre><code class="language-text">Excel, tickets, datasets, reports and SAP context
+                        ↓
+              Canonical model objects
+                        ↓
+        Validation, gaps and impact analysis
+                        ↓
+             Reviewable change proposal
+                        ↓
+                  Human approval
+                        ↓
+ Configuration, migration and test implementation</code></pre>
+<p>This reduces rework in three ways.</p>
+<h3 id="it-preserves-object-identity">It preserves object identity</h3>
+<p>Teams can refer to the same attribute, mapping or rule across tools.</p>
+<h3 id="it-detects-structural-inconsistency">It detects structural inconsistency</h3>
+<p>Broken references and missing relationships can be found before review or testing.</p>
+<h3 id="it-makes-model-changes-reviewable">It makes model changes reviewable</h3>
+<p>AI, scripts or users can propose changes without silently modifying the approved model.</p>
+<h2 id="ai-should-reduce-analysis-effort-not-create-uncontrolled-change">AI should reduce analysis effort, not create uncontrolled change</h2>
+<p>AI can help teams:</p>
+<ul>
+<li>extract possible requirements from tickets;</li>
+<li>compare documents;</li>
+<li>suggest affected model objects;</li>
+<li>identify similar rules;</li>
+<li>summarise data gaps;</li>
+<li>draft mapping changes;</li>
+<li>prepare impact reports.</li>
+</ul>
+<p>The risk is allowing AI-generated proposals to become accepted model truth without validation.</p>
+<p>A plausible mapping can still be wrong.</p>
+<p>A ticket may describe an obsolete decision.</p>
+<p>Two similarly named fields may have different contexts.</p>
+<p>We use AI to prepare proposals and evidence.</p>
+<p>Deterministic validators check model structure.</p>
+<p>Architects and responsible owners approve the change.</p>
+<p>This matters because automated speed is valuable only when it reduces repeated analysis without increasing correction later.</p>
+<h2 id="what-a-low-rework-pilot-should-prove">What a low-rework pilot should prove</h2>
+<p>A programme does not need to model everything before seeing value.</p>
+<p>We recommend selecting:</p>
+<ul>
+<li>one domain;</li>
+<li>one current mapping workbook;</li>
+<li>one representative dataset;</li>
+<li>30–100 critical attributes;</li>
+<li>several high-risk rules;</li>
+<li>recent change requests or defects.</li>
+</ul>
+<p>The pilot should demonstrate that the team can:</p>
+<ol>
+<li>Create stable model objects.</li>
+<li>Connect source and target endpoints.</li>
+<li>Compare the dataset with the model.</li>
+<li>Detect structural and coverage gaps.</li>
+<li>Trace one field across mappings and rules.</li>
+<li>Analyse the impact of one change.</li>
+<li>Produce a reviewable proposal.</li>
+<li>Regenerate a business-readable view.</li>
+<li>Preserve the final decision.</li>
+<li>Show what evidence must be repeated after the change.</li>
+</ol>
+<p>The success measure is not the number of imported rows.</p>
+<p>It is whether the team avoids repeating work that previously required several manual investigations.</p>
+<h2 id="when-simpler-controls-are-enough">When simpler controls are enough</h2>
+<p>Not every MDG project needs a dedicated model registry.</p>
+<p>A disciplined set of workbooks, decisions and change controls may be sufficient when:</p>
+<ul>
+<li>the domain is small;</li>
+<li>there is one source and one target;</li>
+<li>local variation is limited;</li>
+<li>the team is stable;</li>
+<li>the model changes rarely;</li>
+<li>integrations are simple;</li>
+<li>the implementation is short;</li>
+<li>the cost of error is low.</li>
+</ul>
+<p>The key is not the tool.</p>
+<p>The key is whether the programme can answer impact, ownership and evidence questions without repeated reconstruction.</p>
+<p>The need for stronger model control grows with:</p>
+<ul>
+<li>number of systems;</li>
+<li>number of countries;</li>
+<li>number of partners;</li>
+<li>duration;</li>
+<li>model complexity;</li>
+<li>change frequency;</li>
+<li>regulatory exposure;</li>
+<li>handover requirements.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Rework in an SAP MDG implementation does not come only from poor configuration or weak testing.</p>
+<p>It often comes from fragmented decisions.</p>
+<p>The business model changes in one place. Configuration changes in another. Migration, integration and testing discover the difference later.</p>
+<p>The programme then pays several teams to reconcile knowledge it already created.</p>
+<p>We reduce this by maintaining:</p>
+<ul>
+<li>one identifiable model baseline;</li>
+<li>stable model objects;</li>
+<li>explicit assumptions and deviations;</li>
+<li>early comparison with real data;</li>
+<li>impact analysis before material changes;</li>
+<li>controlled proposals;</li>
+<li>deterministic validation;</li>
+<li>evidence linked to model versions;</li>
+<li>continuous handover.</li>
+</ul>
+<p>This does not stop the model from evolving.</p>
+<p>It makes evolution cheaper.</p>
+<p>Our practical test is:</p>
+<blockquote>When one important model decision changes, can the programme identify every affected mapping, rule, dataset, configuration area and test without starting a new discovery exercise?</blockquote>
+<p>If the answer is no, the programme is likely to repeat work whenever the model moves.</p>
+<p>If the answer is yes, change remains work—but it no longer becomes avoidable rework.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. Our focus is helping architects and delivery teams preserve model decisions, identify impact earlier and reduce the repeated reconciliation work that consumes time without improving the final solution.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer supporting governed models, golden records, profiling, matching and consolidation, workflow-based changes, validated values, data-quality monitoring, mass processing and auditable data changes. SAP also recommends curating master data early before an SAP S/4HANA implementation.</p>
+<p>Martenweave’s current public documentation describes structured model objects, deterministic validation, generated indexes, dataset profiling, gap detection, trace and impact analysis, reporting, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html"><span>Previous</span>The design document says the field is optional.</a><a href="/blog/what-an-sap-mdg-handover-package-should-contain.html"><span>Next</span>The SAP MDG programme goes live on Friday.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

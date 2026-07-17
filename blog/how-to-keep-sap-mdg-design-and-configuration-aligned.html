@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Keep SAP MDG Design and Configuration Aligned | Martenweave</title>
+    <meta
+      name="description"
+      content="The design document says the field is optional."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html" />
+    <meta property="og:title" content="How to Keep SAP MDG Design and Configuration Aligned | Martenweave" />
+    <meta property="og:description" content="The design document says the field is optional." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Keep SAP MDG Design and Configuration Aligned | Martenweave" />
+    <meta name="twitter:description" content="The design document says the field is optional." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html",
+                        "name": "How to Keep SAP MDG Design and Configuration Aligned | Martenweave",
+                        "description": "The design document says the field is optional.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Keep SAP MDG Design and Configuration Aligned",
+                                    "item": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html#content",
+                        "headline": "How to Keep SAP MDG Design and Configuration Aligned",
+                        "name": "How to Keep SAP MDG Design and Configuration Aligned",
+                        "description": "The design document says the field is optional.",
+                        "url": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-keep-sap-mdg-design-and-configuration-aligned.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Keep SAP MDG Design and Configuration Aligned</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How to Keep SAP MDG Design and Configuration Aligned</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">The design document says the field is optional.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#configuration-is-not-the-end-of-design">Configuration is not the end of design</a></li><li><a href="#sap-mdg-contains-operational-truth-not-the-whole-implementation-truth">SAP MDG contains operational truth, not the whole implementation truth</a></li><li><a href="#there-are-several-kinds-of-alignment">There are several kinds of alignment</a></li><li><a href="#the-approved-model-needs-its-own-identity">The approved model needs its own identity</a></li><li><a href="#configuration-objects-should-refer-back-to-model-objects">Configuration objects should refer back to model objects</a></li><li><a href="#build-a-design-to-configuration-matrix">Build a design-to-configuration matrix</a></li><li><a href="#changes-should-begin-in-the-model-not-in-configuration">Changes should begin in the model, not in configuration</a></li><li><a href="#do-not-let-jira-become-the-unofficial-design-authority">Do not let Jira become the unofficial design authority</a></li><li><a href="#environment-differences-should-be-explicit">Environment differences should be explicit</a></li><li><a href="#migration-mappings-must-follow-the-model-baseline">Migration mappings must follow the model baseline</a></li><li><a href="#design-and-actual-data-must-also-remain-aligned">Design and actual data must also remain aligned</a></li><li><a href="#rule-alignment-deserves-its-own-review">Rule alignment deserves its own review</a></li><li><a href="#workflow-alignment-is-not-only-about-steps">Workflow alignment is not only about steps</a></li><li><a href="#testing-should-verify-alignment-not-only-functionality">Testing should verify alignment, not only functionality</a></li><li><a href="#use-three-kinds-of-alignment-review">Use three kinds of alignment review</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The design document says the field is optional.</p>
+<p>The migration workbook says it is mandatory.</p>
+<p>The quality system rejects records when the field is blank.</p>
+<p>Development accepts them.</p>
+<p>One country has a local exception recorded in Jira. Another country copied the original global rule into its own mapping file and changed it six weeks ago.</p>
+<p>During the design review, everyone says they are following the approved model.</p>
+<p>They are simply following different versions of it.</p>
+<p>This is not an unusual failure in SAP MDG programmes. The initial design may be coherent, reviewed and formally approved. The divergence appears later, one reasonable change at a time:</p>
+<ul>
+<li>a validation is adjusted to unblock testing;</li>
+<li>a local requirement is accepted through a ticket;</li>
+<li>a target attribute is renamed;</li>
+<li>migration introduces a temporary default;</li>
+<li>an interface requires another value;</li>
+<li>a rule is corrected directly in configuration;</li>
+<li>a transport reaches one environment but not another;</li>
+<li>the design document is left for a later update.</li>
+</ul>
+<p>No single change looks serious.</p>
+<p>After several months, the programme no longer has one model. It has a design model, a configured model, a migration model, a test model and several local interpretations.</p>
+<p>The problem is not that the design changed.</p>
+<p>A model should change when the programme learns something important.</p>
+<p>The problem is that the changes did not move through the entire delivery system together.</p>
+<p>Our approach is to treat alignment as a continuous control:</p>
+<blockquote>The approved design, SAP MDG configuration, migration mappings, datasets, tests and operational documentation should describe the same intended model—or show their differences explicitly.</blockquote>
+<p>Alignment does not mean that every artefact must be identical.</p>
+<p>It means that differences are intentional, traceable and owned.</p>
+<h2 id="configuration-is-not-the-end-of-design">Configuration is not the end of design</h2>
+<p>A common project assumption is that design happens first and configuration follows.</p>
+<p>In reality, configuration generates new design information.</p>
+<p>The team may discover that:</p>
+<ul>
+<li>a standard entity behaves differently from the initial assumption;</li>
+<li>a validation is needed at another point in the process;</li>
+<li>a workflow requires additional context;</li>
+<li>a field cannot be reused as planned;</li>
+<li>a local extension has wider consequences;</li>
+<li>the migration population cannot support a mandatory rule;</li>
+<li>matching behaviour creates unexpected results;</li>
+<li>a downstream interface depends on the old structure.</li>
+</ul>
+<p>These discoveries may justify changing the model.</p>
+<p>That is healthy.</p>
+<p>What creates risk is allowing the configuration decision to become the new design without an explicit review.</p>
+<p>The sequence becomes:</p>
+<pre><code class="language-text">Design approved
+      ↓
+Configuration exposes a problem
+      ↓
+Technical workaround implemented
+      ↓
+Workaround becomes operational behaviour
+      ↓
+Design documentation remains unchanged</code></pre>
+<p>Months later, a new team compares the documented design with the system and assumes that one of them is wrong.</p>
+<p>Sometimes the configuration is wrong.</p>
+<p>Sometimes the document is obsolete.</p>
+<p>Often nobody can prove which one represents the approved decision.</p>
+<h2 id="sap-mdg-contains-operational-truth-not-the-whole-implementation-truth">SAP MDG contains operational truth, not the whole implementation truth</h2>
+<p>SAP describes SAP Master Data Governance as a governance layer that supports governed models, golden records, matching and consolidation, workflow-based changes, validated values, data-quality monitoring and auditable data changes.</p>
+<p>That makes the configured platform a critical source of operational truth.</p>
+<p>It shows what the system currently does.</p>
+<p>The complete implementation truth is wider.</p>
+<p>It also includes:</p>
+<ul>
+<li>why the model was designed this way;</li>
+<li>which requirement introduced the field;</li>
+<li>which source systems can populate it;</li>
+<li>which mappings depend on it;</li>
+<li>which countries have exceptions;</li>
+<li>which target rule was approved;</li>
+<li>which temporary deviations remain;</li>
+<li>which tests prove the intended behaviour;</li>
+<li>which configuration changes are planned but not yet transported;</li>
+<li>which data populations require remediation.</li>
+</ul>
+<p>The configured system cannot preserve all of this automatically because much of it exists outside the operational platform.</p>
+<p>The programme therefore needs a controlled relationship between design intent and configured behaviour.</p>
+<h2 id="there-are-several-kinds-of-alignment">There are several kinds of alignment</h2>
+<p>Teams often discuss alignment as if it were one comparison between a document and a system.</p>
+<p>We separate it into several distinct questions.</p>
+<h3 id="semantic-alignment">Semantic alignment</h3>
+<p>Does the configured attribute still mean what the approved business definition says it means?</p>
+<p>A field can retain the same name while its business use changes.</p>
+<h3 id="structural-alignment">Structural alignment</h3>
+<p>Do the entities, attributes, relationships and contexts in configuration match the approved model?</p>
+<h3 id="rule-alignment">Rule alignment</h3>
+<p>Do validations, derivations and workflow conditions implement the approved business rules?</p>
+<h3 id="mapping-alignment">Mapping alignment</h3>
+<p>Do migration and integration mappings point to the current target attributes and values?</p>
+<h3 id="environment-alignment">Environment alignment</h3>
+<p>Do development, quality and production represent the intended states for their respective stages?</p>
+<h3 id="evidence-alignment">Evidence alignment</h3>
+<p>Do tests and approvals refer to the model and configuration versions actually being delivered?</p>
+<h3 id="operational-alignment">Operational alignment</h3>
+<p>Do stewards and AMS documentation describe the behaviour users will encounter after go-live?</p>
+<p>A programme may be aligned in one area and divergent in another.</p>
+<p>For example, the configured field may exist correctly, while the migration mapping still points to the previous value list.</p>
+<h2 id="the-approved-model-needs-its-own-identity">The approved model needs its own identity</h2>
+<p>The programme should be able to name the model baseline being implemented.</p>
+<p>Not just:</p>
+<blockquote>the latest design</blockquote>
+<p>but something identifiable, such as:</p>
+<pre><code class="language-text">Customer/Business Partner model baseline 1.7
+Approved: 18 June
+Applicable wave: Germany and Austria</code></pre>
+<p>The baseline should include or reference:</p>
+<ul>
+<li>business entities;</li>
+<li>attributes;</li>
+<li>relationships;</li>
+<li>organisational contexts;</li>
+<li>definitions;</li>
+<li>allowed values;</li>
+<li>rules;</li>
+<li>ownership;</li>
+<li>target endpoints;</li>
+<li>approved exceptions.</li>
+</ul>
+<p>This does not mean freezing the model permanently.</p>
+<p>It means changes occur relative to a known state.</p>
+<p>Without a baseline, the programme cannot answer:</p>
+<ul>
+<li>What changed?</li>
+<li>When did it change?</li>
+<li>Who approved it?</li>
+<li>Which configuration implements it?</li>
+<li>Which tests remain valid?</li>
+<li>Which mappings require review?</li>
+</ul>
+<p>“The latest version” is not useful when several teams maintain different latest versions.</p>
+<h2 id="configuration-objects-should-refer-back-to-model-objects">Configuration objects should refer back to model objects</h2>
+<p>A field in SAP configuration should be traceable to an approved model object.</p>
+<p>The exact mechanism may vary, but the programme should maintain a relationship such as:</p>
+<pre><code class="language-text">Business attribute
+→ approved target endpoint
+→ MDG entity or attribute
+→ implemented rule or workflow behaviour</code></pre>
+<p>This helps avoid two common problems.</p>
+<h3 id="configuration-without-design">Configuration without design</h3>
+<p>A technical object exists, but nobody can identify the business concept or approved requirement behind it.</p>
+<h3 id="design-without-implementation">Design without implementation</h3>
+<p>The approved model includes an attribute or rule that was never configured.</p>
+<p>Both situations should be visible before formal testing.</p>
+<p>A stable model identifier is particularly useful.</p>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-BP-TAX-REGISTRATION
+RULE-BP-TAX-MANDATORY-DE
+FEP-MDG-BP-TAXNUM</code></pre>
+<p>These identifiers can be referenced from:</p>
+<ul>
+<li>configuration documentation;</li>
+<li>migration mappings;</li>
+<li>Jira changes;</li>
+<li>tests;</li>
+<li>defect reports;</li>
+<li>release notes;</li>
+<li>AMS procedures.</li>
+</ul>
+<p>The identifiers do not need to be exposed to every business user. They provide a stable connection between artefacts.</p>
+<h2 id="build-a-design-to-configuration-matrix">Build a design-to-configuration matrix</h2>
+<p>A practical alignment control is a design-to-configuration matrix.</p>
+<p>For each critical model object, record:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model element</th><th scope="col">Approved state</th><th scope="col">Configuration reference</th><th scope="col">Environment</th><th scope="col">Verification status</th></tr></thead><tbody><tr><td>Attribute</td><td>Optional in DE sales area</td><td>MDG attribute/config reference</td><td>DEV/QAS</td><td>Verified</td></tr><tr><td>Validation rule</td><td>Mandatory for active B2B customers</td><td>Rule implementation reference</td><td>QAS</td><td>Pending test</td></tr><tr><td>Value list</td><td>Codes 01–08</td><td>Configured list reference</td><td>DEV/QAS</td><td>Difference found</td></tr><tr><td>Workflow condition</td><td>High-risk supplier requires compliance review</td><td>Workflow step reference</td><td>DEV</td><td>Not transported</td></tr></tbody></table></div>
+<p>The matrix should not become another manually maintained mega-spreadsheet.</p>
+<p>Its purpose is to expose critical differences.</p>
+<p>For larger programmes, it should be generated or partially generated from structured model and configuration evidence.</p>
+<p>The useful statuses are not only <code>Complete</code> and <code>Incomplete</code>.</p>
+<p>We prefer:</p>
+<ul>
+<li>Aligned;</li>
+<li>Planned;</li>
+<li>Implemented but not verified;</li>
+<li>Approved deviation;</li>
+<li>Unapproved deviation;</li>
+<li>Obsolete;</li>
+<li>Unknown.</li>
+</ul>
+<p><code>Unknown</code> is important.</p>
+<p>It is better to show that alignment has not been proven than to infer it from the absence of a defect.</p>
+<h2 id="changes-should-begin-in-the-model-not-in-configuration">Changes should begin in the model, not in configuration</h2>
+<p>The cleanest change process begins with the intended model state.</p>
+<pre><code class="language-text">Current approved model
+        ↓
+Proposed model change
+        ↓
+Impact analysis
+        ↓
+Approval
+        ↓
+Configuration and mapping changes
+        ↓
+Testing
+        ↓
+Verified model baseline</code></pre>
+<p>This order keeps configuration as implementation rather than decision-making by accident.</p>
+<p>There will be urgent cases where a technical correction must happen first.</p>
+<p>The programme should treat these as controlled deviations:</p>
+<ol>
+<li>Record the emergency change.</li>
+<li>Identify the affected model objects.</li>
+<li>Explain why the normal sequence was bypassed.</li>
+<li>Review the intended model state.</li>
+<li>Update or revert the configuration.</li>
+<li>Reconcile mappings, tests and documentation.</li>
+</ol>
+<p>An emergency change that is never reconciled becomes hidden architecture.</p>
+<h2 id="do-not-let-jira-become-the-unofficial-design-authority">Do not let Jira become the unofficial design authority</h2>
+<p>Many model changes are discussed and approved in Jira or Azure DevOps.</p>
+<p>This is practical. Tickets provide history, comments, assignment and workflow.</p>
+<p>The risk is that the final model decision remains only in the issue.</p>
+<p>For example:</p>
+<blockquote>Country team confirms that field X is not mandatory for Portugal.</blockquote>
+<p>The issue closes.</p>
+<p>The global design still says the field is mandatory. The configuration team adds a local exception. Migration creates a local rule. Testing updates one scenario.</p>
+<p>Now the ticket is the only place that explains why the model differs.</p>
+<p>A better pattern is:</p>
+<pre><code class="language-text">Issue discussion
+      ↓
+Decision
+      ↓
+Approved model change
+      ↓
+Configuration and delivery updates</code></pre>
+<p>Jira tracks the work and discussion.</p>
+<p>The model records the approved result.</p>
+<p>Closing the issue should trigger or require verification that the relevant model objects were updated.</p>
+<h2 id="environment-differences-should-be-explicit">Environment differences should be explicit</h2>
+<p>Development, quality and production will not always be identical.</p>
+<p>That is normal during delivery.</p>
+<p>The programme should know why they differ.</p>
+<p>A simple environment-alignment view can show:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model object</th><th scope="col">DEV</th><th scope="col">QAS</th><th scope="col">PRD</th><th scope="col">Intended state</th></tr></thead><tbody><tr><td>Tax validation</td><td>New rule</td><td>Old rule</td><td>Old rule</td><td>QAS after transport 142</td></tr><tr><td>Customer Group list</td><td>Codes 01–09</td><td>Codes 01–08</td><td>Codes 01–08</td><td>01–09 after release</td></tr><tr><td>Supplier workflow</td><td>Updated</td><td>Updated</td><td>Previous</td><td>Production after UAT</td></tr></tbody></table></div>
+<p>The danger is not temporary difference.</p>
+<p>The danger is unexplained difference.</p>
+<p>Common causes include:</p>
+<ul>
+<li>pending transports;</li>
+<li>failed transports;</li>
+<li>direct corrections;</li>
+<li>environment-specific settings;</li>
+<li>incomplete deployment;</li>
+<li>emergency fixes;</li>
+<li>manual configuration;</li>
+<li>changes made outside the expected release.</li>
+</ul>
+<p>Alignment review should therefore distinguish:</p>
+<ul>
+<li>design difference;</li>
+<li>deployment difference;</li>
+<li>intended environment difference;</li>
+<li>defect;</li>
+<li>unapproved change.</li>
+</ul>
+<h2 id="migration-mappings-must-follow-the-model-baseline">Migration mappings must follow the model baseline</h2>
+<p>Migration often develops at a different speed from MDG configuration.</p>
+<p>The mapping team may need early target information before configuration is complete. Later target changes may not flow back into the mapping workbooks or migration code.</p>
+<p>Typical divergence includes:</p>
+<ul>
+<li>target field renamed or replaced;</li>
+<li>context changed;</li>
+<li>optional field made mandatory;</li>
+<li>value list updated;</li>
+<li>derivation moved from migration to MDG;</li>
+<li>validation severity changed;</li>
+<li>local extension added;</li>
+<li>relationship model revised.</li>
+</ul>
+<p>Every material model change should answer:</p>
+<ul>
+<li>Which mappings reference this object?</li>
+<li>Which transformations depend on it?</li>
+<li>Which datasets need revalidation?</li>
+<li>Which value mappings need updates?</li>
+<li>Which load templates change?</li>
+<li>Which tests become obsolete?</li>
+</ul>
+<p>The migration team should not learn about target changes through failed loads.</p>
+<h2 id="design-and-actual-data-must-also-remain-aligned">Design and actual data must also remain aligned</h2>
+<p>A design may match configuration and still be disconnected from the source data.</p>
+<p>Suppose the approved and configured model makes an attribute mandatory.</p>
+<p>The configuration is aligned perfectly.</p>
+<p>The current dataset has the value for only 55% of in-scope records.</p>
+<p>This is not a configuration-alignment defect.</p>
+<p>It is still an implementation risk.</p>
+<p>We therefore include dataset evidence in model reviews:</p>
+<ul>
+<li>expected source fields;</li>
+<li>actual column availability;</li>
+<li>completeness;</li>
+<li>observed values;</li>
+<li>context coverage;</li>
+<li>relationship integrity;</li>
+<li>known remediation.</li>
+</ul>
+<p>SAP states that automated S/4HANA processes rely heavily on clean and correct master data and recommends curating that data early.</p>
+<p>For an MDG programme, early curation should include comparing the target design with representative source data—not only assessing data independently.</p>
+<h2 id="rule-alignment-deserves-its-own-review">Rule alignment deserves its own review</h2>
+<p>Rules are especially prone to divergence because they may be implemented in several places:</p>
+<ul>
+<li>source system;</li>
+<li>migration transformation;</li>
+<li>staging validation;</li>
+<li>SAP MDG rule;</li>
+<li>workflow condition;</li>
+<li>integration layer;</li>
+<li>downstream application;</li>
+<li>manual stewardship procedure.</li>
+</ul>
+<p>The programme needs one approved business-rule definition.</p>
+<p>Each technical implementation should refer to it.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business rule:
+German organisational Business Partners require tax category DE1
+unless an approved exemption exists.</code></pre>
+<p>Possible implementations:</p>
+<ul>
+<li>migration pre-check;</li>
+<li>MDG validation;</li>
+<li>data-quality report;</li>
+<li>operational steward guidance.</li>
+</ul>
+<p>These implementations may behave differently by design.</p>
+<p>The migration pre-check may produce a warning during early test cycles. MDG may block new operational records after go-live.</p>
+<p>That difference is acceptable when it is explicit.</p>
+<p>It is a problem when each team thinks it has implemented the definitive rule.</p>
+<h2 id="workflow-alignment-is-not-only-about-steps">Workflow alignment is not only about steps</h2>
+<p>A workflow can match the approved process diagram and still implement the wrong governance model.</p>
+<p>We check:</p>
+<ul>
+<li>what event starts the workflow;</li>
+<li>which attributes determine routing;</li>
+<li>which roles approve;</li>
+<li>whether context affects the approver;</li>
+<li>which changes require additional review;</li>
+<li>how exceptions are handled;</li>
+<li>what happens after rejection;</li>
+<li>which mass-change or emergency paths bypass normal routing;</li>
+<li>whether the approved data ownership model matches actual role assignments.</li>
+</ul>
+<p>SAP highlights collaborative workflow routing and notifications as part of MDG’s governance capabilities.</p>
+<p>The programme must still prove that the configured workflow reflects the organisation’s approved responsibilities.</p>
+<p>A technically functioning workflow can route a decision to the wrong owner with perfect reliability.</p>
+<h2 id="testing-should-verify-alignment-not-only-functionality">Testing should verify alignment, not only functionality</h2>
+<p>A test that proves a field can be saved does not prove alignment.</p>
+<p>We recommend tests that connect:</p>
+<pre><code class="language-text">Approved model requirement
+→ configured behaviour
+→ representative data
+→ expected result</code></pre>
+<p>For a critical rule, evidence should identify:</p>
+<ul>
+<li>model baseline;</li>
+<li>configuration version or release;</li>
+<li>environment;</li>
+<li>dataset or test data;</li>
+<li>context;</li>
+<li>expected result;</li>
+<li>actual result;</li>
+<li>defect or approval.</li>
+</ul>
+<p>This allows the programme to answer:</p>
+<blockquote>Which version of the model did this test prove?</blockquote>
+<p>Without that connection, a successful test may refer to a model that has already changed.</p>
+<h2 id="use-three-kinds-of-alignment-review">Use three kinds of alignment review</h2>
+<p>A single large review at the end of design is not enough.</p>
+<p>We use three different review patterns.</p>
+<h2 id="1-continuous-change-review">1. Continuous change review</h2>
+<p>Triggered by a material model proposal.</p>
+<p>Checks:</p>
+<ul>
+<li>affected design objects;</li>
+<li>configuration impact;</li>
+<li>mapping impact;</li>
+<li>dataset impact;</li>
+<li>test impact;</li>
+<li>owner approval.</li>
+</ul>
+<p>This keeps changes aligned as they occur.</p>
+<h2 id="2-release-alignment-review">2. Release alignment review</h2>
+<p>Performed before a transport bundle, mock load or formal test cycle.</p>
+<p>Checks:</p>
+<ul>
+<li>approved baseline;</li>
+<li>intended release content;</li>
+<li>environment state;</li>
+<li>mappings;</li>
+<li>open deviations;</li>
+<li>test readiness.</li>
+</ul>
+<p>This ensures all teams test the same intended state.</p>
+<h2 id="3-periodic-model-reconciliation">3. Periodic model reconciliation</h2>
+<p>Performed at agreed milestones.</p>
+<p>Checks:</p>
+<ul>
+<li>configured objects without approved model references;</li>
+<li>approved model objects not implemented;</li>
+<li>obsolete mappings;</li>
+<li>undocumented exceptions;</li>
+<li>environment differences;</li>
+<li>closed issues not reflected in the model;</li>
+<li>active rules without owners;</li>
+<li>outdated test evidence.</li>
+</ul>
+<p>This catches slow drift that individual change reviews may miss.</p>
+<h2 id="a-worked-example-supplier-risk-classification">A worked example: supplier risk classification</h2>
+<p>The approved design defines three risk levels:</p>
+<ul>
+<li>Low;</li>
+<li>Medium;</li>
+<li>High.</li>
+</ul>
+<p>The target value list is global.</p>
+<p>During configuration, the compliance team requests an additional value:</p>
+<ul>
+<li>Under Review.</li>
+</ul>
+<p>The value is added in development to support testing.</p>
+<p>The design is not updated because the team considers it temporary.</p>
+<p>Migration later receives records with no reliable risk classification and maps them to Under Review.</p>
+<p>A workflow condition routes Under Review suppliers to compliance.</p>
+<p>An outbound interface does not recognise the new value and rejects replication.</p>
+<p>Testing records the interface failures as technical defects.</p>
+<p>The real issue is design-to-configuration divergence.</p>
+<p>The new value changed:</p>
+<ul>
+<li>the business value list;</li>
+<li>migration treatment;</li>
+<li>workflow routing;</li>
+<li>interface contract;</li>
+<li>operational ownership;</li>
+<li>remediation population.</li>
+</ul>
+<p>A controlled change would have required:</p>
+<ol>
+<li>defining the meaning of Under Review;</li>
+<li>deciding whether it is a permanent governed value;</li>
+<li>identifying who may assign and clear it;</li>
+<li>quantifying migrated records;</li>
+<li>updating the global model;</li>
+<li>reviewing downstream consumers;</li>
+<li>configuring the value;</li>
+<li>updating mappings;</li>
+<li>testing the full lifecycle.</li>
+</ol>
+<p>The configuration change itself may take minutes.</p>
+<p>The model change is larger.</p>
+<h2 id="another-example-optional-tax-field">Another example: optional tax field</h2>
+<p>The design says a tax identifier is optional because several legacy systems do not contain reliable values.</p>
+<p>A country later confirms that the identifier is legally required for a specific organisation type.</p>
+<p>The configuration team adds a mandatory rule for that country.</p>
+<p>Migration continues using the original global design.</p>
+<p>The next load produces hundreds of errors.</p>
+<p>The migration team introduces a placeholder to proceed.</p>
+<p>Now the programme has:</p>
+<ul>
+<li>correct local configuration;</li>
+<li>outdated migration logic;</li>
+<li>invalid placeholder values;</li>
+<li>no remediation owner;</li>
+<li>global documentation that still says optional.</li>
+</ul>
+<p>The solution is not simply to update the mapping.</p>
+<p>The programme needs to reconcile:</p>
+<ul>
+<li>global definition;</li>
+<li>local context;</li>
+<li>source-data availability;</li>
+<li>exception policy;</li>
+<li>configured validation;</li>
+<li>migration treatment;</li>
+<li>operational correction.</li>
+</ul>
+<p>Alignment means all these parts reflect one approved decision.</p>
+<h2 id="manage-deviations-explicitly">Manage deviations explicitly</h2>
+<p>Perfect alignment at every moment is unrealistic.</p>
+<p>A programme needs controlled deviations.</p>
+<p>A deviation record should include:</p>
+<ul>
+<li>affected model object;</li>
+<li>intended design;</li>
+<li>actual implementation;</li>
+<li>reason;</li>
+<li>environment;</li>
+<li>owner;</li>
+<li>risk;</li>
+<li>expiry or reconciliation date;</li>
+<li>required follow-up.</li>
+</ul>
+<p>Useful deviation types include:</p>
+<ul>
+<li>temporary test workaround;</li>
+<li>source-data limitation;</li>
+<li>local legal exception;</li>
+<li>delayed configuration;</li>
+<li>planned future enhancement;</li>
+<li>production emergency change;</li>
+<li>accepted technical constraint.</li>
+</ul>
+<p>The important point is that deviation is a status, not a hidden fact.</p>
+<p>A programme can proceed with known differences.</p>
+<p>It cannot manage differences it does not know about.</p>
+<h2 id="alignment-needs-ownership">Alignment needs ownership</h2>
+<p>No single person can own every element.</p>
+<p>We divide responsibility.</p>
+<h3 id="business-owner">Business owner</h3>
+<p>Owns meaning, policy and acceptance of business exceptions.</p>
+<h3 id="data-or-domain-architect">Data or domain architect</h3>
+<p>Owns model coherence and semantic alignment.</p>
+<h3 id="sap-mdg-architect">SAP MDG architect</h3>
+<p>Owns configured implementation of the approved model.</p>
+<h3 id="migration-lead">Migration lead</h3>
+<p>Owns alignment of mappings and transformation with the target model.</p>
+<h3 id="integration-architect">Integration architect</h3>
+<p>Owns downstream contract alignment.</p>
+<h3 id="test-lead">Test lead</h3>
+<p>Owns evidence that approved behaviour is implemented.</p>
+<h3 id="release-or-configuration-manager">Release or configuration manager</h3>
+<p>Owns environment and deployment visibility.</p>
+<h3 id="ams-lead">AMS lead</h3>
+<p>Owns operational understanding after handover.</p>
+<p>One role should coordinate the alignment process, but the evidence is distributed.</p>
+<p>The model should make responsibility explicit at object and change level.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>We built Martenweave as a practical model-control layer between design, configuration, migration and support.</p>
+<p>The current product model can connect fields, attributes, rules, owners, issues and decisions, validate references, detect model and dataset gaps, trace impact and produce reviewable change proposals.</p>
+<p>Its current core includes:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search and structured query;</li>
+<li>trace and impact analysis;</li>
+<li>dataset profiling and gap detection;</li>
+<li>ownership, audit and scorecard reports;</li>
+<li>CSV and XLSX review flows;</li>
+<li>PatchProposal and ChangeRequest lifecycle.</li>
+</ul>
+<p>For an MDG implementation, a Martenweave model can represent:</p>
+<ul>
+<li>approved business attributes;</li>
+<li>contexts;</li>
+<li>target field endpoints;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>decisions;</li>
+<li>issues;</li>
+<li>ownership;</li>
+<li>datasets;</li>
+<li>proposed changes.</li>
+</ul>
+<p>The SAP configuration remains the operational implementation.</p>
+<p>Martenweave provides the independent model baseline against which configuration and related delivery artefacts can be reviewed.</p>
+<p>It does not replace SAP MDG, Jira, Confluence or migration tooling. The project explicitly positions it beside those tools as a validated model registry.</p>
+<h2 id="a-practical-martenweave-alignment-flow">A practical Martenweave alignment flow</h2>
+<pre><code class="language-text">Approved model objects
+        ↓
+PatchProposal describes intended change
+        ↓
+Deterministic validation
+        ↓
+Impact analysis across mappings, rules and datasets
+        ↓
+Human approval
+        ↓
+SAP MDG configuration and related delivery changes
+        ↓
+Verification evidence
+        ↓
+New approved model baseline</code></pre>
+<p>The flow protects two boundaries.</p>
+<p>First, configuration should not redefine the model silently.</p>
+<p>Second, AI or automation should not update the approved model directly.</p>
+<p>AI may extract a possible change from a ticket or compare documents. It should produce a proposal.</p>
+<p>Validators check structural consistency.</p>
+<p>Responsible people approve the model change.</p>
+<h2 id="what-can-be-checked-automatically">What can be checked automatically</h2>
+<p>Not all alignment can be automated.</p>
+<p>Business meaning and architecture still require judgement.</p>
+<p>Deterministic checks can identify useful classes of divergence:</p>
+<ul>
+<li>mappings referencing retired endpoints;</li>
+<li>missing model objects;</li>
+<li>duplicate identifiers;</li>
+<li>rules without owners;</li>
+<li>attributes without configuration references;</li>
+<li>configuration references without approved attributes;</li>
+<li>value mappings using obsolete lists;</li>
+<li>datasets missing newly required fields;</li>
+<li>tests linked to an older model version;</li>
+<li>unresolved deviations past their review date.</li>
+</ul>
+<p>These checks remove clerical inconsistencies from architecture reviews.</p>
+<p>They also make it easier to find drift before a formal milestone.</p>
+<h2 id="what-managers-should-ask">What managers should ask</h2>
+<p>A manager does not need to compare configuration tables with design documents.</p>
+<p>We recommend asking:</p>
+<ol>
+<li>What is the current approved model baseline?</li>
+<li>Which release or configuration state implements it?</li>
+<li>Which approved model objects are not yet configured?</li>
+<li>Which configured objects do not have an approved model reference?</li>
+<li>Which deviations are temporary?</li>
+<li>Which local exceptions have been incorporated into the global model?</li>
+<li>Which target changes affected migration mappings?</li>
+<li>Which datasets were revalidated after the latest model change?</li>
+<li>Which tests prove the current configuration?</li>
+<li>Are development, quality and production differences understood?</li>
+<li>Which emergency changes still require reconciliation?</li>
+<li>Can AMS explain the current behaviour from the approved model?</li>
+</ol>
+<p>If these questions require several days of manual investigation, alignment is not under control.</p>
+<h2 id="warning-signs">Warning signs</h2>
+<p>We would investigate immediately when:</p>
+<ul>
+<li>teams refer to different “latest” design files;</li>
+<li>configuration decisions are approved only in tickets;</li>
+<li>local workbooks contain fields absent from the global model;</li>
+<li>migration defects repeatedly result from target changes;</li>
+<li>development and quality behave differently without a clear release explanation;</li>
+<li>test evidence does not name a model or release baseline;</li>
+<li>temporary values or defaults have no expiry;</li>
+<li>closed issues did not update the model;</li>
+<li>the design document is updated only before audits or handover;</li>
+<li>AMS documentation is written from memory after go-live.</li>
+</ul>
+<p>Each sign indicates that model knowledge is moving through informal channels.</p>
+<h2 id="alignment-should-not-become-bureaucracy">Alignment should not become bureaucracy</h2>
+<p>There is a risk of turning every label correction into a large governance process.</p>
+<p>We avoid that by classifying changes.</p>
+<h3 id="minor-technical-correction">Minor technical correction</h3>
+<p>No semantic or downstream effect.</p>
+<p>Lightweight review and record update.</p>
+<h3 id="controlled-model-change">Controlled model change</h3>
+<p>Affects one or more rules, mappings, values or contexts.</p>
+<p>Impact review and responsible-owner approval.</p>
+<h3 id="major-cross-domain-change">Major cross-domain change</h3>
+<p>Affects definitions, identifiers, several countries, workflows or integrations.</p>
+<p>Formal architecture and programme decision.</p>
+<p>The process should match the risk.</p>
+<p>The key control is not the number of approvals.</p>
+<p>It is that the intended state is known before implementation and verified afterward.</p>
+<h2 id="the-cost-of-misalignment">The cost of misalignment</h2>
+<p>Misalignment creates work that appears in other budgets:</p>
+<ul>
+<li>migration defects;</li>
+<li>repeated testing;</li>
+<li>configuration rework;</li>
+<li>interface corrections;</li>
+<li>business review meetings;</li>
+<li>emergency data fixes;</li>
+<li>cutover delays;</li>
+<li>handover effort;</li>
+<li>AMS investigations;</li>
+<li>dependency on original consultants.</li>
+</ul>
+<p>This is why alignment can look like documentation overhead while actually being delivery control.</p>
+<p>The programme pays for alignment either early through structured change management or later through reconstruction and correction.</p>
+<p>The later version is usually more expensive because it happens under schedule pressure.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>The design and configuration of SAP MDG will not remain aligned automatically.</p>
+<p>They are changed by different people, in different tools, at different speeds and for different reasons.</p>
+<p>The solution is not to freeze the design.</p>
+<p>The solution is to make change controlled and visible.</p>
+<p>We maintain:</p>
+<ul>
+<li>an identifiable approved model baseline;</li>
+<li>stable model objects;</li>
+<li>references from configuration to design;</li>
+<li>explicit deviations;</li>
+<li>impact analysis before material changes;</li>
+<li>migration and dataset reconciliation;</li>
+<li>evidence that the intended model was implemented;</li>
+<li>periodic reviews for slow drift.</li>
+</ul>
+<p>The central question is not:</p>
+<blockquote>Does the configuration match the document?</blockquote>
+<p>It is:</p>
+<blockquote>Can the programme prove that the configured behaviour, migration logic and operational process still implement the same approved model?</blockquote>
+<p>When the answer is yes, design changes become manageable.</p>
+<p>When the answer depends on which team is asked, the system may be functioning—but the programme is no longer controlling its model.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We work on practical model governance for SAP migration, MDG, MDM and AMS programmes. We focus on helping architects and delivery teams keep business intent, model design, configuration, mappings and evidence aligned as the implementation changes.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer supporting governed models, golden records, matching and consolidation, collaborative workflows, validated values, data-quality monitoring, mass changes and auditable data changes. SAP also recommends preparing clean and correct master data early before an SAP S/4HANA implementation.</p>
+<p>Martenweave’s current public documentation describes structured model objects, deterministic validation, generated indexes, dataset gap detection, trace and impact analysis, ownership and audit reports, spreadsheet review flows and controlled PatchProposal and ChangeRequest lifecycles.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/trace-legacy-field-to-sap-target.html"><span>Previous</span>A defect appears during the second mock load.</a><a href="/blog/how-to-reduce-rework-during-an-sap-mdg-implementation.html"><span>Next</span>The programme has already approved the model.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

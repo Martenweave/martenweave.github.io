@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Prove That a Finding Is Actually Resolved | Martenweave</title>
+    <meta
+      name="description"
+      content="We identify a critical Supplier bank-data Finding."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html" />
+    <meta property="og:title" content="How We Prove That a Finding Is Actually Resolved | Martenweave" />
+    <meta property="og:description" content="We identify a critical Supplier bank-data Finding." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Prove That a Finding Is Actually Resolved | Martenweave" />
+    <meta name="twitter:description" content="We identify a critical Supplier bank-data Finding." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html",
+                        "name": "How We Prove That a Finding Is Actually Resolved | Martenweave",
+                        "description": "We identify a critical Supplier bank-data Finding.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Prove That a Finding Is Actually Resolved",
+                                    "item": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html#content",
+                        "headline": "How We Prove That a Finding Is Actually Resolved",
+                        "name": "How We Prove That a Finding Is Actually Resolved",
+                        "description": "We identify a critical Supplier bank-data Finding.",
+                        "url": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prove-that-a-finding-is-actually-resolved.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Prove That a Finding Is Actually Resolved</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Prove That a Finding Is Actually Resolved</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 19 min read</p><p class="blog-summary">We identify a critical Supplier bank-data Finding.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-change-was-implemented">The change was implemented</a></li><li><a href="#the-correct-population-was-processed">The correct population was processed</a></li><li><a href="#the-intended-outcome-was-produced">The intended outcome was produced</a></li><li><a href="#no-unacceptable-side-effect-was-introduced">No unacceptable side effect was introduced</a></li><li><a href="#the-target-state-matches-the-generated-state">The target state matches the generated state</a></li><li><a href="#the-governing-rule-was-rerun">The governing Rule was rerun</a></li><li><a href="#remaining-deviations-are-explicit">Remaining deviations are explicit</a></li><li><a href="#the-responsible-owner-accepted-the-evidence">The responsible owner accepted the Evidence</a></li><li><a href="#implementation-evidence">Implementation Evidence</a></li><li><a href="#dataset-evidence">Dataset Evidence</a></li><li><a href="#target-evidence">Target Evidence</a></li><li><a href="#governance-evidence">Governance Evidence</a></li><li><a href="#resolved">Resolved</a></li><li><a href="#controlled">Controlled</a></li><li><a href="#accepted-risk">Accepted risk</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>We identify a critical Supplier bank-data Finding.</p>
+<p>Forty payment-active Suppliers have expired bank verification, but the expected payment block is not confirmed.</p>
+<p>The programme creates a GitHub issue.</p>
+<p>A developer updates the transformation.</p>
+<p>The pull request is merged.</p>
+<p>The issue is closed.</p>
+<p>The project dashboard now shows:</p>
+<pre><code>Finding status:
+Resolved</code></pre>
+<p>But what has actually been proven?</p>
+<p>We know that code changed.</p>
+<p>We may know that the delivery task is complete.</p>
+<p>We do not yet know that:</p>
+<ul>
+<li>the correct 40 Suppliers were affected;</li>
+<li>payment blocks were generated for all of them;</li>
+<li>the blocks reached the target system;</li>
+<li>no other Suppliers were incorrectly blocked;</li>
+<li>the verification Rule was rerun;</li>
+<li>the new result used the current model and dataset baseline;</li>
+<li>Treasury reviewed the Evidence;</li>
+<li>the control remains effective in the cutover pipeline;</li>
+<li>the same problem will not return in the next migration wave.</li>
+</ul>
+<p>This is the difference between task completion and Finding resolution.</p>
+<blockquote>A Finding is resolved only when new Evidence demonstrates that the accepted business condition now holds for the intended scope.</blockquote>
+<p>A merged change is not enough.</p>
+<p>A closed issue is not enough.</p>
+<p>A validator that no longer reports an error may not be enough.</p>
+<p>Even a successful mock load may not be enough if it used:</p>
+<ul>
+<li>the wrong dataset;</li>
+<li>an outdated Rule;</li>
+<li>a reduced population;</li>
+<li>an unapproved Exception;</li>
+<li>a different transformation path from the cutover process.</li>
+</ul>
+<p>We therefore treat closure as an evidence-backed claim.</p>
+<p>The claim is:</p>
+<blockquote>The problem described by this Finding no longer exists within the declared baseline and scope, or the remaining deviation is governed explicitly.</blockquote>
+<p>Martenweave’s current architecture already provides the foundations for this approach. Canonical files own model truth, deterministic validation checks IDs, types, references and domain context, and the documented pipeline connects Evidence, gaps, lineage, impact analysis and human-reviewed proposals.</p>
+<p>The missing product layer is a disciplined resolution contract.</p>
+<p>---</p>
+<h1 id="closing-work-is-not-the-same-as-proving-an-outcome">Closing work is not the same as proving an outcome</h1>
+<p>Delivery tools are designed to track work.</p>
+<p>GitHub states that an issue may be closed when a bug is fixed, feedback is acted on, or simply to show that work is not planned. It also allows issues to be closed automatically through pull-request or commit keywords.</p>
+<p>That behaviour is appropriate for delivery management.</p>
+<p>It also proves why issue state cannot serve as the only source of Finding truth.</p>
+<p>A closed issue may mean:</p>
+<ul>
+<li>the implementation was completed;</li>
+<li>the work was cancelled;</li>
+<li>the issue was duplicated;</li>
+<li>the scope moved elsewhere;</li>
+<li>the team decided not to proceed;</li>
+<li>a pull request used an automatic closing keyword.</li>
+</ul>
+<p>Martenweave therefore imports delivery closure as Evidence about the work item.</p>
+<p>It does not automatically interpret it as proof that the governed business problem disappeared.</p>
+<p>The distinction is:</p>
+<pre><code>Issue closed:
+delivery event
+
+Finding resolved:
+evidence-backed model assertion</code></pre>
+<p>---</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>The Finding is:</p>
+<blockquote>Payment-active Suppliers with expired bank verification do not have the required payment block.</blockquote>
+<p>The accepted business condition is:</p>
+<pre><code>When bank verification is absent or expired,
+the Supplier must not remain enabled
+for outgoing payment.</code></pre>
+<p>The affected scope is:</p>
+<pre><code>40 Suppliers
+Wave 1
+Cutover RC4
+Company codes DE01, NL01 and BE01</code></pre>
+<p>The implementation team changes the payment-block derivation.</p>
+<p>Before we resolve the Finding, we need to prove several things.</p>
+<h2 id="the-change-was-implemented">The change was implemented</h2>
+<p>The transformation or configuration now contains the intended logic.</p>
+<h2 id="the-correct-population-was-processed">The correct population was processed</h2>
+<p>The 40 Suppliers were included in the regenerated dataset.</p>
+<h2 id="the-intended-outcome-was-produced">The intended outcome was produced</h2>
+<p>Every in-scope Supplier received the required block.</p>
+<h2 id="no-unacceptable-side-effect-was-introduced">No unacceptable side effect was introduced</h2>
+<p>Verified Suppliers were not blocked incorrectly.</p>
+<h2 id="the-target-state-matches-the-generated-state">The target state matches the generated state</h2>
+<p>The target system or load result contains the expected control.</p>
+<h2 id="the-governing-rule-was-rerun">The governing Rule was rerun</h2>
+<p>The validation result now reflects the current model.</p>
+<h2 id="remaining-deviations-are-explicit">Remaining deviations are explicit</h2>
+<p>Any unresolved records are linked to an approved Exception or remain open.</p>
+<h2 id="the-responsible-owner-accepted-the-evidence">The responsible owner accepted the Evidence</h2>
+<p>Treasury confirms that the control satisfies the business requirement.</p>
+<p>Only then can we make a defensible resolution claim.</p>
+<p>---</p>
+<h1 id="we-define-closure-criteria-before-implementation">We define closure criteria before implementation</h1>
+<p>A weak Finding says:</p>
+<pre><code>Fix payment-block logic.</code></pre>
+<p>This leaves closure open to interpretation.</p>
+<p>The developer may reasonably consider the work complete when the code is merged.</p>
+<p>The migration lead may expect a successful load.</p>
+<p>Treasury may expect record-level proof.</p>
+<p>We avoid this by defining closure criteria when the remediation is approved.</p>
+<p>For our case:</p>
+<pre><code>Closure criteria:
+
+1. All 40 affected Suppliers are included
+   in the regenerated cutover dataset.
+
+2. Every Supplier with expired verification
+   has payment block active.
+
+3. No Supplier with current authorised verification
+   is blocked by this remediation.
+
+4. The target reconciliation confirms the block.
+
+5. The bank-verification Rule is rerun
+   against the current cutover baseline.
+
+6. Treasury approves the result.
+
+7. No unresolved record remains outside
+   an approved Exception.</code></pre>
+<p>These criteria define the outcome.</p>
+<p>The implementation team can choose the technical method, but closure is judged against the governed result.</p>
+<p>---</p>
+<h1 id="we-separate-implementation-evidence-from-outcome-evidence">We separate implementation Evidence from outcome Evidence</h1>
+<p>A pull request proves that files changed.</p>
+<p>A test proves that a defined condition passed in a test environment.</p>
+<p>A generated dataset proves that the transformation produced certain output.</p>
+<p>A target reconciliation proves that the output reached the target.</p>
+<p>A business-owner approval proves that the Evidence was accepted for the relevant decision.</p>
+<p>These artefacts are complementary.</p>
+<p>They are not interchangeable.</p>
+<p>For the Supplier Finding, we may require:</p>
+<h2 id="implementation-evidence">Implementation Evidence</h2>
+<ul>
+<li>pull request;</li>
+<li>changed Mapping or code;</li>
+<li>deterministic model validation;</li>
+<li>unit or integration test.</li>
+</ul>
+<h2 id="dataset-evidence">Dataset Evidence</h2>
+<ul>
+<li>regenerated dataset fingerprint;</li>
+<li>affected-population count;</li>
+<li>payment-block derivation report;</li>
+<li>negative-control population.</li>
+</ul>
+<h2 id="target-evidence">Target Evidence</h2>
+<ul>
+<li>load result;</li>
+<li>target-field reconciliation;</li>
+<li>rejected-record report;</li>
+<li>target validation result.</li>
+</ul>
+<h2 id="governance-evidence">Governance Evidence</h2>
+<ul>
+<li>Treasury approval;</li>
+<li>approved remaining Exceptions;</li>
+<li>current cutover-gate decision.</li>
+</ul>
+<p>The resolution package connects these artefacts to one Finding.</p>
+<p>---</p>
+<h1 id="we-test-the-positive-population">We test the positive population</h1>
+<p>The remediation targets 40 Suppliers.</p>
+<p>We verify:</p>
+<pre><code>Expected affected population:
+40
+
+Payment block generated:
+40
+
+Payment block confirmed in target:
+40</code></pre>
+<p>That proves the intended records received the control.</p>
+<p>But this is only one side of the test.</p>
+<p>A transformation can satisfy the positive population by applying the block too broadly.</p>
+<p>We also need negative Evidence.</p>
+<p>---</p>
+<h1 id="we-test-the-negative-population">We test the negative population</h1>
+<p>The change must not block Suppliers whose bank verification remains current and authorised.</p>
+<p>We define a control population:</p>
+<pre><code>Verified payment-active Suppliers:
+46,600
+
+Unexpected new payment blocks:
+0</code></pre>
+<p>This matters because a fix can remove one risk while creating another.</p>
+<p>For example:</p>
+<pre><code>if verification_expiry_date is missing:
+    apply payment block</code></pre>
+<p>may accidentally block records where a valid status exists but the expiry field is not used by that source.</p>
+<p>A successful remediation must prove both:</p>
+<pre><code>Required blocks applied</code></pre>
+<p>and:</p>
+<pre><code>Unjustified blocks not introduced</code></pre>
+<p>A zero-error report against only the failed population cannot prove this.</p>
+<p>---</p>
+<h1 id="we-prove-population-continuity">We prove population continuity</h1>
+<p>The original Finding affected 40 Suppliers in Cutover RC4.</p>
+<p>The validation rerun may report zero failures because those Suppliers disappeared from RC5.</p>
+<p>That could mean:</p>
+<ul>
+<li>they were intentionally removed from the wave;</li>
+<li>they were accidentally filtered out;</li>
+<li>the extraction scope changed;</li>
+<li>the Supplier IDs no longer matched;</li>
+<li>the issue was hidden rather than resolved.</li>
+</ul>
+<p>We therefore reconcile populations.</p>
+<p>Conceptually:</p>
+<pre><code>Original affected Suppliers:
+40
+
+Present in RC5:
+40
+
+Removed through approved scope decision:
+0
+
+Missing unexpectedly:
+0</code></pre>
+<p>If records were removed deliberately, we require the Decision that changed their scope.</p>
+<p>A disappearing error is not proof of corrected data.</p>
+<p>It may be proof of disappearing records.</p>
+<p>---</p>
+<h1 id="we-prove-baseline-compatibility">We prove baseline compatibility</h1>
+<p>Resolution Evidence must identify:</p>
+<ul>
+<li>model commit;</li>
+<li>Rule version;</li>
+<li>Mapping version;</li>
+<li>dataset fingerprint;</li>
+<li>transformation version;</li>
+<li>target load or environment;</li>
+<li>active Exception set;</li>
+<li>execution date.</li>
+</ul>
+<p>For example:</p>
+<pre><code>Finding:
+FIND-BANK-VERIFY-NO-BLOCK
+
+Model baseline:
+abc123
+
+Rule:
+RULE-SUPPLIER-BANK-VERIFICATION v3
+
+Dataset:
+SUPPLIER-BANK-RC5
+
+Transformation:
+bank-migration build 2026.07.15.2
+
+Target load:
+CUTOVER-RC5-LOAD-04</code></pre>
+<p>Without these references, we may compare incompatible states.</p>
+<p>The original Finding might have been created under Rule version 3.</p>
+<p>The closure report might use Rule version 2, which accepted the legacy verification flag.</p>
+<p>The report would appear green because the standard was weakened.</p>
+<p>That is not resolution.</p>
+<p>---</p>
+<h1 id="we-detect-changed-rules-during-remediation">We detect changed Rules during remediation</h1>
+<p>Suppose the Finding originally failed because Treasury verification was mandatory.</p>
+<p>During remediation, someone changes the Rule:</p>
+<pre><code>Before:
+Current Treasury verification required.
+
+After:
+Legacy VERIFIED flag accepted.</code></pre>
+<p>The validation now passes.</p>
+<p>The Finding has not necessarily been resolved.</p>
+<p>The accepted obligation changed.</p>
+<p>That may be legitimate, but it requires:</p>
+<ul>
+<li>a Decision;</li>
+<li>source-authority review;</li>
+<li>impact analysis;</li>
+<li>Treasury approval;</li>
+<li>refreshed Evidence.</li>
+</ul>
+<p>Martenweave should report:</p>
+<pre><code>Validation now passes.
+
+Material Rule change detected.
+
+Resolution cannot be inferred automatically.
+Business Decision required.</code></pre>
+<p>This protects the programme from improving readiness by lowering the standard silently.</p>
+<p>---</p>
+<h1 id="we-detect-changed-scope-during-remediation">We detect changed scope during remediation</h1>
+<p>The same principle applies to scope.</p>
+<p>Original Rule:</p>
+<pre><code>Applies to all payment-active Suppliers.</code></pre>
+<p>Revised validator:</p>
+<pre><code>Applies only to Suppliers with scheduled payments
+in the first post-go-live week.</code></pre>
+<p>The failed population shrinks.</p>
+<p>That may be a valid cutover prioritization.</p>
+<p>It does not resolve the original Finding for the excluded population.</p>
+<p>We can split the state:</p>
+<pre><code>Immediate-payment population:
+resolved
+
+Remaining payment-active population:
+controlled or open</code></pre>
+<p>Scope changes should create explicit Decisions or scoped Findings.</p>
+<p>They should not erase the earlier obligation.</p>
+<p>---</p>
+<h1 id="we-distinguish-resolved-from-controlled">We distinguish resolved from controlled</h1>
+<p>Some Findings cannot be eliminated before cutover.</p>
+<p>The programme may apply a safe compensating control.</p>
+<p>For the Supplier case:</p>
+<pre><code>Current verification:
+not available
+
+Payment block:
+confirmed
+
+Operational treatment:
+Supplier cannot receive payment
+until verification is renewed</code></pre>
+<p>The underlying verification gap remains.</p>
+<p>The immediate payment risk is controlled.</p>
+<p>The correct status is:</p>
+<pre><code>controlled</code></pre>
+<p>not:</p>
+<pre><code>resolved</code></pre>
+<p>We use the states differently.</p>
+<h2 id="resolved">Resolved</h2>
+<p>The original required condition now holds.</p>
+<h2 id="controlled">Controlled</h2>
+<p>The condition does not fully hold, but an approved compensating control reduces the business exposure within a defined scope and period.</p>
+<h2 id="accepted-risk">Accepted risk</h2>
+<p>The deviation remains, and an authorised owner accepts the residual consequence.</p>
+<h2 id="out-of-scope">Out of scope</h2>
+<p>An approved Decision removed the affected population from the governed scope.</p>
+<h2 id="superseded">Superseded</h2>
+<p>A later Finding or Decision replaced the original interpretation.</p>
+<p>These states prevent “closed” from becoming the only outcome.</p>
+<p>---</p>
+<h1 id="we-distinguish-resolved-from-no-longer-reproducible">We distinguish resolved from no longer reproducible</h1>
+<p>A validator may no longer reproduce the failure because:</p>
+<ul>
+<li>the data changed;</li>
+<li>the validator changed;</li>
+<li>the environment changed;</li>
+<li>the issue is intermittent;</li>
+<li>the population is absent;</li>
+<li>an input source is temporarily unavailable.</li>
+</ul>
+<p>“No longer reproduced” is Evidence.</p>
+<p>It is not always resolution.</p>
+<p>We ask:</p>
+<blockquote>Can we explain why the failure disappeared?</blockquote>
+<p>For our case:</p>
+<pre><code>Failure disappeared because:
+payment-block logic was corrected,
+dataset was regenerated,
+target load was reconciled,
+and the Rule passed for the same population.</code></pre>
+<p>That is strong.</p>
+<p>This is weaker:</p>
+<pre><code>Failure did not appear in the latest report.</code></pre>
+<p>The difference is causal traceability.</p>
+<p>---</p>
+<h1 id="we-require-evidence-lineage">We require evidence lineage</h1>
+<p>Every closure artefact should have provenance.</p>
+<p>W3C PROV-O provides a general framework for representing provenance information created in different systems and contexts, including entities, activities, agents, generation, derivation and attribution.</p>
+<p>Martenweave does not need to implement the full ontology.</p>
+<p>We apply the same discipline.</p>
+<p>For a closure report, we record:</p>
+<pre><code>Evidence entity:
+Target payment-block reconciliation
+
+Generated by:
+Cutover RC5 validation activity
+
+Used:
+SUPPLIER-BANK-RC5 dataset
+Martenweave model commit abc123
+Target load CUTOVER-RC5-LOAD-04
+
+Attributed to:
+Migration Validation Team</code></pre>
+<p>This lets a reviewer answer:</p>
+<ul>
+<li>where the result came from;</li>
+<li>which baseline it used;</li>
+<li>who produced it;</li>
+<li>whether it remains current.</li>
+</ul>
+<p>A screenshot without provenance is weak closure Evidence.</p>
+<p>---</p>
+<h1 id="we-assess-whether-the-control-operates-as-intended">We assess whether the control operates as intended</h1>
+<p>NIST SP 800-53A provides a methodology and procedures for assessing controls, with assessment activities performed at different system-lifecycle phases and tailored to organisational risk-management needs. It also emphasizes assessment planning and analysis of results.</p>
+<p>Our migration use case is not a cybersecurity-control assessment.</p>
+<p>The underlying principle is still useful:</p>
+<blockquote>We need evidence that a control is implemented and operating as intended, not only evidence that its implementation artefact exists.</blockquote>
+<p>For the Supplier case:</p>
+<ul>
+<li>code presence shows implementation;</li>
+<li>generated block values show execution;</li>
+<li>target reconciliation shows deployment;</li>
+<li>rerun validation shows expected operation;</li>
+<li>Treasury review shows accepted business sufficiency.</li>
+</ul>
+<p>Together, these provide assurance.</p>
+<p>---</p>
+<h1 id="we-define-an-evidence-window">We define an evidence window</h1>
+<p>Closure Evidence has a time boundary.</p>
+<p>A payment-block reconciliation from Mock Load 3 may not prove the Cutover RC5 state.</p>
+<p>The model or dataset may have changed.</p>
+<p>We define:</p>
+<pre><code>Evidence valid for:
+Cutover RC5 baseline
+
+Evidence generated:
+15 July 2026
+
+Invalidated when:
+- Rule changes materially;
+- Mapping changes;
+- affected population changes;
+- target load is replaced;
+- payment-block configuration changes.</code></pre>
+<p>This prevents historical green reports from being reused indefinitely.</p>
+<p>---</p>
+<h1 id="we-mark-closure-evidence-as-stale-when-dependencies-change">We mark closure Evidence as stale when dependencies change</h1>
+<p>After the Finding is resolved, a new Mapping release changes bank-verification logic.</p>
+<p>The original closure package may no longer prove the current state.</p>
+<p>We do not reopen the Finding automatically in every case.</p>
+<p>We mark:</p>
+<pre><code>Closure Evidence:
+stale
+
+Reason:
+Material Mapping change after resolution
+
+Required action:
+revalidate affected path</code></pre>
+<p>The next article in this series will address stale Evidence directly.</p>
+<p>For resolution design, the key point is that closure is not an eternal Boolean.</p>
+<p>It is a claim supported by Evidence under known conditions.</p>
+<p>---</p>
+<h1 id="we-use-closure-confidence-carefully">We use closure confidence carefully</h1>
+<p>Not all resolution packages are equally strong.</p>
+<p>We can describe Evidence quality transparently.</p>
+<h2 id="strong">Strong</h2>
+<ul>
+<li>same population reconciled;</li>
+<li>current Rule and Mapping;</li>
+<li>target state confirmed;</li>
+<li>negative controls tested;</li>
+<li>business owner approved.</li>
+</ul>
+<h2 id="moderate">Moderate</h2>
+<ul>
+<li>regenerated data validated;</li>
+<li>target confirmation incomplete;</li>
+<li>no material scope change detected.</li>
+</ul>
+<h2 id="weak">Weak</h2>
+<ul>
+<li>issue closed;</li>
+<li>implementation changed;</li>
+<li>no current record-level revalidation.</li>
+</ul>
+<p>We should not hide this in an unexplained score.</p>
+<p>A Finding may remain:</p>
+<pre><code>resolution proposed</code></pre>
+<p>until the required Evidence reaches the accepted level.</p>
+<p>---</p>
+<h1 id="we-do-not-allow-self-certification-for-critical-findings">We do not allow self-certification for critical Findings</h1>
+<p>The implementation owner should not be the only closure approver for a critical business-control Finding.</p>
+<p>They can provide implementation Evidence.</p>
+<p>An independent role should verify the result.</p>
+<p>For our case:</p>
+<pre><code>Implementation owner:
+Cutover Transformation Team
+
+Evidence provider:
+Migration Validation Team
+
+Closure approver:
+Treasury Data Owner</code></pre>
+<p>This separation reduces confirmation bias and protects the business owner’s authority.</p>
+<p>It does not require a complex workflow engine.</p>
+<p>It requires typed responsibilities and a closure contract.</p>
+<p>---</p>
+<h1 id="we-preserve-failed-remediation-attempts">We preserve failed remediation attempts</h1>
+<p>Suppose the first fix reduces the failed population from 40 to 7.</p>
+<p>The attempt was useful.</p>
+<p>The Finding is not resolved.</p>
+<p>We record:</p>
+<pre><code>Remediation attempt 1:
+payment-block derivation updated
+
+Result:
+33 resolved
+7 still uncontrolled
+
+Finding status:
+remediating</code></pre>
+<p>The failed attempt remains Evidence.</p>
+<p>It tells future teams:</p>
+<ul>
+<li>which approach was tried;</li>
+<li>what it fixed;</li>
+<li>what remained;</li>
+<li>whether the root cause was fully understood.</li>
+</ul>
+<p>We do not overwrite the history with the final successful change.</p>
+<p>---</p>
+<h1 id="we-split-the-remaining-population-when-its-cause-changes">We split the remaining population when its cause changes</h1>
+<p>The remaining seven Suppliers may fail for a different reason.</p>
+<p>For example:</p>
+<ul>
+<li>the general payment-block Mapping now works;</li>
+<li>seven Suppliers use a local company-code configuration that overrides the block.</li>
+</ul>
+<p>The original implementation Finding may be resolved for the common path.</p>
+<p>A new child Finding is justified:</p>
+<blockquote>Local company-code override prevents payment block for seven Suppliers.</blockquote>
+<p>This avoids keeping one Finding open indefinitely after its root cause is fixed.</p>
+<p>The split should be evidence-based.</p>
+<p>The new Finding references the original investigation and validation history.</p>
+<p>---</p>
+<h1 id="we-verify-the-business-outcome-not-only-the-field-value">We verify the business outcome, not only the field value</h1>
+<p>The payment-block field may be populated correctly.</p>
+<p>The target process may ignore it because:</p>
+<ul>
+<li>another flag overrides it;</li>
+<li>the Supplier is active in another company code;</li>
+<li>payment proposals use a different control path;</li>
+<li>the field is not distributed to the payment system;</li>
+<li>the target configuration interprets it differently.</li>
+</ul>
+<p>Field reconciliation is necessary.</p>
+<p>It may not be sufficient.</p>
+<p>For critical controls, we test the operational path.</p>
+<p>For example:</p>
+<pre><code>Supplier:
+1000456
+
+Bank verification:
+expired
+
+Payment block:
+active
+
+Payment proposal test:
+Supplier excluded
+
+Result:
+control operates as intended</code></pre>
+<p>This is much stronger than confirming that one column contains <code>X</code>.</p>
+<p>---</p>
+<h1 id="we-choose-proportionate-closure-evidence">We choose proportionate closure Evidence</h1>
+<p>Not every Finding needs an end-to-end business-process test.</p>
+<p>A missing description may close through:</p>
+<ul>
+<li>corrected data;</li>
+<li>schema validation;</li>
+<li>targeted record check.</li>
+</ul>
+<p>A critical payment-control Finding may require:</p>
+<ul>
+<li>model validation;</li>
+<li>dataset reconciliation;</li>
+<li>target confirmation;</li>
+<li>process-level test;</li>
+<li>business-owner approval.</li>
+</ul>
+<p>The Evidence burden should reflect:</p>
+<ul>
+<li>business impact;</li>
+<li>reversibility;</li>
+<li>control criticality;</li>
+<li>affected scope;</li>
+<li>uncertainty.</li>
+</ul>
+<p>We avoid both extremes:</p>
+<ul>
+<li>closing critical Findings with weak proof;</li>
+<li>imposing expensive end-to-end testing on minor documentation defects.</li>
+</ul>
+<p>---</p>
+<h1 id="we-use-sample-based-evidence-carefully">We use sample-based Evidence carefully</h1>
+<p>For 50,000 records, exhaustive business review may be impractical.</p>
+<p>We can combine:</p>
+<ul>
+<li>deterministic full-population checks;</li>
+<li>targeted high-risk sampling;</li>
+<li>negative controls;</li>
+<li>aggregate reconciliation;</li>
+<li>owner review.</li>
+</ul>
+<p>For our 40-record critical population, full reconciliation is reasonable.</p>
+<p>For a much larger low-risk population, sampling may be acceptable if the Rule and owner allow it.</p>
+<p>The closure package must state:</p>
+<pre><code>Population tested:
+full or sampled
+
+Sampling method:
+declared
+
+Coverage:
+declared
+
+Residual uncertainty:
+declared</code></pre>
+<p>We do not present sampled Evidence as full-population proof.</p>
+<p>---</p>
+<h1 id="we-close-at-the-right-scope">We close at the right scope</h1>
+<p>A Finding may affect three company codes.</p>
+<p>The remediation may resolve two.</p>
+<p>We should not close the root Finding globally.</p>
+<p>We can record:</p>
+<pre><code>DE01:
+resolved
+
+NL01:
+resolved
+
+BE01:
+open</code></pre>
+<p>Possible root status:</p>
+<pre><code>partially resolved</code></pre>
+<p>or:</p>
+<pre><code>active with scoped occurrences</code></pre>
+<p>This is especially important across migration waves.</p>
+<p>Wave 1 resolution does not automatically prove Wave 2 readiness.</p>
+<p>The accepted Rule may be global.</p>
+<p>The closure Evidence is usually scoped.</p>
+<p>---</p>
+<h1 id="we-distinguish-local-resolution-from-systemic-prevention">We distinguish local resolution from systemic prevention</h1>
+<p>The 40 Suppliers are corrected.</p>
+<p>The Finding is resolved for Cutover RC5.</p>
+<p>But the rollout template still allows future waves to omit the payment-block control.</p>
+<p>We have two questions:</p>
+<ol>
+<li>Is the immediate Finding resolved?</li>
+<li>Has recurrence been prevented?</li>
+</ol>
+<p>The answers may be:</p>
+<pre><code>Immediate Finding:
+resolved
+
+Systemic prevention:
+not implemented</code></pre>
+<p>This may justify a separate improvement Finding or model proposal.</p>
+<p>We should not keep the urgent Finding open forever merely because the architecture can be improved.</p>
+<p>We should also not claim that the root problem is permanently eliminated when only one occurrence was fixed.</p>
+<p>---</p>
+<h1 id="we-define-closure-as-a-structured-object">We define closure as a structured object</h1>
+<p>A conceptual Resolution record could contain:</p>
+<pre><code>---
+id: RES-FIND-BANK-VERIFY-NO-BLOCK-RC5
+type: Resolution
+
+finding:
+  FIND-BANK-VERIFY-NO-BLOCK
+
+scope:
+  migration_wave: WAVE-1
+  baseline: CUTOVER-RC5
+  company_codes:
+    - DE01
+    - NL01
+    - BE01
+
+claim:
+  All in-scope Suppliers with expired verification
+  have confirmed payment block.
+
+implementation_evidence:
+  - PR-PAYMENT-BLOCK-FIX
+  - TEST-PAYMENT-BLOCK-DERIVATION
+
+dataset_evidence:
+  - EVID-RC5-AFFECTED-POPULATION
+  - EVID-RC5-NEGATIVE-CONTROL
+
+target_evidence:
+  - EVID-RC5-TARGET-RECONCILIATION
+  - EVID-RC5-PAYMENT-PROPOSAL-TEST
+
+validation_evidence:
+  - VALRUN-BANK-VERIFY-RC5
+
+closure_approver:
+  ROLE-TREASURY-DATA-OWNER
+
+status:
+  approved
+---</code></pre>
+<p>This is a product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<p>The important part is that resolution becomes:</p>
+<ul>
+<li>explicit;</li>
+<li>scoped;</li>
+<li>evidence-backed;</li>
+<li>reviewable;</li>
+<li>invalidatable when dependencies change.</li>
+</ul>
+<p>---</p>
+<h1 id="we-validate-the-resolution-package">We validate the resolution package</h1>
+<p>Deterministic checks can confirm:</p>
+<ul>
+<li>every required closure criterion has linked Evidence;</li>
+<li>the Evidence belongs to the current baseline;</li>
+<li>the affected population is reconciled;</li>
+<li>the Rule and Mapping versions match;</li>
+<li>no unresolved occurrence remains in the claimed scope;</li>
+<li>active Exceptions are disclosed;</li>
+<li>the closure approver has the required role;</li>
+<li>the Finding and Resolution references are valid.</li>
+</ul>
+<p>Potential diagnostics:</p>
+<pre><code>MW-RES-001
+Resolution has no current validation Evidence.
+
+MW-RES-002
+Closure Evidence uses a superseded Rule version.
+
+MW-RES-003
+Affected population was not reconciled.
+
+MW-RES-004
+Resolution claims global closure,
+but an open scoped occurrence remains.
+
+MW-RES-005
+Delivery issue is closed,
+but closure criteria are incomplete.
+
+MW-RES-006
+Resolution has no authorised approver.
+
+MW-RES-007
+Negative-control Evidence is required
+but missing.
+
+MW-RES-008
+Closure Evidence became stale
+after a material Mapping change.</code></pre>
+<p>These checks do not decide whether the business owner should approve closure.</p>
+<p>They prevent incomplete closure packages from appearing complete.</p>
+<p>---</p>
+<h1 id="we-separate-proposed-resolution-from-approved-resolution">We separate proposed resolution from approved resolution</h1>
+<p>An AI agent can assemble a candidate closure package.</p>
+<p>It may state:</p>
+<pre><code>All technical criteria appear complete.
+
+Suggested status:
+ready for closure review</code></pre>
+<p>The agent can:</p>
+<ul>
+<li>collect the relevant Evidence;</li>
+<li>compare populations;</li>
+<li>detect baseline mismatches;</li>
+<li>summarize test results;</li>
+<li>identify missing artefacts;</li>
+<li>draft the resolution claim.</li>
+</ul>
+<p>It cannot approve the business outcome.</p>
+<p>The states should be:</p>
+<pre><code>resolution candidate
+→ validator checked
+→ owner review
+→ approved resolution</code></pre>
+<p>This follows Martenweave’s existing principle: agents propose, validators verify, humans approve and Git records.</p>
+<p>---</p>
+<h1 id="we-do-not-let-ai-infer-closure-from-silence">We do not let AI infer closure from silence</h1>
+<p>A common automation mistake is:</p>
+<pre><code>No new validation error
+→ close Finding</code></pre>
+<p>That rule is unsafe.</p>
+<p>No error may mean:</p>
+<ul>
+<li>the validator did not run;</li>
+<li>the dataset was empty;</li>
+<li>the population changed;</li>
+<li>the Rule was disabled;</li>
+<li>the report was incomplete;</li>
+<li>the failure was filtered;</li>
+<li>the environment was unavailable.</li>
+</ul>
+<p>The system must distinguish:</p>
+<pre><code>zero failures</code></pre>
+<p>from:</p>
+<pre><code>no valid execution evidence</code></pre>
+<p>A valid closure run should prove:</p>
+<ul>
+<li>validator executed;</li>
+<li>expected population was evaluated;</li>
+<li>Rule was active;</li>
+<li>result was complete;</li>
+<li>baseline was current.</li>
+</ul>
+<p>---</p>
+<h1 id="we-use-explicit-non-execution-states">We use explicit non-execution states</h1>
+<p>A validation run may be:</p>
+<ul>
+<li>completed;</li>
+<li>failed technically;</li>
+<li>skipped;</li>
+<li>incomplete;</li>
+<li>no applicable records;</li>
+<li>blocked by missing input.</li>
+</ul>
+<p>These outcomes must not all appear as zero Findings.</p>
+<p>For example:</p>
+<pre><code>Validation status:
+blocked
+
+Reason:
+Treasury dataset unavailable
+
+Failed records:
+not calculated</code></pre>
+<p>This is not a passing result.</p>
+<p>It is an Evidence gap.</p>
+<p>---</p>
+<h1 id="we-link-closure-to-readiness-without-hiding-the-details">We link closure to readiness without hiding the details</h1>
+<p>When the Finding is approved as resolved, readiness can update.</p>
+<p>Before:</p>
+<pre><code>Supplier Bank Readiness:
+Blocked
+
+Critical uncontrolled Findings:
+1</code></pre>
+<p>After:</p>
+<pre><code>Supplier Bank Readiness:
+Ready for Cutover RC5
+
+Resolved critical Findings:
+1
+
+Remaining controlled Exceptions:
+0</code></pre>
+<p>The readiness view should retain access to:</p>
+<ul>
+<li>resolution claim;</li>
+<li>Evidence package;</li>
+<li>approver;</li>
+<li>baseline;</li>
+<li>invalidation conditions.</li>
+</ul>
+<p>A green badge without this trace is weak governance.</p>
+<p>---</p>
+<h1 id="we-reopen-only-with-new-evidence">We reopen only with new Evidence</h1>
+<p>After resolution, Cutover RC6 reports five Suppliers without payment block.</p>
+<p>We should not simply change:</p>
+<pre><code>resolved</code></pre>
+<p>to:</p>
+<pre><code>open</code></pre>
+<p>without context.</p>
+<p>We create a new occurrence and classify it:</p>
+<ul>
+<li>recurrence;</li>
+<li>regression;</li>
+<li>new scope;</li>
+<li>false positive;</li>
+<li>changed Rule.</li>
+</ul>
+<p>The prior Resolution remains valid for RC5.</p>
+<p>The new Evidence establishes that the claim does not hold for RC6.</p>
+<p>The history becomes:</p>
+<pre><code>RC5:
+resolved
+
+RC6:
+regression detected
+
+Cause:
+older transformation configuration deployed</code></pre>
+<p>This preserves both truths.</p>
+<p>---</p>
+<h1 id="we-keep-resolution-and-prevention-separate">We keep resolution and prevention separate</h1>
+<p>The immediate Finding may close when the affected population is safe.</p>
+<p>A prevention proposal may remain open:</p>
+<blockquote>Add payment-block validation as a mandatory control in every Supplier bank migration wave.</blockquote>
+<p>This avoids two poor choices:</p>
+<ul>
+<li>keeping the operational Finding open until a broad architecture improvement is finished;</li>
+<li>closing everything and losing the systemic lesson.</li>
+</ul>
+<p>We can link:</p>
+<pre><code>Resolved Finding:
+FIND-BANK-VERIFY-NO-BLOCK
+
+Prevention proposal:
+PROP-MANDATORY-BANK-CONTROL-DOMAIN-PACK</code></pre>
+<p>The first proves the current population is safe.</p>
+<p>The second reduces recurrence risk.</p>
+<p>---</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A Finding page should not show only:</p>
+<pre><code>Status:
+Resolved</code></pre>
+<p>It should show:</p>
+<h2 id="resolution-claim">Resolution claim</h2>
+<p>All in-scope Suppliers with expired verification have confirmed payment block.</p>
+<h2 id="scope">Scope</h2>
+<p>Wave 1, Cutover RC5, three company codes, 40 Suppliers.</p>
+<h2 id="implementation-evidence-2">Implementation Evidence</h2>
+<p>The approved change and its tests.</p>
+<h2 id="population-reconciliation">Population reconciliation</h2>
+<p>Original, processed, resolved, excluded and remaining counts.</p>
+<h2 id="target-evidence-2">Target Evidence</h2>
+<p>The target block and process-level confirmation.</p>
+<h2 id="negative-controls">Negative controls</h2>
+<p>No current verified Supplier was blocked incorrectly.</p>
+<h2 id="validation-evidence">Validation Evidence</h2>
+<p>The current Rule execution and baseline.</p>
+<h2 id="remaining-exceptions">Remaining Exceptions</h2>
+<p>None, or clearly listed.</p>
+<h2 id="closure-approver">Closure approver</h2>
+<p>Treasury Data Owner.</p>
+<h2 id="invalidation-conditions">Invalidation conditions</h2>
+<p>Rule, Mapping, dataset or target-control changes.</p>
+<p>This makes resolution inspectable.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused Martenweave capability should be <strong>Evidence-Backed Finding Resolution</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Prevent Findings from being marked resolved solely because a task closed or an implementation changed.</p>
+<h2 id="initial-inputs">Initial inputs</h2>
+<ul>
+<li>Finding;</li>
+<li>closure criteria;</li>
+<li>original affected population;</li>
+<li>implementation Evidence;</li>
+<li>current dataset;</li>
+<li>validation result;</li>
+<li>target reconciliation;</li>
+<li>active Exceptions;</li>
+<li>closure approver.</li>
+</ul>
+<h2 id="initial-outputs">Initial outputs</h2>
+<ul>
+<li>candidate Resolution;</li>
+<li>missing-Evidence report;</li>
+<li>population reconciliation;</li>
+<li>baseline-compatibility result;</li>
+<li>closure-readiness status;</li>
+<li>invalidation conditions;</li>
+<li>approved Resolution record.</li>
+</ul>
+<h2 id="supported-closure-outcomes">Supported closure outcomes</h2>
+<ul>
+<li>resolved;</li>
+<li>controlled;</li>
+<li>accepted risk;</li>
+<li>partially resolved;</li>
+<li>out of scope by Decision;</li>
+<li>superseded;</li>
+<li>not ready for closure.</li>
+</ul>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could support:</p>
+<pre><code>martenweave findings closure-check \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings propose-resolution \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --evidence-dir ./reports/rc5 \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings reconcile-population \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --current-dataset ./data/supplier-bank-rc5.csv \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings validate-resolution \
+  RES-FIND-BANK-VERIFY-NO-BLOCK-RC5 \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings approve-resolution \
+  RES-FIND-BANK-VERIFY-NO-BLOCK-RC5 \
+  --dry-run \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended product direction.</p>
+<p>They are not part of the currently documented CLI contract.</p>
+<p>Martenweave’s existing canonical-file, deterministic-validation, dataset-readiness, impact and proposal-first architecture provides the necessary foundation.</p>
+<p>---</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider the capability useful when it can prevent closure in each of these cases:</p>
+<ol>
+<li>The GitHub issue is closed, but no new validation ran.</li>
+<li>The validator ran against an outdated Rule.</li>
+<li>The failed records disappeared from the dataset without an approved scope change.</li>
+<li>The positive population passed, but verified records were blocked incorrectly.</li>
+<li>The generated dataset is correct, but the target reconciliation is missing.</li>
+<li>A technical task completed, but Treasury did not approve the Evidence.</li>
+<li>Seven records remain outside an approved Exception.</li>
+<li>The Finding is resolved in one company code but open in another.</li>
+<li>The immediate population is safe, but recurrence-prevention work remains separate.</li>
+<li>A later baseline invalidates the closure Evidence.</li>
+</ol>
+<p>The system should also allow legitimate closure when the Evidence is complete.</p>
+<p>Governance must prevent false resolution without making closure impossible.</p>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a test-execution platform;</li>
+<li>a deployment system;</li>
+<li>a generic quality-management suite;</li>
+<li>an audit-management platform;</li>
+<li>a sign-off workflow engine;</li>
+<li>a replacement for GitHub or ITSM.</li>
+</ul>
+<p>Existing tools can execute transformations, tests and delivery workflows.</p>
+<p>Martenweave should preserve:</p>
+<ul>
+<li>what had to become true;</li>
+<li>which Evidence proves it;</li>
+<li>which scope was resolved;</li>
+<li>who approved the claim;</li>
+<li>what changes would invalidate it.</li>
+</ul>
+<p>That is the model-governance value.</p>
+<p>---</p>
+<h1 id="the-economic-value">The economic value</h1>
+<p>False closure creates expensive downstream work.</p>
+<p>It leads to:</p>
+<ul>
+<li>Findings rediscovered in later mock loads;</li>
+<li>cutover gates based on incomplete Evidence;</li>
+<li>tasks reported as complete while business controls remain ineffective;</li>
+<li>repeated root-cause investigations;</li>
+<li>untraceable changes in readiness percentages;</li>
+<li>disputes over whether a problem was ever fixed;</li>
+<li>AMS incidents caused by “resolved” migration defects.</li>
+</ul>
+<p>Evidence-backed resolution changes the incentive.</p>
+<p>Teams no longer optimize only for:</p>
+<pre><code>issue closed</code></pre>
+<p>They optimize for:</p>
+<pre><code>business condition demonstrated</code></pre>
+<p>This does not remove delivery pressure.</p>
+<p>It makes completion meaningful.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A Finding is not resolved because:</p>
+<ul>
+<li>a developer changed code;</li>
+<li>a pull request merged;</li>
+<li>an issue closed;</li>
+<li>an error count fell;</li>
+<li>a dashboard turned green.</li>
+</ul>
+<p>Those events may contribute Evidence.</p>
+<p>Resolution requires a stronger chain:</p>
+<pre><code>Accepted closure criteria
+→ approved implementation
+→ current population processed
+→ target outcome confirmed
+→ negative controls checked
+→ governing Rule rerun
+→ remaining deviations governed
+→ authorised closure approval</code></pre>
+<p>For our Supplier bank-verification case, the practical question is:</p>
+<blockquote>Can we demonstrate that every in-scope Supplier with expired verification is prevented from payment, using current Evidence tied to the current model, dataset and target baseline?</blockquote>
+<p>When the answer is yes, the Finding can be resolved for that scope.</p>
+<p>When the answer is:</p>
+<blockquote>The issue was closed by the pull request,</blockquote>
+<p>we know that delivery work ended.</p>
+<p>We do not yet know that the business problem did.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that “resolved” becomes an evidence-backed model statement rather than a project-status label.</p>
+<p>Our operating model is:</p>
+<pre><code>Delivery changes the system.
+
+Validators test the current state.
+
+Evidence proves the outcome.
+
+Owners approve the closure claim.
+
+Martenweave preserves the trace.
+
+Later changes can invalidate the Evidence,
+but they cannot erase the history.</code></pre>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently defines canonical files as the source of truth, generated indexes as disposable, deterministic validation as mandatory before indexing and AI-generated changes as human-reviewed proposals.</p>
+<p>Its documented workflow moves from Evidence and profiling through validation, gaps and impact analysis to proposals and human-reviewed GitHub issues or pull requests.</p>
+<p>GitHub documents issue closure as a delivery action that may indicate a bug was fixed, feedback was addressed or work is not planned. It also supports automatic closure through linked pull requests and commit messages. This supports the distinction made in this article: closed delivery work is useful Evidence, but it is not automatically proof that a model Finding is resolved.</p>
+<p>NIST SP 800-53A Rev. 5 provides a methodology and procedures for assessing controls during different phases of a system lifecycle and includes guidance on assessment planning and analysis of results. Martenweave does not implement the NIST security-control framework, but the general principle of assessing whether a control operates as intended supports evidence-backed Finding closure.</p>
+<p>W3C PROV-O provides classes and relationships for representing provenance information generated in different systems and contexts, including entities, activities, agents, generation, derivation and attribution. Martenweave does not need to adopt PROV-O directly, but provenance relationships are necessary for explaining which model, dataset, execution and responsible party produced closure Evidence.</p>
+<p>Resolution objects, population reconciliation, closure diagnostics, Evidence invalidation and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, NIST, W3C or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html"><span>Previous</span>We confirm a critical Supplier bank-data Finding.</a><a href="/blog/how-we-detect-when-evidence-has-become-stale.html"><span>Next</span>We resolve a critical Supplier bank-data Finding during Cutover Rehearsal 5.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

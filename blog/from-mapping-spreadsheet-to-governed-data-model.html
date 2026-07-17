@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>From Mapping Spreadsheet to Governed Data Model | Martenweave</title>
+    <meta
+      name="description"
+      content="Most migration programmes begin with a spreadsheet."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html" />
+    <meta property="og:title" content="From Mapping Spreadsheet to Governed Data Model | Martenweave" />
+    <meta property="og:description" content="Most migration programmes begin with a spreadsheet." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="From Mapping Spreadsheet to Governed Data Model | Martenweave" />
+    <meta name="twitter:description" content="Most migration programmes begin with a spreadsheet." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html#webpage",
+                        "url": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html",
+                        "name": "From Mapping Spreadsheet to Governed Data Model | Martenweave",
+                        "description": "Most migration programmes begin with a spreadsheet.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "From Mapping Spreadsheet to Governed Data Model",
+                                    "item": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html#content",
+                        "headline": "From Mapping Spreadsheet to Governed Data Model",
+                        "name": "From Mapping Spreadsheet to Governed Data Model",
+                        "description": "Most migration programmes begin with a spreadsheet.",
+                        "url": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/from-mapping-spreadsheet-to-governed-data-model.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT12M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">From Mapping Spreadsheet to Governed Data Model</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>From Mapping Spreadsheet to Governed Data Model</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 12 min read</p><p class="blog-summary">Most migration programmes begin with a spreadsheet.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#why-mapping-spreadsheets-become-central">Why mapping spreadsheets become central</a></li><li><a href="#the-first-warning-sign-the-workbook-needs-interpretation">The first warning sign: the workbook needs interpretation</a></li><li><a href="#the-second-warning-sign-status-is-confused-with-correctness">The second warning sign: status is confused with correctness</a></li><li><a href="#the-third-warning-sign-every-change-creates-another-version">The third warning sign: every change creates another version</a></li><li><a href="#a-governed-model-is-different">A governed model is different</a></li><li><a href="#the-spreadsheet-should-remain-but-change-its-role">The spreadsheet should remain—but change its role</a></li><li><a href="#what-should-become-structured-first">What should become structured first</a></li><li><a href="#stable-identifiers">Stable identifiers</a></li><li><a href="#source-and-target-definitions">Source and target definitions</a></li><li><a href="#transformation-rules">Transformation rules</a></li><li><a href="#conditional-requirements">Conditional requirements</a></li><li><a href="#evidence-and-decisions">Evidence and decisions</a></li><li><a href="#ownership">Ownership</a></li><li><a href="#what-should-be-validated-automatically">What should be validated automatically</a></li><li><a href="#a-practical-example-supplier-payment-terms">A practical example: supplier payment terms</a></li></ol></nav></details></header>
+<p>Most migration programmes begin with a spreadsheet.</p>
+<p>That is not a problem.</p>
+<p>The spreadsheet is familiar. Business users can review it. Consultants can filter it. Developers can use it to prepare transformations. Project managers can count completed rows.</p>
+<p>For a while, it works.</p>
+<p>Then the workbook grows.</p>
+<p>More tabs appear. More colours are introduced. Comments become longer. Local exceptions are added. New versions circulate by email. One team adds technical fields. Another adds business rules. A third team creates a separate file because the original workbook has become too difficult to maintain.</p>
+<p>Eventually, the programme still has a mapping spreadsheet, but it no longer has a reliable mapping model.</p>
+<p>This is the point many projects reach without noticing.</p>
+<p>The document still opens.</p>
+<p>The rows are still there.</p>
+<p>The project can still report that 87% of fields are mapped.</p>
+<p>But nobody can confidently answer which version is authoritative, whether the rules still agree, or what else will be affected if one field changes.</p>
+<p>The problem is not Excel.</p>
+<p>The problem is that a spreadsheet has gradually been asked to become a database, a workflow, a decision log, a validation engine and an impact-analysis tool.</p>
+<p>It was never designed to do all of that.</p>
+<h2 id="why-mapping-spreadsheets-become-central">Why mapping spreadsheets become central</h2>
+<p>Migration programmes need a practical way to connect source and target systems.</p>
+<p>A spreadsheet is the obvious starting point.</p>
+<p>A typical row may include:</p>
+<ul>
+<li>source table;</li>
+<li>source field;</li>
+<li>target object;</li>
+<li>target field;</li>
+<li>transformation;</li>
+<li>mandatory status;</li>
+<li>owner;</li>
+<li>comment;</li>
+<li>status.</li>
+</ul>
+<p>This gives the project a useful working surface.</p>
+<p>The source team can confirm whether a field exists.</p>
+<p>The business can review the target meaning.</p>
+<p>The migration developer can implement the transformation.</p>
+<p>The project manager can track progress.</p>
+<p>For a small and stable migration, this may be sufficient.</p>
+<p>The difficulty appears when the mapping begins to carry more than a direct source-to-target relationship.</p>
+<p>A field may be mandatory only for one country.</p>
+<p>A transformation may depend on two other fields.</p>
+<p>A value mapping may differ by company code.</p>
+<p>A local system may use the same code with another meaning.</p>
+<p>A business exception may have been approved in a ticket.</p>
+<p>An interface may consume the target value.</p>
+<p>A validation script may implement an older rule.</p>
+<p>The row no longer describes a mapping.</p>
+<p>It describes a network of conditions and dependencies.</p>
+<p>A flat table can represent parts of that network.</p>
+<p>It cannot govern it reliably.</p>
+<h2 id="the-first-warning-sign-the-workbook-needs-interpretation">The first warning sign: the workbook needs interpretation</h2>
+<p>A healthy mapping workbook should be understandable from its content.</p>
+<p>An unhealthy workbook requires one or two people to explain what the colours, abbreviations and comments actually mean.</p>
+<p>Typical warning signs include:</p>
+<ul>
+<li>yellow means “under discussion” on one tab and “business approved” on another;</li>
+<li>mandatory status is written as <code>Y</code>, <code>M</code>, <code>C</code>, <code>Required</code> and <code>Yes</code>;</li>
+<li>several rows refer to “the rule discussed in the workshop”;</li>
+<li>source fields are identified by labels rather than stable IDs;</li>
+<li>mappings reference other spreadsheets;</li>
+<li>comments contain newer logic than the transformation column;</li>
+<li>one country keeps a separate local version;</li>
+<li>nobody wants to delete obsolete rows because they may still be needed;</li>
+<li>formulas and macros are understood by only one person.</li>
+</ul>
+<p>At this stage, the workbook is no longer self-explanatory.</p>
+<p>It depends on oral tradition.</p>
+<p>That is a serious project risk.</p>
+<p>A document that requires a particular consultant to interpret it is not a durable source of truth.</p>
+<h2 id="the-second-warning-sign-status-is-confused-with-correctness">The second warning sign: status is confused with correctness</h2>
+<p>Migration programmes often focus on completion status.</p>
+<p>How many fields are mapped?</p>
+<p>How many mappings are approved?</p>
+<p>How many objects are ready?</p>
+<p>These are reasonable questions.</p>
+<p>But a completed mapping is not necessarily a correct mapping.</p>
+<p>A row may be marked complete even though:</p>
+<ul>
+<li>the source field is absent from the latest extract;</li>
+<li>the target definition has changed;</li>
+<li>the value mapping does not cover all observed values;</li>
+<li>the transformation contradicts a validation rule;</li>
+<li>a required exception is documented elsewhere;</li>
+<li>the business owner approved the field before a later change;</li>
+<li>another object uses a conflicting definition.</li>
+</ul>
+<p>The status column tells management that an activity took place.</p>
+<p>It does not prove that the resulting model is coherent.</p>
+<p>This is why a project can report high mapping completion and still produce a large number of test-load defects.</p>
+<p>The rows were completed individually.</p>
+<p>The model was never checked as a whole.</p>
+<h2 id="the-third-warning-sign-every-change-creates-another-version">The third warning sign: every change creates another version</h2>
+<p>Versioning through filenames works until several people edit the same workbook.</p>
+<p>Then the project starts producing files such as:</p>
+<pre><code class="language-text">Customer_Mapping_v7.xlsx
+Customer_Mapping_v7_final.xlsx
+Customer_Mapping_v7_final_reviewed.xlsx
+Customer_Mapping_v8_country_updates.xlsx
+Customer_Mapping_v8_FINAL2.xlsx</code></pre>
+<p>This is not merely untidy.</p>
+<p>It creates uncertainty about the approved state.</p>
+<p>The project may try to solve the issue by moving the file to SharePoint or another collaborative platform.</p>
+<p>That improves document access and editing.</p>
+<p>It does not automatically solve model control.</p>
+<p>A shared workbook can still contain contradictory rules, broken references and unclear approval states.</p>
+<p>Collaboration is not the same as governance.</p>
+<p>The real question is not whether everyone can access the file.</p>
+<p>The real question is whether the project can reproduce the approved model from it.</p>
+<h2 id="a-governed-model-is-different">A governed model is different</h2>
+<p>A governed data model treats each important element as something that can be identified, related, validated and changed deliberately.</p>
+<p>Instead of one large row containing all available information, the model separates the concepts.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business attribute: Shipping Condition
+Source field: LEGACY_CUSTOMER.SHIP_COND
+Target field: SAP Customer Sales Area Shipping Condition
+Transformation: approved value mapping
+Validation rule: mandatory for selected sales areas
+Exception: local pickup customers in Country A
+Owner: Global Order-to-Cash Data Owner
+Used by: migration, route determination review, 3PL outbound interface
+Decision: logistics design approval 2026-04</code></pre>
+<p>The difference is not cosmetic.</p>
+<p>Each item has its own identity.</p>
+<p>The mapping references the source and target fields.</p>
+<p>The validation rule references the business attribute.</p>
+<p>The exception references the rule.</p>
+<p>The decision provides evidence.</p>
+<p>The interface relationship shows downstream impact.</p>
+<p>Now the model can be checked.</p>
+<p>If the source field is removed, the mapping becomes invalid.</p>
+<p>If the target field changes, affected mappings can be found.</p>
+<p>If the exception is deleted, the validation rule can be reviewed.</p>
+<p>If the attribute changes, downstream dependencies become visible.</p>
+<p>The project no longer relies entirely on people noticing inconsistencies manually.</p>
+<h2 id="the-spreadsheet-should-remain-but-change-its-role">The spreadsheet should remain—but change its role</h2>
+<p>Moving to a governed model does not require banning Excel.</p>
+<p>That would be impractical.</p>
+<p>Business users are comfortable with spreadsheets. Large mapping sets are often easier to review in tabular form. External partners may deliver data only through XLSX or CSV.</p>
+<p>The better approach is to change the spreadsheet’s role.</p>
+<p>It should become:</p>
+<ul>
+<li>an import format;</li>
+<li>an export format;</li>
+<li>a review surface;</li>
+<li>a bulk-editing tool;</li>
+<li>an evidence source.</li>
+</ul>
+<p>It should not remain the only source of truth.</p>
+<p>A governed workflow might look like this:</p>
+<ol>
+<li>The current model is exported to a spreadsheet.</li>
+<li>Business and functional teams review the fields.</li>
+<li>Proposed edits are imported as a change proposal.</li>
+<li>Automated validation checks IDs, references and required properties.</li>
+<li>Impact analysis shows affected rules, datasets and interfaces.</li>
+<li>The responsible owners review the proposal.</li>
+<li>Approved changes update the canonical model.</li>
+<li>A fresh workbook and reports can be generated from that model.</li>
+</ol>
+<p>This preserves the practical value of Excel without making the entire programme dependent on one workbook.</p>
+<h2 id="what-should-become-structured-first">What should become structured first</h2>
+<p>A programme does not need to model everything at once.</p>
+<p>Trying to convert every spreadsheet, document and decision into a complete enterprise model will slow the project and create resistance.</p>
+<p>The transition should begin with the elements that create the most risk when they are inconsistent.</p>
+<h2 id="stable-identifiers">Stable identifiers</h2>
+<p>Every object, attribute, field, mapping and rule should have a stable ID.</p>
+<p>Names change.</p>
+<p>Labels differ by language.</p>
+<p>Technical field descriptions are revised.</p>
+<p>An identifier allows relationships to survive those changes.</p>
+<p>For example, the business attribute “Customer Group” may have one stable ID even if different systems call it:</p>
+<ul>
+<li>Customer Classification;</li>
+<li>Account Segment;</li>
+<li>Client Group;</li>
+<li><code>KDGRP</code>;</li>
+<li><code>CUST_CLASS</code>.</li>
+</ul>
+<p>Without stable identity, the project repeatedly confuses naming differences with business differences.</p>
+<h2 id="source-and-target-definitions">Source and target definitions</h2>
+<p>The model should clearly separate:</p>
+<ul>
+<li>business attribute;</li>
+<li>source field;</li>
+<li>target field.</li>
+</ul>
+<p>These are not interchangeable.</p>
+<p>A business concept may be represented by several source fields and several target fields.</p>
+<p>Treating the technical field as the definition makes future change harder.</p>
+<h2 id="transformation-rules">Transformation rules</h2>
+<p>Transformations should not remain only as free-text comments.</p>
+<p>The model should distinguish:</p>
+<ul>
+<li>direct mapping;</li>
+<li>value conversion;</li>
+<li>conditional derivation;</li>
+<li>concatenation;</li>
+<li>default;</li>
+<li>lookup;</li>
+<li>manual population;</li>
+<li>approved null.</li>
+</ul>
+<p>This makes the logic easier to validate and report.</p>
+<h2 id="conditional-requirements">Conditional requirements</h2>
+<p>“Mandatory” is rarely just yes or no.</p>
+<p>A field may be mandatory:</p>
+<ul>
+<li>for one country;</li>
+<li>for one company code;</li>
+<li>for one material type;</li>
+<li>for external suppliers only;</li>
+<li>for a warehouse-managed plant;</li>
+<li>when another attribute has a particular value.</li>
+</ul>
+<p>These conditions should be represented explicitly.</p>
+<p>Otherwise, the project ends up with a mandatory column and several paragraphs explaining why it is not always mandatory.</p>
+<h2 id="evidence-and-decisions">Evidence and decisions</h2>
+<p>The model should preserve why a rule exists.</p>
+<p>A decision may come from:</p>
+<ul>
+<li>business approval;</li>
+<li>SAP design;</li>
+<li>legal requirement;</li>
+<li>interface constraint;</li>
+<li>source-system limitation;</li>
+<li>test finding.</li>
+</ul>
+<p>Without this evidence, later teams cannot tell whether a rule is essential, temporary or obsolete.</p>
+<h2 id="ownership">Ownership</h2>
+<p>Ownership should be attached to the relevant model element.</p>
+<p>The owner of a source table may not be the owner of the business meaning.</p>
+<p>The migration developer may implement the rule without having authority to approve it.</p>
+<p>The system should make those distinctions visible.</p>
+<h2 id="what-should-be-validated-automatically">What should be validated automatically</h2>
+<p>A governed model becomes valuable when it can be checked.</p>
+<p>Some checks are simple but important:</p>
+<ul>
+<li>every mapping references an existing source field;</li>
+<li>every target field belongs to a known object;</li>
+<li>every validation rule references an existing attribute;</li>
+<li>every identifier is unique;</li>
+<li>deprecated fields are not used by active mappings;</li>
+<li>approved mappings contain required ownership and evidence;</li>
+<li>conditional rules contain defined conditions;</li>
+<li>unresolved proposals are not presented as approved truth.</li>
+</ul>
+<p>These checks do not require AI.</p>
+<p>They require discipline and deterministic validation.</p>
+<p>That distinction matters because many organisations are now tempted to use AI to review large mapping workbooks.</p>
+<p>AI can identify suspicious rows, suggest mappings and summarise comments.</p>
+<p>It should not be the only control protecting model consistency.</p>
+<p>A language model may produce a plausible interpretation.</p>
+<p>A deterministic validator should still confirm that the referenced objects exist and the structure is internally valid.</p>
+<h2 id="a-practical-example-supplier-payment-terms">A practical example: supplier payment terms</h2>
+<p>Consider a supplier migration involving several business units.</p>
+<p>The workbook contains a direct mapping from the legacy payment-term code to SAP.</p>
+<p>Most codes map cleanly.</p>
+<p>One code, <code>30D</code>, appears across several source systems.</p>
+<p>The mapping team assigns it to one SAP payment term.</p>
+<p>Later, testing reveals that <code>30D</code> has different operational meanings:</p>
+<ul>
+<li>one business unit calculates from invoice date;</li>
+<li>another uses goods-receipt date;</li>
+<li>one country applies an additional local condition.</li>
+</ul>
+<p>The original workbook row was technically complete.</p>
+<p>The model was semantically incomplete.</p>
+<p>The project must now identify:</p>
+<ul>
+<li>which suppliers belong to each interpretation;</li>
+<li>which source system contains enough information to distinguish them;</li>
+<li>whether separate target terms are required;</li>
+<li>which business owners can approve the resolution;</li>
+<li>which reconciliation checks must be updated;</li>
+<li>which interfaces and reports use the resulting code.</li>
+</ul>
+<p>In a spreadsheet-only approach, this produces more rows, comments and tabs.</p>
+<p>In a governed model, the team can separate:</p>
+<ul>
+<li>the business concepts;</li>
+<li>source representations;</li>
+<li>conditional mappings;</li>
+<li>regional exceptions;</li>
+<li>decisions;</li>
+<li>affected datasets.</li>
+</ul>
+<p>The issue becomes explicit.</p>
+<p>The project can see which records cannot yet be mapped safely.</p>
+<p>That is more useful than marking the original row “reopened.”</p>
+<h2 id="better-reporting-for-managers">Better reporting for managers</h2>
+<p>A governed model changes the quality of status reporting.</p>
+<p>Instead of reporting:</p>
+<blockquote>94% of supplier fields are mapped.</blockquote>
+<p>the programme can say:</p>
+<blockquote>All supplier target attributes have defined source strategies. Four conditional mappings remain unapproved. Two source codes have conflicting meanings across business units. One critical payment-term rule has no confirmed business owner.</blockquote>
+<p>The first statement is simpler.</p>
+<p>The second is more useful.</p>
+<p>A percentage compresses different risks into one number.</p>
+<p>A model-based report can distinguish:</p>
+<ul>
+<li>missing work;</li>
+<li>unresolved meaning;</li>
+<li>incomplete datasets;</li>
+<li>conflicting rules;</li>
+<li>missing ownership;</li>
+<li>high-impact changes.</li>
+</ul>
+<p>This helps managers decide where intervention is actually needed.</p>
+<h2 id="the-goal-is-not-perfect-documentation">The goal is not perfect documentation</h2>
+<p>A governed model can also become excessive.</p>
+<p>Teams may try to document every field, every meeting and every minor decision.</p>
+<p>That creates another maintenance burden.</p>
+<p>The objective is not completeness for its own sake.</p>
+<p>The objective is control over the model elements that influence delivery risk.</p>
+<p>A useful rule is:</p>
+<blockquote>Structure the information that must remain consistent across teams, tools or migration waves.</blockquote>
+<p>A temporary analyst note may not belong in the canonical model.</p>
+<p>A country-specific rule affecting thousands of supplier records probably does.</p>
+<p>A one-off formatting observation may remain in a profiling report.</p>
+<p>A transformation used by several objects should be governed.</p>
+<p>The model should remain smaller than the total documentation around it.</p>
+<h2 id="a-sensible-transition-path">A sensible transition path</h2>
+<p>Managers do not need to launch a large model-governance programme.</p>
+<p>The transition can be incremental.</p>
+<h3 id="step-1-freeze-the-current-baseline">Step 1: Freeze the current baseline</h3>
+<p>Identify which workbook or set of workbooks represents the best current state.</p>
+<p>Do not pretend it is perfect.</p>
+<p>Use it as the starting baseline.</p>
+<h3 id="step-2-define-the-minimum-model">Step 2: Define the minimum model</h3>
+<p>Choose the core object types:</p>
+<ul>
+<li>business objects;</li>
+<li>attributes;</li>
+<li>source fields;</li>
+<li>target fields;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>datasets;</li>
+<li>owners;</li>
+<li>decisions.</li>
+</ul>
+<p>Avoid modelling everything else initially.</p>
+<h3 id="step-3-assign-stable-ids">Step 3: Assign stable IDs</h3>
+<p>Do this before building complex workflows.</p>
+<p>Stable identity is the foundation for traceability.</p>
+<h3 id="step-4-import-the-existing-mappings">Step 4: Import the existing mappings</h3>
+<p>Preserve the original source file as evidence.</p>
+<p>Do not silently clean uncertain content during import.</p>
+<p>Convert ambiguity into visible gaps.</p>
+<h3 id="step-5-validate-the-structure">Step 5: Validate the structure</h3>
+<p>Find:</p>
+<ul>
+<li>missing references;</li>
+<li>duplicates;</li>
+<li>absent owners;</li>
+<li>incomplete mappings;</li>
+<li>invalid object relationships;</li>
+<li>deprecated fields.</li>
+</ul>
+<h3 id="step-6-compare-real-datasets-with-the-model">Step 6: Compare real datasets with the model</h3>
+<p>Check whether the current extracts contain what the approved mappings expect.</p>
+<p>This usually reveals that the workbook and the actual files have already diverged.</p>
+<h3 id="step-7-introduce-proposal-based-changes">Step 7: Introduce proposal-based changes</h3>
+<p>New spreadsheet edits should create reviewable proposals rather than immediately replacing the approved model.</p>
+<h3 id="step-8-generate-reports-from-the-model">Step 8: Generate reports from the model</h3>
+<p>Once reports and exports are generated from the canonical model, the programme has less incentive to maintain parallel truth manually.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>Martenweave uses canonical model files as the controlled source of truth.</p>
+<p>It can import spreadsheet-based model changes as proposals, validate object references, build generated indexes, profile CSV and XLSX datasets, detect gaps and show impact across connected model elements. AI-assisted changes remain proposals until they are reviewed and approved.</p>
+<p>This approach does not ask managers or business users to abandon Excel.</p>
+<p>It separates convenient editing from authoritative model control.</p>
+<p>The spreadsheet remains useful.</p>
+<p>It simply stops carrying responsibilities it cannot reliably support.</p>
+<h2 id="the-management-decision">The management decision</h2>
+<p>The question is not whether spreadsheets are good or bad.</p>
+<p>The question is whether the current workbook can still provide the level of control the programme needs.</p>
+<p>Can the team identify the approved version?</p>
+<p>Can it validate references automatically?</p>
+<p>Can it show what a proposed change affects?</p>
+<p>Can it distinguish approved rules from assumptions?</p>
+<p>Can it compare actual datasets with expected fields?</p>
+<p>Can it explain why a mapping exists?</p>
+<p>Can it reproduce the same readiness report next week?</p>
+<p>When the answer becomes no, the spreadsheet has reached its natural limit.</p>
+<p>That is not a failure.</p>
+<p>It is a sign that the programme has become complex enough to need a model rather than only a workbook.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-data-migration-projects-need-a-model-registry.html"><span>Previous</span>Most migration programmes do not fail because nobody created a mapping.</a><a href="/blog/data-lineage-vs-impact-analysis-why-seeing-the-flow-is-not-enough.html"><span>Next</span>Data lineage is one of the most attractive ideas in data management.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

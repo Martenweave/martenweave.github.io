@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Version a Data Model Without Turning It into Documentation Chaos | Martenweave</title>
+    <meta
+      name="description"
+      content="A Customer Group rule changes during an SAP programme."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html" />
+    <meta property="og:title" content="How to Version a Data Model Without Turning It into Documentation Chaos | Martenweave" />
+    <meta property="og:description" content="A Customer Group rule changes during an SAP programme." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Version a Data Model Without Turning It into Documentation Chaos | Martenweave" />
+    <meta name="twitter:description" content="A Customer Group rule changes during an SAP programme." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html",
+                        "name": "How to Version a Data Model Without Turning It into Documentation Chaos | Martenweave",
+                        "description": "A Customer Group rule changes during an SAP programme.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Version a Data Model Without Turning It into Documentation Chaos",
+                                    "item": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html#content",
+                        "headline": "How to Version a Data Model Without Turning It into Documentation Chaos",
+                        "name": "How to Version a Data Model Without Turning It into Documentation Chaos",
+                        "description": "A Customer Group rule changes during an SAP programme.",
+                        "url": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Version a Data Model Without Turning It into Documentation Chaos</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Version a Data Model Without Turning It into Documentation Chaos</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A Customer Group rule changes during an SAP programme.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#1-file-revision">1. File revision</a></li><li><a href="#2-model-object-lifecycle">2. Model-object lifecycle</a></li><li><a href="#3-model-baseline">3. Model baseline</a></li><li><a href="#4-schema-version">4. Schema version</a></li><li><a href="#5-effective-business-version">5. Effective business version</a></li><li><a href="#one-repository-baseline">One repository baseline</a></li><li><a href="#repository-baseline-with-domain-manifest">Repository baseline with domain manifest</a></li><li><a href="#separate-repositories">Separate repositories</a></li><li><a href="#editorial">Editorial</a></li><li><a href="#metadata">Metadata</a></li><li><a href="#additive">Additive</a></li><li><a href="#restrictive">Restrictive</a></li><li><a href="#semantic">Semantic</a></li><li><a href="#retirement">Retirement</a></li><li><a href="#valid-time">Valid time</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A Customer Group rule changes during an SAP programme.</p>
+<p>The project team records the change in several ways:</p>
+<ul>
+<li>the mapping workbook becomes version 14;</li>
+<li>the design document becomes version 2.7;</li>
+<li>the Git repository receives three new commits;</li>
+<li>the Martenweave object schema remains version 1.0;</li>
+<li>the target SAP release is Wave 3;</li>
+<li>the rule becomes effective on 1 October;</li>
+<li>one country continues using the previous treatment until January;</li>
+<li>the Martenweave software package moves from 0.4.1 to 0.5.0.</li>
+</ul>
+<p>All of these are versions.</p>
+<p>They do not describe the same thing.</p>
+<p>When a team uses one number to represent all of them, confusion follows quickly:</p>
+<blockquote>Is version 3 the third document, the third model baseline, the third SAP deployment or the third schema format?</blockquote>
+<p>This is how version control becomes documentation administration.</p>
+<p>Files receive labels such as:</p>
+<pre><code class="language-text">Customer_Model_v7_FINAL.xlsx
+Customer_Model_v7_FINAL_2.xlsx
+Customer_Model_v8_APPROVED.xlsx
+Customer_Model_v8_APPROVED_LATEST.xlsx</code></pre>
+<p>The labels attempt to carry several independent facts:</p>
+<ul>
+<li>content history;</li>
+<li>approval state;</li>
+<li>business-effective date;</li>
+<li>programme wave;</li>
+<li>implementation status;</li>
+<li>document format.</li>
+</ul>
+<p>One filename cannot carry all of them safely.</p>
+<blockquote>A governed data model should separate content history, model identity, schema compatibility, business effectiveness and implementation release.</blockquote>
+<p>Git can preserve exact content history.</p>
+<p>Canonical object metadata can preserve lifecycle and effective periods.</p>
+<p>Tags can identify approved repository baselines.</p>
+<p>Schema versions can describe the format understood by Martenweave.</p>
+<p>Implementation references can show where and when the model was deployed.</p>
+<p>These mechanisms work together.</p>
+<p>They should not be collapsed into one universal version number.</p>
+<p>---</p>
+<h1 id="five-kinds-of-version">Five kinds of version</h1>
+<p>A practical Martenweave repository needs to distinguish at least five concepts.</p>
+<h2 id="1-file-revision">1. File revision</h2>
+<p>A file revision records that the text or structured metadata changed.</p>
+<p>Examples:</p>
+<ul>
+<li>definition corrected;</li>
+<li>owner added;</li>
+<li>typo fixed;</li>
+<li>relationship changed;</li>
+<li>status updated.</li>
+</ul>
+<p>Git commits already provide this history.</p>
+<p>A separate <code>version: 17</code> inside every file is usually unnecessary when it merely repeats the number of edits.</p>
+<h2 id="2-model-object-lifecycle">2. Model-object lifecycle</h2>
+<p>The object itself can move through states:</p>
+<pre><code class="language-text">draft
+pending_review
+approved
+superseded
+retired</code></pre>
+<p>This is not file history.</p>
+<p>A file may receive five editorial commits while the object remains <code>approved</code>.</p>
+<p>Another file may change once and move from <code>draft</code> to <code>approved</code>.</p>
+<h2 id="3-model-baseline">3. Model baseline</h2>
+<p>A baseline identifies a complete, consistent repository state that a team intends to use for a purpose.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Customer model approved for Mock Load 2
+Supplier model baseline for Wave 3 build
+AMS production model as of 2026-10-01</code></pre>
+<p>A Git tag or immutable commit reference can identify that repository snapshot.</p>
+<p>Git tags are designed to mark significant points in repository history, commonly including release points. Annotated tags can also carry tagger information, date and a message.</p>
+<h2 id="4-schema-version">4. Schema version</h2>
+<p>The schema version describes the format of canonical objects.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">schema_version: &quot;1.0&quot;</code></pre>
+<p>It answers:</p>
+<blockquote>Which fields, object types and structural rules are required to parse this object?</blockquote>
+<p>It does not answer:</p>
+<blockquote>Which Customer Group definition is currently approved?</blockquote>
+<p>Martenweave’s changelog records the addition of schema versioning and migration support, together with normalisation of example canonical objects to schema version 1.0.</p>
+<h2 id="5-effective-business-version">5. Effective business version</h2>
+<p>A model decision may be approved now but become effective later.</p>
+<p>It may also apply differently by:</p>
+<ul>
+<li>country;</li>
+<li>company code;</li>
+<li>migration wave;</li>
+<li>source system;</li>
+<li>operational environment.</li>
+</ul>
+<p>An effective period answers:</p>
+<blockquote>In which context and during which period should this rule be treated as active?</blockquote>
+<p>This cannot be inferred reliably from the file’s last modification date.</p>
+<p>---</p>
+<h1 id="add-a-sixth-version-implementation-state">Add a sixth version: implementation state</h1>
+<p>The canonical model describes intended approved truth.</p>
+<p>SAP, MDM, interfaces and reports implement that truth.</p>
+<p>Implementation may occur later.</p>
+<p>For example:</p>
+<pre><code class="language-text">Model decision approved:
+15 July
+
+Canonical baseline published:
+18 July
+
+SAP configuration transported:
+2 August
+
+Migration transformation deployed:
+5 August
+
+Business-effective date:
+1 October</code></pre>
+<p>Calling all of these “version 3” removes critical information.</p>
+<p>A change can be:</p>
+<ul>
+<li>approved but not implemented;</li>
+<li>implemented in test but not production;</li>
+<li>effective for one wave but not another;</li>
+<li>active in SAP but missing from an interface;</li>
+<li>retired canonically but still present in historical datasets.</li>
+</ul>
+<p>Implementation state should therefore be referenced separately from canonical versioning.</p>
+<p>---</p>
+<h1 id="software-version-is-another-independent-dimension">Software version is another independent dimension</h1>
+<p>Martenweave itself has a software version.</p>
+<p>The current repository package identifies version <code>0.5.0</code>, and its changelog distinguishes product releases such as <code>0.4.0</code>, <code>0.4.1</code> and <code>0.5.0</code>.</p>
+<p>This version describes the capabilities and behaviour of the Martenweave software.</p>
+<p>It may determine:</p>
+<ul>
+<li>which schema versions can be read;</li>
+<li>which validation rules run;</li>
+<li>which commands are available;</li>
+<li>how indexes are generated.</li>
+</ul>
+<p>It does not identify the version of a client’s Customer model.</p>
+<p>A repository may contain Customer Model Baseline 12 while being processed by Martenweave 0.5.0.</p>
+<p>These numbers should not be forced to match.</p>
+<p>---</p>
+<h1 id="do-not-put-a-version-counter-on-every-object-by-default">Do not put a version counter on every object by default</h1>
+<p>A canonical object might be written as:</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP
+version: 7</code></pre>
+<p>This appears useful.</p>
+<p>It immediately raises difficult questions:</p>
+<ul>
+<li>Does a typo increment the version?</li>
+<li>Does adding evidence increment it?</li>
+<li>Does moving the file increment it?</li>
+<li>Who increments it?</li>
+<li>What happens when two branches both create version 8?</li>
+<li>Does version 7 refer to the object or the whole repository?</li>
+<li>Can version 7 exist in several baselines?</li>
+</ul>
+<p>Git already records every content revision.</p>
+<p>An internal object counter adds value only when external consumers require an explicit monotonic identifier for an object revision.</p>
+<p>Without that requirement, it often creates manual administration without improving traceability.</p>
+<p>A stable object ID plus Git history is usually stronger:</p>
+<pre><code class="language-text">Object identity:
+ATTR-CUSTOMER-GROUP
+
+Historical states:
+identified by commit or tag</code></pre>
+<p>---</p>
+<h1 id="stable-id-changing-state">Stable ID, changing state</h1>
+<p>An object’s identity should survive ordinary evolution.</p>
+<p>Suppose the definition of Customer Group is clarified.</p>
+<p>Before:</p>
+<pre><code class="language-markdown">Customer Group is a customer classification.</code></pre>
+<p>After:</p>
+<pre><code class="language-markdown">Customer Group is a sales-area-specific commercial classification.</code></pre>
+<p>The object remains:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>Creating a new ID for every wording change would fragment history and break references.</p>
+<p>A new object identity is justified when the concept itself has changed so substantially that treating it as the same governed object would be misleading.</p>
+<p>Examples include:</p>
+<ul>
+<li>one Attribute is split into two independent concepts;</li>
+<li>a lifecycle status is separated from a final classification;</li>
+<li>a central concept is replaced by an organisational one;</li>
+<li>an object’s meaning is intentionally discontinued and replaced.</li>
+</ul>
+<p>The decision should be semantic, not based on the number of edited lines.</p>
+<p>---</p>
+<h1 id="rename-is-not-replacement">Rename is not replacement</h1>
+<p>Consider this change:</p>
+<pre><code class="language-text">Old label:
+Customer Classification Group
+
+New label:
+Customer Group</code></pre>
+<p>When the meaning and identity remain stable, this is a rename.</p>
+<p>The ID can remain unchanged.</p>
+<pre><code class="language-yaml">id: ATTR-CUSTOMER-GROUP
+name: Customer Group
+aliases:
+  - Customer Classification Group</code></pre>
+<p>Impact may be limited to:</p>
+<ul>
+<li>display labels;</li>
+<li>search aliases;</li>
+<li>documentation;</li>
+<li>exports.</li>
+</ul>
+<p>A replacement is different.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old concept:
+Supplier Risk includes pending assessment state.
+
+New model:
+Supplier Risk contains only final classification.
+Supplier Review Status contains lifecycle state.</code></pre>
+<p>This is not a rename.</p>
+<p>It is a model decomposition.</p>
+<p>The old concept may need to be:</p>
+<ul>
+<li>superseded;</li>
+<li>mapped to two new objects;</li>
+<li>retained for historical interpretation;</li>
+<li>removed from active use.</li>
+</ul>
+<p>Versioning must preserve this distinction.</p>
+<p>---</p>
+<h1 id="git-history-is-not-the-model-lifecycle">Git history is not the model lifecycle</h1>
+<p>Git records that files changed.</p>
+<p>It does not inherently know whether the change represents:</p>
+<ul>
+<li>an editorial correction;</li>
+<li>a draft proposal;</li>
+<li>an approved semantic change;</li>
+<li>a temporary local deviation;</li>
+<li>a retirement;</li>
+<li>an implementation update.</li>
+</ul>
+<p>That meaning belongs in model objects and decisions.</p>
+<p>For example:</p>
+<pre><code class="language-yaml">id: ATTR-SUPPLIER-RISK
+type: Attribute
+status: superseded
+superseded_by:
+  - ATTR-SUPPLIER-RISK
+  - ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>The exact structure may vary, and a self-reference would not be appropriate in a real schema. The important point is that the canonical model should explicitly record the semantic transition rather than expecting readers to infer it from commit messages.</p>
+<p>Git answers:</p>
+<blockquote>What changed in the repository?</blockquote>
+<p>The model lifecycle answers:</p>
+<blockquote>What does that change mean for this object?</blockquote>
+<p>---</p>
+<h1 id="do-not-rewrite-approved-history">Do not rewrite approved history</h1>
+<p>Once a baseline has been used for:</p>
+<ul>
+<li>migration load;</li>
+<li>testing;</li>
+<li>design approval;</li>
+<li>production deployment;</li>
+<li>audit evidence;</li>
+</ul>
+<p>it should remain identifiable.</p>
+<p>An approved tag should not be moved silently to another commit.</p>
+<p>The Martenweave changelog documents a concrete example: the existing remote <code>v0.4.0</code> tag was preserved, and a new <code>v0.4.1</code> release was created rather than moving or reusing the old tag.</p>
+<p>The same discipline should apply to model baselines.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">model-customer-wave2-approved</code></pre>
+<p>points to a specific commit.</p>
+<p>A later correction should create a new baseline:</p>
+<pre><code class="language-text">model-customer-wave2-approved.1</code></pre>
+<p>or a clearer organisational equivalent.</p>
+<p>The original reference should continue identifying what Wave 2 actually used.</p>
+<p>Otherwise, future analysis cannot reconstruct historical decisions or test results.</p>
+<p>---</p>
+<h1 id="use-tags-for-important-snapshots-not-every-commit">Use tags for important snapshots, not every commit</h1>
+<p>Git already stores every commit.</p>
+<p>Tagging every small edit creates another numbering bureaucracy.</p>
+<p>Tags are most useful for repository states that matter outside ordinary development:</p>
+<ul>
+<li>approved model baseline;</li>
+<li>migration-wave freeze;</li>
+<li>mock-load input baseline;</li>
+<li>production-effective model;</li>
+<li>handover package;</li>
+<li>audit snapshot.</li>
+</ul>
+<p>A tag should answer:</p>
+<blockquote>Why is this particular repository state worth naming?</blockquote>
+<p>A useful annotated tag message might record:</p>
+<pre><code class="language-text">Customer and Business Partner model approved for Mock Load 3.
+
+Scope:
+- Customer central data
+- Customer sales-area data
+- Business Partner roles
+
+Known limitations:
+- ERP_B Customer Group enrichment remains open
+- Portugal tax exemption treatment is provisional</code></pre>
+<p>The tag identifies the snapshot.</p>
+<p>The message explains its intended use.</p>
+<p>---</p>
+<h1 id="do-not-use-branches-as-permanent-version-labels">Do not use branches as permanent version labels</h1>
+<p>Branches are useful for active lines of work:</p>
+<pre><code class="language-text">main
+feature/customer-group-enrichment
+release/wave-3</code></pre>
+<p>They are poor permanent historical identifiers because branches move as commits are added.</p>
+<p>A statement such as:</p>
+<blockquote>The migration used <code>release/wave-3</code></blockquote>
+<p>is incomplete.</p>
+<p>Which commit on that branch?</p>
+<p>A durable record should use:</p>
+<ul>
+<li>commit SHA;</li>
+<li>immutable tag;</li>
+<li>release identifier resolving to a fixed commit.</li>
+</ul>
+<p>Branches describe moving workstreams.</p>
+<p>Tags and commits identify fixed states.</p>
+<p>---</p>
+<h1 id="repository-baseline-versus-domain-baseline">Repository baseline versus domain baseline</h1>
+<p>A repository may contain several domains.</p>
+<p>One change to Product data technically creates a new repository commit even when the Customer model is unchanged.</p>
+<p>This creates a useful question:</p>
+<blockquote>Does every domain need an independent version number?</blockquote>
+<p>Not necessarily.</p>
+<p>The Git repository baseline already identifies the complete state.</p>
+<p>Domain-specific releases may be useful when domains have genuinely independent:</p>
+<ul>
+<li>ownership;</li>
+<li>release cycles;</li>
+<li>implementation schedules;</li>
+<li>access controls.</li>
+</ul>
+<p>Possible approaches include:</p>
+<h2 id="one-repository-baseline">One repository baseline</h2>
+<p>Simplest.</p>
+<pre><code class="language-text">model-baseline-2026.10</code></pre>
+<p>All domains share one repository snapshot.</p>
+<h2 id="repository-baseline-with-domain-manifest">Repository baseline with domain manifest</h2>
+<p>The repository is tagged once, while a manifest states which domain versions or effective decisions are included.</p>
+<h2 id="separate-repositories">Separate repositories</h2>
+<p>Appropriate when governance and delivery boundaries are genuinely independent.</p>
+<p>Avoid adding domain version counters merely because stakeholders request “a Customer version number.”</p>
+<p>First determine which operational question that number must answer.</p>
+<p>---</p>
+<h1 id="model-baseline-should-be-a-set-not-a-document-label">Model baseline should be a set, not a document label</h1>
+<p>A usable baseline includes more than one design file.</p>
+<p>It may include:</p>
+<ul>
+<li>Entities;</li>
+<li>Attributes;</li>
+<li>Relationships;</li>
+<li>Rules;</li>
+<li>Mappings;</li>
+<li>Decisions;</li>
+<li>accepted deviations;</li>
+<li>evidence references;</li>
+<li>ownership;</li>
+<li>schema version;</li>
+<li>generated build manifest.</li>
+</ul>
+<p>This is why a repository snapshot is more reliable than a workbook filename.</p>
+<p>The baseline represents the complete connected model state.</p>
+<p>A mapping workbook called version 12 may not indicate which Rule, Decision or Entity definition accompanied it.</p>
+<p>---</p>
+<h1 id="separate-schema-migration-from-business-model-change">Separate schema migration from business-model change</h1>
+<p>Suppose Martenweave schema version 2 introduces a structured ownership field.</p>
+<p>Before:</p>
+<pre><code class="language-yaml">owner: Customer Data Team</code></pre>
+<p>After:</p>
+<pre><code class="language-yaml">owners:
+  semantic:
+    - ROLE-CUSTOMER-DATA-OWNER</code></pre>
+<p>The canonical file changes.</p>
+<p>The business meaning may remain the same.</p>
+<p>This is a schema migration.</p>
+<p>Now consider:</p>
+<pre><code class="language-yaml">owners:
+  semantic:
+    - ROLE-SALES-OPERATIONS</code></pre>
+<p>This is a business-governance change.</p>
+<p>The line-level diff may look similar.</p>
+<p>The change classification is different.</p>
+<p>A migration tool should ideally preserve semantic content while transforming object structure.</p>
+<p>Martenweave’s changelog records schema-version migration support as a distinct capability, which is the correct architectural direction.</p>
+<p>---</p>
+<h1 id="schema-versions-need-explicit-compatibility-rules">Schema versions need explicit compatibility rules</h1>
+<p>A schema version should answer:</p>
+<ul>
+<li>Can the current Martenweave version read it?</li>
+<li>Can it validate it?</li>
+<li>Can it migrate it?</li>
+<li>Will any information be lost?</li>
+<li>Can the new representation be written back to the old version?</li>
+</ul>
+<p>Possible relationships include:</p>
+<pre><code class="language-text">read-compatible
+write-compatible
+migratable
+unsupported</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Martenweave 0.5.0
+reads schema 1.0
+writes schema 1.0
+migrates schema 0.9 to 1.0</code></pre>
+<p>These are examples, not claims about the exact current compatibility matrix.</p>
+<p>The important point is that software version and schema version must be related explicitly rather than assumed.</p>
+<p>---</p>
+<h1 id="semantic-versioning-is-useful-for-software-not-automatically-for-every-model">Semantic Versioning is useful for software, not automatically for every model</h1>
+<p>Semantic Versioning defines a <code>MAJOR.MINOR.PATCH</code> convention tied to incompatible API changes, backward-compatible functionality and backward-compatible fixes.</p>
+<p>This is useful for software packages with a declared public API.</p>
+<p>Applying the same pattern directly to a business data model can create false precision.</p>
+<p>What is a “backward-compatible” change to Supplier Risk?</p>
+<ul>
+<li>adding a value may break downstream consumers;</li>
+<li>clarifying a definition may expose old misuse;</li>
+<li>making a field optional may preserve records but change controls;</li>
+<li>adding an Attribute may be harmless for one interface and breaking for another.</li>
+</ul>
+<p>A model can use semantic-style numbering if compatibility rules are explicitly defined.</p>
+<p>Without those rules, <code>2.1.3</code> is just a label.</p>
+<p>For many Martenweave use cases, named baselines and impact classification are clearer:</p>
+<pre><code class="language-text">customer-wave3-approved
+customer-ams-2026-10</code></pre>
+<p>combined with:</p>
+<pre><code class="language-text">change classification:
+breaking
+non-breaking
+editorial</code></pre>
+<p>---</p>
+<h1 id="define-model-change-classes">Define model-change classes</h1>
+<p>A useful versioning policy distinguishes several change classes.</p>
+<h2 id="editorial">Editorial</h2>
+<p>Examples:</p>
+<ul>
+<li>spelling correction;</li>
+<li>formatting;</li>
+<li>clearer prose without changed meaning;</li>
+<li>additional example.</li>
+</ul>
+<p>Expected treatment:</p>
+<ul>
+<li>no implementation impact;</li>
+<li>ordinary review;</li>
+<li>no new business-effective version.</li>
+</ul>
+<h2 id="metadata">Metadata</h2>
+<p>Examples:</p>
+<ul>
+<li>owner contact updated;</li>
+<li>source reference corrected;</li>
+<li>tag added;</li>
+<li>classification updated.</li>
+</ul>
+<p>Expected treatment depends on whether metadata controls governance.</p>
+<h2 id="additive">Additive</h2>
+<p>Examples:</p>
+<ul>
+<li>new Attribute;</li>
+<li>new Evidence object;</li>
+<li>new optional Relationship;</li>
+<li>new endpoint.</li>
+</ul>
+<p>Potentially non-breaking, but impact still requires review.</p>
+<h2 id="restrictive">Restrictive</h2>
+<p>Examples:</p>
+<ul>
+<li>field becomes mandatory;</li>
+<li>allowed-value set narrows;</li>
+<li>lifecycle transition is prohibited;</li>
+<li>applicability expands.</li>
+</ul>
+<p>Often operationally breaking.</p>
+<h2 id="semantic">Semantic</h2>
+<p>Examples:</p>
+<ul>
+<li>definition changes;</li>
+<li>source equivalence is rejected;</li>
+<li>granularity changes;</li>
+<li>one concept is split;</li>
+<li>authority changes.</li>
+</ul>
+<p>Requires explicit decision and impact analysis.</p>
+<h2 id="retirement">Retirement</h2>
+<p>Examples:</p>
+<ul>
+<li>Attribute removed from active model;</li>
+<li>Mapping superseded;</li>
+<li>Rule no longer valid;</li>
+<li>endpoint decommissioned.</li>
+</ul>
+<p>Requires dependant analysis and historical treatment.</p>
+<p>These classes are more actionable than incrementing a number mechanically.</p>
+<p>---</p>
+<h1 id="effective-dates-belong-to-decisions-and-applicability">Effective dates belong to decisions and applicability</h1>
+<p>A model baseline may be approved on 15 July.</p>
+<p>A rule may become effective on 1 October.</p>
+<p>A local exception may remain valid until 31 December.</p>
+<p>Do not use the Git commit date as the business-effective date.</p>
+<p>Model metadata may need:</p>
+<pre><code class="language-yaml">approved_on: 2026-07-15
+effective_from: 2026-10-01
+effective_to: null</code></pre>
+<p>A contextual override may add:</p>
+<pre><code class="language-yaml">scope:
+  country: PT
+effective_from: 2026-10-01
+effective_to: 2026-12-31</code></pre>
+<p>These dates answer different questions:</p>
+<ul>
+<li>When was the decision authorised?</li>
+<li>When does the rule apply?</li>
+<li>When does the exception expire?</li>
+</ul>
+<p>File modification time answers none of them reliably.</p>
+<p>---</p>
+<h1 id="bitemporal-questions-appear-quickly">Bitemporal questions appear quickly</h1>
+<p>Enterprise teams often need two timelines:</p>
+<h2 id="valid-time">Valid time</h2>
+<p>When the model rule applies to the business.</p>
+<h2 id="record-time">Record time</h2>
+<p>When the repository learned or recorded that rule.</p>
+<p>Example:</p>
+<pre><code class="language-text">Decision recorded:
+15 November
+
+Business-effective correction:
+1 October</code></pre>
+<p>This may happen when an unrecorded production decision is formalised after the fact.</p>
+<p>The repository should not pretend that the file existed on 1 October.</p>
+<p>It should preserve both:</p>
+<ul>
+<li>recorded on 15 November;</li>
+<li>effective from 1 October.</li>
+</ul>
+<p>This supports honest historical reconstruction.</p>
+<p>A full bitemporal database is not required for the first MVP.</p>
+<p>The conceptual distinction is still necessary.</p>
+<p>---</p>
+<h1 id="global-and-local-versions-should-use-applicability-not-copied-files">Global and local versions should use applicability, not copied files</h1>
+<p>A common versioning pattern creates:</p>
+<pre><code class="language-text">Global_Customer_Model_v5
+Germany_Customer_Model_v3
+Portugal_Customer_Model_v8</code></pre>
+<p>Soon, nobody can explain:</p>
+<ul>
+<li>which global version each country extends;</li>
+<li>which local changes remain valid;</li>
+<li>whether a later global version includes the local treatment;</li>
+<li>which file should be used for impact analysis.</li>
+</ul>
+<p>A stronger representation keeps one global object and explicit contextual overrides.</p>
+<pre><code class="language-text">Global rule:
+RULE-TAX-IDENTIFIER
+
+Local override:
+RULE-PT-TAX-IDENTIFIER
+overrides RULE-TAX-IDENTIFIER</code></pre>
+<p>Each object has:</p>
+<ul>
+<li>stable identity;</li>
+<li>lifecycle;</li>
+<li>effective period;</li>
+<li>scope;</li>
+<li>decision.</li>
+</ul>
+<p>Repository baselines then capture the complete combination.</p>
+<p>This avoids maintaining independent copies of the same model.</p>
+<p>---</p>
+<h1 id="migration-waves-are-deployment-contexts-not-model-identities">Migration waves are deployment contexts, not model identities</h1>
+<p>Wave 2 and Wave 3 may use different model states.</p>
+<p>That does not mean every object requires a <code>wave_version</code> field.</p>
+<p>Instead, a baseline manifest can identify:</p>
+<pre><code class="language-text">Wave 2 uses:
+model-customer-wave2-approved
+
+Wave 3 uses:
+model-customer-wave3-approved</code></pre>
+<p>If one rule differs temporarily, record:</p>
+<ul>
+<li>baseline;</li>
+<li>contextual deviation;</li>
+<li>effective period;</li>
+<li>implementation reference.</li>
+</ul>
+<p>Do not fork the entire model for one change unless the programme truly needs an independent long-lived line.</p>
+<p>---</p>
+<h1 id="keep-historical-interpretation">Keep historical interpretation</h1>
+<p>When an object is retired, historical datasets may still contain its values.</p>
+<p>Deleting every trace of the old object makes historical analysis harder.</p>
+<p>A retired object can remain canonical history with:</p>
+<pre><code class="language-yaml">status: retired
+effective_to: 2026-09-30
+replaced_by:
+  - ATTR-SUPPLIER-RISK
+  - ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>The current model should exclude it from ordinary active queries.</p>
+<p>Historical searches and migration analysis should still be able to find it.</p>
+<p>Versioning is not only about finding the newest state.</p>
+<p>It is about interpreting older evidence correctly.</p>
+<p>---</p>
+<h1 id="model-diffs-should-compare-baselines-not-document-names">Model diffs should compare baselines, not document names</h1>
+<p>A useful diff operation asks:</p>
+<pre><code class="language-text">Compare:
+customer-wave2-approved
+with:
+customer-wave3-approved</code></pre>
+<p>The output should classify changes:</p>
+<pre><code class="language-text">Added:
+ATTR-SUPPLIER-REVIEW-STATUS
+
+Changed:
+RULE-SUPPLIER-RISK-ACTIVATION
+- warning
++ blocking at activation
+
+Retired:
+VALUE-SUPPLIER-RISK-UNDER-REVIEW
+
+Unchanged but impacted:
+MAP-ERP-B-RISK-TO-S4</code></pre>
+<p>Martenweave’s changelog records a repository diff command as an existing capability.</p>
+<p>The valuable next step is semantic classification, not merely listing changed files.</p>
+<p>---</p>
+<h1 id="version-manifests-can-make-baselines-understandable">Version manifests can make baselines understandable</h1>
+<p>A tag identifies a commit.</p>
+<p>A manifest explains the baseline.</p>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">id: BASELINE-CUSTOMER-WAVE-3
+type: ModelBaseline
+repository_commit: abc123
+approved_on: 2026-08-14
+effective_from: 2026-10-01
+scope:
+  domains:
+    - DOMAIN-CUSTOMER
+    - DOMAIN-BUSINESS-PARTNER
+purpose: Wave 3 migration and production deployment
+known_deviations:
+  - DEV-ERP-B-CUSTOMER-GROUP</code></pre>
+<p>This is a product direction rather than a claim about the current Martenweave schema.</p>
+<p>A manifest can connect:</p>
+<ul>
+<li>fixed repository state;</li>
+<li>approval;</li>
+<li>scope;</li>
+<li>purpose;</li>
+<li>effective period;</li>
+<li>known deviations;</li>
+<li>implementation releases.</li>
+</ul>
+<p>It prevents the tag name from carrying every piece of context.</p>
+<p>---</p>
+<h1 id="release-is-not-approval">Release is not approval</h1>
+<p>GitHub releases can package software and release notes around a tag, with each release based on a Git tag marking a point in repository history.</p>
+<p>For model repositories, a release page may be useful for:</p>
+<ul>
+<li>distributing a handover baseline;</li>
+<li>attaching generated reports;</li>
+<li>publishing change notes;</li>
+<li>documenting known limitations.</li>
+</ul>
+<p>But publishing a release does not create business authority automatically.</p>
+<p>The baseline still needs:</p>
+<ul>
+<li>accountable approver;</li>
+<li>approval evidence;</li>
+<li>scope;</li>
+<li>effective context.</li>
+</ul>
+<p>Tool publication and governance approval are different acts.</p>
+<p>---</p>
+<h1 id="do-not-version-generated-outputs-independently">Do not version generated outputs independently</h1>
+<p>Generated files may include:</p>
+<ul>
+<li><code>modelops.db</code>;</li>
+<li>search JSONL;</li>
+<li>lineage JSONL;</li>
+<li>static viewer;</li>
+<li>readiness reports.</li>
+</ul>
+<p>These outputs should identify the canonical baseline and tool version that produced them.</p>
+<p>They do not need independent manual version histories.</p>
+<p>Example:</p>
+<pre><code class="language-text">Generated from:
+commit abc123
+
+Martenweave:
+0.5.0
+
+Schema:
+1.0
+
+Built:
+2026-07-14T15:00:00Z</code></pre>
+<p>If generated outputs receive their own unrelated versions, teams must reconcile:</p>
+<pre><code class="language-text">Model baseline 8
+Database version 11
+Viewer version 4
+Report version 19</code></pre>
+<p>That is avoidable.</p>
+<p>Regenerate them from the named canonical baseline.</p>
+<p>The current Martenweave architecture treats SQLite and JSONL outputs as disposable and rebuildable.</p>
+<p>---</p>
+<h1 id="do-not-commit-every-generated-artefact-as-historical-truth">Do not commit every generated artefact as historical truth</h1>
+<p>Committing generated outputs can be useful when:</p>
+<ul>
+<li>a release package requires them;</li>
+<li>deterministic output is being tested;</li>
+<li>an offline consumer needs them.</li>
+</ul>
+<p>It can also create noise:</p>
+<ul>
+<li>large diffs;</li>
+<li>merge conflicts;</li>
+<li>stale generated state;</li>
+<li>reviewers inspecting generated changes instead of canonical changes.</li>
+</ul>
+<p>A practical policy is:</p>
+<pre><code class="language-text">Canonical files:
+always versioned
+
+Generated outputs:
+recreated in CI or release packaging unless a specific consumer requires them</code></pre>
+<p>The baseline remains the canonical commit.</p>
+<p>Generated outputs reference it.</p>
+<p>---</p>
+<h1 id="change-logs-should-explain-semantic-releases">Change logs should explain semantic releases</h1>
+<p>A model changelog should not list every edited sentence.</p>
+<p>It should communicate changes that matter to consumers.</p>
+<p>Useful entries include:</p>
+<ul>
+<li>new governed concept;</li>
+<li>changed definition;</li>
+<li>changed applicability;</li>
+<li>added or retired values;</li>
+<li>changed source authority;</li>
+<li>changed ownership;</li>
+<li>breaking implementation consequence;</li>
+<li>accepted deviation;</li>
+<li>migration action required.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-markdown">## Customer model baseline — 2026-10
+
+### Changed
+
+- Customer Group is now explicitly sales-area-specific.
+- Direct equivalence with CRM Segment is rejected.
+- ERP_B requires governed enrichment before S/4HANA load.
+
+### Migration impact
+
+- Existing central mappings must be reviewed.
+- Mock Load 3 datasets require Sales Area keys.</code></pre>
+<p>This is more useful than:</p>
+<pre><code class="language-text">Updated five model files.</code></pre>
+<p>---</p>
+<h1 id="keep-release-notes-separate-from-permanent-decisions">Keep release notes separate from permanent decisions</h1>
+<p>A release note summarises what changed in one baseline.</p>
+<p>A Decision object preserves why a particular choice was made.</p>
+<p>The release note may say:</p>
+<blockquote>Supplier Review Status added.</blockquote>
+<p>The Decision should preserve:</p>
+<ul>
+<li>the incidents and evidence;</li>
+<li>rejected alternatives;</li>
+<li>approving authority;</li>
+<li>consequence for Supplier Risk.</li>
+</ul>
+<p>Do not rely on release notes as the only historical rationale.</p>
+<p>Release notes are navigational summaries.</p>
+<p>Decisions are governed evidence.</p>
+<p>---</p>
+<h1 id="avoid-version-numbers-in-filenames">Avoid version numbers in filenames</h1>
+<p>Prefer:</p>
+<pre><code class="language-text">customer-group.md
+supplier-risk-activation.md
+customer-group-source-decision.md</code></pre>
+<p>over:</p>
+<pre><code class="language-text">customer-group-v7.md
+supplier-risk-activation-final-v3.md</code></pre>
+<p>The repository history already preserves previous states.</p>
+<p>Version suffixes create problems:</p>
+<ul>
+<li>references must change;</li>
+<li>old and new files coexist accidentally;</li>
+<li>search results duplicate concepts;</li>
+<li>users edit the wrong copy;</li>
+<li>IDs and filenames drift.</li>
+</ul>
+<p>A new filename is appropriate for a genuinely new object, not a new revision of the same object.</p>
+<p>---</p>
+<h1 id="one-object-should-have-one-canonical-active-file">One object should have one canonical active file</h1>
+<p>Keeping several active revisions side by side is usually a mistake:</p>
+<pre><code class="language-text">customer-group-v1.md
+customer-group-v2.md
+customer-group-v3.md</code></pre>
+<p>Which one should references use?</p>
+<p>A better pattern is:</p>
+<pre><code class="language-text">customer-group.md</code></pre>
+<p>with historical revisions available through Git.</p>
+<p>When the old state must remain queryable as a retired concept, preserve it as an explicitly separate historical object only when semantic identity has changed.</p>
+<p>Do not use copied files as a substitute for history.</p>
+<p>---</p>
+<h1 id="merge-conflicts-are-model-signals">Merge conflicts are model signals</h1>
+<p>When two branches change the same object, Git reports a textual conflict.</p>
+<p>The semantic conflict may be larger or smaller than the text suggests.</p>
+<p>Example:</p>
+<p>Branch A:</p>
+<pre><code class="language-yaml">required: true</code></pre>
+<p>Branch B:</p>
+<pre><code class="language-yaml">applicability:
+  supplier_category:
+    - STRATEGIC</code></pre>
+<p>These changes might be compatible:</p>
+<blockquote>Required only for strategic suppliers.</blockquote>
+<p>Or they may reflect conflicting assumptions.</p>
+<p>Conflict resolution should ask:</p>
+<ul>
+<li>Are the changes editorial or semantic?</li>
+<li>Do they affect the same context?</li>
+<li>Which Decision authorises each change?</li>
+<li>Does combining them create a valid Rule?</li>
+<li>Has impact been recalculated?</li>
+</ul>
+<p>Do not resolve model conflicts merely by keeping both lines.</p>
+<p>---</p>
+<h1 id="parallel-branches-need-an-explicit-convergence-strategy">Parallel branches need an explicit convergence strategy</h1>
+<p>SAP programmes often have:</p>
+<ul>
+<li>Wave 2 production support;</li>
+<li>Wave 3 build;</li>
+<li>global template evolution;</li>
+<li>local rollout branches.</li>
+</ul>
+<p>Long-lived branches create risk when model changes must be copied manually.</p>
+<p>A critical production correction may need to move into:</p>
+<ul>
+<li>current production baseline;</li>
+<li>future release branch;</li>
+<li>global template.</li>
+</ul>
+<p>The repository should record whether a change was:</p>
+<ul>
+<li>merged forward;</li>
+<li>intentionally excluded;</li>
+<li>replaced by another decision.</li>
+</ul>
+<p>Otherwise, the same model issue reappears in later waves.</p>
+<p>Avoid long-lived branches when contextual applicability can represent the difference more clearly.</p>
+<p>Use branches for genuine parallel delivery states, not every local variation.</p>
+<p>---</p>
+<h1 id="reverting-a-commit-does-not-always-revert-the-business">Reverting a commit does not always revert the business</h1>
+<p>Git can restore an earlier repository state.</p>
+<p>The operational landscape may already have changed.</p>
+<p>Suppose a Rule becomes mandatory and is deployed to SAP.</p>
+<p>The model commit is then reverted.</p>
+<p>That does not automatically:</p>
+<ul>
+<li>reverse SAP configuration;</li>
+<li>correct records created under the new rule;</li>
+<li>update interfaces;</li>
+<li>inform users;</li>
+<li>restore prior exceptions.</li>
+</ul>
+<p>A model rollback needs an implementation and data plan.</p>
+<p>The repository history provides the previous definition.</p>
+<p>It does not execute operational reversal.</p>
+<p>---</p>
+<h1 id="emergency-changes-need-retroactive-alignment">Emergency changes need retroactive alignment</h1>
+<p>An AMS team may change production under urgent conditions before the canonical model is updated.</p>
+<p>Pretending this never happens is unrealistic.</p>
+<p>The process should record:</p>
+<pre><code class="language-text">Emergency implementation:
+CHG-501
+
+Observed production state:
+Supplier Risk changed from error to warning
+
+Canonical status:
+Deviation pending review
+
+Expiry:
+2026-08-15</code></pre>
+<p>Then one of three outcomes should occur:</p>
+<ol>
+<li>implementation is reverted;</li>
+<li>canonical model is changed through approval;</li>
+<li>bounded deviation is extended explicitly.</li>
+</ol>
+<p>Do not silently edit history to make it appear that the canonical model always matched production.</p>
+<p>Versioning should preserve the actual sequence.</p>
+<p>---</p>
+<h1 id="ai-generated-changes-need-a-baseline-anchor">AI-generated changes need a baseline anchor</h1>
+<p>An agent should not propose a change against an unspecified “current model.”</p>
+<p>A PatchProposal should identify:</p>
+<ul>
+<li>target object IDs;</li>
+<li>baseline commit or fingerprint;</li>
+<li>expected previous values;</li>
+<li>proposed values.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">baseline_commit: abc123
+operations:
+  - object: RULE-SUPPLIER-RISK-ACTIVATION
+    expected:
+      severity: warning
+    proposed:
+      severity: error</code></pre>
+<p>If the repository changes before the proposal is applied, the system can detect that the proposal may be stale.</p>
+<p>This is analogous to optimistic concurrency.</p>
+<p>It prevents an agent from overwriting a newer human decision with a proposal based on older context.</p>
+<p>---</p>
+<h1 id="proposed-versions-are-not-released-versions">Proposed versions are not released versions</h1>
+<p>A branch or PatchProposal may describe a candidate model.</p>
+<p>Do not present it as “Model version 12” before approval.</p>
+<p>Use explicit labels:</p>
+<pre><code class="language-text">draft
+candidate
+pending review
+approved baseline
+effective baseline
+retired baseline</code></pre>
+<p>This prevents stakeholders from treating a technically generated proposal as authorised design.</p>
+<p>---</p>
+<h1 id="versioning-policy-should-answer-concrete-questions">Versioning policy should answer concrete questions</h1>
+<p>A useful policy should allow teams to answer:</p>
+<ul>
+<li>What is the current approved model?</li>
+<li>Which baseline did Mock Load 2 use?</li>
+<li>Which baseline is planned for Wave 3?</li>
+<li>Which schema version do these files use?</li>
+<li>Which changes are approved but not effective?</li>
+<li>Which local deviations remain active?</li>
+<li>Which SAP release implements the baseline?</li>
+<li>Why was this Attribute changed?</li>
+<li>Can we interpret a dataset created last year?</li>
+<li>Which generated index corresponds to this baseline?</li>
+</ul>
+<p>If the policy answers only:</p>
+<blockquote>The latest file is version 9,</blockquote>
+<p>it is insufficient.</p>
+<p>---</p>
+<h1 id="a-minimum-viable-versioning-policy">A minimum viable versioning policy</h1>
+<p>Martenweave does not need a complex configuration-management platform.</p>
+<p>A practical first policy can use the following rules.</p>
+<h2 id="rule-1">Rule 1</h2>
+<p>Stable object IDs do not change for ordinary revisions.</p>
+<h2 id="rule-2">Rule 2</h2>
+<p>Git commits preserve all file history.</p>
+<h2 id="rule-3">Rule 3</h2>
+<p>The approved branch identifies current canonical working state.</p>
+<h2 id="rule-4">Rule 4</h2>
+<p>Annotated tags identify important fixed baselines.</p>
+<h2 id="rule-5">Rule 5</h2>
+<p>Schema version is separate from model baseline.</p>
+<h2 id="rule-6">Rule 6</h2>
+<p>Approval date and effective date are explicit where relevant.</p>
+<h2 id="rule-7">Rule 7</h2>
+<p>Retired and superseded objects remain historically traceable.</p>
+<h2 id="rule-8">Rule 8</h2>
+<p>Generated outputs identify their canonical commit and tool version.</p>
+<h2 id="rule-9">Rule 9</h2>
+<p>Semantic changes reference Decisions and impact evidence.</p>
+<h2 id="rule-10">Rule 10</h2>
+<p>Published tags and used baselines are never silently moved.</p>
+<p>This is enough to eliminate most “final-final-v2” behaviour.</p>
+<p>---</p>
+<h1 id="a-worked-example-customer-group">A worked example: Customer Group</h1>
+<h2 id="baseline-a">Baseline A</h2>
+<p>Tag:</p>
+<pre><code class="language-text">customer-wave2-approved</code></pre>
+<p>Model:</p>
+<pre><code class="language-text">Customer Group is treated as centrally derived from CRM Segment.</code></pre>
+<h2 id="new-evidence">New evidence</h2>
+<p>Wave 2 shows that several customers require different Customer Groups by Sales Area.</p>
+<h2 id="decision">Decision</h2>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-GRANULARITY-017
+
+Customer Group is sales-area-specific.
+Direct central equivalence is rejected.</code></pre>
+<h2 id="candidate-change">Candidate change</h2>
+<ul>
+<li>update Attribute definition;</li>
+<li>change Entity from Customer to Customer Sales Area;</li>
+<li>retire direct Mapping;</li>
+<li>add enrichment requirement;</li>
+<li>update affected Rules.</li>
+</ul>
+<h2 id="baseline-b">Baseline B</h2>
+<p>Tag:</p>
+<pre><code class="language-text">customer-wave3-approved</code></pre>
+<p>Effective date:</p>
+<pre><code class="language-text">2026-10-01</code></pre>
+<h2 id="historical-treatment">Historical treatment</h2>
+<p>Wave 2 test results continue to reference Baseline A.</p>
+<p>Wave 3 uses Baseline B.</p>
+<p>The old baseline is not renamed or deleted.</p>
+<p>---</p>
+<h1 id="a-worked-example-supplier-risk-decomposition">A worked example: Supplier Risk decomposition</h1>
+<h2 id="old-model">Old model</h2>
+<pre><code class="language-text">Supplier Risk:
+LOW
+STANDARD
+HIGH
+UNDER_REVIEW</code></pre>
+<h2 id="finding">Finding</h2>
+<p><code>UNDER_REVIEW</code> is lifecycle state, not final classification.</p>
+<h2 id="new-model">New model</h2>
+<pre><code class="language-text">Supplier Risk:
+LOW
+STANDARD
+HIGH
+
+Supplier Review Status:
+PENDING
+CLEARED
+REJECTED</code></pre>
+<h2 id="versioning-treatment">Versioning treatment</h2>
+<p>This is a semantic breaking change.</p>
+<p>Required actions:</p>
+<ul>
+<li>new Attribute ID for Review Status;</li>
+<li>Customer—or Supplier—Risk object remains stable but loses an invalid value;</li>
+<li>old value is retired;</li>
+<li>historical Mapping is preserved;</li>
+<li>conversion proposal is linked;</li>
+<li>baseline changes;</li>
+<li>implementation release is recorded separately.</li>
+</ul>
+<p>Incrementing a generic file version does not communicate this impact.</p>
+<p>The semantic diff does.</p>
+<p>---</p>
+<h1 id="a-worked-example-schema-only-migration">A worked example: schema-only migration</h1>
+<h2 id="before">Before</h2>
+<pre><code class="language-yaml">schema_version: &quot;0.9&quot;
+owner: Customer Data Team</code></pre>
+<h2 id="after">After</h2>
+<pre><code class="language-yaml">schema_version: &quot;1.0&quot;
+owners:
+  semantic:
+    - ROLE-CUSTOMER-DATA-OWNER</code></pre>
+<p>Assume the role resolves to the same authority.</p>
+<p>Classification:</p>
+<pre><code class="language-text">Schema migration
+No intended business-semantic change</code></pre>
+<p>The repository commit changes.</p>
+<p>Generated indexes may change.</p>
+<p>The business-effective model baseline may remain equivalent.</p>
+<p>This distinction prevents unnecessary implementation work.</p>
+<p>---</p>
+<h1 id="common-anti-patterns">Common anti-patterns</h1>
+<h2 id="version-in-every-filename">Version in every filename</h2>
+<p>Creates duplicate canonical candidates.</p>
+<h2 id="one-global-model-version-counter">One global “model version” counter</h2>
+<p>Cannot explain domain, schema or effective context.</p>
+<h2 id="tags-moved-after-approval">Tags moved after approval</h2>
+<p>Historical evidence becomes unreliable.</p>
+<h2 id="branch-name-used-as-historical-proof">Branch name used as historical proof</h2>
+<p>Branches move.</p>
+<h2 id="commit-date-used-as-effective-date">Commit date used as effective date</h2>
+<p>Recording time and business-valid time are confused.</p>
+<h2 id="software-version-used-as-model-version">Software version used as model version</h2>
+<p>Product release and client model baseline become coupled.</p>
+<h2 id="schema-migration-treated-as-business-change">Schema migration treated as business change</h2>
+<p>Teams perform unnecessary impact work.</p>
+<h2 id="semantic-change-treated-as-editorial-correction">Semantic change treated as editorial correction</h2>
+<p>Implementation impact is missed.</p>
+<h2 id="old-objects-deleted-completely">Old objects deleted completely</h2>
+<p>Historical datasets become hard to interpret.</p>
+<h2 id="generated-database-versioned-independently">Generated database versioned independently</h2>
+<p>Another reconciliation problem is created.</p>
+<h2 id="local-copies-labelled-as-country-versions">Local copies labelled as country versions</h2>
+<p>Global/local inheritance disappears.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>The current core already has several foundations:</p>
+<ul>
+<li>canonical Git-backed files;</li>
+<li>schema versioning and migration;</li>
+<li>repository diff;</li>
+<li>deterministic validation;</li>
+<li>generated indexes;</li>
+<li>proposal and ChangeRequest workflows;</li>
+<li>impact analysis.</li>
+</ul>
+<p>A focused next increment could add a small explicit baseline capability.</p>
+<h2 id="baseline-manifest">Baseline manifest</h2>
+<p>Record:</p>
+<ul>
+<li>baseline ID;</li>
+<li>commit;</li>
+<li>scope;</li>
+<li>approval;</li>
+<li>purpose;</li>
+<li>effective period;</li>
+<li>known deviations.</li>
+</ul>
+<h2 id="semantic-change-classes">Semantic change classes</h2>
+<p>Classify diff results as:</p>
+<ul>
+<li>editorial;</li>
+<li>additive;</li>
+<li>restrictive;</li>
+<li>semantic;</li>
+<li>retirement.</li>
+</ul>
+<h2 id="baseline-comparison-report">Baseline comparison report</h2>
+<p>Show:</p>
+<ul>
+<li>added objects;</li>
+<li>changed definitions;</li>
+<li>changed relationships;</li>
+<li>changed Rules;</li>
+<li>retired objects;</li>
+<li>impacted dependants.</li>
+</ul>
+<h2 id="proposal-baseline-check">Proposal baseline check</h2>
+<p>Reject or warn when a proposal was generated against an outdated baseline.</p>
+<h2 id="generated-artifact-manifest">Generated-artifact manifest</h2>
+<p>Record:</p>
+<ul>
+<li>canonical commit;</li>
+<li>schema version;</li>
+<li>Martenweave version;</li>
+<li>build time;</li>
+<li>validation result.</li>
+</ul>
+<p>This is a small vertical slice.</p>
+<p>It adds practical version governance without building a full configuration-management system.</p>
+<p>---</p>
+<h1 id="versioning-should-remain-boring">Versioning should remain boring</h1>
+<p>Good versioning should not demand constant meetings or manual numbering.</p>
+<p>Most ordinary work should follow naturally:</p>
+<pre><code class="language-text">Edit canonical object
+→ validate
+→ review diff
+→ merge</code></pre>
+<p>Only meaningful baselines require explicit publication:</p>
+<pre><code class="language-text">Validated repository
+→ approval
+→ annotated tag
+→ baseline manifest
+→ generated release artefacts</code></pre>
+<p>The system should automate:</p>
+<ul>
+<li>fingerprints;</li>
+<li>commit references;</li>
+<li>diff generation;</li>
+<li>generated-artifact metadata;</li>
+<li>schema migrations;</li>
+<li>stale-proposal detection.</li>
+</ul>
+<p>Humans should decide:</p>
+<ul>
+<li>semantic identity;</li>
+<li>approval;</li>
+<li>effective date;</li>
+<li>breaking impact;</li>
+<li>retirement.</li>
+</ul>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Versioning a data model is not the task of placing a number beside every document.</p>
+<p>It is the task of preserving several independent truths:</p>
+<pre><code class="language-text">What changed?
+Git commit
+
+Which complete state was approved?
+Model baseline
+
+Which object format is used?
+Schema version
+
+When does the rule apply?
+Effective period
+
+Where has it been implemented?
+Implementation release
+
+Why did it change?
+Decision
+
+What did it affect?
+Impact analysis</code></pre>
+<p>Confusion begins when one label attempts to answer all seven questions.</p>
+<p>Martenweave’s canonical-file architecture provides a strong foundation because:</p>
+<ul>
+<li>Git preserves exact repository history;</li>
+<li>stable IDs preserve object identity;</li>
+<li>schema versions preserve parseability;</li>
+<li>tags can preserve important baselines;</li>
+<li>Decisions preserve rationale;</li>
+<li>impact analysis preserves consequences;</li>
+<li>generated indexes remain tied to canonical state.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can the team reconstruct exactly which model baseline was approved, which schema interpreted it, when it became effective, which SAP release implemented it and why it differed from the previous baseline?</blockquote>
+<p>When the answer is yes, the model is versioned.</p>
+<p>When the answer is “open the latest spreadsheet and check the filename,” the team is still managing documents rather than governing model history.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It uses canonical files, deterministic validation, Git history, generated indexes, decisions and reviewable proposals to preserve model change without turning every revision into another manually maintained document version.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Git’s official documentation describes tags as references used to mark important points in repository history, commonly including releases. It distinguishes lightweight tags from annotated tags, which can store the tagger, date, message and signature information.</p>
+<p>Semantic Versioning defines software versions around incompatible API changes, backward-compatible functionality and backward-compatible fixes. Applying that convention to a business model requires an explicit definition of model compatibility rather than copying the numbering pattern mechanically.</p>
+<p>GitHub’s official documentation describes releases as deployable iterations based on Git tags, with release notes and distributable assets. A release can package a model baseline, but organisational approval and business-effective dates remain separate governance facts.</p>
+<p>Martenweave Core’s current changelog records schema-version migration, repository diffing, proposal impact analysis, approval gates and generated search/index capabilities as existing foundations.</p>
+<p>The changelog also documents the decision not to move or reuse an existing <code>v0.4.0</code> tag, instead creating <code>v0.4.1</code> from the validated branch. This same immutability principle is appropriate for model baselines already used as programme or audit evidence.</p>
+<p>Martenweave’s generated SQLite and JSONL artefacts are documented as disposable and rebuildable from canonical model files. They should therefore identify their originating baseline rather than develop independent authoritative version histories.</p>
+<p>The conceptual baseline-manifest and metadata examples in this article describe a recommended product direction and should not be treated as guarantees of the exact current Martenweave schema.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by GitHub, Git, SAP or Semantic Versioning.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-martenweave-represents-entities-attributes-rules-and-relationships.html"><span>Previous</span>A migration workbook contains one row:</a><a href="/blog/how-model-diffing-should-work-across-sap-releases.html"><span>Next</span>An SAP programme compares its Wave 2 and Wave 3 model repositories.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

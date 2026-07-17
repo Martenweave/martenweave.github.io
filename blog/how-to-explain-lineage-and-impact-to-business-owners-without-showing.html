@@ -1,0 +1,1371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database | Martenweave</title>
+    <meta
+      name="description"
+      content="A data architect opens a lineage viewer during a business review."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html" />
+    <meta property="og:title" content="How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database | Martenweave" />
+    <meta property="og:description" content="A data architect opens a lineage viewer during a business review." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database | Martenweave" />
+    <meta name="twitter:description" content="A data architect opens a lineage viewer during a business review." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html",
+                        "name": "How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database | Martenweave",
+                        "description": "A data architect opens a lineage viewer during a business review.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database",
+                                    "item": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html#content",
+                        "headline": "How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database",
+                        "name": "How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database",
+                        "description": "A data architect opens a lineage viewer during a business review.",
+                        "url": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Explain Lineage and Impact to Business Owners Without Showing Them a Graph Database</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A data architect opens a lineage viewer during a business review.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#1-what-is-this-value">1. What is this value?</a></li><li><a href="#2-how-is-it-created">2. How is it created?</a></li><li><a href="#3-where-is-it-used">3. Where is it used?</a></li><li><a href="#4-what-happens-if-it-changes">4. What happens if it changes?</a></li><li><a href="#5-what-decision-is-required">5. What decision is required?</a></li><li><a href="#example-product-plant-mrp-controller">Example: Product Plant MRP Controller</a></li><li><a href="#what-it-is">What it is</a></li><li><a href="#how-it-is-created">How it is created</a></li><li><a href="#where-it-matters">Where it matters</a></li><li><a href="#current-risk">Current risk</a></li><li><a href="#change-impact">Change impact</a></li><li><a href="#decision">Decision</a></li><li><a href="#data-impact">Data impact</a></li><li><a href="#process-impact">Process impact</a></li><li><a href="#control-impact">Control impact</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A data architect opens a lineage viewer during a business review.</p>
+<p>The screen contains:</p>
+<ul>
+<li>dozens of nodes;</li>
+<li>colour-coded edges;</li>
+<li>table and field names;</li>
+<li>transformation objects;</li>
+<li>source-system identifiers;</li>
+<li>confidence scores;</li>
+<li>several levels of upstream and downstream relationships.</li>
+</ul>
+<p>The architect explains that the graph contains everything the business owner asked for.</p>
+<p>The business owner asks:</p>
+<blockquote>Can the Product MRP Controller be changed safely before cutover?</blockquote>
+<p>The graph is technically complete.</p>
+<p>The answer is still unclear.</p>
+<p>Business owners rarely need to inspect the underlying graph structure. They need the graph translated into a decision:</p>
+<ul>
+<li>what the data means;</li>
+<li>where it comes from;</li>
+<li>how it is created;</li>
+<li>where it is used;</li>
+<li>what would change;</li>
+<li>which risks remain;</li>
+<li>who must approve;</li>
+<li>what evidence supports the conclusion.</li>
+</ul>
+<blockquote>A lineage system should store technical precision and present business consequences.</blockquote>
+<p>The graph is an internal reasoning structure.</p>
+<p>It should not dictate the review format.</p>
+<p>Martenweave’s backend-first model is suited to this separation. Canonical objects and typed references can support deterministic validation, lineage and impact analysis, while a local viewer or generated report can present ownership, evidence, validation state and impact context without making the generated index the source of truth.</p>
+<p>The objective is not to hide technical detail.</p>
+<p>It is to reveal it progressively, beginning with the decision the owner must make.</p>
+<p>---</p>
+<h1 id="the-business-owner-does-not-need-a-node-list">The business owner does not need a node list</h1>
+<p>A technical trace might return:</p>
+<pre><code class="language-text">ATTR-PRODUCT-PLANT-MRP-CONTROLLER
+FEP-LEGACY-PLANNER-GROUP
+FEP-LEGACY-SITE
+MAP-PLANNER-GROUP-TO-MRP-CONTROLLER
+RULE-MRP-CONTROLLER-REQUIRED
+FEP-S4-MARC-DISPO
+EVID-MOCK3-MRP-CONTROLLER
+DEC-PLANT-PLANNING-017</code></pre>
+<p>This output is valuable to the system.</p>
+<p>It is not a useful opening statement in a meeting.</p>
+<p>The business translation is:</p>
+<blockquote>MRP Controller is assigned per Product Plant. It is currently derived from legacy Planner Group and mapped plant. The target field is populated for 94 percent of Product Plant records. Six percent use a temporary default in plants PL20 and PL30. Changing the derivation now would affect production-planning ownership, the cutover file and the first planning run.</blockquote>
+<p>Both representations describe the same graph.</p>
+<p>The second tells the owner what matters.</p>
+<p>---</p>
+<h1 id="start-with-the-business-question">Start with the business question</h1>
+<p>A lineage review should not begin with:</p>
+<blockquote>Here is the full upstream graph.</blockquote>
+<p>It should begin with the specific decision.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Can this field become mandatory?
+
+Can this source system be retired?
+
+Can this custom SAP field be replaced?
+
+Can we accept the current fallback?
+
+Which records would require correction?
+
+Which downstream processes depend on this value?
+
+Does this test result prove readiness?</code></pre>
+<p>The query determines which slice of the graph should be shown.</p>
+<p>A request to approve a value-list change needs a different view from a request to investigate a cutover defect.</p>
+<p>---</p>
+<h1 id="translate-the-graph-into-five-business-questions">Translate the graph into five business questions</h1>
+<p>A reliable business-facing explanation can follow five questions.</p>
+<h2 id="1-what-is-this-value">1. What is this value?</h2>
+<p>State:</p>
+<ul>
+<li>business name;</li>
+<li>plain-language definition;</li>
+<li>Entity and organisational context;</li>
+<li>why the value matters.</li>
+</ul>
+<h2 id="2-how-is-it-created">2. How is it created?</h2>
+<p>State:</p>
+<ul>
+<li>authoritative source;</li>
+<li>relevant inputs;</li>
+<li>transformation;</li>
+<li>fallback;</li>
+<li>manual intervention.</li>
+</ul>
+<h2 id="3-where-is-it-used">3. Where is it used?</h2>
+<p>State:</p>
+<ul>
+<li>SAP target;</li>
+<li>downstream interfaces;</li>
+<li>reports;</li>
+<li>process controls;</li>
+<li>Rules.</li>
+</ul>
+<h2 id="4-what-happens-if-it-changes">4. What happens if it changes?</h2>
+<p>State:</p>
+<ul>
+<li>affected populations;</li>
+<li>systems;</li>
+<li>business processes;</li>
+<li>validations;</li>
+<li>migration cycles;</li>
+<li>historical interpretation.</li>
+</ul>
+<h2 id="5-what-decision-is-required">5. What decision is required?</h2>
+<p>State:</p>
+<ul>
+<li>options;</li>
+<li>recommendation;</li>
+<li>unresolved evidence;</li>
+<li>required approvers;</li>
+<li>deadline.</li>
+</ul>
+<p>This structure is more useful than navigating the graph node by node.</p>
+<p>---</p>
+<h1 id="business-meaning-comes-before-the-field-name">Business meaning comes before the field name</h1>
+<p>Consider the SAP field:</p>
+<pre><code class="language-text">MARC-DISPO</code></pre>
+<p>A technical audience may recognise it.</p>
+<p>A business owner should first see:</p>
+<pre><code class="language-text">Business concept:
+MRP Controller
+
+Context:
+one value per Product and Plant
+
+Purpose:
+identifies the planning responsibility used in operational material planning</code></pre>
+<p>Only then show:</p>
+<pre><code class="language-text">SAP implementation:
+Product Plant MRP Controller field</code></pre>
+<p>The field is evidence of implementation.</p>
+<p>The business concept is the subject of the decision.</p>
+<p>This distinction becomes critical when:</p>
+<ul>
+<li>a custom field is replaced;</li>
+<li>one concept exists in several systems;</li>
+<li>the same label is used at several organisational levels;</li>
+<li>a field name remains stable while its meaning changes.</li>
+</ul>
+<p>---</p>
+<h1 id="explain-grain-in-business-language">Explain grain in business language</h1>
+<p>Technical descriptions often say:</p>
+<pre><code class="language-text">Cardinality:
+Product 1:N Product Plant</code></pre>
+<p>A business explanation says:</p>
+<blockquote>The value is not global for the Product. The same Product can have a different MRP Controller in each Plant.</blockquote>
+<p>Another example:</p>
+<pre><code class="language-text">Customer partner function belongs to Customer Sales Area.</code></pre>
+<p>Business translation:</p>
+<blockquote>The Payer or Ship-to assignment may differ by Sales Organisation, Distribution Channel and Division. One central customer assignment cannot safely be copied everywhere.</blockquote>
+<p>For Cost Centres:</p>
+<blockquote>Validity is evaluated within the Controlling Area and time period. Creating the Cost Centre is not enough if its valid-from date begins after go-live.</blockquote>
+<p>Grain is often the hidden reason a change is risky.</p>
+<p>It must be explained without requiring the owner to interpret a schema diagram.</p>
+<p>---</p>
+<h1 id="use-a-one-page-attribute-brief">Use a one-page Attribute brief</h1>
+<p>For a critical Attribute, the default business view should be a compact brief.</p>
+<h2 id="example-product-plant-mrp-controller">Example: Product Plant MRP Controller</h2>
+<p><strong>Meaning</strong></p>
+<p>Person or planning group responsible for material planning for a Product in one Plant.</p>
+<p><strong>Current source</strong></p>
+<p>Legacy Planner Group combined with the mapped Plant.</p>
+<p><strong>Transformation</strong></p>
+<p>Plant-specific conversion table.</p>
+<p><strong>SAP implementation</strong></p>
+<p>Product Plant MRP Controller.</p>
+<p><strong>Current readiness</strong></p>
+<p>94 percent assigned through approved Mapping.</p>
+<p><strong>Exceptions</strong></p>
+<p>6 percent use temporary default <code>001</code> in PL20 and PL30.</p>
+<p><strong>Business effect</strong></p>
+<p>Incorrect assignments may send planning exceptions and material requirements to the wrong team.</p>
+<p><strong>Decision required</strong></p>
+<p>Either approve the temporary default through the first planning cycle or provide the missing plant-specific conversion.</p>
+<p><strong>Owners</strong></p>
+<p>Production Planning Data Owner, Plant PL20 lead and Plant PL30 lead.</p>
+<p><strong>Evidence</strong></p>
+<p>Mock Load 3 profile and planning simulation.</p>
+<p>This page can be generated from a much larger graph.</p>
+<p>The business owner does not need to see every graph edge unless a detail is disputed.</p>
+<p>---</p>
+<h1 id="show-the-normal-path-first">Show the normal path first</h1>
+<p>Most owners need to understand the intended route before reviewing exceptions.</p>
+<p>A plain-language lineage statement can be:</p>
+<blockquote>Legacy Planner Group and Plant are converted through the approved plant-specific Mapping. The result is written to the SAP Product Plant MRP Controller field.</blockquote>
+<p>A compact visual form can be:</p>
+<pre><code class="language-text">Legacy planning responsibility
++
+Plant
+→ approved conversion
+→ SAP Product Plant MRP Controller</code></pre>
+<p>This keeps:</p>
+<ul>
+<li>business input;</li>
+<li>context;</li>
+<li>transformation;</li>
+<li>target.</li>
+</ul>
+<p>It removes:</p>
+<ul>
+<li>internal IDs;</li>
+<li>graph direction codes;</li>
+<li>technical storage details.</li>
+</ul>
+<p>The user can expand the path when needed.</p>
+<p>---</p>
+<h1 id="then-show-exceptions-separately">Then show exceptions separately</h1>
+<p>Do not mix normal and exceptional paths into one diagram.</p>
+<p>For the same MRP Controller example:</p>
+<pre><code class="language-text">Approved path:
+Planner Group + Plant → plant-specific MRP Controller
+
+Temporary fallback:
+Missing conversion → default controller 001
+
+Affected scope:
+PL20 and PL30
+
+Population:
+6% of Product Plant records
+
+Expiry:
+before first production planning cycle</code></pre>
+<p>This makes the fallback visible without making the entire lineage view confusing.</p>
+<p>It also prevents the fallback from appearing equally valid to the normal path.</p>
+<p>---</p>
+<h1 id="example-1-supplier-bank-account">Example 1: Supplier bank account</h1>
+<p>A graph might connect:</p>
+<pre><code class="language-text">bank country
+bank key
+account number
+IBAN
+supplier
+bank Mapping
+validation Rule
+SAP bank endpoint
+payment process</code></pre>
+<p>The business owner needs a different explanation.</p>
+<h2 id="what-it-is">What it is</h2>
+<p>Bank account approved for Supplier payments.</p>
+<h2 id="how-it-is-created">How it is created</h2>
+<p>The source bank details are normalised and checked according to country-specific requirements. IBAN is used where applicable. Account ownership must be associated with the correct Supplier legal entity.</p>
+<h2 id="where-it-matters">Where it matters</h2>
+<ul>
+<li>payment proposal;</li>
+<li>payment execution;</li>
+<li>fraud and duplicate-account review;</li>
+<li>Treasury or Accounts Payable controls.</li>
+</ul>
+<h2 id="current-risk">Current risk</h2>
+<p>680 payment-active suppliers have technically valid bank data but incomplete ownership verification.</p>
+<h2 id="change-impact">Change impact</h2>
+<p>Relaxing the ownership Rule would increase technical readiness but weaken payment-control assurance.</p>
+<h2 id="decision">Decision</h2>
+<p>Do not approve the relaxation. Keep affected suppliers payment-blocked until evidence is complete.</p>
+<p>The owner does not need to inspect every bank-field edge to understand the decision.</p>
+<p>---</p>
+<h1 id="use-business-outcome-not-target-persistence-as-the-final-node">Use business outcome, not target persistence, as the final node</h1>
+<p>For Supplier Bank Account, the lineage should not end with:</p>
+<pre><code class="language-text">SAP field populated</code></pre>
+<p>The business-facing outcome is:</p>
+<pre><code class="language-text">Supplier can be paid through the intended controlled process</code></pre>
+<p>For Product MRP Type:</p>
+<pre><code class="language-text">Product participates correctly in plant planning</code></pre>
+<p>For Customer Partner Function:</p>
+<pre><code class="language-text">orders, deliveries and invoices use the intended business partners</code></pre>
+<p>For Cost Centre:</p>
+<pre><code class="language-text">postings are accepted in the correct period and organisational context</code></pre>
+<p>For Tax Identifier:</p>
+<pre><code class="language-text">the legal identity is represented using the correct country-specific category</code></pre>
+<p>Business owners care about whether the data works.</p>
+<p>The physical target is one stage in that explanation.</p>
+<p>---</p>
+<h1 id="example-2-product-units-of-measure">Example 2: Product units of measure</h1>
+<p>A technical trace may contain:</p>
+<pre><code class="language-text">legacy unit code
+canonical unit
+conversion numerator
+conversion denominator
+SAP base unit
+SAP alternative unit
+warehouse interface code
+sales interface code</code></pre>
+<p>The business explanation is:</p>
+<blockquote>The Product is stocked in pieces and sold in boxes. One box equals twelve pieces. SAP stores <code>PC</code> as the base unit and <code>BOX</code> as the sales unit. The warehouse interface currently sends <code>EA</code>, which has not been confirmed as equivalent to <code>PC</code>.</blockquote>
+<p>The impact statement is:</p>
+<blockquote>Changing the base unit would affect inventory balances, open documents, conversion ratios, warehouse messages and sales-order quantities. Renaming the display label alone would not have the same impact.</blockquote>
+<p>The decision statement is:</p>
+<blockquote>Keep <code>PC</code> as the base unit. Add an explicit <code>EA</code> to <code>PC</code> interface conversion rather than changing the Product master.</blockquote>
+<p>This is lineage-based reasoning without graph terminology.</p>
+<p>---</p>
+<h1 id="explain-direct-and-conditional-inputs-differently">Explain direct and conditional inputs differently</h1>
+<p>A technical lineage model may distinguish direct and indirect dependencies. OpenLineage, for example, models which input fields produce an output field and can distinguish direct transformations from indirect influences such as joins, filters and conditional logic.</p>
+<p>The business explanation should preserve the distinction.</p>
+<p>Example: Profit Centre derivation.</p>
+<pre><code class="language-text">Product Family:
+determines the profit-centre category
+
+Plant:
+selects the relevant organisational Mapping
+
+Company assignment:
+checks whether the selected Profit Centre is permitted</code></pre>
+<p>Do not say:</p>
+<blockquote>Three fields populate Profit Centre.</blockquote>
+<p>Instead:</p>
+<blockquote>Product Family supplies the main classification. Plant determines which local conversion applies. Company assignment validates whether the result is allowed.</blockquote>
+<p>This is clearer and more accurate.</p>
+<p>---</p>
+<h1 id="example-3-cost-centre-validity">Example 3: Cost Centre validity</h1>
+<p>A business owner asks:</p>
+<blockquote>Why is the Cost Centre migration blocked when all records were created?</blockquote>
+<p>A graph may show a complete source-to-target path.</p>
+<p>The business explanation is:</p>
+<blockquote>All Cost Centres were technically created. However, 74 active Cost Centres have a valid-from date after the planned go-live date. They will exist in SAP but cannot accept postings on day one.</blockquote>
+<p>The impact statement is:</p>
+<ul>
+<li>postings may fail;</li>
+<li>allocations may fail;</li>
+<li>dependent orders may reference unavailable Cost Centres;</li>
+<li>Finance may need manual correction after go-live.</li>
+</ul>
+<p>The decision options are:</p>
+<ol>
+<li>correct source validity dates;</li>
+<li>approve target-date adjustment with Finance;</li>
+<li>defer affected business scope.</li>
+</ol>
+<p>The key message is that object creation and operational readiness are different.</p>
+<p>---</p>
+<h1 id="present-impact-as-categories-not-as-a-neighbour-count">Present impact as categories, not as a neighbour count</h1>
+<p>A graph query might return:</p>
+<pre><code class="language-text">37 impacted objects</code></pre>
+<p>That number does not help the owner.</p>
+<p>Group impact into business categories.</p>
+<h2 id="data-impact">Data impact</h2>
+<p>Which records or populations may change?</p>
+<h2 id="process-impact">Process impact</h2>
+<p>Which operational activities may behave differently?</p>
+<h2 id="control-impact">Control impact</h2>
+<p>Which Rules, approvals or legal checks must change?</p>
+<h2 id="integration-impact">Integration impact</h2>
+<p>Which interfaces and consumers need updates?</p>
+<h2 id="reporting-impact">Reporting impact</h2>
+<p>Which metrics or historical comparisons may change?</p>
+<h2 id="delivery-impact">Delivery impact</h2>
+<p>Which tests, migration cycles or cutover steps must be repeated?</p>
+<h2 id="ownership-impact">Ownership impact</h2>
+<p>Who must approve or act?</p>
+<p>For a value-list change, this structure is more useful than listing every connected node.</p>
+<p>---</p>
+<h1 id="example-4-supplier-tax-category">Example 4: Supplier tax category</h1>
+<p>A proposal changes the interpretation of a tax category.</p>
+<p>The technical impact graph identifies:</p>
+<ul>
+<li>source tax field;</li>
+<li>conversion Mapping;</li>
+<li>SAP tax-number category;</li>
+<li>validation Rule;</li>
+<li>two interfaces;</li>
+<li>one report;</li>
+<li>historical evidence.</li>
+</ul>
+<p>The business summary should say:</p>
+<p><strong>Proposed change</strong></p>
+<p>Move a national tax identifier from a generic category to the country-specific category.</p>
+<p><strong>Affected population</strong></p>
+<p>12,400 suppliers in one jurisdiction.</p>
+<p><strong>Data consequence</strong></p>
+<p>Existing target values require reassignment, not only relabelling.</p>
+<p><strong>Process consequence</strong></p>
+<p>Supplier onboarding and invoice validation use the category.</p>
+<p><strong>Control consequence</strong></p>
+<p>Legal-format checks and duplicate detection must be rerun.</p>
+<p><strong>Historical consequence</strong></p>
+<p>Earlier reports must remain interpretable under the old category.</p>
+<p><strong>Decision</strong></p>
+<p>Approve only with a controlled conversion and legal-owner confirmation.</p>
+<p>This is what impact analysis is for.</p>
+<p>---</p>
+<h1 id="explain-confidence-explicitly">Explain confidence explicitly</h1>
+<p>Not every lineage conclusion has the same evidence quality.</p>
+<p>Business-facing terms can be:</p>
+<h2 id="confirmed">Confirmed</h2>
+<p>Supported by approved model and current evidence.</p>
+<h2 id="expected">Expected</h2>
+<p>Declared in the design but not fully tested.</p>
+<h2 id="observed">Observed</h2>
+<p>Seen in a dataset or implementation but not yet approved as model truth.</p>
+<h2 id="possible">Possible</h2>
+<p>Connected through an indirect or incomplete path.</p>
+<h2 id="disputed">Disputed</h2>
+<p>Credible sources or owners disagree.</p>
+<h2 id="historical">Historical</h2>
+<p>Applied to an earlier baseline.</p>
+<p>These terms are easier to interpret than:</p>
+<pre><code class="language-text">edge confidence: 0.73</code></pre>
+<p>The numerical confidence can remain available for technical use.</p>
+<p>---</p>
+<h1 id="do-not-present-inferred-lineage-as-fact">Do not present inferred lineage as fact</h1>
+<p>AI or metadata analysis may suggest:</p>
+<blockquote>The legacy <code>PLANNER_CODE</code> field probably maps to MRP Controller.</blockquote>
+<p>The business view should say:</p>
+<pre><code class="language-text">Candidate source:
+Legacy Planner Code
+
+Reason:
+name and observed values align
+
+Status:
+not approved
+
+Required evidence:
+Plant-owner review and conversion-table confirmation</code></pre>
+<p>Do not draw the same solid line used for approved lineage.</p>
+<p>A plausible connection can influence a major decision.</p>
+<p>Its status must remain visible.</p>
+<p>---</p>
+<h1 id="example-5-customer-partner-functions">Example 5: Customer partner functions</h1>
+<p>A business owner asks:</p>
+<blockquote>What happens if we simplify all missing Payers to the Sold-to party?</blockquote>
+<p>The lineage-based answer should not begin with table names.</p>
+<p>It should say:</p>
+<blockquote>The proposal affects Customer Sales Area partner assignments. For 82 percent of customers, Sold-to and Payer are already the same. For 18 percent, a separate Payer exists or is unresolved. Applying the default globally would change billing responsibility for those customers and could affect invoice routing and credit processing.</blockquote>
+<p>Then show:</p>
+<p><strong>Confirmed impact</strong></p>
+<ul>
+<li>Customer Sales Area partner assignments;</li>
+<li>billing-document partner determination;</li>
+<li>unresolved external Payer references.</li>
+</ul>
+<p><strong>Possible impact</strong></p>
+<ul>
+<li>credit exposure consolidation;</li>
+<li>invoice delivery;</li>
+<li>downstream customer interfaces.</li>
+</ul>
+<p><strong>Required decision</strong></p>
+<p>The commercial process owner must decide whether self-Payer is an acceptable bounded fallback. The migration team should not decide this from technical convenience.</p>
+<p>That is business-readable impact.</p>
+<p>---</p>
+<h1 id="use-scenarios-instead-of-raw-dependency-chains">Use scenarios instead of raw dependency chains</h1>
+<p>A business owner often understands scenarios better than graph topology.</p>
+<p>For a proposed change, present three cases.</p>
+<h2 id="scenario-a-no-change">Scenario A: no change</h2>
+<p>State:</p>
+<ul>
+<li>current risk;</li>
+<li>current fallback;</li>
+<li>operational consequence.</li>
+</ul>
+<h2 id="scenario-b-proposed-change">Scenario B: proposed change</h2>
+<p>State:</p>
+<ul>
+<li>records affected;</li>
+<li>process impact;</li>
+<li>required remediation;</li>
+<li>evidence gap.</li>
+</ul>
+<h2 id="scenario-c-safer-alternative">Scenario C: safer alternative</h2>
+<p>State:</p>
+<ul>
+<li>reduced scope;</li>
+<li>staged transition;</li>
+<li>additional control;</li>
+<li>different timing.</li>
+</ul>
+<p>Example: Product profit centre.</p>
+<h3 id="no-change">No change</h3>
+<p>Nine percent of Product Plant records retain a temporary regional Profit Centre.</p>
+<h3 id="proposed-global-remapping">Proposed global remapping</h3>
+<p>All affected records move to a new plant-specific derivation before go-live.</p>
+<p>Risk: insufficient time for Finance review.</p>
+<h3 id="safer-alternative">Safer alternative</h3>
+<p>Keep the bounded cutover fallback, block new use after go-live and complete correction before first month-end close.</p>
+<p>The graph supports all three scenarios.</p>
+<p>The owner sees the trade-off.</p>
+<p>---</p>
+<h1 id="impact-should-distinguish-must-change-from-must-review">Impact should distinguish “must change” from “must review”</h1>
+<p>A connected object is not always broken by a proposal.</p>
+<p>Use categories:</p>
+<h2 id="change-required">Change required</h2>
+<p>The object will become invalid or incompatible.</p>
+<h2 id="retest-required">Retest required</h2>
+<p>The object may remain valid, but evidence no longer applies.</p>
+<h2 id="review-required">Review required</h2>
+<p>Business compatibility must be confirmed.</p>
+<h2 id="notify">Notify</h2>
+<p>The owner should be aware, but no change is expected.</p>
+<h2 id="historical-only">Historical only</h2>
+<p>The reference should remain unchanged.</p>
+<p>Example: replacing a custom Supplier Review Status field.</p>
+<pre><code class="language-text">Migration Mapping:
+change required
+
+SAP validation:
+change required
+
+Outbound interface:
+retest required
+
+Business definition:
+review required
+
+Old mock-load report:
+historical only</code></pre>
+<p>This is more useful than saying all five objects are “impacted.”</p>
+<p>---</p>
+<h1 id="example-6-product-serial-number-profile">Example 6: Product serial-number profile</h1>
+<p>A technical change proposal replaces one serial-number profile with another.</p>
+<p>The business-facing explanation should state:</p>
+<p><strong>Current use</strong></p>
+<p>The profile controls how serial numbers are handled during goods movements and delivery processing.</p>
+<p><strong>Affected scope</strong></p>
+<p>Products in plants PL10 and PL40.</p>
+<p><strong>Direct impact</strong></p>
+<p>Product Plant master data and warehouse transactions.</p>
+<p><strong>Retest required</strong></p>
+<p>Goods receipt, stock transfer and outbound delivery scenarios.</p>
+<p><strong>Possible impact</strong></p>
+<p>External warehouse messages and after-sales traceability.</p>
+<p><strong>Historical impact</strong></p>
+<p>Previously posted stock movements remain under the old profile.</p>
+<p><strong>Decision</strong></p>
+<p>Operations and warehouse owners must approve. A Product master-data owner alone cannot determine process compatibility.</p>
+<p>This explanation comes from lineage and impact relationships.</p>
+<p>It does not require the owner to inspect the underlying graph.</p>
+<p>---</p>
+<h1 id="use-progressive-disclosure">Use progressive disclosure</h1>
+<p>A good business-facing interface can use three levels.</p>
+<h2 id="level-1-decision-summary">Level 1: decision summary</h2>
+<p>One paragraph:</p>
+<blockquote>Changing this value affects 8,420 Product Plant records and the first production planning cycle. The approved path is incomplete in two plants because a temporary fallback is still active. Approval is conditional on a remediation date and plant-owner acceptance.</blockquote>
+<h2 id="level-2-structured-explanation">Level 2: structured explanation</h2>
+<p>Show:</p>
+<ul>
+<li>meaning;</li>
+<li>source;</li>
+<li>transformation;</li>
+<li>target;</li>
+<li>uses;</li>
+<li>evidence;</li>
+<li>risks;</li>
+<li>owners.</li>
+</ul>
+<h2 id="level-3-technical-evidence">Level 3: technical evidence</h2>
+<p>Allow expansion into:</p>
+<ul>
+<li>object IDs;</li>
+<li>physical fields;</li>
+<li>graph paths;</li>
+<li>Mapping definitions;</li>
+<li>dataset profiles;</li>
+<li>exact diagnostics;</li>
+<li>commit and baseline.</li>
+</ul>
+<p>The graph remains accessible.</p>
+<p>It is not the first thing every user sees.</p>
+<p>---</p>
+<h1 id="do-not-oversimplify-uncertainty">Do not oversimplify uncertainty</h1>
+<p>Business-friendly does not mean falsely simple.</p>
+<p>Avoid:</p>
+<blockquote>Product MRP Controller comes from the legacy system.</blockquote>
+<p>Prefer:</p>
+<blockquote>For PL10 and PL40, MRP Controller is derived from Planner Group through approved plant-specific conversion. For PL20 and PL30, six percent of records still use a temporary default.</blockquote>
+<p>Avoid:</p>
+<blockquote>Tax Identifier is ready.</blockquote>
+<p>Prefer:</p>
+<blockquote>The identifier is present for 98 percent of suppliers. Country and category validation is complete for 88 percent. Legal evidence remains incomplete for one population.</blockquote>
+<p>Avoid:</p>
+<blockquote>The interface is affected.</blockquote>
+<p>Prefer:</p>
+<blockquote>The interface currently consumes the old code list. It must be tested against the new value before the change can be approved.</blockquote>
+<p>Precision builds trust.</p>
+<p>---</p>
+<h1 id="show-affected-populations">Show affected populations</h1>
+<p>An owner needs scope.</p>
+<p>State:</p>
+<ul>
+<li>number of records;</li>
+<li>percentage;</li>
+<li>countries;</li>
+<li>plants;</li>
+<li>company codes;</li>
+<li>Sales Organisations;</li>
+<li>migration waves;</li>
+<li>active versus historical records.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Affected records:
+8,420 Product Plant assignments
+
+Plants:
+PL20 and PL30
+
+Share of Wave 1 scope:
+12%
+
+Critical subset:
+2,100 externally procured Products</code></pre>
+<p>This is more actionable than:</p>
+<pre><code class="language-text">Impact depth: 3</code></pre>
+<p>---</p>
+<h1 id="show-the-operational-deadline">Show the operational deadline</h1>
+<p>Impact is incomplete without timing.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Must be resolved before:
+Cutover extract freeze</code></pre>
+<pre><code class="language-text">May remain temporarily, but must close before:
+First payment run</code></pre>
+<pre><code class="language-text">Correction required before:
+First MRP planning cycle</code></pre>
+<pre><code class="language-text">Retest required before:
+Interface production activation</code></pre>
+<p>Timing turns model analysis into a delivery decision.</p>
+<p>---</p>
+<h1 id="example-7-supplier-purchasing-block">Example 7: Supplier purchasing block</h1>
+<p>A proposal removes a purchasing block because the central Supplier record appears active.</p>
+<p>The lineage-based explanation is:</p>
+<blockquote>The block is not central. It exists at Purchasing Organisation level and was sourced from a local procurement system. Removing it globally would affect 540 suppliers, including 73 under an unresolved compliance review.</blockquote>
+<p>Impact categories:</p>
+<p><strong>Procurement</strong></p>
+<p>Purchase orders may become possible.</p>
+<p><strong>Compliance</strong></p>
+<p>Local review controls may be bypassed.</p>
+<p><strong>Data</strong></p>
+<p>The central Supplier status would remain unchanged.</p>
+<p><strong>Scope</strong></p>
+<p>Only two Purchasing Organisations are affected.</p>
+<p><strong>Decision</strong></p>
+<p>Procurement and Compliance owners must decide whether the local block represents active policy or obsolete source data.</p>
+<p>The graph tells the system where the block came from.</p>
+<p>The business summary tells people what removing it would do.</p>
+<p>---</p>
+<h1 id="example-8-payment-terms">Example 8: Payment Terms</h1>
+<p>A proposal copies one Supplier Payment Term to every Company Code.</p>
+<p>Business explanation:</p>
+<blockquote>The source provides one central term, but SAP stores the operational term by Company Code. Three Company Codes have approved local terms. Copying the central value globally would overwrite local Finance policy.</blockquote>
+<p>Affected areas:</p>
+<ul>
+<li>invoice due-date calculation;</li>
+<li>cash forecasting;</li>
+<li>local vendor agreements;</li>
+<li>payment runs;</li>
+<li>reconciliation.</li>
+</ul>
+<p>Recommendation:</p>
+<blockquote>Use the central term only where no approved company-code term exists. Treat local values as contextual authority, not exceptions to be overwritten.</blockquote>
+<p>This is a source-authority and impact issue presented in business terms.</p>
+<p>---</p>
+<h1 id="tailor-the-same-lineage-to-different-roles">Tailor the same lineage to different roles</h1>
+<p>The underlying graph is shared.</p>
+<p>The explanation should change by audience.</p>
+<h2 id="data-owner">Data owner</h2>
+<p>Needs:</p>
+<ul>
+<li>definition;</li>
+<li>source authority;</li>
+<li>Rules;</li>
+<li>exceptions;</li>
+<li>approval.</li>
+</ul>
+<h2 id="process-owner">Process owner</h2>
+<p>Needs:</p>
+<ul>
+<li>operational effect;</li>
+<li>scenarios;</li>
+<li>failure modes;</li>
+<li>process tests.</li>
+</ul>
+<h2 id="local-business-owner">Local business owner</h2>
+<p>Needs:</p>
+<ul>
+<li>local population;</li>
+<li>local overrides;</li>
+<li>deadlines;</li>
+<li>required actions.</li>
+</ul>
+<h2 id="migration-lead">Migration lead</h2>
+<p>Needs:</p>
+<ul>
+<li>Mapping coverage;</li>
+<li>dataset gaps;</li>
+<li>cutover consequence;</li>
+<li>retest scope.</li>
+</ul>
+<h2 id="integration-owner">Integration owner</h2>
+<p>Needs:</p>
+<ul>
+<li>interface fields;</li>
+<li>code lists;</li>
+<li>contract changes;</li>
+<li>downstream consumers.</li>
+</ul>
+<h2 id="auditor-or-governance-lead">Auditor or governance lead</h2>
+<p>Needs:</p>
+<ul>
+<li>Decision;</li>
+<li>evidence;</li>
+<li>approval;</li>
+<li>historical path;</li>
+<li>exception control.</li>
+</ul>
+<p>One graph can generate several role-specific summaries.</p>
+<p>---</p>
+<h1 id="separate-model-truth-from-observed-evidence">Separate model truth from observed evidence</h1>
+<p>The business view should state both.</p>
+<p>Example: Supplier bank account.</p>
+<p><strong>Approved model</strong></p>
+<p>IBAN and bank-country data must be validated and linked to the correct Supplier legal entity.</p>
+<p><strong>Observed result</strong></p>
+<p>The latest mock load populated 99.4 percent of bank records, but ownership verification is complete for 93.1 percent.</p>
+<p><strong>Interpretation</strong></p>
+<p>The technical load is nearly complete. Payment readiness is not.</p>
+<p>OpenLineage’s object model similarly separates design-time metadata from individual runtime observations, allowing stable definitions and particular executions to coexist without being confused.</p>
+<p>This distinction is valuable even when OpenLineage itself is not used as the registry.</p>
+<p>---</p>
+<h1 id="evidence-should-be-summarised-by-claim">Evidence should be summarised by claim</h1>
+<p>Do not present:</p>
+<pre><code class="language-text">Evidence files: 14</code></pre>
+<p>Present:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Claim</th><th scope="col">Status</th></tr></thead><tbody><tr><td>Source field available</td><td>Confirmed</td></tr><tr><td>Mapping approved</td><td>Confirmed</td></tr><tr><td>Required context complete</td><td>Partial</td></tr><tr><td>SAP target populated</td><td>Confirmed</td></tr><tr><td>Downstream process tested</td><td>Not tested</td></tr><tr><td>Business owner accepted</td><td>Pending</td></tr></tbody></table></div>
+<p>This helps the owner understand what is known.</p>
+<p>The file list can remain one click deeper.</p>
+<p>---</p>
+<h1 id="use-evidence-language-carefully">Use evidence language carefully</h1>
+<p>Different evidence proves different things.</p>
+<h2 id="source-profile">Source profile</h2>
+<p>Proves that fields and values were observed.</p>
+<h2 id="mapping-test">Mapping test</h2>
+<p>Supports transformation behaviour.</p>
+<h2 id="target-validation">Target validation</h2>
+<p>Supports SAP persistence.</p>
+<h2 id="process-test">Process test</h2>
+<p>Supports operational use.</p>
+<h2 id="business-approval">Business approval</h2>
+<p>Supports acceptance of meaning and risk.</p>
+<p>A target screenshot does not prove source authority.</p>
+<p>A successful interface run does not prove correct business interpretation.</p>
+<p>A signed decision does not prove every record was transformed correctly.</p>
+<p>Business summaries should avoid overstating evidence.</p>
+<p>---</p>
+<h1 id="present-contradictions-directly">Present contradictions directly</h1>
+<p>A useful system should not smooth over disagreement.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved source:
+national tax registry
+
+Observed source:
+legacy ERP extract
+
+Business owner position:
+registry should be authoritative
+
+Current cutover implementation:
+ERP value is loaded when registry value is absent</code></pre>
+<p>Business-facing conclusion:</p>
+<blockquote>The current fallback is operationally active but not yet approved as an authority policy. Cutover approval requires either a bounded fallback Decision or remediation of the registry gap.</blockquote>
+<p>This is clearer than showing two upstream arrows with different colours.</p>
+<p>---</p>
+<h1 id="show-negative-knowledge">Show negative knowledge</h1>
+<p>A business owner may need to know what must not happen.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Review Status must not be loaded as Supplier Risk.
+
+CRM Segment must not be copied directly into Customer Group.
+
+A central Payment Term must not overwrite approved Company Code terms.
+
+Product base unit must not be changed to fix an interface-code mismatch.
+
+Historical Cost Centre values must not be reinterpreted under the new validity policy.</code></pre>
+<p>These rejected paths are part of governance.</p>
+<p>They prevent future teams and agents from recreating known mistakes.</p>
+<p>---</p>
+<h1 id="meeting-format-the-seven-line-decision-brief">Meeting format: the seven-line decision brief</h1>
+<p>For a normal review meeting, the following can be enough.</p>
+<pre><code class="language-text">Decision:
+Approve plant-specific MRP Controller fallback through first planning cycle?
+
+Business concept:
+MRP Controller per Product Plant.
+
+Current path:
+Planner Group + Plant → approved conversion → SAP.
+
+Exception:
+6% use default 001 in PL20 and PL30.
+
+Impact:
+Planning responsibility and exception routing may be inaccurate.
+
+Evidence:
+Mock Load 3 and plant planning simulation.
+
+Recommendation:
+Conditional approval with plant-owner acceptance and fixed remediation date.</code></pre>
+<p>This is generated from lineage.</p>
+<p>It does not look like a graph-database query result.</p>
+<p>---</p>
+<h1 id="working-session-format-the-impact-canvas">Working-session format: the impact canvas</h1>
+<p>For more complex changes, use a structured canvas.</p>
+<h2 id="proposed-change">Proposed change</h2>
+<p>What exactly changes?</p>
+<h2 id="business-reason">Business reason</h2>
+<p>Why is the change needed?</p>
+<h2 id="current-lineage">Current lineage</h2>
+<p>How is the value created now?</p>
+<h2 id="candidate-lineage">Candidate lineage</h2>
+<p>How would it be created after the change?</p>
+<h2 id="affected-scope">Affected scope</h2>
+<p>Which records, contexts and systems?</p>
+<h2 id="controls">Controls</h2>
+<p>Which Rules, approvals and validations?</p>
+<h2 id="evidence">Evidence</h2>
+<p>What has been tested?</p>
+<h2 id="residual-risk">Residual risk</h2>
+<p>What remains uncertain?</p>
+<h2 id="decision-2">Decision</h2>
+<p>Who approves and under which conditions?</p>
+<p>This format works for:</p>
+<ul>
+<li>source retirement;</li>
+<li>target replacement;</li>
+<li>value-list changes;</li>
+<li>Mapping redesign;</li>
+<li>Rule changes;</li>
+<li>fallback approval.</li>
+</ul>
+<p>---</p>
+<h1 id="executive-format-only-the-material-consequences">Executive format: only the material consequences</h1>
+<p>Senior stakeholders may need only:</p>
+<pre><code class="language-text">Change:
+Replace temporary regional Profit Centre default with plant-specific derivation.
+
+Affected:
+1,842 Product Plant records across two plants.
+
+Business risk:
+Incorrect responsibility assignment before month-end close.
+
+Current evidence:
+Target field populated; Finance approval incomplete.
+
+Recommendation:
+Allow cutover fallback, require correction before first close.
+
+Decision owners:
+Finance Data Owner and Plant Controllers.</code></pre>
+<p>The full graph remains available for challenge and audit.</p>
+<p>---</p>
+<h1 id="use-comparisons">Use comparisons</h1>
+<p>Owners understand differences between current and proposed states.</p>
+<p>Example: Cost Centre validity.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Topic</th><th scope="col">Current state</th><th scope="col">Proposed state</th></tr></thead><tbody><tr><td>Validity source</td><td>Legacy dates</td><td>Finance-approved dates</td></tr><tr><td>Go-live coverage</td><td>94%</td><td>100%</td></tr><tr><td>Manual correction</td><td>74 records</td><td>None expected</td></tr><tr><td>Posting test</td><td>Partial</td><td>Required</td></tr><tr><td>Historical interpretation</td><td>Preserved</td><td>Preserved</td></tr></tbody></table></div>
+<p>This is often clearer than a future-state lineage diagram alone.</p>
+<p>---</p>
+<h1 id="use-impact-language-consistently">Use impact language consistently</h1>
+<p>Recommended terms:</p>
+<pre><code class="language-text">Affected:
+relationship confirms relevance
+
+Potentially affected:
+indirect or uncertain dependency
+
+Change required:
+candidate becomes incompatible
+
+Retest required:
+old evidence is no longer sufficient
+
+Review required:
+business compatibility is unresolved
+
+Historical only:
+retain without changing</code></pre>
+<p>Consistent vocabulary makes reports comparable.</p>
+<p>---</p>
+<h1 id="avoid-technical-theatre">Avoid technical theatre</h1>
+<p>A complicated graph can create an impression of precision without delivering a decision.</p>
+<p>Warning signs include:</p>
+<ul>
+<li>hundreds of nodes shown by default;</li>
+<li>unexplained colour coding;</li>
+<li>centrality scores presented as business importance;</li>
+<li>database terminology in executive reports;</li>
+<li>every connected object labelled “impacted”;</li>
+<li>no affected record count;</li>
+<li>no owner;</li>
+<li>no recommendation;</li>
+<li>no evidence quality.</li>
+</ul>
+<p>The business view should be simpler because the underlying model is structured—not because detail was discarded.</p>
+<p>---</p>
+<h1 id="keep-stable-ids-available-for-audit">Keep stable IDs available for audit</h1>
+<p>Business summaries should use plain names.</p>
+<p>They should also preserve canonical IDs in metadata or expandable detail.</p>
+<p>Example:</p>
+<pre><code class="language-text">Business name:
+Product Plant MRP Controller
+
+Canonical ID:
+ATTR-PRODUCT-PLANT-MRP-CONTROLLER
+
+SAP endpoint:
+FEP-S4-MARC-DISPO</code></pre>
+<p>Stable IDs allow:</p>
+<ul>
+<li>issue linking;</li>
+<li>proposal generation;</li>
+<li>automated validation;</li>
+<li>historical comparison;</li>
+<li>exact technical follow-up.</li>
+</ul>
+<p>The owner does not need to memorise them.</p>
+<p>The system must preserve them.</p>
+<p>---</p>
+<h1 id="example-9-credit-limit">Example 9: Credit limit</h1>
+<p>A proposal changes the source of Customer Credit Limit.</p>
+<p>Business explanation:</p>
+<blockquote>Credit Limit is currently sourced from the legacy credit system and loaded into the SAP credit-management structure. The candidate design derives it from risk category and historical exposure. This would change the Attribute from an approved amount to a calculated amount.</blockquote>
+<p>Impact:</p>
+<ul>
+<li>credit review;</li>
+<li>order blocking;</li>
+<li>existing limits;</li>
+<li>source authority;</li>
+<li>audit trail;</li>
+<li>local credit-manager responsibility.</li>
+</ul>
+<p>The critical question is not:</p>
+<blockquote>Can the formula populate the field?</blockquote>
+<p>It is:</p>
+<blockquote>Is the organisation changing the meaning and ownership of Credit Limit?</blockquote>
+<p>This is a semantic change disguised as a Mapping change.</p>
+<p>---</p>
+<h1 id="example-10-product-valuation-class">Example 10: Product valuation class</h1>
+<p>A proposed value-list simplification merges two valuation classes.</p>
+<p>Business summary:</p>
+<blockquote>Two Product valuation classes currently separate spare parts from production materials. The proposal merges them because both map to the same account in one company code. Other company codes use different account determination.</blockquote>
+<p>Impact:</p>
+<ul>
+<li>account determination;</li>
+<li>inventory posting;</li>
+<li>company-code-specific configuration;</li>
+<li>historical reporting;</li>
+<li>Product classification.</li>
+</ul>
+<p>Recommendation:</p>
+<blockquote>Do not approve a global merge based on one company code. Assess the value by valuation area and Finance context.</blockquote>
+<p>The graph may reveal all connected account-determination and Product objects.</p>
+<p>The business explanation shows why the global change is unsafe.</p>
+<p>---</p>
+<h1 id="explain-no-impact-carefully">Explain “no impact” carefully</h1>
+<p>A graph may find no downstream dependency.</p>
+<p>Do not simply state:</p>
+<pre><code class="language-text">No impact.</code></pre>
+<p>Prefer:</p>
+<blockquote>No modelled downstream dependency was found in the current repository. The result does not prove that external or undocumented consumers do not exist.</blockquote>
+<p>Confidence depends on:</p>
+<ul>
+<li>repository coverage;</li>
+<li>interface inventory;</li>
+<li>runtime evidence;</li>
+<li>owner review.</li>
+</ul>
+<p>A business owner should understand the limit of the analysis.</p>
+<p>---</p>
+<h1 id="impact-confidence-should-depend-on-coverage">Impact confidence should depend on coverage</h1>
+<p>Possible statements:</p>
+<pre><code class="language-text">High confidence:
+all known interfaces and current runtime evidence are represented.
+
+Medium confidence:
+core SAP and migration paths are covered; reporting inventory is incomplete.
+
+Low confidence:
+only repository references were assessed; external consumers remain unverified.</code></pre>
+<p>This avoids presenting graph completeness as landscape completeness.</p>
+<p>---</p>
+<h1 id="business-owners-should-approve-meaning-and-risk-not-technical-edges">Business owners should approve meaning and risk, not technical edges</h1>
+<p>A business owner should not be asked to approve:</p>
+<pre><code class="language-text">REL-00482
+MAPS_TO
+FEP-00891</code></pre>
+<p>They should approve:</p>
+<blockquote>Legacy Product Family and Plant may be used to derive Profit Centre under the reviewed conversion. The regional default is permitted only through first month-end close.</blockquote>
+<p>Technical reviewers confirm:</p>
+<ul>
+<li>endpoints;</li>
+<li>fields;</li>
+<li>transformation implementation;</li>
+<li>schema compatibility.</li>
+</ul>
+<p>Business reviewers confirm:</p>
+<ul>
+<li>meaning;</li>
+<li>authority;</li>
+<li>applicability;</li>
+<li>fallback;</li>
+<li>acceptable risk.</li>
+</ul>
+<p>The review system should reflect this division.</p>
+<p>---</p>
+<h1 id="human-approval-should-be-recorded-at-the-right-level">Human approval should be recorded at the right level</h1>
+<p>A Mapping may be technically correct but business-unapproved.</p>
+<p>A business Decision might approve the principle while implementation remains untested.</p>
+<p>Use separate states:</p>
+<pre><code class="language-text">Business meaning approved
+
+Technical Mapping validated
+
+Runtime evidence verified
+
+Release accepted</code></pre>
+<p>Do not reduce them to one <code>approved: true</code> flag.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-generate">What Martenweave should generate</h1>
+<p>Martenweave should preserve the complete graph internally and generate several business-facing outputs.</p>
+<h2 id="attribute-brief">Attribute brief</h2>
+<p>Explains one business concept.</p>
+<h2 id="source-policy-brief">Source-policy brief</h2>
+<p>Explains authority, enrichment and fallback.</p>
+<h2 id="change-impact-brief">Change-impact brief</h2>
+<p>Explains current state, proposed state and consequences.</p>
+<h2 id="readiness-brief">Readiness brief</h2>
+<p>Explains evidence, blockers and conditions.</p>
+<h2 id="incident-trace-brief">Incident trace brief</h2>
+<p>Explains source, load, target and downstream defect.</p>
+<h2 id="decision-record">Decision record</h2>
+<p>Captures options, rationale, owner and approval.</p>
+<p>These can be static Markdown, JSON or local viewer pages generated from canonical data.</p>
+<p>The generated presentation remains disposable.</p>
+<p>The canonical model remains the source of truth.</p>
+<p>---</p>
+<h1 id="a-focused-martenweave-implementation-slice">A focused Martenweave implementation slice</h1>
+<p>Martenweave already has the architectural foundation:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>generated indexes;</li>
+<li>trace and impact analysis;</li>
+<li>Evidence and Decisions;</li>
+<li>ownership and validation context;</li>
+<li>local static and interactive review surfaces;</li>
+<li>proposal-first changes.</li>
+</ul>
+<p>The next vertical slice should add <strong>business-facing lineage briefs</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Translate one canonical lineage or impact result into a decision-ready business explanation.</p>
+<h2 id="initial-outputs">Initial outputs</h2>
+<ul>
+<li>Attribute brief;</li>
+<li>change-impact brief;</li>
+<li>source and fallback brief;</li>
+<li>readiness brief.</li>
+</ul>
+<h2 id="required-sections">Required sections</h2>
+<ol>
+<li>Business meaning.</li>
+<li>Context and grain.</li>
+<li>Current source path.</li>
+<li>Target and business use.</li>
+<li>Exceptions and fallback.</li>
+<li>Affected population.</li>
+<li>Impact categories.</li>
+<li>Evidence status.</li>
+<li>Decision required.</li>
+<li>Owners.</li>
+</ol>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For Product MRP Controller, the brief must explain:</p>
+<ul>
+<li>one value per Product Plant;</li>
+<li>current plant-specific derivation;</li>
+<li>percentage using temporary default;</li>
+<li>effect on planning responsibility;</li>
+<li>required decision and owners.</li>
+</ul>
+<p>For Supplier Bank Account, it must distinguish:</p>
+<ul>
+<li>target-field population;</li>
+<li>account validation;</li>
+<li>ownership verification;</li>
+<li>payment readiness.</li>
+</ul>
+<p>For Cost Centre validity, it must explain why technically created records may still be unusable at go-live.</p>
+<h2 id="existing-analysis-commands">Existing analysis commands</h2>
+<pre><code class="language-bash">martenweave trace \
+  ATTR-PRODUCT-PLANT-MRP-CONTROLLER \
+  --repo ./model
+
+martenweave impact \
+  FEP-S4-PRODUCT-PLANT-MRP-CONTROLLER \
+  --repo ./model</code></pre>
+<h2 id="future-brief-generation">Future brief generation</h2>
+<pre><code class="language-bash">martenweave brief \
+  ATTR-PRODUCT-PLANT-MRP-CONTROLLER \
+  --audience business-owner \
+  --repo ./model</code></pre>
+<p>The <code>brief</code> command describes a recommended direction rather than a current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Business owners do not need less truth.</p>
+<p>They need the truth organised around the decision they are responsible for.</p>
+<p>The graph should preserve:</p>
+<ul>
+<li>exact object identity;</li>
+<li>typed relationships;</li>
+<li>source and target endpoints;</li>
+<li>transformation semantics;</li>
+<li>Rules;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>historical states.</li>
+</ul>
+<p>The business explanation should answer:</p>
+<pre><code class="language-text">What is this?
+
+How is it created?
+
+Where is it used?
+
+What changes?
+
+Who is affected?
+
+What evidence exists?
+
+What must be decided?</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can a business owner understand the consequence of changing Product MRP Controller, Supplier Bank Account, Cost Centre validity or Tax Identifier category without interpreting a graph-database visualisation?</blockquote>
+<p>When the answer is yes, lineage supports governance.</p>
+<p>When the answer is:</p>
+<blockquote>Here are 64 connected nodes,</blockquote>
+<p>the system has exposed its internal model but has not completed the translation into a business decision.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It stores precise canonical relationships so that different audiences can receive different explanations without creating separate versions of model truth.</p>
+<p>The purpose is not to hide the graph.</p>
+<p>It is to make the graph useful to people who should not need to think like graph engineers.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines itself as a backend-first model-governance and evidence layer. Canonical files remain the source of truth, generated SQLite and JSONL indexes are disposable, validation precedes lineage and impact analysis, and AI-assisted changes require human review.</p>
+<p>The current CLI exposes health, scorecard, trace, impact, search, query, repository diff and dataset-readiness operations. These provide the inputs from which business-facing briefs can be generated.</p>
+<p>OpenLineage’s current object model distinguishes design-time Job and Dataset metadata from runtime Run observations. It also represents Jobs, Runs and Datasets separately so that stable definitions and individual execution events do not need to be collapsed into one representation.</p>
+<p>OpenLineage’s column-level lineage facet represents which input columns contribute to output columns and how. Its transformation metadata distinguishes direct relationships from indirect influences, providing a useful technical foundation that can be translated into plain descriptions such as “supplies the value,” “selects the applicable conversion” or “filters the affected population.”</p>
+<p>The proposed business briefs, impact categories and <code>brief</code> command describe a recommended Martenweave direction. They should not be interpreted as guarantees of the current canonical schema, viewer or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-build-a-lineage-based-migration-readiness-score-without-hiding.html"><span>Previous</span>A migration dashboard shows:</a><a href="/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html"><span>Next</span>A production incident arrives in the AMS queue:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

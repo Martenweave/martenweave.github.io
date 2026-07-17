@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers | Martenweave</title>
+    <meta
+      name="description"
+      content="What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html" />
+    <meta property="og:title" content="How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers | Martenweave" />
+    <meta property="og:description" content="What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers | Martenweave" />
+    <meta name="twitter:description" content="What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html",
+                        "name": "How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers | Martenweave",
+                        "description": "What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers",
+                                    "item": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html#content",
+                        "headline": "How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers",
+                        "name": "How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers",
+                        "description": "What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?",
+                        "url": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-create-a-canonical-location-model-across-erp-ewm-tm-and-external.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Logistics data",
+                        "keywords": "Logistics data",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Logistics data</p><h1>How We Create a Canonical Location Model Across ERP, EWM, TM and External Carriers</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 18 min read</p><p class="blog-summary">What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#sap-s-4hana">SAP S/4HANA</a></li><li><a href="#sap-ewm">SAP EWM</a></li><li><a href="#sap-transportation-management">SAP Transportation Management</a></li><li><a href="#carrier-portal">Carrier portal</a></li><li><a href="#3pl-system">3PL system</a></li><li><a href="#physical-site">Physical site</a></li><li><a href="#operational-node">Operational node</a></li><li><a href="#organisational-assignment">Organisational assignment</a></li><li><a href="#system-identity">System identity</a></li><li><a href="#physicalsite">PhysicalSite</a></li><li><a href="#operationalnode">OperationalNode</a></li><li><a href="#locationrole">LocationRole</a></li><li><a href="#systemidentity">SystemIdentity</a></li><li><a href="#externalpartneridentity">ExternalPartnerIdentity</a></li><li><a href="#address">Address</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>What happens when five systems agree that a location exists—but none of them agrees on what the location actually is?</p>
+<p>SAP S/4HANA knows a Plant.</p>
+<p>EWM knows a warehouse number.</p>
+<p>Transportation Management knows a logistics location.</p>
+<p>A carrier knows a pickup code.</p>
+<p>A 3PL knows a distribution centre.</p>
+<p>The address strings look similar.</p>
+<p>The identifiers are different.</p>
+<p>The time zones are not always the same.</p>
+<p>One system describes the legal address.</p>
+<p>Another describes the truck entrance.</p>
+<p>A third describes the warehouse receiving point.</p>
+<p>A fourth contains coordinates copied years ago.</p>
+<p>A fifth still uses the code of a site that was renamed during a reorganisation.</p>
+<p>Every individual record can be technically valid.</p>
+<p>The logistics network can still be wrong.</p>
+<p>The consequences appear later:</p>
+<ul>
+<li>shipments are routed to the wrong gate;</li>
+<li>pickup appointments use the wrong working calendar;</li>
+<li>transit-time calculations begin from the wrong node;</li>
+<li>deliveries are assigned to the wrong warehouse;</li>
+<li>carriers reject messages because their location code is missing;</li>
+<li>tracking events cannot be reconciled;</li>
+<li>freight rates are applied to the wrong origin or destination;</li>
+<li>planners create lanes between logical codes that do not represent executable physical movements.</li>
+</ul>
+<p>This is not only an address-quality problem.</p>
+<p>It is a model problem.</p>
+<blockquote>A logistics location is not an address. It is a governed business object that connects physical place, operational role, organisational ownership, external identity and process capability.</blockquote>
+<p>Managers should care because transportation and warehouse systems depend on a shared logistics network.</p>
+<p>SAP describes Transportation Management as integrating fleet and logistics management throughout the network, including transportation planning, freight tendering and settlement. Those processes require locations to be consistently understood across planning, execution and partner collaboration.</p>
+<p>Martenweave should not replace SAP TM, EWM, geocoding services or carrier platforms.</p>
+<p>Its role is to preserve the model those systems depend on:</p>
+<ul>
+<li>which records represent the same physical place;</li>
+<li>which records represent separate operational nodes;</li>
+<li>which roles a location performs;</li>
+<li>which system identifiers belong to it;</li>
+<li>which address and coordinates are authoritative;</li>
+<li>which calendars and service windows apply;</li>
+<li>which routes and lanes depend on it;</li>
+<li>which Evidence proves the current target state.</li>
+</ul>
+<p>The current Martenweave core already supports generic entities, attributes, relationships, datasets, mappings, Rules, Evidence, Decisions and change proposals. Canonical files remain authoritative, validation is deterministic, and AI-generated changes require human review.</p>
+<p>A canonical location model is therefore a natural logistics extension of the existing architecture.</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>We use one logistics campus throughout the article.</p>
+<p>The business calls it:</p>
+<pre><code class="language-text">Hamburg Distribution Campus</code></pre>
+<p>The campus contains:</p>
+<ul>
+<li>one manufacturing Plant;</li>
+<li>one finished-goods warehouse;</li>
+<li>one inbound component warehouse;</li>
+<li>two truck gates;</li>
+<li>one rail access point;</li>
+<li>one returns centre.</li>
+</ul>
+<p>The systems describe it differently.</p>
+<h2 id="sap-s-4hana">SAP S/4HANA</h2>
+<pre><code class="language-text">Plant:
+DE10
+
+Shipping point:
+SP10
+
+Address:
+Industriestrasse 20
+20457 Hamburg
+Germany</code></pre>
+<h2 id="sap-ewm">SAP EWM</h2>
+<pre><code class="language-text">Warehouse number:
+EWM-WH01
+
+Description:
+Hamburg Main Warehouse
+
+Address:
+Industriestr. 20
+20457 Hamburg
+DE</code></pre>
+<h2 id="sap-transportation-management">SAP Transportation Management</h2>
+<pre><code class="language-text">Location:
+LOC-DE10-A
+
+Role:
+Shipping location
+
+Coordinates:
+53.5310, 9.9850</code></pre>
+<h2 id="carrier-portal">Carrier portal</h2>
+<pre><code class="language-text">Pickup location code:
+F12345
+
+Name:
+Hamburg DC Gate 2
+
+Address:
+Industriestrasse 22
+20457 Hamburg</code></pre>
+<h2 id="3pl-system">3PL system</h2>
+<pre><code class="language-text">Distribution centre:
+DC-HAMBURG-01
+
+Time zone:
+UTC+1
+
+Receiving hours:
+06:00–18:00</code></pre>
+<p>The project initially assumes that these records are duplicates.</p>
+<p>They are connected.</p>
+<p>They are not necessarily identical.</p>
+<p>The Plant, warehouse and transport location may refer to the same campus.</p>
+<p>The carrier code may refer specifically to Gate 2.</p>
+<p>The 3PL receiving point may represent only the inbound warehouse.</p>
+<p>A canonical model must preserve both:</p>
+<ul>
+<li>sameness;</li>
+<li>distinction.</li>
+</ul>
+<p>If it merges too aggressively, operational meaning is lost.</p>
+<p>If it keeps every record separate, the network cannot be reconciled.</p>
+<h1 id="the-first-management-mistake-using-the-address-as-the-identity">The first management mistake: using the address as the identity</h1>
+<p>Addresses are evidence about location.</p>
+<p>They are not reliable permanent identifiers.</p>
+<p>The same place can appear as:</p>
+<pre><code class="language-text">Industriestrasse 20
+Industriestr. 20
+Industriestraße 20
+Industriestrasse 20–22</code></pre>
+<p>All may refer to the same campus.</p>
+<p>The opposite problem also occurs.</p>
+<p>Two operational nodes can share one postal address:</p>
+<ul>
+<li>main warehouse;</li>
+<li>returns centre;</li>
+<li>production gate;</li>
+<li>outbound gate.</li>
+</ul>
+<p>Address matching can suggest relationships.</p>
+<p>It cannot make the final identity Decision alone.</p>
+<p>For the Hamburg campus:</p>
+<pre><code class="language-text">Plant DE10
+and
+EWM-WH01</code></pre>
+<p>may belong to the same physical campus.</p>
+<pre><code class="language-text">Carrier location F12345</code></pre>
+<p>may represent only Gate 2 inside that campus.</p>
+<p>Merging all three into one flat record would remove the gate-level distinction needed for pickup execution.</p>
+<p>The manager should ask:</p>
+<blockquote>Are these records the same physical place, the same operational node, or merely part of the same site?</blockquote>
+<p>Those are three different relationships.</p>
+<h1 id="the-second-mistake-confusing-physical-locations-with-organisational-objects">The second mistake: confusing physical locations with organisational objects</h1>
+<p>A Plant is an organisational object.</p>
+<p>A warehouse number is an operational and system-specific warehouse context.</p>
+<p>A shipping point supports shipping execution.</p>
+<p>A TM location represents a node in the transportation network.</p>
+<p>A carrier pickup code is an external identity.</p>
+<p>These objects can all relate to one physical place without being equivalent.</p>
+<p>The canonical model should separate:</p>
+<h2 id="physical-site">Physical site</h2>
+<p>The real-world campus or facility.</p>
+<h2 id="operational-node">Operational node</h2>
+<p>The point where a logistics activity occurs.</p>
+<p>Examples:</p>
+<ul>
+<li>Gate 2;</li>
+<li>inbound receiving;</li>
+<li>outbound dispatch;</li>
+<li>rail terminal;</li>
+<li>returns centre.</li>
+</ul>
+<h2 id="organisational-assignment">Organisational assignment</h2>
+<p>The enterprise structure responsible for the activity.</p>
+<p>Examples:</p>
+<ul>
+<li>Plant DE10;</li>
+<li>company code;</li>
+<li>business unit.</li>
+</ul>
+<h2 id="system-identity">System identity</h2>
+<p>The code used by one application.</p>
+<p>Examples:</p>
+<ul>
+<li><code>EWM-WH01</code>;</li>
+<li><code>LOC-DE10-A</code>;</li>
+<li><code>F12345</code>.</li>
+</ul>
+<p>This separation lets us represent the truth:</p>
+<pre><code class="language-text">Plant DE10
+belongs to
+Hamburg Distribution Campus
+
+Warehouse EWM-WH01
+operates within
+Hamburg Distribution Campus
+
+Carrier code F12345
+identifies
+Gate 2
+
+TM location LOC-DE10-A
+represents
+the outbound transportation node</code></pre>
+<h1 id="the-third-mistake-building-one-golden-address-and-discarding-operational-addresses">The third mistake: building one “golden address” and discarding operational addresses</h1>
+<p>A legal or postal address is not always the address a driver needs.</p>
+<p>The campus may have:</p>
+<pre><code class="language-text">Legal address:
+Industriestrasse 20
+
+Inbound truck entrance:
+Industriestrasse 22
+
+Outbound gate:
+Hafenweg 4
+
+Visitor entrance:
+Industriestrasse 18</code></pre>
+<p>Creating one golden address and distributing it everywhere can make the data cleaner while making operations worse.</p>
+<p>The canonical model should support address roles.</p>
+<p>For example:</p>
+<ul>
+<li>legal;</li>
+<li>postal;</li>
+<li>physical site;</li>
+<li>inbound delivery;</li>
+<li>outbound pickup;</li>
+<li>visitor;</li>
+<li>billing;</li>
+<li>emergency.</li>
+</ul>
+<p>For Gate 2:</p>
+<pre><code class="language-text">Address role:
+outbound pickup
+
+Street:
+Industriestrasse 22
+
+Instructions:
+Use Gate 2, south entrance</code></pre>
+<p>The address belongs to the operational node.</p>
+<p>It should not overwrite the legal address of the campus.</p>
+<h1 id="the-fourth-mistake-treating-location-codes-as-stable-business-meaning">The fourth mistake: treating location codes as stable business meaning</h1>
+<p>System codes survive organisational changes in unpredictable ways.</p>
+<p>A code may remain while:</p>
+<ul>
+<li>the site is renamed;</li>
+<li>operational ownership changes;</li>
+<li>a warehouse moves within the campus;</li>
+<li>one node is split into two;</li>
+<li>a 3PL replaces another provider;</li>
+<li>a carrier introduces a new account.</li>
+</ul>
+<p>Another code may change while the physical place remains unchanged.</p>
+<p>For example:</p>
+<pre><code class="language-text">Old 3PL code:
+HH-DC-01
+
+New 3PL code:
+DC-HAMBURG-01</code></pre>
+<p>The canonical location identity should remain stable if the underlying operational node is the same.</p>
+<p>System identifiers should be mappings attached to that identity.</p>
+<pre><code class="language-text">Canonical node:
+LOC-HAMBURG-INBOUND
+
+3PL identity before transition:
+HH-DC-01
+
+3PL identity after transition:
+DC-HAMBURG-01</code></pre>
+<p>This is especially important during migrations, when old and new codes coexist.</p>
+<h1 id="the-fifth-mistake-treating-coordinates-as-indisputable-truth">The fifth mistake: treating coordinates as indisputable truth</h1>
+<p>Coordinates look objective.</p>
+<p>They can still be wrong for the process.</p>
+<p>A coordinate may point to:</p>
+<ul>
+<li>the centre of the postal code;</li>
+<li>the centre of the campus;</li>
+<li>the administrative office;</li>
+<li>the warehouse building;</li>
+<li>the wrong truck gate.</li>
+</ul>
+<p>For transportation planning, a campus-centre coordinate may be sufficient for strategic distance estimation.</p>
+<p>For driver navigation or appointment execution, it may be inadequate.</p>
+<p>The model should record:</p>
+<ul>
+<li>coordinate;</li>
+<li>precision;</li>
+<li>source;</li>
+<li>intended use;</li>
+<li>validation date.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Coordinate:
+53.5310, 9.9850
+
+Represents:
+Campus centre
+
+Approved use:
+Strategic routing
+
+Not approved for:
+Driver gate navigation</code></pre>
+<p>Gate 2 can have a separate coordinate approved for execution.</p>
+<p>The manager should not ask only:</p>
+<blockquote>Do we have coordinates?</blockquote>
+<p>The better question is:</p>
+<blockquote>Do we have coordinates suitable for the decision being made?</blockquote>
+<h1 id="the-sixth-mistake-ignoring-time-zone-semantics">The sixth mistake: ignoring time-zone semantics</h1>
+<p>The 3PL record says:</p>
+<pre><code class="language-text">Time zone:
+UTC+1</code></pre>
+<p>This looks reasonable for Hamburg.</p>
+<p>It is incomplete.</p>
+<p>A fixed UTC offset does not necessarily preserve daylight-saving behaviour.</p>
+<p>The project also needs to know whether opening times, appointment windows and carrier cutoffs are stored as:</p>
+<ul>
+<li>local wall-clock time;</li>
+<li>UTC;</li>
+<li>system time;</li>
+<li>fixed offset.</li>
+</ul>
+<p>Suppose the warehouse accepts appointments from:</p>
+<pre><code class="language-text">06:00 to 18:00 local time</code></pre>
+<p>Transportation planning interprets the values as UTC+1 throughout the year.</p>
+<p>The error may appear only after a seasonal clock change.</p>
+<p>The canonical model should preserve a named time-zone concept and the semantics of each time-based Attribute.</p>
+<pre><code class="language-text">Location time zone:
+Europe/Berlin
+
+Receiving hours:
+local time
+
+Carrier cutoff:
+local time
+
+Event timestamps:
+UTC</code></pre>
+<p>The important point is not the specific technology.</p>
+<p>It is that the model distinguishes business time from storage representation.</p>
+<h1 id="the-seventh-mistake-maintaining-one-calendar-for-a-location">The seventh mistake: maintaining one calendar for a location</h1>
+<p>A location can have several calendars.</p>
+<p>The Hamburg campus may have:</p>
+<ul>
+<li>Plant production calendar;</li>
+<li>warehouse receiving calendar;</li>
+<li>outbound shipping calendar;</li>
+<li>carrier pickup calendar;</li>
+<li>public-holiday calendar;</li>
+<li>maintenance shutdowns;</li>
+<li>gate appointment windows.</li>
+</ul>
+<p>A location may be open for production while the inbound gate is closed.</p>
+<p>A warehouse may operate on Saturday while a specific carrier does not collect.</p>
+<p>One generic “location calendar” cannot represent every process.</p>
+<p>For the inbound node:</p>
+<pre><code class="language-text">Receiving calendar:
+Monday–Friday
+
+Receiving hours:
+06:00–18:00
+
+Holiday source:
+Germany/Hamburg
+
+Shutdown:
+24–26 December</code></pre>
+<p>For the outbound gate:</p>
+<pre><code class="language-text">Shipping calendar:
+Monday–Saturday
+
+Carrier cutoff:
+16:00
+
+Night pickup:
+By Exception</code></pre>
+<p>The canonical model should link calendars to:</p>
+<ul>
+<li>node;</li>
+<li>role;</li>
+<li>activity;</li>
+<li>partner where necessary.</li>
+</ul>
+<h1 id="the-eighth-mistake-confusing-location-role-with-location-identity">The eighth mistake: confusing location role with location identity</h1>
+<p>The Hamburg campus can perform several roles:</p>
+<ul>
+<li>production source;</li>
+<li>inventory location;</li>
+<li>shipping origin;</li>
+<li>receiving destination;</li>
+<li>returns destination;</li>
+<li>cross-docking node;</li>
+<li>carrier handover point.</li>
+</ul>
+<p>A role can change without changing the physical site.</p>
+<p>A new returns process may be introduced at the existing campus.</p>
+<p>The canonical model should add a role relationship rather than create a new unrelated location.</p>
+<p>Conversely, two roles can occur at different nodes within the campus.</p>
+<pre><code class="language-text">Outbound shipping:
+Gate 2
+
+Returns receiving:
+Returns Centre</code></pre>
+<p>The role should therefore be scoped to the correct operational node.</p>
+<h1 id="the-ninth-mistake-collapsing-parent-and-child-locations">The ninth mistake: collapsing parent and child locations</h1>
+<p>Managers often receive a location list where every code appears at the same level.</p>
+<p>The list may contain:</p>
+<ul>
+<li>country;</li>
+<li>region;</li>
+<li>campus;</li>
+<li>warehouse;</li>
+<li>gate;</li>
+<li>dock;</li>
+<li>storage area.</li>
+</ul>
+<p>Without hierarchy, systems and analysts can compare incompatible objects.</p>
+<p>For the Hamburg campus:</p>
+<pre><code class="language-text">Hamburg Distribution Campus
+├── Manufacturing Plant DE10
+├── Inbound Warehouse
+│   └── Gate 1
+├── Finished-Goods Warehouse
+│   └── Gate 2
+├── Returns Centre
+└── Rail Terminal</code></pre>
+<p>A transport lane to the campus may be suitable for strategic planning.</p>
+<p>An appointment requires the exact gate or receiving node.</p>
+<p>The canonical model should preserve hierarchy and the planning grain at which each relationship is valid.</p>
+<h1 id="the-tenth-mistake-treating-external-partner-codes-as-secondary-reference-data">The tenth mistake: treating external partner codes as secondary reference data</h1>
+<p>Carrier and 3PL identifiers are often stored in separate spreadsheets.</p>
+<p>They are treated as interface details.</p>
+<p>Operationally, they determine whether partners understand the location.</p>
+<p>The carrier may require:</p>
+<pre><code class="language-text">F12345</code></pre>
+<p>The 3PL may require:</p>
+<pre><code class="language-text">DC-HAMBURG-01</code></pre>
+<p>A track-and-trace provider may use another identifier.</p>
+<p>The model should connect external identities to the canonical node and preserve:</p>
+<ul>
+<li>partner;</li>
+<li>identifier;</li>
+<li>validity period;</li>
+<li>intended process;</li>
+<li>Evidence;</li>
+<li>owner.</li>
+</ul>
+<p>This supports a deterministic check:</p>
+<blockquote>Every carrier used for outbound shipments from Gate 2 must have an active external location identity mapped to that node.</blockquote>
+<p>Without this, the internal model can be perfect while partner execution fails.</p>
+<h1 id="the-eleventh-mistake-creating-transportation-lanes-between-codes-instead-of-locations">The eleventh mistake: creating transportation lanes between codes instead of locations</h1>
+<p>A lane may be represented as:</p>
+<pre><code class="language-text">LOC-DE10-A → LOC-FR20-B</code></pre>
+<p>But if <code>LOC-DE10-A</code> changes, does the physical route change?</p>
+<p>If two codes refer to the same origin node, should they create separate lanes?</p>
+<p>If one code represents the campus and another represents Gate 2, which one is correct for the planning use?</p>
+<p>The lane should connect canonical operational nodes.</p>
+<p>System-specific lane identifiers and codes should map to that relationship.</p>
+<pre><code class="language-text">Origin:
+Hamburg Outbound Gate 2
+
+Destination:
+Lyon Receiving Node 1
+
+Mode:
+Road
+
+Carrier applicability:
+Carrier A and Carrier B
+
+Planning system identity:
+LANE-DE10-FR20</code></pre>
+<p>This prevents system-code changes from silently changing network meaning.</p>
+<h1 id="the-twelfth-mistake-detecting-duplicates-without-detecting-splits">The twelfth mistake: detecting duplicates without detecting splits</h1>
+<p>MDM programmes are familiar with duplicate locations.</p>
+<p>Location migration also has a split problem.</p>
+<p>One legacy location may represent several future operational nodes.</p>
+<p>For example:</p>
+<pre><code class="language-text">Legacy location:
+HAMBURG_DC</code></pre>
+<p>The target model requires:</p>
+<pre><code class="language-text">Hamburg Inbound Gate
+Hamburg Outbound Gate
+Hamburg Returns Centre</code></pre>
+<p>A matching algorithm that tries to create one golden record can preserve the legacy ambiguity.</p>
+<p>The project needs an explicit split Decision.</p>
+<pre><code class="language-text">Legacy HAMBURG_DC
+is replaced by
+three target operational nodes</code></pre>
+<p>Mappings, lanes, appointments and partner codes must then be reassigned.</p>
+<p>A canonical location registry should support:</p>
+<ul>
+<li>merge;</li>
+<li>split;</li>
+<li>rename;</li>
+<li>supersession;</li>
+<li>parent-child restructuring.</li>
+</ul>
+<h1 id="the-management-solution-create-a-layered-canonical-location-model">The management solution: create a layered canonical location model</h1>
+<p>A useful canonical model should contain several connected objects.</p>
+<h2 id="physicalsite">PhysicalSite</h2>
+<p>Represents the real-world campus or facility.</p>
+<h2 id="operationalnode">OperationalNode</h2>
+<p>Represents a point where a logistics activity occurs.</p>
+<p>Examples:</p>
+<ul>
+<li>receiving gate;</li>
+<li>shipping gate;</li>
+<li>warehouse;</li>
+<li>rail terminal.</li>
+</ul>
+<h2 id="locationrole">LocationRole</h2>
+<p>Defines how the site or node participates in a process.</p>
+<p>Examples:</p>
+<ul>
+<li>shipping origin;</li>
+<li>receiving destination;</li>
+<li>production source;</li>
+<li>returns destination.</li>
+</ul>
+<h2 id="systemidentity">SystemIdentity</h2>
+<p>Connects a canonical object to a system-specific code.</p>
+<h2 id="externalpartneridentity">ExternalPartnerIdentity</h2>
+<p>Connects it to carrier, 3PL or tracking-provider codes.</p>
+<h2 id="address">Address</h2>
+<p>Stores a role-specific address with validity and authority.</p>
+<h2 id="coordinate">Coordinate</h2>
+<p>Stores a coordinate with precision, source and approved use.</p>
+<h2 id="calendar-and-servicewindow">Calendar and ServiceWindow</h2>
+<p>Define when a role or activity is available.</p>
+<h2 id="hierarchyrelationship">HierarchyRelationship</h2>
+<p>Connects campus, warehouse, gate and other levels.</p>
+<h2 id="lanerelationship">LaneRelationship</h2>
+<p>Connects operational nodes through a governed transportation path.</p>
+<p>This layered structure is more complex than one location table.</p>
+<p>The logistics network is already complex.</p>
+<p>The model prevents that complexity from being hidden in inconsistent codes.</p>
+<h1 id="a-canonical-representation-of-the-hamburg-campus">A canonical representation of the Hamburg campus</h1>
+<p>Conceptually:</p>
+<pre><code class="language-text">Physical site:
+Hamburg Distribution Campus
+
+Enterprise assignments:
+- Plant DE10
+- Shipping Point SP10
+
+Operational nodes:
+- Hamburg Inbound Gate 1
+- Hamburg Outbound Gate 2
+- Hamburg Returns Centre
+- Hamburg Rail Terminal
+
+Warehouse:
+EWM-WH01
+
+Transportation identities:
+- LOC-DE10-A
+- carrier F12345
+- 3PL DC-HAMBURG-01
+
+Time zone:
+Europe/Berlin</code></pre>
+<p>The outbound gate might then be represented as:</p>
+<pre><code class="language-text">Canonical node:
+LOC-HAMBURG-OUTBOUND-GATE-2
+
+Parent:
+Hamburg Distribution Campus
+
+Role:
+shipping origin
+
+Address:
+Industriestrasse 22
+
+Coordinate:
+gate-specific coordinate
+
+TM identity:
+LOC-DE10-A
+
+Carrier identity:
+F12345
+
+Shipping calendar:
+Monday–Saturday
+
+Carrier cutoff:
+16:00 local time</code></pre>
+<p>The exact schema is less important than the separation of meaning.</p>
+<h1 id="we-define-source-authority-by-attribute">We define source authority by Attribute</h1>
+<p>Different parties may own different parts of the location.</p>
+<p>For the Hamburg campus:</p>
+<pre><code class="language-text">Legal address:
+Corporate Real Estate
+
+Operational gate address:
+Warehouse Operations
+
+Coordinates:
+Logistics Network Design
+
+Receiving hours:
+Warehouse Operations
+
+Carrier pickup code:
+Transportation Operations
+
+Time zone:
+Enterprise Location Governance
+
+Holiday calendar:
+Local Business Operations</code></pre>
+<p>A single “location owner” is often too broad.</p>
+<p>Martenweave can preserve typed ownership and detect when a proposed change affects an Attribute owned by another role.</p>
+<h1 id="we-validate-location-identity-deterministically">We validate location identity deterministically</h1>
+<p>Useful Rules include:</p>
+<h2 id="every-operational-node-has-one-parent-site">Every operational node has one parent site</h2>
+<p>Unless explicitly modelled as a standalone node.</p>
+<h2 id="no-active-system-identity-maps-ambiguously">No active system identity maps ambiguously</h2>
+<p>A code should not point to two active canonical nodes for the same scope.</p>
+<h2 id="every-partner-identity-has-validity-dates">Every partner identity has validity dates</h2>
+<p>Old and new carrier codes should not overlap without explanation.</p>
+<h2 id="every-executable-transport-node-has-a-time-zone">Every executable transport node has a time zone</h2>
+<p>And the time zone must use the approved representation.</p>
+<h2 id="every-appointment-enabled-node-has-service-windows">Every appointment-enabled node has service windows</h2>
+<p>Missing hours should not be interpreted as always open.</p>
+<h2 id="coordinates-have-declared-precision-and-use">Coordinates have declared precision and use</h2>
+<p>Campus-level coordinates should not be accepted automatically for gate navigation.</p>
+<h2 id="address-role-is-explicit">Address role is explicit</h2>
+<p>A legal address must not silently become a pickup address.</p>
+<h2 id="parent-child-hierarchy-has-no-cycles">Parent-child hierarchy has no cycles</h2>
+<p>A gate cannot contain its own campus.</p>
+<h2 id="active-lanes-connect-active-nodes">Active lanes connect active nodes</h2>
+<p>A retired node should not remain in the current network.</p>
+<h2 id="split-and-merge-decisions-preserve-lineage">Split and merge Decisions preserve lineage</h2>
+<p>Legacy codes must map to the appropriate target nodes.</p>
+<p>These Rules turn location migration into a model-governance problem rather than an address-cleansing exercise.</p>
+<h1 id="we-connect-findings-to-logistics-consequences">We connect Findings to logistics consequences</h1>
+<p>A technical Finding might say:</p>
+<pre><code class="language-text">Time zone mismatch.</code></pre>
+<p>A management Finding should say:</p>
+<pre><code class="language-text">Hamburg Outbound Gate 2 uses a fixed UTC+1 offset
+while the canonical site uses Europe/Berlin.
+
+Affected process:
+Carrier appointment scheduling
+
+Potential consequence:
+One-hour appointment and cutoff deviation
+during daylight-saving periods
+
+Affected lanes:
+18
+
+Affected carriers:
+4
+
+Cutover status:
+Not ready</code></pre>
+<p>Another example:</p>
+<pre><code class="language-text">Carrier code F12345 maps to the campus
+instead of Outbound Gate 2.
+
+Potential consequence:
+Pickup instructions and tracking events
+cannot be reconciled to the executable node.</code></pre>
+<p>This is how a data issue becomes a decision item.</p>
+<h1 id="we-distinguish-data-mapping-and-network-design-problems">We distinguish data, mapping and network-design problems</h1>
+<p>A location discrepancy can require different remediation.</p>
+<h2 id="data-correction">Data correction</h2>
+<p>The address or coordinate is wrong.</p>
+<h2 id="mapping-correction">Mapping correction</h2>
+<p>A system code maps to the wrong canonical node.</p>
+<h2 id="model-correction">Model correction</h2>
+<p>The canonical hierarchy does not distinguish campus and gate.</p>
+<h2 id="network-design-correction">Network-design correction</h2>
+<p>The intended operational node or lane is not defined.</p>
+<h2 id="partner-correction">Partner correction</h2>
+<p>The carrier or 3PL uses an obsolete external identity.</p>
+<h2 id="scope-decision">Scope Decision</h2>
+<p>A node is intentionally excluded from the current wave.</p>
+<p>Managers should require the Finding to name the likely remediation class.</p>
+<p>Otherwise issues bounce among S/4, EWM, TM, integration and carrier teams.</p>
+<h1 id="we-preserve-controlled-exceptions">We preserve controlled exceptions</h1>
+<p>Not every location discrepancy must block cutover.</p>
+<p>Suppose two low-volume carriers still use the campus-level code instead of Gate 2.</p>
+<p>A controlled Exception might permit temporary operation when:</p>
+<ul>
+<li>manual pickup instructions are issued;</li>
+<li>carrier contacts are confirmed;</li>
+<li>shipment volume remains below a defined limit;</li>
+<li>the external code will be corrected by a deadline.</li>
+</ul>
+<pre><code class="language-text">Affected carriers:
+2
+
+Temporary control:
+Manual dispatch instruction
+
+Maximum daily shipments:
+5
+
+Owner:
+Transportation Operations
+
+Expiry:
+Two weeks after go-live</code></pre>
+<p>The location is not fully ready for those carrier integrations.</p>
+<p>It is controlled.</p>
+<p>That distinction should remain visible.</p>
+<h1 id="we-close-findings-with-current-target-evidence">We close Findings with current target Evidence</h1>
+<p>A location Finding should not close because an Excel mapping was changed.</p>
+<p>For the Hamburg case, closure should prove:</p>
+<ol>
+<li>the canonical site and node hierarchy is approved;</li>
+<li>S/4, EWM and TM identities map to the correct nodes;</li>
+<li>carrier and 3PL codes are active and scoped correctly;</li>
+<li>address roles are explicit;</li>
+<li>time zone and calendars are aligned;</li>
+<li>coordinates are approved for their intended use;</li>
+<li>affected lanes and partner messages were revalidated;</li>
+<li>the current target extracts match the canonical model.</li>
+</ol>
+<p>A closure package might contain:</p>
+<pre><code class="language-text">Canonical model commit
+
+S/4 location extract
+
+EWM warehouse extract
+
+TM location extract
+
+Carrier mapping confirmation
+
+Calendar reconciliation
+
+Lane impact report
+
+Business-owner approval</code></pre>
+<p>A successful interface message is only one part of that package.</p>
+<h1 id="the-manager-focused-workbench-view">The manager-focused Workbench view</h1>
+<p>The Workbench should not begin with a list of address duplicates.</p>
+<p>It should show the logistics network state.</p>
+<h2 id="canonical-site">Canonical site</h2>
+<p>Hamburg Distribution Campus.</p>
+<h2 id="operational-nodes">Operational nodes</h2>
+<ul>
+<li>Inbound Gate 1;</li>
+<li>Outbound Gate 2;</li>
+<li>Returns Centre;</li>
+<li>Rail Terminal.</li>
+</ul>
+<h2 id="system-coverage">System coverage</h2>
+<pre><code class="language-text">S/4 identities:
+complete
+
+EWM identities:
+complete
+
+TM identities:
+one ambiguous mapping
+
+Carrier identities:
+two missing
+
+3PL identities:
+complete</code></pre>
+<h2 id="operational-readiness">Operational readiness</h2>
+<pre><code class="language-text">Inbound receiving:
+ready
+
+Outbound transportation:
+controlled
+
+Returns:
+ready
+
+Rail dispatch:
+not assessed</code></pre>
+<h2 id="critical-findings">Critical Findings</h2>
+<ul>
+<li>carrier code maps to campus rather than gate;</li>
+<li>fixed-offset time zone used for appointment scheduling;</li>
+<li>three lanes reference a superseded TM location;</li>
+<li>one outbound node lacks current receiving and pickup hours.</li>
+</ul>
+<h2 id="business-impact">Business impact</h2>
+<ul>
+<li>18 transportation lanes;</li>
+<li>four carriers;</li>
+<li>first-week outbound deliveries;</li>
+<li>manual dispatch fallback required.</li>
+</ul>
+<p>This is a management view, not an address-maintenance screen.</p>
+<h1 id="a-focused-martenweave-pilot">A focused Martenweave pilot</h1>
+<p>The first location pilot should not cover the entire enterprise network.</p>
+<p>Choose:</p>
+<pre><code class="language-text">One logistics campus
+
+One warehouse
+
+One shipping point
+
+Five carriers
+
+Twenty transportation lanes</code></pre>
+<p>For the Hamburg campus, collect:</p>
+<ul>
+<li>S/4 Plant and shipping-point data;</li>
+<li>EWM warehouse and address data;</li>
+<li>TM location data;</li>
+<li>carrier and 3PL codes;</li>
+<li>addresses;</li>
+<li>coordinates;</li>
+<li>calendars;</li>
+<li>service windows;</li>
+<li>active lanes;</li>
+<li>current target Evidence.</li>
+</ul>
+<p>The pilot should answer:</p>
+<ol>
+<li>Which records represent the same physical site?</li>
+<li>Which represent distinct operational nodes?</li>
+<li>Which identities belong to each node?</li>
+<li>Which addresses are legal, operational or partner-facing?</li>
+<li>Which time zone and calendars apply?</li>
+<li>Which lanes and carrier processes depend on each node?</li>
+<li>Which mappings are missing or ambiguous?</li>
+<li>Which current Evidence proves readiness?</li>
+</ol>
+<p>This is narrow enough to deliver.</p>
+<p>It is broad enough to demonstrate real logistics value.</p>
+<h1 id="the-proposed-martenweave-capability">The proposed Martenweave capability</h1>
+<h2 id="canonical-logistics-location-registry">Canonical Logistics Location Registry</h2>
+<h3 id="goal">Goal</h3>
+<p>Create a traceable model connecting physical sites, operational nodes, organisational objects, system identities and external partner codes.</p>
+<h3 id="initial-objects">Initial objects</h3>
+<ul>
+<li>PhysicalSite;</li>
+<li>OperationalNode;</li>
+<li>LocationRole;</li>
+<li>SystemIdentity;</li>
+<li>ExternalPartnerIdentity;</li>
+<li>Address;</li>
+<li>Coordinate;</li>
+<li>Calendar;</li>
+<li>ServiceWindow;</li>
+<li>HierarchyRelationship;</li>
+<li>TransportationLane;</li>
+<li>Evidence;</li>
+<li>Decision;</li>
+<li>Finding.</li>
+</ul>
+<h3 id="initial-validations">Initial validations</h3>
+<ul>
+<li>duplicate or ambiguous identity;</li>
+<li>missing parent site;</li>
+<li>incorrect address role;</li>
+<li>missing or invalid time-zone representation;</li>
+<li>missing service window;</li>
+<li>stale external code;</li>
+<li>inactive node used by active lane;</li>
+<li>coordinate precision unsuitable for intended use;</li>
+<li>unresolved split or merge;</li>
+<li>stale Evidence.</li>
+</ul>
+<h3 id="initial-outputs">Initial outputs</h3>
+<ul>
+<li>canonical location hierarchy;</li>
+<li>cross-system identity map;</li>
+<li>partner-identity gaps;</li>
+<li>affected lanes;</li>
+<li>business impact;</li>
+<li>readiness by logistics role;</li>
+<li>remediation proposal;</li>
+<li>closure criteria.</li>
+</ul>
+<h1 id="a-conceptual-location-object">A conceptual location object</h1>
+<pre><code class="language-text">---
+id: LOC-HAMBURG-OUTBOUND-GATE-2
+type: OperationalNode
+
+parent_site:
+  LOC-HAMBURG-CAMPUS
+
+roles:
+  - shipping_origin
+  - carrier_handover
+
+enterprise_context:
+  plant: DE10
+  shipping_point: SP10
+  warehouse: EWM-WH01
+
+system_identities:
+  - system: SAP_TM
+    value: LOC-DE10-A
+  - system: CARRIER_A
+    value: F12345
+
+address:
+  role: outbound_pickup
+  street: Industriestrasse 22
+  city: Hamburg
+  country: DE
+
+time_zone:
+  Europe/Berlin
+
+service_window:
+  calendar: CAL-HAMBURG-OUTBOUND
+  opens: 06:00
+  closes: 18:00
+
+owner:
+  ROLE-TRANSPORTATION-OPERATIONS
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code class="language-text">martenweave logistics location-map \
+  LOC-HAMBURG-CAMPUS \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave logistics validate-locations \
+  --dataset ./data/location-baseline.xlsx \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave logistics location-conflicts \
+  --site LOC-HAMBURG-CAMPUS \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave logistics location-impact \
+  LOC-HAMBURG-OUTBOUND-GATE-2 \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave logistics propose-location-fix \
+  FIND-HAMBURG-CARRIER-MAPPING \
+  --dry-run \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended capability.</p>
+<p>They are not part of the currently documented CLI.</p>
+<p>The current Martenweave core already provides canonical files, deterministic validation, gap detection, lineage, impact analysis and proposal-first change handling that can underpin this slice.</p>
+<h1 id="what-managers-should-require">What managers should require</h1>
+<h2 id="require-identity-before-cleansing">Require identity before cleansing</h2>
+<p>Do not standardise address strings before deciding whether records represent the same site or different nodes.</p>
+<h2 id="require-a-location-hierarchy">Require a location hierarchy</h2>
+<p>Separate campuses, warehouses, gates and operational points.</p>
+<h2 id="require-role-specific-addresses">Require role-specific addresses</h2>
+<p>Legal, receiving, pickup and visitor addresses should not overwrite each other.</p>
+<h2 id="require-typed-authority">Require typed authority</h2>
+<p>Assign owners to addresses, coordinates, calendars, partner codes and roles separately.</p>
+<h2 id="require-time-zone-and-calendar-semantics">Require time-zone and calendar semantics</h2>
+<p>A fixed offset or generic calendar is not enough for appointment and cutoff processes.</p>
+<h2 id="require-external-identity-coverage">Require external identity coverage</h2>
+<p>Every active carrier and 3PL integration should map to the correct canonical node.</p>
+<h2 id="require-lane-impact-analysis">Require lane impact analysis</h2>
+<p>A location change should show which routes, rates, appointments and partners are affected.</p>
+<h2 id="require-current-evidence">Require current Evidence</h2>
+<p>Location readiness must refer to the current system extracts, partner mappings and network baseline.</p>
+<h2 id="require-explicit-split-and-merge-decisions">Require explicit split and merge Decisions</h2>
+<p>Do not let duplicate matching decide the future logistics structure automatically.</p>
+<h1 id="the-questions-managers-should-ask">The questions managers should ask</h1>
+<ol>
+<li>Which records represent the same physical site?</li>
+<li>Which records represent different operational nodes within that site?</li>
+<li>Which organisational objects are assigned to each node?</li>
+<li>Which addresses are legal, postal, receiving or pickup addresses?</li>
+<li>Which coordinates represent the campus, warehouse and exact gate?</li>
+<li>Which time zone governs local appointment and cutoff times?</li>
+<li>Which calendars apply to receiving, shipping and carrier activity?</li>
+<li>Which carrier and 3PL codes identify each node?</li>
+<li>Which locations were split, merged, renamed or superseded?</li>
+<li>Which transportation lanes depend on each location?</li>
+<li>Which nodes are current, controlled, not ready or not assessed?</li>
+<li>Which Evidence proves that all systems and partners use the current model?</li>
+</ol>
+<p>A programme that cannot answer these questions does not have a governed logistics network.</p>
+<h1 id="the-business-value">The business value</h1>
+<p>A canonical location model reduces:</p>
+<ul>
+<li>wrong pickup and delivery points;</li>
+<li>carrier-message rejection;</li>
+<li>appointment errors;</li>
+<li>incorrect route and distance calculations;</li>
+<li>stale lanes;</li>
+<li>duplicate transport nodes;</li>
+<li>failed tracking reconciliation;</li>
+<li>manual partner mapping;</li>
+<li>repeated disputes between ERP, EWM, TM and integration teams.</li>
+</ul>
+<p>It also improves management reporting.</p>
+<p>Instead of:</p>
+<pre><code class="language-text">98 percent of location addresses are complete.</code></pre>
+<p>the programme can report:</p>
+<pre><code class="language-text">The Hamburg campus has four governed operational nodes.
+
+S/4 and EWM identities are aligned.
+
+One TM identity remains ambiguous.
+
+Two carrier codes are missing.
+
+Three active lanes use a superseded node.
+
+Outbound transportation is controlled,
+but not yet fully ready.</code></pre>
+<p>That is a decision-ready statement.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A location is not only where something is.</p>
+<p>It is where a defined activity can happen, under a defined identity, schedule, role and set of partner agreements.</p>
+<p>The practical test is:</p>
+<blockquote>Can we explain which physical site and operational node every system code represents, and can we prove that the network still works when those identities, roles or calendars change?</blockquote>
+<p>When the answer is yes, location data becomes governed logistics infrastructure.</p>
+<p>When the answer is:</p>
+<blockquote>The addresses look similar and the records loaded successfully,</blockquote>
+<p>we know that the strings are populated.</p>
+<p>We do not yet know whether the truck, warehouse, planner and carrier are all going to the same place.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that logistics locations become stable, traceable model objects rather than loosely connected codes spread across ERP, warehouse, transportation and partner systems.</p>
+<p>Our operating model is:</p>
+<pre><code class="language-text">Physical sites define the real-world place.
+
+Operational nodes define where work happens.
+
+Roles define what can happen there.
+
+System identities connect applications.
+
+Partner identities connect the network.
+
+Rules validate consistency.
+
+Lineage shows lane and process impact.
+
+Evidence proves the current state.
+
+AI proposes corrections.
+
+Humans approve identity, authority and scope.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance, logistics and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a backend-first model-governance pipeline that converts datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI-generated changes proposal-first.</p>
+<p>Its documented workflow moves from source Evidence through validation, gap detection, lineage and impact analysis to reviewed proposals and GitHub delivery.</p>
+<p>SAP describes SAP Transportation Management as integrating fleet and logistics management across the network, including transportation planning, freight tendering and settlement. The article uses that network scope to explain why location identity must remain consistent across internal and external execution systems.</p>
+<p>SAP describes SAP Master Data Governance as preserving semantics and relationships across governed business entities, applying validated values and business Rules, maintaining an audit trail and supporting governed data across SAP and third-party sources. The proposed canonical location model applies those principles to logistics sites, nodes, roles and partner identities.</p>
+<p>The PhysicalSite, OperationalNode, ExternalPartnerIdentity and TransportationLane objects, location validations and proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html">The material migration report looks successful.</a></li><li><a href="/blog/how-we-detect-missing-material-extensions-before-cutover.html">The material migration team reports:</a></li><li><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html">The unit-of-measure migration report looks harmless.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-s4-material-readiness-does-not-prove-ewm-readiness.html"><span>Previous</span>The material migration dashboard is green.</a><a href="/blog/how-we-govern-lead-times-across-procurement-production-warehouse-and.html"><span>Next</span>What exactly are we promising when we say the lead time is 12 days?</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

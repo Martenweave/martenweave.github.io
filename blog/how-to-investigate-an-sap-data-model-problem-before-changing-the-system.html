@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Investigate an SAP Data Model Problem Before Changing the System | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration test fails because Customer Group is missing."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html" />
+    <meta property="og:title" content="How to Investigate an SAP Data Model Problem Before Changing the System | Martenweave" />
+    <meta property="og:description" content="A migration test fails because Customer Group is missing." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Investigate an SAP Data Model Problem Before Changing the System | Martenweave" />
+    <meta name="twitter:description" content="A migration test fails because Customer Group is missing." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html",
+                        "name": "How to Investigate an SAP Data Model Problem Before Changing the System | Martenweave",
+                        "description": "A migration test fails because Customer Group is missing.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Investigate an SAP Data Model Problem Before Changing the System",
+                                    "item": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html#content",
+                        "headline": "How to Investigate an SAP Data Model Problem Before Changing the System",
+                        "name": "How to Investigate an SAP Data Model Problem Before Changing the System",
+                        "description": "A migration test fails because Customer Group is missing.",
+                        "url": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT24M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Investigate an SAP Data Model Problem Before Changing the System</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Investigate an SAP Data Model Problem Before Changing the System</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 24 min read</p><p class="blog-summary">A migration test fails because Customer Group is missing.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#investigation-should-begin-before-solution-design">Investigation should begin before solution design</a></li><li><a href="#separate-four-layers-immediately">Separate four layers immediately</a></li><li><a href="#1-observed-fact">1. Observed fact</a></li><li><a href="#2-interpretation">2. Interpretation</a></li><li><a href="#3-decision">3. Decision</a></li><li><a href="#4-implementation">4. Implementation</a></li><li><a href="#define-the-exact-investigation-question">Define the exact investigation question</a></li><li><a href="#establish-the-current-approved-baseline">Establish the current approved baseline</a></li><li><a href="#test-semantic-equivalence-explicitly">Test semantic equivalence explicitly</a></li><li><a href="#identify-the-organisational-context">Identify the organisational context</a></li><li><a href="#define-the-applicable-population">Define the applicable population</a></li><li><a href="#do-not-treat-the-current-dataset-as-complete-truth">Do not treat the current dataset as complete truth</a></li><li><a href="#compare-approved-model-with-implemented-behaviour">Compare approved model with implemented behaviour</a></li><li><a href="#inspect-the-decision-history">Inspect the decision history</a></li><li><a href="#determine-whether-the-problem-is-actually-a-model-problem">Determine whether the problem is actually a model problem</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration test fails because Customer Group is missing.</p>
+<p>The defect is assigned to the mapping team.</p>
+<p>An analyst opens the mapping workbook, finds a source field named <code>CUSTOMER_SEGMENT</code> and maps it to the SAP target field used for Customer Group. The next load succeeds.</p>
+<p>The issue appears resolved.</p>
+<p>Several weeks later, the sales organisation reports inconsistent customer grouping. The same customer has different commercial treatment across sales areas, but the source field contains one central value.</p>
+<p>The migration change was technically successful.</p>
+<p>It was semantically wrong.</p>
+<p>The original investigation answered:</p>
+<blockquote>Which available source field can populate this SAP target?</blockquote>
+<p>It did not answer:</p>
+<blockquote>Does the source field represent the same business concept, at the same organisational level, for the same applicable population?</blockquote>
+<p>This distinction is central to SAP migration, MDG and MDM work.</p>
+<p>Many model problems first appear as:</p>
+<ul>
+<li>missing fields;</li>
+<li>rejected records;</li>
+<li>incomplete mappings;</li>
+<li>invalid values;</li>
+<li>workflow errors;</li>
+<li>duplicate data;</li>
+<li>inconsistent reports;</li>
+<li>repeated support incidents.</li>
+</ul>
+<p>The first visible symptom is rarely the complete problem.</p>
+<p>Yet programme pressure often pushes teams directly toward a solution:</p>
+<ul>
+<li>change the mapping;</li>
+<li>create a default;</li>
+<li>disable the validation;</li>
+<li>add another value;</li>
+<li>introduce a local field;</li>
+<li>copy a configuration rule;</li>
+<li>correct the current dataset.</li>
+</ul>
+<p>Sometimes that response is appropriate.</p>
+<p>Sometimes it removes the visible error while creating a more expensive semantic or operational defect.</p>
+<blockquote>A model investigation is the disciplined process of determining what is actually wrong before deciding whether the data, mapping, model, configuration or business policy should change.</blockquote>
+<p>The purpose is not to delay delivery with analysis.</p>
+<p>It is to prevent teams from implementing the wrong answer quickly.</p>
+<h2 id="investigation-should-begin-before-solution-design">Investigation should begin before solution design</h2>
+<p>A typical defect description already contains a proposed treatment:</p>
+<blockquote>Map <code>CUSTOMER_SEGMENT</code> to Customer Group.</blockquote>
+<blockquote>Make Supplier Classification optional.</blockquote>
+<blockquote>Add <code>UNKNOWN</code> to the target value list.</blockquote>
+<blockquote>Disable the tax validation for Portugal.</blockquote>
+<p>This wording narrows the investigation too early.</p>
+<p>A stronger starting point describes the observed condition:</p>
+<blockquote>Customer Group is missing for 18% of applicable migrated customers.</blockquote>
+<blockquote>Active suppliers from ERP_B cannot satisfy the proposed Supplier Classification rule.</blockquote>
+<blockquote>Source value <code>STRAT</code> has no approved target treatment.</blockquote>
+<blockquote>Individual suppliers in Portugal are being blocked by a validation intended for organisations.</blockquote>
+<p>The observed condition leaves room to determine whether the cause lies in:</p>
+<ul>
+<li>source data;</li>
+<li>source definition;</li>
+<li>mapping;</li>
+<li>target design;</li>
+<li>context;</li>
+<li>SAP configuration;</li>
+<li>integration;</li>
+<li>ownership;</li>
+<li>business policy.</li>
+</ul>
+<p>A model investigation should therefore start with a neutral problem statement.</p>
+<h2 id="separate-four-layers-immediately">Separate four layers immediately</h2>
+<p>The most useful first step is to separate four kinds of information.</p>
+<h2 id="1-observed-fact">1. Observed fact</h2>
+<p>What happened?</p>
+<p>Examples:</p>
+<ul>
+<li>4,800 records have a blank value.</li>
+<li>SAP rejected records with message X.</li>
+<li>source value <code>C</code> has no mapping.</li>
+<li>a workflow routed to the wrong team.</li>
+<li>two systems provide different values.</li>
+</ul>
+<p>This should be reproducible where possible.</p>
+<h2 id="2-interpretation">2. Interpretation</h2>
+<p>What do people think the fact means?</p>
+<p>Examples:</p>
+<ul>
+<li>the source field is incomplete;</li>
+<li>the target rule is too strict;</li>
+<li>two values are equivalent;</li>
+<li>the local process is different;</li>
+<li>the current mapping is wrong.</li>
+</ul>
+<p>Interpretations may be reasonable without yet being proven.</p>
+<h2 id="3-decision">3. Decision</h2>
+<p>What should the approved model say?</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier Risk is mandatory only for active strategic suppliers;</li>
+<li>Customer Group is maintained at sales-area level;</li>
+<li><code>UNDER_REVIEW</code> is a process status, not a final classification;</li>
+<li>Portugal has an approved contextual exception.</li>
+</ul>
+<p>This requires accountable human authority.</p>
+<h2 id="4-implementation">4. Implementation</h2>
+<p>How should the approved model be realised?</p>
+<p>Examples:</p>
+<ul>
+<li>SAP validation;</li>
+<li>mapping transformation;</li>
+<li>source remediation;</li>
+<li>workflow routing;</li>
+<li>interface update;</li>
+<li>migration rule.</li>
+</ul>
+<p>Programmes often mix these four layers.</p>
+<p>A system error is treated as proof that the business model is wrong.</p>
+<p>A convenient mapping is treated as a business decision.</p>
+<p>An SAP limitation is allowed to redefine the target concept.</p>
+<p>A structured investigation keeps the layers distinct.</p>
+<h2 id="define-the-exact-investigation-question">Define the exact investigation question</h2>
+<p>“Investigate Customer Group” is too broad.</p>
+<p>A good investigation question should identify:</p>
+<ul>
+<li>model concept;</li>
+<li>observed symptom;</li>
+<li>scope;</li>
+<li>decision needed.</li>
+</ul>
+<p>For example:</p>
+<blockquote>Determine whether <code>CRM_A.CUSTOMER_SEGMENT</code> is a valid source for the SAP sales-area Customer Group for German and Austrian customers, and identify the correct treatment for customers with multiple sales areas.</blockquote>
+<p>Another:</p>
+<blockquote>Determine whether blank Supplier Classification values in ERP_B represent missing data, non-applicable records or an unresolved business decision before the global validation becomes blocking.</blockquote>
+<p>The investigation question prevents scope drift.</p>
+<p>It also makes the final conclusion testable.</p>
+<h2 id="establish-the-current-approved-baseline">Establish the current approved baseline</h2>
+<p>Before investigating a potential defect, identify what the programme currently considers approved.</p>
+<p>Possible artefacts include:</p>
+<ul>
+<li>canonical model;</li>
+<li>mapping baseline;</li>
+<li>target-design workbook;</li>
+<li>approved decision;</li>
+<li>SAP configuration specification;</li>
+<li>migration transformation;</li>
+<li>local extension;</li>
+<li>test expectation.</li>
+</ul>
+<p>These artefacts may conflict.</p>
+<p>The investigation should record:</p>
+<p>```text id=&quot;inv-01&quot; Approved model baseline: customer-model-v2.7</p>
+<p>Current mapping baseline: mapping-release-4.2</p>
+<p>SAP implementation baseline: MDG-R3</p>
+<p>Dataset: CRM_A extract dated 10 July 2026</p>
+<pre><code>
+Without a baseline, teams may compare:
+
+- a new dataset;
+- an old mapping;
+- future target design;
+- current SAP configuration.
+
+The resulting conclusion may be internally inconsistent.
+
+## Identify the business object before the physical fields
+
+A common investigation failure begins with field names.
+
+A source field resembles a target field, so the team assumes equivalence.
+
+Instead, identify the business concept first.
+
+For Customer Group, ask:
+
+- What business decision does the attribute support?
+- Is it central or organisational?
+- Is it descriptive or process-controlling?
+- Who owns it?
+- Can one customer have several values?
+- Does it differ from Account Group, segmentation or pricing classification?
+
+Only then examine physical representations.
+
+For example:
+
+```text id=&quot;inv-02&quot;
+Business attribute:
+Customer Group for Sales Processing
+
+Source representation:
+CRM_A.CUSTOMER_SEGMENT
+
+Target representation:
+SAP KNVV-KDGRP</code></pre>
+<p>The investigation must determine whether both physical fields implement the same business attribute.</p>
+<p>Similar labels are evidence to inspect, not proof of equivalence.</p>
+<h2 id="test-semantic-equivalence-explicitly">Test semantic equivalence explicitly</h2>
+<p>Two fields are semantically equivalent only when their meanings align sufficiently for the intended use.</p>
+<p>Compare:</p>
+<h3 id="definition">Definition</h3>
+<p>What does each value mean?</p>
+<h3 id="granularity">Granularity</h3>
+<p>Customer, sales area, company code, purchasing organisation or another level?</p>
+<h3 id="cardinality">Cardinality</h3>
+<p>One value or several values per business object?</p>
+<h3 id="lifecycle">Lifecycle</h3>
+<p>When and by whom can the value change?</p>
+<h3 id="allowed-values">Allowed values</h3>
+<p>Do the lists represent the same distinctions?</p>
+<h3 id="business-use">Business use</h3>
+<p>Does the value drive the same workflow, reporting or process?</p>
+<h3 id="applicability">Applicability</h3>
+<p>Does it apply to the same populations and contexts?</p>
+<p>Example:</p>
+<p>```text id=&quot;inv-03&quot; CRM_A.CUSTOMER_SEGMENT</p>
+<p>Meaning: Central marketing segment</p>
+<p>Cardinality: One value per customer</p>
+<p>Usage: Campaign selection</p>
+<pre><code>
+```text id=&quot;inv-04&quot;
+SAP Customer Group
+
+Meaning:
+Sales-processing classification
+
+Cardinality:
+One value per sales area
+
+Usage:
+Commercial processing and reporting</code></pre>
+<p>The fields may correlate.</p>
+<p>They are not automatically equivalent.</p>
+<p>A direct copy may create apparently complete but incorrect data.</p>
+<h2 id="identify-the-organisational-context">Identify the organisational context</h2>
+<p>Many SAP model problems are context problems disguised as missing data.</p>
+<p>A value may be maintained by:</p>
+<ul>
+<li>client;</li>
+<li>company code;</li>
+<li>sales area;</li>
+<li>purchasing organisation;</li>
+<li>plant;</li>
+<li>country;</li>
+<li>partner role;</li>
+<li>Business Partner category.</li>
+</ul>
+<p>A source value at one level cannot always populate a target value at another level without an approved rule.</p>
+<p>Suppose one central customer segment must populate three sales areas.</p>
+<p>Possible treatments include:</p>
+<ul>
+<li>repeat the value across all sales areas;</li>
+<li>derive values by sales area;</li>
+<li>use another source;</li>
+<li>maintain the target after migration;</li>
+<li>redesign the target concept.</li>
+</ul>
+<p>Each treatment carries different meaning.</p>
+<p>The investigation should never allow organisational expansion to happen invisibly inside technical mapping code.</p>
+<h2 id="define-the-applicable-population">Define the applicable population</h2>
+<p>A gap percentage is meaningless without scope.</p>
+<p>Consider:</p>
+<blockquote>Supplier Classification is 70% complete.</blockquote>
+<p>Questions:</p>
+<ul>
+<li>70% of all suppliers?</li>
+<li>active suppliers?</li>
+<li>strategic suppliers?</li>
+<li>supplier organisations only?</li>
+<li>one country?</li>
+<li>one migration wave?</li>
+<li>records required for cutover?</li>
+</ul>
+<p>The investigation should define the population precisely.</p>
+<p>For example:</p>
+<p>```text id=&quot;inv-05&quot; Applicable population:</p>
+<p>Country: Germany and Austria</p>
+<p>Business Partner category: Organisation</p>
+<p>Role: Supplier</p>
+<p>Status: Active</p>
+<p>Supplier segment: Strategic</p>
+<p>Migration wave: Wave 2</p>
+<pre><code>
+This affects whether the observed gap is material.
+
+A blank field may represent:
+
+- a defect;
+- legitimate non-applicability;
+- historical data;
+- an unapproved exception;
+- unresolved scope.
+
+## Inspect real dataset evidence early
+
+Do not investigate model problems only through documentation.
+
+Profile a current, representative dataset.
+
+Useful checks include:
+
+- column presence;
+- completeness;
+- distinct values;
+- frequency;
+- duplicates;
+- key integrity;
+- relationship integrity;
+- value combinations;
+- population by context.
+
+SAP currently recommends preparing clean and correct master data well before an SAP S/4HANA implementation because increasingly automated processes depend on it.
+
+The investigation should connect this principle to the exact model question.
+
+For example:
+
+```text id=&quot;inv-06&quot;
+Applicable suppliers:
+24,880
+
+Valid classifications:
+18,040
+
+Blank:
+5,600
+
+Unknown source values:
+1,240
+
+Blank distribution:
+- ERP_A: 2%
+- ERP_B: 41%
+- Local System C: 7%</code></pre>
+<p>This result changes the investigation.</p>
+<p>The issue may not be a global model problem.</p>
+<p>It may be concentrated in one source system.</p>
+<h2 id="do-not-treat-the-current-dataset-as-complete-truth">Do not treat the current dataset as complete truth</h2>
+<p>Dataset evidence also has limitations.</p>
+<p>A profile may cover:</p>
+<ul>
+<li>only one extract;</li>
+<li>only active records;</li>
+<li>only one country;</li>
+<li>a transformed staging file rather than the original source;</li>
+<li>values already changed by migration code.</li>
+</ul>
+<p>Record:</p>
+<ul>
+<li>source;</li>
+<li>extraction date;</li>
+<li>filters;</li>
+<li>transformation state;</li>
+<li>record count;</li>
+<li>model baseline;</li>
+<li>known limitations.</li>
+</ul>
+<p>Example:</p>
+<p>```text id=&quot;inv-07&quot; Evidence limitation:</p>
+<p>The profile uses the transformed staging file. It cannot prove whether missing source values were defaulted before the file was produced.</p>
+<pre><code>
+This may require inspecting the raw source or transformation logic.
+
+## Trace the value end to end
+
+A model investigation should trace the complete route:
+
+```text id=&quot;inv-08&quot;
+business meaning
+→ source representation
+→ extraction
+→ transformation
+→ mapping
+→ target representation
+→ validation
+→ workflow
+→ consumer</code></pre>
+<p>A problem may be introduced at any point.</p>
+<p>For example:</p>
+<ul>
+<li>source contains the correct value;</li>
+<li>extraction omits the field;</li>
+<li>transformation uses an old code list;</li>
+<li>mapping sends it to the wrong endpoint;</li>
+<li>SAP validation interprets it in the wrong context;</li>
+<li>outbound interface drops it;</li>
+<li>report assigns another meaning.</li>
+</ul>
+<p>Stopping after source-to-target mapping may miss the actual defect.</p>
+<p>Martenweave’s current core is designed around canonical model objects, generated indexes, search, trace and impact analysis.</p>
+<p>That is the technical foundation for preserving the investigation path rather than reconstructing it repeatedly.</p>
+<h2 id="compare-approved-model-with-implemented-behaviour">Compare approved model with implemented behaviour</h2>
+<p>An investigation should reconcile at least three states.</p>
+<h3 id="approved-model">Approved model</h3>
+<p>What should be true?</p>
+<h3 id="implemented-model">Implemented model</h3>
+<p>What SAP, mappings and interfaces actually implement?</p>
+<h3 id="observed-data">Observed data</h3>
+<p>What records currently show?</p>
+<p>Example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Layer</th><th scope="col">Supplier Classification</th></tr></thead><tbody><tr><td>Approved model</td><td>Mandatory for active strategic suppliers</td></tr><tr><td>SAP configuration</td><td>Mandatory for all active suppliers</td></tr><tr><td>Source data</td><td>ERP_B incomplete for 41%</td></tr><tr><td>Observed test result</td><td>Many non-strategic suppliers blocked</td></tr></tbody></table></div>
+<p>The correct treatment is not simply “clean the source.”</p>
+<p>The investigation has identified both:</p>
+<ul>
+<li>configuration misalignment;</li>
+<li>source limitation.</li>
+</ul>
+<p>These require separate actions.</p>
+<p>SAP MDG supports governed models, ownership, validated values, workflows, business-rule monitoring and auditable changes.</p>
+<p>Those controls are effective only when the rule they implement has been correctly defined and scoped.</p>
+<h2 id="inspect-the-decision-history">Inspect the decision history</h2>
+<p>Many apparently irrational model elements were introduced for a reason.</p>
+<p>A temporary default may have been approved for:</p>
+<ul>
+<li>an early mock load;</li>
+<li>one country;</li>
+<li>historical inactive records;</li>
+<li>a source system scheduled for replacement.</li>
+</ul>
+<p>Before removing or expanding it, find:</p>
+<ul>
+<li>original problem;</li>
+<li>considered alternatives;</li>
+<li>approver;</li>
+<li>scope;</li>
+<li>expiry;</li>
+<li>assumptions.</li>
+</ul>
+<p>Example:</p>
+<p>```text id=&quot;inv-09&quot; Decision: Use MIGRATION_REVIEW for unresolved Wave 1 suppliers.</p>
+<p>Scope: Inactive suppliers only.</p>
+<p>Expiry: Before UAT.</p>
+<p>Restriction: Not available in operational creation.</p>
+<pre><code>
+If the value is now used for active operational suppliers, the problem may be lifecycle drift rather than a bad original decision.
+
+## Investigate ownership
+
+A model problem may persist because authority is unclear.
+
+Ask:
+
+- Who owns the business meaning?
+- Who owns the source?
+- Who owns the target implementation?
+- Who approves local exceptions?
+- Who accepts residual migration risk?
+- Who maintains the model after go-live?
+
+Avoid treating the implementation consultant as the default decision owner.
+
+The person who can configure the field is not necessarily authorised to define its meaning.
+
+An investigation should distinguish:
+
+```text id=&quot;inv-10&quot;
+Business owner:
+Defines intended policy
+
+Source owner:
+Confirms source meaning and reliability
+
+SAP architect:
+Confirms implementation
+
+Migration lead:
+Confirms population and delivery impact
+
+Local owner:
+Confirms contextual requirement</code></pre>
+<h2 id="determine-whether-the-problem-is-actually-a-model-problem">Determine whether the problem is actually a model problem</h2>
+<p>Not every migration defect requires changing the model.</p>
+<p>A useful classification is:</p>
+<h2 id="data-defect">Data defect</h2>
+<p>The model and implementation are correct, but records are wrong.</p>
+<p>Example:</p>
+<ul>
+<li>isolated invalid value;</li>
+<li>missing record enrichment;</li>
+<li>duplicate caused by source error.</li>
+</ul>
+<h2 id="extraction-defect">Extraction defect</h2>
+<p>The source contains the information, but the extract omits or alters it.</p>
+<h2 id="mapping-defect">Mapping defect</h2>
+<p>The approved source and target are correct, but transformation is wrong.</p>
+<h2 id="configuration-defect">Configuration defect</h2>
+<p>The approved model is correct, but SAP implements another scope or rule.</p>
+<h2 id="documentation-defect">Documentation defect</h2>
+<p>The model is correct, but supporting documentation is stale.</p>
+<h2 id="model-ambiguity">Model ambiguity</h2>
+<p>The approved model does not answer the question clearly.</p>
+<h2 id="model-defect">Model defect</h2>
+<p>The approved model contains the wrong meaning, context or relationship.</p>
+<h2 id="policy-change">Policy change</h2>
+<p>The model was correct, but the business requirement has changed.</p>
+<p>This classification determines the correct change path.</p>
+<p>A configuration defect should not automatically rewrite the canonical model to match the current system.</p>
+<p>A data defect should not be solved by weakening a valid business rule.</p>
+<h2 id="search-for-repeated-symptoms">Search for repeated symptoms</h2>
+<p>One incident may be local.</p>
+<p>Repeated symptoms may indicate a structural model problem.</p>
+<p>Look for:</p>
+<ul>
+<li>similar gaps in other countries;</li>
+<li>repeated incidents around one attribute;</li>
+<li>several mappings using different meanings;</li>
+<li>recurring manual defaults;</li>
+<li>multiple local exceptions;</li>
+<li>frequent test expectation changes.</li>
+</ul>
+<p>Example:</p>
+<p>```text id=&quot;inv-11&quot; ATTR-CUSTOMER-GROUP</p>
+<p>Related findings:</p>
+<ul>
+<li>German mapping uses CRM segment</li>
+<li>Austria uses manual enrichment</li>
+<li>France uses pricing class</li>
+<li>three AMS incidents concern sales-area variation</li>
+</ul>
+<pre><code>
+The correct investigation scope may be broader than the original defect.
+
+However, do not automatically launch an enterprise redesign.
+
+Identify the shared root question first.
+
+## Examine local and global variants
+
+A local difference may be:
+
+### Legitimate variation
+
+Required by regulation, process or market structure.
+
+### Implementation workaround
+
+Introduced because the global design was unavailable or late.
+
+### Historical residue
+
+No longer needed but never retired.
+
+### Semantic conflict
+
+Local teams use the same term for another concept.
+
+The investigation should ask:
+
+- Does the local requirement represent a new context?
+- Is it another value of the same attribute?
+- Is it a separate attribute?
+- Is it a temporary deviation?
+- Should it remain local?
+
+Avoid two symmetrical mistakes:
+
+- forcing every local need into the global model;
+- allowing every local difference to create a separate model copy.
+
+## Inspect defaults with particular suspicion
+
+Defaults can make migration statistics look better while reducing model quality.
+
+A default may be valid when:
+
+- business meaning is genuinely deterministic;
+- applicability is clear;
+- source conditions are explicit;
+- affected records remain traceable;
+- owners approve the rule.
+
+A default is dangerous when it:
+
+- hides missing knowledge;
+- creates a plausible final value;
+- collapses distinct source meanings;
+- removes the ability to identify unresolved records;
+- continues beyond migration.
+
+Investigation questions include:
+
+1. Why was the default introduced?
+2. Which records receive it?
+3. Can they be identified later?
+4. Is the value semantically true?
+5. Does it trigger downstream behaviour?
+6. May users assign it operationally?
+7. What is the retirement plan?
+
+A missing value is visible uncertainty.
+
+A false default can be invisible incorrect certainty.
+
+## Inspect value mappings as business decisions
+
+A value mapping table may appear technical:
+
+```text id=&quot;inv-12&quot;
+A → STANDARD
+B → STANDARD
+C → STRATEGIC</code></pre>
+<p>But each row asserts semantic equivalence.</p>
+<p>The investigation should examine:</p>
+<ul>
+<li>source definitions;</li>
+<li>target definitions;</li>
+<li>frequency;</li>
+<li>context;</li>
+<li>exceptions;</li>
+<li>information loss.</li>
+</ul>
+<p>If both <code>A</code> and <code>B</code> map to <code>STANDARD</code>, ask whether the distinction can be discarded safely.</p>
+<p>If the source distinction is lost, rollback may become impossible after migration.</p>
+<h2 id="test-assumptions-against-edge-cases">Test assumptions against edge cases</h2>
+<p>A proposed treatment may work for common records and fail at boundaries.</p>
+<p>Useful edge cases include:</p>
+<ul>
+<li>multi-sales-area customers;</li>
+<li>suppliers with several roles;</li>
+<li>person versus organisation;</li>
+<li>inactive records;</li>
+<li>records transferred between countries;</li>
+<li>missing organisational assignments;</li>
+<li>historical values no longer allowed;</li>
+<li>source records with several candidate values.</li>
+</ul>
+<p>For example, copying one central segment to every sales area may work for customers with one sales area.</p>
+<p>It fails to prove the model for customers with several.</p>
+<p>Edge cases should be selected based on model structure, not randomly.</p>
+<h2 id="assess-downstream-consequences-before-recommending-a-change">Assess downstream consequences before recommending a change</h2>
+<p>A proposed change may affect:</p>
+<ul>
+<li>mappings;</li>
+<li>validation;</li>
+<li>workflow;</li>
+<li>interface contracts;</li>
+<li>reports;</li>
+<li>analytics;</li>
+<li>local variants;</li>
+<li>test cases;</li>
+<li>remediation;</li>
+<li>AMS procedures.</li>
+</ul>
+<p>Martenweave’s current workflow explicitly includes lineage and impact analysis before proposal publication.</p>
+<p>The investigation should distinguish:</p>
+<h3 id="confirmed-impact">Confirmed impact</h3>
+<p>A represented dependency will change.</p>
+<h3 id="review-required">Review required</h3>
+<p>A dependency exists, but the consequence needs expert judgement.</p>
+<h3 id="unknown-coverage">Unknown coverage</h3>
+<p>A system or relationship may exist outside the current model.</p>
+<p>A credible investigation report should not claim complete enterprise impact when the registry has incomplete coverage.</p>
+<h2 id="do-not-let-urgency-determine-the-conclusion">Do not let urgency determine the conclusion</h2>
+<p>A migration deadline may require fast action.</p>
+<p>It does not change semantic truth.</p>
+<p>When the final decision cannot be completed before a milestone, use a controlled temporary treatment:</p>
+<ul>
+<li>contain the affected population;</li>
+<li>preserve unresolved identity;</li>
+<li>block final activation;</li>
+<li>introduce an explicit temporary status;</li>
+<li>record owner and expiry;</li>
+<li>create the permanent decision backlog.</li>
+</ul>
+<p>Do not pretend that a temporary technical workaround is the final approved model.</p>
+<h2 id="develop-alternative-treatments">Develop alternative treatments</h2>
+<p>A good investigation does not only identify the problem.</p>
+<p>It evaluates realistic treatments.</p>
+<p>Example problem:</p>
+<blockquote>ERP_B cannot provide Supplier Risk.</blockquote>
+<p>Possible alternatives:</p>
+<h3 id="option-a-source-remediation">Option A: source remediation</h3>
+<p>Benefits:</p>
+<ul>
+<li>establishes durable authority;</li>
+<li>supports future records.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>may require source release;</li>
+<li>could miss migration timeline.</li>
+</ul>
+<h3 id="option-b-controlled-enrichment">Option B: controlled enrichment</h3>
+<p>Benefits:</p>
+<ul>
+<li>can support migration;</li>
+<li>keeps business review explicit.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>creates operational process;</li>
+<li>needs ownership and audit.</li>
+</ul>
+<h3 id="option-c-derivation">Option C: derivation</h3>
+<p>Benefits:</p>
+<ul>
+<li>scalable when reliable rules exist.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>may create false certainty;</li>
+<li>rule may not cover exceptions.</li>
+</ul>
+<h3 id="option-d-separate-review-status">Option D: separate Review Status</h3>
+<p>Benefits:</p>
+<ul>
+<li>preserves unresolved state without corrupting final classification.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>requires model, workflow and interface changes.</li>
+</ul>
+<h3 id="option-e-exclude-affected-records">Option E: exclude affected records</h3>
+<p>Benefits:</p>
+<ul>
+<li>protects model integrity.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>business scope may be delayed.</li>
+</ul>
+<h3 id="option-f-uncontrolled-default">Option F: uncontrolled default</h3>
+<p>Benefits:</p>
+<ul>
+<li>fastest load completion.</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>false classification;</li>
+<li>low detectability;</li>
+<li>weak reversibility.</li>
+</ul>
+<p>The investigation should recommend one treatment and explain why others were rejected or deferred.</p>
+<h2 id="separate-immediate-containment-from-permanent-treatment">Separate immediate containment from permanent treatment</h2>
+<p>Some problems need an immediate operational response.</p>
+<p>Example:</p>
+<blockquote>An invalid default is currently assigning <code>STANDARD</code> to unclassified suppliers.</blockquote>
+<p>Immediate containment:</p>
+<ul>
+<li>stop new defaulting;</li>
+<li>identify affected records;</li>
+<li>prevent final activation where necessary.</li>
+</ul>
+<p>Permanent treatment:</p>
+<ul>
+<li>define source responsibility;</li>
+<li>introduce approved review process;</li>
+<li>remediate existing population;</li>
+<li>update model and interfaces.</li>
+</ul>
+<p>Containment prevents additional harm.</p>
+<p>It should not be mistaken for complete resolution.</p>
+<h2 id="produce-an-investigation-finding-not-only-meeting-notes">Produce an investigation finding, not only meeting notes</h2>
+<p>A useful investigation record should contain:</p>
+<h2 id="problem-statement">Problem statement</h2>
+<p>Neutral description of the observed condition.</p>
+<h2 id="scope">Scope</h2>
+<p>Domain, system, country, population and baseline.</p>
+<h2 id="affected-model-objects">Affected model objects</h2>
+<p>Attributes, endpoints, mappings, rules, values and decisions.</p>
+<h2 id="observed-evidence">Observed evidence</h2>
+<p>Dataset and implementation facts.</p>
+<h2 id="interpretations-assessed">Interpretations assessed</h2>
+<p>Candidate explanations and their evidence.</p>
+<h2 id="root-finding">Root finding</h2>
+<p>Best-supported explanation.</p>
+<h2 id="classification">Classification</h2>
+<p>Data, extraction, mapping, configuration, model, policy or mixed issue.</p>
+<h2 id="alternatives">Alternatives</h2>
+<p>Serious treatments and trade-offs.</p>
+<h2 id="recommendation">Recommendation</h2>
+<p>Proposed next action.</p>
+<h2 id="impact">Impact</h2>
+<p>Known dependencies and coverage limitations.</p>
+<h2 id="decisions-required">Decisions required</h2>
+<p>Exact questions and responsible owners.</p>
+<h2 id="proposed-follow-up">Proposed follow-up</h2>
+<p>PatchProposal, issue, remediation or configuration correction.</p>
+<p>This turns the investigation into reusable programme knowledge.</p>
+<h2 id="use-explicit-finding-confidence">Use explicit finding confidence</h2>
+<p>Not every conclusion will be fully proven.</p>
+<p>Useful confidence levels include:</p>
+<h3 id="confirmed">Confirmed</h3>
+<p>Direct, reproducible evidence supports the finding.</p>
+<h3 id="strongly-supported">Strongly supported</h3>
+<p>Several evidence sources agree, but one limitation remains.</p>
+<h3 id="provisional">Provisional</h3>
+<p>The explanation is plausible but requires additional evidence.</p>
+<h3 id="unresolved">Unresolved</h3>
+<p>Competing explanations remain.</p>
+<p>Example:</p>
+<p>```text id=&quot;inv-13&quot; Finding: CRM_A.CUSTOMER_SEGMENT is not semantically equivalent to SAP sales-area Customer Group.</p>
+<p>Confidence: Strongly supported</p>
+<p>Remaining limitation: French local process definition has not yet been reviewed.</p>
+<pre><code>
+This is better than presenting all conclusions as certain.
+
+## Define the stop condition
+
+Investigations can expand indefinitely.
+
+Before beginning, define what is enough to make the required decision.
+
+For example:
+
+&gt; Stop when the programme can determine whether direct mapping is valid, whether contextual derivation is required, or whether another target concept must be selected.
+
+Do not require complete enterprise documentation before fixing a bounded problem.
+
+The goal is decision-quality evidence, not perfect knowledge.
+
+## Know when not to change the canonical model
+
+Do not create a model change when the investigation finds:
+
+- one bad record;
+- extraction omission;
+- coding defect;
+- configuration mismatch;
+- stale documentation;
+- failed transport.
+
+Instead:
+
+- correct the relevant implementation;
+- link evidence to the approved model;
+- verify alignment.
+
+Changing the canonical model merely to match an implementation error destroys the distinction between intended and actual state.
+
+## Know when a PatchProposal is appropriate
+
+Create a PatchProposal when the investigation concludes that approved model truth may need to change.
+
+Examples:
+
+- new contextual rule;
+- corrected business definition;
+- new source or target relationship;
+- retirement of obsolete value;
+- changed ownership;
+- new local extension;
+- revised lifecycle.
+
+Martenweave’s core explicitly requires AI-assisted changes to enter as reviewable `PatchProposal` objects and become `ChangeRequest`s only after approval.
+
+The proposal should carry:
+
+- investigation finding;
+- evidence;
+- affected objects;
+- semantic diff;
+- impact;
+- open questions;
+- required reviewers.
+
+## Know when to create an issue instead
+
+Create an issue when the treatment is not yet known or requires work outside the canonical model.
+
+Examples:
+
+- source evidence unavailable;
+- owner unresolved;
+- legal clarification required;
+- interface consumer not assessed;
+- dataset remediation needed;
+- SAP configuration differs.
+
+Martenweave’s current pipeline supports moving evidence through gap and impact analysis before generating GitHub-ready issues or proposals.
+
+Do not force every uncertainty into a premature patch.
+
+## A worked example: Customer Group
+
+### Symptom
+
+Customer Group is blank for customers migrated from CRM_A.
+
+### Proposed quick fix
+
+Map `CUSTOMER_SEGMENT` to SAP Customer Group.
+
+### Investigation
+
+#### Business concept
+
+SAP target is sales-area-specific and controls sales processing.
+
+#### Source concept
+
+CRM segment is central and used for marketing.
+
+#### Dataset
+
+Most customers have one segment but several sales areas.
+
+#### Existing decisions
+
+No approved decision states that the segment should be copied to every sales area.
+
+#### Impact
+
+Direct replication would affect pricing reports and sales analytics.
+
+### Finding
+
+The source field is not semantically equivalent to the target.
+
+### Classification
+
+Target-source model gap, not merely missing mapping.
+
+### Recommendation
+
+- define the intended sales-area classification;
+- identify another source or controlled derivation;
+- do not use CRM segment as an unrestricted direct mapping;
+- create a decision issue;
+- preserve current missing values as an explicit migration gap.
+
+The investigation prevents false completeness.
+
+## A worked example: Supplier Classification
+
+### Symptom
+
+SAP validation rejects ERP_B suppliers.
+
+### Proposed quick fix
+
+Make the field optional.
+
+### Investigation
+
+#### Approved model
+
+Classification is mandatory for active strategic suppliers.
+
+#### SAP implementation
+
+Rule applies to all active suppliers.
+
+#### Dataset
+
+ERP_B lacks classification mainly for non-strategic suppliers.
+
+#### Source evidence
+
+Strategic supplier population has acceptable coverage.
+
+### Finding
+
+The primary defect is configuration context.
+
+A smaller source gap remains inside the genuinely applicable population.
+
+### Classification
+
+Mixed configuration and data issue.
+
+### Recommendation
+
+1. Correct the SAP rule context.
+2. Profile the remaining strategic population.
+3. Remediate or approve treatment for true gaps.
+4. Keep the approved business policy.
+
+Making the field optional globally would solve the visible error by weakening the correct model.
+
+## A worked example: tax validation
+
+### Symptom
+
+Portuguese suppliers cannot be activated.
+
+### Proposed quick fix
+
+Disable the validation for Portugal.
+
+### Investigation
+
+#### Affected population
+
+Most failures are individual suppliers.
+
+#### Approved rule
+
+Tax identifier mandatory for supplier organisations.
+
+#### Configuration
+
+Rule applies to persons and organisations.
+
+#### Local evidence
+
+No evidence supports a complete Portuguese exemption.
+
+### Finding
+
+The issue is an incorrect category context, not a country-level policy defect.
+
+### Recommendation
+
+Correct the configuration to apply only to organisations and retain the approved rule.
+
+## A worked example: temporary migration value
+
+### Symptom
+
+Reports contain many suppliers classified as `MIGRATION_REVIEW`.
+
+### Investigation
+
+#### Decision history
+
+Value was approved for inactive Wave 1 suppliers only.
+
+#### Current model
+
+Value remains active without context restriction.
+
+#### Data
+
+Operational users continue assigning it.
+
+#### Consumers
+
+Reporting treats it as a final classification.
+
+### Finding
+
+The original temporary decision has escaped its approved lifecycle and context.
+
+### Recommendation
+
+- block new operational use;
+- create an explicit Review Status if the business process still needs it;
+- identify and remediate existing records;
+- retire the migration-only value;
+- update reporting.
+
+## How Martenweave supports the investigation
+
+The current Martenweave Core describes itself as a backend-first model-governance and evidence layer that turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, gap reports, lineage, impact analysis and human-approved patch proposals.
+
+A practical investigation can use the existing workflow.
+
+## 1. Validate the current model
+
+```bash id=&quot;inv-14&quot;
+martenweave validate --repo ./model</code></pre>
+<p>This identifies structural inconsistencies before semantic investigation.</p>
+<h2 id="2-check-index-freshness">2. Check index freshness</h2>
+<p>```bash id=&quot;inv-15&quot; martenweave index-fresh --repo ./model</p>
+<pre><code>
+The investigator should not rely on stale search or lineage results.
+
+## 3. Search for the concept
+
+```bash id=&quot;inv-16&quot;
+martenweave search &quot;Customer Group&quot; --repo ./model</code></pre>
+<p>This helps locate attributes, aliases, endpoints and related objects.</p>
+<h2 id="4-trace-the-object">4. Trace the object</h2>
+<p>```bash id=&quot;inv-17&quot; martenweave trace ATTR-CUST-SALES-CUSTOMER-GROUP --repo ./model</p>
+<pre><code>
+The trace should reveal represented source, target and relationship paths.
+
+## 5. Profile the current dataset
+
+```bash id=&quot;inv-18&quot;
+martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/customers.xlsx \
+  --out ./reports/customer-group</code></pre>
+<p>This connects the model expectation to observed evidence.</p>
+<h2 id="6-run-impact-analysis">6. Run impact analysis</h2>
+<p>```bash id=&quot;inv-19&quot; martenweave impact ATTR-CUST-SALES-CUSTOMER-GROUP --repo ./model</p>
+<pre><code>
+This identifies represented dependencies before proposing a treatment.
+
+## 7. Promote only a supported finding
+
+Where the evidence supports a model change, the dataset-readiness workflow can promote gaps into a reviewable proposal or generate an issue draft.
+
+The tools support the investigation.
+
+They do not replace semantic and business judgement.
+
+## AI should challenge the hypothesis, not confirm it
+
+AI can help with:
+
+- locating similarly named fields;
+- summarising definitions;
+- comparing mapping versions;
+- extracting decision history;
+- grouping dataset findings;
+- identifying possible dependencies;
+- drafting alternative treatments.
+
+A dangerous AI workflow begins with:
+
+&gt; Find a field that can populate this target.
+
+A stronger workflow asks:
+
+&gt; Compare candidate source fields against the target business attribute by meaning, granularity, context, lifecycle and value semantics. Identify missing evidence and do not propose a mapping when equivalence is unsupported.
+
+AI should be encouraged to disprove the initial hypothesis.
+
+It should label:
+
+- facts;
+- inferences;
+- assumptions;
+- unresolved questions.
+
+The safe boundary remains:
+
+```text id=&quot;inv-20&quot;
+AI organises and challenges evidence.
+
+Validators test structural consistency.
+
+Responsible experts decide the model treatment.</code></pre>
+<h2 id="a-minimum-investigation-checklist">A minimum investigation checklist</h2>
+<h3 id="problem">Problem</h3>
+<ul>
+<li>Is the symptom described without embedding a solution?</li>
+<li>Is the investigation question precise?</li>
+</ul>
+<h3 id="baseline">Baseline</h3>
+<ul>
+<li>Is the current approved model identified?</li>
+<li>Are mapping, dataset and implementation versions known?</li>
+</ul>
+<h3 id="meaning">Meaning</h3>
+<ul>
+<li>Is the business concept defined?</li>
+<li>Are similarly named fields distinguished?</li>
+<li>Is semantic equivalence tested?</li>
+</ul>
+<h3 id="context">Context</h3>
+<ul>
+<li>Is organisational level explicit?</li>
+<li>Is applicable population defined?</li>
+<li>Are local and global variations separated?</li>
+</ul>
+<h3 id="evidence">Evidence</h3>
+<ul>
+<li>Is a current representative dataset profiled?</li>
+<li>Are evidence limitations recorded?</li>
+<li>Are defaults and transformations visible?</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<ul>
+<li>Does SAP configuration match the approved model?</li>
+<li>Are integrations and consumers assessed?</li>
+<li>Are repeated incidents or defects connected?</li>
+</ul>
+<h3 id="decision">Decision</h3>
+<ul>
+<li>Is the issue classified correctly?</li>
+<li>Are alternatives evaluated?</li>
+<li>Is immediate containment separated from permanent treatment?</li>
+<li>Are the required owners identified?</li>
+</ul>
+<h3 id="output">Output</h3>
+<ul>
+<li>Is there a reusable finding?</li>
+<li>Is confidence stated?</li>
+<li>Is impact recorded?</li>
+<li>Is the next action a proposal, issue, correction or remediation?</li>
+</ul>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>What fact triggered this investigation?</li>
+<li>What solution was initially assumed?</li>
+<li>What is the exact business concept?</li>
+<li>Are source and target meanings genuinely equivalent?</li>
+<li>At which organisational level does each field operate?</li>
+<li>Which population is actually affected?</li>
+<li>Does current dataset evidence support the conclusion?</li>
+<li>Does SAP implement the approved model or another rule?</li>
+<li>Is the problem data, mapping, configuration, model or policy?</li>
+<li>Which alternatives were considered?</li>
+<li>What happens if the quick fix is wrong?</li>
+<li>Which dependencies would change?</li>
+<li>Which conclusion is confirmed, and which remains provisional?</li>
+<li>What is the smallest safe next action?</li>
+<li>Is a model change genuinely required?</li>
+</ol>
+<p>If the investigation begins and ends with “we found a field with a similar name,” the programme has not investigated the model.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="beginning-with-the-desired-fix">Beginning with the desired fix</h3>
+<p>Evidence is interpreted to justify the requested solution.</p>
+<h3 id="treating-labels-as-semantic-definitions">Treating labels as semantic definitions</h3>
+<p>Similar names conceal different business concepts.</p>
+<h3 id="ignoring-organisational-granularity">Ignoring organisational granularity</h3>
+<p>Central values are copied into contextual targets without approval.</p>
+<h3 id="profiling-the-wrong-population">Profiling the wrong population</h3>
+<p>Global completeness hides the records to which the rule actually applies.</p>
+<h3 id="trusting-transformed-data-as-raw-source-evidence">Trusting transformed data as raw source evidence</h3>
+<p>Defaults and conversions may already have changed the result.</p>
+<h3 id="rewriting-the-model-to-match-incorrect-configuration">Rewriting the model to match incorrect configuration</h3>
+<p>The distinction between intended and implemented state disappears.</p>
+<h3 id="treating-one-successful-record-as-proof">Treating one successful record as proof</h3>
+<p>Common cases pass while edge cases remain invalid.</p>
+<h3 id="solving-visible-blanks-with-plausible-defaults">Solving visible blanks with plausible defaults</h3>
+<p>Uncertainty becomes undetectable incorrect data.</p>
+<h3 id="ignoring-decision-history">Ignoring decision history</h3>
+<p>Temporary or contextual treatments are expanded beyond their scope.</p>
+<h3 id="creating-a-patchproposal-before-the-finding-is-supported">Creating a PatchProposal before the finding is supported</h3>
+<p>Uncertainty is converted into premature design.</p>
+<h3 id="allowing-ai-to-optimise-for-completion">Allowing AI to optimise for completion</h3>
+<p>The agent finds a technically possible mapping rather than a semantically valid treatment.</p>
+<h2 id="when-a-lightweight-investigation-is-enough">When a lightweight investigation is enough</h2>
+<p>A short investigation may be sufficient when:</p>
+<ul>
+<li>one system is involved;</li>
+<li>the business meaning is stable;</li>
+<li>the error is isolated;</li>
+<li>no context variation exists;</li>
+<li>impact is limited;</li>
+<li>evidence is clear.</li>
+</ul>
+<p>A concise record may contain:</p>
+<ul>
+<li>observed fact;</li>
+<li>affected object;</li>
+<li>classification;</li>
+<li>correction;</li>
+<li>verification.</li>
+</ul>
+<p>A fuller investigation is justified when:</p>
+<ul>
+<li>source and target meanings differ;</li>
+<li>several systems or countries are involved;</li>
+<li>the change affects critical attributes;</li>
+<li>defaults or information loss are proposed;</li>
+<li>organisational levels differ;</li>
+<li>current evidence conflicts;</li>
+<li>AI-generated mappings are being considered;</li>
+<li>the result will be reused across waves or AMS.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Most expensive model defects do not begin as dramatic architecture failures.</p>
+<p>They begin as reasonable shortcuts:</p>
+<ul>
+<li>use the similarly named field;</li>
+<li>add a default;</li>
+<li>disable the rule;</li>
+<li>copy the local treatment;</li>
+<li>correct the current file.</li>
+</ul>
+<p>The shortcut succeeds technically.</p>
+<p>The hidden semantic problem survives.</p>
+<p>A disciplined model investigation asks:</p>
+<ul>
+<li>What exactly happened?</li>
+<li>What is fact and what is interpretation?</li>
+<li>Which business concept is involved?</li>
+<li>What is the current approved baseline?</li>
+<li>Do source and target meanings align?</li>
+<li>At what context and granularity?</li>
+<li>What does the current dataset show?</li>
+<li>Does implementation match the model?</li>
+<li>Which treatment reduces the real risk?</li>
+<li>Does the canonical model actually need to change?</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Could another qualified architect reproduce the investigation, inspect the same model and evidence, and understand why the recommended treatment is safer than the apparent quick fix?</blockquote>
+<p>When the answer is yes, the programme has created a defensible model decision.</p>
+<p>When the answer is no, the team may have resolved the current error while leaving the underlying model problem to return in testing, cutover or production support.</p>
+<p>This is the pain Martenweave should continue to close:</p>
+<blockquote>Turning scattered symptoms and evidence into a traceable investigation before anyone changes model truth.</blockquote>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build Martenweave as a model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>Martenweave connects:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>source and target endpoints;</li>
+<li>datasets;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>evidence;</li>
+<li>decisions;</li>
+<li>impact;</li>
+<li>reviewable proposals.</li>
+</ul>
+<p>The product does not decide business meaning automatically.</p>
+<p>It gives teams a controlled way to investigate model problems, test assumptions and create a reviewable change only when the evidence supports it.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer unifying master data, policy and metadata. Its capabilities include governed models, preserved semantics and relationships, data profiling and reconciliation, stewardship workflows, validated values, business-rule monitoring, quality management and auditable changes.</p>
+<p>SAP also recommends curating clean and correct master data well before an SAP S/4HANA implementation because increasingly automated processes depend heavily on master-data quality.</p>
+<p>The current Martenweave Core README describes Martenweave as a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It converts spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-reviewed patch proposals.</p>
+<p>The current core uses canonical Markdown and YAML files as source of truth, rebuildable SQLite and JSONL indexes, deterministic validation and proposal-first AI-assisted changes.</p>
+<p>The documented workflow includes evidence profiling, validation, index generation, dataset/model gap detection, lineage, impact analysis, PatchProposal generation and GitHub-ready issue or pull-request output.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html"><span>Previous</span>A migration architect opens Martenweave and searches for Customer Group .</a><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html"><span>Next</span>The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

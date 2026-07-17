@@ -1,0 +1,1267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Design Global and Local Model Inheritance Without Creating Configuration Chaos | Martenweave</title>
+    <meta
+      name="description"
+      content="The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html" />
+    <meta property="og:title" content="How to Design Global and Local Model Inheritance Without Creating Configuration Chaos | Martenweave" />
+    <meta property="og:description" content="The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Design Global and Local Model Inheritance Without Creating Configuration Chaos | Martenweave" />
+    <meta name="twitter:description" content="The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html",
+                        "name": "How to Design Global and Local Model Inheritance Without Creating Configuration Chaos | Martenweave",
+                        "description": "The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Design Global and Local Model Inheritance Without Creating Configuration Chaos",
+                                    "item": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html#content",
+                        "headline": "How to Design Global and Local Model Inheritance Without Creating Configuration Chaos",
+                        "name": "How to Design Global and Local Model Inheritance Without Creating Configuration Chaos",
+                        "description": "The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers.",
+                        "url": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-design-global-and-local-model-inheritance-without-creating.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Design Global and Local Model Inheritance Without Creating Configuration Chaos</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Design Global and Local Model Inheritance Without Creating Configuration Chaos</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 19 min read</p><p class="blog-summary">The global supplier model defines Supplier Risk as a mandatory final classification for active strategic suppliers.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#about-the-authors">About the authors</a></li><li><a href="#sources-and-notes">Sources and notes</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The global supplier model defines <code>Supplier Risk</code> as a mandatory final classification for active strategic suppliers.</p>
+<p>Portugal adds a compliance-review status before activation.</p>
+<p>Italy cannot provide the classification from its legacy source and introduces a temporary enrichment flag.</p>
+<p>Germany adds <code>UNDER_REVIEW</code> directly to the Supplier Risk value list.</p>
+<p>Spain copies the global validation and modifies it locally.</p>
+<p>Each change works in its own implementation.</p>
+<p>Then the global team changes the definition of an active strategic supplier.</p>
+<p>Portugal’s local rule inherits part of the change. Spain’s copied rule does not. Germany’s new value is now interpreted as a final risk category by reporting. Italy’s temporary flag remains in the model after the source remediation is delivered.</p>
+<p>Nobody can answer one basic question:</p>
+<blockquote>What is the effective Supplier Risk model for each country?</blockquote>
+<p>The programme has global documentation, local specifications and functioning configuration. It does not have controlled inheritance.</p>
+<p>This is where global–local governance often collapses. Teams agree that countries may extend a shared model, but they do not define what “extend” means operationally.</p>
+<p>Without an inheritance contract, local teams typically choose one of two approaches:</p>
+<ul>
+<li>copy the global model and edit it;</li>
+<li>modify global objects with local values, notes and conditions.</li>
+</ul>
+<p>The first creates drift.</p>
+<p>The second corrupts shared semantics.</p>
+<p>A usable inheritance model needs a third approach:</p>
+<blockquote>Preserve one global semantic object, attach contextual differences as explicit deltas, and calculate the effective model through deterministic precedence rules.</blockquote>
+<p>This sounds technical, but the main problem is not software inheritance. It is governance.</p>
+<p>The organisation must decide:</p>
+<ul>
+<li>which properties are inherited;</li>
+<li>which may be narrowed;</li>
+<li>which may be extended;</li>
+<li>which must never be overridden locally;</li>
+<li>how conflicts are resolved;</li>
+<li>how temporary differences expire;</li>
+<li>how inherited changes are tested.</li>
+</ul>
+<p>The objective is not to reproduce object-oriented programming inside a data-governance repository.</p>
+<p>It is to stop every country from becoming a partially disconnected version of the enterprise model.</p>
+<p>---</p>
+<h1 id="start-with-an-inheritance-contract">Start with an inheritance contract</h1>
+<p>Before building global and local layers, define the rules of inheritance.</p>
+<p>A model object contains several kinds of information:</p>
+<ul>
+<li>identity;</li>
+<li>definition;</li>
+<li>domain;</li>
+<li>granularity;</li>
+<li>cardinality;</li>
+<li>lifecycle;</li>
+<li>ownership;</li>
+<li>value semantics;</li>
+<li>applicability;</li>
+<li>validation;</li>
+<li>source and target implementation;</li>
+<li>evidence;</li>
+<li>decisions.</li>
+</ul>
+<p>These properties should not all inherit in the same way.</p>
+<p>For each property, assign an inheritance policy.</p>
+<p>A practical policy set is:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Policy</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>Fixed</td><td>Local contexts cannot change it</td></tr><tr><td>Inherited</td><td>Local context receives the global value unless explicitly permitted otherwise</td></tr><tr><td>Extendable</td><td>Local context may add values or relationships without removing the global core</td></tr><tr><td>Restrictable</td><td>Local context may narrow applicability</td></tr><tr><td>Strengthenable</td><td>Local context may add stricter requirements</td></tr><tr><td>Overridable</td><td>Local context may replace behaviour with explicit approval</td></tr><tr><td>Implemented locally</td><td>The semantic value is global, but physical implementation differs</td></tr><tr><td>Temporary deviation</td><td>Local context may differ until a defined expiry</td></tr></tbody></table></div>
+<p>This table is the beginning of model governance.</p>
+<p>Without it, “inheritance” becomes an informal expectation interpreted differently by each team.</p>
+<p>---</p>
+<h1 id="some-properties-should-remain-fixed">Some properties should remain fixed</h1>
+<p>A local model should rarely be able to redefine the identity of a shared business concept.</p>
+<p>For a global attribute such as Supplier Risk, fixed properties may include:</p>
+<ul>
+<li>object ID;</li>
+<li>core business definition;</li>
+<li>classification dimension;</li>
+<li>granularity;</li>
+<li>cardinality;</li>
+<li>relationship to the Supplier entity;</li>
+<li>distinction from review or workflow status.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Global object:
+ATTR-SUPPLIER-RISK
+
+Definition:
+The approved final assessment of supplier exposure.
+
+Granularity:
+Supplier legal entity.
+
+Cardinality:
+One current final classification per supplier.
+
+Not represented:
+Review progress, migration completeness or workflow state.</code></pre>
+<p>Germany should not be able to redefine this as:</p>
+<blockquote>Supplier risk or pending review state.</blockquote>
+<p>That is not a local extension. It is a semantic collision.</p>
+<p>When a country needs another concept, it should add another contextual or global object rather than alter the dimension represented by the existing attribute.</p>
+<p>This fixed semantic core is what makes cross-country comparison possible.</p>
+<p>---</p>
+<h1 id="other-properties-should-inherit-automatically">Other properties should inherit automatically</h1>
+<p>Many global properties should flow into local contexts unless a permitted delta exists.</p>
+<p>Examples include:</p>
+<ul>
+<li>default owner role;</li>
+<li>global lifecycle;</li>
+<li>global values;</li>
+<li>shared relationships;</li>
+<li>enterprise labels;</li>
+<li>general evidence requirements;</li>
+<li>baseline quality rules.</li>
+</ul>
+<p>Suppose the global value list is:</p>
+<pre><code class="language-text">LOW
+MEDIUM
+HIGH</code></pre>
+<p>Portugal inherits all three.</p>
+<p>It should not create a separate complete list:</p>
+<pre><code class="language-text">LOW
+MEDIUM
+HIGH
+PENDING</code></pre>
+<p>because <code>PENDING</code> is not another risk level.</p>
+<p>A better model is:</p>
+<pre><code class="language-text">Supplier Risk:
+LOW
+MEDIUM
+HIGH
+
+Supplier Review Status:
+PENDING
+CLEARED
+REJECTED</code></pre>
+<p>The local context may make Review Status applicable only to regulated Portuguese suppliers, but it does not alter the inherited risk semantics.</p>
+<p>---</p>
+<h1 id="extend-only-along-declared-extension-points">Extend only along declared extension points</h1>
+<p>A global model should expose explicit places where contextual additions are allowed.</p>
+<p>Possible extension points include:</p>
+<ul>
+<li>local identifiers;</li>
+<li>local evidence types;</li>
+<li>jurisdiction-specific subcategories;</li>
+<li>translated labels;</li>
+<li>source-system mappings;</li>
+<li>additional validation;</li>
+<li>local workflow references;</li>
+<li>implementation references.</li>
+</ul>
+<p>For example, the global Tax Registration model might allow:</p>
+<pre><code class="language-text">Global:
+Registration jurisdiction
+Registration type
+Registration number
+Validity period
+Issuing authority</code></pre>
+<p>Portugal can then add:</p>
+<pre><code class="language-text">Portuguese registration subtype
+Portuguese verification evidence
+Local validation pattern</code></pre>
+<p>The extension remains related to the shared Tax Registration structure.</p>
+<p>The country does not invent an unrelated custom field whose connection to the global model exists only in a design document.</p>
+<p>---</p>
+<h1 id="restriction-is-safer-than-replacement">Restriction is safer than replacement</h1>
+<p>Local contexts often need to narrow a global rule.</p>
+<p>Consider:</p>
+<pre><code class="language-text">Global rule:
+Supplier Classification required for active strategic suppliers.</code></pre>
+<p>Portugal may restrict the applicable population:</p>
+<pre><code class="language-text">Country = PT
+Partner category = Organisation
+Supplier type = Strategic
+Status = Active</code></pre>
+<p>This is a contextual restriction.</p>
+<p>The global policy remains intact.</p>
+<p>A replacement would be:</p>
+<pre><code class="language-text">Portuguese rule:
+Supplier Classification optional.</code></pre>
+<p>That removes the original meaning without explaining why.</p>
+<p>A local restriction should state:</p>
+<ul>
+<li>which part of the global applicability remains;</li>
+<li>which part is excluded;</li>
+<li>why;</li>
+<li>who approved the difference.</li>
+</ul>
+<p>Restriction is not automatically legitimate, but it is easier to reason about than complete rule replacement.</p>
+<p>---</p>
+<h1 id="strengthening-should-not-change-the-original-concept">Strengthening should not change the original concept</h1>
+<p>A country may add stricter controls.</p>
+<p>For example:</p>
+<pre><code class="language-text">Global:
+Supplier Risk required before final approval.
+
+Portugal:
+Compliance Review Status must be CLEARED
+before Supplier Risk can be approved.</code></pre>
+<p>Portugal strengthens the process.</p>
+<p>It does not redefine Supplier Risk.</p>
+<p>The effective model contains both rules:</p>
+<pre><code class="language-text">Global final-classification requirement
++
+Portuguese pre-approval compliance condition</code></pre>
+<p>This is a common and valid inheritance pattern.</p>
+<p>The danger begins when the local condition is encoded inside the global value list because that is technically easier.</p>
+<p>---</p>
+<h1 id="overrides-should-be-exceptional-and-visible">Overrides should be exceptional and visible</h1>
+<p>Sometimes a local context must replace inherited behaviour.</p>
+<p>For example, a global tax rule may not apply to a particular legally defined non-resident category.</p>
+<p>The override should be a first-class object or relationship, not a hidden condition in code.</p>
+<p>A useful override record includes:</p>
+<pre><code class="language-yaml">id: OVR-PT-TAX-ID-NONRESIDENT
+
+overrides:
+  - RULE-GLOBAL-SUPPLIER-TAX-ID
+
+context:
+  countries:
+    - PT
+  residency_status:
+    - NON_RESIDENT
+  partner_categories:
+    - ORGANISATION
+
+replacement_behavior:
+  tax_identifier_required: false
+  exemption_evidence_required: true
+
+authority:
+  - ROLE-PT-TAX-DATA-OWNER
+
+effective_from: 2026-10-01
+
+review_triggers:
+  - tax_regulation_changed
+  - residency_model_changed</code></pre>
+<p>The override does not erase the global rule.</p>
+<p>It declares where another result takes precedence.</p>
+<p>This preserves both global intent and local authority.</p>
+<p>---</p>
+<h1 id="local-implementation-is-not-inheritance-of-meaning">Local implementation is not inheritance of meaning</h1>
+<p>Different systems may represent the same concept differently.</p>
+<p>For example:</p>
+<pre><code class="language-text">Global attribute:
+Payment Terms
+
+Germany source:
+ERP_DE.ZTERM
+
+Portugal source:
+ERP_PT.PAYMENT_COND
+
+France source:
+MDM_FR.TERM_CODE</code></pre>
+<p>These are implementations of one inherited concept.</p>
+<p>They may have different:</p>
+<ul>
+<li>field names;</li>
+<li>extraction logic;</li>
+<li>code conversions;</li>
+<li>source owners;</li>
+<li>data-quality profiles.</li>
+</ul>
+<p>They should not create separate semantic attributes unless the meanings genuinely differ.</p>
+<p>A clean model separates:</p>
+<pre><code class="language-text">Global business attribute
+        ↓ implemented by
+Local source endpoint
+        ↓ transformed through
+Local mapping
+        ↓ represented by
+Target endpoint</code></pre>
+<p>This is particularly important in SAP migration programmes, where each source often creates its own workbook row, transformation and defect history.</p>
+<p>Physical diversity is expected.</p>
+<p>Semantic duplication is not.</p>
+<p>---</p>
+<h1 id="temporary-deviation-needs-a-clock">Temporary deviation needs a clock</h1>
+<p>A temporary local deviation should not look like an ordinary inherited rule.</p>
+<p>It needs:</p>
+<ul>
+<li>reason;</li>
+<li>scope;</li>
+<li>compensating control;</li>
+<li>owner;</li>
+<li>effective date;</li>
+<li>expiry;</li>
+<li>convergence action.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-yaml">id: DEV-IT-PAYMENT-TERMS-WAVE2
+
+deviates_from:
+  - RULE-GLOBAL-PAYMENT-TERMS-REQUIRED
+
+context:
+  countries:
+    - IT
+  migration_waves:
+    - WAVE_2
+
+temporary_behavior:
+  allow_missing_value: true
+  activation_allowed: false
+
+reason:
+  Source remediation unavailable before Mock Load 2.
+
+expires_on: 2026-10-15
+
+convergence_action:
+  issue: MIG-1842</code></pre>
+<p>A deviation without expiry should fail validation.</p>
+<p>A temporary exception that survives three releases is no longer a temporary exception. It is an unreviewed model change.</p>
+<p>---</p>
+<h1 id="do-not-build-inheritance-by-copying-files">Do not build inheritance by copying files</h1>
+<p>The simplest repository structure is often the most dangerous:</p>
+<pre><code class="language-text">global/supplier.yaml
+pt/supplier.yaml
+de/supplier.yaml
+it/supplier.yaml</code></pre>
+<p>If each country file contains a full Supplier model, the organisation has created several independent snapshots.</p>
+<p>The copied files may initially be identical.</p>
+<p>They will diverge through:</p>
+<ul>
+<li>global changes not propagated;</li>
+<li>local comments interpreted as rules;</li>
+<li>different value orders;</li>
+<li>copied obsolete relationships;</li>
+<li>different owners;</li>
+<li>conflicting lifecycle states.</li>
+</ul>
+<p>A better structure stores the global object once and local deltas separately:</p>
+<pre><code class="language-text">model/global/attributes/supplier-risk.md
+
+model/contexts/pt/extensions/supplier-review-status.md
+model/contexts/pt/overrides/tax-id-nonresident.md
+
+model/contexts/it/deviations/payment-terms-wave2.md
+model/contexts/de/mappings/supplier-risk-erp-de.md</code></pre>
+<p>The exact folder layout is secondary.</p>
+<p>The principle is not:</p>
+<blockquote>one complete model per country.</blockquote>
+<p>It is:</p>
+<blockquote>one semantic model plus explicit contextual differences.</blockquote>
+<p>---</p>
+<h1 id="the-effective-model-must-be-calculated">The effective model must be calculated</h1>
+<p>The repository contains source objects and deltas.</p>
+<p>Users and validators need the effective result for a given context.</p>
+<p>For example:</p>
+<pre><code class="language-text">Context:
+Country = PT
+Partner category = Organisation
+Supplier type = Regulated
+Lifecycle = Active
+Date = 2026-11-01</code></pre>
+<p>The resolver should combine:</p>
+<ol>
+<li>global entity and attribute definitions;</li>
+<li>inherited values and relationships;</li>
+<li>Portuguese extensions;</li>
+<li>applicable local restrictions;</li>
+<li>applicable strengthening rules;</li>
+<li>approved overrides;</li>
+<li>active temporary deviations;</li>
+<li>local implementation mappings.</li>
+</ol>
+<p>The result might be:</p>
+<pre><code class="language-text">Supplier Risk:
+Required
+
+Supplier Review Status:
+Required
+
+Activation:
+Blocked unless Review Status = CLEARED
+
+Tax Identifier:
+Required except approved non-resident category
+
+Payment Terms:
+Required
+
+Source mappings:
+Resolved by Portuguese source system</code></pre>
+<p>Without an effective-model resolver, users must mentally combine several documents and rules.</p>
+<p>That is configuration chaos even if every file is individually well documented.</p>
+<p>---</p>
+<h1 id="precedence-must-be-deterministic">Precedence must be deterministic</h1>
+<p>When multiple rules apply, the system needs a clear precedence model.</p>
+<p>A practical hierarchy is:</p>
+<pre><code class="language-text">Fixed global semantics
+        ↓
+Global default behavior
+        ↓
+Contextual extension
+        ↓
+Contextual restriction or strengthening
+        ↓
+Approved explicit override
+        ↓
+Temporary deviation
+        ↓
+Physical implementation</code></pre>
+<p>This hierarchy does not mean a temporary deviation is more authoritative than global semantics.</p>
+<p>It means that for its exact operational scope, it changes the effective behaviour while remaining visibly exceptional.</p>
+<p>Precedence should use more than layer order.</p>
+<p>It should also consider:</p>
+<ul>
+<li>context specificity;</li>
+<li>effective dates;</li>
+<li>status;</li>
+<li>explicit priority;</li>
+<li>superseding relationship.</li>
+</ul>
+<p>A rule for:</p>
+<pre><code class="language-text">Country = PT</code></pre>
+<p>is less specific than:</p>
+<pre><code class="language-text">Country = PT
+Partner category = Organisation
+Residency status = Non-resident</code></pre>
+<p>When both apply, the narrower approved context should usually win.</p>
+<p>But this principle should be encoded and documented rather than assumed.</p>
+<p>---</p>
+<h1 id="never-allow-silent-conflict-resolution">Never allow silent conflict resolution</h1>
+<p>Suppose two active rules apply:</p>
+<pre><code class="language-text">Rule A:
+Supplier Risk required for all active Portuguese suppliers.
+
+Rule B:
+Supplier Risk optional for non-strategic Southern Europe suppliers.</code></pre>
+<p>A Portuguese non-strategic supplier satisfies both scopes.</p>
+<p>The system should not simply select the newest file or the highest numerical priority without warning.</p>
+<p>The conflict may reflect:</p>
+<ul>
+<li>legitimate override;</li>
+<li>overlapping governance authority;</li>
+<li>stale regional decision;</li>
+<li>ambiguous context design.</li>
+</ul>
+<p>The resolver should return:</p>
+<pre><code class="language-text">Effective model unresolved
+
+Conflicting rules:
+RULE-PT-SUPPLIER-RISK
+RULE-SEU-NONSTRATEGIC-RISK
+
+Required action:
+Approve precedence or narrow scope</code></pre>
+<p>A model that hides conflict produces apparently valid configuration built on unresolved governance.</p>
+<p>---</p>
+<h1 id="inherited-changes-need-compatibility-checks">Inherited changes need compatibility checks</h1>
+<p>Changing a global object can affect every inheriting context.</p>
+<p>Before approval, the impact analysis should identify:</p>
+<ul>
+<li>local extensions;</li>
+<li>local restrictions;</li>
+<li>overrides;</li>
+<li>deviations;</li>
+<li>mappings;</li>
+<li>datasets;</li>
+<li>tests;</li>
+<li>interfaces;</li>
+<li>decisions.</li>
+</ul>
+<p>Consider adding a global value:</p>
+<pre><code class="language-text">CRITICAL</code></pre>
+<p>The change may affect:</p>
+<ul>
+<li>local reporting;</li>
+<li>interface contracts;</li>
+<li>validation;</li>
+<li>workflows;</li>
+<li>country translations;</li>
+<li>historical mappings;</li>
+<li>downstream systems that accept only three values.</li>
+</ul>
+<p>The proposal should not ask only:</p>
+<blockquote>Is <code>CRITICAL</code> a valid new risk value?</blockquote>
+<p>It should also ask:</p>
+<blockquote>Can every inheriting context safely receive it?</blockquote>
+<p>Martenweave’s current core already includes trace and impact analysis across canonical objects and generated indexes.</p>
+<p>Global–local inheritance should make contextual dependencies part of that impact graph.</p>
+<p>---</p>
+<h1 id="local-changes-need-global-regression-checks">Local changes need global regression checks</h1>
+<p>A Portuguese extension can break the global model even when its context is correct.</p>
+<p>Possible failures include:</p>
+<ul>
+<li>local value leaking into global interface;</li>
+<li>override applied without country filter;</li>
+<li>local field reused in common reporting;</li>
+<li>changed value-list validation affecting all records;</li>
+<li>copied global rule diverging silently.</li>
+</ul>
+<p>Every material local proposal should test:</p>
+<pre><code class="language-text">Local positive behavior
+Local negative behavior
+Local out-of-scope behavior
+Global regression
+Interface containment
+Reporting containment</code></pre>
+<p>For example:</p>
+<pre><code class="language-text">Portuguese regulated supplier:
+Review Status required.
+
+Portuguese ordinary supplier:
+Review Status not required.
+
+German supplier:
+No behavior change.
+
+Global Supplier Risk:
+No new value introduced.
+
+Outbound interface:
+Local status sent only to consumers that support it.</code></pre>
+<p>Local success is not enough.</p>
+<p>The extension must remain contained.</p>
+<p>---</p>
+<h1 id="ownership-should-also-inherit-but-not-disappear">Ownership should also inherit—but not disappear</h1>
+<p>A global object may have a global owner.</p>
+<p>A local context may add a local operational owner.</p>
+<p>For example:</p>
+<pre><code class="language-text">Global Supplier Risk owner:
+Global Supplier Governance Owner
+
+Portuguese Review Status owner:
+Portugal Compliance Data Owner
+
+Portuguese mapping owner:
+ERP_PT Migration Lead</code></pre>
+<p>The inheritance rules should make accountability visible.</p>
+<p>The local owner cannot redefine global semantics alone.</p>
+<p>The global owner should not be responsible for daily Portuguese operational review.</p>
+<p>Collibra’s current governance guidance emphasises explicit operating models, domains and ownership, including federated structures with multiple groups of authority.</p>
+<p>Global–local inheritance is one practical application of that federated principle: authority is divided by semantic and contextual responsibility rather than centralised indiscriminately.</p>
+<p>---</p>
+<h1 id="sap-mdg-can-enforce-the-result-but-it-should-not-be-the-only-specification">SAP MDG can enforce the result, but it should not be the only specification</h1>
+<p>SAP currently presents Master Data Governance as a central governance layer with one governed model, preserved semantics and relationships, validated values, ownership, workflow, business-rule monitoring, quality management and auditability.</p>
+<p>Those capabilities can operationalise:</p>
+<ul>
+<li>shared attributes;</li>
+<li>contextual validations;</li>
+<li>local workflow;</li>
+<li>ownership;</li>
+<li>controlled change.</li>
+</ul>
+<p>But SAP configuration alone is a weak source for inheritance intent.</p>
+<p>A BRFplus rule, derivation, change-request step or custom field may show what the system does.</p>
+<p>It may not explain:</p>
+<ul>
+<li>whether the behaviour is global or local;</li>
+<li>which global object it extends;</li>
+<li>whether it is temporary;</li>
+<li>which decision authorised it;</li>
+<li>which contexts inherit it;</li>
+<li>what should happen outside SAP.</li>
+</ul>
+<p>The inheritance specification should exist independently enough to guide migration, MDG configuration, integrations, tests and AMS.</p>
+<p>SAP MDG is an implementation and governance platform.</p>
+<p>It should not be forced to carry the entire project reasoning implicitly.</p>
+<p>---</p>
+<h1 id="mdm-platforms-solve-operational-consistency-not-every-project-inheritance-question">MDM platforms solve operational consistency, not every project inheritance question</h1>
+<p>Informatica currently describes its MDM and 360 capabilities around integrating data from multiple sources, maintaining high-quality records and connecting multiple domains into an enterprise-wide view. It also positions MDM alongside cataloguing, integration, quality and governance services.</p>
+<p>Profisee presents an MDM platform with modelling, rules, workflows, stewardship, integration and quality/governance capabilities.</p>
+<p>These platforms can implement sophisticated multidomain and contextual structures.</p>
+<p>The project still needs to determine:</p>
+<ul>
+<li>which property is global;</li>
+<li>which difference is contextual;</li>
+<li>which local representation implements the same concept;</li>
+<li>which deviation is temporary;</li>
+<li>how migration evidence supports the decision;</li>
+<li>how source and target model history is preserved.</li>
+</ul>
+<p>The inheritance contract should remain portable.</p>
+<p>If the organisation later changes MDM platform, it should not have to reverse-engineer the global–local model exclusively from proprietary configuration.</p>
+<p>---</p>
+<h1 id="data-catalogues-and-governance-platforms-sit-above-a-broader-landscape">Data catalogues and governance platforms sit above a broader landscape</h1>
+<p>An enterprise governance platform may contain:</p>
+<ul>
+<li>global business terms;</li>
+<li>domains;</li>
+<li>ownership;</li>
+<li>policies;</li>
+<li>technical lineage;</li>
+<li>certification;</li>
+<li>quality status.</li>
+</ul>
+<p>That broader context is useful.</p>
+<p>Martenweave should not duplicate all of it.</p>
+<p>Its inheritance layer should link enterprise meaning to exact delivery objects:</p>
+<pre><code class="language-text">Global business attribute
+→ local contextual extension
+→ source endpoint
+→ mapping
+→ dataset evidence
+→ SAP target
+→ validation
+→ decision
+→ change proposal</code></pre>
+<p>This is a lower-level, delivery-facing problem than a general business glossary.</p>
+<p>The two layers should complement one another.</p>
+<p>---</p>
+<h1 id="model-inheritance-needs-version-discipline">Model inheritance needs version discipline</h1>
+<p>A local context should state which global baseline it inherits.</p>
+<p>Example:</p>
+<pre><code class="language-text">Portugal Supplier context:
+inherits global supplier model v3.4</code></pre>
+<p>After a global release:</p>
+<pre><code class="language-text">Global supplier model v3.5 available</code></pre>
+<p>The system should determine:</p>
+<ul>
+<li>automatically compatible;</li>
+<li>requires local review;</li>
+<li>blocked by conflict;</li>
+<li>explicitly deferred.</li>
+</ul>
+<p>A context should not remain on an older global baseline silently.</p>
+<p>Possible states include:</p>
+<pre><code class="language-text">Current
+Review required
+Upgrade blocked
+Approved deferral
+Obsolete</code></pre>
+<p>An approved deferral should have:</p>
+<ul>
+<li>reason;</li>
+<li>owner;</li>
+<li>risk;</li>
+<li>target date.</li>
+</ul>
+<p>This prevents local contexts from becoming hidden long-lived branches.</p>
+<p>---</p>
+<h1 id="use-semantic-versioning-carefully">Use semantic versioning carefully</h1>
+<p>Traditional software semantic versioning does not map perfectly to business models.</p>
+<p>Still, changes can be classified.</p>
+<h3 id="compatible-extension">Compatible extension</h3>
+<p>Adds an optional object or value that does not invalidate existing behaviour.</p>
+<h3 id="context-impacting-change">Context-impacting change</h3>
+<p>Changes applicability, validation or ownership for some contexts.</p>
+<h3 id="breaking-semantic-change">Breaking semantic change</h3>
+<p>Changes definition, granularity, cardinality or meaning.</p>
+<h3 id="retirement">Retirement</h3>
+<p>Removes or deprecates an object or value.</p>
+<p>The classification helps determine review scope.</p>
+<p>A new optional description field may need limited review.</p>
+<p>Changing Customer Group from central to sales-area granularity requires a migration and implementation assessment.</p>
+<p>---</p>
+<h1 id="the-override-budget">The “override budget”</h1>
+<p>Every override increases maintenance cost.</p>
+<p>A model with ten local extensions may be manageable.</p>
+<p>A model with two hundred overlapping overrides may technically resolve correctly but remain operationally unreadable.</p>
+<p>Track:</p>
+<ul>
+<li>overrides per global object;</li>
+<li>countries using overrides;</li>
+<li>duplicated override patterns;</li>
+<li>expired deviations;</li>
+<li>contexts on old baselines;</li>
+<li>objects with several precedence layers;</li>
+<li>rules with unresolved conflicts.</li>
+</ul>
+<p>An object with many overrides may indicate:</p>
+<ul>
+<li>poor global abstraction;</li>
+<li>concept mixing;</li>
+<li>excessive centralisation;</li>
+<li>unmanaged legacy differences;</li>
+<li>need for decomposition.</li>
+</ul>
+<p>This does not mean every frequently overridden object is badly designed.</p>
+<p>It means it deserves investigation.</p>
+<p>A useful question is:</p>
+<blockquote>Is the global object stable, or are local teams repeatedly correcting a design that does not represent reality?</blockquote>
+<p>---</p>
+<h1 id="collapse-repeated-deltas-into-reusable-contextual-patterns">Collapse repeated deltas into reusable contextual patterns</h1>
+<p>Several countries may need the same extension with different applicability.</p>
+<p>Instead of copying the extension three times:</p>
+<pre><code class="language-text">PT Supplier Review Status
+ES Supplier Review Status
+IT Supplier Review Status</code></pre>
+<p>define one reusable concept:</p>
+<pre><code class="language-text">Supplier Review Status</code></pre>
+<p>and separate contexts:</p>
+<pre><code class="language-text">PT applicability and workflow
+ES applicability and workflow
+IT applicability and workflow</code></pre>
+<p>The semantic model remains shared.</p>
+<p>The process details remain contextual.</p>
+<p>This reduces duplication without forcing identical operations.</p>
+<p>---</p>
+<h1 id="do-not-over-normalise-local-reality">Do not over-normalise local reality</h1>
+<p>The opposite failure is creating an abstraction so generic that nobody can use it.</p>
+<p>For example:</p>
+<pre><code class="language-text">Generic Local Regulatory Status</code></pre>
+<p>may combine:</p>
+<ul>
+<li>tax validation;</li>
+<li>sanctions review;</li>
+<li>public-sector classification;</li>
+<li>environmental certification.</li>
+</ul>
+<p>The object is globally reusable only because it means almost nothing.</p>
+<p>Inheritance should preserve genuine shared meaning.</p>
+<p>Do not create abstract parent objects merely to satisfy a hierarchy.</p>
+<p>A local standalone concept is sometimes more honest than a false global abstraction.</p>
+<p>---</p>
+<h1 id="worked-inheritance-chain-supplier-review">Worked inheritance chain: Supplier Review</h1>
+<p>The global supplier model contains:</p>
+<pre><code class="language-text">Supplier Risk
+Supplier Status
+Supplier Activation Rule</code></pre>
+<p>Portugal requests an additional compliance review.</p>
+<p>A sound inheritance design is:</p>
+<pre><code class="language-text">Global:
+Supplier Review Status
+- PENDING
+- CLEARED
+- REJECTED
+
+Portugal context:
+Applicable to regulated supplier organisations
+
+Portugal strengthening rule:
+Activation requires Review Status = CLEARED
+
+Portugal implementation:
+Local compliance workflow and interface mapping</code></pre>
+<p>What does not happen:</p>
+<ul>
+<li>Supplier Risk receives <code>PENDING</code>;</li>
+<li>the full Supplier model is copied;</li>
+<li>a Portuguese supplier entity is created;</li>
+<li>the activation rule is rewritten without reference to the global rule.</li>
+</ul>
+<p>The effective Portuguese model is richer than the global default but remains semantically compatible.</p>
+<p>---</p>
+<h1 id="worked-inheritance-chain-italian-source-deviation">Worked inheritance chain: Italian source deviation</h1>
+<p>The global model requires Payment Terms.</p>
+<p>Italy’s legacy source is incomplete.</p>
+<p>The inheritance design is:</p>
+<pre><code class="language-text">Global:
+Payment Terms required.
+
+Italian implementation:
+Local source mapping.
+
+Temporary deviation:
+Missing value allowed in Mock Load 2.
+Activation blocked.
+Controlled enrichment required.
+
+Expiry:
+Before UAT.</code></pre>
+<p>What does not happen:</p>
+<ul>
+<li>Italian Payment Terms becomes a different attribute;</li>
+<li>the global rule becomes optional;</li>
+<li>a permanent local override is approved because of current data quality.</li>
+</ul>
+<p>The model preserves policy while allowing bounded delivery reality.</p>
+<p>---</p>
+<h1 id="worked-inheritance-chain-portuguese-tax-exemption">Worked inheritance chain: Portuguese tax exemption</h1>
+<p>The global rule requires Tax Identifier for supplier organisations.</p>
+<p>Portugal has an approved non-resident exemption.</p>
+<p>The inheritance design is:</p>
+<pre><code class="language-text">Global rule:
+Tax Identifier required.
+
+Portuguese override:
+Not required for approved non-resident organisations.
+
+Additional local rule:
+Exemption evidence required.
+
+Effective model:
+Global requirement applies unless the narrower approved context matches.</code></pre>
+<p>The override is legitimate because it changes applicability, not meaning.</p>
+<p>It is explicit and testable.</p>
+<p>---</p>
+<h1 id="worked-inheritance-failure-german-under-review">Worked inheritance failure: German <code>UNDER_REVIEW</code></h1>
+<p>Germany adds <code>UNDER_REVIEW</code> to Supplier Risk.</p>
+<p>The global value list is inherited by other contexts and interfaces.</p>
+<p>Consequences:</p>
+<ul>
+<li>analytics treats <code>UNDER_REVIEW</code> as a final risk level;</li>
+<li>another country begins using it as a migration default;</li>
+<li>rules comparing LOW, MEDIUM and HIGH no longer cover all values;</li>
+<li>data cannot distinguish process status from final classification.</li>
+</ul>
+<p>The correct repair is not merely to mark the value local.</p>
+<p>It is to:</p>
+<ol>
+<li>investigate the concept;</li>
+<li>create or reuse Supplier Review Status;</li>
+<li>migrate affected records;</li>
+<li>remove the invalid value;</li>
+<li>update interfaces and reports;</li>
+<li>preserve the decision explaining the semantic split.</li>
+</ol>
+<p>---</p>
+<h1 id="what-martenweave-should-calculate">What Martenweave should calculate</h1>
+<p>The current Martenweave Core is built around canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace, impact analysis and reviewable proposals.</p>
+<p>A global–local inheritance capability should add an effective-model resolution step.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">martenweave resolve \
+  --repo ./model \
+  --context country=PT \
+  --context partner_category=organisation \
+  --context supplier_type=regulated \
+  --date 2026-11-01</code></pre>
+<p>The command is a product direction, not a claim about the current CLI.</p>
+<p>The output should include:</p>
+<ul>
+<li>inherited objects;</li>
+<li>contextual additions;</li>
+<li>restrictions;</li>
+<li>strengthening rules;</li>
+<li>overrides;</li>
+<li>deviations;</li>
+<li>conflicts;</li>
+<li>source mappings;</li>
+<li>decision references;</li>
+<li>baseline versions.</li>
+</ul>
+<p>The same resolution logic should support:</p>
+<ul>
+<li>validation;</li>
+<li>UI inspection;</li>
+<li>dataset readiness;</li>
+<li>impact analysis;</li>
+<li>testing;</li>
+<li>generated documentation.</li>
+</ul>
+<p>There must be one resolver.</p>
+<p>Do not let the CLI, UI and documentation calculate effective behaviour differently.</p>
+<p>---</p>
+<h1 id="validation-rules-that-matter">Validation rules that matter</h1>
+<p>A first implementation should detect:</p>
+<ul>
+<li>local extension without a declared parent or standalone justification;</li>
+<li>fixed property overridden locally;</li>
+<li>context missing from a local rule;</li>
+<li>two active overrides with overlapping scope;</li>
+<li>temporary deviation without expiry;</li>
+<li>context inheriting an obsolete global baseline;</li>
+<li>local implementation creating a duplicate semantic object;</li>
+<li>local value violating the global classification dimension;</li>
+<li>override authorised by the wrong governance role;</li>
+<li>global change with unreviewed inheriting contexts;</li>
+<li>local delta referencing a retired global object;</li>
+<li>conflict resolved only by file order.</li>
+</ul>
+<p>These are structural checks.</p>
+<p>They do not decide whether the business requirement is correct.</p>
+<p>They make an incorrect or incomplete inheritance design visible before configuration and data are changed.</p>
+<p>---</p>
+<h1 id="the-review-view-should-show-resolved-behaviour">The review view should show resolved behaviour</h1>
+<p>Reviewing only the delta is not enough.</p>
+<p>A reviewer should see both:</p>
+<h3 id="proposed-delta">Proposed delta</h3>
+<pre><code class="language-text">Add Portugal non-resident tax exemption.</code></pre>
+<h3 id="resulting-effective-model">Resulting effective model</h3>
+<pre><code class="language-text">Portuguese resident supplier organisation:
+Tax Identifier required.
+
+Portuguese non-resident supplier organisation:
+Tax Identifier optional.
+Exemption evidence required.
+
+German supplier organisation:
+No change.</code></pre>
+<p>This is the real decision surface.</p>
+<p>A small override can have a large effective consequence.</p>
+<p>Conversely, a large-looking local specification may have little semantic impact because it only adds mappings and labels.</p>
+<p>Review should focus on resulting behaviour.</p>
+<p>---</p>
+<h1 id="a-practical-repository-design">A practical repository design</h1>
+<p>A lightweight canonical structure could distinguish:</p>
+<pre><code class="language-text">model/
+  global/
+    entities/
+    attributes/
+    rules/
+    values/
+    decisions/
+
+  contexts/
+    pt/
+      extensions/
+      overrides/
+      deviations/
+      mappings/
+      evidence/
+
+    de/
+      extensions/
+      overrides/
+      deviations/
+      mappings/
+      evidence/</code></pre>
+<p>Generated outputs might include:</p>
+<pre><code class="language-text">.generated/
+  effective/
+    pt/
+    de/
+    it/
+
+  conflicts/
+  impact/
+  indexes/</code></pre>
+<p>Generated effective models must remain disposable.</p>
+<p>The canonical truth is:</p>
+<ul>
+<li>global objects;</li>
+<li>contextual deltas;</li>
+<li>decisions;</li>
+<li>evidence.</li>
+</ul>
+<p>This aligns with Martenweave’s existing principle that generated SQLite and JSONL indexes are rebuildable from canonical files.</p>
+<p>---</p>
+<h1 id="the-smallest-useful-delivery-slice">The smallest useful delivery slice</h1>
+<p>Do not begin with every inheritance pattern.</p>
+<p>Start with:</p>
+<ol>
+<li>one global attribute;</li>
+<li>one contextual extension;</li>
+<li>one restriction;</li>
+<li>one temporary deviation;</li>
+<li>two countries;</li>
+<li>effective-model rendering;</li>
+<li>conflict validation;</li>
+<li>impact report.</li>
+</ol>
+<p>A realistic pilot could use Supplier Risk:</p>
+<pre><code class="language-text">Global:
+Supplier Risk and mandatory rule.
+
+Portugal:
+Supplier Review Status and strengthening rule.
+
+Italy:
+Temporary source deviation.
+
+Germany:
+No local delta.</code></pre>
+<p>Acceptance should prove:</p>
+<ul>
+<li>Portugal receives global semantics plus local review control;</li>
+<li>Italy receives global semantics plus temporary bounded deviation;</li>
+<li>Germany receives only the global model;</li>
+<li>a global definition change identifies all three contexts;</li>
+<li>an overlapping override fails validation;</li>
+<li>effective models can be generated reproducibly.</li>
+</ul>
+<p>This vertical slice proves the inheritance mechanism.</p>
+<p>It avoids building a generic rules engine.</p>
+<p>---</p>
+<h1 id="what-should-remain-outside-martenweave">What should remain outside Martenweave</h1>
+<p>Martenweave should not become:</p>
+<ul>
+<li>a full SAP configuration engine;</li>
+<li>a replacement for SAP MDG workflow;</li>
+<li>an enterprise policy-management platform;</li>
+<li>a generic application configuration framework;</li>
+<li>a runtime rules engine;</li>
+<li>a multidomain MDM replacement.</li>
+</ul>
+<p>Its role is to specify and validate model inheritance before and around implementation.</p>
+<p>Operational platforms still enforce the result.</p>
+<p>Ticketing tools still manage delivery.</p>
+<p>Enterprise catalogues still provide broader discovery and policy context.</p>
+<p>Martenweave keeps the inheritance decision traceable to:</p>
+<ul>
+<li>canonical objects;</li>
+<li>context;</li>
+<li>evidence;</li>
+<li>impact;</li>
+<li>proposal;</li>
+<li>Git history.</li>
+</ul>
+<p>---</p>
+<h1 id="questions-worth-asking-before-approval">Questions worth asking before approval</h1>
+<p>For a global object:</p>
+<ul>
+<li>Which properties are fixed?</li>
+<li>Which are extendable?</li>
+<li>Which may be restricted or strengthened?</li>
+<li>Which local contexts currently inherit it?</li>
+<li>What would break if it changed?</li>
+</ul>
+<p>For a local delta:</p>
+<ul>
+<li>Is this semantic, contextual, technical or temporary?</li>
+<li>Which global object does it relate to?</li>
+<li>Does it add meaning or merely implementation?</li>
+<li>Is its scope machine-readable?</li>
+<li>Does it conflict with another active rule?</li>
+<li>Who has authority?</li>
+<li>What is the resulting effective model?</li>
+<li>Which global regression tests are required?</li>
+</ul>
+<p>For the whole inheritance system:</p>
+<ul>
+<li>Can effective behaviour be calculated deterministically?</li>
+<li>Can conflicts remain hidden?</li>
+<li>Can temporary deviations outlive expiry?</li>
+<li>Can a context silently remain on an old baseline?</li>
+<li>Can local values leak into global reporting?</li>
+<li>Can another team explain why the delta exists?</li>
+</ul>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Global–local inheritance is not solved by folders, naming conventions or a country column.</p>
+<p>It is solved when the organisation defines:</p>
+<ul>
+<li>one stable semantic core;</li>
+<li>explicit extension points;</li>
+<li>bounded contextual deltas;</li>
+<li>deterministic precedence;</li>
+<li>visible conflicts;</li>
+<li>reviewable effective behaviour;</li>
+<li>controlled upgrade and expiry.</li>
+</ul>
+<p>The central rule is:</p>
+<blockquote>Inherit meaning. Extend context. Vary implementation. Time-limit deviation.</blockquote>
+<p>A local model should not be a copy of the global model.</p>
+<p>A global model should not be a container for every local value and exception.</p>
+<p>The effective model should be generated from the relationship between them.</p>
+<p>This is what prevents configuration chaos.</p>
+<p>The practical test is:</p>
+<blockquote>Can the programme calculate and explain the effective model for one supplier in one country on one date, including every inherited rule, local extension, override and temporary deviation?</blockquote>
+<p>When the answer is yes, global–local governance is operational.</p>
+<p>When the answer requires several architects to compare spreadsheets and SAP configuration manually, inheritance exists only as an intention.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>global semantic objects;</li>
+<li>contextual extensions;</li>
+<li>local implementations;</li>
+<li>temporary deviations;</li>
+<li>source and target endpoints;</li>
+<li>datasets;</li>
+<li>decisions;</li>
+<li>impact;</li>
+<li>reviewable model changes.</li>
+</ul>
+<p>The goal is not to create another configuration platform.</p>
+<p>It is to make inherited model behaviour explicit before it becomes scattered across mappings, SAP rules, local workbooks and production exceptions.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer with a governed model across business entities, preserved semantics and relationships, profiling, matching, consolidation, workflow, validated values, business-rule monitoring and auditable changes.</p>
+<p>Informatica currently positions its MDM and 360 capabilities around integrating data from multiple sources, maintaining high-quality master records and connecting multiple domains into enterprise-wide views, alongside cataloguing, integration, quality and governance services.</p>
+<p>Profisee presents its MDM platform around modelling, rules, automated workflows, stewardship, integration and data-quality governance.</p>
+<p>Collibra’s current governance guidance describes operating models with explicit roles, responsibilities, domains and ownership, including centralised and decentralised or federated authority structures.</p>
+<p>Martenweave Core currently uses canonical Markdown and YAML model files, deterministic validation, rebuildable SQLite and JSONL indexes, dataset-gap analysis, trace, impact analysis and human-reviewed <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Its current documented pipeline moves from evidence through proposal, validation, gaps and impact to human review and GitHub-ready changes.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Informatica, Profisee, Collibra or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-decide-whether-a-local-sap-requirement-belongs-in-the-global.html"><span>Previous</span>A country team requests a new field:</a><a href="/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html"><span>Next</span>The global design states:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

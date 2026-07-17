@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why SAP Migration Teams Still Lose Control Even with the Right Tools | Martenweave</title>
+    <meta
+      name="description"
+      content="An SAP migration programme may have every major tool it is supposed to have."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html" />
+    <meta property="og:title" content="Why SAP Migration Teams Still Lose Control Even with the Right Tools | Martenweave" />
+    <meta property="og:description" content="An SAP migration programme may have every major tool it is supposed to have." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why SAP Migration Teams Still Lose Control Even with the Right Tools | Martenweave" />
+    <meta name="twitter:description" content="An SAP migration programme may have every major tool it is supposed to have." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html",
+                        "name": "Why SAP Migration Teams Still Lose Control Even with the Right Tools | Martenweave",
+                        "description": "An SAP migration programme may have every major tool it is supposed to have.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why SAP Migration Teams Still Lose Control Even with the Right Tools",
+                                    "item": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html#content",
+                        "headline": "Why SAP Migration Teams Still Lose Control Even with the Right Tools",
+                        "name": "Why SAP Migration Teams Still Lose Control Even with the Right Tools",
+                        "description": "An SAP migration programme may have every major tool it is supposed to have.",
+                        "url": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT15M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why SAP Migration Teams Still Lose Control Even with the Right Tools</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>Why SAP Migration Teams Still Lose Control Even with the Right Tools</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 15 min read</p><p class="blog-summary">An SAP migration programme may have every major tool it is supposed to have.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-common-failure-every-tool-is-correct-within-its-own-boundary">The common failure: every tool is correct within its own boundary</a></li><li><a href="#migration-platforms-solve-execution">Migration platforms solve execution</a></li><li><a href="#mdm-solves-record-governance">MDM solves record governance</a></li><li><a href="#data-catalogs-solve-discovery-and-technical-lineage">Data catalogs solve discovery and technical lineage</a></li><li><a href="#data-quality-tools-solve-conformance">Data-quality tools solve conformance</a></li><li><a href="#schema-registries-solve-technical-compatibility">Schema registries solve technical compatibility</a></li><li><a href="#jira-confluence-and-sharepoint-solve-collaboration">Jira, Confluence and SharePoint solve collaboration</a></li><li><a href="#excel-solves-negotiation">Excel solves negotiation</a></li><li><a href="#the-pain-martenweave-is-designed-around">The pain Martenweave is designed around</a></li><li><a href="#what-martenweave-actually-adds">What Martenweave actually adds</a></li><li><a href="#a-concrete-example">A concrete example</a></li><li><a href="#what-martenweave-does-not-solve">What Martenweave does not solve</a></li><li><a href="#when-the-additional-layer-is-justified">When the additional layer is justified</a></li><li><a href="#the-management-lesson">The management lesson</a></li></ol></nav></details></header>
+<p>An SAP migration programme may have every major tool it is supposed to have.</p>
+<p>There is a migration platform for extraction, transformation and loading.</p>
+<p>There is an MDM system for governing customers, suppliers and products.</p>
+<p>There is a data catalog for discovering datasets and technical lineage.</p>
+<p>There are data-quality checks for missing values, formats and reference lists.</p>
+<p>There are Jira tickets, SharePoint folders, mapping workbooks and project dashboards.</p>
+<p>And yet the programme still reaches integration testing with unresolved questions:</p>
+<ul>
+<li>Which mapping is currently approved?</li>
+<li>Why was this field made mandatory?</li>
+<li>Does the latest extract contain the source attribute expected by the design?</li>
+<li>Which exception applies to this country?</li>
+<li>Which interface will be affected if the value changes?</li>
+<li>Does the validation rule implement the same logic as the mapping workbook?</li>
+<li>Is this decision final, or was it only a temporary workaround?</li>
+</ul>
+<p>The problem is not necessarily that the organisation selected poor tools.</p>
+<p>The problem is that each tool controls a different part of the work.</p>
+<p>The migration platform moves the data.</p>
+<p>The MDM platform governs productive records.</p>
+<p>The catalog describes the existing data landscape.</p>
+<p>The quality tool checks records against defined expectations.</p>
+<p>Jira records work and decisions.</p>
+<p>Excel remains the place where people negotiate mappings.</p>
+<p>What is often missing is a controlled layer connecting all these parts into one validated project model.</p>
+<p>That is the problem Martenweave is intended to solve.</p>
+<h2 id="the-common-failure-every-tool-is-correct-within-its-own-boundary">The common failure: every tool is correct within its own boundary</h2>
+<p>Consider a material migration into SAP S/4HANA and EWM.</p>
+<p>The migration platform contains a transformation for the warehouse unit of measure.</p>
+<p>The data-quality tool checks that the resulting value is populated and belongs to an approved list.</p>
+<p>The target message conforms to its technical schema.</p>
+<p>The data catalog shows where the source field originated and which pipeline transformed it.</p>
+<p>The project ticket states that the mapping was approved.</p>
+<p>Everything appears controlled.</p>
+<p>During warehouse testing, several products still arrive with the wrong unit.</p>
+<p>The investigation finds that:</p>
+<ul>
+<li>the source field describes a sales unit for one business unit;</li>
+<li>the transformation assumes it is a warehouse unit;</li>
+<li>a separate packaging file contains the correct relationship;</li>
+<li>one plant uses a local exception;</li>
+<li>the EWM team expects the value at another packaging level;</li>
+<li>the approval ticket refers to an earlier version of the mapping.</li>
+</ul>
+<p>No individual tool necessarily malfunctioned.</p>
+<p>The migration platform executed the configured transformation.</p>
+<p>The quality check confirmed that the resulting code was valid.</p>
+<p>The schema accepted the field.</p>
+<p>The catalog correctly showed the technical flow.</p>
+<p>Jira preserved the approval record.</p>
+<p>The programme still produced the wrong result because the relationships among those artefacts were not governed as one model.</p>
+<p>This is the gap managers need to recognise.</p>
+<h2 id="migration-platforms-solve-execution">Migration platforms solve execution</h2>
+<p>Enterprise migration platforms are built to move data through a controlled delivery process.</p>
+<p>Syniti, for example, positions its platform around migration methodology, transformation, data quality, business-readiness validation, automation, dashboards and repeatable execution across complex ERP programmes.</p>
+<p>These are substantial capabilities.</p>
+<p>A migration platform can help teams:</p>
+<ul>
+<li>extract legacy data;</li>
+<li>build transformations;</li>
+<li>profile and cleanse records;</li>
+<li>execute repeated load cycles;</li>
+<li>reconcile results;</li>
+<li>monitor migration progress;</li>
+<li>prepare business-ready target data.</li>
+</ul>
+<p>If the central problem is unreliable migration execution, this is the correct class of system.</p>
+<p>But execution tooling does not automatically create an independent canonical model of every business attribute, rule, exception, decision and external dependency surrounding the migration.</p>
+<p>The transformation may be implemented correctly according to the current specification.</p>
+<p>The specification itself may be incomplete.</p>
+<p>A field can be loaded successfully into SAP while using the wrong business meaning.</p>
+<p>A value mapping can pass every technical test while ignoring a country-specific decision recorded elsewhere.</p>
+<p>A migration platform can contain some or all of this information. The management question is whether the programme has actually modelled and connected it—not whether the platform could theoretically store it.</p>
+<h3 id="the-remaining-pain">The remaining pain</h3>
+<p>Migration teams commonly lose control when:</p>
+<ul>
+<li>mappings are split between the platform and Excel;</li>
+<li>business decisions remain in Jira or meeting notes;</li>
+<li>source-file expectations are maintained separately;</li>
+<li>interface dependencies belong to another workstream;</li>
+<li>local teams keep their own versions;</li>
+<li>validation logic evolves independently from the mapping;</li>
+<li>temporary fixes become permanent without a formal model change.</li>
+</ul>
+<p>Martenweave does not try to execute the migration instead.</p>
+<p>It creates a separate model layer in which the source field, target field, business attribute, transformation, validation, dataset and decision can be connected and checked together.</p>
+<p>The migration platform remains the execution engine.</p>
+<p>Martenweave provides a reviewable definition of what that execution is supposed to implement.</p>
+<h2 id="mdm-solves-record-governance">MDM solves record governance</h2>
+<p>SAP Master Data Governance is designed to govern business-critical master data through capabilities such as golden records, matching, consolidation, business rules, workflows, quality monitoring, mass changes and audit history.</p>
+<p>That addresses a different pain.</p>
+<p>The organisation needs to know:</p>
+<ul>
+<li>which supplier record is trusted;</li>
+<li>whether a customer is a duplicate;</li>
+<li>who may change a product;</li>
+<li>which values are valid;</li>
+<li>whether a change has been approved;</li>
+<li>how governed master data reaches consuming systems.</li>
+</ul>
+<p>A model registry should not replace this work.</p>
+<p>Martenweave does not create productive Business Partners, run SAP change-request workflows or distribute golden records.</p>
+<p>The unresolved problem appears around the productive record.</p>
+<p>Before the record can be governed, the migration or transformation programme must decide:</p>
+<ul>
+<li>which legacy field supplies each target attribute;</li>
+<li>how local classifications are harmonised;</li>
+<li>which source is authoritative;</li>
+<li>which exceptions must be preserved;</li>
+<li>which datasets contain the necessary evidence;</li>
+<li>which interfaces depend on the chosen definition.</li>
+</ul>
+<p>MDM governs the accepted record.</p>
+<p>It does not automatically govern every project artefact and decision used to construct that record.</p>
+<h3 id="the-remaining-pain-2">The remaining pain</h3>
+<p>A company may have SAP MDG and still maintain migration mappings in multiple workbooks.</p>
+<p>The MDG rule may state that a tax number is mandatory.</p>
+<p>The migration design may include an exception for private individuals.</p>
+<p>The source dataset may use a field whose name suggests VAT but actually contains a company-registration number.</p>
+<p>The interface team may send the resulting value under a simplified external category.</p>
+<p>The productive governance process can be functioning correctly while the migration model remains semantically inconsistent.</p>
+<p>Martenweave addresses the layer before and around record governance:</p>
+<ul>
+<li>what the attribute means;</li>
+<li>how it is represented in each system;</li>
+<li>where it comes from;</li>
+<li>which rule applies;</li>
+<li>why an exception exists;</li>
+<li>what depends on it;</li>
+<li>which proposed change is awaiting review.</li>
+</ul>
+<p>MDG governs the record.</p>
+<p>Martenweave governs the traceable reasoning used to define and change the record.</p>
+<h2 id="data-catalogs-solve-discovery-and-technical-lineage">Data catalogs solve discovery and technical lineage</h2>
+<p>A data catalog helps an organisation discover its data estate.</p>
+<p>OpenMetadata, for example, tracks lineage across databases, dashboards and pipelines, showing how data moves, transforms and is used.</p>
+<p>This helps answer important questions:</p>
+<ul>
+<li>Which table contains the source data?</li>
+<li>Who owns the dataset?</li>
+<li>Which pipeline transforms the field?</li>
+<li>Which reports use the output?</li>
+<li>What downstream assets may be affected by a technical change?</li>
+</ul>
+<p>For a large analytics landscape, these capabilities are indispensable.</p>
+<p>But SAP migrations contain dependencies that scanners cannot reliably discover.</p>
+<p>A mapping may exist in Excel.</p>
+<p>A country exception may be recorded in a ticket.</p>
+<p>A mandatory rule may come from an SAP design workshop.</p>
+<p>A 3PL may interpret the same code differently.</p>
+<p>A proposed target field may not exist in any productive system yet.</p>
+<p>Technical lineage shows what is moving through the current landscape.</p>
+<p>Migration programmes also need design-time lineage: what the future model is supposed to become.</p>
+<h3 id="the-remaining-pain-3">The remaining pain</h3>
+<p>A catalog may correctly show that legacy column <code>SHIP_COND</code> flows through an extraction pipeline.</p>
+<p>It may not know that:</p>
+<ul>
+<li>the column is approved only for two sales organisations;</li>
+<li>one country derives the value from customer type;</li>
+<li>the 3PL uses another code;</li>
+<li>a workshop changed the business definition;</li>
+<li>the next migration wave expects a renamed source field;</li>
+<li>the mapping is still a proposal rather than an approved rule.</li>
+</ul>
+<p>Martenweave does not compete with catalog-scale discovery.</p>
+<p>It uses registered evidence to model the project relationships that matter:</p>
+<pre><code class="language-text">Business attribute
+→ source field
+→ dataset
+→ transformation
+→ SAP target field
+→ validation rule
+→ interface dependency
+→ business decision</code></pre>
+<p>A catalog describes the data estate.</p>
+<p>Martenweave describes the governed project model being built across that estate.</p>
+<p>The two can work together. Discovered metadata from the catalog can become evidence in Martenweave. Approved semantic context from Martenweave can enrich the catalog.</p>
+<h2 id="data-quality-tools-solve-conformance">Data-quality tools solve conformance</h2>
+<p>Data-quality tools are effective at checking whether records satisfy explicit expectations.</p>
+<p>Great Expectations, for example, allows teams to define expected data states and run validations against actual data batches.</p>
+<p>These checks can detect:</p>
+<ul>
+<li>missing values;</li>
+<li>incorrect formats;</li>
+<li>duplicate identifiers;</li>
+<li>unsupported codes;</li>
+<li>values outside expected ranges;</li>
+<li>broken references;</li>
+<li>schema changes.</li>
+</ul>
+<p>The limitation is not in the validation engine.</p>
+<p>The limitation is that somebody must define the correct expectations first.</p>
+<p>Suppose the rule states:</p>
+<blockquote>Shipping condition must not be empty for every customer.</blockquote>
+<p>The tool can enforce that rule perfectly.</p>
+<p>The rule may still be wrong.</p>
+<p>Perhaps it applies only to customers with a sales-area extension.</p>
+<p>Perhaps the field should be derived for one business unit.</p>
+<p>Perhaps customer-pickup scenarios are exempt.</p>
+<p>Perhaps the source field was replaced after the check was written.</p>
+<p>The data-quality tool answers:</p>
+<blockquote>Does the data comply with this rule?</blockquote>
+<p>It does not automatically answer:</p>
+<blockquote>Is this the correct rule, attached to the correct attribute, mapping and population?</blockquote>
+<h3 id="the-remaining-pain-4">The remaining pain</h3>
+<p>Migration programmes often respond to every defect by adding another check.</p>
+<p>Over time, they accumulate validations that:</p>
+<ul>
+<li>encode old decisions;</li>
+<li>conflict with exceptions;</li>
+<li>refer to obsolete fields;</li>
+<li>apply to the wrong population;</li>
+<li>duplicate rules in another tool;</li>
+<li>cannot be traced to an owner.</li>
+</ul>
+<p>The dataset may eventually become clean according to a rule library nobody can confidently explain.</p>
+<p>Martenweave connects the quality rule to the model around it:</p>
+<ul>
+<li>the attribute being validated;</li>
+<li>the expected dataset field;</li>
+<li>the applicable condition;</li>
+<li>the mapping that populates it;</li>
+<li>the owner;</li>
+<li>the supporting decision;</li>
+<li>the downstream dependencies.</li>
+</ul>
+<p>The quality engine still executes record-level checks.</p>
+<p>Martenweave validates whether the rule belongs coherently in the approved project model.</p>
+<h2 id="schema-registries-solve-technical-compatibility">Schema registries solve technical compatibility</h2>
+<p>Schema registries protect communication between systems.</p>
+<p>They help ensure that producers and consumers agree on field structures, datatypes, required properties and compatible schema evolution.</p>
+<p>This solves an important engineering problem.</p>
+<p>A producer should not remove a required field or change a datatype without understanding how consumers will react.</p>
+<p>But schema compatibility does not guarantee semantic compatibility.</p>
+<p>Consider this field:</p>
+<pre><code class="language-text">priorityCode: string</code></pre>
+<p>The schema may remain unchanged for years.</p>
+<p>During that time, the business meaning may shift from customer delivery priority to warehouse processing priority.</p>
+<p>Every message remains technically valid.</p>
+<p>Every consumer can still parse it.</p>
+<p>Different systems may now interpret the same value differently.</p>
+<h3 id="the-remaining-pain-5">The remaining pain</h3>
+<p>The schema registry knows that the field is a string.</p>
+<p>It may not know:</p>
+<ul>
+<li>which business attribute the field represents;</li>
+<li>which SAP source field supplies it;</li>
+<li>which transformation produces its values;</li>
+<li>which organisation-specific conditions apply;</li>
+<li>why one 3PL uses a different code;</li>
+<li>which business owner approved the definition.</li>
+</ul>
+<p>Martenweave connects the technical field to that wider meaning.</p>
+<p>The schema registry protects applications from incompatible message structures.</p>
+<p>Martenweave helps protect the organisation from a compatible message carrying the wrong business interpretation.</p>
+<h2 id="jira-confluence-and-sharepoint-solve-collaboration">Jira, Confluence and SharePoint solve collaboration</h2>
+<p>Most project knowledge eventually reaches one of these systems.</p>
+<p>A decision is recorded in a Jira ticket.</p>
+<p>A design is explained in Confluence.</p>
+<p>A mapping workbook is stored in SharePoint.</p>
+<p>A test report is attached to an issue.</p>
+<p>These tools are useful because people need somewhere to communicate and preserve evidence.</p>
+<p>The problem is that storing evidence does not make the model consistent.</p>
+<p>A ticket can state that a field is optional.</p>
+<p>The mapping workbook can still mark it mandatory.</p>
+<p>The validation script can still reject empty values.</p>
+<p>The interface specification can still describe the old interpretation.</p>
+<p>All four artefacts may be individually accessible and correctly versioned.</p>
+<p>They still contradict one another.</p>
+<h3 id="the-remaining-pain-6">The remaining pain</h3>
+<p>Collaboration systems tell the organisation that information exists.</p>
+<p>They do not normally validate the relationships among field definitions, mappings, datasets, rules and decisions.</p>
+<p>Martenweave treats the ticket or document as evidence attached to a structured model element.</p>
+<p>The decision is not merely stored.</p>
+<p>It is connected to the rule, mapping or attribute it affects.</p>
+<p>If that model element changes later, the decision remains traceable.</p>
+<h2 id="excel-solves-negotiation">Excel solves negotiation</h2>
+<p>Excel remains central because mappings are negotiated, not merely configured.</p>
+<p>Business users can review rows.</p>
+<p>Consultants can compare source and target fields.</p>
+<p>Teams can add comments, filters and provisional values.</p>
+<p>Removing Excel entirely would make many projects harder, not better.</p>
+<p>The problem begins when the workbook becomes the only place where the model exists.</p>
+<p>Then it must also perform the work of:</p>
+<ul>
+<li>version control;</li>
+<li>relationship management;</li>
+<li>validation;</li>
+<li>ownership;</li>
+<li>decision history;</li>
+<li>impact analysis;</li>
+<li>approval state;</li>
+<li>dataset readiness.</li>
+</ul>
+<p>The result is familiar:</p>
+<pre><code class="language-text">Material_Mapping_v8.xlsx
+Material_Mapping_v8_final.xlsx
+Material_Mapping_v8_final_reviewed.xlsx
+Material_Mapping_v9_country_changes.xlsx</code></pre>
+<h3 id="the-remaining-pain-7">The remaining pain</h3>
+<p>The project can no longer tell whether:</p>
+<ul>
+<li>the latest workbook is approved;</li>
+<li>all references remain valid;</li>
+<li>local changes were incorporated;</li>
+<li>validations use the same rules;</li>
+<li>the current extract matches the expected fields;</li>
+<li>a changed mapping affects other objects.</li>
+</ul>
+<p>Martenweave does not need to eliminate spreadsheets.</p>
+<p>It changes their role.</p>
+<p>A spreadsheet can be imported as evidence or as a proposed model update.</p>
+<p>The proposal is validated and reviewed before it becomes canonical truth.</p>
+<p>The model can later be exported back to CSV or XLSX for business review.</p>
+<p>Excel remains the working surface.</p>
+<p>It stops being the accidental governance architecture.</p>
+<h2 id="the-pain-martenweave-is-designed-around">The pain Martenweave is designed around</h2>
+<p>Martenweave is not based on the claim that existing enterprise tools are inadequate.</p>
+<p>It is based on a narrower observation:</p>
+<blockquote>Complex data programmes lose control in the gaps between their tools.</blockquote>
+<p>The gaps appear when:</p>
+<ul>
+<li>a mapping is updated but its validation is not;</li>
+<li>a business decision never reaches the transformation;</li>
+<li>a source extract changes without impact analysis;</li>
+<li>an MDM rule differs from the migration rule;</li>
+<li>a schema remains compatible while the meaning changes;</li>
+<li>a catalog shows technical flow but not project intent;</li>
+<li>a support ticket fixes a record without improving the model;</li>
+<li>an AI agent proposes a change without a safe review boundary.</li>
+</ul>
+<p>These are model-coherence problems.</p>
+<p>They cannot always be solved by buying a larger execution platform or adding another dashboard.</p>
+<h2 id="what-martenweave-actually-adds">What Martenweave actually adds</h2>
+<p>Martenweave maintains canonical model files for objects such as domains, entities, attributes, field endpoints, datasets, mappings, rules, evidence, decisions and change proposals.</p>
+<p>It validates IDs, references and domain relationships before building generated indexes. It can profile CSV and XLSX datasets, detect differences between datasets and model expectations, trace dependencies, calculate change impact and generate reviewable patch proposals. The generated SQLite and search indexes remain disposable; the canonical files stay authoritative.</p>
+<p>The practical workflow is:</p>
+<pre><code class="language-text">Existing tools produce evidence
+→ Martenweave connects it to the project model
+→ deterministic validation finds contradictions
+→ dataset checks reveal missing coverage
+→ impact analysis shows affected elements
+→ a proposed correction is reviewed
+→ approved model changes are recorded</code></pre>
+<p>This gives the organisation a control layer without asking Martenweave to become the execution engine for everything.</p>
+<h2 id="a-concrete-example">A concrete example</h2>
+<p>Suppose a company wants to change the customer shipping condition used for expedited deliveries.</p>
+<h3 id="the-migration-platform-knows">The migration platform knows</h3>
+<ul>
+<li>the source field;</li>
+<li>the transformation code;</li>
+<li>the load target;</li>
+<li>the affected records.</li>
+</ul>
+<h3 id="sap-mdg-knows">SAP MDG knows</h3>
+<ul>
+<li>the governed target value;</li>
+<li>the approval workflow;</li>
+<li>the productive customer records.</li>
+</ul>
+<h3 id="the-catalog-knows">The catalog knows</h3>
+<ul>
+<li>the technical source;</li>
+<li>the pipeline;</li>
+<li>the downstream datasets.</li>
+</ul>
+<h3 id="the-quality-tool-knows">The quality tool knows</h3>
+<ul>
+<li>whether the value is populated;</li>
+<li>whether it belongs to an allowed list.</li>
+</ul>
+<h3 id="the-schema-registry-knows">The schema registry knows</h3>
+<ul>
+<li>whether the outbound field remains technically compatible.</li>
+</ul>
+<h3 id="jira-knows">Jira knows</h3>
+<ul>
+<li>that the business requested the change;</li>
+<li>who approved the ticket.</li>
+</ul>
+<h3 id="martenweave-connects">Martenweave connects</h3>
+<ul>
+<li>the business meaning of Shipping Condition;</li>
+<li>the source and target representations;</li>
+<li>the transformation;</li>
+<li>the mandatory conditions;</li>
+<li>the country exception;</li>
+<li>the migration dataset;</li>
+<li>the 3PL conversion;</li>
+<li>the validation rules;</li>
+<li>the business decision;</li>
+<li>the proposed new definition.</li>
+</ul>
+<p>Before approval, Martenweave can report:</p>
+<blockquote>The proposed shipping-condition change affects one customer migration mapping, two validation rules, one 3PL conversion and one regional exception. The technical message schema remains compatible, but the 3PL interpretation conflicts with the proposed business definition.</blockquote>
+<p>That is the answer managers usually need.</p>
+<p>Not simply whether one system can accept the change.</p>
+<p>Whether the programme has found the important consequences across systems.</p>
+<h2 id="what-martenweave-does-not-solve">What Martenweave does not solve</h2>
+<p>The boundary should remain explicit.</p>
+<p>Martenweave does not:</p>
+<ul>
+<li>execute SAP migration loads;</li>
+<li>replace Syniti or another migration platform;</li>
+<li>create productive master records;</li>
+<li>replace SAP MDG;</li>
+<li>crawl the entire enterprise landscape like a large data catalog;</li>
+<li>execute every row-level quality check;</li>
+<li>manage runtime message schemas;</li>
+<li>replace Jira, Confluence or SharePoint;</li>
+<li>write changes directly into SAP.</li>
+</ul>
+<p>Its value depends on keeping this scope narrow.</p>
+<p>It is the model and evidence layer between those systems.</p>
+<h2 id="when-the-additional-layer-is-justified">When the additional layer is justified</h2>
+<p>A small migration may not need Martenweave.</p>
+<p>A disciplined workbook, clear ownership and a few deterministic scripts may be enough.</p>
+<p>The case becomes stronger when the programme has:</p>
+<ul>
+<li>several source systems;</li>
+<li>several target applications;</li>
+<li>multiple migration waves;</li>
+<li>country or plant exceptions;</li>
+<li>SAP plus EWM, TM, MDG or external providers;</li>
+<li>frequently changing mappings;</li>
+<li>large numbers of project decisions;</li>
+<li>recurring inconsistencies between mappings and validations;</li>
+<li>several consulting or business teams;</li>
+<li>AI-assisted model analysis;</li>
+<li>poor traceability from defects back to model definitions.</li>
+</ul>
+<p>At this point, the programme already has a model registry.</p>
+<p>It is simply distributed across several tools and people.</p>
+<p>Martenweave makes that registry explicit, testable and reviewable.</p>
+<h2 id="the-management-lesson">The management lesson</h2>
+<p>The question should not be:</p>
+<blockquote>Which existing platform can store one more kind of metadata?</blockquote>
+<p>The better question is:</p>
+<blockquote>Where is the approved model that connects our fields, mappings, rules, datasets, decisions and dependencies—and how do we know it is still consistent?</blockquote>
+<p>Migration platforms, MDM, catalogs, quality tools and schema registries each solve important problems.</p>
+<p>Martenweave should not be positioned as a replacement for any of them.</p>
+<p>It exists because their boundaries leave a recurring operational gap.</p>
+<p>The data can be migrated correctly according to the transformation.</p>
+<p>The record can be governed correctly according to MDM.</p>
+<p>The dataset can pass every quality check.</p>
+<p>The message can remain schema-compatible.</p>
+<p>The catalogue can show the complete technical flow.</p>
+<p>The programme can still be working from the wrong model.</p>
+<p>That is the problem Martenweave is built to expose.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/schema-registry-vs-model-registry-technical-compatibility-is-not.html"><span>Previous</span>A message can be technically valid and still be wrong.</a><a href="/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html"><span>Next</span>Most migration teams believe they have a mapping problem only when a field is missing.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

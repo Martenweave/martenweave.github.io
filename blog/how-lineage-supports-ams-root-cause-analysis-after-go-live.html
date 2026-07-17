@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Lineage Supports AMS Root-Cause Analysis After Go-Live | Martenweave</title>
+    <meta
+      name="description"
+      content="A production incident arrives in the AMS queue:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html" />
+    <meta property="og:title" content="How Lineage Supports AMS Root-Cause Analysis After Go-Live | Martenweave" />
+    <meta property="og:description" content="A production incident arrives in the AMS queue:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Lineage Supports AMS Root-Cause Analysis After Go-Live | Martenweave" />
+    <meta name="twitter:description" content="A production incident arrives in the AMS queue:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html",
+                        "name": "How Lineage Supports AMS Root-Cause Analysis After Go-Live | Martenweave",
+                        "description": "A production incident arrives in the AMS queue:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Lineage Supports AMS Root-Cause Analysis After Go-Live",
+                                    "item": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html#content",
+                        "headline": "How Lineage Supports AMS Root-Cause Analysis After Go-Live",
+                        "name": "How Lineage Supports AMS Root-Cause Analysis After Go-Live",
+                        "description": "A production incident arrives in the AMS queue:",
+                        "url": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-lineage-supports-ams-root-cause-analysis-after-go-live.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Lineage Supports AMS Root-Cause Analysis After Go-Live</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How Lineage Supports AMS Root-Cause Analysis After Go-Live</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">A production incident arrives in the AMS queue:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#business-symptom">Business symptom</a></li><li><a href="#operational-evidence">Operational evidence</a></li><li><a href="#canonical-model">Canonical model</a></li><li><a href="#symptom">Symptom</a></li><li><a href="#first-hypothesis">First hypothesis</a></li><li><a href="#operational-observation">Operational observation</a></li><li><a href="#canonical-lineage">Canonical lineage</a></li><li><a href="#root-cause">Root cause</a></li><li><a href="#corrective-action">Corrective action</a></li><li><a href="#incorrect-corrective-action">Incorrect corrective action</a></li><li><a href="#symptom-2">Symptom</a></li><li><a href="#operational-observation-2">Operational observation</a></li><li><a href="#approved-path">Approved path</a></li><li><a href="#production-path">Production path</a></li><li><a href="#immediate-correction">Immediate correction</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A production incident arrives in the AMS queue:</p>
+<blockquote>Supplier cannot be paid.</blockquote>
+<p>The ticket contains:</p>
+<ul>
+<li>Supplier number;</li>
+<li>company code;</li>
+<li>payment run;</li>
+<li>screenshot of an error;</li>
+<li>priority marked as high.</li>
+</ul>
+<p>The first assumption is that the migrated bank account is wrong.</p>
+<p>An analyst checks the Business Partner and finds:</p>
+<ul>
+<li>bank country populated;</li>
+<li>IBAN populated;</li>
+<li>account number populated;</li>
+<li>bank details active.</li>
+</ul>
+<p>The bank-data migration appears correct.</p>
+<p>Further investigation shows that the Supplier has no permitted Payment Method for the relevant Company Code.</p>
+<p>The operational symptom was a failed payment.</p>
+<p>The affected Supplier contained bank data.</p>
+<p>The root cause belonged to another business Attribute and another part of the model.</p>
+<p>Without governed lineage, the analyst may:</p>
+<ul>
+<li>edit the bank record unnecessarily;</li>
+<li>reopen the wrong migration Mapping;</li>
+<li>assign the ticket to the wrong support team;</li>
+<li>close the incident after a manual workaround;</li>
+<li>fail to recognise that hundreds of Suppliers share the same Company Code gap.</li>
+</ul>
+<p>With lineage, the investigation can move through a structured path:</p>
+<pre><code class="language-text">Payment failure
+→ Supplier and Company Code context
+→ payment-control Attributes
+→ SAP endpoints
+→ source Mappings
+→ cutover evidence
+→ affected population</code></pre>
+<blockquote>Root-cause analysis in AMS should connect an operational symptom to the smallest governed model condition that explains it.</blockquote>
+<p>This is not the same as identifying the first technical error message.</p>
+<p>It is not the same as finding the first blank field.</p>
+<p>It is not the same as locating the last interface that failed.</p>
+<p>A production incident may originate in:</p>
+<ul>
+<li>master-data meaning;</li>
+<li>source authority;</li>
+<li>migration transformation;</li>
+<li>organisational context;</li>
+<li>SAP configuration;</li>
+<li>interface conversion;</li>
+<li>incomplete target extension;</li>
+<li>expired fallback;</li>
+<li>operational process;</li>
+<li>manual post-go-live correction.</li>
+</ul>
+<p>Lineage helps the team distinguish these possibilities before changing production data.</p>
+<p>---</p>
+<h1 id="ams-receives-symptoms-not-model-objects">AMS receives symptoms, not model objects</h1>
+<p>Business users do not report:</p>
+<blockquote><code>ATTR-SUPPLIER-COMPANY-CODE-PAYMENT-METHOD</code> is missing.</blockquote>
+<p>They report:</p>
+<blockquote>The Supplier cannot be paid.</blockquote>
+<p>They do not report:</p>
+<blockquote>The Product Plant extension has no valid MRP Type Mapping.</blockquote>
+<p>They report:</p>
+<blockquote>MRP did not create the expected purchase requisition.</blockquote>
+<p>They do not report:</p>
+<blockquote>Payer partner-function lineage is incorrect for Sales Organisation 2200.</blockquote>
+<p>They report:</p>
+<blockquote>The invoice went to the wrong company.</blockquote>
+<p>The AMS process must translate symptoms into model questions.</p>
+<p>A useful first step is:</p>
+<pre><code class="language-text">business symptom
+→ process step
+→ business object
+→ organisational context
+→ candidate Attributes</code></pre>
+<p>Only then should the team descend into:</p>
+<ul>
+<li>tables;</li>
+<li>fields;</li>
+<li>APIs;</li>
+<li>jobs;</li>
+<li>transports;</li>
+<li>logs.</li>
+</ul>
+<p>The technical layer matters.</p>
+<p>Starting there too early creates a wide search with weak business context.</p>
+<p>---</p>
+<h1 id="root-cause-is-not-the-same-as-the-failing-component">Root cause is not the same as the failing component</h1>
+<p>An interface can fail because:</p>
+<ul>
+<li>its payload is malformed;</li>
+<li>the source master data is missing;</li>
+<li>the target code list changed;</li>
+<li>the interface Mapping is wrong;</li>
+<li>the consumer rejects a semantically valid value;</li>
+<li>the master record exists at the wrong organisational level.</li>
+</ul>
+<p>The interface is where the failure appeared.</p>
+<p>It may not be where the defect originated.</p>
+<p>Similarly, an SAP validation can block a transaction because:</p>
+<ul>
+<li>the master data is wrong;</li>
+<li>the Rule is implemented incorrectly;</li>
+<li>the Rule is correct but the record followed an unapproved fallback;</li>
+<li>the process uses the Attribute earlier than the migration design assumed.</li>
+</ul>
+<p>Root-cause analysis needs a dependency path.</p>
+<p>Without it, teams confuse:</p>
+<pre><code class="language-text">failure location</code></pre>
+<p>with:</p>
+<pre><code class="language-text">defect origin</code></pre>
+<p>---</p>
+<h1 id="three-layers-of-ams-investigation">Three layers of AMS investigation</h1>
+<p>A lineage-based investigation can separate three layers.</p>
+<h2 id="business-symptom">Business symptom</h2>
+<p>What failed in operational language?</p>
+<p>Examples:</p>
+<ul>
+<li>payment rejected;</li>
+<li>purchase requisition not created;</li>
+<li>invoice routed incorrectly;</li>
+<li>posting blocked;</li>
+<li>tax document rejected;</li>
+<li>delivery schedule wrong.</li>
+</ul>
+<h2 id="operational-evidence">Operational evidence</h2>
+<p>What was observed?</p>
+<p>Examples:</p>
+<ul>
+<li>error message;</li>
+<li>failed job;</li>
+<li>rejected interface message;</li>
+<li>field value;</li>
+<li>missing organisational extension;</li>
+<li>production record;</li>
+<li>recent change;</li>
+<li>affected population.</li>
+</ul>
+<h2 id="canonical-model">Canonical model</h2>
+<p>What should exist and how should it be produced?</p>
+<p>Examples:</p>
+<ul>
+<li>business Attribute;</li>
+<li>parent Entity;</li>
+<li>source authority;</li>
+<li>Mapping;</li>
+<li>Rule;</li>
+<li>SAP endpoint;</li>
+<li>fallback;</li>
+<li>Decision;</li>
+<li>evidence from migration or testing.</li>
+</ul>
+<p>The investigation compares operational evidence with the canonical model.</p>
+<p>The model should not be changed simply because production differs.</p>
+<p>The difference may be an implementation defect.</p>
+<p>---</p>
+<h1 id="begin-with-the-exact-business-context">Begin with the exact business context</h1>
+<p>An incident becomes actionable when its context is precise.</p>
+<p>For a Supplier payment issue, collect:</p>
+<ul>
+<li>Supplier;</li>
+<li>Company Code;</li>
+<li>payment method;</li>
+<li>bank account;</li>
+<li>payment block;</li>
+<li>payment terms;</li>
+<li>currency;</li>
+<li>relevant payment run.</li>
+</ul>
+<p>For a Product planning issue:</p>
+<ul>
+<li>Product;</li>
+<li>Plant;</li>
+<li>MRP Area where applicable;</li>
+<li>procurement type;</li>
+<li>MRP Type;</li>
+<li>MRP Controller;</li>
+<li>planning parameters;</li>
+<li>operational scenario.</li>
+</ul>
+<p>For a Customer billing issue:</p>
+<ul>
+<li>Customer;</li>
+<li>Sales Organisation;</li>
+<li>Distribution Channel;</li>
+<li>Division;</li>
+<li>partner role;</li>
+<li>billing document;</li>
+<li>related Ship-to, Bill-to or Payer.</li>
+</ul>
+<p>The same central object may behave correctly in one context and fail in another.</p>
+<p>A Supplier can be valid centrally and unusable in one Company Code.</p>
+<p>A Product can exist globally and lack a Plant extension.</p>
+<p>A Customer can have the correct Payer in one Sales Area and the wrong one elsewhere.</p>
+<p>Root-cause analysis without organisational context produces false conclusions.</p>
+<p>---</p>
+<h1 id="example-1-supplier-payment-failure">Example 1: Supplier payment failure</h1>
+<h2 id="symptom">Symptom</h2>
+<p>A payment proposal excludes a Supplier.</p>
+<h2 id="first-hypothesis">First hypothesis</h2>
+<p>Bank data is missing.</p>
+<h2 id="operational-observation">Operational observation</h2>
+<ul>
+<li>IBAN exists;</li>
+<li>bank account is active;</li>
+<li>no bank-data validation error appears;</li>
+<li>Payment Method is blank in the relevant Company Code.</li>
+</ul>
+<h2 id="canonical-lineage">Canonical lineage</h2>
+<pre><code class="language-text">legacy payment instruction
++
+Company Code
+→ Payment Method Mapping
+→ Supplier Company Code Payment Method
+→ payment process</code></pre>
+<h2 id="root-cause">Root cause</h2>
+<p>The migration source contained one central payment instruction.</p>
+<p>The target required Company Code-specific Payment Method assignment.</p>
+<p>The Mapping did not cover one acquired Company Code.</p>
+<h2 id="corrective-action">Corrective action</h2>
+<ul>
+<li>correct affected Supplier Company Code records;</li>
+<li>update the Mapping or source policy;</li>
+<li>identify other Suppliers in the same context;</li>
+<li>add a regression check.</li>
+</ul>
+<h2 id="incorrect-corrective-action">Incorrect corrective action</h2>
+<p>Changing bank details because the incident was raised as a payment problem.</p>
+<p>The value of lineage is not only faster diagnosis.</p>
+<p>It prevents damage caused by fixing the wrong Attribute.</p>
+<p>---</p>
+<h1 id="correct-one-record-or-correct-the-model">Correct one record or correct the model?</h1>
+<p>AMS teams must distinguish two questions:</p>
+<pre><code class="language-text">How do we restore service for this record?</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Why could this defect occur, and which other records are exposed?</code></pre>
+<p>The first may require an immediate data correction.</p>
+<p>The second may require:</p>
+<ul>
+<li>Mapping change;</li>
+<li>Rule change;</li>
+<li>source remediation;</li>
+<li>interface correction;</li>
+<li>fallback retirement;</li>
+<li>model clarification.</li>
+</ul>
+<p>Closing the incident after correcting one record can leave the root cause active.</p>
+<p>A lineage trace should identify the model path shared by similar records.</p>
+<p>---</p>
+<h1 id="example-2-product-not-planned">Example 2: Product not planned</h1>
+<h2 id="symptom-2">Symptom</h2>
+<p>A Product is not included correctly in material planning.</p>
+<h2 id="operational-observation-2">Operational observation</h2>
+<ul>
+<li>Product exists;</li>
+<li>Plant extension exists;</li>
+<li>MRP Type is <code>ND</code>;</li>
+<li>business expects <code>PD</code>.</li>
+</ul>
+<h2 id="approved-path">Approved path</h2>
+<pre><code class="language-text">legacy planning method
++
+Plant
+→ plant-specific conversion
+→ Product Plant MRP Type</code></pre>
+<h2 id="production-path">Production path</h2>
+<p>The Product belonged to a Plant missing from the conversion table.</p>
+<p>A cutover default assigned <code>ND</code>.</p>
+<h2 id="immediate-correction">Immediate correction</h2>
+<p>Change the affected Product Plant MRP Type after business approval.</p>
+<h2 id="root-cause-action">Root-cause action</h2>
+<ul>
+<li>identify all records using the fallback;</li>
+<li>determine whether the fallback has expired;</li>
+<li>add missing plant-specific conversion;</li>
+<li>reassess first planning-run evidence;</li>
+<li>prevent new records from using the default.</li>
+</ul>
+<p>The incident is not merely “wrong MRP Type.”</p>
+<p>It is evidence that a temporary fallback remained operational after its intended period.</p>
+<p>---</p>
+<h1 id="fallbacks-become-ams-risk-when-their-expiry-is-forgotten">Fallbacks become AMS risk when their expiry is forgotten</h1>
+<p>Migration programmes often approve temporary paths:</p>
+<ul>
+<li>default MRP Controller;</li>
+<li>regional Profit Centre;</li>
+<li>manual tax classification;</li>
+<li>replicated source value;</li>
+<li>placeholder partner assignment.</li>
+</ul>
+<p>During cutover, these may be necessary.</p>
+<p>After go-live, they can become invisible technical debt.</p>
+<p>The model should preserve:</p>
+<ul>
+<li>why the fallback exists;</li>
+<li>affected scope;</li>
+<li>approver;</li>
+<li>expiry;</li>
+<li>reconciliation requirement;</li>
+<li>remediation owner.</li>
+</ul>
+<p>AMS should be able to query:</p>
+<pre><code class="language-text">Which active production values were created through temporary fallbacks?</code></pre>
+<p>Without this, support teams treat later incidents as isolated data errors.</p>
+<p>---</p>
+<h1 id="example-3-invoice-sent-to-the-wrong-payer">Example 3: Invoice sent to the wrong Payer</h1>
+<h2 id="symptom-3">Symptom</h2>
+<p>An invoice is associated with the wrong business partner.</p>
+<h2 id="first-hypothesis-2">First hypothesis</h2>
+<p>Customer master was replicated incorrectly.</p>
+<h2 id="context">Context</h2>
+<ul>
+<li>Sold-to Party;</li>
+<li>Sales Area;</li>
+<li>Payer role;</li>
+<li>Billing document.</li>
+</ul>
+<h2 id="approved-lineage">Approved lineage</h2>
+<pre><code class="language-text">legacy billing-account relationship
++
+Sales Area
+→ Payer partner-function Mapping
+→ SAP Customer Sales Area partner assignment</code></pre>
+<h2 id="observed-production-state">Observed production state</h2>
+<p>The Sold-to Party was assigned as Payer through a self-partner fallback.</p>
+<h2 id="root-cause-2">Root cause</h2>
+<p>The external Payer existed, but its number cross-reference was unavailable during cutover.</p>
+<p>The fallback was applied to the full Sales Area rather than only unresolved records.</p>
+<h2 id="impact">Impact</h2>
+<ul>
+<li>invoice recipient;</li>
+<li>credit exposure;</li>
+<li>payment matching;</li>
+<li>downstream customer interfaces.</li>
+</ul>
+<h2 id="correct-response">Correct response</h2>
+<p>Do not edit the central Customer identity.</p>
+<p>Correct the Sales Area partner assignment and investigate the bounded population that used the fallback.</p>
+<p>Lineage identifies the right Entity grain and prevents a central-data change from being used to correct an organisational relationship.</p>
+<p>---</p>
+<h1 id="ams-needs-both-upstream-and-downstream-trace">AMS needs both upstream and downstream trace</h1>
+<p>Upstream trace asks:</p>
+<blockquote>How did this value get here?</blockquote>
+<p>Downstream trace asks:</p>
+<blockquote>What uses this value?</blockquote>
+<p>Both matter during incident analysis.</p>
+<p>For Product Base Unit:</p>
+<pre><code class="language-text">source unit
+→ canonical unit
+→ SAP Product Base Unit
+→ warehouse interface
+→ inventory and delivery process</code></pre>
+<p>If the warehouse rejects <code>PC</code> and expects <code>EA</code>, the root cause may be:</p>
+<ul>
+<li>incorrect Product master;</li>
+<li>missing interface conversion;</li>
+<li>inconsistent code-list governance;</li>
+<li>consumer assumption.</li>
+</ul>
+<p>Upstream trace tests whether <code>PC</code> was created correctly.</p>
+<p>Downstream trace tests whether consumers interpret it correctly.</p>
+<p>Changing the Product Base Unit to satisfy one interface may corrupt inventory semantics.</p>
+<p>---</p>
+<h1 id="example-4-warehouse-interface-rejects-a-product">Example 4: Warehouse interface rejects a Product</h1>
+<h2 id="symptom-4">Symptom</h2>
+<p>A warehouse message rejects a Product because unit <code>PC</code> is unknown.</p>
+<h2 id="production-data">Production data</h2>
+<p>SAP Product Base Unit is <code>PC</code>.</p>
+<h2 id="migration-evidence">Migration evidence</h2>
+<p>The approved source Mapping correctly normalised source <code>PCS</code> to canonical <code>PC</code>.</p>
+<h2 id="interface-evidence">Interface evidence</h2>
+<p>The warehouse contract expects <code>EA</code>.</p>
+<h2 id="root-cause-3">Root cause</h2>
+<p>Missing outbound interface conversion.</p>
+<h2 id="corrective-action-2">Corrective action</h2>
+<p>Add or correct interface code conversion.</p>
+<h2 id="model-consequence">Model consequence</h2>
+<p>The canonical Product Base Unit remains unchanged.</p>
+<p>This is a strong example of lineage preventing a bad master-data correction.</p>
+<p>The failing downstream system should not automatically redefine the governed Attribute.</p>
+<p>---</p>
+<h1 id="root-cause-can-belong-to-a-rule">Root cause can belong to a Rule</h1>
+<p>Some incidents occur because data is present but control behaviour is wrong.</p>
+<p>Example:</p>
+<blockquote>Supplier became active without a required tax identifier.</blockquote>
+<p>Possible causes:</p>
+<ul>
+<li>Rule not implemented;</li>
+<li>Rule implemented as warning instead of error;</li>
+<li>incorrect lifecycle stage;</li>
+<li>local exception;</li>
+<li>manual override;</li>
+<li>category misclassification.</li>
+</ul>
+<p>The lineage path includes:</p>
+<pre><code class="language-text">Tax Identifier Attribute
+→ requiredness Rule
+→ implementation control
+→ lifecycle event
+→ observed activation</code></pre>
+<p>A field trace alone cannot explain the incident.</p>
+<p>AMS needs Rule lineage.</p>
+<p>---</p>
+<h1 id="example-5-tax-compliance-failure">Example 5: Tax-compliance failure</h1>
+<h2 id="symptom-5">Symptom</h2>
+<p>A Supplier invoice is rejected because the tax identifier is stored under the wrong category.</p>
+<h2 id="production-state">Production state</h2>
+<p>A tax number is present.</p>
+<h2 id="initial-dashboard-status">Initial dashboard status</h2>
+<p>Tax-number completeness: 100 percent.</p>
+<h2 id="canonical-model-2">Canonical model</h2>
+<pre><code class="language-text">country
++
+tax-number type
++
+identifier
+→ category Mapping
+→ SAP Business Partner tax number</code></pre>
+<h2 id="root-cause-4">Root cause</h2>
+<p>The migration used a generic category for a country requiring a specific category.</p>
+<h2 id="consequence">Consequence</h2>
+<ul>
+<li>legal validation;</li>
+<li>duplicate detection;</li>
+<li>invoice processing;</li>
+<li>downstream reporting.</li>
+</ul>
+<h2 id="ams-action">AMS action</h2>
+<ul>
+<li>correct the category;</li>
+<li>identify all records created through the same Mapping;</li>
+<li>update or supersede the conversion;</li>
+<li>rerun country-specific validation;</li>
+<li>preserve historical evidence explaining the correction.</li>
+</ul>
+<p>The incident demonstrates why completeness is not correctness.</p>
+<p>---</p>
+<h1 id="root-cause-scope-should-expand-from-one-record-to-one-path">Root-cause scope should expand from one record to one path</h1>
+<p>A single incident can reveal:</p>
+<ul>
+<li>one bad record;</li>
+<li>one source population;</li>
+<li>one Mapping version;</li>
+<li>one organisational context;</li>
+<li>one cutover batch;</li>
+<li>one entire Attribute design defect.</li>
+</ul>
+<p>AMS should expand scope progressively.</p>
+<h2 id="level-1-record">Level 1: record</h2>
+<p>Is this one record wrong?</p>
+<h2 id="level-2-context">Level 2: context</h2>
+<p>Are records in the same Plant, Company Code or Sales Area affected?</p>
+<h2 id="level-3-mapping">Level 3: Mapping</h2>
+<p>Did the same transformation create similar values?</p>
+<h2 id="level-4-source">Level 4: source</h2>
+<p>Does one source system or extract contain the defect?</p>
+<h2 id="level-5-model">Level 5: model</h2>
+<p>Is the business definition, Rule or authority decision incomplete?</p>
+<p>Do not begin by assuming a global model defect.</p>
+<p>Do not stop after correcting one record.</p>
+<p>---</p>
+<h1 id="lineage-helps-calculate-the-probable-blast-radius">Lineage helps calculate the probable blast radius</h1>
+<p>Suppose one Cost Centre cannot accept a posting.</p>
+<p>The trace identifies:</p>
+<pre><code class="language-text">source validity dates
+→ Cost Centre Mapping
+→ SAP Cost Centre
+→ internal orders and postings</code></pre>
+<p>The support team can search for records sharing:</p>
+<ul>
+<li>the same source extract;</li>
+<li>the same validity conversion;</li>
+<li>the same Controlling Area;</li>
+<li>the same Mapping version;</li>
+<li>the same fallback.</li>
+</ul>
+<p>This produces a more defensible affected population than:</p>
+<blockquote>Check all Cost Centres.</blockquote>
+<p>---</p>
+<h1 id="example-6-cost-centre-posting-blocked">Example 6: Cost Centre posting blocked</h1>
+<h2 id="symptom-6">Symptom</h2>
+<p>Posting fails on the first business day after go-live.</p>
+<h2 id="production-observation">Production observation</h2>
+<p>Cost Centre exists.</p>
+<p>Its valid-from date begins one month later.</p>
+<h2 id="approved-design">Approved design</h2>
+<p>Validity should cover the go-live period.</p>
+<h2 id="runtime-evidence">Runtime evidence</h2>
+<p>The cutover file used source dates without the approved go-live adjustment.</p>
+<h2 id="root-cause-classification">Root cause classification</h2>
+<p>Implementation or cutover execution drift.</p>
+<h2 id="immediate-fix">Immediate fix</h2>
+<p>Correct the affected validity interval after Finance approval.</p>
+<h2 id="broader-check">Broader check</h2>
+<p>Identify all Cost Centres from the same load batch whose valid-from date excludes go-live.</p>
+<h2 id="canonical-model-change">Canonical model change</h2>
+<p>Possibly none.</p>
+<p>The approved Mapping may already be correct.</p>
+<p>The implementation failed to apply it.</p>
+<p>This distinction matters.</p>
+<p>Changing the model to match the defective execution would institutionalise the problem.</p>
+<p>---</p>
+<h1 id="approved-design-versus-observed-execution">Approved design versus observed execution</h1>
+<p>A mature AMS investigation compares:</p>
+<h2 id="approved-path-2">Approved path</h2>
+<p>What should have happened.</p>
+<h2 id="implemented-path">Implemented path</h2>
+<p>What configuration or code was intended to execute.</p>
+<h2 id="observed-path">Observed path</h2>
+<p>What data and logs indicate actually happened.</p>
+<h2 id="production-outcome">Production outcome</h2>
+<p>How the business process behaved.</p>
+<p>OpenLineage’s object model separates stable Jobs and Datasets from individual Runs, while column-level lineage distinguishes direct value derivation from indirect dependencies such as joins, filters and conditional logic. That separation is useful for comparing a declared model with a particular execution rather than treating runtime behaviour as permanent truth.</p>
+<p>For Martenweave, the canonical model holds the approved path.</p>
+<p>Operational platforms and incident evidence describe the observed path.</p>
+<p>---</p>
+<h1 id="do-not-make-martenweave-the-monitoring-system">Do not make Martenweave the monitoring system</h1>
+<p>AMS already uses tools for:</p>
+<ul>
+<li>job monitoring;</li>
+<li>interface monitoring;</li>
+<li>SAP application logs;</li>
+<li>alerts;</li>
+<li>incident tickets;</li>
+<li>service management;</li>
+<li>technical metrics.</li>
+</ul>
+<p>Martenweave should not duplicate these systems.</p>
+<p>Its role is to connect their evidence to model truth.</p>
+<p>The division is:</p>
+<pre><code class="language-text">Monitoring system:
+what failed and when
+
+ITSM:
+who owns the incident and its service status
+
+Martenweave:
+which governed model path explains the data dependency</code></pre>
+<p>This keeps the product focused.</p>
+<p>Integrations bring input.</p>
+<p>Martenweave stores model truth.</p>
+<p>Validators check consistency.</p>
+<p>AI proposes changes.</p>
+<p>Humans approve.</p>
+<p>---</p>
+<h1 id="incident-evidence-should-be-attached-to-a-claim">Incident evidence should be attached to a claim</h1>
+<p>A screenshot or log file is not enough.</p>
+<p>The model should record what the evidence supports.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Claim:
+Payment Method is absent for Company Code 3100.</code></pre>
+<pre><code class="language-text">Claim:
+Product Plant MRP Type was created through expired fallback MAP-MRP-DEFAULT-001.</code></pre>
+<pre><code class="language-text">Claim:
+Payer partner assignment differs from the approved Sales Area Mapping.</code></pre>
+<pre><code class="language-text">Claim:
+Cost Centre validity from the production record does not match cutover baseline.</code></pre>
+<p>This makes the evidence reusable in later investigations.</p>
+<p>---</p>
+<h1 id="example-7-purchasing-block-appears-unexpectedly">Example 7: Purchasing block appears unexpectedly</h1>
+<h2 id="symptom-7">Symptom</h2>
+<p>Purchase-order creation is blocked for a Supplier.</p>
+<h2 id="initial-interpretation">Initial interpretation</h2>
+<p>Supplier is centrally blocked.</p>
+<h2 id="lineage-context">Lineage context</h2>
+<p>A Supplier can have:</p>
+<ul>
+<li>central block;</li>
+<li>Company Code posting block;</li>
+<li>Purchasing Organisation block;</li>
+<li>deletion indicator;</li>
+<li>workflow or compliance status.</li>
+</ul>
+<h2 id="production-observation-2">Production observation</h2>
+<p>The block exists only for Purchasing Organisation P100.</p>
+<h2 id="upstream-path">Upstream path</h2>
+<pre><code class="language-text">local procurement status
++
+Purchasing Organisation
+→ purchasing-block Mapping
+→ Supplier purchasing data</code></pre>
+<h2 id="root-cause-5">Root cause</h2>
+<p>A local source status code was interpreted as an active purchasing block after the source process had already cleared it.</p>
+<h2 id="response">Response</h2>
+<ul>
+<li>correct the Purchasing Organisation-specific value;</li>
+<li>inspect the source status Mapping;</li>
+<li>identify records with the same source code;</li>
+<li>avoid changing central Supplier status.</li>
+</ul>
+<p>Again, organisational context narrows both correction and impact.</p>
+<p>---</p>
+<h1 id="root-cause-can-be-historical-model-drift">Root cause can be historical model drift</h1>
+<p>After go-live, the landscape continues changing.</p>
+<p>Examples:</p>
+<ul>
+<li>source system replaced;</li>
+<li>custom field retired;</li>
+<li>value list expanded;</li>
+<li>interface version changed;</li>
+<li>Rule moved to another lifecycle stage;</li>
+<li>business ownership transferred.</li>
+</ul>
+<p>The canonical repository may become stale if these changes are not recorded.</p>
+<p>An incident can therefore reveal:</p>
+<pre><code class="language-text">production is correct
+but model is outdated</code></pre>
+<p>or:</p>
+<pre><code class="language-text">model is correct
+but production drifted</code></pre>
+<p>AMS needs to distinguish the two.</p>
+<p>---</p>
+<h1 id="example-8-custom-field-retirement">Example 8: Custom field retirement</h1>
+<h2 id="symptom-8">Symptom</h2>
+<p>A report shows blank Supplier Review Status.</p>
+<h2 id="landscape-change">Landscape change</h2>
+<p>A standard SAP field replaced the former custom field.</p>
+<h2 id="production-state-2">Production state</h2>
+<p>New field is populated.</p>
+<h2 id="report-implementation">Report implementation</h2>
+<p>Still reads the retired custom field.</p>
+<h2 id="canonical-model-3">Canonical model</h2>
+<p>If correctly maintained, it should show:</p>
+<pre><code class="language-text">Supplier Review Status
+→ current standard endpoint
+
+retired custom endpoint
+→ historical implementation</code></pre>
+<h2 id="root-cause-6">Root cause</h2>
+<p>Downstream report was not migrated.</p>
+<h2 id="correct-response-2">Correct response</h2>
+<p>Update the report.</p>
+<p>Do not repopulate the retired custom field merely to satisfy the report.</p>
+<p>Without endpoint history and downstream impact, AMS may recreate obsolete data structures.</p>
+<p>---</p>
+<h1 id="known-workaround-versus-root-cause-correction">Known workaround versus root-cause correction</h1>
+<p>AMS teams often need a workaround.</p>
+<p>A workaround restores service.</p>
+<p>A corrective action removes the cause.</p>
+<p>Example:</p>
+<h2 id="incident">Incident</h2>
+<p>Product does not plan.</p>
+<h2 id="workaround">Workaround</h2>
+<p>Manually set MRP Type to <code>PD</code>.</p>
+<h2 id="corrective-action-3">Corrective action</h2>
+<p>Complete the Plant-specific conversion and correct all affected Product Plant records.</p>
+<p>The incident record should distinguish:</p>
+<pre><code class="language-text">service-restoration action</code></pre>
+<p>from:</p>
+<pre><code class="language-text">model or implementation correction</code></pre>
+<p>Otherwise, repeated manual fixes appear to be successful problem resolution.</p>
+<p>---</p>
+<h1 id="repeated-incidents-should-form-a-pattern">Repeated incidents should form a pattern</h1>
+<p>One missing Profit Centre may be a data error.</p>
+<p>Fifty similar incidents in one Plant indicate a Mapping or source problem.</p>
+<p>The model can group incidents by:</p>
+<ul>
+<li>business Attribute;</li>
+<li>Mapping;</li>
+<li>Rule;</li>
+<li>source endpoint;</li>
+<li>target endpoint;</li>
+<li>organisational context;</li>
+<li>fallback;</li>
+<li>model baseline.</li>
+</ul>
+<p>This creates an AMS knowledge layer based on governed identities rather than ticket keywords.</p>
+<p>---</p>
+<h1 id="example-9-profit-centre-incidents">Example 9: Profit Centre incidents</h1>
+<p>Suppose several tickets report incorrect financial responsibility for Products.</p>
+<p>The shared path is:</p>
+<pre><code class="language-text">Product Family
++
+Plant
+→ Profit Centre derivation
+→ Product Plant Profit Centre</code></pre>
+<p>Incident clustering shows:</p>
+<ul>
+<li>all affected records belong to PL30;</li>
+<li>all use the regional fallback;</li>
+<li>the fallback should have expired before first month-end close.</li>
+</ul>
+<p>The root cause is not a collection of unrelated Product errors.</p>
+<p>It is an expired fallback policy.</p>
+<p>The corrective action should include:</p>
+<ul>
+<li>model Finding;</li>
+<li>production correction;</li>
+<li>fallback retirement;</li>
+<li>validation Rule;</li>
+<li>prevention of future use.</li>
+</ul>
+<p>---</p>
+<h1 id="problem-records-should-reference-canonical-objects">Problem records should reference canonical objects</h1>
+<p>An ITSM problem record can remain in the existing service-management system.</p>
+<p>It should reference stable model IDs such as:</p>
+<pre><code class="language-text">ATTR-PRODUCT-PLANT-PROFIT-CENTRE
+MAP-PRODUCT-PROFIT-CENTRE-DERIVATION
+RULE-PROFIT-CENTRE-REQUIRED
+FEP-S4-PRODUCT-PLANT-PROFIT-CENTRE</code></pre>
+<p>This allows:</p>
+<ul>
+<li>exact search;</li>
+<li>impact analysis;</li>
+<li>cross-ticket grouping;</li>
+<li>historical trace;</li>
+<li>proposal generation.</li>
+</ul>
+<p>The incident system owns service-management state.</p>
+<p>The model registry owns model identity and approved meaning.</p>
+<p>---</p>
+<h1 id="root-cause-categories">Root-cause categories</h1>
+<p>A practical classification for data-related AMS problems can include:</p>
+<h2 id="source-defect">Source defect</h2>
+<p>The authoritative source contains an incorrect or missing value.</p>
+<h2 id="source-authority-defect">Source-authority defect</h2>
+<p>The wrong source was selected.</p>
+<h2 id="mapping-defect">Mapping defect</h2>
+<p>Transformation or applicability is incorrect.</p>
+<h2 id="key-or-grain-defect">Key or grain defect</h2>
+<p>The value was attached to the wrong record or organisational level.</p>
+<h2 id="rule-defect">Rule defect</h2>
+<p>The intended control is incorrect or incomplete.</p>
+<h2 id="rule-implementation-defect">Rule-implementation defect</h2>
+<p>The canonical Rule is correct, but implementation differs.</p>
+<h2 id="target-configuration-defect">Target-configuration defect</h2>
+<p>SAP cannot store or process the intended result correctly.</p>
+<h2 id="interface-defect">Interface defect</h2>
+<p>Downstream or upstream conversion is wrong.</p>
+<h2 id="execution-defect">Execution defect</h2>
+<p>The approved design did not execute as expected.</p>
+<h2 id="fallback-defect">Fallback defect</h2>
+<p>A temporary or approximate path was used incorrectly.</p>
+<h2 id="model-documentation-drift">Model-documentation drift</h2>
+<p>Production changed legitimately, but the canonical model was not updated.</p>
+<h2 id="isolated-record-defect">Isolated record defect</h2>
+<p>One record differs without evidence of a systemic path problem.</p>
+<p>This classification helps route the problem to the correct owner.</p>
+<p>---</p>
+<h1 id="root-cause-confidence">Root-cause confidence</h1>
+<p>Not every investigation reaches certainty immediately.</p>
+<p>Use statuses such as:</p>
+<h2 id="confirmed">Confirmed</h2>
+<p>Evidence directly supports the cause.</p>
+<h2 id="probable">Probable</h2>
+<p>The path and pattern strongly support the cause, but one verification remains.</p>
+<h2 id="possible">Possible</h2>
+<p>The object is connected, but evidence is incomplete.</p>
+<h2 id="rejected">Rejected</h2>
+<p>The hypothesis was tested and disproved.</p>
+<h2 id="unknown">Unknown</h2>
+<p>No defensible cause has been established.</p>
+<p>This is better than recording the first plausible explanation as fact.</p>
+<p>---</p>
+<h1 id="negative-findings-are-valuable">Negative findings are valuable</h1>
+<p>Suppose an analyst proves:</p>
+<blockquote>Supplier bank data is not the cause of the payment failure.</blockquote>
+<p>That conclusion should be retained.</p>
+<p>Otherwise, the next incident may repeat the same investigation.</p>
+<p>Negative knowledge can state:</p>
+<pre><code class="language-text">Bank Account path:
+verified
+
+Payment Method path:
+nonconformant</code></pre>
+<p>A good model registry preserves both the root cause and important rejected hypotheses.</p>
+<p>---</p>
+<h1 id="example-10-delivery-scheduling-error">Example 10: Delivery scheduling error</h1>
+<h2 id="symptom-9">Symptom</h2>
+<p>Deliveries are planned on an unexpected date.</p>
+<h2 id="candidate-causes">Candidate causes</h2>
+<ul>
+<li>Customer unloading point;</li>
+<li>receiving hours;</li>
+<li>factory calendar;</li>
+<li>route;</li>
+<li>shipping condition;</li>
+<li>interface date conversion.</li>
+</ul>
+<h2 id="lineage-investigation">Lineage investigation</h2>
+<p>The unloading point migrated correctly.</p>
+<p>The relevant receiving calendar was not connected to the ship-to context.</p>
+<h2 id="root-cause-7">Root cause</h2>
+<p>Incomplete relationship and contextual assignment, not an incorrect unloading-point text.</p>
+<h2 id="correction">Correction</h2>
+<ul>
+<li>establish correct calendar relationship;</li>
+<li>identify affected Ship-to/Sales Area population;</li>
+<li>retest delivery scheduling.</li>
+</ul>
+<p>The business symptom involved scheduling.</p>
+<p>The root cause belonged to relationship lineage.</p>
+<p>---</p>
+<h1 id="relationships-matter-as-much-as-fields">Relationships matter as much as fields</h1>
+<p>Many AMS incidents come from incorrect relationships:</p>
+<ul>
+<li>Customer to Payer;</li>
+<li>Supplier to bank account;</li>
+<li>Product to Plant;</li>
+<li>Cost Centre to hierarchy;</li>
+<li>Business Partner to role;</li>
+<li>Product to unit conversion;</li>
+<li>Supplier to Purchasing Organisation;</li>
+<li>address to usage.</li>
+</ul>
+<p>A field can be correct.</p>
+<p>Its attachment to the wrong Entity or context can still cause failure.</p>
+<p>Lineage needs Entity and Relationship objects, not only FieldEndpoints.</p>
+<p>---</p>
+<h1 id="time-is-part-of-the-root-cause">Time is part of the root cause</h1>
+<p>Effective dates can explain incidents that look like missing data.</p>
+<p>Examples:</p>
+<ul>
+<li>Cost Centre not valid yet;</li>
+<li>tax exemption expired;</li>
+<li>fallback still active after expiry;</li>
+<li>source authority changed at cutover;</li>
+<li>old value list used for a new effective period;</li>
+<li>Partner assignment ended before transaction date.</li>
+</ul>
+<p>A trace should support:</p>
+<pre><code class="language-text">What was the approved path on the date of the incident?</code></pre>
+<p>Current-state lineage alone may produce the wrong answer for historical incidents.</p>
+<p>---</p>
+<h1 id="model-baseline-and-production-change-history">Model baseline and production change history</h1>
+<p>A defensible investigation should identify:</p>
+<ul>
+<li>model baseline;</li>
+<li>deployment or transport;</li>
+<li>data correction;</li>
+<li>interface version;</li>
+<li>relevant date;</li>
+<li>incident time.</li>
+</ul>
+<p>The team can then compare:</p>
+<pre><code class="language-text">model at approval
+vs.
+implementation at deployment
+vs.
+data at incident time</code></pre>
+<p>This helps isolate whether the defect entered through:</p>
+<ul>
+<li>design;</li>
+<li>implementation;</li>
+<li>migration;</li>
+<li>later maintenance.</li>
+</ul>
+<p>---</p>
+<h1 id="ams-changes-can-create-new-drift">AMS changes can create new drift</h1>
+<p>An urgent correction may solve an incident and create inconsistency.</p>
+<p>Examples:</p>
+<ul>
+<li>local field changed without updating source authority;</li>
+<li>interface conversion added without updating Mapping;</li>
+<li>Rule relaxed without Decision;</li>
+<li>custom field repopulated after retirement;</li>
+<li>default added directly in code.</li>
+</ul>
+<p>Therefore, post-incident review should ask:</p>
+<pre><code class="language-text">Did the workaround change model behaviour?</code></pre>
+<p>When yes, create a PatchProposal or ChangeRequest.</p>
+<p>Do not let emergency support changes become undocumented governance.</p>
+<p>---</p>
+<h1 id="ai-in-ams-root-cause-analysis">AI in AMS root-cause analysis</h1>
+<p>AI can assist with:</p>
+<ul>
+<li>extracting objects and context from incident text;</li>
+<li>suggesting candidate Attributes;</li>
+<li>retrieving trace and impact paths;</li>
+<li>grouping similar incidents;</li>
+<li>summarising evidence;</li>
+<li>drafting root-cause hypotheses;</li>
+<li>proposing regression checks;</li>
+<li>drafting PatchProposals.</li>
+</ul>
+<p>AI should not autonomously:</p>
+<ul>
+<li>edit production data;</li>
+<li>declare source authority;</li>
+<li>approve a new fallback;</li>
+<li>rewrite canonical lineage;</li>
+<li>close the problem record;</li>
+<li>infer causality from graph proximity alone.</li>
+</ul>
+<p>A connected object is a hypothesis candidate.</p>
+<p>It is not automatically the cause.</p>
+<p>Recent research on automated cloud root-cause analysis continues to show the difficulty of reliable autonomous diagnosis, including failures from incomplete exploration and hallucinated interpretation. This reinforces the need for evidence-bound analysis and human confirmation rather than unconstrained agent conclusions.</p>
+<p>---</p>
+<h1 id="root-cause-is-not-graph-centrality">Root cause is not graph centrality</h1>
+<p>The node with the most connections is not necessarily the cause.</p>
+<p>A central Business Partner Attribute may appear in many paths.</p>
+<p>A small local conversion table may contain the actual defect.</p>
+<p>Similarly:</p>
+<ul>
+<li>shortest path is not proof;</li>
+<li>newest change is not always the cause;</li>
+<li>most frequent error is not always the underlying cause;</li>
+<li>high-impact object is not necessarily defective.</li>
+</ul>
+<p>Lineage narrows the investigation.</p>
+<p>Evidence establishes causality.</p>
+<p>---</p>
+<h1 id="a-practical-ams-investigation-workflow">A practical AMS investigation workflow</h1>
+<h2 id="1-capture-the-symptom">1. Capture the symptom</h2>
+<p>Use business language and concrete transaction context.</p>
+<h2 id="2-identify-the-object-and-organisational-grain">2. Identify the object and organisational grain</h2>
+<p>Supplier Company Code, Product Plant, Customer Sales Area, Cost Centre in Controlling Area.</p>
+<h2 id="3-locate-candidate-attributes-and-relationships">3. Locate candidate Attributes and Relationships</h2>
+<p>Do not begin only from tables.</p>
+<h2 id="4-trace-upstream">4. Trace upstream</h2>
+<p>Identify source, Mapping, fallback, Rule and migration evidence.</p>
+<h2 id="5-trace-downstream">5. Trace downstream</h2>
+<p>Identify process, interface, report and affected consumers.</p>
+<h2 id="6-compare-approved-and-observed-state">6. Compare approved and observed state</h2>
+<p>Find differences in values, path, versions and context.</p>
+<h2 id="7-test-hypotheses">7. Test hypotheses</h2>
+<p>Preserve confirmed and rejected hypotheses.</p>
+<h2 id="8-calculate-affected-population">8. Calculate affected population</h2>
+<p>Use shared Mapping, source, context, fallback or load batch.</p>
+<h2 id="9-restore-service">9. Restore service</h2>
+<p>Apply bounded operational correction where necessary.</p>
+<h2 id="10-decide-whether-the-model-must-change">10. Decide whether the model must change</h2>
+<p>Create a proposal only when the approved model is incomplete or wrong.</p>
+<h2 id="11-add-prevention">11. Add prevention</h2>
+<p>Validation, test, monitoring, source remediation or fallback expiry.</p>
+<h2 id="12-preserve-evidence">12. Preserve evidence</h2>
+<p>Link problem record, Finding, Decision and accepted correction.</p>
+<p>---</p>
+<h1 id="root-cause-brief">Root-cause brief</h1>
+<p>A concise AMS brief can contain:</p>
+<pre><code class="language-text">Symptom:
+Product not planned in Plant PL30.
+
+Affected concept:
+Product Plant MRP Type.
+
+Expected path:
+Planner method + Plant → approved conversion → SAP MRP Type.
+
+Observed state:
+Fallback ND used because PL30 conversion was missing.
+
+Root cause:
+Expired fallback and incomplete plant-specific Mapping.
+
+Affected population:
+1,140 Product Plant records.
+
+Immediate action:
+Correct priority Products.
+
+Systemic action:
+Add PL30 conversion and remove expired fallback.
+
+Evidence:
+Cutover run, production profile and planning failure.
+
+Owners:
+Production Planning Data Owner and Plant PL30 lead.</code></pre>
+<p>This is more useful than a collection of screenshots and SQL results.</p>
+<p>---</p>
+<h1 id="root-cause-evidence-requirements">Root-cause evidence requirements</h1>
+<p>A confirmed model-related root cause should ideally identify:</p>
+<ul>
+<li>business symptom;</li>
+<li>affected object;</li>
+<li>organisational context;</li>
+<li>expected path;</li>
+<li>observed path;</li>
+<li>divergence;</li>
+<li>affected population;</li>
+<li>supporting evidence;</li>
+<li>rejected alternatives;</li>
+<li>immediate correction;</li>
+<li>systemic correction;</li>
+<li>owner;</li>
+<li>verification result.</li>
+</ul>
+<p>Not every low-priority incident requires the full package.</p>
+<p>Recurring, high-impact and governance-related incidents do.</p>
+<p>---</p>
+<h1 id="verification-after-correction">Verification after correction</h1>
+<p>A fix is not complete when the error disappears for one record.</p>
+<p>Verification should check:</p>
+<ul>
+<li>affected record corrected;</li>
+<li>shared population assessed;</li>
+<li>approved path restored;</li>
+<li>workaround removed or bounded;</li>
+<li>downstream process succeeds;</li>
+<li>regression test added;</li>
+<li>evidence linked;</li>
+<li>canonical model updated where required.</li>
+</ul>
+<p>For a Mapping defect, verify another representative population.</p>
+<p>For a Rule defect, test positive, negative and exception scenarios.</p>
+<p>For an interface defect, verify both payload and business outcome.</p>
+<p>---</p>
+<h1 id="ams-metrics-derived-from-lineage">AMS metrics derived from lineage</h1>
+<p>Useful metrics include:</p>
+<ul>
+<li>incidents by Attribute;</li>
+<li>incidents by Mapping;</li>
+<li>incidents caused by fallback;</li>
+<li>incidents caused by organisational-context gaps;</li>
+<li>recurring defects by source system;</li>
+<li>time to identify the affected model object;</li>
+<li>percentage of incidents with confirmed root cause;</li>
+<li>number of record fixes without systemic remediation;</li>
+<li>stale model paths discovered through support;</li>
+<li>evidence coverage for high-incident Attributes.</li>
+</ul>
+<p>These metrics show model health more clearly than raw ticket volume alone.</p>
+<p>---</p>
+<h1 id="incident-volume-does-not-equal-model-importance">Incident volume does not equal model importance</h1>
+<p>A frequently used Attribute may generate many low-severity tickets.</p>
+<p>A rarely changed tax or bank Attribute may generate one severe incident.</p>
+<p>Prioritisation should include:</p>
+<ul>
+<li>business impact;</li>
+<li>affected population;</li>
+<li>legal or financial risk;</li>
+<li>recurrence;</li>
+<li>operational workaround;</li>
+<li>model criticality;</li>
+<li>correction complexity.</li>
+</ul>
+<p>The model graph supplies context.</p>
+<p>The service process supplies urgency and impact.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave currently provides the relevant foundation:</p>
+<ul>
+<li>canonical Domains, Entities, Attributes, Relationships, datasets, Mappings, Rules, Evidence and Decisions;</li>
+<li>deterministic validation;</li>
+<li>trace and impact analysis;</li>
+<li>health and scorecard operations;</li>
+<li>dataset readiness;</li>
+<li>PatchProposal and ChangeRequest workflow;</li>
+<li>a local Workbench for assessment, investigation, reports and controlled changes.</li>
+</ul>
+<p>The next useful vertical slice should be an <strong>incident-to-model investigation workflow</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Turn an AMS symptom into a bounded, evidence-backed model investigation without turning Martenweave into an ITSM platform.</p>
+<h2 id="scope">Scope</h2>
+<p>Given an incident note or ticket export:</p>
+<ul>
+<li>extract object identifiers and organisational context;</li>
+<li>propose candidate Attributes and Relationships;</li>
+<li>retrieve upstream and downstream paths;</li>
+<li>show relevant Mappings, Rules, fallbacks and evidence;</li>
+<li>capture hypotheses;</li>
+<li>classify confirmed and rejected causes;</li>
+<li>calculate affected model scope;</li>
+<li>draft a Finding or PatchProposal.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For a Supplier payment incident, the workflow must distinguish:</p>
+<pre><code class="language-text">bank-account issue</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Company Code Payment Method issue</code></pre>
+<p>For a Product planning incident, it must distinguish:</p>
+<pre><code class="language-text">Product missing</code></pre>
+<p>from:</p>
+<pre><code class="language-text">Product Plant planning Attribute incorrect</code></pre>
+<p>For a warehouse unit error, it must distinguish:</p>
+<pre><code class="language-text">canonical Product Base Unit defect</code></pre>
+<p>from:</p>
+<pre><code class="language-text">outbound interface conversion defect</code></pre>
+<p>For a retired custom field, it must distinguish:</p>
+<pre><code class="language-text">missing production data</code></pre>
+<p>from:</p>
+<pre><code class="language-text">downstream consumer still reading historical endpoint</code></pre>
+<h2 id="existing-commands">Existing commands</h2>
+<pre><code class="language-text">martenweave search &quot;MRP Controller&quot; --repo ./model
+
+martenweave trace \
+  ATTR-PRODUCT-PLANT-MRP-CONTROLLER \
+  --repo ./model
+
+martenweave impact \
+  FEP-S4-PRODUCT-PLANT-MRP-CONTROLLER \
+  --repo ./model</code></pre>
+<h2 id="future-focused-operation">Future focused operation</h2>
+<pre><code class="language-text">martenweave investigate \
+  --from ./incidents/INC-10482.md \
+  --repo ./model</code></pre>
+<p>The <code>investigate</code> command describes a recommended product direction rather than the current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>AMS root-cause analysis becomes difficult when model knowledge is scattered across:</p>
+<ul>
+<li>migration workbooks;</li>
+<li>interface specifications;</li>
+<li>cutover reports;</li>
+<li>SAP configuration;</li>
+<li>tickets;</li>
+<li>decisions;</li>
+<li>individual memory.</li>
+</ul>
+<p>Lineage does not replace technical investigation.</p>
+<p>It gives the investigation a governed structure.</p>
+<p>The useful path is:</p>
+<pre><code class="language-text">business symptom
+→ operational context
+→ business Attribute or Relationship
+→ expected lineage
+→ observed production state
+→ divergence
+→ affected population
+→ corrective action</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the AMS team explain why this Supplier could not be paid, why this Product was not planned, why this invoice used the wrong Payer or why this Cost Centre rejected a posting—and determine whether the cause is isolated, systemic, technical or model-related?</blockquote>
+<p>When the answer is yes, lineage is supporting operations rather than remaining migration documentation.</p>
+<p>When the answer is:</p>
+<blockquote>We corrected the field and closed the ticket,</blockquote>
+<p>the service may be restored while the root cause remains active.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects model truth, lineage, impact, evidence, Decisions and reviewable proposals so that support incidents can be investigated against an explicit model rather than reconstructed from scattered documents.</p>
+<p>Martenweave Workbench is a local browser interface for assessment, investigation, reports and controlled changes. It reads through the local API and does not store canonical model truth independently of the model files.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently uses canonical model files as the source of truth, disposable generated indexes, deterministic validation and proposal-first AI-assisted changes. Its documented pipeline includes evidence import, gap detection, lineage, impact analysis and human review.</p>
+<p>The current Martenweave CLI exposes health, scorecard, trace, impact, search, query, repository diff and dataset-readiness operations. These provide the foundation for incident-oriented investigation without requiring Martenweave to replace existing monitoring or service-management tools.</p>
+<p>OpenLineage’s object model separates stable Jobs and Datasets from individual runtime Runs, while its column-level lineage model distinguishes direct transformations from indirect dependencies such as joins, filters and conditional logic. These distinctions are useful when comparing approved model paths with the execution evidence associated with one production incident.</p>
+<p>The incident-to-model workflow, root-cause categories and proposed <code>investigate</code> command described in this article are recommended Martenweave improvements. They should not be interpreted as guarantees of the current canonical schema, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-explain-lineage-and-impact-to-business-owners-without-showing.html"><span>Previous</span>A data architect opens a lineage viewer during a business review.</a><a href="/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html"><span>Next</span>A dataset-readiness report says:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

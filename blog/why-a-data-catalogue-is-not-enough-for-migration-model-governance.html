@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why a Data Catalogue Is Not Enough for Migration Model Governance | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration team is preparing Product data for SAP S/4HANA."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html" />
+    <meta property="og:title" content="Why a Data Catalogue Is Not Enough for Migration Model Governance | Martenweave" />
+    <meta property="og:description" content="A migration team is preparing Product data for SAP S/4HANA." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Why a Data Catalogue Is Not Enough for Migration Model Governance | Martenweave" />
+    <meta name="twitter:description" content="A migration team is preparing Product data for SAP S/4HANA." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html#webpage",
+                        "url": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html",
+                        "name": "Why a Data Catalogue Is Not Enough for Migration Model Governance | Martenweave",
+                        "description": "A migration team is preparing Product data for SAP S/4HANA.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Why a Data Catalogue Is Not Enough for Migration Model Governance",
+                                    "item": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html#content",
+                        "headline": "Why a Data Catalogue Is Not Enough for Migration Model Governance",
+                        "name": "Why a Data Catalogue Is Not Enough for Migration Model Governance",
+                        "description": "A migration team is preparing Product data for SAP S/4HANA.",
+                        "url": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/why-a-data-catalogue-is-not-enough-for-migration-model-governance.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT16M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Why a Data Catalogue Is Not Enough for Migration Model Governance</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>Why a Data Catalogue Is Not Enough for Migration Model Governance</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 16 min read</p><p class="blog-summary">A migration team is preparing Product data for SAP S/4HANA.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#data-catalogue">Data catalogue</a></li><li><a href="#itsm">ITSM</a></li><li><a href="#sap-mdg">SAP MDG</a></li><li><a href="#git">Git</a></li><li><a href="#canonical-business-objects">Canonical business objects</a></li><li><a href="#physical-endpoints">Physical endpoints</a></li><li><a href="#mappings">Mappings</a></li><li><a href="#rules">Rules</a></li><li><a href="#evidence">Evidence</a></li><li><a href="#decisions">Decisions</a></li><li><a href="#findings">Findings</a></li><li><a href="#patchproposals">PatchProposals</a></li><li><a href="#data-catalogue-2">Data catalogue</a></li><li><a href="#sap-mdg-2">SAP MDG</a></li><li><a href="#itsm-2">ITSM</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration team is preparing Product data for SAP S/4HANA.</p>
+<p>The source dataset contains:</p>
+<pre><code class="language-text">PRODUCT_ID
+PLANNER_GROUP
+MRP_TYPE
+PROCUREMENT_TYPE</code></pre>
+<p>The target design expects planning data at Product Plant level.</p>
+<p>The dataset does not contain Plant.</p>
+<p>A data catalogue can help the team discover the file, inspect its schema, identify its owner, connect columns to glossary terms and show technical lineage. Modern catalogues may also provide data-quality rules, health scores, governance domains, critical data elements and impact analysis across registered data assets. Microsoft, for example, describes Purview Unified Catalog in terms of asset inventory, metadata, lineage, business vocabulary, data products, quality and governance health.</p>
+<p>That is valuable.</p>
+<p>It still does not answer the migration decision:</p>
+<blockquote>How should the canonical Product planning model change now that the dataset cannot support Product Plant assignments?</blockquote>
+<p>The team must determine whether to:</p>
+<ul>
+<li>add Plant to the source extract;</li>
+<li>use another dataset as the Plant authority;</li>
+<li>derive Plant from a cross-reference;</li>
+<li>treat the planning values as global;</li>
+<li>retain a temporary MRP Controller fallback;</li>
+<li>exclude affected Product Plant records;</li>
+<li>change the target design.</li>
+</ul>
+<p>This is not only a discovery problem.</p>
+<p>It is not only a data-quality problem.</p>
+<p>It is not only an operational master-data problem.</p>
+<p>It is a governed model-change problem.</p>
+<blockquote>A data catalogue helps an organisation understand its data estate. Migration model governance must decide how new evidence changes the model used to transform, validate and approve data.</blockquote>
+<p>The distinction explains why Martenweave should not try to become a general enterprise data catalogue.</p>
+<p>Its product opportunity is narrower.</p>
+<p>It connects migration evidence to a canonical, version-controlled model and provides a controlled path from Finding to proposed model change, deterministic validation, impact analysis and human approval.</p>
+<p>---</p>
+<h1 id="the-real-pain-is-fragmented-model-truth">The real pain is fragmented model truth</h1>
+<p>The migration team rarely lacks information.</p>
+<p>The information is simply distributed across different tools.</p>
+<p>The catalogue contains:</p>
+<ul>
+<li>the source file;</li>
+<li>its columns;</li>
+<li>a glossary term for Plant;</li>
+<li>an owner;</li>
+<li>technical lineage.</li>
+</ul>
+<p>The transformation workbook contains:</p>
+<ul>
+<li>Planner Group mappings;</li>
+<li>target fields;</li>
+<li>temporary defaults;</li>
+<li>comments from previous workshops.</li>
+</ul>
+<p>The ticketing system contains:</p>
+<ul>
+<li>an action to request Plant from the source team;</li>
+<li>a deadline;</li>
+<li>an assignee;</li>
+<li>discussion history.</li>
+</ul>
+<p>SAP MDG or another MDM platform may contain:</p>
+<ul>
+<li>governed Product or Business Partner records;</li>
+<li>change-request workflows;</li>
+<li>validation rules;</li>
+<li>operational stewardship.</li>
+</ul>
+<p>The migration repository may contain:</p>
+<ul>
+<li>scripts;</li>
+<li>value lists;</li>
+<li>validation reports;</li>
+<li>cutover extracts.</li>
+</ul>
+<p>A meeting note contains the critical decision:</p>
+<blockquote>Planning responsibility differs by Plant. The values must not be copied globally.</blockquote>
+<p>Each tool holds part of the truth.</p>
+<p>No single layer necessarily states the complete governed path:</p>
+<pre><code class="language-text">Legacy Planner Group
++
+authoritative Plant
+→ plant-specific conversion
+→ Product Plant MRP Controller
+→ SAP planning responsibility</code></pre>
+<p>That path is the migration model.</p>
+<p>It describes:</p>
+<ul>
+<li>the business concept;</li>
+<li>its grain;</li>
+<li>its source authority;</li>
+<li>the transformation;</li>
+<li>the SAP implementation;</li>
+<li>the applicable Rule;</li>
+<li>the fallback;</li>
+<li>the evidence;</li>
+<li>the decision history.</li>
+</ul>
+<p>The pain is not that the catalogue failed to scan the source.</p>
+<p>The pain is that the accepted meaning of the migration path remains spread across metadata, spreadsheets, code and conversations.</p>
+<p>---</p>
+<h1 id="what-a-data-catalogue-solves-well">What a data catalogue solves well</h1>
+<p>It is important not to weaken the argument by pretending catalogues are primitive field lists.</p>
+<p>Modern data catalogues can be substantial governance platforms.</p>
+<p>They may support:</p>
+<ul>
+<li>data discovery;</li>
+<li>business glossaries;</li>
+<li>asset ownership;</li>
+<li>governance domains;</li>
+<li>technical lineage;</li>
+<li>access policies;</li>
+<li>data products;</li>
+<li>quality rules;</li>
+<li>health scores;</li>
+<li>critical data elements;</li>
+<li>impact views.</li>
+</ul>
+<p>Microsoft’s current Purview documentation positions Unified Catalog as a platform for discovery, understanding, curation, access, health and federated governance. It describes an inventory of data assets, metadata and lineage, along with glossary terms, governance domains, critical data elements and data-quality capabilities.</p>
+<p>For the Product planning case, the catalogue may answer:</p>
+<ul>
+<li>Which dataset contains <code>PLANNER_GROUP</code>?</li>
+<li>Who owns the dataset?</li>
+<li>Where was the file produced?</li>
+<li>Which pipelines use it?</li>
+<li>Which technical assets consume it?</li>
+<li>Is there another field named <code>PLANT</code> elsewhere?</li>
+<li>Which glossary concept is attached to the columns?</li>
+<li>What is the null rate?</li>
+<li>Which reports or data products depend on the source?</li>
+</ul>
+<p>These are necessary questions.</p>
+<p>They are not yet a migration decision.</p>
+<p>---</p>
+<h1 id="discovery-does-not-establish-authority">Discovery does not establish authority</h1>
+<p>Suppose the catalogue finds two possible Plant sources:</p>
+<pre><code class="language-text">LEGACY_SITE_CODE
+CENTRAL_PLANT_CROSS_REFERENCE</code></pre>
+<p>Both are populated.</p>
+<p>Both are owned.</p>
+<p>Both have lineage.</p>
+<p>They disagree for eight percent of Products.</p>
+<p>The catalogue can make the disagreement visible.</p>
+<p>It cannot infer authority from availability alone.</p>
+<p>The migration programme must decide:</p>
+<ul>
+<li>whether Site Code is semantically equivalent to Plant;</li>
+<li>whether the central cross-reference is current;</li>
+<li>which source applies to the acquired business unit;</li>
+<li>whether the decision changes after cutover;</li>
+<li>whether one source is a fallback;</li>
+<li>how conflicts are reconciled.</li>
+</ul>
+<p>A searchable asset is not automatically an authoritative source.</p>
+<p>A glossary link is not an approval.</p>
+<p>A lineage connection is not a business decision.</p>
+<p>This is the first gap between cataloguing and migration model governance.</p>
+<p>---</p>
+<h1 id="a-glossary-term-is-not-an-executable-model">A glossary term is not an executable model</h1>
+<p>The catalogue may define Plant as:</p>
+<blockquote>An organisational unit where materials are produced, procured, stored or planned.</blockquote>
+<p>That definition helps users understand the concept.</p>
+<p>The migration model must go further.</p>
+<p>It must specify:</p>
+<pre><code class="language-text">Attribute:
+Plant
+
+Required for:
+Product Plant MRP Controller Mapping
+
+Source:
+Central Plant Cross-Reference
+
+Input role:
+Conditional context
+
+Target use:
+Select plant-specific MRP Controller conversion
+
+Fallback:
+Not permitted for PL20 and PL30</code></pre>
+<p>This is executable governance.</p>
+<p>The model can now be validated.</p>
+<p>A dataset can be tested against it.</p>
+<p>A Mapping can fail when Plant is absent.</p>
+<p>A PatchProposal can add or change the source.</p>
+<p>Impact analysis can identify affected planning paths.</p>
+<p>A glossary term explains meaning.</p>
+<p>A canonical model turns meaning into controlled migration behaviour.</p>
+<p>Both are useful.</p>
+<p>They are not interchangeable.</p>
+<p>---</p>
+<h1 id="why-this-becomes-urgent-during-migration">Why this becomes urgent during migration</h1>
+<p>In steady-state governance, ambiguity can sometimes remain visible while owners investigate it.</p>
+<p>Migration creates deadlines.</p>
+<p>Data must be:</p>
+<ul>
+<li>extracted;</li>
+<li>transformed;</li>
+<li>validated;</li>
+<li>loaded;</li>
+<li>reconciled;</li>
+<li>approved.</li>
+</ul>
+<p>When Plant is missing, the migration team cannot leave the issue as general metadata uncertainty.</p>
+<p>It must choose an operational response.</p>
+<p>The dangerous responses are usually technically convenient:</p>
+<pre><code class="language-text">Copy the same planning value to every Plant.</code></pre>
+<pre><code class="language-text">Use controller 001 when the conversion is missing.</code></pre>
+<pre><code class="language-text">Load Product data globally and correct the Plants later.</code></pre>
+<p>Each response may improve technical completion.</p>
+<p>Each may create incorrect business meaning.</p>
+<p>Migration model governance exists because the programme must convert uncertain evidence into explicit, reviewable decisions before those decisions become production data.</p>
+<p>---</p>
+<h1 id="why-a-catalogue-health-score-is-not-migration-readiness">Why a catalogue health score is not migration readiness</h1>
+<p>A catalogue may report that the Product planning dataset has:</p>
+<ul>
+<li>an owner;</li>
+<li>a glossary assignment;</li>
+<li>lineage;</li>
+<li>a quality score;</li>
+<li>complete metadata;</li>
+<li>a certified status.</li>
+</ul>
+<p>The dataset can still be unfit for the migration path.</p>
+<p>For example:</p>
+<pre><code class="language-text">Dataset metadata completeness:
+100%
+
+Column population:
+98%
+
+Product Plant Mapping readiness:
+Blocked</code></pre>
+<p>Why?</p>
+<p>Because the required organisational key is absent.</p>
+<p>The dataset is well catalogued.</p>
+<p>It cannot produce the governed target result.</p>
+<p>This is a critical product distinction.</p>
+<p>Catalogue health asks whether the asset is understandable, governed and measurable within the data estate.</p>
+<p>Migration readiness asks whether the dataset can satisfy a specific transformation and target obligation for a declared scope and baseline.</p>
+<p>Martenweave should consume catalogue information where available.</p>
+<p>It should not inherit the assumption that a well-governed asset is automatically ready for SAP migration.</p>
+<p>---</p>
+<h1 id="what-sap-mdg-solves">What SAP MDG solves</h1>
+<p>SAP Master Data Governance addresses a different and important problem.</p>
+<p>SAP currently presents MDG as a central governance layer for business-critical master data, with governed models, matching and consolidation, change-request workflows, data-quality controls, ownership, workflow routing and auditability.</p>
+<p>In the Product planning case, SAP MDG may help govern the operational Product record after the design is established.</p>
+<p>It can support:</p>
+<ul>
+<li>controlled master-data changes;</li>
+<li>validation of Product data;</li>
+<li>workflow and stewardship;</li>
+<li>audit trails;</li>
+<li>central or consolidated governance;</li>
+<li>mass changes;</li>
+<li>distribution of trusted master data.</li>
+</ul>
+<p>This is not a weakness.</p>
+<p>It is the purpose of an MDM platform.</p>
+<p>The unresolved migration question occurs earlier:</p>
+<blockquote>What should the approved Product Plant Mapping be, given conflicting source evidence and an incomplete migration dataset?</blockquote>
+<p>That question includes artefacts outside the operational master-data workflow:</p>
+<ul>
+<li>source extracts;</li>
+<li>legacy field interpretations;</li>
+<li>dataset profiles;</li>
+<li>migration Mappings;</li>
+<li>temporary cutover defaults;</li>
+<li>mock-load evidence;</li>
+<li>rejected alternatives;</li>
+<li>target endpoints;</li>
+<li>project decisions.</li>
+</ul>
+<p>SAP MDG can be part of the governed target landscape.</p>
+<p>Martenweave should not attempt to replace it.</p>
+<p>---</p>
+<h1 id="the-difference-between-governing-records-and-governing-the-migration-model">The difference between governing records and governing the migration model</h1>
+<p>SAP MDG governs master-data creation and change.</p>
+<p>Martenweave’s intended role is to govern the model used to explain and transform data across the migration lifecycle.</p>
+<p>In the Product planning case, SAP MDG may govern the final MRP Controller value.</p>
+<p>Martenweave should preserve why that value is expected:</p>
+<pre><code class="language-text">Business Attribute:
+MRP Controller
+
+Grain:
+Product Plant
+
+Source inputs:
+Planner Group and Plant
+
+Transformation:
+Plant-specific lookup
+
+Fallback:
+Temporary controller only for approved scope
+
+Evidence:
+Mock Load 3
+
+Decision:
+Planning owners approved plant-specific responsibility</code></pre>
+<p>The operational record and the migration model are connected.</p>
+<p>They are not the same object.</p>
+<p>A mature architecture can use both:</p>
+<pre><code class="language-text">Martenweave:
+governs migration model truth and evidence
+
+SAP MDG:
+governs operational master-data changes and stewardship</code></pre>
+<p>The boundary should remain explicit.</p>
+<p>---</p>
+<h1 id="what-itsm-solves">What ITSM solves</h1>
+<p>An ITSM platform can manage the work created by the gap.</p>
+<p>A ticket might state:</p>
+<pre><code class="language-text">Request Plant field for Product planning extract.</code></pre>
+<p>ITSM is designed around service delivery, incidents, requests, problems, changes, assignment, status and operational coordination. ServiceNow defines ITSM as the management of end-to-end IT service delivery, including the creation, delivery and support of IT services.</p>
+<p>For the Product planning problem, ITSM can answer:</p>
+<ul>
+<li>Who owns the action?</li>
+<li>What is its priority?</li>
+<li>What deadline applies?</li>
+<li>Which team must respond?</li>
+<li>Is the task blocked?</li>
+<li>Which change record implements the solution?</li>
+<li>Has the request been completed?</li>
+</ul>
+<p>These are necessary delivery controls.</p>
+<p>The ticket still does not define the canonical model delta.</p>
+<p>“Add Plant” is ambiguous.</p>
+<p>The change could mean:</p>
+<ul>
+<li>add a source column;</li>
+<li>create a new DatasetField object;</li>
+<li>register a source endpoint;</li>
+<li>update one Mapping;</li>
+<li>update three Mappings;</li>
+<li>change Attribute grain;</li>
+<li>restrict a fallback;</li>
+<li>change a Rule;</li>
+<li>invalidate previous Evidence.</li>
+</ul>
+<p>ITSM manages the work.</p>
+<p>Martenweave should define what model change the work is expected to produce.</p>
+<p>---</p>
+<h1 id="why-a-ticket-description-cannot-safely-become-model-truth">Why a ticket description cannot safely become model truth</h1>
+<p>Assume the ticket is closed with this note:</p>
+<blockquote>Plant added to the extract. Mapping updated.</blockquote>
+<p>The statement does not prove:</p>
+<ul>
+<li>which Plant source was used;</li>
+<li>whether it covers the full population;</li>
+<li>which Mapping changed;</li>
+<li>whether the fallback was removed;</li>
+<li>whether the candidate model validated;</li>
+<li>whether previous mock-load evidence remains current;</li>
+<li>whether planning owners approved the result;</li>
+<li>whether the repository reflects the same change.</li>
+</ul>
+<p>The ticket is operational history.</p>
+<p>It is not necessarily canonical model history.</p>
+<p>Martenweave should link to the ticket as Evidence or delivery context.</p>
+<p>It should not treat the ticket body as the model itself.</p>
+<p>---</p>
+<h1 id="git-solves-review-of-changes-but-not-semantic-preparation">Git solves review of changes, but not semantic preparation</h1>
+<p>Git and pull requests provide a strong foundation for versioning and review.</p>
+<p>GitHub pull-request reviews allow reviewers to comment, approve or request changes before merge, and repositories can require approvals.</p>
+<p>This is highly relevant to Martenweave.</p>
+<p>Canonical model files should be reviewed through Git.</p>
+<p>But a raw file diff may show only:</p>
+<pre><code class="language-text">inputs:
+  - PLANNER_GROUP
+  - PLANT</code></pre>
+<p>A business reviewer needs to know:</p>
+<ul>
+<li>why Plant was added;</li>
+<li>which source supplies it;</li>
+<li>how many records are affected;</li>
+<li>what happens to the current default;</li>
+<li>which planning process changes;</li>
+<li>which evidence supports the proposal;</li>
+<li>which assumptions remain unresolved.</li>
+</ul>
+<p>Git is the record and merge control.</p>
+<p>A PatchProposal is the semantic review package that should precede or accompany the diff.</p>
+<p>---</p>
+<h1 id="the-product-plant-case-across-four-tools">The Product Plant case across four tools</h1>
+<p>The same problem appears differently in each system.</p>
+<h2 id="data-catalogue">Data catalogue</h2>
+<pre><code class="language-text">Asset:
+Product planning extract
+
+Observed schema:
+PLANNER_GROUP present
+PLANT absent
+
+Owner:
+Legacy Product Data Team
+
+Related term:
+Plant</code></pre>
+<h2 id="itsm">ITSM</h2>
+<pre><code class="language-text">Task:
+Provide Plant in the Product planning extract
+
+Assignee:
+Legacy ERP Team
+
+Due:
+Before Mock Load 3</code></pre>
+<h2 id="sap-mdg">SAP MDG</h2>
+<pre><code class="language-text">Target governance:
+Product Plant MRP Controller must pass target validation
+and follow controlled change workflow</code></pre>
+<h2 id="git">Git</h2>
+<pre><code class="language-text">Proposed file change:
+Add Plant input to MRP Controller Mapping</code></pre>
+<p>Each view is useful.</p>
+<p>The missing view is:</p>
+<pre><code class="language-text">Finding:
+The current dataset cannot support plant-specific MRP Controller derivation.
+
+Candidate source:
+Central Plant Cross-Reference
+
+Proposed model change:
+Add Plant as conditional Mapping context.
+
+Fallback effect:
+1,840 records lose the global default.
+
+Impact:
+PL20 and PL30 require conversion completion or explicit exception.
+
+Evidence:
+Dataset profile and Mock Load 2 result.
+
+Reviewers:
+Production Planning Data Owner and affected Plant owners.
+
+Validation:
+Candidate model passes structural checks.
+
+Decision:
+Pending.</code></pre>
+<p>That is the Martenweave-shaped problem.</p>
+<p>---</p>
+<h1 id="the-product-is-not-another-metadata-inventory">The product is not another metadata inventory</h1>
+<p>A weak version of Martenweave would import catalogue assets and display them in another UI.</p>
+<p>That would create duplication.</p>
+<p>It would add little value.</p>
+<p>The stronger product position is:</p>
+<blockquote>Martenweave stores the governed migration model that existing catalogues, datasets, tickets, validation reports and SAP systems can reference.</blockquote>
+<p>The catalogue remains the best place to discover enterprise assets.</p>
+<p>ITSM remains the best place to manage service work.</p>
+<p>SAP MDG remains the operational master-data governance platform where applicable.</p>
+<p>Git remains the version and review record.</p>
+<p>Martenweave connects those systems around model truth.</p>
+<p>---</p>
+<h1 id="what-martenweave-stores-that-the-catalogue-usually-does-not-own">What Martenweave stores that the catalogue usually does not own</h1>
+<p>For the Product Plant case, Martenweave should own or reference:</p>
+<h2 id="canonical-business-objects">Canonical business objects</h2>
+<ul>
+<li>Product;</li>
+<li>Product Plant;</li>
+<li>MRP Controller;</li>
+<li>Plant;</li>
+<li>Planner Group.</li>
+</ul>
+<h2 id="physical-endpoints">Physical endpoints</h2>
+<ul>
+<li>source columns;</li>
+<li>cross-reference fields;</li>
+<li>SAP target fields;</li>
+<li>interface fields.</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<ul>
+<li>Planner Group plus Plant to MRP Controller.</li>
+</ul>
+<h2 id="rules">Rules</h2>
+<ul>
+<li>Plant required for plant-specific planning data;</li>
+<li>fallback permitted only in defined scope.</li>
+</ul>
+<h2 id="evidence">Evidence</h2>
+<ul>
+<li>dataset profile;</li>
+<li>mock-load result;</li>
+<li>source comparison;</li>
+<li>validation report.</li>
+</ul>
+<h2 id="decisions">Decisions</h2>
+<ul>
+<li>selected Plant authority;</li>
+<li>fallback acceptance;</li>
+<li>effective scope.</li>
+</ul>
+<h2 id="findings">Findings</h2>
+<ul>
+<li>current dataset lacks required context.</li>
+</ul>
+<h2 id="patchproposals">PatchProposals</h2>
+<ul>
+<li>candidate change to the Mapping and fallback.</li>
+</ul>
+<p>This is not a larger catalogue.</p>
+<p>It is a narrower model-change system.</p>
+<p>---</p>
+<h1 id="why-canonical-files-matter">Why canonical files matter</h1>
+<p>A catalogue database may be authoritative for catalogue metadata.</p>
+<p>Martenweave uses canonical Markdown and YAML files as the model source of truth, with generated SQLite and JSONL indexes treated as disposable. It validates IDs, types, references and domain context before indexing.</p>
+<p>This gives the migration model several useful properties:</p>
+<ul>
+<li>it can be versioned;</li>
+<li>it can be reviewed through Git;</li>
+<li>it can be transferred with the project;</li>
+<li>it can be validated deterministically;</li>
+<li>it can be diffed between releases;</li>
+<li>it can be read by agents and developers;</li>
+<li>it does not depend on a hosted catalogue instance;</li>
+<li>generated search and viewer layers can be rebuilt.</li>
+</ul>
+<p>The files are not valuable merely because they are files.</p>
+<p>They are valuable because they make the governed model portable and reviewable.</p>
+<p>---</p>
+<h1 id="the-core-workflow">The core workflow</h1>
+<p>For the Product Plant gap, the useful workflow is:</p>
+<pre><code class="language-text">1. Import or profile the dataset.
+2. Compare it with the canonical model.
+3. Detect that Plant context is missing.
+4. Create a Finding.
+5. Retrieve relevant lineage and decisions.
+6. Generate one or more PatchProposals.
+7. Apply a proposal to a candidate model.
+8. Validate the candidate deterministically.
+9. Calculate impact and stale evidence.
+10. Present the result for review.
+11. Apply the approved change through Git.
+12. Rerun dataset readiness.</code></pre>
+<p>This is already aligned with Martenweave’s documented pipeline: evidence and profiling lead to validation, gap detection, lineage, impact, proposals and human-reviewed Git work.</p>
+<p>The product should deepen this loop rather than expand sideways into general catalogue functionality.</p>
+<p>---</p>
+<h1 id="where-catalogue-integration-helps">Where catalogue integration helps</h1>
+<p>Martenweave should not ignore catalogues.</p>
+<p>A catalogue can provide useful input:</p>
+<ul>
+<li>asset IDs;</li>
+<li>dataset ownership;</li>
+<li>descriptions;</li>
+<li>classifications;</li>
+<li>glossary terms;</li>
+<li>technical lineage;</li>
+<li>data-quality metrics;</li>
+<li>access information;</li>
+<li>system metadata.</li>
+</ul>
+<p>For the Product planning case, Martenweave could link:</p>
+<pre><code class="language-text">Dataset:
+Product Planning Extract
+
+External catalogue reference:
+catalog://product-planning-extract
+
+Owner:
+Legacy Product Data Team</code></pre>
+<p>The canonical model then adds migration-specific meaning:</p>
+<pre><code class="language-text">Required by:
+MAP-PRODUCT-PLANT-MRP-CONTROLLER
+
+Missing input:
+PLANT
+
+Readiness verdict:
+Blocked
+
+Candidate remediation:
+Use Central Plant Cross-Reference</code></pre>
+<p>The integration principle is:</p>
+<blockquote>Import context; do not duplicate the entire catalogue.</blockquote>
+<p>---</p>
+<h1 id="where-sap-mdg-integration-helps">Where SAP MDG integration helps</h1>
+<p>SAP MDG can provide:</p>
+<ul>
+<li>target domain context;</li>
+<li>approved target values;</li>
+<li>change-request references;</li>
+<li>stewardship ownership;</li>
+<li>target Rules;</li>
+<li>operational change history.</li>
+</ul>
+<p>Martenweave can use that context to strengthen the migration model.</p>
+<p>For example:</p>
+<pre><code class="language-text">Target Attribute:
+Product Plant MRP Controller
+
+Operational governance:
+SAP MDG change process
+
+Migration source:
+Legacy Planner Group + Plant
+
+Migration proposal:
+Add plant-specific source path</code></pre>
+<p>The integration principle is:</p>
+<blockquote>Use SAP MDG as operational governance where it fits; use Martenweave to preserve the migration reasoning around it.</blockquote>
+<p>---</p>
+<h1 id="where-itsm-integration-helps">Where ITSM integration helps</h1>
+<p>Once the PatchProposal is reviewed, Martenweave can generate a precise issue:</p>
+<pre><code class="language-text">Goal:
+Add authoritative Plant context to the Product planning source path.
+
+Scope:
+Update Product Plant MRP Controller Mapping for PL20 and PL30.
+
+Acceptance criteria:
+- Plant source registered.
+- Candidate model validates.
+- No unapproved global fallback remains.
+- Mock-load readiness rerun.
+- Planning owner approves results.
+
+Validation command:
+martenweave validate --repo ./model</code></pre>
+<p>The ITSM or GitHub issue then manages implementation.</p>
+<p>The task is no longer vague because the model change is already defined.</p>
+<p>---</p>
+<h1 id="the-business-value-is-continuity-of-reasoning">The business value is continuity of reasoning</h1>
+<p>The main value does not come from another metadata screen.</p>
+<p>It comes from preserving the chain:</p>
+<pre><code class="language-text">What did we observe?
+
+What does it mean?
+
+What should change?
+
+What assumptions support the change?
+
+What else is affected?
+
+Who approved it?
+
+Which model version contains the result?</code></pre>
+<p>Without this chain, migration programmes repeatedly lose reasoning.</p>
+<p>A field is added, but nobody remembers why.</p>
+<p>A fallback remains after cutover.</p>
+<p>A Mapping changes in code but not in documentation.</p>
+<p>A later wave reopens the same debate.</p>
+<p>An AMS team sees the production value but cannot trace the decision.</p>
+<p>Martenweave turns temporary project learning into reusable model knowledge.</p>
+<p>---</p>
+<h1 id="the-strongest-product-wedge">The strongest product wedge</h1>
+<p>The initial sales or pilot story should not be:</p>
+<blockquote>Replace your enterprise data catalogue.</blockquote>
+<p>That is strategically weak.</p>
+<p>It creates unnecessary competition with mature platforms.</p>
+<p>A better story is:</p>
+<blockquote>Use your existing catalogue, tickets and SAP governance tools. Martenweave adds a version-controlled model layer that connects migration evidence to validated, reviewable change.</blockquote>
+<p>A focused pilot could use one real Product dataset:</p>
+<ol>
+<li>register its source fields;</li>
+<li>profile the file;</li>
+<li>detect missing Plant context;</li>
+<li>connect the gap to the MRP Controller Mapping;</li>
+<li>show affected Product Plant records;</li>
+<li>generate a PatchProposal;</li>
+<li>validate the candidate;</li>
+<li>show impact;</li>
+<li>approve the change;</li>
+<li>produce a Git issue or pull request.</li>
+</ol>
+<p>This demonstrates an end-to-end outcome.</p>
+<p>It does not require an enterprise-wide catalogue replacement.</p>
+<p>---</p>
+<h1 id="current-versus-proposed-martenweave-capability">Current versus proposed Martenweave capability</h1>
+<p>Martenweave currently documents:</p>
+<ul>
+<li>canonical Markdown and YAML model files;</li>
+<li>deterministic validation;</li>
+<li>disposable SQLite and JSONL indexes;</li>
+<li>dataset readiness;</li>
+<li>gap detection;</li>
+<li>trace and impact;</li>
+<li>health and scorecard commands;</li>
+<li>AI-assisted PatchProposals;</li>
+<li>human-reviewed GitHub issues or pull requests;</li>
+<li>a local Workbench for assessment and controlled review.</li>
+</ul>
+<p>The next product improvements should focus on:</p>
+<ul>
+<li>external catalogue references;</li>
+<li>richer Finding objects;</li>
+<li>candidate-state proposal validation;</li>
+<li>semantic before-and-after views;</li>
+<li>role-based reviewers;</li>
+<li>stale-proposal detection;</li>
+<li>structured approval conditions;</li>
+<li>ITSM and Git issue generation;</li>
+<li>SAP MDG references where relevant.</li>
+</ul>
+<p>The project should not prioritise:</p>
+<ul>
+<li>enterprise-wide crawling;</li>
+<li>access-policy management;</li>
+<li>general data marketplace features;</li>
+<li>hosted catalogue replacement;</li>
+<li>generic workflow automation;</li>
+<li>direct SAP record maintenance.</li>
+</ul>
+<p>Those are different products.</p>
+<p>---</p>
+<h1 id="a-practical-product-boundary">A practical product boundary</h1>
+<p>The boundary can be stated plainly.</p>
+<h2 id="data-catalogue-2">Data catalogue</h2>
+<p>Helps users discover, understand, classify and govern data assets.</p>
+<h2 id="sap-mdg-2">SAP MDG</h2>
+<p>Governs operational master data, workflows, quality and stewardship.</p>
+<h2 id="itsm-2">ITSM</h2>
+<p>Coordinates incidents, problems, requests and implementation work.</p>
+<h2 id="git-2">Git</h2>
+<p>Versions and reviews file changes.</p>
+<h2 id="martenweave">Martenweave</h2>
+<p>Maintains the canonical migration model connecting evidence, Attributes, Mappings, Rules, lineage, impact, Decisions and proposed change.</p>
+<p>This is not a hierarchy.</p>
+<p>It is a division of responsibility.</p>
+<p>---</p>
+<h1 id="why-the-boundary-matters-for-ai">Why the boundary matters for AI</h1>
+<p>AI agents can search catalogues.</p>
+<p>They can read tickets.</p>
+<p>They can inspect datasets.</p>
+<p>They can query SAP metadata.</p>
+<p>They can draft pull requests.</p>
+<p>Without a canonical model layer, the agent still lacks a stable place to answer:</p>
+<ul>
+<li>Which interpretation is approved?</li>
+<li>Which source is authoritative?</li>
+<li>Which fallback is permitted?</li>
+<li>Which Mapping is current?</li>
+<li>Which Decision superseded the old one?</li>
+<li>Which evidence applies to this baseline?</li>
+<li>Which model changes require approval?</li>
+</ul>
+<p>The catalogue improves retrieval.</p>
+<p>Martenweave should improve controlled reasoning.</p>
+<p>This is what makes the model AI-ready.</p>
+<p>AI readiness is not only making metadata searchable by an LLM.</p>
+<p>It is making authority, evidence, constraints and change boundaries explicit enough that an agent can propose safely.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A data catalogue is useful because enterprise data is difficult to find, understand and govern.</p>
+<p>Migration introduces another problem.</p>
+<p>The programme must continuously change its understanding of:</p>
+<ul>
+<li>source meaning;</li>
+<li>target design;</li>
+<li>transformation;</li>
+<li>applicability;</li>
+<li>fallback;</li>
+<li>evidence;</li>
+<li>ownership.</li>
+</ul>
+<p>Those changes need a canonical, reviewable model.</p>
+<p>The Product Plant example shows the difference.</p>
+<p>The catalogue can reveal that Plant is missing.</p>
+<p>The migration model must decide:</p>
+<pre><code class="language-text">which Plant;
+from which source;
+for which population;
+used by which Mapping;
+with which fallback;
+approved by whom;
+effective from when.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the organisation move from a discovered metadata gap to an explicit, validated and approved change in migration model truth without reconstructing the reasoning across five different tools?</blockquote>
+<p>When the answer is yes, Martenweave has a clear product role.</p>
+<p>When the answer is:</p>
+<blockquote>The catalogue already contains the column,</blockquote>
+<p>the programme has confused data visibility with migration governance.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It does not need to replace data catalogues, SAP MDG, ITSM platforms or Git.</p>
+<p>It connects them around a missing layer:</p>
+<pre><code class="language-text">traceable migration model truth
++
+validated proposed change
++
+human approval</code></pre>
+<p>The product becomes stronger when that boundary remains narrow.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Microsoft currently positions Purview Unified Catalog around discovery, data understanding, metadata, lineage, governance domains, glossary terms, critical data elements, data products, access, health controls and data quality. These capabilities provide strong catalogue and governance context, but the Martenweave argument in this article concerns the separate need for a version-controlled migration model and proposal workflow.</p>
+<p>SAP currently positions SAP Master Data Governance as a central governance layer for business-critical master data, including governed models, golden records, matching and consolidation, change-request workflows, data-quality controls, collaborative routing and audit trails. Martenweave is intended to complement this operational governance with migration evidence, source mappings and Git-based canonical model history.</p>
+<p>ServiceNow defines ITSM around end-to-end IT service delivery and support. In the model described here, ITSM remains the system for assigning and coordinating work, while Martenweave defines the model change that the work is expected to implement.</p>
+<p>GitHub pull-request reviews allow reviewers to comment, approve or request changes before merge, with optional required approvals. Martenweave uses this as an external review pattern while adding semantic evidence, validation and impact context before a canonical model change is merged.</p>
+<p>Martenweave Core currently documents canonical files, deterministic validation, disposable generated indexes, dataset readiness, lineage, impact, AI PatchProposals and human-reviewed Git workflows.</p>
+<p>The catalogue connectors, richer proposal-review capabilities and cross-system references described in this article are product directions. They should not be interpreted as guarantees of the exact current schema, integrations, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Microsoft, ServiceNow or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-ai-should-propose-model-changes-but-never-approve-them.html"><span>Previous</span>A Product migration dataset contains PLANNER GROUP , MRP TYPE and PROCUREMENT TYPE .</a><a href="/blog/why-sap-mdg-is-not-a-replacement-for-a-migration-model-registry.html"><span>Next</span>A programme is migrating Supplier bank data into SAP S/4HANA.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

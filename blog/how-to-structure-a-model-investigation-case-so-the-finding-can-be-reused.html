@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Structure a Model Investigation Case So the Finding Can Be Reused | Martenweave</title>
+    <meta
+      name="description"
+      content="The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html" />
+    <meta property="og:title" content="How to Structure a Model Investigation Case So the Finding Can Be Reused | Martenweave" />
+    <meta property="og:description" content="The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Structure a Model Investigation Case So the Finding Can Be Reused | Martenweave" />
+    <meta name="twitter:description" content="The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html",
+                        "name": "How to Structure a Model Investigation Case So the Finding Can Be Reused | Martenweave",
+                        "description": "The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Structure a Model Investigation Case So the Finding Can Be Reused",
+                                    "item": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html#content",
+                        "headline": "How to Structure a Model Investigation Case So the Finding Can Be Reused",
+                        "name": "How to Structure a Model Investigation Case So the Finding Can Be Reused",
+                        "description": "The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.",
+                        "url": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Structure a Model Investigation Case So the Finding Can Be Reused</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How to Structure a Model Investigation Case So the Finding Can Be Reused</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 18 min read</p><p class="blog-summary">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-expensive-part-is-not-always-finding-the-answer">The expensive part is not always finding the answer</a></li><li><a href="#a-reusable-case-is-not-a-large-report">A reusable case is not a large report</a></li><li><a href="#the-case-needs-a-stable-identity">The case needs a stable identity</a></li><li><a href="#open-with-the-trigger-not-the-solution">Open with the trigger, not the solution</a></li><li><a href="#freeze-the-investigation-scope">Freeze the investigation scope</a></li><li><a href="#record-the-model-baseline">Record the model baseline</a></li><li><a href="#build-the-case-around-model-objects">Build the case around model objects</a></li><li><a href="#preserve-evidence-as-evidence">Preserve evidence as evidence</a></li><li><a href="#distinguish-evidence-from-claims">Distinguish evidence from claims</a></li><li><a href="#keep-the-hypothesis-trail">Keep the hypothesis trail</a></li><li><a href="#record-negative-findings">Record negative findings</a></li><li><a href="#the-finding-should-be-one-clear-statement">The finding should be one clear statement</a></li><li><a href="#then-state-the-approved-consequence">Then state the approved consequence</a></li><li><a href="#add-reuse-conditions">Add reuse conditions</a></li><li><a href="#a-case-can-become-precedent-without-becoming-policy">A case can become precedent without becoming policy</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</p>
+<p>They compare CRM fields, inspect SAP targets, interview the sales-process owner, profile current values and discover that the source contains one central marketing segment while the SAP target is maintained separately by sales area.</p>
+<p>The team rejects the direct mapping.</p>
+<p>They document the conclusion in a meeting presentation, update the German workbook and close the Jira ticket.</p>
+<p>Six months later, the Austrian rollout encounters the same problem.</p>
+<p>The Austrian team cannot find the original analysis. The presentation explains the decision but does not identify the datasets, model baseline or rejected alternatives. The German mapping workbook contains the final treatment but not the reasoning.</p>
+<p>The Austrian team repeats most of the investigation.</p>
+<p>A year later, an AMS incident raises the same question again after a source-system upgrade.</p>
+<p>The organisation paid for the answer three times.</p>
+<p>This is one of the less visible costs of SAP migration and MDM programmes. Teams do not only lose knowledge when documents disappear. They lose it when the result remains available but cannot be safely reused.</p>
+<p>A conclusion such as:</p>
+<blockquote>Do not map CRM Customer Segment directly to SAP Customer Group.</blockquote>
+<p>is useful only when the next team can determine:</p>
+<ul>
+<li>which business concepts were compared;</li>
+<li>which systems and organisational levels were in scope;</li>
+<li>what evidence supported the conclusion;</li>
+<li>which alternatives were rejected;</li>
+<li>whether the finding still applies;</li>
+<li>what would invalidate it.</li>
+</ul>
+<p>That requires more than meeting minutes or a resolved ticket.</p>
+<p>It requires a reusable investigation case.</p>
+<h2 id="the-expensive-part-is-not-always-finding-the-answer">The expensive part is not always finding the answer</h2>
+<p>The first investigation usually consumes substantial effort:</p>
+<ul>
+<li>locating source and target definitions;</li>
+<li>finding the current mapping;</li>
+<li>obtaining representative datasets;</li>
+<li>identifying the right owners;</li>
+<li>comparing meanings;</li>
+<li>understanding organisational context;</li>
+<li>testing edge cases;</li>
+<li>assessing downstream impact.</li>
+</ul>
+<p>Once the team has done this work, the marginal cost of preserving it properly is relatively small.</p>
+<p>Yet programmes often save only the final outcome:</p>
+<ul>
+<li>mapping changed;</li>
+<li>rule narrowed;</li>
+<li>value rejected;</li>
+<li>source selected;</li>
+<li>issue closed.</li>
+</ul>
+<p>The evidence chain disappears.</p>
+<p>That creates three forms of waste.</p>
+<h3 id="repeated-analysis">Repeated analysis</h3>
+<p>Later teams must rediscover the same facts.</p>
+<h3 id="unsafe-copying">Unsafe copying</h3>
+<p>A previous conclusion is copied into a new context without checking whether its assumptions still hold.</p>
+<h3 id="decision-drift">Decision drift</h3>
+<p>The organisation remembers an oversimplified version of the finding.</p>
+<p>For example:</p>
+<blockquote>Customer Segment cannot be used.</blockquote>
+<p>The actual finding may have been narrower:</p>
+<blockquote>The central CRM Customer Segment cannot be copied directly into the sales-area Customer Group without an approved organisational derivation.</blockquote>
+<p>The difference matters.</p>
+<h2 id="a-reusable-case-is-not-a-large-report">A reusable case is not a large report</h2>
+<p>The answer is not to write a forty-page document for every field issue.</p>
+<p>A reusable investigation case is a structured evidence package with a defined scope and conclusion.</p>
+<p>It should be small enough to maintain and complete enough to support later decisions.</p>
+<p>A useful case answers seven questions:</p>
+<ol>
+<li>What triggered the investigation?</li>
+<li>Which model objects and populations were examined?</li>
+<li>What did the evidence show?</li>
+<li>Which explanations were tested?</li>
+<li>What conclusion was reached?</li>
+<li>Which decision or treatment followed?</li>
+<li>Under which conditions can the finding be reused?</li>
+</ol>
+<p>The final question is what distinguishes a reusable case from ordinary project documentation.</p>
+<h2 id="the-case-needs-a-stable-identity">The case needs a stable identity</h2>
+<p>A case should have its own identifier.</p>
+<p>For example:</p>
+<pre><code class="language-text">INV-CUSTOMER-GROUP-CRM-A-001</code></pre>
+<p>The identifier allows it to be referenced from:</p>
+<ul>
+<li>model objects;</li>
+<li>mappings;</li>
+<li>decisions;</li>
+<li>gaps;</li>
+<li>risks;</li>
+<li>PatchProposals;</li>
+<li>GitHub issues;</li>
+<li>test cases;</li>
+<li>later investigations.</li>
+</ul>
+<p>A title alone is unreliable.</p>
+<p>Several teams may create documents called:</p>
+<ul>
+<li>Customer Group Analysis;</li>
+<li>Customer Group Mapping;</li>
+<li>Customer Group Issue;</li>
+<li>Customer Group Decision.</li>
+</ul>
+<p>A stable ID makes it clear that they refer to one investigation record.</p>
+<h2 id="open-with-the-trigger-not-the-solution">Open with the trigger, not the solution</h2>
+<p>The case should begin with what caused the investigation.</p>
+<p>Example:</p>
+<pre><code class="language-text">Trigger:
+
+During Mock Load 2, 18% of German customer sales-area records
+had no approved value for SAP Customer Group.</code></pre>
+<p>This is stronger than:</p>
+<pre><code class="language-text">Request:
+
+Map CRM_A.CUSTOMER_SEGMENT to KNVV-KDGRP.</code></pre>
+<p>The second statement already assumes the answer.</p>
+<p>The trigger should preserve the original symptom so later readers can determine whether their problem is genuinely similar.</p>
+<p>Useful trigger types include:</p>
+<ul>
+<li>dataset gap;</li>
+<li>failed migration;</li>
+<li>conflicting mappings;</li>
+<li>validation defect;</li>
+<li>production incident;</li>
+<li>requested local exception;</li>
+<li>source-system retirement;</li>
+<li>changed business policy;</li>
+<li>AI-generated proposal requiring verification.</li>
+</ul>
+<h2 id="freeze-the-investigation-scope">Freeze the investigation scope</h2>
+<p>The case should state what was and was not examined.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business domain:
+Customer
+
+Countries:
+Germany and Austria
+
+Source:
+CRM_A
+
+Target:
+SAP S/4HANA Customer Group
+
+Organisational level:
+Sales area
+
+Population:
+Active sold-to parties included in Wave 2
+
+Excluded:
+Historical inactive customers and pricing-group analysis</code></pre>
+<p>This boundary prevents later users from applying the finding too broadly.</p>
+<p>A result proven for:</p>
+<ul>
+<li>active customer organisations;</li>
+<li>one source system;</li>
+<li>two countries;</li>
+<li>one SAP target;</li>
+</ul>
+<p>should not automatically become a global enterprise rule.</p>
+<h2 id="record-the-model-baseline">Record the model baseline</h2>
+<p>Every investigation takes place against a particular version of model truth.</p>
+<p>The case should record:</p>
+<ul>
+<li>canonical model baseline;</li>
+<li>mapping version;</li>
+<li>dataset version;</li>
+<li>relevant implementation release;</li>
+<li>investigation date.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Canonical model:
+customer-model-v2.7
+
+Mapping baseline:
+migration-mappings-v4.2
+
+Source extract:
+CRM_A_2026-07-10.csv
+
+SAP implementation:
+MDG-R3
+
+Investigation completed:
+14 July 2026</code></pre>
+<p>This allows a later team to determine whether the conclusion was based on the same model state it is currently using.</p>
+<p>Without baseline information, a finding may appear current while referring to:</p>
+<ul>
+<li>an old value list;</li>
+<li>a retired endpoint;</li>
+<li>a previous source structure;</li>
+<li>a superseded SAP design.</li>
+</ul>
+<h2 id="build-the-case-around-model-objects">Build the case around model objects</h2>
+<p>The investigation should identify the exact objects involved.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business attribute:
+ATTR-CUST-SALES-CUSTOMER-GROUP
+
+Source endpoint:
+FEP-CRM-A-CUSTOMER-SEGMENT
+
+Target endpoint:
+FEP-S4-KNVV-KDGRP
+
+Current mapping:
+MAP-CRM-A-CUSTOMER-GROUP
+
+Related rule:
+RULE-CUSTOMER-GROUP-REQUIRED-DE
+
+Dataset:
+DATASET-CRM-A-WAVE-2</code></pre>
+<p>This converts the case from a narrative document into a reusable part of the model knowledge layer.</p>
+<p>The next user can open the target attribute and discover:</p>
+<ul>
+<li>the investigation;</li>
+<li>the decision;</li>
+<li>current mapping;</li>
+<li>related evidence;</li>
+<li>later changes.</li>
+</ul>
+<p>Martenweave’s core already models domains, entities, attributes, relationships, datasets, mappings, rules, evidence, decisions and change proposals around canonical files and generated indexes.</p>
+<p>The investigation case should connect those existing objects rather than create a parallel document universe.</p>
+<h2 id="preserve-evidence-as-evidence">Preserve evidence as evidence</h2>
+<p>An investigation may use several evidence sources:</p>
+<ul>
+<li>source definitions;</li>
+<li>target definitions;</li>
+<li>dataset profiles;</li>
+<li>sample records;</li>
+<li>SAP configuration;</li>
+<li>interface specifications;</li>
+<li>business-owner interviews;</li>
+<li>previous decisions;</li>
+<li>incident history.</li>
+</ul>
+<p>Each evidence item should identify:</p>
+<ul>
+<li>type;</li>
+<li>source;</li>
+<li>date;</li>
+<li>owner or producer;</li>
+<li>model objects supported;</li>
+<li>limitations;</li>
+<li>current or superseded status.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Evidence:
+EVID-CRM-A-SEGMENT-PROFILE-2026-07
+
+Type:
+Dataset profile
+
+Source:
+CRM_A Wave 2 extract
+
+Records:
+148,620
+
+Supports:
+Source cardinality and value distribution
+
+Limitation:
+Extract contains transformed values and does not prove
+the original operational maintenance process</code></pre>
+<p>The limitation is part of the evidence.</p>
+<p>A dataset can show what values exist.</p>
+<p>It may not prove what those values mean.</p>
+<h2 id="distinguish-evidence-from-claims">Distinguish evidence from claims</h2>
+<p>A reusable case should separate raw findings from interpretation.</p>
+<h3 id="evidence">Evidence</h3>
+<pre><code class="language-text">92% of customers have one CUSTOMER_SEGMENT value.
+8% have no value.
+No customer has more than one value.</code></pre>
+<h3 id="interpretation">Interpretation</h3>
+<pre><code class="language-text">The source represents a central customer-level classification.</code></pre>
+<h3 id="decision-relevance">Decision relevance</h3>
+<pre><code class="language-text">The SAP target permits different values by sales area.
+Direct replication would therefore require an explicit rule
+for organisational expansion.</code></pre>
+<p>When these layers are combined into one paragraph, later readers cannot tell which parts were measured and which parts were inferred.</p>
+<h2 id="keep-the-hypothesis-trail">Keep the hypothesis trail</h2>
+<p>A good investigation rarely begins with the correct explanation.</p>
+<p>The case should preserve serious hypotheses that were tested.</p>
+<p>Example:</p>
+<h3 id="hypothesis-1">Hypothesis 1</h3>
+<p><code>CUSTOMER_SEGMENT</code> is equivalent to SAP Customer Group.</p>
+<p><strong>Result:</strong> Rejected.</p>
+<p><strong>Reason:</strong> Different organisational granularity and business use.</p>
+<h3 id="hypothesis-2">Hypothesis 2</h3>
+<p>The same source value can be repeated across every sales area.</p>
+<p><strong>Result:</strong> Not approved.</p>
+<p><strong>Reason:</strong> No business rule confirms that all sales areas use identical grouping.</p>
+<h3 id="hypothesis-3">Hypothesis 3</h3>
+<p>Another CRM field provides sales-area grouping.</p>
+<p><strong>Result:</strong> Unsupported.</p>
+<p><strong>Reason:</strong> No candidate field exists in the current extract.</p>
+<h3 id="hypothesis-4">Hypothesis 4</h3>
+<p>Target value should be maintained through controlled enrichment.</p>
+<p><strong>Result:</strong> Recommended for the current migration scope.</p>
+<p>This trail prevents a future team from repeating already rejected ideas.</p>
+<p>It also reveals which alternatives remain open.</p>
+<h2 id="record-negative-findings">Record negative findings</h2>
+<p>Negative findings are often as valuable as positive ones.</p>
+<p>Examples:</p>
+<ul>
+<li>no authoritative source exists;</li>
+<li>two fields are not semantically equivalent;</li>
+<li>no evidence supports a global rule;</li>
+<li>current data cannot distinguish two target values;</li>
+<li>direct derivation would lose information;</li>
+<li>the proposed default is not business-valid.</li>
+</ul>
+<p>Projects often fail to preserve these findings because they do not produce a new field or mapping.</p>
+<p>Later teams rediscover the same dead ends.</p>
+<p>A reusable case should treat:</p>
+<blockquote>We proved that this treatment is unsafe</blockquote>
+<p>as a valid outcome.</p>
+<h2 id="the-finding-should-be-one-clear-statement">The finding should be one clear statement</h2>
+<p>A long investigation needs a concise conclusion.</p>
+<p>For example:</p>
+<blockquote><code>CRM_A.CUSTOMER_SEGMENT</code> is not a valid direct source for SAP sales-area Customer Group because it represents one central marketing classification per customer, while the SAP target can vary by sales area and is used for sales processing.</blockquote>
+<p>This statement contains:</p>
+<ul>
+<li>source;</li>
+<li>target;</li>
+<li>conclusion;</li>
+<li>main reason.</li>
+</ul>
+<p>It is more durable than:</p>
+<blockquote>Mapping not recommended.</blockquote>
+<h2 id="then-state-the-approved-consequence">Then state the approved consequence</h2>
+<p>The finding and the decision are related but separate.</p>
+<h3 id="finding">Finding</h3>
+<p>The two fields are not directly equivalent.</p>
+<h3 id="decision">Decision</h3>
+<p>Use controlled business enrichment for Wave 2 and create a separate design decision for future sales-area derivation.</p>
+<p>The finding may remain valid even if the treatment changes later.</p>
+<p>For example, another source system may eventually become available.</p>
+<p>Do not rewrite the original finding merely because the implementation response changes.</p>
+<h2 id="add-reuse-conditions">Add reuse conditions</h2>
+<p>This is the part most project documents omit.</p>
+<p>A case should state where its finding may be reused.</p>
+<p>Example:</p>
+<pre><code class="language-text">Reusable when:
+
+- the source remains CRM_A.CUSTOMER_SEGMENT;
+- the target remains sales-area Customer Group;
+- source cardinality remains one value per customer;
+- no approved organisational derivation exists.</code></pre>
+<p>Also state when it must not be reused automatically:</p>
+<pre><code class="language-text">Reinvestigation required when:
+
+- another source field becomes available;
+- the CRM definition changes;
+- target use changes;
+- a country has a separate business rule;
+- the source begins storing sales-area-specific values.</code></pre>
+<p>These conditions turn the case into controlled precedent rather than folklore.</p>
+<h2 id="a-case-can-become-precedent-without-becoming-policy">A case can become precedent without becoming policy</h2>
+<p>A reusable finding may guide later investigations.</p>
+<p>It should not automatically become a global mandatory rule.</p>
+<p>Useful case statuses include:</p>
+<h3 id="local-finding">Local finding</h3>
+<p>Applies only to the original scope.</p>
+<h3 id="reusable-precedent">Reusable precedent</h3>
+<p>May be applied when stated conditions match.</p>
+<h3 id="global-decision-evidence">Global decision evidence</h3>
+<p>Supports an approved global model decision.</p>
+<h3 id="superseded">Superseded</h3>
+<p>Later evidence invalidated or replaced the conclusion.</p>
+<h3 id="partially-superseded">Partially superseded</h3>
+<p>The finding remains valid for some contexts but not others.</p>
+<p>This prevents a German migration conclusion from silently becoming global architecture.</p>
+<h2 id="how-other-platforms-fit-around-the-case">How other platforms fit around the case</h2>
+<p>A reusable investigation case does not attempt to replace every data-management platform.</p>
+<p>It fills a narrower gap between them.</p>
+<h3 id="sap-mdg">SAP MDG</h3>
+<p>SAP MDG is designed to govern operational master data through governed models, validated values, stewardship workflows, quality monitoring, matching, consolidation and auditable data changes.</p>
+<p>It is the appropriate place to enforce an approved master-data rule or route an operational change request.</p>
+<p>The investigation case explains why a rule, value or model treatment was selected before or around that implementation.</p>
+<h3 id="enterprise-data-catalogues">Enterprise data catalogues</h3>
+<p>Collibra describes data catalogues as inventories of enterprise data assets using technical, business and operational metadata to improve discovery, understanding and trust. Its broader platform includes governance, lineage, quality and privacy capabilities.</p>
+<p>Alation similarly positions its catalogue around searchable metadata, business context, trust indicators, provenance and source-to-destination lineage.</p>
+<p>These platforms are well suited to:</p>
+<ul>
+<li>enterprise discovery;</li>
+<li>business glossary;</li>
+<li>metadata inventory;</li>
+<li>technical lineage;</li>
+<li>stewardship;</li>
+<li>trust and certification.</li>
+</ul>
+<p>A Martenweave investigation case is more delivery-specific.</p>
+<p>It captures why one model problem was interpreted in a particular way, how dataset evidence affected the conclusion and which model patch or migration treatment followed.</p>
+<p>A catalogue may contain or link to the case.</p>
+<p>The case should not attempt to replace enterprise metadata harvesting.</p>
+<h3 id="integrated-governance-and-mdm-suites">Integrated governance and MDM suites</h3>
+<p>Informatica presents governance, cataloguing, data quality, observability, integration and MDM as complementary cloud services. Its governance offering links metadata to business context, shows profiling statistics and scorecards, and connects through APIs and scanners.</p>
+<p>Such a platform may already provide much of the surrounding enterprise infrastructure.</p>
+<p>Martenweave’s useful role remains:</p>
+<ul>
+<li>canonical project model;</li>
+<li>repository-level validation;</li>
+<li>explicit source-to-target mapping knowledge;</li>
+<li>dataset/model gap analysis;</li>
+<li>proposal-first change bundles;</li>
+<li>Git-compatible evidence history.</li>
+</ul>
+<p>The case can reference Informatica assets and profiles rather than duplicating them.</p>
+<h3 id="data-quality-platforms">Data-quality platforms</h3>
+<p>Ataccama describes capabilities for profiling datasets, applying reusable quality rules, monitoring results, analysing lineage, managing remediation and exposing issues to data owners.</p>
+<p>These tools can establish that:</p>
+<ul>
+<li>a field is missing;</li>
+<li>values are invalid;</li>
+<li>completeness changed;</li>
+<li>a rule failed;</li>
+<li>a pipeline introduced a problem.</li>
+</ul>
+<p>The investigation case connects those observations to a model decision:</p>
+<ul>
+<li>Is the field actually required?</li>
+<li>For which population?</li>
+<li>Does the value have the expected meaning?</li>
+<li>Is the target rule correct?</li>
+<li>Should the model, source, mapping or configuration change?</li>
+</ul>
+<p>Data quality provides the signal.</p>
+<p>The case preserves the interpretation and decision.</p>
+<h3 id="jira-servicenow-and-other-ticketing-systems">Jira, ServiceNow and other ticketing systems</h3>
+<p>A ticket is useful for:</p>
+<ul>
+<li>assignment;</li>
+<li>scheduling;</li>
+<li>escalation;</li>
+<li>delivery status;</li>
+<li>operational communication.</li>
+</ul>
+<p>It is rarely sufficient as the only long-term model record.</p>
+<p>A case may link several tickets:</p>
+<ul>
+<li>investigation;</li>
+<li>remediation;</li>
+<li>configuration;</li>
+<li>testing;</li>
+<li>source correction.</li>
+</ul>
+<p>The finding should remain stable even after those tickets are closed or archived.</p>
+<h2 id="martenweave-s-position-is-between-evidence-and-controlled-change">Martenweave’s position is between evidence and controlled change</h2>
+<p>The product should not claim:</p>
+<blockquote>We replace SAP MDG, Collibra, Alation, Informatica or Ataccama.</blockquote>
+<p>That would be inaccurate and strategically weak.</p>
+<p>A more defensible position is:</p>
+<pre><code class="language-text">Operational systems and platforms produce evidence.
+
+Martenweave structures the model investigation.
+
+The case links evidence to canonical model objects.
+
+Validators test consistency.
+
+A proposal records the intended change.
+
+Existing delivery and governance tools execute the work.</code></pre>
+<p>Martenweave’s current documented pipeline already follows this direction:</p>
+<pre><code class="language-text">evidence
+→ proposal
+→ validation
+→ gaps and impact
+→ review
+→ GitHub issue or pull request</code></pre>
+<p>The reusable investigation case should sit between evidence and proposal.</p>
+<pre><code class="language-text">evidence
+→ investigation case
+→ finding
+→ decision
+→ PatchProposal or issue</code></pre>
+<p>Not every evidence item should become a proposal.</p>
+<p>The case determines whether a model change is justified.</p>
+<h2 id="the-anatomy-of-a-practical-case">The anatomy of a practical case</h2>
+<p>A concise case record can use the following structure.</p>
+<h3 id="case-identity">Case identity</h3>
+<ul>
+<li>case ID;</li>
+<li>title;</li>
+<li>status;</li>
+<li>investigator;</li>
+<li>responsible owner;</li>
+<li>dates.</li>
+</ul>
+<h3 id="trigger">Trigger</h3>
+<ul>
+<li>observed symptom;</li>
+<li>source of the finding;</li>
+<li>business or migration consequence.</li>
+</ul>
+<h3 id="scope">Scope</h3>
+<ul>
+<li>domain;</li>
+<li>systems;</li>
+<li>countries;</li>
+<li>organisational level;</li>
+<li>population;</li>
+<li>exclusions.</li>
+</ul>
+<h3 id="model-references">Model references</h3>
+<ul>
+<li>affected attributes;</li>
+<li>endpoints;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>values;</li>
+<li>datasets;</li>
+<li>decisions.</li>
+</ul>
+<h3 id="baselines">Baselines</h3>
+<ul>
+<li>canonical model;</li>
+<li>mapping;</li>
+<li>dataset;</li>
+<li>implementation;</li>
+<li>test cycle.</li>
+</ul>
+<h3 id="evidence-2">Evidence</h3>
+<ul>
+<li>evidence IDs;</li>
+<li>facts established;</li>
+<li>limitations;</li>
+<li>freshness.</li>
+</ul>
+<h3 id="hypotheses">Hypotheses</h3>
+<ul>
+<li>explanation;</li>
+<li>evidence for;</li>
+<li>evidence against;</li>
+<li>result.</li>
+</ul>
+<h3 id="finding-2">Finding</h3>
+<ul>
+<li>concise conclusion;</li>
+<li>confidence;</li>
+<li>unresolved questions.</li>
+</ul>
+<h3 id="decision-2">Decision</h3>
+<ul>
+<li>approved treatment;</li>
+<li>responsible authority;</li>
+<li>conditions;</li>
+<li>expiry.</li>
+</ul>
+<h3 id="impact">Impact</h3>
+<ul>
+<li>confirmed dependencies;</li>
+<li>review-required dependencies;</li>
+<li>coverage gaps.</li>
+</ul>
+<h3 id="reuse">Reuse</h3>
+<ul>
+<li>valid reuse conditions;</li>
+<li>reinvestigation triggers;</li>
+<li>precedent status.</li>
+</ul>
+<h3 id="follow-up">Follow-up</h3>
+<ul>
+<li>PatchProposal;</li>
+<li>ChangeRequest;</li>
+<li>issue;</li>
+<li>remediation;</li>
+<li>implementation;</li>
+<li>test.</li>
+</ul>
+<p>This is comprehensive without requiring a narrative report for every case.</p>
+<h2 id="the-case-should-be-inspectable-as-a-graph">The case should be inspectable as a graph</h2>
+<p>The case is not isolated.</p>
+<p>It links:</p>
+<pre><code class="language-text">Dataset evidence
+        ↓
+Investigation case
+        ↓
+Model finding
+        ↓
+Decision
+        ↓
+PatchProposal
+        ↓
+ChangeRequest
+        ↓
+Mapping, rule or attribute
+        ↓
+Tests and implementation evidence</code></pre>
+<p>This structure allows users to approach the knowledge from several directions.</p>
+<p>From an attribute:</p>
+<blockquote>Which investigations changed our understanding of this concept?</blockquote>
+<p>From a dataset:</p>
+<blockquote>Which model findings were based on this profile?</blockquote>
+<p>From a decision:</p>
+<blockquote>Which evidence and hypotheses supported it?</blockquote>
+<p>From a production incident:</p>
+<blockquote>Has this problem been investigated before?</blockquote>
+<h2 id="do-not-store-the-entire-investigation-only-as-prose">Do not store the entire investigation only as prose</h2>
+<p>Prose is useful for explaining nuance.</p>
+<p>Important elements should also be structured:</p>
+<ul>
+<li>IDs;</li>
+<li>scope;</li>
+<li>statuses;</li>
+<li>baselines;</li>
+<li>evidence links;</li>
+<li>confidence;</li>
+<li>reuse conditions;</li>
+<li>affected objects.</li>
+</ul>
+<p>This enables:</p>
+<ul>
+<li>search;</li>
+<li>validation;</li>
+<li>filtering;</li>
+<li>impact analysis;</li>
+<li>stale-evidence detection;</li>
+<li>agent-assisted summarisation.</li>
+</ul>
+<p>The prose explains the reasoning.</p>
+<p>The structure makes the reasoning reusable.</p>
+<h2 id="case-validation-should-be-deterministic-where-possible">Case validation should be deterministic where possible</h2>
+<p>Martenweave could validate that:</p>
+<ul>
+<li>referenced model objects exist;</li>
+<li>evidence records exist;</li>
+<li>model baselines are identified;</li>
+<li>closed cases contain a finding;</li>
+<li>approved cases identify a decision owner;</li>
+<li>reusable precedents define reuse conditions;</li>
+<li>temporary decisions contain expiry;</li>
+<li>superseded cases identify their replacement;</li>
+<li>proposed changes link to a case or other evidence source.</li>
+</ul>
+<p>These checks do not decide whether the finding is correct.</p>
+<p>They ensure that the case is complete enough to review and reuse.</p>
+<p>This follows Martenweave’s existing principle of validating IDs, types, references and domain-context rules before building generated indexes.</p>
+<h2 id="detect-stale-cases">Detect stale cases</h2>
+<p>A previously valid case may need review when:</p>
+<ul>
+<li>an affected model object changes;</li>
+<li>a source endpoint is replaced;</li>
+<li>a new country enters scope;</li>
+<li>a dataset contradicts the finding;</li>
+<li>a rejected alternative becomes technically possible;</li>
+<li>target semantics change;</li>
+<li>an accepted condition expires.</li>
+</ul>
+<p>A case should not become immutable truth merely because it was approved once.</p>
+<p>Useful states include:</p>
+<ul>
+<li>current;</li>
+<li>review required;</li>
+<li>contradicted;</li>
+<li>superseded;</li>
+<li>archived.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Case:
+INV-CUSTOMER-GROUP-CRM-A-001
+
+Status:
+Review required
+
+Trigger:
+CRM_A now supports sales-area-specific values
+
+Reason:
+Original finding assumed one central value per customer</code></pre>
+<p>The original case remains historically valid.</p>
+<p>Its reuse conditions no longer hold.</p>
+<h2 id="similar-cases-should-not-be-merged-blindly">Similar cases should not be merged blindly</h2>
+<p>Two cases may appear identical:</p>
+<ul>
+<li>same target attribute;</li>
+<li>same gap type;</li>
+<li>similar source field.</li>
+</ul>
+<p>Before merging or reusing, compare:</p>
+<ul>
+<li>business meaning;</li>
+<li>organisational level;</li>
+<li>population;</li>
+<li>source-system behaviour;</li>
+<li>local requirements;</li>
+<li>target use;</li>
+<li>current baselines.</li>
+</ul>
+<p>The right goal is not eliminating all duplicate investigations.</p>
+<p>It is avoiding unnecessary repetition while preserving meaningful contextual differences.</p>
+<h2 id="a-worked-case-supplier-review-status">A worked case: Supplier Review Status</h2>
+<h3 id="trigger-2">Trigger</h3>
+<p>ERP_B cannot provide Supplier Risk for 27% of active suppliers included in Wave 2.</p>
+<h3 id="initial-request">Initial request</h3>
+<p>Default missing values to <code>STANDARD</code>.</p>
+<h3 id="scope-2">Scope</h3>
+<ul>
+<li>ERP_B;</li>
+<li>active supplier organisations;</li>
+<li>Germany and Austria;</li>
+<li>Wave 2;</li>
+<li>Supplier Risk and Compliance Review Status.</li>
+</ul>
+<h3 id="evidence-3">Evidence</h3>
+<p>Dataset profiling shows:</p>
+<ul>
+<li>18,040 valid Supplier Risk values;</li>
+<li>5,600 blanks;</li>
+<li>1,240 ambiguous codes;</li>
+<li>blanks concentrated among non-strategic suppliers.</li>
+</ul>
+<p>Business review establishes:</p>
+<ul>
+<li>Supplier Risk is a final classification;</li>
+<li>unresolved records should not appear final;</li>
+<li>compliance already uses an informal pending-review process.</li>
+</ul>
+<h3 id="hypotheses-2">Hypotheses</h3>
+<p>#### The blanks mean standard risk</p>
+<p>Rejected.</p>
+<p>No evidence supports that conclusion.</p>
+<p>#### Supplier Risk should be optional</p>
+<p>Rejected as a global treatment.</p>
+<p>The requirement remains valid for active strategic suppliers.</p>
+<p>#### A separate review status is needed</p>
+<p>Supported.</p>
+<p>The source gap concerns process state and incomplete assessment, not a final risk value.</p>
+<h3 id="finding-3">Finding</h3>
+<p>The source cannot provide a final Supplier Risk for every applicable record, and using <code>STANDARD</code> would convert missing knowledge into an apparently valid classification.</p>
+<h3 id="decision-3">Decision</h3>
+<ul>
+<li>do not default Supplier Risk;</li>
+<li>introduce Review Status;</li>
+<li>use <code>PENDING</code> for unresolved applicable records;</li>
+<li>block final activation until classification is approved;</li>
+<li>remediate the current population.</li>
+</ul>
+<h3 id="reuse-conditions">Reuse conditions</h3>
+<p>The finding may be reused for another source when:</p>
+<ul>
+<li>Supplier Risk remains a final classification;</li>
+<li>unresolved records can be identified;</li>
+<li>no authoritative source provides the final value;</li>
+<li>operational workflow supports a separate review state.</li>
+</ul>
+<h3 id="reinvestigation-triggers">Reinvestigation triggers</h3>
+<ul>
+<li>Supplier Risk definition changes;</li>
+<li>an authoritative source becomes available;</li>
+<li>business approves deterministic derivation;</li>
+<li>Review Status is no longer needed operationally.</li>
+</ul>
+<p>This case can later guide another source-system rollout without automatically imposing the same implementation.</p>
+<h2 id="a-weak-case-and-a-strong-case">A weak case and a strong case</h2>
+<h3 id="weak">Weak</h3>
+<pre><code class="language-text">Issue:
+Customer Group mapping incorrect.
+
+Decision:
+Use manual enrichment.
+
+Status:
+Closed.</code></pre>
+<h3 id="strong">Strong</h3>
+<pre><code class="language-text">Finding:
+CRM_A Customer Segment is a central marketing classification
+and is not directly equivalent to sales-area Customer Group.
+
+Evidence:
+Current source definition, July dataset profile, sales-process
+owner review and target-usage analysis.
+
+Decision:
+Use controlled enrichment for Wave 2.
+
+Reuse:
+Applicable only while CRM_A remains central and no approved
+sales-area derivation exists.
+
+Reinvestigate when:
+Source granularity or target usage changes.</code></pre>
+<p>The strong case is not dramatically longer.</p>
+<p>It is far more reusable.</p>
+<h2 id="what-should-be-shown-to-different-readers">What should be shown to different readers</h2>
+<p>A migration analyst needs:</p>
+<ul>
+<li>dataset;</li>
+<li>population;</li>
+<li>mapping;</li>
+<li>rejected values;</li>
+<li>next action.</li>
+</ul>
+<p>A business owner needs:</p>
+<ul>
+<li>business meaning;</li>
+<li>scope;</li>
+<li>alternatives;</li>
+<li>decision;</li>
+<li>remaining risk.</li>
+</ul>
+<p>An architect needs:</p>
+<ul>
+<li>model objects;</li>
+<li>context;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>baselines.</li>
+</ul>
+<p>AMS needs:</p>
+<ul>
+<li>final finding;</li>
+<li>implementation;</li>
+<li>known limitations;</li>
+<li>reopening triggers.</li>
+</ul>
+<p>These should be views of one case.</p>
+<p>Do not create separate versions that can diverge.</p>
+<h2 id="ai-has-a-limited-but-useful-role">AI has a limited but useful role</h2>
+<p>AI can help:</p>
+<ul>
+<li>extract candidate evidence from tickets and documents;</li>
+<li>group similar cases;</li>
+<li>draft hypothesis comparisons;</li>
+<li>identify missing case fields;</li>
+<li>summarise long investigation histories;</li>
+<li>suggest previous cases that may be relevant.</li>
+</ul>
+<p>It should not declare two cases equivalent because their field names match.</p>
+<p>It should not convert a previous local finding into a global rule.</p>
+<p>A useful agent output is:</p>
+<blockquote>This case resembles <code>INV-CUSTOMER-GROUP-CRM-A-001</code>, but the current source stores values by sales organisation rather than centrally. The previous conclusion cannot be reused without checking organisational equivalence.</blockquote>
+<p>The agent helps retrieve and challenge precedent.</p>
+<p>It does not replace the new decision.</p>
+<h2 id="a-small-martenweave-implementation-slice">A small Martenweave implementation slice</h2>
+<p>The first implementation does not need a full case-management system.</p>
+<p>Add one canonical object type:</p>
+<pre><code class="language-text">InvestigationCase</code></pre>
+<p>Support:</p>
+<ul>
+<li>stable ID;</li>
+<li>status;</li>
+<li>scope;</li>
+<li>affected model references;</li>
+<li>evidence references;</li>
+<li>hypotheses;</li>
+<li>finding;</li>
+<li>confidence;</li>
+<li>decision reference;</li>
+<li>reuse conditions;</li>
+<li>reinvestigation triggers;</li>
+<li>follow-up links.</li>
+</ul>
+<p>Then provide:</p>
+<ol>
+<li>deterministic validation;</li>
+<li>indexing and search;</li>
+<li>object-to-case lookup;</li>
+<li>case-to-proposal linkage;</li>
+<li>Markdown and HTML rendering;</li>
+<li>Git diff and review.</li>
+</ol>
+<p>A useful first acceptance scenario is:</p>
+<blockquote>A user investigating Customer Group can find an earlier case, see why direct mapping was rejected, determine whether the old scope matches the new one and either reuse the finding or open a related case.</blockquote>
+<p>That proves reusable model knowledge without building another generic workflow platform.</p>
+<h2 id="questions-for-a-programme-lead">Questions for a programme lead</h2>
+<p>Before declaring an investigation complete, ask:</p>
+<ul>
+<li>Can another team find it?</li>
+<li>Are the affected model objects identified?</li>
+<li>Is the source evidence still available?</li>
+<li>Are facts separated from interpretation?</li>
+<li>Are rejected alternatives preserved?</li>
+<li>Is the finding concise?</li>
+<li>Is the decision recorded separately?</li>
+<li>Are reuse conditions explicit?</li>
+<li>Are reinvestigation triggers defined?</li>
+<li>Can the case be linked to the resulting model change?</li>
+<li>Does it complement rather than duplicate existing governance platforms?</li>
+<li>Would AMS understand the finding without calling the original consultant?</li>
+</ul>
+<p>If several answers are no, the investigation produced a decision but not reusable knowledge.</p>
+<h2 id="final-perspective">Final perspective</h2>
+<p>SAP programmes do not lack analysis.</p>
+<p>They lose analysis after it has been performed.</p>
+<p>The answer is not more documentation.</p>
+<p>It is a better unit of knowledge.</p>
+<p>A reusable model investigation case preserves:</p>
+<ul>
+<li>the original problem;</li>
+<li>the exact scope;</li>
+<li>the evidence;</li>
+<li>the rejected explanations;</li>
+<li>the conclusion;</li>
+<li>the approved treatment;</li>
+<li>the conditions under which the conclusion remains valid.</li>
+</ul>
+<p>SAP MDG can operationalise governed master data and workflow. Data catalogues such as Collibra and Alation can provide enterprise metadata discovery, context and lineage. Informatica can combine governance, cataloguing, quality and MDM capabilities. Ataccama can provide profiling, rules, lineage, monitoring and remediation.</p>
+<p>Martenweave should not imitate all of them.</p>
+<p>Its stronger position is narrower:</p>
+<blockquote>Preserve how project evidence became a model finding, and how that finding became a controlled change.</blockquote>
+<p>The practical test is simple:</p>
+<blockquote>When the same model question appears in another country or migration wave, can the new team reuse the old investigation without copying its conclusion blindly?</blockquote>
+<p>When the answer is yes, the project has created durable model knowledge.</p>
+<p>When the answer is no, the organisation is still paying repeatedly for answers it has already found.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects canonical model objects, datasets, gaps, evidence, decisions, lineage, impact analysis and human-reviewed change proposals.</p>
+<p>The objective is not to replace operational MDM, enterprise catalogues, data-quality platforms or delivery tools.</p>
+<p>It is to preserve the missing chain between evidence, investigation, decision and approved model change.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP describes SAP Master Data Governance as a central governance layer for master data, policy and metadata, including governed models, semantic relationships, matching, consolidation, steward workflows, validated values, quality monitoring and auditable changes.</p>
+<p>Collibra describes data catalogues as metadata-based inventories supporting discovery, description and organisation of enterprise data assets, while its wider platform covers governance, lineage, quality, privacy and access.</p>
+<p>Alation describes a data catalogue as a searchable platform combining technical metadata, business context, lineage, trust information and governance.</p>
+<p>Informatica presents data governance, cataloguing, quality, observability, integration and MDM as connected platform capabilities and supports metadata linkage, profiling statistics, scorecards, scanners and APIs.</p>
+<p>Ataccama describes dataset profiling, quality rules, monitoring, lineage, issue remediation and reusable rule management as integrated data-quality capabilities.</p>
+<p>Martenweave Core currently uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, lineage, impact analysis and human-reviewed <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Collibra, Alation, Informatica, Ataccama or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-build-a-migration-finding-taxonomy-that-business-data-and-sap.html">The migration test reports that 4,860 supplier records failed the Tax Identifier rule.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html"><span>Previous</span>A migration test fails because Customer Group is missing.</a><a href="/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html"><span>Next</span>A programme has an approved decision:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

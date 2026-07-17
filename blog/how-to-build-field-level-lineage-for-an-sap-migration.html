@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Build Field-Level Lineage for an SAP Migration | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration programme says that it has lineage."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html" />
+    <meta property="og:title" content="How to Build Field-Level Lineage for an SAP Migration | Martenweave" />
+    <meta property="og:description" content="A migration programme says that it has lineage." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Build Field-Level Lineage for an SAP Migration | Martenweave" />
+    <meta name="twitter:description" content="A migration programme says that it has lineage." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html",
+                        "name": "How to Build Field-Level Lineage for an SAP Migration | Martenweave",
+                        "description": "A migration programme says that it has lineage.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Build Field-Level Lineage for an SAP Migration",
+                                    "item": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html#content",
+                        "headline": "How to Build Field-Level Lineage for an SAP Migration",
+                        "name": "How to Build Field-Level Lineage for an SAP Migration",
+                        "description": "A migration programme says that it has lineage.",
+                        "url": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-build-field-level-lineage-for-an-sap-migration.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Build Field-Level Lineage for an SAP Migration</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Build Field-Level Lineage for an SAP Migration</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A migration programme says that it has lineage.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#source-endpoint">Source endpoint</a></li><li><a href="#observed-dataset-field">Observed dataset field</a></li><li><a href="#transformation-or-mapping">Transformation or Mapping</a></li><li><a href="#business-attribute">Business Attribute</a></li><li><a href="#target-endpoint">Target endpoint</a></li><li><a href="#direct-copy">Direct copy</a></li><li><a href="#value-conversion">Value conversion</a></li><li><a href="#conditional-derivation">Conditional derivation</a></li><li><a href="#concatenation-or-split">Concatenation or split</a></li><li><a href="#aggregation">Aggregation</a></li><li><a href="#enrichment">Enrichment</a></li><li><a href="#default">Default</a></li><li><a href="#manual-assignment">Manual assignment</a></li><li><a href="#rejection">Rejection</a></li><li><a href="#design-lineage">Design lineage</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration programme says that it has lineage.</p>
+<p>The architecture diagram shows:</p>
+<pre><code class="language-text">Legacy CRM
+→ Migration Platform
+→ SAP S/4HANA</code></pre>
+<p>The arrow is correct.</p>
+<p>It is also too broad to answer most migration questions.</p>
+<p>A data owner asks:</p>
+<blockquote>Where does Customer Group in SAP come from?</blockquote>
+<p>The programme replies:</p>
+<blockquote>CRM.</blockquote>
+<p>That answer hides the actual chain:</p>
+<pre><code class="language-text">CRM customer segment field
+→ source extract column
+→ value normalisation
+→ organisational enrichment
+→ approved Customer Group mapping
+→ migration load field
+→ SAP KNVV-KDGRP</code></pre>
+<p>It also hides the evidence needed to trust the chain:</p>
+<ul>
+<li>which source table or API property was used;</li>
+<li>which extract version contained it;</li>
+<li>whether the value was copied, converted or derived;</li>
+<li>which Sales Area context was required;</li>
+<li>which decision approved the mapping;</li>
+<li>which records could not be evaluated;</li>
+<li>which validation report confirmed the result;</li>
+<li>which proposal remains open.</li>
+</ul>
+<p>System-level lineage can show that data moved from CRM to SAP.</p>
+<p>Field-level lineage explains what happened to one governed value.</p>
+<blockquote>For an SAP migration, useful lineage must connect physical source fields, observed dataset columns, transformations, business attributes, target fields, rules, evidence and decisions.</blockquote>
+<p>Martenweave’s current public example already demonstrates the intended shape. It can trace the business Attribute <code>ATTR-CUST-SALES-CUSTOMER-GROUP</code> and calculate impact from the physical SAP FieldEndpoint <code>FEP-S4-KNVV-KDGRP</code>. Its documentation describes the trace as connecting business attributes, physical SAP fields, mappings, issues, decisions and evidence.</p>
+<p>The product also generates <code>lineage_edges.jsonl</code> from canonical model files alongside the searchable SQLite index. Those generated edges remain disposable and rebuildable rather than becoming an independently edited lineage database.</p>
+<p>The objective is not to draw the largest possible graph.</p>
+<p>It is to create a graph precise enough to support migration decisions.</p>
+<p>---</p>
+<h1 id="field-level-lineage-answers-a-different-question">Field-level lineage answers a different question</h1>
+<p>Dataset lineage asks:</p>
+<blockquote>Which dataset produced this dataset?</blockquote>
+<p>Field-level lineage asks:</p>
+<blockquote>Which input fields contributed to this output field, and how?</blockquote>
+<p>This distinction is recognised in established lineage specifications. OpenLineage describes column-level lineage as fine-grained dependency information that identifies which input columns produce an output column and the nature of that transformation.</p>
+<p>For SAP migration, the question is broader than column-to-column dependency.</p>
+<p>A target field often depends on:</p>
+<ul>
+<li>business interpretation;</li>
+<li>organisational context;</li>
+<li>reference data;</li>
+<li>conditional rules;</li>
+<li>manual enrichment;</li>
+<li>source authority;</li>
+<li>approved exceptions.</li>
+</ul>
+<p>A technically accurate transformation path may still be semantically incomplete.</p>
+<p>For example:</p>
+<pre><code class="language-text">CRM_SEGMENT
+→ KDGRP</code></pre>
+<p>does not tell the reviewer whether:</p>
+<ul>
+<li>CRM Segment and Customer Group mean the same thing;</li>
+<li>one CRM value maps to several Customer Groups;</li>
+<li>Sales Area determines the result;</li>
+<li>unmapped values receive a default;</li>
+<li>the default is temporary;</li>
+<li>the mapping applies only to one migration wave.</li>
+</ul>
+<p>Martenweave therefore needs to represent both:</p>
+<pre><code class="language-text">physical lineage
+and
+governed semantic lineage</code></pre>
+<p>---</p>
+<h1 id="the-minimum-useful-chain">The minimum useful chain</h1>
+<p>A practical field-level lineage chain should usually contain at least five layers.</p>
+<h2 id="source-endpoint">Source endpoint</h2>
+<p>The registered physical field in the source landscape.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT</code></pre>
+<h2 id="observed-dataset-field">Observed dataset field</h2>
+<p>The column or path actually found in one migration extract.</p>
+<p>Example:</p>
+<pre><code class="language-text">DATAFIELD-ERP-B-WAVE3-SEGMENT-CODE</code></pre>
+<h2 id="transformation-or-mapping">Transformation or Mapping</h2>
+<p>The operation that copies, converts, derives, enriches or filters the value.</p>
+<p>Example:</p>
+<pre><code class="language-text">MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP</code></pre>
+<h2 id="business-attribute">Business Attribute</h2>
+<p>The governed semantic concept.</p>
+<p>Example:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<h2 id="target-endpoint">Target endpoint</h2>
+<p>The physical SAP field receiving the result.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>The resulting path is:</p>
+<pre><code class="language-text">registered source field
+→ observed extract column
+→ Mapping or transformation
+→ governed business Attribute
+→ SAP target field</code></pre>
+<p>Additional layers may include:</p>
+<ul>
+<li>reference-data lookup;</li>
+<li>Decision;</li>
+<li>Rule;</li>
+<li>Data Quality assertion;</li>
+<li>exception;</li>
+<li>manual enrichment;</li>
+<li>interface;</li>
+<li>intermediate staging field;</li>
+<li>downstream report.</li>
+</ul>
+<p>The chain should expand only where the additional object explains real behaviour or risk.</p>
+<p>---</p>
+<h1 id="separate-registered-fields-from-observed-columns">Separate registered fields from observed columns</h1>
+<p>Migration teams often assume that a registered source field and an extract column are the same object.</p>
+<p>They are not always.</p>
+<p>A source system may register:</p>
+<pre><code class="language-text">ERP_B.CUSTOMER.SEGMENT</code></pre>
+<p>The migration extract may contain:</p>
+<pre><code class="language-text">SEG_CODE</code></pre>
+<p>The extract might:</p>
+<ul>
+<li>rename the field;</li>
+<li>convert its datatype;</li>
+<li>combine several source fields;</li>
+<li>filter records;</li>
+<li>omit organisational context;</li>
+<li>contain a previous schema version.</li>
+</ul>
+<p>A field-level lineage model should distinguish:</p>
+<pre><code class="language-text">Source FieldEndpoint:
+where the data exists in the source application
+
+DatasetField:
+what appeared in one specific extract</code></pre>
+<p>This allows Martenweave to detect:</p>
+<ul>
+<li>expected source field not extracted;</li>
+<li>unexpected dataset column;</li>
+<li>extract schema drift;</li>
+<li>transformation performed before the migration team received the data;</li>
+<li>undocumented renaming;</li>
+<li>loss of granularity.</li>
+</ul>
+<p>OpenLineage similarly distinguishes a Dataset from its schema fields and allows dataset metadata to include field names, types and descriptions.</p>
+<p>---</p>
+<h1 id="begin-with-stable-field-identities">Begin with stable field identities</h1>
+<p>Lineage becomes fragile when endpoints are identified only by labels such as:</p>
+<pre><code class="language-text">Customer Group
+Segment
+Risk
+Status</code></pre>
+<p>A reliable physical endpoint ID should include enough stable implementation context to distinguish it:</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
+FEP-S4-KNVV-KDGRP
+FEP-MDG-BP-ZZ-RISK-LEVEL</code></pre>
+<p>The corresponding business Attributes remain separate:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-SEGMENT
+ATTR-CUSTOMER-GROUP
+ATTR-SUPPLIER-RISK</code></pre>
+<p>This separation matters because a business Attribute can survive:</p>
+<ul>
+<li>source-system replacement;</li>
+<li>SAP upgrade;</li>
+<li>custom-to-standard field migration;</li>
+<li>interface redesign;</li>
+<li>new migration tooling.</li>
+</ul>
+<p>The endpoint identity changes when the physical location changes.</p>
+<p>The business identity changes only when the governed concept changes.</p>
+<p>---</p>
+<h1 id="do-not-infer-lineage-from-similar-names">Do not infer lineage from similar names</h1>
+<p>These fields may appear equivalent:</p>
+<pre><code class="language-text">CRM_SEGMENT
+CUSTOMER_SEGMENT
+CUSTOMER_GROUP
+KDGRP</code></pre>
+<p>Name similarity is not sufficient evidence.</p>
+<p>Possible realities include:</p>
+<ul>
+<li>direct equivalence;</li>
+<li>partial overlap;</li>
+<li>value conversion;</li>
+<li>context-dependent mapping;</li>
+<li>two unrelated classifications;</li>
+<li>historical misuse of one field;</li>
+<li>temporary workaround.</li>
+</ul>
+<p>The lineage edge should exist because an explicit Mapping or Decision supports it.</p>
+<p>Not because an algorithm found similar words.</p>
+<p>AI can suggest likely connections.</p>
+<p>The canonical graph should require reviewable evidence.</p>
+<p>---</p>
+<h1 id="transformation-is-an-object-not-an-arrow-label">Transformation is an object, not an arrow label</h1>
+<p>A weak lineage diagram shows:</p>
+<pre><code class="language-text">SEGMENT
+── mapped to ──&gt;
+KDGRP</code></pre>
+<p>A stronger model represents the Mapping itself.</p>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
+→ MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<p>The Mapping object can carry:</p>
+<ul>
+<li>transformation type;</li>
+<li>applicability;</li>
+<li>input fields;</li>
+<li>output fields;</li>
+<li>lookup reference;</li>
+<li>fallback;</li>
+<li>owner;</li>
+<li>Decision;</li>
+<li>status;</li>
+<li>evidence.</li>
+</ul>
+<p>This allows the graph to answer:</p>
+<blockquote>Which transformation creates this value?</blockquote>
+<p>rather than only:</p>
+<blockquote>Which fields are related?</blockquote>
+<p>---</p>
+<h1 id="classify-transformation-types">Classify transformation types</h1>
+<p>Field lineage becomes more useful when the transformation is typed.</p>
+<p>OpenLineage distinguishes direct and indirect column dependencies and further classifies direct identity, transformation and aggregation, as well as indirect join, filter, grouping, sorting, windowing and conditional dependencies.</p>
+<p>An SAP migration model can use a related but migration-oriented classification.</p>
+<h2 id="direct-copy">Direct copy</h2>
+<pre><code class="language-text">source value → target value unchanged</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">COUNTRY_CODE → LAND1</code></pre>
+<p>This classification should still be verified for format and semantics.</p>
+<h2 id="value-conversion">Value conversion</h2>
+<pre><code class="language-text">01 → STANDARD
+02 → STRATEGIC</code></pre>
+<p>A lookup or conversion table is involved.</p>
+<h2 id="conditional-derivation">Conditional derivation</h2>
+<pre><code class="language-text">if Country = PT and Supplier Type = ORGANISATION
+then derive Tax Category</code></pre>
+<p>The output depends on one or more condition fields.</p>
+<h2 id="concatenation-or-split">Concatenation or split</h2>
+<p>Several fields form one target, or one source populates several targets.</p>
+<h2 id="aggregation">Aggregation</h2>
+<p>Several source records contribute to one target value.</p>
+<p>This is less common in operational master-data loads but may appear in classification or summarisation.</p>
+<h2 id="enrichment">Enrichment</h2>
+<p>The source value is insufficient and must be combined with:</p>
+<ul>
+<li>organisational context;</li>
+<li>reference data;</li>
+<li>external evidence;</li>
+<li>manual stewardship.</li>
+</ul>
+<h2 id="default">Default</h2>
+<p>The target receives a value when the source is absent.</p>
+<p>Defaults need explicit justification because they can hide data gaps.</p>
+<h2 id="manual-assignment">Manual assignment</h2>
+<p>A steward or migration team determines the result.</p>
+<p>This is still lineage.</p>
+<p>The human step should not disappear from the graph.</p>
+<h2 id="rejection">Rejection</h2>
+<p>A source value or record is deliberately excluded from the target.</p>
+<p>The absence of a target value can be an intentional transformation outcome rather than a missing edge.</p>
+<p>---</p>
+<h1 id="distinguish-value-derivation-from-control-dependencies">Distinguish value derivation from control dependencies</h1>
+<p>Suppose Customer Group is calculated from CRM Segment, but Sales Area determines which lookup row is used.</p>
+<pre><code class="language-text">CRM Segment:
+contributes to the output value
+
+Sales Area:
+controls which conversion applies</code></pre>
+<p>These are different dependencies.</p>
+<p>A useful graph can represent:</p>
+<pre><code class="language-text">CRM Segment
+── direct transformation input ──&gt;
+Customer Group Mapping
+
+Sales Area
+── conditional context ──&gt;
+Customer Group Mapping</code></pre>
+<p>OpenLineage’s column-level model similarly distinguishes direct dependencies, where an output value is derived from an input field, from indirect dependencies, where a field affects selection or calculation without contributing its value directly.</p>
+<p>This distinction prevents every control field from being described as though its value were copied into the output.</p>
+<p>---</p>
+<h1 id="organisational-context-must-appear-in-lineage">Organisational context must appear in lineage</h1>
+<p>SAP master data frequently exists at several levels:</p>
+<ul>
+<li>central Business Partner;</li>
+<li>Customer Sales Area;</li>
+<li>Customer Company Code;</li>
+<li>Supplier Purchasing Organisation;</li>
+<li>Supplier Company Code;</li>
+<li>Product Plant;</li>
+<li>Product Sales Organisation.</li>
+</ul>
+<p>A field-level lineage path that omits these keys can be technically connected but operationally wrong.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM customer segment
+→ Customer Group</code></pre>
+<p>The missing question is:</p>
+<blockquote>For which Sales Area?</blockquote>
+<p>A stronger chain is:</p>
+<pre><code class="language-text">CRM customer segment
++
+legacy Sales Area assignment
++
+approved contextual Mapping
+→ Customer Group for Customer Sales Area
+→ KNVV-KDGRP</code></pre>
+<p>The lineage should therefore include:</p>
+<ul>
+<li>parent Entity;</li>
+<li>organisational-key fields;</li>
+<li>cardinality;</li>
+<li>context Rules;</li>
+<li>applicable population.</li>
+</ul>
+<p>Without this, one central source value may appear to support several organisational target records without explaining how they differ.</p>
+<p>---</p>
+<h1 id="keys-are-part-of-lineage">Keys are part of lineage</h1>
+<p>Migration lineage is not only about payload fields.</p>
+<p>Keys determine which source and target records are connected.</p>
+<p>For a Customer Sales Area value, the relevant identity may require:</p>
+<pre><code class="language-text">Customer
+Sales Organisation
+Distribution Channel
+Division</code></pre>
+<p>If the lineage records only:</p>
+<pre><code class="language-text">CRM_SEGMENT → KNVV-KDGRP</code></pre>
+<p>it does not explain how the value is assigned to one <code>KNVV</code> record rather than another.</p>
+<p>Key lineage should show:</p>
+<pre><code class="language-text">Source Customer ID
+→ Customer number mapping
+→ SAP KUNNR
+
+Legacy Sales Unit
+→ organisational mapping
+→ VKORG/VTWEG/SPART</code></pre>
+<p>These key paths establish the target row.</p>
+<p>The value path establishes the target field.</p>
+<p>Both are necessary.</p>
+<p>---</p>
+<h1 id="model-field-level-and-record-level-lineage-separately">Model field-level and record-level lineage separately</h1>
+<p>Field-level lineage says:</p>
+<pre><code class="language-text">Source column A contributes to target field B.</code></pre>
+<p>Record-level lineage says:</p>
+<pre><code class="language-text">Source record 7182 produced SAP Business Partner 100045 and Customer Sales Area 1010/10/00.</code></pre>
+<p>Record-level lineage can be useful during:</p>
+<ul>
+<li>defect investigation;</li>
+<li>reconciliation;</li>
+<li>audit;</li>
+<li>cutover;</li>
+<li>rollback.</li>
+</ul>
+<p>It also creates much larger volumes and greater privacy risk.</p>
+<p>Martenweave’s canonical registry should focus first on model and field-level lineage.</p>
+<p>Record-level evidence can remain in:</p>
+<ul>
+<li>migration logs;</li>
+<li>reconciliation reports;</li>
+<li>load-control tables;</li>
+<li>restricted evidence stores.</li>
+</ul>
+<p>The registry can reference these sources without storing every business record.</p>
+<p>---</p>
+<h1 id="design-lineage-and-runtime-lineage">Design lineage and runtime lineage</h1>
+<p>A migration programme needs both intended and observed lineage.</p>
+<h2 id="design-lineage">Design lineage</h2>
+<p>The approved path:</p>
+<pre><code class="language-text">CRM Segment
+→ approved conversion
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<h2 id="runtime-lineage">Runtime lineage</h2>
+<p>What happened in a particular load:</p>
+<pre><code class="language-text">Extract 2026-07-12
+→ transformation job run 184
+→ load file 019
+→ SAP mock-load result</code></pre>
+<p>OpenLineage explicitly distinguishes design-time metadata events from runtime Job Run events. Design events describe declared datasets and jobs, while runtime events describe particular executions.</p>
+<p>For Martenweave:</p>
+<ul>
+<li>canonical Mappings and Relationships express design lineage;</li>
+<li>dataset profiles and execution Evidence express observed lineage;</li>
+<li>findings expose differences between the two.</li>
+</ul>
+<p>This separation avoids treating a successful one-time execution as proof that the approved design is complete.</p>
+<p>---</p>
+<h1 id="lineage-needs-evidence-confidence">Lineage needs evidence confidence</h1>
+<p>Not every lineage edge has the same evidential strength.</p>
+<p>A useful classification may include:</p>
+<h2 id="confirmed">Confirmed</h2>
+<p>Supported by:</p>
+<ul>
+<li>approved Mapping;</li>
+<li>code inspection;</li>
+<li>successful test evidence;</li>
+<li>validated source and target metadata.</li>
+</ul>
+<h2 id="declared">Declared</h2>
+<p>Documented in design but not yet verified in data.</p>
+<h2 id="observed">Observed</h2>
+<p>Inferred from an actual extract or run.</p>
+<h2 id="inferred">Inferred</h2>
+<p>Suggested from names, values or statistical correlation.</p>
+<h2 id="disputed">Disputed</h2>
+<p>Conflicting sources or Decisions exist.</p>
+<h2 id="deprecated">Deprecated</h2>
+<p>The lineage applied historically but should not be used for current loads.</p>
+<p>This makes uncertainty visible.</p>
+<p>The graph should not render every edge with equal authority.</p>
+<p>---</p>
+<h1 id="connect-decisions-to-lineage-edges">Connect decisions to lineage edges</h1>
+<p>A Mapping may exist because an architecture group decided:</p>
+<blockquote>CRM Segment is not semantically equivalent to Customer Group, but it may be used as one input to an enrichment process.</blockquote>
+<p>That Decision should remain connected to the lineage path.</p>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-SOURCE-017
+→ authorises
+MAP-CUSTOMER-GROUP-ENRICHMENT</code></pre>
+<p>If a later Decision supersedes it, Martenweave can identify:</p>
+<ul>
+<li>affected lineage;</li>
+<li>target fields;</li>
+<li>migration waves;</li>
+<li>datasets;</li>
+<li>tests.</li>
+</ul>
+<p>Without the Decision connection, the edge appears as a timeless technical fact.</p>
+<p>---</p>
+<h1 id="connect-rules-to-lineage">Connect rules to lineage</h1>
+<p>A Rule may define:</p>
+<ul>
+<li>when the Mapping applies;</li>
+<li>which values are permitted;</li>
+<li>whether enrichment is mandatory;</li>
+<li>whether missing data blocks load;</li>
+<li>whether a default may be used.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-APPLICABILITY
+→ governs
+MAP-CUSTOMER-GROUP-ENRICHMENT</code></pre>
+<p>and:</p>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+→ validates
+ATTR-CUSTOMER-GROUP</code></pre>
+<p>This enables more useful investigation:</p>
+<blockquote>The target field is missing. Was the source absent, the Mapping inapplicable, the enrichment incomplete or the Rule evaluated incorrectly?</blockquote>
+<p>---</p>
+<h1 id="connect-evidence-to-the-path-not-only-the-final-object">Connect evidence to the path, not only the final object</h1>
+<p>Evidence may support different parts of the chain.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Source profile:
+confirms CRM Segment exists
+
+Mapping test:
+confirms value conversion
+
+Load report:
+confirms KNVV-KDGRP populated
+
+Business decision:
+confirms semantic treatment
+
+Reconciliation:
+confirms expected record count</code></pre>
+<p>A single “evidence” link to the Attribute does not reveal which claim was verified.</p>
+<p>The graph should support evidence links such as:</p>
+<pre><code class="language-text">EVID-SOURCE-PROFILE
+→ supports source availability
+
+EVID-MAPPING-TEST
+→ verifies transformation
+
+EVID-MOCK-LOAD
+→ verifies target population</code></pre>
+<p>---</p>
+<h1 id="missing-lineage-is-a-finding">Missing lineage is a finding</h1>
+<p>Not every unknown connection should be filled with a guess.</p>
+<p>Suppose the target field is populated in a test extract, but no approved source or Mapping can be identified.</p>
+<p>Represent:</p>
+<pre><code class="language-text">FIND-UNKNOWN-SOURCE-FOR-CUSTOMER-GROUP</code></pre>
+<p>The Finding can state:</p>
+<ul>
+<li>target endpoint;</li>
+<li>observed values;</li>
+<li>suspected sources;</li>
+<li>evidence;</li>
+<li>investigation owner;</li>
+<li>status.</li>
+</ul>
+<p>This is more honest than drawing a dashed edge and allowing users to treat it as confirmed lineage.</p>
+<p>---</p>
+<h1 id="avoid-the-one-giant-transformation-problem">Avoid the “one giant transformation” problem</h1>
+<p>Migration tools often contain broad jobs such as:</p>
+<pre><code class="language-text">Transform Customer</code></pre>
+<p>That job may handle hundreds of fields.</p>
+<p>Representing all lineage as:</p>
+<pre><code class="language-text">Customer Extract
+→ Transform Customer
+→ SAP Customer</code></pre>
+<p>does not help field-level analysis.</p>
+<p>The model should decompose the transformation logically.</p>
+<p>This does not require one executable job per field.</p>
+<p>It requires Mapping or TransformationRule objects that explain individual target outcomes.</p>
+<pre><code class="language-text">Transform Customer job
+├── Customer Group Mapping
+├── Shipping Condition Mapping
+├── Payment Terms Mapping
+└── Tax Classification Mapping</code></pre>
+<p>The runtime job and the semantic mappings can coexist.</p>
+<p>---</p>
+<h1 id="intermediate-staging-fields-matter">Intermediate staging fields matter</h1>
+<p>A field may pass through several stages:</p>
+<pre><code class="language-text">CRM_SEGMENT
+→ STG_SEGMENT_NORMALISED
+→ STG_CUSTOMER_GROUP
+→ LOAD_KDGRP
+→ KNVV-KDGRP</code></pre>
+<p>Do all intermediate fields belong in the canonical graph?</p>
+<p>Include them when they explain:</p>
+<ul>
+<li>transformation behaviour;</li>
+<li>reconciliation point;</li>
+<li>ownership boundary;</li>
+<li>defect location;</li>
+<li>material semantic change.</li>
+</ul>
+<p>Omit purely mechanical intermediate copies when they add no diagnostic value.</p>
+<p>A useful lineage path should be detailed enough to investigate failure without becoming a dump of every temporary column.</p>
+<p>---</p>
+<h1 id="manual-transformations-must-be-visible">Manual transformations must be visible</h1>
+<p>Some migrations rely on:</p>
+<ul>
+<li>business review workbooks;</li>
+<li>steward assignment;</li>
+<li>manually maintained conversion tables;</li>
+<li>local exceptions;</li>
+<li>one-time correction files.</li>
+</ul>
+<p>These steps often disappear from technical lineage because they are not implemented as code.</p>
+<p>That makes the lineage misleading.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM Segment
+→ manually reviewed conversion workbook
+→ approved Customer Group
+→ SAP target</code></pre>
+<p>The workbook should not become the canonical source of truth.</p>
+<p>It can still be represented as Evidence or an implementation artefact in the lineage.</p>
+<p>The approved Mapping remains canonical.</p>
+<p>---</p>
+<h1 id="default-values-deserve-special-treatment">Default values deserve special treatment</h1>
+<p>A default can make lineage appear complete while hiding source failure.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Missing Customer Group
+→ default STANDARD</code></pre>
+<p>The target field is populated.</p>
+<p>A completeness report may look good.</p>
+<p>The lineage should expose:</p>
+<ul>
+<li>default condition;</li>
+<li>default value;</li>
+<li>approving Decision;</li>
+<li>applicable population;</li>
+<li>expiry;</li>
+<li>records affected.</li>
+</ul>
+<p>A default is not equivalent to a source-derived value.</p>
+<p>It should have its own transformation classification.</p>
+<p>---</p>
+<h1 id="nulls-are-lineage-outcomes">Nulls are lineage outcomes</h1>
+<p>A missing target value may result from:</p>
+<ul>
+<li>missing source;</li>
+<li>Mapping not applicable;</li>
+<li>source value rejected;</li>
+<li>failed lookup;</li>
+<li>incomplete enrichment;</li>
+<li>deliberate blank;</li>
+<li>technical load failure.</li>
+</ul>
+<p>The graph should allow these outcomes to be distinguished.</p>
+<p>A lineage model that records only successful field population cannot support readiness analysis.</p>
+<p>---</p>
+<h1 id="multi-source-lineage">Multi-source lineage</h1>
+<p>One SAP field may use several sources.</p>
+<p>Example:</p>
+<pre><code class="language-text">Supplier Risk =
+central risk score
++
+local compliance status
++
+supplier category
++
+manual approval</code></pre>
+<p>The model should show:</p>
+<pre><code class="language-text">FEP-RISK-SCORE
+FEP-COMPLIANCE-STATUS
+FEP-SUPPLIER-CATEGORY
+EVID-MANUAL-APPROVAL
+→ MAP-SUPPLIER-RISK-DERIVATION
+→ ATTR-SUPPLIER-RISK
+→ FEP-S4-SUPPLIER-RISK</code></pre>
+<p>Each input should have a role:</p>
+<ul>
+<li>direct value input;</li>
+<li>condition;</li>
+<li>lookup key;</li>
+<li>approval gate.</li>
+</ul>
+<p>This prevents a flat list of four upstream fields from implying that all four values are concatenated or copied.</p>
+<p>---</p>
+<h1 id="one-source-to-many-targets">One source to many targets</h1>
+<p>A source field may populate several target fields.</p>
+<p>Example:</p>
+<pre><code class="language-text">Legacy Partner Type
+→ Business Partner category
+→ Customer role eligibility
+→ Supplier role eligibility</code></pre>
+<p>The graph should represent separate Mappings.</p>
+<p>One broad edge:</p>
+<pre><code class="language-text">Partner Type → SAP Business Partner</code></pre>
+<p>does not show the different semantics and conditions.</p>
+<p>---</p>
+<h1 id="many-sources-to-one-target">Many sources to one target</h1>
+<p>Several systems may supply the same business Attribute for different populations.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM:
+Customer Group for active commercial customers
+
+ERP_B:
+Customer Group for legacy regional customers
+
+Manual enrichment:
+missing organisational combinations</code></pre>
+<p>The lineage needs applicability:</p>
+<pre><code class="language-text">source A applies when...
+source B applies when...
+manual route applies when...</code></pre>
+<p>Otherwise, the graph appears to contain conflicting authorities.</p>
+<p>---</p>
+<h1 id="authority-is-part-of-lineage">Authority is part of lineage</h1>
+<p>A field may be technically available from several systems.</p>
+<p>The approved source of record may vary by:</p>
+<ul>
+<li>Attribute;</li>
+<li>country;</li>
+<li>business unit;</li>
+<li>effective date;</li>
+<li>lifecycle stage.</li>
+</ul>
+<p>The lineage should distinguish:</p>
+<pre><code class="language-text">available source
+from
+authoritative source</code></pre>
+<p>A source field can be connected as Evidence without being approved for migration.</p>
+<p>---</p>
+<h1 id="historical-lineage-must-remain-queryable">Historical lineage must remain queryable</h1>
+<p>Wave 2 may have used:</p>
+<pre><code class="language-text">CRM Segment
+→ direct Customer Group Mapping</code></pre>
+<p>Wave 3 may use:</p>
+<pre><code class="language-text">CRM Segment + Sales Area
+→ enrichment
+→ Customer Group</code></pre>
+<p>Do not overwrite the old lineage and pretend the new path always existed.</p>
+<p>Use:</p>
+<ul>
+<li>model baselines;</li>
+<li>effective periods;</li>
+<li>superseded Mappings;</li>
+<li>Decisions.</li>
+</ul>
+<p>This allows the team to interpret:</p>
+<ul>
+<li>older test results;</li>
+<li>historical defects;</li>
+<li>previous cutover files;</li>
+<li>production records loaded under earlier logic.</li>
+</ul>
+<p>---</p>
+<h1 id="lineage-quality-dimensions">Lineage quality dimensions</h1>
+<p>A field-level lineage chain can be evaluated across several dimensions.</p>
+<h2 id="identity-completeness">Identity completeness</h2>
+<p>Are all source, Mapping, Attribute and target IDs explicit?</p>
+<h2 id="transformation-completeness">Transformation completeness</h2>
+<p>Is the nature of the transformation known?</p>
+<h2 id="context-completeness">Context completeness</h2>
+<p>Are keys and organisational scope represented?</p>
+<h2 id="governance-completeness">Governance completeness</h2>
+<p>Are owner, Decision and status known?</p>
+<h2 id="evidence-completeness">Evidence completeness</h2>
+<p>Has the declared path been verified?</p>
+<h2 id="temporal-completeness">Temporal completeness</h2>
+<p>Is the applicable baseline or effective period known?</p>
+<h2 id="operational-completeness">Operational completeness</h2>
+<p>Can the team identify the implementation job or artefact?</p>
+<p>A graph may be structurally connected and still weak in several dimensions.</p>
+<p>---</p>
+<h1 id="lineage-coverage-should-not-be-one-percentage">Lineage coverage should not be one percentage</h1>
+<p>A programme may report:</p>
+<pre><code class="language-text">95% lineage coverage</code></pre>
+<p>The number is meaningless without a definition.</p>
+<p>Possible metrics include:</p>
+<ul>
+<li>target fields with any upstream source;</li>
+<li>target fields with an approved Mapping;</li>
+<li>target fields with transformation classification;</li>
+<li>target fields with evidence;</li>
+<li>critical fields with complete lineage;</li>
+<li>source fields connected to an SAP endpoint;</li>
+<li>paths verified in the latest load.</li>
+</ul>
+<p>A better scorecard separates them:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Measure</th><th scope="col">Coverage</th></tr></thead><tbody><tr><td>Target fields with upstream endpoint</td><td>95%</td></tr><tr><td>Target fields with approved Mapping</td><td>81%</td></tr><tr><td>Transformations classified</td><td>74%</td></tr><tr><td>Paths verified by test evidence</td><td>62%</td></tr><tr><td>Critical fields fully evidenced</td><td>48%</td></tr></tbody></table></div>
+<p>This prevents a broad technical edge from being counted as complete lineage.</p>
+<p>---</p>
+<h1 id="build-critical-lineage-first">Build critical lineage first</h1>
+<p>A migration programme does not need field-level lineage for every field on day one.</p>
+<p>Prioritise fields that are:</p>
+<ul>
+<li>mandatory;</li>
+<li>legally sensitive;</li>
+<li>used in key determination;</li>
+<li>organisationally contextual;</li>
+<li>derived;</li>
+<li>heavily defaulted;</li>
+<li>used by downstream interfaces;</li>
+<li>repeatedly failing;</li>
+<li>subject to local overrides;</li>
+<li>changed between releases.</li>
+</ul>
+<p>For a Customer migration pilot, the first set might include:</p>
+<ul>
+<li>Business Partner category;</li>
+<li>Customer Group;</li>
+<li>Sales Organisation keys;</li>
+<li>Company Code;</li>
+<li>Tax Identifier;</li>
+<li>Payment Terms;</li>
+<li>Shipping Condition;</li>
+<li>partner roles.</li>
+</ul>
+<p>The goal is to prove the method on a critical chain.</p>
+<p>---</p>
+<h1 id="a-practical-construction-workflow">A practical construction workflow</h1>
+<h2 id="step-1-register-business-attributes">Step 1: Register business Attributes</h2>
+<p>Define the governed concepts independently of source and target systems.</p>
+<h2 id="step-2-register-source-and-target-fieldendpoints">Step 2: Register source and target FieldEndpoints</h2>
+<p>Include system, table, API path, file column or other physical locator.</p>
+<h2 id="step-3-register-expected-datasets-and-datasetfields">Step 3: Register expected datasets and DatasetFields</h2>
+<p>Capture what the migration process actually receives.</p>
+<h2 id="step-4-create-mappings">Step 4: Create Mappings</h2>
+<p>Connect sources, transformations, Attributes and targets.</p>
+<h2 id="step-5-add-keys-and-context">Step 5: Add keys and context</h2>
+<p>Represent organisational and record-identification dependencies.</p>
+<h2 id="step-6-add-rules-and-decisions">Step 6: Add Rules and Decisions</h2>
+<p>Explain applicability, requiredness and authority.</p>
+<h2 id="step-7-attach-evidence">Step 7: Attach Evidence</h2>
+<p>Use source profiles, mapping tests and load reports.</p>
+<h2 id="step-8-validate-references">Step 8: Validate references</h2>
+<p>Ensure all IDs and types resolve.</p>
+<h2 id="step-9-generate-lineage-edges">Step 9: Generate lineage edges</h2>
+<p>Build the derived graph.</p>
+<h2 id="step-10-run-trace-from-both-directions">Step 10: Run trace from both directions</h2>
+<p>Trace:</p>
+<pre><code class="language-text">source → target</code></pre>
+<p>and:</p>
+<pre><code class="language-text">target → source</code></pre>
+<p>Both views expose different gaps.</p>
+<p>---</p>
+<h1 id="trace-from-the-target-first">Trace from the target first</h1>
+<p>A target-first investigation is often the most useful during SAP migration.</p>
+<p>Start with:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<p>Ask:</p>
+<ol>
+<li>Which business Attribute does this endpoint implement?</li>
+<li>Which Mappings populate it?</li>
+<li>Which source fields feed those Mappings?</li>
+<li>Which condition fields influence them?</li>
+<li>Which Decisions approve them?</li>
+<li>Which datasets contain the required fields?</li>
+<li>Which Evidence verifies the path?</li>
+<li>Which gaps remain?</li>
+</ol>
+<p>Martenweave’s current <code>impact</code> example starts from <code>FEP-S4-KNVV-KDGRP</code>, while <code>trace</code> starts from the related business Attribute.</p>
+<p>This dual direction is important:</p>
+<pre><code class="language-text">trace:
+How is this concept connected?
+
+impact:
+What depends on this field or object?</code></pre>
+<p>---</p>
+<h1 id="trace-from-the-source-to-find-unused-data">Trace from the source to find unused data</h1>
+<p>Source-first tracing answers:</p>
+<blockquote>Where does this source field go?</blockquote>
+<p>Possible outcomes:</p>
+<ul>
+<li>one approved SAP target;</li>
+<li>several conditional targets;</li>
+<li>staging only;</li>
+<li>evidence only;</li>
+<li>no current use;</li>
+<li>retired Mapping.</li>
+</ul>
+<p>This helps identify:</p>
+<ul>
+<li>redundant extracts;</li>
+<li>undocumented transformations;</li>
+<li>source fields included “just in case”;</li>
+<li>data collected but never governed;</li>
+<li>migration logic no longer needed.</li>
+</ul>
+<p>---</p>
+<h1 id="impact-analysis-depends-on-typed-lineage">Impact analysis depends on typed lineage</h1>
+<p>Suppose the source field changes datatype.</p>
+<p>Affected objects may include:</p>
+<ul>
+<li>DatasetField;</li>
+<li>Mapping;</li>
+<li>transformation lookup;</li>
+<li>SAP endpoint;</li>
+<li>validation test.</li>
+</ul>
+<p>Suppose the business Attribute changes definition.</p>
+<p>Affected objects may include:</p>
+<ul>
+<li>several source fields;</li>
+<li>several Mappings;</li>
+<li>Rules;</li>
+<li>reports;</li>
+<li>Decisions.</li>
+</ul>
+<p>Typed lineage lets Martenweave distinguish these consequences.</p>
+<p>A generic graph of <code>related_to</code> edges cannot.</p>
+<p>---</p>
+<h1 id="lineage-and-dataset-gaps-should-reinforce-each-other">Lineage and dataset gaps should reinforce each other</h1>
+<p>Martenweave’s current dataset-gap flow compares a sample dataset with expected FieldEndpoints and can produce readiness findings or promote gaps into a draft <code>PatchProposal</code>.</p>
+<p>Field-level lineage makes the gap more actionable.</p>
+<p>Instead of:</p>
+<pre><code class="language-text">Column CUSTOMER_GROUP is missing.</code></pre>
+<p>the report can say:</p>
+<pre><code class="language-text">Target:
+FEP-S4-KNVV-KDGRP
+
+Business Attribute:
+ATTR-CUSTOMER-GROUP
+
+Expected source path:
+FEP-CRM-CUSTOMER-SEGMENT
++ FEP-LEGACY-SALES-AREA
+→ MAP-CUSTOMER-GROUP-ENRICHMENT
+
+Observed gap:
+Sales Area context absent from dataset.
+
+Impact:
+Customer Group cannot be evaluated for 18% of target records.</code></pre>
+<p>That is a migration finding, not merely a schema mismatch.</p>
+<p>---</p>
+<h1 id="lineage-and-ai">Lineage and AI</h1>
+<p>AI can help extract candidate lineage from:</p>
+<ul>
+<li>mapping workbooks;</li>
+<li>SQL;</li>
+<li>transformation code;</li>
+<li>tickets;</li>
+<li>design documents;</li>
+<li>validation reports.</li>
+</ul>
+<p>It can suggest:</p>
+<pre><code class="language-text">SEGMENT_CODE probably contributes to KNVV-KDGRP.</code></pre>
+<p>The safe workflow is:</p>
+<pre><code class="language-text">AI extraction
+→ candidate Mapping
+→ reference validation
+→ evidence review
+→ human approval
+→ canonical lineage</code></pre>
+<p>AI should not create approved lineage solely from similarity.</p>
+<p>A plausible edge can produce false impact results across the entire graph.</p>
+<p>---</p>
+<h1 id="lineage-needs-negative-knowledge">Lineage needs negative knowledge</h1>
+<p>A mature model should also record conclusions such as:</p>
+<pre><code class="language-text">CRM Segment is not directly equivalent to Customer Group.
+
+ERP_B does not provide Supplier Risk.
+
+Local Review Status must not populate final Risk Classification.</code></pre>
+<p>These statements prevent future teams or agents from recreating rejected mappings.</p>
+<p>Negative knowledge can be represented through:</p>
+<ul>
+<li>Decisions;</li>
+<li>rejected proposals;</li>
+<li>constraints;</li>
+<li>Findings;</li>
+<li>prohibited Mapping patterns.</li>
+</ul>
+<p>A graph of only positive connections loses this protection.</p>
+<p>---</p>
+<h1 id="do-not-confuse-lineage-with-copying">Do not confuse lineage with copying</h1>
+<p>Lineage describes dependency and provenance.</p>
+<p>It does not imply that a value is copied unchanged.</p>
+<p>Examples:</p>
+<pre><code class="language-text">source value copied directly
+source value converted
+source value used only as a condition
+source value rejected
+source value combined with manual evidence</code></pre>
+<p>The edge type and Mapping explain which case applies.</p>
+<p>---</p>
+<h1 id="do-not-confuse-lineage-with-process-flow">Do not confuse lineage with process flow</h1>
+<p>A process diagram might show:</p>
+<pre><code class="language-text">Extract
+→ Cleanse
+→ Validate
+→ Load</code></pre>
+<p>This explains stages.</p>
+<p>It does not explain which fields feed which targets.</p>
+<p>A field lineage graph might show:</p>
+<pre><code class="language-text">SEGMENT_CODE
+→ Customer Group Mapping
+→ KNVV-KDGRP</code></pre>
+<p>Both are useful.</p>
+<p>They answer different questions.</p>
+<p>Martenweave should link them where needed rather than turning one into a substitute for the other.</p>
+<p>---</p>
+<h1 id="do-not-confuse-lineage-with-data-ownership">Do not confuse lineage with data ownership</h1>
+<p>A source owner may not own the business definition.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM team:
+owns source field implementation
+
+Customer Data Owner:
+owns Customer Group meaning
+
+Migration team:
+owns transformation implementation
+
+SAP team:
+owns target field configuration</code></pre>
+<p>Field-level lineage should preserve these separate responsibilities.</p>
+<p>This makes defect routing more precise.</p>
+<p>---</p>
+<h1 id="a-worked-customer-group-lineage">A worked Customer Group lineage</h1>
+<h2 id="business-concept">Business concept</h2>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP
+Entity:
+Customer Sales Area</code></pre>
+<h2 id="source-endpoints">Source endpoints</h2>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
+FEP-LEGACY-SALES-AREA</code></pre>
+<h2 id="dataset-fields">Dataset fields</h2>
+<pre><code class="language-text">DATAFIELD-W3-SEGMENT-CODE
+DATAFIELD-W3-SALES-ORG
+DATAFIELD-W3-DISTRIBUTION-CHANNEL
+DATAFIELD-W3-DIVISION</code></pre>
+<h2 id="transformation">Transformation</h2>
+<pre><code class="language-text">MAP-CUSTOMER-GROUP-ENRICHMENT
+
+Type:
+conditional enrichment</code></pre>
+<h2 id="decision">Decision</h2>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-SOURCE-017
+
+Direct equivalence rejected.
+Sales Area context required.</code></pre>
+<h2 id="target">Target</h2>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP</code></pre>
+<h2 id="rule">Rule</h2>
+<pre><code class="language-text">RULE-CUSTOMER-GROUP-REQUIRED
+
+Required before Customer Sales Area activation.</code></pre>
+<h2 id="evidence">Evidence</h2>
+<pre><code class="language-text">EVID-W3-CUSTOMER-GROUP-PROFILE
+EVID-MOCK-LOAD-3-KDGRP-RESULT</code></pre>
+<h2 id="complete-path">Complete path</h2>
+<pre><code class="language-text">FEP-CRM-CUSTOMER-SEGMENT
++
+FEP-LEGACY-SALES-AREA
+→ MAP-CUSTOMER-GROUP-ENRICHMENT
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<p>with:</p>
+<pre><code class="language-text">DEC-CUSTOMER-GROUP-SOURCE-017
+→ authorises Mapping
+
+RULE-CUSTOMER-GROUP-REQUIRED
+→ validates target Attribute
+
+EVID-MOCK-LOAD-3-KDGRP-RESULT
+→ verifies observed target population</code></pre>
+<p>This lineage can support:</p>
+<ul>
+<li>source readiness;</li>
+<li>mock-load investigation;</li>
+<li>impact analysis;</li>
+<li>change review;</li>
+<li>AMS handover.</li>
+</ul>
+<p>---</p>
+<h1 id="a-worked-supplier-risk-lineage">A worked Supplier Risk lineage</h1>
+<h2 id="sources">Sources</h2>
+<pre><code class="language-text">FEP-ERP-B-RISK-SCORE
+FEP-COMPLIANCE-REVIEW-STATUS
+FEP-SUPPLIER-CATEGORY</code></pre>
+<h2 id="mapping-roles">Mapping roles</h2>
+<pre><code class="language-text">Risk Score:
+direct value input
+
+Compliance Status:
+approval condition
+
+Supplier Category:
+applicability condition</code></pre>
+<h2 id="business-output">Business output</h2>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK</code></pre>
+<h2 id="target-2">Target</h2>
+<pre><code class="language-text">FEP-S4-SUPPLIER-RISK</code></pre>
+<h2 id="rejected-treatment">Rejected treatment</h2>
+<pre><code class="language-text">UNDER_REVIEW must not become a Supplier Risk value.</code></pre>
+<p>The graph distinguishes:</p>
+<pre><code class="language-text">value dependency
+from
+control dependency</code></pre>
+<p>This prevents Review Status from being interpreted as another classification value.</p>
+<p>---</p>
+<h1 id="a-worked-manual-enrichment-lineage">A worked manual-enrichment lineage</h1>
+<h2 id="source-state">Source state</h2>
+<p>The source contains no reliable Customer Group.</p>
+<h2 id="manual-step">Manual step</h2>
+<p>A business-owned workbook assigns values by Sales Area.</p>
+<h2 id="canonical-treatment">Canonical treatment</h2>
+<pre><code class="language-text">manual workbook:
+Evidence and operational implementation
+
+approved Mapping:
+canonical transformation specification</code></pre>
+<h2 id="lineage">Lineage</h2>
+<pre><code class="language-text">Customer identifier
++
+Sales Area
++
+reviewed enrichment workbook
+→ MAP-MANUAL-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<p>The workbook is visible.</p>
+<p>It does not become the permanent source of model truth.</p>
+<p>---</p>
+<h1 id="common-failure-modes">Common failure modes</h1>
+<h2 id="system-to-system-arrows-only">System-to-system arrows only</h2>
+<p>The programme knows where data travelled but not how fields were produced.</p>
+<h2 id="field-names-used-as-identities">Field names used as identities</h2>
+<p>Similar labels create false lineage.</p>
+<h2 id="missing-organisational-keys">Missing organisational keys</h2>
+<p>Central and contextual values are confused.</p>
+<h2 id="transformation-hidden-inside-prose">Transformation hidden inside prose</h2>
+<p>The graph cannot distinguish copy, lookup, derivation or default.</p>
+<h2 id="manual-enrichment-omitted">Manual enrichment omitted</h2>
+<p>The lineage falsely appears automated.</p>
+<h2 id="defaults-treated-as-source-values">Defaults treated as source values</h2>
+<p>Readiness looks better than reality.</p>
+<h2 id="runtime-success-treated-as-design-approval">Runtime success treated as design approval</h2>
+<p>One successful load becomes mistaken for governed lineage.</p>
+<h2 id="all-edges-shown-as-equally-trusted">All edges shown as equally trusted</h2>
+<p>Inferred and approved connections become indistinguishable.</p>
+<h2 id="source-and-dataset-columns-collapsed">Source and dataset columns collapsed</h2>
+<p>Extract schema drift is hidden.</p>
+<h2 id="every-temporary-staging-column-included">Every temporary staging column included</h2>
+<p>The graph becomes unreadable.</p>
+<h2 id="no-historical-lineage">No historical lineage</h2>
+<p>Previous waves cannot be reconstructed.</p>
+<h2 id="ai-generated-edges-accepted-directly">AI-generated edges accepted directly</h2>
+<p>Plausibility replaces evidence.</p>
+<p>---</p>
+<h1 id="a-field-level-lineage-acceptance-test">A field-level lineage acceptance test</h1>
+<p>For each critical SAP target field, the team should be able to answer:</p>
+<ol>
+<li>What business Attribute does the field implement?</li>
+<li>At what Entity and organisational level does it exist?</li>
+<li>Which registered source endpoints contribute to it?</li>
+<li>Which observed dataset columns provide those inputs?</li>
+<li>Which inputs affect the value directly?</li>
+<li>Which inputs only control applicability or selection?</li>
+<li>What transformation produces the target?</li>
+<li>Which Decision approved the Mapping?</li>
+<li>Which Rule validates the result?</li>
+<li>Which evidence verifies the latest migration run?</li>
+<li>Which records remain unevaluable?</li>
+<li>Which historical Mapping applied in earlier waves?</li>
+<li>Who owns the business meaning?</li>
+<li>Who owns the transformation implementation?</li>
+<li>What would be affected if the source or target changed?</li>
+</ol>
+<p>When several answers are missing, the programme has a partial diagram rather than governed field lineage.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has several foundations:</p>
+<ul>
+<li>canonical FieldEndpoints and business objects;</li>
+<li>generated lineage edges;</li>
+<li>trace and impact commands;</li>
+<li>system-lineage model objects;</li>
+<li>dataset-gap analysis;</li>
+<li>evidence, Decisions and proposal workflows.</li>
+</ul>
+<p>The next focused vertical slice should strengthen <strong>typed field lineage</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Represent and query field-level source-to-target paths with transformation semantics.</p>
+<h2 id="scope">Scope</h2>
+<p>Support:</p>
+<ul>
+<li>source FieldEndpoint;</li>
+<li>DatasetField;</li>
+<li>Mapping;</li>
+<li>business Attribute;</li>
+<li>target FieldEndpoint;</li>
+<li>direct and conditional inputs;</li>
+<li>Decision and Evidence links.</li>
+</ul>
+<h2 id="first-transformation-classes">First transformation classes</h2>
+<ul>
+<li>direct copy;</li>
+<li>value conversion;</li>
+<li>conditional derivation;</li>
+<li>enrichment;</li>
+<li>default;</li>
+<li>manual assignment.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For <code>FEP-S4-KNVV-KDGRP</code>, Martenweave can return:</p>
+<ul>
+<li>related business Attribute;</li>
+<li>all upstream source fields;</li>
+<li>controlling context fields;</li>
+<li>Mapping type;</li>
+<li>approving Decision;</li>
+<li>latest supporting Evidence;</li>
+<li>unresolved dataset gaps.</li>
+</ul>
+<h2 id="validation-command">Validation command</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="functional-verification">Functional verification</h2>
+<pre><code class="language-bash">martenweave trace ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model
+
+martenweave impact FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model</code></pre>
+<p>This would deepen an existing capability rather than create another platform.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Field-level lineage for SAP migration is not a drawing exercise.</p>
+<p>It is a governed explanation of how a target field came to exist.</p>
+<p>A useful lineage path connects:</p>
+<pre><code class="language-text">source system field
+→ observed extract field
+→ transformation
+→ business Attribute
+→ SAP target field</code></pre>
+<p>and then attaches:</p>
+<pre><code class="language-text">keys
+context
+Rules
+Decisions
+Evidence
+ownership
+effective baseline</code></pre>
+<p>The path must distinguish:</p>
+<ul>
+<li>direct value inputs;</li>
+<li>conditional inputs;</li>
+<li>manual steps;</li>
+<li>defaults;</li>
+<li>rejected sources;</li>
+<li>historical alternatives.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can the programme start from <code>KNVV-KDGRP</code> and identify the exact source fields, organisational context, approved transformation, business meaning, latest test evidence and unresolved gaps without opening five spreadsheets and asking the original consultant?</blockquote>
+<p>When the answer is yes, the programme has field-level lineage.</p>
+<p>When the answer is only:</p>
+<blockquote><code>KNVV-KDGRP</code> comes from CRM,</blockquote>
+<p>the programme has a system arrow.</p>
+<p>That is not enough to govern an SAP migration.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects canonical business Attributes, physical FieldEndpoints, Mappings, datasets, Rules, Decisions and Evidence so that lineage is reviewable rather than inferred from scattered documents.</p>
+<p>The objective is not to build the largest lineage graph.</p>
+<p>It is to make critical SAP field paths precise enough to validate, investigate and change safely.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave’s public demo generates <code>lineage_edges.jsonl</code> from canonical model files and provides trace and impact commands connecting business Attributes, physical SAP FieldEndpoints, Mappings, issues, Decisions and Evidence.</p>
+<p>The current dataset-readiness workflow compares observed dataset structure with expected model fields, generates gap reports and can promote gaps into reviewable PatchProposals.</p>
+<p>Martenweave Core’s release history records system-lineage objects including <code>IntegrationFlow</code>, <code>DataFlowStep</code>, <code>TransformationRule</code>, <code>Interface</code>, <code>InterfaceEndpoint</code>, <code>Application</code> and <code>System</code>, as well as proposal impact analysis and repository diffing.</p>
+<p>OpenLineage’s current object model distinguishes Datasets, Jobs and Runs and supports both design-time and runtime lineage metadata. Its column-level lineage facet represents which input fields contribute to output fields and distinguishes direct identity, transformation and aggregation from indirect conditions such as joins, filters and conditional logic.</p>
+<p>The proposed Martenweave transformation taxonomy and DatasetField object boundaries in this article describe a recommended product direction. They should not be treated as guarantees of the exact current canonical schema unless separately published and versioned.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-package-and-transfer-a-martenweave-model-repository.html"><span>Previous</span>An SAP migration programme reaches handover.</a><a href="/blog/why-table-level-lineage-is-not-enough-for-master-data.html"><span>Next</span>A migration architect opens the lineage view and sees:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

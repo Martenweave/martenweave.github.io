@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Separate Technical Completeness from Business Readiness | Martenweave</title>
+    <meta
+      name="description"
+      content="A Supplier migration load finishes successfully."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html" />
+    <meta property="og:title" content="How We Separate Technical Completeness from Business Readiness | Martenweave" />
+    <meta property="og:description" content="A Supplier migration load finishes successfully." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Separate Technical Completeness from Business Readiness | Martenweave" />
+    <meta name="twitter:description" content="A Supplier migration load finishes successfully." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html",
+                        "name": "How We Separate Technical Completeness from Business Readiness | Martenweave",
+                        "description": "A Supplier migration load finishes successfully.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Separate Technical Completeness from Business Readiness",
+                                    "item": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html#content",
+                        "headline": "How We Separate Technical Completeness from Business Readiness",
+                        "name": "How We Separate Technical Completeness from Business Readiness",
+                        "description": "A Supplier migration load finishes successfully.",
+                        "url": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-separate-technical-completeness-from-business-readiness.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Separate Technical Completeness from Business Readiness</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How We Separate Technical Completeness from Business Readiness</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 18 min read</p><p class="blog-summary">A Supplier migration load finishes successfully.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#file-completeness">File completeness</a></li><li><a href="#field-completeness">Field completeness</a></li><li><a href="#schema-validity">Schema validity</a></li><li><a href="#transformation-completeness">Transformation completeness</a></li><li><a href="#load-completeness">Load completeness</a></li><li><a href="#replication-completeness">Replication completeness</a></li><li><a href="#reconciliation-completeness">Reconciliation completeness</a></li><li><a href="#identity-gate">Identity gate</a></li><li><a href="#structural-gate">Structural gate</a></li><li><a href="#semantic-gate">Semantic gate</a></li><li><a href="#control-gate">Control gate</a></li><li><a href="#technical-finding">Technical Finding</a></li><li><a href="#business-readiness-finding">Business-readiness Finding</a></li><li><a href="#approved-permanent-default">Approved permanent default</a></li><li><a href="#temporary-migration-fallback">Temporary migration fallback</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>A Supplier migration load finishes successfully.</p>
+<p>The migration report shows:</p>
+<pre><code class="language-text">Records submitted:
+50,000
+
+Records created:
+49,920
+
+Technical success rate:
+99.84%</code></pre>
+<p>The project team reports that Supplier master data is ready.</p>
+<p>Three days later, procurement tries to create the first purchase orders.</p>
+<p>Some Suppliers cannot be used because the required purchasing-organisation extension is missing.</p>
+<p>Accounts Payable tries to post invoices.</p>
+<p>Several Suppliers have no valid reconciliation account for the relevant company code.</p>
+<p>Treasury prepares the first payment run.</p>
+<p>Forty payment-active Suppliers have bank details, but the verification evidence is expired and no payment block is active.</p>
+<p>The Supplier records exist.</p>
+<p>The mandatory fields accepted by the load interface are populated.</p>
+<p>The technical migration result is strong.</p>
+<p>The business still cannot use part of the population safely.</p>
+<p>This is the gap between technical completeness and business readiness.</p>
+<blockquote>Technical completeness tells us whether a record satisfies a structural or execution requirement. Business readiness tells us whether that record can support its intended process under the accepted controls.</blockquote>
+<p>Migration programmes repeatedly confuse these states because technical completeness is easier to measure.</p>
+<p>We can count:</p>
+<ul>
+<li>populated columns;</li>
+<li>successful transformations;</li>
+<li>passed schema checks;</li>
+<li>accepted load records;</li>
+<li>completed MDG change requests;</li>
+<li>successful replication messages.</li>
+</ul>
+<p>Business readiness requires a more difficult assessment.</p>
+<p>We must understand:</p>
+<ul>
+<li>which process needs the master data;</li>
+<li>which organisational context applies;</li>
+<li>which Rules are critical for that process;</li>
+<li>whether source authority is resolved;</li>
+<li>whether identity is governed;</li>
+<li>whether required related objects exist;</li>
+<li>whether the Evidence is current;</li>
+<li>whether any Exception changes the result.</li>
+</ul>
+<p>Martenweave should preserve this distinction explicitly.</p>
+<p>Its current core already connects datasets, validation reports, Decisions and SAP context to canonical model files, deterministic validation, dataset gaps, lineage, impact analysis and human-reviewed proposals.</p>
+<p>The next useful layer is not another completeness score.</p>
+<p>It is a model that explains what a technically complete record is actually ready to do.</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>We use one Supplier in the Wave 1 cutover population.</p>
+<p>The record contains:</p>
+<pre><code class="language-text">Business Partner number:
+created
+
+Supplier role:
+created
+
+Name:
+populated
+
+Address:
+populated
+
+Tax number:
+populated
+
+Bank account:
+populated
+
+Company-code extension:
+created
+
+Purchasing-organisation extension:
+missing
+
+Payment block:
+empty
+
+Bank verification:
+expired</code></pre>
+<p>The load tool reports success because the Business Partner and Supplier objects were created.</p>
+<p>A field-completeness report may also look strong:</p>
+<pre><code class="language-text">Required fields populated:
+97%</code></pre>
+<p>But the Supplier has different readiness states for different processes.</p>
+<pre><code class="language-text">Ready for basic identification:
+yes
+
+Ready for invoice posting:
+possibly
+
+Ready for purchasing:
+no
+
+Ready for payment:
+no
+
+Ready for reporting:
+yes</code></pre>
+<p>There is no contradiction.</p>
+<p>Master data is used through process-specific organisational and control contexts.</p>
+<p>A Supplier is not simply “ready” or “not ready” in the abstract.</p>
+<p>It is ready for a defined use.</p>
+<h1 id="technical-completeness-has-several-layers">Technical completeness has several layers</h1>
+<p>Before we discuss business readiness, we should separate the different technical conditions that projects often combine.</p>
+<h2 id="file-completeness">File completeness</h2>
+<p>The expected columns exist.</p>
+<pre><code class="language-text">SUPPLIER_ID
+NAME
+COUNTRY
+BANK_ACCOUNT
+COMPANY_CODE</code></pre>
+<p>This says nothing about whether the values are correct or sufficient.</p>
+<h2 id="field-completeness">Field completeness</h2>
+<p>Required fields are populated.</p>
+<pre><code class="language-text">NAME is not empty
+COUNTRY is not empty
+BANK_ACCOUNT is not empty</code></pre>
+<p>This still says nothing about source authority, semantic validity or business applicability.</p>
+<h2 id="schema-validity">Schema validity</h2>
+<p>Values satisfy technical format requirements.</p>
+<p>Examples include:</p>
+<ul>
+<li>valid length;</li>
+<li>allowed data type;</li>
+<li>accepted code format;</li>
+<li>valid date representation;</li>
+<li>known reference value.</li>
+</ul>
+<h2 id="transformation-completeness">Transformation completeness</h2>
+<p>Every required target Attribute has a Mapping or derivation path.</p>
+<p>A Mapping can be complete and still be wrong.</p>
+<h2 id="load-completeness">Load completeness</h2>
+<p>The target interface accepts the record.</p>
+<p>The interface confirms that the submitted structure is technically processable.</p>
+<h2 id="replication-completeness">Replication completeness</h2>
+<p>The record or change is distributed successfully to the intended consuming system.</p>
+<h2 id="reconciliation-completeness">Reconciliation completeness</h2>
+<p>The expected target values match the source or transformed values.</p>
+<p>These technical layers matter.</p>
+<p>None of them alone proves that the record can support a business process correctly.</p>
+<h1 id="a-successful-load-proves-less-than-teams-assume">A successful load proves less than teams assume</h1>
+<p>When a migration cockpit, API, IDoc or custom load framework reports success, it usually proves that the target accepted the submitted transaction under its current technical and application validations.</p>
+<p>It does not automatically prove that:</p>
+<ul>
+<li>every required organisational extension exists;</li>
+<li>the record belongs to the correct duplicate survivor;</li>
+<li>the chosen value came from the accepted authority;</li>
+<li>a temporary default is approved;</li>
+<li>the downstream process will use the record;</li>
+<li>related controls are effective;</li>
+<li>the record is ready for every business scenario.</li>
+</ul>
+<p>The load result is Evidence.</p>
+<p>It is not the complete readiness Decision.</p>
+<p>For our Supplier, creation of the general Business Partner object does not prove that purchasing or payment can proceed.</p>
+<h1 id="an-mdg-approval-proves-a-governed-decision-not-the-entire-migration-state">An MDG approval proves a governed decision, not the entire migration state</h1>
+<p>SAP describes Master Data Governance as a governance layer for trusted master data, with governed models, golden records, profiling, matching, merging, semantic reconciliation, workflows, data-quality Rules and continuous monitoring. It also distinguishes master-data governance and quality from the distribution of master data to consuming applications.</p>
+<p>These capabilities can provide strong Evidence.</p>
+<p>An approved MDG change request may prove that:</p>
+<ul>
+<li>the requested master-data change passed its workflow;</li>
+<li>required approvals were obtained;</li>
+<li>defined validations were satisfied;</li>
+<li>the governed record was activated.</li>
+</ul>
+<p>It may not prove that:</p>
+<ul>
+<li>the cutover file used the activated version;</li>
+<li>the target migration load included all organisational segments;</li>
+<li>the record was replicated to every required system;</li>
+<li>the migration Mapping used the correct version;</li>
+<li>a later direct file edit did not overwrite the approved value;</li>
+<li>the business process can operate in the target environment.</li>
+</ul>
+<p>We therefore treat MDG approval as an important part of readiness Evidence.</p>
+<p>We do not turn it into a universal green status.</p>
+<h1 id="business-readiness-starts-with-the-intended-process">Business readiness starts with the intended process</h1>
+<p>We cannot assess readiness without answering:</p>
+<blockquote>Ready for what?</blockquote>
+<p>For the Supplier, possible uses include:</p>
+<ul>
+<li>creating purchase orders;</li>
+<li>receiving goods;</li>
+<li>posting Supplier invoices;</li>
+<li>processing outgoing payments;</li>
+<li>evaluating Supplier spend;</li>
+<li>reporting tax information;</li>
+<li>managing source lists or purchasing agreements.</li>
+</ul>
+<p>Each use requires a different subset of the model.</p>
+<p>For purchasing, we may need:</p>
+<pre><code class="language-text">Supplier identity
+Supplier role
+Purchasing organisation
+Order currency
+Purchasing group
+Incoterms or other agreed purchasing controls
+Partner functions where applicable</code></pre>
+<p>For invoice posting, we may need:</p>
+<pre><code class="language-text">Company-code extension
+Reconciliation account
+Payment terms
+Tax-relevant data
+Posting control</code></pre>
+<p>For payment, we may need:</p>
+<pre><code class="language-text">Company-code payment configuration
+Payment methods
+Bank account
+Current authorised bank verification
+Payment block logic</code></pre>
+<p>One record can pass the purchasing gate and fail the payment gate.</p>
+<p>A single global completion percentage cannot express this safely.</p>
+<h1 id="we-model-business-capability-gates">We model business-capability gates</h1>
+<p>We define readiness through gates connected to the intended capability.</p>
+<p>For our Supplier, we use four.</p>
+<h2 id="identity-gate">Identity gate</h2>
+<p>Can we confidently identify the intended business entity?</p>
+<p>Requirements may include:</p>
+<ul>
+<li>duplicate assessment completed;</li>
+<li>survivor Decision approved;</li>
+<li>source identifiers mapped;</li>
+<li>no unresolved identity conflict.</li>
+</ul>
+<h2 id="structural-gate">Structural gate</h2>
+<p>Do the required roles and organisational extensions exist?</p>
+<p>Requirements may include:</p>
+<ul>
+<li>Supplier role;</li>
+<li>company-code extension;</li>
+<li>purchasing-organisation extension;</li>
+<li>required partner relationships.</li>
+</ul>
+<h2 id="semantic-gate">Semantic gate</h2>
+<p>Do values represent the accepted business meaning?</p>
+<p>Requirements may include:</p>
+<ul>
+<li>payment terms from the approved authority;</li>
+<li>correct reconciliation account;</li>
+<li>tax status supported by Evidence;</li>
+<li>valid purchasing settings for the organisational context.</li>
+</ul>
+<h2 id="control-gate">Control gate</h2>
+<p>Are the controls required for safe use effective?</p>
+<p>Requirements may include:</p>
+<ul>
+<li>bank verification current;</li>
+<li>payment block active when verification is absent;</li>
+<li>duplicate merge completed;</li>
+<li>sensitive changes approved.</li>
+</ul>
+<p>The record is ready for a business process only when the required gates are satisfied or a valid Exception governs the remaining deviation.</p>
+<h1 id="completeness-without-organisational-context-is-misleading">Completeness without organisational context is misleading</h1>
+<p>Supplier data in SAP is highly contextual.</p>
+<p>General Business Partner data may be shared.</p>
+<p>Company-code and purchasing data represent different operational scopes.</p>
+<p>A dashboard that reports:</p>
+<pre><code class="language-text">Supplier created:
+yes</code></pre>
+<p>can hide:</p>
+<pre><code class="language-text">Company code DE01:
+ready
+
+Company code NL01:
+missing
+
+Purchasing organisation P100:
+ready
+
+Purchasing organisation P200:
+missing</code></pre>
+<p>Our running Supplier may be technically complete for DE01 and P100.</p>
+<p>The business expects it to support NL01 and P200 after cutover.</p>
+<p>It is therefore only partially ready.</p>
+<p>We should model the assessment grain explicitly:</p>
+<pre><code class="language-text">Entity:
+Supplier
+
+Business use:
+Purchase Order Creation
+
+Organisational scope:
+Purchasing Organisation P200</code></pre>
+<p>Without this grain, completeness can be true for the wrong context.</p>
+<h1 id="we-separate-populated-from-governed">We separate populated from governed</h1>
+<p>A field may contain a value without being governed.</p>
+<p>Suppose the Supplier’s payment terms are:</p>
+<pre><code class="language-text">Z030</code></pre>
+<p>The value may have come from:</p>
+<ul>
+<li>the approved Finance source;</li>
+<li>the Procurement portal;</li>
+<li>a legacy default;</li>
+<li>a migration workshop decision;</li>
+<li>a manual file correction;</li>
+<li>a copied value from another Supplier.</li>
+</ul>
+<p>All six paths can produce a populated target field.</p>
+<p>They do not have the same readiness meaning.</p>
+<p>We classify derivation.</p>
+<pre><code class="language-text">Approved authoritative source:
+governed
+
+Approved deterministic Mapping:
+governed
+
+Steward-approved correction:
+governed with Evidence
+
+Current temporary Exception:
+controlled
+
+Unapproved default:
+not governed
+
+Manual override without Evidence:
+not governed</code></pre>
+<p>Technical completeness counts values.</p>
+<p>Business readiness evaluates the authority and derivation behind those values.</p>
+<h1 id="we-separate-syntactic-validity-from-semantic-validity">We separate syntactic validity from semantic validity</h1>
+<p>A reconciliation account can be a valid target code and still be wrong for the Supplier context.</p>
+<p>A payment term can exist in configuration and still conflict with the approved commercial agreement.</p>
+<p>A tax number can match the expected format and still belong to another legal entity.</p>
+<p>A bank account can pass an IBAN check and still be unverified.</p>
+<p>For our Supplier:</p>
+<pre><code class="language-text">Bank account format:
+valid
+
+Bank account value:
+populated
+
+Treasury verification:
+expired
+
+Payment block:
+missing</code></pre>
+<p>The record is syntactically complete.</p>
+<p>It is not payment-ready.</p>
+<p>This distinction should be visible in the readiness result.</p>
+<h1 id="we-separate-data-correctness-from-process-enablement">We separate data correctness from process enablement</h1>
+<p>A record can be correct but incomplete for a process.</p>
+<p>Suppose all loaded values are accurate.</p>
+<p>The purchasing-organisation extension is missing because it was not included in Wave 1.</p>
+<p>The Supplier data is not necessarily wrong.</p>
+<p>The purchasing capability is unavailable.</p>
+<p>The correct Finding is:</p>
+<pre><code class="language-text">Required organisational extension
+is missing from the migration scope.</code></pre>
+<p>Not:</p>
+<pre><code class="language-text">Supplier data is incorrect.</code></pre>
+<p>This difference controls remediation.</p>
+<p>We may need to:</p>
+<ul>
+<li>extend the Supplier;</li>
+<li>change wave scope;</li>
+<li>document a dependency;</li>
+<li>create a controlled fallback.</li>
+</ul>
+<p>We do not necessarily need to cleanse existing fields.</p>
+<h1 id="we-separate-business-readiness-from-immediate-activation">We separate business readiness from immediate activation</h1>
+<p>A Supplier can be loaded safely before it is activated for every process.</p>
+<p>For example:</p>
+<pre><code class="language-text">Supplier record:
+created
+
+Purchasing extension:
+created
+
+Bank verification:
+pending
+
+Payment block:
+active</code></pre>
+<p>This Supplier may be:</p>
+<pre><code class="language-text">Ready for purchasing:
+yes
+
+Ready for payment:
+controlled or no</code></pre>
+<p>The record can exist in the target while payment remains intentionally blocked.</p>
+<p>This is often a rational cutover treatment.</p>
+<p>The readiness model must not force the false choice between:</p>
+<ul>
+<li>fully active;</li>
+<li>excluded from migration.</li>
+</ul>
+<p>Controlled activation is a real state.</p>
+<h1 id="we-classify-controlled-readiness-separately">We classify controlled readiness separately</h1>
+<p>For the payment process, our Supplier may be classified as controlled when:</p>
+<ul>
+<li>bank verification is expired;</li>
+<li>an approved Exception exists;</li>
+<li>payment block is confirmed;</li>
+<li>the Exception owner is valid;</li>
+<li>the Exception has an expiry and closure path.</li>
+</ul>
+<pre><code class="language-text">Payment readiness:
+controlled
+
+Reason:
+verification renewal pending
+
+Compensating control:
+payment block
+
+Expiry:
+before first payment activation</code></pre>
+<p>If the payment block is absent, the same Supplier becomes:</p>
+<pre><code class="language-text">Payment readiness:
+not ready</code></pre>
+<p>Both records are technically complete.</p>
+<p>Their business-control states differ.</p>
+<h1 id="we-treat-unresolved-identity-as-a-business-readiness-blocker">We treat unresolved identity as a business-readiness blocker</h1>
+<p>Duplicate handling is not only a data-quality exercise.</p>
+<p>It affects business identity.</p>
+<p>Suppose the Supplier exists twice:</p>
+<pre><code class="language-text">Supplier A:
+current contracts
+
+Supplier B:
+current bank account
+
+Duplicate candidate:
+unresolved</code></pre>
+<p>Both records may be technically complete.</p>
+<p>Neither may be business-ready until the programme decides:</p>
+<ul>
+<li>whether they represent the same entity;</li>
+<li>which record survives;</li>
+<li>how open transactions map;</li>
+<li>which bank data belongs to the survivor;</li>
+<li>which tax and organisational attributes are retained.</li>
+</ul>
+<p>A high match score is not a completed Decision.</p>
+<p>A completed duplicate-detection run is not resolved identity.</p>
+<p>SAP’s MDG positioning includes matching, merging and semantic reconciliation as part of creating governed golden records.</p>
+<p>For migration readiness, we still need to connect that Decision to the current migration keys, target records and process scope.</p>
+<h1 id="we-treat-missing-relationships-as-readiness-gaps">We treat missing relationships as readiness gaps</h1>
+<p>Master data works through relationships.</p>
+<p>Our Supplier may depend on:</p>
+<ul>
+<li>company-code assignments;</li>
+<li>purchasing organisations;</li>
+<li>partner functions;</li>
+<li>bank accounts;</li>
+<li>tax classifications;</li>
+<li>contact persons;</li>
+<li>source-system key mappings.</li>
+</ul>
+<p>The Supplier’s main object can be complete while one relationship is missing.</p>
+<p>For example:</p>
+<pre><code class="language-text">Supplier general data:
+complete
+
+Purchasing organisation:
+complete
+
+Partner function:
+missing
+
+Purchase-order scenario:
+blocked</code></pre>
+<p>Readiness should follow the business dependency graph, not only the parent record.</p>
+<p>This is where Martenweave’s lineage and impact-analysis direction becomes important.</p>
+<p>The current repository already treats lineage and impact analysis as explicit steps after gap detection.</p>
+<h1 id="we-treat-process-specific-rules-as-first-class">We treat process-specific Rules as first-class</h1>
+<p>A generic Rule may state:</p>
+<pre><code class="language-text">Supplier Name is required.</code></pre>
+<p>A business-readiness Rule may state:</p>
+<pre><code class="language-text">A Supplier used for outgoing payment
+must have a company-code extension,
+an eligible payment method,
+a current verified bank account
+or a confirmed payment block.</code></pre>
+<p>The second Rule combines:</p>
+<ul>
+<li>Entity;</li>
+<li>organisational context;</li>
+<li>business purpose;</li>
+<li>control state.</li>
+</ul>
+<p>This is the level at which readiness becomes useful.</p>
+<p>We should not try to represent every business process as one large Boolean expression.</p>
+<p>We can decompose the capability into gates and linked Rules.</p>
+<h1 id="we-distinguish-mandatory-target-fields-from-mandatory-business-conditions">We distinguish mandatory target fields from mandatory business conditions</h1>
+<p>Target-system mandatory checks are necessary.</p>
+<p>They are defined by:</p>
+<ul>
+<li>configuration;</li>
+<li>object model;</li>
+<li>interface requirements;</li>
+<li>processing context.</li>
+</ul>
+<p>Business conditions may be stricter.</p>
+<p>The target may allow an empty purchasing field that the organisation requires for automatic purchase-order processing.</p>
+<p>The target may accept a bank account without the programme’s current verification Evidence.</p>
+<p>The target may create a Supplier without all future organisational extensions.</p>
+<p>Technical acceptance therefore sets a floor.</p>
+<p>It does not define the entire readiness standard.</p>
+<h1 id="we-preserve-the-intended-operating-model">We preserve the intended operating model</h1>
+<p>Migration programmes sometimes copy legacy data exactly and call it complete.</p>
+<p>But the target operating model may require different behaviour.</p>
+<p>For example:</p>
+<ul>
+<li>central payment replaces local payment;</li>
+<li>purchasing organisations are consolidated;</li>
+<li>new approval controls apply;</li>
+<li>MDG becomes the authority after go-live;</li>
+<li>duplicate identities are merged;</li>
+<li>source ownership changes.</li>
+</ul>
+<p>A record can be fully copied from the legacy system and still be unready for the target model.</p>
+<p>Readiness must be judged against the approved future state, not only source fidelity.</p>
+<h1 id="we-show-the-difference-directly">We show the difference directly</h1>
+<p>For our Supplier, the Workbench should display:</p>
+<pre><code class="language-text">Technical completeness
+
+General BP created:
+pass
+
+Supplier role created:
+pass
+
+Required file columns present:
+pass
+
+Transformation successful:
+pass
+
+Target load successful:
+pass</code></pre>
+<p>Then separately:</p>
+<pre><code class="language-text">Business readiness
+
+Identity:
+pass
+
+Invoice posting in DE01:
+pass
+
+Purchasing in P200:
+fail
+
+Payment in DE01:
+fail
+
+Current Evidence:
+pass
+
+Overall:
+not ready for full intended use</code></pre>
+<p>This view is harder to misunderstand than one blended score.</p>
+<h1 id="we-keep-technical-and-business-findings-separate">We keep technical and business findings separate</h1>
+<p>A failed file-schema check is not the same kind of problem as a missing purchasing extension.</p>
+<h2 id="technical-finding">Technical Finding</h2>
+<pre><code class="language-text">Column COMPANY_CODE is absent.</code></pre>
+<h2 id="business-readiness-finding">Business-readiness Finding</h2>
+<pre><code class="language-text">Supplier cannot support invoice posting
+for company code NL01.</code></pre>
+<p>The technical Finding may cause the business Finding.</p>
+<p>They should be connected through lineage.</p>
+<p>They should not be treated as identical.</p>
+<p>This allows teams to understand:</p>
+<ul>
+<li>immediate technical cause;</li>
+<li>downstream business consequence.</li>
+</ul>
+<h1 id="we-do-not-make-technical-completeness-irrelevant">We do not make technical completeness irrelevant</h1>
+<p>Technical completeness is foundational.</p>
+<p>A record cannot be business-ready if required data cannot be loaded or reconciled.</p>
+<p>We preserve technical measures.</p>
+<p>We simply stop presenting them as the final answer.</p>
+<p>A useful hierarchy is:</p>
+<pre><code class="language-text">File complete
+→ structurally valid
+→ transformed
+→ loaded
+→ reconciled
+→ semantically governed
+→ process-ready</code></pre>
+<p>Each stage provides Evidence for the next.</p>
+<p>Skipping stages weakens confidence.</p>
+<p>Stopping too early creates false readiness.</p>
+<h1 id="we-define-explicit-denominators">We define explicit denominators</h1>
+<p>Suppose 49,920 of 50,000 Suppliers load successfully.</p>
+<p>The technical success rate is 99.84 percent.</p>
+<p>For payment readiness, only 20,000 Suppliers may be in scope.</p>
+<p>Of those:</p>
+<pre><code class="language-text">Fully payment-ready:
+19,500
+
+Controlled through payment block:
+420
+
+Not ready:
+40
+
+Not assessed:
+40</code></pre>
+<p>The correct payment-readiness breakdown is based on 20,000, not 50,000.</p>
+<p>We should not combine unrelated populations to produce a more attractive percentage.</p>
+<h1 id="we-classify-not-applicable-separately">We classify not applicable separately</h1>
+<p>Not every Supplier needs every process capability.</p>
+<p>A Supplier may be used only for reporting or historical transactions.</p>
+<p>Bank verification may not apply when no future outgoing payment is allowed.</p>
+<p>The state should be:</p>
+<pre><code class="language-text">Payment readiness:
+not applicable
+
+Reason:
+Supplier excluded from future payment use
+by approved scope Decision</code></pre>
+<p>It should not be:</p>
+<pre><code class="language-text">Payment readiness:
+ready</code></pre>
+<p>Not applicable and ready are different claims.</p>
+<h1 id="we-classify-not-assessed-separately">We classify not assessed separately</h1>
+<p>A Supplier may have no current payment-readiness result because:</p>
+<ul>
+<li>the Rule was introduced after the latest run;</li>
+<li>Evidence became stale;</li>
+<li>the target load was replaced;</li>
+<li>the bank dataset was missing;</li>
+<li>the record entered scope late.</li>
+</ul>
+<p>The state should be:</p>
+<pre><code class="language-text">Payment readiness:
+not assessed</code></pre>
+<p>Not:</p>
+<pre><code class="language-text">Payment readiness:
+failed</code></pre>
+<p>and not:</p>
+<pre><code class="language-text">Payment readiness:
+ready</code></pre>
+<p>Unknown states must remain visible.</p>
+<h1 id="we-make-temporary-defaults-visible">We make temporary defaults visible</h1>
+<p>Suppose the purchasing group is set to <code>001</code> for 2,000 Suppliers because local ownership is not final.</p>
+<p>The field-completeness report is perfect.</p>
+<p>Business readiness depends on the meaning of <code>001</code>.</p>
+<h2 id="approved-permanent-default">Approved permanent default</h2>
+<p>The record may be ready.</p>
+<h2 id="temporary-migration-fallback">Temporary migration fallback</h2>
+<p>The record may be controlled.</p>
+<h2 id="undocumented-constant">Undocumented constant</h2>
+<p>The record is not governed.</p>
+<p>The same target value creates three different readiness states.</p>
+<p>We need the Mapping and Decision history to distinguish them.</p>
+<h1 id="we-show-where-completeness-was-achieved-through-manual-repair">We show where completeness was achieved through manual repair</h1>
+<p>Manual file repair is common during cutover.</p>
+<p>A steward may populate missing reconciliation accounts directly in Excel.</p>
+<p>The values may be correct.</p>
+<p>The readiness assessment should still preserve:</p>
+<ul>
+<li>who changed them;</li>
+<li>what Evidence supported them;</li>
+<li>which approved Rule or Decision applies;</li>
+<li>whether the canonical Mapping was updated;</li>
+<li>whether the same gap will recur in the next file.</li>
+</ul>
+<p>A manually corrected record can become ready.</p>
+<p>A manual correction without provenance should not disappear into the fully governed population.</p>
+<h1 id="we-distinguish-local-fixes-from-model-resolution">We distinguish local fixes from model resolution</h1>
+<p>Suppose our Supplier is manually extended to purchasing organisation P200.</p>
+<p>The immediate record becomes usable.</p>
+<p>The canonical Mapping still omits P200 for similar Suppliers.</p>
+<p>The states are:</p>
+<pre><code class="language-text">Supplier record:
+ready for purchasing
+
+Systemic Finding:
+still open</code></pre>
+<p>This matters for later waves and delta loads.</p>
+<p>We can close the record-level blocker while preserving the model-level defect.</p>
+<h1 id="we-connect-readiness-to-ownership">We connect readiness to ownership</h1>
+<p>Each failed business gate needs an accountable role.</p>
+<p>For the Supplier:</p>
+<pre><code class="language-text">Purchasing readiness owner:
+Procurement Data Owner
+
+Invoice readiness owner:
+Finance Data Owner
+
+Payment readiness owner:
+Treasury Data Owner
+
+Migration implementation owner:
+Supplier Migration Team</code></pre>
+<p>A generic “Supplier owner” may not have authority over all uses.</p>
+<p>The readiness view should show who can decide and who must implement.</p>
+<p>It should not build the workflow itself.</p>
+<h1 id="we-connect-readiness-to-evidence-freshness">We connect readiness to Evidence freshness</h1>
+<p>A Supplier passed payment-readiness checks in RC5.</p>
+<p>The bank-verification Mapping changes in RC6.</p>
+<p>The technical load record remains unchanged.</p>
+<p>The business-readiness result becomes unproven.</p>
+<pre><code class="language-text">Technical completeness:
+current
+
+Payment-readiness Evidence:
+stale
+
+Current payment readiness:
+not assessed</code></pre>
+<p>This is a critical distinction.</p>
+<p>A technically stable record may require business revalidation after a model change.</p>
+<h1 id="we-connect-readiness-to-cutover-decisions">We connect readiness to cutover decisions</h1>
+<p>A cutover decision should not ask only:</p>
+<blockquote>How many records loaded?</blockquote>
+<p>It should ask:</p>
+<ul>
+<li>Which business capabilities are ready?</li>
+<li>Which records remain controlled?</li>
+<li>Which zero-tolerance Rules fail?</li>
+<li>Which Evidence is stale?</li>
+<li>Which organisational scopes are incomplete?</li>
+<li>Which identity Decisions remain open?</li>
+<li>Which Exceptions expire before activation?</li>
+</ul>
+<p>For our Supplier population, the cutover summary might state:</p>
+<pre><code class="language-text">Technical load success:
+99.84%
+
+Purchasing readiness:
+98.9%
+
+Invoice readiness:
+99.5%
+
+Payment readiness:
+97.5% fully ready
+2.1% controlled
+0.2% not ready
+0.2% not assessed
+
+Cutover payment gate:
+not ready</code></pre>
+<p>The lower percentage is not necessarily a worse report.</p>
+<p>It is a more precise one.</p>
+<h1 id="a-conceptual-capability-assessment">A conceptual capability assessment</h1>
+<p>A process-specific readiness object might look like:</p>
+<pre><code class="language-text">---
+id: READINESS-SUPPLIER-100045-PAYMENT-RC6
+type: CapabilityReadiness
+
+entity:
+  SUPPLIER-100045
+
+capability:
+  outgoing_supplier_payment
+
+scope:
+  company_code: DE01
+  migration_wave: WAVE-1
+  baseline: CUTOVER-RC6
+
+technical:
+  target_record_created: pass
+  company_code_extension: pass
+  bank_account_loaded: pass
+  reconciliation_completed: pass
+
+business:
+  bank_verification_current: fail
+  payment_block_confirmed: fail
+  payment_method_valid: pass
+
+evidence:
+  status: current
+
+overall:
+  status: not_ready
+
+blocking_finding:
+  FIND-BANK-VERIFY-NO-BLOCK
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<h1 id="we-aggregate-without-losing-the-underlying-states">We aggregate without losing the underlying states</h1>
+<p>At programme level, we can aggregate process-specific results.</p>
+<pre><code class="language-text">Payment capability
+
+Ready:
+19,500
+
+Controlled:
+420
+
+Not ready:
+40
+
+Not assessed:
+40</code></pre>
+<p>The aggregation remains traceable.</p>
+<p>Users can drill into:</p>
+<ul>
+<li>company code;</li>
+<li>source system;</li>
+<li>Exception;</li>
+<li>Finding;</li>
+<li>Rule;</li>
+<li>owner.</li>
+</ul>
+<p>We do not aggregate by converting controlled and unassessed records into ready.</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A useful page should have two clearly separated sections.</p>
+<h2 id="technical-completeness">Technical completeness</h2>
+<ul>
+<li>file schema;</li>
+<li>required source fields;</li>
+<li>Mapping coverage;</li>
+<li>transformation status;</li>
+<li>load status;</li>
+<li>target reconciliation.</li>
+</ul>
+<h2 id="business-readiness">Business readiness</h2>
+<ul>
+<li>process capability;</li>
+<li>organisational context;</li>
+<li>identity status;</li>
+<li>source authority;</li>
+<li>semantic Rules;</li>
+<li>control state;</li>
+<li>active Exceptions;</li>
+<li>Evidence freshness;</li>
+<li>blocking Findings.</li>
+</ul>
+<p>The page should state:</p>
+<pre><code class="language-text">Technically complete:
+yes
+
+Ready for intended business use:
+no
+
+Reason:
+Purchasing organisation P200 missing
+and payment control unresolved</code></pre>
+<p>That single distinction would eliminate a large amount of programme confusion.</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next Martenweave capability should be <strong>Capability-Based Business Readiness</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Assess whether technically migrated master data can support a defined business process in a defined organisational context.</p>
+<h2 id="initial-inputs">Initial inputs</h2>
+<ul>
+<li>Entity and Attributes;</li>
+<li>intended business capability;</li>
+<li>organisational scope;</li>
+<li>technical validation results;</li>
+<li>Mapping and load Evidence;</li>
+<li>source-authority Decisions;</li>
+<li>duplicate-resolution status;</li>
+<li>process-specific Rules;</li>
+<li>active Exceptions;</li>
+<li>Evidence freshness.</li>
+</ul>
+<h2 id="initial-technical-states">Initial technical states</h2>
+<ul>
+<li>incomplete;</li>
+<li>structurally valid;</li>
+<li>transformed;</li>
+<li>loaded;</li>
+<li>reconciled.</li>
+</ul>
+<h2 id="initial-business-states">Initial business states</h2>
+<ul>
+<li>ready;</li>
+<li>controlled;</li>
+<li>not ready;</li>
+<li>not assessed;</li>
+<li>not applicable.</li>
+</ul>
+<h2 id="initial-supplier-capabilities">Initial Supplier capabilities</h2>
+<ul>
+<li>purchasing;</li>
+<li>invoice posting;</li>
+<li>payment;</li>
+<li>reporting.</li>
+</ul>
+<h2 id="required-outputs">Required outputs</h2>
+<ul>
+<li>technical-completeness result;</li>
+<li>business-readiness result;</li>
+<li>gate-by-gate explanation;</li>
+<li>blocking Findings;</li>
+<li>active controls;</li>
+<li>affected organisational scope;</li>
+<li>Evidence trace;</li>
+<li>accountable owners.</li>
+</ul>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI could support:</p>
+<pre><code class="language-text">martenweave readiness capability \
+  --entity SUPPLIER-100045 \
+  --capability outgoing_supplier_payment \
+  --scope company_code=DE01 \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave readiness explain \
+  READINESS-SUPPLIER-100045-PAYMENT-RC6 \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave readiness compare-technical-business \
+  --scope supplier-wave1 \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave readiness process-summary \
+  --capability purchase_order_creation \
+  --scope purchasing_org=P200 \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended product direction.</p>
+<p>They are not part of the currently documented CLI.</p>
+<p>The existing Martenweave foundation already supports canonical files, deterministic validation, dataset-gap detection, lineage, impact analysis and dataset-readiness workflows.</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider the capability useful when it can correctly classify our Supplier as:</p>
+<pre><code class="language-text">Technically complete:
+yes
+
+Ready for basic identification:
+yes
+
+Ready for invoice posting in DE01:
+yes
+
+Ready for purchasing in P200:
+no
+
+Ready for payment in DE01:
+no</code></pre>
+<p>It must explain why.</p>
+<p>It should also prevent these false conclusions:</p>
+<ol>
+<li>A successful load means the Supplier is ready for purchasing.</li>
+<li>A populated bank account means the Supplier is payment-ready.</li>
+<li>An approved MDG record proves the cutover file used the approved state.</li>
+<li>A technically valid code proves the value is semantically correct.</li>
+<li>A general Supplier record proves every organisational extension exists.</li>
+<li>A completed duplicate-detection job proves identity is resolved.</li>
+<li>A manually populated default is equivalent to an approved source value.</li>
+<li>old business-readiness Evidence remains current after a material Mapping change.</li>
+<li>one global percentage represents every Supplier business use.</li>
+<li>not applicable and not assessed can be counted as ready.</li>
+</ol>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>an SAP process simulator;</li>
+<li>an ERP transaction-testing platform;</li>
+<li>a replacement for SAP MDG;</li>
+<li>a migration-load framework;</li>
+<li>a generic process-modelling suite;</li>
+<li>a business workflow engine.</li>
+</ul>
+<p>The capability should remain model-driven.</p>
+<p>It links master-data state to the process conditions already defined by the programme.</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Confusing completeness with readiness creates expensive failures:</p>
+<ul>
+<li>Suppliers exist but purchase orders cannot be created;</li>
+<li>invoices cannot post because company-code data is incomplete;</li>
+<li>payment runs stop because controls were not assessed;</li>
+<li>duplicates survive as separate business entities;</li>
+<li>manually defaulted values become permanent;</li>
+<li>MDG approvals are assumed to cover later migration changes;</li>
+<li>load-success percentages hide missing organisational scope;</li>
+<li>hypercare teams rediscover problems that cutover reporting declared complete.</li>
+</ul>
+<p>Separating the states changes the conversation.</p>
+<p>Instead of:</p>
+<pre><code class="language-text">Supplier load is 99.84% complete.</code></pre>
+<p>we can say:</p>
+<pre><code class="language-text">The Supplier objects are technically loaded.
+
+Purchasing is ready for P100,
+but not for P200.
+
+Invoice posting is ready for DE01.
+
+Payment remains blocked for 40 Suppliers
+because the current bank control is unresolved.</code></pre>
+<p>That statement is more operational.</p>
+<p>It allows leaders to make a real cutover decision.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Technical completeness asks:</p>
+<pre><code class="language-text">Is the field present?
+
+Is the structure valid?
+
+Did the transformation run?
+
+Did the target accept the record?
+
+Did reconciliation match?</code></pre>
+<p>Business readiness asks:</p>
+<pre><code class="language-text">Is this the right business entity?
+
+Is the value governed?
+
+Is the organisational context present?
+
+Are critical controls effective?
+
+Is the Evidence current?
+
+Can the intended process operate safely?</code></pre>
+<p>For our Supplier, the record can be technically complete and still be unready for purchasing or payment.</p>
+<p>That is not a reporting inconvenience.</p>
+<p>It is the central reality of master-data migration.</p>
+<p>The practical test is:</p>
+<blockquote>Can we name the exact business capability, organisational context and control conditions for which the record is ready?</blockquote>
+<p>When the answer is yes, readiness becomes meaningful.</p>
+<p>When the answer is:</p>
+<blockquote>The record loaded successfully and most fields are populated,</blockquote>
+<p>we have proven technical progress.</p>
+<p>We have not yet proven business readiness.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that migration teams stop treating object creation, field population and successful load messages as interchangeable with operational readiness.</p>
+<p>Our operating model is:</p>
+<pre><code class="language-text">Technical checks prove structural progress.
+
+Canonical Rules define accepted meaning.
+
+Capability gates define business use.
+
+Exceptions preserve controlled limitations.
+
+Evidence proves the current state.
+
+Findings explain what remains blocked.
+
+Humans approve readiness for the process.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes an open-source, backend-first governance and Evidence layer that transforms datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset gaps, lineage, impact analysis and human-approved AI proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI changes proposal-first.</p>
+<p>Its documented workflow includes dataset and model-gap detection, lineage, impact analysis and a dataset-readiness command.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer that creates governed golden records, supports matching and merging, provides workflow, applies data-quality Rules and maintains auditable data changes. SAP also distinguishes master-data integration, which distributes data in its current state, from master-data management and quality improvement. These distinctions support treating MDG approval, replication and migration execution as related but separate readiness Evidence.</p>
+<p>Capability-based readiness objects, process gates, organisational-context assessments and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html"><span>Previous</span>The Supplier migration dashboard shows:</a><a href="/blog/how-we-use-model-evidence-during-cutover-approval.html"><span>Next</span>The Supplier migration team completes the final rehearsal.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

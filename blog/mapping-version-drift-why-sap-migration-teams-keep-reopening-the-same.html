@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions | Martenweave</title>
+    <meta
+      name="description"
+      content="Most migration teams believe they have a mapping problem only when a field is missing."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html" />
+    <meta property="og:title" content="Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions | Martenweave" />
+    <meta property="og:description" content="Most migration teams believe they have a mapping problem only when a field is missing." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions | Martenweave" />
+    <meta name="twitter:description" content="Most migration teams believe they have a mapping problem only when a field is missing." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html#webpage",
+                        "url": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html",
+                        "name": "Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions | Martenweave",
+                        "description": "Most migration teams believe they have a mapping problem only when a field is missing.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions",
+                                    "item": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html#content",
+                        "headline": "Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions",
+                        "name": "Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions",
+                        "description": "Most migration teams believe they have a mapping problem only when a field is missing.",
+                        "url": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/mapping-version-drift-why-sap-migration-teams-keep-reopening-the-same.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT11M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>Mapping Version Drift: Why SAP Migration Teams Keep Reopening the Same Decisions</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 11 min read</p><p class="blog-summary">Most migration teams believe they have a mapping problem only when a field is missing.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-mapping-is-rarely-stored-in-one-place">The mapping is rarely stored in one place</a></li><li><a href="#a-practical-example-customer-group-mapping">A practical example: customer group mapping</a></li><li><a href="#why-document-versioning-does-not-solve-the-whole-problem">Why document versioning does not solve the whole problem</a></li><li><a href="#why-git-alone-is-not-enough">Why Git alone is not enough</a></li><li><a href="#why-migration-platforms-do-not-automatically-prevent-drift">Why migration platforms do not automatically prevent drift</a></li><li><a href="#why-jira-does-not-become-the-model">Why Jira does not become the model</a></li><li><a href="#why-excel-becomes-the-visible-victim">Why Excel becomes the visible victim</a></li><li><a href="#what-mapping-drift-costs">What mapping drift costs</a></li><li><a href="#the-real-control-should-be-model-state">The real control should be model state</a></li><li><a href="#how-martenweave-addresses-mapping-version-drift">How Martenweave addresses mapping version drift</a></li><li><a href="#comparison-of-responsibilities">Comparison of responsibilities</a></li><li><a href="#what-a-manager-should-request">What a manager should request</a></li><li><a href="#the-goal-is-not-one-giant-system">The goal is not one giant system</a></li><li><a href="#the-management-lesson">The management lesson</a></li></ol></nav></details></header>
+<p>Most migration teams believe they have a mapping problem only when a field is missing.</p>
+<p>The more dangerous problem is different.</p>
+<p>The mapping exists, but nobody is completely sure which version is current.</p>
+<p>One team uses the workbook approved two weeks ago.</p>
+<p>Another team works from a local copy with country-specific changes.</p>
+<p>The transformation developer has already implemented a later rule from Jira.</p>
+<p>The validation script still follows the original design.</p>
+<p>The business owner remembers approving an exception, but cannot see whether it reached the migration logic.</p>
+<p>The project therefore has several internally reasonable versions of the same model.</p>
+<p>This is mapping version drift.</p>
+<p>It is one of the main reasons migration defects return after they were supposedly resolved.</p>
+<h2 id="the-mapping-is-rarely-stored-in-one-place">The mapping is rarely stored in one place</h2>
+<p>A migration mapping is often described as a simple relationship:</p>
+<pre><code class="language-text">Source field → transformation → target field</code></pre>
+<p>In a real SAP programme, the full mapping may be distributed across:</p>
+<ul>
+<li>an Excel workbook;</li>
+<li>transformation code;</li>
+<li>migration-tool configuration;</li>
+<li>validation scripts;</li>
+<li>Jira decisions;</li>
+<li>SharePoint documents;</li>
+<li>SAP design specifications;</li>
+<li>country-specific files;</li>
+<li>interface mappings;</li>
+<li>test-case expectations.</li>
+</ul>
+<p>Each artefact may contain part of the current logic.</p>
+<p>The workbook may identify the source and target fields.</p>
+<p>The code contains the implemented transformation.</p>
+<p>The ticket contains the exception.</p>
+<p>The validation script defines what values are accepted.</p>
+<p>The interface specification shows how the result is sent downstream.</p>
+<p>The problem begins when one part changes and the others do not.</p>
+<p>No dramatic technical failure is required.</p>
+<p>The project simply starts to operate with several versions of the truth.</p>
+<h2 id="a-practical-example-customer-group-mapping">A practical example: customer group mapping</h2>
+<p>Consider an SAP S/4HANA migration in which a legacy customer classification is mapped to the SAP customer group.</p>
+<p>The first approved mapping is:</p>
+<pre><code class="language-text">A → 01
+B → 02
+C → 03</code></pre>
+<p>During testing, the business discovers that classification <code>C</code> contains two different customer populations.</p>
+<p>The decision is changed:</p>
+<pre><code class="language-text">C + domestic customer → 03
+C + export customer → 04</code></pre>
+<p>The Jira ticket is approved.</p>
+<p>The migration developer updates the transformation.</p>
+<p>The next load produces the expected values.</p>
+<p>The problem appears solved.</p>
+<p>But several things have not changed:</p>
+<ul>
+<li>the main mapping workbook still contains <code>C → 03</code>;</li>
+<li>the validation script accepts only <code>01</code>, <code>02</code> and <code>03</code>;</li>
+<li>the reconciliation report groups all legacy <code>C</code> customers under target group <code>03</code>;</li>
+<li>the interface team uses the workbook to prepare a downstream mapping;</li>
+<li>another country copies the original rule for its migration wave.</li>
+</ul>
+<p>The first load may succeed.</p>
+<p>The inconsistency appears later as:</p>
+<ul>
+<li>validation failures;</li>
+<li>reconciliation differences;</li>
+<li>incorrect reporting;</li>
+<li>rejected interface values;</li>
+<li>repeated clarification requests;</li>
+<li>defects in another rollout.</li>
+</ul>
+<p>The project reopens the same business decision because the change was implemented in one place but never became the new canonical model.</p>
+<h2 id="why-document-versioning-does-not-solve-the-whole-problem">Why document versioning does not solve the whole problem</h2>
+<p>Teams often try to control mapping drift through document management.</p>
+<p>The workbook is stored in SharePoint.</p>
+<p>Version history is enabled.</p>
+<p>Editing permissions are restricted.</p>
+<p>A naming convention is introduced.</p>
+<p>This helps.</p>
+<p>It establishes which file changed, when it changed and who changed it.</p>
+<p>It does not prove that the wider migration model is aligned.</p>
+<p>SharePoint can show that version 14 is the latest workbook.</p>
+<p>It cannot automatically confirm that:</p>
+<ul>
+<li>the transformation code implements version 14;</li>
+<li>the validation rules use the same value set;</li>
+<li>the current source extract contains the expected fields;</li>
+<li>a Jira decision has been incorporated;</li>
+<li>another migration object uses the same business definition;</li>
+<li>the 3PL mapping reflects the updated code.</li>
+</ul>
+<p>Document version control answers:</p>
+<blockquote>Which version of this document is current?</blockquote>
+<p>Migration governance needs to answer:</p>
+<blockquote>Which version of the model is implemented across all affected artefacts?</blockquote>
+<p>Those are different questions.</p>
+<h2 id="why-git-alone-is-not-enough">Why Git alone is not enough</h2>
+<p>Technical teams may propose Git as the solution.</p>
+<p>Git provides strong version control.</p>
+<p>It records changes, authors, branches, reviews and merges.</p>
+<p>For model-as-code approaches, it is an excellent foundation.</p>
+<p>But Git cannot govern relationships that have not been represented.</p>
+<p>If the mapping workbook, validation script and business decision remain unrelated files, Git can show that each one changed.</p>
+<p>It cannot determine whether they still agree.</p>
+<p>A pull request may contain a transformation update.</p>
+<p>Unless the dependency is explicit, the reviewer may not know that the change also requires:</p>
+<ul>
+<li>a rule update;</li>
+<li>a dataset change;</li>
+<li>a report adjustment;</li>
+<li>an interface review;</li>
+<li>a new approval.</li>
+</ul>
+<p>Git records change well.</p>
+<p>A model registry provides the context needed to review that change.</p>
+<p>The two should work together.</p>
+<h2 id="why-migration-platforms-do-not-automatically-prevent-drift">Why migration platforms do not automatically prevent drift</h2>
+<p>A migration platform can centralise transformations and load logic.</p>
+<p>This reduces some version problems.</p>
+<p>Instead of distributing scripts across individual machines, the project can manage execution within one controlled environment.</p>
+<p>But the platform normally controls the version of the executable migration logic.</p>
+<p>It may not control every supporting decision and dependency.</p>
+<p>The implemented mapping can still differ from:</p>
+<ul>
+<li>the business-approved mapping workbook;</li>
+<li>the target design;</li>
+<li>the validation framework;</li>
+<li>the interface specification;</li>
+<li>the current dataset expectation.</li>
+</ul>
+<p>The platform can prove which transformation was executed.</p>
+<p>It may not prove that this transformation reflects the latest approved business decision.</p>
+<p>This distinction matters during audits and defect analysis.</p>
+<p>“Version 27 was executed” is not the same as “version 27 implements the currently approved model.”</p>
+<h2 id="why-jira-does-not-become-the-model">Why Jira does not become the model</h2>
+<p>Jira is often where the most important changes are recorded.</p>
+<p>A ticket may contain:</p>
+<ul>
+<li>the defect;</li>
+<li>screenshots;</li>
+<li>business comments;</li>
+<li>proposed mapping;</li>
+<li>test evidence;</li>
+<li>approval.</li>
+</ul>
+<p>The issue is resolved and closed.</p>
+<p>Months later, somebody asks why the mapping works this way.</p>
+<p>The ticket may be difficult to find.</p>
+<p>Even when found, it may not show whether the decision was propagated everywhere.</p>
+<p>Jira proves that work was discussed and approved.</p>
+<p>It does not automatically update the model elements affected by the decision.</p>
+<p>A closed ticket can coexist with:</p>
+<ul>
+<li>an obsolete mapping workbook;</li>
+<li>an unchanged validation rule;</li>
+<li>an old interface conversion;</li>
+<li>a source extract missing the new condition.</li>
+</ul>
+<p>The decision exists.</p>
+<p>Its implementation status across the model remains uncertain.</p>
+<h2 id="why-excel-becomes-the-visible-victim">Why Excel becomes the visible victim</h2>
+<p>Excel usually receives the blame because version drift is easiest to see there.</p>
+<p>Multiple copies circulate.</p>
+<p>Local changes appear.</p>
+<p>Comments are added without formal review.</p>
+<p>Tabs become inconsistent.</p>
+<p>But Excel is only the visible surface.</p>
+<p>The real problem is not that teams use spreadsheets.</p>
+<p>The real problem is that the project has no controlled relationship between the spreadsheet and the other artefacts.</p>
+<p>A workbook can be effective when used as:</p>
+<ul>
+<li>an import format;</li>
+<li>an export format;</li>
+<li>a business review surface;</li>
+<li>a bulk-editing tool.</li>
+</ul>
+<p>It becomes dangerous when every team assumes that its own copy represents the complete approved model.</p>
+<p>The answer is not necessarily to remove Excel.</p>
+<p>The answer is to stop treating it as the only authoritative layer.</p>
+<h2 id="what-mapping-drift-costs">What mapping drift costs</h2>
+<p>Mapping drift rarely appears as one large failure.</p>
+<p>It creates repeated small losses across the programme.</p>
+<h3 id="repeated-analysis">Repeated analysis</h3>
+<p>The same decision is explained several times because later teams cannot trace its current status.</p>
+<h3 id="rework">Rework</h3>
+<p>Transformations, validations and reports are updated at different times.</p>
+<p>Each inconsistency creates another correction cycle.</p>
+<h3 id="unreliable-testing">Unreliable testing</h3>
+<p>A failed test may reflect bad data, an obsolete rule or an outdated expectation.</p>
+<p>The team spends time identifying which version is being tested.</p>
+<h3 id="weak-readiness-reporting">Weak readiness reporting</h3>
+<p>Management sees that mappings are “approved” without knowing whether they are implemented consistently.</p>
+<h3 id="cross-wave-defects">Cross-wave defects</h3>
+<p>A later country or business unit copies an earlier mapping that had already been corrected elsewhere.</p>
+<h3 id="dependence-on-individuals">Dependence on individuals</h3>
+<p>The only person who understands the differences between versions becomes a critical project dependency.</p>
+<p>None of these costs looks dramatic on its own.</p>
+<p>Together, they consume a significant part of migration effort.</p>
+<h2 id="the-real-control-should-be-model-state">The real control should be model state</h2>
+<p>A migration programme needs more than file versions.</p>
+<p>It needs an explicit model state.</p>
+<p>For every important mapping, the project should know:</p>
+<ul>
+<li>which source field is approved;</li>
+<li>which target field is approved;</li>
+<li>which transformation version is current;</li>
+<li>which conditions apply;</li>
+<li>which decision authorised the rule;</li>
+<li>which datasets are expected to provide the inputs;</li>
+<li>which validations use the mapping;</li>
+<li>which interfaces depend on it;</li>
+<li>whether a proposed change is still under review;</li>
+<li>which model version is implemented in each execution environment.</li>
+</ul>
+<p>This creates a stronger baseline.</p>
+<p>The project no longer asks only:</p>
+<blockquote>Which workbook is latest?</blockquote>
+<p>It asks:</p>
+<blockquote>Which approved mapping version is current, and where has it been implemented?</blockquote>
+<h2 id="how-martenweave-addresses-mapping-version-drift">How Martenweave addresses mapping version drift</h2>
+<p>Martenweave treats mappings as model objects rather than rows that exist only inside a workbook.</p>
+<p>A mapping can have:</p>
+<ul>
+<li>a stable identifier;</li>
+<li>source and target references;</li>
+<li>transformation logic;</li>
+<li>status;</li>
+<li>owner;</li>
+<li>evidence;</li>
+<li>related decisions;</li>
+<li>affected rules and datasets;</li>
+<li>version history.</li>
+</ul>
+<p>The canonical model files represent the approved state.</p>
+<p>Generated indexes and reports can be rebuilt from those files.</p>
+<p>This means the project has one controlled model baseline instead of several independently maintained interpretations.</p>
+<h3 id="workbook-changes-become-proposals">Workbook changes become proposals</h3>
+<p>A team can still edit or deliver mappings through CSV or XLSX.</p>
+<p>But the imported change should not immediately replace the approved model.</p>
+<p>It becomes a proposal.</p>
+<p>The proposal can show:</p>
+<ul>
+<li>which mappings are new;</li>
+<li>which mappings changed;</li>
+<li>which fields were removed;</li>
+<li>which references are unknown;</li>
+<li>which approved rules may be affected.</li>
+</ul>
+<p>This separates convenience from authority.</p>
+<p>The spreadsheet remains easy to use.</p>
+<p>The canonical model remains controlled.</p>
+<h3 id="decisions-are-connected-to-affected-mappings">Decisions are connected to affected mappings</h3>
+<p>A Jira ticket or workshop note can be registered as evidence.</p>
+<p>The decision is linked to the mapping it changes.</p>
+<p>Later, the project can trace:</p>
+<pre><code class="language-text">Decision
+→ mapping change
+→ validation rule
+→ dataset expectation
+→ downstream dependency</code></pre>
+<p>This reduces the need to reconstruct the reason from comments and memory.</p>
+<h3 id="validation-catches-structural-divergence">Validation catches structural divergence</h3>
+<p>Martenweave can check conditions such as:</p>
+<ul>
+<li>the mapping references a source field that no longer exists;</li>
+<li>the target field is unknown;</li>
+<li>an active mapping uses a deprecated value;</li>
+<li>a validation rule still references the earlier mapping;</li>
+<li>the required decision or owner is absent;</li>
+<li>two active mappings conflict for the same context.</li>
+</ul>
+<p>Deterministic validation does not prove that the business decision is correct.</p>
+<p>It proves that the approved model is structurally coherent.</p>
+<h3 id="impact-analysis-shows-what-must-move-together">Impact analysis shows what must move together</h3>
+<p>Before changing a mapping, the project can inspect connected elements.</p>
+<p>For the customer-group example, the impact result may show:</p>
+<ul>
+<li>one source field;</li>
+<li>one conditional transformation;</li>
+<li>two validation rules;</li>
+<li>one reconciliation report definition;</li>
+<li>one interface mapping;</li>
+<li>one country rollout;</li>
+<li>one approved decision.</li>
+</ul>
+<p>The change can then be reviewed as one model update rather than a series of unrelated file edits.</p>
+<h3 id="dataset-checks-reveal-implementation-gaps">Dataset checks reveal implementation gaps</h3>
+<p>The approved model may require an additional condition such as domestic or export status.</p>
+<p>Martenweave can compare the current dataset with this expectation.</p>
+<p>It may reveal that:</p>
+<ul>
+<li>one country extract lacks the required field;</li>
+<li>another extract uses a renamed column;</li>
+<li>some records contain no value for the new condition;</li>
+<li>the migration mapping cannot be executed safely for the affected population.</li>
+</ul>
+<p>This prevents the team from approving a mapping that the available data cannot support.</p>
+<h2 id="comparison-of-responsibilities">Comparison of responsibilities</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Tool</th><th scope="col">What it controls</th><th scope="col">What may remain unresolved</th></tr></thead><tbody><tr><td>Excel</td><td>Mapping review and bulk editing</td><td>Canonical state, references, impact</td></tr><tr><td>SharePoint</td><td>Document versions and access</td><td>Agreement across artefacts</td></tr><tr><td>Git</td><td>File and code history</td><td>Business meaning and unmodelled dependencies</td></tr><tr><td>Jira</td><td>Work, discussion and approval records</td><td>Propagation into mappings and rules</td></tr><tr><td>Migration platform</td><td>Executable transformation and load logic</td><td>Independent approved model</td></tr><tr><td>Data-quality tool</td><td>Data conformance to rules</td><td>Whether the current rule is approved</td></tr><tr><td>Martenweave</td><td>Connected mapping model, evidence, validation and impact</td><td>Runtime migration execution</td></tr></tbody></table></div>
+<p>Martenweave does not replace these tools.</p>
+<p>It provides the layer that shows whether the versions managed inside them still describe the same model.</p>
+<h2 id="what-a-manager-should-request">What a manager should request</h2>
+<p>A migration status report should not say only:</p>
+<blockquote>Customer mapping version 14 is approved.</blockquote>
+<p>It should say:</p>
+<blockquote>Customer mapping model version 14 is approved. The transformation and validation rules are aligned. One downstream interface still uses version 13. The next country extract does not yet contain the field required by the new conditional mapping.</blockquote>
+<p>This is more uncomfortable than a green status.</p>
+<p>It is also more useful.</p>
+<p>Managers should ask:</p>
+<ul>
+<li>Which model version is approved?</li>
+<li>Which execution artefacts implement it?</li>
+<li>Which artefacts still differ?</li>
+<li>Which datasets can support it?</li>
+<li>Which decisions explain the latest changes?</li>
+<li>Which downstream dependencies require review?</li>
+<li>Can the same model state be reproduced after the current team leaves?</li>
+</ul>
+<p>If the project cannot answer these questions, version control exists only at document level.</p>
+<h2 id="the-goal-is-not-one-giant-system">The goal is not one giant system</h2>
+<p>The solution is not to force every project activity into Martenweave.</p>
+<p>That would recreate the same problem inside a larger product.</p>
+<p>Excel should remain useful for review.</p>
+<p>Jira should remain useful for work management.</p>
+<p>Git should record file changes.</p>
+<p>Migration platforms should execute transformations.</p>
+<p>Quality tools should run record-level checks.</p>
+<p>Martenweave should remain the small control layer connecting their relevant outputs to the approved model.</p>
+<p>The architecture should look like this:</p>
+<pre><code class="language-text">Excel, Jira, migration tools, validation reports
+                ↓
+            evidence
+                ↓
+     Martenweave canonical model
+                ↓
+ validation → impact → proposal → review
+                ↓
+  approved change returned to execution tools</code></pre>
+<p>The strength comes from clear boundaries, not from moving every function into one platform.</p>
+<h2 id="the-management-lesson">The management lesson</h2>
+<p>Mapping version drift is not a file-naming problem.</p>
+<p>It is not solved completely by SharePoint, Git, Jira or a migration platform.</p>
+<p>Those tools control versions of documents, code, tickets and execution logic.</p>
+<p>The programme still needs to know whether all of those versions represent the same approved model.</p>
+<p>Martenweave addresses this by making mappings, fields, rules, datasets, decisions and dependencies part of one validated model state.</p>
+<p>The question changes from:</p>
+<blockquote>Which file is latest?</blockquote>
+<p>to:</p>
+<blockquote>Which model is approved, what implements it, and where has the programme drifted away from it?</blockquote>
+<p>That is the question that prevents the same migration decision from returning as a defect in every new wave.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-sap-migration-teams-still-lose-control-even-with-the-right-tools.html"><span>Previous</span>An SAP migration programme may have every major tool it is supposed to have.</a><a href="/blog/sap-migration-tco-how-model-governance-reduces-rework-and-project-cost.html"><span>Next</span>The licence fee is rarely the most dangerous part of migration cost.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

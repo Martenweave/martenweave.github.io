@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Connect Findings to Owners Without Building Another Workflow Engine | Martenweave</title>
+    <meta
+      name="description"
+      content="We confirm a critical Supplier bank-data Finding."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html" />
+    <meta property="og:title" content="How We Connect Findings to Owners Without Building Another Workflow Engine | Martenweave" />
+    <meta property="og:description" content="We confirm a critical Supplier bank-data Finding." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Connect Findings to Owners Without Building Another Workflow Engine | Martenweave" />
+    <meta name="twitter:description" content="We confirm a critical Supplier bank-data Finding." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html",
+                        "name": "How We Connect Findings to Owners Without Building Another Workflow Engine | Martenweave",
+                        "description": "We confirm a critical Supplier bank-data Finding.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Connect Findings to Owners Without Building Another Workflow Engine",
+                                    "item": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html#content",
+                        "headline": "How We Connect Findings to Owners Without Building Another Workflow Engine",
+                        "name": "How We Connect Findings to Owners Without Building Another Workflow Engine",
+                        "description": "We confirm a critical Supplier bank-data Finding.",
+                        "url": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-connect-findings-to-owners-without-building-another-workflow.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Connect Findings to Owners Without Building Another Workflow Engine</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Connect Findings to Owners Without Building Another Workflow Engine</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 18 min read</p><p class="blog-summary">We confirm a critical Supplier bank-data Finding.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#business-policy-owner">Business policy owner</a></li><li><a href="#data-owner">Data owner</a></li><li><a href="#model-owner">Model owner</a></li><li><a href="#migration-owner">Migration owner</a></li><li><a href="#implementation-owner">Implementation owner</a></li><li><a href="#risk-owner">Risk owner</a></li><li><a href="#finding-coordinator">Finding coordinator</a></li><li><a href="#accountable">Accountable</a></li><li><a href="#responsible">Responsible</a></li><li><a href="#decision-owner">Decision owner</a></li><li><a href="#delivery-owner">Delivery owner</a></li><li><a href="#evidence-owner">Evidence owner</a></li><li><a href="#closure-approver">Closure approver</a></li><li><a href="#issue-1">Issue 1</a></li><li><a href="#issue-2">Issue 2</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>We confirm a critical Supplier bank-data Finding.</p>
+<p>Forty payment-active Suppliers have expired bank verification, but the expected payment block is not active.</p>
+<p>The Finding is clear enough:</p>
+<blockquote>Payment may remain enabled for bank details that are no longer covered by current Treasury verification.</blockquote>
+<p>The next question sounds simple:</p>
+<blockquote>Who owns this?</blockquote>
+<p>The migration team assigns the Finding to a developer.</p>
+<p>The developer can change the transformation.</p>
+<p>They cannot decide:</p>
+<ul>
+<li>whether expired verification must block payment;</li>
+<li>whether the affected Suppliers may remain in the cutover wave;</li>
+<li>whether Treasury accepts another evidence source;</li>
+<li>whether a temporary exception is acceptable;</li>
+<li>whether the Finding is resolved from a business perspective.</li>
+</ul>
+<p>The issue is reassigned to Treasury.</p>
+<p>Treasury can define the verification requirement.</p>
+<p>They cannot implement the migration Mapping, update the cutover dataset or validate the target payment block alone.</p>
+<p>The issue is then assigned to the Supplier migration lead.</p>
+<p>The migration lead coordinates the work but does not own the bank-control policy.</p>
+<p>Several people are involved.</p>
+<p>Nobody has a precise accountability.</p>
+<p>This is how Findings become stuck even when they are technically well described.</p>
+<blockquote>A Finding does not need one generic owner. It needs explicit ownership for the different decisions and actions required to resolve it.</blockquote>
+<p>At the same time, we do not want Martenweave to become:</p>
+<ul>
+<li>a workflow engine;</li>
+<li>a ticketing platform;</li>
+<li>an organisational directory;</li>
+<li>a project-management system;</li>
+<li>an approval inbox;</li>
+<li>a replacement for GitHub, Jira or ServiceNow.</li>
+</ul>
+<p>Our role is narrower.</p>
+<p>We preserve who is accountable for the model meaning, who owns the affected data, who must implement the remediation and who has authority to accept the remaining risk.</p>
+<p>The delivery system manages:</p>
+<ul>
+<li>assignment;</li>
+<li>status;</li>
+<li>due dates;</li>
+<li>comments;</li>
+<li>sprints;</li>
+<li>notifications;</li>
+<li>escalation.</li>
+</ul>
+<p>Martenweave manages the ownership contract around canonical model truth.</p>
+<p>The distinction is:</p>
+<pre><code>Martenweave:
+Who must decide, provide evidence,
+implement and approve closure?
+
+Delivery system:
+Who is currently doing which task,
+and what is its delivery status?</code></pre>
+<p>Martenweave’s current architecture supports this boundary. The product is defined as a backend-first model-governance pipeline with canonical files, deterministic validation, lineage, impact analysis and human-reviewed proposals. It explicitly avoids becoming a generic workflow platform or hosted multi-tenant application.</p>
+<p>---</p>
+<h1 id="the-word-owner-is-too-ambiguous">The word “owner” is too ambiguous</h1>
+<p>In enterprise migration work, “owner” may refer to several different responsibilities.</p>
+<p>For the Supplier bank-verification Finding, possible owners include:</p>
+<h2 id="business-policy-owner">Business policy owner</h2>
+<p>Defines what verified bank data means and what control is required.</p>
+<p>In our case:</p>
+<pre><code>Treasury Data Owner</code></pre>
+<h2 id="data-owner">Data owner</h2>
+<p>Owns the authoritative Treasury verification dataset and its quality.</p>
+<h2 id="model-owner">Model owner</h2>
+<p>Owns the canonical representation of Supplier Bank Verification, its Rule and its source authority.</p>
+<h2 id="migration-owner">Migration owner</h2>
+<p>Owns the readiness of the Supplier migration scope.</p>
+<h2 id="implementation-owner">Implementation owner</h2>
+<p>Changes the Mapping, transformation or target-control logic.</p>
+<h2 id="risk-owner">Risk owner</h2>
+<p>Accepts or rejects the remaining business exposure.</p>
+<h2 id="finding-coordinator">Finding coordinator</h2>
+<p>Makes sure the investigation, remediation and Evidence remain connected.</p>
+<p>All of these may be called “the owner” in a meeting.</p>
+<p>They are not interchangeable.</p>
+<p>If we store only:</p>
+<pre><code>owner:
+Supplier Migration Lead</code></pre>
+<p>we have not solved ownership.</p>
+<p>We have compressed a multi-party accountability model into one label.</p>
+<p>---</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>The Finding is:</p>
+<pre><code>Finding:
+Expired Supplier bank verification
+without confirmed payment block
+
+Affected population:
+40 payment-active Suppliers
+
+Business process:
+Outgoing Supplier Payment
+
+Required Rule:
+Unverified or expired bank details
+must not remain payment-enabled</code></pre>
+<p>The remediation may require four different actions:</p>
+<ol>
+<li>confirm the accepted business treatment;</li>
+<li>identify the correct affected population;</li>
+<li>implement or correct the payment-block path;</li>
+<li>rerun validation and approve closure.</li>
+</ol>
+<p>No single person necessarily has authority and capability across all four.</p>
+<p>We therefore assign roles to obligations rather than assigning the whole Finding to one person.</p>
+<p>---</p>
+<h1 id="we-start-with-accountability-not-task-assignment">We start with accountability, not task assignment</h1>
+<p>The most important ownership question is:</p>
+<blockquote>Who has authority to decide what must be true?</blockquote>
+<p>For the Supplier case, Treasury may be accountable for the policy:</p>
+<pre><code>Expired verification requires payment block.</code></pre>
+<p>The Supplier migration team cannot redefine this requirement merely because implementation is difficult.</p>
+<p>The developer cannot decide that a legacy <code>VERIFIED</code> flag is an acceptable substitute.</p>
+<p>An AI agent cannot lower the Rule severity to improve readiness.</p>
+<p>The accountable business role establishes the accepted state.</p>
+<p>That role should be represented in the canonical model.</p>
+<p>For example:</p>
+<pre><code>Rule:
+RULE-SUPPLIER-BANK-VERIFICATION
+
+Policy owner:
+ROLE-TREASURY-DATA-OWNER
+
+Risk acceptance authority:
+ROLE-TREASURY-CONTROL-OWNER</code></pre>
+<p>The model does not need the current person’s name in every object.</p>
+<p>It needs the stable organisational role responsible for the meaning.</p>
+<p>---</p>
+<h1 id="roles-are-more-stable-than-people">Roles are more stable than people</h1>
+<p>Projects last longer than individual assignments.</p>
+<p>A named owner may:</p>
+<ul>
+<li>leave the programme;</li>
+<li>change teams;</li>
+<li>move to another country scope;</li>
+<li>become unavailable during cutover;</li>
+<li>be replaced by a successor.</li>
+</ul>
+<p>If the canonical model says:</p>
+<pre><code>owner:
+Jane Smith</code></pre>
+<p>the model becomes stale when Jane leaves.</p>
+<p>A better primary reference is:</p>
+<pre><code>owner_role:
+Treasury Data Owner</code></pre>
+<p>We may resolve that role to the current person through project configuration or a delivery-system integration.</p>
+<p>The canonical responsibility remains stable.</p>
+<p>The current assignment can change.</p>
+<p>This separation gives us:</p>
+<pre><code>Canonical ownership:
+Treasury Data Owner
+
+Current person:
+resolved from project configuration
+
+Delivery assignee:
+stored in GitHub or ITSM</code></pre>
+<p>Martenweave should not become an HR master-data system.</p>
+<p>It should preserve the role contract.</p>
+<p>---</p>
+<h1 id="we-distinguish-accountable-from-responsible">We distinguish accountable from responsible</h1>
+<p>For the Finding, Treasury may be accountable for the control.</p>
+<p>The migration integration team may be responsible for implementation.</p>
+<p>The distinction is practical.</p>
+<h2 id="accountable">Accountable</h2>
+<p>Has authority to accept the intended meaning and final outcome.</p>
+<h2 id="responsible">Responsible</h2>
+<p>Performs the work needed to achieve that outcome.</p>
+<p>For our case:</p>
+<pre><code>Accountable:
+Treasury Data Owner
+
+Responsible:
+Supplier Migration Integration Team</code></pre>
+<p>If the integration team changes the Mapping without Treasury agreement, the implementation may be complete but semantically unapproved.</p>
+<p>If Treasury approves the treatment but nobody implements it, the policy is clear but the Finding remains unresolved.</p>
+<p>We need both relationships.</p>
+<p>---</p>
+<h1 id="we-add-evidence-ownership">We add evidence ownership</h1>
+<p>Some Findings remain open because nobody owns the missing Evidence.</p>
+<p>The Supplier bank Finding requires proof that:</p>
+<ul>
+<li>the current bank account is identified;</li>
+<li>verification is expired;</li>
+<li>payment block is active after remediation;</li>
+<li>the affected population has been revalidated.</li>
+</ul>
+<p>The implementation owner may update the transformation.</p>
+<p>Another team may need to produce the target reconciliation file.</p>
+<p>We therefore represent:</p>
+<pre><code>Evidence provider:
+Supplier Cutover Reporting Team
+
+Evidence approver:
+Treasury Control Owner</code></pre>
+<p>The provider generates the artefact.</p>
+<p>The approver determines whether it is sufficient to close the Finding.</p>
+<p>These roles should not be silently collapsed.</p>
+<p>---</p>
+<h1 id="we-add-data-ownership">We add data ownership</h1>
+<p>The Finding may expose a problem in the Treasury Review Dataset.</p>
+<p>The Treasury Dataset Owner is responsible for questions such as:</p>
+<ul>
+<li>whether every relevant Supplier is covered;</li>
+<li>whether verification refers to the current account;</li>
+<li>whether identifiers are reliable;</li>
+<li>whether the extract is current;</li>
+<li>whether the status values have consistent meaning.</li>
+</ul>
+<p>The data owner is not automatically the policy owner.</p>
+<p>A team may maintain the dataset operationally while another role defines the control.</p>
+<p>For example:</p>
+<pre><code>Policy owner:
+Treasury Control Owner
+
+Authoritative dataset owner:
+Treasury Operations Data Steward</code></pre>
+<p>This distinction becomes important when the dataset does not support the business policy correctly.</p>
+<p>---</p>
+<h1 id="we-add-model-ownership">We add model ownership</h1>
+<p>The canonical Rule and Attribute may be represented incorrectly.</p>
+<p>Suppose verification was modelled at Supplier level, while Treasury verifies a specific bank account.</p>
+<p>Changing that model requires a model owner.</p>
+<p>The Treasury owner supplies the business Decision.</p>
+<p>The model owner ensures that the canonical objects express it consistently.</p>
+<p>For example:</p>
+<pre><code>Business decision owner:
+Treasury Data Owner
+
+Canonical model owner:
+Supplier Domain Model Owner</code></pre>
+<p>The model owner does not invent policy.</p>
+<p>They protect the structure, consistency and impact of the approved interpretation.</p>
+<p>---</p>
+<h1 id="we-add-implementation-ownership-only-after-remediation-is-classified">We add implementation ownership only after remediation is classified</h1>
+<p>Before assigning implementation work, we diagnose the Finding.</p>
+<p>The remediation may be:</p>
+<ul>
+<li>data correction;</li>
+<li>dataset integration;</li>
+<li>Mapping change;</li>
+<li>implementation correction;</li>
+<li>model change;</li>
+<li>controlled Exception.</li>
+</ul>
+<p>Each path has a different implementation owner.</p>
+<p>For the Supplier case, investigation shows:</p>
+<pre><code>Canonical Rule:
+correct
+
+Payment-block requirement:
+approved
+
+Target block Mapping:
+correct in canonical model
+
+Cutover transformation:
+uses an outdated implementation</code></pre>
+<p>This is implementation drift.</p>
+<p>The implementation owner is the cutover transformation team.</p>
+<p>We should not assign the task before establishing that classification.</p>
+<p>Otherwise, the wrong team receives an unclear issue and must repeat the investigation.</p>
+<p>---</p>
+<h1 id="we-add-closure-authority">We add closure authority</h1>
+<p>A delivery team may complete the code change.</p>
+<p>That does not automatically close the Finding.</p>
+<p>Closure requires a person or role with authority to accept the new Evidence.</p>
+<p>For the Supplier case:</p>
+<pre><code>Implementation owner:
+Cutover Transformation Team
+
+Closure evidence provider:
+Migration Validation Team
+
+Closure approver:
+Treasury Data Owner</code></pre>
+<p>The Finding is resolved only when:</p>
+<ul>
+<li>the control is implemented;</li>
+<li>the affected dataset is regenerated;</li>
+<li>the payment block is confirmed;</li>
+<li>the Rule is rerun;</li>
+<li>Treasury accepts the Evidence.</li>
+</ul>
+<p>A merged pull request proves that code changed.</p>
+<p>It does not prove that the business control is effective.</p>
+<p>---</p>
+<h1 id="we-keep-risk-acceptance-separate-from-resolution">We keep risk acceptance separate from resolution</h1>
+<p>The programme may not be able to resolve all 40 records before cutover.</p>
+<p>Treasury may approve a bounded Exception:</p>
+<pre><code>Affected Suppliers remain payment-blocked
+until current verification is obtained.</code></pre>
+<p>The Finding may then become:</p>
+<pre><code>controlled</code></pre>
+<p>rather than:</p>
+<pre><code>resolved</code></pre>
+<p>The risk owner approves the Exception.</p>
+<p>The implementation owner applies the block.</p>
+<p>The data owner continues remediation.</p>
+<p>These are distinct responsibilities.</p>
+<p>We should not mark the Finding resolved merely because the risk was accepted temporarily.</p>
+<p>---</p>
+<h1 id="a-practical-ownership-contract">A practical ownership contract</h1>
+<p>For the Supplier Finding, the ownership contract might be:</p>
+<pre><code>Finding:
+FIND-BANK-VERIFY-NO-BLOCK
+
+Business policy owner:
+Treasury Data Owner
+
+Risk acceptance authority:
+Treasury Control Owner
+
+Authoritative dataset owner:
+Treasury Review Data Steward
+
+Canonical model owner:
+Supplier Domain Model Owner
+
+Finding coordinator:
+Supplier Migration Lead
+
+Implementation owner:
+Cutover Transformation Team
+
+Evidence provider:
+Migration Validation Team
+
+Closure approver:
+Treasury Data Owner</code></pre>
+<p>This looks more complex than one assignee.</p>
+<p>It is also much closer to how the work actually happens.</p>
+<p>The complexity already exists.</p>
+<p>The model makes it explicit.</p>
+<p>---</p>
+<h1 id="we-do-not-build-a-full-raci-matrix-for-every-object">We do not build a full RACI matrix for every object</h1>
+<p>We should avoid over-modelling.</p>
+<p>Not every Attribute needs eight ownership roles.</p>
+<p>For ordinary objects, we may need only:</p>
+<pre><code>owner_role</code></pre>
+<p>For critical Findings, we add the roles required by the remediation.</p>
+<p>A practical minimum is:</p>
+<h2 id="decision-owner">Decision owner</h2>
+<p>Who has authority over business meaning or risk treatment?</p>
+<h2 id="delivery-owner">Delivery owner</h2>
+<p>Who implements the approved remediation?</p>
+<h2 id="evidence-owner">Evidence owner</h2>
+<p>Who produces proof of the outcome?</p>
+<h2 id="closure-approver">Closure approver</h2>
+<p>Who accepts the result?</p>
+<p>In simpler Findings, one role may fulfil several responsibilities.</p>
+<p>The model should permit that.</p>
+<p>It should not force artificial organisational complexity.</p>
+<p>---</p>
+<h1 id="we-separate-canonical-ownership-from-current-assignment">We separate canonical ownership from current assignment</h1>
+<p>Martenweave should store:</p>
+<pre><code>implementation_owner_role:
+ROLE-CUTOVER-TRANSFORMATION-TEAM</code></pre>
+<p>The generated GitHub issue may assign:</p>
+<pre><code>current assignee:
+@migration-developer</code></pre>
+<p>The role is canonical.</p>
+<p>The username is delivery state.</p>
+<p>GitHub’s own documentation describes assignees as a way to clarify who is working on specific issues and pull requests, and GitHub allows multiple assignees on one item.</p>
+<p>That is useful for current work allocation.</p>
+<p>It does not replace the model’s need to preserve business accountability, Evidence responsibility and closure authority.</p>
+<p>---</p>
+<h1 id="we-use-delivery-tools-for-execution">We use delivery tools for execution</h1>
+<p>Once the ownership contract is clear, Martenweave can generate an implementation issue.</p>
+<p>For example:</p>
+<pre><code>Goal
+
+Apply and verify the payment block for Suppliers
+whose bank verification is expired.
+
+Business owner
+
+Treasury Data Owner
+
+Implementation owner
+
+Cutover Transformation Team
+
+Scope
+
+40 payment-active Suppliers in Cutover RC4.
+
+Acceptance criteria
+
+- Every affected Supplier has payment block active.
+- The block is visible in the target reconciliation.
+- No expired verification is classified as current.
+- The bank-verification Rule is rerun.
+- Treasury approves the closure Evidence.
+
+Validation command
+
+martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/supplier-bank-rc5.csv \
+  --out ./reports/supplier-bank-rc5</code></pre>
+<p>The delivery tool can manage:</p>
+<ul>
+<li>assignees;</li>
+<li>status;</li>
+<li>comments;</li>
+<li>branches;</li>
+<li>pull requests;</li>
+<li>milestones.</li>
+</ul>
+<p>Martenweave retains the semantic contract behind the issue.</p>
+<p>---</p>
+<h1 id="we-allow-one-finding-to-create-several-issues">We allow one Finding to create several issues</h1>
+<p>The Supplier Finding may require:</p>
+<h2 id="issue-1">Issue 1</h2>
+<p>Correct the cutover payment-block implementation.</p>
+<h2 id="issue-2">Issue 2</h2>
+<p>Generate the target reconciliation report.</p>
+<h2 id="issue-3">Issue 3</h2>
+<p>Obtain current Treasury verification for the remaining accounts.</p>
+<h2 id="issue-4">Issue 4</h2>
+<p>Update the rollout template so the control is included in Wave 2.</p>
+<p>All four issues relate to one root Finding.</p>
+<p>We should not create four separate Findings merely because four teams have work.</p>
+<p>The relationship is:</p>
+<pre><code>One governed problem
+→ several delivery tasks</code></pre>
+<p>This preserves root-cause visibility while allowing distributed execution.</p>
+<p>---</p>
+<h1 id="we-allow-one-issue-to-support-several-findings">We allow one issue to support several Findings</h1>
+<p>A reusable Mapping correction may resolve multiple Findings.</p>
+<p>For example, implementing account-fingerprint matching may help:</p>
+<ul>
+<li>expired verification detection;</li>
+<li>duplicate bank-account investigation;</li>
+<li>target reconciliation.</li>
+</ul>
+<p>One GitHub issue can reference several Finding IDs.</p>
+<p>We should not duplicate implementation merely to maintain a one-to-one relationship.</p>
+<p>Martenweave needs a many-to-many link:</p>
+<pre><code>Finding
+↔ implementation issue</code></pre>
+<p>The delivery tool remains responsible for task execution.</p>
+<p>The canonical model preserves which governed problems the task is intended to address.</p>
+<p>---</p>
+<h1 id="we-do-not-copy-delivery-status-into-canonical-truth-blindly">We do not copy delivery status into canonical truth blindly</h1>
+<p>A GitHub issue may be:</p>
+<pre><code>closed</code></pre>
+<p>That does not necessarily mean:</p>
+<pre><code>Finding resolved</code></pre>
+<p>The issue may have been closed because:</p>
+<ul>
+<li>the code was merged;</li>
+<li>the work moved to another issue;</li>
+<li>the scope changed;</li>
+<li>the team decided not to implement it;</li>
+<li>the issue was duplicated;</li>
+<li>the technical task finished but Evidence is missing.</li>
+</ul>
+<p>Martenweave may import the status as Evidence:</p>
+<pre><code>Delivery issue:
+closed</code></pre>
+<p>It should not automatically set:</p>
+<pre><code>Finding:
+resolved</code></pre>
+<p>Closure remains governed by the Finding’s criteria.</p>
+<p>---</p>
+<h1 id="we-treat-ownership-gaps-as-findings-about-governance">We treat ownership gaps as Findings about governance</h1>
+<p>Sometimes no valid owner exists.</p>
+<p>For example:</p>
+<ul>
+<li>Treasury says migration owns the issue;</li>
+<li>migration says Treasury owns the control;</li>
+<li>the local company says global design owns it;</li>
+<li>global design says local operations owns it.</li>
+</ul>
+<p>The correct response is not to assign the Finding to a random coordinator.</p>
+<p>We record:</p>
+<pre><code>Ownership status:
+unresolved
+
+Missing role:
+risk acceptance authority
+
+Consequence:
+Exception cannot be approved
+and cutover gate cannot close</code></pre>
+<p>An unresolved ownership relationship is itself a material gap.</p>
+<p>Martenweave should surface it before implementation begins.</p>
+<p>---</p>
+<h1 id="we-distinguish-no-owner-from-no-available-person">We distinguish no owner from no available person</h1>
+<p>The canonical role may be clear:</p>
+<pre><code>Treasury Data Owner</code></pre>
+<p>But no current person is configured.</p>
+<p>That is an assignment-resolution problem.</p>
+<p>It differs from:</p>
+<pre><code>No role has authority to decide this policy.</code></pre>
+<p>We model them separately.</p>
+<h2 id="role-defined-person-unresolved">Role defined, person unresolved</h2>
+<p>Operational assignment problem.</p>
+<h2 id="role-undefined">Role undefined</h2>
+<p>Governance-design problem.</p>
+<p>The first can be resolved through project configuration.</p>
+<p>The second requires an organisational Decision.</p>
+<p>---</p>
+<h1 id="we-validate-ownership-structurally">We validate ownership structurally</h1>
+<p>Deterministic checks can detect:</p>
+<ul>
+<li>critical Rule has no policy owner;</li>
+<li>Finding has no decision owner;</li>
+<li>implementation issue has no implementation-owner role;</li>
+<li>closure criteria exist but no closure approver;</li>
+<li>Exception has no risk-acceptance authority;</li>
+<li>referenced role does not exist;</li>
+<li>owner role is outside the Finding’s domain without an explicit relationship.</li>
+</ul>
+<p>Example diagnostics:</p>
+<pre><code>MW-OWN-001
+Critical Finding has no decision owner.
+
+MW-OWN-002
+Finding requires implementation,
+but no implementation-owner role is defined.
+
+MW-OWN-003
+Closure Evidence is required,
+but no closure approver is assigned.
+
+MW-OWN-004
+Exception references no risk-acceptance authority.
+
+MW-OWN-005
+Canonical owner role cannot be resolved
+for the current project configuration.</code></pre>
+<p>These checks do not decide who should own the Finding.</p>
+<p>They prevent ownership from remaining invisible.</p>
+<p>---</p>
+<h1 id="we-derive-candidate-owners-from-the-model">We derive candidate owners from the model</h1>
+<p>Martenweave can suggest ownership from relationships.</p>
+<p>For example:</p>
+<pre><code>Affected Rule owner:
+Treasury Data Owner
+
+Affected Dataset owner:
+Treasury Review Data Steward
+
+Affected Mapping owner:
+Supplier Migration Integration Team
+
+Affected domain owner:
+Supplier Domain Model Owner</code></pre>
+<p>From this context, an AI agent can propose:</p>
+<pre><code>Decision owner:
+Treasury Data Owner
+
+Implementation owner:
+Supplier Migration Integration Team
+
+Evidence provider:
+Migration Validation Team</code></pre>
+<p>The proposal should explain its basis.</p>
+<p>Humans approve or correct it.</p>
+<p>AI should not assign business accountability solely from names or previous tickets.</p>
+<p>---</p>
+<h1 id="we-avoid-ownership-by-whoever-discovered-the-problem">We avoid ownership by whoever discovered the problem</h1>
+<p>The validation engineer may create the Finding.</p>
+<p>That does not make them the owner.</p>
+<p>The person who observes a problem is often best placed to provide initial Evidence.</p>
+<p>They are not necessarily authorised to define the business response.</p>
+<p>We distinguish:</p>
+<pre><code>reported_by</code></pre>
+<p>from:</p>
+<pre><code>decision_owner</code></pre>
+<p>and:</p>
+<pre><code>implementation_owner</code></pre>
+<p>This small distinction prevents many Findings from remaining with the wrong team.</p>
+<p>---</p>
+<h1 id="we-avoid-ownership-by-system-boundary">We avoid ownership by system boundary</h1>
+<p>Teams often assign a Finding to the system where the error appeared.</p>
+<p>The target SAP load rejects the record, so the SAP team receives the issue.</p>
+<p>But the cause may be:</p>
+<ul>
+<li>missing Treasury Evidence;</li>
+<li>incorrect source authority;</li>
+<li>an obsolete Mapping;</li>
+<li>a source-data defect.</li>
+</ul>
+<p>The target system is the observation point.</p>
+<p>It is not automatically the ownership boundary.</p>
+<p>Lineage should guide ownership.</p>
+<p>We trace upstream until we find the failing obligation and responsible role.</p>
+<p>---</p>
+<h1 id="we-avoid-assigning-business-risk-to-developers">We avoid assigning business risk to developers</h1>
+<p>A developer may propose:</p>
+<pre><code>Use legacy VERIFIED flag
+when Treasury evidence is missing.</code></pre>
+<p>That is not merely a coding choice.</p>
+<p>It changes accepted source authority and risk treatment.</p>
+<p>The developer can implement the proposal after approval.</p>
+<p>They should not approve it through a code change.</p>
+<p>Martenweave should detect that the PatchProposal affects:</p>
+<ul>
+<li>the Rule;</li>
+<li>source authority;</li>
+<li>payment control;</li>
+<li>risk treatment.</li>
+</ul>
+<p>The required reviewers should include Treasury.</p>
+<p>---</p>
+<h1 id="we-avoid-assigning-implementation-details-to-business-owners">We avoid assigning implementation details to business owners</h1>
+<p>The opposite failure also occurs.</p>
+<p>A business owner receives a technical issue containing:</p>
+<ul>
+<li>field names;</li>
+<li>join conditions;</li>
+<li>SQL logic;</li>
+<li>file paths;</li>
+<li>test commands.</li>
+</ul>
+<p>They cannot execute the task.</p>
+<p>We should generate two linked views.</p>
+<h2 id="business-review">Business review</h2>
+<pre><code>Decision required:
+Can Suppliers without current verification
+remain in scope if payment block is confirmed?</code></pre>
+<h2 id="implementation-task">Implementation task</h2>
+<pre><code>Implement account-specific verification matching
+and payment-block derivation.</code></pre>
+<p>The same Finding connects them.</p>
+<p>Each role receives an appropriate responsibility.</p>
+<p>---</p>
+<h1 id="we-model-delegation-without-transferring-accountability">We model delegation without transferring accountability</h1>
+<p>A Treasury owner may delegate investigation to a data steward.</p>
+<p>The steward may:</p>
+<ul>
+<li>profile the dataset;</li>
+<li>confirm coverage;</li>
+<li>collect Evidence;</li>
+<li>prepare a recommendation.</li>
+</ul>
+<p>The policy owner remains accountable for the final Decision.</p>
+<p>We should not overwrite:</p>
+<pre><code>decision_owner</code></pre>
+<p>when work is delegated.</p>
+<p>We can represent:</p>
+<pre><code>delegate:
+Treasury Data Steward
+
+delegated_activity:
+Evidence collection</code></pre>
+<p>This keeps accountability stable while allowing practical execution.</p>
+<p>---</p>
+<h1 id="we-model-temporary-ownership-during-cutover">We model temporary ownership during cutover</h1>
+<p>Cutover may require temporary operational roles.</p>
+<p>For example:</p>
+<pre><code>Cutover Finding coordinator:
+Supplier Cutover Lead
+
+Valid during:
+Cutover window</code></pre>
+<p>This does not replace the long-term Treasury policy owner.</p>
+<p>We separate:</p>
+<ul>
+<li>enduring model ownership;</li>
+<li>project ownership;</li>
+<li>temporary execution ownership.</li>
+</ul>
+<p>Otherwise, the cutover lead may remain recorded as the owner years after the project ends.</p>
+<p>---</p>
+<h1 id="we-connect-ownership-to-scope">We connect ownership to scope</h1>
+<p>A global role may own the Rule.</p>
+<p>A local role may own a country-specific occurrence.</p>
+<p>For example:</p>
+<pre><code>Global Rule owner:
+Treasury Control Owner
+
+Wave 2 occurrence owner:
+North America Supplier Migration Lead
+
+Local Evidence approver:
+North America Treasury Data Steward</code></pre>
+<p>The root Finding can preserve global accountability.</p>
+<p>The scoped occurrence can preserve local delivery responsibility.</p>
+<p>This is particularly important across migration waves.</p>
+<p>The same root problem may require different local teams while remaining governed by one global policy.</p>
+<p>---</p>
+<h1 id="we-preserve-ownership-decisions-as-history">We preserve ownership decisions as history</h1>
+<p>Ownership can change.</p>
+<p>A later Decision may move verification responsibility from Treasury Operations to a central Master Data team.</p>
+<p>We do not rewrite historical Evidence to make it appear that the new team always owned the process.</p>
+<p>We record:</p>
+<pre><code>Effective until 2026-12-31:
+Treasury Operations Data Steward
+
+Effective from 2027-01-01:
+Central Master Data Steward</code></pre>
+<p>Historical Findings retain the ownership context valid at the time.</p>
+<p>Current Findings resolve the current role.</p>
+<p>This matters during audits and AMS investigations.</p>
+<p>---</p>
+<h1 id="we-keep-sensitive-personal-data-out-of-canonical-files-where-possible">We keep sensitive personal data out of canonical files where possible</h1>
+<p>The canonical model should normally store role references.</p>
+<p>Current person resolution may remain in:</p>
+<ul>
+<li>repository configuration;</li>
+<li>GitHub teams;</li>
+<li>an ITSM directory;</li>
+<li>a local project mapping file;</li>
+<li>another authorised source.</li>
+</ul>
+<p>This reduces unnecessary personal data in long-lived model repositories.</p>
+<p>It also makes the model more portable between organisations and projects.</p>
+<p>The canonical statement is:</p>
+<pre><code>Role:
+Treasury Data Owner</code></pre>
+<p>The project integration resolves the current person.</p>
+<p>---</p>
+<h1 id="a-conceptual-ownership-model">A conceptual ownership model</h1>
+<p>A Finding might contain:</p>
+<pre><code>---
+id: FIND-BANK-VERIFY-NO-BLOCK
+type: Finding
+status: confirmed
+
+decision_owner:
+  role: ROLE-TREASURY-DATA-OWNER
+
+risk_acceptance_authority:
+  role: ROLE-TREASURY-CONTROL-OWNER
+
+data_owner:
+  role: ROLE-TREASURY-REVIEW-DATA-STEWARD
+
+model_owner:
+  role: ROLE-SUPPLIER-DOMAIN-MODEL-OWNER
+
+finding_coordinator:
+  role: ROLE-SUPPLIER-MIGRATION-LEAD
+
+implementation_owner:
+  role: ROLE-CUTOVER-TRANSFORMATION-TEAM
+
+evidence_provider:
+  role: ROLE-MIGRATION-VALIDATION-TEAM
+
+closure_approver:
+  role: ROLE-TREASURY-DATA-OWNER
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave Finding schema.</p>
+<p>The important part is that ownership is typed rather than represented by one ambiguous field.</p>
+<p>---</p>
+<h1 id="a-conceptual-role-object">A conceptual role object</h1>
+<p>A role may be represented as:</p>
+<pre><code>---
+id: ROLE-TREASURY-DATA-OWNER
+type: Role
+
+title:
+  Treasury Data Owner
+
+domain:
+  supplier_bank_data
+
+responsibilities:
+  - define verification authority
+  - approve verification policy
+  - approve Finding closure evidence
+
+may_approve:
+  - RULE-SUPPLIER-BANK-VERIFICATION
+  - EXC-SUPPLIER-BANK-VERIFICATION
+
+current_assignment:
+  project_config_reference
+---</code></pre>
+<p>Again, this is a proposed direction.</p>
+<p>Martenweave does not need to reproduce a complete organisational chart.</p>
+<p>It needs only the roles relevant to model governance.</p>
+<p>---</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>The Finding page should show an ownership section that answers:</p>
+<h2 id="who-decides">Who decides?</h2>
+<p>Treasury Data Owner.</p>
+<h2 id="who-accepts-residual-risk">Who accepts residual risk?</h2>
+<p>Treasury Control Owner.</p>
+<h2 id="who-owns-the-source-evidence">Who owns the source Evidence?</h2>
+<p>Treasury Review Data Steward.</p>
+<h2 id="who-coordinates-the-finding">Who coordinates the Finding?</h2>
+<p>Supplier Migration Lead.</p>
+<h2 id="who-implements">Who implements?</h2>
+<p>Cutover Transformation Team.</p>
+<h2 id="who-produces-closure-evidence">Who produces closure Evidence?</h2>
+<p>Migration Validation Team.</p>
+<h2 id="who-approves-closure">Who approves closure?</h2>
+<p>Treasury Data Owner.</p>
+<h2 id="where-is-the-delivery-work">Where is the delivery work?</h2>
+<p>Linked GitHub issues or external ITSM references.</p>
+<p>This view prevents “Owner: Migration” from becoming the whole accountability model.</p>
+<p>---</p>
+<h1 id="we-show-missing-ownership-as-a-blocker">We show missing ownership as a blocker</h1>
+<p>If the closure approver is unresolved, the Workbench should not display:</p>
+<pre><code>Ready for closure</code></pre>
+<p>It should display:</p>
+<pre><code>Closure blocked:
+No authorised closure approver resolved</code></pre>
+<p>If the risk owner is missing, an Exception proposal should fail validation.</p>
+<p>If the implementation owner is missing, the Finding may remain confirmed but cannot be promoted into an agent-ready task.</p>
+<p>Ownership should influence workflow readiness without Martenweave becoming the workflow engine.</p>
+<p>---</p>
+<h1 id="we-generate-different-artefacts-for-different-owners">We generate different artefacts for different owners</h1>
+<p>From one Finding, Martenweave can generate:</p>
+<h2 id="decision-brief">Decision brief</h2>
+<p>For the business owner:</p>
+<pre><code>Decision:
+Confirm whether payment block is sufficient
+for Suppliers with expired verification.
+
+Affected population:
+40.
+
+Cutover implication:
+Payment activation gate remains open.</code></pre>
+<h2 id="implementation-issue">Implementation issue</h2>
+<p>For the technical owner:</p>
+<pre><code>Apply and verify payment block
+for the governed population.</code></pre>
+<h2 id="evidence-request">Evidence request</h2>
+<p>For the validation team:</p>
+<pre><code>Produce target reconciliation showing
+zero unblocked expired-verification records.</code></pre>
+<h2 id="closure-review">Closure review</h2>
+<p>For Treasury:</p>
+<pre><code>Review the RC5 Evidence
+against the closure criteria.</code></pre>
+<p>These artefacts remain linked to one Finding.</p>
+<p>We avoid forcing every participant into one generic ticket description.</p>
+<p>---</p>
+<h1 id="we-keep-notifications-outside-the-core">We keep notifications outside the core</h1>
+<p>Martenweave may publish an issue or expose a machine-readable owner reference.</p>
+<p>It should not build:</p>
+<ul>
+<li>email notification rules;</li>
+<li>escalation schedules;</li>
+<li>reminder queues;</li>
+<li>team calendars;</li>
+<li>inbox management.</li>
+</ul>
+<p>Those functions belong in existing delivery platforms.</p>
+<p>The current Martenweave repository explicitly defines the product as a pipeline coordinating canonical files and Git, not as a generic workflow platform or hosted application.</p>
+<p>The boundary protects the core from unnecessary expansion.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused capability should be <strong>Typed Finding Ownership and Delivery Handoff</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Connect every important Finding to the roles required for Decision, implementation, Evidence and closure without implementing task workflow inside Martenweave.</p>
+<h2 id="initial-role-types">Initial role types</h2>
+<ul>
+<li>decision owner;</li>
+<li>data owner;</li>
+<li>model owner;</li>
+<li>implementation owner;</li>
+<li>Evidence provider;</li>
+<li>risk-acceptance authority;</li>
+<li>closure approver;</li>
+<li>Finding coordinator.</li>
+</ul>
+<h2 id="initial-validation">Initial validation</h2>
+<ul>
+<li>critical Finding requires decision owner;</li>
+<li>model change requires model owner;</li>
+<li>implementation task requires implementation owner;</li>
+<li>Exception requires risk-acceptance authority;</li>
+<li>closure criteria require closure approver;</li>
+<li>referenced roles must exist;</li>
+<li>scoped occurrences may override delivery roles without replacing global policy ownership.</li>
+</ul>
+<h2 id="initial-delivery-integration">Initial delivery integration</h2>
+<p>Generate:</p>
+<ul>
+<li>GitHub issue;</li>
+<li>issue body;</li>
+<li>suggested assignees;</li>
+<li>required reviewers;</li>
+<li>Finding reference;</li>
+<li>acceptance criteria;</li>
+<li>validation command.</li>
+</ul>
+<p>The delivery platform remains authoritative for task state.</p>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave findings owners \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings suggest-owners \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings validate-ownership \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings handoff \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --to github \
+  --dry-run</code></pre>
+<pre><code>martenweave roles unresolved \
+  --repo ./model \
+  --scope cutover</code></pre>
+<p>These commands describe a product direction rather than the current documented CLI.</p>
+<p>The current Martenweave foundation already provides the canonical-file, validation, gap, impact and proposal-first architecture required to support this slice.</p>
+<p>---</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider the capability useful when it can take the Supplier bank Finding and answer:</p>
+<ol>
+<li>Who owns the business Rule?</li>
+<li>Who may accept an Exception?</li>
+<li>Who owns the authoritative verification dataset?</li>
+<li>Who owns the canonical model objects?</li>
+<li>Who must implement the approved remediation?</li>
+<li>Who produces closure Evidence?</li>
+<li>Who may approve closure?</li>
+<li>Which roles are global and which are wave-specific?</li>
+<li>Which current delivery issue and assignees implement the work?</li>
+<li>Is closure blocked by unresolved ownership?</li>
+</ol>
+<p>The result should remain useful even when individual people change.</p>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not build:</p>
+<ul>
+<li>generic workflow states;</li>
+<li>universal approval chains;</li>
+<li>organisational chart management;</li>
+<li>employee directories;</li>
+<li>resource planning;</li>
+<li>sprint management;</li>
+<li>notification orchestration;</li>
+<li>a replacement for GitHub, Jira or ServiceNow.</li>
+</ul>
+<p>We need only enough ownership structure to protect canonical meaning and produce a precise delivery handoff.</p>
+<p>---</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Ambiguous ownership creates several recurring costs:</p>
+<ul>
+<li>Findings assigned to people without decision authority;</li>
+<li>technical teams making business-policy choices;</li>
+<li>business owners receiving implementation tasks they cannot execute;</li>
+<li>completed code changes without closure Evidence;</li>
+<li>Exceptions approved by the wrong role;</li>
+<li>cutover gates blocked because nobody can accept residual risk;</li>
+<li>repeated reassignment and escalation;</li>
+<li>unresolved Findings labelled as “owned by migration.”</li>
+</ul>
+<p>Typed ownership reduces these costs.</p>
+<p>It makes clear:</p>
+<pre><code>who decides,
+who acts,
+who proves,
+and who closes.</code></pre>
+<p>That is enough to make delivery systems substantially more effective.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>We do not solve Finding ownership by adding one assignee field.</p>
+<p>For the Supplier bank-verification case, one person cannot reasonably own:</p>
+<ul>
+<li>Treasury policy;</li>
+<li>source-data quality;</li>
+<li>canonical modelling;</li>
+<li>transformation implementation;</li>
+<li>validation Evidence;</li>
+<li>cutover risk acceptance;</li>
+<li>final closure.</li>
+</ul>
+<p>We separate the responsibilities.</p>
+<p>The operating chain is:</p>
+<pre><code>Business owner defines the accepted outcome.
+
+Data owner provides authoritative input.
+
+Model owner protects canonical meaning.
+
+Implementation owner changes the delivery path.
+
+Evidence provider proves the result.
+
+Risk owner accepts any remaining deviation.
+
+Closure approver resolves the Finding.
+
+GitHub or ITSM tracks the work.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can every participant see the decision or action they own without forcing Martenweave to manage their daily workflow?</blockquote>
+<p>When the answer is yes, the ownership model is useful.</p>
+<p>When the answer is:</p>
+<blockquote>The ticket is assigned to the migration lead,</blockquote>
+<p>we still do not know who can define the Rule, implement the fix, accept the risk or approve closure.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that enterprise model Findings do not disappear into ambiguous ownership labels.</p>
+<p>Our product boundary is deliberate:</p>
+<pre><code>Martenweave preserves accountability
+around model truth.
+
+Delivery platforms coordinate execution.
+
+AI suggests roles and prepares handoffs.
+
+Humans accept responsibility,
+approve risk and close Findings.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently defines a backend-first pipeline that converts spreadsheets, datasets, tickets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset gaps, lineage, impact analysis and human-approved proposals.</p>
+<p>The current product principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI-generated changes proposal-first.</p>
+<p>The repository explicitly positions Martenweave as a model-governance pipeline rather than a generic workflow platform and describes GitHub issues and pull requests as human-review delivery outputs.</p>
+<p>GitHub documents assignees as a mechanism that clarifies who is working on specific issues and pull requests. It also supports multiple assignees on an issue or pull request. In the architecture described here, assignees represent current delivery work, while Martenweave preserves policy ownership, Evidence responsibility, risk authority and closure accountability.</p>
+<p>Typed ownership roles, Role objects, ownership validation, scoped role resolution and the proposed handoff commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html"><span>Previous</span>We run the Supplier bank-verification check during Mock Load 2.</a><a href="/blog/how-we-prove-that-a-finding-is-actually-resolved.html"><span>Next</span>We identify a critical Supplier bank-data Finding.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

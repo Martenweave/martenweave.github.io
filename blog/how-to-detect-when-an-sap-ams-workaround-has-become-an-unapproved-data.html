@@ -1,0 +1,1229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model | Martenweave</title>
+    <meta
+      name="description"
+      content="A supplier cannot be activated because its final risk classification is missing."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html" />
+    <meta property="og:title" content="How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model | Martenweave" />
+    <meta property="og:description" content="A supplier cannot be activated because its final risk classification is missing." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model | Martenweave" />
+    <meta name="twitter:description" content="A supplier cannot be activated because its final risk classification is missing." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html",
+                        "name": "How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model | Martenweave",
+                        "description": "A supplier cannot be activated because its final risk classification is missing.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model",
+                                    "item": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html#content",
+                        "headline": "How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model",
+                        "name": "How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model",
+                        "description": "A supplier cannot be activated because its final risk classification is missing.",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-when-an-sap-ams-workaround-has-become-an-unapproved-data.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "AMS and continuity",
+                        "keywords": "AMS and continuity",
+                        "timeRequired": "PT24M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">AMS and continuity</p><h1>How to Detect When an SAP AMS Workaround Has Become an Unapproved Data Model</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 24 min read</p><p class="blog-summary">A supplier cannot be activated because its final risk classification is missing.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#stage-1-emergency-containment">Stage 1: Emergency containment</a></li><li><a href="#stage-2-repeatable-procedure">Stage 2: Repeatable procedure</a></li><li><a href="#stage-3-parallel-state">Stage 3: Parallel state</a></li><li><a href="#stage-4-downstream-adaptation">Stage 4: Downstream adaptation</a></li><li><a href="#stage-5-institutional-dependence">Stage 5: Institutional dependence</a></li><li><a href="#1-it-introduces-a-new-meaning">1. It introduces a new meaning</a></li><li><a href="#2-it-creates-a-parallel-lifecycle">2. It creates a parallel lifecycle</a></li><li><a href="#3-other-processes-begin-depending-on-it">3. Other processes begin depending on it</a></li><li><a href="#4-it-outlives-its-stated-boundary">4. It outlives its stated boundary</a></li><li><a href="#5-it-receives-its-own-ownership">5. It receives its own ownership</a></li><li><a href="#6-it-appears-in-training-and-knowledge-articles">6. It appears in training and knowledge articles</a></li><li><a href="#7-removing-it-requires-impact-analysis">7. Removing it requires impact analysis</a></li><li><a href="#the-workaround-survives-its-expiry">The workaround survives its expiry</a></li><li><a href="#the-affected-population-grows">The affected population grows</a></li><li><a href="#a-second-system-consumes-the-workaround">A second system consumes the workaround</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A supplier cannot be activated because its final risk classification is missing.</p>
+<p>AMS creates a workaround:</p>
+<blockquote>Enter <code>STANDARD</code> temporarily so the supplier can proceed. The business will correct the value later.</blockquote>
+<p>The workaround is documented in a knowledge article. It is used for one urgent supplier.</p>
+<p>Two months later, the same procedure is applied to twelve more suppliers.</p>
+<p>A spreadsheet is created to track which records still require review.</p>
+<p>The support team adds a service-request template so business users can ask for the temporary value.</p>
+<p>A report excludes the affected suppliers from risk statistics.</p>
+<p>A local interface begins sending <code>STANDARD</code> downstream because that is the value stored in SAP.</p>
+<p>Six months later, nobody describes the process as temporary.</p>
+<p>The approved model still says:</p>
+<blockquote>Supplier Risk represents the final approved exposure classification.</blockquote>
+<p>The operational model now says:</p>
+<blockquote>When no assessment is available, use <code>STANDARD</code>, maintain the real status in a spreadsheet and exclude the record from selected reports.</blockquote>
+<p>The spreadsheet, default, support article and reporting filter together form another data model.</p>
+<p>It has:</p>
+<ul>
+<li>its own states;</li>
+<li>its own lifecycle;</li>
+<li>its own ownership;</li>
+<li>its own interpretation rules;</li>
+<li>its own downstream consequences.</li>
+</ul>
+<p>It was never approved as a model.</p>
+<p>It emerged from repeated service restoration.</p>
+<p>This is how SAP AMS workarounds become architecture.</p>
+<p>Not through one large design decision, but through a sequence of reasonable local actions that gradually acquire permanence.</p>
+<blockquote>A workaround becomes an unapproved data model when operational behaviour begins defining business meaning that the canonical model no longer explains.</blockquote>
+<p>The problem is not that workarounds exist.</p>
+<p>AMS needs workarounds. They reduce disruption, preserve service and buy time while underlying causes are investigated.</p>
+<p>The problem begins when the organisation cannot distinguish:</p>
+<ul>
+<li>a temporary operational technique;</li>
+<li>a recurring compensating control;</li>
+<li>a permanent business rule;</li>
+<li>a shadow model.</li>
+</ul>
+<p>Detecting that transition early is one of the most valuable capabilities an AMS organisation can build.</p>
+<p>---</p>
+<h1 id="a-workaround-is-supposed-to-reduce-impact-not-redefine-truth">A workaround is supposed to reduce impact, not redefine truth</h1>
+<p>In service management, a workaround is normally understood as a temporary way to reduce the effect of a problem while the underlying cause remains unresolved. Atlassian’s problem-management guidance describes workarounds as temporary solutions used to limit business impact and distinguishes them from eliminating the underlying problem. It also warns that heavy, isolated problem-management processes can become backlogs where unresolved issues accumulate rather than improve services.</p>
+<p>ServiceNow similarly positions problem management around visibility into known errors and workarounds, root-cause resolution, remediation plans and prevention of recurring incidents.</p>
+<p>This distinction is straightforward for a technical workaround:</p>
+<blockquote>Restart the interface after the failed job.</blockquote>
+<p>It becomes harder when the workaround manipulates master data.</p>
+<p>Examples include:</p>
+<ul>
+<li>assign a default classification;</li>
+<li>store the missing value in a spreadsheet;</li>
+<li>use a custom field instead of the governed attribute;</li>
+<li>bypass validation for a selected population;</li>
+<li>enter a placeholder identifier;</li>
+<li>derive one concept from another without approved semantics;</li>
+<li>maintain an exception list outside the platform;</li>
+<li>suppress records from reporting until remediation.</li>
+</ul>
+<p>These actions do not merely restore technical service.</p>
+<p>They can alter what the data appears to mean.</p>
+<p>Once that altered meaning is reused by processes, reports or integrations, the workaround has crossed into model territory.</p>
+<p>---</p>
+<h1 id="the-transformation-happens-gradually">The transformation happens gradually</h1>
+<p>A workaround rarely becomes a shadow model on the day it is introduced.</p>
+<p>It typically passes through five stages.</p>
+<h2 id="stage-1-emergency-containment">Stage 1: Emergency containment</h2>
+<p>One operational case requires immediate treatment.</p>
+<p>Example:</p>
+<blockquote>Use temporary code <code>999</code> so the record can load.</blockquote>
+<p>At this stage, the workaround may be justified.</p>
+<p>Its scope is narrow and visible.</p>
+<h2 id="stage-2-repeatable-procedure">Stage 2: Repeatable procedure</h2>
+<p>The same condition appears again.</p>
+<p>AMS documents the steps so other analysts can apply them consistently.</p>
+<p>Example:</p>
+<blockquote>When Legal Form is unknown, use <code>999</code> and add the record to the remediation sheet.</blockquote>
+<p>The workaround now has procedure.</p>
+<h2 id="stage-3-parallel-state">Stage 3: Parallel state</h2>
+<p>The official system can no longer represent the whole operational truth.</p>
+<p>The remediation sheet or support queue carries additional state:</p>
+<ul>
+<li>pending;</li>
+<li>reviewed;</li>
+<li>exception approved;</li>
+<li>waiting for source;</li>
+<li>permanent limitation.</li>
+</ul>
+<p>The workaround now has lifecycle.</p>
+<h2 id="stage-4-downstream-adaptation">Stage 4: Downstream adaptation</h2>
+<p>Reports, interfaces and business processes adapt to the workaround.</p>
+<p>Examples:</p>
+<ul>
+<li>reports filter out <code>999</code>;</li>
+<li>interface mappings convert <code>999</code> to blank;</li>
+<li>users interpret <code>STANDARD</code> as “not assessed” for certain sources;</li>
+<li>local teams use a custom status to decide activation.</li>
+</ul>
+<p>The workaround now has semantics.</p>
+<h2 id="stage-5-institutional-dependence">Stage 5: Institutional dependence</h2>
+<p>Removing the workaround would disrupt operations.</p>
+<p>People may no longer know how many processes depend on it.</p>
+<p>The workaround has become an unapproved model.</p>
+<p>The original temporary decision may still be recorded as open, resolved or obsolete.</p>
+<p>Operational reality has moved on.</p>
+<p>---</p>
+<h1 id="the-seven-signs-of-a-shadow-model">The seven signs of a shadow model</h1>
+<p>Several signals show that a workaround is no longer merely temporary.</p>
+<h2 id="1-it-introduces-a-new-meaning">1. It introduces a new meaning</h2>
+<p>The clearest sign is that an existing value is being interpreted differently.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved meaning:
+STANDARD = approved standard risk classification
+
+Operational meaning for ERP_B:
+STANDARD = no final assessment available</code></pre>
+<p>One value now represents two states.</p>
+<p>This is not just poor data quality.</p>
+<p>It is semantic overloading.</p>
+<p>Another example:</p>
+<pre><code class="language-text">Approved meaning:
+Blank = no value maintained
+
+Operational meaning:
+Blank = exempt, pending, unavailable or not yet migrated</code></pre>
+<p>The system cannot distinguish four operational situations.</p>
+<p>The distinction survives only in support knowledge or team memory.</p>
+<h2 id="2-it-creates-a-parallel-lifecycle">2. It creates a parallel lifecycle</h2>
+<p>A spreadsheet may contain:</p>
+<pre><code class="language-text">New
+Awaiting business
+Approved for exception
+Ready for update
+Closed</code></pre>
+<p>These statuses govern the same business object as SAP but are not represented in the canonical model.</p>
+<p>The spreadsheet is no longer only a task list.</p>
+<p>It carries a shadow lifecycle.</p>
+<h2 id="3-other-processes-begin-depending-on-it">3. Other processes begin depending on it</h2>
+<p>A workaround becomes structurally important when another process asks:</p>
+<ul>
+<li>Is this record on the exception list?</li>
+<li>Was the default entered by AMS?</li>
+<li>Has the spreadsheet status changed?</li>
+<li>Should this value be excluded from reporting?</li>
+<li>Is the manual review complete?</li>
+</ul>
+<p>The workaround is now an input to business behaviour.</p>
+<h2 id="4-it-outlives-its-stated-boundary">4. It outlives its stated boundary</h2>
+<p>Typical boundaries include:</p>
+<ul>
+<li>until the source release;</li>
+<li>until the next migration wave;</li>
+<li>during hypercare;</li>
+<li>for one country;</li>
+<li>for one known error;</li>
+<li>for ten business days.</li>
+</ul>
+<p>A workaround that remains active after its boundary has expired has changed status, whether or not the documentation has been updated.</p>
+<h2 id="5-it-receives-its-own-ownership">5. It receives its own ownership</h2>
+<p>A named team begins maintaining:</p>
+<ul>
+<li>the spreadsheet;</li>
+<li>exception list;</li>
+<li>custom values;</li>
+<li>manual enrichment;</li>
+<li>monthly upload.</li>
+</ul>
+<p>Ownership makes the workaround more reliable operationally.</p>
+<p>It also makes it easier to mistake the workaround for approved design.</p>
+<h2 id="6-it-appears-in-training-and-knowledge-articles">6. It appears in training and knowledge articles</h2>
+<p>Support documentation begins telling users:</p>
+<blockquote>For this supplier category, enter <code>STANDARD</code> and notify the support team.</blockquote>
+<p>The procedure becomes normalised.</p>
+<p>Future analysts may assume it is policy rather than containment.</p>
+<h2 id="7-removing-it-requires-impact-analysis">7. Removing it requires impact analysis</h2>
+<p>When the organisation says:</p>
+<blockquote>We cannot remove this until we understand the reports, interfaces and countries that depend on it,</blockquote>
+<p>the workaround is already part of the architecture.</p>
+<p>A temporary operational step should be removable through its documented exit plan.</p>
+<p>A shadow model requires migration.</p>
+<p>---</p>
+<h1 id="the-workaround-inventory">The workaround inventory</h1>
+<p>Most organisations do not know how many active workarounds affect model meaning.</p>
+<p>They know about:</p>
+<ul>
+<li>known errors;</li>
+<li>knowledge articles;</li>
+<li>incident resolutions;</li>
+<li>temporary changes;</li>
+<li>local procedures.</li>
+</ul>
+<p>These records are usually organised by service or technical component.</p>
+<p>To detect shadow models, build a narrower inventory of workarounds that affect data semantics.</p>
+<p>Include any workaround that:</p>
+<ul>
+<li>creates or replaces a value;</li>
+<li>changes mandatory behaviour;</li>
+<li>maintains state outside the governed platform;</li>
+<li>bypasses validation;</li>
+<li>applies a default;</li>
+<li>introduces local mapping;</li>
+<li>suppresses data from reporting;</li>
+<li>changes source authority;</li>
+<li>allows activation without approved evidence.</li>
+</ul>
+<p>A useful inventory entry contains:</p>
+<pre><code class="language-text">Workaround:
+Default Supplier Risk to STANDARD for ERP_B
+
+Origin:
+Problem PRB-0142
+
+Affected object:
+Supplier Risk
+
+Operational purpose:
+Allow urgent supplier review to proceed
+
+Scope:
+ERP_B strategic supplier organisations
+
+Introduced:
+15 January 2026
+
+Expected expiry:
+31 March 2026
+
+External state:
+supplier_risk_pending.xlsx
+
+Downstream adaptations:
+Risk dashboard exclusion
+Outbound interface blank conversion
+
+Current owner:
+Supplier AMS Team</code></pre>
+<p>This record already makes the shadow model visible.</p>
+<p>---</p>
+<h1 id="do-not-trust-the-word-temporary">Do not trust the word “temporary”</h1>
+<p>A workaround is not temporary because the documentation calls it temporary.</p>
+<p>It is temporary only when it has all of the following:</p>
+<ul>
+<li>defined scope;</li>
+<li>start date;</li>
+<li>expiry or exit condition;</li>
+<li>accountable owner;</li>
+<li>compensating control;</li>
+<li>residual population;</li>
+<li>removal procedure;</li>
+<li>verified convergence.</li>
+</ul>
+<p>If one of these is absent, the workaround may still be necessary, but it is not controlled.</p>
+<p>The strongest evidence of temporariness is not an expiry field.</p>
+<p>It is an executable path back to the approved model.</p>
+<p>For example:</p>
+<pre><code class="language-text">Exit condition:
+ERP_B starts supplying final risk classification.
+
+Convergence:
+1. Stop assigning temporary STANDARD.
+2. Reassess all affected suppliers.
+3. Replace defaulted values.
+4. Remove reporting exclusions.
+5. Remove interface blank conversion.
+6. Retire the support article.</code></pre>
+<p>Without this sequence, “temporary” is an intention.</p>
+<p>---</p>
+<h1 id="defaults-are-particularly-dangerous">Defaults are particularly dangerous</h1>
+<p>Defaults often appear harmless because they reduce blanks.</p>
+<p>They can improve superficial completeness while damaging semantic quality.</p>
+<p>Consider:</p>
+<pre><code class="language-text">Missing Supplier Risk → STANDARD</code></pre>
+<p>The field becomes 100% complete.</p>
+<p>The model becomes less trustworthy.</p>
+<p>The default may hide:</p>
+<ul>
+<li>no assessment performed;</li>
+<li>source unavailable;</li>
+<li>assessment pending;</li>
+<li>local exemption;</li>
+<li>mapping failure.</li>
+</ul>
+<p>All these states become indistinguishable from an approved standard-risk classification.</p>
+<p>A default has become an unapproved model when users must know its provenance to interpret it correctly.</p>
+<p>A defensible default needs:</p>
+<ul>
+<li>approved semantic meaning;</li>
+<li>applicability;</li>
+<li>traceable derivation;</li>
+<li>reversibility;</li>
+<li>downstream acceptance.</li>
+</ul>
+<p>If the business interpretation is:</p>
+<blockquote><code>STANDARD</code> means standard risk unless it was entered by AMS for ERP_B,</blockquote>
+<p>the model is already fragmented.</p>
+<p>---</p>
+<h1 id="placeholder-values-are-hidden-status-systems">Placeholder values are hidden status systems</h1>
+<p>Values such as these should trigger investigation:</p>
+<pre><code class="language-text">UNKNOWN
+N/A
+TBD
+999
+ZZZ
+TEMP
+OTHER
+MIGRATION</code></pre>
+<p>Some may be valid business values.</p>
+<p>Many are carrying process state inside a business attribute.</p>
+<p>Ask what each value means operationally.</p>
+<p>For example, <code>UNKNOWN</code> may mean:</p>
+<ul>
+<li>source did not provide the value;</li>
+<li>business does not know;</li>
+<li>value is not applicable;</li>
+<li>value is awaiting review;</li>
+<li>historical record was not enriched;</li>
+<li>interface failed.</li>
+</ul>
+<p>If one code represents several conditions, the organisation has created a compressed shadow model.</p>
+<p>The correct response may be to:</p>
+<ul>
+<li>create explicit status;</li>
+<li>separate applicability;</li>
+<li>preserve source completeness;</li>
+<li>establish review state;</li>
+<li>reject the placeholder;</li>
+<li>approve a bounded historical treatment.</li>
+</ul>
+<p>Simply documenting the overloaded meaning does not repair the model.</p>
+<p>---</p>
+<h1 id="spreadsheets-become-models-when-they-contain-governing-state">Spreadsheets become models when they contain governing state</h1>
+<p>A spreadsheet is not automatically a governance failure.</p>
+<p>It may be a practical intake or review tool.</p>
+<p>The critical question is:</p>
+<blockquote>Does SAP or another governed platform contain enough information to reconstruct the current approved state without the spreadsheet?</blockquote>
+<p>When the answer is no, the spreadsheet is part of the operational model.</p>
+<p>Common examples include:</p>
+<ul>
+<li>exception-register spreadsheets;</li>
+<li>mapping override files;</li>
+<li>manual status trackers;</li>
+<li>country value lists;</li>
+<li>data-owner approval matrices;</li>
+<li>source-of-truth reconciliation sheets.</li>
+</ul>
+<p>A spreadsheet becomes a shadow model when it determines:</p>
+<ul>
+<li>which value is correct;</li>
+<li>whether a record may activate;</li>
+<li>whether an exception remains valid;</li>
+<li>which source wins;</li>
+<li>which local rule applies.</li>
+</ul>
+<p>The solution is not necessarily to prohibit spreadsheets.</p>
+<p>It is to identify which content must become canonical and traceable.</p>
+<p>---</p>
+<h1 id="knowledge-articles-can-accidentally-become-policy">Knowledge articles can accidentally become policy</h1>
+<p>AMS teams need knowledge articles.</p>
+<p>They speed resolution and make support consistent.</p>
+<p>The risk appears when an article states business treatment that is absent from the approved model.</p>
+<p>Example:</p>
+<blockquote>When the tax number is unavailable, enter <code>N/A</code> and continue.</blockquote>
+<p>This statement contains several hidden decisions:</p>
+<ul>
+<li>the field is not always mandatory;</li>
+<li><code>N/A</code> is an approved value;</li>
+<li>lack of source data is equivalent to non-applicability;</li>
+<li>activation is allowed;</li>
+<li>no evidence is required.</li>
+</ul>
+<p>The article author may only have intended to document a practical workaround.</p>
+<p>Future users experience it as policy.</p>
+<p>A useful control is to classify model-affecting knowledge:</p>
+<pre><code class="language-text">Operational instruction:
+Restart failed replication.
+
+Model-affecting instruction:
+Enter a substitute value or bypass a rule.</code></pre>
+<p>The second type should reference:</p>
+<ul>
+<li>canonical rule;</li>
+<li>approved decision;</li>
+<li>scope;</li>
+<li>expiry;</li>
+<li>owner.</li>
+</ul>
+<p>A knowledge article must not be the only authority for model behaviour.</p>
+<p>---</p>
+<h1 id="local-fields-can-become-semantic-forks">Local fields can become semantic forks</h1>
+<p>A country may create a custom field because the global field cannot represent a local requirement quickly.</p>
+<p>Initially:</p>
+<pre><code class="language-text">Global:
+Supplier Risk
+
+Portugal:
+ZZ Compliance Status</code></pre>
+<p>Over time, users begin treating the local status as the real approval state.</p>
+<p>The global risk value becomes secondary.</p>
+<p>Reports combine them through local logic.</p>
+<p>Interfaces consume one or the other depending on system.</p>
+<p>This may be a legitimate contextual extension.</p>
+<p>It becomes an unapproved model when:</p>
+<ul>
+<li>no relationship to the global object is defined;</li>
+<li>local meaning is not documented canonically;</li>
+<li>precedence is unclear;</li>
+<li>downstream usage expands outside the approved context;</li>
+<li>the field survives after the original limitation is removed.</li>
+</ul>
+<p>The correct question is not:</p>
+<blockquote>Is the field custom?</blockquote>
+<p>It is:</p>
+<blockquote>Is the relationship between the local field and shared model explicitly governed?</blockquote>
+<p>---</p>
+<h1 id="reporting-exclusions-are-model-decisions">Reporting exclusions are model decisions</h1>
+<p>A workaround often includes a report filter:</p>
+<blockquote>Exclude records with placeholder value <code>999</code>.</blockquote>
+<p>This is not only a reporting change.</p>
+<p>It defines which records count as valid population.</p>
+<p>The exclusion may alter:</p>
+<ul>
+<li>risk statistics;</li>
+<li>compliance measures;</li>
+<li>completeness metrics;</li>
+<li>operational KPIs;</li>
+<li>executive reporting.</li>
+</ul>
+<p>When reports need special knowledge to interpret workaround data, the model has already diverged.</p>
+<p>Every workaround-related reporting filter should answer:</p>
+<ul>
+<li>Which canonical condition does it represent?</li>
+<li>Is the exclusion approved?</li>
+<li>Is it temporary?</li>
+<li>What is the residual population?</li>
+<li>When will historical data be corrected?</li>
+</ul>
+<p>A hidden filter can make a broken model appear healthy.</p>
+<p>---</p>
+<h1 id="interface-conversions-create-distributed-shadow-models">Interface conversions create distributed shadow models</h1>
+<p>Suppose SAP stores <code>STANDARD</code> as the workaround.</p>
+<p>The outbound interface converts it to blank for one consumer.</p>
+<p>Another consumer receives <code>STANDARD</code>.</p>
+<p>A reporting pipeline translates it to <code>UNASSESSED</code>.</p>
+<p>The same record now has three meanings across systems.</p>
+<p>This is no longer a local AMS workaround.</p>
+<p>It is a distributed model fork.</p>
+<p>SAP currently positions SAP MDG around one governed model, preserved semantics and relationships, validated values, ownership, workflows, business-rule monitoring and auditable changes.</p>
+<p>Those controls are weakened when operational workarounds introduce alternative semantics outside the governed change path.</p>
+<p>Martenweave should not replace MDG or the interfaces. Its role is to expose that several implementations no longer share one approved semantic source.</p>
+<p>---</p>
+<h1 id="the-workaround-dependency-graph">The workaround dependency graph</h1>
+<p>To determine whether a workaround has become structural, trace its dependencies.</p>
+<p>Start with the workaround:</p>
+<pre><code class="language-text">Default Supplier Risk to STANDARD</code></pre>
+<p>Then identify:</p>
+<pre><code class="language-text">Incident procedure
+→ knowledge article
+→ spreadsheet register
+→ SAP value
+→ activation rule
+→ interface conversion
+→ risk dashboard filter
+→ monthly remediation process</code></pre>
+<p>The number of links is less important than their nature.</p>
+<p>A workaround is structurally significant when it affects:</p>
+<ul>
+<li>business decisions;</li>
+<li>persisted data;</li>
+<li>downstream systems;</li>
+<li>reports;</li>
+<li>legal or compliance controls;</li>
+<li>recurring operational services.</li>
+</ul>
+<p>This graph also shows why “just remove the workaround” may be unsafe.</p>
+<p>The organisation first needs a controlled migration back to approved semantics.</p>
+<p>---</p>
+<h1 id="a-shadow-model-scorecard">A shadow-model scorecard</h1>
+<p>Do not reduce the decision to one universal numerical threshold.</p>
+<p>Use a qualitative assessment.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Signal</th><th scope="col">Low concern</th><th scope="col">Strong shadow-model signal</th></tr></thead><tbody><tr><td>Duration</td><td>One bounded event</td><td>Active beyond expiry</td></tr><tr><td>Population</td><td>Identified few records</td><td>Growing recurring population</td></tr><tr><td>State</td><td>No new state</td><td>Parallel lifecycle exists</td></tr><tr><td>Semantics</td><td>Meaning unchanged</td><td>Values interpreted differently</td></tr><tr><td>Persistence</td><td>No stored change</td><td>Workaround values stored</td></tr><tr><td>Consumers</td><td>No dependencies</td><td>Reports or interfaces depend on it</td></tr><tr><td>Ownership</td><td>Incident owner only</td><td>Dedicated recurring owner</td></tr><tr><td>Documentation</td><td>Temporary incident note</td><td>Standard knowledge or training</td></tr><tr><td>Removal</td><td>Direct rollback</td><td>Migration and impact analysis needed</td></tr><tr><td>Authority</td><td>Approved deviation</td><td>No clear approving decision</td></tr></tbody></table></div>
+<p>The assessment should lead to one of four outcomes:</p>
+<ol>
+<li>retain as controlled workaround;</li>
+<li>strengthen expiry and monitoring;</li>
+<li>formalise as approved model change;</li>
+<li>retire and remediate.</li>
+</ol>
+<p>---</p>
+<h1 id="the-mandatory-conversion-trigger">The mandatory conversion trigger</h1>
+<p>Some conditions should automatically force model review.</p>
+<h2 id="the-workaround-survives-its-expiry">The workaround survives its expiry</h2>
+<p>It cannot remain a normal temporary control.</p>
+<h2 id="the-affected-population-grows">The affected population grows</h2>
+<p>The condition is no longer exceptional.</p>
+<h2 id="a-second-system-consumes-the-workaround">A second system consumes the workaround</h2>
+<p>Semantic impact has spread.</p>
+<h2 id="a-second-country-copies-it">A second country copies it</h2>
+<p>The pattern may reveal a missing shared concept.</p>
+<h2 id="a-report-or-business-decision-depends-on-it">A report or business decision depends on it</h2>
+<p>The workaround has acquired business meaning.</p>
+<h2 id="users-request-it-as-a-standard-service">Users request it as a standard service</h2>
+<p>Temporary treatment has become operational capability.</p>
+<h2 id="removing-it-requires-data-migration">Removing it requires data migration</h2>
+<p>It has become persisted design.</p>
+<p>These triggers do not automatically approve the workaround as the new model.</p>
+<p>They require the organisation to decide.</p>
+<p>---</p>
+<h1 id="formalisation-is-not-automatic-acceptance">Formalisation is not automatic acceptance</h1>
+<p>Once a workaround becomes structural, some teams argue:</p>
+<blockquote>It is already used, so we should document it as the official model.</blockquote>
+<p>That is not sufficient.</p>
+<p>Operational adoption proves dependence.</p>
+<p>It does not prove correctness.</p>
+<p>The review should consider four options.</p>
+<h2 id="accept-and-formalise">Accept and formalise</h2>
+<p>Appropriate when the workaround represents a valid concept or process that should persist.</p>
+<p>Example:</p>
+<ul>
+<li>repeated manual review reveals a legitimate Supplier Review Status.</li>
+</ul>
+<h2 id="redesign">Redesign</h2>
+<p>Appropriate when the operational need is valid but the representation is wrong.</p>
+<p>Example:</p>
+<ul>
+<li><code>UNDER_REVIEW</code> should become a separate status, not a Supplier Risk value.</li>
+</ul>
+<h2 id="contain-while-replacing">Contain while replacing</h2>
+<p>Appropriate when immediate removal is unsafe but the workaround must not become permanent.</p>
+<p>Example:</p>
+<ul>
+<li>retain a placeholder during remediation, but stop new creation and plan conversion.</li>
+</ul>
+<h2 id="reject-and-remove">Reject and remove</h2>
+<p>Appropriate when the workaround is unnecessary, dangerous or based on outdated constraints.</p>
+<p>Formal review exists to choose among these outcomes.</p>
+<p>---</p>
+<h1 id="the-conversion-package">The conversion package</h1>
+<p>When a workaround requires model review, prepare a compact package.</p>
+<h2 id="original-purpose">Original purpose</h2>
+<p>Which incident or problem was it designed to contain?</p>
+<h2 id="current-operational-behaviour">Current operational behaviour</h2>
+<p>What do teams actually do?</p>
+<h2 id="affected-model-objects">Affected model objects</h2>
+<p>Which attributes, rules, values, mappings and sources are involved?</p>
+<h2 id="population">Population</h2>
+<p>How many records and contexts use it?</p>
+<h2 id="external-dependencies">External dependencies</h2>
+<p>Which reports, interfaces, procedures and services depend on it?</p>
+<h2 id="semantic-divergence">Semantic divergence</h2>
+<p>How does operational meaning differ from approved meaning?</p>
+<h2 id="authority-history">Authority history</h2>
+<p>Who approved the original workaround, and for what scope?</p>
+<h2 id="options">Options</h2>
+<ul>
+<li>formalise;</li>
+<li>redesign;</li>
+<li>replace;</li>
+<li>remove.</li>
+</ul>
+<h2 id="recommendation">Recommendation</h2>
+<p>Which option best preserves business meaning and operational continuity?</p>
+<p>This package turns support history into a model decision.</p>
+<p>---</p>
+<h1 id="worked-case-standard-as-not-assessed">Worked case: <code>STANDARD</code> as “not assessed”</h1>
+<h2 id="approved-model">Approved model</h2>
+<p>Supplier Risk values:</p>
+<pre><code class="language-text">LOW
+STANDARD
+HIGH</code></pre>
+<p>Each is a final approved classification.</p>
+<h2 id="workaround">Workaround</h2>
+<p>ERP_B cannot provide the classification.</p>
+<p>AMS assigns <code>STANDARD</code> so supplier activation can continue.</p>
+<h2 id="shadow-model-evidence">Shadow-model evidence</h2>
+<ul>
+<li>1,800 records now use the default;</li>
+<li>a spreadsheet identifies which values are temporary;</li>
+<li>reports exclude those records;</li>
+<li>one interface converts <code>STANDARD</code> back to blank;</li>
+<li>users request the default through a standard form.</li>
+</ul>
+<h2 id="finding">Finding</h2>
+<p>The operational model has created an undocumented state:</p>
+<pre><code class="language-text">Risk assessment pending</code></pre>
+<h2 id="decision">Decision</h2>
+<p>Reject the overloaded meaning.</p>
+<p>Create an explicit Supplier Review Status:</p>
+<pre><code class="language-text">PENDING
+CLEARED
+REJECTED</code></pre>
+<p>Retain Supplier Risk as final classification.</p>
+<h2 id="transition">Transition</h2>
+<ol>
+<li>Stop new temporary <code>STANDARD</code> creation.</li>
+<li>Identify defaulted records.</li>
+<li>Set Review Status to <code>PENDING</code>.</li>
+<li>Reassess risk.</li>
+<li>Remove reporting exclusions.</li>
+<li>remove interface conversions.</li>
+<li>retire spreadsheet and knowledge article.</li>
+</ol>
+<p>The workaround was not simply documented.</p>
+<p>It was decomposed into the correct concepts.</p>
+<p>---</p>
+<h1 id="worked-case-tax-identifier-exception-spreadsheet">Worked case: tax-identifier exception spreadsheet</h1>
+<p>A country maintains a spreadsheet listing suppliers allowed to proceed without a local tax identifier.</p>
+<h2 id="initial-purpose">Initial purpose</h2>
+<p>Support urgent onboarding while legal interpretation is confirmed.</p>
+<h2 id="current-behaviour">Current behaviour</h2>
+<ul>
+<li>SAP validation checks only whether the supplier appears on the spreadsheet;</li>
+<li>local support maintains approval dates;</li>
+<li>expired entries are not removed consistently;</li>
+<li>downstream systems cannot identify the exemption reason.</li>
+</ul>
+<h2 id="shadow-model-finding">Shadow-model finding</h2>
+<p>The spreadsheet defines:</p>
+<ul>
+<li>exemption status;</li>
+<li>approval;</li>
+<li>validity;</li>
+<li>evidence;</li>
+<li>owner.</li>
+</ul>
+<p>It is an external regulatory model.</p>
+<h2 id="decision-2">Decision</h2>
+<p>Create an explicit contextual exemption structure linked to:</p>
+<ul>
+<li>supplier;</li>
+<li>jurisdiction;</li>
+<li>evidence;</li>
+<li>effective period;</li>
+<li>approval;</li>
+<li>governing rule.</li>
+</ul>
+<p>The spreadsheet may remain an intake interface temporarily.</p>
+<p>It should no longer be the only source of approved exemption truth.</p>
+<p>---</p>
+<h1 id="worked-case-recurring-mapping-override">Worked case: recurring mapping override</h1>
+<p>AMS maintains a CSV file that overrides Customer Group mappings for selected customers.</p>
+<h2 id="original-reason">Original reason</h2>
+<p>The central source segment did not reliably map to sales-area-specific Customer Group.</p>
+<h2 id="current-behaviour-2">Current behaviour</h2>
+<ul>
+<li>the file contains 4,000 overrides;</li>
+<li>local teams request additions monthly;</li>
+<li>no expiry exists;</li>
+<li>some customers have different values by sales area;</li>
+<li>the approved mapping specification still describes direct central mapping.</li>
+</ul>
+<h2 id="finding-2">Finding</h2>
+<p>The CSV is acting as:</p>
+<ul>
+<li>authoritative source;</li>
+<li>organisational mapping;</li>
+<li>exception list;</li>
+<li>ownership process.</li>
+</ul>
+<h2 id="decision-3">Decision</h2>
+<p>Do not simply import the file as a permanent mapping table.</p>
+<p>Investigate:</p>
+<ul>
+<li>correct granularity;</li>
+<li>business ownership;</li>
+<li>authoritative source;</li>
+<li>enrichment process;</li>
+<li>applicability.</li>
+</ul>
+<p>The workaround may reveal that the original direct mapping was invalid.</p>
+<p>---</p>
+<h1 id="worked-case-disabled-validation">Worked case: disabled validation</h1>
+<p>A mandatory validation was changed from error to warning during hypercare.</p>
+<h2 id="original-purpose-2">Original purpose</h2>
+<p>Prevent onboarding backlog while source remediation was completed.</p>
+<h2 id="current-behaviour-3">Current behaviour</h2>
+<ul>
+<li>remediation was never finished;</li>
+<li>users expect warning-only behaviour;</li>
+<li>active records continue without the value;</li>
+<li>no residual population is maintained.</li>
+</ul>
+<h2 id="finding-3">Finding</h2>
+<p>The operational applicability rule has changed:</p>
+<pre><code class="language-text">Approved:
+Value mandatory before activation.
+
+Operational:
+Value recommended but not blocking.</code></pre>
+<h2 id="required-action">Required action</h2>
+<p>Either:</p>
+<ul>
+<li>restore the blocking rule and remediate;</li>
+<li>approve a genuine applicability change;</li>
+<li>approve a bounded new deviation.</li>
+</ul>
+<p>Leaving the warning active is itself a policy decision.</p>
+<p>---</p>
+<h1 id="detecting-shadow-models-through-recurring-evidence">Detecting shadow models through recurring evidence</h1>
+<p>AMS already produces evidence that can reveal these patterns:</p>
+<ul>
+<li>repeated incidents;</li>
+<li>repeated service requests;</li>
+<li>knowledge-article usage;</li>
+<li>problem records;</li>
+<li>temporary changes;</li>
+<li>exception files;</li>
+<li>configuration differences;</li>
+<li>manual upload jobs;</li>
+<li>recurring report filters.</li>
+</ul>
+<p>The difficulty is that these signals live in different tools.</p>
+<p>Martenweave can connect them around canonical objects.</p>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK
+├── PRB-0142: ERP_B source gap
+├── KA-0081: temporary STANDARD procedure
+├── REQ-2280: monthly default request
+├── DATASET: 1,800 defaulted suppliers
+├── REPORT: risk exclusion filter
+├── INTERFACE: STANDARD-to-blank conversion
+└── DECISION: temporary deviation expired</code></pre>
+<p>The graph makes the hidden model visible.</p>
+<p>---</p>
+<h1 id="where-martenweave-fits">Where Martenweave fits</h1>
+<p>The current Martenweave Core is a backend-first model-governance and evidence layer. It turns datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, gap reports, lineage, impact analysis and reviewable proposals.</p>
+<p>Its core principles are directly relevant:</p>
+<ul>
+<li>canonical files remain the source of truth;</li>
+<li>generated indexes are rebuildable;</li>
+<li>validation is deterministic;</li>
+<li>AI creates proposals rather than silently mutating the model;</li>
+<li>approved changes remain human-controlled.</li>
+</ul>
+<p>For workaround governance, Martenweave should preserve:</p>
+<ul>
+<li>the original operational signal;</li>
+<li>affected model object;</li>
+<li>workaround behaviour;</li>
+<li>scope;</li>
+<li>expiry;</li>
+<li>external state;</li>
+<li>dependencies;</li>
+<li>evidence population;</li>
+<li>proposed resolution.</li>
+</ul>
+<p>It should not become the problem-management or knowledge-management platform.</p>
+<p>---</p>
+<h1 id="a-conceptual-workaround-object">A conceptual workaround object</h1>
+<pre><code class="language-yaml">id: WRK-SUPPLIER-RISK-ERP-B-001
+type: Workaround
+
+status: model_review_required
+
+origin:
+  problem: PRB-0142
+  incidents:
+    - INC-4821
+    - INC-4930
+
+affected_objects:
+  - ATTR-SUPPLIER-RISK
+  - RULE-SUPPLIER-RISK-ACTIVATION
+
+behavior:
+  description: &gt;
+    Assign STANDARD when ERP_B cannot provide final Supplier Risk.
+  changes_persisted_data: true
+  changes_semantic_interpretation: true
+
+scope:
+  source_systems:
+    - ERP_B
+  population:
+    - active_strategic_supplier_organisations
+
+introduced_on: 2026-01-15
+expired_on: 2026-03-31
+
+external_state:
+  - supplier_risk_pending.xlsx
+
+dependencies:
+  - REPORT-SUPPLIER-RISK-DASHBOARD
+  - INT-SUPPLIER-OUTBOUND-03
+  - KA-SUPPLIER-RISK-TEMPORARY
+
+assessment:
+  shadow_model_signals:
+    - expired
+    - parallel_state
+    - downstream_dependency
+    - semantic_overload
+    - standard_service_request
+
+decision_required: &gt;
+  Replace the overloaded risk default with an explicit review lifecycle
+  and remediate affected records.</code></pre>
+<p>This is a product direction, not a claim about the current schema.</p>
+<p>The important point is that workaround behaviour becomes inspectable against the approved model.</p>
+<p>---</p>
+<h1 id="deterministic-checks-worth-adding">Deterministic checks worth adding</h1>
+<p>Martenweave could detect structural warning signs such as:</p>
+<ul>
+<li>active workaround past expiry;</li>
+<li>model-affecting workaround without affected object;</li>
+<li>persistent default without derivation decision;</li>
+<li>placeholder value used by several mappings;</li>
+<li>exception list without owner or validity;</li>
+<li>temporary field consumed outside approved context;</li>
+<li>workaround referenced by multiple systems;</li>
+<li>knowledge article prescribing values without a decision reference;</li>
+<li>report filter tied to an unapproved placeholder;</li>
+<li>workaround closed while affected population remains;</li>
+<li>new canonical proposal attempting to formalise a workaround without impact analysis.</li>
+</ul>
+<p>These checks do not determine whether the workaround is good or bad.</p>
+<p>They determine whether it has escaped its original control boundary.</p>
+<p>---</p>
+<h1 id="compare-model-state-with-operational-state">Compare model state with operational state</h1>
+<p>A workaround review needs two columns.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Canonical model</th><th scope="col">Operational reality</th></tr></thead><tbody><tr><td>Supplier Risk is final classification</td><td><code>STANDARD</code> also means unassessed</td></tr><tr><td>Risk required before activation</td><td>Warning allows activation</td></tr><tr><td>No review status exists</td><td>Spreadsheet tracks pending review</td></tr><tr><td>Global values have shared meaning</td><td>Interface converts values by source</td></tr><tr><td>Temporary deviation expired</td><td>Monthly request still active</td></tr></tbody></table></div>
+<p>The right-hand column is not automatically the new truth.</p>
+<p>It is evidence of divergence.</p>
+<p>The organisation must decide which side changes:</p>
+<ul>
+<li>implementation returns to the canonical model;</li>
+<li>canonical model is updated;</li>
+<li>both are replaced by a better design.</li>
+</ul>
+<p>---</p>
+<h1 id="model-drift-is-not-always-caused-by-weak-discipline">Model drift is not always caused by weak discipline</h1>
+<p>Some workarounds exist because the approved model was incomplete.</p>
+<p>The operational team may discover realities that the project missed:</p>
+<ul>
+<li>a genuine intermediate lifecycle;</li>
+<li>a valid local legal exception;</li>
+<li>a missing source concept;</li>
+<li>a recurring relationship;</li>
+<li>a population that cannot follow the global process.</li>
+</ul>
+<p>Do not treat every shadow model as misconduct.</p>
+<p>Treat it as evidence.</p>
+<p>The objective is not to punish AMS for keeping the business running.</p>
+<p>It is to convert operational learning into governed model change before the workaround becomes irreversible.</p>
+<p>---</p>
+<h1 id="problem-management-and-model-management-should-meet-at-the-workaround">Problem management and model management should meet at the workaround</h1>
+<p>Problem management asks:</p>
+<blockquote>Why does this incident recur, and how can its effect or cause be removed?</blockquote>
+<p>Model management asks:</p>
+<blockquote>Has the workaround introduced or exposed business meaning that the approved model does not represent?</blockquote>
+<p>These questions overlap but are not identical.</p>
+<p>Atlassian recommends keeping incident and problem management close enough that underlying causes and long-term fixes are not isolated in a backlog. It describes a closed problem as one whose cause has been eliminated so that it can no longer create another incident.</p>
+<p>For master-data workarounds, problem closure should therefore ask an additional question:</p>
+<blockquote>Has every workaround-created semantic state also been removed, formalised or migrated?</blockquote>
+<p>Eliminating the technical cause is not enough when temporary values and external state remain in production data.</p>
+<p>---</p>
+<h1 id="closing-the-source-issue-does-not-remove-the-shadow-model">Closing the source issue does not remove the shadow model</h1>
+<p>Suppose ERP_B is enhanced and now provides Supplier Risk correctly.</p>
+<p>The technical problem is solved.</p>
+<p>But 1,800 existing suppliers still contain temporary <code>STANDARD</code>.</p>
+<p>The spreadsheet still marks them as pending.</p>
+<p>The report still excludes them.</p>
+<p>The interface still converts the value.</p>
+<p>The organisation must perform model convergence:</p>
+<ol>
+<li>identify affected records;</li>
+<li>reassess or enrich them;</li>
+<li>replace temporary values;</li>
+<li>remove parallel state;</li>
+<li>remove special report logic;</li>
+<li>remove interface conversions;</li>
+<li>retire operational instructions;</li>
+<li>verify no new workaround records are created.</li>
+</ol>
+<p>Without convergence, the old workaround survives its cause.</p>
+<p>---</p>
+<h1 id="how-to-retire-a-shadow-model-safely">How to retire a shadow model safely</h1>
+<p>Retirement should be treated as a controlled migration.</p>
+<h2 id="freeze-expansion">Freeze expansion</h2>
+<p>Stop new records from entering the workaround where operationally possible.</p>
+<h2 id="establish-the-population">Establish the population</h2>
+<p>Identify all records, contexts and systems affected.</p>
+<h2 id="define-the-target-state">Define the target state</h2>
+<p>State what each workaround condition becomes.</p>
+<h2 id="convert-data">Convert data</h2>
+<p>Replace placeholders, defaults and external statuses.</p>
+<h2 id="align-implementations">Align implementations</h2>
+<p>Update SAP, interfaces, reports, workflows and tests.</p>
+<h2 id="remove-external-authority">Remove external authority</h2>
+<p>Retire spreadsheets, local lists and knowledge instructions as sources of truth.</p>
+<h2 id="monitor-recurrence">Monitor recurrence</h2>
+<p>Confirm that new incidents do not recreate the workaround.</p>
+<h2 id="preserve-history">Preserve history</h2>
+<p>Keep the decision and evidence explaining why the workaround existed and how it was removed.</p>
+<p>The history remains useful.</p>
+<p>The workaround itself should not remain operational by inertia.</p>
+<p>---</p>
+<h1 id="what-ai-may-safely-do">What AI may safely do</h1>
+<p>AI can help identify possible shadow models by:</p>
+<ul>
+<li>clustering recurring incidents;</li>
+<li>finding repeated workaround phrases;</li>
+<li>detecting placeholder values;</li>
+<li>comparing knowledge articles with canonical rules;</li>
+<li>identifying expired deviations;</li>
+<li>tracing reports and interfaces affected by workaround values;</li>
+<li>drafting the review package;</li>
+<li>proposing a migration plan.</li>
+</ul>
+<p>AI should not decide:</p>
+<ul>
+<li>that operational adoption makes the workaround valid;</li>
+<li>that a placeholder is a legitimate business value;</li>
+<li>that a temporary exception should become permanent;</li>
+<li>that a spreadsheet is authoritative;</li>
+<li>that the canonical model should change.</li>
+</ul>
+<p>The safe pattern remains:</p>
+<pre><code class="language-text">AI surfaces divergence.
+Validators check structure.
+Owners decide meaning.
+Humans approve the change.
+Git records the model.</code></pre>
+<p>---</p>
+<h1 id="a-monthly-workaround-review">A monthly workaround review</h1>
+<p>A focused review does not need to inspect every known error.</p>
+<p>Review only model-affecting workarounds with signals such as:</p>
+<ul>
+<li>expiry approaching or passed;</li>
+<li>population increasing;</li>
+<li>new downstream dependency;</li>
+<li>recurring request volume;</li>
+<li>local replication to another context;</li>
+<li>value or rule semantics changed;</li>
+<li>owner missing;</li>
+<li>removal blocked by unknown impact.</li>
+</ul>
+<p>The review should choose one action:</p>
+<pre><code class="language-text">Continue under current control
+Strengthen control and expiry
+Formalise through model proposal
+Replace through redesign
+Retire and remediate</code></pre>
+<p>This creates movement.</p>
+<p>A workaround register that only records status becomes another archive.</p>
+<p>---</p>
+<h1 id="questions-that-expose-an-unapproved-model">Questions that expose an unapproved model</h1>
+<p>Ask these questions for any long-lived workaround:</p>
+<ol>
+<li>Does it change what a stored value means?</li>
+<li>Does it introduce a state not represented in the approved model?</li>
+<li>Is external information required to interpret SAP data correctly?</li>
+<li>Do reports or interfaces contain special logic for it?</li>
+<li>Can users request it through a repeatable process?</li>
+<li>Does it have a dedicated owner or maintenance routine?</li>
+<li>Has it passed its original expiry or scope?</li>
+<li>Would removal require data conversion or coordinated release?</li>
+<li>Can the canonical model fully explain the current operational outcome?</li>
+<li>Is there a current decision authorising the behaviour?</li>
+</ol>
+<p>Several affirmative answers strongly indicate that the workaround has become a shadow model.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>An SAP AMS workaround becomes an unapproved data model before anyone calls it one.</p>
+<p>The transition happens when temporary operational knowledge becomes necessary to interpret business data.</p>
+<p>The evidence is visible:</p>
+<ul>
+<li>one value carries two meanings;</li>
+<li>a spreadsheet contains the real lifecycle;</li>
+<li>a support article defines policy;</li>
+<li>a report compensates for placeholders;</li>
+<li>an interface translates local semantics;</li>
+<li>a temporary procedure becomes a standard request.</li>
+</ul>
+<p>The correct response is not to ban workarounds.</p>
+<p>That would make AMS less capable of protecting operations.</p>
+<p>The correct response is to give model-affecting workarounds a controlled lifecycle:</p>
+<pre><code class="language-text">Contain
+→ observe
+→ classify
+→ review
+→ formalise, replace or retire
+→ verify convergence</code></pre>
+<p>SAP MDG can operationalise governed master-data models, ownership, workflows, validated values, quality rules and auditable changes.</p>
+<p>Problem-management platforms can record known errors, workarounds, root causes and remediation plans.</p>
+<p>Martenweave’s role is to connect those operational records to the model question they create:</p>
+<blockquote>Has the workaround changed the effective meaning, lifecycle, applicability or authority of the data?</blockquote>
+<p>The practical test is:</p>
+<blockquote>Could a new analyst interpret the SAP record correctly using only the approved model, without knowing which source, spreadsheet, support procedure or historical workaround touched it?</blockquote>
+<p>When the answer is yes, the workaround remains operational containment.</p>
+<p>When the answer is no, another data model is already running.</p>
+<p>It should be governed before it becomes impossible to remove.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>canonical model objects;</li>
+<li>operational workarounds;</li>
+<li>incidents and problems;</li>
+<li>temporary deviations;</li>
+<li>datasets;</li>
+<li>external dependencies;</li>
+<li>decisions;</li>
+<li>impact analysis;</li>
+<li>reviewable model changes.</li>
+</ul>
+<p>It does not replace SAP MDG, problem management, knowledge management or AMS delivery.</p>
+<p>Its purpose is to make model drift visible while the organisation still has a choice about how to resolve it.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer that unifies master data, policy and metadata through one governed model, preserved semantics and relationships, attribute ownership, validated values, workflows, business-rule monitoring, data-quality controls and auditable changes.</p>
+<p>Atlassian describes problem management as identifying and managing the causes of incidents, creating known-error records and using workarounds to limit business impact while root causes remain unresolved. Its guidance warns against isolated problem backlogs and recommends keeping incident and problem investigation closely connected.</p>
+<p>ServiceNow’s current Problem Management offering emphasises visibility into known errors and workarounds, root-cause analysis, remediation plans, recurring-incident prevention and publishing operational solutions.</p>
+<p>Martenweave Core currently positions itself as a backend-first model-governance and evidence layer that converts datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, gap reports, lineage, impact analysis and reviewable proposals.</p>
+<p>Its current principles define canonical files as the source of truth, generated indexes as disposable, deterministic validation as the first gate, AI output as reviewable proposals and approved changes as human-controlled.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Atlassian, ServiceNow or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-metalhatscats-helps-teams-establish-model-governance.html">A programme has already created most of the artefacts it needs.</a></li><li><a href="/blog/how-to-turn-model-governance-into-an-ams-capability-after-go-live.html">The implementation programme has ended.</a></li><li><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html">A business owner requests a change:</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-separate-sap-ams-incidents-service-requests-and-model-changes.html"><span>Previous</span>A user reports that a supplier cannot be activated in SAP.</a><a href="/blog/how-to-retire-sap-ams-workarounds-without-breaking-the-business-process.html"><span>Next</span>A temporary Supplier Risk workaround has been running for nine months.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

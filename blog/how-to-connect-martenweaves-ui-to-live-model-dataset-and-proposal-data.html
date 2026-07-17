@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration architect opens Martenweave and searches for Customer Group ."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html" />
+    <meta property="og:title" content="How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data | Martenweave" />
+    <meta property="og:description" content="A migration architect opens Martenweave and searches for Customer Group ." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data | Martenweave" />
+    <meta name="twitter:description" content="A migration architect opens Martenweave and searches for Customer Group ." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html",
+                        "name": "How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data | Martenweave",
+                        "description": "A migration architect opens Martenweave and searches for Customer Group .",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data",
+                                    "item": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html#content",
+                        "headline": "How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data",
+                        "name": "How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data",
+                        "description": "A migration architect opens Martenweave and searches for Customer Group .",
+                        "url": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-connect-martenweaves-ui-to-live-model-dataset-and-proposal-data.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Connect Martenweave’s UI to Live Model, Dataset and Proposal Data</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">A migration architect opens Martenweave and searches for Customer Group .</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-ui-already-exists">The UI already exists</a></li><li><a href="#start-from-the-user-s-investigation-loop">Start from the user’s investigation loop</a></li><li><a href="#the-first-product-principle-every-answer-needs-provenance">The first product principle: every answer needs provenance</a></li><li><a href="#do-not-connect-the-frontend-directly-to-canonical-files">Do not connect the frontend directly to canonical files</a></li><li><a href="#use-the-generated-index-as-the-primary-read-model">Use the generated index as the primary read model</a></li><li><a href="#keep-cli-api-and-ui-semantically-identical">Keep CLI, API and UI semantically identical</a></li><li><a href="#the-home-screen-should-answer-what-needs-attention">The Home screen should answer: what needs attention?</a></li><li><a href="#models-search-should-be-the-primary-entry-point">Models search should be the primary entry point</a></li><li><a href="#search-should-expose-ambiguity">Search should expose ambiguity</a></li><li><a href="#object-detail-should-become-the-central-investigation-page">Object Detail should become the central investigation page</a></li><li><a href="#what-is-this-object">What is this object?</a></li><li><a href="#how-is-it-implemented">How is it implemented?</a></li><li><a href="#what-evidence-supports-it">What evidence supports it?</a></li><li><a href="#what-currently-requires-attention">What currently requires attention?</a></li><li><a href="#object-detail-should-not-become-a-document-dump">Object Detail should not become a document dump</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration architect opens Martenweave and searches for <code>Customer Group</code>.</p>
+<p>The UI returns the business attribute, source fields, target endpoints, mappings and several related gaps.</p>
+<p>The architect opens the lineage view and sees that one source maps to a central Business Partner classification while the SAP target is maintained by sales area.</p>
+<p>They open the gap.</p>
+<p>The screen explains that two source systems provide values at different organisational levels.</p>
+<p>The architect then asks the questions that determine whether the product is useful:</p>
+<ul>
+<li>Is this the current approved model?</li>
+<li>Which source dataset produced the gap?</li>
+<li>When was that dataset profiled?</li>
+<li>Does the target mapping come from the canonical repository or demo data?</li>
+<li>Has someone already proposed a correction?</li>
+<li>What would be affected if the target endpoint changed?</li>
+<li>Can the proposed change be reviewed and passed into the existing Git workflow?</li>
+</ul>
+<p>If the UI cannot answer these questions, it is still a demonstration.</p>
+<p>It may look credible. It may explain the product concept. It does not yet reduce the work required to investigate and govern a real model problem.</p>
+<p>This is the next important Martenweave step.</p>
+<blockquote>Connecting the UI to live data is not primarily an API integration task. It is the work of making every visible answer traceable to canonical model truth, current evidence and a controlled proposal lifecycle.</blockquote>
+<p>The objective is not to reproduce every CLI command as a button.</p>
+<p>The objective is to let an SAP migration, MDG or AMS user complete one difficult investigation without manually reconstructing the answer across Excel, terminal output, GitHub issues and static reports.</p>
+<h2 id="the-ui-already-exists">The UI already exists</h2>
+<p>Martenweave already has a browser-based interactive workspace.</p>
+<p>The current frontend covers seven model-governance areas:</p>
+<ul>
+<li>Home;</li>
+<li>Models and global search;</li>
+<li>Object detail;</li>
+<li>Lineage;</li>
+<li>Gaps;</li>
+<li>Proposals;</li>
+<li>Proposal review.</li>
+</ul>
+<p>This matters because the product problem is no longer:</p>
+<blockquote>Should Martenweave have a UI?</blockquote>
+<p>The relevant question is:</p>
+<blockquote>Which live backend contracts must power the existing screens so that they solve real model-governance work?</blockquote>
+<p>The current frontend uses handcrafted demo data and does not persist user state. Its documentation describes it as a local interactive workspace and identifies generated SQLite data or a local API as the intended production integration path.</p>
+<p>That is a strong starting position.</p>
+<p>The mistake now would be to expand the interface faster than the evidence path underneath it.</p>
+<h2 id="start-from-the-user-s-investigation-loop">Start from the user’s investigation loop</h2>
+<p>A connected UI should support one coherent operating loop:</p>
+<pre><code class="language-text">Question
+→ search
+→ inspect object
+→ trace relationships
+→ inspect evidence and gaps
+→ assess impact
+→ propose treatment
+→ validate
+→ review
+→ record approved change</code></pre>
+<p>This loop is more important than any individual page.</p>
+<p>A user rarely opens a data-model registry simply to browse objects.</p>
+<p>They arrive because something is unclear or wrong:</p>
+<ul>
+<li>a target field has no source;</li>
+<li>two mappings conflict;</li>
+<li>a dataset does not support the approved rule;</li>
+<li>a value appears in migration data but not in the target model;</li>
+<li>a country requests an exception;</li>
+<li>a proposed change may affect several systems;</li>
+<li>a production incident needs explanation.</li>
+</ul>
+<p>The UI should help resolve that question.</p>
+<p>Every feature should support one step in the investigation.</p>
+<h2 id="the-first-product-principle-every-answer-needs-provenance">The first product principle: every answer needs provenance</h2>
+<p>When the UI displays a mapping, it should be able to show where that mapping came from.</p>
+<p>Possible provenance includes:</p>
+<ul>
+<li>canonical model file;</li>
+<li>generated index record;</li>
+<li>imported spreadsheet;</li>
+<li>dataset profile;</li>
+<li>decision;</li>
+<li>proposal;</li>
+<li>configuration reference;</li>
+<li>ticket or issue.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Mapping:
+MAP-CRM-A-CUSTOMER-GROUP
+
+Current state:
+Approved
+
+Canonical source:
+model/mappings/customer-group.yaml
+
+Model baseline:
+customer-model-v2.8
+
+Last validated:
+14 July 2026
+
+Supporting evidence:
+CRM_A dataset profile, 12 July 2026
+
+Related decision:
+DEC-CUSTOMER-GROUP-017</code></pre>
+<p>Without provenance, the UI gives information but not trust.</p>
+<p>A model-governance product should make it easy to answer:</p>
+<blockquote>Why should I believe this screen?</blockquote>
+<h2 id="do-not-connect-the-frontend-directly-to-canonical-files">Do not connect the frontend directly to canonical files</h2>
+<p>Canonical Markdown and YAML files should remain the authoritative model source.</p>
+<p>The browser should not repeatedly parse the repository and infer the complete graph itself.</p>
+<p>Martenweave Core already separates canonical source from generated indexes. The current architecture treats canonical files as truth and SQLite or JSONL outputs as rebuildable representations for search, query, trace and impact analysis.</p>
+<p>The connected architecture should preserve that boundary:</p>
+<pre><code class="language-text">Canonical model files
+        ↓
+Deterministic validation
+        ↓
+Generated index and evidence records
+        ↓
+Local API
+        ↓
+Martenweave UI</code></pre>
+<p>This provides several advantages:</p>
+<ul>
+<li>one model interpretation across CLI and UI;</li>
+<li>faster queries;</li>
+<li>consistent validation state;</li>
+<li>no duplicate parsing logic;</li>
+<li>reproducible results;</li>
+<li>clearer security and mutation boundaries.</li>
+</ul>
+<p>The UI should consume the model.</p>
+<p>It should not become another model engine.</p>
+<h2 id="use-the-generated-index-as-the-primary-read-model">Use the generated index as the primary read model</h2>
+<p>The SQLite index is the natural source for most interactive views.</p>
+<p>It can serve:</p>
+<ul>
+<li>objects;</li>
+<li>relationships;</li>
+<li>search results;</li>
+<li>ownership;</li>
+<li>lifecycle state;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>decisions;</li>
+<li>gap references;</li>
+<li>proposal references.</li>
+</ul>
+<p>A read-oriented API can expose this information in stable response contracts.</p>
+<p>For example:</p>
+<pre><code class="language-text">GET /api/models/search?q=customer+group
+GET /api/objects/{object_id}
+GET /api/objects/{object_id}/lineage
+GET /api/objects/{object_id}/impact
+GET /api/objects/{object_id}/evidence
+GET /api/gaps
+GET /api/proposals</code></pre>
+<p>These endpoint names are illustrative.</p>
+<p>The important requirement is that the API wraps core services rather than implementing different behaviour for the frontend.</p>
+<h2 id="keep-cli-api-and-ui-semantically-identical">Keep CLI, API and UI semantically identical</h2>
+<p>A dangerous product split would be:</p>
+<pre><code class="language-text">CLI result:
+Generated from canonical repository
+
+UI result:
+Generated through separate frontend logic</code></pre>
+<p>Users would eventually receive different answers.</p>
+<p>A stronger contract is:</p>
+<pre><code class="language-text">martenweave search
+API search endpoint
+UI search screen
+
+all call the same application service</code></pre>
+<p>The same applies to:</p>
+<ul>
+<li>query;</li>
+<li>trace;</li>
+<li>impact;</li>
+<li>gaps;</li>
+<li>dataset readiness;</li>
+<li>proposal validation.</li>
+</ul>
+<p>The CLI and UI may present information differently.</p>
+<p>They should not interpret the model differently.</p>
+<h2 id="the-home-screen-should-answer-what-needs-attention">The Home screen should answer: what needs attention?</h2>
+<p>The existing Home screen should not become a generic dashboard full of totals.</p>
+<p>Users need to know what requires action.</p>
+<p>Useful live sections include:</p>
+<h3 id="new-high-impact-gaps">New high-impact gaps</h3>
+<p>Examples:</p>
+<ul>
+<li>mandatory target without source treatment;</li>
+<li>active mapping using retired endpoint;</li>
+<li>critical object without owner;</li>
+<li>unsupported observed values.</li>
+</ul>
+<h3 id="proposals-awaiting-review">Proposals awaiting review</h3>
+<p>Show:</p>
+<ul>
+<li>title;</li>
+<li>affected objects;</li>
+<li>proposer;</li>
+<li>validation state;</li>
+<li>impact level;</li>
+<li>required reviewers.</li>
+</ul>
+<h3 id="stale-model-evidence">Stale model evidence</h3>
+<p>Examples:</p>
+<ul>
+<li>dataset profile older than the current mapping;</li>
+<li>test evidence based on superseded model baseline;</li>
+<li>accepted exception past expiry.</li>
+</ul>
+<h3 id="recently-changed-critical-objects">Recently changed critical objects</h3>
+<p>Show changes that may require other teams to reassess their work.</p>
+<h3 id="investigation-history">Investigation history</h3>
+<p>Allow users to return to objects, traces and gap cases they recently examined.</p>
+<p>The Home screen should answer:</p>
+<blockquote>Where is the highest-value unresolved model work?</blockquote>
+<p>It should not merely say:</p>
+<blockquote>The registry contains 418 attributes.</blockquote>
+<h2 id="models-search-should-be-the-primary-entry-point">Models search should be the primary entry point</h2>
+<p>Search is central because users rarely know the correct internal object ID.</p>
+<p>They may search by:</p>
+<ul>
+<li>business term;</li>
+<li>SAP table or field;</li>
+<li>source column;</li>
+<li>value;</li>
+<li>country;</li>
+<li>ticket reference;</li>
+<li>owner;</li>
+<li>alias.</li>
+</ul>
+<p>Martenweave Core already provides search and query capabilities over its generated model representation.</p>
+<p>The UI should expose search results with enough context to prevent wrong selection.</p>
+<p>A result card might show:</p>
+<pre><code class="language-text">Customer Group for Sales Processing
+Attribute · Active
+
+SAP target:
+KNVV-KDGRP
+
+Context:
+Sales area
+
+Sources:
+CRM_A, ERP_B
+
+Open gaps:
+2
+
+Pending proposals:
+1</code></pre>
+<p>This is more useful than a list of matching labels.</p>
+<h2 id="search-should-expose-ambiguity">Search should expose ambiguity</h2>
+<p>Suppose the user searches for <code>Customer Group</code>.</p>
+<p>The model may contain:</p>
+<ul>
+<li>customer grouping for pricing;</li>
+<li>customer account group;</li>
+<li>sales-area Customer Group;</li>
+<li>central segmentation;</li>
+<li>source-system classification.</li>
+</ul>
+<p>The UI should not silently choose the first match.</p>
+<p>It should show the distinctions:</p>
+<ul>
+<li>definition;</li>
+<li>context;</li>
+<li>owner;</li>
+<li>endpoint;</li>
+<li>aliases;</li>
+<li>related systems.</li>
+</ul>
+<p>One of Martenweave’s core business values is preventing similar labels from being treated as equivalent concepts.</p>
+<p>The search experience should reinforce that discipline.</p>
+<h2 id="object-detail-should-become-the-central-investigation-page">Object Detail should become the central investigation page</h2>
+<p>The Object Detail screen should answer four questions.</p>
+<h2 id="what-is-this-object">What is this object?</h2>
+<p>Show:</p>
+<ul>
+<li>name;</li>
+<li>type;</li>
+<li>definition;</li>
+<li>lifecycle;</li>
+<li>context;</li>
+<li>owner;</li>
+<li>aliases.</li>
+</ul>
+<h2 id="how-is-it-implemented">How is it implemented?</h2>
+<p>Show:</p>
+<ul>
+<li>source endpoints;</li>
+<li>target endpoints;</li>
+<li>mappings;</li>
+<li>rules;</li>
+<li>values;</li>
+<li>configuration references.</li>
+</ul>
+<h2 id="what-evidence-supports-it">What evidence supports it?</h2>
+<p>Show:</p>
+<ul>
+<li>datasets;</li>
+<li>profiles;</li>
+<li>decisions;</li>
+<li>tests;</li>
+<li>tickets;</li>
+<li>imports.</li>
+</ul>
+<h2 id="what-currently-requires-attention">What currently requires attention?</h2>
+<p>Show:</p>
+<ul>
+<li>gaps;</li>
+<li>risks;</li>
+<li>pending proposals;</li>
+<li>stale evidence;</li>
+<li>unresolved ownership.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-RISK
+
+Status:
+Active
+
+Owner:
+Global Supplier Data Owner
+
+Target:
+SAP Supplier Risk Classification
+
+Sources:
+ERP_A — direct
+ERP_B — enrichment required
+
+Current gaps:
+ERP_B completeness below programme policy
+
+Pending proposal:
+Introduce separate Supplier Review Status
+
+Last dataset profile:
+12 July 2026</code></pre>
+<p>This creates a useful home for the model object across its lifecycle.</p>
+<h2 id="object-detail-should-not-become-a-document-dump">Object Detail should not become a document dump</h2>
+<p>A common mistake would be to show:</p>
+<ul>
+<li>every attached file;</li>
+<li>every related ticket;</li>
+<li>every historical note;</li>
+<li>every graph edge.</li>
+</ul>
+<p>The page should prioritise current truth and current decisions.</p>
+<p>Historical evidence should remain available but secondary.</p>
+<p>A useful ordering is:</p>
+<ol>
+<li>Current approved state.</li>
+<li>Current implementation and evidence.</li>
+<li>Open gaps or proposals.</li>
+<li>Impact and relationships.</li>
+<li>Historical changes.</li>
+</ol>
+<p>The user should not need to read the project archive to understand the object.</p>
+<h2 id="lineage-should-explain-not-decorate">Lineage should explain, not decorate</h2>
+<p>The existing lineage canvas is a major product asset.</p>
+<p>It should answer practical questions such as:</p>
+<ul>
+<li>Where did this value come from?</li>
+<li>How does this source field become the SAP target?</li>
+<li>Which rule applies?</li>
+<li>Which systems consume the result?</li>
+<li>What breaks if the object changes?</li>
+</ul>
+<p>The live graph should be generated from core relationship data rather than frontend demo structures.</p>
+<p>Each edge should expose:</p>
+<ul>
+<li>relationship type;</li>
+<li>status;</li>
+<li>context;</li>
+<li>evidence;</li>
+<li>baseline;</li>
+<li>confidence or verification state where relevant.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">CRM_A.CUSTOMER_SEGMENT
+    maps_to
+ATTR-CUSTOMER-GROUP
+    represented_by
+SAP KNVV-KDGRP
+    consumed_by
+Sales Order Processing</code></pre>
+<p>If a relationship is proposed rather than approved, that state must be visible.</p>
+<h2 id="use-several-lineage-modes">Use several lineage modes</h2>
+<p>One large graph is rarely useful.</p>
+<p>The UI should offer focused modes:</p>
+<h3 id="source-to-target">Source-to-target</h3>
+<p>For mapping investigation.</p>
+<h3 id="business-to-implementation">Business-to-implementation</h3>
+<p>For architects and owners.</p>
+<h3 id="impact">Impact</h3>
+<p>For change analysis.</p>
+<h3 id="evidence">Evidence</h3>
+<p>For readiness or closure review.</p>
+<h3 id="historical">Historical</h3>
+<p>For understanding superseded decisions and migrated records.</p>
+<p>These modes can use the same relationship graph with different filters.</p>
+<p>This is more valuable than adding more graph visual effects.</p>
+<h2 id="gaps-should-become-evidence-backed-work-objects">Gaps should become evidence-backed work objects</h2>
+<p>The Gaps screen is where Martenweave can close a significant pain.</p>
+<p>Migration gaps are usually scattered across:</p>
+<ul>
+<li>validation reports;</li>
+<li>mapping workbooks;</li>
+<li>dataset profiles;</li>
+<li>Jira;</li>
+<li>email;</li>
+<li>meeting notes.</li>
+</ul>
+<p>A Martenweave gap should connect:</p>
+<ul>
+<li>model expectation;</li>
+<li>observed evidence;</li>
+<li>affected population;</li>
+<li>severity or policy result;</li>
+<li>owner;</li>
+<li>possible treatments;</li>
+<li>related proposals.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Gap:
+Supplier Risk unavailable in ERP_B
+
+Expected:
+Active strategic suppliers require approved Supplier Risk
+
+Observed:
+27% of applicable ERP_B records are blank
+
+Affected records:
+6,840
+
+Evidence:
+ERP_B supplier extract, 12 July 2026
+
+Owner:
+ERP_B Data Owner
+
+Status:
+Treatment decision required</code></pre>
+<p>This is an actionable gap.</p>
+<p>A statement such as <code>Column missing</code> is only a diagnostic fragment.</p>
+<h2 id="gaps-should-distinguish-fact-from-policy">Gaps should distinguish fact from policy</h2>
+<p>A dataset result may show:</p>
+<blockquote>27% of records are blank.</blockquote>
+<p>Whether this is a blocking problem depends on:</p>
+<ul>
+<li>applicable population;</li>
+<li>target rule;</li>
+<li>migration phase;</li>
+<li>accepted exceptions;</li>
+<li>business criticality.</li>
+</ul>
+<p>The UI should separate:</p>
+<h3 id="observed-fact">Observed fact</h3>
+<p>27% blank.</p>
+<h3 id="model-expectation">Model expectation</h3>
+<p>Value required for active strategic suppliers.</p>
+<h3 id="programme-policy-result">Programme policy result</h3>
+<p>Fails current Wave 2 readiness criterion.</p>
+<p>This avoids presenting programme thresholds as universal product truth.</p>
+<h2 id="dataset-data-should-be-versioned-evidence">Dataset data should be versioned evidence</h2>
+<p>A live UI must not display dataset metrics without identity.</p>
+<p>Every profile should include:</p>
+<ul>
+<li>dataset name;</li>
+<li>source;</li>
+<li>extraction date;</li>
+<li>checksum or stable reference;</li>
+<li>profiling timestamp;</li>
+<li>applicable model baseline;</li>
+<li>filters;</li>
+<li>record count.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Dataset:
+ERP_B_supplier_extract_2026-07-12.xlsx
+
+Records:
+24,880
+
+Model baseline:
+supplier-model-v2.7
+
+Profile status:
+Current
+
+Supersedes:
+ERP_B_supplier_extract_2026-06-28.xlsx</code></pre>
+<p>Without this, a user may compare today’s model with last month’s data and draw the wrong conclusion.</p>
+<h2 id="dataset-upload-should-not-become-uncontrolled-storage">Dataset upload should not become uncontrolled storage</h2>
+<p>Martenweave does not need to become an enterprise data lake.</p>
+<p>For local workflows, the UI may support file selection or upload for profiling.</p>
+<p>The system should retain:</p>
+<ul>
+<li>metadata;</li>
+<li>profiling output;</li>
+<li>evidence reference;</li>
+<li>optional local file path or controlled location.</li>
+</ul>
+<p>It should not automatically store sensitive production extracts inside the model repository.</p>
+<p>The boundary should remain:</p>
+<pre><code class="language-text">Dataset provides evidence.
+
+Canonical model stores model truth.
+
+Generated profile stores derived findings.</code></pre>
+<h2 id="show-dataset-readiness-from-the-model-object">Show dataset readiness from the model object</h2>
+<p>A user investigating an attribute should not need to open a separate report and manually find the relevant column.</p>
+<p>The Object Detail page can show:</p>
+<pre><code class="language-text">Dataset support
+
+ERP_A:
+Column present
+99.4% applicable completeness
+All observed values mapped
+
+ERP_B:
+Column absent
+Enrichment process proposed
+
+Local Procurement:
+Column present
+Three unmapped values</code></pre>
+<p>This connects the model requirement directly to current evidence.</p>
+<h2 id="impact-analysis-should-be-available-before-proposal-creation">Impact analysis should be available before proposal creation</h2>
+<p>A user considering a change should be able to ask:</p>
+<blockquote>What would this affect?</blockquote>
+<p>Martenweave Core already supports trace and impact analysis.</p>
+<p>The UI should show impact in practical groups:</p>
+<ul>
+<li>model objects;</li>
+<li>mappings;</li>
+<li>datasets;</li>
+<li>rules;</li>
+<li>values;</li>
+<li>decisions;</li>
+<li>owners;</li>
+<li>tests;</li>
+<li>interfaces;</li>
+<li>local variants.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Proposed change:
+Retire Customer Group target endpoint
+
+Confirmed impact:
+- 12 active mappings
+- 3 country variants
+- 8 test references
+- 2 interface consumers
+
+Review required:
+- Pricing analytics
+- historical migration lineage</code></pre>
+<p>The purpose is not to display the largest graph.</p>
+<p>It is to help the reviewer avoid missing work.</p>
+<h2 id="make-model-coverage-limitations-explicit">Make model coverage limitations explicit</h2>
+<p>Impact analysis is only as complete as the registered relationships.</p>
+<p>The UI should say:</p>
+<pre><code class="language-text">Impact coverage:
+
+Represented:
+SAP target, migration mappings, outbound interface, UAT tests
+
+Not represented:
+Country X local reporting tool</code></pre>
+<p>This is better than implying complete enterprise lineage.</p>
+<p>Trust increases when the product is honest about its boundary.</p>
+<h2 id="proposals-should-start-from-evidence">Proposals should start from evidence</h2>
+<p>The UI should allow a user to create a proposal from:</p>
+<ul>
+<li>a gap;</li>
+<li>an object;</li>
+<li>an impact result;</li>
+<li>a dataset finding;</li>
+<li>a comparison;</li>
+<li>a decision request.</li>
+</ul>
+<p>For example, from a gap:</p>
+<pre><code class="language-text">Gap:
+ERP_B cannot provide Supplier Risk
+
+Create proposal:
+- add reviewed enrichment source;
+- introduce temporary Review Status;
+- narrow mandatory rule;
+- create issue for source remediation.</code></pre>
+<p>The proposal should carry the evidence context automatically.</p>
+<p>The user should not have to re-enter:</p>
+<ul>
+<li>affected object IDs;</li>
+<li>dataset reference;</li>
+<li>current gap;</li>
+<li>baseline;</li>
+<li>observed population.</li>
+</ul>
+<p>This is how the UI reduces real work.</p>
+<h2 id="the-ui-must-preserve-proposal-versus-approved-truth">The UI must preserve proposal versus approved truth</h2>
+<p>The current frontend documentation is explicit that proposal approval flows are demonstrations and that real model changes must continue through the human-reviewed <code>PatchProposal</code> to <code>ChangeRequest</code> process.</p>
+<p>This boundary should remain visible in the connected UI.</p>
+<p>Use clear state labels:</p>
+<ul>
+<li>Draft suggestion;</li>
+<li>PatchProposal;</li>
+<li>Validation failed;</li>
+<li>Ready for review;</li>
+<li>Changes requested;</li>
+<li>Approved ChangeRequest;</li>
+<li>Applied to canonical model;</li>
+<li>Superseded;</li>
+<li>Rejected.</li>
+</ul>
+<p>Do not display a proposed mapping as though it were part of the approved lineage.</p>
+<h2 id="proposal-review-should-combine-business-and-technical-views">Proposal review should combine business and technical views</h2>
+<p>A reviewer should see:</p>
+<h3 id="business-meaning">Business meaning</h3>
+<p>What decision changes?</p>
+<h3 id="exact-model-diff">Exact model diff</h3>
+<p>Which canonical objects would change?</p>
+<h3 id="evidence-2">Evidence</h3>
+<p>Which gap, dataset or decision supports it?</p>
+<h3 id="structural-validation">Structural validation</h3>
+<p>Does the candidate model remain consistent?</p>
+<h3 id="impact-2">Impact</h3>
+<p>Which dependencies require review?</p>
+<h3 id="open-questions">Open questions</h3>
+<p>Which parts remain uncertain?</p>
+<h3 id="required-approvers">Required approvers</h3>
+<p>Which roles have authority?</p>
+<p>For example:</p>
+<pre><code class="language-text">Proposal:
+Replace central Customer Classification target with sales-area Customer Group
+
+Business issue:
+Current target does not represent sales-process grouping
+
+Model changes:
+- modify mapping target
+- add sales-area context
+- retire old mapping relationship
+
+Impact:
+- six tests
+- one outbound interface
+- three country mappings
+
+Open question:
+CRM_A source is central; organisational expansion treatment not approved</code></pre>
+<p>This proposal should probably not be approved yet.</p>
+<p>The UI should make that clear.</p>
+<h2 id="do-not-implement-direct-canonical-mutation-first">Do not implement direct canonical mutation first</h2>
+<p>The tempting next step is:</p>
+<blockquote>Let users edit an object in the UI and save it.</blockquote>
+<p>That is the wrong first production write path.</p>
+<p>It risks bypassing:</p>
+<ul>
+<li>deterministic validation;</li>
+<li>Git diff;</li>
+<li>proposal review;</li>
+<li>ownership;</li>
+<li>impact analysis;</li>
+<li>audit history.</li>
+</ul>
+<p>The first write workflow should be:</p>
+<pre><code class="language-text">UI input
+→ PatchProposal
+→ validation
+→ semantic diff
+→ human review
+→ ChangeRequest
+→ Git issue or pull request
+→ canonical update</code></pre>
+<p>Martenweave’s existing product principle remains:</p>
+<blockquote>Agents propose. Validators verify. Humans approve. Git records.</blockquote>
+<p>The UI should make that process easier, not remove it.</p>
+<h2 id="connect-github-after-the-proposal-is-coherent">Connect GitHub after the proposal is coherent</h2>
+<p>GitHub integration is valuable when the UI has already assembled:</p>
+<ul>
+<li>proposal;</li>
+<li>evidence;</li>
+<li>affected objects;</li>
+<li>validation result;</li>
+<li>impact;</li>
+<li>required reviewers.</li>
+</ul>
+<p>The user can then create:</p>
+<ul>
+<li>issue draft;</li>
+<li>pull-request-ready patch;</li>
+<li>review package.</li>
+</ul>
+<p>Do not use GitHub issue creation as the first response to every gap.</p>
+<p>Many gaps require investigation before they are ready for implementation.</p>
+<p>A useful lifecycle is:</p>
+<pre><code class="language-text">Gap
+→ investigation
+→ treatment decision
+→ validated proposal
+→ GitHub issue or pull request</code></pre>
+<h2 id="persistence-should-focus-on-user-work-not-model-truth">Persistence should focus on user work, not model truth</h2>
+<p>The canonical repository remains model truth.</p>
+<p>The UI still needs to persist working state such as:</p>
+<ul>
+<li>saved investigations;</li>
+<li>review comments;</li>
+<li>draft proposals;</li>
+<li>evidence selections;</li>
+<li>user filters;</li>
+<li>closure decisions;</li>
+<li>acknowledgement of gaps.</li>
+</ul>
+<p>This state should not be mixed into generated search indexes.</p>
+<p>A clean separation is:</p>
+<h3 id="canonical-store">Canonical store</h3>
+<p>Approved model files and Git history.</p>
+<h3 id="generated-read-store">Generated read store</h3>
+<p>SQLite or JSONL index and reports.</p>
+<h3 id="workspace-store">Workspace store</h3>
+<p>Draft review and investigation state.</p>
+<p>The workspace store could remain local initially.</p>
+<p>A large multi-tenant persistence platform is not required for the next useful step.</p>
+<h2 id="use-a-local-api-as-the-product-boundary">Use a local API as the product boundary</h2>
+<p>The frontend documentation already anticipates reading generated SQLite data or a local API rather than static <code>src/data.js</code>.</p>
+<p>A local API provides a useful boundary for:</p>
+<ul>
+<li>query consistency;</li>
+<li>filesystem access;</li>
+<li>dataset profiling;</li>
+<li>proposal generation;</li>
+<li>validation;</li>
+<li>report generation;</li>
+<li>Git integration.</li>
+</ul>
+<p>It also keeps sensitive project data local.</p>
+<p>The browser does not need direct access to repository internals or local datasets.</p>
+<h2 id="the-api-should-return-decision-ready-responses">The API should return decision-ready responses</h2>
+<p>A weak API response exposes raw rows.</p>
+<p>A stronger response supports the screen’s decision.</p>
+<p>For example, an object-detail response might include:</p>
+<pre><code class="language-json">{
+  &quot;object&quot;: {},
+  &quot;ownership&quot;: [],
+  &quot;relationships&quot;: [],
+  &quot;current_gaps&quot;: [],
+  &quot;dataset_evidence&quot;: [],
+  &quot;pending_proposals&quot;: [],
+  &quot;validation&quot;: {},
+  &quot;provenance&quot;: {}
+}</code></pre>
+<p>This does not mean one large endpoint must do everything.</p>
+<p>It means the frontend contract should reflect the investigation needs rather than force the browser to rebuild domain logic.</p>
+<h2 id="add-freshness-and-health-indicators">Add freshness and health indicators</h2>
+<p>Users need to know whether the visible result is current.</p>
+<p>The UI should show:</p>
+<ul>
+<li>canonical repository commit;</li>
+<li>index build time;</li>
+<li>index freshness;</li>
+<li>last validation;</li>
+<li>dataset profile date;</li>
+<li>model baseline;</li>
+<li>API health.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Model:
+main@7ac29e1
+
+Index:
+Current
+
+Validation:
+Passed 14 July 2026, 16:20
+
+Dataset evidence:
+ERP_B profile from 12 July 2026
+
+Warning:
+One proposal was created against an older model baseline</code></pre>
+<p>Martenweave Core already documents index freshness, health and scorecard-oriented commands.</p>
+<p>These should be visible where they affect trust.</p>
+<h2 id="avoid-exposing-technical-health-as-product-value">Avoid exposing technical health as product value</h2>
+<p>Users do not primarily care that SQLite was rebuilt successfully.</p>
+<p>They care whether the answer is current.</p>
+<p>Translate technical status into user meaning:</p>
+<p>Weak:</p>
+<blockquote>Index build completed.</blockquote>
+<p>Stronger:</p>
+<blockquote>Search and impact results reflect the current canonical model.</blockquote>
+<p>Weak:</p>
+<blockquote>Dataset hash changed.</blockquote>
+<p>Stronger:</p>
+<blockquote>Existing readiness evidence is stale because a newer source extract is available.</blockquote>
+<h2 id="use-loading-and-error-states-that-preserve-trust">Use loading and error states that preserve trust</h2>
+<p>A model-governance UI must distinguish:</p>
+<ul>
+<li>no results;</li>
+<li>missing relationship;</li>
+<li>backend unavailable;</li>
+<li>index stale;</li>
+<li>validation failed;</li>
+<li>evidence not yet generated;</li>
+<li>user lacks access.</li>
+</ul>
+<p>Do not replace all of these with:</p>
+<blockquote>Something went wrong.</blockquote>
+<p>For example:</p>
+<pre><code class="language-text">Lineage unavailable
+
+Reason:
+The generated model index is older than the canonical repository.
+
+Action:
+Rebuild and validate the index before using impact results.</code></pre>
+<p>This helps the user understand whether the absence is meaningful.</p>
+<h2 id="do-not-hide-validator-failures-behind-the-ui">Do not hide validator failures behind the UI</h2>
+<p>Suppose a proposal produces an invalid reference.</p>
+<p>The UI should show:</p>
+<pre><code class="language-text">Proposal cannot enter review
+
+Validation error:
+MAP-CUSTOMER-0042 references retired endpoint FEP-SAP-OLD-KDGRP
+
+Affected objects:
+3</code></pre>
+<p>Do not silently remove the broken relationship from the graph.</p>
+<p>The user needs to see why the proposal is unsafe.</p>
+<h2 id="design-one-complete-vertical-slice">Design one complete vertical slice</h2>
+<p>The best next implementation is not to connect every screen partially.</p>
+<p>Build one end-to-end scenario.</p>
+<h3 id="suggested-scenario">Suggested scenario</h3>
+<p><strong>Investigate a dataset-to-model gap and create a reviewable proposal.</strong></p>
+<h3 id="user-story">User story</h3>
+<p>A migration analyst uploads or selects a supplier dataset.</p>
+<p>Martenweave identifies that Supplier Risk is missing for part of the applicable population.</p>
+<p>The user opens the gap, inspects the affected attribute and lineage, assesses the impact, creates a PatchProposal and routes it for review.</p>
+<h3 id="required-live-capabilities">Required live capabilities</h3>
+<ol>
+<li>Load canonical model.</li>
+<li>Validate it.</li>
+<li>Build or open the generated index.</li>
+<li>Search for Supplier Risk.</li>
+<li>Display Object Detail.</li>
+<li>Profile the dataset.</li>
+<li>Generate the gap.</li>
+<li>Show affected population.</li>
+<li>Display lineage and impact.</li>
+<li>Create a PatchProposal.</li>
+<li>Validate the candidate change.</li>
+<li>Show semantic diff.</li>
+<li>Save review state.</li>
+<li>Produce a GitHub-ready issue or patch bundle.</li>
+</ol>
+<p>This single slice proves the product promise.</p>
+<h2 id="the-acceptance-test-should-use-a-real-pain-scenario">The acceptance test should use a real pain scenario</h2>
+<p>A useful acceptance scenario could be:</p>
+<pre><code class="language-text">Given:
+A canonical Supplier Risk attribute is mandatory
+for active strategic suppliers.
+
+And:
+ERP_B dataset has 27% missing values.
+
+When:
+The user profiles the dataset in Martenweave.
+
+Then:
+The UI shows the model expectation, observed population,
+affected mappings and current owner.
+
+When:
+The user proposes a separate Supplier Review Status.
+
+Then:
+The UI shows the canonical diff, validation result,
+impact on rules, tests and interfaces, and required reviewers.
+
+And:
+The approved model is not changed until review is complete.</code></pre>
+<p>This proves that the connected UI closes work, not just that endpoints respond.</p>
+<h2 id="a-second-vertical-slice-explain-one-field-end-to-end">A second vertical slice: explain one field end to end</h2>
+<p>After the gap workflow, build:</p>
+<blockquote>Explain this SAP target field.</blockquote>
+<p>The user enters:</p>
+<pre><code class="language-text">KNVV-KDGRP</code></pre>
+<p>The UI should show:</p>
+<ul>
+<li>business meaning;</li>
+<li>organisational context;</li>
+<li>source systems;</li>
+<li>transformations;</li>
+<li>dataset support;</li>
+<li>rules;</li>
+<li>decisions;</li>
+<li>consumers;</li>
+<li>current gaps;</li>
+<li>pending changes.</li>
+</ul>
+<p>This is a strong demo and a real implementation need.</p>
+<p>Many migration and AMS teams spend hours reconstructing exactly this chain.</p>
+<h2 id="a-third-vertical-slice-review-a-proposed-change">A third vertical slice: review a proposed change</h2>
+<p>The user opens a proposal to retire a target endpoint.</p>
+<p>The UI should show:</p>
+<ul>
+<li>exact proposed change;</li>
+<li>affected mappings;</li>
+<li>country variants;</li>
+<li>current datasets;</li>
+<li>stale tests;</li>
+<li>unresolved consumers;</li>
+<li>reviewer questions.</li>
+</ul>
+<p>The reviewer can:</p>
+<ul>
+<li>approve;</li>
+<li>reject;</li>
+<li>request changes;</li>
+<li>create follow-up issues.</li>
+</ul>
+<p>This demonstrates controlled change, not only model browsing.</p>
+<h2 id="do-not-add-a-generic-chatbot">Do not add a generic chatbot</h2>
+<p>The UI may include natural-language search or an assistant later.</p>
+<p>It should not become the primary product interaction.</p>
+<p>A generic chat response such as:</p>
+<blockquote>Customer Group is mapped from CRM_A to KNVV-KDGRP.</blockquote>
+<p>is weaker than an inspectable object page showing:</p>
+<ul>
+<li>source;</li>
+<li>target;</li>
+<li>context;</li>
+<li>evidence;</li>
+<li>gaps;</li>
+<li>decision;</li>
+<li>impact.</li>
+</ul>
+<p>Natural language should help users reach structured evidence.</p>
+<p>It should not replace structured evidence.</p>
+<h2 id="ai-should-operate-inside-the-visible-workflow">AI should operate inside the visible workflow</h2>
+<p>Useful AI assistance includes:</p>
+<ul>
+<li>suggesting likely object matches;</li>
+<li>summarising a lineage path;</li>
+<li>extracting candidate mappings from a workbook;</li>
+<li>drafting a gap explanation;</li>
+<li>proposing a patch;</li>
+<li>summarising impact;</li>
+<li>generating reviewer questions.</li>
+</ul>
+<p>Each suggestion should link to the underlying objects and evidence.</p>
+<p>For example:</p>
+<pre><code class="language-text">AI suggestion:
+CRM_A.CUSTOMER_SEGMENT may not be equivalent to
+sales-area Customer Group.
+
+Evidence:
+- source is central
+- target is sales-area-specific
+- definitions differ
+- three mappings use direct replication
+
+Action:
+Open semantic review</code></pre>
+<p>This is far more useful than an isolated chat answer.</p>
+<h2 id="keep-the-product-local-first">Keep the product local-first</h2>
+<p>Martenweave’s current core and frontend direction are local-first. The UI runs locally, and the documented production path is through generated local indexes or a local API.</p>
+<p>That is not a weakness for the target audience.</p>
+<p>SAP migration and MDM evidence can contain:</p>
+<ul>
+<li>sensitive model details;</li>
+<li>customer and supplier structures;</li>
+<li>source-system information;</li>
+<li>local exceptions;</li>
+<li>sample datasets.</li>
+</ul>
+<p>A local-first workspace can reduce deployment and confidentiality barriers during pilots.</p>
+<p>Do not add multi-tenant SaaS architecture before the core workflow proves repeated value.</p>
+<h2 id="what-the-first-connected-ui-should-not-attempt">What the first connected UI should not attempt</h2>
+<p>Avoid:</p>
+<ul>
+<li>direct SAP mutation;</li>
+<li>complete SAP configuration introspection;</li>
+<li>enterprise authentication platform;</li>
+<li>configurable workflow engine;</li>
+<li>unrestricted browser model editing;</li>
+<li>general project management;</li>
+<li>enterprise data catalogue replacement;</li>
+<li>full graph-database platform;</li>
+<li>broad AI chatbot;</li>
+<li>large dashboard suite.</li>
+</ul>
+<p>These features increase complexity without proving the central value.</p>
+<p>The first connected UI should solve:</p>
+<blockquote>Find, explain, validate and safely change one important model relationship.</blockquote>
+<h2 id="measure-user-value-not-endpoint-coverage">Measure user value, not endpoint coverage</h2>
+<p>Weak success metrics include:</p>
+<ul>
+<li>number of API routes;</li>
+<li>percentage of screens connected;</li>
+<li>number of graph nodes rendered;</li>
+<li>number of UI components.</li>
+</ul>
+<p>Better measures include:</p>
+<h3 id="time-to-explain-a-field">Time to explain a field</h3>
+<p>How long does it take to trace one SAP target field to source, rule and decision?</p>
+<h3 id="time-to-identify-a-dataset-gap">Time to identify a dataset gap</h3>
+<p>Can a user connect a failed column or value to the model expectation?</p>
+<h3 id="time-to-assess-change-impact">Time to assess change impact</h3>
+<p>Can the user identify affected mappings, tests and consumers?</p>
+<h3 id="proposal-completeness">Proposal completeness</h3>
+<p>Does the proposal include evidence, validation and affected objects before review?</p>
+<h3 id="review-efficiency">Review efficiency</h3>
+<p>Can reviewers decide without reopening several workbooks and tickets?</p>
+<h3 id="reconstruction-avoided">Reconstruction avoided</h3>
+<p>How much repeated manual analysis is removed?</p>
+<p>These are the pains Martenweave is intended to close.</p>
+<h2 id="a-practical-implementation-sequence">A practical implementation sequence</h2>
+<h3 id="1-establish-read-contracts">1. Establish read contracts</h3>
+<p>Connect search, object detail, lineage and gaps to the generated index.</p>
+<h3 id="2-add-provenance-and-freshness">2. Add provenance and freshness</h3>
+<p>Show repository baseline, validation and evidence versions.</p>
+<h3 id="3-connect-dataset-readiness">3. Connect dataset readiness</h3>
+<p>Allow a selected dataset profile to create visible object-level gaps.</p>
+<h3 id="4-add-impact-analysis">4. Add impact analysis</h3>
+<p>Connect object and proposal views to core impact services.</p>
+<h3 id="5-add-proposal-creation">5. Add proposal creation</h3>
+<p>Generate PatchProposal objects from gaps and object views.</p>
+<h3 id="6-add-proposal-validation-and-semantic-diff">6. Add proposal validation and semantic diff</h3>
+<p>Do not add approval before the reviewer can see meaningful consequences.</p>
+<h3 id="7-persist-review-state">7. Persist review state</h3>
+<p>Store comments, reviewer decisions and proposal lifecycle.</p>
+<h3 id="8-export-to-github">8. Export to GitHub</h3>
+<p>Create issue or patch bundles after the proposal is coherent.</p>
+<h3 id="9-add-closure-and-ams-evidence">9. Add closure and AMS evidence</h3>
+<p>Extend the same object and evidence model after the investigation workflow works.</p>
+<p>This sequence keeps the product focused.</p>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>Which concrete user problem does each connected screen solve?</li>
+<li>Is every displayed answer traceable to canonical truth?</li>
+<li>Do CLI, API and UI use the same core services?</li>
+<li>Can users see the model and dataset baseline?</li>
+<li>Are proposed and approved states clearly separated?</li>
+<li>Can a gap be traced to the exact object and population?</li>
+<li>Can the user assess impact before proposing a change?</li>
+<li>Does the UI create a PatchProposal rather than mutate the model directly?</li>
+<li>Can reviewers understand the semantic diff?</li>
+<li>Are model coverage limitations visible?</li>
+<li>Can the workflow produce a GitHub-ready review package?</li>
+<li>Does the connected UI reduce reconstruction work?</li>
+<li>Is the product still local-first and focused?</li>
+<li>Are we solving investigation and change control rather than building a generic dashboard?</li>
+</ol>
+<p>If the team can answer technical API questions but not these product questions, the integration is being designed from the wrong direction.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="replacing-demo-data-with-raw-database-rows">Replacing demo data with raw database rows</h3>
+<p>The interface becomes live but not decision-ready.</p>
+<h3 id="connecting-every-screen-shallowly">Connecting every screen shallowly</h3>
+<p>No complete user workflow works end to end.</p>
+<h3 id="reimplementing-core-logic-in-javascript">Reimplementing core logic in JavaScript</h3>
+<p>CLI and UI eventually disagree.</p>
+<h3 id="treating-dataset-metrics-as-timeless">Treating dataset metrics as timeless</h3>
+<p>Evidence becomes misleading after model or extract changes.</p>
+<h3 id="showing-proposed-relationships-as-approved-lineage">Showing proposed relationships as approved lineage</h3>
+<p>Users cannot distinguish truth from suggestion.</p>
+<h3 id="adding-direct-editing-before-proposal-control">Adding direct editing before proposal control</h3>
+<p>The UI bypasses the core governance principle.</p>
+<h3 id="creating-github-issues-too-early">Creating GitHub issues too early</h3>
+<p>Uninvestigated gaps become noisy backlog items.</p>
+<h3 id="hiding-backend-health-and-baseline-state">Hiding backend health and baseline state</h3>
+<p>Users cannot judge whether results are current.</p>
+<h3 id="building-a-generic-chatbot">Building a generic chatbot</h3>
+<p>Structured investigation becomes an opaque conversation.</p>
+<h3 id="measuring-progress-by-screen-coverage">Measuring progress by screen coverage</h3>
+<p>The product may look complete while still failing to solve one real task.</p>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Connecting Martenweave’s UI to live data is not a frontend completion exercise.</p>
+<p>It is the point where the product must prove its operating model:</p>
+<ul>
+<li>canonical files hold approved model truth;</li>
+<li>deterministic validators check structure;</li>
+<li>generated indexes provide searchable relationships;</li>
+<li>datasets provide current evidence;</li>
+<li>the UI supports investigation and review;</li>
+<li>proposals remain separate from approved state;</li>
+<li>Git records accepted changes;</li>
+<li>humans retain decision authority.</li>
+</ul>
+<p>Martenweave already has the correct user-facing foundation:</p>
+<ul>
+<li>search;</li>
+<li>object detail;</li>
+<li>lineage;</li>
+<li>gaps;</li>
+<li>proposals;</li>
+<li>review.</li>
+</ul>
+<p>The next useful step is to connect one complete workflow:</p>
+<blockquote>A user finds a real model-to-dataset gap, understands why it exists, sees what it affects, creates a validated proposal and sends a decision-ready change into review.</blockquote>
+<p>When that works, the UI is no longer a prototype demonstrating concepts.</p>
+<p>It becomes the practical surface through which Martenweave closes one of the most expensive recurring pains in SAP migration and MDG programmes:</p>
+<blockquote>Teams have plenty of evidence, but they cannot reliably connect it to the model decision that must be made.</blockquote>
+<p>That is the pain the product should continue to own.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build Martenweave as a backend-first model-governance and evidence workspace for SAP migration, MDM, data governance and AMS teams.</p>
+<p>The product combines:</p>
+<ul>
+<li>canonical model files;</li>
+<li>deterministic validation;</li>
+<li>generated indexes;</li>
+<li>dataset-gap analysis;</li>
+<li>lineage;</li>
+<li>impact analysis;</li>
+<li>proposal-first change control;</li>
+<li>an existing interactive UI for model investigation and review.</li>
+</ul>
+<p>The objective is not to build another enterprise dashboard.</p>
+<p>It is to give teams one traceable path from scattered evidence to an approved model decision.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace, impact analysis and human-reviewed proposals.</p>
+<p>The core’s current workflow moves from evidence through proposal, validation, gaps and impact to review and GitHub-ready output.</p>
+<p>The current CLI documentation includes validation, index health, search, query, trace, impact, proposal, dataset-readiness and issue-draft workflows.</p>
+<p>The Martenweave repository already contains a browser-based interactive workspace with Home, Models, Object Detail, Lineage, Gaps, Proposals and Proposal Review screens. The current implementation runs locally with demo data, and its documented integration direction is to consume the generated SQLite index or a local Martenweave API.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by SAP. SAP, SAP S/4HANA and SAP Master Data Governance are trademarks or registered trademarks of SAP SE or its affiliates.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-design-a-closure-evidence-workspace-for-sap-migration-and-mdg.html"><span>Previous</span>The programme is preparing for a risk-closure meeting.</a><a href="/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html"><span>Next</span>A migration test fails because Customer Group is missing.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

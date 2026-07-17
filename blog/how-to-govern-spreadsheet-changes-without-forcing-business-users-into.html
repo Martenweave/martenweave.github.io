@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Govern Spreadsheet Changes Without Forcing Business Users into Git | Martenweave</title>
+    <meta
+      name="description"
+      content="The business owner receives a mapping workbook."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html" />
+    <meta property="og:title" content="How to Govern Spreadsheet Changes Without Forcing Business Users into Git | Martenweave" />
+    <meta property="og:description" content="The business owner receives a mapping workbook." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Govern Spreadsheet Changes Without Forcing Business Users into Git | Martenweave" />
+    <meta name="twitter:description" content="The business owner receives a mapping workbook." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html",
+                        "name": "How to Govern Spreadsheet Changes Without Forcing Business Users into Git | Martenweave",
+                        "description": "The business owner receives a mapping workbook.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Govern Spreadsheet Changes Without Forcing Business Users into Git",
+                                    "item": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html#content",
+                        "headline": "How to Govern Spreadsheet Changes Without Forcing Business Users into Git",
+                        "name": "How to Govern Spreadsheet Changes Without Forcing Business Users into Git",
+                        "description": "The business owner receives a mapping workbook.",
+                        "url": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-govern-spreadsheet-changes-without-forcing-business-users-into.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Govern Spreadsheet Changes Without Forcing Business Users into Git</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Govern Spreadsheet Changes Without Forcing Business Users into Git</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">The business owner receives a mapping workbook.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#generate-the-workbook-from-a-known-baseline">Generate the workbook from a known baseline</a></li><li><a href="#protect-identity-columns-from-casual-editing">Protect identity columns from casual editing</a></li><li><a href="#require-rationale-for-material-changes">Require rationale for material changes</a></li><li><a href="#comments-are-evidence-not-structured-decisions">Comments are evidence, not structured decisions</a></li><li><a href="#design-the-workbook-for-one-review-task">Design the workbook for one review task</a></li><li><a href="#keep-technical-metadata-available-but-secondary">Keep technical metadata available but secondary</a></li><li><a href="#validate-the-workbook-before-import">Validate the workbook before import</a></li><li><a href="#generate-a-semantic-diff-for-final-approval">Generate a semantic diff for final approval</a></li><li><a href="#preserve-the-returned-workbook-as-evidence">Preserve the returned workbook as evidence</a></li><li><a href="#use-sharepoint-approval-for-document-publication-not-model-merge">Use SharePoint approval for document publication, not model merge</a></li><li><a href="#avoid-simultaneous-free-form-editing">Avoid simultaneous free-form editing</a></li><li><a href="#do-not-ask-users-to-manage-workbook-formulas">Do not ask users to manage workbook formulas</a></li><li><a href="#allow-offline-review-but-control-re-entry">Allow offline review, but control re-entry</a></li><li><a href="#handle-added-rows-carefully">Handle added rows carefully</a></li><li><a href="#handle-conflicting-reviewers-explicitly">Handle conflicting reviewers explicitly</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The business owner receives a mapping workbook.</p>
+<p>It contains 4,000 rows, 28 columns, several colour codes and three hidden sheets. The owner is asked to approve changes to customer and supplier mappings.</p>
+<p>The technical team expects the workbook to become part of a Git-controlled model repository.</p>
+<p>The business owner is told to:</p>
+<ul>
+<li>clone a repository;</li>
+<li>create a branch;</li>
+<li>edit YAML;</li>
+<li>commit the changes;</li>
+<li>open a pull request;</li>
+<li>review the diff.</li>
+</ul>
+<p>The process is technically controlled.</p>
+<p>It is operationally unrealistic.</p>
+<p>The owner returns the workbook by email with comments highlighted in yellow.</p>
+<p>A consultant copies those comments into the model files. Some are implemented. Some are interpreted differently. Several rows contain new values but no decision rationale. The resulting pull request is reviewed by developers who did not participate in the business discussion.</p>
+<p>Git now contains a clean technical history.</p>
+<p>It does not contain a reliable record of what the business actually approved.</p>
+<p>This creates a false choice:</p>
+<p>```text id=&quot;xls-gov-01&quot; Either business users work directly in Git</p>
+<p>or</p>
+<p>spreadsheet changes remain uncontrolled.</p>
+<pre><code>
+That choice is unnecessary.
+
+Business users can continue working in Excel while the programme maintains a canonical, validated and Git-controlled model.
+
+The important design principle is:
+
+&gt; Excel should be a governed review and input surface, not an independent source of model truth.
+
+The business user works in a familiar interface.
+
+The model-governance layer controls:
+
+- stable object identity;
+- allowed changes;
+- structural validation;
+- comparison with the approved baseline;
+- proposal creation;
+- impact analysis;
+- approval;
+- final merge.
+
+The spreadsheet does not need to become the architecture.
+
+It needs to participate safely in the architecture.
+
+## Why Excel remains difficult to replace
+
+Excel is not used only because organisations have failed to modernise.
+
+It remains useful because it supports work that is naturally tabular:
+
+- reviewing many mappings at once;
+- filtering by country, object or owner;
+- comparing source and target fields;
+- adding comments;
+- sorting gaps;
+- reviewing value lists;
+- working offline;
+- sharing with external teams;
+- collecting decisions during workshops.
+
+For many SAP migration, MDM and governance teams, these are legitimate requirements.
+
+A business owner may need to review 300 supplier attributes.
+
+A local team may need to filter only its country mappings.
+
+A migration analyst may need to compare current source values with proposed target values.
+
+A spreadsheet can be more efficient for these tasks than opening hundreds of model objects individually.
+
+The problem is not the spreadsheet interface.
+
+The problem appears when the workbook becomes:
+
+- the only source of truth;
+- detached from stable identities;
+- copied into many local versions;
+- edited without structural validation;
+- approved without a precise change boundary;
+- difficult to reconcile with configuration and datasets.
+
+The objective should therefore be controlled spreadsheet participation, not spreadsheet elimination.
+
+## Excel already provides useful local controls
+
+Excel supports data-validation rules that can restrict entered values, provide dropdown lists, display input guidance and show errors or warnings when users enter invalid content. Microsoft documents support for list, numeric, date, time, text-length and custom-formula validation rules, as well as configurable error behaviour.
+
+These features can help create a safer review workbook.
+
+For example, the workbook can restrict:
+
+- review status;
+- object type;
+- change action;
+- country code;
+- mapping status;
+- severity;
+- approval response.
+
+A reviewer might select only:
+
+```text id=&quot;xls-gov-02&quot;
+Approve
+Reject
+Needs clarification</code></pre>
+<p>rather than entering arbitrary status text.</p>
+<p>The workbook can display guidance when a user selects a cell:</p>
+<p>```text id=&quot;xls-gov-03&quot; Enter a proposed target value only when the mapping decision has been confirmed by the responsible data owner.</p>
+<pre><code>
+This reduces accidental variation.
+
+It does not make the workbook a fully governed model system.
+
+Spreadsheet validation is a useful first boundary, not the final control layer.
+
+## Version history is necessary but insufficient
+
+SharePoint document libraries can retain document versions, distinguish draft and published versions, support content approval, and use check-in and check-out controls with change comments. Microsoft describes these capabilities as mechanisms for controlling document versions through their lifecycle.
+
+This is better than distributing files through email.
+
+A team may be able to determine:
+
+- who changed the workbook;
+- when it changed;
+- which file version was approved;
+- whether an earlier file can be restored.
+
+But file version history still works at the document level.
+
+It does not automatically explain:
+
+- which model objects changed;
+- whether a referenced endpoint exists;
+- whether a local override conflicts with a global rule;
+- whether an observed source value has a valid target treatment;
+- whether the change affects tests or interfaces;
+- whether a proposed row is approved model truth or only a suggestion.
+
+Document control answers:
+
+&gt; Which workbook version was published?
+
+Model governance answers:
+
+&gt; Which model changes were approved, why, and what do they affect?
+
+Both layers can be used together.
+
+They should not be confused.
+
+## The canonical model should remain outside the workbook
+
+A controlled architecture separates three things.
+
+```text id=&quot;xls-gov-04&quot;
+Canonical model
+        ↓
+Generated review workbook
+        ↓
+Imported change proposal</code></pre>
+<h3 id="canonical-model">Canonical model</h3>
+<p>The current approved state.</p>
+<p>It contains stable, structured model objects and relationships.</p>
+<h3 id="review-workbook">Review workbook</h3>
+<p>A generated or controlled representation prepared for business review.</p>
+<p>It contains the relevant subset of model information in a usable tabular form.</p>
+<h3 id="change-proposal">Change proposal</h3>
+<p>The structured difference extracted from the returned workbook.</p>
+<p>It remains proposed until validation and human approval are complete.</p>
+<p>The returned workbook should not overwrite the canonical model directly.</p>
+<p>This boundary is essential.</p>
+<p>A spreadsheet can contain:</p>
+<ul>
+<li>accidental edits;</li>
+<li>broken formulas;</li>
+<li>deleted rows;</li>
+<li>copied content from an old version;</li>
+<li>comments without implementation intent;</li>
+<li>formatting changes;</li>
+<li>conflicting user edits.</li>
+</ul>
+<p>Those changes must be interpreted and validated before becoming model truth.</p>
+<h2 id="generate-the-workbook-from-a-known-baseline">Generate the workbook from a known baseline</h2>
+<p>Do not create a new review workbook manually from several files.</p>
+<p>Generate it from an identifiable canonical model baseline.</p>
+<p>For example:</p>
+<p>```text id=&quot;xls-gov-05&quot; Review package: SUPPLIER-MAPPING-DE-2026-07</p>
+<p>Generated from model baseline: supplier-model-v2.4</p>
+<p>Generated at: 14 July 2026</p>
+<p>Scope: Germany supplier mappings and contextual rules</p>
+<pre><code>
+This establishes the starting state.
+
+When the workbook returns, the import process can compare it with the same baseline.
+
+Without the baseline reference, the programme cannot distinguish:
+
+- a genuine new change;
+- an edit already approved elsewhere;
+- a value copied from an older workbook;
+- a row removed because the reviewer filtered it incorrectly;
+- a change based on a superseded model.
+
+## Give every row a stable identifier
+
+The most important spreadsheet column may not be the source or target field.
+
+It is the stable object identifier.
+
+Examples:
+
+```text id=&quot;xls-gov-06&quot;
+MAP-SUPPLIER-RISK-ERP-A
+ATTR-SUPPLIER-RISK
+RULE-SUPPLIER-RISK-REQUIRED-DE
+VLIST-SUPPLIER-RISK</code></pre>
+<p>The identifier allows the importer to determine which model object the row represents.</p>
+<p>Do not rely only on:</p>
+<ul>
+<li>row number;</li>
+<li>field label;</li>
+<li>worksheet position;</li>
+<li>source-field name;</li>
+<li>target-field name.</li>
+</ul>
+<p>Rows move.</p>
+<p>Names change.</p>
+<p>Two contexts may use the same display name.</p>
+<p>Stable identities allow the workbook to remain a view of the model rather than a detached table.</p>
+<h2 id="protect-identity-columns-from-casual-editing">Protect identity columns from casual editing</h2>
+<p>Some workbook fields should be read-only.</p>
+<p>Examples include:</p>
+<ul>
+<li>object ID;</li>
+<li>baseline version;</li>
+<li>object type;</li>
+<li>current lifecycle state;</li>
+<li>generated source reference;</li>
+<li>internal relationship IDs.</li>
+</ul>
+<p>Business reviewers normally do not need to edit these values.</p>
+<p>Allowing changes creates ambiguity:</p>
+<p>```text id=&quot;xls-gov-07&quot; Did the reviewer rename the object?</p>
+<p>Did they create a new object?</p>
+<p>Did they accidentally overwrite the identifier?</p>
+<pre><code>
+The workbook should separate:
+
+### Controlled identity fields
+
+Generated and protected.
+
+### Reviewable current-state fields
+
+Visible for context.
+
+### Proposal fields
+
+Explicitly editable.
+
+This is better than giving users a complete export and asking them to change anything they think is necessary.
+
+## Separate current state from proposed state
+
+A review workbook should not require reviewers to overwrite the current approved value.
+
+Use separate columns.
+
+For example:
+
+| Model ID | Current target | Proposed target | Review status | Rationale |
+|---|---|---|---|---|
+| MAP-CUST-0042 | KNVV-KDGRP | BUT000-BPKIND | Needs clarification | Current target appears incorrect |
+
+This preserves the original state in the workbook.
+
+The importer can identify the proposed difference explicitly.
+
+A weaker workbook contains only one `Target Field` column.
+
+After editing, the reader cannot see what changed without comparing file versions.
+
+Separate fields make the proposal visible even before Git processing.
+
+## Require an explicit change action
+
+A modified cell is not always an intentional model proposal.
+
+The reviewer may have:
+
+- corrected spelling;
+- added a note;
+- pasted a value temporarily;
+- changed formatting;
+- replaced a formula.
+
+Use an explicit action column:
+
+```text id=&quot;xls-gov-08&quot;
+No change
+Modify
+Add
+Retire
+Request clarification
+Reject current treatment</code></pre>
+<p>Only rows with a relevant action should be imported as candidate model changes.</p>
+<p>This avoids treating every workbook difference as semantic intent.</p>
+<h2 id="require-rationale-for-material-changes">Require rationale for material changes</h2>
+<p>A reviewer changing a mapping should explain why.</p>
+<p>Useful rationale categories include:</p>
+<ul>
+<li>incorrect source interpretation;</li>
+<li>incorrect target context;</li>
+<li>new business requirement;</li>
+<li>current dataset evidence;</li>
+<li>local legal requirement;</li>
+<li>target-model change;</li>
+<li>implementation defect;</li>
+<li>obsolete value;</li>
+<li>temporary deviation.</li>
+</ul>
+<p>The workbook can provide a controlled category and a free-text explanation.</p>
+<p>For example:</p>
+<p>```text id=&quot;xls-gov-09&quot; Change reason: Target context correction</p>
+<p>Rationale: Customer Group is maintained by sales area. The current mapping points to a central Business Partner field.</p>
+<pre><code>
+The rationale does not need to be an essay.
+
+It should be sufficient for another reviewer to understand the requested decision.
+
+## Do not use cell colour as the only meaning
+
+Programmes frequently assign meaning through colours:
+
+- green means approved;
+- yellow means review;
+- red means rejected;
+- blue means local change.
+
+This is visually convenient.
+
+It is structurally weak.
+
+Colours can be:
+
+- copied accidentally;
+- interpreted differently;
+- lost during export;
+- inaccessible to some users;
+- difficult to validate automatically.
+
+Colour may support the interface.
+
+The authoritative meaning should remain in explicit values:
+
+```text id=&quot;xls-gov-10&quot;
+review_status: approved</code></pre>
+<p>not only a green background.</p>
+<h2 id="comments-are-evidence-not-structured-decisions">Comments are evidence, not structured decisions</h2>
+<p>Spreadsheet comments are useful for discussion.</p>
+<p>They are poor as the only representation of a model change.</p>
+<p>A comment might say:</p>
+<blockquote>Use the local code here.</blockquote>
+<p>The importer cannot determine reliably:</p>
+<ul>
+<li>which code;</li>
+<li>which country;</li>
+<li>whether this is a proposal;</li>
+<li>who may approve it;</li>
+<li>whether it replaces the current value.</li>
+</ul>
+<p>Use comments for explanation.</p>
+<p>Use structured cells for:</p>
+<ul>
+<li>proposed value;</li>
+<li>context;</li>
+<li>action;</li>
+<li>status;</li>
+<li>rationale;</li>
+<li>owner.</li>
+</ul>
+<h2 id="design-the-workbook-for-one-review-task">Design the workbook for one review task</h2>
+<p>Do not create one giant workbook for every audience.</p>
+<p>A business owner does not need every technical column.</p>
+<p>A migration analyst may need source details that a legal reviewer does not.</p>
+<p>Generate role-specific workbooks.</p>
+<h3 id="business-definition-review">Business definition review</h3>
+<p>Show:</p>
+<ul>
+<li>attribute;</li>
+<li>definition;</li>
+<li>context;</li>
+<li>owner;</li>
+<li>proposed change;</li>
+<li>rationale.</li>
+</ul>
+<h3 id="mapping-review">Mapping review</h3>
+<p>Show:</p>
+<ul>
+<li>source endpoint;</li>
+<li>business attribute;</li>
+<li>target endpoint;</li>
+<li>transformation;</li>
+<li>dataset coverage;</li>
+<li>proposal.</li>
+</ul>
+<h3 id="value-list-review">Value-list review</h3>
+<p>Show:</p>
+<ul>
+<li>source value;</li>
+<li>frequency;</li>
+<li>current treatment;</li>
+<li>proposed target;</li>
+<li>applicability;</li>
+<li>decision.</li>
+</ul>
+<h3 id="ownership-review">Ownership review</h3>
+<p>Show:</p>
+<ul>
+<li>model object;</li>
+<li>current owner;</li>
+<li>proposed owner;</li>
+<li>criticality;</li>
+<li>open issues.</li>
+</ul>
+<p>The canonical objects remain the same.</p>
+<p>Only the review surface changes.</p>
+<h2 id="keep-technical-metadata-available-but-secondary">Keep technical metadata available but secondary</h2>
+<p>A workbook may still include technical metadata in protected or secondary sheets:</p>
+<ul>
+<li>internal identifiers;</li>
+<li>relationship references;</li>
+<li>export timestamp;</li>
+<li>checksum;</li>
+<li>baseline commit;</li>
+<li>import schema version.</li>
+</ul>
+<p>These fields help the import process confirm that the workbook is valid.</p>
+<p>They should not dominate the main review sheet.</p>
+<p>A useful pattern is:</p>
+<p>```text id=&quot;xls-gov-11&quot; Sheet 1: Review</p>
+<p>Sheet 2: Instructions</p>
+<p>Sheet 3: Reference values</p>
+<p>Sheet 4: Technical metadata</p>
+<pre><code>
+Do not hide essential business meaning in technical sheets.
+
+## Use controlled lists from the canonical model
+
+Dropdown values should be generated from current model state where practical.
+
+Examples include:
+
+- allowed lifecycle statuses;
+- valid countries;
+- current target endpoints;
+- approved value lists;
+- named owners;
+- change-reason categories.
+
+This reduces free-text variation.
+
+However, a reviewer may need to propose something that does not yet exist.
+
+Provide an explicit route:
+
+```text id=&quot;xls-gov-12&quot;
+Target selection:
+NEW OBJECT PROPOSED
+
+Proposed name:
+Supplier Review Status
+
+Reason:
+No current target attribute represents the concept.</code></pre>
+<p>Do not force users to select an incorrect existing value merely because the dropdown lacks the correct future option.</p>
+<h2 id="validate-the-workbook-before-import">Validate the workbook before import</h2>
+<p>The returned workbook should pass basic technical checks.</p>
+<p>Examples:</p>
+<ul>
+<li>expected worksheets exist;</li>
+<li>required columns exist;</li>
+<li>baseline identifier is present;</li>
+<li>object IDs are not duplicated;</li>
+<li>protected identity values are unchanged;</li>
+<li>action values are valid;</li>
+<li>proposed changes contain rationale;</li>
+<li>mandatory proposal fields are complete;</li>
+<li>rows belong to the exported scope.</li>
+</ul>
+<p>A failed workbook should produce an actionable report.</p>
+<p>For example:</p>
+<p>```text id=&quot;xls-gov-13&quot; Workbook import failed.</p>
+<p>Row 142: Object ID was changed from MAP-CUST-0042 to MAP-CUST-042.</p>
+<p>Row 287: Action is Modify, but Proposed Target is blank.</p>
+<p>Row 401: Object does not belong to baseline supplier-model-v2.4.</p>
+<pre><code>
+The system should not silently ignore invalid rows.
+
+## Compare the workbook with the baseline, not with the latest model
+
+Suppose the workbook was generated from baseline 2.4.
+
+While the business reviews it, another approved change creates baseline 2.5.
+
+The returned workbook should first be interpreted against 2.4 because that is the state the reviewer saw.
+
+Then the proposal should be checked against the current 2.5 model.
+
+This is similar to rebasing a change.
+
+Possible outcomes include:
+
+### No conflict
+
+The reviewed proposal still applies cleanly.
+
+### Technical conflict
+
+The same object changed in 2.5.
+
+### Semantic conflict
+
+The latest model introduced a related decision that changes the proposal’s meaning.
+
+### Superseded proposal
+
+The requested change has already been implemented.
+
+Do not import the workbook blindly into the latest state.
+
+## Convert spreadsheet changes into PatchProposals
+
+Martenweave’s current architecture uses canonical Markdown and YAML files, deterministic validation before indexing and proposal-first changes. AI-generated changes must not mutate the model silently; they enter as `PatchProposal` objects and become `ChangeRequest`s only after approval.
+
+Spreadsheet changes should follow the same boundary.
+
+```text id=&quot;xls-gov-14&quot;
+Returned workbook
+        ↓
+Import and structural checks
+        ↓
+Candidate row changes
+        ↓
+PatchProposal
+        ↓
+Validation
+        ↓
+Impact analysis
+        ↓
+Human review
+        ↓
+ChangeRequest
+        ↓
+Canonical model update</code></pre>
+<p>The spreadsheet itself is evidence of the reviewer’s input.</p>
+<p>The PatchProposal is the controlled representation of what that input would change.</p>
+<h2 id="generate-a-semantic-diff-for-final-approval">Generate a semantic diff for final approval</h2>
+<p>The business reviewer may approve the spreadsheet content.</p>
+<p>A separate final approval may still be required after import because:</p>
+<ul>
+<li>the importer interprets the changes;</li>
+<li>related canonical objects may need updates;</li>
+<li>impact analysis may reveal additional consequences;</li>
+<li>the current baseline may have changed.</li>
+</ul>
+<p>The final review should show a semantic diff.</p>
+<p>Example:</p>
+<p>```text id=&quot;xls-gov-15&quot; Reviewed workbook proposal: Change Customer Group target.</p>
+<p>Canonical changes generated:</p>
+<ul>
+<li>Modify MAP-CUST-0042 target endpoint</li>
+<li>Add sales-area context relationship</li>
+<li>Mark previous central endpoint mapping as retired</li>
+<li>Invalidate tests TC-CUST-18 and TC-CUST-22</li>
+<li>Request review from Integration Owner</li>
+</ul>
+<p>No automatic SAP change will be performed.</p>
+<pre><code>
+The reviewer can confirm whether the imported proposal reflects their intent.
+
+## Do not treat spreadsheet sign-off as unlimited approval
+
+A user may approve one row without understanding every generated consequence.
+
+The approval scope should be explicit.
+
+For example:
+
+```text id=&quot;xls-gov-16&quot;
+Business owner approval:
+Approves the target business meaning and country scope.
+
+Does not approve:
+- technical implementation;
+- interface compatibility;
+- migration timing.</code></pre>
+<p>Other reviewers may still be required.</p>
+<p>The workbook should not create the impression that one signature approves every architectural consequence.</p>
+<h2 id="preserve-the-returned-workbook-as-evidence">Preserve the returned workbook as evidence</h2>
+<p>The workbook can be retained as part of the proposal evidence.</p>
+<p>Record:</p>
+<ul>
+<li>file identifier;</li>
+<li>generated baseline;</li>
+<li>reviewer;</li>
+<li>submission date;</li>
+<li>checksum;</li>
+<li>imported changes;</li>
+<li>import result.</li>
+</ul>
+<p>Do not treat the workbook as the current model after import.</p>
+<p>It remains evidence of the review interaction.</p>
+<p>The canonical model and approved change history determine current truth.</p>
+<h2 id="use-sharepoint-approval-for-document-publication-not-model-merge">Use SharePoint approval for document publication, not model merge</h2>
+<p>SharePoint versioning and content approval can help control which workbook is considered the published review package. It can retain successive versions and distinguish drafts from approved published content.</p>
+<p>This is useful for:</p>
+<ul>
+<li>distributing one controlled workbook;</li>
+<li>preventing uncontrolled email copies;</li>
+<li>identifying the returned approved version;</li>
+<li>retaining document history.</li>
+</ul>
+<p>But a SharePoint content approval should not automatically merge model changes.</p>
+<p>The approved workbook still needs:</p>
+<ul>
+<li>structural import validation;</li>
+<li>baseline comparison;</li>
+<li>model validation;</li>
+<li>impact review.</li>
+</ul>
+<p>Document approval confirms the business-review artefact.</p>
+<p>Model approval confirms the canonical state change.</p>
+<h2 id="avoid-simultaneous-free-form-editing">Avoid simultaneous free-form editing</h2>
+<p>Coauthoring can be useful for workshops and joint review.</p>
+<p>It can also make proposal boundaries harder to understand.</p>
+<p>For critical model review, define:</p>
+<ul>
+<li>review period;</li>
+<li>named participants;</li>
+<li>editing responsibilities;</li>
+<li>comment resolution process;</li>
+<li>submission cutoff;</li>
+<li>final reviewer.</li>
+</ul>
+<p>The goal is not to prohibit collaboration.</p>
+<p>It is to know when the workbook moves from:</p>
+<p>```text id=&quot;xls-gov-17&quot; work in progress</p>
+<pre><code>
+to:
+
+```text id=&quot;xls-gov-18&quot;
+submitted proposal evidence</code></pre>
+<p>A continuously changing shared workbook should not be imported repeatedly without a defined submission event.</p>
+<h2 id="do-not-ask-users-to-manage-workbook-formulas">Do not ask users to manage workbook formulas</h2>
+<p>The programme should avoid controls that depend on reviewers preserving complex formulas manually.</p>
+<p>Users may:</p>
+<ul>
+<li>paste values over formulas;</li>
+<li>insert rows outside the controlled range;</li>
+<li>copy sheets;</li>
+<li>delete hidden references.</li>
+</ul>
+<p>Where formulas are necessary:</p>
+<ul>
+<li>protect them;</li>
+<li>validate them during import;</li>
+<li>treat their output as guidance rather than authoritative truth.</li>
+</ul>
+<p>Critical model validation should run outside the spreadsheet against structured objects.</p>
+<h2 id="allow-offline-review-but-control-re-entry">Allow offline review, but control re-entry</h2>
+<p>Offline work is often necessary:</p>
+<ul>
+<li>external partners;</li>
+<li>restricted environments;</li>
+<li>travel;</li>
+<li>workshop settings;</li>
+<li>limited repository access.</li>
+</ul>
+<p>An offline workbook can still participate in governance when it contains:</p>
+<ul>
+<li>baseline ID;</li>
+<li>export timestamp;</li>
+<li>scope;</li>
+<li>stable object IDs;</li>
+<li>schema version.</li>
+</ul>
+<p>When returned, it goes through the same import and conflict process.</p>
+<p>The programme should not refuse offline work.</p>
+<p>It should prevent an old offline workbook from silently overwriting a newer model.</p>
+<h2 id="handle-added-rows-carefully">Handle added rows carefully</h2>
+<p>A reviewer may add a row for a genuinely missing field.</p>
+<p>This should create a proposed new object, not an immediate canonical object.</p>
+<p>Required fields might include:</p>
+<ul>
+<li>proposed object type;</li>
+<li>business name;</li>
+<li>definition;</li>
+<li>context;</li>
+<li>owner;</li>
+<li>reason;</li>
+<li>evidence;</li>
+<li>suggested source or target.</li>
+</ul>
+<p>The import process should assign or propose a stable identifier according to policy.</p>
+<p>Example:</p>
+<p>```text id=&quot;xls-gov-19&quot; New object proposal: Local Construction Licence Number</p>
+<p>Type: Attribute</p>
+<p>Context: Country X, regulated construction suppliers</p>
+<p>Owner: Country Compliance</p>
+<p>Evidence: Local registration process</p>
+<p>Status: Candidate</p>
+<pre><code>
+The new object remains a proposal until reviewed.
+
+## Handle deleted rows carefully
+
+A missing row does not necessarily mean the reviewer wants to retire an object.
+
+It may have been:
+
+- filtered out;
+- deleted accidentally;
+- omitted by copy-paste;
+- moved to another worksheet.
+
+Retirement should require an explicit action:
+
+```text id=&quot;xls-gov-20&quot;
+Action:
+Retire
+
+Reason:
+Attribute no longer used after source-system replacement.
+
+Replacement:
+ATTR-SUPPLIER-RISK-V2</code></pre>
+<p>Never interpret row absence alone as approval to delete model truth.</p>
+<h2 id="handle-conflicting-reviewers-explicitly">Handle conflicting reviewers explicitly</h2>
+<p>Two reviewers may return different changes to the same object.</p>
+<p>For example:</p>
+<ul>
+<li>global owner approves one target;</li>
+<li>country owner requests another;</li>
+<li>migration architect proposes a default.</li>
+</ul>
+<p>Do not merge the workbooks in Excel and choose the most recent cell.</p>
+<p>Create competing proposals or one proposal with unresolved alternatives.</p>
+<p>```text id=&quot;xls-gov-21&quot; Object: ATTR-SUPPLIER-CLASS</p>
+<p>Global proposal: Use standard global classification.</p>
+<p>Country proposal: Add local regulatory category.</p>
+<p>Conflict: Local requirement may be a separate attribute rather than a value.</p>
+<pre><code>
+The conflict is a governance decision.
+
+The importer should expose it rather than solve it through last-write-wins behaviour.
+
+## Use issue creation for unresolved rows
+
+Not every workbook row should become a model patch.
+
+Some rows indicate missing knowledge.
+
+Examples:
+
+- source field unknown;
+- owner not agreed;
+- legal evidence missing;
+- target context disputed;
+- dataset unavailable.
+
+These should become structured gaps or issue drafts.
+
+Martenweave’s current pipeline supports evidence processing, gap and impact analysis, PatchProposals, and GitHub-ready issue or pull-request outputs.
+
+A useful distinction is:
+
+```text id=&quot;xls-gov-22&quot;
+Known treatment:
+Create PatchProposal.
+
+Unresolved question:
+Create issue or decision request.</code></pre>
+<p>Do not force uncertainty into a premature model value.</p>
+<h2 id="a-worked-example-customer-mapping-review">A worked example: customer mapping review</h2>
+<p>The canonical model contains:</p>
+<p>```text id=&quot;xls-gov-23&quot; MAP-CUSTOMER-GROUP-CRM-A</p>
+<p>Source: CRM_A.CUSTOMER_SEGMENT</p>
+<p>Target: SAP central BP classification</p>
+<p>Status: Approved</p>
+<pre><code>
+A generated workbook shows the current mapping.
+
+The business reviewer selects:
+
+```text id=&quot;xls-gov-24&quot;
+Action:
+Modify
+
+Proposed target:
+SAP sales-area Customer Group
+
+Reason:
+Current target does not represent sales-process segmentation.
+
+Context:
+Germany sales areas</code></pre>
+<p>The import process creates a proposal.</p>
+<p>Validation and impact analysis identify:</p>
+<ul>
+<li>target context changes from central to sales area;</li>
+<li>organisational expansion is required;</li>
+<li>six tests become stale;</li>
+<li>one interface consumes the central field;</li>
+<li>another country uses the same source mapping;</li>
+<li>no approved decision yet distinguishes segmentation from classification.</li>
+</ul>
+<p>The final result is not an automatic mapping update.</p>
+<p>It is a decision package.</p>
+<p>The spreadsheet made business input efficient.</p>
+<p>The model layer prevented a small-looking cell edit from becoming an uncontrolled architecture change.</p>
+<h2 id="another-example-value-mapping-review">Another example: value-mapping review</h2>
+<p>The source dataset contains:</p>
+<p>```text id=&quot;xls-gov-25&quot; A B C STRAT UNKNOWN</p>
+<pre><code>
+The generated workbook includes record frequencies and current treatments.
+
+The reviewer proposes:
+
+| Source | Records | Current treatment | Proposed treatment |
+|---|---:|---|---|
+| A | 48,000 | STANDARD | No change |
+| B | 12,000 | STANDARD | No change |
+| C | 7,000 | CRITICAL | Modify to STRATEGIC |
+| STRAT | 1,400 | Unmapped | STRATEGIC |
+| UNKNOWN | 900 | Unmapped | MIGRATION_REVIEW |
+
+The importer can create candidate value mappings.
+
+The governance process should still ask:
+
+- Does `C` really mean `STRATEGIC`?
+- Is `MIGRATION_REVIEW` an approved target value?
+- Is it temporary?
+- Which records may use it?
+- Do interfaces support it?
+- Who owns remediation?
+
+The spreadsheet is well suited to reviewing the population.
+
+It should not bypass the value-governance decision.
+
+## Another example: ownership review
+
+A generated workbook lists critical objects without owners.
+
+Business users propose names.
+
+The importer should distinguish:
+
+- person;
+- role;
+- accountable owner;
+- operational steward;
+- reviewer.
+
+An employee name should not become permanent governance architecture without a role.
+
+For example:
+
+```text id=&quot;xls-gov-26&quot;
+Proposed role:
+German Tax Data Owner
+
+Current assignee:
+Jane Smith</code></pre>
+<p>The role belongs in the model.</p>
+<p>The current person assignment may belong in an identity or operational system.</p>
+<h2 id="a-minimum-spreadsheet-governance-design">A minimum spreadsheet-governance design</h2>
+<p>A practical first implementation should include:</p>
+<ol>
+<li>Canonical model baseline.</li>
+<li>Generated workbook scoped to one review task.</li>
+<li>Stable object identifiers.</li>
+<li>Protected identity and metadata columns.</li>
+<li>Separate current and proposed values.</li>
+<li>Explicit change-action column.</li>
+<li>Controlled status and reason lists.</li>
+<li>Mandatory rationale for material changes.</li>
+<li>Import validation.</li>
+<li>Baseline conflict detection.</li>
+<li>PatchProposal generation.</li>
+<li>Semantic diff.</li>
+<li>Human approval.</li>
+<li>Git-recorded canonical change.</li>
+<li>Retained workbook evidence.</li>
+</ol>
+<p>This is enough to create a safe bridge between Excel and Git.</p>
+<h2 id="where-martenweave-fits">Where Martenweave fits</h2>
+<p>The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It transforms spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals.</p>
+<p>The current source version is listed as 0.5.0. The product remains CLI-driven and backend-first rather than a hosted editable enterprise application.</p>
+<p>Its current capabilities include:</p>
+<ul>
+<li>canonical Markdown and YAML files;</li>
+<li>deterministic validation;</li>
+<li>rebuildable SQLite and JSONL indexes;</li>
+<li>dataset profiling;</li>
+<li>gap detection;</li>
+<li>search;</li>
+<li>trace and impact analysis;</li>
+<li>patch proposals;</li>
+<li>issue-draft generation;</li>
+<li>CSV and XLSX-oriented workflows.</li>
+</ul>
+<p>The appropriate product direction is not to force every reviewer into the CLI.</p>
+<p>It is to make spreadsheets safe input and review surfaces around the canonical model.</p>
+<h2 id="a-martenweave-spreadsheet-flow">A Martenweave spreadsheet flow</h2>
+<p>```text id=&quot;xls-gov-27&quot; Canonical model in Git ↓ Generate scoped XLSX review package ↓ Business review in Excel ↓ Submit controlled workbook version ↓ Validate workbook structure ↓ Compare with exported baseline ↓ Create PatchProposal or issue drafts ↓ Run model validation and impact analysis ↓ Generate semantic review report ↓ Human approval ↓ Merge approved canonical change</p>
+<pre><code>
+This preserves the roles of both tools.
+
+Excel supports human review.
+
+Git protects model history.
+
+Martenweave connects them.
+
+## AI can help interpret spreadsheet feedback
+
+AI may assist with:
+
+- extracting proposed changes from comments;
+- categorising rationale;
+- identifying likely affected model objects;
+- comparing workbook versions;
+- drafting PatchProposals;
+- detecting contradictory reviewer input;
+- producing semantic summaries.
+
+AI output should remain provisional.
+
+A comment such as:
+
+&gt; Use group here.
+
+may refer to:
+
+- Customer Group;
+- Account Group;
+- Pricing Group;
+- local classification.
+
+An AI can suggest the likely interpretation.
+
+It should not silently select the target and modify the canonical model.
+
+The safe pattern remains:
+
+```text id=&quot;xls-gov-28&quot;
+AI interprets.
+Validator checks.
+Human confirms.
+Git records.</code></pre>
+<h2 id="what-business-users-should-see">What business users should see</h2>
+<p>The process should feel simple.</p>
+<p>A reviewer should be able to:</p>
+<ol>
+<li>Open the workbook.</li>
+<li>Filter to their scope.</li>
+<li>See the current approved state.</li>
+<li>Enter a proposed value.</li>
+<li>Select a change reason.</li>
+<li>Add a concise rationale.</li>
+<li>Mark the row ready for submission.</li>
+<li>Return or submit the workbook.</li>
+</ol>
+<p>They should not need to understand:</p>
+<ul>
+<li>Git branches;</li>
+<li>YAML syntax;</li>
+<li>SQLite indexes;</li>
+<li>object graph internals;</li>
+<li>merge strategies.</li>
+</ul>
+<p>Governance complexity belongs in the supporting system.</p>
+<p>It should not be transferred to every business participant.</p>
+<h2 id="what-technical-maintainers-should-see">What technical maintainers should see</h2>
+<p>The technical process needs more detail:</p>
+<ul>
+<li>workbook schema;</li>
+<li>baseline commit;</li>
+<li>object identifiers;</li>
+<li>imported delta;</li>
+<li>structural errors;</li>
+<li>conflicts;</li>
+<li>impact report;</li>
+<li>generated PatchProposal;</li>
+<li>canonical diff;</li>
+<li>required reviewers.</li>
+</ul>
+<p>This separation allows business accessibility without sacrificing technical control.</p>
+<h2 id="what-management-should-ask">What management should ask</h2>
+<ol>
+<li>Which system contains approved model truth?</li>
+<li>From which baseline was the workbook generated?</li>
+<li>Does every row have a stable model identifier?</li>
+<li>Are current and proposed values separated?</li>
+<li>Can reviewers state explicit change intent?</li>
+<li>Are spreadsheet validation rules used for basic input control?</li>
+<li>Can a returned workbook overwrite the model directly?</li>
+<li>How are deleted or added rows interpreted?</li>
+<li>What happens when the model changes during spreadsheet review?</li>
+<li>Are conflicting reviewers handled explicitly?</li>
+<li>Does the importer generate a semantic diff?</li>
+<li>Who gives final business and technical approval?</li>
+<li>Is the approved canonical change recorded in Git?</li>
+<li>Can business users participate without using developer tooling?</li>
+</ol>
+<p>A process that answers only the last question has optimised usability but not governance.</p>
+<p>A process that answers only the first thirteen has optimised control but may fail adoption.</p>
+<p>Both sides matter.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<h3 id="making-excel-the-canonical-source">Making Excel the canonical source</h3>
+<p>Multiple copies and weak relationship control eventually create competing truth.</p>
+<h3 id="forcing-business-owners-to-edit-yaml">Forcing business owners to edit YAML</h3>
+<p>Technical purity can destroy practical participation.</p>
+<h3 id="exporting-a-workbook-with-no-baseline-identifier">Exporting a workbook with no baseline identifier</h3>
+<p>The returned changes cannot be reconciled safely.</p>
+<h3 id="using-names-instead-of-stable-ids">Using names instead of stable IDs</h3>
+<p>Rows become ambiguous after renaming or reordering.</p>
+<h3 id="overwriting-current-values">Overwriting current values</h3>
+<p>Review intent becomes difficult to distinguish.</p>
+<h3 id="treating-all-cell-changes-as-proposals">Treating all cell changes as proposals</h3>
+<p>Formatting and accidental edits create noise.</p>
+<h3 id="treating-workbook-approval-as-automatic-model-merge">Treating workbook approval as automatic model merge</h3>
+<p>Structural validation and impact review are still required.</p>
+<h3 id="interpreting-deleted-rows-as-retirement">Interpreting deleted rows as retirement</h3>
+<p>Retirement must be explicit.</p>
+<h3 id="relying-on-colour-and-comments">Relying on colour and comments</h3>
+<p>Important meaning should be stored in structured values.</p>
+<h3 id="allowing-ai-to-infer-final-intent">Allowing AI to infer final intent</h3>
+<p>Ambiguous spreadsheet feedback requires human confirmation.</p>
+<h2 id="when-a-controlled-workbook-alone-may-be-enough">When a controlled workbook alone may be enough</h2>
+<p>A Git-backed registry may be unnecessary when:</p>
+<ul>
+<li>the domain is small;</li>
+<li>one workbook is authoritative;</li>
+<li>changes are rare;</li>
+<li>one stable team reviews them;</li>
+<li>dependencies are limited;</li>
+<li>version history and approval are sufficient.</li>
+</ul>
+<p>In that situation, improve the workbook with:</p>
+<ul>
+<li>stable IDs;</li>
+<li>data validation;</li>
+<li>explicit actions;</li>
+<li>versioning;</li>
+<li>approval;</li>
+<li>decision records.</li>
+</ul>
+<p>A model-registry workflow becomes more useful when:</p>
+<ul>
+<li>several workbooks represent the same model;</li>
+<li>multiple countries submit changes;</li>
+<li>mappings depend on datasets and rules;</li>
+<li>AI generates proposals;</li>
+<li>exact impact matters;</li>
+<li>later waves reuse the model;</li>
+<li>configuration and documentation frequently diverge.</li>
+</ul>
+<h2 id="our-conclusion">Our conclusion</h2>
+<p>Business users should not be forced into Git merely because model governance requires version control.</p>
+<p>They should work through interfaces suited to their task.</p>
+<p>For many SAP migration and MDG processes, that interface will remain Excel.</p>
+<p>The governance boundary should sit behind it.</p>
+<p>A safe process uses:</p>
+<ul>
+<li>a canonical model;</li>
+<li>generated scoped workbooks;</li>
+<li>stable identities;</li>
+<li>explicit proposed values;</li>
+<li>controlled spreadsheet input;</li>
+<li>validated import;</li>
+<li>semantic diff;</li>
+<li>proposal-based approval;</li>
+<li>Git-recorded history.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can a business owner review and propose a change in Excel while the programme still proves exactly which canonical objects would change, which dependencies are affected and who approved the final state?</blockquote>
+<p>When the answer is yes, the organisation has combined accessibility with control.</p>
+<p>When the answer is no, it will usually choose one failure mode:</p>
+<ul>
+<li>uncontrolled spreadsheets;</li>
+<li>or a technically governed process that business users avoid.</li>
+</ul>
+<p>The goal is not to replace Excel.</p>
+<p>It is to stop Excel from having to carry responsibilities it was never designed to carry alone.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We build practical model-governance infrastructure for SAP migration, MDG, MDM and AMS teams.</p>
+<p>Martenweave uses canonical model files, deterministic validation, dataset evidence, traceability and proposal-first change control. Spreadsheets remain useful review and input surfaces, while Git records the approved model history.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Microsoft documents that Excel data validation can restrict entered values, provide dropdown lists, display input messages and produce configurable errors or warnings.</p>
+<p>Microsoft also documents SharePoint document-library controls including versioning, major and minor versions, content approval, and check-in/check-out with change comments. These controls support document governance but do not by themselves create object-level model validation or impact analysis.</p>
+<p>The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.</p>
+<p>The core uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Martenweave is an independent project and is not affiliated with or endorsed by Microsoft, SAP or GitHub. Microsoft Excel, SharePoint, SAP, SAP S/4HANA, SAP Master Data Governance and GitHub are trademarks or registered trademarks of their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-use-github-as-a-change-control-layer-for-sap-data-models.html"><span>Previous</span>A country team changes one row in a mapping workbook.</a><a href="/blog/how-to-design-a-model-change-request-that-business-and-technical-teams.html"><span>Next</span>A business owner requests a change:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

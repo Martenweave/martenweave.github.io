@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Martenweave Builds a Searchable SQLite Model Index | Martenweave</title>
+    <meta
+      name="description"
+      content="A migration analyst searches for:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html" />
+    <meta property="og:title" content="How Martenweave Builds a Searchable SQLite Model Index | Martenweave" />
+    <meta property="og:description" content="A migration analyst searches for:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Martenweave Builds a Searchable SQLite Model Index | Martenweave" />
+    <meta name="twitter:description" content="A migration analyst searches for:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html",
+                        "name": "How Martenweave Builds a Searchable SQLite Model Index | Martenweave",
+                        "description": "A migration analyst searches for:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Martenweave Builds a Searchable SQLite Model Index",
+                                    "item": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html#content",
+                        "headline": "How Martenweave Builds a Searchable SQLite Model Index",
+                        "name": "How Martenweave Builds a Searchable SQLite Model Index",
+                        "description": "A migration analyst searches for:",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Martenweave Builds a Searchable SQLite Model Index</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How Martenweave Builds a Searchable SQLite Model Index</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">A migration analyst searches for:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#file-discovery">File discovery</a></li><li><a href="#parsing">Parsing</a></li><li><a href="#structural-validation">Structural validation</a></li><li><a href="#identity-validation">Identity validation</a></li><li><a href="#reference-validation">Reference validation</a></li><li><a href="#contextual-validation">Contextual validation</a></li><li><a href="#deleted-objects-disappear-reliably">Deleted objects disappear reliably</a></li><li><a href="#renamed-objects-do-not-leave-stale-rows">Renamed objects do not leave stale rows</a></li><li><a href="#changed-relationships-are-recalculated">Changed relationships are recalculated</a></li><li><a href="#schema-migrations-are-simpler">Schema migrations are simpler</a></li><li><a href="#debugging-becomes-easier">Debugging becomes easier</a></li><li><a href="#hidden-database-edits-are-erased">Hidden database edits are erased</a></li><li><a href="#object-registry">Object registry</a></li><li><a href="#type-specific-properties">Type-specific properties</a></li><li><a href="#relationships">Relationships</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A migration analyst searches for:</p>
+<pre><code class="language-text">Customer Group</code></pre>
+<p>The expected answer is not one document.</p>
+<p>The analyst needs to find a connected set of objects:</p>
+<ul>
+<li>the business attribute;</li>
+<li>the SAP field endpoint;</li>
+<li>source fields;</li>
+<li>active mappings;</li>
+<li>validation rules;</li>
+<li>ownership;</li>
+<li>migration evidence;</li>
+<li>approved decisions;</li>
+<li>open proposals;</li>
+<li>downstream dependencies.</li>
+</ul>
+<p>The canonical Martenweave repository may contain each of these as a separate Markdown and YAML object.</p>
+<p>That arrangement is useful for governance and review.</p>
+<p>It is not the most efficient representation for every query.</p>
+<p>Answering one search directly from the files could require the system to:</p>
+<ol>
+<li>discover every model file;</li>
+<li>parse YAML frontmatter;</li>
+<li>read Markdown bodies;</li>
+<li>validate object types;</li>
+<li>resolve references;</li>
+<li>build reverse relationships;</li>
+<li>search text;</li>
+<li>rank results;</li>
+<li>calculate connected objects.</li>
+</ol>
+<p>Repeating that process for every query would be wasteful.</p>
+<p>Martenweave therefore separates canonical storage from query access.</p>
+<blockquote>Canonical files preserve model truth. A generated SQLite index makes that truth searchable, queryable and traversable.</blockquote>
+<p>The public Martenweave demo flow currently validates the canonical repository and then generates three principal artefacts:</p>
+<pre><code class="language-text">generated/modelops.db
+generated/search_documents.jsonl
+generated/lineage_edges.jsonl</code></pre>
+<p>The documentation describes all three as disposable and rebuildable.</p>
+<p>This architecture creates two layers:</p>
+<pre><code class="language-text">Canonical layer:
+human-readable, versioned model objects
+
+Generated layer:
+optimised query, search and relationship projections</code></pre>
+<p>The SQLite database is not a second model.</p>
+<p>It is a compiled representation of the canonical one.</p>
+<p>---</p>
+<h1 id="think-of-the-index-as-a-build-artefact">Think of the index as a build artefact</h1>
+<p>A useful comparison is software compilation.</p>
+<p>Source code is written for review, maintenance and version control.</p>
+<p>A compiled artefact is created for execution.</p>
+<p>The executable may be faster and more convenient for a machine, but developers do not normally edit the executable to change the source programme.</p>
+<p>Martenweave follows a similar principle:</p>
+<pre><code class="language-text">Markdown and YAML model files
+→ parse
+→ validate
+→ normalise
+→ resolve references
+→ build SQLite and JSONL artefacts</code></pre>
+<p>The generated index is designed for consumption by:</p>
+<ul>
+<li>command-line queries;</li>
+<li>local APIs;</li>
+<li>generated viewers;</li>
+<li>agents;</li>
+<li>reports;</li>
+<li>impact analysis;</li>
+<li>lineage traversal.</li>
+</ul>
+<p>A model change still begins with canonical files or with a proposal that may eventually change them.</p>
+<p>It does not begin by editing a row in <code>modelops.db</code>.</p>
+<p>---</p>
+<h1 id="the-pipeline-begins-before-sqlite">The pipeline begins before SQLite</h1>
+<p>The most important part of index construction happens before the first row is inserted.</p>
+<p>A reliable build should proceed through several gates.</p>
+<h2 id="file-discovery">File discovery</h2>
+<p>The builder identifies canonical files inside the repository.</p>
+<p>It must distinguish them from:</p>
+<ul>
+<li>generated outputs;</li>
+<li>reports;</li>
+<li>sample datasets;</li>
+<li>documentation;</li>
+<li>archived material;</li>
+<li>temporary files.</li>
+</ul>
+<h2 id="parsing">Parsing</h2>
+<p>For each canonical object, the builder reads:</p>
+<ul>
+<li>YAML frontmatter;</li>
+<li>Markdown content;</li>
+<li>repository path;</li>
+<li>file metadata needed for the build.</li>
+</ul>
+<h2 id="structural-validation">Structural validation</h2>
+<p>The object is checked against its declared type.</p>
+<p>An Attribute and a Decision should not require the same fields.</p>
+<h2 id="identity-validation">Identity validation</h2>
+<p>The system checks:</p>
+<ul>
+<li>missing IDs;</li>
+<li>duplicate IDs;</li>
+<li>unsupported object types;</li>
+<li>invalid statuses;</li>
+<li>malformed references.</li>
+</ul>
+<h2 id="reference-validation">Reference validation</h2>
+<p>Links between objects are checked before they are projected into database relationships.</p>
+<h2 id="contextual-validation">Contextual validation</h2>
+<p>Domain-specific rules can determine whether an object is structurally plausible in its declared context.</p>
+<p>Only after these stages should the system publish a searchable index.</p>
+<p>The Martenweave README explicitly places deterministic validation before indexing and states that object IDs, types, references and domain-context rules are validated.</p>
+<p>---</p>
+<h1 id="why-validation-must-precede-search">Why validation must precede search</h1>
+<p>Search systems can make invalid information look authoritative.</p>
+<p>Suppose a mapping refers to:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GRUP</code></pre>
+<p>when the real object is:</p>
+<pre><code class="language-text">ATTR-CUSTOMER-GROUP</code></pre>
+<p>If the index accepts the broken reference:</p>
+<ul>
+<li>the mapping may appear in search;</li>
+<li>the attribute may appear separately;</li>
+<li>trace may fail to connect them;</li>
+<li>impact analysis may undercount dependencies;</li>
+<li>users may assume no relationship exists.</li>
+</ul>
+<p>The search result is technically available but structurally misleading.</p>
+<p>The same problem appears when:</p>
+<ul>
+<li>two objects share an ID;</li>
+<li>a rule references a retired attribute;</li>
+<li>a mapping points to a Decision instead of an Attribute;</li>
+<li>an owner reference does not exist;</li>
+<li>an object declares an unsupported status.</li>
+</ul>
+<p>An index builder should therefore refuse or clearly qualify invalid state rather than make it easier to browse.</p>
+<p>Searchability is not a substitute for integrity.</p>
+<p>---</p>
+<h1 id="the-full-rebuild-is-deliberate">The full rebuild is deliberate</h1>
+<p>Martenweave currently documents <code>build-index</code> as a full rebuild that drops and recreates generated database tables. The design is intended to keep generated state deterministic and aligned with canonical files.</p>
+<p>A full rebuild may appear less sophisticated than incremental synchronisation.</p>
+<p>For the current product stage, it has strong advantages.</p>
+<h2 id="deleted-objects-disappear-reliably">Deleted objects disappear reliably</h2>
+<p>If a canonical file is removed, the corresponding database representation disappears during rebuild.</p>
+<p>No special delete event needs to be preserved.</p>
+<h2 id="renamed-objects-do-not-leave-stale-rows">Renamed objects do not leave stale rows</h2>
+<p>The new build reflects the current canonical baseline.</p>
+<h2 id="changed-relationships-are-recalculated">Changed relationships are recalculated</h2>
+<p>Reverse links and graph edges do not depend on correctly processing every historical update event.</p>
+<h2 id="schema-migrations-are-simpler">Schema migrations are simpler</h2>
+<p>The builder can recreate the generated schema from the currently supported definition.</p>
+<h2 id="debugging-becomes-easier">Debugging becomes easier</h2>
+<p>Given the same repository baseline and compatible build version, the team can investigate the same input state.</p>
+<h2 id="hidden-database-edits-are-erased">Hidden database edits are erased</h2>
+<p>A manual modification to the generated database does not survive the next build.</p>
+<p>This is a governance property, not only a technical convenience.</p>
+<p>---</p>
+<h1 id="full-rebuild-versus-incremental-update">Full rebuild versus incremental update</h1>
+<p>A future large-scale deployment may eventually need more incremental behaviour.</p>
+<p>That does not mean the canonical architecture should change.</p>
+<p>The distinction is:</p>
+<pre><code class="language-text">Canonical authority:
+always repository files
+
+Build strategy:
+full or incremental projection</code></pre>
+<p>An incremental builder could process only changed files while still treating the database as disposable.</p>
+<p>But incremental indexing introduces more complexity:</p>
+<ul>
+<li>change detection;</li>
+<li>delete handling;</li>
+<li>dependency invalidation;</li>
+<li>reverse-edge updates;</li>
+<li>failed partial builds;</li>
+<li>schema migrations;</li>
+<li>recovery from interrupted writes;</li>
+<li>stale-cache detection.</li>
+</ul>
+<p>A full rebuild is often the safer first implementation when the model repository remains within a manageable size.</p>
+<p>The current README notes that a configurable warning may be emitted as a repository grows and that very large repositories may eventually require a higher limit or separation into multiple repositories.</p>
+<p>That is a reasonable boundary.</p>
+<p>Do not introduce distributed indexing machinery before repository scale proves it necessary.</p>
+<p>---</p>
+<h1 id="from-heterogeneous-objects-to-a-common-projection">From heterogeneous objects to a common projection</h1>
+<p>Canonical objects are not identical.</p>
+<p>An Attribute may contain:</p>
+<ul>
+<li>definition;</li>
+<li>entity;</li>
+<li>domain;</li>
+<li>owners;</li>
+<li>value list;</li>
+<li>endpoints.</li>
+</ul>
+<p>A Mapping may contain:</p>
+<ul>
+<li>source;</li>
+<li>target;</li>
+<li>transformation;</li>
+<li>conditions;</li>
+<li>decision references.</li>
+</ul>
+<p>A Rule may contain:</p>
+<ul>
+<li>applicability;</li>
+<li>expression;</li>
+<li>severity;</li>
+<li>lifecycle stage.</li>
+</ul>
+<p>A Decision may contain:</p>
+<ul>
+<li>question;</li>
+<li>alternatives;</li>
+<li>outcome;</li>
+<li>authority;</li>
+<li>affected objects.</li>
+</ul>
+<p>The database needs to preserve their differences while still supporting common queries.</p>
+<p>A conceptual projection can be divided into three layers.</p>
+<h2 id="object-registry">Object registry</h2>
+<p>One row per canonical object with common fields such as:</p>
+<pre><code class="language-text">id
+type
+name
+status
+domain
+path
+title
+summary</code></pre>
+<h2 id="type-specific-properties">Type-specific properties</h2>
+<p>Structured data that differs by object type.</p>
+<p>This can be represented through:</p>
+<ul>
+<li>dedicated tables;</li>
+<li>normalised property tables;</li>
+<li>JSON columns;</li>
+<li>a combination of these approaches.</li>
+</ul>
+<h2 id="relationships">Relationships</h2>
+<p>Explicit links between object IDs.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Attribute → Entity
+Mapping → Source endpoint
+Mapping → Target endpoint
+Rule → Attribute
+Decision → Affected object
+Evidence → Supported finding
+Proposal → Changed object</code></pre>
+<p>The exact current Martenweave table schema is not documented as a public compatibility contract.</p>
+<p>That is appropriate.</p>
+<p>Users should depend on supported CLI, export and API behaviour rather than on undocumented internal table names.</p>
+<p>---</p>
+<h1 id="do-not-make-the-database-schema-the-public-model-schema">Do not make the database schema the public model schema</h1>
+<p>This distinction is easy to miss.</p>
+<p>There are at least three schemas involved:</p>
+<h2 id="canonical-object-schema">Canonical object schema</h2>
+<p>Defines what an Attribute, Mapping, Decision or other model object means.</p>
+<h2 id="generated-database-schema">Generated database schema</h2>
+<p>Defines how those objects are efficiently stored for local querying.</p>
+<h2 id="external-api-or-export-schema">External API or export schema</h2>
+<p>Defines what supported consumers receive.</p>
+<p>These schemas may overlap.</p>
+<p>They should not be assumed to be identical.</p>
+<p>For example, the database may contain:</p>
+<ul>
+<li>normalised lowercase text;</li>
+<li>computed search fields;</li>
+<li>reverse relationships;</li>
+<li>build metadata;</li>
+<li>source-file hashes;</li>
+<li>cached risk scores.</li>
+</ul>
+<p>These fields help indexing.</p>
+<p>They are not necessarily canonical model properties.</p>
+<p>Keeping the layers separate allows database optimisation without redefining the product’s domain model.</p>
+<p>---</p>
+<h1 id="search-needs-a-document-representation">Search needs a document representation</h1>
+<p>Relational filtering is useful when the user knows exactly what to request:</p>
+<pre><code class="language-text">Show every object of type Attribute.</code></pre>
+<p>The Martenweave demo exposes this through a type-oriented query command:</p>
+<pre><code class="language-bash">martenweave query --type Attribute --repo examples/customer_bp_model</code></pre>
+<p>It also exposes a free-text search command:</p>
+<pre><code class="language-bash">martenweave search &quot;Customer Group&quot; --repo examples/customer_bp_model</code></pre>
+<p>Both commands are part of the public demo path.</p>
+<p>Free-text search requires a different projection.</p>
+<p>A search document may combine selected information from the canonical object:</p>
+<pre><code class="language-text">ID:
+ATTR-CUST-SALES-CUSTOMER-GROUP
+
+Type:
+Attribute
+
+Name:
+Customer Group
+
+Domain:
+Customer
+
+Body:
+Customer Group is a sales-area-level commercial classification...
+
+References:
+FEP-S4-KNVV-KDGRP
+MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP
+DEC-CUSTOMER-GROUP-SOURCE-017</code></pre>
+<p>This flattened document allows a search engine to find the object through:</p>
+<ul>
+<li>exact ID;</li>
+<li>label;</li>
+<li>body text;</li>
+<li>SAP field name;</li>
+<li>linked decision;</li>
+<li>aliases;</li>
+<li>related source terms.</li>
+</ul>
+<p>The public build generates <code>search_documents.jsonl</code>, which makes the search projection portable outside SQLite as well.</p>
+<p>---</p>
+<h1 id="why-produce-both-sqlite-and-jsonl">Why produce both SQLite and JSONL?</h1>
+<p>SQLite and JSONL solve different access problems.</p>
+<h2 id="sqlite">SQLite</h2>
+<p>Useful for:</p>
+<ul>
+<li>structured filters;</li>
+<li>joins;</li>
+<li>counts;</li>
+<li>local API queries;</li>
+<li>reverse relationships;</li>
+<li>combined search and metadata filtering;</li>
+<li>generated views.</li>
+</ul>
+<h2 id="search-jsonl">Search JSONL</h2>
+<p>Useful for:</p>
+<ul>
+<li>inspection;</li>
+<li>external indexing;</li>
+<li>agent pipelines;</li>
+<li>transfer into another search system;</li>
+<li>debugging the search projection;</li>
+<li>line-oriented processing.</li>
+</ul>
+<h2 id="lineage-jsonl">Lineage JSONL</h2>
+<p>Useful for:</p>
+<ul>
+<li>graph traversal;</li>
+<li>external visualisation;</li>
+<li>agent context;</li>
+<li>inspecting derived edges;</li>
+<li>integrating with another lineage consumer.</li>
+</ul>
+<p>The generated files represent different projections of the same canonical repository.</p>
+<p>They should agree on object identity.</p>
+<p>They do not need to contain the same fields.</p>
+<p>---</p>
+<h1 id="sqlite-is-a-practical-local-index">SQLite is a practical local index</h1>
+<p>SQLite is suitable for a backend-first local model registry for several reasons.</p>
+<p>It stores a complete relational database in a portable file format and supports indexes, transactions and SQL querying without requiring a separately managed database server. Its official documentation defines a stable on-disk database format and describes the database as a structured collection of pages containing tables, indexes and related database structures.</p>
+<p>For Martenweave, this means the generated index can be:</p>
+<ul>
+<li>built locally;</li>
+<li>passed to another process;</li>
+<li>opened by the CLI;</li>
+<li>used by a local API;</li>
+<li>consumed by a static-viewer generator;</li>
+<li>deleted and recreated.</li>
+</ul>
+<p>The choice fits the product’s current local-first direction.</p>
+<p>Martenweave does not need PostgreSQL, Elasticsearch, Kafka or a graph platform merely to make a repository of model objects searchable.</p>
+<p>Those tools may become relevant under different scale or concurrency requirements.</p>
+<p>They are not prerequisites for proving the core value.</p>
+<p>---</p>
+<h1 id="full-text-search-is-not-the-same-as-sql-filtering">Full-text search is not the same as SQL filtering</h1>
+<p>A normal relational query may find:</p>
+<pre><code class="language-sql">SELECT *
+FROM objects
+WHERE type = 'Attribute';</code></pre>
+<p>It is less suitable for a user entering:</p>
+<pre><code class="language-text">customer group sales area mapping</code></pre>
+<p>A full-text index tokenises documents and allows the engine to retrieve documents containing relevant terms.</p>
+<p>SQLite provides the FTS5 virtual-table extension for full-text search. FTS5 supports term, phrase, prefix, proximity, column-filter and Boolean queries, as well as relevance ordering and snippet or highlighting functions.</p>
+<p>However, Martenweave’s public documentation does not currently promise that every <code>search</code> implementation detail is based specifically on FTS5.</p>
+<p>That internal choice should remain replaceable.</p>
+<p>The public product contract should focus on behaviour:</p>
+<ul>
+<li>find objects by ID;</li>
+<li>find objects by name;</li>
+<li>search explanatory text;</li>
+<li>filter by type and context;</li>
+<li>return stable object references;</li>
+<li>connect results to trace and impact.</li>
+</ul>
+<p>An internal search implementation can evolve without changing canonical model files.</p>
+<p>---</p>
+<h1 id="search-ranking-should-reflect-model-intent">Search ranking should reflect model intent</h1>
+<p>Plain text frequency is not enough.</p>
+<p>A query for:</p>
+<pre><code class="language-text">Customer Group</code></pre>
+<p>should probably rank:</p>
+<ol>
+<li>the Attribute named Customer Group;</li>
+<li>its SAP field endpoint;</li>
+<li>active mappings;</li>
+<li>governing decisions;</li>
+<li>rules;</li>
+<li>evidence mentioning the term;</li>
+<li>unrelated objects where the phrase appears incidentally.</li>
+</ol>
+<p>A useful ranking model can assign different weights to:</p>
+<ul>
+<li>exact ID match;</li>
+<li>exact name match;</li>
+<li>alias match;</li>
+<li>field-endpoint match;</li>
+<li>title match;</li>
+<li>type;</li>
+<li>status;</li>
+<li>body occurrence;</li>
+<li>relationship distance.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Exact object ID:
+very strong
+
+Exact canonical name:
+strong
+
+Alias or SAP field:
+strong
+
+Markdown body:
+moderate
+
+Indirect linked object:
+contextual boost</code></pre>
+<p>The ranking policy is part of product usefulness.</p>
+<p>It should not become canonical truth.</p>
+<p>Two ranking versions may order results differently while representing the same underlying model.</p>
+<p>---</p>
+<h1 id="search-should-preserve-object-type">Search should preserve object type</h1>
+<p>A user must be able to distinguish:</p>
+<pre><code class="language-text">Customer Group — Attribute
+Customer Group mapping — Mapping
+Customer Group mandatory rule — Rule
+Customer Group source decision — Decision
+Customer Group profile — Evidence</code></pre>
+<p>Returning one flattened list without object types recreates document-search ambiguity.</p>
+<p>Each search result should expose enough structured context:</p>
+<ul>
+<li>ID;</li>
+<li>type;</li>
+<li>name or title;</li>
+<li>status;</li>
+<li>domain;</li>
+<li>short excerpt;</li>
+<li>key relationships;</li>
+<li>source path.</li>
+</ul>
+<p>This allows the user or agent to decide which object to inspect next.</p>
+<p>---</p>
+<h1 id="search-should-not-hide-lifecycle-state">Search should not hide lifecycle state</h1>
+<p>A retired rule and an approved rule may contain the same words.</p>
+<p>A rejected proposal may describe a change more clearly than the active object.</p>
+<p>Search results therefore need lifecycle context.</p>
+<p>Examples:</p>
+<pre><code class="language-text">APPROVED
+DRAFT
+PENDING_REVIEW
+RETIRED
+REJECTED
+SUPERSEDED</code></pre>
+<p>The system may rank approved objects higher by default.</p>
+<p>It should still allow users to find:</p>
+<ul>
+<li>historical decisions;</li>
+<li>rejected proposals;</li>
+<li>retired mappings;</li>
+<li>superseded definitions.</li>
+</ul>
+<p>Otherwise, search becomes convenient but historically misleading.</p>
+<p>---</p>
+<h1 id="the-index-turns-forward-references-into-reverse-navigation">The index turns forward references into reverse navigation</h1>
+<p>Canonical objects often declare forward references.</p>
+<p>A Mapping may declare:</p>
+<pre><code class="language-yaml">source: FEP-CRM-SEGMENT
+target: FEP-S4-KNVV-KDGRP</code></pre>
+<p>The SAP field endpoint does not need to list every mapping that targets it.</p>
+<p>During indexing, the system can derive the reverse relationship:</p>
+<pre><code class="language-text">FEP-S4-KNVV-KDGRP
+← targeted by MAP-CRM-SEGMENT-TO-CUSTOMER-GROUP</code></pre>
+<p>This is one of the main values of the generated index.</p>
+<p>It can answer:</p>
+<ul>
+<li>Which mappings target this field?</li>
+<li>Which rules govern this attribute?</li>
+<li>Which decisions affect this object?</li>
+<li>Which proposals modify it?</li>
+<li>Which evidence supports it?</li>
+</ul>
+<p>The canonical repository remains normalised around explicit references.</p>
+<p>The index adds efficient reverse lookup.</p>
+<p>---</p>
+<h1 id="lineage-edges-are-another-compiled-output">Lineage edges are another compiled output</h1>
+<p>Martenweave separately generates <code>lineage_edges.jsonl</code>.</p>
+<p>That output can represent relationships such as:</p>
+<pre><code class="language-text">source field
+→ mapping
+→ business attribute
+→ target field
+→ rule
+→ downstream consumer</code></pre>
+<p>The demo flow uses <code>trace</code> and <code>impact</code> to show how a business attribute, physical SAP field endpoint, mappings, issues, decisions and evidence stay connected.</p>
+<p>This separation is useful.</p>
+<p>The relational database may contain all object and relationship information.</p>
+<p>The line-oriented edge export provides a simple integration format for:</p>
+<ul>
+<li>graph visualisation;</li>
+<li>external analytics;</li>
+<li>agent retrieval;</li>
+<li>troubleshooting;</li>
+<li>alternative graph stores.</li>
+</ul>
+<p>Again, the JSONL file is generated.</p>
+<p>An edge becomes canonical only because it is derived from approved object references—not because someone manually edited <code>lineage_edges.jsonl</code>.</p>
+<p>---</p>
+<h1 id="freshness-is-part-of-correctness">Freshness is part of correctness</h1>
+<p>A generated index can be structurally correct and still be outdated.</p>
+<p>Suppose a canonical mapping changes after the last build.</p>
+<p>The database continues returning the old mapping.</p>
+<p>This is a stale-index problem.</p>
+<p>Martenweave exposes an <code>index-fresh</code> command alongside <code>build-index</code> in its demo and README.</p>
+<p>A freshness check may conceptually compare:</p>
+<ul>
+<li>canonical file modification state;</li>
+<li>repository or content hash;</li>
+<li>build manifest;</li>
+<li>index build timestamp;</li>
+<li>expected schema version.</li>
+</ul>
+<p>The exact mechanism may evolve.</p>
+<p>The user-facing result should remain simple:</p>
+<pre><code class="language-text">Fresh:
+Index represents current canonical state.
+
+Stale:
+Canonical repository changed after the index build.
+
+Missing:
+No generated index exists.
+
+Incompatible:
+Index was built with an unsupported schema or tool version.</code></pre>
+<p>Search results should not silently come from stale state.</p>
+<p>---</p>
+<h1 id="build-metadata-should-be-explicit">Build metadata should be explicit</h1>
+<p>A generated index should identify its origin.</p>
+<p>Useful build metadata includes:</p>
+<pre><code class="language-text">tool version
+schema version
+repository path
+canonical baseline or commit
+build timestamp
+object count
+relationship count
+validation result
+content fingerprint</code></pre>
+<p>This supports several questions:</p>
+<ul>
+<li>Which model baseline produced this database?</li>
+<li>Was validation successful?</li>
+<li>Was the database generated before or after a particular decision?</li>
+<li>Can the same result be rebuilt?</li>
+<li>Is an attached database safe to compare with another one?</li>
+</ul>
+<p>Build metadata is generated evidence.</p>
+<p>It does not belong in every canonical object.</p>
+<p>---</p>
+<h1 id="determinism-has-practical-limits">Determinism has practical limits</h1>
+<p>A deterministic build does not necessarily mean every output byte must always be identical.</p>
+<p>Outputs may include:</p>
+<ul>
+<li>timestamps;</li>
+<li>filesystem paths;</li>
+<li>environment details;</li>
+<li>tool-version metadata.</li>
+</ul>
+<p>The stronger requirement is semantic determinism:</p>
+<blockquote>The same canonical model baseline should produce the same governed objects, references, searchable content and lineage relationships.</blockquote>
+<p>Where exact reproducibility matters, variable metadata can be separated from core index content.</p>
+<p>The release smoke described in the current demo documentation runs the command matrix against bundled examples and asserts stable JSON output.</p>
+<p>This is useful because deterministic interfaces are easier to test and integrate.</p>
+<p>---</p>
+<h1 id="search-documents-should-be-inspectable">Search documents should be inspectable</h1>
+<p>Generated search content can fail in subtle ways:</p>
+<ul>
+<li>important fields omitted;</li>
+<li>Markdown headings duplicated;</li>
+<li>IDs not indexed;</li>
+<li>status missing;</li>
+<li>sensitive evidence copied unintentionally;</li>
+<li>body text truncated too aggressively;</li>
+<li>aliases ignored.</li>
+</ul>
+<p>A line-oriented search-document export gives developers and evaluators a way to inspect what the search layer actually sees.</p>
+<p>For each object, they can verify:</p>
+<ul>
+<li>identity;</li>
+<li>title;</li>
+<li>searchable text;</li>
+<li>metadata;</li>
+<li>source path;</li>
+<li>linked terms.</li>
+</ul>
+<p>This is especially important for agent integration.</p>
+<p>An agent can only retrieve what the index exposes.</p>
+<p>If the search projection omits ownership, decisions or applicability, the agent may produce incomplete analysis even though the canonical files contain the information.</p>
+<p>---</p>
+<h1 id="do-not-index-every-piece-of-evidence-indiscriminately">Do not index every piece of evidence indiscriminately</h1>
+<p>Searchability can create information-governance risks.</p>
+<p>A canonical evidence object may reference:</p>
+<ul>
+<li>confidential ticket;</li>
+<li>personal data;</li>
+<li>sensitive dataset;</li>
+<li>client document;</li>
+<li>restricted legal analysis.</li>
+</ul>
+<p>The generated search document should include only the information appropriate for the index.</p>
+<p>Possible approaches include:</p>
+<ul>
+<li>indexing evidence metadata but not full content;</li>
+<li>storing a redacted summary;</li>
+<li>keeping secure source references;</li>
+<li>excluding sensitive fields;</li>
+<li>separating indexes by access boundary.</li>
+</ul>
+<p>The local-first architecture does not automatically solve access control.</p>
+<p>It reduces hosted dependencies.</p>
+<p>Repository and generated-artifact permissions still matter.</p>
+<p>---</p>
+<h1 id="query-and-search-are-complementary">Query and search are complementary</h1>
+<p>A structured query answers:</p>
+<pre><code class="language-text">Show approved Attributes in the Customer domain.</code></pre>
+<p>A full-text search answers:</p>
+<pre><code class="language-text">Where is sales-area customer classification discussed?</code></pre>
+<p>A graph traversal answers:</p>
+<pre><code class="language-text">What is connected to KNVV-KDGRP?</code></pre>
+<p>An impact analysis answers:</p>
+<pre><code class="language-text">What may be affected if Customer Group changes?</code></pre>
+<p>These are different operations.</p>
+<p>A mature model index supports all four without forcing them into one search box.</p>
+<p>The current Martenweave command set already separates:</p>
+<ul>
+<li><code>query</code>;</li>
+<li><code>search</code>;</li>
+<li><code>trace</code>;</li>
+<li><code>impact</code>;</li>
+<li><code>owners</code>;</li>
+<li><code>health</code>;</li>
+<li><code>scorecard</code>;</li>
+<li><code>gap-report</code>.</li>
+</ul>
+<p>This separation reflects the different questions users ask of the same model.</p>
+<p>---</p>
+<h1 id="search-should-lead-to-investigation-not-act-as-the-conclusion">Search should lead to investigation, not act as the conclusion</h1>
+<p>A result for Customer Group should be an entry point.</p>
+<p>From the result, a user should be able to inspect:</p>
+<ul>
+<li>the canonical object;</li>
+<li>active mappings;</li>
+<li>decisions;</li>
+<li>evidence;</li>
+<li>upstream sources;</li>
+<li>downstream fields;</li>
+<li>open proposals;</li>
+<li>ownership.</li>
+</ul>
+<p>A search engine that returns only text snippets risks reducing the model registry to document search.</p>
+<p>Martenweave’s value is that the result has identity and relationships.</p>
+<p>The user can continue from:</p>
+<pre><code class="language-text">search
+→ object
+→ trace
+→ evidence
+→ impact
+→ proposal</code></pre>
+<p>That sequence turns discovery into governed investigation.</p>
+<p>---</p>
+<h1 id="static-viewer-generation-uses-the-same-index">Static viewer generation uses the same index</h1>
+<p>The current public demo can generate a local static viewer from <code>modelops.db</code>.</p>
+<p>Expected viewer outputs include:</p>
+<ul>
+<li>object lists;</li>
+<li>object detail pages;</li>
+<li>gap pages;</li>
+<li>decision pages;</li>
+<li>owner pages;</li>
+<li>a search index;</li>
+<li>a viewer manifest.</li>
+</ul>
+<p>The viewer is documented as local, static and read-only; canonical files remain authoritative.</p>
+<p>This demonstrates why the generated database is useful.</p>
+<p>The same index can support several delivery surfaces without changing the canonical layer:</p>
+<pre><code class="language-text">CLI
+local API
+static viewer
+reports
+agent tools</code></pre>
+<p>The product can improve its user experience while retaining one model source.</p>
+<p>---</p>
+<h1 id="a-read-only-viewer-is-an-architectural-safeguard">A read-only viewer is an architectural safeguard</h1>
+<p>An editable viewer may be useful later.</p>
+<p>The current read-only design avoids an unresolved write path.</p>
+<p>If a viewer allows direct updates, it must answer:</p>
+<ul>
+<li>Does the edit change SQLite only?</li>
+<li>Does it edit a canonical file?</li>
+<li>Does it create a proposal?</li>
+<li>Which validator runs?</li>
+<li>Which branch receives the change?</li>
+<li>Who approves it?</li>
+<li>How is the index refreshed?</li>
+</ul>
+<p>Until this path is explicit, read-only access is safer.</p>
+<p>The user can inspect the model without creating a second authority.</p>
+<p>---</p>
+<h1 id="index-failure-should-not-corrupt-canonical-truth">Index failure should not corrupt canonical truth</h1>
+<p>A build may fail because:</p>
+<ul>
+<li>one object is invalid;</li>
+<li>the database file is locked;</li>
+<li>disk space is insufficient;</li>
+<li>an unsupported schema is encountered;</li>
+<li>generated output cannot be written.</li>
+</ul>
+<p>The canonical repository should remain untouched.</p>
+<p>A robust builder should avoid leaving a half-published index that appears current.</p>
+<p>Possible strategies include:</p>
+<ol>
+<li>build into a temporary location;</li>
+<li>complete validation and writes;</li>
+<li>verify generated artefacts;</li>
+<li>replace the previous index atomically where practical;</li>
+<li>update build metadata only after success.</li>
+</ol>
+<p>The precise implementation may differ.</p>
+<p>The principle is stable:</p>
+<blockquote>Failure to build an access layer must not mutate model truth.</blockquote>
+<p>---</p>
+<h1 id="transactions-matter-during-generation">Transactions matter during generation</h1>
+<p>SQLite supports transactional updates, allowing a set of database changes to commit together or roll back on failure.</p>
+<p>For a generated index, this helps ensure that users do not observe:</p>
+<ul>
+<li>new objects with old edges;</li>
+<li>updated search text with stale metadata;</li>
+<li>partially deleted rows;</li>
+<li>incomplete reverse relationships.</li>
+</ul>
+<p>SQLite’s file format and transaction mechanisms are designed around maintaining a consistent database state across commits and recovery.</p>
+<p>Even when the builder performs a full rebuild, transactional publication or temporary-database replacement can reduce partial-state risks.</p>
+<p>---</p>
+<h1 id="indexes-inside-the-index">Indexes inside the index</h1>
+<p>The term “index” is overloaded.</p>
+<p><code>modelops.db</code> is an application-level generated model index.</p>
+<p>Inside SQLite, database indexes may also accelerate particular queries.</p>
+<p>Examples include indexes on:</p>
+<ul>
+<li>object ID;</li>
+<li>type;</li>
+<li>status;</li>
+<li>domain;</li>
+<li>source path;</li>
+<li>relationship source;</li>
+<li>relationship target.</li>
+</ul>
+<p>SQLite’s query-planning documentation explains how indexes can reduce the amount of data scanned for supported queries and how the query planner selects among available access paths.</p>
+<p>The internal indexes should follow observed query patterns.</p>
+<p>Creating many speculative indexes can increase build cost and storage without improving real usage.</p>
+<p>---</p>
+<h1 id="scale-should-be-measured-by-operations-not-object-count-alone">Scale should be measured by operations, not object count alone</h1>
+<p>Two repositories with the same object count may behave differently.</p>
+<p>One may contain:</p>
+<ul>
+<li>short definitions;</li>
+<li>few relationships;</li>
+<li>simple queries.</li>
+</ul>
+<p>Another may contain:</p>
+<ul>
+<li>large Markdown bodies;</li>
+<li>dense lineage;</li>
+<li>thousands of evidence links;</li>
+<li>many full-text terms;</li>
+<li>broad impact traversals.</li>
+</ul>
+<p>Useful scale measures include:</p>
+<ul>
+<li>canonical file count;</li>
+<li>total searchable text;</li>
+<li>edge count;</li>
+<li>rebuild duration;</li>
+<li>database size;</li>
+<li>search latency;</li>
+<li>trace depth;</li>
+<li>impact fan-out;</li>
+<li>memory usage.</li>
+</ul>
+<p>Optimisation should target measured bottlenecks.</p>
+<p>A million-object distributed architecture is irrelevant if the current pilot contains two hundred governed objects.</p>
+<p>---</p>
+<h1 id="repository-partitioning-is-a-governance-decision">Repository partitioning is a governance decision</h1>
+<p>When a model grows, one response is to split it into several repositories.</p>
+<p>Possible boundaries include:</p>
+<ul>
+<li>domain;</li>
+<li>programme;</li>
+<li>region;</li>
+<li>client;</li>
+<li>environment;</li>
+<li>data-product group.</li>
+</ul>
+<p>This affects:</p>
+<ul>
+<li>ownership;</li>
+<li>cross-repository references;</li>
+<li>releases;</li>
+<li>search;</li>
+<li>impact analysis;</li>
+<li>access control.</li>
+</ul>
+<p>Partitioning should not be introduced merely because a directory feels large.</p>
+<p>The team first needs to understand:</p>
+<ul>
+<li>whether the full rebuild is genuinely slow;</li>
+<li>whether ownership boundaries differ;</li>
+<li>whether security requires separation;</li>
+<li>whether cross-domain analysis remains important.</li>
+</ul>
+<p>A single repository gives simple global consistency.</p>
+<p>Multiple repositories give stronger isolation but require a federation strategy.</p>
+<p>---</p>
+<h1 id="what-the-index-should-never-become">What the index should never become</h1>
+<p>The generated database should not become:</p>
+<h2 id="a-hidden-write-store">A hidden write store</h2>
+<p>Canonical changes must not live only in SQLite.</p>
+<h2 id="a-second-approval-system">A second approval system</h2>
+<p>Review state belongs in canonical or operational workflow records.</p>
+<h2 id="a-production-master-data-database">A production master-data database</h2>
+<p>It indexes model knowledge, not every business record.</p>
+<h2 id="a-replacement-for-sap-mdg">A replacement for SAP MDG</h2>
+<p>It does not run master-data governance transactions.</p>
+<h2 id="a-general-enterprise-search-platform">A general enterprise search platform</h2>
+<p>Its search is scoped to registered model knowledge.</p>
+<h2 id="an-opaque-agent-memory">An opaque agent memory</h2>
+<p>Every retrieved result should remain traceable to canonical objects.</p>
+<p>Protecting these boundaries keeps the product focused.</p>
+<p>---</p>
+<h1 id="a-practical-build-sequence">A practical build sequence</h1>
+<p>A current Martenweave evaluation can demonstrate the architecture with the bundled Customer and Business Partner example.</p>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model
+
+martenweave build-index \
+  --repo examples/customer_bp_model \
+  --jsonl
+
+martenweave index-fresh \
+  --repo examples/customer_bp_model
+
+martenweave search &quot;Customer Group&quot; \
+  --repo examples/customer_bp_model
+
+martenweave query \
+  --type Attribute \
+  --repo examples/customer_bp_model
+
+martenweave trace \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model
+
+martenweave impact \
+  FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model</code></pre>
+<p>These commands reflect the documented public demo sequence.</p>
+<p>The evaluation should then delete the generated directory and rebuild it.</p>
+<p>That proves the most important property:</p>
+<blockquote>Search and lineage are generated capabilities, not hidden authoritative state.</blockquote>
+<p>---</p>
+<h1 id="acceptance-criteria-for-a-trustworthy-index">Acceptance criteria for a trustworthy index</h1>
+<p>A searchable model index is useful when it satisfies several conditions.</p>
+<h2 id="complete">Complete</h2>
+<p>Every valid canonical object expected in the build is represented.</p>
+<h2 id="referentially-coherent">Referentially coherent</h2>
+<p>Relationships connect stable object IDs.</p>
+<h2 id="fresh">Fresh</h2>
+<p>The index identifies whether it matches the current repository baseline.</p>
+<h2 id="rebuildable">Rebuildable</h2>
+<p>Deleting generated files does not lose model truth.</p>
+<h2 id="inspectable">Inspectable</h2>
+<p>Search documents and lineage edges can be examined.</p>
+<h2 id="traceable">Traceable</h2>
+<p>Every database result leads back to a canonical source object.</p>
+<h2 id="deterministic">Deterministic</h2>
+<p>Equivalent canonical input produces equivalent semantic output.</p>
+<h2 id="read-only-as-authority">Read-only as authority</h2>
+<p>No independent database edit changes approved truth.</p>
+<h2 id="portable">Portable</h2>
+<p>The index can be used locally without requiring a hosted service.</p>
+<h2 id="replaceable">Replaceable</h2>
+<p>Internal search implementation can evolve without changing canonical model files.</p>
+<p>---</p>
+<h1 id="common-failure-modes">Common failure modes</h1>
+<h2 id="indexing-before-validation">Indexing before validation</h2>
+<p>Broken references become searchable.</p>
+<h2 id="updating-rows-incrementally-without-reliable-deletion">Updating rows incrementally without reliable deletion</h2>
+<p>Removed objects remain visible.</p>
+<h2 id="omitting-source-paths">Omitting source paths</h2>
+<p>Users cannot trace results back to canonical files.</p>
+<h2 id="treating-search-ranking-as-truth">Treating search ranking as truth</h2>
+<p>Popular or frequently mentioned objects appear more authoritative than approved ones.</p>
+<h2 id="hiding-status">Hiding status</h2>
+<p>Retired and approved objects look equivalent.</p>
+<h2 id="indexing-sensitive-evidence-bodies">Indexing sensitive evidence bodies</h2>
+<p>Local search leaks information beyond its intended scope.</p>
+<h2 id="allowing-ui-edits-directly-against-sqlite">Allowing UI edits directly against SQLite</h2>
+<p>The generated database becomes a shadow source of truth.</p>
+<h2 id="storing-computed-relationships-only-in-the-database">Storing computed relationships only in the database</h2>
+<p>The repository cannot explain how edges were derived.</p>
+<h2 id="no-freshness-check">No freshness check</h2>
+<p>Users search an outdated baseline.</p>
+<h2 id="publishing-half-built-output">Publishing half-built output</h2>
+<p>Objects, search documents and edges disagree.</p>
+<p>---</p>
+<h1 id="future-improvements-should-preserve-the-contract">Future improvements should preserve the contract</h1>
+<p>Martenweave may later improve:</p>
+<ul>
+<li>search ranking;</li>
+<li>tokenisation;</li>
+<li>multilingual search;</li>
+<li>fuzzy matching;</li>
+<li>prefix search;</li>
+<li>aliases;</li>
+<li>filtering;</li>
+<li>incremental builds;</li>
+<li>cross-repository search;</li>
+<li>vector retrieval;</li>
+<li>graph visualisation.</li>
+</ul>
+<p>These changes can be valuable.</p>
+<p>They should preserve the architectural contract:</p>
+<pre><code class="language-text">Canonical files remain authoritative.
+
+Generated indexes remain reproducible.
+
+Search results remain traceable.
+
+Writes become proposals or controlled file changes.
+
+Implementation details remain replaceable.</code></pre>
+<p>Vector embeddings, for example, may improve semantic retrieval.</p>
+<p>They should be another generated projection.</p>
+<p>An embedding should never become the only representation of model meaning.</p>
+<p>---</p>
+<h1 id="why-this-architecture-matters-for-agents">Why this architecture matters for agents</h1>
+<p>An agent investigating Customer Group needs fast context.</p>
+<p>Reading every repository file on every request is inefficient.</p>
+<p>The generated index can provide:</p>
+<ul>
+<li>candidate objects;</li>
+<li>exact IDs;</li>
+<li>summaries;</li>
+<li>related mappings;</li>
+<li>decisions;</li>
+<li>evidence;</li>
+<li>lineage edges.</li>
+</ul>
+<p>The agent can then retrieve the canonical objects needed for deeper analysis.</p>
+<p>A safe pattern is:</p>
+<pre><code class="language-text">Agent query
+→ generated search index
+→ stable object IDs
+→ canonical source retrieval
+→ trace and impact
+→ reviewable proposal</code></pre>
+<p>The index improves recall and speed.</p>
+<p>Canonical files preserve evidence and authority.</p>
+<p>The agent should not cite an opaque search-result row as model truth without retaining the source-object reference.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>The SQLite index is not the heart of Martenweave.</p>
+<p>The canonical model repository is.</p>
+<p>But without an index, the repository would be harder to use for:</p>
+<ul>
+<li>search;</li>
+<li>querying;</li>
+<li>trace;</li>
+<li>impact analysis;</li>
+<li>local APIs;</li>
+<li>generated viewers;</li>
+<li>agent retrieval.</li>
+</ul>
+<p>The generated index turns reviewed model objects into an operationally useful knowledge layer.</p>
+<p>Its design depends on several disciplined choices:</p>
+<ol>
+<li>validate before indexing;</li>
+<li>rebuild from canonical state;</li>
+<li>preserve stable IDs;</li>
+<li>compile explicit relationships;</li>
+<li>create searchable documents;</li>
+<li>expose freshness;</li>
+<li>keep outputs inspectable;</li>
+<li>prevent database edits from becoming authoritative;</li>
+<li>retain traceability back to source files;</li>
+<li>scale only when measured need appears.</li>
+</ol>
+<p>SQLite is valuable here because it offers a compact, portable and queryable relational layer without requiring a separately operated database service. SQLite also offers optional full-text-search capabilities and ordinary relational indexes when those mechanisms fit the implementation.</p>
+<p>The specific table layout can evolve.</p>
+<p>The architectural promise should not:</p>
+<blockquote>Delete <code>modelops.db</code>, rebuild it from the canonical repository, and recover the same approved model relationships and searchable knowledge.</blockquote>
+<p>That is what makes the database an index rather than another source of truth.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It keeps model truth in canonical files and generates SQLite, search and lineage projections for efficient local use.</p>
+<p>The objective is not to create another database that teams must reconcile manually.</p>
+<p>It is to make a governed model repository fast enough for real investigation, reporting and agent workflows while remaining fully rebuildable.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>The current Martenweave public demo validates canonical files and generates <code>modelops.db</code>, <code>search_documents.jsonl</code> and <code>lineage_edges.jsonl</code>. The artefacts are documented as disposable and rebuildable.</p>
+<p>The same demo exposes separate commands for free-text search, type-based query, trace and impact analysis, and uses the generated database to create a static local read-only viewer.</p>
+<p>Martenweave Core currently defines canonical Markdown and YAML files as the source of truth, generated indexes as disposable, deterministic validation as the first gate and full index rebuilding as the current consistency strategy.</p>
+<p>The current command set includes validation, index building, freshness checking, search, structured query, trace, impact, ownership analysis, health reporting, scorecards and dataset-readiness operations.</p>
+<p>SQLite’s official documentation describes FTS5 as a virtual-table module for full-text search, supporting phrases, prefixes, proximity, column filters, Boolean expressions and relevance-related functions.</p>
+<p>SQLite’s official query-planner documentation explains how relational indexes support efficient lookup paths, while its file-format documentation describes the structured portable database-file representation used by SQLite.</p>
+<p>The exact internal Martenweave database schema and search implementation should not be treated as a stable public contract unless separately documented. Users should depend on canonical schemas and supported CLI, API and export interfaces.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SQLite or SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-canonical-model-files-should-remain-the-source-of-truth.html"><span>Previous</span>A business owner updates Customer Group in an Excel review file.</a><a href="/blog/how-deterministic-model-validation-works.html"><span>Next</span>A migration analyst adds a new mapping:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

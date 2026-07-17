@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context | Martenweave</title>
+    <meta
+      name="description"
+      content="When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html" />
+    <meta property="og:title" content="How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context | Martenweave" />
+    <meta property="og:description" content="When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context | Martenweave" />
+    <meta name="twitter:description" content="When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html",
+                        "name": "How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context | Martenweave",
+                        "description": "When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context",
+                                    "item": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html#content",
+                        "headline": "How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context",
+                        "name": "How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context",
+                        "description": "When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML.",
+                        "url": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-convert-a-mapping-workbook-into-a-canonical-model-without-losing.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How We Convert a Mapping Workbook into a Canonical Model Without Losing Business Context</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 17 min read</p><p class="blog-summary">When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#business-concept">Business concept</a></li><li><a href="#source-implementation">Source implementation</a></li><li><a href="#target-implementation">Target implementation</a></li><li><a href="#the-attribute">The Attribute</a></li><li><a href="#the-source-endpoints">The source endpoints</a></li><li><a href="#the-mapping">The Mapping</a></li><li><a href="#the-fallback">The fallback</a></li><li><a href="#the-evidence">The Evidence</a></li><li><a href="#the-decision">The Decision</a></li><li><a href="#the-finding">The Finding</a></li><li><a href="#step-1-inspect">Step 1: inspect</a></li><li><a href="#step-2-classify">Step 2: classify</a></li><li><a href="#step-3-match">Step 3: match</a></li><li><a href="#step-4-propose">Step 4: propose</a></li><li><a href="#step-5-validate">Step 5: validate</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>When we receive a migration mapping workbook, our first instinct should not be to convert every row into YAML.</p>
+<p>That would preserve the cells.</p>
+<p>It might lose the model.</p>
+<p>A serious mapping workbook contains more than source and target fields. It usually contains years of accumulated project knowledge:</p>
+<ul>
+<li>business definitions;</li>
+<li>field interpretations;</li>
+<li>organisational scope;</li>
+<li>exceptions;</li>
+<li>temporary defaults;</li>
+<li>unresolved questions;</li>
+<li>workshop decisions;</li>
+<li>technical assumptions;</li>
+<li>ownership;</li>
+<li>evidence references;</li>
+<li>implementation status.</li>
+</ul>
+<p>Much of this context is not stored in clearly labelled columns.</p>
+<p>It may exist in:</p>
+<ul>
+<li>cell comments;</li>
+<li>colours;</li>
+<li>hidden sheets;</li>
+<li>merged cells;</li>
+<li>formulas;</li>
+<li>notes such as “check with Finance”;</li>
+<li>filenames such as <code>FINAL_v8_APPROVED</code>;</li>
+<li>conversations outside the workbook.</li>
+</ul>
+<p>If we simply import rows, we can create a structured representation that looks cleaner while becoming less truthful.</p>
+<p>The real product problem is therefore not:</p>
+<blockquote>How do we move Excel into Markdown or YAML?</blockquote>
+<p>It is:</p>
+<blockquote>How do we identify the business objects, claims, decisions and dependencies hidden inside a workbook, preserve their context, and turn them into a model that can be validated and changed safely?</blockquote>
+<p>Our answer is not to eliminate the workbook.</p>
+<p>We change its role.</p>
+<p>The workbook remains a useful review and collaboration surface.</p>
+<p>The canonical model becomes the source of truth.</p>
+<p>Martenweave’s current architecture is designed around that separation. Canonical model files own truth, generated indexes remain disposable, deterministic validation happens before indexing, and AI-generated changes are represented as reviewable proposals rather than silent mutations.</p>
+<p>Our working principle is:</p>
+<pre><code>Workbook:
+human collaboration and evidence intake
+
+Canonical model:
+stable business and technical truth
+
+Generated workbook:
+reviewable projection of the model
+
+Workbook edits:
+candidate changes, not automatic truth</code></pre>
+<p>This article explains how we make that transition using one continuous Product planning case.</p>
+<p>---</p>
+<h1 id="the-workbook-we-receive">The workbook we receive</h1>
+<p>The migration team gives us a workbook called:</p>
+<pre><code>Product_Planning_Mapping_FINAL_v7.xlsx</code></pre>
+<p>The main sheet contains rows for Product planning fields.</p>
+<p>One row looks approximately like this:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Source</th><th scope="col">Target</th><th scope="col">Mapping</th><th scope="col">Status</th><th scope="col">Comment</th></tr></thead><tbody><tr><td><code>PLANNER_GROUP</code></td><td>MRP Controller</td><td>Lookup</td><td>Approved</td><td>Plant-specific; default 001 where missing</td></tr></tbody></table></div>
+<p>At first glance, the row appears understandable.</p>
+<p>It tells us that:</p>
+<ul>
+<li>Planner Group is the source;</li>
+<li>MRP Controller is the target;</li>
+<li>a lookup performs the conversion;</li>
+<li>the Mapping is approved;</li>
+<li>Plant affects the result;</li>
+<li><code>001</code> is used as a default.</li>
+</ul>
+<p>But the row hides almost every question that matters.</p>
+<p>What does “Plant-specific” mean?</p>
+<p>Where does Plant come from?</p>
+<p>Is Plant a Mapping input or only a comment?</p>
+<p>Which lookup table is current?</p>
+<p>Does default <code>001</code> apply to every Plant?</p>
+<p>Was the default approved for production or only for a mock load?</p>
+<p>Does “Approved” apply to the Mapping, the target field, the default or the entire row?</p>
+<p>Who approved it?</p>
+<p>Which evidence supports the conclusion?</p>
+<p>How many Product Plant records use the fallback?</p>
+<p>Does the implemented transformation match the workbook?</p>
+<p>A direct row-to-object conversion cannot answer these questions.</p>
+<p>We need to reconstruct the model that the row is trying to describe.</p>
+<p>---</p>
+<h1 id="we-begin-by-treating-the-workbook-as-evidence">We begin by treating the workbook as evidence</h1>
+<p>The workbook is not automatically authoritative because somebody called it “final.”</p>
+<p>We first register it as an observed source.</p>
+<p>Conceptually:</p>
+<pre><code>Evidence:
+Product_Planning_Mapping_FINAL_v7.xlsx
+
+Observed:
+Sheet contains a row linking PLANNER_GROUP
+to MRP Controller.
+
+Observed note:
+“Plant-specific; default 001 where missing.”
+
+Authority:
+Not yet established.</code></pre>
+<p>This distinction is essential.</p>
+<p>The workbook proves that the project documented a particular interpretation.</p>
+<p>It does not by itself prove that:</p>
+<ul>
+<li>the interpretation is current;</li>
+<li>the logic was implemented;</li>
+<li>the default was formally approved;</li>
+<li>no later Decision superseded it.</li>
+</ul>
+<p>We preserve the workbook, its fingerprint, its date and its source.</p>
+<p>We do not immediately promote every cell into canonical truth.</p>
+<p>The W3C PROV model makes a similar general distinction useful for provenance systems: information can be represented as entities generated or used by activities and associated with agents, while derivation and attribution remain explicit relationships rather than implicit assumptions.</p>
+<p>Martenweave does not need to reproduce PROV-O in full.</p>
+<p>We do need the same discipline:</p>
+<blockquote>We record where a claim came from before deciding whether the claim becomes model truth.</blockquote>
+<p>---</p>
+<h1 id="we-reconstruct-the-business-sentence">We reconstruct the business sentence</h1>
+<p>Before modelling fields, we write the business interpretation in plain language.</p>
+<p>From the workbook row, source data and project notes, we may derive this candidate statement:</p>
+<blockquote>For each Product Plant, MRP Controller is derived from legacy Planner Group through a Plant-specific conversion. Where no approved conversion exists, controller <code>001</code> has been used as a temporary fallback.</blockquote>
+<p>This sentence is more valuable than the original row because it exposes the important concepts:</p>
+<ul>
+<li>Product Plant;</li>
+<li>MRP Controller;</li>
+<li>Planner Group;</li>
+<li>Plant;</li>
+<li>conversion;</li>
+<li>fallback;</li>
+<li>temporary status.</li>
+</ul>
+<p>It also exposes uncertainty.</p>
+<p>The sentence does not yet tell us whether the fallback is approved for the current baseline.</p>
+<p>That becomes an explicit Finding rather than an assumption hidden in a comment.</p>
+<p>---</p>
+<h1 id="we-identify-the-grain-before-the-fields">We identify the grain before the fields</h1>
+<p>The most important modelling decision is not the source column.</p>
+<p>It is the business grain.</p>
+<p>The workbook says:</p>
+<pre><code>Target:
+MRP Controller</code></pre>
+<p>We need to know whether MRP Controller belongs to:</p>
+<ul>
+<li>global Product;</li>
+<li>Product Plant;</li>
+<li>MRP Area;</li>
+<li>another planning context.</li>
+</ul>
+<p>In our case, it belongs to Product Plant.</p>
+<p>That changes the entire interpretation.</p>
+<p>The Mapping is not:</p>
+<pre><code>Planner Group
+→ MRP Controller</code></pre>
+<p>It is:</p>
+<pre><code>Planner Group
++
+Plant
+→ Product Plant MRP Controller</code></pre>
+<p>Without this distinction, we might import a technically neat but semantically wrong model.</p>
+<p>We therefore create or confirm the relevant canonical objects:</p>
+<pre><code>Entity:
+Product
+
+Entity:
+Plant
+
+Entity:
+Product Plant
+
+Relationship:
+Product is extended to Plant
+
+Attribute:
+Product Plant MRP Controller</code></pre>
+<p>The workbook row becomes meaningful only after it is attached to the correct Entity grain.</p>
+<p>---</p>
+<h1 id="we-separate-business-attributes-from-physical-fields">We separate business Attributes from physical fields</h1>
+<p>The workbook places source and target columns side by side.</p>
+<p>That format encourages us to treat the physical fields as the model.</p>
+<p>We do not.</p>
+<p>We separate three layers.</p>
+<h2 id="business-concept">Business concept</h2>
+<pre><code>Product Plant MRP Controller</code></pre>
+<h2 id="source-implementation">Source implementation</h2>
+<pre><code>Legacy field:
+PLANNER_GROUP</code></pre>
+<h2 id="target-implementation">Target implementation</h2>
+<pre><code>SAP Product Plant MRP Controller endpoint</code></pre>
+<p>Plant is represented separately as a contextual source input.</p>
+<p>This allows the business Attribute to remain stable even when:</p>
+<ul>
+<li>the source system changes;</li>
+<li>the source column is renamed;</li>
+<li>the SAP endpoint changes;</li>
+<li>another interface consumes the value;</li>
+<li>a custom implementation is retired.</li>
+</ul>
+<p>The workbook row described one implementation path.</p>
+<p>The canonical model describes the reusable concept and its current implementation.</p>
+<p>---</p>
+<h1 id="we-assign-stable-ids">We assign stable IDs</h1>
+<p>The workbook identifies the logic through:</p>
+<ul>
+<li>sheet name;</li>
+<li>row number;</li>
+<li>human-readable labels.</li>
+</ul>
+<p>Those references are fragile.</p>
+<p>We create stable IDs such as:</p>
+<pre><code>ENT-PRODUCT
+ENT-PLANT
+ENT-PRODUCT-PLANT
+
+ATTR-PRODUCT-PLANT-MRP-CONTROLLER
+
+FEP-LEGACY-PLANNER-GROUP
+FEP-LEGACY-PLANT
+FEP-S4-PRODUCT-PLANT-MRP-CONTROLLER
+
+MAP-PRODUCT-PLANT-MRP-CONTROLLER</code></pre>
+<p>The exact naming convention can vary.</p>
+<p>The requirement does not.</p>
+<p>Each important object needs an identity that survives:</p>
+<ul>
+<li>workbook sorting;</li>
+<li>file renaming;</li>
+<li>documentation changes;</li>
+<li>implementation replacement;</li>
+<li>new migration waves.</li>
+</ul>
+<p>Stable IDs let the same Mapping be referenced from:</p>
+<ul>
+<li>dataset readiness;</li>
+<li>validation diagnostics;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>Findings;</li>
+<li>PatchProposals;</li>
+<li>GitHub issues;</li>
+<li>AMS incidents.</li>
+</ul>
+<p>The model becomes a connected system rather than a set of document locations.</p>
+<p>---</p>
+<h1 id="we-split-the-row-into-distinct-canonical-objects">We split the row into distinct canonical objects</h1>
+<p>The original row combined several concerns.</p>
+<p>We separate them.</p>
+<h2 id="the-attribute">The Attribute</h2>
+<pre><code>Product Plant MRP Controller</code></pre>
+<p>It contains:</p>
+<ul>
+<li>definition;</li>
+<li>Entity context;</li>
+<li>owner;</li>
+<li>business purpose;</li>
+<li>criticality.</li>
+</ul>
+<h2 id="the-source-endpoints">The source endpoints</h2>
+<pre><code>Legacy Planner Group
+Legacy Plant</code></pre>
+<p>They contain:</p>
+<ul>
+<li>source system;</li>
+<li>physical location;</li>
+<li>datatype;</li>
+<li>observed values;</li>
+<li>dataset references.</li>
+</ul>
+<h2 id="the-mapping">The Mapping</h2>
+<pre><code>Planner Group + Plant
+→ Product Plant MRP Controller</code></pre>
+<p>It contains:</p>
+<ul>
+<li>direct input;</li>
+<li>contextual input;</li>
+<li>transformation type;</li>
+<li>value-list reference;</li>
+<li>applicability.</li>
+</ul>
+<h2 id="the-fallback">The fallback</h2>
+<pre><code>MRP Controller 001</code></pre>
+<p>It contains:</p>
+<ul>
+<li>scope;</li>
+<li>reason;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>status.</li>
+</ul>
+<h2 id="the-evidence">The Evidence</h2>
+<pre><code>Workbook version
+Mock-load profile
+Transformation output</code></pre>
+<h2 id="the-decision">The Decision</h2>
+<pre><code>Plant-specific derivation approved</code></pre>
+<h2 id="the-finding">The Finding</h2>
+<pre><code>Fallback approval for the current baseline is unclear</code></pre>
+<p>The workbook did not explicitly distinguish these objects.</p>
+<p>That is why the conversion requires interpretation rather than simple extraction.</p>
+<p>---</p>
+<h1 id="we-distinguish-direct-inputs-from-context">We distinguish direct inputs from context</h1>
+<p>The workbook often lists one source field per target field.</p>
+<p>Real transformations frequently use other fields that do not directly supply the output value.</p>
+<p>In this case:</p>
+<pre><code>Planner Group:
+supplies the classification used for conversion
+
+Plant:
+selects which conversion table entry applies</code></pre>
+<p>Plant is not merely another source value.</p>
+<p>It changes the applicability of the Mapping.</p>
+<p>We model the roles explicitly:</p>
+<pre><code>Planner Group:
+direct input
+
+Plant:
+conditional context</code></pre>
+<p>This distinction improves validation.</p>
+<p>If Planner Group is missing, the main source value is unavailable.</p>
+<p>If Plant is missing, the conversion cannot be selected deterministically.</p>
+<p>Those are different gap types and should produce different diagnostics.</p>
+<p>---</p>
+<h1 id="we-turn-the-comment-into-a-governed-fallback">We turn the comment into a governed fallback</h1>
+<p>The workbook comment says:</p>
+<pre><code>default 001 where missing</code></pre>
+<p>That sentence is dangerous because it lacks boundaries.</p>
+<p>We refuse to model it as a simple default value.</p>
+<p>We ask:</p>
+<ul>
+<li>Missing what?</li>
+<li>Missing Planner Group?</li>
+<li>Missing conversion?</li>
+<li>Missing Plant?</li>
+<li>Which Plants?</li>
+<li>Which records?</li>
+<li>Which migration phase?</li>
+<li>Who accepts the operational consequence?</li>
+<li>When does the fallback expire?</li>
+<li>How will affected records be identified?</li>
+</ul>
+<p>After investigation, the real rule may be:</p>
+<blockquote>Use controller <code>001</code> only for Product Plant records in PL20 and PL30 where Planner Group is present but no approved conversion exists. The fallback is permitted through Mock Load 3 and must not be used for production cutover without renewed approval.</blockquote>
+<p>Now we can represent it explicitly.</p>
+<p>Conceptually:</p>
+<pre><code>Fallback:
+FALLBACK-MRP-CONTROLLER-001
+
+Value:
+001
+
+Applies when:
+Planner Group exists
+and approved conversion is absent
+
+Scope:
+PL20
+PL30
+
+Valid until:
+Mock Load 3 completion
+
+Production use:
+Not approved
+
+Owner:
+Production Planning Data Owner</code></pre>
+<p>The original workbook comment survives.</p>
+<p>Its meaning becomes testable.</p>
+<p>---</p>
+<h1 id="we-preserve-uncertainty-instead-of-forcing-completion">We preserve uncertainty instead of forcing completion</h1>
+<p>During conversion, teams often feel pressure to fill every structured field.</p>
+<p>That creates false certainty.</p>
+<p>Suppose we cannot find evidence that production use of fallback <code>001</code> was approved.</p>
+<p>We do not set:</p>
+<pre><code>status:
+approved</code></pre>
+<p>We create a Finding:</p>
+<pre><code>Finding:
+Current workbook describes fallback 001,
+but no Decision authorising production use
+was found.
+
+Affected scope:
+PL20 and PL30
+
+Required action:
+Production Planning owner review</code></pre>
+<p>This is one of the main reasons to separate Evidence, Finding and Decision.</p>
+<p>The workbook can be accurately imported even when the business conclusion remains unresolved.</p>
+<p>A canonical model should make uncertainty visible.</p>
+<p>It should not hide it to produce a cleaner diagram.</p>
+<p>---</p>
+<h1 id="we-compare-the-workbook-with-implementation">We compare the workbook with implementation</h1>
+<p>The workbook may not match transformation code.</p>
+<p>We inspect the implemented path and observe:</p>
+<pre><code>Workbook:
+default 001 where conversion is missing
+
+Implementation:
+PL30 receives controller 030 through a hard-coded exception</code></pre>
+<p>Now we have a discrepancy.</p>
+<p>We do not choose one silently.</p>
+<p>We record:</p>
+<pre><code>Documented model:
+global fallback 001
+
+Observed implementation:
+PL30 exception to 030
+
+Canonical status:
+disputed
+
+Required decision:
+confirm whether PL30 exception is approved</code></pre>
+<p>This is where the product begins to create real value.</p>
+<p>The model is not simply a cleaned copy of the workbook.</p>
+<p>It becomes the place where documented, implemented and observed states can be compared.</p>
+<p>---</p>
+<h1 id="we-link-evidence-to-claims">We link evidence to claims</h1>
+<p>We avoid attaching a folder of documents to the Mapping and calling it traceability.</p>
+<p>We state what each item proves.</p>
+<p>For example:</p>
+<pre><code>Claim:
+MRP Controller must vary by Plant.
+
+Evidence:
+Planning workshop Decision record.
+
+Claim:
+Plant-specific conversion covers 94% of Wave 1 records.
+
+Evidence:
+Mock Load 3 profile.
+
+Claim:
+Fallback 001 was used in PL20 and PL30.
+
+Evidence:
+Transformation output and target validation report.
+
+Claim:
+Production use of the fallback is approved.
+
+Evidence:
+Not found.</code></pre>
+<p>This is much stronger than a generic <code>evidence_files</code> list.</p>
+<p>The model can now distinguish:</p>
+<ul>
+<li>supported claims;</li>
+<li>unsupported claims;</li>
+<li>stale claims;</li>
+<li>contradictory claims.</li>
+</ul>
+<p>---</p>
+<h1 id="we-create-a-candidate-canonical-representation">We create a candidate canonical representation</h1>
+<p>Once the objects and relationships are understood, we create the candidate model.</p>
+<p>A simplified Mapping object could look like this:</p>
+<pre><code>---
+id: MAP-PRODUCT-PLANT-MRP-CONTROLLER
+type: Mapping
+status: candidate
+
+source_inputs:
+  - id: FEP-LEGACY-PLANNER-GROUP
+    role: direct
+
+  - id: FEP-LEGACY-PLANT
+    role: conditional_context
+
+target:
+  id: ATTR-PRODUCT-PLANT-MRP-CONTROLLER
+
+transformation:
+  type: value_lookup
+  value_list: VL-PLANT-PLANNER-MRP-CONTROLLER
+
+fallback:
+  id: FALLBACK-MRP-CONTROLLER-001
+
+evidence:
+  - EVID-MAPPING-WORKBOOK-V7
+  - EVID-MOCK-LOAD-3-MRP-COVERAGE
+---
+
+Derive Product Plant MRP Controller from legacy
+Planner Group using the Plant-specific conversion.</code></pre>
+<p>This is an illustrative direction rather than a guarantee of the exact current Martenweave schema.</p>
+<p>The important properties are:</p>
+<ul>
+<li>stable identity;</li>
+<li>explicit input roles;</li>
+<li>explicit target;</li>
+<li>transformation reference;</li>
+<li>fallback reference;</li>
+<li>Evidence;</li>
+<li>human-readable description.</li>
+</ul>
+<p>---</p>
+<h1 id="we-validate-the-candidate-model">We validate the candidate model</h1>
+<p>The conversion is not complete when the files are generated.</p>
+<p>We validate them.</p>
+<p>For this case, deterministic checks should ask:</p>
+<ul>
+<li>Does every referenced object exist?</li>
+<li>Is the target Attribute attached to Product Plant?</li>
+<li>Is Plant represented as a valid contextual input?</li>
+<li>Does the value list exist?</li>
+<li>Does the fallback reference a valid object?</li>
+<li>Does the fallback scope use known Plants?</li>
+<li>Are IDs unique?</li>
+<li>Are required owners present?</li>
+<li>Are statuses valid?</li>
+<li>Are there conflicting active Mappings?</li>
+</ul>
+<p>The candidate may fail.</p>
+<p>That is useful.</p>
+<p>A failed import reveals assumptions that the workbook allowed to remain implicit.</p>
+<p>Martenweave’s current core already follows the principle that model objects should be validated for IDs, types, references and domain context before indexing.</p>
+<p>The conversion process should use those validators rather than create a parallel validation system.</p>
+<p>---</p>
+<h1 id="we-calculate-what-the-workbook-never-showed-clearly">We calculate what the workbook never showed clearly</h1>
+<p>Once the canonical objects exist, we can ask questions that were expensive to answer from the workbook.</p>
+<p>For example:</p>
+<ul>
+<li>Which datasets supply Plant?</li>
+<li>Which Mappings depend on Planner Group?</li>
+<li>Which records use fallback <code>001</code>?</li>
+<li>Which Plants remain uncovered?</li>
+<li>Which Evidence supports the current Mapping?</li>
+<li>Which Decision approved the conversion?</li>
+<li>What changes if PL30 is removed from fallback scope?</li>
+<li>Which test results become stale?</li>
+</ul>
+<p>The model is not valuable merely because it is structured.</p>
+<p>It is valuable because the structure supports these operations deterministically.</p>
+<p>---</p>
+<h1 id="we-generate-the-workbook-back-from-the-model">We generate the workbook back from the model</h1>
+<p>This is the point at which many conversion projects fail.</p>
+<p>They import Excel once and expect business users to work only in model files or a new UI.</p>
+<p>We take a different approach.</p>
+<p>We generate a review workbook from the canonical model.</p>
+<p>The exported row may include:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Mapping ID</th><th scope="col">Business Attribute</th><th scope="col">Direct input</th><th scope="col">Context</th><th scope="col">Target</th><th scope="col">Fallback</th><th scope="col">Validation</th><th scope="col">Finding</th></tr></thead><tbody><tr><td><code>MAP-PRODUCT-PLANT-MRP-CONTROLLER</code></td><td>MRP Controller</td><td>Planner Group</td><td>Plant</td><td>SAP Product Plant</td><td><code>001</code>, limited scope</td><td>Passed</td><td>Production fallback approval missing</td></tr></tbody></table></div>
+<p>This workbook is better than the historical version because:</p>
+<ul>
+<li>stable IDs are visible;</li>
+<li>direct and contextual inputs are separated;</li>
+<li>fallback is explicit;</li>
+<li>validation state is generated;</li>
+<li>unresolved Findings are visible;</li>
+<li>the model commit can be recorded.</li>
+</ul>
+<p>Business users retain the familiar tabular surface.</p>
+<p>The workbook no longer owns the logic independently.</p>
+<p>---</p>
+<h1 id="we-compare-the-generated-workbook-with-the-original">We compare the generated workbook with the original</h1>
+<p>We do not assume that the structured model preserved everything.</p>
+<p>We run a deliberate review.</p>
+<p>We ask the planning owner:</p>
+<ul>
+<li>Is the business wording still correct?</li>
+<li>Did we preserve the meaning of the comments?</li>
+<li>Did we classify Plant correctly?</li>
+<li>Did we misinterpret <code>Approved</code>?</li>
+<li>Are the fallback boundaries accurate?</li>
+<li>Is any important local exception missing?</li>
+<li>Does the generated view remain usable?</li>
+</ul>
+<p>This review is essential because some workbook meaning is social rather than structural.</p>
+<p>A yellow cell may have been meaningful only because the team agreed it meant “requires local confirmation.”</p>
+<p>During conversion, we must either:</p>
+<ul>
+<li>model that state explicitly;</li>
+<li>preserve it as a Finding;</li>
+<li>discard it deliberately.</li>
+</ul>
+<p>We should not lose it accidentally.</p>
+<p>---</p>
+<h1 id="we-treat-corrections-as-patchproposals">We treat corrections as PatchProposals</h1>
+<p>Suppose the business owner reviews the generated workbook and changes:</p>
+<pre><code>Fallback Plant scope:
+PL20 and PL30</code></pre>
+<p>to:</p>
+<pre><code>Fallback Plant scope:
+PL20 only</code></pre>
+<p>We do not overwrite the canonical model immediately.</p>
+<p>We generate a PatchProposal:</p>
+<pre><code>Proposal:
+Remove PL30 from fallback 001 applicability.
+
+Reason:
+PL30 plant-specific conversion is now available.
+
+Affected records:
+640 Product Plant records.
+
+Required validation:
+Mapping coverage and MRP planning test.
+
+Required reviewer:
+PL30 Production Planning Owner.</code></pre>
+<p>The proposal is:</p>
+<ul>
+<li>validated;</li>
+<li>impact-assessed;</li>
+<li>reviewed;</li>
+<li>applied through Git if approved.</li>
+</ul>
+<p>This preserves spreadsheet usability without giving spreadsheet edits uncontrolled authority.</p>
+<p>Martenweave’s documented operating model is already proposal-first: agents propose, validators verify, humans approve and Git records the accepted result.</p>
+<p>GitHub’s pull-request review model similarly separates proposed changes from approval and merge, which provides a useful external pattern for reviewing canonical file changes.</p>
+<p>---</p>
+<h1 id="we-preserve-the-original-workbook">We preserve the original workbook</h1>
+<p>Moving to a canonical model does not mean deleting historical workbooks.</p>
+<p>The original file remains Evidence.</p>
+<p>We preserve:</p>
+<ul>
+<li>filename;</li>
+<li>checksum;</li>
+<li>import date;</li>
+<li>sheet names;</li>
+<li>conversion report;</li>
+<li>unresolved cells;</li>
+<li>model objects created from it;</li>
+<li>Findings raised during import.</li>
+</ul>
+<p>This allows us to answer:</p>
+<blockquote>What did version 7 of the workbook say?</blockquote>
+<p>and separately:</p>
+<blockquote>What did we accept into the canonical model?</blockquote>
+<p>That distinction protects historical interpretation.</p>
+<p>---</p>
+<h1 id="we-produce-an-import-report">We produce an import report</h1>
+<p>A serious workbook conversion should end with a report.</p>
+<p>For this case:</p>
+<pre><code>Workbook:
+Product_Planning_Mapping_FINAL_v7.xlsx
+
+Rows inspected:
+46
+
+Canonical objects matched:
+31
+
+New candidate objects:
+8
+
+Findings:
+5
+
+Conflicting interpretations:
+2
+
+Unresolved approvals:
+1
+
+Rows imported without ambiguity:
+29
+
+Rows requiring human review:
+17</code></pre>
+<p>The objective is not a 100 percent automatic import rate.</p>
+<p>The objective is a truthful model.</p>
+<p>An importer that claims complete success by guessing every ambiguity is less useful than one that exposes the difficult decisions clearly.</p>
+<p>---</p>
+<h1 id="we-use-ai-as-an-interpreter-not-an-authority">We use AI as an interpreter, not an authority</h1>
+<p>AI can help us:</p>
+<ul>
+<li>identify candidate business objects;</li>
+<li>detect repeated terms;</li>
+<li>interpret comments;</li>
+<li>suggest stable IDs;</li>
+<li>group similar mappings;</li>
+<li>draft plain-language definitions;</li>
+<li>identify potential contradictions;</li>
+<li>propose model operations.</li>
+</ul>
+<p>AI should not silently decide:</p>
+<ul>
+<li>that a yellow cell means approved;</li>
+<li>that <code>001</code> is a production-safe fallback;</li>
+<li>that two similarly named fields are equivalent;</li>
+<li>that the latest workbook is authoritative;</li>
+<li>that a hard-coded implementation exception is valid.</li>
+</ul>
+<p>The safe output is:</p>
+<pre><code>Candidate interpretation
+
+Supporting evidence
+
+Confidence
+
+Unresolved question
+
+Proposed model change</code></pre>
+<p>Human reviewers remain responsible for authority and meaning.</p>
+<p>---</p>
+<h1 id="we-avoid-over-modelling-the-first-workbook">We avoid over-modelling the first workbook</h1>
+<p>A common mistake is to design a universal enterprise ontology before importing the first Mapping.</p>
+<p>We do not need that.</p>
+<p>For the Product planning case, the smallest useful model contains:</p>
+<ul>
+<li>Product;</li>
+<li>Plant;</li>
+<li>Product Plant;</li>
+<li>Planner Group;</li>
+<li>MRP Controller;</li>
+<li>two source endpoints;</li>
+<li>one target endpoint;</li>
+<li>one Mapping;</li>
+<li>one value list;</li>
+<li>one fallback;</li>
+<li>one Rule;</li>
+<li>Evidence;</li>
+<li>one Decision or unresolved Finding.</li>
+</ul>
+<p>That is enough to prove the workflow.</p>
+<p>We can extend the model when new use cases require it.</p>
+<p>The product should grow from real migration pain, not from theoretical completeness.</p>
+<p>---</p>
+<h1 id="what-we-refuse-to-do">What we refuse to do</h1>
+<p>We should not:</p>
+<ul>
+<li>convert every row automatically and call it canonical;</li>
+<li>preserve colours without explaining their meaning;</li>
+<li>flatten comments into generic notes;</li>
+<li>treat workbook status as formal approval;</li>
+<li>combine Mapping, Rule, Evidence and Decision into one object;</li>
+<li>replace unresolved ambiguity with AI confidence;</li>
+<li>force business users to abandon spreadsheets immediately;</li>
+<li>allow round-trip imports to overwrite canonical files directly.</li>
+</ul>
+<p>These shortcuts make the conversion appear successful.</p>
+<p>They recreate the original technical debt in another format.</p>
+<p>---</p>
+<h1 id="the-product-workflow-we-should-build">The product workflow we should build</h1>
+<p>The focused Martenweave capability should be <strong>Workbook-to-Model Assessment</strong>.</p>
+<h2 id="step-1-inspect">Step 1: inspect</h2>
+<p>Read workbook structure, sheets, columns, comments and stable identifiers where available.</p>
+<h2 id="step-2-classify">Step 2: classify</h2>
+<p>Identify candidate:</p>
+<ul>
+<li>Entities;</li>
+<li>Attributes;</li>
+<li>FieldEndpoints;</li>
+<li>Mappings;</li>
+<li>Rules;</li>
+<li>Evidence;</li>
+<li>Decisions;</li>
+<li>Findings.</li>
+</ul>
+<h2 id="step-3-match">Step 3: match</h2>
+<p>Connect rows to existing canonical objects.</p>
+<h2 id="step-4-propose">Step 4: propose</h2>
+<p>Create candidate objects and PatchProposals for unresolved additions or changes.</p>
+<h2 id="step-5-validate">Step 5: validate</h2>
+<p>Run deterministic model validation.</p>
+<h2 id="step-6-assess-impact">Step 6: assess impact</h2>
+<p>Identify dependencies and affected scope.</p>
+<h2 id="step-7-render">Step 7: render</h2>
+<p>Generate a review workbook and static report.</p>
+<h2 id="step-8-approve">Step 8: approve</h2>
+<p>Apply only accepted proposals through Git.</p>
+<p>This is not generic spreadsheet ingestion.</p>
+<p>It is a model-governance workflow for a specific enterprise artefact.</p>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future focused interface could look like:</p>
+<pre><code>martenweave workbook assess \
+  ./inputs/product-planning-mapping.xlsx \
+  --repo ./model \
+  --out ./reports/workbook-assessment</code></pre>
+<p>Then:</p>
+<pre><code>martenweave workbook propose \
+  ./inputs/product-planning-mapping.xlsx \
+  --repo ./model</code></pre>
+<p>And:</p>
+<pre><code>martenweave workbook render \
+  --repo ./model \
+  --scope product-planning \
+  --out ./reviews/product-planning.xlsx</code></pre>
+<p>These commands are recommended product directions, not claims about the current CLI.</p>
+<p>The current Martenweave CLI already exposes the underlying building blocks for validation, index generation, trace, impact, diff, proposal generation and dataset readiness.</p>
+<p>---</p>
+<h1 id="acceptance-criteria-for-the-first-slice">Acceptance criteria for the first slice</h1>
+<p>We should consider the first implementation successful when we can take the Product planning workbook and answer:</p>
+<ol>
+<li>What is the canonical Mapping ID?</li>
+<li>What is the business target Attribute?</li>
+<li>What is its Entity grain?</li>
+<li>Which source input supplies the value?</li>
+<li>Which input supplies context?</li>
+<li>Which value list performs the conversion?</li>
+<li>Which fallback exists?</li>
+<li>What is its approved scope?</li>
+<li>Which Evidence supports the Mapping?</li>
+<li>Which questions remain unresolved?</li>
+<li>What changes between the workbook and implementation?</li>
+<li>Can we regenerate a business-review workbook from the canonical model?</li>
+</ol>
+<p>The system should not claim success merely because it created files.</p>
+<p>It succeeds when we can explain the model more reliably than the original workbook could.</p>
+<p>---</p>
+<h1 id="the-business-outcome">The business outcome</h1>
+<p>The immediate benefit is not that the programme stops using Excel.</p>
+<p>The benefit is that the programme stops depending on Excel as the only place where model meaning exists.</p>
+<p>This reduces:</p>
+<ul>
+<li>version confusion;</li>
+<li>duplicate analysis;</li>
+<li>hidden defaults;</li>
+<li>undocumented implementation drift;</li>
+<li>repeated workshops;</li>
+<li>weak handover;</li>
+<li>unsafe AI interpretation.</li>
+</ul>
+<p>It also changes how later work is performed.</p>
+<p>A new mock-load Finding can point to a stable Mapping.</p>
+<p>A proposed fallback change can show impact before implementation.</p>
+<p>An AMS incident can trace back to the migration Decision.</p>
+<p>A later wave can reuse the accepted model rather than reopening the original workbook debate.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>When we convert a mapping workbook, our job is not to preserve every cell exactly.</p>
+<p>Our job is to preserve the meaning that the programme relies on.</p>
+<p>For the Product Plant MRP Controller case, that means retaining:</p>
+<ul>
+<li>the business Attribute;</li>
+<li>the Product Plant grain;</li>
+<li>Planner Group as direct input;</li>
+<li>Plant as context;</li>
+<li>the conversion table;</li>
+<li>fallback <code>001</code>;</li>
+<li>its scope and expiry;</li>
+<li>supporting Evidence;</li>
+<li>unresolved approval;</li>
+<li>the difference between documented and implemented behaviour.</li>
+</ul>
+<p>The transformation is:</p>
+<pre><code>Workbook row
+→ observed evidence
+→ business interpretation
+→ canonical objects
+→ deterministic validation
+→ reviewable model
+→ generated workbook</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we discard the working copy of the workbook, rebuild a reviewable version from canonical files, and still explain why the Mapping exists, how it works, what remains uncertain and who approved it?</blockquote>
+<p>When the answer is yes, we have preserved business context.</p>
+<p>When the answer is:</p>
+<blockquote>We successfully converted 46 rows to YAML,</blockquote>
+<p>we may only have moved the technical debt.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave as a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>We do not want to remove spreadsheets from enterprise work.</p>
+<p>We want to stop critical model truth from depending on:</p>
+<ul>
+<li>one workbook copy;</li>
+<li>one consultant’s memory;</li>
+<li>one undocumented colour convention;</li>
+<li>one unreviewed AI interpretation.</li>
+</ul>
+<p>Our model is simple:</p>
+<pre><code>Spreadsheets bring evidence and collaboration.
+
+Martenweave stores canonical model truth.
+
+Validators check consistency.
+
+AI proposes changes.
+
+Humans approve.
+
+Git records the result.</code></pre>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently defines itself as a backend-first model-governance and evidence layer that turns spreadsheets, datasets, tickets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>The current architecture keeps Markdown and YAML model files authoritative, treats generated indexes as disposable, validates IDs, types, references and domain context before indexing, and prevents AI from silently mutating model truth.</p>
+<p>Martenweave’s documented pipeline moves from Evidence and profiling through validation, indexing, gap detection, lineage, impact and PatchProposals to human-reviewed GitHub issues or pull requests.</p>
+<p>W3C PROV-O provides a general model for representing and exchanging provenance information across systems and contexts, including entities, activities, agents, derivation and attribution. Martenweave does not need to implement PROV-O directly, but the distinction between an observed artefact, the activity that produced it and the agent responsible for it supports the evidence-first approach described here.</p>
+<p>GitHub pull-request reviews separate proposed changes from approval and merge, allowing reviewers to comment, approve or request changes. That review pattern is relevant to canonical model files, although Martenweave must add semantic Evidence and impact context beyond the textual Git diff.</p>
+<p>The workbook assessment, round-trip rendering and proposed commands described in this article are product directions. They should not be interpreted as guarantees of the exact current workbook importer, canonical schema, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, W3C or GitHub.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html"><span>Previous</span>A migration programme creates a mapping workbook for Product planning data.</a><a href="/blog/how-we-keep-business-decisions-traceable-after-the-mapping-workbook-is.html"><span>Next</span>A migration team decides that MRP Controller must be derived differently for Plant PL30.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

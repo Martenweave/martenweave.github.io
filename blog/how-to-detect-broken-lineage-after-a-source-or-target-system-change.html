@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Detect Broken Lineage After a Source or Target System Change | Martenweave</title>
+    <meta
+      name="description"
+      content="A source system is retired."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html" />
+    <meta property="og:title" content="How to Detect Broken Lineage After a Source or Target System Change | Martenweave" />
+    <meta property="og:description" content="A source system is retired." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Detect Broken Lineage After a Source or Target System Change | Martenweave" />
+    <meta name="twitter:description" content="A source system is retired." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html",
+                        "name": "How to Detect Broken Lineage After a Source or Target System Change | Martenweave",
+                        "description": "A source system is retired.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Detect Broken Lineage After a Source or Target System Change",
+                                    "item": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html#content",
+                        "headline": "How to Detect Broken Lineage After a Source or Target System Change",
+                        "name": "How to Detect Broken Lineage After a Source or Target System Change",
+                        "description": "A source system is retired.",
+                        "url": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-detect-broken-lineage-after-a-source-or-target-system-change.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Detect Broken Lineage After a Source or Target System Change</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How to Detect Broken Lineage After a Source or Target System Change</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 20 min read</p><p class="blog-summary">A source system is retired.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#structural-break">Structural break</a></li><li><a href="#applicability-break">Applicability break</a></li><li><a href="#semantic-break">Semantic break</a></li><li><a href="#observability-break">Observability break</a></li><li><a href="#approved-lineage">Approved lineage</a></li><li><a href="#observed-lineage">Observed lineage</a></li><li><a href="#active-dependency">Active dependency</a></li><li><a href="#historical-dependency">Historical dependency</a></li><li><a href="#candidate-dependency">Candidate dependency</a></li><li><a href="#incidental-reference">Incidental reference</a></li><li><a href="#replaced-dependency">Replaced dependency</a></li><li><a href="#drop">Drop</a></li><li><a href="#rename">Rename</a></li><li><a href="#alter">Alter</a></li><li><a href="#overwrite">Overwrite</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A source system is retired.</p>
+<p>The migration programme updates its architecture diagram:</p>
+<pre><code class="language-text">ERP_A
+→ retired
+
+ERP_B
+→ new source</code></pre>
+<p>The interfaces are redirected.</p>
+<p>The old extract job is disabled.</p>
+<p>The programme considers the transition complete.</p>
+<p>Several weeks later, a data-quality defect appears in SAP.</p>
+<p>Customer Group is blank for part of the migrated population.</p>
+<p>The technical investigation finds that the new source system contains a field called <code>CUSTOMER_CLASS</code>, but the old source supplied Customer Group through a contextual conversion that also used Sales Area.</p>
+<p>The system connection was replaced.</p>
+<p>The lineage was not.</p>
+<p>A similar failure can happen at the target end.</p>
+<p>A custom SAP field is replaced by a standard field. The new field exists, accepts data and appears in the target extract. However:</p>
+<ul>
+<li>one Mapping still targets the custom endpoint;</li>
+<li>one outbound interface reads the old field;</li>
+<li>a Rule remains implemented against the custom field;</li>
+<li>historical reconciliation reports do not distinguish the two;</li>
+<li>the canonical Attribute links to both endpoints without an effective transition date.</li>
+</ul>
+<p>Nothing is completely disconnected.</p>
+<p>The model is still broken.</p>
+<blockquote>Broken lineage exists when the declared or observed path can no longer explain how a governed value moves from its valid source context to its intended target context.</blockquote>
+<p>This is broader than a missing edge.</p>
+<p>A lineage path can break because:</p>
+<ul>
+<li>a source disappears;</li>
+<li>a target is replaced;</li>
+<li>an interface contract changes;</li>
+<li>a field is renamed;</li>
+<li>a system is split or consolidated;</li>
+<li>the same endpoint name gains different meaning;</li>
+<li>runtime behaviour diverges from the approved design;</li>
+<li>historical and current paths are mixed together.</li>
+</ul>
+<p>Martenweave Core already contains system-lineage object types including <code>System</code>, <code>Application</code>, <code>Interface</code>, <code>InterfaceEndpoint</code>, <code>IntegrationFlow</code>, <code>DataFlowStep</code> and <code>TransformationRule</code>. It also provides proposal impact analysis, repository diffing, canonical validation and generated lineage capabilities.</p>
+<p>That object model provides the basis for detecting lineage breakage as a governed transition rather than a missing-document problem.</p>
+<p>---</p>
+<h1 id="a-system-change-is-not-automatically-a-lineage-change">A system change is not automatically a lineage change</h1>
+<p>Some technical changes preserve the model path.</p>
+<p>Examples:</p>
+<ul>
+<li>infrastructure hostname changes;</li>
+<li>server moves to another environment;</li>
+<li>application receives a new display name;</li>
+<li>interface implementation is redeployed without changing its contract;</li>
+<li>source table moves to another schema while preserving identity and semantics.</li>
+</ul>
+<p>Other changes alter lineage materially:</p>
+<ul>
+<li>source field removed;</li>
+<li>target field replaced;</li>
+<li>source authority transferred;</li>
+<li>record grain changes;</li>
+<li>interface field renamed without compatibility handling;</li>
+<li>direct Mapping becomes an enrichment;</li>
+<li>one source system is split into several systems;</li>
+<li>several sources are consolidated into one.</li>
+</ul>
+<p>The first task is therefore classification.</p>
+<p>Ask:</p>
+<blockquote>Did the implementation location change, or did the governed dependency change?</blockquote>
+<p>A technical relocation may require endpoint metadata updates.</p>
+<p>A semantic dependency change requires new lineage, impact analysis and approval.</p>
+<p>---</p>
+<h1 id="four-types-of-broken-lineage">Four types of broken lineage</h1>
+<p>A practical detection model should distinguish four broad failure classes.</p>
+<h2 id="structural-break">Structural break</h2>
+<p>A required node or edge no longer exists.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-ERP-A-CUSTOMER-GROUP
+→ retired
+
+MAP-ERP-A-CUSTOMER-GROUP
+→ still active</code></pre>
+<p>The Mapping has no usable source.</p>
+<h2 id="applicability-break">Applicability break</h2>
+<p>The objects still exist, but the path no longer applies to the relevant population or context.</p>
+<p>Example:</p>
+<pre><code class="language-text">ERP_B source Mapping:
+valid for central Customer
+
+Target Attribute:
+Customer Sales Area</code></pre>
+<p>The field exists.</p>
+<p>The grain is wrong.</p>
+<h2 id="semantic-break">Semantic break</h2>
+<p>The path remains technically connected, but the source, transformation or target meaning changed.</p>
+<p>Example:</p>
+<pre><code class="language-text">CUSTOMER_CLASS
+→ mapped to
+Customer Group</code></pre>
+<p>while <code>CUSTOMER_CLASS</code> now represents marketing classification rather than commercial grouping.</p>
+<h2 id="observability-break">Observability break</h2>
+<p>The approved design path exists, but current runtime or dataset evidence no longer confirms it.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved Mapping:
+CRM Segment + Sales Area → Customer Group
+
+Observed extract:
+Sales Area column missing</code></pre>
+<p>The model is intact.</p>
+<p>The executable path is not currently supported.</p>
+<p>These classes should not be collapsed into one <code>lineage invalid</code> message.</p>
+<p>They require different action.</p>
+<p>---</p>
+<h1 id="approved-lineage-and-observed-lineage">Approved lineage and observed lineage</h1>
+<p>A lineage model needs two related views.</p>
+<h2 id="approved-lineage">Approved lineage</h2>
+<p>What the canonical model says should happen.</p>
+<pre><code class="language-text">FEP-ERP-A-CUSTOMER-GROUP
+→ MAP-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<h2 id="observed-lineage">Observed lineage</h2>
+<p>What current datasets and runtime evidence show.</p>
+<pre><code class="language-text">ERP_B extract CUSTOMER_CLASS
+→ transformation run 204
+→ SAP load field KDGRP</code></pre>
+<p>Comparing these graphs reveals several conditions.</p>
+<h3 id="match">Match</h3>
+<p>Observed execution supports the approved path.</p>
+<h3 id="missing-observation">Missing observation</h3>
+<p>The approved path exists, but no current evidence confirms it.</p>
+<h3 id="undocumented-execution">Undocumented execution</h3>
+<p>Runtime uses a path not represented canonically.</p>
+<h3 id="partial-implementation">Partial implementation</h3>
+<p>Only part of the approved transformation is observed.</p>
+<h3 id="contradiction">Contradiction</h3>
+<p>Observed source, transformation or target differs from the approved model.</p>
+<p>OpenLineage’s current object model makes a similar distinction between design-time metadata and runtime events. <code>JobEvent</code> and <code>DatasetEvent</code> describe declared metadata, while <code>RunEvent</code> records an execution occurrence.</p>
+<p>For Martenweave, canonical system and Mapping objects should represent approved design lineage. Dataset profiles, run reports and validation results provide observed evidence.</p>
+<p>Neither view should silently overwrite the other.</p>
+<p>---</p>
+<h1 id="register-the-system-change-as-evidence-first">Register the system change as evidence first</h1>
+<p>When a source or target system changes, the first model action should not be automatic rewiring.</p>
+<p>Record the change event.</p>
+<p>Conceptually:</p>
+<pre><code class="language-yaml">id: FIND-ERP-A-RETIREMENT
+type: Finding
+subject: SYS-ERP-A
+change_type: system_retirement
+effective_from: 2026-10-01
+evidence:
+  - EVID-ERP-A-DECOMMISSION-PLAN</code></pre>
+<p>Possible system-change types include:</p>
+<ul>
+<li>retirement;</li>
+<li>replacement;</li>
+<li>rename;</li>
+<li>consolidation;</li>
+<li>split;</li>
+<li>ownership transfer;</li>
+<li>version upgrade;</li>
+<li>interface migration;</li>
+<li>endpoint deprecation;</li>
+<li>environment relocation.</li>
+</ul>
+<p>This event becomes the anchor for impact analysis.</p>
+<p>The safe sequence is:</p>
+<pre><code class="language-text">system change evidence
+→ affected endpoint discovery
+→ lineage impact
+→ candidate replacement paths
+→ validation
+→ Decision
+→ canonical update</code></pre>
+<p>not:</p>
+<pre><code class="language-text">system changed
+→ replace IDs globally</code></pre>
+<p>---</p>
+<h1 id="source-retirement">Source retirement</h1>
+<p>When a source system is retired, identify every model object that depends on it.</p>
+<p>Start with:</p>
+<pre><code class="language-text">System
+→ Applications
+→ Interfaces
+→ InterfaceEndpoints
+→ FieldEndpoints
+→ Mappings
+→ Attributes
+→ Rules
+→ target endpoints</code></pre>
+<p>The first report should classify each dependency.</p>
+<h2 id="active-dependency">Active dependency</h2>
+<p>The source currently provides an approved input.</p>
+<h2 id="historical-dependency">Historical dependency</h2>
+<p>The source is needed only to interpret previous migrations or records.</p>
+<h2 id="candidate-dependency">Candidate dependency</h2>
+<p>A future Mapping was proposed but never approved.</p>
+<h2 id="incidental-reference">Incidental reference</h2>
+<p>Documentation or Evidence mentions the system without relying on it operationally.</p>
+<h2 id="replaced-dependency">Replaced dependency</h2>
+<p>A successor path exists and has been approved.</p>
+<p>A retirement should be blocked when an active critical dependency has no valid successor.</p>
+<p>---</p>
+<h1 id="retiring-a-source-system-does-not-retire-its-history">Retiring a source system does not retire its history</h1>
+<p>Suppose ERP_A supplied Customer Group for Wave 2.</p>
+<p>ERP_B will supply it for Wave 3.</p>
+<p>The old path should remain historically queryable:</p>
+<pre><code class="language-text">Wave 2:
+ERP_A Customer Group
+→ direct Mapping
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>The new path may be:</p>
+<pre><code class="language-text">Wave 3:
+ERP_B Customer Class
++
+Sales Area
+→ enrichment
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>Do not edit the old Mapping to point to ERP_B.</p>
+<p>That would rewrite historical lineage.</p>
+<p>Instead:</p>
+<ul>
+<li>retire or close the ERP_A Mapping for new use;</li>
+<li>preserve its effective period;</li>
+<li>create the ERP_B Mapping;</li>
+<li>connect the replacement relationship;</li>
+<li>identify affected baselines.</li>
+</ul>
+<p>The old system is retired operationally.</p>
+<p>Its model identity remains necessary for historical interpretation.</p>
+<p>---</p>
+<h1 id="detect-source-fields-without-successors">Detect source fields without successors</h1>
+<p>A source-system retirement check should identify all active FieldEndpoints whose only physical parent is the retiring system.</p>
+<p>Example:</p>
+<pre><code class="language-text">FEP-ERP-A-CUSTOMER-GROUP
+FEP-ERP-A-PAYMENT-TERMS
+FEP-ERP-A-SHIPPING-CONDITION</code></pre>
+<p>For each endpoint, ask:</p>
+<ol>
+<li>Which business Attribute does it support?</li>
+<li>Which active Mappings use it?</li>
+<li>Which target endpoints depend on those Mappings?</li>
+<li>Is a successor source registered?</li>
+<li>Is semantic equivalence confirmed?</li>
+<li>Are required context fields available?</li>
+<li>Is the replacement path tested?</li>
+</ol>
+<p>A similar field name in the new system should be treated as a candidate—not as confirmed replacement lineage.</p>
+<p>---</p>
+<h1 id="source-replacement-can-change-grain">Source replacement can change grain</h1>
+<p>Source replacement often fails because teams compare fields but not record grain.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old source:
+one Customer Group per Customer Sales Area
+
+New source:
+one Customer Class per Customer</code></pre>
+<p>The new field may have:</p>
+<ul>
+<li>matching datatype;</li>
+<li>similar codes;</li>
+<li>similar label.</li>
+</ul>
+<p>It does not have matching cardinality.</p>
+<p>The lineage detector should compare:</p>
+<ul>
+<li>source Entity;</li>
+<li>source keys;</li>
+<li>target Entity;</li>
+<li>Mapping context;</li>
+<li>expected cardinality.</li>
+</ul>
+<p>A replacement should be classified as broken until the grain transition is explained.</p>
+<p>---</p>
+<h1 id="source-replacement-can-change-authority">Source replacement can change authority</h1>
+<p>A new system may contain the data but not own it.</p>
+<p>Example:</p>
+<pre><code class="language-text">CRM:
+contains replicated Customer Group
+
+ERP_B:
+becomes operational source for Customer master
+
+Global Reference System:
+remains semantic authority</code></pre>
+<p>Redirecting lineage from ERP_A to ERP_B may be technically convenient and governantically wrong.</p>
+<p>The transition analysis must distinguish:</p>
+<ul>
+<li>data availability;</li>
+<li>system of entry;</li>
+<li>system of record;</li>
+<li>semantic authority;</li>
+<li>temporary migration source.</li>
+</ul>
+<p>A source system change should not silently transfer ownership of the business meaning.</p>
+<p>---</p>
+<h1 id="target-replacement">Target replacement</h1>
+<p>Target changes create a different impact pattern.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Old:
+FEP-S4-ZZ-REVIEW-STATUS
+
+New:
+FEP-S4-STANDARD-REVIEW-STATUS</code></pre>
+<p>The business Attribute remains:</p>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS</code></pre>
+<p>The detector should inspect:</p>
+<ul>
+<li>every incoming Mapping;</li>
+<li>every Rule implementation;</li>
+<li>outbound interfaces;</li>
+<li>reports;</li>
+<li>reconciliation;</li>
+<li>existing data;</li>
+<li>historical Evidence;</li>
+<li>local extensions;</li>
+<li>open proposals.</li>
+</ul>
+<p>The key question is not only:</p>
+<blockquote>Does the replacement field exist?</blockquote>
+<p>It is:</p>
+<blockquote>Can the approved business Attribute be represented and operated equivalently through the replacement endpoint?</blockquote>
+<p>---</p>
+<h1 id="physical-compatibility-is-not-semantic-compatibility">Physical compatibility is not semantic compatibility</h1>
+<p>A replacement endpoint may have the same datatype and length.</p>
+<p>Its value domain may differ.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old custom field:
+PENDING
+CLEARED
+REJECTED
+
+New standard field:
+OPEN
+COMPLETED
+CANCELLED</code></pre>
+<p>The fields look similar.</p>
+<p>The semantics may not be equivalent.</p>
+<p>The lineage transition needs:</p>
+<ul>
+<li>value mapping;</li>
+<li>lifecycle comparison;</li>
+<li>Rule review;</li>
+<li>business Decision;</li>
+<li>historical-data treatment.</li>
+</ul>
+<p>A direct endpoint replacement without these checks creates a semantic break.</p>
+<p>---</p>
+<h1 id="detect-stale-target-references">Detect stale target references</h1>
+<p>After target replacement, find all objects still pointing to the old endpoint.</p>
+<p>Possible stale references include:</p>
+<ul>
+<li>incoming Mappings;</li>
+<li>transformation code references;</li>
+<li>interface fields;</li>
+<li>reports;</li>
+<li>Rules;</li>
+<li>test evidence;</li>
+<li>business-review exports;</li>
+<li>local overrides;</li>
+<li>dataset expectations.</li>
+</ul>
+<p>Not all stale references require editing.</p>
+<p>Historical Evidence should continue to point to the old endpoint when it tested the old implementation.</p>
+<p>The detector should classify:</p>
+<pre><code class="language-text">active operational reference:
+must migrate or justify
+
+historical reference:
+retain
+
+candidate proposal:
+refresh
+
+documentation reference:
+review
+
+external consumer:
+verify separately</code></pre>
+<p>---</p>
+<h1 id="parallel-target-operation">Parallel target operation</h1>
+<p>Some transitions include a coexistence period.</p>
+<pre><code class="language-text">Old custom field:
+active for existing records
+
+New standard field:
+active for new records</code></pre>
+<p>or:</p>
+<pre><code class="language-text">Old interface:
+consumed by legacy application
+
+New API:
+consumed by replacement application</code></pre>
+<p>The model should represent:</p>
+<ul>
+<li>effective dates;</li>
+<li>applicable populations;</li>
+<li>synchronisation Rules;</li>
+<li>source of truth during overlap;</li>
+<li>retirement criteria.</li>
+</ul>
+<p>Without this, both endpoints appear active for the same Attribute and the graph cannot explain which is authoritative.</p>
+<p>---</p>
+<h1 id="interface-contract-change">Interface contract change</h1>
+<p>A system may remain unchanged while its interface contract changes.</p>
+<p>Examples:</p>
+<ul>
+<li>property renamed;</li>
+<li>field removed;</li>
+<li>nested structure introduced;</li>
+<li>optional field becomes mandatory;</li>
+<li>code list changes;</li>
+<li>endpoint version changes;</li>
+<li>payload grain changes;</li>
+<li>filter behaviour changes.</li>
+</ul>
+<p>Table- or system-level lineage may remain intact:</p>
+<pre><code class="language-text">CRM
+→ Integration Platform
+→ SAP</code></pre>
+<p>Field-level lineage may be broken.</p>
+<p>The transition should inspect:</p>
+<pre><code class="language-text">Interface
+→ InterfaceEndpoint
+→ payload field
+→ Mapping
+→ business Attribute</code></pre>
+<p>A contract change can invalidate lineage even when every system remains online.</p>
+<p>---</p>
+<h1 id="rename-is-not-always-replacement">Rename is not always replacement</h1>
+<p>Suppose an API property changes:</p>
+<pre><code class="language-text">customerGroup
+→ salesAreaCustomerGroup</code></pre>
+<p>This could be:</p>
+<ol>
+<li>a label improvement;</li>
+<li>a clarified existing meaning;</li>
+<li>a new sales-area-specific property replacing a central one.</li>
+</ol>
+<p>Only the first two may preserve endpoint identity.</p>
+<p>The third is a semantic and granularity change.</p>
+<p>A rename detector should compare:</p>
+<ul>
+<li>stable external identifier if available;</li>
+<li>schema path;</li>
+<li>parent structure;</li>
+<li>definition;</li>
+<li>cardinality;</li>
+<li>keys;</li>
+<li>value domain;</li>
+<li>effective version.</li>
+</ul>
+<p>Do not decide identity from text similarity alone.</p>
+<p>---</p>
+<h1 id="system-rename-versus-system-replacement">System rename versus system replacement</h1>
+<p>Enterprise landscapes frequently rename applications during mergers, platform programmes or branding changes.</p>
+<p>Example:</p>
+<pre><code class="language-text">Legacy CRM
+→ Customer Hub</code></pre>
+<p>The name changed.</p>
+<p>The application may or may not have changed.</p>
+<p>A stable <code>System</code> or <code>Application</code> ID should survive a true rename.</p>
+<pre><code class="language-yaml">id: SYS-CUSTOMER-HUB
+name: Customer Hub
+aliases:
+  - Legacy CRM</code></pre>
+<p>However, if Customer Hub is a new product with:</p>
+<ul>
+<li>different data model;</li>
+<li>different ownership;</li>
+<li>different interfaces;</li>
+<li>migrated data;</li>
+</ul>
+<p>then reusing the old system identity would hide a replacement.</p>
+<p>The decision should be based on operational identity, not branding.</p>
+<p>---</p>
+<h1 id="system-split">System split</h1>
+<p>One source application may be divided into several successors.</p>
+<pre><code class="language-text">ERP_A
+→ Customer Hub
+→ Supplier Hub
+→ Product Hub</code></pre>
+<p>A global replacement edge is insufficient.</p>
+<p>Each source endpoint must be routed separately.</p>
+<p>Example:</p>
+<pre><code class="language-text">ERP_A Customer Group
+→ Customer Hub
+
+ERP_A Supplier Risk
+→ Supplier Hub
+
+ERP_A Material Planning Group
+→ Product Hub</code></pre>
+<p>The split may also divide ownership and effective dates.</p>
+<p>The transition must be analysed per Attribute and endpoint.</p>
+<p>---</p>
+<h1 id="system-consolidation">System consolidation</h1>
+<p>Several sources may be replaced by one target application.</p>
+<pre><code class="language-text">ERP_A
+ERP_B
+CRM
+→ Master Data Hub</code></pre>
+<p>The new system may standardise representations.</p>
+<p>It may also preserve source-specific semantics behind one field.</p>
+<p>The detector should identify:</p>
+<ul>
+<li>formerly distinct Attributes merged into one;</li>
+<li>formerly shared Attribute split by source context;</li>
+<li>conflicting value domains;</li>
+<li>source-precedence changes;</li>
+<li>historical source identity loss.</li>
+</ul>
+<p>Consolidation is not simply many edges redirected to one node.</p>
+<p>---</p>
+<h1 id="dataset-lifecycle-events-as-detection-signals">Dataset lifecycle events as detection signals</h1>
+<p>OpenLineage’s current object model includes dataset lifecycle metadata for events such as create, alter, drop, overwrite, rename and truncate.</p>
+<p>These lifecycle signals can initiate model checks.</p>
+<h2 id="drop">Drop</h2>
+<p>Find every active lineage path depending on the dataset or its fields.</p>
+<h2 id="rename">Rename</h2>
+<p>Verify whether identity remains stable and update physical metadata without creating false deletion and addition.</p>
+<h2 id="alter">Alter</h2>
+<p>Compare field schema, keys, types and value domains.</p>
+<h2 id="overwrite">Overwrite</h2>
+<p>Check whether the logical dataset identity remains valid.</p>
+<h2 id="truncate">Truncate</h2>
+<p>Treat as an operational data event, not necessarily a lineage-model change.</p>
+<p>Martenweave does not need to reproduce an entire runtime lineage platform.</p>
+<p>It can consume lifecycle evidence and assess the governed model consequences.</p>
+<p>---</p>
+<h1 id="field-level-schema-comparison">Field-level schema comparison</h1>
+<p>When a source or target dataset changes, compare:</p>
+<ul>
+<li>fields added;</li>
+<li>fields removed;</li>
+<li>fields renamed;</li>
+<li>datatype changes;</li>
+<li>nullability;</li>
+<li>keys;</li>
+<li>nesting;</li>
+<li>value domains;</li>
+<li>descriptions where authoritative.</li>
+</ul>
+<p>Then map each physical change to canonical objects.</p>
+<p>Example:</p>
+<pre><code class="language-text">Removed:
+ERP_A.CUSTOMER_GROUP
+
+Canonical consequences:
+- 1 active Mapping loses source
+- 1 Customer Group Attribute loses approved input
+- 2 migration datasets become unsupported
+- 1 fallback path remains</code></pre>
+<p>A schema diff becomes valuable when translated into model impact.</p>
+<p>---</p>
+<h1 id="direct-and-indirect-dependencies">Direct and indirect dependencies</h1>
+<p>A changed field may not supply the target value directly.</p>
+<p>It may control:</p>
+<ul>
+<li>filtering;</li>
+<li>joining;</li>
+<li>conditional logic;</li>
+<li>organisational selection;</li>
+<li>fallback behaviour.</li>
+</ul>
+<p>OpenLineage’s column-lineage specification distinguishes direct dependencies, where an output value is derived from an input field, from indirect dependencies, where an input influences the result through a join, filter, grouping, sorting, window or conditional expression.</p>
+<p>This distinction matters during system changes.</p>
+<p>Removing a Sales Organisation field may not remove Customer Group’s source value.</p>
+<p>It can still make Customer Group impossible to derive correctly because the contextual lookup no longer works.</p>
+<p>The detector should report:</p>
+<pre><code class="language-text">Direct source preserved.
+
+Conditional context lost.
+
+Result:
+lineage path structurally present but semantically incomplete.</code></pre>
+<p>---</p>
+<h1 id="broken-key-lineage">Broken key lineage</h1>
+<p>A system replacement may preserve payload fields while changing identifiers.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old source customer ID:
+numeric internal number
+
+New source customer ID:
+global UUID</code></pre>
+<p>The business Attribute fields remain available.</p>
+<p>The migration can no longer join them to existing organisational or historical records without a key cross-reference.</p>
+<p>Broken key lineage can affect every downstream field even when those fields are unchanged.</p>
+<p>The transition check should include:</p>
+<ul>
+<li>business key;</li>
+<li>technical key;</li>
+<li>cross-reference;</li>
+<li>parent-child keys;</li>
+<li>organisational keys;</li>
+<li>effective identity rules.</li>
+</ul>
+<p>---</p>
+<h1 id="transformation-rule-drift">Transformation-rule drift</h1>
+<p>A source or target change can leave the Mapping connected while invalidating its transformation.</p>
+<p>Example:</p>
+<pre><code class="language-text">Old source code:
+A, B, C
+
+New source code:
+01, 02, 03</code></pre>
+<p>The FieldEndpoint remains conceptually the source of Customer Class.</p>
+<p>The conversion table still expects letters.</p>
+<p>The graph is connected.</p>
+<p>The transformation is broken.</p>
+<p>Martenweave’s system-lineage model includes <code>TransformationRule</code> and <code>DataFlowStep</code> objects, which can represent this intermediate behaviour rather than treating the source-to-target connection as one undifferentiated edge.</p>
+<p>---</p>
+<h1 id="rule-implementation-drift">Rule-implementation drift</h1>
+<p>A target field may be replaced, but the Rule remains implemented against the old endpoint.</p>
+<p>Example:</p>
+<pre><code class="language-text">Canonical Rule:
+Supplier Review Status required before distribution.
+
+Old implementation:
+validation on custom field.
+
+New field:
+standard endpoint.
+
+Current implementation:
+not updated.</code></pre>
+<p>The lineage of the value may work.</p>
+<p>The lineage of the control does not.</p>
+<p>The broken-lineage detector should include:</p>
+<ul>
+<li>value path;</li>
+<li>validation path;</li>
+<li>workflow path;</li>
+<li>distribution path.</li>
+</ul>
+<p>Master data depends on controls as well as values.</p>
+<p>---</p>
+<h1 id="evidence-can-become-stale-without-becoming-false">Evidence can become stale without becoming false</h1>
+<p>An old mock-load report may prove that the previous lineage worked.</p>
+<p>After system replacement, it no longer proves the new lineage.</p>
+<p>Do not delete it.</p>
+<p>Reclassify it:</p>
+<pre><code class="language-text">Historical Evidence:
+valid for baseline CUSTOMER-WAVE2
+
+Candidate replacement path:
+not yet verified</code></pre>
+<p>This preserves auditability while exposing the new verification gap.</p>
+<p>---</p>
+<h1 id="detecting-broken-lineage-through-graph-comparison">Detecting broken lineage through graph comparison</h1>
+<p>A powerful method is to compare the graph before and after a proposed system change.</p>
+<h2 id="current-graph">Current graph</h2>
+<pre><code class="language-text">ERP_A endpoint
+→ Mapping A
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<h2 id="candidate-graph">Candidate graph</h2>
+<pre><code class="language-text">ERP_B endpoint
+→ Mapping B
+→ Customer Group
+→ KNVV-KDGRP</code></pre>
+<p>Compare:</p>
+<ul>
+<li>removed nodes;</li>
+<li>added nodes;</li>
+<li>redirected edges;</li>
+<li>changed edge types;</li>
+<li>changed statuses;</li>
+<li>changed applicability;</li>
+<li>changed transformation Rules;</li>
+<li>lost Evidence;</li>
+<li>new Findings.</li>
+</ul>
+<p>A candidate graph is broken when required paths no longer connect appropriate roots to targets.</p>
+<p>---</p>
+<h1 id="required-path-assertions">Required path assertions</h1>
+<p>Rather than asking whether the graph remains generally connected, define critical assertions.</p>
+<p>Example:</p>
+<pre><code class="language-text">For every approved mandatory SAP target FieldEndpoint:
+
+there must be at least one
+active or approved Mapping path
+
+from an authoritative source
+or declared manual creation process
+
+covering each active applicability context.</code></pre>
+<p>Another assertion:</p>
+<pre><code class="language-text">Every active Rule implementation endpoint
+must belong to an active system
+or have an approved transition replacement.</code></pre>
+<p>Assertions turn lineage health into deterministic validation.</p>
+<p>---</p>
+<h1 id="root-to-target-continuity">Root-to-target continuity</h1>
+<p>For critical Attributes, test whether a complete path remains.</p>
+<pre><code class="language-text">authoritative source
+→ observed dataset or creation process
+→ Mapping
+→ business Attribute
+→ active target endpoint</code></pre>
+<p>The path may be considered broken when:</p>
+<ul>
+<li>no source exists;</li>
+<li>all sources are retired;</li>
+<li>required context is missing;</li>
+<li>Mapping is inactive;</li>
+<li>target is retired;</li>
+<li>source and target applicability do not overlap;</li>
+<li>transformation output is incompatible;</li>
+<li>replacement is only candidate status.</li>
+</ul>
+<p>A path can remain graph-connected and fail one of these semantic requirements.</p>
+<p>---</p>
+<h1 id="coverage-by-context">Coverage by context</h1>
+<p>Do not test continuity only at the global level.</p>
+<p>Customer Group may have:</p>
+<pre><code class="language-text">CRM population:
+valid path
+
+ERP_A historical population:
+historical path
+
+ERP_B Wave 3 population:
+no approved path
+
+manual exception population:
+temporary path</code></pre>
+<p>A global query finds at least one source-to-target path.</p>
+<p>The ERP_B context remains broken.</p>
+<p>Lineage continuity must be evaluated per:</p>
+<ul>
+<li>country;</li>
+<li>business unit;</li>
+<li>source population;</li>
+<li>migration wave;</li>
+<li>organisational context;</li>
+<li>effective period.</li>
+</ul>
+<p>---</p>
+<h1 id="detecting-silent-fallback">Detecting silent fallback</h1>
+<p>When a source disappears, the implementation may begin using:</p>
+<ul>
+<li>default values;</li>
+<li>another source;</li>
+<li>cached data;</li>
+<li>manual assignments;</li>
+<li>previous-period values.</li>
+</ul>
+<p>The target remains populated.</p>
+<p>A superficial completeness check shows no defect.</p>
+<p>Observed lineage should identify the fallback path.</p>
+<p>The model can then compare it with approved design.</p>
+<p>Example:</p>
+<pre><code class="language-text">Approved:
+ERP_A Customer Group
+
+Observed after retirement:
+default 01
+
+Classification:
+undocumented runtime fallback</code></pre>
+<p>This is a high-priority lineage break because data appears complete while provenance has changed.</p>
+<p>---</p>
+<h1 id="detecting-duplicate-paths-after-replacement">Detecting duplicate paths after replacement</h1>
+<p>During transition, both old and new sources may remain active.</p>
+<pre><code class="language-text">ERP_A Customer Group
+→ Customer Group
+
+ERP_B Customer Class
+→ Customer Group</code></pre>
+<p>If applicability and precedence are not explicit, the model cannot determine:</p>
+<ul>
+<li>which source wins;</li>
+<li>whether values must agree;</li>
+<li>whether one path is fallback;</li>
+<li>whether populations overlap.</li>
+</ul>
+<p>The detector should identify overlapping active paths to the same Attribute and context.</p>
+<p>Possible status:</p>
+<pre><code class="language-text">parallel operation:
+approved
+
+uncontrolled duplication:
+error</code></pre>
+<p>---</p>
+<h1 id="detecting-path-collapse">Detecting path collapse</h1>
+<p>A new platform may simplify several transformation steps into one service.</p>
+<p>Before:</p>
+<pre><code class="language-text">source field
+→ staging normalisation
+→ lookup table
+→ enrichment
+→ target field</code></pre>
+<p>After:</p>
+<pre><code class="language-text">source API
+→ target API</code></pre>
+<p>The shorter runtime path may be valid.</p>
+<p>The canonical model still needs to preserve:</p>
+<ul>
+<li>transformation meaning;</li>
+<li>lookup ownership;</li>
+<li>context dependencies;</li>
+<li>Rule assumptions.</li>
+</ul>
+<p>Do not remove semantic Mapping objects merely because one technical service now implements several steps internally.</p>
+<p>---</p>
+<h1 id="detecting-path-expansion">Detecting path expansion</h1>
+<p>The opposite can occur.</p>
+<p>A direct Mapping becomes:</p>
+<pre><code class="language-text">source
+→ event bus
+→ integration service
+→ reference-data service
+→ SAP API</code></pre>
+<p>The business Mapping may remain unchanged.</p>
+<p>The implementation has more failure points and owners.</p>
+<p>System lineage should expand while the semantic lineage remains stable.</p>
+<p>This separation prevents technical topology from redefining business meaning.</p>
+<p>---</p>
+<h1 id="detection-workflow">Detection workflow</h1>
+<p>A practical source- or target-change analysis can follow twelve steps.</p>
+<h2 id="1-identify-the-change-event">1. Identify the change event</h2>
+<p>Retirement, replacement, rename, split, consolidation, interface version or endpoint change.</p>
+<h2 id="2-fix-the-comparison-baseline">2. Fix the comparison baseline</h2>
+<p>Record current commit, candidate baseline and effective date.</p>
+<h2 id="3-validate-the-current-model">3. Validate the current model</h2>
+<p>Do not analyse a graph with unresolved structural errors.</p>
+<h2 id="4-locate-affected-system-objects">4. Locate affected system objects</h2>
+<p>Systems, Applications, Interfaces, InterfaceEndpoints and FieldEndpoints.</p>
+<h2 id="5-traverse-active-dependencies">5. Traverse active dependencies</h2>
+<p>Find Mappings, TransformationRules, Attributes, Rules, datasets and consumers.</p>
+<h2 id="6-preserve-historical-paths">6. Preserve historical paths</h2>
+<p>Separate current operational dependencies from historical lineage.</p>
+<h2 id="7-register-candidate-replacements">7. Register candidate replacements</h2>
+<p>Do not approve them merely because names match.</p>
+<h2 id="8-compare-semantic-contracts">8. Compare semantic contracts</h2>
+<p>Meaning, grain, keys, value domain, applicability and authority.</p>
+<h2 id="9-build-the-candidate-graph">9. Build the candidate graph</h2>
+<p>Apply proposed replacements without changing canonical files.</p>
+<h2 id="10-run-required-path-assertions">10. Run required-path assertions</h2>
+<p>Check continuity per critical Attribute and context.</p>
+<h2 id="11-compare-approved-and-observed-lineage">11. Compare approved and observed lineage</h2>
+<p>Use current dataset and runtime Evidence.</p>
+<h2 id="12-generate-findings-and-review-tasks">12. Generate Findings and review tasks</h2>
+<p>Do not mutate the model automatically.</p>
+<p>---</p>
+<h1 id="suggested-diagnostic-codes">Suggested diagnostic codes</h1>
+<p>A focused implementation could expose diagnostics such as:</p>
+<pre><code class="language-text">MW-LINEAGE-BREAK-001
+Active Mapping depends on retired source endpoint.
+
+MW-LINEAGE-BREAK-002
+Active Attribute has no source or creation path after system retirement.
+
+MW-LINEAGE-BREAK-003
+Replacement source has incompatible Entity grain.
+
+MW-LINEAGE-BREAK-004
+Replacement endpoint value domain is not equivalent.
+
+MW-LINEAGE-BREAK-005
+Interface contract removed a directly used field.
+
+MW-LINEAGE-BREAK-006
+Required conditional input is missing from replacement source.
+
+MW-LINEAGE-BREAK-007
+Active Rule implementation points to retired endpoint.
+
+MW-LINEAGE-BREAK-008
+Observed runtime path differs from approved Mapping.
+
+MW-LINEAGE-BREAK-009
+Old and new active paths overlap without precedence.
+
+MW-LINEAGE-BREAK-010
+Historical Evidence is being used to claim current verification.
+
+MW-LINEAGE-BREAK-011
+System rename created duplicate identities.
+
+MW-LINEAGE-BREAK-012
+Candidate target replacement leaves downstream consumers on old endpoint.</code></pre>
+<p>These findings should include:</p>
+<ul>
+<li>affected path;</li>
+<li>object IDs;</li>
+<li>context;</li>
+<li>severity;</li>
+<li>likely reviewer;</li>
+<li>suggested next action.</li>
+</ul>
+<p>---</p>
+<h1 id="worked-example-erp-a-retirement">Worked example: ERP_A retirement</h1>
+<h2 id="current-approved-path">Current approved path</h2>
+<pre><code class="language-text">FEP-ERP-A-CUSTOMER-GROUP
+→ MAP-ERP-A-CUSTOMER-GROUP
+→ ATTR-CUSTOMER-GROUP
+→ FEP-S4-KNVV-KDGRP</code></pre>
+<h2 id="system-event">System event</h2>
+<pre><code class="language-text">SYS-ERP-A
+status:
+retiring
+
+effective date:
+1 October 2026</code></pre>
+<h2 id="candidate-source">Candidate source</h2>
+<pre><code class="language-text">FEP-ERP-B-CUSTOMER-CLASS</code></pre>
+<h2 id="comparison">Comparison</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Property</th><th scope="col">ERP_A</th><th scope="col">ERP_B</th></tr></thead><tbody><tr><td>Meaning</td><td>Customer Group</td><td>Customer Classification</td></tr><tr><td>Grain</td><td>Customer Sales Area</td><td>Customer</td></tr><tr><td>Values</td><td>SAP-aligned codes</td><td>Local category codes</td></tr><tr><td>Authority</td><td>Approved</td><td>Unresolved</td></tr><tr><td>Context</td><td>Sales Area included</td><td>No Sales Area</td></tr></tbody></table></div>
+<h2 id="finding">Finding</h2>
+<pre><code class="language-text">Replacement field exists,
+but semantic equivalence and grain compatibility fail.</code></pre>
+<h2 id="required-actions">Required actions</h2>
+<ul>
+<li>define enrichment Mapping;</li>
+<li>add Sales Area source;</li>
+<li>approve source authority;</li>
+<li>profile ERP_B values;</li>
+<li>test candidate path;</li>
+<li>keep ERP_A Mapping historical.</li>
+</ul>
+<p>The system replacement is not complete until the governed path is restored.</p>
+<p>---</p>
+<h1 id="worked-example-custom-target-field-replaced">Worked example: custom target field replaced</h1>
+<h2 id="current-path">Current path</h2>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS
+→ FEP-S4-ZZ-REVIEW-STATUS</code></pre>
+<h2 id="proposed-path">Proposed path</h2>
+<pre><code class="language-text">ATTR-SUPPLIER-REVIEW-STATUS
+→ FEP-S4-STANDARD-REVIEW-STATUS</code></pre>
+<h2 id="detected-dependencies-on-old-endpoint">Detected dependencies on old endpoint</h2>
+<ul>
+<li>migration Mapping;</li>
+<li>MDG Rule implementation;</li>
+<li>outbound interface;</li>
+<li>report filter;</li>
+<li>mock-load Evidence;</li>
+<li>local rollout exception.</li>
+</ul>
+<h2 id="candidate-assessment">Candidate assessment</h2>
+<ul>
+<li>Attribute meaning: mostly aligned;</li>
+<li>value domain: requires conversion;</li>
+<li>workflow Rule: not yet reimplemented;</li>
+<li>outbound interface: still uses old property;</li>
+<li>historical Evidence: remains valid only for old endpoint.</li>
+</ul>
+<h2 id="verdict">Verdict</h2>
+<pre><code class="language-text">Candidate lineage:
+structurally connected
+
+Operational continuity:
+incomplete
+
+Release:
+blocked</code></pre>
+<p>A new target field alone does not restore the complete path.</p>
+<p>---</p>
+<h1 id="worked-example-interface-property-renamed">Worked example: interface property renamed</h1>
+<h2 id="before">Before</h2>
+<pre><code class="language-text">API property:
+customerGroup</code></pre>
+<h2 id="after">After</h2>
+<pre><code class="language-text">API property:
+salesAreaCustomerGroup</code></pre>
+<h2 id="initial-assumption">Initial assumption</h2>
+<p>Simple rename.</p>
+<h2 id="discovered-change">Discovered change</h2>
+<p>The new property is nested under Sales Area and may occur several times per customer.</p>
+<h2 id="classification">Classification</h2>
+<pre><code class="language-text">Not a rename.
+
+Change type:
+grain and cardinality change</code></pre>
+<h2 id="impact">Impact</h2>
+<ul>
+<li>consumer data model;</li>
+<li>Mapping keys;</li>
+<li>report joins;</li>
+<li>API tests;</li>
+<li>source extract design;</li>
+<li>business Attribute context.</li>
+</ul>
+<p>The detector avoids preserving false endpoint identity.</p>
+<p>---</p>
+<h1 id="worked-example-source-system-renamed">Worked example: source system renamed</h1>
+<h2 id="before-2">Before</h2>
+<pre><code class="language-text">SYS-LEGACY-CRM
+name:
+Legacy CRM</code></pre>
+<h2 id="after-2">After</h2>
+<pre><code class="language-text">name:
+Customer Hub</code></pre>
+<h2 id="evidence">Evidence</h2>
+<ul>
+<li>same database;</li>
+<li>same interfaces;</li>
+<li>same ownership;</li>
+<li>same field identities;</li>
+<li>no migration event.</li>
+</ul>
+<h2 id="classification-2">Classification</h2>
+<pre><code class="language-text">System rename.
+
+Stable ID retained.
+Old name preserved as alias.
+No lineage rewiring required.</code></pre>
+<p>This prevents a cosmetic change from creating a false new system and orphaning the old paths.</p>
+<p>---</p>
+<h1 id="worked-example-observed-path-differs">Worked example: observed path differs</h1>
+<h2 id="approved-path">Approved path</h2>
+<pre><code class="language-text">CRM Segment + Sales Area
+→ Customer Group enrichment
+→ KNVV-KDGRP</code></pre>
+<h2 id="observed-load">Observed load</h2>
+<pre><code class="language-text">Missing Sales Area
+→ default 01
+→ KNVV-KDGRP</code></pre>
+<h2 id="technical-result">Technical result</h2>
+<p>Target field populated.</p>
+<h2 id="governance-result">Governance result</h2>
+<p>Approved lineage not followed.</p>
+<h2 id="classification-3">Classification</h2>
+<pre><code class="language-text">Undocumented fallback.
+Semantic and observability break.</code></pre>
+<h2 id="required-action">Required action</h2>
+<ul>
+<li>identify affected records;</li>
+<li>determine whether fallback was authorised;</li>
+<li>correct implementation or create bounded deviation;</li>
+<li>retain runtime Evidence;</li>
+<li>rerun readiness.</li>
+</ul>
+<p>---</p>
+<h1 id="release-gates">Release gates</h1>
+<p>A system transition should not be considered lineage-ready when:</p>
+<ul>
+<li>a critical Attribute loses its only active source;</li>
+<li>a replacement source has incompatible grain;</li>
+<li>required context fields are missing;</li>
+<li>a target replacement lacks updated Mappings;</li>
+<li>active Rules still point to retired endpoints;</li>
+<li>interface consumers remain on the old contract;</li>
+<li>overlapping paths have no precedence;</li>
+<li>candidate path has no supporting Evidence;</li>
+<li>historical lineage would be overwritten;</li>
+<li>observed runtime uses an undocumented fallback.</li>
+</ul>
+<p>Warnings may remain when:</p>
+<ul>
+<li>noncritical endpoints are unclassified;</li>
+<li>low-volume consumers await verification;</li>
+<li>a historical report has incomplete metadata;</li>
+<li>future-state paths remain draft.</li>
+</ul>
+<p>---</p>
+<h1 id="ci-and-repository-review">CI and repository review</h1>
+<p>Broken-lineage checks should run during model changes.</p>
+<p>A review can compare the base and candidate repositories:</p>
+<pre><code class="language-bash">martenweave validate --repo ./model
+martenweave build-index --repo ./model --jsonl
+martenweave diff ./model ./candidate-model
+martenweave impact SYS-ERP-A --repo ./model</code></pre>
+<p>The documented Martenweave CLI currently supports validation, index construction, trace, impact and repository diff operations.</p>
+<p>A future system-change-aware check could evaluate:</p>
+<pre><code class="language-bash">martenweave lineage-check \
+  --change FIND-ERP-A-RETIREMENT \
+  --repo ./model</code></pre>
+<p>The dedicated command is a recommended direction rather than current guaranteed behaviour.</p>
+<p>---</p>
+<h1 id="what-ai-can-contribute">What AI can contribute</h1>
+<p>AI can help:</p>
+<ul>
+<li>extract candidate replacement fields from interface specifications;</li>
+<li>compare old and new descriptions;</li>
+<li>summarise schema differences;</li>
+<li>propose likely Mapping updates;</li>
+<li>identify references in tickets and reports;</li>
+<li>draft Findings and test plans.</li>
+</ul>
+<p>AI should not decide autonomously:</p>
+<ul>
+<li>that two systems are the same identity;</li>
+<li>that similarly named fields are semantically equivalent;</li>
+<li>that a historical path can be deleted;</li>
+<li>that runtime fallback is acceptable;</li>
+<li>that source authority transfers to the replacement system.</li>
+</ul>
+<p>The deterministic layer should establish exact model dependencies.</p>
+<p>Humans approve identity, authority and semantic compatibility.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already has the relevant architectural pieces:</p>
+<ul>
+<li>system-lineage objects;</li>
+<li>canonical Mappings and Rules;</li>
+<li>deterministic reference validation;</li>
+<li>repository diff;</li>
+<li>trace and impact;</li>
+<li>BFS-based proposal impact;</li>
+<li>dataset readiness;</li>
+<li>proposal-first change control.</li>
+</ul>
+<p>The next useful vertical slice should be <strong>system-change lineage continuity analysis</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Detect which approved lineage paths break when a System, Application, Interface or FieldEndpoint is retired, replaced or changed.</p>
+<h2 id="scope">Scope</h2>
+<p>Support change events for:</p>
+<ul>
+<li>system retirement;</li>
+<li>source replacement;</li>
+<li>target replacement;</li>
+<li>interface-field removal;</li>
+<li>interface-field rename;</li>
+<li>system rename.</li>
+</ul>
+<h2 id="required-checks">Required checks</h2>
+<ol>
+<li>Active Mappings using retired endpoints.</li>
+<li>Mandatory Attributes losing all source paths.</li>
+<li>Replacement fields with incompatible grain.</li>
+<li>Missing direct or conditional inputs.</li>
+<li>Rules implemented against retired targets.</li>
+<li>Downstream interfaces still consuming old endpoints.</li>
+<li>Duplicate old and new active paths without precedence.</li>
+<li>Historical Evidence incorrectly treated as current.</li>
+<li>Runtime observations contradicting approved lineage.</li>
+<li>System rename represented incorrectly as replacement.</li>
+</ol>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>For an ERP_A retirement scenario, Martenweave should report:</p>
+<ul>
+<li>all affected source FieldEndpoints;</li>
+<li>active Mappings;</li>
+<li>business Attributes;</li>
+<li>SAP targets;</li>
+<li>replacement candidates;</li>
+<li>missing context;</li>
+<li>historical paths to preserve;</li>
+<li>required reviewers.</li>
+</ul>
+<h2 id="validation-command">Validation command</h2>
+<pre><code class="language-bash">martenweave validate --repo examples/customer_bp_model</code></pre>
+<h2 id="existing-functional-checks">Existing functional checks</h2>
+<pre><code class="language-bash">martenweave trace \
+  ATTR-CUST-SALES-CUSTOMER-GROUP \
+  --repo examples/customer_bp_model
+
+martenweave impact \
+  FEP-S4-KNVV-KDGRP \
+  --repo examples/customer_bp_model</code></pre>
+<h2 id="future-transition-check">Future transition check</h2>
+<pre><code class="language-bash">martenweave lineage-check \
+  --system SYS-ERP-A \
+  --change retirement \
+  --repo examples/customer_bp_model</code></pre>
+<p>The final command describes a product direction, not a current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A source or target system change is not complete when the new connection works.</p>
+<p>It is complete when the organisation can still explain every critical governed path.</p>
+<p>The relevant chain is:</p>
+<pre><code class="language-text">authoritative source
+→ physical field
+→ dataset or interface
+→ transformation
+→ business Attribute
+→ target endpoint
+→ downstream consumer</code></pre>
+<p>supported by:</p>
+<pre><code class="language-text">Rules
+Decisions
+Evidence
+ownership
+effective baseline</code></pre>
+<p>Broken lineage can appear as:</p>
+<ul>
+<li>a missing edge;</li>
+<li>a wrong grain;</li>
+<li>an outdated transformation;</li>
+<li>a stale Rule implementation;</li>
+<li>a silent fallback;</li>
+<li>a duplicated source path;</li>
+<li>a replacement endpoint with different meaning;</li>
+<li>historical evidence presented as current proof.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>After the system change, can the team trace every critical Attribute from an authoritative and contextually valid source to the active target, prove that the candidate transformation works and preserve the previous path for historical interpretation?</blockquote>
+<p>When the answer is yes, lineage continuity has been restored.</p>
+<p>When the answer is:</p>
+<blockquote>The new interface is running,</blockquote>
+<p>the technical transition may be complete while the model transition remains unresolved.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects system, interface, endpoint, Mapping, Attribute, Rule, Decision and Evidence objects so that source and target changes can be assessed before they silently break model continuity.</p>
+<p>The objective is not to preserve old systems forever.</p>
+<p>It is to preserve the meaning and provenance of the data as systems change.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently includes system-lineage model objects such as <code>IntegrationFlow</code>, <code>DataFlowStep</code>, <code>TransformationRule</code>, <code>Interface</code>, <code>InterfaceEndpoint</code>, <code>Application</code> and <code>System</code>. Its release history also records proposal impact analysis, repository diffing, search and schema-version support.</p>
+<p>The current Martenweave workflow uses canonical files as the source of truth, validates references before indexing and places lineage and impact analysis before reviewable AI-assisted proposals.</p>
+<p>OpenLineage’s object model distinguishes runtime <code>RunEvent</code> observations from design-time <code>JobEvent</code> and <code>DatasetEvent</code> metadata. It also defines dataset lifecycle metadata for changes including create, alter, drop, overwrite, rename and truncate.</p>
+<p>OpenLineage’s column-level lineage specification distinguishes direct field derivation from indirect influence and classifies indirect dependencies such as joins, filtering and conditional logic. This is important when a removed field controls context without directly supplying a target value.</p>
+<p>The system-change events, lineage-break diagnostic codes and proposed <code>lineage-check</code> operation in this article describe recommended Martenweave improvements. They should not be interpreted as guarantees of the exact current schema or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or OpenLineage.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-detect-orphaned-fields-rules-and-mappings.html"><span>Previous</span>A repository validates successfully.</a><a href="/blog/how-to-model-source-authority-and-fallback-paths-without-creating.html"><span>Next</span>A migration team traces Customer Group upstream and finds four possible sources:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

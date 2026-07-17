@@ -1080,6 +1080,16 @@ pre {
 .blog-index-header { max-width: 790px; margin: 0 0 3.5rem; }
 .blog-index-header h1 { max-width: 15ch; margin: 0.7rem 0 1.2rem; font-size: clamp(2.35rem, 4.8vw, 4.3rem); line-height: 1.03; }
 .blog-index-header > p:last-child { max-width: 62ch; font-size: 1.05rem; line-height: 1.65; }
+.blog-controls { margin: 0 0 2.5rem; border-block: 1px solid var(--line); padding: 1rem 0 1.2rem; }
+.blog-search { display: grid; gap: 0.45rem; max-width: 38rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.blog-search input { width: 100%; border: 1px solid var(--line); border-radius: 0; background: var(--paper); color: var(--ink); font: inherit; letter-spacing: 0; padding: 0.85rem 0.9rem; text-transform: none; }
+.blog-search input:focus-visible { outline: 3px solid color-mix(in srgb, var(--amber) 45%, transparent); outline-offset: 2px; }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1rem; }
+.blog-filter, .blog-pagination button { border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; font: 0.72rem/1 var(--font-mono); padding: 0.62rem 0.78rem; }
+.blog-filter:hover, .blog-filter.is-active, .blog-pagination button:hover, .blog-pagination button.is-current { border-color: var(--aubergine); background: var(--aubergine); color: var(--paper); }
+.blog-result-count { margin: 1rem 0 0; color: var(--muted); font: 0.74rem/1.4 var(--font-mono); }
+.blog-pagination { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 2rem 0 0; }
+.blog-card[hidden] { display: none; }
 .blog-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 .blog-card { display: flex; min-height: 280px; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.25rem; color: var(--ink); text-decoration: none; transition: background 160ms ease; }
 .blog-card:nth-child(2n) { border-right: 0; }
@@ -1096,6 +1106,7 @@ pre {
   .blog-article .article-contents li + li { margin-top: 0.35rem; }
   .article-neighbors, .blog-grid { grid-template-columns: 1fr; }
   .blog-card, .blog-card.is-featured { grid-column: auto; min-height: 230px; border-right: 0; }
+  .blog-filter { font-size: 0.67rem; }
 }
 
 .blog-cta p {

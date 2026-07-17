@@ -1,0 +1,1236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Prevent Local SAP Decisions from Fragmenting the Global Data Model | Martenweave</title>
+    <meta
+      name="description"
+      content="A country team raises a reasonable request."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html" />
+    <meta property="og:title" content="How to Prevent Local SAP Decisions from Fragmenting the Global Data Model | Martenweave" />
+    <meta property="og:description" content="A country team raises a reasonable request." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Prevent Local SAP Decisions from Fragmenting the Global Data Model | Martenweave" />
+    <meta name="twitter:description" content="A country team raises a reasonable request." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html",
+                        "name": "How to Prevent Local SAP Decisions from Fragmenting the Global Data Model | Martenweave",
+                        "description": "A country team raises a reasonable request.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Prevent Local SAP Decisions from Fragmenting the Global Data Model",
+                                    "item": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html#content",
+                        "headline": "How to Prevent Local SAP Decisions from Fragmenting the Global Data Model",
+                        "name": "How to Prevent Local SAP Decisions from Fragmenting the Global Data Model",
+                        "description": "A country team raises a reasonable request.",
+                        "url": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-prevent-local-sap-decisions-from-fragmenting-the-global-data.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT22M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Prevent Local SAP Decisions from Fragmenting the Global Data Model</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>How to Prevent Local SAP Decisions from Fragmenting the Global Data Model</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 22 min read</p><p class="blog-summary">A country team raises a reasonable request.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#fragmentation-is-not-the-same-as-localisation">Fragmentation is not the same as localisation</a></li><li><a href="#four-ways-global-models-usually-break">Four ways global models usually break</a></li><li><a href="#start-by-protecting-the-global-semantic-core">Start by protecting the global semantic core</a></li><li><a href="#use-inheritance-not-duplication">Use inheritance, not duplication</a></li><li><a href="#every-local-variation-needs-a-type">Every local variation needs a type</a></li><li><a href="#require-a-parent-for-every-local-object">Require a parent for every local object</a></li><li><a href="#scope-must-be-machine-readable-not-buried-in-prose">Scope must be machine-readable, not buried in prose</a></li><li><a href="#local-teams-should-submit-a-difference-not-a-replacement-model">Local teams should submit a difference, not a replacement model</a></li><li><a href="#the-business-case-for-variation-should-be-visible">The business case for variation should be visible</a></li><li><a href="#do-not-use-legal-requirement-as-an-unexamined-override">Do not use “legal requirement” as an unexamined override</a></li><li><a href="#compare-the-local-need-with-existing-global-capabilities">Compare the local need with existing global capabilities</a></li><li><a href="#search-for-the-same-need-in-other-countries">Search for the same need in other countries</a></li><li><a href="#promote-repeated-local-extensions-deliberately">Promote repeated local extensions deliberately</a></li><li><a href="#allow-local-implementation-without-local-semantics">Allow local implementation without local semantics</a></li><li><a href="#control-value-list-extensions">Control value-list extensions</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A country team raises a reasonable request.</p>
+<p>Portuguese supplier organisations require an additional compliance status before activation.</p>
+<p>The global SAP model does not contain that status. The programme is approaching testing, and the local team cannot wait for another global design cycle.</p>
+<p>A local field is added.</p>
+<p>The field solves the immediate problem.</p>
+<p>Six months later, Spain introduces a similar field with different values. Italy represents the same process through a workflow status. Germany adds a value to Supplier Risk instead of creating a separate attribute. One source system begins sending the Portuguese status globally because the interface does not preserve country context.</p>
+<p>Every local decision had a practical reason.</p>
+<p>Together they created four competing representations of the same business condition.</p>
+<p>The programme now has:</p>
+<ul>
+<li>several definitions;</li>
+<li>several value lists;</li>
+<li>incompatible mappings;</li>
+<li>duplicated validation;</li>
+<li>country-specific interfaces;</li>
+<li>inconsistent reporting;</li>
+<li>no reliable way to determine which design should survive.</li>
+</ul>
+<p>This is how global data models fragment.</p>
+<p>It rarely begins with a deliberate decision to create several standards.</p>
+<p>It begins with a sequence of justified local responses that were never represented as controlled extensions of a shared model.</p>
+<blockquote>The objective of global model governance is not to eliminate local variation. It is to make every variation explicit, bounded, traceable and reversible.</blockquote>
+<p>A global model that ignores legitimate country and business requirements will not survive implementation.</p>
+<p>A model that accepts every local solution without structure will stop being global.</p>
+<p>The work is to distinguish necessary variation from uncontrolled divergence.</p>
+<h2 id="fragmentation-is-not-the-same-as-localisation">Fragmentation is not the same as localisation</h2>
+<p>A local requirement may be entirely valid.</p>
+<p>Examples include:</p>
+<ul>
+<li>country-specific tax identifiers;</li>
+<li>legally required classifications;</li>
+<li>regional payment methods;</li>
+<li>local organisational structures;</li>
+<li>market-specific reporting;</li>
+<li>source-system limitations during migration;</li>
+<li>temporary cutover treatment.</li>
+</ul>
+<p>Localisation becomes fragmentation when the organisation cannot answer:</p>
+<ul>
+<li>Which global concept does this local element extend?</li>
+<li>Why is a separate local treatment required?</li>
+<li>Where exactly does it apply?</li>
+<li>What remains shared globally?</li>
+<li>Who approved the difference?</li>
+<li>Which systems implement it?</li>
+<li>When should it be reviewed or retired?</li>
+<li>What happens if another country requests something similar?</li>
+</ul>
+<p>A properly governed local extension strengthens the model by representing reality.</p>
+<p>An undocumented local copy weakens it by creating another truth.</p>
+<h2 id="four-ways-global-models-usually-break">Four ways global models usually break</h2>
+<p>Fragmentation often appears through one of four patterns.</p>
+<h3 id="a-global-object-is-copied-and-edited-locally">A global object is copied and edited locally</h3>
+<p>The country takes the global Supplier model, adds several fields, changes definitions and maintains the result separately.</p>
+<p>At first, this is convenient.</p>
+<p>Later, a global rule changes. The local copy does not inherit it. Teams must compare two large models to determine what differs intentionally and what merely drifted.</p>
+<h3 id="a-local-requirement-is-forced-into-an-unrelated-global-field">A local requirement is forced into an unrelated global field</h3>
+<p>The country needs a process status.</p>
+<p>Instead of defining a contextual status attribute, it adds <code>UNDER_REVIEW</code> to a global risk classification.</p>
+<p>The global object remains technically shared, but its meaning becomes unstable.</p>
+<h3 id="a-workaround-is-mistaken-for-a-permanent-requirement">A workaround is mistaken for a permanent requirement</h3>
+<p>A source cannot provide a field before cutover.</p>
+<p>The programme introduces a local default.</p>
+<p>The source is later replaced, but the default remains in mappings and operational data.</p>
+<h3 id="several-local-solutions-address-the-same-missing-global-capability">Several local solutions address the same missing global capability</h3>
+<p>Each country implements its own version because no shared investigation or decision mechanism exists.</p>
+<p>The organisation discovers the common pattern only after several implementations are live.</p>
+<p>These failure modes require different treatment. A single rule such as “all countries must use the global template” is not sufficient.</p>
+<h2 id="start-by-protecting-the-global-semantic-core">Start by protecting the global semantic core</h2>
+<p>A global model does not need to prescribe every implementation detail.</p>
+<p>It should define the stable concepts that local extensions must not silently redefine.</p>
+<p>For each important attribute, relationship or rule, the semantic core should state:</p>
+<ul>
+<li>business meaning;</li>
+<li>owner;</li>
+<li>identity;</li>
+<li>granularity;</li>
+<li>lifecycle;</li>
+<li>cardinality;</li>
+<li>global value semantics;</li>
+<li>authoritative context;</li>
+<li>permitted extension points.</li>
+</ul>
+<p>Consider Supplier Risk.</p>
+<p>The global semantic core may state:</p>
+<pre><code class="language-text">Supplier Risk is the approved final assessment of supplier exposure.
+
+It is not:
+- a workflow state;
+- a migration-completeness indicator;
+- a temporary review flag.
+
+Granularity:
+Supplier organisation.
+
+Owner:
+Global Supplier Risk Owner.</code></pre>
+<p>A country may still require:</p>
+<ul>
+<li>another review step;</li>
+<li>a local risk dimension;</li>
+<li>a regulatory indicator;</li>
+<li>a different approval threshold.</li>
+</ul>
+<p>It should not use the global Supplier Risk attribute for those purposes unless the global meaning is formally changed.</p>
+<p>The strongest global models are strict about meaning and flexible about controlled context.</p>
+<h2 id="use-inheritance-not-duplication">Use inheritance, not duplication</h2>
+<p>A local model should normally inherit from the global model.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Global Supplier Model
+        ↓ inherited by
+Portugal Supplier Context
+        ↓ extends with
+Local Compliance Review Status</code></pre>
+<p>The local context should contain only the difference:</p>
+<ul>
+<li>additional attribute;</li>
+<li>narrower rule;</li>
+<li>allowed local value;</li>
+<li>local source treatment;</li>
+<li>local ownership;</li>
+<li>effective dates.</li>
+</ul>
+<p>It should not copy every global object.</p>
+<p>This has an important consequence.</p>
+<p>When the global definition changes, the local context receives the change unless it has an explicit override.</p>
+<p>Without inheritance, every local model becomes a separate branch requiring manual reconciliation.</p>
+<h2 id="every-local-variation-needs-a-type">Every local variation needs a type</h2>
+<p>Not all local differences are equivalent.</p>
+<p>A useful classification separates at least six forms of variation.</p>
+<h3 id="local-extension">Local extension</h3>
+<p>Adds information that does not alter global meaning.</p>
+<p>Example:</p>
+<blockquote>Portuguese Tax Registration Type is added for the Portuguese supplier context.</blockquote>
+<h3 id="contextual-restriction">Contextual restriction</h3>
+<p>Makes a global rule narrower in a defined context.</p>
+<p>Example:</p>
+<blockquote>Supplier Classification is mandatory only for active strategic suppliers.</blockquote>
+<h3 id="contextual-strengthening">Contextual strengthening</h3>
+<p>Adds an additional local requirement.</p>
+<p>Example:</p>
+<blockquote>Portuguese regulated suppliers require Compliance Review Status before activation.</blockquote>
+<h3 id="approved-semantic-override">Approved semantic override</h3>
+<p>Changes the interpretation of a global element for a bounded context.</p>
+<p>This should be rare because it weakens cross-country comparability.</p>
+<h3 id="temporary-deviation">Temporary deviation</h3>
+<p>Allows a difference for a limited migration or operational period.</p>
+<p>Example:</p>
+<blockquote>ERP_B may leave Review Status pending during Mock Load 2.</blockquote>
+<h3 id="implementation-workaround">Implementation workaround</h3>
+<p>Changes technical behaviour without changing the approved model.</p>
+<p>Example:</p>
+<blockquote>A local enrichment file supplies an approved global attribute until the source is corrected.</blockquote>
+<p>The type determines how the variation should be reviewed and maintained.</p>
+<p>A temporary workaround should not be governed like a permanent country attribute.</p>
+<h2 id="require-a-parent-for-every-local-object">Require a parent for every local object</h2>
+<p>A local object should either:</p>
+<ol>
+<li>extend a global object;</li>
+<li>implement a global object in a local system;</li>
+<li>introduce a genuinely local concept with an explicit domain owner.</li>
+</ol>
+<p>For example:</p>
+<pre><code class="language-text">Local object:
+ATTR-PT-SUPPLIER-COMPLIANCE-STATUS
+
+Relationship:
+extends ATTR-GLOBAL-SUPPLIER-GOVERNANCE
+
+Context:
+Country = PT</code></pre>
+<p>Or:</p>
+<pre><code class="language-text">Local mapping:
+MAP-ERP-PT-SUPPLIER-RISK
+
+Relationship:
+implements ATTR-GLOBAL-SUPPLIER-RISK
+
+Context:
+Source system = ERP_PT</code></pre>
+<p>An orphaned local object is a warning sign.</p>
+<p>It may indicate:</p>
+<ul>
+<li>duplicate global concept;</li>
+<li>unresolved semantic overlap;</li>
+<li>undocumented workaround;</li>
+<li>missing global capability.</li>
+</ul>
+<p>Requiring a parent does not mean every local field must have a direct global equivalent.</p>
+<p>It means the organisation must state where the local concept belongs in the wider model.</p>
+<h2 id="scope-must-be-machine-readable-not-buried-in-prose">Scope must be machine-readable, not buried in prose</h2>
+<p>A note such as:</p>
+<blockquote>This rule applies only in Portugal.</blockquote>
+<p>is too weak.</p>
+<p>The model should represent scope explicitly.</p>
+<p>Possible dimensions include:</p>
+<ul>
+<li>country;</li>
+<li>legal entity;</li>
+<li>company code;</li>
+<li>sales organisation;</li>
+<li>purchasing organisation;</li>
+<li>plant;</li>
+<li>business unit;</li>
+<li>source system;</li>
+<li>Business Partner category;</li>
+<li>role;</li>
+<li>record status;</li>
+<li>migration wave;</li>
+<li>effective dates.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-yaml">context:
+  countries:
+    - PT
+  partner_categories:
+    - organization
+  partner_roles:
+    - supplier
+  supplier_types:
+    - regulated
+  effective_from: 2026-10-01</code></pre>
+<p>Machine-readable context supports:</p>
+<ul>
+<li>validation;</li>
+<li>impact analysis;</li>
+<li>conflict detection;</li>
+<li>dataset filtering;</li>
+<li>testing;</li>
+<li>reporting.</li>
+</ul>
+<p>A local rule without explicit scope is effectively global by accident.</p>
+<h2 id="local-teams-should-submit-a-difference-not-a-replacement-model">Local teams should submit a difference, not a replacement model</h2>
+<p>A local request should explain the delta from the approved global state.</p>
+<p>A useful request might say:</p>
+<pre><code class="language-text">Global state:
+Supplier Risk records final risk classification.
+
+Local need:
+Portuguese regulated suppliers require an intermediate compliance review.
+
+Proposed difference:
+Add local Compliance Review Status.
+
+Unchanged global behaviour:
+Supplier Risk meaning and values remain unchanged.
+
+Applicable context:
+Portugal, supplier organisations, regulated population.
+
+Implementation:
+SAP workflow and local interface.
+
+Review date:
+After the first operational quarter.</code></pre>
+<p>This is far easier to govern than a local design document containing an entire alternative supplier model.</p>
+<p>Reviewers can focus on the actual difference.</p>
+<h2 id="the-business-case-for-variation-should-be-visible">The business case for variation should be visible</h2>
+<p>Local teams should not need to prove that global consistency is always more important than their operation.</p>
+<p>They should explain why the variation is necessary.</p>
+<p>Useful evidence may include:</p>
+<ul>
+<li>regulation;</li>
+<li>contractual obligation;</li>
+<li>process requirement;</li>
+<li>dataset structure;</li>
+<li>source limitation;</li>
+<li>business-volume impact;</li>
+<li>operational incident;</li>
+<li>language or address standard;</li>
+<li>existing local system behaviour.</li>
+</ul>
+<p>The evidence should distinguish:</p>
+<h3 id="required-difference">Required difference</h3>
+<p>A local obligation genuinely cannot be represented by the current global model.</p>
+<h3 id="preferred-difference">Preferred difference</h3>
+<p>The local team prefers its existing process or terminology.</p>
+<h3 id="transitional-difference">Transitional difference</h3>
+<p>The local landscape cannot yet support the global model.</p>
+<h3 id="suspected-difference">Suspected difference</h3>
+<p>The team believes its requirement is unique, but comparison with other countries has not been performed.</p>
+<p>These categories support a more honest governance discussion.</p>
+<h2 id="do-not-use-legal-requirement-as-an-unexamined-override">Do not use “legal requirement” as an unexamined override</h2>
+<p>Local requirements are often justified as legal or regulatory.</p>
+<p>Some are.</p>
+<p>Others are:</p>
+<ul>
+<li>local interpretation;</li>
+<li>historic process;</li>
+<li>system limitation;</li>
+<li>internal control;</li>
+<li>preferred reporting practice.</li>
+</ul>
+<p>The decision record should identify:</p>
+<ul>
+<li>the exact requirement;</li>
+<li>applicable population;</li>
+<li>evidence source;</li>
+<li>responsible legal or compliance reviewer;</li>
+<li>effective date;</li>
+<li>consequences of non-compliance.</li>
+</ul>
+<p>The model-governance team should not provide legal interpretation.</p>
+<p>It should require enough evidence to represent the approved requirement correctly.</p>
+<h2 id="compare-the-local-need-with-existing-global-capabilities">Compare the local need with existing global capabilities</h2>
+<p>Before creating an extension, ask whether the global model already supports the requirement through:</p>
+<ul>
+<li>context;</li>
+<li>optional attribute;</li>
+<li>relationship;</li>
+<li>value list;</li>
+<li>workflow;</li>
+<li>role;</li>
+<li>reference data;</li>
+<li>exception mechanism.</li>
+</ul>
+<p>A local team may request a new attribute because the existing global attribute is poorly documented or not exposed in its current implementation.</p>
+<p>The correct action may be:</p>
+<ul>
+<li>improve implementation;</li>
+<li>expose an existing object;</li>
+<li>add a local mapping;</li>
+<li>clarify ownership;</li>
+<li>fix configuration.</li>
+</ul>
+<p>Creating another attribute would duplicate the concept.</p>
+<h2 id="search-for-the-same-need-in-other-countries">Search for the same need in other countries</h2>
+<p>A “local” requirement may be the first visible instance of a broader need.</p>
+<p>Before approving a country-specific object, check:</p>
+<ul>
+<li>open gaps;</li>
+<li>investigation cases;</li>
+<li>decision library;</li>
+<li>local extensions;</li>
+<li>incident history;</li>
+<li>proposed values;</li>
+<li>source-system patterns.</li>
+</ul>
+<p>Suppose Portugal requests Review Status.</p>
+<p>Spain has an informal spreadsheet flag. Italy uses workflow status. Germany uses <code>UNDER_REVIEW</code> inside Supplier Risk.</p>
+<p>This is evidence of a missing shared concept.</p>
+<p>The correct result may be:</p>
+<pre><code class="language-text">Global concept:
+Supplier Review Status
+
+Local applicability:
+Defined by country and supplier population
+
+Local workflow:
+May differ
+
+Global semantics:
+Shared</code></pre>
+<p>A good governance process uses local requests to improve the global model where repetition justifies it.</p>
+<h2 id="promote-repeated-local-extensions-deliberately">Promote repeated local extensions deliberately</h2>
+<p>Not every repeated field deserves global promotion.</p>
+<p>A local concept may become global when:</p>
+<ul>
+<li>several contexts need it;</li>
+<li>the meaning is sufficiently shared;</li>
+<li>a global owner exists;</li>
+<li>value semantics can be standardised;</li>
+<li>systems can consume it consistently;</li>
+<li>the cost of separate variants exceeds the value of local independence.</li>
+</ul>
+<p>Promotion should be an explicit model change.</p>
+<p>The process might be:</p>
+<pre><code class="language-text">Local extension
+→ evidence from several contexts
+→ cross-country investigation
+→ global proposal
+→ impact analysis
+→ global approval
+→ migration of local implementations</code></pre>
+<p>Do not simply rename one local object as global.</p>
+<p>The local implementations may differ in important ways.</p>
+<h2 id="allow-local-implementation-without-local-semantics">Allow local implementation without local semantics</h2>
+<p>Countries often use different source systems and technical configurations while implementing the same global concept.</p>
+<p>For example:</p>
+<pre><code class="language-text">Global attribute:
+Payment Terms
+
+Portugal source:
+ERP_PT.ZTERM
+
+Germany source:
+ERP_DE.PAYMENT_CODE
+
+France source:
+MDM_FR.TERM_CLASS</code></pre>
+<p>Different mappings do not necessarily mean fragmented model truth.</p>
+<p>Fragmentation occurs when the countries assign different meanings to the target without explicit contextual decisions.</p>
+<p>The model should separate:</p>
+<ul>
+<li>global business concept;</li>
+<li>local physical representation;</li>
+<li>local transformation;</li>
+<li>target implementation.</li>
+</ul>
+<p>This is where a project model registry adds value beyond a flat global template.</p>
+<h2 id="control-value-list-extensions">Control value-list extensions</h2>
+<p>Value lists are a frequent source of hidden divergence.</p>
+<p>Suppose the global Supplier Type values are:</p>
+<ul>
+<li>STANDARD;</li>
+<li>STRATEGIC;</li>
+<li>REGULATED.</li>
+</ul>
+<p>A country requests:</p>
+<ul>
+<li>PUBLIC_SECTOR.</li>
+</ul>
+<p>Before adding the value, ask:</p>
+<ol>
+<li>Does it represent the same classification dimension?</li>
+<li>Can a supplier be both strategic and public sector?</li>
+<li>Is it a value or a separate attribute?</li>
+<li>Is the concept local or globally relevant?</li>
+<li>Will downstream systems interpret it correctly?</li>
+<li>Does it change reporting and rules?</li>
+</ol>
+<p>If <code>PUBLIC_SECTOR</code> describes legal-sector category while the existing values describe commercial importance, adding it to the same value list mixes dimensions.</p>
+<p>The problem is not the local value.</p>
+<p>The problem is the incorrect global object.</p>
+<h2 id="keep-local-labels-separate-from-canonical-values">Keep local labels separate from canonical values</h2>
+<p>Countries may need local terminology or translations.</p>
+<p>That does not always require separate values.</p>
+<p>For example:</p>
+<pre><code class="language-text">Canonical code:
+PENDING_REVIEW
+
+English label:
+Pending review
+
+Portuguese label:
+Revisão pendente
+
+German label:
+Prüfung ausstehend</code></pre>
+<p>Creating country-specific codes because labels differ produces unnecessary mapping and reporting complexity.</p>
+<p>Canonical identity and local presentation should be separate where possible.</p>
+<h2 id="use-explicit-override-rules">Use explicit override rules</h2>
+<p>Sometimes a local rule legitimately changes global behaviour.</p>
+<p>The override should state:</p>
+<ul>
+<li>global rule;</li>
+<li>local rule;</li>
+<li>context;</li>
+<li>reason;</li>
+<li>authority;</li>
+<li>priority;</li>
+<li>effective dates;</li>
+<li>tests;</li>
+<li>review trigger.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Global rule:
+Tax Identifier required for supplier organisations.
+
+Portuguese override:
+Identifier not required for approved non-resident supplier category.
+
+Priority:
+Local override applies only when Country = PT
+and Residency Status = Non-resident.
+
+Owner:
+Portugal Tax Data Owner.
+
+Review trigger:
+Change in local tax policy.</code></pre>
+<p>The system should be able to determine which rule is effective.</p>
+<p>An override stored only in meeting minutes is not operational governance.</p>
+<h2 id="detect-contradictory-local-decisions">Detect contradictory local decisions</h2>
+<p>Two local decisions may both be valid in their own context.</p>
+<p>Conflict occurs when their scopes overlap.</p>
+<p>Example:</p>
+<pre><code class="language-text">Decision A:
+Supplier Risk mandatory for all active suppliers in PT.
+
+Decision B:
+Supplier Risk optional for non-strategic suppliers in Southern Europe.</code></pre>
+<p>If Portugal belongs to the Southern Europe context, both may apply.</p>
+<p>The model needs a resolution mechanism:</p>
+<ul>
+<li>narrower context wins;</li>
+<li>explicitly higher-priority decision wins;</li>
+<li>conflict requires review;</li>
+<li>effective-date ordering applies.</li>
+</ul>
+<p>Do not assume the latest decision always wins.</p>
+<p>A later local workaround should not silently supersede a global policy.</p>
+<h2 id="make-precedence-simple-enough-to-explain">Make precedence simple enough to explain</h2>
+<p>A practical precedence order might be:</p>
+<ol>
+<li>current approved global semantic definition;</li>
+<li>approved domain rule;</li>
+<li>approved contextual extension or override;</li>
+<li>temporary deviation;</li>
+<li>technical implementation;</li>
+<li>observed data.</li>
+</ol>
+<p>This order does not mean global always wins.</p>
+<p>It means lower layers cannot silently redefine higher layers.</p>
+<p>A local override can change applicable behaviour because it has been explicitly approved.</p>
+<p>Current SAP configuration cannot change business policy merely because it exists.</p>
+<p>Observed data cannot prove that a value is correct merely because many records contain it.</p>
+<h2 id="every-deviation-needs-an-expiry-or-review-trigger">Every deviation needs an expiry or review trigger</h2>
+<p>Permanent local requirements may not need an expiry date.</p>
+<p>They still need review triggers.</p>
+<p>Examples:</p>
+<ul>
+<li>regulation changes;</li>
+<li>source system replaced;</li>
+<li>global model adds equivalent capability;</li>
+<li>local process harmonised;</li>
+<li>incident volume increases;</li>
+<li>another country adopts the extension;</li>
+<li>downstream interface changes.</li>
+</ul>
+<p>Temporary deviations require both:</p>
+<ul>
+<li>expiry;</li>
+<li>cleanup plan.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Deviation:
+ERP_PT may omit Compliance Status during Mock Load 2.
+
+Control:
+Affected records cannot activate.
+
+Expiry:
+Before UAT Cycle 1.
+
+Cleanup:
+Remediate records and remove migration exception.</code></pre>
+<p>Without cleanup, temporary deviation becomes local architecture.</p>
+<h2 id="test-global-behaviour-as-well-as-local-behaviour">Test global behaviour as well as local behaviour</h2>
+<p>A local extension can work correctly in Portugal while breaking another context.</p>
+<p>Testing should cover:</p>
+<h3 id="local-positive-case">Local positive case</h3>
+<p>The Portuguese regulated supplier follows the new review process.</p>
+<h3 id="local-negative-case">Local negative case</h3>
+<p>A Portuguese record missing required information is blocked.</p>
+<h3 id="global-regression">Global regression</h3>
+<p>German and Austrian suppliers retain existing behaviour.</p>
+<h3 id="out-of-scope-case">Out-of-scope case</h3>
+<p>Portuguese non-regulated suppliers are not incorrectly routed.</p>
+<h3 id="integration-case">Integration case</h3>
+<p>Consumers receive values only where the contract supports them.</p>
+<h3 id="reporting-case">Reporting case</h3>
+<p>Global reporting does not treat local process status as global risk classification.</p>
+<p>Testing only the local success path is insufficient.</p>
+<h2 id="keep-dataset-evidence-contextual">Keep dataset evidence contextual</h2>
+<p>A local requirement should be assessed against the applicable population.</p>
+<p>Example:</p>
+<pre><code class="language-text">Portugal regulated suppliers:
+4,280 records
+
+Compliance Status available:
+93%
+
+Pending review:
+280
+
+Invalid values:
+4</code></pre>
+<p>Do not evaluate the global supplier population and conclude that the local extension has negligible impact.</p>
+<p>Likewise, do not generalise the Portuguese data pattern to every country.</p>
+<p>The model and evidence should use the same scope definition.</p>
+<h2 id="assign-two-owners-where-necessary">Assign two owners where necessary</h2>
+<p>A local extension may need:</p>
+<ul>
+<li>global semantic owner;</li>
+<li>local operational owner.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-text">Global owner:
+Supplier Governance Owner
+
+Local owner:
+Portugal Compliance Data Owner</code></pre>
+<p>The global owner ensures that the extension does not corrupt shared meaning.</p>
+<p>The local owner ensures that the requirement remains correct and operationally maintained.</p>
+<p>Neither role should act alone for material semantic changes.</p>
+<h2 id="use-a-federated-governance-model-not-central-approval-for-everything">Use a federated governance model, not central approval for everything</h2>
+<p>Pure centralisation causes delays and encourages teams to bypass governance.</p>
+<p>Pure decentralisation produces incompatible models.</p>
+<p>A federated structure can allocate decision authority by change type.</p>
+<h3 id="local-owner-may-approve">Local owner may approve</h3>
+<ul>
+<li>label translations;</li>
+<li>local source mappings;</li>
+<li>implementation references;</li>
+<li>local evidence;</li>
+<li>non-semantic presentation changes.</li>
+</ul>
+<h3 id="joint-local-and-global-approval">Joint local and global approval</h3>
+<ul>
+<li>local value extensions;</li>
+<li>contextual validation;</li>
+<li>local relationships;</li>
+<li>new local attributes;</li>
+<li>temporary deviations affecting global objects.</li>
+</ul>
+<h3 id="global-approval">Global approval</h3>
+<ul>
+<li>global definitions;</li>
+<li>enterprise identifiers;</li>
+<li>shared value semantics;</li>
+<li>cardinality;</li>
+<li>global lifecycle;</li>
+<li>cross-country harmonisation;</li>
+<li>retirement of shared objects.</li>
+</ul>
+<p>Collibra’s guidance describes governance operating models as centralised, decentralised or federated and emphasises defined roles, ownership, domains and governance structures. That broader governance principle applies here: authority must be distributed deliberately rather than left to whichever team can make the configuration change.</p>
+<h2 id="a-comparison-with-operational-mdm-platforms">A comparison with operational MDM platforms</h2>
+<p>SAP MDG is designed to govern master data through shared models, ownership, validated values, workflows, business rules, quality monitoring and audit trails. It can enforce approved global and contextual behaviour in operational master-data processes.</p>
+<p>Informatica’s MDM offering similarly focuses on integrating sources, maintaining high-quality master records and connecting multiple data domains into enterprise views, with surrounding cataloguing, quality, integration and governance services.</p>
+<p>These platforms are appropriate for:</p>
+<ul>
+<li>golden or mastered records;</li>
+<li>operational stewardship;</li>
+<li>matching and merging;</li>
+<li>workflow;</li>
+<li>data distribution;</li>
+<li>enterprise master-data processes.</li>
+</ul>
+<p>They do not remove the project-level need to decide:</p>
+<ul>
+<li>whether a local field is genuinely new;</li>
+<li>whether it extends or duplicates a global concept;</li>
+<li>which migration evidence justifies it;</li>
+<li>whether a workaround should become permanent;</li>
+<li>how the local decision relates to canonical project knowledge.</li>
+</ul>
+<p>Martenweave should complement those platforms by preserving the model rationale, evidence and controlled difference that precede or surround implementation.</p>
+<h2 id="a-comparison-with-data-governance-platforms">A comparison with data-governance platforms</h2>
+<p>A data-governance platform can provide:</p>
+<ul>
+<li>business glossary;</li>
+<li>ownership;</li>
+<li>domains;</li>
+<li>policies;</li>
+<li>metadata;</li>
+<li>lineage;</li>
+<li>quality;</li>
+<li>stewardship workflows.</li>
+</ul>
+<p>Collibra positions its platform around cataloguing, governance, lineage, quality, privacy and a governance operating model with defined domains and ownership.</p>
+<p>That is broader than Martenweave’s intended role.</p>
+<p>Martenweave should not try to become the enterprise governance system for every data asset.</p>
+<p>Its narrower contribution is to maintain:</p>
+<ul>
+<li>exact migration and MDM model objects;</li>
+<li>source and target endpoints;</li>
+<li>local inheritance;</li>
+<li>contextual overrides;</li>
+<li>dataset gaps;</li>
+<li>investigation cases;</li>
+<li>decision precedents;</li>
+<li>proposal-ready diffs;</li>
+<li>Git-verifiable model changes.</li>
+</ul>
+<p>A global enterprise catalogue may contain the official business definition.</p>
+<p>Martenweave can show how that definition is implemented and varied across a specific SAP migration landscape.</p>
+<h2 id="ticketing-systems-should-carry-work-not-model-identity">Ticketing systems should carry work, not model identity</h2>
+<p>A local request may begin in Jira or ServiceNow.</p>
+<p>The ticket should manage:</p>
+<ul>
+<li>assignment;</li>
+<li>urgency;</li>
+<li>due date;</li>
+<li>implementation;</li>
+<li>communication.</li>
+</ul>
+<p>The controlled model difference should not exist only inside that ticket.</p>
+<p>A robust relationship is:</p>
+<pre><code class="language-text">Local request ticket
+→ investigation case
+→ local or global decision
+→ PatchProposal
+→ implementation tasks
+→ verification</code></pre>
+<p>Closing the ticket should not delete or obscure the approved model relationship.</p>
+<h2 id="what-martenweave-should-represent">What Martenweave should represent</h2>
+<p>The current Martenweave core already treats canonical files as source of truth, generated indexes as rebuildable, deterministic validation as a gate and AI-assisted changes as reviewable proposals rather than automatic mutations.</p>
+<p>To govern local variation well, the model layer should represent at least:</p>
+<pre><code class="language-text">GlobalObject
+LocalExtension
+Context
+Override
+Deviation
+Decision
+Evidence
+Owner
+PatchProposal
+ChangeRequest</code></pre>
+<p>Important relationships include:</p>
+<pre><code class="language-text">extends
+implements
+overrides
+restricts
+strengthens
+temporarily_deviates_from
+supersedes
+promotes_to_global</code></pre>
+<p>This is more useful than creating separate global and country folders with no formal connection.</p>
+<h2 id="deterministic-checks-can-stop-basic-fragmentation">Deterministic checks can stop basic fragmentation</h2>
+<p>Validation can detect:</p>
+<ul>
+<li>local object without parent;</li>
+<li>overlapping active overrides;</li>
+<li>temporary deviation past expiry;</li>
+<li>local value duplicating global code;</li>
+<li>local object using a retired parent;</li>
+<li>global object changed without global authority;</li>
+<li>local extension missing context;</li>
+<li>configuration object linked to no current decision;</li>
+<li>local copy repeating the entire global object;</li>
+<li>promoted global concept still duplicated locally.</li>
+</ul>
+<p>A validator cannot decide whether the Portuguese requirement is legitimate.</p>
+<p>It can ensure that the requirement is represented in a governable way.</p>
+<h2 id="the-approval-package-should-show-the-semantic-delta">The approval package should show the semantic delta</h2>
+<p>Reviewers should not need to compare entire repositories manually.</p>
+<p>A local proposal should show:</p>
+<h3 id="shared-global-state">Shared global state</h3>
+<p>What remains inherited?</p>
+<h3 id="local-delta">Local delta</h3>
+<p>What is added or changed?</p>
+<h3 id="context">Context</h3>
+<p>Where does it apply?</p>
+<h3 id="semantic-consequence">Semantic consequence</h3>
+<p>Does global meaning change?</p>
+<h3 id="dataset-consequence">Dataset consequence</h3>
+<p>Which records are affected?</p>
+<h3 id="implementation-consequence">Implementation consequence</h3>
+<p>Which SAP, mapping, interface and test objects change?</p>
+<h3 id="convergence-plan">Convergence plan</h3>
+<p>Could the local difference later become global or be retired?</p>
+<p>For example:</p>
+<pre><code class="language-text">Proposal:
+Add Portugal Compliance Review Status.
+
+Global objects changed:
+None.
+
+Global objects referenced:
+Supplier, Supplier Risk, Activation Rule.
+
+Local objects added:
+Compliance Review Status.
+Portugal Compliance Workflow Rule.
+
+Affected population:
+4,280 regulated supplier organisations.
+
+Global regression:
+No behaviour change outside Portugal.</code></pre>
+<p>This is a reviewable extension.</p>
+<p>A document stating “Portugal requires additional status” is not enough.</p>
+<h2 id="three-decisions-from-one-local-request">Three decisions from one local request</h2>
+<p>A local requirement may produce several distinct decisions.</p>
+<h3 id="semantic-decision">Semantic decision</h3>
+<p>Is this a new concept or an existing global concept in another form?</p>
+<h3 id="scope-decision">Scope decision</h3>
+<p>Which country, population and lifecycle does it apply to?</p>
+<h3 id="implementation-decision">Implementation decision</h3>
+<p>How will SAP, source systems and interfaces realise it?</p>
+<p>Combining all three into one approval creates confusion.</p>
+<p>The global owner may approve the semantic relationship but not the local technical design.</p>
+<p>The local owner may approve scope but not enterprise interface changes.</p>
+<h2 id="case-study-a-local-value-that-should-not-be-local">Case study: a local value that should not be local</h2>
+<h3 id="request">Request</h3>
+<p>Germany requests <code>UNDER_REVIEW</code> in Supplier Risk.</p>
+<h3 id="investigation">Investigation</h3>
+<p>The value describes incomplete process state, not risk.</p>
+<p>Spain and Portugal have similar process needs.</p>
+<h3 id="decision">Decision</h3>
+<p>Do not add a local Supplier Risk value.</p>
+<p>Create global Supplier Review Status with contextual applicability.</p>
+<h3 id="result">Result</h3>
+<p>The local request improves the global model.</p>
+<p>The countries may still implement different workflow routes.</p>
+<p>The semantic concept remains shared.</p>
+<h2 id="case-study-a-legitimate-permanent-local-extension">Case study: a legitimate permanent local extension</h2>
+<h3 id="request-2">Request</h3>
+<p>Portugal requires a regulatory supplier registration category not used elsewhere.</p>
+<h3 id="evidence">Evidence</h3>
+<p>The category has a defined local legal basis, local owner and stable value list.</p>
+<h3 id="decision-2">Decision</h3>
+<p>Create a Portuguese contextual attribute linked to the global Supplier entity.</p>
+<h3 id="controls">Controls</h3>
+<ul>
+<li>explicit PT context;</li>
+<li>no use outside Portugal;</li>
+<li>local owner;</li>
+<li>interface scope;</li>
+<li>annual regulatory review trigger;</li>
+<li>no change to global Supplier Type.</li>
+</ul>
+<h3 id="result-2">Result</h3>
+<p>The model remains global while representing a real local requirement.</p>
+<h2 id="case-study-a-temporary-source-system-deviation">Case study: a temporary source-system deviation</h2>
+<h3 id="request-3">Request</h3>
+<p>ERP_IT cannot provide global Payment Terms before cutover.</p>
+<h3 id="proposed-local-solution">Proposed local solution</h3>
+<p>Create an Italian Payment Terms attribute.</p>
+<h3 id="investigation-2">Investigation</h3>
+<p>The business concept is identical. Only the source capability differs.</p>
+<h3 id="decision-3">Decision</h3>
+<p>Do not create a local attribute.</p>
+<p>Use temporary enrichment to populate the global attribute.</p>
+<h3 id="controls-2">Controls</h3>
+<ul>
+<li>affected records identifiable;</li>
+<li>local enrichment owner;</li>
+<li>expiry after source release;</li>
+<li>no new semantic object;</li>
+<li>verification against global value list.</li>
+</ul>
+<h3 id="result-3">Result</h3>
+<p>Implementation differs temporarily without fragmenting the model.</p>
+<h2 id="case-study-a-local-override-that-should-be-rejected">Case study: a local override that should be rejected</h2>
+<h3 id="request-4">Request</h3>
+<p>A country wants Supplier Classification optional because current completeness is low.</p>
+<h3 id="evidence-2">Evidence</h3>
+<p>The business rule applies to the same strategic suppliers as elsewhere. The gap is caused by an incomplete source.</p>
+<h3 id="decision-4">Decision</h3>
+<p>Reject the permanent override.</p>
+<p>Approve a temporary migration deviation with activation control and remediation deadline.</p>
+<h3 id="reason">Reason</h3>
+<p>Low data quality does not establish a different business requirement.</p>
+<p>This distinction is essential.</p>
+<p>Otherwise, every weak source produces a weaker local model.</p>
+<h2 id="case-study-one-label-hiding-two-concepts">Case study: one label hiding two concepts</h2>
+<h3 id="request-5">Request</h3>
+<p>France asks for a different Customer Group value list.</p>
+<h3 id="investigation-3">Investigation</h3>
+<p>The French values describe market segment, while the global Customer Group describes sales-processing treatment.</p>
+<h3 id="decision-5">Decision</h3>
+<p>Do not extend Customer Group.</p>
+<p>Create or reuse a Market Segment attribute.</p>
+<h3 id="result-4">Result</h3>
+<p>The apparent local variation is actually a separate business dimension.</p>
+<p>The investigation prevents semantic contamination of the global object.</p>
+<h2 id="a-practical-operating-rhythm">A practical operating rhythm</h2>
+<p>Local-model governance does not require a large committee for every change.</p>
+<p>A workable cadence can be:</p>
+<h3 id="continuous-intake">Continuous intake</h3>
+<p>Local requests enter with:</p>
+<ul>
+<li>problem;</li>
+<li>scope;</li>
+<li>evidence;</li>
+<li>proposed difference;</li>
+<li>urgency.</li>
+</ul>
+<h3 id="weekly-triage">Weekly triage</h3>
+<p>Classify as:</p>
+<ul>
+<li>implementation correction;</li>
+<li>local mapping;</li>
+<li>local extension;</li>
+<li>global gap;</li>
+<li>temporary deviation;</li>
+<li>policy question.</li>
+</ul>
+<h3 id="focused-investigation">Focused investigation</h3>
+<p>Only where meaning, context or overlap is unclear.</p>
+<h3 id="decision-and-proposal">Decision and proposal</h3>
+<p>Create the smallest appropriate local or global change.</p>
+<h3 id="validation-and-impact">Validation and impact</h3>
+<p>Check structure, overlaps, dependencies and dataset consequences.</p>
+<h3 id="review">Review</h3>
+<p>Route to roles derived from the change type.</p>
+<h3 id="verification">Verification</h3>
+<p>Confirm local implementation and global regression.</p>
+<h3 id="periodic-convergence-review">Periodic convergence review</h3>
+<p>Look for:</p>
+<ul>
+<li>repeated local extensions;</li>
+<li>expired deviations;</li>
+<li>duplicate values;</li>
+<li>conflicting definitions;</li>
+<li>candidates for global promotion.</li>
+</ul>
+<p>This last step prevents the model from accumulating local debt indefinitely.</p>
+<h2 id="a-local-model-scorecard-should-expose-concentration-not-vanity-metrics">A local-model scorecard should expose concentration, not vanity metrics</h2>
+<p>Useful indicators include:</p>
+<ul>
+<li>active local extensions by domain;</li>
+<li>extensions without global parent;</li>
+<li>temporary deviations past expiry;</li>
+<li>repeated concepts across countries;</li>
+<li>local objects with no owner;</li>
+<li>conflicting contextual rules;</li>
+<li>global objects with many overrides;</li>
+<li>local treatments eligible for promotion;</li>
+<li>local copies that have drifted from global baseline.</li>
+</ul>
+<p>A low number of local extensions is not automatically good.</p>
+<p>It may mean local requirements are being hidden in configuration or spreadsheets.</p>
+<p>The goal is visible, justified variation.</p>
+<h2 id="what-should-never-be-centralised">What should never be centralised</h2>
+<p>Some elements belong locally:</p>
+<ul>
+<li>local legal references;</li>
+<li>source-system field mappings;</li>
+<li>local process ownership;</li>
+<li>translation;</li>
+<li>country implementation evidence;</li>
+<li>local remediation populations;</li>
+<li>operational procedures.</li>
+</ul>
+<p>Attempting to centralise every detail creates a global model too large to use and too slow to govern.</p>
+<p>The global layer should define shared semantics and boundaries.</p>
+<p>Local layers should define contextual implementation and legitimate additional meaning.</p>
+<h2 id="what-should-rarely-be-local">What should rarely be local</h2>
+<p>Some elements usually require global control:</p>
+<ul>
+<li>enterprise identifiers;</li>
+<li>core entity definitions;</li>
+<li>relationship identity;</li>
+<li>shared cardinality;</li>
+<li>global lifecycle states;</li>
+<li>cross-country reference values;</li>
+<li>semantics used by enterprise reporting;</li>
+<li>attributes distributed to many consumers.</li>
+</ul>
+<p>Local changes to these objects can create effects far beyond the country that requested them.</p>
+<p>They require broader impact analysis and authority.</p>
+<h2 id="questions-that-expose-fragmentation-early">Questions that expose fragmentation early</h2>
+<p>When reviewing a local request, ask:</p>
+<ul>
+<li>Is this genuinely a different business concept?</li>
+<li>Does an existing global object already represent it?</li>
+<li>Is the difference semantic, contextual or merely technical?</li>
+<li>What evidence makes the requirement local?</li>
+<li>Which global object does it extend?</li>
+<li>Can scope be represented explicitly?</li>
+<li>Would another country recognise the same need?</li>
+<li>Does the proposal mix two classification dimensions?</li>
+<li>Is the request caused by poor source data?</li>
+<li>Is it permanent or transitional?</li>
+<li>What will inherit from the global model?</li>
+<li>Which global tests must remain unchanged?</li>
+<li>Can the extension be retired cleanly?</li>
+<li>What would justify promotion to the global model?</li>
+</ul>
+<p>These questions are more useful than asking only:</p>
+<blockquote>Does the country approve?</blockquote>
+<h2 id="the-position-martenweave-can-own">The position Martenweave can own</h2>
+<p>SAP MDG and multidomain MDM platforms can govern and distribute approved master data. Enterprise governance platforms can organise domains, ownership, glossary, lineage and policy. Ticketing systems can manage work. Data-quality tools can measure local populations.</p>
+<p>The unresolved delivery problem is often the connective tissue:</p>
+<ul>
+<li>why a country differs;</li>
+<li>which global object remains authoritative;</li>
+<li>whether the difference is semantic or technical;</li>
+<li>which evidence supports it;</li>
+<li>how the override is scoped;</li>
+<li>when it expires;</li>
+<li>what would be affected by changing it;</li>
+<li>whether repeated local needs justify global promotion.</li>
+</ul>
+<p>Martenweave can own that layer without pretending to replace the surrounding platforms.</p>
+<p>Its current core already supports canonical model files, deterministic validation, generated indexes, dataset-gap detection, trace, impact analysis and reviewable proposals.</p>
+<p>The additional requirement is disciplined modelling of inheritance, context, overrides and deviations.</p>
+<h2 id="final-perspective">Final perspective</h2>
+<p>A global data model does not stay global because the programme publishes a template.</p>
+<p>It stays global because every local difference is related back to shared meaning.</p>
+<p>A mature model can say:</p>
+<ul>
+<li>this is globally identical;</li>
+<li>this is implemented differently;</li>
+<li>this is locally extended;</li>
+<li>this is temporarily deviating;</li>
+<li>this local pattern should become global;</li>
+<li>this request should be rejected because it duplicates or corrupts an existing concept.</li>
+</ul>
+<p>That is stronger than either extreme:</p>
+<blockquote>Every country must follow the template exactly.</blockquote>
+<p>or:</p>
+<blockquote>Every country may adapt the model as needed.</blockquote>
+<p>The first ignores reality.</p>
+<p>The second creates fragmentation.</p>
+<p>The practical standard is:</p>
+<blockquote>Local freedom inside explicit semantic boundaries.</blockquote>
+<p>A country should be able to solve a legitimate problem without creating another independent version of Customer, Supplier, Product or Business Partner truth.</p>
+<p>A global owner should be able to see local variation without blocking every implementation detail.</p>
+<p>A later programme should be able to understand why the difference exists and whether it still deserves to exist.</p>
+<p>That is what controlled global–local governance should deliver.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It is designed to connect:</p>
+<ul>
+<li>global model objects;</li>
+<li>local contexts;</li>
+<li>source and target endpoints;</li>
+<li>mappings;</li>
+<li>dataset evidence;</li>
+<li>investigations;</li>
+<li>decisions;</li>
+<li>overrides;</li>
+<li>temporary deviations;</li>
+<li>impact analysis;</li>
+<li>reviewable model changes.</li>
+</ul>
+<p>The objective is not to eliminate local variation.</p>
+<p>It is to prevent necessary local decisions from becoming disconnected, duplicated and permanent by accident.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer combining master data, policy and metadata, with governed models, preserved semantics and relationships, workflow, validated values, business-rule monitoring, quality management and auditable changes.</p>
+<p>Collibra describes data governance as an organisational discipline supported by an operating model defining roles, responsibilities, domains, ownership and governance structures. Its published guidance recognises centralised, decentralised and federated governance structures.</p>
+<p>Informatica describes MDM as the consolidation and maintenance of consistent, high-quality master records across sources and positions its MDM capabilities alongside cataloguing, integration, quality and governance services. It also describes multidomain MDM as connecting multiple domains into enterprise-wide views.</p>
+<p>Martenweave Core currently uses canonical Markdown and YAML model files, deterministic validation, rebuildable SQLite and JSONL indexes, dataset-gap analysis, trace, impact analysis and human-reviewed <code>PatchProposal</code> and <code>ChangeRequest</code> workflows.</p>
+<p>Its documented operating pipeline moves from evidence through proposal, validation, gaps and impact to human review and GitHub-ready output.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Collibra, Informatica or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-project-knowledge-disappears-after-go-live.html">Six months after go-live, an SAP MDG validation starts rejecting supplier changes.</a></li><li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">The programme already has an approved toolset.</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">A company has a data problem.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-build-a-reusable-decision-library-for-sap-migration-and-mdm.html"><span>Previous</span>A programme has an approved decision:</a><a href="/blog/how-to-decide-whether-a-local-sap-requirement-belongs-in-the-global.html"><span>Next</span>A country team requests a new field:</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

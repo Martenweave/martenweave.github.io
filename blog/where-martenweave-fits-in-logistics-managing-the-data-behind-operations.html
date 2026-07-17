@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Where Martenweave Fits in Logistics: Managing the Data Behind Operations | Martenweave</title>
+    <meta
+      name="description"
+      content="Logistics problems are often described as operational problems."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html" />
+    <meta property="og:title" content="Where Martenweave Fits in Logistics: Managing the Data Behind Operations | Martenweave" />
+    <meta property="og:description" content="Logistics problems are often described as operational problems." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Where Martenweave Fits in Logistics: Managing the Data Behind Operations | Martenweave" />
+    <meta name="twitter:description" content="Logistics problems are often described as operational problems." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html#webpage",
+                        "url": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html",
+                        "name": "Where Martenweave Fits in Logistics: Managing the Data Behind Operations | Martenweave",
+                        "description": "Logistics problems are often described as operational problems.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Where Martenweave Fits in Logistics: Managing the Data Behind Operations",
+                                    "item": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html#content",
+                        "headline": "Where Martenweave Fits in Logistics: Managing the Data Behind Operations",
+                        "name": "Where Martenweave Fits in Logistics: Managing the Data Behind Operations",
+                        "description": "Logistics problems are often described as operational problems.",
+                        "url": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/where-martenweave-fits-in-logistics-managing-the-data-behind-operations.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Logistics data",
+                        "keywords": "Logistics data",
+                        "timeRequired": "PT9M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Where Martenweave Fits in Logistics: Managing the Data Behind Operations</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Logistics data</p><h1>Where Martenweave Fits in Logistics: Managing the Data Behind Operations</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 9 min read</p><p class="blog-summary">Logistics problems are often described as operational problems.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#the-logistics-problem-is-larger-than-master-data-quality">The logistics problem is larger than master data quality</a></li><li><a href="#what-martenweave-manages">What Martenweave manages</a></li><li><a href="#a-practical-example-changing-shipping-conditions">A practical example: changing shipping conditions</a></li><li><a href="#where-logistics-teams-can-use-it">Where logistics teams can use it</a></li><li><a href="#what-managers-receive">What managers receive</a></li><li><a href="#what-martenweave-should-not-become">What Martenweave should not become</a></li><li><a href="#why-this-matters">Why this matters</a></li></ol></nav></details></header>
+<p>Logistics problems are often described as operational problems.</p>
+<p>A delivery cannot be created. A route is selected incorrectly. A warehouse does not receive the expected product data. A carrier interface rejects a message. A material cannot be used in a particular plant. A unit of measure is interpreted differently by two systems.</p>
+<p>The immediate response is usually to investigate the transaction, configuration or interface.</p>
+<p>But many recurring logistics failures begin earlier.</p>
+<p>They begin when the organisation does not have a reliable model of the data on which its logistics processes depend.</p>
+<p>The relevant knowledge may exist, but it is scattered across:</p>
+<ul>
+<li>SAP configuration documents;</li>
+<li>material master spreadsheets;</li>
+<li>customer and supplier mappings;</li>
+<li>warehouse templates;</li>
+<li>interface specifications;</li>
+<li>migration files;</li>
+<li>Jira tickets;</li>
+<li>validation reports;</li>
+<li>emails;</li>
+<li>workshop decisions;</li>
+<li>local team knowledge.</li>
+</ul>
+<p>Martenweave can be used as the controlled model layer connecting these artefacts.</p>
+<p>It does not execute transportation, warehouse or procurement processes. It does not replace SAP S/4HANA, EWM, TM, a TMS, a WMS or an integration platform.</p>
+<p>Its purpose is narrower:</p>
+<blockquote>Martenweave helps logistics teams understand which data, rules, mappings and decisions their processes depend on—and what may break when they change.</blockquote>
+<h2 id="the-logistics-problem-is-larger-than-master-data-quality">The logistics problem is larger than master data quality</h2>
+<p>Poor master data is an obvious logistics risk.</p>
+<p>A material may have an incorrect weight. A customer may have the wrong delivery priority. A supplier may be missing purchasing-organisation data. A product may lack warehouse attributes. Units of measure may not be converted consistently.</p>
+<p>However, correcting individual records does not solve the whole problem.</p>
+<p>The organisation must also understand:</p>
+<ul>
+<li>which systems use each attribute;</li>
+<li>which rules depend on it;</li>
+<li>where the value originates;</li>
+<li>how it is transformed;</li>
+<li>who owns it;</li>
+<li>which exceptions have been approved;</li>
+<li>which reports and interfaces consume it;</li>
+<li>which migration objects must provide it;</li>
+<li>what happens when its definition changes.</li>
+</ul>
+<p>This is model knowledge.</p>
+<p>Most logistics organisations do not manage it as a coherent asset.</p>
+<p>They manage fragments of it in different tools.</p>
+<p>That becomes particularly dangerous during SAP transformations, warehouse rollouts, acquisitions, data migrations, 3PL integrations and changes to fulfilment models.</p>
+<h2 id="what-martenweave-manages">What Martenweave manages</h2>
+<p>Martenweave stores model knowledge in canonical files and generates disposable indexes and reports from them.</p>
+<p>The model may describe:</p>
+<ul>
+<li>logistics domains;</li>
+<li>business objects;</li>
+<li>attributes;</li>
+<li>source and target fields;</li>
+<li>datasets;</li>
+<li>mappings;</li>
+<li>validation rules;</li>
+<li>relationships;</li>
+<li>interfaces;</li>
+<li>decisions;</li>
+<li>evidence;</li>
+<li>owners;</li>
+<li>identified gaps;</li>
+<li>proposed changes.</li>
+</ul>
+<p>The application validates identifiers and references deterministically, builds searchable indexes, compares datasets with the expected model, traces dependencies and creates reviewable change proposals. AI may propose a modification, but the canonical model is not silently changed: validators check it and a human must approve it.</p>
+<p>For logistics teams, this creates a common layer above individual spreadsheets and below operational applications.</p>
+<h2 id="a-practical-example-changing-shipping-conditions">A practical example: changing shipping conditions</h2>
+<p>Consider an organisation that wants to change how shipping conditions are assigned to customers.</p>
+<p>At first, this may appear to be a relatively small master-data change.</p>
+<p>The project identifies several customer groups that should move from a standard shipping condition to an expedited one.</p>
+<p>A spreadsheet is prepared with the affected customers. A ticket is created. The customer master records are updated.</p>
+<p>A few days later, the team begins to see unexpected effects:</p>
+<ul>
+<li>different routes are selected;</li>
+<li>deliveries receive different scheduling results;</li>
+<li>some plants cannot use the expected route;</li>
+<li>transport-planning messages contain new values;</li>
+<li>a 3PL does not recognise one of the resulting combinations;</li>
+<li>migration templates still contain the old shipping condition;</li>
+<li>reporting groups expedited and standard deliveries differently;</li>
+<li>another country uses the same shipping-condition code with a different business meaning.</li>
+</ul>
+<p>The original change was made correctly at record level.</p>
+<p>The problem was that its wider model impact was not visible.</p>
+<h3 id="how-martenweave-would-represent-the-change">How Martenweave would represent the change</h3>
+<p>The logistics model could connect the shipping-condition attribute to:</p>
+<ul>
+<li>the Business Partner or customer object;</li>
+<li>source fields in legacy systems;</li>
+<li>SAP target fields;</li>
+<li>customer classifications;</li>
+<li>sales-document rules;</li>
+<li>shipping-point and route-related dependencies;</li>
+<li>delivery scheduling;</li>
+<li>transport-planning interfaces;</li>
+<li>country or sales-organisation exceptions;</li>
+<li>reports using the value;</li>
+<li>migration templates;</li>
+<li>owners and approvers;</li>
+<li>the business decision authorising the change.</li>
+</ul>
+<p>The purpose is not to reproduce every line of SAP configuration.</p>
+<p>The purpose is to maintain enough traceable context to answer the operationally important questions.</p>
+<h3 id="before-the-change">Before the change</h3>
+<p>The team could run impact analysis and see that the attribute is referenced by:</p>
+<ul>
+<li>three customer migration mappings;</li>
+<li>two validation rules;</li>
+<li>one 3PL interface;</li>
+<li>a route-related decision;</li>
+<li>a logistics KPI report;</li>
+<li>and a country-specific exception.</li>
+</ul>
+<p>The change can then be reviewed by the relevant owners before records are updated.</p>
+<h3 id="during-implementation">During implementation</h3>
+<p>A dataset containing the proposed customer updates can be compared with the model.</p>
+<p>Martenweave can identify:</p>
+<ul>
+<li>unknown shipping-condition values;</li>
+<li>missing customer identifiers;</li>
+<li>countries not covered by the approved rule;</li>
+<li>source columns that differ from the expected template;</li>
+<li>customers for which required dependent data is unavailable.</li>
+</ul>
+<p>The application already supports profiling CSV and XLSX datasets, detecting dataset-to-model gaps, generating readiness reports and promoting identified gaps into reviewable proposals or issue drafts.</p>
+<h3 id="after-the-change">After the change</h3>
+<p>The approved model change becomes part of the project history.</p>
+<p>The organisation can later determine:</p>
+<ul>
+<li>why the shipping condition changed;</li>
+<li>which customer groups were affected;</li>
+<li>which evidence supported the decision;</li>
+<li>which mappings were updated;</li>
+<li>which interfaces were reviewed;</li>
+<li>and which exceptions remained.</li>
+</ul>
+<p>This reduces dependence on the people who happened to participate in the original workshop.</p>
+<h2 id="where-logistics-teams-can-use-it">Where logistics teams can use it</h2>
+<h3 id="sap-migration-and-transformation">SAP migration and transformation</h3>
+<p>During an S/4HANA migration, logistics knowledge is usually distributed across migration objects, mapping files, configuration workbooks and defect lists.</p>
+<p>Martenweave can connect:</p>
+<ul>
+<li>legacy tables and extracts;</li>
+<li>migration fields;</li>
+<li>SAP target attributes;</li>
+<li>transformation logic;</li>
+<li>mandatory conditions;</li>
+<li>validation rules;</li>
+<li>business ownership;</li>
+<li>test findings;</li>
+<li>unresolved decisions.</li>
+</ul>
+<p>Its dataset-readiness workflow validates the model, builds the index, profiles the supplied dataset, detects gaps and produces a consolidated report.</p>
+<p>For logistics, this can cover objects such as:</p>
+<ul>
+<li>materials and products;</li>
+<li>plants and storage locations;</li>
+<li>customers and suppliers;</li>
+<li>purchasing data;</li>
+<li>sales-area data;</li>
+<li>units of measure;</li>
+<li>batches;</li>
+<li>classification;</li>
+<li>warehouse attributes;</li>
+<li>transportation attributes;</li>
+<li>source lists and purchasing relationships.</li>
+</ul>
+<p>The value is not another migration template.</p>
+<p>The value is the traceability between the template, the target model, the validation rules and the decisions behind them.</p>
+<h3 id="warehouse-implementations-and-rollouts">Warehouse implementations and rollouts</h3>
+<p>Warehouse projects depend on more than storage-bin and stock data.</p>
+<p>They also depend on consistent definitions of:</p>
+<ul>
+<li>products;</li>
+<li>packaging;</li>
+<li>handling units;</li>
+<li>units of measure;</li>
+<li>batch requirements;</li>
+<li>warehouse-process attributes;</li>
+<li>dangerous-goods indicators;</li>
+<li>serial-number rules;</li>
+<li>plant and storage-location relationships;</li>
+<li>ERP-to-WMS or ERP-to-EWM mappings.</li>
+</ul>
+<p>Martenweave can maintain a governed model of those dependencies.</p>
+<p>Before a warehouse rollout, the team can compare local datasets against the approved template and identify which required attributes are absent, structurally different or not covered by existing mappings.</p>
+<h3 id="transportation-and-3pl-integrations">Transportation and 3PL integrations</h3>
+<p>Transportation processes often cross several organisational and technical boundaries:</p>
+<ul>
+<li>SAP;</li>
+<li>transportation-management systems;</li>
+<li>carrier platforms;</li>
+<li>freight forwarders;</li>
+<li>EDI providers;</li>
+<li>middleware;</li>
+<li>3PL systems;</li>
+<li>local warehouse applications.</li>
+</ul>
+<p>The same business concept may use different names, formats and codes in each system.</p>
+<p>Martenweave can document and validate the relationship between those representations.</p>
+<p>For example, it can connect an internal shipping-condition code to:</p>
+<ul>
+<li>its business definition;</li>
+<li>its SAP field;</li>
+<li>an interface segment;</li>
+<li>a 3PL code;</li>
+<li>applicable regions;</li>
+<li>a transformation rule;</li>
+<li>and the evidence approving that mapping.</li>
+</ul>
+<p>It does not transport the message. It makes the meaning of the message traceable.</p>
+<h3 id="procurement-and-supplier-data-governance">Procurement and supplier-data governance</h3>
+<p>Procurement operations depend on supplier and material data that is usually owned by several teams.</p>
+<p>Martenweave can help document:</p>
+<ul>
+<li>which supplier attributes are required by each purchasing organisation;</li>
+<li>which source system provides them;</li>
+<li>which validations apply;</li>
+<li>how local supplier classifications map to global ones;</li>
+<li>which purchasing fields are mandatory for particular scenarios;</li>
+<li>which interfaces and reports consume them.</li>
+</ul>
+<p>This is useful when consolidating suppliers, onboarding new business units, integrating acquisitions or preparing data for SAP MDG.</p>
+<h3 id="logistics-application-support">Logistics application support</h3>
+<p>In AMS, many incidents are closed by correcting data or reprocessing a message.</p>
+<p>The operational symptom disappears, but the underlying knowledge is rarely added to a reusable model.</p>
+<p>Martenweave can turn repeated incidents into structured evidence.</p>
+<p>A support ticket may indicate that a delivery failed because a material lacked a particular attribute in one plant.</p>
+<p>Instead of preserving this only in the ticket, the team can propose:</p>
+<ul>
+<li>a new validation rule;</li>
+<li>a clarified field definition;</li>
+<li>an ownership assignment;</li>
+<li>a dataset check;</li>
+<li>or a model exception.</li>
+</ul>
+<p>The proposal is reviewed before changing the canonical model.</p>
+<p>Over time, the registry becomes a preventive control rather than only a record of past defects.</p>
+<h2 id="what-managers-receive">What managers receive</h2>
+<p>Managers should not be expected to navigate hundreds of model files.</p>
+<p>They need aggregated answers.</p>
+<p>Martenweave can generate views and reports such as:</p>
+<ul>
+<li>which logistics objects are ready for migration;</li>
+<li>which datasets do not satisfy the approved model;</li>
+<li>which attributes lack owners;</li>
+<li>which mappings contain unresolved values;</li>
+<li>which decisions are still provisional;</li>
+<li>which high-impact fields are changing;</li>
+<li>which interfaces depend on the affected attributes;</li>
+<li>which gaps block a warehouse, plant or country rollout.</li>
+</ul>
+<p>The generated SQLite and search indexes make the model searchable without turning the index into another source of truth. The index can always be rebuilt from the canonical files.</p>
+<p>This supports more defensible readiness reporting.</p>
+<p>Instead of saying:</p>
+<blockquote>Material master preparation is 90% complete.</blockquote>
+<p>the project can report:</p>
+<blockquote>The supplied material dataset covers 96% of required attributes. Twelve warehouse attributes are missing, four units of measure are unmapped, and two high-impact fields still lack approved ownership.</blockquote>
+<p>The second statement gives management something concrete to act on.</p>
+<h2 id="what-martenweave-should-not-become">What Martenweave should not become</h2>
+<p>The logistics use case can easily pull the product in the wrong direction.</p>
+<p>Martenweave should not become:</p>
+<ul>
+<li>a warehouse-management system;</li>
+<li>a transport optimiser;</li>
+<li>a control tower;</li>
+<li>an inventory-planning application;</li>
+<li>a carrier portal;</li>
+<li>an EDI runtime;</li>
+<li>an SAP configuration replacement;</li>
+<li>a generic process-mining platform;</li>
+<li>a direct master-data maintenance tool.</li>
+</ul>
+<p>Those categories already contain large specialised products.</p>
+<p>Trying to compete with them would weaken Martenweave.</p>
+<p>Its defensible role is the model and evidence layer behind logistics change.</p>
+<p>It should answer:</p>
+<ul>
+<li>What does this logistics attribute mean?</li>
+<li>Where does it originate?</li>
+<li>Which systems use it?</li>
+<li>Which rules validate it?</li>
+<li>Which dataset gaps exist?</li>
+<li>Who owns the decision?</li>
+<li>What will be affected if it changes?</li>
+<li>What evidence justifies the proposed modification?</li>
+</ul>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>Logistics processes appear transactional, but their reliability depends heavily on stable definitions.</p>
+<p>Products, locations, suppliers, customers, packaging, units, routes and organisational structures must mean the same thing across systems and teams.</p>
+<p>When that meaning is distributed across spreadsheets and individual experience, every transformation or integration project must reconstruct it.</p>
+<p>That reconstruction consumes time and creates avoidable risk.</p>
+<p>Martenweave provides a way to preserve the model behind logistics operations.</p>
+<p>Integrations bring in evidence and datasets.</p>
+<p>Martenweave stores the approved model truth.</p>
+<p>Validators check consistency.</p>
+<p>AI proposes changes.</p>
+<p>Humans approve them.</p>
+<p>Reports show where the operational risks are.</p>
+<p>That is where the application can create value in logistics—not by running the physical flow, but by making the data model behind that flow understandable, testable and governable.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-a-successfully-loaded-material-may-still-be-unusable.html">The material migration report looks successful.</a></li><li><a href="/blog/how-we-detect-missing-material-extensions-before-cutover.html">The material migration team reports:</a></li><li><a href="/blog/why-units-of-measure-are-one-of-the-most-dangerous-logistics-migration.html">The unit-of-measure migration report looks harmless.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-consultant-turnover-makes-sap-programmes-pay-twice-for-the-same.html"><span>Previous</span>What exactly leaves the programme when an experienced consultant leaves?</a><a href="/blog/logistics-problems-rarely-start-in-logistics.html"><span>Next</span>When a delivery fails, people usually look at the delivery.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

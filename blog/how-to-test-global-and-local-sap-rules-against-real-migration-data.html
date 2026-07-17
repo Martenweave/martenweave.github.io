@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Test Global and Local SAP Rules Against Real Migration Data | Martenweave</title>
+    <meta
+      name="description"
+      content="The global design says that Supplier Risk is mandatory for every active strategic supplier."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html" />
+    <meta property="og:title" content="How to Test Global and Local SAP Rules Against Real Migration Data | Martenweave" />
+    <meta property="og:description" content="The global design says that Supplier Risk is mandatory for every active strategic supplier." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Test Global and Local SAP Rules Against Real Migration Data | Martenweave" />
+    <meta name="twitter:description" content="The global design says that Supplier Risk is mandatory for every active strategic supplier." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html",
+                        "name": "How to Test Global and Local SAP Rules Against Real Migration Data | Martenweave",
+                        "description": "The global design says that Supplier Risk is mandatory for every active strategic supplier.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Test Global and Local SAP Rules Against Real Migration Data",
+                                    "item": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html#content",
+                        "headline": "How to Test Global and Local SAP Rules Against Real Migration Data",
+                        "name": "How to Test Global and Local SAP Rules Against Real Migration Data",
+                        "description": "The global design says that Supplier Risk is mandatory for every active strategic supplier.",
+                        "url": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-test-global-and-local-sap-rules-against-real-migration-data.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT21M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Test Global and Local SAP Rules Against Real Migration Data</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Test Global and Local SAP Rules Against Real Migration Data</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 21 min read</p><p class="blog-summary">The global design says that Supplier Risk is mandatory for every active strategic supplier.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#put-the-real-population-in-the-room">Put the real population in the room</a></li><li><a href="#the-model-passes">The model passes</a></li><li><a href="#the-data-passes">The data passes</a></li><li><a href="#the-implementation-passes">The implementation passes</a></li><li><a href="#positive">Positive</a></li><li><a href="#negative">Negative</a></li><li><a href="#boundary">Boundary</a></li><li><a href="#out-of-scope">Out of scope</a></li><li><a href="#exception">Exception</a></li><li><a href="#contradiction">Contradiction</a></li><li><a href="#regression">Regression</a></li><li><a href="#volume">Volume</a></li><li><a href="#reversibility">Reversibility</a></li><li><a href="#step-1-inspect-rule-inputs">Step 1: inspect rule inputs</a></li><li><a href="#step-2-profile-the-dataset">Step 2: profile the dataset</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>The global design says that Supplier Risk is mandatory for every active strategic supplier.</p>
+<p>The Portuguese design adds another condition: regulated suppliers must complete compliance review before activation.</p>
+<p>The migration plan allows incomplete records to enter a temporary review queue during Mock Load 2.</p>
+<p>All three rules have been approved.</p>
+<p>The team creates six test records:</p>
+<ul>
+<li>one German strategic supplier with valid risk;</li>
+<li>one Portuguese regulated supplier with valid risk and clearance;</li>
+<li>one Portuguese supplier without risk;</li>
+<li>one Italian supplier with incomplete source data;</li>
+<li>one inactive historical supplier;</li>
+<li>one non-resident supplier with an exemption.</li>
+</ul>
+<p>Every scripted test produces the expected result.</p>
+<p>The rule set is declared ready.</p>
+<p>Then the real migration file arrives.</p>
+<p>It contains:</p>
+<ul>
+<li>suppliers with several company-code and purchasing-organisation assignments;</li>
+<li>records classified as strategic in one source and ordinary in another;</li>
+<li>blank country codes;</li>
+<li>expired exemption evidence;</li>
+<li>inactive central records with active organisational views;</li>
+<li>unexpected local values;</li>
+<li>suppliers changing legal category during the extraction period;</li>
+<li>duplicates created by source consolidation;</li>
+<li>records already transformed by an old default.</li>
+</ul>
+<p>The rules still work technically.</p>
+<p>The test data did not represent the population to which they would actually be applied.</p>
+<p>This is the gap between rule testing and migration-data testing.</p>
+<p>A conventional test asks:</p>
+<blockquote>Does the rule return the expected result for this record?</blockquote>
+<p>A migration-data test asks:</p>
+<blockquote>Does the rule produce a controlled result across the real population, including combinations, exceptions and source defects that the design did not anticipate?</blockquote>
+<p>Both are necessary.</p>
+<p>The first tests logic.</p>
+<p>The second tests whether the logic is usable.</p>
+<p>---</p>
+<h2 id="put-the-real-population-in-the-room">Put the real population in the room</h2>
+<p>Global and local rules are usually approved in abstract language:</p>
+<blockquote>Tax Identifier is required for supplier organisations.</blockquote>
+<blockquote>Portuguese non-residents may use an approved exemption.</blockquote>
+<blockquote>Supplier Risk is mandatory for strategic suppliers.</blockquote>
+<blockquote>Local review status must be cleared before activation.</blockquote>
+<p>The statements look clear because each sentence describes one condition.</p>
+<p>Real records combine many conditions.</p>
+<p>One supplier may be:</p>
+<ul>
+<li>registered centrally in Germany;</li>
+<li>extended to a Portuguese company code;</li>
+<li>purchased from through an Italian purchasing organisation;</li>
+<li>marked strategic in one source;</li>
+<li>marked inactive centrally;</li>
+<li>still active in open purchase orders;</li>
+<li>missing a final risk value;</li>
+<li>covered by a temporary migration exception.</li>
+</ul>
+<p>The effective result depends on how these dimensions interact.</p>
+<p>Testing rules against isolated examples is therefore insufficient. The programme needs a population in which the important contexts occur together.</p>
+<p>A meaningful test dataset must represent:</p>
+<ul>
+<li>business-object category;</li>
+<li>role;</li>
+<li>organisational assignment;</li>
+<li>lifecycle status;</li>
+<li>country and jurisdiction;</li>
+<li>source system;</li>
+<li>migration wave;</li>
+<li>local extension;</li>
+<li>exemption;</li>
+<li>temporary deviation;</li>
+<li>missing or contradictory evidence.</li>
+</ul>
+<p>This is not a demand to copy the entire production database into every test environment.</p>
+<p>It is a demand to know which combinations exist and which combinations matter.</p>
+<p>---</p>
+<h1 id="three-separate-things-must-pass">Three separate things must pass</h1>
+<p>Teams often report that “the rule passed” without stating what was tested.</p>
+<p>There are three different pass conditions.</p>
+<h2 id="the-model-passes">The model passes</h2>
+<p>The rule is structurally coherent.</p>
+<p>For example:</p>
+<ul>
+<li>referenced attributes exist;</li>
+<li>contexts are valid;</li>
+<li>global and local relationships are connected;</li>
+<li>an override identifies the rule it overrides;</li>
+<li>temporary deviations have expiry;</li>
+<li>applicable owners exist.</li>
+</ul>
+<p>This is deterministic model validation.</p>
+<p>It says nothing yet about whether source data can support the rule.</p>
+<h2 id="the-data-passes">The data passes</h2>
+<p>The current population contains enough information to evaluate the rule and reach an approved outcome.</p>
+<p>For example:</p>
+<ul>
+<li>required fields are available;</li>
+<li>context can be determined;</li>
+<li>values are valid;</li>
+<li>exceptions are identifiable;</li>
+<li>affected records are measurable;</li>
+<li>no uncontrolled default hides missing data.</li>
+</ul>
+<p>This is dataset readiness.</p>
+<p>It says nothing yet about whether SAP or another MDM platform implements the rule correctly.</p>
+<h2 id="the-implementation-passes">The implementation passes</h2>
+<p>The configured system produces the approved outcome.</p>
+<p>For example:</p>
+<ul>
+<li>valid records proceed;</li>
+<li>invalid records are blocked;</li>
+<li>exceptions require the right evidence;</li>
+<li>workflow routes correctly;</li>
+<li>downstream systems receive an interpretable state;</li>
+<li>temporary migration behaviour does not leak into operations.</li>
+</ul>
+<p>A rule is ready only when these three pass conditions align.</p>
+<pre><code class="language-text">Model validity
++
+Dataset evaluability
++
+Implementation correctness
+=
+Usable rule</code></pre>
+<p>A failure in any layer should not be disguised by success in another.</p>
+<p>---</p>
+<h1 id="a-small-sample-can-be-perfectly-misleading">A small sample can be perfectly misleading</h1>
+<p>Migration teams often receive a sample file containing a few hundred clean records.</p>
+<p>The sample is useful for:</p>
+<ul>
+<li>checking columns;</li>
+<li>testing formats;</li>
+<li>proving basic transformations;</li>
+<li>building initial scripts.</li>
+</ul>
+<p>It is weak evidence for population readiness when it was manually selected or cleaned.</p>
+<p>A sample may omit:</p>
+<ul>
+<li>rare source values;</li>
+<li>legacy records;</li>
+<li>inactive-but-relevant organisational data;</li>
+<li>combinations created by mergers;</li>
+<li>local exceptions;</li>
+<li>records that fail source joins;</li>
+<li>unusual partner categories;</li>
+<li>multi-organisational assignments.</li>
+</ul>
+<p>The sample can prove that a rule works.</p>
+<p>It cannot prove how often the rule will encounter an unevaluable or contradictory record.</p>
+<p>Before relying on a sample, record:</p>
+<pre><code class="language-text">Selection method:
+Random, stratified, manual or convenience sample
+
+Source stage:
+Raw extract, transformed staging or post-remediation file
+
+Included contexts:
+Countries, systems, roles and organisational levels
+
+Excluded populations:
+Historical records, incomplete records, local exceptions
+
+Known limitation:
+Does not represent rare value combinations</code></pre>
+<p>A manually prepared “good example” file should never be mistaken for readiness evidence.</p>
+<p>---</p>
+<h1 id="build-populations-before-test-cases">Build populations before test cases</h1>
+<p>Traditional test design starts with scenarios.</p>
+<p>For model rules, it is often better to start with populations.</p>
+<p>Suppose the rule is:</p>
+<blockquote>Supplier Risk is required before activation for active strategic supplier organisations.</blockquote>
+<p>The relevant populations are not merely “valid” and “invalid.”</p>
+<p>They include:</p>
+<ol>
+<li>active strategic organisations with valid risk;</li>
+<li>active strategic organisations without risk;</li>
+<li>active non-strategic organisations;</li>
+<li>inactive strategic organisations;</li>
+<li>supplier persons;</li>
+<li>organisations with conflicting strategic indicators;</li>
+<li>records where activity status differs by organisational view;</li>
+<li>records under temporary deviation;</li>
+<li>records with risk values outside the approved list;</li>
+<li>records with a plausible default introduced upstream.</li>
+</ol>
+<p>For Portugal, the local rule creates further partitions:</p>
+<ul>
+<li>regulated versus non-regulated;</li>
+<li>review cleared versus pending;</li>
+<li>exemption present versus missing;</li>
+<li>resident versus non-resident;</li>
+<li>migration stage versus final activation.</li>
+</ul>
+<p>The purpose is not to create hundreds of manual test cases.</p>
+<p>It is to expose the dimensions that determine effective behaviour.</p>
+<p>---</p>
+<h1 id="use-a-population-inventory">Use a population inventory</h1>
+<p>A population inventory shows whether the dataset actually contains the combinations needed for testing.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Population</th><th scope="col">Records</th><th scope="col">Expected treatment</th><th scope="col">Evidence quality</th></tr></thead><tbody><tr><td>DE active strategic with valid risk</td><td>18,240</td><td>May proceed</td><td>Strong</td></tr><tr><td>DE active strategic without risk</td><td>416</td><td>Block or remediate</td><td>Strong</td></tr><tr><td>PT regulated, risk valid, review cleared</td><td>2,180</td><td>May activate</td><td>Strong</td></tr><tr><td>PT regulated, risk blank, review pending</td><td>284</td><td>Load to review; block activation</td><td>Strong</td></tr><tr><td>PT non-resident with exemption</td><td>96</td><td>Apply approved exemption</td><td>Partial</td></tr><tr><td>IT source-deviation population</td><td>1,420</td><td>Temporary enrichment</td><td>Strong</td></tr><tr><td>Person records incorrectly in supplier scope</td><td>63</td><td>Out of scope</td><td>Strong</td></tr><tr><td>Unknown strategic indicator</td><td>212</td><td>Rule cannot be evaluated</td><td>Strong</td></tr></tbody></table></div>
+<p>The final row is particularly important.</p>
+<p>A record may not be valid or invalid.</p>
+<p>The system may lack the information required to decide.</p>
+<p>That is a distinct outcome:</p>
+<pre><code class="language-text">Pass
+Fail
+Exempt
+Pending remediation
+Unevaluable
+Out of scope</code></pre>
+<p>Reducing every record to pass or fail conceals the difference between bad data and incomplete decision context.</p>
+<p>---</p>
+<h1 id="test-rule-evaluability-before-compliance">Test rule evaluability before compliance</h1>
+<p>Before checking whether a record complies, determine whether the rule can be evaluated.</p>
+<p>For the Supplier Risk rule, the system may require:</p>
+<ul>
+<li>partner category;</li>
+<li>supplier role;</li>
+<li>strategic indicator;</li>
+<li>activity status;</li>
+<li>final risk value;</li>
+<li>effective date;</li>
+<li>country;</li>
+<li>migration stage.</li>
+</ul>
+<p>If activity status is missing, the result is not automatically “risk missing.”</p>
+<p>The rule cannot determine whether the record is applicable.</p>
+<p>An evaluability test asks:</p>
+<pre><code class="language-text">Are all attributes required to determine applicability available,
+valid and measured at the correct granularity?</code></pre>
+<p>Only then should the compliance test run.</p>
+<p>This distinction changes reporting.</p>
+<p>Weak report:</p>
+<pre><code class="language-text">6,840 records failed Supplier Risk validation.</code></pre>
+<p>Stronger report:</p>
+<pre><code class="language-text">4,910 applicable records lack Supplier Risk.
+
+1,212 records are not applicable.
+
+718 records cannot be evaluated because strategic status
+or lifecycle context is missing.</code></pre>
+<p>The remediation actions are different.</p>
+<p>---</p>
+<h1 id="context-fields-deserve-the-same-scrutiny-as-the-governed-value">Context fields deserve the same scrutiny as the governed value</h1>
+<p>Teams focus on the field being validated and ignore fields used to determine scope.</p>
+<p>For example:</p>
+<blockquote>Tax Identifier is required for Portuguese resident supplier organisations.</blockquote>
+<p>The test usually examines Tax Identifier completeness.</p>
+<p>It should also examine:</p>
+<ul>
+<li>country completeness;</li>
+<li>residence status;</li>
+<li>partner category;</li>
+<li>supplier role;</li>
+<li>effective dates;</li>
+<li>exemption state.</li>
+</ul>
+<p>If country is blank, the programme cannot determine whether the local rule applies.</p>
+<p>If partner category is wrong, persons may be tested as organisations.</p>
+<p>If residence status is derived inconsistently, exemptions may be applied incorrectly.</p>
+<p>A rule is only as reliable as the data that selects its population.</p>
+<p>---</p>
+<h1 id="granularity-mismatches-must-fail-loudly">Granularity mismatches must fail loudly</h1>
+<p>A rule may be defined at one level and tested at another.</p>
+<p>Example:</p>
+<pre><code class="language-text">Supplier Risk:
+Supplier legal-entity level
+
+Activity:
+Purchasing-organisation level
+
+Strategic status:
+Source-system central level
+
+Compliance review:
+Country level</code></pre>
+<p>A flat migration row may combine these values without indicating their scope.</p>
+<p>The test engine can then produce a result that appears precise but has no valid semantic basis.</p>
+<p>Before executing the rule, confirm:</p>
+<ul>
+<li>the key of every input;</li>
+<li>whether values are central or organisational;</li>
+<li>whether one value is being repeated across several contexts;</li>
+<li>whether aggregation or derivation is approved.</li>
+</ul>
+<p>Consider a supplier active in one purchasing organisation and inactive in another.</p>
+<p>A central <code>ACTIVE = true</code> flag cannot prove applicability for both.</p>
+<p>The test should report a model-to-data granularity gap rather than silently expanding the value.</p>
+<p>---</p>
+<h1 id="test-the-effective-rule-not-each-sentence-separately">Test the effective rule, not each sentence separately</h1>
+<p>Global and local rules should be resolved into effective behaviour before testing.</p>
+<p>Suppose the approved rules are:</p>
+<pre><code class="language-text">Global:
+Supplier Risk required before activation for active strategic suppliers.
+
+Portugal:
+Regulated suppliers require Review Status = CLEARED.
+
+Migration Wave 2:
+Missing Supplier Risk may enter a controlled review queue.
+
+Temporary control:
+Records in review cannot activate.</code></pre>
+<p>The effective Portuguese Wave 2 rule is:</p>
+<pre><code class="language-text">A regulated strategic supplier may enter the migration review queue
+without final Supplier Risk.
+
+It may not activate until:
+- Supplier Risk is approved; and
+- Review Status is CLEARED.</code></pre>
+<p>This effective rule should drive the test.</p>
+<p>Do not run four independent checks and expect the reviewer to infer the combined outcome.</p>
+<p>---</p>
+<h1 id="decision-tables-expose-ambiguity">Decision tables expose ambiguity</h1>
+<p>A decision table is often more useful than prose.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Strategic</th><th scope="col">Regulated PT</th><th scope="col">Risk</th><th scope="col">Review</th><th scope="col">Migration stage</th><th scope="col">Expected result</th></tr></thead><tbody><tr><td>Yes</td><td>Yes</td><td>Valid</td><td>Cleared</td><td>Activation</td><td>Pass</td></tr><tr><td>Yes</td><td>Yes</td><td>Missing</td><td>Pending</td><td>Load</td><td>Enter review</td></tr><tr><td>Yes</td><td>Yes</td><td>Missing</td><td>Pending</td><td>Activation</td><td>Block</td></tr><tr><td>Yes</td><td>Yes</td><td>Valid</td><td>Pending</td><td>Activation</td><td>Block</td></tr><tr><td>Yes</td><td>No</td><td>Valid</td><td>Not applicable</td><td>Activation</td><td>Pass</td></tr><tr><td>No</td><td>Yes</td><td>Missing</td><td>Cleared</td><td>Activation</td><td>Depends on approved non-strategic policy</td></tr><tr><td>Unknown</td><td>Yes</td><td>Missing</td><td>Pending</td><td>Any</td><td>Unevaluable</td></tr></tbody></table></div>
+<p>The sixth row frequently reveals an unresolved policy question.</p>
+<p>The seventh reveals missing context.</p>
+<p>Do not fabricate an expected result merely to complete the table.</p>
+<p>An unresolved cell is useful evidence that the model is not ready.</p>
+<p>---</p>
+<h1 id="positive-tests-are-the-least-interesting-tests">Positive tests are the least interesting tests</h1>
+<p>A positive test proves that a clean record can pass.</p>
+<p>Most real migration failures occur elsewhere.</p>
+<p>A complete rule test set needs several categories.</p>
+<h2 id="positive">Positive</h2>
+<p>Valid applicable record succeeds.</p>
+<h2 id="negative">Negative</h2>
+<p>Invalid applicable record is rejected or routed as approved.</p>
+<h2 id="boundary">Boundary</h2>
+<p>A value exactly at the applicability boundary behaves correctly.</p>
+<p>Examples:</p>
+<ul>
+<li>activation date equals effective date;</li>
+<li>exception expires today;</li>
+<li>supplier changes from non-strategic to strategic;</li>
+<li>review becomes cleared after load but before activation.</li>
+</ul>
+<h2 id="out-of-scope">Out of scope</h2>
+<p>The rule does not affect unrelated records.</p>
+<p>Examples:</p>
+<ul>
+<li>persons;</li>
+<li>inactive records;</li>
+<li>another country;</li>
+<li>non-supplier Business Partners.</li>
+</ul>
+<h2 id="exception">Exception</h2>
+<p>An approved exemption works only with required evidence.</p>
+<h2 id="contradiction">Contradiction</h2>
+<p>Inputs disagree.</p>
+<p>Examples:</p>
+<ul>
+<li>strategic in one source, ordinary in another;</li>
+<li>country differs between central and organisational data;</li>
+<li>final risk and review status are logically inconsistent.</li>
+</ul>
+<h2 id="regression">Regression</h2>
+<p>Existing global contexts remain unchanged after local rule introduction.</p>
+<h2 id="volume">Volume</h2>
+<p>The rule performs and produces manageable outcomes across the real population.</p>
+<h2 id="reversibility">Reversibility</h2>
+<p>Records affected by temporary defaults or transformations can still be identified and corrected.</p>
+<p>A rule suite dominated by positive cases creates confidence without much protection.</p>
+<p>---</p>
+<h1 id="test-absence-invalidity-and-uncertainty-separately">Test absence, invalidity and uncertainty separately</h1>
+<p>These conditions are often collapsed into blank.</p>
+<p>They are different.</p>
+<h3 id="absent">Absent</h3>
+<p>No value exists.</p>
+<h3 id="invalid">Invalid</h3>
+<p>A value exists but is not allowed.</p>
+<h3 id="unmapped">Unmapped</h3>
+<p>A source value exists, but no target treatment is approved.</p>
+<h3 id="ambiguous">Ambiguous</h3>
+<p>Several target treatments are plausible.</p>
+<h3 id="contradictory">Contradictory</h3>
+<p>Different sources provide incompatible values.</p>
+<h3 id="not-applicable">Not applicable</h3>
+<p>The field is correctly empty for this context.</p>
+<h3 id="unknown-applicability">Unknown applicability</h3>
+<p>The programme cannot determine whether the rule applies.</p>
+<p>Each condition needs a distinct result.</p>
+<p>For example:</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Condition</th><th scope="col">Appropriate treatment</th></tr></thead><tbody><tr><td>Absent but required</td><td>Remediate or block</td></tr><tr><td>Invalid code</td><td>Reject or map through approved correction</td></tr><tr><td>Unmapped value</td><td>Decision required</td></tr><tr><td>Ambiguous value</td><td>Investigation required</td></tr><tr><td>Contradictory sources</td><td>Authority or survivorship decision</td></tr><tr><td>Not applicable</td><td>Pass</td></tr><tr><td>Unknown applicability</td><td>Context gap</td></tr></tbody></table></div>
+<p>If all become <code>FAILED</code>, the remediation queue becomes noisy and difficult to govern.</p>
+<p>If all become <code>WARNING</code>, material problems disappear.</p>
+<p>---</p>
+<h1 id="the-dataset-should-contain-deliberately-difficult-records">The dataset should contain deliberately difficult records</h1>
+<p>A production extract provides realism.</p>
+<p>A deliberately constructed challenge set provides coverage.</p>
+<p>Use both.</p>
+<p>The challenge set should include:</p>
+<ul>
+<li>each rule boundary;</li>
+<li>each approved exception;</li>
+<li>each temporary deviation;</li>
+<li>contradictory source combinations;</li>
+<li>unknown codes;</li>
+<li>null context fields;</li>
+<li>multi-organisational records;</li>
+<li>expired evidence;</li>
+<li>records created before and after effective dates;</li>
+<li>values from retired mappings;</li>
+<li>records previously touched by defaults.</li>
+</ul>
+<p>These records are not meant to estimate population frequency.</p>
+<p>They prove that the model can distinguish difficult states correctly.</p>
+<p>---</p>
+<h1 id="then-run-against-the-whole-representative-population">Then run against the whole representative population</h1>
+<p>After the challenge set passes, execute the rules against a representative or complete migration population.</p>
+<p>Measure:</p>
+<ul>
+<li>number of applicable records;</li>
+<li>pass count;</li>
+<li>fail count;</li>
+<li>exception count;</li>
+<li>unevaluable count;</li>
+<li>out-of-scope count;</li>
+<li>top failure reasons;</li>
+<li>distribution by source, country and organisation;</li>
+<li>concentration among critical records;</li>
+<li>change from previous extract.</li>
+</ul>
+<p>This is where hidden problems appear.</p>
+<p>Example:</p>
+<pre><code class="language-text">Global Supplier Risk rule
+
+Applicable:
+42,810
+
+Pass:
+36,905
+
+Pending approved review:
+2,140
+
+Fail:
+1,118
+
+Unevaluable:
+2,647</code></pre>
+<p>A superficial summary reports:</p>
+<blockquote>91.9% pass or approved review.</blockquote>
+<p>A better analysis notices that 2,647 records cannot be evaluated.</p>
+<p>If these are concentrated in one source system, the central issue may be missing strategic classification rather than Supplier Risk itself.</p>
+<p>---</p>
+<h1 id="do-not-accept-a-percentage-without-seeing-the-residual-population">Do not accept a percentage without seeing the residual population</h1>
+<p>A programme may set readiness thresholds such as:</p>
+<ul>
+<li>99% complete;</li>
+<li>fewer than 100 open records;</li>
+<li>zero critical failures.</li>
+</ul>
+<p>These are programme policies, not universal rules.</p>
+<p>Whatever threshold is used, the residual population must remain visible.</p>
+<p>Ask:</p>
+<ul>
+<li>Which records failed?</li>
+<li>Are they critical?</li>
+<li>Do they share a source?</li>
+<li>Are they legally sensitive?</li>
+<li>Can they activate?</li>
+<li>Are they new or recurring?</li>
+<li>Is the residual population growing?</li>
+</ul>
+<p>A 0.1% failure rate can still include:</p>
+<ul>
+<li>the largest suppliers;</li>
+<li>regulated customers;</li>
+<li>master records required for cutover;</li>
+<li>parent entities;</li>
+<li>records used by several countries.</li>
+</ul>
+<p>Volume and materiality must be assessed together.</p>
+<p>---</p>
+<h1 id="cross-country-testing-should-prove-containment">Cross-country testing should prove containment</h1>
+<p>A local rule is not safe merely because it works locally.</p>
+<p>When a Portuguese rule is introduced, test:</p>
+<ul>
+<li>Portugal in-scope population;</li>
+<li>Portugal out-of-scope population;</li>
+<li>at least one unaffected country;</li>
+<li>shared interfaces;</li>
+<li>global reports;</li>
+<li>common value lists.</li>
+</ul>
+<p>A containment report might state:</p>
+<pre><code class="language-text">Portuguese regulated organisations:
+New review rule applied.
+
+Portuguese non-regulated organisations:
+No review requirement.
+
+German strategic suppliers:
+Global risk rule unchanged.
+
+Shared risk value list:
+No local process values added.
+
+Global reporting:
+Review Status excluded from final risk distribution.</code></pre>
+<p>This proves that local variation has not leaked into the shared model.</p>
+<p>---</p>
+<h1 id="test-migration-stage-transitions">Test migration stage transitions</h1>
+<p>Rules may differ between:</p>
+<ul>
+<li>source assessment;</li>
+<li>initial load;</li>
+<li>enrichment;</li>
+<li>validation;</li>
+<li>review;</li>
+<li>activation;</li>
+<li>replication;</li>
+<li>hypercare.</li>
+</ul>
+<p>A record should be tested across transitions.</p>
+<p>Example:</p>
+<pre><code class="language-text">Stage 1:
+Loaded with missing Supplier Risk into PENDING review.
+
+Stage 2:
+Risk enrichment completed.
+
+Stage 3:
+Compliance review cleared.
+
+Stage 4:
+Activation succeeds.
+
+Stage 5:
+Approved values replicated downstream.</code></pre>
+<p>Also test failure transitions:</p>
+<pre><code class="language-text">Risk completed, review still pending:
+Activation blocked.
+
+Review cleared, risk missing:
+Activation blocked.
+
+Temporary deviation expired:
+Load no longer permitted.</code></pre>
+<p>This is more useful than testing each screen or batch independently.</p>
+<p>---</p>
+<h1 id="historical-and-delta-data-need-different-tests">Historical and delta data need different tests</h1>
+<p>A full migration extract and a post-go-live delta are not equivalent.</p>
+<p>Historical migration may contain:</p>
+<ul>
+<li>inactive records;</li>
+<li>obsolete values;</li>
+<li>incomplete organisational structures;</li>
+<li>legacy exceptions;</li>
+<li>low-value history needed only for reference.</li>
+</ul>
+<p>Operational delta processing may require:</p>
+<ul>
+<li>complete current values;</li>
+<li>immediate validation;</li>
+<li>stricter ownership;</li>
+<li>no migration defaults;</li>
+<li>real-time distribution.</li>
+</ul>
+<p>A rule may therefore permit:</p>
+<pre><code class="language-text">Historical inactive record:
+Load with documented exception.</code></pre>
+<p>while requiring:</p>
+<pre><code class="language-text">New active record:
+Block until complete.</code></pre>
+<p>The test plan should distinguish historical treatment from operational policy.</p>
+<p>Otherwise, migration concessions leak into steady-state governance.</p>
+<p>---</p>
+<h1 id="configuration-tests-are-still-required">Configuration tests are still required</h1>
+<p>Dataset testing does not prove SAP implementation.</p>
+<p>After the model and population are understood, test the configured platform.</p>
+<p>For SAP MDG or another MDM solution, verify:</p>
+<ul>
+<li>field behaviour;</li>
+<li>validation timing;</li>
+<li>derivation;</li>
+<li>workflow route;</li>
+<li>authorisation;</li>
+<li>change-request status;</li>
+<li>activation;</li>
+<li>replication;</li>
+<li>audit trail;</li>
+<li>mass-change consequences.</li>
+</ul>
+<p>SAP currently positions MDG around one governed model, profiling and reconciliation, validated values, workflows, business-rule monitoring, quality controls and auditable change. Those capabilities can enforce and monitor approved rules, but the programme still needs evidence that the configured rule uses the right context and produces the intended lifecycle outcome.</p>
+<p>A configuration test should use records selected from the same population analysis, not unrelated synthetic examples.</p>
+<p>---</p>
+<h1 id="data-quality-platforms-are-execution-engines-not-semantic-authorities">Data-quality platforms are execution engines, not semantic authorities</h1>
+<p>Platforms such as Ataccama and Informatica can profile data, execute quality checks, monitor conditions, expose lineage and support remediation workflows. Ataccama’s current platform description combines data-quality checks, monitoring, lineage, observability, reference data and master-data capabilities.</p>
+<p>Informatica’s current data-quality offering describes continuous profiling, cleansing and standardisation, generated quality rules and observability across data, pipelines and business views.</p>
+<p>These capabilities are valuable for:</p>
+<ul>
+<li>scanning large populations;</li>
+<li>measuring completeness;</li>
+<li>validating formats;</li>
+<li>monitoring recurring failures;</li>
+<li>applying reusable checks;</li>
+<li>detecting change over time.</li>
+</ul>
+<p>They do not independently determine:</p>
+<ul>
+<li>whether the field should be mandatory;</li>
+<li>which population is applicable;</li>
+<li>whether a local exception is legitimate;</li>
+<li>whether two fields mean the same thing;</li>
+<li>whether a temporary migration treatment should become permanent.</li>
+</ul>
+<p>The canonical model and approved decision must supply that meaning.</p>
+<p>A clean division of responsibility is:</p>
+<pre><code class="language-text">Martenweave:
+Defines and traces the rule, context, evidence and approved treatment.
+
+Data-quality platform:
+Executes and monitors scalable checks.
+
+SAP or MDM platform:
+Enforces operational behaviour.
+
+Test tools:
+Verify configured scenarios and regression.
+
+Humans:
+Approve meaning, exceptions and residual risk.</code></pre>
+<p>---</p>
+<h1 id="keep-rule-identity-stable-across-tools">Keep rule identity stable across tools</h1>
+<p>The same rule may appear in:</p>
+<ul>
+<li>Martenweave;</li>
+<li>SAP MDG;</li>
+<li>Ataccama;</li>
+<li>Informatica;</li>
+<li>migration scripts;</li>
+<li>test management;</li>
+<li>Jira.</li>
+</ul>
+<p>Use one stable rule ID.</p>
+<p>For example:</p>
+<pre><code class="language-text">RULE-SUPPLIER-RISK-ACTIVATION-001</code></pre>
+<p>Each implementation should reference it:</p>
+<pre><code class="language-text">Martenweave:
+Canonical definition and context
+
+Ataccama:
+Population quality check
+
+SAP MDG:
+Activation validation
+
+Migration pipeline:
+Readiness gate
+
+Test suite:
+Positive, negative and regression scenarios</code></pre>
+<p>This allows the programme to compare results.</p>
+<p>Without stable identity, several rules with similar labels may gradually diverge.</p>
+<p>---</p>
+<h1 id="baselines-must-agree">Baselines must agree</h1>
+<p>A valid test package identifies:</p>
+<ul>
+<li>canonical model commit or version;</li>
+<li>rule version;</li>
+<li>dataset extract;</li>
+<li>transformation version;</li>
+<li>SAP configuration release;</li>
+<li>value-list version;</li>
+<li>test cycle.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Model:
+supplier-model-v3.4
+
+Rule:
+RULE-SUPPLIER-RISK-ACTIVATION-001 v2
+
+Dataset:
+ERP_B_supplier_extract_2026-07-12
+
+Transformation:
+migration-release-4.6
+
+SAP configuration:
+MDG-R5
+
+Test cycle:
+UAT-1</code></pre>
+<p>If the dataset was transformed using rule v1 but SAP was tested with rule v2, the evidence does not describe one coherent state.</p>
+<p>The tests may all pass individually.</p>
+<p>The package still cannot prove readiness.</p>
+<p>---</p>
+<h1 id="testing-should-produce-findings-not-only-defects">Testing should produce findings, not only defects</h1>
+<p>A failed record does not always justify a software defect.</p>
+<p>Possible outputs include:</p>
+<h3 id="data-remediation">Data remediation</h3>
+<p>The model and implementation are correct; records must be fixed.</p>
+<h3 id="source-gap">Source gap</h3>
+<p>Required context or value is unavailable from the source.</p>
+<h3 id="mapping-issue">Mapping issue</h3>
+<p>Source and target are approved, but transformation is wrong.</p>
+<h3 id="model-ambiguity">Model ambiguity</h3>
+<p>The rule does not define the outcome for the observed combination.</p>
+<h3 id="configuration-defect">Configuration defect</h3>
+<p>SAP or the MDM platform differs from the approved rule.</p>
+<h3 id="local-policy-decision">Local-policy decision</h3>
+<p>A contextual requirement has not been approved.</p>
+<h3 id="temporary-deviation-decision">Temporary-deviation decision</h3>
+<p>The target rule is valid, but the current migration stage needs bounded treatment.</p>
+<h3 id="test-data-defect">Test-data defect</h3>
+<p>The expected result was based on an incorrect assumption.</p>
+<p>A test programme that turns every unexpected result into a configuration ticket will corrupt the model.</p>
+<p>---</p>
+<h1 id="a-full-worked-example-supplier-risk-and-review-status">A full worked example: Supplier Risk and Review Status</h1>
+<p>Consider a programme with three rules.</p>
+<h3 id="global-rule">Global rule</h3>
+<p>Supplier Risk is mandatory before activation for active strategic supplier organisations.</p>
+<h3 id="portuguese-strengthening">Portuguese strengthening</h3>
+<p>Regulated Portuguese suppliers also require Compliance Review Status = <code>CLEARED</code>.</p>
+<h3 id="italian-deviation">Italian deviation</h3>
+<p>Italian Wave 2 records may enter remediation without final Supplier Risk because the source release is delayed. They may not activate.</p>
+<h2 id="step-1-inspect-rule-inputs">Step 1: inspect rule inputs</h2>
+<p>Required inputs:</p>
+<ul>
+<li>partner category;</li>
+<li>supplier role;</li>
+<li>active status;</li>
+<li>strategic status;</li>
+<li>country;</li>
+<li>regulated status;</li>
+<li>risk value;</li>
+<li>review status;</li>
+<li>migration wave;</li>
+<li>activation stage.</li>
+</ul>
+<h2 id="step-2-profile-the-dataset">Step 2: profile the dataset</h2>
+<pre><code class="language-text">Total supplier records:
+86,420
+
+Applicable active organisations:
+62,180
+
+Strategic:
+14,480
+
+Portuguese regulated:
+2,940
+
+Italian Wave 2:
+8,110
+
+Missing strategic status:
+1,320
+
+Invalid risk codes:
+148
+
+Missing country:
+42</code></pre>
+<p>The 1,320 records with missing strategic status cannot yet be evaluated against the global rule.</p>
+<h2 id="step-3-build-the-decision-table">Step 3: build the decision table</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">Country</th><th scope="col">Strategic</th><th scope="col">Regulated</th><th scope="col">Risk</th><th scope="col">Review</th><th scope="col">Stage</th><th scope="col">Result</th></tr></thead><tbody><tr><td>DE</td><td>Yes</td><td>No</td><td>HIGH</td><td>N/A</td><td>Activation</td><td>Pass</td></tr><tr><td>DE</td><td>Yes</td><td>No</td><td>Blank</td><td>N/A</td><td>Activation</td><td>Block</td></tr><tr><td>PT</td><td>Yes</td><td>Yes</td><td>HIGH</td><td>CLEARED</td><td>Activation</td><td>Pass</td></tr><tr><td>PT</td><td>Yes</td><td>Yes</td><td>HIGH</td><td>PENDING</td><td>Activation</td><td>Block</td></tr><tr><td>PT</td><td>Yes</td><td>Yes</td><td>Blank</td><td>PENDING</td><td>Load</td><td>Review</td></tr><tr><td>IT</td><td>Yes</td><td>No</td><td>Blank</td><td>N/A</td><td>Wave 2 load</td><td>Remediation queue</td></tr><tr><td>IT</td><td>Yes</td><td>No</td><td>Blank</td><td>N/A</td><td>Activation</td><td>Block</td></tr><tr><td>Any</td><td>Unknown</td><td>Any</td><td>Any</td><td>Any</td><td>Any</td><td>Unevaluable</td></tr></tbody></table></div>
+<h2 id="step-4-execute-against-the-population">Step 4: execute against the population</h2>
+<p>Results:</p>
+<pre><code class="language-text">Pass:
+11,806
+
+Approved temporary review:
+1,716
+
+Block:
+958
+
+Unevaluable:
+1,320
+
+Out of scope:
+70,620</code></pre>
+<h2 id="step-5-analyse-concentration">Step 5: analyse concentration</h2>
+<p>The 1,320 unevaluable records are almost entirely from one source.</p>
+<p>The primary programme risk is no longer merely missing Supplier Risk.</p>
+<p>It is missing strategic-status evidence.</p>
+<h2 id="step-6-test-implementation">Step 6: test implementation</h2>
+<p>SAP MDG testing confirms:</p>
+<ul>
+<li>Portuguese pending review blocks activation;</li>
+<li>valid Portuguese records activate;</li>
+<li>Italian Wave 2 records can enter remediation;</li>
+<li>Italian records cannot activate without risk;</li>
+<li>German behaviour remains unchanged.</li>
+</ul>
+<h2 id="step-7-test-downstream-distribution">Step 7: test downstream distribution</h2>
+<p>The outbound interface is checked to ensure:</p>
+<ul>
+<li>no final risk value is invented;</li>
+<li>pending review is identifiable;</li>
+<li>consumers do not treat pending records as approved;</li>
+<li>local review status is not confused with risk classification.</li>
+</ul>
+<h2 id="step-8-record-separate-actions">Step 8: record separate actions</h2>
+<pre><code class="language-text">Data action:
+Remediate missing strategic-status evidence.
+
+Configuration action:
+Correct one Italian activation condition.
+
+Model action:
+Clarify lifecycle point for the temporary deviation.
+
+Decision action:
+Approve treatment for 42 records with missing country.</code></pre>
+<p>One test run created four different workstreams.</p>
+<p>That is a sign of useful testing.</p>
+<p>---</p>
+<h1 id="where-martenweave-fits-in-the-test-chain">Where Martenweave fits in the test chain</h1>
+<p>Martenweave Core already provides the main backend pieces needed to build model-aware testing:</p>
+<ul>
+<li>deterministic validation;</li>
+<li>generated SQLite and JSONL indexes;</li>
+<li>search;</li>
+<li>trace;</li>
+<li>impact analysis;</li>
+<li>governance health and scorecards;</li>
+<li>dataset-to-model gap checks;</li>
+<li>a combined dataset-readiness workflow;</li>
+<li>promotion of gaps into reviewable proposals or GitHub-ready issue drafts.</li>
+</ul>
+<p>The current demo flow shows that <code>dataset-readiness</code> combines validation, coverage, gaps and a readiness verdict into shareable JSON and Markdown reports. It can also promote findings into a pending-review <code>PatchProposal</code>, preserving human review rather than changing canonical files automatically.</p>
+<p>This supports an important product boundary:</p>
+<pre><code class="language-text">Martenweave should not become the engine that executes every enterprise data-quality rule.
+
+It should determine which rule is being tested,
+against which model and dataset baseline,
+for which context,
+and what the result means for controlled change.</code></pre>
+<p>---</p>
+<h1 id="what-martenweave-should-add-for-contextual-rule-testing">What Martenweave should add for contextual rule testing</h1>
+<p>A focused implementation could extend dataset readiness with:</p>
+<h2 id="rule-applicability-output">Rule applicability output</h2>
+<p>For each rule:</p>
+<ul>
+<li>applicable records;</li>
+<li>out-of-scope records;</li>
+<li>unevaluable records;</li>
+<li>reason for unevaluability.</li>
+</ul>
+<h2 id="context-breakdown">Context breakdown</h2>
+<p>Results by:</p>
+<ul>
+<li>source;</li>
+<li>country;</li>
+<li>role;</li>
+<li>organisational level;</li>
+<li>migration wave;</li>
+<li>local extension.</li>
+</ul>
+<h2 id="outcome-classification">Outcome classification</h2>
+<ul>
+<li>pass;</li>
+<li>fail;</li>
+<li>exception;</li>
+<li>pending;</li>
+<li>out of scope;</li>
+<li>unevaluable.</li>
+</ul>
+<h2 id="residual-population-export">Residual-population export</h2>
+<p>A stable list of records requiring:</p>
+<ul>
+<li>remediation;</li>
+<li>decision;</li>
+<li>configuration correction;</li>
+<li>source investigation.</li>
+</ul>
+<h2 id="baseline-manifest">Baseline manifest</h2>
+<ul>
+<li>repository commit;</li>
+<li>rule IDs;</li>
+<li>dataset checksum;</li>
+<li>profile date;</li>
+<li>mapping version;</li>
+<li>implementation reference.</li>
+</ul>
+<h2 id="comparison-between-runs">Comparison between runs</h2>
+<ul>
+<li>new failures;</li>
+<li>resolved failures;</li>
+<li>changed applicability;</li>
+<li>new source values;</li>
+<li>regression by context.</li>
+</ul>
+<p>This remains backend-first and deterministic.</p>
+<p>It does not require a general test-management platform.</p>
+<p>---</p>
+<h1 id="a-conceptual-report">A conceptual report</h1>
+<pre><code class="language-yaml">test_run:
+  id: TESTRUN-SUPPLIER-RISK-2026-07-14
+  model_baseline: supplier-model-v3.4
+  dataset: ERP_B_supplier_extract_2026-07-12
+  rules:
+    - RULE-SUPPLIER-RISK-ACTIVATION-001
+    - RULE-PT-COMPLIANCE-CLEARANCE-004
+    - DEV-IT-WAVE2-RISK-002
+
+results:
+  applicable: 15800
+  passed: 11806
+  failed: 958
+  approved_pending: 1716
+  unevaluable: 1320
+  out_of_scope: 70620
+
+findings:
+  - type: source_context_gap
+    population: 1320
+    reason: strategic_status_missing
+    owner: ROLE-ERP-B-DATA-OWNER
+
+  - type: implementation_mismatch
+    population: 118
+    reason: italian_activation_rule_not_enforced
+    owner: ROLE-MDG-ARCHITECT
+
+readiness:
+  verdict: not_ready
+  blockers:
+    - strategic status unavailable for applicable population
+    - Italian activation configuration mismatch</code></pre>
+<p>This is a conceptual direction, not a claim about the current schema.</p>
+<p>---</p>
+<h1 id="the-release-gate-should-be-evidence-based">The release gate should be evidence-based</h1>
+<p>Before a global or local rule is declared migration-ready, require:</p>
+<h3 id="model">Model</h3>
+<ul>
+<li>rule identity is stable;</li>
+<li>context is explicit;</li>
+<li>global and local precedence is resolved;</li>
+<li>references validate;</li>
+<li>temporary deviations have expiry.</li>
+</ul>
+<h3 id="dataset">Dataset</h3>
+<ul>
+<li>applicability inputs are available;</li>
+<li>population is measured;</li>
+<li>unevaluable records are visible;</li>
+<li>unexpected values are classified;</li>
+<li>residual population is owned.</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<ul>
+<li>positive and negative cases pass;</li>
+<li>lifecycle transitions pass;</li>
+<li>local behaviour is contained;</li>
+<li>unaffected global contexts pass regression;</li>
+<li>downstream consumers interpret the result correctly.</li>
+</ul>
+<h3 id="evidence">Evidence</h3>
+<ul>
+<li>baselines align;</li>
+<li>report is reproducible;</li>
+<li>remaining gaps are linked to owners and actions;</li>
+<li>accepted exceptions are approved;</li>
+<li>reopening triggers exist.</li>
+</ul>
+<p>A rule should not pass because one team says its part works.</p>
+<p>It should pass when the complete evidence chain describes one coherent state.</p>
+<p>---</p>
+<h1 id="the-questions-that-reveal-weak-testing">The questions that reveal weak testing</h1>
+<p>Before accepting the report, ask:</p>
+<ul>
+<li>Which exact population was tested?</li>
+<li>How was that population selected?</li>
+<li>Which contexts were absent?</li>
+<li>Can the rule be evaluated for every applicable record?</li>
+<li>How are unevaluable records reported?</li>
+<li>Which granularities do the input fields use?</li>
+<li>Were real source combinations tested?</li>
+<li>Were local rules tested against unaffected countries?</li>
+<li>Were temporary deviations tested after expiry?</li>
+<li>Did the tests use the same model and implementation baseline?</li>
+<li>Are residual failures materially important?</li>
+<li>Did the run produce data, model or configuration actions?</li>
+<li>Can the test be repeated on the next extract?</li>
+</ul>
+<p>If the report answers only:</p>
+<blockquote>25 scenarios passed,</blockquote>
+<p>the programme has tested examples, not readiness.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A rule is not proven by a clean test record.</p>
+<p>It is proven by controlled behaviour across the population to which it applies.</p>
+<p>Real migration data tests more than formatting and completeness. It tests whether the model can survive:</p>
+<ul>
+<li>missing context;</li>
+<li>organisational complexity;</li>
+<li>local exceptions;</li>
+<li>temporary deviations;</li>
+<li>contradictory sources;</li>
+<li>lifecycle transitions;</li>
+<li>unexpected values;</li>
+<li>scale.</li>
+</ul>
+<p>SAP MDG and other MDM platforms can enforce approved operational rules. Ataccama, Informatica and other data-quality platforms can profile, validate and monitor large datasets. Test-management tools can organise scenarios and defects.</p>
+<p>The missing layer is often the connection between them:</p>
+<blockquote>Which canonical rule was tested, against which effective global–local context, using which dataset and baseline, and what does each result mean for the model?</blockquote>
+<p>That is the layer Martenweave can own.</p>
+<p>The practical test is:</p>
+<blockquote>Can the programme take a new migration extract, apply the approved effective model, separate failure from exception and unevaluability, trace every material result to a rule and owner, and repeat the same analysis after the next change?</blockquote>
+<p>When it can, rule testing becomes evidence.</p>
+<p>When it cannot, the programme has a collection of successful examples and an unresolved production risk.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects:</p>
+<ul>
+<li>canonical global and local rules;</li>
+<li>contexts;</li>
+<li>source and target endpoints;</li>
+<li>datasets;</li>
+<li>gaps;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>decisions;</li>
+<li>reviewable proposals.</li>
+</ul>
+<p>Its role is not to replace SAP validation, enterprise data-quality platforms or test-management applications.</p>
+<p>It is to make the tested rule, population, evidence and resulting change traceable as one governed model process.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer that preserves model semantics and relationships, supports profiling and reconciliation, enforces validated values, routes collaborative workflows, monitors business rules and maintains auditable changes. SAP also recommends curating master data early because automated SAP S/4HANA processes depend increasingly on clean and correct data.</p>
+<p>Ataccama currently presents its platform as combining data-quality checks, monitoring, lineage, observability, reference-data and master-data capabilities across end-to-end quality workflows.</p>
+<p>Informatica currently describes Data Quality and Observability capabilities that include continuous profiling, cleansing and standardisation, generated rules and monitoring through data, pipeline and business perspectives.</p>
+<p>Martenweave’s current public demo path validates canonical files, builds disposable indexes, supports search, trace and impact analysis, reports governance and model-side gaps, compares datasets with expected field endpoints and produces combined readiness reports.</p>
+<p>The same dataset-readiness workflow can promote gaps into a pending-review <code>PatchProposal</code> or generate a GitHub-ready issue draft, while preserving human review before canonical model changes.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, Ataccama, Informatica or other vendors named in this article. Product names and trademarks belong to their respective owners.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-resolve-conflicting-global-and-local-rules-before-they-reach-sap.html"><span>Previous</span>The global design states:</a><a href="/blog/how-to-turn-migration-rule-test-results-into-model-decisions-instead-of.html"><span>Next</span>The first migration-rule test produces 8,420 failures.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

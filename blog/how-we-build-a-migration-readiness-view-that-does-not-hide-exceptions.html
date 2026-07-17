@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Build a Migration Readiness View That Does Not Hide Exceptions | Martenweave</title>
+    <meta
+      name="description"
+      content="The Supplier migration dashboard shows:"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html" />
+    <meta property="og:title" content="How We Build a Migration Readiness View That Does Not Hide Exceptions | Martenweave" />
+    <meta property="og:description" content="The Supplier migration dashboard shows:" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Build a Migration Readiness View That Does Not Hide Exceptions | Martenweave" />
+    <meta name="twitter:description" content="The Supplier migration dashboard shows:" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html",
+                        "name": "How We Build a Migration Readiness View That Does Not Hide Exceptions | Martenweave",
+                        "description": "The Supplier migration dashboard shows:",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Build a Migration Readiness View That Does Not Hide Exceptions",
+                                    "item": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html#content",
+                        "headline": "How We Build a Migration Readiness View That Does Not Hide Exceptions",
+                        "name": "How We Build a Migration Readiness View That Does Not Hide Exceptions",
+                        "description": "The Supplier migration dashboard shows:",
+                        "url": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-build-a-migration-readiness-view-that-does-not-hide-exceptions.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT20M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Build a Migration Readiness View That Does Not Hide Exceptions</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How We Build a Migration Readiness View That Does Not Hide Exceptions</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 20 min read</p><p class="blog-summary">The Supplier migration dashboard shows:</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#ready">Ready</a></li><li><a href="#ready-with-controlled-exception">Ready with controlled Exception</a></li><li><a href="#not-ready">Not ready</a></li><li><a href="#not-assessed">Not assessed</a></li><li><a href="#approved-out-of-scope">Approved out of scope</a></li><li><a href="#blocked-by-dependency">Blocked by dependency</a></li><li><a href="#identity-gate">Identity gate</a></li><li><a href="#governance-gate">Governance gate</a></li><li><a href="#structural-gate">Structural gate</a></li><li><a href="#data-quality-gate">Data-quality gate</a></li><li><a href="#payment-control-gate">Payment-control gate</a></li><li><a href="#migration-execution-gate">Migration-execution gate</a></li><li><a href="#evidence-gate">Evidence gate</a></li><li><a href="#resolved">Resolved</a></li><li><a href="#controlled">Controlled</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>The Supplier migration dashboard shows:</p>
+<pre><code>Records complete:
+99.6%
+
+Validation passed:
+99.4%
+
+Load success:
+99.8%
+
+Overall readiness:
+Green</code></pre>
+<p>The programme reports that Supplier master data is nearly ready for cutover.</p>
+<p>Then Treasury asks a different question:</p>
+<blockquote>How many payment-active Suppliers still have bank details without current verification?</blockquote>
+<p>The answer is 40.</p>
+<p>Procurement asks:</p>
+<blockquote>How many Suppliers were loaded without the purchasing-organisation extension required for the first purchase orders?</blockquote>
+<p>The answer is 70.</p>
+<p>The MDM team asks:</p>
+<blockquote>How many Suppliers still belong to unresolved duplicate clusters?</blockquote>
+<p>The answer is 110.</p>
+<p>The migration lead asks:</p>
+<blockquote>How many records are treated as ready only because a temporary Exception is still active?</blockquote>
+<p>The answer is 700.</p>
+<p>The dashboard was not mathematically wrong.</p>
+<p>It was operationally incomplete.</p>
+<p>It measured:</p>
+<ul>
+<li>populated fields;</li>
+<li>passed technical validations;</li>
+<li>successful load messages.</li>
+</ul>
+<p>It did not show:</p>
+<ul>
+<li>unresolved identity decisions;</li>
+<li>temporary defaults;</li>
+<li>expiring Exceptions;</li>
+<li>blocked business processes;</li>
+<li>stale Evidence;</li>
+<li>incomplete organisational extensions;</li>
+<li>records that were never assessed under the current Rule set.</li>
+</ul>
+<p>This is one of the most persistent pains in SAP migration, MDM and MDG programmes.</p>
+<p>A dashboard can become greener while the business risk becomes harder to see.</p>
+<blockquote>A readiness view fails when it converts unresolved conditions into a reassuring average.</blockquote>
+<p>We do not want Martenweave to produce another percentage that programme teams can copy into a steering slide.</p>
+<p>We want it to answer a harder question:</p>
+<blockquote>Which master-data populations are demonstrably ready for their intended business use, which are ready only under controlled conditions, and which remain unsafe or unproven?</blockquote>
+<p>That requires more than counting populated fields.</p>
+<p>It requires us to combine:</p>
+<ul>
+<li>canonical model Rules;</li>
+<li>migration scope;</li>
+<li>source authority;</li>
+<li>mappings;</li>
+<li>validation results;</li>
+<li>duplicate-resolution status;</li>
+<li>Decisions;</li>
+<li>Exceptions;</li>
+<li>Evidence freshness;</li>
+<li>target-load results;</li>
+<li>business-process consequences.</li>
+</ul>
+<p>Martenweave already provides the architectural foundation for this direction. The current core turns datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-reviewed proposals. It also exposes a dataset-readiness workflow while keeping canonical files authoritative.</p>
+<p>The next step is to make readiness an explainable model assessment rather than a cosmetic score.</p>
+<h1 id="technical-success-is-not-migration-readiness">Technical success is not migration readiness</h1>
+<p>A Supplier record can be technically successful and still be unready.</p>
+<p>The load tool may report success because:</p>
+<ul>
+<li>the Business Partner was created;</li>
+<li>the mandatory target fields were accepted;</li>
+<li>no technical error message was returned.</li>
+</ul>
+<p>The Supplier may still be unable to support the intended process.</p>
+<p>For example:</p>
+<ul>
+<li>the Supplier exists but lacks the required company-code role;</li>
+<li>the company-code role exists but payment methods are incomplete;</li>
+<li>the purchasing organisation is missing;</li>
+<li>the bank account was loaded but is not currently verified;</li>
+<li>tax classification is defaulted rather than approved;</li>
+<li>the Supplier belongs to an unresolved duplicate cluster;</li>
+<li>the target record exists but replication to a consuming system failed;</li>
+<li>the record is valid only because an Exception permits temporary treatment.</li>
+</ul>
+<p>The technical load answers:</p>
+<blockquote>Could the system accept this record?</blockquote>
+<p>Migration readiness asks:</p>
+<blockquote>Can the organisation safely use this record for the process for which it is being migrated?</blockquote>
+<p>Those are different questions.</p>
+<h1 id="mdg-status-is-not-automatically-migration-readiness">MDG status is not automatically migration readiness</h1>
+<p>SAP positions Master Data Governance around governed master-data models, golden records, matching and merging, workflow-based governance, data-quality Rules, monitoring and auditable changes. Those capabilities are valuable and directly relevant to long-term master-data control.</p>
+<p>But an MDG workflow status alone does not answer every migration-readiness question.</p>
+<p>A change request may be approved while:</p>
+<ul>
+<li>the migration Mapping still uses an older source extract;</li>
+<li>the approved record has not been replicated to the target landscape;</li>
+<li>the cutover file was produced before approval;</li>
+<li>a duplicate decision applies to one system but not another;</li>
+<li>required organisational extensions remain outside the MDG change;</li>
+<li>the target load produced a different result;</li>
+<li>the Evidence proving the approval has become stale.</li>
+</ul>
+<p>Likewise, a consolidated golden record may be governed correctly but not yet included in the current migration wave.</p>
+<p>We should therefore not treat any single system status as the whole readiness state.</p>
+<p>MDG can contribute authoritative Evidence.</p>
+<p>The migration registry must connect that Evidence to the actual wave, dataset, Mapping, target load and business-use scope.</p>
+<h1 id="our-supplier-migration-case">Our Supplier migration case</h1>
+<p>We have 50,000 Supplier records in Wave 1.</p>
+<p>A conventional dashboard reports:</p>
+<pre><code>Required fields populated:
+49,800
+
+Records passing validation:
+49,700
+
+Records loaded:
+49,900</code></pre>
+<p>Depending on the chosen denominator, the programme can report readiness above 99 percent.</p>
+<p>We build a different classification.</p>
+<pre><code>Ready:
+48,900
+
+Ready with controlled Exception:
+700
+
+Not ready:
+220
+
+Not assessed under current baseline:
+100
+
+Removed from scope by approved Decision:
+80</code></pre>
+<p>The total remains 50,000.</p>
+<p>Nothing disappears into an average.</p>
+<p>Each record belongs to one explicit state.</p>
+<p>The readiness view can still calculate percentages, but the primary information is categorical.</p>
+<pre><code>Ready:
+97.8%
+
+Controlled:
+1.4%
+
+Not ready:
+0.44%
+
+Not assessed:
+0.20%
+
+Approved out of scope:
+0.16%</code></pre>
+<p>The 0.44 percent may include the most important records in the dataset.</p>
+<p>We therefore do not stop at percentages.</p>
+<h1 id="the-states-we-need">The states we need</h1>
+<p>A useful migration-readiness view requires a controlled vocabulary.</p>
+<h2 id="ready">Ready</h2>
+<p>The record satisfies the current Rules for the intended process.</p>
+<p>Required Evidence is current.</p>
+<p>No unresolved critical Finding applies.</p>
+<p>No temporary Exception is required.</p>
+<h2 id="ready-with-controlled-exception">Ready with controlled Exception</h2>
+<p>The record does not fully satisfy the intended final model, but an approved Exception permits its use under defined controls.</p>
+<p>The Exception must have:</p>
+<ul>
+<li>scope;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>compensating control;</li>
+<li>closure path.</li>
+</ul>
+<p>This is not the same as fully ready.</p>
+<h2 id="not-ready">Not ready</h2>
+<p>A current Rule or business gate is not satisfied.</p>
+<p>No valid Exception covers the condition.</p>
+<p>The record may be technically loadable but operationally unsafe or incomplete.</p>
+<h2 id="not-assessed">Not assessed</h2>
+<p>The current baseline does not contain valid Evidence for the record.</p>
+<p>This may happen because:</p>
+<ul>
+<li>the validator did not run;</li>
+<li>the source dataset was missing;</li>
+<li>the record entered scope after the latest assessment;</li>
+<li>current Evidence became stale;</li>
+<li>a new Rule was introduced.</li>
+</ul>
+<p>Not assessed must never be converted into passed.</p>
+<h2 id="approved-out-of-scope">Approved out of scope</h2>
+<p>A current, authorised Decision removes the record from the assessed population.</p>
+<p>The Decision and its rationale must remain traceable.</p>
+<p>Filtering a record from a file is not enough.</p>
+<h2 id="blocked-by-dependency">Blocked by dependency</h2>
+<p>The record may satisfy its own local checks, but a required related object or process is not ready.</p>
+<p>For example:</p>
+<ul>
+<li>Supplier general data exists;</li>
+<li>company-code extension is missing;</li>
+<li>payment readiness is therefore blocked.</li>
+</ul>
+<p>This state is often essential in master data, where business use depends on several connected segments.</p>
+<h1 id="why-complete-is-a-dangerous-label">Why “complete” is a dangerous label</h1>
+<p>In master-data projects, completeness often means:</p>
+<pre><code>Required column is not empty.</code></pre>
+<p>That is useful but weak.</p>
+<p>A populated field can contain:</p>
+<ul>
+<li>a placeholder;</li>
+<li>a default;</li>
+<li>a copied legacy value;</li>
+<li>a value from the wrong authority;</li>
+<li>a technically valid but outdated code;</li>
+<li>a value accepted only for a mock load;</li>
+<li>an unresolved survivor value from duplicate consolidation.</li>
+</ul>
+<p>For the Supplier bank case:</p>
+<pre><code>BANK_VERIFICATION_STATUS = VERIFIED</code></pre>
+<p>looks complete.</p>
+<p>But we still need to know:</p>
+<ul>
+<li>which authority produced the status;</li>
+<li>which bank account it applies to;</li>
+<li>whether the account changed later;</li>
+<li>whether the status remains current;</li>
+<li>whether the target payment control uses it correctly.</li>
+</ul>
+<p>The readiness view should distinguish:</p>
+<pre><code>Populated</code></pre>
+<p>from:</p>
+<pre><code>Semantically valid</code></pre>
+<p>and from:</p>
+<pre><code>Ready for business use</code></pre>
+<h1 id="we-classify-values-by-derivation-path">We classify values by derivation path</h1>
+<p>A field should not contribute equally to readiness regardless of how it was produced.</p>
+<p>For example, MRP Controller, payment terms or tax classification may be derived through:</p>
+<ul>
+<li>approved source authority;</li>
+<li>approved deterministic Mapping;</li>
+<li>steward-approved enrichment;</li>
+<li>controlled temporary fallback;</li>
+<li>unapproved default;</li>
+<li>manual override with no Evidence.</li>
+</ul>
+<p>These paths have different governance meaning.</p>
+<p>For the Supplier bank case:</p>
+<pre><code>Current Treasury verification:
+ready
+
+Approved temporary payment block:
+controlled
+
+Legacy VERIFIED flag:
+not ready unless accepted by Decision
+
+Hard-coded VERIFIED value:
+invalid</code></pre>
+<p>The readiness view must retain the derivation path.</p>
+<p>Otherwise a default value can make a column appear complete while increasing model debt.</p>
+<h1 id="we-expose-exceptions-instead-of-absorbing-them">We expose Exceptions instead of absorbing them</h1>
+<p>A common readiness formula counts an approved Exception as a pass.</p>
+<p>That hides the fact that the final model is not yet satisfied.</p>
+<p>Suppose 700 Suppliers are allowed to migrate with payment block while verification is completed.</p>
+<p>A conventional dashboard may classify them as ready because cutover can continue.</p>
+<p>We classify them separately:</p>
+<pre><code>Fully ready:
+48,900
+
+Ready under Exception:
+700</code></pre>
+<p>The Exception population should show:</p>
+<ul>
+<li>business reason;</li>
+<li>affected process;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>current compensating control;</li>
+<li>remaining remediation;</li>
+<li>Evidence freshness.</li>
+</ul>
+<p>A steering committee can then make a deliberate decision.</p>
+<p>It cannot claim that the 700 records are identical to fully governed Suppliers.</p>
+<h1 id="we-show-when-exceptions-are-concentrating">We show when Exceptions are concentrating</h1>
+<p>Seven hundred controlled records may be acceptable when distributed across inactive Suppliers.</p>
+<p>The same number may be dangerous when concentrated in:</p>
+<ul>
+<li>one critical company code;</li>
+<li>one high-volume purchasing organisation;</li>
+<li>strategic Suppliers;</li>
+<li>the first payment run;</li>
+<li>one Plant needed for production start.</li>
+</ul>
+<p>The readiness view should segment controlled populations by business context.</p>
+<p>For our case:</p>
+<pre><code>Controlled Suppliers:
+700
+
+Inactive or future-use Suppliers:
+420
+
+Payment-blocked Suppliers:
+240
+
+Payment-active Suppliers:
+40</code></pre>
+<p>The 40 require a different decision from the 420.</p>
+<p>A single Exception count would hide that distinction.</p>
+<h1 id="we-do-not-treat-unresolved-duplicates-as-ordinary-validation-failures">We do not treat unresolved duplicates as ordinary validation failures</h1>
+<p>Duplicate management is a core MDM and MDG concern.</p>
+<p>A potential duplicate is not merely a missing value.</p>
+<p>It raises identity questions:</p>
+<ul>
+<li>Are these records the same business entity?</li>
+<li>Which record survives?</li>
+<li>Which identifiers remain valid?</li>
+<li>Which bank accounts, tax numbers and organisational roles belong to the survivor?</li>
+<li>Which source is authoritative for each Attribute?</li>
+<li>Will open transactions still reference the correct object?</li>
+<li>Does consolidation create a different target key?</li>
+</ul>
+<p>SAP describes MDG capabilities around matching, merging, semantic reconciliation and golden-record creation.</p>
+<p>For migration readiness, we should distinguish at least:</p>
+<pre><code>No duplicate candidate:
+ready for identity gate
+
+Candidate reviewed and accepted as separate:
+ready
+
+Duplicate merged with approved survivor:
+ready if downstream mappings are updated
+
+Candidate unresolved:
+not ready or explicitly controlled
+
+Automatically matched but not steward-approved:
+not yet governed</code></pre>
+<p>A match score does not equal a business identity Decision.</p>
+<p>A readiness percentage that counts every processed match as resolved can hide a serious cutover risk.</p>
+<h1 id="we-make-organisational-extensions-visible">We make organisational extensions visible</h1>
+<p>Supplier and Business Partner readiness is rarely one flat record.</p>
+<p>Different business processes require different segments.</p>
+<p>A Supplier may need:</p>
+<ul>
+<li>general Business Partner data;</li>
+<li>Supplier role;</li>
+<li>company-code data;</li>
+<li>purchasing-organisation data;</li>
+<li>bank data;</li>
+<li>withholding-tax data;</li>
+<li>partner functions;</li>
+<li>payment methods;</li>
+<li>reconciliation account;</li>
+<li>purchasing settings.</li>
+</ul>
+<p>A global completeness score can hide missing extensions.</p>
+<p>For example:</p>
+<pre><code>Supplier created:
+yes
+
+Company-code extension:
+yes
+
+Purchasing organisation:
+no
+
+Bank verification:
+controlled
+
+Overall:
+loaded successfully</code></pre>
+<p>For payment, the record may be controlled.</p>
+<p>For procurement, it is not ready.</p>
+<p>We therefore need process-specific readiness.</p>
+<h1 id="one-record-can-have-several-readiness-results">One record can have several readiness results</h1>
+<p>The same Supplier can be:</p>
+<pre><code>Ready for purchasing:
+no
+
+Ready for invoice posting:
+yes
+
+Ready for payment:
+controlled
+
+Ready for reporting:
+yes</code></pre>
+<p>This is not inconsistency.</p>
+<p>It reflects how master data supports different processes.</p>
+<p>The canonical model should connect Rules and Attributes to the business capabilities they enable.</p>
+<p>The readiness view can then answer:</p>
+<ul>
+<li>ready for what;</li>
+<li>under which organisational context;</li>
+<li>using which Evidence;</li>
+<li>with which remaining conditions.</li>
+</ul>
+<p>A single Supplier-level traffic light is often too coarse.</p>
+<h1 id="we-build-readiness-from-gates">We build readiness from gates</h1>
+<p>Instead of averaging all checks, we define gates.</p>
+<p>For the Supplier case:</p>
+<h2 id="identity-gate">Identity gate</h2>
+<ul>
+<li>duplicate status resolved;</li>
+<li>canonical Supplier identity assigned;</li>
+<li>key mappings valid.</li>
+</ul>
+<h2 id="governance-gate">Governance gate</h2>
+<ul>
+<li>source authority defined;</li>
+<li>required Decisions approved;</li>
+<li>no expired Exception governs the record.</li>
+</ul>
+<h2 id="structural-gate">Structural gate</h2>
+<ul>
+<li>required Supplier roles and organisational extensions exist.</li>
+</ul>
+<h2 id="data-quality-gate">Data-quality gate</h2>
+<ul>
+<li>critical Rules pass;</li>
+<li>required Attributes are semantically valid.</li>
+</ul>
+<h2 id="payment-control-gate">Payment-control gate</h2>
+<ul>
+<li>current bank verification exists;</li>
+<li>or payment block is confirmed under an approved Exception.</li>
+</ul>
+<h2 id="migration-execution-gate">Migration-execution gate</h2>
+<ul>
+<li>transformed record matches the approved Mapping;</li>
+<li>target load succeeded;</li>
+<li>target reconciliation completed.</li>
+</ul>
+<h2 id="evidence-gate">Evidence gate</h2>
+<ul>
+<li>validation and target Evidence are current for the present baseline.</li>
+</ul>
+<p>A record is ready for a process only when the required gates are satisfied.</p>
+<h1 id="gates-can-have-zero-tolerance-rules">Gates can have zero-tolerance Rules</h1>
+<p>We should not average a critical failure into a high score.</p>
+<p>Suppose the Supplier has 200 evaluated Attributes.</p>
+<p>199 pass.</p>
+<p>One fails:</p>
+<pre><code>Payment-active bank account has no current verification
+and no payment block.</code></pre>
+<p>Attribute-level readiness is:</p>
+<pre><code>99.5%</code></pre>
+<p>Business readiness is:</p>
+<pre><code>Not ready for payment</code></pre>
+<p>The payment-control gate has zero tolerance.</p>
+<p>The readiness model must preserve that policy.</p>
+<p>Otherwise the programme can present a near-perfect score while violating the most important control.</p>
+<h1 id="we-separate-controlled-from-unresolved">We separate controlled from unresolved</h1>
+<p>A failed Rule can lead to three different outcomes.</p>
+<h2 id="resolved">Resolved</h2>
+<p>The condition is corrected and current Evidence proves it.</p>
+<h2 id="controlled">Controlled</h2>
+<p>The condition remains, but a valid compensating control and Exception govern it.</p>
+<h2 id="unresolved">Unresolved</h2>
+<p>Neither the final condition nor an accepted control is present.</p>
+<p>These categories should never be merged into one “accepted” bucket.</p>
+<p>For our 180 Suppliers without current verification:</p>
+<pre><code>Payment block confirmed:
+140 controlled
+
+Payment block absent:
+40 unresolved</code></pre>
+<p>Reporting only:</p>
+<pre><code>180 verification issues</code></pre>
+<p>is too weak.</p>
+<p>Reporting:</p>
+<pre><code>180 accepted exceptions</code></pre>
+<p>would be false.</p>
+<h1 id="we-show-stale-evidence-as-a-readiness-gap">We show stale Evidence as a readiness gap</h1>
+<p>A Supplier may have passed validation in RC5.</p>
+<p>The Rule or Mapping changes before RC6.</p>
+<p>The old result becomes stale.</p>
+<p>The Supplier should not remain silently green.</p>
+<p>Its state may become:</p>
+<pre><code>Previously ready
+
+Current readiness:
+not assessed
+
+Reason:
+bank-verification Mapping changed after latest Evidence</code></pre>
+<p>This is operationally uncomfortable.</p>
+<p>It is correct.</p>
+<p>A migration-readiness view should distinguish lack of current proof from confirmed failure.</p>
+<p>Both require action, but not the same action.</p>
+<h1 id="we-distinguish-unknown-from-zero">We distinguish unknown from zero</h1>
+<p>This is a basic but frequently violated reporting rule.</p>
+<p>These statements are not equivalent:</p>
+<pre><code>Unresolved duplicate clusters:
+0</code></pre>
+<pre><code>Unresolved duplicate clusters:
+unknown</code></pre>
+<p>The second may mean:</p>
+<ul>
+<li>duplicate check not run;</li>
+<li>matching dataset incomplete;</li>
+<li>current Rule unavailable;</li>
+<li>results not imported;</li>
+<li>current wave not assessed.</li>
+</ul>
+<p>Dashboards often display blank, null or unavailable values as zero.</p>
+<p>Martenweave should fail closed for critical readiness dimensions.</p>
+<p>Unknown must remain visible.</p>
+<h1 id="we-retain-denominators">We retain denominators</h1>
+<p>A percentage without a denominator is dangerous.</p>
+<p>For example:</p>
+<pre><code>Bank readiness:
+100%</code></pre>
+<p>may mean:</p>
+<ul>
+<li>50,000 of 50,000 assessed records passed;</li>
+<li>40,000 of 40,000 assessed records passed while 10,000 were not assessed;</li>
+<li>700 Exception records were counted as passed;</li>
+<li>out-of-scope records were silently removed.</li>
+</ul>
+<p>We report:</p>
+<pre><code>Current scope:
+50,000
+
+Assessed:
+49,820
+
+Fully ready:
+48,900
+
+Controlled:
+700
+
+Not ready:
+220
+
+Not assessed:
+100
+
+Approved out of scope:
+80</code></pre>
+<p>Every percentage can be reconstructed.</p>
+<h1 id="we-preserve-scope-changes">We preserve scope changes</h1>
+<p>Migration populations change constantly.</p>
+<p>Records are:</p>
+<ul>
+<li>added;</li>
+<li>removed;</li>
+<li>deferred;</li>
+<li>merged;</li>
+<li>split;</li>
+<li>reclassified;</li>
+<li>moved to another wave.</li>
+</ul>
+<p>A readiness view must explain changes in the denominator.</p>
+<p>For example:</p>
+<pre><code>RC5 scope:
+49,800
+
+RC6 scope:
+50,000
+
+Added:
+280
+
+Removed by approved Decision:
+80</code></pre>
+<p>A percentage improvement may be caused by removing difficult records.</p>
+<p>That may be a valid scope Decision.</p>
+<p>It must remain visible.</p>
+<h1 id="we-make-ownership-part-of-readiness">We make ownership part of readiness</h1>
+<p>An unresolved critical Finding with no owner is worse than an equivalent Finding with an active remediation plan.</p>
+<p>But ownership alone does not make the data ready.</p>
+<p>We show it separately:</p>
+<pre><code>Not-ready records:
+220
+
+Owner assigned:
+190
+
+Owner unresolved:
+30</code></pre>
+<p>For controlled Exceptions:</p>
+<pre><code>Valid owner and approver:
+680
+
+Owner no longer resolvable:
+20</code></pre>
+<p>The latter 20 may no longer qualify as controlled.</p>
+<p>A control without accountable ownership is weak governance.</p>
+<h1 id="we-make-expiry-visible">We make expiry visible</h1>
+<p>Temporary decisions must not remain green indefinitely.</p>
+<p>The readiness view should show:</p>
+<pre><code>Controlled Exceptions:
+700
+
+Expiring before cutover:
+25
+
+Expired:
+8
+
+No expiry declared:
+3</code></pre>
+<p>Expired Exceptions should move records out of the controlled state.</p>
+<p>They become unresolved until:</p>
+<ul>
+<li>the final condition is met;</li>
+<li>a new extension is approved;</li>
+<li>another valid treatment is established.</li>
+</ul>
+<h1 id="we-do-not-hide-readiness-behind-one-composite-score">We do not hide readiness behind one composite score</h1>
+<p>A composite score may still be useful for trend reporting.</p>
+<p>It should be secondary.</p>
+<p>A score such as:</p>
+<pre><code>Readiness score:
+96</code></pre>
+<p>cannot explain whether:</p>
+<ul>
+<li>a payment gate is blocked;</li>
+<li>duplicate identity is unresolved;</li>
+<li>current Evidence is missing;</li>
+<li>700 records rely on temporary Exceptions.</li>
+</ul>
+<p>The primary view should show gate states and population categories.</p>
+<p>The score can summarise them only after zero-tolerance conditions are applied.</p>
+<p>For example:</p>
+<pre><code>Readiness score:
+96
+
+Gate result:
+Not ready
+
+Critical blocker:
+40 payment-active Suppliers without verified bank control</code></pre>
+<p>This prevents the score from overruling the model.</p>
+<h1 id="we-show-progress-without-disguising-risk">We show progress without disguising risk</h1>
+<p>Teams need visible progress.</p>
+<p>A truthful readiness model can still show improvement.</p>
+<p>For example:</p>
+<pre><code>Mock Load 2
+
+Ready:
+42,100
+
+Controlled:
+3,000
+
+Not ready:
+4,200
+
+Not assessed:
+700</code></pre>
+<pre><code>Cutover RC5
+
+Ready:
+48,900
+
+Controlled:
+700
+
+Not ready:
+220
+
+Not assessed:
+100</code></pre>
+<p>The trend is strong.</p>
+<p>The remaining 220 still matter.</p>
+<p>The team can demonstrate progress without pretending that the last critical blockers disappeared.</p>
+<h1 id="we-distinguish-remediation-backlog-from-readiness">We distinguish remediation backlog from readiness</h1>
+<p>A record may be ready while improvement work remains.</p>
+<p>For example:</p>
+<ul>
+<li>bank verification exists;</li>
+<li>payment control is safe;</li>
+<li>account-holder formatting remains inconsistent.</li>
+</ul>
+<p>The formatting issue may remain in the backlog.</p>
+<p>It does not necessarily block cutover.</p>
+<p>Conversely, a record may have no open issue because nobody created one.</p>
+<p>That does not make it ready.</p>
+<p>We keep:</p>
+<pre><code>Readiness state</code></pre>
+<p>separate from:</p>
+<pre><code>Delivery-task state</code></pre>
+<p>This follows Martenweave’s broader boundary: canonical model governance stays in the model layer, while GitHub or ITSM manages execution. The current repository explicitly avoids becoming a generic workflow platform and describes GitHub issues and pull requests as reviewed delivery outputs.</p>
+<h1 id="we-make-every-green-state-explainable">We make every green state explainable</h1>
+<p>For a Supplier shown as ready, a user should be able to ask:</p>
+<ul>
+<li>Which Rules were evaluated?</li>
+<li>Which version was used?</li>
+<li>Which dataset contained the record?</li>
+<li>Which Mappings produced the values?</li>
+<li>Which duplicate Decision applies?</li>
+<li>Which organisational contexts were assessed?</li>
+<li>Which target load was reconciled?</li>
+<li>Which Evidence proves the result?</li>
+<li>Which Exceptions were considered?</li>
+<li>When will the Evidence become stale?</li>
+</ul>
+<p>The answer should be reproducible.</p>
+<p>Green should be a traceable conclusion, not a manually selected colour.</p>
+<h1 id="we-build-readiness-at-several-levels">We build readiness at several levels</h1>
+<h2 id="record-level">Record level</h2>
+<p>Is this Supplier ready for a defined business use?</p>
+<h2 id="segment-level">Segment level</h2>
+<p>How many Suppliers are ready within a company code, purchasing organisation, source system or wave?</p>
+<h2 id="finding-level">Finding level</h2>
+<p>Which unresolved conditions block readiness?</p>
+<h2 id="gate-level">Gate level</h2>
+<p>Which business capabilities are blocked?</p>
+<h2 id="programme-level">Programme level</h2>
+<p>What is the overall state without hiding critical minority populations?</p>
+<p>These levels should reconcile.</p>
+<p>The programme total must be explainable through the underlying records and gates.</p>
+<h1 id="a-conceptual-readiness-assessment">A conceptual readiness assessment</h1>
+<p>A focused assessment might look like:</p>
+<pre><code>---
+id: READINESS-SUPPLIER-WAVE1-RC6
+type: ReadinessAssessment
+
+scope:
+  domain: supplier
+  migration_wave: WAVE-1
+  baseline: CUTOVER-RC6
+
+population:
+  total: 50000
+  ready: 48900
+  controlled: 700
+  not_ready: 220
+  not_assessed: 100
+  approved_out_of_scope: 80
+
+gates:
+  identity:
+    status: blocked
+    unresolved_records: 110
+
+  structural:
+    status: blocked
+    unresolved_records: 70
+
+  payment_control:
+    status: blocked
+    unresolved_records: 40
+    controlled_records: 700
+
+  migration_execution:
+    status: ready
+
+  evidence:
+    status: partially_ready
+    stale_records: 100
+
+overall:
+  status: not_ready
+
+critical_reason:
+  Payment-active Suppliers remain
+  without current verification or confirmed payment block.
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<h1 id="we-make-classifications-mutually-exclusive">We make classifications mutually exclusive</h1>
+<p>At one assessment baseline, each record should have one top-level readiness state.</p>
+<p>A record cannot be counted simultaneously as:</p>
+<ul>
+<li>fully ready;</li>
+<li>controlled;</li>
+<li>not ready.</li>
+</ul>
+<p>It may have several underlying Findings.</p>
+<p>Its top-level state follows the most restrictive applicable gate.</p>
+<p>For example:</p>
+<pre><code>Identity:
+ready
+
+Structure:
+ready
+
+Payment:
+controlled
+
+Overall:
+controlled</code></pre>
+<p>Another record:</p>
+<pre><code>Identity:
+not ready
+
+Payment:
+controlled
+
+Overall:
+not ready</code></pre>
+<p>This prevents double counting.</p>
+<h1 id="we-retain-the-reasons-behind-the-state">We retain the reasons behind the state</h1>
+<p>The top-level state is not enough.</p>
+<p>A controlled record should identify:</p>
+<ul>
+<li>Exception ID;</li>
+<li>affected Rule;</li>
+<li>compensating control;</li>
+<li>expiry;</li>
+<li>approver.</li>
+</ul>
+<p>A not-ready record should identify:</p>
+<ul>
+<li>blocking Finding;</li>
+<li>failed gate;</li>
+<li>owner;</li>
+<li>required action.</li>
+</ul>
+<p>A not-assessed record should identify:</p>
+<ul>
+<li>missing Evidence;</li>
+<li>stale dependency;</li>
+<li>required validation.</li>
+</ul>
+<p>The dashboard becomes an entry point into the model trace.</p>
+<h1 id="we-show-readiness-by-business-use">We show readiness by business use</h1>
+<p>For the Supplier domain, the view might include:</p>
+<pre><code>Purchasing readiness:
+49,650 ready
+210 controlled
+60 not ready
+80 not assessed
+
+Payment readiness:
+48,900 ready
+700 controlled
+40 not ready
+280 not assessed
+
+Invoice-posting readiness:
+49,720 ready
+120 controlled
+80 not ready
+80 not assessed</code></pre>
+<p>These are conceptual numbers, but the principle is important.</p>
+<p>Master data is not ready in the abstract.</p>
+<p>It is ready for a defined use under defined conditions.</p>
+<h1 id="we-integrate-duplicate-and-consolidation-status">We integrate duplicate and consolidation status</h1>
+<p>For MDM and MDG programmes, duplicate status must participate directly in readiness.</p>
+<p>We can classify:</p>
+<pre><code>No candidate found:
+ready
+
+Candidate reviewed, separate entities confirmed:
+ready
+
+Merge approved and survivor mapped:
+ready
+
+Merge approved but downstream key mapping incomplete:
+not ready
+
+Candidate unresolved:
+not ready
+
+Auto-match accepted temporarily:
+controlled only with explicit Decision</code></pre>
+<p>This avoids a familiar failure:</p>
+<ul>
+<li>duplicate detection was run;</li>
+<li>match scores were generated;</li>
+<li>the dashboard reports the activity as complete;</li>
+<li>the business identity Decisions remain unresolved.</li>
+</ul>
+<p>Process completion is not outcome completion.</p>
+<h1 id="we-integrate-replication-and-target-state">We integrate replication and target state</h1>
+<p>An MDG record may be approved centrally.</p>
+<p>A migration record may be technically transformed.</p>
+<p>Readiness still depends on whether the required consuming state exists.</p>
+<p>For example:</p>
+<pre><code>MDG approval:
+complete
+
+S/4 Business Partner:
+created
+
+Company-code extension:
+created
+
+Purchasing extension:
+failed
+
+Downstream procurement readiness:
+not ready</code></pre>
+<p>The readiness view should connect governance Evidence with migration and replication Evidence.</p>
+<p>No single system has to own the whole process.</p>
+<p>Martenweave stores the cross-system model trace.</p>
+<h1 id="we-integrate-source-authority">We integrate source authority</h1>
+<p>Two sources may contain payment terms.</p>
+<p>Both fields may be populated.</p>
+<p>Readiness remains unresolved if the programme has not decided which source is authoritative.</p>
+<p>For example:</p>
+<pre><code>Legacy Finance:
+Z030
+
+Procurement Portal:
+Z060
+
+Target:
+Z030
+
+Authority Decision:
+missing</code></pre>
+<p>A technical validator may accept the target value because it is syntactically valid.</p>
+<p>The readiness view should classify the Attribute as unresolved.</p>
+<p>Without source authority, a populated value is not governed truth.</p>
+<h1 id="we-expose-manual-overrides">We expose manual overrides</h1>
+<p>Manual correction is sometimes necessary.</p>
+<p>The readiness view must distinguish:</p>
+<pre><code>Manual correction with approved Evidence:
+ready
+
+Manual correction awaiting owner approval:
+not assessed or not ready
+
+Manual override contradicting canonical Mapping:
+not ready
+
+Manual fallback covered by current Exception:
+controlled</code></pre>
+<p>This is especially important during cutover, when teams may edit files directly under schedule pressure.</p>
+<p>A corrected cell must not become invisible model truth.</p>
+<h1 id="we-treat-defaults-as-debt">We treat defaults as debt</h1>
+<p>Default values are not inherently bad.</p>
+<p>Some are genuine business defaults.</p>
+<p>Others are temporary migration conveniences.</p>
+<p>The readiness view should classify them by authority.</p>
+<pre><code>Approved business default:
+ready
+
+Temporary fallback:
+controlled
+
+Undocumented constant:
+not ready
+
+Default applied outside approved scope:
+not ready</code></pre>
+<p>This distinction applies across domains:</p>
+<ul>
+<li>MRP Controller;</li>
+<li>payment terms;</li>
+<li>reconciliation account;</li>
+<li>shipping condition;</li>
+<li>purchasing group;</li>
+<li>tax classification.</li>
+</ul>
+<p>The value itself does not reveal whether it is governed.</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A strong readiness page should begin with:</p>
+<h2 id="overall-gate">Overall gate</h2>
+<p>Not ready.</p>
+<h2 id="critical-blockers">Critical blockers</h2>
+<ul>
+<li>40 payment-active Suppliers without verified bank control.</li>
+<li>110 records in unresolved duplicate clusters.</li>
+<li>70 records missing required purchasing extension.</li>
+</ul>
+<h2 id="population-state">Population state</h2>
+<ul>
+<li>48,900 ready.</li>
+<li>700 controlled.</li>
+<li>220 not ready.</li>
+<li>100 not assessed.</li>
+<li>80 approved out of scope.</li>
+</ul>
+<h2 id="exception-health">Exception health</h2>
+<ul>
+<li>700 active.</li>
+<li>25 expiring.</li>
+<li>8 expired.</li>
+<li>3 without valid owner.</li>
+</ul>
+<h2 id="evidence-health">Evidence health</h2>
+<ul>
+<li>49,820 currently assessed.</li>
+<li>100 stale or missing.</li>
+<li>latest baseline and model commit.</li>
+</ul>
+<h2 id="process-readiness">Process readiness</h2>
+<ul>
+<li>purchasing;</li>
+<li>invoicing;</li>
+<li>payment;</li>
+<li>reporting.</li>
+</ul>
+<h2 id="trace">Trace</h2>
+<p>Every number links to:</p>
+<ul>
+<li>records;</li>
+<li>Findings;</li>
+<li>Rules;</li>
+<li>Decisions;</li>
+<li>Exceptions;</li>
+<li>Evidence;</li>
+<li>owners.</li>
+</ul>
+<p>The view should not begin with a large green percentage.</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next focused Martenweave capability should be <strong>Exception-Aware Migration Readiness</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Produce an explainable readiness assessment that separates fully compliant records, controlled Exceptions, unresolved Findings, unassessed records and approved scope exclusions.</p>
+<h2 id="initial-inputs">Initial inputs</h2>
+<ul>
+<li>migration population;</li>
+<li>canonical Rules;</li>
+<li>process gates;</li>
+<li>validation results;</li>
+<li>duplicate-resolution Decisions;</li>
+<li>organisational extensions;</li>
+<li>active Exceptions;</li>
+<li>Evidence freshness;</li>
+<li>target reconciliation;</li>
+<li>approved scope Decisions.</li>
+</ul>
+<h2 id="initial-record-states">Initial record states</h2>
+<ul>
+<li>ready;</li>
+<li>controlled;</li>
+<li>not ready;</li>
+<li>not assessed;</li>
+<li>approved out of scope;</li>
+<li>blocked by dependency.</li>
+</ul>
+<h2 id="initial-gate-types">Initial gate types</h2>
+<ul>
+<li>identity;</li>
+<li>governance;</li>
+<li>structural;</li>
+<li>data quality;</li>
+<li>business control;</li>
+<li>migration execution;</li>
+<li>Evidence freshness.</li>
+</ul>
+<h2 id="required-outputs">Required outputs</h2>
+<ul>
+<li>overall gate result;</li>
+<li>population breakdown;</li>
+<li>business-process readiness;</li>
+<li>critical blockers;</li>
+<li>Exception health;</li>
+<li>Evidence health;</li>
+<li>denominator changes;</li>
+<li>traceable reasons;</li>
+<li>targeted remediation list.</li>
+</ul>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave readiness build \
+  --repo ./model \
+  --scope supplier-wave1 \
+  --dataset ./data/supplier-rc6.csv</code></pre>
+<pre><code>martenweave readiness explain \
+  READINESS-SUPPLIER-WAVE1-RC6 \
+  --repo ./model</code></pre>
+<pre><code>martenweave readiness gates \
+  --scope supplier-wave1 \
+  --repo ./model</code></pre>
+<pre><code>martenweave readiness exceptions \
+  --scope supplier-wave1 \
+  --repo ./model</code></pre>
+<pre><code>martenweave readiness compare \
+  READINESS-SUPPLIER-ML2 \
+  READINESS-SUPPLIER-RC6 \
+  --repo ./model</code></pre>
+<p>These commands describe a product direction.</p>
+<p>They are not part of the currently documented CLI contract.</p>
+<p>The existing Martenweave core already includes the canonical-file, validation, dataset-gap, lineage, impact and dataset-readiness foundation required to build this slice.</p>
+<h1 id="acceptance-criteria">Acceptance criteria</h1>
+<p>We should consider the capability useful when it prevents each of these false-green outcomes:</p>
+<ol>
+<li>A record with an unapproved default is counted as fully ready.</li>
+<li>A valid temporary Exception is hidden inside the passed population.</li>
+<li>An expired Exception remains green.</li>
+<li>An unresolved duplicate candidate is counted as complete.</li>
+<li>A Business Partner exists but a required organisational extension is missing.</li>
+<li>A field is populated from an undefined source authority.</li>
+<li>A record was never assessed under the current Rule version.</li>
+<li>old Evidence is reused after a material Mapping change.</li>
+<li>a successful load is treated as proof of business-process readiness.</li>
+<li>a 99-percent score hides a zero-tolerance payment-control failure.</li>
+</ol>
+<p>The view must also remain usable.</p>
+<p>It should explain the blocker without requiring a programme manager to inspect every model file.</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>a generic BI platform;</li>
+<li>a project portfolio dashboard;</li>
+<li>a replacement for SAP MDG monitoring;</li>
+<li>a replacement for migration load tools;</li>
+<li>a workflow engine;</li>
+<li>a general data-observability platform.</li>
+</ul>
+<p>The readiness view should remain a generated assessment over canonical model truth and current Evidence.</p>
+<p>Its purpose is:</p>
+<blockquote>Explain whether the current migration population is safe for its intended business use and why.</blockquote>
+<h1 id="the-business-value">The business value</h1>
+<p>Poor readiness reporting creates predictable damage.</p>
+<p>It encourages teams to:</p>
+<ul>
+<li>optimise field completion rather than business safety;</li>
+<li>hide Exceptions inside pass rates;</li>
+<li>count loaded records as usable records;</li>
+<li>postpone duplicate Decisions;</li>
+<li>ignore missing organisational segments;</li>
+<li>reuse stale Evidence;</li>
+<li>remove difficult records without explaining scope changes;</li>
+<li>declare success before business owners can verify the result.</li>
+</ul>
+<p>An exception-aware readiness view changes the conversation.</p>
+<p>Instead of:</p>
+<pre><code>Supplier readiness is 99.6%.</code></pre>
+<p>we can say:</p>
+<pre><code>48,900 Suppliers are fully ready.
+
+700 are usable only under approved,
+time-bounded controls.
+
+220 remain blocked.
+
+100 have no current Evidence.
+
+The payment gate cannot close
+because 40 Suppliers remain uncontrolled.</code></pre>
+<p>That statement is less comfortable.</p>
+<p>It is more useful.</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Migration readiness should not be a reward for producing a high percentage.</p>
+<p>It should be a defensible statement about business use.</p>
+<p>For our Supplier population, we do not ask only:</p>
+<pre><code>Were the fields populated?
+
+Did the validation job finish?
+
+Did the load succeed?</code></pre>
+<p>We ask:</p>
+<pre><code>Is identity resolved?
+
+Is source authority approved?
+
+Are required organisational segments present?
+
+Are critical Rules satisfied?
+
+Are Exceptions current and controlled?
+
+Is Evidence valid for this baseline?
+
+Did the target state preserve the control?
+
+Can the intended process operate safely?</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we separate records that satisfy the intended model from records that are usable only because of a temporary control, and can we prevent either category from hiding unresolved or unassessed records?</blockquote>
+<p>When the answer is yes, readiness becomes a governance instrument.</p>
+<p>When the answer is:</p>
+<blockquote>The dashboard is green because almost every field has a value,</blockquote>
+<p>we are measuring file completion rather than migration readiness.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that migration programmes can report progress without converting uncertainty, temporary treatment and unresolved master-data risk into a reassuring average.</p>
+<p>Our operating model is:</p>
+<pre><code>Canonical Rules define readiness.
+
+Validation produces observations.
+
+Findings explain blockers.
+
+Exceptions preserve controlled deviation.
+
+Evidence proves the current state.
+
+Business gates prevent averages
+from hiding critical failures.
+
+Humans approve readiness.</code></pre>
+<p>Martenweave is an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns datasets, tickets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset gaps, lineage, impact analysis and human-approved AI proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI changes proposal-first.</p>
+<p>Its documented workflow already includes dataset and model-gap detection, lineage, impact analysis and a one-command dataset-readiness flow.</p>
+<p>SAP describes SAP Master Data Governance as a governance layer for master data, with governed models, golden records, profiling, matching, merging, semantic reconciliation, workflow, data-quality Rules, monitoring and auditable data changes. These capabilities provide important governance and quality Evidence; the migration-specific readiness model described here additionally connects them to wave scope, mappings, target loads, Exceptions and business-process gates.</p>
+<p>The ReadinessAssessment object, process gates, mutually exclusive readiness states, Exception-health view and proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-detect-when-evidence-has-become-stale.html"><span>Previous</span>We resolve a critical Supplier bank-data Finding during Cutover Rehearsal 5.</a><a href="/blog/how-we-separate-technical-completeness-from-business-readiness.html"><span>Next</span>A Supplier migration load finishes successfully.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

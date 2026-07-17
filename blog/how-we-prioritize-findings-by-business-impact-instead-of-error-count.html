@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Prioritize Findings by Business Impact Instead of Error Count | Martenweave</title>
+    <meta
+      name="description"
+      content="We complete a Supplier bank-data validation run."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html" />
+    <meta property="og:title" content="How We Prioritize Findings by Business Impact Instead of Error Count | Martenweave" />
+    <meta property="og:description" content="We complete a Supplier bank-data validation run." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Prioritize Findings by Business Impact Instead of Error Count | Martenweave" />
+    <meta name="twitter:description" content="We complete a Supplier bank-data validation run." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html",
+                        "name": "How We Prioritize Findings by Business Impact Instead of Error Count | Martenweave",
+                        "description": "We complete a Supplier bank-data validation run.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Prioritize Findings by Business Impact Instead of Error Count",
+                                    "item": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html#content",
+                        "headline": "How We Prioritize Findings by Business Impact Instead of Error Count",
+                        "name": "How We Prioritize Findings by Business Impact Instead of Error Count",
+                        "description": "We complete a Supplier bank-data validation run.",
+                        "url": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Lineage and impact",
+                        "keywords": "Lineage and impact",
+                        "timeRequired": "PT18M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Prioritize Findings by Business Impact Instead of Error Count</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Lineage and impact</p><h1>How We Prioritize Findings by Business Impact Instead of Error Count</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 18 min read</p><p class="blog-summary">We complete a Supplier bank-data validation run.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#finding-a">Finding A</a></li><li><a href="#finding-b">Finding B</a></li><li><a href="#finding-c">Finding C</a></li><li><a href="#business-criticality">Business criticality</a></li><li><a href="#consequence">Consequence</a></li><li><a href="#timing">Timing</a></li><li><a href="#exposure">Exposure</a></li><li><a href="#control-state">Control state</a></li><li><a href="#reversibility">Reversibility</a></li><li><a href="#concentration">Concentration</a></li><li><a href="#confidence">Confidence</a></li><li><a href="#propagation">Propagation</a></li><li><a href="#high-impact-low-effort">High impact, low effort</a></li><li><a href="#high-impact-high-effort">High impact, high effort</a></li><li><a href="#low-impact-low-effort">Low impact, low effort</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>We complete a Supplier bank-data validation run.</p>
+<p>The report contains three Findings:</p>
+<pre><code class="language-text">Finding A:
+3,000 Suppliers have an empty account-holder name.
+
+Finding B:
+180 Suppliers have no current Treasury verification.
+
+Finding C:
+40 Suppliers contain a verified bank account
+but no payment block was applied after verification expired.</code></pre>
+<p>A volume-based backlog places Finding A first.</p>
+<p>It affects the largest number of records.</p>
+<p>The migration dashboard may even present the result as:</p>
+<pre><code class="language-text">3,220 total errors
+
+Largest issue:
+Missing account-holder name — 3,000 records</code></pre>
+<p>That ordering is easy to generate.</p>
+<p>It may be operationally wrong.</p>
+<p>The 3,000 missing account-holder values may concern Suppliers that:</p>
+<ul>
+<li>are inactive;</li>
+<li>will not receive payments;</li>
+<li>are outside the cutover wave;</li>
+<li>use bank accounts that will not be activated;</li>
+<li>have a safe downstream enrichment path.</li>
+</ul>
+<p>The 40 records in Finding C may include payment-active strategic Suppliers scheduled for high-value payments immediately after go-live.</p>
+<p>Those records already appear verified.</p>
+<p>The missing payment block means the control intended to prevent use of stale bank verification has failed.</p>
+<p>Forty records may therefore represent greater business exposure than three thousand incomplete text fields.</p>
+<blockquote>Error count measures volume. It does not measure consequence.</blockquote>
+<p>We want Martenweave to help programmes prioritize the Findings that can cause the most serious business outcome, not simply the Findings that produce the longest CSV file.</p>
+<p>That requires us to connect every Finding to:</p>
+<ul>
+<li>the business process it affects;</li>
+<li>the model objects involved;</li>
+<li>the affected population;</li>
+<li>the operational consequence;</li>
+<li>the timing of that consequence;</li>
+<li>available controls;</li>
+<li>reversibility;</li>
+<li>uncertainty;</li>
+<li>concentration;</li>
+<li>remediation effort.</li>
+</ul>
+<p>Martenweave’s current architecture already connects canonical model files with deterministic validation, dataset-gap reports, lineage, impact analysis and human-reviewed proposals. The model registry is intended to own model truth inside that pipeline rather than become a generic workflow platform.</p>
+<p>The prioritization layer should build on those relationships.</p>
+<p>It should not be another arbitrary red–amber–green score.</p>
+<p>---</p>
+<h1 id="why-teams-prioritize-by-count">Why teams prioritize by count</h1>
+<p>Error count is attractive because it is objective.</p>
+<p>We can count:</p>
+<ul>
+<li>failed records;</li>
+<li>missing fields;</li>
+<li>rejected values;</li>
+<li>unmapped codes;</li>
+<li>validation messages.</li>
+</ul>
+<p>The number is easy to compare.</p>
+<p>A Finding affecting 3,000 records looks larger than one affecting 40.</p>
+<p>The trouble is that the count answers only one question:</p>
+<blockquote>How many records exhibit this condition?</blockquote>
+<p>It does not answer:</p>
+<blockquote>What happens if we do nothing?</blockquote>
+<p>Migration programmes often use count as a proxy for risk because the model does not preserve enough context to calculate anything better.</p>
+<p>The validation tool sees records.</p>
+<p>The issue tracker sees tickets.</p>
+<p>The project plan sees deadlines.</p>
+<p>The business owner sees operational consequences.</p>
+<p>These views are rarely connected.</p>
+<p>Martenweave should connect them through the canonical model.</p>
+<p>---</p>
+<h1 id="we-begin-with-the-business-consequence">We begin with the business consequence</h1>
+<p>For every confirmed Finding, we ask:</p>
+<blockquote>Which business capability may fail, become unsafe or require manual intervention?</blockquote>
+<p>For the Supplier bank case, the affected capability may be:</p>
+<pre><code class="language-text">Outgoing Supplier Payment</code></pre>
+<p>The failed model path is:</p>
+<pre><code class="language-text">Supplier
+→ current bank account
+→ authorised verification
+→ payment eligibility
+→ outgoing payment</code></pre>
+<p>Finding A may affect data presentation or matching quality.</p>
+<p>Finding C affects the control between expired verification and payment activation.</p>
+<p>The second path has a more direct relationship to financial execution.</p>
+<p>We do not need to claim that a loss will certainly occur.</p>
+<p>We need to recognize that the plausible consequence is more material.</p>
+<p>This is consistent with established risk-assessment practice: NIST describes risk assessment as part of an overall risk-management process that provides leaders with information needed to choose appropriate responses to identified risks.</p>
+<p>We are applying that general principle to migration Findings rather than cybersecurity threats.</p>
+<p>---</p>
+<h1 id="we-do-not-equate-a-failed-rule-with-business-impact">We do not equate a failed rule with business impact</h1>
+<p>A validator may assign severity:</p>
+<pre><code class="language-text">ERROR</code></pre>
+<p>That severity belongs to the technical check.</p>
+<p>Business impact requires additional context.</p>
+<p>The same missing account-holder name may have different consequences for:</p>
+<ul>
+<li>a payment-active Supplier;</li>
+<li>an inactive historical Supplier;</li>
+<li>a one-time Supplier;</li>
+<li>a Supplier excluded from the current wave.</li>
+</ul>
+<p>The same validation failure can therefore produce several impact levels.</p>
+<p>We keep these concepts separate:</p>
+<pre><code class="language-text">Validation severity:
+How the technical test classifies the failure.
+
+Finding priority:
+How urgently the programme should respond.
+
+Business impact:
+What may happen if the condition remains unresolved.</code></pre>
+<p>A high-severity validator does not automatically create the highest-priority Finding.</p>
+<p>A low-severity warning can become critical when it affects a cutover gate or a high-risk process.</p>
+<p>---</p>
+<h1 id="our-running-case">Our running case</h1>
+<p>We investigate the three Findings in the same Supplier bank dataset.</p>
+<h2 id="finding-a">Finding A</h2>
+<pre><code class="language-text">3,000 Suppliers have no account-holder name.</code></pre>
+<p>Investigation shows:</p>
+<ul>
+<li>2,700 are inactive or historical;</li>
+<li>250 are payment-blocked;</li>
+<li>50 are payment-active;</li>
+<li>the target can accept the bank account without the text;</li>
+<li>the missing value reduces review quality but does not alone activate payment.</li>
+</ul>
+<h2 id="finding-b">Finding B</h2>
+<pre><code class="language-text">180 Suppliers have no current Treasury verification.</code></pre>
+<p>Investigation shows:</p>
+<ul>
+<li>all are payment-active candidates;</li>
+<li>a payment block is expected when verification is absent;</li>
+<li>the block exists for 140;</li>
+<li>40 do not have the block.</li>
+</ul>
+<h2 id="finding-c">Finding C</h2>
+<pre><code class="language-text">40 Suppliers have expired verification
+and no payment block.</code></pre>
+<p>Finding C is actually the dangerous subset revealed during the investigation of Finding B.</p>
+<p>Its count is the smallest.</p>
+<p>Its impact is the most immediate.</p>
+<p>If we prioritize only by volume, we can spend days enriching account-holder text while leaving the failed payment control unresolved.</p>
+<p>---</p>
+<h1 id="we-separate-exposure-from-population-size">We separate exposure from population size</h1>
+<p>The affected population matters.</p>
+<p>It should be measured in several ways.</p>
+<p>For the 40 Suppliers, we may calculate:</p>
+<ul>
+<li>number of Suppliers;</li>
+<li>number of bank accounts;</li>
+<li>number of company codes;</li>
+<li>planned payment volume;</li>
+<li>payment timing;</li>
+<li>organisational concentration;</li>
+<li>strategic status;</li>
+<li>countries or legal entities affected.</li>
+</ul>
+<p>A Finding that affects 40 Suppliers may represent:</p>
+<ul>
+<li>40 dormant records;</li>
+<li>or 40 Suppliers responsible for a large share of near-term payments.</li>
+</ul>
+<p>The record count is only the first denominator.</p>
+<p>A useful Finding summary could state:</p>
+<pre><code class="language-text">Affected Suppliers:
+40
+
+Payment-active:
+40
+
+Payments scheduled in first post-go-live week:
+28
+
+Company codes:
+3
+
+Estimated payment exposure:
+High
+
+Current compensating control:
+None confirmed</code></pre>
+<p>We do not need false monetary precision.</p>
+<p>We do need a defensible description of exposure.</p>
+<p>---</p>
+<h1 id="we-prioritize-the-scenario-not-the-data-defect">We prioritize the scenario, not the data defect</h1>
+<p>The Finding itself is a condition:</p>
+<pre><code class="language-text">Expired bank verification without payment block.</code></pre>
+<p>The priority comes from the scenario that condition enables:</p>
+<pre><code class="language-text">A Supplier payment may use bank details
+that are no longer covered by current verification.</code></pre>
+<p>The scenario helps us identify:</p>
+<ul>
+<li>the initiating condition;</li>
+<li>the operational action;</li>
+<li>the missing control;</li>
+<li>the possible consequence;</li>
+<li>the time window.</li>
+</ul>
+<p>We can express the chain:</p>
+<pre><code class="language-text">Verification expires
+→ payment block not applied
+→ Supplier remains payment-active
+→ outgoing payment may proceed
+→ unverified bank details may be used</code></pre>
+<p>This does not claim that every payment will be wrong.</p>
+<p>It explains why the Finding deserves attention.</p>
+<p>A count alone cannot provide that reasoning.</p>
+<p>---</p>
+<h1 id="the-dimensions-we-use">The dimensions we use</h1>
+<p>We do not need a complex risk engine for the first product slice.</p>
+<p>We need a transparent set of dimensions.</p>
+<h2 id="business-criticality">Business criticality</h2>
+<p>How important is the affected process?</p>
+<p>Examples:</p>
+<ul>
+<li>payment execution;</li>
+<li>production planning;</li>
+<li>regulatory reporting;</li>
+<li>customer order fulfilment;</li>
+<li>informational reporting.</li>
+</ul>
+<h2 id="consequence">Consequence</h2>
+<p>What can happen if the Finding remains?</p>
+<p>Examples:</p>
+<ul>
+<li>payment blocked;</li>
+<li>payment sent using unverified data;</li>
+<li>production order delayed;</li>
+<li>reporting inconsistency;</li>
+<li>manual review required.</li>
+</ul>
+<h2 id="timing">Timing</h2>
+<p>When can the consequence occur?</p>
+<p>Examples:</p>
+<ul>
+<li>during the next mock load;</li>
+<li>at cutover;</li>
+<li>in the first operational week;</li>
+<li>only after a later process activation.</li>
+</ul>
+<h2 id="exposure">Exposure</h2>
+<p>How much business activity is connected to the affected population?</p>
+<h2 id="control-state">Control state</h2>
+<p>Is there a compensating control?</p>
+<h2 id="reversibility">Reversibility</h2>
+<p>Can the outcome be corrected easily after it occurs?</p>
+<h2 id="concentration">Concentration</h2>
+<p>Is the Finding spread across low-value records or concentrated in a critical Plant, company code or customer segment?</p>
+<h2 id="confidence">Confidence</h2>
+<p>How strong is the Evidence supporting the impact assessment?</p>
+<h2 id="propagation">Propagation</h2>
+<p>Can the defect affect downstream data, processes or decisions?</p>
+<p>These dimensions are understandable to business and technical reviewers.</p>
+<p>They also map naturally to Martenweave objects and lineage.</p>
+<p>---</p>
+<h1 id="business-criticality-must-come-from-the-model">Business criticality must come from the model</h1>
+<p>We should not classify every Supplier bank field as critical simply because it belongs to bank data.</p>
+<p>The model should explain which process uses the Attribute.</p>
+<p>For example:</p>
+<pre><code class="language-text">Attribute:
+Supplier Bank Account
+
+Used by:
+Outgoing Supplier Payment
+
+Control:
+Treasury verification
+
+Consequence of invalid use:
+Payment must remain blocked</code></pre>
+<p>The Finding can inherit business criticality from the governed relationship.</p>
+<p>This is better than assigning severity manually in every validation report.</p>
+<p>If the same Attribute is used in another context, the impact may differ.</p>
+<p>Martenweave’s generic model already includes entities, attributes, relationships, datasets, mappings, rules, evidence and decisions. These relationships provide the basis for model-aware impact rather than isolated error scoring.</p>
+<p>---</p>
+<h1 id="timing-changes-priority">Timing changes priority</h1>
+<p>A Finding can be serious but not urgent.</p>
+<p>Another can be moderate but immediately blocking.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Finding A:
+3,000 missing account-holder names
+
+Required by:
+Post-go-live supplier review process
+
+Finding C:
+40 expired verification records without payment block
+
+Required by:
+Cutover payment activation</code></pre>
+<p>Finding C should normally be handled first because the decision point is near.</p>
+<p>We record:</p>
+<pre><code class="language-text">Impact horizon:
+Cutover
+
+Latest safe resolution date:
+Before payment activation
+
+Current stage:
+Cutover rehearsal</code></pre>
+<p>A priority model without time context produces static rankings that quickly become misleading.</p>
+<p>---</p>
+<h1 id="we-distinguish-inherent-impact-from-residual-impact">We distinguish inherent impact from residual impact</h1>
+<p>Finding C may have high inherent impact:</p>
+<pre><code class="language-text">Payment-active Supplier uses expired verification.</code></pre>
+<p>But if every affected Supplier has a confirmed payment block, the residual impact is lower.</p>
+<p>We therefore separate:</p>
+<pre><code class="language-text">Inherent impact:
+Potential consequence without controls.
+
+Current controls:
+Blocks, exclusions, manual reviews or other safeguards.
+
+Residual impact:
+Remaining consequence after current controls.</code></pre>
+<p>For our case:</p>
+<pre><code class="language-text">Finding B:
+180 Suppliers lack current verification.
+
+Inherent impact:
+High.
+
+Compensating control:
+Payment block for 140 Suppliers.
+
+Residual high-risk population:
+40 Suppliers.</code></pre>
+<p>This is why Finding C emerges as the true priority.</p>
+<p>The larger Finding remains important.</p>
+<p>Its unresolved subset requires immediate action.</p>
+<p>---</p>
+<h1 id="we-do-not-let-an-unverified-control-reduce-priority">We do not let an unverified control reduce priority</h1>
+<p>A control should reduce residual impact only when we have Evidence that it exists and works.</p>
+<p>A meeting note saying:</p>
+<blockquote>These Suppliers should be payment-blocked</blockquote>
+<p>is not sufficient.</p>
+<p>We need evidence such as:</p>
+<ul>
+<li>target-field value;</li>
+<li>load result;</li>
+<li>reconciliation report;</li>
+<li>approved cutover control;</li>
+<li>recent validation.</li>
+</ul>
+<p>If the payment block has not been verified, we mark:</p>
+<pre><code class="language-text">Control state:
+Expected but unconfirmed</code></pre>
+<p>We do not score it as effective.</p>
+<p>This prevents optimistic assumptions from lowering priority.</p>
+<p>---</p>
+<h1 id="reversibility-matters">Reversibility matters</h1>
+<p>Some migration defects are easy to correct later.</p>
+<p>Others create consequences that are difficult to unwind.</p>
+<p>A missing account-holder name can often be enriched after load.</p>
+<p>An incorrect payment can require:</p>
+<ul>
+<li>investigation;</li>
+<li>bank coordination;</li>
+<li>accounting correction;</li>
+<li>Supplier communication;</li>
+<li>fraud review.</li>
+</ul>
+<p>We record reversibility separately:</p>
+<pre><code class="language-text">Reversibility:
+Low, moderate or high
+
+Recovery effort:
+Estimated operational difficulty
+
+Evidence:
+Prior incident, process owner assessment
+or documented recovery path</code></pre>
+<p>A small, hard-to-reverse population may deserve higher priority than a large, easily corrected one.</p>
+<p>---</p>
+<h1 id="downstream-propagation-changes-the-ranking">Downstream propagation changes the ranking</h1>
+<p>A Finding may affect one field but propagate through many processes.</p>
+<p>For example, an incorrect MRP Controller can affect:</p>
+<ul>
+<li>planning responsibility;</li>
+<li>exception handling;</li>
+<li>work allocation;</li>
+<li>reporting;</li>
+<li>operational ownership.</li>
+</ul>
+<p>An unverified Supplier bank account can affect:</p>
+<ul>
+<li>payment readiness;</li>
+<li>bank-data approval;</li>
+<li>cutover control;</li>
+<li>post-go-live incident handling.</li>
+</ul>
+<p>Lineage allows us to identify these paths.</p>
+<p>Martenweave already positions lineage and impact analysis as core parts of the workflow after validation and dataset-gap detection.</p>
+<p>The prioritization layer should use that graph.</p>
+<p>A Finding linked to several critical downstream processes deserves different treatment from an isolated presentation defect.</p>
+<p>---</p>
+<h1 id="we-consider-concentration">We consider concentration</h1>
+<p>Three thousand minor defects spread across historical Suppliers may be less urgent than forty defects concentrated in one company code that must run payments on day one.</p>
+<p>Concentration can reveal hidden operational risk.</p>
+<p>We may group the 40 Suppliers:</p>
+<pre><code class="language-text">Company code DE01:
+32
+
+Company code NL01:
+6
+
+Company code BE01:
+2</code></pre>
+<p>If DE01 has a critical cutover payment run, the priority increases.</p>
+<p>The Finding page should show this concentration rather than only the global count.</p>
+<p>---</p>
+<h1 id="we-account-for-uncertainty">We account for uncertainty</h1>
+<p>Not every impact assessment is equally reliable.</p>
+<p>We may know with confidence that:</p>
+<ul>
+<li>payment block is absent;</li>
+<li>verification is expired;</li>
+<li>Supplier is payment-active.</li>
+</ul>
+<p>We may be less certain about:</p>
+<ul>
+<li>payment volume;</li>
+<li>first payment date;</li>
+<li>alternative operational controls.</li>
+</ul>
+<p>We record:</p>
+<pre><code class="language-text">Confirmed:
+40 records lack payment block.
+
+Probable:
+28 are expected in the first payment run.
+
+Unknown:
+Whether local teams will apply a manual block.</code></pre>
+<p>A high-impact Finding with uncertain controls should not be ranked low merely because the programme hopes the control exists.</p>
+<p>Uncertainty itself may increase the need for investigation.</p>
+<p>---</p>
+<h1 id="we-use-categories-before-scores">We use categories before scores</h1>
+<p>The first output should be a clear category:</p>
+<pre><code class="language-text">Critical:
+Immediate business-control failure or cutover blocker.
+
+High:
+Material operational consequence likely
+within the current stage.
+
+Medium:
+Important defect with safe temporary control
+or later impact horizon.
+
+Low:
+Limited consequence, low exposure
+or straightforward post-load remediation.</code></pre>
+<p>Then we show the dimensions that support the category.</p>
+<p>We do not begin with:</p>
+<pre><code class="language-text">Risk score:
+78.4</code></pre>
+<p>A precise-looking number can conceal weak assumptions.</p>
+<p>NIST’s risk-assessment guidance is designed to help decision-makers determine appropriate responses to identified risks; it does not imply that a single numerical formula is always sufficient for judgment.</p>
+<p>Our score, when used, should summarize reasoning—not replace it.</p>
+<p>---</p>
+<h1 id="a-transparent-scoring-model">A transparent scoring model</h1>
+<p>Martenweave could optionally calculate a priority score from declared dimensions.</p>
+<p>For example:</p>
+<pre><code class="language-text">Business criticality:
+5
+
+Consequence severity:
+5
+
+Time urgency:
+5
+
+Control effectiveness:
+1
+
+Reversibility:
+2
+
+Propagation:
+4
+
+Evidence confidence:
+4</code></pre>
+<p>The calculation may produce a ranking.</p>
+<p>But we must retain the inputs.</p>
+<p>Reviewers should be able to see why Finding C outranks Finding A.</p>
+<p>We should also allow policy-based overrides.</p>
+<p>For example:</p>
+<pre><code class="language-text">Any Finding that permits payment activation
+without required bank verification
+is automatically Critical before cutover.</code></pre>
+<p>This is clearer than relying only on weighted arithmetic.</p>
+<p>---</p>
+<h1 id="count-still-matters">Count still matters</h1>
+<p>We are not arguing that volume is irrelevant.</p>
+<p>A large population can create:</p>
+<ul>
+<li>remediation effort;</li>
+<li>load instability;</li>
+<li>manual workload;</li>
+<li>broad business exposure;</li>
+<li>poor readiness.</li>
+</ul>
+<p>Finding A may still require significant work.</p>
+<p>The point is that count must be interpreted.</p>
+<p>We preserve several measures:</p>
+<pre><code class="language-text">Affected count
+
+Affected percentage
+
+Critical-process count
+
+Uncontrolled count
+
+Exception-covered count
+
+Near-term operational count</code></pre>
+<p>For our case:</p>
+<pre><code class="language-text">Finding B total:
+180
+
+Controlled by payment block:
+140
+
+Uncontrolled:
+40
+
+Immediate-payment population:
+28</code></pre>
+<p>That decomposition is more useful than the headline number.</p>
+<p>---</p>
+<h1 id="we-prioritize-findings-not-individual-error-rows">We prioritize Findings, not individual error rows</h1>
+<p>The priority belongs to the interpreted problem.</p>
+<p>We do not calculate a separate governance score for every row unless record-level action requires it.</p>
+<p>The Finding groups records that share:</p>
+<ul>
+<li>cause;</li>
+<li>business path;</li>
+<li>consequence;</li>
+<li>owner;</li>
+<li>remediation.</li>
+</ul>
+<p>Within the Finding, we may segment the population by exposure.</p>
+<p>For example:</p>
+<pre><code class="language-text">Segment 1:
+28 Suppliers scheduled for immediate payment
+Priority: immediate
+
+Segment 2:
+12 payment-active Suppliers with no scheduled payment
+Priority: before payment activation</code></pre>
+<p>This gives delivery teams an actionable order without creating forty unrelated tickets.</p>
+<p>---</p>
+<h1 id="priority-can-change-when-the-model-changes">Priority can change when the model changes</h1>
+<p>A Finding is not permanently high or low.</p>
+<p>Its priority may change when:</p>
+<ul>
+<li>the cutover date approaches;</li>
+<li>a compensating control is implemented;</li>
+<li>the affected population shrinks;</li>
+<li>new Evidence increases confidence;</li>
+<li>a downstream process is removed from scope;</li>
+<li>an Exception expires;</li>
+<li>a new migration wave begins.</li>
+</ul>
+<p>We therefore store prioritization as an assessment tied to:</p>
+<ul>
+<li>model baseline;</li>
+<li>dataset baseline;</li>
+<li>project stage;</li>
+<li>Evidence date.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code class="language-text">Priority assessment:
+PA-FIND-BANK-VERIFY-RC4
+
+Finding:
+FIND-BANK-VERIFY-NO-BLOCK
+
+Stage:
+Cutover rehearsal
+
+Priority:
+Critical
+
+Assessed on:
+2026-07-15
+
+Evidence:
+RC4 validation and payment-readiness report</code></pre>
+<p>A later assessment can supersede it without rewriting history.</p>
+<p>---</p>
+<h1 id="we-avoid-permanent-manual-priority-labels">We avoid permanent manual priority labels</h1>
+<p>A project manager may set:</p>
+<pre><code class="language-text">Priority:
+High</code></pre>
+<p>That label can survive after the Finding is controlled or the scope changes.</p>
+<p>Martenweave should recalculate or at least flag stale assessments when:</p>
+<ul>
+<li>the affected population changes materially;</li>
+<li>the Rule changes;</li>
+<li>related Evidence becomes stale;</li>
+<li>the Exception status changes;</li>
+<li>the migration stage advances.</li>
+</ul>
+<p>Manual judgement remains important.</p>
+<p>It should be based on current model context.</p>
+<p>---</p>
+<h1 id="we-distinguish-business-priority-from-remediation-effort">We distinguish business priority from remediation effort</h1>
+<p>A Critical Finding may be easy to fix.</p>
+<p>A Low-impact Finding may require weeks of cleansing.</p>
+<p>We track both:</p>
+<pre><code class="language-text">Business priority:
+Critical
+
+Estimated remediation effort:
+Low</code></pre>
+<p>This combination should normally be handled immediately.</p>
+<p>Another Finding may be:</p>
+<pre><code class="language-text">Business priority:
+Medium
+
+Estimated remediation effort:
+High</code></pre>
+<p>That may require planning, scope reduction or a controlled Exception.</p>
+<p>A single backlog ordering cannot represent both dimensions adequately.</p>
+<p>The Workbench should show them separately.</p>
+<p>---</p>
+<h1 id="we-distinguish-value-from-effort">We distinguish value from effort</h1>
+<p>A simple prioritization view can use four quadrants.</p>
+<h2 id="high-impact-low-effort">High impact, low effort</h2>
+<p>Act immediately.</p>
+<h2 id="high-impact-high-effort">High impact, high effort</h2>
+<p>Escalate, plan and define controls.</p>
+<h2 id="low-impact-low-effort">Low impact, low effort</h2>
+<p>Batch where efficient.</p>
+<h2 id="low-impact-high-effort">Low impact, high effort</h2>
+<p>Challenge the requirement or defer deliberately.</p>
+<p>For Finding C:</p>
+<pre><code class="language-text">Impact:
+High
+
+Effort:
+Low to moderate
+
+Action:
+Apply payment blocks,
+verify the population
+and rerun the control.</code></pre>
+<p>For the 3,000 account-holder names:</p>
+<pre><code class="language-text">Impact:
+Low to medium
+
+Effort:
+High
+
+Action:
+Segment the population
+and avoid blanket manual enrichment.</code></pre>
+<p>This stops large but low-value cleansing work from consuming the critical path.</p>
+<p>---</p>
+<h1 id="we-connect-priority-to-the-next-action">We connect priority to the next action</h1>
+<p>A prioritization result should not end with a coloured badge.</p>
+<p>It should lead to a treatment.</p>
+<h2 id="critical">Critical</h2>
+<ul>
+<li>immediate owner confirmation;</li>
+<li>control activation;</li>
+<li>cutover escalation;</li>
+<li>evidence deadline;</li>
+<li>explicit go/no-go implication.</li>
+</ul>
+<h2 id="high">High</h2>
+<ul>
+<li>planned remediation;</li>
+<li>impact review;</li>
+<li>monitored delivery;</li>
+<li>no unreviewed extension.</li>
+</ul>
+<h2 id="medium">Medium</h2>
+<ul>
+<li>schedule within the current wave;</li>
+<li>retain compensating control;</li>
+<li>reassess before the next stage.</li>
+</ul>
+<h2 id="low">Low</h2>
+<ul>
+<li>batch remediation;</li>
+<li>post-load treatment;</li>
+<li>or accepted deferral with rationale.</li>
+</ul>
+<p>For Finding C, the treatment may be:</p>
+<pre><code class="language-text">1. Apply payment block to all 40 Suppliers.
+2. Confirm the block through target Evidence.
+3. Obtain current Treasury verification.
+4. Rerun the Rule.
+5. Remove blocks only after verified approval.</code></pre>
+<p>The priority is useful because it changes action.</p>
+<p>---</p>
+<h1 id="we-make-cutover-implications-explicit">We make cutover implications explicit</h1>
+<p>Before cutover, Findings should be translated into gate implications.</p>
+<p>For example:</p>
+<pre><code class="language-text">Finding:
+Expired bank verification without payment block
+
+Cutover implication:
+Blocks Supplier payment activation approval
+
+Affected gate:
+Supplier Bank Readiness
+
+Decision owner:
+Treasury Data Owner
+
+Required Evidence:
+Zero uncontrolled payment-active records</code></pre>
+<p>This is more meaningful than:</p>
+<pre><code class="language-text">Priority 1</code></pre>
+<p>A business owner can understand what decision is blocked and what evidence is required.</p>
+<p>---</p>
+<h1 id="we-preserve-minority-critical-populations">We preserve minority critical populations</h1>
+<p>Aggregate readiness metrics can hide the 40 records.</p>
+<p>Suppose the dataset contains 50,000 Suppliers.</p>
+<p>The uncontrolled population is:</p>
+<pre><code class="language-text">0.08%</code></pre>
+<p>A dashboard may report:</p>
+<pre><code class="language-text">Bank-verification readiness:
+99.92%</code></pre>
+<p>That looks excellent.</p>
+<p>It may still fail the business gate.</p>
+<p>We therefore distinguish:</p>
+<pre><code class="language-text">Coverage percentage:
+99.92%
+
+Critical uncontrolled records:
+40
+
+Gate result:
+Not ready</code></pre>
+<p>A high percentage must not override a zero-tolerance control.</p>
+<p>This is one of the most important design rules for migration readiness.</p>
+<p>---</p>
+<h1 id="we-allow-policy-based-zero-tolerance">We allow policy-based zero tolerance</h1>
+<p>Some Findings should not be averaged into a score.</p>
+<p>Examples may include:</p>
+<ul>
+<li>payment-active Supplier without required bank control;</li>
+<li>legally required tax identifier absent for an in-scope process;</li>
+<li>critical Plant assignment missing before production planning;</li>
+<li>unresolved identity collision for a strategic Business Partner.</li>
+</ul>
+<p>The business owner can define:</p>
+<pre><code class="language-text">Tolerance:
+0 unresolved records</code></pre>
+<p>Martenweave should preserve that policy.</p>
+<p>A readiness score of 99.9 percent does not satisfy a zero-tolerance Rule.</p>
+<p>---</p>
+<h1 id="we-avoid-universal-risk-formulas">We avoid universal risk formulas</h1>
+<p>Different domains require different impact dimensions.</p>
+<p>Supplier bank data may emphasize:</p>
+<ul>
+<li>payment exposure;</li>
+<li>control state;</li>
+<li>verification authority.</li>
+</ul>
+<p>Product planning may emphasize:</p>
+<ul>
+<li>production continuity;</li>
+<li>Plant scope;</li>
+<li>operational responsibility.</li>
+</ul>
+<p>Customer data may emphasize:</p>
+<ul>
+<li>order blocks;</li>
+<li>credit;</li>
+<li>legal or tax treatment.</li>
+</ul>
+<p>Martenweave should provide a common priority framework and allow domain-specific profiles.</p>
+<p>It should not hard-code one universal formula.</p>
+<p>SAP migration and MDM are the first proof domain, but the current repository explicitly treats them as a domain pack rather than the permanent product boundary.</p>
+<p>---</p>
+<h1 id="a-conceptual-priority-assessment">A conceptual priority assessment</h1>
+<p>A Finding assessment might look like:</p>
+<pre><code class="language-text">---
+id: PA-BANK-VERIFY-NO-BLOCK-RC4
+type: PriorityAssessment
+
+finding:
+  FIND-BANK-VERIFY-NO-BLOCK
+
+baseline:
+  model: abc123
+  dataset: SUPPLIER-BANK-RC4
+  stage: cutover_rehearsal
+
+population:
+  total: 40
+  payment_active: 40
+  immediate_payment: 28
+
+impact:
+  business_process: outgoing_supplier_payment
+  consequence: unverified_bank_details_may_be_used
+  criticality: critical
+  reversibility: low
+
+controls:
+  payment_block:
+    expected: true
+    confirmed: false
+
+confidence:
+  overall: high
+
+priority:
+  category: critical
+
+required_action:
+  apply_and_verify_payment_block_before_cutover
+---</code></pre>
+<p>This is a proposed product direction.</p>
+<p>It is not a claim about the exact current Martenweave schema.</p>
+<p>The key is that the category remains explainable through structured evidence.</p>
+<p>---</p>
+<h1 id="we-compare-findings-using-the-same-baseline">We compare Findings using the same baseline</h1>
+<p>We should not compare:</p>
+<ul>
+<li>one Finding assessed against Mock Load 2;</li>
+<li>another assessed against Cutover RC4;</li>
+<li>another assessed against historical production data.</li>
+</ul>
+<p>The model and dataset baselines matter.</p>
+<p>A comparison view should show:</p>
+<pre><code class="language-text">Assessment stage:
+Cutover RC4
+
+Model baseline:
+abc123
+
+Dataset baseline:
+supplier-bank-rc4
+
+Findings compared:
+12</code></pre>
+<p>This makes the ranking reproducible.</p>
+<p>---</p>
+<h1 id="we-use-ai-carefully">We use AI carefully</h1>
+<p>AI can help us:</p>
+<ul>
+<li>summarize business impact;</li>
+<li>retrieve downstream dependencies;</li>
+<li>segment affected populations;</li>
+<li>identify likely control gaps;</li>
+<li>draft priority assessments;</li>
+<li>compare Findings;</li>
+<li>explain why a small Finding may be critical.</li>
+</ul>
+<p>AI should not:</p>
+<ul>
+<li>invent payment exposure;</li>
+<li>assume a control is effective;</li>
+<li>lower priority because the count is small;</li>
+<li>override a zero-tolerance Rule;</li>
+<li>approve risk acceptance;</li>
+<li>hide uncertainty inside a numeric score.</li>
+</ul>
+<p>The output should remain a proposal:</p>
+<pre><code class="language-text">Suggested priority:
+Critical
+
+Reason:
+All affected Suppliers are payment-active,
+verification is expired
+and no payment block is confirmed.
+
+Evidence confidence:
+High
+
+Required human owner:
+Treasury Data Owner</code></pre>
+<p>Human approval remains necessary for risk acceptance and cutover decisions.</p>
+<p>---</p>
+<h1 id="we-keep-delivery-priority-outside-canonical-business-truth">We keep delivery priority outside canonical business truth</h1>
+<p>A Finding’s business impact belongs in Martenweave.</p>
+<p>Sprint ordering and resource allocation belong in the delivery system.</p>
+<p>Martenweave can generate:</p>
+<ul>
+<li>recommended priority;</li>
+<li>rationale;</li>
+<li>affected scope;</li>
+<li>required completion horizon;</li>
+<li>acceptance criteria.</li>
+</ul>
+<p>GitHub, Jira or ServiceNow can manage:</p>
+<ul>
+<li>assignee;</li>
+<li>sprint;</li>
+<li>milestone;</li>
+<li>status;</li>
+<li>team capacity.</li>
+</ul>
+<p>This preserves the boundary.</p>
+<p>Martenweave’s current product definition explicitly avoids becoming a generic workflow platform while supporting proposal-first GitHub issue and pull-request delivery.</p>
+<p>---</p>
+<h1 id="the-workbench-view-we-need">The Workbench view we need</h1>
+<p>A useful prioritization page should not begin with total errors.</p>
+<p>It should begin with business exposure.</p>
+<p>For each Finding, show:</p>
+<h2 id="business-process">Business process</h2>
+<p>Outgoing Supplier Payment.</p>
+<h2 id="consequence-2">Consequence</h2>
+<p>Expired verification may remain payment-enabled.</p>
+<h2 id="affected-population">Affected population</h2>
+<p>40 Suppliers, 28 near-term payments.</p>
+<h2 id="control-state-2">Control state</h2>
+<p>Required payment block not confirmed.</p>
+<h2 id="timing-2">Timing</h2>
+<p>Must be resolved before cutover payment activation.</p>
+<h2 id="reversibility-2">Reversibility</h2>
+<p>Low.</p>
+<h2 id="evidence-confidence">Evidence confidence</h2>
+<p>High.</p>
+<h2 id="recommended-priority">Recommended priority</h2>
+<p>Critical.</p>
+<h2 id="required-owner">Required owner</h2>
+<p>Treasury Data Owner.</p>
+<p>The account-holder Finding may appear below it even though its count is much larger.</p>
+<p>That ordering communicates the programme’s real risk.</p>
+<p>---</p>
+<h1 id="the-first-product-slice-we-should-build">The first product slice we should build</h1>
+<p>The next Martenweave capability should be <strong>Impact-Based Finding Prioritization</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Rank confirmed Findings using business consequence and model context rather than record count alone.</p>
+<h2 id="initial-inputs">Initial inputs</h2>
+<ul>
+<li>Finding;</li>
+<li>affected Rule;</li>
+<li>affected Attributes and Entities;</li>
+<li>business-process relationships;</li>
+<li>affected population;</li>
+<li>migration stage;</li>
+<li>active controls;</li>
+<li>related Exceptions;</li>
+<li>downstream impact;</li>
+<li>Evidence confidence.</li>
+</ul>
+<h2 id="initial-dimensions">Initial dimensions</h2>
+<ul>
+<li>business criticality;</li>
+<li>consequence;</li>
+<li>timing;</li>
+<li>exposure;</li>
+<li>control effectiveness;</li>
+<li>reversibility;</li>
+<li>propagation;</li>
+<li>concentration;</li>
+<li>confidence;</li>
+<li>remediation effort.</li>
+</ul>
+<h2 id="required-outputs">Required outputs</h2>
+<ul>
+<li>priority category;</li>
+<li>clear rationale;</li>
+<li>unresolved assumptions;</li>
+<li>affected owner;</li>
+<li>required decision horizon;</li>
+<li>recommended treatment;</li>
+<li>optional transparent score.</li>
+</ul>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code class="language-text">martenweave findings prioritize \
+  --repo ./model \
+  --baseline ./reports/supplier-bank-rc4</code></pre>
+<pre><code class="language-text">martenweave findings explain-priority \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave findings compare \
+  FIND-MISSING-ACCOUNT-HOLDER \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --repo ./model</code></pre>
+<pre><code class="language-text">martenweave findings reassess \
+  FIND-BANK-VERIFY-NO-BLOCK \
+  --evidence EVID-PAYMENT-BLOCK-RC5 \
+  --repo ./model</code></pre>
+<p>These commands describe a recommended product direction rather than the current published CLI.</p>
+<p>The current Martenweave foundation already includes the canonical model, deterministic validation, dataset-gap detection, lineage, impact analysis and proposal-first review needed to support this capability.</p>
+<p>---</p>
+<h1 id="acceptance-criteria-for-the-first-slice">Acceptance criteria for the first slice</h1>
+<p>We should consider the capability useful when it can explain why:</p>
+<pre><code class="language-text">40 uncontrolled verification failures</code></pre>
+<p>rank above:</p>
+<pre><code class="language-text">3,000 missing account-holder names</code></pre>
+<p>The explanation must include:</p>
+<ul>
+<li>affected business process;</li>
+<li>payment-active status;</li>
+<li>current control state;</li>
+<li>timing;</li>
+<li>reversibility;</li>
+<li>Evidence confidence;</li>
+<li>required owner.</li>
+</ul>
+<p>The result must not depend on a hidden AI score.</p>
+<p>A reviewer should be able to inspect the reasoning and change an assumption deliberately.</p>
+<p>---</p>
+<h1 id="what-we-should-not-build">What we should not build</h1>
+<p>We should not turn Martenweave into:</p>
+<ul>
+<li>an enterprise risk-management suite;</li>
+<li>a financial exposure engine;</li>
+<li>a project portfolio tool;</li>
+<li>a universal risk calculator;</li>
+<li>an autonomous cutover decision-maker.</li>
+</ul>
+<p>The prioritization feature should remain tied to model Findings.</p>
+<p>Its role is to explain why one model or data problem deserves attention before another.</p>
+<p>---</p>
+<h1 id="the-economic-value">The economic value</h1>
+<p>Volume-based prioritization creates predictable waste:</p>
+<ul>
+<li>teams clean thousands of low-impact values;</li>
+<li>critical minority populations remain hidden;</li>
+<li>cutover gates appear green through averages;</li>
+<li>manual effort follows error count rather than business consequence;</li>
+<li>senior experts must repeatedly reinterpret reports;</li>
+<li>urgent controls are discovered late.</li>
+</ul>
+<p>Impact-based prioritization changes the order of work.</p>
+<p>It helps us:</p>
+<ul>
+<li>protect critical business processes first;</li>
+<li>preserve zero-tolerance controls;</li>
+<li>use compensating controls deliberately;</li>
+<li>defer low-value cleansing when safe;</li>
+<li>focus experts on decisions rather than spreadsheets;</li>
+<li>explain priorities to programme leadership.</li>
+</ul>
+<p>The value is not a better score.</p>
+<p>It is better allocation of limited migration time.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>We do not prioritize Findings by asking only:</p>
+<pre><code class="language-text">How many records failed?</code></pre>
+<p>We ask:</p>
+<pre><code class="language-text">Which business process is affected?
+
+What can happen?
+
+How soon can it happen?
+
+Which controls remain?
+
+How reversible is the outcome?
+
+How much exposure is concentrated
+in the affected population?
+
+How confident are we?</code></pre>
+<p>For our Supplier bank case:</p>
+<pre><code class="language-text">3,000 missing account-holder names
+may be a large cleansing task.
+
+40 expired verification records
+without payment block
+may be a cutover-critical control failure.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we explain why a small Finding should block a business decision while a much larger Finding can be deferred or segmented safely?</blockquote>
+<p>When the answer is yes, prioritization reflects business reality.</p>
+<p>When the answer is:</p>
+<blockquote>We started with the largest error file,</blockquote>
+<p>the programme is optimizing the visibility of progress rather than the reduction of risk.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that migration programmes do not confuse:</p>
+<pre><code class="language-text">large data volume
+with large business impact,
+
+technical completeness
+with operational safety,
+
+and high readiness percentages
+with readiness for critical processes.</code></pre>
+<p>Our operating model is:</p>
+<pre><code class="language-text">Validators detect conditions.
+
+Findings explain shared causes.
+
+Lineage connects them to business processes.
+
+Impact analysis shows consequences.
+
+Priority assessments order the work.
+
+Humans accept risk and approve cutover decisions.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a pipeline that turns spreadsheets, datasets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved PatchProposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, validation deterministic and AI changes proposal-first.</p>
+<p>Its documented workflow runs from Evidence and profiling through validation, gap detection, lineage and impact analysis to proposals and human-reviewed GitHub delivery.</p>
+<p>NIST SP 800-30 Rev. 1 describes risk assessment as part of an overall risk-management process that provides senior leaders with information for determining appropriate responses to identified risks. This article applies that general consequence-oriented principle to migration Findings; it does not claim that Martenweave implements the NIST cybersecurity risk methodology.</p>
+<p>NIST describes the Cybersecurity Framework as a resource for helping organisations understand and improve their management of cybersecurity risk. The specific Finding dimensions proposed here are Martenweave product design choices for data migration and model governance, not direct NIST requirements.</p>
+<p>PriorityAssessment objects, domain-specific impact profiles, control-effectiveness checks and the proposed commands are product directions. They should not be interpreted as guarantees of the exact current Martenweave schema, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP or NIST.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/impact-analysis-sap-field-change.html">On Monday, a country team asks for one SAP field to become mandatory.</a></li><li><a href="/blog/trace-legacy-field-to-sap-target.html">A defect appears during the second mock load.</a></li><li><a href="/blog/how-better-model-traceability-reduces-rework.html">A migration defect appears during UAT.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html"><span>Previous</span>A Supplier bank-data validation fails for 3,400 records.</a><a href="/blog/how-we-prevent-duplicate-findings-across-mock-loads-and-migration-waves.html"><span>Next</span>We run the Supplier bank-verification check during Mock Load 2.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

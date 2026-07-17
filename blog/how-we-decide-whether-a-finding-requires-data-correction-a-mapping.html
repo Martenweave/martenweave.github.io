@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change | Martenweave</title>
+    <meta
+      name="description"
+      content="A Supplier bank-data validation fails for 3,400 records."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html" />
+    <meta property="og:title" content="How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change | Martenweave" />
+    <meta property="og:description" content="A Supplier bank-data validation fails for 3,400 records." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:modified_time" content="2026-07-15" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change | Martenweave" />
+    <meta name="twitter:description" content="A Supplier bank-data validation fails for 3,400 records." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html",
+                        "name": "How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change | Martenweave",
+                        "description": "A Supplier bank-data validation fails for 3,400 records.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change",
+                                    "item": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html#content",
+                        "headline": "How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change",
+                        "name": "How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change",
+                        "description": "A Supplier bank-data validation fails for 3,400 records.",
+                        "url": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-we-decide-whether-a-finding-requires-data-correction-a-mapping.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-15",
+                        "dateModified": "2026-07-15",
+                        "articleSection": "Validation and readiness",
+                        "keywords": "Validation and readiness",
+                        "timeRequired": "PT19M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Validation and readiness</p><h1>How We Decide Whether a Finding Requires Data Correction, a Mapping Change or a Model Change</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-15">15 July 2026</time> · 19 min read</p><p class="blog-summary">A Supplier bank-data validation fails for 3,400 records.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#1-what-accepted-obligation-failed">1. What accepted obligation failed?</a></li><li><a href="#2-is-the-obligation-still-valid">2. Is the obligation still valid?</a></li><li><a href="#3-does-the-required-authoritative-input-exist">3. Does the required authoritative input exist?</a></li><li><a href="#4-does-the-mapping-correctly-represent-the-accepted-path">4. Does the Mapping correctly represent the accepted path?</a></li><li><a href="#5-does-the-implementation-match-the-mapping">5. Does the implementation match the Mapping?</a></li><li><a href="#6-do-the-remaining-records-genuinely-fail-the-accepted-condition">6. Do the remaining records genuinely fail the accepted condition?</a></li><li><a href="#data-correction">Data correction</a></li><li><a href="#mapping-change">Mapping change</a></li><li><a href="#model-change">Model change</a></li><li><a href="#validator-weakened-while-rule-remains-unchanged">Validator weakened while Rule remains unchanged</a></li><li><a href="#mapping-changed-to-use-an-unapproved-source">Mapping changed to use an unapproved source</a></li><li><a href="#model-rule-changed-after-a-failed-readiness-run">Model Rule changed after a failed readiness run</a></li><li><a href="#records-mass-updated-to-a-default">Records mass-updated to a default</a></li><li><a href="#finding-closed-without-new-validation-evidence">Finding closed without new validation Evidence</a></li><li><a href="#data-correction-closes-when">Data correction closes when</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 15 July 2026</strong></p>
+<p>A Supplier bank-data validation fails for 3,400 records.</p>
+<p>The canonical Rule states:</p>
+<blockquote>A payment-active Supplier must have current, authorised verification evidence for the bank account used for payment.</blockquote>
+<p>The first reaction is predictable:</p>
+<blockquote>Correct the failed records.</blockquote>
+<p>That may be the wrong action.</p>
+<p>The records may not be incorrect.</p>
+<p>The source data may be complete, but the migration dataset may have omitted the Treasury verification file.</p>
+<p>The verification data may be present, but the Mapping may join it through an obsolete Supplier identifier.</p>
+<p>The Mapping may work exactly as designed, but the canonical model may incorrectly treat a legacy verification flag as authoritative.</p>
+<p>The Rule itself may be applied to Suppliers that are not intended for payment activation.</p>
+<p>All of these situations can produce a similar validation output:</p>
+<pre><code>Bank verification requirement failed.</code></pre>
+<p>They represent different problems.</p>
+<p>They require different owners.</p>
+<p>They produce different changes.</p>
+<p>The critical question is therefore not:</p>
+<blockquote>How do we fix the failed records?</blockquote>
+<p>It is:</p>
+<blockquote>At which layer is the accepted model no longer reflected correctly?</blockquote>
+<p>We separate three main remediation levels:</p>
+<pre><code>Data correction:
+The accepted model is correct.
+The implementation is correct.
+The record does not satisfy the model.
+
+Mapping change:
+The accepted model is correct.
+The required source evidence exists.
+The transformation does not represent the model correctly.
+
+Model change:
+The current canonical interpretation is incomplete,
+incorrect or no longer accepted.</code></pre>
+<p>Choosing the wrong level creates expensive rework.</p>
+<p>A data team may manually correct thousands of records when one Mapping change would resolve the population.</p>
+<p>A developer may change transformation logic when the actual problem is an unresolved business-policy decision.</p>
+<p>A governance team may weaken the canonical Rule because the source extract is incomplete.</p>
+<p>Our job is to prevent those category errors.</p>
+<p>Martenweave already provides the foundations for this separation. Its current architecture treats canonical model files as the source of truth, validates model objects deterministically, detects dataset gaps, supports lineage and impact analysis, and uses human-reviewed PatchProposals for controlled change.</p>
+<p>The product should help us trace a Finding back through the model before deciding what to edit.</p>
+<p>---</p>
+<h1 id="one-finding-three-possible-causes">One Finding, three possible causes</h1>
+<p>We begin with one confirmed Finding:</p>
+<blockquote>The Supplier bank migration dataset cannot establish authorised bank verification for 3,400 payment-active Suppliers.</blockquote>
+<p>The affected records all fail the same business Rule.</p>
+<p>That does not prove that they share the same remediation.</p>
+<p>To decide what must change, we inspect the complete path:</p>
+<pre><code>Business policy
+→ canonical Rule
+→ required Attributes
+→ source authority
+→ source Dataset
+→ Mapping
+→ transformed value
+→ validation result
+→ operational consequence</code></pre>
+<p>A defect can appear at any point.</p>
+<p>For the Supplier case, the expected path is:</p>
+<pre><code>Treasury Review Dataset
+→ Supplier identity match
+→ current bank-account match
+→ authorised verification evidence
+→ canonical Bank Verification Attribute
+→ payment-readiness Rule</code></pre>
+<p>We compare this expected path with what actually happened.</p>
+<p>That comparison gives us the remediation level.</p>
+<p>---</p>
+<h1 id="we-start-by-confirming-the-accepted-model">We start by confirming the accepted model</h1>
+<p>Before correcting anything, we ask whether the current canonical model represents an approved business interpretation.</p>
+<p>For the Supplier case, we verify:</p>
+<ul>
+<li>payment-active Suppliers require bank verification;</li>
+<li>Treasury is the accepted verification authority;</li>
+<li>verification must refer to the current bank account;</li>
+<li>an unverified Supplier may migrate only with payment block;</li>
+<li>the Rule applies to the current migration wave.</li>
+</ul>
+<p>If these statements are unclear or disputed, we cannot diagnose the failure only as a technical problem.</p>
+<p>Suppose the model says:</p>
+<pre><code>Legacy Finance verified flag
+is the authoritative verification source.</code></pre>
+<p>Treasury now states:</p>
+<blockquote>The legacy flag was an operational indicator and did not represent Treasury approval.</blockquote>
+<p>The validator may be executing the model correctly.</p>
+<p>The Mapping may be implementing the model correctly.</p>
+<p>The model itself contains the wrong authority assumption.</p>
+<p>Correcting records against that assumption would reinforce the defect.</p>
+<p>We therefore begin with the model, not the error rows.</p>
+<p>---</p>
+<h1 id="the-first-test-is-the-expected-business-meaning-still-accepted">The first test: is the expected business meaning still accepted?</h1>
+<p>We ask:</p>
+<ol>
+<li>Is the Rule still valid?</li>
+<li>Is its scope correct?</li>
+<li>Is the source authority approved?</li>
+<li>Is the required Entity grain correct?</li>
+<li>Are the failure consequences still accepted?</li>
+<li>Has a later Decision superseded the model?</li>
+</ol>
+<p>When the answer is no or unknown, we have a candidate model problem.</p>
+<p>When the answer is yes, we continue down the path.</p>
+<p>This order protects us from treating a disputed policy as a data-cleansing specification.</p>
+<p>---</p>
+<h1 id="when-the-finding-requires-data-correction">When the Finding requires data correction</h1>
+<p>A Finding requires data correction when:</p>
+<ul>
+<li>the canonical model is accepted;</li>
+<li>the Mapping represents it correctly;</li>
+<li>the validator is correctly scoped;</li>
+<li>the relevant source data is present;</li>
+<li>specific records contain missing, invalid or contradictory values.</li>
+</ul>
+<p>In our Supplier case, imagine that the Treasury Review Dataset is integrated correctly.</p>
+<p>The join uses the approved canonical Supplier identifier.</p>
+<p>The verification records are linked to bank-account fingerprints.</p>
+<p>For 3,250 Suppliers, the path works.</p>
+<p>For 150 Suppliers, the Treasury record refers to an older IBAN.</p>
+<p>The bank account changed after verification.</p>
+<p>The model says:</p>
+<blockquote>Verification must apply to the current bank account.</blockquote>
+<p>The Mapping correctly compares the fingerprints.</p>
+<p>The validator correctly rejects the mismatch.</p>
+<p>The records do not satisfy the accepted business obligation.</p>
+<p>This is a data remediation problem.</p>
+<p>The appropriate action may be:</p>
+<ul>
+<li>obtain new Treasury verification;</li>
+<li>correct an incorrect bank account;</li>
+<li>keep the Supplier payment-blocked;</li>
+<li>remove the Supplier from the payment-active cutover scope.</li>
+</ul>
+<p>We do not need to change the Mapping merely because records failed it.</p>
+<p>We do not need to weaken the Rule to improve the readiness score.</p>
+<p>The validation has identified exactly the condition it was intended to detect.</p>
+<p>---</p>
+<h1 id="evidence-that-points-to-data-correction">Evidence that points to data correction</h1>
+<p>We classify the Finding as data correction when we can demonstrate:</p>
+<pre><code>Accepted model:
+current and approved
+
+Source authority:
+available and correct
+
+Mapping:
+consistent with the model
+
+Validator:
+correctly scoped and reproducible
+
+Failed records:
+contain values that do not meet the obligation</code></pre>
+<p>For one failed Supplier, the evidence may show:</p>
+<pre><code>Current IBAN fingerprint:
+A91F...
+
+Verification IBAN fingerprint:
+D22C...
+
+Verification date:
+before the current bank-account change
+
+Result:
+verification is stale</code></pre>
+<p>No transformation change can make this record genuinely verified.</p>
+<p>A technical workaround could copy the old status.</p>
+<p>That would suppress the failure without satisfying the policy.</p>
+<p>The correct response is to remediate the underlying record or preserve the required operational control.</p>
+<p>---</p>
+<h1 id="data-correction-should-not-alter-canonical-meaning">Data correction should not alter canonical meaning</h1>
+<p>When we classify the problem as a data defect, the canonical model remains unchanged.</p>
+<p>We may create:</p>
+<ul>
+<li>a remediation dataset;</li>
+<li>an owner assignment;</li>
+<li>a correction task;</li>
+<li>a controlled Exception;</li>
+<li>new validation Evidence.</li>
+</ul>
+<p>The model should record that the Finding concerns actual record compliance, not the definition of the expected state.</p>
+<p>Conceptually:</p>
+<pre><code>Finding classification:
+data_defect
+
+Canonical model change:
+none
+
+Required action:
+refresh Treasury verification
+for current bank account
+
+Closure:
+new verification evidence
+and successful revalidation</code></pre>
+<p>This prevents every data-cleaning cycle from creating unnecessary model churn.</p>
+<p>---</p>
+<h1 id="when-the-finding-requires-a-mapping-change">When the Finding requires a Mapping change</h1>
+<p>A Finding requires a Mapping change when:</p>
+<ul>
+<li>the canonical business meaning is accepted;</li>
+<li>the necessary source data exists;</li>
+<li>the current transformation does not represent the accepted model correctly.</li>
+</ul>
+<p>Return to the same Supplier population.</p>
+<p>The Treasury Review Dataset contains current verification records for the 3,400 Suppliers.</p>
+<p>The migration pipeline joins it using the legacy Supplier number.</p>
+<p>After a company consolidation, many Treasury records use the canonical Supplier identifier instead.</p>
+<p>The data exists.</p>
+<p>The policy is clear.</p>
+<p>The current Mapping fails to connect the correct records.</p>
+<p>The expected path is:</p>
+<pre><code>Treasury Supplier ID
+→ canonical Supplier ID
+→ current bank account
+→ verification evidence</code></pre>
+<p>The implemented path is:</p>
+<pre><code>Treasury Supplier ID
+→ legacy local Supplier number
+→ incomplete match</code></pre>
+<p>This is not primarily a record-correction problem.</p>
+<p>Manually updating 3,400 verification statuses would duplicate the transformation logic and destroy provenance.</p>
+<p>The correct change is to repair the Mapping.</p>
+<p>---</p>
+<h1 id="evidence-that-points-to-a-mapping-change">Evidence that points to a Mapping change</h1>
+<p>We classify the Finding as a Mapping defect when:</p>
+<pre><code>The required source value exists.
+
+The source is approved.
+
+The canonical target meaning is clear.
+
+The current transformation omits, misuses
+or incorrectly combines the available inputs.</code></pre>
+<p>Typical signals include:</p>
+<ul>
+<li>source values exist but do not reach the target Attribute;</li>
+<li>the wrong join key is used;</li>
+<li>context such as company code or Plant is omitted;</li>
+<li>precedence logic contradicts the accepted Decision;</li>
+<li>a fallback executes before an authoritative source is checked;</li>
+<li>implementation differs from the canonical Mapping;</li>
+<li>the correct source endpoint is registered but not connected.</li>
+</ul>
+<p>For the Supplier case, we may compare populations:</p>
+<pre><code>Treasury records available:
+3,400
+
+Matched through current Mapping:
+120
+
+Matched through canonical Supplier ID:
+3,350
+
+Remaining without current verification:
+50</code></pre>
+<p>The comparison shows that most failures are produced by the transformation path rather than by missing verification.</p>
+<p>The Mapping should change.</p>
+<p>The remaining 50 records may later become a separate data-correction Finding.</p>
+<p>One initial error population can therefore split into multiple remediation levels after investigation.</p>
+<p>---</p>
+<h1 id="a-mapping-change-must-preserve-the-business-rule">A Mapping change must preserve the business Rule</h1>
+<p>A dangerous response would be to modify the validator so that the unmatched records pass.</p>
+<p>For example:</p>
+<pre><code>When Treasury verification is not found,
+accept the legacy VERIFIED flag.</code></pre>
+<p>That may improve coverage.</p>
+<p>It changes source authority.</p>
+<p>It is not merely a Mapping repair.</p>
+<p>Unless Treasury has approved the legacy flag, this workaround introduces an unapproved model change through transformation code.</p>
+<p>A genuine Mapping correction preserves the accepted meaning:</p>
+<pre><code>Before:
+join Treasury evidence through obsolete local key
+
+After:
+join Treasury evidence through canonical Supplier identity
+and current bank-account fingerprint</code></pre>
+<p>The source authority, policy and target Attribute remain unchanged.</p>
+<p>Only the implementation path changes.</p>
+<p>---</p>
+<h1 id="we-validate-the-mapping-change-as-a-candidate-state">We validate the Mapping change as a candidate state</h1>
+<p>A Mapping change should not be applied directly because it appears to resolve more records.</p>
+<p>We create a candidate proposal.</p>
+<p>The proposal should state:</p>
+<ul>
+<li>which Mapping changes;</li>
+<li>why the current implementation is wrong;</li>
+<li>which source inputs are used;</li>
+<li>which records are affected;</li>
+<li>which previous Evidence becomes stale;</li>
+<li>which Rule results are expected to change;</li>
+<li>what remains unresolved.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code>PatchProposal:
+Replace legacy Supplier-number join
+with canonical Supplier identity mapping.
+
+Affected Finding:
+FIND-SUPPLIER-BANK-VERIFICATION
+
+Expected effect:
+resolve verification linkage
+for approximately 3,350 Suppliers.
+
+Unresolved:
+50 Suppliers may still lack current verification.</code></pre>
+<p>The candidate model is then validated and its impact calculated before human approval.</p>
+<p>This is aligned with Martenweave’s documented proposal-first workflow: Evidence leads into validation, gaps, impact analysis and human-reviewed Git work rather than silent mutation.</p>
+<p>---</p>
+<h1 id="when-the-finding-requires-a-model-change">When the Finding requires a model change</h1>
+<p>A Finding requires a model change when the canonical representation of accepted truth is itself incomplete, incorrect or outdated.</p>
+<p>In the Supplier case, assume the model currently says:</p>
+<pre><code>Supplier Bank Verification
+is a Supplier-level Attribute.</code></pre>
+<p>The investigation reveals that one Supplier may have several bank accounts.</p>
+<p>Treasury verifies a specific account, not the Supplier in general.</p>
+<p>A Supplier-level verified flag allows this sequence:</p>
+<ol>
+<li>Bank account A is verified.</li>
+<li>The Supplier receives status <code>VERIFIED</code>.</li>
+<li>Bank account B replaces account A.</li>
+<li>The Supplier-level status remains <code>VERIFIED</code>.</li>
+<li>The new account passes the migration validator.</li>
+</ol>
+<p>The Mapping may correctly populate the canonical Attribute.</p>
+<p>The validator may correctly test the Attribute.</p>
+<p>The underlying model is wrong because verification belongs to the bank-account relationship, not to the Supplier as a whole.</p>
+<p>This requires a model change.</p>
+<p>---</p>
+<h1 id="model-changes-alter-the-meaning-of-the-governed-path">Model changes alter the meaning of the governed path</h1>
+<p>A model change can affect:</p>
+<ul>
+<li>Entity grain;</li>
+<li>Attribute meaning;</li>
+<li>source authority;</li>
+<li>required context;</li>
+<li>Rule applicability;</li>
+<li>fallback policy;</li>
+<li>evidence requirements;</li>
+<li>ownership;</li>
+<li>lifecycle.</li>
+</ul>
+<p>For our case, the change may be:</p>
+<pre><code>Before:
+Supplier has Bank Verification Status.
+
+After:
+Supplier Bank Account has Verification Evidence.
+
+Verification applies to:
+a specific account fingerprint
+and a defined validity period.</code></pre>
+<p>This is larger than editing a join.</p>
+<p>It changes what the organisation means by a verified bank account.</p>
+<p>It may invalidate:</p>
+<ul>
+<li>existing Mappings;</li>
+<li>previous validation results;</li>
+<li>source extracts;</li>
+<li>cutover readiness;</li>
+<li>approved exceptions;</li>
+<li>Workbench views;</li>
+<li>target handoff logic.</li>
+</ul>
+<p>That is why model changes require explicit Decisions and impact analysis.</p>
+<p>---</p>
+<h1 id="evidence-that-points-to-a-model-change">Evidence that points to a model change</h1>
+<p>We classify the Finding as a model gap when one or more of these conditions is true:</p>
+<ul>
+<li>the required business concept has no canonical object;</li>
+<li>the Attribute is attached to the wrong Entity grain;</li>
+<li>the Rule cannot express the accepted business requirement;</li>
+<li>source authority is undefined or disputed;</li>
+<li>multiple Mappings are valid because applicability is missing;</li>
+<li>the current model cannot distinguish accepted and rejected states;</li>
+<li>the model treats historical behaviour as approved policy;</li>
+<li>a new target requirement introduces an obligation not represented in the model;</li>
+<li>existing Decisions no longer reflect the operating model.</li>
+</ul>
+<p>For the Supplier case:</p>
+<pre><code>Observed problem:
+verification remains valid after bank-account replacement.
+
+Root cause:
+verification modelled at Supplier level.
+
+Required change:
+move verification to Supplier Bank Account context
+and require account-specific Evidence.</code></pre>
+<p>Correcting individual records would not prevent recurrence.</p>
+<p>Changing the Mapping alone would still target the wrong canonical concept.</p>
+<p>The model must change.</p>
+<p>---</p>
+<h1 id="model-change-should-be-the-last-justified-level-not-the-default">Model change should be the last justified level, not the default</h1>
+<p>It is easy to overreact to validation failures by redesigning the model.</p>
+<p>That creates instability.</p>
+<p>We should change the canonical model only when the investigation demonstrates that the accepted representation is inadequate.</p>
+<p>Our order is conservative:</p>
+<pre><code>1. Confirm the Rule and model meaning.
+2. Confirm source authority and availability.
+3. Inspect Mapping and implementation.
+4. Inspect failed records.
+5. Change the highest layer that is actually wrong.</code></pre>
+<p>“Highest” does not mean most important.</p>
+<p>It means furthest upstream in the chain of meaning.</p>
+<p>A model change affects more downstream objects than a record correction.</p>
+<p>We therefore require stronger evidence.</p>
+<p>---</p>
+<h1 id="the-same-finding-may-require-more-than-one-remediation-level">The same Finding may require more than one remediation level</h1>
+<p>Real Findings do not always fit into one box.</p>
+<p>Our Supplier investigation may conclude:</p>
+<ul>
+<li>the canonical model must move verification from Supplier to Bank Account;</li>
+<li>the Mapping must join Treasury evidence by account fingerprint;</li>
+<li>50 remaining records need new Treasury review.</li>
+</ul>
+<p>The complete remediation is:</p>
+<pre><code>Model change:
+represent account-specific verification.
+
+Mapping change:
+link Treasury evidence to the account fingerprint.
+
+Data correction:
+obtain current verification for 50 accounts.</code></pre>
+<p>We should still separate these actions.</p>
+<p>They have different owners, approval requirements and closure evidence.</p>
+<p>A single vague issue such as:</p>
+<blockquote>Fix bank verification failures</blockquote>
+<p>would conceal the sequence.</p>
+<p>The correct order is:</p>
+<ol>
+<li>approve the model interpretation;</li>
+<li>update the Mapping;</li>
+<li>regenerate the dataset;</li>
+<li>identify genuinely non-compliant records;</li>
+<li>remediate those records;</li>
+<li>rerun validation.</li>
+</ol>
+<p>Without this order, record corrections may be performed against a model that is about to change.</p>
+<p>---</p>
+<h1 id="we-add-a-fourth-outcome-no-change-yet">We add a fourth outcome: no change yet</h1>
+<p>Sometimes the evidence does not justify selecting any of the three remediation levels.</p>
+<p>For example:</p>
+<ul>
+<li>Treasury and Finance disagree over source authority;</li>
+<li>the target requirement is still being designed;</li>
+<li>the external verification dataset has not been inspected;</li>
+<li>the validator may be mis-scoped, but the affected population is unclear.</li>
+</ul>
+<p>The correct status is:</p>
+<pre><code>Finding confirmed.
+
+Remediation level:
+undetermined
+
+Required next step:
+governance decision or evidence collection</code></pre>
+<p>We should not force every Finding into a PatchProposal.</p>
+<p>“Insufficient evidence” is a valid result.</p>
+<p>It is safer than allowing AI or delivery pressure to choose an arbitrary fix.</p>
+<p>---</p>
+<h1 id="our-diagnostic-sequence">Our diagnostic sequence</h1>
+<p>For each confirmed Finding, we use a sequence of questions.</p>
+<h2 id="1-what-accepted-obligation-failed">1. What accepted obligation failed?</h2>
+<p>We identify the Rule, Decision and affected business concept.</p>
+<h2 id="2-is-the-obligation-still-valid">2. Is the obligation still valid?</h2>
+<p>We check scope, authority, grain and current Decisions.</p>
+<p>If not, investigate a model change.</p>
+<h2 id="3-does-the-required-authoritative-input-exist">3. Does the required authoritative input exist?</h2>
+<p>If not, determine whether this is:</p>
+<ul>
+<li>a dataset gap;</li>
+<li>a source-data gap;</li>
+<li>a missing business decision.</li>
+</ul>
+<h2 id="4-does-the-mapping-correctly-represent-the-accepted-path">4. Does the Mapping correctly represent the accepted path?</h2>
+<p>If not, investigate a Mapping change.</p>
+<h2 id="5-does-the-implementation-match-the-mapping">5. Does the implementation match the Mapping?</h2>
+<p>If not, correct implementation drift.</p>
+<h2 id="6-do-the-remaining-records-genuinely-fail-the-accepted-condition">6. Do the remaining records genuinely fail the accepted condition?</h2>
+<p>If yes, perform data correction or govern an Exception.</p>
+<p>This sequence avoids starting with the error rows and working backward through assumptions.</p>
+<p>---</p>
+<h1 id="a-compact-decision-matrix">A compact decision matrix</h1>
+<p>For the Supplier case, the decision can be summarised as follows.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Model accepted?</th><th scope="col">Source evidence available?</th><th scope="col">Mapping correct?</th><th scope="col">Record compliant?</th><th scope="col">Primary action</th></tr></thead><tbody><tr><td>No</td><td>Unknown</td><td>Unknown</td><td>Unknown</td><td>Model decision or model change</td></tr><tr><td>Yes</td><td>Yes</td><td>No</td><td>Unknown</td><td>Mapping change</td></tr><tr><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Data correction or Exception</td></tr><tr><td>Yes</td><td>No</td><td>Not executable</td><td>Unknown</td><td>Dataset or source remediation</td></tr><tr><td>Unknown</td><td>Unknown</td><td>Unknown</td><td>Unknown</td><td>Gather Evidence; do not patch</td></tr></tbody></table></div>
+<p>The table is a guide.</p>
+<p>It does not replace investigation.</p>
+<p>Its purpose is to stop us from treating every red validation result as a bad record.</p>
+<p>---</p>
+<h1 id="dataset-remediation-is-not-always-data-correction">Dataset remediation is not always data correction</h1>
+<p>We also distinguish a missing dataset from incorrect data.</p>
+<p>In the original 3,400-record failure, the Treasury Review Dataset may simply be absent from the migration package.</p>
+<p>The authoritative evidence exists outside the current input.</p>
+<p>The appropriate action is:</p>
+<pre><code>Register and ingest the missing dataset.</code></pre>
+<p>This is not record-by-record correction.</p>
+<p>It may not require a canonical model change if the Dataset and Mapping are already represented correctly.</p>
+<p>It is a delivery and evidence-supply problem.</p>
+<p>Our remediation classification can therefore contain a more precise subtype:</p>
+<pre><code>Primary level:
+data layer
+
+Subtype:
+missing dataset input
+
+Record correction:
+not yet justified</code></pre>
+<p>This prevents thousands of unnecessary manual updates.</p>
+<p>---</p>
+<h1 id="implementation-drift-is-not-automatically-a-mapping-change">Implementation drift is not automatically a Mapping change</h1>
+<p>Suppose the canonical Mapping already uses the correct Supplier identity and bank-account fingerprint.</p>
+<p>The production transformation still uses the old local key.</p>
+<p>The model is correct.</p>
+<p>The approved Mapping is correct.</p>
+<p>The code is wrong.</p>
+<p>This is implementation drift.</p>
+<p>We should not edit the canonical Mapping just to create visible activity.</p>
+<p>The appropriate output is an implementation issue tied to the existing model object.</p>
+<p>Conceptually:</p>
+<pre><code>Finding classification:
+implementation_drift
+
+Canonical change:
+none
+
+Required implementation:
+align transformation with
+MAP-TREASURY-BANK-VERIFICATION</code></pre>
+<p>Martenweave should preserve this distinction even though it does not need to become a full deployment platform.</p>
+<p>---</p>
+<h1 id="we-use-impact-analysis-before-selecting-model-change">We use impact analysis before selecting model change</h1>
+<p>Before changing the verification grain, we calculate impact.</p>
+<p>The affected objects may include:</p>
+<ul>
+<li>Supplier Bank Account Attribute;</li>
+<li>verification Rule;</li>
+<li>Treasury Evidence type;</li>
+<li>source Dataset;</li>
+<li>Mapping;</li>
+<li>target handoff;</li>
+<li>payment-block logic;</li>
+<li>validation reports;</li>
+<li>active Exceptions;</li>
+<li>migration readiness score.</li>
+</ul>
+<p>The impact analysis helps reviewers understand that a seemingly simple model correction changes the complete readiness path.</p>
+<p>The decision is no longer:</p>
+<blockquote>Move a status field.</blockquote>
+<p>It is:</p>
+<blockquote>Redefine verification as evidence attached to a specific bank account and revalidate every dependent path.</blockquote>
+<p>This is the business value of model-aware impact analysis.</p>
+<p>---</p>
+<h1 id="we-use-evidence-strength-to-control-the-remediation-level">We use Evidence strength to control the remediation level</h1>
+<p>The broader the proposed change, the stronger the Evidence should be.</p>
+<h2 id="data-correction">Data correction</h2>
+<p>May require record-level validation and owner confirmation.</p>
+<h2 id="mapping-change">Mapping change</h2>
+<p>Requires proof that the source exists and the current path misrepresents the accepted model.</p>
+<h2 id="model-change">Model change</h2>
+<p>Requires business rationale, authority and analysis of affected downstream objects.</p>
+<p>We should not approve a model change only because an AI agent found a pattern in failed rows.</p>
+<p>Patterns can identify a candidate problem.</p>
+<p>They do not establish organisational meaning.</p>
+<p>---</p>
+<h1 id="we-record-the-chosen-remediation-rationale">We record the chosen remediation rationale</h1>
+<p>After investigation, the Finding should state why a particular level was selected.</p>
+<p>For example:</p>
+<pre><code>Selected remediation:
+Mapping change
+
+Reason:
+Treasury verification records exist for 3,350
+of the affected Suppliers.
+
+The canonical Rule and authority Decision remain valid.
+
+The current transformation joins through
+an obsolete local Supplier key.
+
+No canonical business meaning changes.</code></pre>
+<p>For the remaining 50 records:</p>
+<pre><code>Selected remediation:
+Data correction
+
+Reason:
+No current verification Evidence exists
+for the active bank-account fingerprint.
+
+Mapping and model are correct.</code></pre>
+<p>This rationale prevents the same debate from reopening in the next mock load.</p>
+<p>---</p>
+<h1 id="we-prevent-remediation-from-changing-the-wrong-layer">We prevent remediation from changing the wrong layer</h1>
+<p>Martenweave should detect suspicious changes.</p>
+<h2 id="validator-weakened-while-rule-remains-unchanged">Validator weakened while Rule remains unchanged</h2>
+<p>Possible symptom suppression.</p>
+<h2 id="mapping-changed-to-use-an-unapproved-source">Mapping changed to use an unapproved source</h2>
+<p>Possible hidden authority change.</p>
+<h2 id="model-rule-changed-after-a-failed-readiness-run">Model Rule changed after a failed readiness run</h2>
+<p>Requires Decision and impact review.</p>
+<h2 id="records-mass-updated-to-a-default">Records mass-updated to a default</h2>
+<p>Possible ungoverned Exception.</p>
+<h2 id="finding-closed-without-new-validation-evidence">Finding closed without new validation Evidence</h2>
+<p>Resolution not demonstrated.</p>
+<p>These controls do not decide the business outcome.</p>
+<p>They make category mistakes visible.</p>
+<p>---</p>
+<h1 id="we-create-different-outputs-for-different-remediation-levels">We create different outputs for different remediation levels</h1>
+<p>A data correction Finding should generate a remediation task such as:</p>
+<pre><code>Goal:
+Obtain current Treasury verification
+for 50 Supplier bank accounts.
+
+Acceptance criteria:
+Each account has authorised verification Evidence
+or remains payment-blocked.
+
+Validation:
+Rerun bank-verification Rule.</code></pre>
+<p>A Mapping change should generate:</p>
+<pre><code>Goal:
+Replace obsolete Supplier-number join
+with canonical identity and account fingerprint.
+
+Acceptance criteria:
+The Mapping validates.
+The candidate dataset links existing Treasury Evidence.
+No legacy flag is promoted to authoritative status.</code></pre>
+<p>A model change should generate a PatchProposal:</p>
+<pre><code>Goal:
+Represent verification at Supplier Bank Account grain.
+
+Scope:
+Attribute, Rule, Evidence relationship,
+Mapping and readiness logic.
+
+Approval:
+Treasury Data Owner and Supplier Model Owner.</code></pre>
+<p>The issue format follows the type of problem.</p>
+<p>We do not send every Finding into the same generic workflow.</p>
+<p>---</p>
+<h1 id="we-close-each-level-differently">We close each level differently</h1>
+<h2 id="data-correction-closes-when">Data correction closes when</h2>
+<ul>
+<li>the records satisfy the accepted Rule;</li>
+<li>or a valid Exception governs them;</li>
+<li>new Evidence is attached.</li>
+</ul>
+<h2 id="mapping-change-closes-when">Mapping change closes when</h2>
+<ul>
+<li>the approved Mapping is implemented;</li>
+<li>candidate and actual behaviour align;</li>
+<li>affected data is regenerated;</li>
+<li>validation is rerun.</li>
+</ul>
+<h2 id="model-change-closes-when">Model change closes when</h2>
+<ul>
+<li>the Decision is approved;</li>
+<li>canonical objects are updated;</li>
+<li>validation passes;</li>
+<li>impact obligations are addressed;</li>
+<li>dependent Evidence is refreshed.</li>
+</ul>
+<p>A merged pull request is not sufficient closure for every Finding.</p>
+<p>It proves that files changed.</p>
+<p>It does not automatically prove that the population now satisfies the intended business outcome.</p>
+<p>---</p>
+<h1 id="a-conceptual-classification-inside-the-finding">A conceptual classification inside the Finding</h1>
+<p>A Finding could preserve the remediation decision like this:</p>
+<pre><code>---
+id: FIND-SUPPLIER-BANK-VERIFICATION
+type: Finding
+status: remediation_approved
+
+classification:
+  primary: mapping_defect
+
+accepted_model:
+  rule: RULE-SUPPLIER-BANK-VERIFICATION
+  status: confirmed_current
+
+evidence_state:
+  treasury_records_available: true
+  authority_confirmed: true
+
+mapping_state:
+  current_join_key: legacy_supplier_number
+  required_join_key: canonical_supplier_id
+  account_match_required: true
+
+remediation:
+  mapping_change:
+    required: true
+  model_change:
+    required: false
+  record_correction:
+    required_after_rerun: possible
+
+closure:
+  - candidate_mapping_validated
+  - transformation_updated
+  - dataset_regenerated
+  - rule_rerun
+---</code></pre>
+<p>This is a proposed design direction rather than a claim about the exact current Martenweave Finding schema.</p>
+<p>The important part is that the remediation level and its rationale become explicit.</p>
+<p>---</p>
+<h1 id="what-we-should-build-next">What we should build next</h1>
+<p>The next focused Martenweave capability should be <strong>Finding Remediation Classification</strong>.</p>
+<p>It should sit between Finding confirmation and issue or PatchProposal creation.</p>
+<h2 id="required-inputs">Required inputs</h2>
+<ul>
+<li>Finding;</li>
+<li>Rule;</li>
+<li>affected model objects;</li>
+<li>source availability;</li>
+<li>source authority;</li>
+<li>current Mapping;</li>
+<li>implementation Evidence;</li>
+<li>failed-record profile;</li>
+<li>relevant Decisions and Exceptions.</li>
+</ul>
+<h2 id="required-outputs">Required outputs</h2>
+<ul>
+<li>recommended remediation level;</li>
+<li>supporting Evidence;</li>
+<li>unresolved questions;</li>
+<li>affected owners;</li>
+<li>impact;</li>
+<li>proposed closure criteria;</li>
+<li>confidence without automatic approval.</li>
+</ul>
+<h2 id="supported-outcomes">Supported outcomes</h2>
+<ul>
+<li>data correction;</li>
+<li>dataset remediation;</li>
+<li>Mapping change;</li>
+<li>implementation correction;</li>
+<li>model change;</li>
+<li>governance Decision;</li>
+<li>controlled Exception;</li>
+<li>insufficient Evidence.</li>
+</ul>
+<p>This is more useful than automatically creating a patch from every failed validation.</p>
+<p>---</p>
+<h1 id="proposed-commands">Proposed commands</h1>
+<p>A future CLI might support:</p>
+<pre><code>martenweave findings diagnose \
+  FIND-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings classify-remediation \
+  FIND-SUPPLIER-BANK-VERIFICATION \
+  --repo ./model \
+  --dry-run</code></pre>
+<pre><code>martenweave findings propose-fix \
+  FIND-SUPPLIER-BANK-VERIFICATION \
+  --level mapping \
+  --repo ./model</code></pre>
+<pre><code>martenweave findings verify \
+  FIND-SUPPLIER-BANK-VERIFICATION \
+  --evidence EVID-SUPPLIER-BANK-RC6 \
+  --repo ./model</code></pre>
+<p>These commands describe a product direction.</p>
+<p>They are not part of the currently documented CLI contract.</p>
+<p>The current Martenweave foundation already supports canonical files, deterministic validation, dataset gaps, lineage, impact analysis and proposal-first change.</p>
+<p>---</p>
+<h1 id="we-keep-the-process-deterministic-where-possible">We keep the process deterministic where possible</h1>
+<p>Not every diagnostic step should be delegated to AI.</p>
+<p>Software can establish:</p>
+<ul>
+<li>whether required fields exist;</li>
+<li>whether a Mapping references them;</li>
+<li>whether implementation output follows the Mapping;</li>
+<li>whether failed records share a source path;</li>
+<li>whether an active Decision defines authority;</li>
+<li>whether an Exception covers the population;</li>
+<li>whether Evidence was generated under the current baseline.</li>
+</ul>
+<p>AI is useful for:</p>
+<ul>
+<li>interpreting workshop notes;</li>
+<li>identifying candidate causes;</li>
+<li>explaining impact;</li>
+<li>drafting remediation proposals;</li>
+<li>identifying missing questions.</li>
+</ul>
+<p>Humans decide:</p>
+<ul>
+<li>whether business meaning is correct;</li>
+<li>which source is authoritative;</li>
+<li>whether risk is acceptable;</li>
+<li>whether the model should change.</li>
+</ul>
+<p>The division remains:</p>
+<pre><code>Deterministic checks establish facts.
+
+AI organises and proposes interpretations.
+
+Humans approve semantic change.</code></pre>
+<p>---</p>
+<h1 id="why-structured-validation-results-matter">Why structured validation results matter</h1>
+<p>A validator that returns only:</p>
+<pre><code>Bank verification failed.</code></pre>
+<p>does not provide enough information for diagnosis.</p>
+<p>We need structured result fields such as:</p>
+<ul>
+<li>focus record;</li>
+<li>result path;</li>
+<li>observed value;</li>
+<li>expected condition;</li>
+<li>source Rule;</li>
+<li>validator version;</li>
+<li>dataset;</li>
+<li>severity;</li>
+<li>supporting details.</li>
+</ul>
+<p>The W3C SHACL Recommendation provides one established example of this separation: its validation reports distinguish the overall conformance result from individual results and include fields for focus node, result path, source constraint, detail, message and severity.</p>
+<p>Martenweave does not need to use RDF or implement SHACL.</p>
+<p>It should preserve equivalent diagnostic structure so that Findings can be classified reliably.</p>
+<p>---</p>
+<h1 id="data-quality-dimensions-do-not-select-the-remediation-layer">Data quality dimensions do not select the remediation layer</h1>
+<p>A failure may be described as:</p>
+<ul>
+<li>incomplete;</li>
+<li>inaccurate;</li>
+<li>inconsistent;</li>
+<li>not current.</li>
+</ul>
+<p>Those quality dimensions are useful.</p>
+<p>They do not determine what must change.</p>
+<p>For example, missing verification may look like a completeness problem.</p>
+<p>The real cause may be:</p>
+<ul>
+<li>absent Treasury input;</li>
+<li>incorrect Mapping;</li>
+<li>wrong Entity grain;</li>
+<li>genuinely unverified account.</li>
+</ul>
+<p>ISO/IEC 25012 defines a general data-quality model for structured data, but project-specific business meaning, authority, remediation and risk still need to be represented by the programme.</p>
+<p>We use quality dimensions to describe symptoms.</p>
+<p>We use the canonical model and lineage to choose the correction layer.</p>
+<p>---</p>
+<h1 id="the-business-value">The business value</h1>
+<p>Choosing the right remediation level reduces several recurring forms of waste:</p>
+<ul>
+<li>manual correction of data that was already available;</li>
+<li>Mapping changes that conceal a policy dispute;</li>
+<li>model redesign triggered by an implementation bug;</li>
+<li>weakened Rules used to improve readiness scores;</li>
+<li>repeated defects across migration waves;</li>
+<li>conflicting fixes by different teams;</li>
+<li>closed issues that leave the root cause unchanged.</li>
+</ul>
+<p>The value is not merely better classification.</p>
+<p>It is avoiding work at the wrong layer.</p>
+<p>A single correct Mapping change may eliminate thousands of manual corrections.</p>
+<p>A single model decision may prevent every future dataset from reproducing the same ambiguity.</p>
+<p>A disciplined choice not to change the model may protect a valid business control from schedule pressure.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>A validation failure does not tell us what to edit.</p>
+<p>It tells us where to investigate.</p>
+<p>For the Supplier bank-verification Finding, we ask:</p>
+<pre><code>Is the business obligation correct?
+
+Is the authority defined?
+
+Does the required evidence exist?
+
+Does the Mapping use it correctly?
+
+Does implementation match the Mapping?
+
+Which records remain genuinely non-compliant?</code></pre>
+<p>Only then do we choose:</p>
+<pre><code>Data correction
+when the record violates a correct model.
+
+Mapping change
+when implementation misrepresents a correct model.
+
+Model change
+when the accepted representation itself is wrong.</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can we explain why the selected remediation changes the lowest necessary layer while preserving every accepted business decision above it?</blockquote>
+<p>When the answer is yes, the Finding is actionable.</p>
+<p>When the answer is:</p>
+<blockquote>The validator failed, so we updated something until it passed,</blockquote>
+<p>we have no assurance that we corrected the problem rather than suppressed the evidence.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>We are building Martenweave so that migration teams can distinguish:</p>
+<pre><code>bad data
+from bad transformation,
+
+bad transformation
+from bad model,
+
+and bad model
+from an unresolved business decision.</code></pre>
+<p>Our operating model is:</p>
+<pre><code>Validators detect deviations.
+
+Findings explain the problem.
+
+Lineage locates the failing layer.
+
+Impact analysis shows the consequences.
+
+AI proposes the smallest defensible change.
+
+Humans approve changes to model truth.
+
+New Evidence proves resolution.</code></pre>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 15 July 2026.</p>
+<p>Martenweave Core currently describes a canonical model-governance pipeline that turns datasets, validation reports, Decisions and SAP context into validated model files, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>Its current principles keep canonical files authoritative, generated indexes disposable, deterministic validation mandatory and AI changes proposal-first.</p>
+<p>Its documented workflow moves from Evidence and profiling through validation, gap detection, lineage and impact to PatchProposals and human-reviewed GitHub delivery.</p>
+<p>The W3C Shapes Constraint Language defines conditions used to validate data graphs and structured validation reports containing individual results, focus nodes, result paths, source constraints, details, messages and severity. Martenweave does not need to implement SHACL directly, but structured validation output is necessary for reliable Finding diagnosis.</p>
+<p>ISO/IEC 25012 defines a general data-quality model for structured data used by computer systems. It provides useful quality vocabulary, while the remediation distinctions in this article—record correction, Mapping change and canonical model change—remain domain and governance decisions specific to the modelled process.</p>
+<p>Finding remediation classification, diagnostic commands and the proposed schema are product directions. They should not be interpreted as guarantees of the exact current Martenweave Finding model, Workbench behaviour or CLI until implemented and released.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP, W3C or ISO.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/detect-dataset-gaps-before-sap-migration-testing.html">Many SAP migration programmes treat testing as the first serious encounter between the target model and the source data.</a></li><li><a href="/blog/deterministic-validation-migration-risk.html">The migration workbook looks complete.</a></li><li><a href="/blog/how-to-structure-a-model-investigation-case-so-the-finding-can-be-reused.html">The German migration team spends three weeks investigating why Customer Group cannot be mapped reliably.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-we-turn-validation-failures-into-actionable-findings-instead-of.html"><span>Previous</span>We run a validation against a Supplier bank-data migration dataset.</a><a href="/blog/how-we-prioritize-findings-by-business-impact-instead-of-error-count.html"><span>Next</span>We complete a Supplier bank-data validation run.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

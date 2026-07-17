@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How Martenweave Should Work Alongside SAP MDG During a Migration | Martenweave</title>
+    <meta
+      name="description"
+      content="A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html" />
+    <meta property="og:title" content="How Martenweave Should Work Alongside SAP MDG During a Migration | Martenweave" />
+    <meta property="og:description" content="A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How Martenweave Should Work Alongside SAP MDG During a Migration | Martenweave" />
+    <meta name="twitter:description" content="A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html",
+                        "name": "How Martenweave Should Work Alongside SAP MDG During a Migration | Martenweave",
+                        "description": "A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How Martenweave Should Work Alongside SAP MDG During a Migration",
+                                    "item": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html#content",
+                        "headline": "How Martenweave Should Work Alongside SAP MDG During a Migration",
+                        "name": "How Martenweave Should Work Alongside SAP MDG During a Migration",
+                        "description": "A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA.",
+                        "url": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-martenweave-should-work-alongside-sap-mdg-during-a-migration.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "SAP MDG and MDM",
+                        "keywords": "SAP MDG and MDM",
+                        "timeRequired": "PT17M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How Martenweave Should Work Alongside SAP MDG During a Migration</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">SAP MDG and MDM</p><h1>How Martenweave Should Work Alongside SAP MDG During a Migration</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 17 min read</p><p class="blog-summary">A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#source-evidence">Source evidence</a></li><li><a href="#migration-interpretation">Migration interpretation</a></li><li><a href="#candidate-target-record">Candidate target record</a></li><li><a href="#operational-governance">Operational governance</a></li><li><a href="#target-values">Target values</a></li><li><a href="#control-status">Control status</a></li><li><a href="#exception-status">Exception status</a></li><li><a href="#provenance-reference">Provenance reference</a></li><li><a href="#migration-baseline">Migration baseline</a></li><li><a href="#ready-for-target-governance">Ready for target governance</a></li><li><a href="#ready-with-target-control">Ready with target control</a></li><li><a href="#requires-enrichment">Requires enrichment</a></li><li><a href="#requires-business-decision">Requires business decision</a></li><li><a href="#excluded-from-wave">Excluded from wave</a></li><li><a href="#migration-model-approval">Migration-model approval</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A programme is migrating Supplier bank data from several legacy systems into SAP S/4HANA.</p>
+<p>SAP Master Data Governance is part of the target architecture.</p>
+<p>The programme has already defined:</p>
+<ul>
+<li>governed Business Partner processes;</li>
+<li>bank-data validation;</li>
+<li>steward responsibilities;</li>
+<li>approval workflows;</li>
+<li>target distribution;</li>
+<li>audit requirements.</li>
+</ul>
+<p>Yet the migration team still manages much of its working knowledge in:</p>
+<ul>
+<li>source extracts;</li>
+<li>field-mapping workbooks;</li>
+<li>duplicate-analysis files;</li>
+<li>mock-load reports;</li>
+<li>cutover trackers;</li>
+<li>tickets;</li>
+<li>meeting decisions;</li>
+<li>local transformation scripts.</li>
+</ul>
+<p>The result is a common architectural misunderstanding.</p>
+<p>Some stakeholders assume:</p>
+<blockquote>SAP MDG is the governance platform, so all migration governance should happen there.</blockquote>
+<p>Others react in the opposite direction:</p>
+<blockquote>The migration repository contains all the source knowledge, so it should become the master-data governance platform.</blockquote>
+<p>Both positions blur two different responsibilities.</p>
+<p>SAP MDG should govern trusted operational master data and the processes used to maintain it.</p>
+<p>Martenweave should govern the migration model that explains how fragmented source evidence becomes an approved candidate for that operational master data.</p>
+<p>The systems should meet at a controlled handoff.</p>
+<blockquote>Martenweave should prepare, explain and validate the migration path. SAP MDG should govern the resulting operational master-data state.</blockquote>
+<p>This is not a competitive positioning claim.</p>
+<p>It is an operating model.</p>
+<p>SAP currently describes SAP Master Data Governance as a governance layer for business data, with governed models, golden records, profiling, matching, consolidation, workflows, business rules, data-quality monitoring and auditable changes. SAP also positions it as useful for preparing master data for SAP S/4HANA and governing SAP and third-party data.</p>
+<p>Martenweave’s current repository defines a different role: a backend-first model-governance and evidence layer that turns spreadsheets, datasets, tickets, validation reports, Decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved proposals.</p>
+<p>The product value appears in the space between source investigation and target governance.</p>
+<p>---</p>
+<h1 id="the-pain-exists-before-the-first-mdg-approval">The pain exists before the first MDG approval</h1>
+<p>The Supplier bank-data migration includes three source systems.</p>
+<p>The Finance system contains:</p>
+<ul>
+<li>IBAN;</li>
+<li>bank country;</li>
+<li>bank key;</li>
+<li>account number.</li>
+</ul>
+<p>The Supplier portal contains:</p>
+<ul>
+<li>account-holder name;</li>
+<li>uploaded confirmation;</li>
+<li>a user-facing verification status.</li>
+</ul>
+<p>A local purchasing application contains:</p>
+<ul>
+<li>another bank key;</li>
+<li>a more recent update timestamp;</li>
+<li>local Supplier references.</li>
+</ul>
+<p>The target SAP model needs one coherent bank account connected to the correct Business Partner.</p>
+<p>Before any target workflow can govern that record, the migration team must decide:</p>
+<ul>
+<li>which source owns each Attribute;</li>
+<li>how Supplier identities are matched;</li>
+<li>how conflicting bank records are compared;</li>
+<li>what the verification status means;</li>
+<li>whether a portal confirmation is acceptable evidence;</li>
+<li>when a fallback may be used;</li>
+<li>which records must remain payment-blocked;</li>
+<li>which exceptions can enter the migration wave.</li>
+</ul>
+<p>These decisions are not merely preparatory technical details.</p>
+<p>They define the candidate data presented to SAP MDG.</p>
+<p>If the migration team selects the wrong source, SAP MDG may govern the wrong candidate record correctly.</p>
+<p>If a default verification status is inserted during transformation, the target workflow may receive a record that appears complete but lacks defensible provenance.</p>
+<p>Target governance cannot compensate automatically for invisible source-to-target assumptions.</p>
+<p>---</p>
+<h1 id="one-supplier-record-several-governance-layers">One Supplier record, several governance layers</h1>
+<p>Consider one migrated Supplier.</p>
+<p>The final target record contains:</p>
+<pre><code>Supplier:
+1000456
+
+Bank country:
+DE
+
+IBAN:
+DE...
+
+Account holder:
+Example Components GmbH
+
+Verification status:
+Verified</code></pre>
+<p>This simple record hides several layers.</p>
+<h2 id="source-evidence">Source evidence</h2>
+<p>What did each legacy system contain?</p>
+<pre><code>Finance system:
+IBAN and bank key
+
+Supplier portal:
+account holder and uploaded confirmation
+
+Purchasing application:
+different bank key and later timestamp</code></pre>
+<h2 id="migration-interpretation">Migration interpretation</h2>
+<p>How were the values selected?</p>
+<pre><code>IBAN:
+Finance system is authoritative
+
+Account holder:
+Supplier portal is authoritative when present
+
+Bank key:
+Finance system is primary;
+derive from IBAN only when absent
+
+Verification:
+Treasury review is required</code></pre>
+<h2 id="candidate-target-record">Candidate target record</h2>
+<p>What value set will be submitted to SAP?</p>
+<h2 id="operational-governance">Operational governance</h2>
+<p>Who may approve, activate, maintain and later change the target record?</p>
+<p>The first two layers belong to migration-model governance.</p>
+<p>The last layer belongs to operational master-data governance.</p>
+<p>The candidate target record connects them.</p>
+<p>---</p>
+<h1 id="the-correct-handoff-is-a-governed-data-contract">The correct handoff is a governed data contract</h1>
+<p>Martenweave should not hand SAP MDG an unexplained file.</p>
+<p>It should produce a governed migration contract for the target data.</p>
+<p>For Supplier bank data, that contract should state:</p>
+<ul>
+<li>the business Attribute;</li>
+<li>the target Entity;</li>
+<li>the physical target endpoint;</li>
+<li>the authoritative source for each component;</li>
+<li>the source-selection logic;</li>
+<li>validation Rules;</li>
+<li>evidence requirements;</li>
+<li>exception policy;</li>
+<li>readiness status;</li>
+<li>unresolved Findings;</li>
+<li>applicable migration baseline.</li>
+</ul>
+<p>Conceptually:</p>
+<pre><code>Business Attribute:
+Supplier Bank Account
+
+Target:
+SAP Business Partner bank data
+
+IBAN authority:
+Legacy Finance System
+
+Account-holder authority:
+Supplier Portal
+
+Verification authority:
+Treasury Review Dataset
+
+Fallback:
+Derive bank key from IBAN where permitted
+
+Payment rule:
+Unverified bank accounts remain payment-blocked</code></pre>
+<p>SAP MDG can then govern the record according to its operational workflow.</p>
+<p>Martenweave preserves why this record qualifies for submission.</p>
+<p>---</p>
+<h1 id="the-handoff-should-not-copy-the-whole-migration-repository">The handoff should not copy the whole migration repository</h1>
+<p>A migration repository may contain:</p>
+<ul>
+<li>raw profiles;</li>
+<li>rejected mappings;</li>
+<li>temporary files;</li>
+<li>mock-load diagnostics;</li>
+<li>local test artefacts;</li>
+<li>historical Findings;</li>
+<li>candidate proposals.</li>
+</ul>
+<p>SAP MDG does not need all of this attached to every Business Partner.</p>
+<p>The handoff should contain only the information required by the target process.</p>
+<p>For example:</p>
+<h2 id="target-values">Target values</h2>
+<p>The actual Supplier bank fields.</p>
+<h2 id="control-status">Control status</h2>
+<p>Whether the candidate passed the migration Rules.</p>
+<h2 id="exception-status">Exception status</h2>
+<p>Whether the record requires payment block or manual review.</p>
+<h2 id="provenance-reference">Provenance reference</h2>
+<p>A stable Martenweave Evidence or Decision reference.</p>
+<h2 id="migration-baseline">Migration baseline</h2>
+<p>The exact approved model version used to create the record.</p>
+<p>This keeps the operational workflow usable while preserving traceability.</p>
+<p>---</p>
+<h1 id="martenweave-should-own-the-pre-mdg-readiness-decision">Martenweave should own the pre-MDG readiness decision</h1>
+<p>Before a record enters the MDG-controlled target process, Martenweave should be able to classify it.</p>
+<p>Possible states include:</p>
+<h2 id="ready-for-target-governance">Ready for target governance</h2>
+<p>The source path, Mapping, Rules and required Evidence are complete.</p>
+<h2 id="ready-with-target-control">Ready with target control</h2>
+<p>The record may enter SAP, but a specified control such as payment block must remain active.</p>
+<h2 id="requires-enrichment">Requires enrichment</h2>
+<p>A required source or Evidence item is missing.</p>
+<h2 id="requires-business-decision">Requires business decision</h2>
+<p>Source authority or exception treatment remains unresolved.</p>
+<h2 id="excluded-from-wave">Excluded from wave</h2>
+<p>The record cannot be migrated safely in the current scope.</p>
+<p>For the Supplier example:</p>
+<pre><code>Record:
+1000456
+
+Migration status:
+Ready with target control
+
+Reason:
+Bank values are valid,
+but Treasury verification is incomplete
+
+Required target control:
+Payment block</code></pre>
+<p>The target workflow should not need to rediscover why the control is required.</p>
+<p>---</p>
+<h1 id="sap-mdg-should-own-the-operational-approval">SAP MDG should own the operational approval</h1>
+<p>Once a record enters the target governance process, SAP MDG should remain authoritative for:</p>
+<ul>
+<li>the operational master-data change;</li>
+<li>workflow routing;</li>
+<li>steward approval;</li>
+<li>target validations;</li>
+<li>activation;</li>
+<li>target audit history;</li>
+<li>later maintenance;</li>
+<li>distribution to consuming systems.</li>
+</ul>
+<p>SAP describes MDG as supporting workflows, validated values, business rules, data-quality monitoring, source unification and auditable data changes.</p>
+<p>Martenweave should not add a competing operational approval that claims to activate the Business Partner independently.</p>
+<p>A Martenweave approval means:</p>
+<blockquote>The migration model and candidate path are accepted for this scope.</blockquote>
+<p>An SAP MDG approval means:</p>
+<blockquote>The operational master-data change is accepted in the target governance process.</blockquote>
+<p>Those approvals are related but not identical.</p>
+<p>---</p>
+<h1 id="two-approvals-may-be-necessary">Two approvals may be necessary</h1>
+<p>For a sensitive field such as Supplier Bank Account, a robust programme may require two explicit decisions.</p>
+<h2 id="migration-model-approval">Migration-model approval</h2>
+<p>Approves:</p>
+<ul>
+<li>source authority;</li>
+<li>Mapping logic;</li>
+<li>fallback;</li>
+<li>evidence requirements;</li>
+<li>affected population;</li>
+<li>migration readiness.</li>
+</ul>
+<h2 id="operational-record-approval">Operational record approval</h2>
+<p>Approves:</p>
+<ul>
+<li>the actual target data;</li>
+<li>target workflow;</li>
+<li>steward review;</li>
+<li>activation;</li>
+<li>downstream distribution.</li>
+</ul>
+<p>This prevents one approval from being overloaded.</p>
+<p>A migration architect should not automatically approve a sensitive operational bank change.</p>
+<p>A target steward should not need to reconstruct every source-system Mapping decision.</p>
+<p>---</p>
+<h1 id="the-model-approval-can-cover-a-population">The model approval can cover a population</h1>
+<p>Martenweave does not need to approve every Supplier record individually.</p>
+<p>The model approval may cover a governed population.</p>
+<p>For example:</p>
+<pre><code>Approved path:
+Finance IBAN + Portal account holder + Treasury verification
+
+Scope:
+German payment-active Suppliers
+
+Baseline:
+WAVE-2-RC4
+
+Fallback:
+Bank-key derivation permitted
+
+Exception:
+Missing verification requires payment block</code></pre>
+<p>Individual records are then assessed against the approved path.</p>
+<p>SAP MDG handles operational record-level governance where configured.</p>
+<p>This division avoids turning Martenweave into a second high-volume workflow system.</p>
+<p>---</p>
+<h1 id="the-candidate-dataset-must-be-traceable-to-the-model-baseline">The candidate dataset must be traceable to the model baseline</h1>
+<p>Every generated migration dataset should identify:</p>
+<ul>
+<li>dataset fingerprint;</li>
+<li>extraction date;</li>
+<li>source scope;</li>
+<li>Martenweave model commit;</li>
+<li>Mapping version;</li>
+<li>Rule version;</li>
+<li>Evidence set;</li>
+<li>proposal or Decision references.</li>
+</ul>
+<p>Without this, a target load may use values generated under an obsolete policy.</p>
+<p>Suppose Treasury changes the verification requirement after Mock Load 3.</p>
+<p>The earlier dataset may still be technically loadable.</p>
+<p>It is no longer compliant with the current migration model.</p>
+<p>Martenweave should detect:</p>
+<pre><code>Dataset baseline:
+WAVE-2-RC3
+
+Current approved model:
+WAVE-2-RC4
+
+Material change:
+Treasury verification became mandatory
+
+Verdict:
+Dataset is stale for payment-active Suppliers</code></pre>
+<p>SAP MDG can validate the submitted record.</p>
+<p>Martenweave should prevent an obsolete candidate dataset from being treated as current migration truth.</p>
+<p>---</p>
+<h1 id="changes-in-mdg-should-feed-back-into-martenweave">Changes in MDG should feed back into Martenweave</h1>
+<p>The relationship is not one-way.</p>
+<p>During target design or testing, the MDG team may change:</p>
+<ul>
+<li>required fields;</li>
+<li>validation Rules;</li>
+<li>workflow expectations;</li>
+<li>target endpoints;</li>
+<li>code lists;</li>
+<li>exception handling;</li>
+<li>target ownership.</li>
+</ul>
+<p>These changes affect the migration model.</p>
+<p>For example, the MDG design may introduce a requirement:</p>
+<blockquote>Payment-active Suppliers must have bank verification before activation.</blockquote>
+<p>Martenweave should translate that into migration obligations:</p>
+<ul>
+<li>Treasury verification Dataset required;</li>
+<li>verification Mapping required;</li>
+<li>readiness Rule required;</li>
+<li>unverified population identified;</li>
+<li>target payment-block control linked;</li>
+<li>earlier Evidence invalidated.</li>
+</ul>
+<p>The feedback loop is:</p>
+<pre><code>MDG target requirement
+→ migration model obligation
+→ source/dataset gap analysis
+→ PatchProposal
+→ approved canonical change
+→ updated candidate data</code></pre>
+<p>Without this loop, target governance and migration transformation drift apart.</p>
+<p>---</p>
+<h1 id="the-product-should-track-target-requirements-as-references">The product should track target requirements as references</h1>
+<p>Martenweave should not duplicate every detail of MDG configuration.</p>
+<p>It should register the parts relevant to the migration model.</p>
+<p>For example:</p>
+<pre><code>Target Rule reference:
+MDG-BP-BANK-VERIFY-01
+
+Business meaning:
+Payment-active Supplier requires verified bank account
+
+Migration implication:
+Treasury verification status must be present
+
+Fallback:
+Payment block
+
+Owner:
+Treasury Data Owner</code></pre>
+<p>This creates traceability without turning Martenweave into an SAP configuration repository.</p>
+<p>---</p>
+<h1 id="a-change-request-id-is-evidence-not-the-whole-model">A change-request ID is evidence, not the whole model</h1>
+<p>Suppose the MDG team creates a change request that updates bank validation.</p>
+<p>Martenweave can reference:</p>
+<ul>
+<li>the change-request identifier;</li>
+<li>status;</li>
+<li>effective release;</li>
+<li>approved Rule;</li>
+<li>relevant target fields.</li>
+</ul>
+<p>But the migration model still needs to state:</p>
+<ul>
+<li>which source inputs satisfy the Rule;</li>
+<li>how existing source records are evaluated;</li>
+<li>which dataset must change;</li>
+<li>how many records are affected;</li>
+<li>which earlier mock loads are now stale.</li>
+</ul>
+<p>The target change request establishes the operational requirement.</p>
+<p>The migration model evaluates its source-to-target consequences.</p>
+<p>---</p>
+<h1 id="the-gap-appears-when-the-target-requirement-cannot-be-satisfied">The gap appears when the target requirement cannot be satisfied</h1>
+<p>The new target Rule requires Treasury verification.</p>
+<p>The source migration dataset contains:</p>
+<pre><code>SUPPLIER_ID
+BANK_COUNTRY
+IBAN
+ACCOUNT_HOLDER</code></pre>
+<p>It does not contain:</p>
+<pre><code>BANK_VERIFICATION_STATUS</code></pre>
+<p>A simple schema report says:</p>
+<blockquote>Column missing.</blockquote>
+<p>Martenweave should produce a model-aware Finding:</p>
+<pre><code>Finding:
+No approved input supplies Bank Verification Status.
+
+Affected Rule:
+Payment-active Supplier requires verified bank account.
+
+Affected population:
+3,400 Suppliers
+
+Target consequence:
+Records cannot be activated for payment without control.
+
+Available fallback:
+Payment block
+
+Required decision:
+Add Treasury Review Dataset or exclude affected records.</code></pre>
+<p>This is the point where Martenweave contributes more than a loader, catalogue or target workflow.</p>
+<p>It translates a target governance requirement into a source-side migration obligation.</p>
+<p>---</p>
+<h1 id="the-proposal-should-be-reviewed-before-transformation-code-changes">The proposal should be reviewed before transformation code changes</h1>
+<p>An AI agent may suggest:</p>
+<pre><code>Add Treasury Review Dataset.
+
+Join by canonical Supplier ID.
+
+Map approval status to Bank Verification Status.
+
+Apply payment block where status is absent.</code></pre>
+<p>That is a reasonable PatchProposal.</p>
+<p>It should be validated before the ETL code is changed.</p>
+<p>Candidate-state validation should confirm:</p>
+<ul>
+<li>Treasury Dataset exists;</li>
+<li>Supplier identity keys are compatible;</li>
+<li>the Mapping is typed correctly;</li>
+<li>the Rule applies only to payment-active Suppliers;</li>
+<li>the payment-block fallback is represented;</li>
+<li>downstream target references remain valid;</li>
+<li>no unsupported assumption sets verification to true.</li>
+</ul>
+<p>Impact analysis should show:</p>
+<ul>
+<li>affected datasets;</li>
+<li>affected Mappings;</li>
+<li>affected Rules;</li>
+<li>affected population;</li>
+<li>stale readiness Evidence;</li>
+<li>required reviewers.</li>
+</ul>
+<p>Only after approval should an implementation issue or Git change be generated.</p>
+<p>Martenweave’s documented pipeline already places Evidence, validation, gaps, impact and proposals before human-reviewed Git work.</p>
+<p>---</p>
+<h1 id="the-implementation-handoff-should-be-precise">The implementation handoff should be precise</h1>
+<p>An approved model proposal can generate an implementation package.</p>
+<h2 id="goal">Goal</h2>
+<p>Add Treasury verification to the Supplier bank-data migration path.</p>
+<h2 id="scope">Scope</h2>
+<ul>
+<li>import Treasury Review Dataset;</li>
+<li>join through canonical Supplier ID;</li>
+<li>map approved Treasury result;</li>
+<li>retain payment block when verification is absent;</li>
+<li>preserve SAP MDG target validations.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<ul>
+<li>every payment-active Supplier has verification Evidence or payment block;</li>
+<li>no record is defaulted to verified;</li>
+<li>dataset readiness is recalculated;</li>
+<li>target validation passes;</li>
+<li>Treasury and Supplier data owners approve the result.</li>
+</ul>
+<h2 id="validation">Validation</h2>
+<pre><code>martenweave validate --repo ./model
+martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/supplier-bank-cutover.csv \
+  --out ./reports/bank-readiness</code></pre>
+<p>The implementation system manages the work.</p>
+<p>Martenweave preserves the expected semantic result.</p>
+<p>SAP MDG governs the operational record.</p>
+<p>---</p>
+<h1 id="cutover-requires-a-reconciliation-between-both-layers">Cutover requires a reconciliation between both layers</h1>
+<p>Before cutover, the programme should reconcile:</p>
+<h2 id="martenweave-view">Martenweave view</h2>
+<ul>
+<li>which records are ready;</li>
+<li>which source path produced them;</li>
+<li>which exceptions exist;</li>
+<li>which fallbacks are active;</li>
+<li>which Evidence supports the result.</li>
+</ul>
+<h2 id="sap-mdg-or-target-view">SAP MDG or target view</h2>
+<ul>
+<li>which records were accepted;</li>
+<li>which validations passed;</li>
+<li>which records entered workflow;</li>
+<li>which controls were applied;</li>
+<li>which records were rejected.</li>
+</ul>
+<p>The reconciliation should identify differences such as:</p>
+<pre><code>Martenweave ready:
+49,100
+
+Submitted to target:
+49,100
+
+Accepted:
+48,940
+
+Payment-blocked:
+2,800
+
+Rejected:
+160</code></pre>
+<p>Each rejection should be connected back to:</p>
+<ul>
+<li>model Attribute;</li>
+<li>Mapping;</li>
+<li>Rule;</li>
+<li>source data;</li>
+<li>target validation.</li>
+</ul>
+<p>This prevents target errors from becoming disconnected technical lists.</p>
+<p>---</p>
+<h1 id="a-target-rejection-can-reveal-different-problems">A target rejection can reveal different problems</h1>
+<p>The MDG or target process rejects a Supplier bank record.</p>
+<p>Possible causes include:</p>
+<h2 id="source-data-defect">Source-data defect</h2>
+<p>IBAN is invalid.</p>
+<h2 id="migration-mapping-defect">Migration Mapping defect</h2>
+<p>Bank country was normalised incorrectly.</p>
+<h2 id="model-gap">Model gap</h2>
+<p>The migration model omitted a target Rule.</p>
+<h2 id="target-configuration-change">Target-configuration change</h2>
+<p>The MDG validation changed after the model baseline.</p>
+<h2 id="identity-defect">Identity defect</h2>
+<p>The bank account was attached to the wrong Supplier.</p>
+<h2 id="valid-target-rejection">Valid target rejection</h2>
+<p>The record correctly failed a sensitive control.</p>
+<p>Martenweave should classify the rejection before proposing a model change.</p>
+<p>The target rejection is Evidence.</p>
+<p>It is not automatically proof that the canonical model is wrong.</p>
+<p>---</p>
+<h1 id="the-approved-model-should-not-be-rewritten-to-match-every-rejection">The approved model should not be rewritten to match every rejection</h1>
+<p>Suppose SAP rejects records without Treasury verification.</p>
+<p>The migration team could weaken the model:</p>
+<pre><code>Verification optional.</code></pre>
+<p>That would make the data appear more ready.</p>
+<p>It would contradict the target governance requirement.</p>
+<p>The correct response may be:</p>
+<ul>
+<li>enrich the dataset;</li>
+<li>retain payment block;</li>
+<li>exclude the records;</li>
+<li>correct the source;</li>
+<li>preserve the Rule.</li>
+</ul>
+<p>Martenweave should make it difficult to “solve” readiness by lowering the model standard.</p>
+<p>---</p>
+<h1 id="hypercare-should-preserve-the-link">Hypercare should preserve the link</h1>
+<p>After go-live, a Supplier payment incident occurs.</p>
+<p>SAP contains the bank account.</p>
+<p>The AMS team can inspect the operational record and MDG history.</p>
+<p>Martenweave should answer:</p>
+<ul>
+<li>which migration baseline created the account;</li>
+<li>which sources supplied the values;</li>
+<li>whether Treasury verification existed;</li>
+<li>whether payment block was expected;</li>
+<li>whether a fallback was used;</li>
+<li>which Finding or exception applied;</li>
+<li>which Decision authorised the path.</li>
+</ul>
+<p>This reduces investigation from archaeology to trace.</p>
+<p>The model registry remains useful because it preserves the context that existed before the record entered the target governance process.</p>
+<p>---</p>
+<h1 id="the-boundary-prevents-duplicate-workflows">The boundary prevents duplicate workflows</h1>
+<p>A common product mistake would be to add:</p>
+<ul>
+<li>record-by-record bank approval;</li>
+<li>steward inboxes;</li>
+<li>SAP activation;</li>
+<li>distribution;</li>
+<li>operational maintenance.</li>
+</ul>
+<p>That duplicates MDG.</p>
+<p>Another mistake would be to push all migration-model Decisions into MDG change requests.</p>
+<p>That overloads operational workflows with:</p>
+<ul>
+<li>source-field debates;</li>
+<li>mock-load Evidence;</li>
+<li>rejected transformation alternatives;</li>
+<li>temporary migration fallbacks;</li>
+<li>dataset profiles.</li>
+</ul>
+<p>The clean boundary is:</p>
+<pre><code>Martenweave:
+approve the model path
+
+SAP MDG:
+approve and govern the operational record</code></pre>
+<p>---</p>
+<h1 id="martenweave-should-not-depend-on-mdg">Martenweave should not depend on MDG</h1>
+<p>Not every programme uses SAP MDG.</p>
+<p>Some use:</p>
+<ul>
+<li>S/4HANA maintenance processes;</li>
+<li>another MDM platform;</li>
+<li>custom governance;</li>
+<li>staged migration approvals;</li>
+<li>manual stewardship.</li>
+</ul>
+<p>Martenweave should model the target governance layer generically.</p>
+<p>For example:</p>
+<pre><code>target_governance:
+  system: SAP MDG
+  process_reference: BP-BANK-CHANGE
+  required_control: TREASURY_VERIFICATION</code></pre>
+<p>Another project can use a different target system without redesigning the core model.</p>
+<p>SAP migration and MDM are the first domain pack, not the architectural boundary of Martenweave.</p>
+<p>---</p>
+<h1 id="martenweave-should-remain-useful-without-deep-integration">Martenweave should remain useful without deep integration</h1>
+<p>The first product version does not need to:</p>
+<ul>
+<li>call every MDG API;</li>
+<li>reproduce change-request screens;</li>
+<li>synchronise every workflow event;</li>
+<li>read the full SAP configuration model;</li>
+<li>write target records.</li>
+</ul>
+<p>A useful first integration can rely on:</p>
+<ul>
+<li>exported target requirements;</li>
+<li>stable external references;</li>
+<li>validation-result imports;</li>
+<li>load-result evidence;</li>
+<li>change-request IDs;</li>
+<li>manually confirmed status.</li>
+</ul>
+<p>The core value comes from the canonical model and traceability, not integration volume.</p>
+<p>---</p>
+<h1 id="a-practical-operating-model">A practical operating model</h1>
+<p>The joint process can be organised into six stages.</p>
+<h2 id="1-target-requirement-capture">1. Target requirement capture</h2>
+<p>SAP MDG owners define:</p>
+<ul>
+<li>target fields;</li>
+<li>validations;</li>
+<li>governance process;</li>
+<li>target roles;</li>
+<li>activation conditions.</li>
+</ul>
+<p>Martenweave records the migration-relevant references.</p>
+<h2 id="2-source-model-design">2. Source-model design</h2>
+<p>Martenweave defines:</p>
+<ul>
+<li>source authority;</li>
+<li>Attribute meaning;</li>
+<li>Mappings;</li>
+<li>Rules;</li>
+<li>fallbacks;</li>
+<li>Evidence requirements.</li>
+</ul>
+<h2 id="3-dataset-readiness">3. Dataset readiness</h2>
+<p>Martenweave profiles the candidate dataset and detects gaps against the approved model.</p>
+<h2 id="4-candidate-preparation">4. Candidate preparation</h2>
+<p>Transformation tooling generates the target candidate data using the approved model baseline.</p>
+<h2 id="5-target-governance">5. Target governance</h2>
+<p>SAP MDG validates and governs the operational record.</p>
+<h2 id="6-reconciliation-and-learning">6. Reconciliation and learning</h2>
+<p>Target results return as Evidence.</p>
+<p>Findings may create new PatchProposals.</p>
+<p>The approved model evolves through review.</p>
+<p>---</p>
+<h1 id="who-owns-what">Who owns what</h1>
+<p>A practical responsibility model for the Supplier bank-data case is:</p>
+<h2 id="migration-data-lead">Migration data lead</h2>
+<p>Owns:</p>
+<ul>
+<li>dataset readiness;</li>
+<li>transformation implementation;</li>
+<li>load scope;</li>
+<li>reconciliation.</li>
+</ul>
+<h2 id="treasury-data-owner">Treasury data owner</h2>
+<p>Owns:</p>
+<ul>
+<li>bank verification meaning;</li>
+<li>authority;</li>
+<li>acceptable fallback;</li>
+<li>risk acceptance.</li>
+</ul>
+<h2 id="sap-mdg-owner">SAP MDG owner</h2>
+<p>Owns:</p>
+<ul>
+<li>target governance process;</li>
+<li>target Rules;</li>
+<li>workflow;</li>
+<li>activation.</li>
+</ul>
+<h2 id="martenweave-model-owner">Martenweave model owner</h2>
+<p>Owns:</p>
+<ul>
+<li>canonical model consistency;</li>
+<li>Evidence links;</li>
+<li>Mapping and Rule representation;</li>
+<li>proposal workflow.</li>
+</ul>
+<h2 id="ams-owner">AMS owner</h2>
+<p>Owns:</p>
+<ul>
+<li>post-go-live incident handling;</li>
+<li>operational correction;</li>
+<li>feedback into Findings.</li>
+</ul>
+<p>This avoids the vague statement:</p>
+<blockquote>Data Governance owns it.</blockquote>
+<p>---</p>
+<h1 id="the-product-should-expose-the-handoff-explicitly">The product should expose the handoff explicitly</h1>
+<p>Martenweave Workbench should show a target-handoff view.</p>
+<p>For one migration Attribute, it should display:</p>
+<h2 id="migration-model">Migration model</h2>
+<ul>
+<li>source authority;</li>
+<li>Mapping;</li>
+<li>fallback;</li>
+<li>Evidence;</li>
+<li>readiness.</li>
+</ul>
+<h2 id="target-governance">Target governance</h2>
+<ul>
+<li>target system;</li>
+<li>endpoint;</li>
+<li>target Rule reference;</li>
+<li>required control;</li>
+<li>external workflow reference.</li>
+</ul>
+<h2 id="current-population">Current population</h2>
+<ul>
+<li>ready;</li>
+<li>controlled exception;</li>
+<li>blocked;</li>
+<li>excluded.</li>
+</ul>
+<h2 id="open-findings">Open Findings</h2>
+<ul>
+<li>missing verification;</li>
+<li>identity conflict;</li>
+<li>invalid value.</li>
+</ul>
+<h2 id="proposed-changes">Proposed changes</h2>
+<ul>
+<li>candidate model updates;</li>
+<li>validation;</li>
+<li>impact;</li>
+<li>approval status.</li>
+</ul>
+<p>Martenweave Workbench is currently described as a local browser UI for assessment, investigation, reports and controlled changes, while canonical truth remains in the model files.</p>
+<p>A handoff view would strengthen that role without duplicating the MDG UI.</p>
+<p>---</p>
+<h1 id="what-not-to-build">What not to build</h1>
+<p>Martenweave should not build:</p>
+<ul>
+<li>a parallel Business Partner maintenance UI;</li>
+<li>operational MDG workflows;</li>
+<li>target activation;</li>
+<li>direct SAP write-back;</li>
+<li>a universal integration bus;</li>
+<li>an enterprise workflow engine;</li>
+<li>an MDG replacement data model.</li>
+</ul>
+<p>Those additions would increase complexity while weakening the product thesis.</p>
+<p>Martenweave should instead improve:</p>
+<ul>
+<li>source-to-target canonical modelling;</li>
+<li>Evidence ingestion;</li>
+<li>dataset readiness;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>PatchProposals;</li>
+<li>target-governance references;</li>
+<li>reconciliation.</li>
+</ul>
+<p>---</p>
+<h1 id="the-smallest-useful-product-slice">The smallest useful product slice</h1>
+<p>A strong pilot can use one Supplier bank-data flow.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li>Finance bank extract;</li>
+<li>Supplier portal extract;</li>
+<li>Treasury verification file;</li>
+<li>SAP target-field definition;</li>
+<li>target validation result.</li>
+</ul>
+<h2 id="canonical-model">Canonical model</h2>
+<ul>
+<li>Supplier Bank Account Attribute;</li>
+<li>source authority;</li>
+<li>field-level Mapping;</li>
+<li>verification Rule;</li>
+<li>target endpoint;</li>
+<li>payment-block fallback.</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li>profile the datasets;</li>
+<li>identify missing verification;</li>
+<li>calculate affected payment-active Suppliers;</li>
+<li>generate a PatchProposal;</li>
+<li>validate the candidate model;</li>
+<li>approve the migration path;</li>
+<li>generate the target candidate;</li>
+<li>import the target result;</li>
+<li>reconcile rejected records;</li>
+<li>preserve Evidence.</li>
+</ol>
+<h2 id="demonstrated-value">Demonstrated value</h2>
+<p>The programme can explain:</p>
+<ul>
+<li>why each bank value was selected;</li>
+<li>which records are unsafe;</li>
+<li>which control SAP must apply;</li>
+<li>who approved the model;</li>
+<li>which target results differ from expectation.</li>
+</ul>
+<p>This is a credible product demonstration.</p>
+<p>---</p>
+<h1 id="current-and-proposed-capability">Current and proposed capability</h1>
+<p>Martenweave currently provides the relevant foundation:</p>
+<ul>
+<li>canonical files;</li>
+<li>deterministic validation;</li>
+<li>dataset-gap detection;</li>
+<li>lineage;</li>
+<li>impact;</li>
+<li>dataset readiness;</li>
+<li>proposals;</li>
+<li>Git-based review;</li>
+<li>local Workbench.</li>
+</ul>
+<p>The next product improvements should include:</p>
+<ul>
+<li>target-governance reference objects;</li>
+<li>external Rule references;</li>
+<li>handoff manifests;</li>
+<li>candidate-dataset baseline metadata;</li>
+<li>target-result Evidence import;</li>
+<li>migration-versus-target reconciliation;</li>
+<li>Workbench handoff view.</li>
+</ul>
+<p>These should remain generic enough to support SAP MDG and other governance targets.</p>
+<p>---</p>
+<h1 id="recommended-handoff-manifest">Recommended handoff manifest</h1>
+<p>A simple generated manifest might contain:</p>
+<pre><code>migration_baseline:
+  WAVE-2-RC4
+
+entity:
+  Supplier
+
+attribute:
+  Supplier Bank Account
+
+target_system:
+  SAP MDG
+
+target_process:
+  Business Partner bank-data governance
+
+model_commit:
+  abc123
+
+input_datasets:
+  - FINANCE-BANK-2026-07
+  - PORTAL-BANK-2026-07
+  - TREASURY-VERIFY-2026-07
+
+rules:
+  - IBAN country validation
+  - Treasury verification required
+  - payment block when verification absent
+
+population:
+  ready: 46140
+  controlled_exception: 2800
+  blocked: 160</code></pre>
+<p>This is a proposed product direction, not a current guaranteed schema.</p>
+<p>The manifest creates a clear handoff without moving canonical truth into the target workflow.</p>
+<p>---</p>
+<h1 id="the-economic-value-of-cooperation">The economic value of cooperation</h1>
+<p>The value is not merely architectural neatness.</p>
+<p>The joint model reduces:</p>
+<ul>
+<li>repeated source-analysis workshops;</li>
+<li>ambiguous mappings;</li>
+<li>late target rejections;</li>
+<li>undocumented defaults;</li>
+<li>manual reconciliation;</li>
+<li>duplicated approval effort;</li>
+<li>hypercare investigation time;</li>
+<li>dependence on individual consultants.</li>
+</ul>
+<p>SAP MDG reduces operational master-data risk.</p>
+<p>Martenweave should reduce migration-model ambiguity and the cost of reconstructing decisions.</p>
+<p>Together, they address different parts of the same data transformation.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Martenweave and SAP MDG should not compete for ownership of the same layer.</p>
+<p>Their responsibilities should connect in sequence.</p>
+<pre><code>Source evidence
+→ Martenweave migration model
+→ validated candidate dataset
+→ SAP MDG target governance
+→ target result
+→ Martenweave reconciliation evidence</code></pre>
+<p>For Supplier bank data, Martenweave should answer:</p>
+<ul>
+<li>which source owns each value;</li>
+<li>which Mapping produced the candidate;</li>
+<li>which evidence supports verification;</li>
+<li>which fallback is allowed;</li>
+<li>which population is ready;</li>
+<li>which target control is required.</li>
+</ul>
+<p>SAP MDG should answer:</p>
+<ul>
+<li>whether the operational change is accepted;</li>
+<li>which steward approved it;</li>
+<li>which target validations passed;</li>
+<li>when it became active;</li>
+<li>how later changes are governed.</li>
+</ul>
+<p>The practical test is:</p>
+<blockquote>Can the programme trace one migrated Supplier bank account from source evidence through an approved migration model into the SAP MDG-governed target record, without asking one system to perform the other system’s job?</blockquote>
+<p>When the answer is yes, the architecture is coherent.</p>
+<p>When the answer is:</p>
+<blockquote>MDG is present, so the mapping spreadsheet does not need governance,</blockquote>
+<p>the programme has protected the target workflow while leaving the path into it fragmented.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It is designed to work alongside SAP MDG:</p>
+<pre><code>Martenweave governs the migration model.
+
+SAP MDG governs operational master data.
+
+Validators verify.
+
+Humans approve.
+
+Git records.</code></pre>
+<p>The value comes from the handoff and feedback loop—not from attempting to replace the target governance platform.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>SAP currently describes SAP Master Data Governance as a central governance layer for business-critical master data. Its documented capabilities include governed models, golden records, profiling, matching, consolidation, workflow routing, validated values, business rules, data-quality monitoring, mass changes and auditable data changes.</p>
+<p>SAP also recommends curating master data before an SAP S/4HANA move and states that SAP MDG can consolidate and actively govern master data for SAP and third-party applications.</p>
+<p>Martenweave Core currently defines canonical Markdown and YAML files as the source of truth, generated indexes as disposable and AI-generated changes as reviewable PatchProposals rather than silent mutations.</p>
+<p>Its documented pipeline moves from Evidence and profiling through validation, dataset/model gaps, lineage and impact analysis to proposals and human-reviewed GitHub issues or pull requests.</p>
+<p>Martenweave explicitly positions itself as a backend-first model-governance pipeline rather than a hosted MDM platform, generic workflow engine or direct SAP write-back mechanism.</p>
+<p>The target-governance references, handoff manifest, reconciliation flow and Workbench handoff view described here are recommended product directions. They should not be interpreted as guarantees of a current deep SAP MDG integration, target workflow connector or direct SAP execution capability.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-mdg-implementation-knowledge.html">SAP Master Data Governance can manage governed records, change requests, workflows, data quality rules and the operational lifecycle of master data.</a></li><li><a href="/blog/what-to-prepare-before-starting-an-sap-mdg-implementation.html">An SAP MDG implementation often appears to begin with the platform.</a></li><li><a href="/blog/how-sap-data-migration-and-mdg-implementation-should-work-together.html">SAP data migration and SAP Master Data Governance are often organised as separate workstreams.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/why-sap-mdg-is-not-a-replacement-for-a-migration-model-registry.html"><span>Previous</span>A programme is migrating Supplier bank data into SAP S/4HANA.</a><a href="/blog/why-migration-mapping-workbooks-become-technical-debt-and-what-should.html"><span>Next</span>A migration programme creates a mapping workbook for Product planning data.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

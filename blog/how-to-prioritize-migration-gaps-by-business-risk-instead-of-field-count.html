@@ -1,0 +1,1456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to Prioritize Migration Gaps by Business Risk Instead of Field Count | Martenweave</title>
+    <meta
+      name="description"
+      content="A readiness report identifies 137 data gaps."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html" />
+    <meta property="og:title" content="How to Prioritize Migration Gaps by Business Risk Instead of Field Count | Martenweave" />
+    <meta property="og:description" content="A readiness report identifies 137 data gaps." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://www.linkedin.com/in/dkharlanau/" />
+    <meta property="article:published_time" content="2026-07-14" />
+    <meta property="article:modified_time" content="2026-07-14" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Prioritize Migration Gaps by Business Risk Instead of Field Count | Martenweave" />
+    <meta name="twitter:description" content="A readiness report identifies 137 data gaps." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html#webpage",
+                        "url": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html",
+                        "name": "How to Prioritize Migration Gaps by Business Risk Instead of Field Count | Martenweave",
+                        "description": "A readiness report identifies 137 data gaps.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "How to Prioritize Migration Gaps by Business Risk Instead of Field Count",
+                                    "item": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html#content",
+                        "headline": "How to Prioritize Migration Gaps by Business Risk Instead of Field Count",
+                        "name": "How to Prioritize Migration Gaps by Business Risk Instead of Field Count",
+                        "description": "A readiness report identifies 137 data gaps.",
+                        "url": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/how-to-prioritize-migration-gaps-by-business-risk-instead-of-field-count.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-14",
+                        "dateModified": "2026-07-14",
+                        "articleSection": "Migration readiness",
+                        "keywords": "Migration readiness",
+                        "timeRequired": "PT23M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://www.linkedin.com/in/dkharlanau/",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">How to Prioritize Migration Gaps by Business Risk Instead of Field Count</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Migration readiness</p><h1>How to Prioritize Migration Gaps by Business Risk Instead of Field Count</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-14">14 July 2026</time> · 23 min read</p><p class="blog-summary">A readiness report identifies 137 data gaps.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#gap-a">Gap A</a></li><li><a href="#gap-b">Gap B</a></li><li><a href="#1-business-criticality">1. Business criticality</a></li><li><a href="#2-affected-population">2. Affected population</a></li><li><a href="#3-process-proximity">3. Process proximity</a></li><li><a href="#4-fallback-quality">4. Fallback quality</a></li><li><a href="#5-detectability">5. Detectability</a></li><li><a href="#6-reversibility">6. Reversibility</a></li><li><a href="#7-evidence-confidence">7. Evidence confidence</a></li><li><a href="#gap">Gap</a></li><li><a href="#population">Population</a></li><li><a href="#business-criticality">Business criticality</a></li><li><a href="#process-proximity">Process proximity</a></li><li><a href="#fallback">Fallback</a></li><li><a href="#detectability">Detectability</a></li></ol></nav></details></header>
+<p><strong>Reviewed: 14 July 2026</strong></p>
+<p>A readiness report identifies 137 data gaps.</p>
+<p>The programme sorts them by frequency:</p>
+<pre><code class="language-text">Missing Product descriptions: 18,400 records
+Missing Customer search terms: 9,200 records
+Missing Supplier marketing classifications: 6,700 records
+Missing Cost Centre valid-from date: 74 records
+Missing Supplier Payment Method: 31 records</code></pre>
+<p>The first three findings dominate the dashboard.</p>
+<p>Teams are assigned to fix the largest populations.</p>
+<p>The Cost Centre and Supplier findings remain lower in the backlog because they affect fewer records.</p>
+<p>Then cutover begins.</p>
+<p>The missing descriptions cause inconvenience.</p>
+<p>The 74 Cost Centres cannot accept postings on the first day of production.</p>
+<p>The 31 Suppliers cannot be included in the first payment run.</p>
+<p>The programme fixed the largest gaps first.</p>
+<p>It did not fix the largest risks first.</p>
+<blockquote>Migration-gap priority should be based on the business consequence of an unresolved model path, not on the number of missing fields or affected rows alone.</blockquote>
+<p>Field count is easy to calculate.</p>
+<p>Risk requires context.</p>
+<p>A serious prioritisation model must consider:</p>
+<ul>
+<li>what the missing data means;</li>
+<li>which Entity and organisational level it belongs to;</li>
+<li>whether the path is mandatory;</li>
+<li>what process depends on it;</li>
+<li>how many records are affected;</li>
+<li>when the value is needed;</li>
+<li>whether a safe fallback exists;</li>
+<li>whether the defect can be detected after go-live;</li>
+<li>whether correction is reversible;</li>
+<li>which evidence supports the assessment.</li>
+</ul>
+<p>Martenweave already connects canonical model objects, deterministic validation, dataset gaps, lineage, impact analysis and reviewable PatchProposals in one backend-first pipeline. Its current CLI also exposes health, scorecard, trace, impact and dataset-readiness operations.</p>
+<p>That architecture makes it possible to prioritise a gap by the complete business path it interrupts rather than by its position in a spreadsheet.</p>
+<p>---</p>
+<h1 id="field-count-is-not-risk">Field count is not risk</h1>
+<p>Consider two gaps.</p>
+<h2 id="gap-a">Gap A</h2>
+<pre><code class="language-text">18,400 Products lack a secondary marketing description.</code></pre>
+<p>Potential consequence:</p>
+<ul>
+<li>incomplete search;</li>
+<li>reduced usability;</li>
+<li>weaker catalogue presentation.</li>
+</ul>
+<h2 id="gap-b">Gap B</h2>
+<pre><code class="language-text">12 Product Plant records lack Procurement Type.</code></pre>
+<p>Potential consequence:</p>
+<ul>
+<li>incorrect planning behaviour;</li>
+<li>missing procurement proposals;</li>
+<li>production or replenishment disruption.</li>
+</ul>
+<p>Gap A affects more records.</p>
+<p>Gap B may carry more operational risk.</p>
+<p>A prioritisation process that sorts only by affected-row count will place Gap A first.</p>
+<p>A business-risk model should probably place Gap B first.</p>
+<p>The point is not that descriptions never matter.</p>
+<p>The point is that population size must be interpreted through business consequence.</p>
+<p>---</p>
+<h1 id="a-gap-is-a-broken-obligation">A gap is a broken obligation</h1>
+<p>A useful way to think about a migration gap is:</p>
+<blockquote>Which obligation can no longer be fulfilled because this model path is incomplete?</blockquote>
+<p>Possible obligations include:</p>
+<ul>
+<li>create the target master record;</li>
+<li>assign the correct organisational extension;</li>
+<li>pass a legal validation;</li>
+<li>allow payment;</li>
+<li>allow posting;</li>
+<li>support production planning;</li>
+<li>route an invoice;</li>
+<li>replicate the value downstream;</li>
+<li>preserve historical interpretation;</li>
+<li>demonstrate control compliance.</li>
+</ul>
+<p>The gap itself may be:</p>
+<pre><code class="language-text">field missing</code></pre>
+<p>The obligation may be:</p>
+<pre><code class="language-text">Supplier cannot be paid</code></pre>
+<p>or:</p>
+<pre><code class="language-text">Product cannot be planned correctly</code></pre>
+<p>Risk belongs to the obligation, not to the field count.</p>
+<p>---</p>
+<h1 id="prioritise-paths-not-isolated-columns">Prioritise paths, not isolated columns</h1>
+<p>A dataset report may find:</p>
+<pre><code class="language-text">Missing field:
+PLANT</code></pre>
+<p>The same field can participate in several paths:</p>
+<ul>
+<li>Product Plant MRP Controller;</li>
+<li>Product Plant Procurement Type;</li>
+<li>Product Plant Profit Centre;</li>
+<li>Product Plant loading group;</li>
+<li>Product Plant storage conditions.</li>
+</ul>
+<p>One missing key can break several target assignments.</p>
+<p>Conversely, five missing descriptive columns may affect only one low-criticality output.</p>
+<p>Therefore, prioritisation should traverse:</p>
+<pre><code class="language-text">dataset gap
+→ Mapping dependency
+→ business Attribute or Relationship
+→ target endpoint
+→ Rule
+→ downstream process</code></pre>
+<p>The priority belongs to the resulting impact set.</p>
+<p>---</p>
+<h1 id="seven-dimensions-of-migration-gap-risk">Seven dimensions of migration-gap risk</h1>
+<p>A practical risk model can use seven dimensions.</p>
+<h2 id="1-business-criticality">1. Business criticality</h2>
+<p>What happens when the value is missing or wrong?</p>
+<p>Typical levels:</p>
+<h3 id="critical">Critical</h3>
+<p>Could prevent a core process, create legal or financial exposure, corrupt ownership or produce unsafe operational behaviour.</p>
+<h3 id="high">High</h3>
+<p>Could materially disrupt operations, reporting or a significant population.</p>
+<h3 id="medium">Medium</h3>
+<p>Creates manageable manual work, reduced quality or bounded process degradation.</p>
+<h3 id="low">Low</h3>
+<p>Primarily affects convenience, description, search or noncritical reporting.</p>
+<p>Criticality should be assigned to the Attribute in context, not only to the physical field.</p>
+<h2 id="2-affected-population">2. Affected population</h2>
+<p>How many records, organisational units or transactions are exposed?</p>
+<p>Population remains important.</p>
+<p>It is simply not sufficient on its own.</p>
+<h2 id="3-process-proximity">3. Process proximity</h2>
+<p>When will the value be needed?</p>
+<p>Examples:</p>
+<ul>
+<li>during master-data creation;</li>
+<li>before cutover;</li>
+<li>during the first payment run;</li>
+<li>during the first MRP run;</li>
+<li>before month-end close;</li>
+<li>only in a later reporting cycle.</li>
+</ul>
+<p>A small gap needed tomorrow may be more urgent than a large gap needed in three months.</p>
+<h2 id="4-fallback-quality">4. Fallback quality</h2>
+<p>Is there a safe alternative?</p>
+<p>Possible classifications:</p>
+<ul>
+<li>no fallback;</li>
+<li>equivalent approved fallback;</li>
+<li>transformable fallback;</li>
+<li>manual controlled fallback;</li>
+<li>approximate fallback;</li>
+<li>undocumented default;</li>
+<li>expired fallback.</li>
+</ul>
+<p>A good fallback lowers immediate delivery risk.</p>
+<p>It may still create remediation debt.</p>
+<h2 id="5-detectability">5. Detectability</h2>
+<p>Will an incorrect value be detected quickly?</p>
+<p>A missing mandatory field that blocks the load is highly visible.</p>
+<p>A plausible but wrong Profit Centre may post successfully and remain unnoticed until financial reporting.</p>
+<p>Low detectability increases risk.</p>
+<h2 id="6-reversibility">6. Reversibility</h2>
+<p>How difficult is correction after go-live?</p>
+<p>Examples:</p>
+<ul>
+<li>optional description: easy;</li>
+<li>wrong partner relationship after invoices are created: difficult;</li>
+<li>wrong base unit after stock exists: potentially severe;</li>
+<li>wrong tax category after documents are posted: complex;</li>
+<li>missing search term: usually easy.</li>
+</ul>
+<p>Low reversibility increases priority.</p>
+<h2 id="7-evidence-confidence">7. Evidence confidence</h2>
+<p>How certain is the impact assessment?</p>
+<p>A high-risk conclusion with weak evidence may require immediate investigation.</p>
+<p>It should not automatically be downgraded because uncertainty exists.</p>
+<p>---</p>
+<h1 id="severity-and-urgency-are-different">Severity and urgency are different</h1>
+<p>A gap can be severe without being immediately urgent.</p>
+<p>Example:</p>
+<pre><code class="language-text">Historical Product classification required only for a later analytics migration.</code></pre>
+<p>Potential severity may be high for reporting integrity.</p>
+<p>Urgency may be low before the analytics phase.</p>
+<p>Another gap may be moderately severe but highly urgent:</p>
+<pre><code class="language-text">Missing Shipping Condition for customers in tomorrow’s cutover population.</code></pre>
+<p>A useful queue should therefore show both:</p>
+<pre><code class="language-text">Business severity
+Delivery urgency</code></pre>
+<p>Combining them into one hidden score makes prioritisation harder to explain.</p>
+<p>---</p>
+<h1 id="example-1-supplier-payment-method">Example 1: Supplier Payment Method</h1>
+<h2 id="gap">Gap</h2>
+<p>Payment Method is missing for 31 Suppliers in Company Code 3100.</p>
+<h2 id="population">Population</h2>
+<p>Small.</p>
+<h2 id="business-criticality">Business criticality</h2>
+<p>High.</p>
+<h2 id="process-proximity">Process proximity</h2>
+<p>Needed for the first payment proposal.</p>
+<h2 id="fallback">Fallback</h2>
+<p>Manual maintenance is possible but requires Finance approval.</p>
+<h2 id="detectability">Detectability</h2>
+<p>High: the payment run will exclude the Supplier.</p>
+<h2 id="reversibility">Reversibility</h2>
+<p>Moderate: records can be corrected, but delayed payments may have contractual consequences.</p>
+<h2 id="priority">Priority</h2>
+<p>Critical before the first payment run.</p>
+<p>A field-count model sees 31 records.</p>
+<p>A business-risk model sees payment continuity.</p>
+<p>---</p>
+<h1 id="example-2-product-marketing-descriptions">Example 2: Product marketing descriptions</h1>
+<h2 id="gap-2">Gap</h2>
+<p>Secondary description is missing for 18,400 Products.</p>
+<h2 id="population-2">Population</h2>
+<p>Large.</p>
+<h2 id="business-criticality-2">Business criticality</h2>
+<p>Low to medium, depending on downstream catalogue use.</p>
+<h2 id="process-proximity-2">Process proximity</h2>
+<p>Not required for basic material creation or planning.</p>
+<h2 id="fallback-2">Fallback</h2>
+<p>Primary description remains available.</p>
+<h2 id="detectability-2">Detectability</h2>
+<p>High: users can see the missing text.</p>
+<h2 id="reversibility-2">Reversibility</h2>
+<p>High: description can usually be added later.</p>
+<h2 id="priority-2">Priority</h2>
+<p>Lower than operational planning, financial and legal gaps.</p>
+<p>This gap should remain visible.</p>
+<p>It should not consume the same cutover attention as a missing planning key.</p>
+<p>---</p>
+<h1 id="example-3-cost-centre-valid-from-date">Example 3: Cost Centre valid-from date</h1>
+<h2 id="gap-3">Gap</h2>
+<p>Valid-from date is absent for 74 Cost Centres.</p>
+<h2 id="population-3">Population</h2>
+<p>Small.</p>
+<h2 id="business-criticality-3">Business criticality</h2>
+<p>Critical.</p>
+<h2 id="process-proximity-3">Process proximity</h2>
+<p>Required on the first day of posting.</p>
+<h2 id="fallback-3">Fallback</h2>
+<p>A go-live-date default may be possible but requires Finance approval and historical review.</p>
+<h2 id="detectability-3">Detectability</h2>
+<p>High when postings fail, but not necessarily during basic object creation.</p>
+<h2 id="reversibility-3">Reversibility</h2>
+<p>Moderate to difficult once dependent postings and assignments exist.</p>
+<h2 id="priority-3">Priority</h2>
+<p>Immediate.</p>
+<p>The gap should outrank thousands of missing descriptive fields.</p>
+<p>---</p>
+<h1 id="risk-is-contextual">Risk is contextual</h1>
+<p>The same Attribute can have different priority in different populations.</p>
+<p>Consider Product Serial Number Profile.</p>
+<h2 id="population-a">Population A</h2>
+<p>Products managed without serial tracking.</p>
+<p>Missing profile may be inapplicable.</p>
+<h2 id="population-b">Population B</h2>
+<p>High-value equipment requiring traceability.</p>
+<p>Missing profile may create operational and audit risk.</p>
+<p>The field is identical.</p>
+<p>The business path differs.</p>
+<p>Priority must be scoped by:</p>
+<ul>
+<li>Product type;</li>
+<li>Plant;</li>
+<li>process;</li>
+<li>regulatory or contractual requirement.</li>
+</ul>
+<p>A universal field-level criticality flag is too coarse.</p>
+<p>---</p>
+<h1 id="example-4-product-serial-number-profile">Example 4: Product serial-number profile</h1>
+<p>A source file lacks Serial Number Profile for 120 Products.</p>
+<p>Further analysis shows:</p>
+<ul>
+<li>100 are ordinary consumables;</li>
+<li>20 are repairable equipment requiring serial traceability.</li>
+</ul>
+<p>A row-count view treats the entire gap equally.</p>
+<p>A business-risk view separates:</p>
+<pre><code class="language-text">100 low-risk or not-applicable records
+20 critical records</code></pre>
+<p>Recommended priority:</p>
+<ol>
+<li>resolve the 20 traceability-critical Products;</li>
+<li>confirm that the remaining population is truly out of scope;</li>
+<li>do not spend cutover time manufacturing values for inapplicable records.</li>
+</ol>
+<p>This is a better use of limited migration capacity.</p>
+<p>---</p>
+<h1 id="mandatory-does-not-always-mean-critical">Mandatory does not always mean critical</h1>
+<p>A field can be technically mandatory in SAP because of configuration.</p>
+<p>That does not automatically make the business meaning critical.</p>
+<p>A default may satisfy the technical requirement without business harm.</p>
+<p>Conversely, a technically optional field can be operationally critical.</p>
+<p>Example:</p>
+<ul>
+<li>a custom Review Status field may be optional in the database;</li>
+<li>the business process may depend on it to prevent unapproved Supplier distribution.</li>
+</ul>
+<p>Therefore, criticality should consider:</p>
+<pre><code class="language-text">technical requiredness
++
+business requiredness
++
+process consequence</code></pre>
+<p>Do not derive risk from target nullability alone.</p>
+<p>---</p>
+<h1 id="example-5-supplier-bank-account-ownership">Example 5: Supplier bank-account ownership</h1>
+<p>The target bank fields are technically complete.</p>
+<p>The gap is:</p>
+<pre><code class="language-text">Ownership verification evidence missing for 680 Suppliers.</code></pre>
+<p>No column is absent.</p>
+<p>The issue may not appear in a schema-gap report.</p>
+<p>Business risk is high because:</p>
+<ul>
+<li>payments could go to an account not sufficiently associated with the Supplier;</li>
+<li>duplicate or shared accounts may remain unresolved;</li>
+<li>control evidence is incomplete.</li>
+</ul>
+<p>Priority should be based on:</p>
+<ul>
+<li>payment-active status;</li>
+<li>value volume;</li>
+<li>verification policy;</li>
+<li>available payment block.</li>
+</ul>
+<p>A Supplier blocked from payment may be safely deferred.</p>
+<p>An active Supplier scheduled for immediate payment may be critical.</p>
+<p>---</p>
+<h1 id="gap-type-influences-risk">Gap type influences risk</h1>
+<p>Different gap types tend to create different risk patterns.</p>
+<h2 id="missing-direct-value">Missing direct value</h2>
+<p>May cause blank target or explicit rejection.</p>
+<p>Usually visible.</p>
+<h2 id="missing-key-or-context">Missing key or context</h2>
+<p>May attach a plausible value to the wrong record.</p>
+<p>Often less visible and more dangerous.</p>
+<h2 id="invalid-value">Invalid value</h2>
+<p>May be rejected—or may map incorrectly.</p>
+<h2 id="missing-rule-input">Missing Rule input</h2>
+<p>May prevent the programme from deciding whether a control applies.</p>
+<h2 id="missing-evidence">Missing evidence</h2>
+<p>May leave a technically successful path unverified.</p>
+<h2 id="conflicting-source-values">Conflicting source values</h2>
+<p>May create silent source-authority mistakes.</p>
+<h2 id="unexpected-field">Unexpected field</h2>
+<p>May indicate a model gap rather than a data defect.</p>
+<p>Risk logic should reflect the gap type.</p>
+<p>---</p>
+<h1 id="missing-context-often-deserves-higher-priority-than-missing-value">Missing context often deserves higher priority than missing value</h1>
+<p>Suppose a Customer partner-function dataset contains:</p>
+<pre><code class="language-text">CUSTOMER_ID
+PARTNER_ID
+PARTNER_ROLE</code></pre>
+<p>but lacks:</p>
+<pre><code class="language-text">SALES_ORG
+DISTRIBUTION_CHANNEL
+DIVISION</code></pre>
+<p>The partner values are present.</p>
+<p>The context is missing.</p>
+<p>A migration could:</p>
+<ul>
+<li>reject the records;</li>
+<li>assign them centrally;</li>
+<li>duplicate them across Sales Areas;</li>
+<li>apply a default Sales Area.</li>
+</ul>
+<p>Only the first option makes the uncertainty obvious.</p>
+<p>The other options can create plausible but wrong relationships.</p>
+<p>A missing contextual key is often more dangerous than a blank optional value because the result can pass technical validation.</p>
+<p>---</p>
+<h1 id="example-6-customer-payer-assignment">Example 6: Customer Payer assignment</h1>
+<h2 id="gap-4">Gap</h2>
+<p>Sales Area keys are missing for 240 Payer relationships.</p>
+<h2 id="population-4">Population</h2>
+<p>Moderate.</p>
+<h2 id="business-criticality-4">Business criticality</h2>
+<p>High.</p>
+<h2 id="process-impact">Process impact</h2>
+<p>Billing responsibility and invoice routing.</p>
+<h2 id="fallback-4">Fallback</h2>
+<p>Self-Payer is technically possible but not approved globally.</p>
+<h2 id="detectability-4">Detectability</h2>
+<p>Low to medium: invoices may be created successfully and sent to the wrong party.</p>
+<h2 id="reversibility-4">Reversibility</h2>
+<p>Difficult after billing documents exist.</p>
+<h2 id="priority-4">Priority</h2>
+<p>High, despite a relatively small population.</p>
+<p>A field-count model may bury this gap beneath thousands of missing search terms.</p>
+<p>---</p>
+<h1 id="detectability-changes-the-ranking">Detectability changes the ranking</h1>
+<p>Some defects fail loudly.</p>
+<p>Others produce plausible output.</p>
+<p>Loud failures are painful but easier to control.</p>
+<p>Silent defects can be more dangerous.</p>
+<h2 id="loud-failure">Loud failure</h2>
+<p>Missing mandatory Company Code key causes a load rejection.</p>
+<h2 id="silent-failure">Silent failure</h2>
+<p>Central Payment Terms copied to every Company Code.</p>
+<p>The second may load successfully and affect cash flow later.</p>
+<p>A prioritisation model should penalise low detectability.</p>
+<p>---</p>
+<h1 id="example-7-supplier-payment-terms">Example 7: Supplier Payment Terms</h1>
+<p>A dataset contains one Payment Term per Supplier.</p>
+<p>The target requires Company Code-specific values.</p>
+<p>The migration applies the central value to all Company Codes.</p>
+<p>No field is missing.</p>
+<p>No load error occurs.</p>
+<p>The gap is contextual model coverage.</p>
+<p>Risk factors:</p>
+<ul>
+<li>local contractual differences;</li>
+<li>invoice due dates;</li>
+<li>payment forecasting;</li>
+<li>cash management;</li>
+<li>correction after posted invoices.</li>
+</ul>
+<p>This can deserve higher priority than a visible missing-field rejection because the defect may remain hidden until financial processing.</p>
+<p>---</p>
+<h1 id="reversibility-changes-the-ranking">Reversibility changes the ranking</h1>
+<p>A gap that is easy to fix after go-live may tolerate a later deadline.</p>
+<p>A gap that becomes expensive or dangerous after transactions exist should move earlier.</p>
+<h2 id="high-reversibility">High reversibility</h2>
+<ul>
+<li>search term;</li>
+<li>optional description;</li>
+<li>noncritical classification;</li>
+<li>unused report label.</li>
+</ul>
+<h2 id="low-reversibility">Low reversibility</h2>
+<ul>
+<li>Product Base Unit;</li>
+<li>legal identifier category;</li>
+<li>partner relationship used by documents;</li>
+<li>Cost Centre validity after postings;</li>
+<li>Profit Centre used in inventory postings;</li>
+<li>bank account used in payments.</li>
+</ul>
+<p>This is not absolute.</p>
+<p>Context matters.</p>
+<p>But reversibility is a powerful prioritisation dimension.</p>
+<p>---</p>
+<h1 id="example-8-product-base-unit">Example 8: Product Base Unit</h1>
+<h2 id="gap-5">Gap</h2>
+<p>Source systems disagree whether the base unit is <code>PC</code> or <code>EA</code>.</p>
+<h2 id="affected-population">Affected population</h2>
+<p>Only 46 Products.</p>
+<h2 id="business-criticality-5">Business criticality</h2>
+<p>Critical.</p>
+<h2 id="process-proximity-4">Process proximity</h2>
+<p>Needed before stock and open documents are migrated.</p>
+<h2 id="fallback-5">Fallback</h2>
+<p>None should be assumed.</p>
+<h2 id="detectability-5">Detectability</h2>
+<p>Potentially low if both codes are technically valid.</p>
+<h2 id="reversibility-5">Reversibility</h2>
+<p>Very low after stock and transactional data exist.</p>
+<h2 id="priority-5">Priority</h2>
+<p>Immediate design decision before cutover.</p>
+<p>Forty-six records can outrank tens of thousands of missing descriptions.</p>
+<p>---</p>
+<h1 id="population-still-matters">Population still matters</h1>
+<p>Business-risk prioritisation should not swing too far and ignore volume.</p>
+<p>A medium-risk issue affecting 500,000 records can be more serious than a high-risk issue affecting one record with a safe workaround.</p>
+<p>Population can be measured as:</p>
+<ul>
+<li>record count;</li>
+<li>percentage;</li>
+<li>number of organisational units;</li>
+<li>number of downstream consumers;</li>
+<li>transaction volume;</li>
+<li>financial exposure;</li>
+<li>number of business owners.</li>
+</ul>
+<p>The right denominator depends on the Attribute.</p>
+<p>For bank data, payment-active Suppliers may matter more than total Suppliers.</p>
+<p>For Product planning, active Product Plant records matter more than all Products.</p>
+<p>For partner functions, active Sales Areas matter more than central Customer count.</p>
+<p>---</p>
+<h1 id="use-the-affected-business-population">Use the affected business population</h1>
+<p>Weak denominator:</p>
+<pre><code class="language-text">680 of 80,000 Suppliers affected</code></pre>
+<p>Stronger denominator:</p>
+<pre><code class="language-text">680 of 4,200 payment-active Suppliers affected</code></pre>
+<p>Weak denominator:</p>
+<pre><code class="language-text">120 of 100,000 Products affected</code></pre>
+<p>Stronger denominator:</p>
+<pre><code class="language-text">20 of 140 serial-controlled repair Products affected</code></pre>
+<p>Risk changes when the correct population is used.</p>
+<p>Lineage and applicability Rules help define that denominator.</p>
+<p>---</p>
+<h1 id="example-9-tax-identifier-category">Example 9: Tax Identifier category</h1>
+<h2 id="gap-6">Gap</h2>
+<p>Country-specific tax category is unresolved for 1,240 Suppliers.</p>
+<h2 id="total-supplier-population">Total Supplier population</h2>
+<p>90,000.</p>
+<p>The issue appears small.</p>
+<h2 id="relevant-population">Relevant population</h2>
+<p>1,240 Suppliers in the affected country.</p>
+<p>Coverage is effectively zero for that scope.</p>
+<h2 id="business-impact">Business impact</h2>
+<ul>
+<li>legal validation;</li>
+<li>invoice processing;</li>
+<li>duplicate detection;</li>
+<li>reporting.</li>
+</ul>
+<h2 id="fallback-6">Fallback</h2>
+<p>Generic category exists technically but is not legally confirmed.</p>
+<h2 id="priority-6">Priority</h2>
+<p>Critical for the affected country.</p>
+<p>A global percentage would hide the local completeness failure.</p>
+<p>---</p>
+<h1 id="local-blockers-should-survive-global-aggregation">Local blockers should survive global aggregation</h1>
+<p>A programme dashboard may show:</p>
+<pre><code class="language-text">Tax data readiness: 98.6%</code></pre>
+<p>This can coexist with:</p>
+<pre><code class="language-text">Portugal tax-category readiness: 0%</code></pre>
+<p>The global result should not erase the local blocker.</p>
+<p>A risk-prioritisation system should preserve:</p>
+<ul>
+<li>global score;</li>
+<li>local critical findings;</li>
+<li>lowest critical path;</li>
+<li>blocked scope.</li>
+</ul>
+<p>A programme can be largely ready and still unable to release one jurisdiction safely.</p>
+<p>---</p>
+<h1 id="fallback-quality-is-central-to-priority">Fallback quality is central to priority</h1>
+<p>Two gaps with similar impact may have different urgency because one has a reliable fallback.</p>
+<h2 id="gap-a-2">Gap A</h2>
+<p>Authoritative source temporarily unavailable.</p>
+<p>A verified replica exists and is less than one day old.</p>
+<h2 id="gap-b-2">Gap B</h2>
+<p>Authoritative source unavailable.</p>
+<p>Only a manually maintained spreadsheet exists with unclear ownership.</p>
+<p>Gap A may be controlled.</p>
+<p>Gap B may require immediate intervention.</p>
+<p>Fallback classification should include:</p>
+<ul>
+<li>semantic equivalence;</li>
+<li>freshness;</li>
+<li>governance;</li>
+<li>capacity;</li>
+<li>traceability;</li>
+<li>expiry;</li>
+<li>reconciliation.</li>
+</ul>
+<p>---</p>
+<h1 id="example-10-product-mrp-controller">Example 10: Product MRP Controller</h1>
+<p>Two plants lack the final MRP Controller conversion.</p>
+<h2 id="plant-pl10">Plant PL10</h2>
+<p>Fallback is an approved planner-team assignment tested during rehearsal.</p>
+<h2 id="plant-pl30">Plant PL30</h2>
+<p>Fallback is controller <code>001</code>, selected only because it is technically valid.</p>
+<p>The number of affected records is similar.</p>
+<p>Risk differs.</p>
+<p>PL10 may be conditionally ready.</p>
+<p>PL30 may be blocked.</p>
+<p>A fallback is not just a nonblank value.</p>
+<p>It is an alternate governed path.</p>
+<p>---</p>
+<h1 id="manual-fallback-capacity">Manual fallback capacity</h1>
+<p>A manual process may be safe for 20 records and impossible for 20,000.</p>
+<p>Therefore, fallback risk should account for capacity.</p>
+<p>Questions include:</p>
+<ul>
+<li>how many records require review;</li>
+<li>how long each review takes;</li>
+<li>which qualified owners are available;</li>
+<li>whether review can finish before the deadline;</li>
+<li>whether decisions are auditable;</li>
+<li>whether records can be identified later.</li>
+</ul>
+<p>A manual fallback is not scalable by default.</p>
+<p>---</p>
+<h1 id="timing-should-be-tied-to-the-first-affected-process">Timing should be tied to the first affected process</h1>
+<p>The deadline for a gap is not always cutover.</p>
+<p>Examples:</p>
+<h2 id="supplier-bank-verification">Supplier bank verification</h2>
+<p>Before first payment.</p>
+<h2 id="product-profit-centre">Product Profit Centre</h2>
+<p>Before first inventory posting or month-end close.</p>
+<h2 id="product-serial-profile">Product serial profile</h2>
+<p>Before warehouse or delivery execution.</p>
+<h2 id="customer-payer">Customer Payer</h2>
+<p>Before billing.</p>
+<h2 id="cost-centre-hierarchy-assignment">Cost Centre hierarchy assignment</h2>
+<p>Possibly before reporting or allocation, depending on process.</p>
+<h2 id="optional-long-text">Optional long text</h2>
+<p>May follow go-live.</p>
+<p>The prioritisation model should identify:</p>
+<pre><code class="language-text">last responsible moment</code></pre>
+<p>rather than assigning every gap the same cutover deadline.</p>
+<p>---</p>
+<h1 id="a-four-quadrant-action-model">A four-quadrant action model</h1>
+<p>A simple working model can use:</p>
+<pre><code class="language-text">business risk
+×
+time urgency</code></pre>
+<h2 id="high-risk-high-urgency">High risk, high urgency</h2>
+<p>Act immediately.</p>
+<p>Examples:</p>
+<ul>
+<li>unresolved Product Base Unit;</li>
+<li>Cost Centre invalid at go-live;</li>
+<li>payment-active Supplier missing Payment Method.</li>
+</ul>
+<h2 id="high-risk-lower-urgency">High risk, lower urgency</h2>
+<p>Plan controlled remediation before the first affected process.</p>
+<p>Examples:</p>
+<ul>
+<li>Product Profit Centre correction before first close;</li>
+<li>downstream value-list compatibility before interface activation.</li>
+</ul>
+<h2 id="lower-risk-high-urgency">Lower risk, high urgency</h2>
+<p>Use bounded operational handling.</p>
+<p>Examples:</p>
+<ul>
+<li>visible but noncritical description required by a cutover file format.</li>
+</ul>
+<h2 id="lower-risk-lower-urgency">Lower risk, lower urgency</h2>
+<p>Defer transparently.</p>
+<p>Examples:</p>
+<ul>
+<li>optional search terms;</li>
+<li>nonessential classification;</li>
+<li>low-value documentation enrichment.</li>
+</ul>
+<p>This model is simple enough for delivery meetings.</p>
+<p>The underlying risk dimensions remain available for audit.</p>
+<p>---</p>
+<h1 id="risk-score-versus-release-gate">Risk score versus release gate</h1>
+<p>A numerical risk score can help sorting.</p>
+<p>It should not replace blockers.</p>
+<p>Example:</p>
+<pre><code class="language-text">Risk score: 62
+Release gate: Failed</code></pre>
+<p>Why can a moderate score still block?</p>
+<p>Because the gap concerns one legally mandatory tax category.</p>
+<p>Another gap may score 78 but remain conditionally acceptable because:</p>
+<ul>
+<li>a controlled fallback exists;</li>
+<li>affected records are isolated;</li>
+<li>process owners approve the temporary path.</li>
+</ul>
+<p>Release policy and numerical priority are related but different.</p>
+<p>---</p>
+<h1 id="hard-gate-examples">Hard-gate examples</h1>
+<p>A gap should usually block its affected scope when:</p>
+<ul>
+<li>no valid source exists for a mandatory critical Attribute;</li>
+<li>required organisational keys are missing;</li>
+<li>Product Base Unit is ambiguous;</li>
+<li>bank ownership is unresolved for a payment-active Supplier;</li>
+<li>Cost Centre validity excludes go-live;</li>
+<li>tax category cannot be determined;</li>
+<li>mandatory partner role cannot be assigned;</li>
+<li>fallback is undocumented or expired;</li>
+<li>affected records cannot be identified;</li>
+<li>correction after go-live would be unsafe.</li>
+</ul>
+<p>These conditions should not be averaged against low-risk completed fields.</p>
+<p>---</p>
+<h1 id="do-not-equate-legal-or-financial-importance-with-field-category">Do not equate legal or financial importance with field category</h1>
+<p>A field named “status” can be critical.</p>
+<p>A field named “amount” may be informational.</p>
+<p>A custom field can govern an approval process.</p>
+<p>A standard field can be unused.</p>
+<p>Risk must derive from actual use and Rules.</p>
+<p>Examples:</p>
+<ul>
+<li>Supplier Review Status may control distribution;</li>
+<li>Payment Block may stop all payments;</li>
+<li>Product Status may affect planning and sales;</li>
+<li>Address Usage may affect tax or delivery;</li>
+<li>Tax Category may determine legal treatment.</li>
+</ul>
+<p>Names and technical types are weak proxies for business risk.</p>
+<p>---</p>
+<h1 id="risk-is-not-graph-centrality">Risk is not graph centrality</h1>
+<p>A highly connected Attribute is not automatically the highest priority.</p>
+<p>A rarely used legal identifier may have few edges and severe consequences.</p>
+<p>A descriptive field may connect to many reports and remain low risk.</p>
+<p>Graph structure helps identify dependencies.</p>
+<p>Risk requires:</p>
+<ul>
+<li>criticality;</li>
+<li>process;</li>
+<li>scope;</li>
+<li>timing;</li>
+<li>fallback;</li>
+<li>detectability;</li>
+<li>reversibility.</li>
+</ul>
+<p>Martenweave should not rank gaps merely by node degree or number of downstream neighbours.</p>
+<p>---</p>
+<h1 id="example-11-product-valuation-class">Example 11: Product valuation class</h1>
+<h2 id="gap-7">Gap</h2>
+<p>Value <code>3999</code> is not recognised in the target value list.</p>
+<h2 id="affected-records">Affected records</h2>
+<p>62 Products.</p>
+<h2 id="downstream-path">Downstream path</h2>
+<pre><code class="language-text">Product valuation class
+→ account determination
+→ inventory and financial postings</code></pre>
+<h2 id="detectability-6">Detectability</h2>
+<p>Medium: some postings may fail, others may hit an unintended account depending on configuration.</p>
+<h2 id="reversibility-6">Reversibility</h2>
+<p>Difficult after postings.</p>
+<h2 id="priority-7">Priority</h2>
+<p>High or critical, subject to Finance assessment.</p>
+<p>This gap should outrank thousands of missing optional Product texts.</p>
+<p>---</p>
+<h1 id="example-12-address-usage">Example 12: Address usage</h1>
+<h2 id="gap-8">Gap</h2>
+<p>Address exists, but its intended usage is unknown for 3,100 Customer records.</p>
+<h2 id="possible-uses">Possible uses</h2>
+<ul>
+<li>standard;</li>
+<li>delivery;</li>
+<li>billing;</li>
+<li>correspondence.</li>
+</ul>
+<h2 id="risk">Risk</h2>
+<p>Varies by affected process.</p>
+<p>If the standard address is available and the missing usage affects only correspondence, priority may be medium.</p>
+<p>If Ship-to usage cannot be identified, delivery risk may be high.</p>
+<p>The same missing relationship must be segmented before assigning one priority.</p>
+<p>---</p>
+<h1 id="segmentation-before-prioritisation">Segmentation before prioritisation</h1>
+<p>A broad gap should often be divided into smaller findings.</p>
+<p>Example:</p>
+<pre><code class="language-text">3,100 Customer address-usage gaps</code></pre>
+<p>Segment into:</p>
+<ul>
+<li>2,000 correspondence-only;</li>
+<li>700 Ship-to;</li>
+<li>300 Bill-to;</li>
+<li>100 legally registered address conflicts.</li>
+</ul>
+<p>Each segment has different:</p>
+<ul>
+<li>owner;</li>
+<li>process;</li>
+<li>risk;</li>
+<li>deadline;</li>
+<li>fallback.</li>
+</ul>
+<p>One aggregate priority would be misleading.</p>
+<p>---</p>
+<h1 id="confidence-should-influence-investigation-priority">Confidence should influence investigation priority</h1>
+<p>Suppose a potential high-risk gap is based on an uncertain column match.</p>
+<p>Example:</p>
+<pre><code class="language-text">LEGACY_UOM may represent Product Base Unit.</code></pre>
+<p>The impact could be severe.</p>
+<p>The semantic match is unconfirmed.</p>
+<p>The correct action is not to assign a low priority because confidence is weak.</p>
+<p>It is to prioritise clarification.</p>
+<p>Useful distinction:</p>
+<pre><code class="language-text">Remediation priority
+Investigation priority</code></pre>
+<p>A high-impact uncertain finding may receive:</p>
+<ul>
+<li>high investigation priority;</li>
+<li>unresolved remediation priority.</li>
+</ul>
+<p>This avoids waiting until certainty arrives by accident.</p>
+<p>---</p>
+<h1 id="prioritise-by-decision-latency">Prioritise by decision latency</h1>
+<p>Some gaps require decisions from scarce owners:</p>
+<ul>
+<li>Tax;</li>
+<li>Treasury;</li>
+<li>Finance controlling;</li>
+<li>production planning;</li>
+<li>legal;</li>
+<li>local business leadership.</li>
+</ul>
+<p>Even when technical remediation is small, decision latency can be long.</p>
+<p>These gaps should enter the queue early.</p>
+<p>Example:</p>
+<pre><code class="language-text">62 Products require valuation-class decision.</code></pre>
+<p>The technical conversion may take one day.</p>
+<p>Finance review may take three weeks.</p>
+<p>Field-count sorting will not reveal this delivery risk.</p>
+<p>---</p>
+<h1 id="dependency-on-external-teams">Dependency on external teams</h1>
+<p>Priority should increase when remediation depends on:</p>
+<ul>
+<li>external source-system teams;</li>
+<li>local countries;</li>
+<li>third-party data providers;</li>
+<li>SAP configuration;</li>
+<li>interface consumers;</li>
+<li>legal review.</li>
+</ul>
+<p>This does not mean every external dependency is high risk.</p>
+<p>It means the schedule risk must be explicit.</p>
+<p>---</p>
+<h1 id="effort-does-not-define-priority">Effort does not define priority</h1>
+<p>A common backlog strategy prioritises quick wins.</p>
+<p>Quick wins can improve dashboard percentages while critical gaps remain untouched.</p>
+<p>Example:</p>
+<pre><code class="language-text">Fix 4,000 missing descriptions:
+two days
+
+Resolve 31 Payment Methods:
+requires Finance decision</code></pre>
+<p>The descriptions may be easier.</p>
+<p>The Payment Methods may still need to start first.</p>
+<p>Effort should influence sequencing and planning.</p>
+<p>It should not override business risk.</p>
+<p>---</p>
+<h1 id="a-useful-priority-record">A useful priority record</h1>
+<p>Each gap should contain enough information to justify its position.</p>
+<pre><code class="language-text">Gap:
+Supplier Payment Method unavailable.
+
+Affected Attribute:
+Supplier Company Code Payment Method.
+
+Scope:
+Company Code 3100.
+
+Population:
+31 payment-active Suppliers.
+
+Business impact:
+Excluded from first payment proposal.
+
+Fallback:
+Manual maintenance with Finance approval.
+
+Deadline:
+Before first payment run.
+
+Detectability:
+High.
+
+Reversibility:
+Moderate.
+
+Business severity:
+Critical.
+
+Delivery urgency:
+Critical.
+
+Owner:
+Accounts Payable Data Owner.</code></pre>
+<p>This is defensible.</p>
+<p>“Priority 1” without context is not.</p>
+<p>---</p>
+<h1 id="risk-scoring-model">Risk scoring model</h1>
+<p>A simple configurable model might assess:</p>
+<pre><code class="language-text">Criticality: 1–5
+Population exposure: 1–5
+Process proximity: 1–5
+Fallback weakness: 1–5
+Low detectability: 1–5
+Low reversibility: 1–5
+Evidence uncertainty: 1–3</code></pre>
+<p>The exact formula should be transparent and versioned.</p>
+<p>One possible structure is:</p>
+<pre><code class="language-text">Base risk =
+criticality
+× maximum(process proximity, reversibility risk)
+
+Exposure modifier =
+population
++ fallback weakness
++ detectability risk</code></pre>
+<p>This is only an illustration.</p>
+<p>The product should not claim that one universal formula represents every domain.</p>
+<p>The important requirement is explainability.</p>
+<p>---</p>
+<h1 id="avoid-false-numerical-precision">Avoid false numerical precision</h1>
+<p>A score such as:</p>
+<pre><code class="language-text">Risk: 83.47</code></pre>
+<p>creates a sense of precision that the inputs may not support.</p>
+<p>Prefer:</p>
+<pre><code class="language-text">Critical
+High
+Medium
+Low</code></pre>
+<p>with dimension details.</p>
+<p>A numerical score can exist for sorting.</p>
+<p>The business-facing decision should use clear categories and reasons.</p>
+<p>---</p>
+<h1 id="domain-specific-policies">Domain-specific policies</h1>
+<p>Different domains require different risk rules.</p>
+<h2 id="supplier-bank-data">Supplier bank data</h2>
+<p>Emphasise:</p>
+<ul>
+<li>payment activity;</li>
+<li>account ownership;</li>
+<li>validation;</li>
+<li>duplicate account risk;</li>
+<li>payment-block fallback.</li>
+</ul>
+<h2 id="product-planning">Product planning</h2>
+<p>Emphasise:</p>
+<ul>
+<li>Plant context;</li>
+<li>planning cycle;</li>
+<li>procurement behaviour;</li>
+<li>operational fallback;</li>
+<li>first MRP run.</li>
+</ul>
+<h2 id="tax-data">Tax data</h2>
+<p>Emphasise:</p>
+<ul>
+<li>country;</li>
+<li>category;</li>
+<li>legal evidence;</li>
+<li>document processing;</li>
+<li>detectability.</li>
+</ul>
+<h2 id="finance-master-data">Finance master data</h2>
+<p>Emphasise:</p>
+<ul>
+<li>validity;</li>
+<li>organisational assignments;</li>
+<li>posting ability;</li>
+<li>period close;</li>
+<li>reversibility.</li>
+</ul>
+<h2 id="partner-functions">Partner functions</h2>
+<p>Emphasise:</p>
+<ul>
+<li>Sales Area;</li>
+<li>role cardinality;</li>
+<li>billing and delivery;</li>
+<li>relationship correctness.</li>
+</ul>
+<p>The common framework remains stable.</p>
+<p>The policy varies.</p>
+<p>---</p>
+<h1 id="risk-by-migration-phase">Risk by migration phase</h1>
+<p>The same gap can change priority over time.</p>
+<h2 id="early-design">Early design</h2>
+<p>Focus on semantic uncertainty and source authority.</p>
+<h2 id="mock-load">Mock load</h2>
+<p>Focus on executable Mappings, source gaps and target fit.</p>
+<h2 id="cutover-rehearsal">Cutover rehearsal</h2>
+<p>Focus on critical-path evidence, fallback and operational sequencing.</p>
+<h2 id="cutover">Cutover</h2>
+<p>Focus on immediate blockers and controlled exceptions.</p>
+<h2 id="hypercare">Hypercare</h2>
+<p>Focus on production impact, recurring patterns and remediation debt.</p>
+<p>A low-priority design question can become a cutover blocker if it remains unresolved.</p>
+<p>Priority should be recalculated as context changes.</p>
+<p>---</p>
+<h1 id="risk-decay-and-risk-escalation">Risk decay and risk escalation</h1>
+<p>Some gaps naturally become less urgent.</p>
+<p>Example:</p>
+<ul>
+<li>optional description deferred to post-go-live enrichment.</li>
+</ul>
+<p>Others escalate:</p>
+<ul>
+<li>temporary fallback approaching expiry;</li>
+<li>source extract still incomplete near freeze;</li>
+<li>unresolved legal Decision;</li>
+<li>repeated mock-load failure;</li>
+<li>affected population increasing.</li>
+</ul>
+<p>The queue should support:</p>
+<pre><code class="language-text">priority changed because</code></pre>
+<p>not only the latest rank.</p>
+<p>This creates accountable history.</p>
+<p>---</p>
+<h1 id="accepted-risk-is-not-resolved-risk">Accepted risk is not resolved risk</h1>
+<p>A programme may approve go-live with a bounded gap.</p>
+<p>Record:</p>
+<ul>
+<li>what is accepted;</li>
+<li>scope;</li>
+<li>owner;</li>
+<li>expiry;</li>
+<li>controls;</li>
+<li>remediation deadline;</li>
+<li>affected records.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-text">Accepted risk:
+regional Profit Centre fallback for Plant PL30.
+
+Population:
+1,842 Product Plant records.
+
+Control:
+monthly exception report.
+
+Expiry:
+before first month-end close.
+
+Owner:
+Plant Controller.</code></pre>
+<p>The gap remains active until remediated.</p>
+<p>Changing its status to “closed” would hide the obligation.</p>
+<p>---</p>
+<h1 id="deferred-gaps-need-a-valid-future-path">Deferred gaps need a valid future path</h1>
+<p>A deferred gap should answer:</p>
+<ul>
+<li>when it will be addressed;</li>
+<li>which process can operate without it;</li>
+<li>whether target correction is possible;</li>
+<li>who owns it;</li>
+<li>how affected records are identified;</li>
+<li>what event triggers escalation.</li>
+</ul>
+<p>Weak:</p>
+<pre><code class="language-text">Post-go-live.</code></pre>
+<p>Stronger:</p>
+<pre><code class="language-text">Correct before first warehouse integration activation.
+Affected Products are tagged through Evidence set EVID-UOM-GAP-001.</code></pre>
+<p>---</p>
+<h1 id="gap-portfolio-views">Gap portfolio views</h1>
+<p>A useful portfolio should show more than counts.</p>
+<h2 id="by-business-risk">By business risk</h2>
+<p>Critical, high, medium and low.</p>
+<h2 id="by-affected-process">By affected process</h2>
+<p>Payment, planning, billing, posting, procurement, warehouse, reporting.</p>
+<h2 id="by-root-cause">By root cause</h2>
+<p>Source, Mapping, context, Rule, evidence, target, fallback.</p>
+<h2 id="by-owner">By owner</h2>
+<p>Finance, Tax, Planning, Procurement, Integration, local business.</p>
+<h2 id="by-deadline">By deadline</h2>
+<p>Cutover, first payment, first MRP run, first close, later release.</p>
+<h2 id="by-remediation-type">By remediation type</h2>
+<p>Source fix, Mapping change, manual review, fallback, scope exclusion, model proposal.</p>
+<p>This makes the backlog operational.</p>
+<p>---</p>
+<h1 id="example-priority-comparison">Example priority comparison</h1>
+<div class="table-wrap"><table><thead><tr><th scope="col">Gap</th><th scope="col">Records</th><th scope="col">Process</th><th scope="col">Fallback</th><th scope="col">Reversibility</th><th scope="col">Priority</th></tr></thead><tbody><tr><td>Product secondary description</td><td>18,400</td><td>Search and display</td><td>Primary text exists</td><td>High</td><td>Low</td></tr><tr><td>Customer Payer Sales Area missing</td><td>240</td><td>Billing</td><td>Unsafe self-Payer default</td><td>Low</td><td>Critical</td></tr><tr><td>Cost Centre valid-from missing</td><td>74</td><td>Posting</td><td>Controlled date default possible</td><td>Medium</td><td>Critical</td></tr><tr><td>Supplier Payment Method missing</td><td>31</td><td>Payment</td><td>Manual Finance maintenance</td><td>Medium</td><td>Critical</td></tr><tr><td>Product alternative-unit conversion missing</td><td>1,920</td><td>Warehouse and sales</td><td>None confirmed</td><td>Low</td><td>High</td></tr><tr><td>Supplier tax category unresolved</td><td>1,240</td><td>Tax and invoices</td><td>Generic category unapproved</td><td>Low</td><td>Critical</td></tr></tbody></table></div>
+<p>This table shows why count alone is a poor queue.</p>
+<p>---</p>
+<h1 id="release-decisions-should-remain-scoped">Release decisions should remain scoped</h1>
+<p>Possible result:</p>
+<pre><code class="language-text">Wave 1 overall:
+Conditionally ready
+
+Blocked scopes:
+- Portugal Supplier tax data
+- Company Code 3100 Supplier Payment Method
+- Plant PL30 Product MRP Controller
+
+Ready scopes:
+- central Supplier identity
+- Germany bank data
+- Product descriptions
+- Plant PL10 planning data</code></pre>
+<p>This is more useful than blocking or approving the entire programme from one aggregate score.</p>
+<p>---</p>
+<h1 id="from-prioritisation-to-action">From prioritisation to action</h1>
+<p>Every critical or high-priority gap should end with one concrete next action.</p>
+<p>Examples:</p>
+<pre><code class="language-text">Add Company Code payment-instruction extract.</code></pre>
+<pre><code class="language-text">Obtain Finance approval for go-live-date default.</code></pre>
+<pre><code class="language-text">Complete Plant PL30 planner conversion.</code></pre>
+<pre><code class="language-text">Identify the legally correct Portuguese tax category.</code></pre>
+<pre><code class="language-text">Confirm warehouse unit conversion instead of changing Product Base Unit.</code></pre>
+<p>Prioritisation without an action owner becomes reporting theatre.</p>
+<p>---</p>
+<h1 id="use-findings-before-model-mutation">Use Findings before model mutation</h1>
+<p>A high-priority gap does not automatically mean the canonical model is wrong.</p>
+<p>The cause may be:</p>
+<ul>
+<li>source dataset;</li>
+<li>implementation;</li>
+<li>missing evidence;</li>
+<li>target configuration;</li>
+<li>scope;</li>
+<li>actual model defect.</li>
+</ul>
+<p>The safe workflow remains:</p>
+<pre><code class="language-text">gap evidence
+→ risk classification
+→ Finding
+→ root-cause review
+→ PatchProposal where justified
+→ deterministic validation
+→ human approval</code></pre>
+<p>Martenweave’s documented operating model explicitly keeps canonical files authoritative and routes changes through proposals, validation, impact analysis and human review.</p>
+<p>---</p>
+<h1 id="what-ai-can-contribute">What AI can contribute</h1>
+<p>AI can help:</p>
+<ul>
+<li>summarise business impact;</li>
+<li>suggest process dependencies;</li>
+<li>group similar gaps;</li>
+<li>identify likely critical contexts;</li>
+<li>estimate which owners are needed;</li>
+<li>draft prioritisation explanations;</li>
+<li>propose targeted tests.</li>
+</ul>
+<p>AI should not autonomously:</p>
+<ul>
+<li>reduce criticality;</li>
+<li>approve fallback;</li>
+<li>exclude population;</li>
+<li>accept legal or financial risk;</li>
+<li>close a gap;</li>
+<li>manufacture certainty from weak evidence.</li>
+</ul>
+<p>Risk acceptance is a governance decision.</p>
+<p>---</p>
+<h1 id="suggested-diagnostic-and-priority-labels">Suggested diagnostic and priority labels</h1>
+<p>A first implementation could expose:</p>
+<pre><code class="language-text">MW-RISK-001
+Critical path has no valid source.
+
+MW-RISK-002
+Required organisational context is missing.
+
+MW-RISK-003
+Gap may produce plausible but incorrect output.
+
+MW-RISK-004
+Correction becomes difficult after first transaction.
+
+MW-RISK-005
+No approved fallback exists.
+
+MW-RISK-006
+Fallback capacity is insufficient for affected population.
+
+MW-RISK-007
+Critical local scope is hidden by global coverage.
+
+MW-RISK-008
+Gap deadline precedes planned remediation.
+
+MW-RISK-009
+High-impact finding has low evidence confidence.
+
+MW-RISK-010
+Accepted risk has no expiry or owner.
+
+MW-RISK-011
+Deferred gap has no future verification point.
+
+MW-RISK-012
+Gap priority is based only on field or row count.</code></pre>
+<p>These diagnostics can support scorecards and CI policies without replacing human risk decisions.</p>
+<p>---</p>
+<h1 id="what-martenweave-should-implement-next">What Martenweave should implement next</h1>
+<p>Martenweave already provides:</p>
+<ul>
+<li>canonical model files;</li>
+<li>deterministic validation;</li>
+<li>dataset-readiness analysis;</li>
+<li>gaps, lineage and impact;</li>
+<li>health and scorecards;</li>
+<li>PatchProposals;</li>
+<li>a local Workbench for assessment and review.</li>
+</ul>
+<p>The next focused vertical slice should add <strong>business-risk gap prioritisation</strong>.</p>
+<h2 id="goal">Goal</h2>
+<p>Rank migration gaps according to the business path and release obligation they threaten rather than their field count alone.</p>
+<h2 id="initial-dimensions">Initial dimensions</h2>
+<ul>
+<li>business criticality;</li>
+<li>affected population;</li>
+<li>process proximity;</li>
+<li>fallback quality;</li>
+<li>detectability;</li>
+<li>reversibility;</li>
+<li>evidence confidence.</li>
+</ul>
+<h2 id="required-scope-support">Required scope support</h2>
+<ul>
+<li>country;</li>
+<li>Company Code;</li>
+<li>Plant;</li>
+<li>Sales Area;</li>
+<li>migration wave;</li>
+<li>active business population;</li>
+<li>effective period.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance criteria</h2>
+<p>The system must rank:</p>
+<pre><code class="language-text">31 missing Supplier Payment Methods</code></pre>
+<p>above:</p>
+<pre><code class="language-text">18,400 missing optional Product descriptions</code></pre>
+<p>when the first payment run is at risk.</p>
+<p>It must rank:</p>
+<pre><code class="language-text">46 ambiguous Product Base Units</code></pre>
+<p>above large low-risk descriptive gaps because correction becomes unsafe after stock migration.</p>
+<p>It must identify:</p>
+<pre><code class="language-text">Portugal tax category readiness: blocked</code></pre>
+<p>even when global tax-field coverage exceeds 98 percent.</p>
+<p>It must distinguish:</p>
+<pre><code class="language-text">temporary fallback available</code></pre>
+<p>from:</p>
+<pre><code class="language-text">safe fallback approved and operationally scalable</code></pre>
+<h2 id="existing-commands">Existing commands</h2>
+<pre><code class="language-text">martenweave run dataset-readiness \
+  --repo ./model \
+  --dataset ./data/source.xlsx \
+  --out ./reports/readiness
+
+martenweave impact \
+  ATTR-SUPPLIER-PAYMENT-METHOD \
+  --repo ./model
+
+martenweave scorecard --repo ./model</code></pre>
+<h2 id="future-focused-operation">Future focused operation</h2>
+<pre><code class="language-text">martenweave gap-priority \
+  --repo ./model \
+  --report ./reports/readiness/gaps.json \
+  --policy ./policies/migration-risk.yaml</code></pre>
+<p>The <code>gap-priority</code> command and policy file describe a recommended product direction rather than the current documented CLI contract.</p>
+<p>---</p>
+<h1 id="final-perspective">Final perspective</h1>
+<p>Migration teams do not run out of gaps.</p>
+<p>They run out of time, attention and qualified decision-makers.</p>
+<p>Prioritisation determines where those scarce resources go.</p>
+<p>The useful chain is:</p>
+<pre><code class="language-text">dataset gap
+→ broken model obligation
+→ affected business process
+→ exposed population
+→ fallback
+→ deadline
+→ correction difficulty
+→ accountable owner</code></pre>
+<p>The practical test is:</p>
+<blockquote>Can the programme explain why one missing value must be resolved before cutover while another larger gap can be deferred safely?</blockquote>
+<p>When the answer is yes, the backlog reflects business risk.</p>
+<p>When the answer is:</p>
+<blockquote>This issue affects the most rows,</blockquote>
+<p>the programme is prioritising data volume, not migration safety.</p>
+<h2 id="about-the-authors">About the authors</h2>
+<p>Martenweave is maintained by Dzmitryi Kharlanau.</p>
+<p>Martenweave is a backend-first, source-available model-governance and evidence layer for SAP migration, MDM, data governance and AMS teams.</p>
+<p>It connects dataset findings to canonical Attributes, Relationships, Mappings, Rules, target endpoints, downstream impact, Evidence and Decisions so that gap priority can be explained through business consequence.</p>
+<p>The goal is not to create a mysterious risk score.</p>
+<p>It is to make it difficult for a critical local or low-volume failure to disappear beneath large numbers of harmless missing fields.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<p>This article was reviewed on 14 July 2026.</p>
+<p>Martenweave Core currently treats canonical files as the source of truth, validates IDs, types, references and domain context before indexing, and runs dataset-gap, lineage and impact analysis before human-reviewed change proposals.</p>
+<p>The current CLI includes health, scorecard, trace, impact, search, query, repository diff and dataset-readiness operations. These provide the foundation for connecting observed gaps to governed paths and prioritising them by impact.</p>
+<p>The risk dimensions, diagnostics and proposed <code>gap-priority</code> command described here are recommended Martenweave improvements. They should not be interpreted as guarantees of the current scorecard, canonical schema, Workbench behaviour or CLI unless separately implemented and published.</p>
+<p>Martenweave is independent and is not affiliated with or endorsed by SAP.</p>
+<aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/sap-migration-mapping-spreadsheets.html">Most SAP migration programmes begin with a mapping spreadsheet.</a></li><li><a href="/blog/sap-data-migration-readiness-checklist.html">A migration team can complete mappings, build load files and pass several technical checks while the domain is still not ready for migration.</a></li><li><a href="/blog/why-mapping-completion-is-not-migration-readiness.html">A migration programme reports that 96% of mappings are complete.</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/how-to-connect-dataset-gaps-to-lineage-and-business-impact.html"><span>Previous</span>A dataset-readiness report says:</a><a href="/blog/how-to-turn-migration-gap-findings-into-reviewable-patch-proposals.html"><span>Next</span>A profiling script finds that the Product migration dataset has no Plant field.</a></nav>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>
