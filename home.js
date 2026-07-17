@@ -188,3 +188,53 @@
     }
   });
 })();
+
+(function () {
+  "use strict";
+
+  const calculator = document.querySelector("[data-savings-calculator]");
+  if (calculator) {
+    const team = calculator.querySelector("[data-savings-team]");
+    const hours = calculator.querySelector("[data-savings-hours]");
+    const rate = calculator.querySelector("[data-savings-rate]");
+    const result = calculator.querySelector("[data-savings-result]");
+    const detail = calculator.querySelector("[data-savings-detail]");
+    const formatter = new Intl.NumberFormat("en-IE", {
+      style: "currency",
+      currency: "EUR",
+      maximumFractionDigits: 0,
+    });
+
+    function valueOf(input) {
+      return Math.max(0, Number.parseFloat(input.value) || 0);
+    }
+
+    function updateSavings() {
+      const people = valueOf(team);
+      const weeklyHours = valueOf(hours);
+      const hourlyRate = valueOf(rate);
+      result.textContent = formatter.format(people * weeklyHours * hourlyRate * 48);
+      detail.textContent = `${people} people × ${weeklyHours} hours × ${formatter.format(hourlyRate)} × 48 working weeks`;
+    }
+
+    for (const input of [team, hours, rate]) input.addEventListener("input", updateSavings);
+    updateSavings();
+  }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const targets = document.querySelectorAll(".proof-strip, .home-section");
+  if (!targets.length || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("has-motion");
+  for (const target of targets) target.classList.add("reveal-on-scroll");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.12 },
+  );
+  for (const target of targets) observer.observe(target);
+})();
