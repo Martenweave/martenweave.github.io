@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope | Martenweave</title>
+    <meta
+      name="description"
+      content="An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html" />
+    <meta property="og:title" content="Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope | Martenweave" />
+    <meta property="og:description" content="An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not." />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://martenweave.github.io/docs/author.html" />
+    <meta property="article:published_time" content="2026-07-18" />
+    <meta property="article:modified_time" content="2026-07-18" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope | Martenweave" />
+    <meta name="twitter:description" content="An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not." />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html#webpage",
+                        "url": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html",
+                        "name": "Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope | Martenweave",
+                        "description": "An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not.",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope",
+                                    "item": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html#content",
+                        "headline": "Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope",
+                        "name": "Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope",
+                        "description": "An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not.",
+                        "url": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-18",
+                        "dateModified": "2026-07-18",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT4M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://martenweave.github.io/docs/author.html",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/",
+                              "https://x.com/dkharlanau",
+                              "https://hashnode.com/@dkharlanau",
+                              "https://medium.com/@dkharlanau",
+                              "https://huggingface.co/dkharlanau",
+                              "https://dev.to/dkharlanau",
+                              "https://substack.com/@dkharlanau",
+                              "https://www.reddit.com/user/dkharlanau"
+                        ],
+                        "description": "Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.",
+                        "jobTitle": "Senior SAP Consultant",
+                        "worksFor": {
+                              "@type": "Organization",
+                              "name": "EPAM Systems",
+                              "url": "https://www.epam.com"
+                        },
+                        "knowsAbout": [
+                              "SAP SD",
+                              "SAP logistics",
+                              "SAP integration",
+                              "SAP Master Data Governance",
+                              "application management services",
+                              "data migration",
+                              "data governance",
+                              "ABAP",
+                              "data lineage",
+                              "impact analysis"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Martenweave vs OpenMetadata and DataHub: Open Source Does Not Mean the Same Scope</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-18">18 July 2026</time> · 4 min read</p><p class="blog-summary">An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not.</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-the-metadata-platforms-do-well">What the metadata platforms do well</a></li><li><a href="#what-a-migration-model-adds">What a migration model adds</a></li><li><a href="#direct-alternative-adjacent-tool-or-complement">Direct alternative, adjacent tool, or complement?</a></li><li><a href="#how-to-choose">How to choose</a></li><li><a href="#sources-and-notes">Sources and notes</a></li></ol></nav></details></header>
+<p>An architect who wants open source may see OpenMetadata, DataHub, and Martenweave in the same search results and assume they are interchangeable. They are not.</p>
+<p>OpenMetadata and DataHub are open-source metadata platforms and data catalogues. Martenweave is an Apache-licensed, backend-first registry for canonical model knowledge and controlled delivery change. The shared preference for inspectable technology is useful, but it is not a product category.</p>
+<h2 id="what-the-metadata-platforms-do-well">What the metadata platforms do well</h2>
+<p>DataHub describes itself as a modern data catalog for metadata management, discovery, governance, lineage, profiling, and data contracts. OpenMetadata describes a unified platform for discovery, observability, governance, quality, lineage, and collaboration. Both are designed to ingest metadata from a changing data ecosystem and help users explore technical assets across it.</p>
+<p>That makes them strong options when the programme needs searchable warehouse, pipeline, dashboard, topic, and data-product metadata; broad lineage; ownership; policies; and operational metadata management. OpenMetadata’s documented lineage view, for example, reaches across databases, pipelines, dashboards, services, domains, and data products. DataHub provides a large metadata model, integrations, APIs, and self-hosted or cloud paths.</p>
+<p>Martenweave cannot substitute for that breadth. It does not claim automated estate-wide ingestion, catalog UI parity, platform RBAC, data observability, or a general metadata graph for every analytics asset.</p>
+<h2 id="what-a-migration-model-adds">What a migration model adds</h2>
+<p>A migration model often starts from a more constrained but more difficult question: whether the meaning of an attribute survives a move between systems.</p>
+<p>For a supplier bank detail, a team may need to distinguish the business attribute from its legacy field, its SAP field endpoint, its company-code context, its permitted values, its mapping, its test evidence, and the decision that accepted a local exception. A technical lineage graph can show movement between tables. It cannot, by itself, establish which mapping rule was approved, whether the SAP context is valid, or whether an AI suggestion may alter canonical model truth.</p>
+<p>Martenweave stores those delivery objects in canonical files. Its validators check identifiers, object types, cross-object references, and supported SAP context rules. Dataset profiling and gap analysis can expose missing expected columns; lineage and impact services then work from the same model. AI-assisted changes are represented as PatchProposals for human review rather than direct edits.</p>
+<h2 id="direct-alternative-adjacent-tool-or-complement">Direct alternative, adjacent tool, or complement?</h2>
+<p>OpenMetadata and DataHub are direct alternatives only if the team’s intended “model registry” is really a metadata catalogue. They are adjacent tools when the goal is field-level delivery evidence, deterministic model validation, and proposal-based change control. They are complementary when an organisation wants both a broad metadata system and a bounded canonical model for a transformation programme.</p>
+<p>A sensible boundary is:</p>
+<ul>
+<li>OpenMetadata or DataHub: discover, inventory, enrich, and govern the wider data estate;</li>
+<li>Martenweave: capture the specific model slice, migration assumptions, gaps, mappings, decisions, and controlled changes that delivery teams must preserve.</li>
+</ul>
+<p>Do not replicate every table and dashboard into Martenweave. Do not expect a metadata platform to become the sole authority for every model decision without designing the required governance workflow.</p>
+<h2 id="how-to-choose">How to choose</h2>
+<p>Start with OpenMetadata or DataHub when the priority is a platform for metadata ingestion, discovery, ownership, data contracts, observability, and lineage across the data estate.</p>
+<p>Start with Martenweave when the priority is an inspectable, Git-friendly model repository for a bounded SAP migration, MDM, governance, or AMS workflow. Its advantage is adaptability: teams can extend object models, validation rules, examples, and domain packs in source control, subject to their own review standards.</p>
+<p>Choose both when catalogued technical context and controlled delivery semantics must meet. Begin with a small link convention and export boundary rather than promising a bidirectional sync that neither product currently provides out of the box.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<ul>
+<li><a href="https://docs.datahub.com/">DataHub documentation</a> describes data discovery, governance, lineage, profiling, contracts, APIs, and deployment options.</li>
+<li><a href="https://docs.open-metadata.org/v1.12.x/features">OpenMetadata features</a> describes discovery, ownership, RBAC, lineage, and metadata collaboration.</li>
+<li><a href="https://docs.open-metadata.org/v1.12.x/how-to-guides/data-lineage/explore">OpenMetadata lineage documentation</a> describes table and column lineage across services, domains, and data products.</li>
+<li><a href="/docs/open-source.html">Martenweave open-source path</a> and <a href="/docs/ai-governance.html">AI governance</a> describe its license and controlled-change boundary.</li>
+</ul>
+<p>Martenweave is independent and is not affiliated with, endorsed by, or a replacement for OpenMetadata or DataHub. Product names are trademarks of their respective owners.</p>
+<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">Dzmitryi Kharlanau</h2><p>Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.</p><p><a href="/docs/author.html">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a> <span aria-hidden="true">·</span> <a href="https://dkharlanau.github.io/">Personal site</a></p></aside><aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><aside class="topic-guide"><span class="section-kicker">Go deeper</span><p>Explore the <a href="/docs/product.html">Martenweave product guide</a>.</p></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/data-model-registry-vs-data-catalog.html">Data Model Registry vs Data Catalog</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">Data Model Registry vs MDM Platform</a></li><li><a href="/blog/how-martenweave-represents-a-data-model-in-markdown-and-yaml.html">How Martenweave Represents a Data Model in Markdown and YAML</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/martenweave-vs-data-governance-catalogs-collibra-alation-atlan.html"><span>Previous</span>Martenweave vs Collibra, Alation, and Atlan: A Model Registry Is Not a Data Catalog</a><a href="/blog/martenweave-vs-enterprise-mdm-platforms.html"><span>Next</span>Martenweave vs Informatica, Semarchy, Reltio, and Profisee: Model Evidence vs Operational Mastering</a></nav>
+<section class="share-controls" aria-label="Share this page" data-share-controls><p class="section-kicker">Share this page</p><div class="share-actions"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-openmetadata-and-datahub.html" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-openmetadata-and-datahub.html&text=Martenweave%20vs%20OpenMetadata%20and%20DataHub%3A%20Open%20Source%20Does%20Not%20Mean%20the%20Same%20Scope" target="_blank" rel="noopener noreferrer">X</a><a href="mailto:?subject=Martenweave%20vs%20OpenMetadata%20and%20DataHub%3A%20Open%20Source%20Does%20Not%20Mean%20the%20Same%20Scope&body=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-openmetadata-and-datahub.html">Email</a><button type="button" data-copy-link data-share-url="https://martenweave.github.io/blog/martenweave-vs-openmetadata-and-datahub.html">Copy link</button></div><p class="share-status" data-share-status aria-live="polite"></p></section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/docs/support-martenweave.html">Support</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>

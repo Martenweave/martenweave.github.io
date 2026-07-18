@@ -12,6 +12,7 @@ Start here:
 - [Local viewer](local-viewer.md) - generated local read-only viewer from the SQLite index.
 - [Examples](examples.md) - which bundled model to use and what each one proves.
 - [Use cases](use-cases.md) - practical scenarios for migration, MDM, governance, validation, AMS, and AI-assisted maintenance.
+- [Tool comparisons](comparisons.md) - where a model registry fits alongside MDM platforms, data catalogues, SAP ecosystem tools, and delivery workspaces.
 - [Architecture](architecture.md) - canonical files, validation, generated indexes, lineage, reports, and approval flow.
 - [AI governance](ai-governance.md) - the controlled AI stance: AI proposes, validators verify, humans approve.
 - [FAQ](faq.md) - concise answers for evaluators and answer engines.

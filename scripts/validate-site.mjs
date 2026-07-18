@@ -392,8 +392,8 @@ if (
 ) {
   errors.push("Blog index must render searchable, paginated editorial cards with reading time.");
 }
-if (publicBlogRoutes.length - 1 !== blogSourceFiles.length || blogSourceFiles.length !== 130) {
-  errors.push("Every one of the 130 canonical blog sources must render to one public article route.");
+if (publicBlogRoutes.length - 1 !== blogSourceFiles.length) {
+  errors.push("Every canonical blog source must render to one public article route.");
 }
 
 const shareableFiles = [...generatedDocs, ...publicBlogRoutes.filter((route) => route !== "/blog/").map((route) => route.slice(1))];

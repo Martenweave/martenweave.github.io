@@ -114,6 +114,14 @@ const docRoutes = [
       "Explore Martenweave use cases for SAP migration, Business Partner governance, field mapping validation, dataset gaps, AMS knowledge reuse, lineage, and impact.",
   },
   {
+    source: "comparisons.md",
+    output: "comparisons.html",
+    label: "Tool comparisons",
+    seoTitle: "Martenweave Tool Comparisons | Model Registry, MDM, Catalog, and SAP",
+    description:
+      "Compare Martenweave with enterprise MDM platforms, data catalogues, metadata platforms, SAP ecosystem tools, and spreadsheet-based approaches without overstating product scope.",
+  },
+  {
     source: "use-cases/sap-migration.md",
     output: "use-cases/sap-migration.html",
     label: "SAP migration",
@@ -301,6 +309,13 @@ function articleSlug(filename) {
 
 function articleTopic(markdown) {
   const value = extractTitle(markdown).toLowerCase();
+  if (
+    /^(martenweave vs|martenweave alongside|open-source model governance|build, buy|when martenweave|extending martenweave|how consulting teams)/.test(
+      value,
+    )
+  ) {
+    return "Model governance";
+  }
   if (/logistics|warehouse|ewm|material|transport/.test(value)) return "Logistics data";
   if (/lineage|impact|trace|dependency/.test(value)) return "Lineage and impact";
   if (/validation|dataset gap|data quality|finding/.test(value)) return "Validation and readiness";
@@ -312,7 +327,10 @@ function articleTopic(markdown) {
 }
 
 function articleDescription(markdown) {
-  const body = markdown.replace(/^#\s+.+\n?/m, "").replace(/\*\*Reviewed:[^*]+\*\*\n?/, "");
+  const body = markdown
+    .replace(/^#\s+.+\n?/m, "")
+    .replace(/<!--\s*\*\*Reviewed:[\s\S]*?\*\*\s*-->\n?/, "")
+    .replace(/\*\*Reviewed:[^*]+\*\*\n?/, "");
   const paragraph = body.split(/\n\s*\n/).map(textFromMarkdown).find(Boolean) ?? "";
   return paragraph.length > 170 ? `${paragraph.slice(0, 167).trim()}…` : paragraph;
 }
@@ -469,6 +487,9 @@ function markdownToHtml(markdown) {
 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
     const line = lines[lineIndex];
+    if (/^<!--\s*.*\s*-->$/.test(line.trim())) {
+      continue;
+    }
     const fenceMatch = line.match(/^```([a-zA-Z0-9_-]*)\s*$/);
     if (fenceMatch) {
       if (codeFence !== null) {

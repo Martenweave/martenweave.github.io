@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Extending Martenweave with Project Modules and Domain Packs | Martenweave</title>
+    <meta
+      name="description"
+      content="A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html" />
+    <meta property="og:title" content="Extending Martenweave with Project Modules and Domain Packs | Martenweave" />
+    <meta property="og:description" content="A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://martenweave.github.io/docs/author.html" />
+    <meta property="article:published_time" content="2026-07-18" />
+    <meta property="article:modified_time" content="2026-07-18" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Extending Martenweave with Project Modules and Domain Packs | Martenweave" />
+    <meta name="twitter:description" content="A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html#webpage",
+                        "url": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html",
+                        "name": "Extending Martenweave with Project Modules and Domain Packs | Martenweave",
+                        "description": "A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Extending Martenweave with Project Modules and Domain Packs",
+                                    "item": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html#content",
+                        "headline": "Extending Martenweave with Project Modules and Domain Packs",
+                        "name": "Extending Martenweave with Project Modules and Domain Packs",
+                        "description": "A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…",
+                        "url": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-18",
+                        "dateModified": "2026-07-18",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT3M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://martenweave.github.io/docs/author.html",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/",
+                              "https://x.com/dkharlanau",
+                              "https://hashnode.com/@dkharlanau",
+                              "https://medium.com/@dkharlanau",
+                              "https://huggingface.co/dkharlanau",
+                              "https://dev.to/dkharlanau",
+                              "https://substack.com/@dkharlanau",
+                              "https://www.reddit.com/user/dkharlanau"
+                        ],
+                        "description": "Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.",
+                        "jobTitle": "Senior SAP Consultant",
+                        "worksFor": {
+                              "@type": "Organization",
+                              "name": "EPAM Systems",
+                              "url": "https://www.epam.com"
+                        },
+                        "knowsAbout": [
+                              "SAP SD",
+                              "SAP logistics",
+                              "SAP integration",
+                              "SAP Master Data Governance",
+                              "application management services",
+                              "data migration",
+                              "data governance",
+                              "ABAP",
+                              "data lineage",
+                              "impact analysis"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Extending Martenweave with Project Modules and Domain Packs</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Extending Martenweave with Project Modules and Domain Packs</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-18">18 July 2026</time> · 3 min read</p><p class="blog-summary">A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field:…</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-exists-in-core">What exists in Core</a></li><li><a href="#useful-extension-shapes">Useful extension shapes</a></li><li><a href="#boundaries-that-preserve-trust">Boundaries that preserve trust</a></li><li><a href="#a-practical-extension-path">A practical extension path</a></li><li><a href="#sources-and-notes">Sources and notes</a></li></ol></nav></details></header>
+<p>A generic model registry becomes useful only when it can represent the distinctions that make a programme difficult. In SAP migration, a field is rarely just a field: its meaning can depend on sales area, company code, partner function, source-system authority, value conversion, release wave, and local exception.</p>
+<p>Martenweave is designed to be extended in code and canonical content, but the extension must stay within its controlled model boundary.</p>
+<h2 id="what-exists-in-core">What exists in Core</h2>
+<p>Core provides registered canonical object types, Pydantic schema validation, cross-object reference validation, SAP context validation, generated SQLite and JSONL indexes, dataset profiling and gap detection, lineage and impact analysis, exports, and proposal/change-request workflows. The bundled examples provide Business Partner-to-Customer and Supplier-to-Vendor model slices.</p>
+<p>The current SAP domain pack validates specific table-to-context expectations for supported field endpoints. This is deliberately deterministic: a rule either has sufficient model evidence or it reports a finding with a reason and suggested fix.</p>
+<h2 id="useful-extension-shapes">Useful extension shapes</h2>
+<p>A project module should add a clearly owned capability rather than a second source of truth. Good examples include:</p>
+<ul>
+<li>a domain pack that adds validated contexts and rules for a supported business area;</li>
+<li>a canonical object convention for a regulated handover or project-specific evidence reference;</li>
+<li>a report that assembles existing model facts for a review meeting;</li>
+<li>a bounded import or export adapter that produces reviewable output;</li>
+<li>a starter model for a consulting team’s repeatable, client-safe delivery scenario.</li>
+</ul>
+<p>The first test for an extension is whether it strengthens a real decision: does it clarify meaning, expose a broken reference, detect a dataset/model mismatch, trace a consequence, or make approval more explicit?</p>
+<h2 id="boundaries-that-preserve-trust">Boundaries that preserve trust</h2>
+<p>Do not make an extension write directly into canonical files from an external system or an AI agent. External evidence can create a PatchProposal, a report, or a draft. Canonical changes remain subject to the existing validation and human review path.</p>
+<p>Do not manually edit generated databases or JSONL files. They are rebuildable projections of canonical files. If a report needs a new relationship, represent it in the model or service layer rather than patching a generated output.</p>
+<p>Do not call an unimplemented connector or domain pack available in marketing. State the actual interface, test it against a synthetic or safe model slice, and document what is in scope.</p>
+<h2 id="a-practical-extension-path">A practical extension path</h2>
+<p>Start with a small example repository and a narrow acceptance test. Add the rule or object convention. Validate expected success and failure cases. Rebuild the index. Run the exact report, trace, impact, or export flow that the extension is meant to improve. Then decide whether the module is project-specific or a reusable domain pack.</p>
+<p>This sequence is especially valuable for consulting and implementation teams: it turns a recurrent workshop question or handover problem into a tested delivery asset without claiming that every client uses the same model.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<ul>
+<li><a href="/docs/architecture.html">Martenweave architecture</a> documents canonical files, validation, and derived indexes.</li>
+<li><a href="/docs/examples.html">Examples</a> describes the supported bundled model slices.</li>
+<li><a href="/docs/contributing-scenarios.html">Contributing scenarios</a> explains useful contribution boundaries.</li>
+<li><a href="/docs/partnerships.html">Partnerships</a> describes co-designed domain packs, starter scenarios, and bounded integrations.</li>
+<li>The <a href="https://github.com/metalhatscats/martenweave-core">Core repository</a> is the authoritative implementation source.</li>
+</ul>
+<p>Project-specific extension and custom development may be commercial services; the Core remains available under Apache License 2.0. See <a href="/docs/open-source.html">open source</a> and <a href="/docs/consulting.html">consulting</a>.</p>
+<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">Dzmitryi Kharlanau</h2><p>Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.</p><p><a href="/docs/author.html">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a> <span aria-hidden="true">·</span> <a href="https://dkharlanau.github.io/">Personal site</a></p></aside><aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><aside class="topic-guide"><span class="section-kicker">Go deeper</span><p>Explore the <a href="/docs/product.html">Martenweave product guide</a>.</p></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/why-generated-indexes-should-be-disposable.html">Why Generated Indexes Should Be Disposable</a></li><li><a href="/blog/how-to-version-a-data-model-without-turning-it-into-documentation-chaos.html">How to Version a Data Model Without Turning It into Documentation Chaos</a></li><li><a href="/blog/how-martenweave-builds-a-searchable-sqlite-model-index.html">How Martenweave Builds a Searchable SQLite Model Index</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/when-martenweave-is-the-wrong-tool.html"><span>Previous</span>When Martenweave Is the Wrong Tool</a><a href="/blog/reusable-model-knowledge-for-consulting-and-implementation-teams.html"><span>Next</span>How Consulting Teams Can Reuse SAP Migration Knowledge Without Reusing Client Data</a></nav>
+<section class="share-controls" aria-label="Share this page" data-share-controls><p class="section-kicker">Share this page</p><div class="share-actions"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fextending-martenweave-with-domain-packs-and-project-modules.html" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fextending-martenweave-with-domain-packs-and-project-modules.html&text=Extending%20Martenweave%20with%20Project%20Modules%20and%20Domain%20Packs" target="_blank" rel="noopener noreferrer">X</a><a href="mailto:?subject=Extending%20Martenweave%20with%20Project%20Modules%20and%20Domain%20Packs&body=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fextending-martenweave-with-domain-packs-and-project-modules.html">Email</a><button type="button" data-copy-link data-share-url="https://martenweave.github.io/blog/extending-martenweave-with-domain-packs-and-project-modules.html">Copy link</button></div><p class="share-status" data-share-status aria-live="polite"></p></section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/docs/support-martenweave.html">Support</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>
