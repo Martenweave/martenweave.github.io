@@ -20,6 +20,10 @@ Use SAP MDG to govern operational master data. Use Datasphere and SAP Business D
 
 Excel, Jira, Confluence, and internal scripts are often good local tools but do not automatically form an authoritative model or controlled relationship graph. Read [Martenweave vs Excel, Jira, and Confluence](/blog/martenweave-vs-excel-jira-and-confluence.html).
 
+### dbt and Git-based approaches
+
+dbt is built for analytics transformation and semantic models; Git is a strong versioning and review layer. Read [Martenweave vs dbt and custom Git repositories](/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html) to decide whether the delivery problem needs an additional canonical model and evidence layer.
+
 ### Build, buy, or extend
 
 Use Martenweave when teams need inspectable canonical model files, deterministic validation, derived indexes, gap detection, lineage and impact analysis, and human-approved proposals—and are prepared to operate and extend a local-first tool. Read [Build, buy, or extend a model-governance approach](/blog/build-buy-or-extend-model-governance.html) and [when Martenweave is the wrong tool](/blog/when-martenweave-is-the-wrong-tool.html).

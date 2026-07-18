@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model | Martenweave</title>
+    <meta
+      name="description"
+      content="Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Dzmitryi Kharlanau" />
+    <meta name="application-name" content="Martenweave" />
+    <meta name="martenweave-deployment-ref" content="main" />
+    <meta name="theme-color" content="#321136" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Martenweave" />
+    <meta property="og:url" content="https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html" />
+    <meta property="og:title" content="Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model | Martenweave" />
+    <meta property="og:description" content="Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…" />
+    <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Martenweave open-source data model registry" />
+    <meta property="article:author" content="https://martenweave.github.io/docs/author.html" />
+    <meta property="article:published_time" content="2026-07-18" />
+    <meta property="article:modified_time" content="2026-07-18" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model | Martenweave" />
+    <meta name="twitter:description" content="Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…" />
+    <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
+    <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
+    <link rel="canonical" href="https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" sizes="16x16" href="/assets/favicon-16.png" type="image/png" />
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Martenweave AI summary" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms-full.txt"
+      title="Martenweave full AI context"
+    />
+    <link rel="alternate" type="application/json" href="/ai.json" title="Martenweave metadata" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Martenweave Blog" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+    <script type="application/ld+json">
+      {
+            "@context": "https://schema.org",
+            "@graph": [
+                  {
+                        "@type": "WebPage",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html#webpage",
+                        "url": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html",
+                        "name": "Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model | Martenweave",
+                        "description": "Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…",
+                        "isPartOf": {
+                              "@id": "https://martenweave.github.io/#website"
+                        },
+                        "breadcrumb": {
+                              "@id": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html#breadcrumb"
+                        },
+                        "primaryImageOfPage": {
+                              "@id": "https://martenweave.github.io/assets/og-image.png"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "inLanguage": "en"
+                  },
+                  {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html#breadcrumb",
+                        "itemListElement": [
+                              {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://martenweave.github.io/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Blog",
+                                    "item": "https://martenweave.github.io/blog/"
+                              },
+                              {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model",
+                                    "item": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html"
+                              }
+                        ]
+                  },
+                  {
+                        "@type": "Article",
+                        "@id": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html#content",
+                        "headline": "Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model",
+                        "name": "Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model",
+                        "description": "Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…",
+                        "url": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html",
+                        "mainEntityOfPage": {
+                              "@id": "https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html#webpage"
+                        },
+                        "author": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "creator": {
+                              "@id": "https://martenweave.github.io/#person"
+                        },
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "isAccessibleForFree": true,
+                        "inLanguage": "en",
+                        "datePublished": "2026-07-18",
+                        "dateModified": "2026-07-18",
+                        "articleSection": "Model governance",
+                        "keywords": "Model governance",
+                        "timeRequired": "PT4M"
+                  },
+                  {
+                        "@type": "Organization",
+                        "@id": "https://martenweave.github.io/#organization",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "logo": {
+                              "@type": "ImageObject",
+                              "url": "https://martenweave.github.io/assets/logo.png"
+                        },
+                        "sameAs": [
+                              "https://github.com/Martenweave"
+                        ]
+                  },
+                  {
+                        "@type": "Person",
+                        "@id": "https://martenweave.github.io/#person",
+                        "name": "Dzmitryi Kharlanau",
+                        "url": "https://martenweave.github.io/docs/author.html",
+                        "sameAs": [
+                              "https://www.linkedin.com/in/dkharlanau/",
+                              "https://x.com/dkharlanau",
+                              "https://hashnode.com/@dkharlanau",
+                              "https://medium.com/@dkharlanau",
+                              "https://huggingface.co/dkharlanau",
+                              "https://dev.to/dkharlanau",
+                              "https://substack.com/@dkharlanau",
+                              "https://www.reddit.com/user/dkharlanau"
+                        ],
+                        "description": "Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.",
+                        "jobTitle": "Senior SAP Consultant",
+                        "worksFor": {
+                              "@type": "Organization",
+                              "name": "EPAM Systems",
+                              "url": "https://www.epam.com"
+                        },
+                        "knowsAbout": [
+                              "SAP SD",
+                              "SAP logistics",
+                              "SAP integration",
+                              "SAP Master Data Governance",
+                              "application management services",
+                              "data migration",
+                              "data governance",
+                              "ABAP",
+                              "data lineage",
+                              "impact analysis"
+                        ]
+                  },
+                  {
+                        "@type": "WebSite",
+                        "@id": "https://martenweave.github.io/#website",
+                        "name": "Martenweave",
+                        "url": "https://martenweave.github.io/",
+                        "publisher": {
+                              "@id": "https://martenweave.github.io/#organization"
+                        },
+                        "inLanguage": "en"
+                  }
+            ]
+      }
+    </script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Martenweave home">
+          <img src="/assets/logo.png" alt="" width="34" height="34" />
+          <span>Martenweave</span>
+        </a>
+        <div class="nav-links">
+          <a href="/docs.html">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+          <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="article-shell">
+
+      <article class="doc-content blog-article">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model</span>
+        </nav>
+<header class="blog-header"><p class="section-kicker">Model governance</p><h1>Martenweave vs dbt and Custom Git Repositories: Transformation Code Is Not a Migration Model</h1><p class="blog-meta">By Dzmitryi Kharlanau · Published <time datetime="2026-07-18">18 July 2026</time> · 4 min read</p><p class="blog-summary">Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories conta…</p><details class="article-contents"><summary>Contents</summary><nav aria-label="Article contents"><ol><li><a href="#what-dbt-does-better">What dbt does better</a></li><li><a href="#what-a-custom-git-repository-can-already-achieve">What a custom Git repository can already achieve</a></li><li><a href="#where-martenweave-adds-a-layer">Where Martenweave adds a layer</a></li><li><a href="#direct-competitor-adjacent-tool-or-complement">Direct competitor, adjacent tool, or complement?</a></li><li><a href="#decision-framework">Decision framework</a></li><li><a href="#sources-and-notes">Sources and notes</a></li></ol></nav></details></header>
+<p>Many data teams already version model-related work in Git. dbt projects contain SQL models, YAML properties, tests, and a dependency graph. Internal repositories contain mapping scripts, CSV files, diagrams, and documentation. That is often a strong foundation.</p>
+<p>The question is not whether Git is enough. It is whether the repository has a canonical model, deterministic relationship validation, and a controlled way to turn delivery evidence into a reviewed change.</p>
+<h2 id="what-dbt-does-better">What dbt does better</h2>
+<p>dbt is an analytics-engineering and data-transformation tool. Its models, tests, documentation, semantic layer, and lineage help teams build and understand transformed analytical data. The dbt documentation describes a Semantic Layer that lets teams define metrics over existing models and have joins handled consistently; its catalog helps users discover dbt resources.</p>
+<p>Choose dbt when the work is warehouse transformation, analytics engineering, model execution, testing, metric definition, and the lineage of those transformations. Martenweave does not compile or execute SQL transformations, orchestrate data builds, manage a warehouse, or replace dbt’s analytics workflow.</p>
+<h2 id="what-a-custom-git-repository-can-already-achieve">What a custom Git repository can already achieve</h2>
+<p>Git is an excellent change-control layer. A carefully maintained repository can provide version history, pull-request review, code ownership, templates, automated checks, and transparent artefacts. Some teams should continue with an internal repository rather than introduce a separate product.</p>
+<p>The risk is not Git itself. The risk is an unstructured collection of files where the relationship between a business attribute, SAP context, source column, target field, mapping rule, evidence gap, decision, and approval can only be reconstructed by reading multiple documents. Git records that files changed; it does not automatically define or validate the model inside them.</p>
+<h2 id="where-martenweave-adds-a-layer">Where Martenweave adds a layer</h2>
+<p>Martenweave uses Git-friendly canonical Markdown and YAML files, but gives the files a registered object model and validation pipeline. A mapping is not merely a row in a workbook or a comment in SQL: it can be connected to field endpoints, an attribute, an entity context, value mappings, issues, decisions, and a reviewable PatchProposal. Generated indexes, lineage edges, and reports are derived from that canonical model.</p>
+<p>For a SAP migration, this matters because the governing question is often semantic rather than executable. A dbt graph can show that a customer staging model feeds a reporting model. It may not express that the source’s <code>CUST_GRP</code> field maps to a sales-area-dependent SAP attribute, that the source extract lacks the required column in one country, or that an exception needs approval before the next mock load.</p>
+<h2 id="direct-competitor-adjacent-tool-or-complement">Direct competitor, adjacent tool, or complement?</h2>
+<p>dbt is an adjacent and often complementary tool. It is a direct alternative only when the team’s actual need is data-transformation documentation and testing, not a migration or MDM model-evidence layer.</p>
+<p>A custom Git repository is a viable alternative when it already has the model structure, tests, review discipline, and maintainers required for the programme. Martenweave is an accelerator for teams that want those mechanics in a reusable open-source Core rather than build and operate them entirely from scratch.</p>
+<p>Use a simple boundary:</p>
+<ul>
+<li>dbt owns executable analytics transformations and their documentation;</li>
+<li>Git owns versioning and review across repositories;</li>
+<li>Martenweave owns the canonical delivery model and its deterministic, proposal-based governance workflow.</li>
+</ul>
+<h2 id="decision-framework">Decision framework</h2>
+<p>Keep the existing Git repository if its model semantics are clear, validation is reliable, and the team can trace a change without manual archaeology.</p>
+<p>Use dbt where the business need is analytical transformation and metric governance.</p>
+<p>Add Martenweave when the delivery issue is an independent model of business meaning, SAP contexts, mappings, evidence gaps, decisions, and controlled model changes. The Core can be extended, but that extension should be justified by a recurring delivery problem, not by a desire to replace every repository with one tool.</p>
+<h2 id="sources-and-notes">Sources and notes</h2>
+<ul>
+<li><a href="https://docs.getdbt.com/">dbt Developer Hub</a> describes dbt’s transformation, documentation, catalog, lineage, and semantic-layer products.</li>
+<li><a href="https://github.com/metalhatscats/martenweave-core/blob/main/docs/github-publishing-workflow.md">Martenweave GitHub publishing workflow</a> describes Git as a versioning and review layer around canonical model files.</li>
+<li><a href="/docs/architecture.html">Martenweave architecture</a> describes the canonical/derived boundary.</li>
+<li><a href="/blog/martenweave-vs-excel-jira-and-confluence.html">Martenweave vs Excel, Jira, and Confluence</a> covers the wider delivery-workspace comparison.</li>
+</ul>
+<p>Martenweave is independent and is not affiliated with, endorsed by, or a replacement for dbt. Product names are trademarks of their respective owners.</p>
+<aside class="author-card" aria-labelledby="author-card-title"><p class="section-kicker">About the author</p><h2 id="author-card-title">Dzmitryi Kharlanau</h2><p>Dzmitryi Kharlanau is a Senior SAP Consultant at EPAM Systems with more than 12 years of experience across SAP SD, logistics, integration, MDG-related work, and AMS-heavy delivery.</p><p><a href="/docs/author.html">Read author profile</a> <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/dkharlanau/">LinkedIn</a> <span aria-hidden="true">·</span> <a href="https://dkharlanau.github.io/">Personal site</a></p></aside><aside class="blog-cta"><strong>Put the evidence in one controlled model.</strong><p>Explore the local-first workflow, then scope a representative pilot slice.</p><a href="/docs/pilot-projects.html">Explore pilot projects</a></aside><aside class="topic-guide"><span class="section-kicker">Go deeper</span><p>Explore the <a href="/docs/product.html">Martenweave product guide</a>.</p></aside><section class="article-sources" aria-label="Primary sources"><h2>Primary sources</h2><ul><li><a href="https://www.sap.com/products/technology-platform/master-data-governance.html">SAP Master Data Governance</a></li><li><a href="https://help.sap.com/">SAP Help Portal</a></li><li><a href="https://github.com/metalhatscats/martenweave-core">Martenweave Core source repository</a></li></ul></section><section class="related-articles"><h2>Related articles</h2><ul><li><a href="/blog/how-to-investigate-an-sap-data-model-problem-before-changing-the-system.html">How to Investigate an SAP Data Model Problem Before Changing the System</a></li><li><a href="/blog/data-model-registry-vs-mdm-platform.html">Data Model Registry vs MDM Platform</a></li><li><a href="/blog/data-model-registry-vs-data-catalog.html">Data Model Registry vs Data Catalog</a></li></ul></section><nav class="article-neighbors" aria-label="More articles"><a href="/blog/reusable-model-knowledge-for-consulting-and-implementation-teams.html"><span>Previous</span>How Consulting Teams Can Reuse SAP Migration Knowledge Without Reusing Client Data</a></nav>
+<section class="share-controls" aria-label="Share this page" data-share-controls><p class="section-kicker">Share this page</p><div class="share-actions"><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-dbt-and-custom-git-model-repositories.html" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-dbt-and-custom-git-model-repositories.html&text=Martenweave%20vs%20dbt%20and%20Custom%20Git%20Repositories%3A%20Transformation%20Code%20Is%20Not%20a%20Migration%20Model" target="_blank" rel="noopener noreferrer">X</a><a href="mailto:?subject=Martenweave%20vs%20dbt%20and%20Custom%20Git%20Repositories%3A%20Transformation%20Code%20Is%20Not%20a%20Migration%20Model&body=https%3A%2F%2Fmartenweave.github.io%2Fblog%2Fmartenweave-vs-dbt-and-custom-git-model-repositories.html">Email</a><button type="button" data-copy-link data-share-url="https://martenweave.github.io/blog/martenweave-vs-dbt-and-custom-git-model-repositories.html">Copy link</button></div><p class="share-status" data-share-status aria-live="polite"></p></section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="/" aria-label="Martenweave home">
+        <img src="/assets/logo.png" alt="" width="30" height="30" />
+        <span>Martenweave</span>
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://github.com/metalhatscats/martenweave-core">GitHub</a>
+        <a href="https://pypi.org/project/martenweave-core/">PyPI</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/docs/support-martenweave.html">Support</a>
+        <a href="/ai.txt">AI disclosure</a>
+        <a href="https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE">License</a>
+        <a href="/llms.txt">llms.txt</a>
+        <a href="/humans.txt">humans.txt</a>
+        <a class="website-source" href="https://github.com/Martenweave/martenweave.github.io">
+          Website source
+        </a>
+      </nav>
+      <p class="footer-line">AI proposes. Validators verify. Humans approve.</p>
+    </footer>
+  </body>
+</html>
