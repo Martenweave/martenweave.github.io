@@ -257,6 +257,8 @@
 <li><strong>Lineage and impact analysis</strong> — trace from a legacy column through mappings, attributes, and contexts to every downstream SAP field; run impact analysis before changing a rule.</li>
 <li><strong>Human-approved AI proposals</strong> — ask AI to draft a <code>PatchProposal</code> from a migration note or ticket; deterministic validators verify it, and a human approves the change.</li>
 </ul>
+<p><img src="/assets/screenshots/synthetic-customer-model-overview.png" alt="Synthetic Customer Business Partner model overview showing a fresh local index and canonical object counts" /></p>
+<p>*This local static viewer is generated from the checked-in synthetic Customer Business Partner example after a synthetic dataset-gap proposal is added. It contains no client data and remains read-only; canonical files under <code>model/</code> are authoritative.*</p>
 <h2 id="what-it-is-not">What it is not</h2>
 <p>Martenweave does not write data back to SAP. It does not replace an enterprise MDM platform, run workflows, or operate as a chatbot. The local generated viewer is read-only. SAP table and field names are used descriptively for migration context; Martenweave is not an SAP product, partner, or certified solution.</p>
 <h2 id="example-scope">Example scope</h2>

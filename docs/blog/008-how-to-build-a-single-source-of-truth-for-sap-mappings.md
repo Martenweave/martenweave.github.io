@@ -115,6 +115,10 @@ The controlled model does not replace every surrounding system.
 
 It defines the relationships that make their information coherent.
 
+![Synthetic local object catalogue showing a fictional CRM, commerce, finance, migration hub, and SAP target lineage](/assets/screenshots/synthetic-customer-multi-system-lineage.jpg)
+
+*Synthetic example: the Customer 360 demo separates fictional Nimbus CRM, Orbit Commerce, Ledger AR, Atlas Migration Hub, and SAP S/4HANA target evidence. It uses invented identifiers and names to make mapping and lineage reviewable without presenting client data.*
+
 ## What the mapping source of truth should contain
 
 At minimum, a governed mapping model should separate the objects that are often mixed together in workbook rows.
