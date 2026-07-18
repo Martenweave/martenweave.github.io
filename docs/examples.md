@@ -29,6 +29,34 @@ Run:
 .venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/customer_bp_model
 ```
 
+## Synthetic Customer 360 Migration Demo
+
+Path:
+
+```text
+examples/synthetic_customer_migration_demo
+```
+
+Best for:
+
+- a fully fictional, explicitly isolated demo dataset
+- collecting and reconciling customer evidence from Nimbus CRM, Orbit Commerce, and Ledger AR
+- mapping through the Atlas Migration Hub before the SAP S/4HANA target
+- explaining field-level mappings, value normalization, `IntegrationFlow`, and `DataFlowStep` lineage without showing client data
+
+![Synthetic local object catalogue showing the Atlas hub, Nimbus CRM, and Ledger AR field endpoints](/assets/screenshots/synthetic-customer-multi-system-lineage.jpg)
+
+*Synthetic demo evidence: this local, read-only viewer is generated from fictional sources only. The `SYS-DEMO-*` identifiers, account references, customer names, and group values are invented for explanation and test use; they are not masked production data.*
+
+Run:
+
+```bash
+.venv/bin/martenweave validate --repo examples/synthetic_customer_migration_demo
+.venv/bin/martenweave build-index --repo examples/synthetic_customer_migration_demo --jsonl
+.venv/bin/martenweave trace FEP-DEMO-HUB-GOLDEN-NAME --repo examples/synthetic_customer_migration_demo
+.venv/bin/martenweave impact FEP-S4-KNVV-KDGRP --repo examples/synthetic_customer_migration_demo
+```
+
 ## Supplier / Vendor
 
 Path:
