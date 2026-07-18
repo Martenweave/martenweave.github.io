@@ -32,6 +32,10 @@ Our approach is to compare representative datasets with the approved model befor
 
 A dataset gap is a difference between what the approved migration model expects and what the current dataset can provide or prove.
 
+![Synthetic Customer Business Partner dataset-gap report showing deterministic gap types and linked canonical objects](/assets/screenshots/synthetic-customer-dataset-gaps.png)
+
+*Synthetic example: a local, read-only report generated from the checked-in Customer Business Partner model and a deliberately messy sample extract. The counts are illustrative model evidence, not client metrics.*
+
 This definition is broader than a missing column.
 
 A dataset can contain every expected column and still have serious gaps.

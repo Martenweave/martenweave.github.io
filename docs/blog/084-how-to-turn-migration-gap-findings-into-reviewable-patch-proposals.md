@@ -60,6 +60,10 @@ This is the product problem that PatchProposals are meant to solve.
 
 Martenweave is built around a controlled sequence in which evidence leads to a proposal, the proposal is validated against the model, gaps and impact are recalculated, and only then is the change presented for human review. Canonical files remain authoritative, generated indexes are disposable, and AI must not modify model truth silently.
 
+![Synthetic pending review PatchProposal generated from a dataset-gap finding](/assets/screenshots/synthetic-customer-patch-proposal.png)
+
+*Synthetic example: a pending-review `PatchProposal` produced from the Customer Business Partner sample's deliberately messy dataset. It is a proposal artifact, not an automatic change to canonical model files.*
+
 A PatchProposal is therefore not an AI-generated edit.
 
 It is a governed candidate state.
