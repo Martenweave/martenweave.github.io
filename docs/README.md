@@ -21,6 +21,7 @@ Start here:
 - [Open source](open-source.md) - Apache 2.0 rights, optional services, and contribution path.
 - [Support Martenweave](support-martenweave.md) - sponsorship conversations, design partnerships, pilots, and public contributions.
 - [Partnerships](partnerships.md) - integration collaboration and a delivery offer for consulting practices.
+- [Marketing assets](assets.md) - approved visuals, architecture scheme, and use guidance.
 
 For deep implementation details, see the core repository docs:
 

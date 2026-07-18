@@ -251,6 +251,14 @@ const docRoutes = [
       "Work with Martenweave on bounded integrations, delivery partnerships, and consulting practices for governed SAP migration and data-model work.",
   },
   {
+    source: "assets.md",
+    output: "assets.html",
+    label: "Marketing assets",
+    seoTitle: "Martenweave Marketing Assets | Reusable Project Visuals",
+    description:
+      "Download approved Martenweave brand marks, marketing visuals, and architecture diagrams for accurate project communication.",
+  },
+  {
     source: "engagement.md",
     output: "engagement.html",
     label: "Engagement",
