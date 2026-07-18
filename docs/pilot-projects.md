@@ -42,6 +42,19 @@ the workbook without becoming model truth.
 
 Pilot inputs remain inputs. Martenweave does not write back to SAP, and AI-assisted work produces proposals for review rather than direct canonical changes. The pilot can run entirely locally.
 
+## A clear pilot exit check
+
+Before a pilot model is presented as ready for a wider team, run its deterministic readiness
+profile:
+
+```bash
+martenweave readiness --repo ./pilot-model --profile pilot --json
+```
+
+Treat a failing gate as evidence for the next review—not as a reason to reduce the threshold or
+apply a shortcut. Model changes stay proposal-first: validators verify, the required human
+approvers decide, and the same readiness command is rerun after the approved change.
+
 ## Discuss a pilot
 
 Read the [engagement process](/docs/engagement.html) to see the working sequence. When you are ready, send Metalhatcats the model slice, evidence available, and decision you need to make.
