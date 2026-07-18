@@ -6,6 +6,33 @@ Core repository:
 
 https://github.com/metalhatscats/martenweave-core/tree/main/examples
 
+## Northstar Mobility Group — Synthetic Pilot
+
+Path:
+
+```text
+examples/northstar_mobility_pilot
+```
+
+Best for:
+
+- an explicitly fictional, multidomain SAP S/4HANA transformation scenario;
+- Business Partner/Customer, Supplier, Material, Sales, Procurement, Logistics,
+  and Finance relationships in one canonical model;
+- deterministic CSV/XLSX profiling, intentional gaps, ownership blockers,
+  decisions, evidence, pending proposals, and cross-domain impact; and
+- a connected local Workbench driven by the same canonical repository.
+
+Run the complete reproducible workflow:
+
+```bash
+bash scripts/demo_northstar_pilot.sh
+```
+
+Read the [Northstar synthetic pilot walkthrough](/docs/northstar-synthetic-pilot.html)
+for the verified results, fictional roles, limitations, screenshot, and full command
+sequence.
+
 ## Customer / Business Partner
 
 Path:

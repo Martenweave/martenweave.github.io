@@ -55,6 +55,15 @@ Treat a failing gate as evidence for the next review—not as a reason to reduce
 apply a shortcut. Model changes stay proposal-first: validators verify, the required human
 approvers decide, and the same readiness command is rerun after the approved change.
 
+## Inspect a fictional end-to-end pilot
+
+The [Northstar Mobility Group synthetic pilot](/docs/northstar-synthetic-pilot.html)
+is a reproducible example, not a customer story. It joins seven SAP transformation
+domains, deterministic CSV/XLSX evidence, intentional blockers, lineage and impact,
+and a connected local Workbench using the same canonical repository. It shows what a
+failing readiness decision looks like without implying SAP write-back or automatic
+model mutation.
+
 ## Discuss a pilot
 
 Read the [engagement process](/docs/engagement.html) to see the working sequence. When you are ready, send Metalhatcats the model slice, evidence available, and decision you need to make.

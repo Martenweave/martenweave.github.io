@@ -9,6 +9,7 @@ Start here:
 - [Import/export](import-export.md) - available import/export paths, supported manual workflows, and planned integrations.
 - [Governance](governance.md) - practical governance mapping for definitions, ownership, lineage, quality, stewardship, and change control.
 - [Quickstart](quickstart.md) - local install and command flow from validation to proposal dry-run.
+- [Northstar synthetic pilot](northstar-synthetic-pilot.md) - a fully fictional, reproducible multidomain SAP transformation walkthrough.
 - [Local viewer](local-viewer.md) - generated local read-only viewer from the SQLite index.
 - [Examples](examples.md) - which bundled model to use and what each one proves.
 - [Use cases](use-cases.md) - practical scenarios for migration, MDM, governance, validation, AMS, and AI-assisted maintenance.

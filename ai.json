@@ -44,6 +44,16 @@
     "programmingLanguage": "Python",
     "runtimePlatform": "Python 3.11+"
   },
+  "referencePilots": [
+    {
+      "name": "Northstar Mobility Group — Synthetic Pilot",
+      "fictional": true,
+      "url": "https://martenweave.github.io/docs/northstar-synthetic-pilot.html",
+      "corePath": "examples/northstar_mobility_pilot",
+      "domains": ["Business Partner and Customer", "Supplier", "Material", "Sales", "Procurement", "Logistics", "Finance"],
+      "limitations": "Synthetic evidence only; no SAP write-back, no automatic canonical mutation, and human review remains required."
+    }
+  ],
   "sourceOfTruth": {
     "format": "Markdown and YAML canonical model files",
     "canonicalFilesAreAuthoritative": true,

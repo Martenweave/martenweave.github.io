@@ -106,6 +106,14 @@ const docRoutes = [
       "Explore Martenweave example registries for SAP Business Partner and Customer, Supplier and Vendor, and generic product data models.",
   },
   {
+    source: "northstar-synthetic-pilot.md",
+    output: "northstar-synthetic-pilot.html",
+    label: "Synthetic pilot walkthrough",
+    seoTitle: "Northstar Synthetic SAP Transformation Pilot | Martenweave",
+    description:
+      "Reproduce the fully fictional Northstar Mobility Group SAP transformation pilot: canonical model validation, datasets, gaps, readiness, lineage, impact, proposals, and the local Workbench.",
+  },
+  {
     source: "use-cases.md",
     output: "use-cases.html",
     label: "Use cases",
