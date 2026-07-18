@@ -47,6 +47,8 @@ These are directionally aligned with the product, but should not be described as
 
 Martenweave can grow toward these paths, but the current open-source core is a local-first package and CLI.
 
+Teams building data or delivery platforms can discuss a bounded integration collaboration through [Partnerships](/docs/partnerships.html). Any such work begins with an explicit evidence flow, ownership model, and approval boundary.
+
 ## Import Safety Model
 
 Raw files are not model truth.

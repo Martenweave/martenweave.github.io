@@ -243,6 +243,14 @@ const docRoutes = [
       "Practical consulting for SAP migration, MDM, data governance, and AMS teams that need an accountable model and evidence workflow.",
   },
   {
+    source: "partnerships.md",
+    output: "partnerships.html",
+    label: "Partnerships",
+    seoTitle: "Martenweave Partnerships | Integration and Consulting Collaboration",
+    description:
+      "Work with Martenweave on bounded integrations, delivery partnerships, and consulting practices for governed SAP migration and data-model work.",
+  },
+  {
     source: "engagement.md",
     output: "engagement.html",
     label: "Engagement",

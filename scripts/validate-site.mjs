@@ -28,6 +28,7 @@ const docRoutes = [
   { source: "capabilities.md", output: "capabilities.html" },
   { source: "pilot-projects.md", output: "pilot-projects.html" },
   { source: "consulting.md", output: "consulting.html" },
+  { source: "partnerships.md", output: "partnerships.html" },
   { source: "engagement.md", output: "engagement.html" },
   { source: "author.md", output: "author.html" },
   { source: "contact.md", output: "contact.html" },
