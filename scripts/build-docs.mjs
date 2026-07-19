@@ -114,6 +114,14 @@ const docRoutes = [
       "Reproduce the fully fictional Northstar Mobility Group SAP transformation pilot: canonical model validation, datasets, gaps, readiness, lineage, impact, proposals, and the local Workbench.",
   },
   {
+    source: "ai-factory.md",
+    output: "ai-factory.html",
+    label: "Development AI Factory",
+    seoTitle: "Development AI Factory | Martenweave Agent Infrastructure",
+    description:
+      "Use the repository-native Martenweave Development AI Factory: specialist agents, validated skills, GitHub issue queue, deterministic gates, and L0-L3 autonomy for safe agent-driven development.",
+  },
+  {
     source: "use-cases.md",
     output: "use-cases.html",
     label: "Use cases",

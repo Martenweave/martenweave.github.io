@@ -10,6 +10,7 @@ Start here:
 - [Governance](governance.md) - practical governance mapping for definitions, ownership, lineage, quality, stewardship, and change control.
 - [Quickstart](quickstart.md) - local install and command flow from validation to proposal dry-run.
 - [Northstar synthetic pilot](northstar-synthetic-pilot.md) - a fully fictional, reproducible multidomain SAP transformation walkthrough.
+- [Development AI Factory](ai-factory.md) - how AI agents safely develop Martenweave itself: agents, skills, issue queue, gates, and autonomy levels.
 - [Local viewer](local-viewer.md) - generated local read-only viewer from the SQLite index.
 - [Examples](examples.md) - which bundled model to use and what each one proves.
 - [Use cases](use-cases.md) - practical scenarios for migration, MDM, governance, validation, AMS, and AI-assisted maintenance.
