@@ -48,6 +48,14 @@ Supplier, Procurement, and Finance (71 affected objects); shared customer credit
 limit reaches Customer, Sales, and Finance (55 affected objects). These are
 generated findings from the example, not claims about a customer programme.
 
+![Canonical model ledger in the local Workbench. Objects owned by the fictional stewards show their assigned owners, while the deliberately ownerless Logistics objects show Unassigned.](/assets/screenshots/northstar-mobility-pilot-ledger-ownership.png)
+
+*The Workbench ledger reads ownership straight from the canonical files through
+the local API: attributes curated by the fictional stewards show their assigned
+owners, and the intentionally ownerless Logistics objects (`ATTR-DELIVERY-ID`,
+`ATTR-DELIVERY-QUANTITY`, `DS-FREIGHTLINK-DELIVERIES`) show Unassigned — the
+same ownership gap the `owners` report and readiness gates flag.*
+
 ## Reproduce it locally
 
 Use Python 3.11+ and a clean Core checkout. The script regenerates the deterministic
