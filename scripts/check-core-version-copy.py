@@ -34,6 +34,19 @@ def main() -> int:
             candidates[file_name] = "missing"
 
     drift = [f"{name}={value!r}" for name, value in candidates.items() if value != core_version]
+
+    version_claim_patterns = [
+        re.compile(r"(?:current|latest|supported)[^.]*?version[^`0-9]*`(\d+\.\d+\.\d+)`", re.I),
+        re.compile(r"martenweave-core\b`?[^.\n]{0,40}?version[^`0-9]*`(\d+\.\d+\.\d+)`", re.I),
+        re.compile(r"martenweave-core\s+(\d+\.\d+\.\d+)`"),
+    ]
+    for doc in ("docs/product.md", "docs/faq.md", "docs/roadmap.md"):
+        text = (root / doc).read_text(encoding="utf-8")
+        for pattern in version_claim_patterns:
+            for match in pattern.finditer(text):
+                if match.group(1) != core_version:
+                    drift.append(f"{doc} claims {match.group(1)}")
+
     if drift:
         print(f"Core version is {core_version}; public copy drift: {', '.join(drift)}")
         return 1

@@ -16,7 +16,7 @@ a hosted service, or a roadmap item.
   loads: the product north star, policies, specialist agent definitions,
   workflows, and project memory (known limitations, rejected ideas, lessons
   learned, exact validation commands).
-- **Reusable skills** (`skills/`) — 23 procedure cards covering audit, gap
+- **Reusable skills** (`skills/`) — 24 procedure cards covering audit, gap
   detection, issue triage, planning, patching, review, test/CI repair, synthetic
   pilot validation, AI evaluation, domain packs, documentation sync, website
   claim verification, and release preparation. All are structurally validated by

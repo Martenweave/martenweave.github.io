@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,8 +16,15 @@ const docRoutes = [
   { source: "quickstart.md", output: "quickstart.html" },
   { source: "local-viewer.md", output: "local-viewer.html" },
   { source: "examples.md", output: "examples.html" },
+  { source: "northstar-synthetic-pilot.md", output: "northstar-synthetic-pilot.html" },
+  { source: "ai-factory.md", output: "ai-factory.html" },
   { source: "use-cases.md", output: "use-cases.html" },
+  { source: "comparisons.md", output: "comparisons.html" },
   { source: "use-cases/sap-migration.md", output: "use-cases/sap-migration.html" },
+  { source: "use-cases/mdm.md", output: "use-cases/mdm.html" },
+  { source: "use-cases/mdg.md", output: "use-cases/mdg.html" },
+  { source: "use-cases/data-governance.md", output: "use-cases/data-governance.html" },
+  { source: "use-cases/ams.md", output: "use-cases/ams.html" },
   { source: "architecture.md", output: "architecture.html" },
   { source: "ai-governance.md", output: "ai-governance.html" },
   { source: "faq.md", output: "faq.html" },
@@ -353,7 +361,7 @@ const requiredText = [
   "Humans approve.",
   "Git records.",
   "A synthetic model can expose a specific next review.",
-  "ATTR-BP-CENTRAL-FOUNDATION-DATE",
+  "ATTR-BP-CENTRAL-LEGAL-FORM",
   "Run the example",
 ];
 
@@ -625,6 +633,37 @@ if (aiJson.packageVersion !== "0.6.1" || aiJson.corePackage?.version !== "0.6.1"
   errors.push("ai.json package version fields must be 0.6.1.");
 }
 
+const currentCoreVersion = aiJson.packageVersion;
+const currentVersionClaimPatterns = [
+  /(?:current|latest|supported)[^.]*?version[^`0-9]*`(\d+\.\d+\.\d+)`/gi,
+  /martenweave-core\b`?[^.\n]{0,40}?version[^`0-9]*`(\d+\.\d+\.\d+)`/gi,
+  /martenweave-core\s+(\d+\.\d+\.\d+)`/g,
+];
+
+for (const file of markdownDocs) {
+  const text = readSiteFile(file);
+  for (const pattern of currentVersionClaimPatterns) {
+    for (const match of text.matchAll(pattern)) {
+      if (match[1] !== currentCoreVersion) {
+        errors.push(`${file} claims current version ${match[1]}; ai.json declares ${currentCoreVersion}.`);
+      }
+    }
+  }
+}
+
+for (const file of generatedDocs) {
+  const jsonLdBlocks = (htmlByFile.get(file) ?? "").matchAll(
+    /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+  );
+  for (const block of jsonLdBlocks) {
+    for (const match of block[1].matchAll(/"(?:softwareVersion|version)":\s*"(\d+\.\d+\.\d+)"/g)) {
+      if (match[1] !== currentCoreVersion) {
+        errors.push(`${file} JSON-LD declares version ${match[1]}; ai.json declares ${currentCoreVersion}.`);
+      }
+    }
+  }
+}
+
 if (!Array.isArray(aiJson.capabilities) || aiJson.capabilities.length < 6) {
   errors.push("ai.json must include capabilities.");
 }
@@ -842,9 +881,22 @@ const publicText = [
   robots,
   humans,
 ].join("\n");
-for (const privatePath of ["/Users/", "/home/", "C:\\Users\\", "file://"]) {
+const privatePathPatterns = ["/Users/", "/home/", "C:\\Users\\", "file://"];
+for (const privatePath of privatePathPatterns) {
   if (publicText.includes(privatePath)) {
     errors.push(`Public files contain a private or local path: ${privatePath}`);
+  }
+}
+
+const committedMarkdown = execSync("git ls-files '*.md'", { cwd: root, encoding: "utf8" })
+  .split("\n")
+  .filter(Boolean);
+for (const file of committedMarkdown) {
+  const text = readSiteFile(file);
+  for (const privatePath of privatePathPatterns) {
+    if (text.includes(privatePath)) {
+      errors.push(`Committed Markdown ${file} contains a private or local path: ${privatePath}`);
+    }
   }
 }
 

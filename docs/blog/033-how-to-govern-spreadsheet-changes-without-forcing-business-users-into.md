@@ -1144,7 +1144,7 @@ This is enough to create a safe bridge between Excel and Git.
 
 The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It transforms spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals.
 
-The current source version is listed as 0.5.0. The product remains CLI-driven and backend-first rather than a hosted editable enterprise application.
+As of July 2026, the source version is 0.6.1. The product remains CLI-driven and backend-first rather than a hosted editable enterprise application.
 
 Its current capabilities include:
 
@@ -1427,7 +1427,7 @@ Microsoft documents that Excel data validation can restrict entered values, prov
 
 Microsoft also documents SharePoint document-library controls including versioning, major and minor versions, content approval, and check-in/check-out with change comments. These controls support document governance but do not by themselves create object-level model validation or impact analysis.
 
-The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. As of July 2026, the source version is 0.6.1.
 
 The core uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 

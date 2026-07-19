@@ -1249,7 +1249,7 @@ GitHub becomes more useful when:
 
 ## Where Martenweave fits
 
-The current Martenweave Core README describes an open-source, backend-first governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes an open-source, backend-first governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals. As of July 2026, the source version is 0.6.1.
 
 Its pipeline is:
 

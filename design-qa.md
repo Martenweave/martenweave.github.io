@@ -1,6 +1,6 @@
 # Homepage design QA — Model atlas
 
-**Source visual truth:** `/Users/dzmitryikharlanau/.codex/generated_images/019f6c04-ff0c-7640-9688-b0193a474a74/exec-beb44061-881c-4b4a-9c45-c38ddc4fe15e.png` (selected direction 2, Model atlas).
+**Source visual truth:** locally generated candidate image from the design exploration (selected direction 2, Model atlas).
 
 **Implementation:** `http://127.0.0.1:4267/`, captured in the Codex in-app browser after the homepage implementation.
 

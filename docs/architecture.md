@@ -114,4 +114,4 @@ The current core is CLI/backend-first:
 - Git-friendly repository files
 - CSV/XLSX import and export review paths
 
-A UI can be useful later, but the model registry should not depend on a hosted UI.
+A local Workbench now exists as a read and review surface over the local API, but the model registry still does not depend on a hosted UI.

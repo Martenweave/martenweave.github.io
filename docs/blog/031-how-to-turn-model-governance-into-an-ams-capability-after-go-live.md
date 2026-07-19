@@ -917,7 +917,7 @@ It is to make model drift visible.
 
 The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions and SAP context into canonical model files, deterministic validation, dataset-gap reports, lineage, impact analysis and human-approved AI patch proposals.
 
-The current source version is listed as 0.5.0. The project remains CLI-driven and backend-first rather than a hosted editable production application.
+As of July 2026, the source version is 0.6.1. The project remains CLI-driven and backend-first rather than a hosted editable production application.
 
 Its core principles are directly relevant to AMS:
 
@@ -1356,7 +1356,7 @@ SAP currently describes SAP Master Data Governance as a governance layer that un
 
 SAP also distinguishes master-data integration as the distribution layer that provides applications with a harmonised view of master data in its current state.
 
-The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. As of July 2026, the source version is 0.6.1.
 
 Martenweave uses canonical model files, deterministic validation, disposable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 

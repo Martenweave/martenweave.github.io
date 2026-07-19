@@ -52,7 +52,7 @@ Martenweave is for:
 
 ## What Exists Now
 
-The current open-source core is `martenweave-core` version `0.5.0`, licensed under Apache License 2.0.
+The current open-source core is `martenweave-core` version `0.6.1`, licensed under Apache License 2.0.
 
 Available now:
 

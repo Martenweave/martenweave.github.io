@@ -6,6 +6,8 @@ We confirm a critical Supplier bank-data Finding.
 
 Forty payment-active Suppliers have expired bank verification, but the expected payment block is not active.
 
+*The scenario and figures in this opening are illustrative modelling assumptions, not a customer result or a measured outcome.*
+
 The Finding is clear enough:
 
 > Payment may remain enabled for bank details that are no longer covered by current Treasury verification.

@@ -35,7 +35,7 @@ const authorSocialProfiles = [
   "https://substack.com/@dkharlanau",
   "https://www.reddit.com/user/dkharlanau",
 ];
-const siteLastModified = "2026-07-16";
+const siteLastModified = new Date().toISOString().slice(0, 10);
 const deploymentRevision = "main";
 
 const docRoutes = [

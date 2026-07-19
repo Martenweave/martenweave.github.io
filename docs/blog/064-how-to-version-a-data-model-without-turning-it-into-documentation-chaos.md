@@ -202,7 +202,7 @@ Implementation state should therefore be referenced separately from canonical ve
 
 Martenweave itself has a software version.
 
-The current repository package identifies version `0.5.0`, and its changelog distinguishes product releases such as `0.4.0`, `0.4.1` and `0.5.0`.
+As of July 2026, the current repository package identifies version `0.6.1`, and its changelog distinguishes product releases such as `0.4.1`, `0.5.0` and `0.6.1`.
 
 This version describes the capabilities and behaviour of the Martenweave software.
 
@@ -215,7 +215,7 @@ It may determine:
 
 It does not identify the version of a client’s Customer model.
 
-A repository may contain Customer Model Baseline 12 while being processed by Martenweave 0.5.0.
+A repository may contain Customer Model Baseline 12 while being processed by Martenweave 0.6.1.
 
 These numbers should not be forced to match.
 
@@ -646,7 +646,7 @@ unsupported
 Example:
 
 ```text
-Martenweave 0.5.0
+Martenweave 0.6.1
 reads schema 1.0
 writes schema 1.0
 migrates schema 0.9 to 1.0
@@ -1064,7 +1064,7 @@ Generated from:
 commit abc123
 
 Martenweave:
-0.5.0
+0.6.1
 
 Schema:
 1.0

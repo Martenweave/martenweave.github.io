@@ -1675,7 +1675,7 @@ SAP currently describes SAP Master Data Governance as a governance layer that co
 
 GitHub documents pull requests as proposals that allow changes to be discussed, reviewed, checked and compared before they are merged. Its review model supports comments, approvals, requested changes, requested reviewers and required approvals.
 
-The current Martenweave Core README identifies Martenweave as an open-source, backend-first model-governance and evidence layer. The current source version is listed as 0.5.0.
+The current Martenweave Core README identifies Martenweave as an open-source, backend-first model-governance and evidence layer. As of July 2026, the source version is 0.6.1.
 
 Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 

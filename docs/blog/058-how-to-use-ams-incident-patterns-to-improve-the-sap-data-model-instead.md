@@ -8,6 +8,8 @@ Supplier-related incidents have fallen from 180 per month to 95.
 
 Average resolution time has improved. More tickets are resolved on first contact. Knowledge articles cover the most common validation messages. Automated routing sends incidents to the correct support teams.
 
+*The incident counts and improvements in this opening are illustrative modelling assumptions, not a customer result or a measured outcome.*
+
 The service organisation is performing better.
 
 But behind the lower ticket count, the same model weaknesses remain:

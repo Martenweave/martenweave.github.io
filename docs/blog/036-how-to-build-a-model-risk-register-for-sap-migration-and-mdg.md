@@ -1573,7 +1573,7 @@ SAP currently describes SAP Master Data Governance as a central governance layer
 
 NIST SP 800-30 Rev. 1 describes risk assessments as part of an overall risk-management process that provides leaders with information needed to determine appropriate courses of action. This article applies that general principle to model risks in SAP migration and MDG programmes; it does not imply that NIST defines the model-risk method presented here.
 
-The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. As of July 2026, the source version is 0.6.1.
 
 Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 

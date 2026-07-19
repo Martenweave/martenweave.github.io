@@ -1293,7 +1293,7 @@ NIST describes risk assessment as part of an overall risk-management process tha
 
 SAP currently describes SAP Master Data Governance as a central governance layer combining master data, policy and metadata, with governed models, attribute ownership, validated values, collaborative workflows, monitored business rules, mass changes and auditable data changes. SAP also recommends curating clean and correct master data early before an SAP S/4HANA implementation.
 
-The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. As of July 2026, the source version is 0.6.1.
 
 Martenweave uses canonical model files, deterministic validation, rebuildable generated indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 

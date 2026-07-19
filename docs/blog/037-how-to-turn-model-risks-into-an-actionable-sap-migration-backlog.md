@@ -1386,7 +1386,7 @@ This article was reviewed on 14 July 2026.
 
 SAP currently describes SAP Master Data Governance as a central governance layer that unifies master data, policy and metadata. Its capabilities include governed models, preservation of semantics and relationships, validated values, collaborative workflows, business-rule monitoring, mass changes and auditable data changes. SAP also recommends curating master data early before an SAP S/4HANA implementation because more automated processes rely heavily on clean and correct master data.
 
-The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. The current source version is listed as 0.5.0.
+The current Martenweave Core README describes Martenweave as an open-source, backend-first model-governance and evidence layer for SAP migration, MDM, data governance and AMS. As of July 2026, the source version is 0.6.1.
 
 The core uses canonical model files, deterministic validation, rebuildable indexes, dataset-gap analysis, trace and impact analysis, and reviewable `PatchProposal` and `ChangeRequest` workflows.
 
