@@ -766,7 +766,7 @@ if (!Array.isArray(faqEntity?.mainEntity) || faqEntity.mainEntity.length < 5) {
 const pilotHtml = htmlByFile.get("docs/pilot-projects.html") ?? "";
 if (
   !pilotHtml.includes("Order a pilot on LinkedIn") ||
-  !pilotHtml.includes('href="https://www.linkedin.com/in/metalhatcats/"')
+  !pilotHtml.includes('href="https://www.linkedin.com/company/metalhatscats/"')
 ) {
   errors.push("Pilot Projects must include a direct Metalhatcats LinkedIn order CTA.");
 }
@@ -774,7 +774,7 @@ if (
 const supportHtml = htmlByFile.get("docs/support-martenweave.html") ?? "";
 if (
   !supportHtml.includes("Discuss sponsorship, a design partnership, or a pilot") ||
-  !supportHtml.includes('href="https://www.linkedin.com/in/metalhatcats/"')
+  !supportHtml.includes('href="https://www.linkedin.com/company/metalhatscats/"')
 ) {
   errors.push("Support page must include a direct Metalhatcats LinkedIn contact CTA.");
 }

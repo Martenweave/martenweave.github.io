@@ -1,6 +1,6 @@
 # Contact
 
-To discuss a Martenweave pilot, consulting engagement, or a practical question about model governance, contact [Metalhatcats on LinkedIn](https://www.linkedin.com/in/metalhatcats/).
+To discuss a Martenweave pilot, consulting engagement, or a practical question about model governance, contact [Metalhatcats on LinkedIn](https://www.linkedin.com/company/metalhatscats/).
 
 ## Helpful context
 

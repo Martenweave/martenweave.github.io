@@ -41,4 +41,4 @@ This approach makes it possible to prove usefulness while respecting client conf
 
 ## Start a conversation
 
-Contact [Metalhatcats on LinkedIn](https://www.linkedin.com/in/metalhatcats/) with a short description of your platform or consulting practice, the delivery scenario you want to improve, the relevant systems, and any confidentiality constraints. For the current product boundary, read [Import and Export](/docs/import-export.html), [Capabilities](/docs/capabilities.html), and [Engagement Process](/docs/engagement.html).
+Contact [Metalhatcats on LinkedIn](https://www.linkedin.com/company/metalhatscats/) with a short description of your platform or consulting practice, the delivery scenario you want to improve, the relevant systems, and any confidentiality constraints. For the current product boundary, read [Import and Export](/docs/import-export.html), [Capabilities](/docs/capabilities.html), and [Engagement Process](/docs/engagement.html).

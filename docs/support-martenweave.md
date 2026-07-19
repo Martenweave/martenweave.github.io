@@ -31,4 +31,4 @@ Useful contributions are not limited to code. You can share reproducible scenari
 
 A public sponsorship platform is not currently configured. The best first step is to describe the problem, the model area, and the result you need.
 
-> **Discuss sponsorship, a design partnership, or a pilot:** [Contact Metalhatcats on LinkedIn →](https://www.linkedin.com/in/metalhatcats/)
+> **Discuss sponsorship, a design partnership, or a pilot:** [Contact Metalhatcats on LinkedIn →](https://www.linkedin.com/company/metalhatscats/)

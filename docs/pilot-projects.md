@@ -68,4 +68,4 @@ model mutation.
 
 Read the [engagement process](/docs/engagement.html) to see the working sequence. When you are ready, send Metalhatcats the model slice, evidence available, and decision you need to make.
 
-> **Ready to start?** [Order a pilot on LinkedIn →](https://www.linkedin.com/in/metalhatcats/)
+> **Ready to start?** [Order a pilot on LinkedIn →](https://www.linkedin.com/company/metalhatscats/)

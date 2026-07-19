@@ -24,4 +24,4 @@ Deliver the canonical baseline, generated reports, reviewable proposal/decision 
 
 ## Get started
 
-The best first message includes the delivery problem, a candidate model slice, systems involved, and whether representative inputs can be shared under the appropriate controls. Continue at [Contact](https://www.linkedin.com/in/metalhatcats/).
+The best first message includes the delivery problem, a candidate model slice, systems involved, and whether representative inputs can be shared under the appropriate controls. Continue at [Contact](https://www.linkedin.com/company/metalhatscats/).

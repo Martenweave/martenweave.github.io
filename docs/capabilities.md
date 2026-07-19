@@ -37,4 +37,4 @@ Martenweave is not a hosted SaaS tenant platform, enterprise MDM replacement, ge
 
 ## Next step
 
-Read the [pilot-project approach](/docs/pilot-projects.html), see [how an engagement works](/docs/engagement.html), or [contact the team](https://www.linkedin.com/in/metalhatcats/) with a representative model slice or migration question.
+Read the [pilot-project approach](/docs/pilot-projects.html), see [how an engagement works](/docs/engagement.html), or [contact the team](https://www.linkedin.com/company/metalhatscats/) with a representative model slice or migration question.
