@@ -103,6 +103,24 @@ NOTE
 
 The default adapter is deterministic and makes no external AI call. Provider-backed AI is optional, and AI output must remain reviewable.
 
+## Use Mapping-Workbook Evidence in the Agent Loop
+
+When a consultant already has a source-to-target workbook, the agent loop can use its preflighted
+structure to draft a narrowly scoped proposal. It passes detected sheet names, columns, warnings,
+exclusions, and assumptions into the proposer. Workbook values remain evidence only: the loop does
+not make them canonical truth, apply changes, or approve a proposal.
+
+```bash
+.venv/bin/martenweave agent-loop \
+  --repo examples/customer_bp_model \
+  --mapping ./sap-customer-mapping.xlsx \
+  --goal "Clarify the Customer Group mapping; keep the change reviewable." \
+  --dry-run
+```
+
+Review the resulting `PatchProposal` in the local Workbench or with `martenweave proposal review`
+before creating or approving a ChangeRequest.
+
 ## One-Command Verification
 
 ```bash

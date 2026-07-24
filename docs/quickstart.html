@@ -304,6 +304,14 @@ NOTE
   --repo examples/customer_bp_model \
   --dry-run</code></pre>
 <p>The default adapter is deterministic and makes no external AI call. Provider-backed AI is optional, and AI output must remain reviewable.</p>
+<h2 id="use-mapping-workbook-evidence-in-the-agent-loop">Use Mapping-Workbook Evidence in the Agent Loop</h2>
+<p>When a consultant already has a source-to-target workbook, the agent loop can use its preflighted structure to draft a narrowly scoped proposal. It passes detected sheet names, columns, warnings, exclusions, and assumptions into the proposer. Workbook values remain evidence only: the loop does not make them canonical truth, apply changes, or approve a proposal.</p>
+<pre><code class="language-bash">.venv/bin/martenweave agent-loop \
+  --repo examples/customer_bp_model \
+  --mapping ./sap-customer-mapping.xlsx \
+  --goal &quot;Clarify the Customer Group mapping; keep the change reviewable.&quot; \
+  --dry-run</code></pre>
+<p>Review the resulting <code>PatchProposal</code> in the local Workbench or with <code>martenweave proposal review</code> before creating or approving a ChangeRequest.</p>
 <h2 id="one-command-verification">One-Command Verification</h2>
 <pre><code class="language-bash">bash scripts/release_smoke.sh</code></pre>
 <p>This runs validation, indexing, health, scorecards, search, query, trace, impact, gaps, gap report, and dry-run proposal checks across bundled examples.</p>

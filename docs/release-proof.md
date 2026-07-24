@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.6.1` is the current supported public source and PyPI release.
+Martenweave Core `v0.6.2` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.6.1`
-- PyPI package: `martenweave-core 0.6.1`
+- GitHub Release: `v0.6.2`
+- PyPI package: `martenweave-core 0.6.2`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -15,6 +15,23 @@ Martenweave Core is open-source software licensed under Apache License 2.0. It m
 modified, embedded, and distributed, including for internal and commercial purposes, subject to
 the license terms. Optional commercial services include implementation, private SAP/MDM domain
 packs, enterprise validation packs, integrations, training, hosted Workbench work, and support.
+
+## Change log
+
+### Current main (unreleased)
+
+- The existing `agent-loop` command can now accept a mapping workbook as preflighted,
+  metadata-only evidence. It includes detected sheets, columns, warnings, exclusions, and
+  assumptions in the proposal context, while blocked inputs never reach the provider.
+- The loop remains proposal-first: it does not apply or approve model changes. A consultant must
+  review the `PatchProposal` before creating or approving a ChangeRequest.
+
+### 0.6.2 — 2026-07-24
+
+- Workbench imports now inspect CSV/XLSX evidence before profiling or proposal preview, showing
+  sheet/column interpretation and safety warnings without treating evidence as canonical truth.
+- The reusable SAP migration/MDM scenario matrix and deterministic workbook evidence tests were
+  added to Core.
 
 These screenshots were refreshed from the local static site during the compact landing-page redesign.
 
