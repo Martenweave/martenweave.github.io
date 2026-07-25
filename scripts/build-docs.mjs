@@ -206,9 +206,9 @@ const docRoutes = [
     source: "release-proof.md",
     output: "release-proof.html",
     label: "Release proof",
-    seoTitle: "Martenweave Core 0.7.1 Release Proof",
+    seoTitle: "Martenweave Core 0.8.0 Release Proof",
     description:
-      "Review the Apache-licensed martenweave-core 0.7.1 release, including package links, backend-first boundaries, validation, and rendered site checks.",
+      "Review the Apache-licensed martenweave-core 0.8.0 Pilot Proof release, including package links, validation evidence, and rendered site checks.",
   },
   {
     source: "roadmap.md",
