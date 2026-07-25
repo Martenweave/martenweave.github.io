@@ -13,6 +13,17 @@ The current core includes commands and services for:
 - importing Google Drive files for profiling
 - importing Google Sheets as PatchProposals
 - importing spreadsheet edits as PatchProposals
+- inspecting external machine-readable schema evidence — JSON Schema, OpenAPI, OData EDMX, WSDL,
+  XSD, sample JSON/XML/IDoc payloads, CDS metadata, WE60 HTML documentation, Integration Suite
+  `.iflw`/artifact ZIP exports, Migration Cockpit workbook templates, SAP mapping workbooks, and
+  CSV/XLSX field catalogues — into a normalized evidence model
+- importing that schema evidence as reviewable PatchProposals that can create Interface,
+  InterfaceEndpoint, MessageType, and SchemaNode objects with request/response message links and
+  recorded source provenance (version, namespace, checksum, retrieval time, optional source and
+  licensing notes)
+- emitting governed workbook suggestion artifacts from pilot preflight, bootstrap, and migration
+  assessment runs, and importing reviewer decisions back from a protected suggestion review workbook
+- building, validating, and diffing built-in reference domain packs
 - exporting canonical model objects to CSV or XLSX
 - exporting JSON Schema for canonical object types
 - exporting canonical model objects to Google Sheets

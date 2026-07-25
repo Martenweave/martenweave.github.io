@@ -34,8 +34,9 @@ The generated SQLite and JSONL files are rebuildable. Canonical Markdown/YAML fi
 ## Start from an Existing Mapping Workbook
 
 For a new pilot, create a separate empty local repository from a source-to-target `.xlsx` workbook.
-Martenweave profiles the workbook and writes a deterministic draft proposal and bootstrap report; it
-does not apply inferred model objects.
+Martenweave profiles the workbook and writes a deterministic draft proposal, a bootstrap report, a
+structural workbook manifest, and governed workbook suggestion artifacts with a protected review
+workbook; it does not apply inferred model objects.
 
 ```bash
 .venv/bin/martenweave bootstrap-assessment \

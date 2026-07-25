@@ -15,6 +15,8 @@ Inputs can include:
 - decision logs
 - SAP table and field context
 - source-system extracts
+- machine-readable schema and interface contracts (OpenAPI, OData EDMX, WSDL, XSD, IDoc
+  documentation, Integration Suite exports, field catalogues)
 - steward comments
 
 Raw inputs are not treated as truth. They provide evidence.
