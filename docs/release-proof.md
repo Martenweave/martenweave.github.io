@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.7.0` is the current supported public source and PyPI release.
+Martenweave Core `v0.7.1` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.7.0`
-- PyPI package: `martenweave-core 0.7.0`
+- GitHub Release: `v0.7.1`
+- PyPI package: `martenweave-core 0.7.1`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -17,6 +17,16 @@ the license terms. Optional commercial services include implementation, private 
 packs, enterprise validation packs, integrations, training, hosted Workbench work, and support.
 
 ## Change log
+
+### 0.7.1 — 2026-07-25
+
+- Fix: schema imports of contracts with repeated element names across message structures no
+  longer fail part-way at proposal apply; duplicate creates are deduplicated and flagged at
+  validation time.
+- The Workbench groups create-heavy proposals (schema imports) by object type in preview and
+  detail review.
+- The SAP BP reference example now includes a synthetic WSDL contract and its imported
+  interface/message lineage slice.
 
 ### 0.7.0 — 2026-07-25
 
