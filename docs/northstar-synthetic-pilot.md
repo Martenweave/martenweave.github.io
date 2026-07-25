@@ -8,7 +8,7 @@ production data.
 
 Core source: <https://github.com/metalhatscats/martenweave-core/tree/main/examples/northstar_mobility_pilot>
 
-![Northstar Mobility Group synthetic pilot in the connected local Workbench. The screen is driven by the 187 canonical objects in the example repository, not a separate UI dataset.](/assets/screenshots/northstar-mobility-pilot-workbench.png)
+![Northstar Mobility Group synthetic pilot in the connected local Workbench. The screen is driven by the 200 canonical objects in the example repository, not a separate UI dataset.](/assets/screenshots/northstar-mobility-pilot-workbench.png)
 
 *Captured locally from `martenweave workbench --repo examples/northstar_mobility_pilot` after building the index. The Workbench is a local inspection and controlled-review surface; it does not write to SAP or apply changes automatically.*
 
@@ -29,8 +29,10 @@ default.
 
 ## Deliberate findings
 
-The model itself remains valid: the verified run has 187 canonical objects, zero
-validation errors, and 13 intentional warnings. The synthetic extracts expose
+The model itself remains valid: the verified run has 200 canonical objects, zero
+validation errors, and 13 intentional warnings. A freight-status interface slice
+(Interface, InterfaceEndpoint operations, MessageType, and SchemaNode objects)
+connects the fictional Freightlink TMS to the logistics domain. The synthetic extracts expose
 delivery risks through gap and readiness workflows instead of corrupting canonical
 truth:
 
