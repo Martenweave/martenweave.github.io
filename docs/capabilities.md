@@ -15,6 +15,11 @@ Martenweave Core is a local-first, backend-first model governance layer. It turn
 - **Controlled changes:** AI and import flows—including deterministic evidence ingestion from notes
   and validation reports—create reviewable PatchProposals. Validators verify; humans approve;
   approved changes are recorded through ChangeRequests and Git-oriented bundles.
+- **Schema and interface evidence:** machine-readable contracts (JSON Schema, OpenAPI, OData EDMX,
+  WSDL, XSD, IDoc/WE60 documentation, CDS metadata, Integration Suite exports, Migration Cockpit
+  templates, field catalogues) can be inspected into a normalized evidence model and imported as
+  proposals that build Interface, InterfaceEndpoint, MessageType, and SchemaNode lineage with
+  recorded source provenance. Built-in reference domain packs can be built, validated, and diffed.
 - **Local integration:** the CLI, bound local API, MCP server, and Workbench are integration surfaces around the same Core services. The Workbench exposes local search, evidence-backed findings, reports, and repository activity when the bound API supports them, and labels connected, read-only, stale-index, and demo states instead of implying a hosted production environment or user account.
 
 ## Practical use cases
