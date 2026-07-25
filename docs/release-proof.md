@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.6.2` is the current supported public source and PyPI release.
+Martenweave Core `v0.7.0` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.6.2`
-- PyPI package: `martenweave-core 0.6.2`
+- GitHub Release: `v0.7.0`
+- PyPI package: `martenweave-core 0.7.0`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -18,13 +18,19 @@ packs, enterprise validation packs, integrations, training, hosted Workbench wor
 
 ## Change log
 
-### Current main (unreleased)
+### 0.7.0 — 2026-07-25
 
-- The existing `agent-loop` command can now accept a mapping workbook as preflighted,
-  metadata-only evidence. It includes detected sheets, columns, warnings, exclusions, and
-  assumptions in the proposal context, while blocked inputs never reach the provider.
-- The loop remains proposal-first: it does not apply or approve model changes. A consultant must
-  review the `PatchProposal` before creating or approving a ChangeRequest.
+- `martenweave schema inspect|import` turns local machine-readable contracts (JSON Schema,
+  OpenAPI, OData EDMX, WSDL, XSD, IDoc/WE60 documentation, CDS metadata, Integration Suite
+  exports, Migration Cockpit templates, field catalogues) into normalized evidence and reviewable
+  proposals that can create Interface, InterfaceEndpoint, MessageType, and SchemaNode lineage with
+  recorded source provenance. Nothing is applied without human approval.
+- `martenweave domain-pack build|validate|diff` manages built-in reference domain packs locally.
+- Pilot preflight, bootstrap, and migration assessment now emit governed workbook suggestion
+  artifacts with a protected review workbook roundtrip.
+- The `agent-loop` command can accept a mapping workbook as preflighted, metadata-only evidence;
+  the loop remains proposal-first and never applies or approves model changes.
+- The Workbench labels interface-lineage object types distinctly in object and lineage views.
 
 ### 0.6.2 — 2026-07-24
 

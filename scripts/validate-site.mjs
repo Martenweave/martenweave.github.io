@@ -491,8 +491,8 @@ for (const [file, text] of [
   ["llms-full.txt", aiFullContext],
   ["ai.txt", aiText],
 ]) {
-  if (!text.includes("0.6.2")) {
-    errors.push(`${file} must include version 0.6.2.`);
+  if (!text.includes("0.7.0")) {
+    errors.push(`${file} must include version 0.7.0.`);
   }
   if (text.includes(staleVersion)) {
     errors.push(`${file} must not include stale version ${staleVersion}.`);
@@ -629,8 +629,8 @@ for (const [file, text] of [
   }
 }
 
-if (aiJson.packageVersion !== "0.6.2" || aiJson.corePackage?.version !== "0.6.2") {
-  errors.push("ai.json package version fields must be 0.6.2.");
+if (aiJson.packageVersion !== "0.7.0" || aiJson.corePackage?.version !== "0.7.0") {
+  errors.push("ai.json package version fields must be 0.7.0.");
 }
 
 const currentCoreVersion = aiJson.packageVersion;
@@ -754,8 +754,8 @@ const sourceCode = homepageGraph.find((entity) => entity["@type"] === "SoftwareS
 if (
   sourceCode?.name !== "Martenweave Core" ||
   sourceCode?.alternateName !== "martenweave-core" ||
-  sourceCode?.softwareVersion !== "0.6.2" ||
-  sourceCode?.version !== "0.6.2" ||
+  sourceCode?.softwareVersion !== "0.7.0" ||
+  sourceCode?.version !== "0.7.0" ||
   sourceCode?.programmingLanguage !== "Python" ||
   sourceCode?.runtimePlatform !== "Python 3.11+" ||
   sourceCode?.codeRepository !== "https://github.com/metalhatscats/martenweave-core"
@@ -765,7 +765,7 @@ if (
 
 const software = homepageGraph.find((entity) => entity["@type"] === "SoftwareApplication");
 if (
-  software?.softwareVersion !== "0.6.2" ||
+  software?.softwareVersion !== "0.7.0" ||
   software?.downloadUrl !== "https://github.com/metalhatscats/martenweave-core/archive/refs/heads/main.zip" ||
   software?.installUrl !== "https://martenweave.github.io/docs/quickstart.html"
 ) {
