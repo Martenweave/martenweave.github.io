@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.7.1` is the current supported public source and PyPI release.
+Martenweave Core `v0.8.0` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.7.1`
-- PyPI package: `martenweave-core 0.7.1`
+- GitHub Release: `v0.8.0`
+- PyPI package: `martenweave-core 0.8.0`
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -17,6 +17,20 @@ the license terms. Optional commercial services include implementation, private 
 packs, enterprise validation packs, integrations, training, hosted Workbench work, and support.
 
 ## Change log
+
+### 0.8.0 — 2026-07-25
+
+- Pilot Proof workflow: preflight a realistic SAP mapping workbook, bootstrap a proposal-only
+  model, assess deterministic findings, review them, and produce client-ready reports without
+  changing canonical model files automatically.
+- Mapping-workbook comparison produces JSON, HTML, and XLSX evidence for changed mappings,
+  source/target fields, conditions, transformations, owners, statuses, validation rules,
+  decisions, and matched canonical endpoint impact.
+- Assessment packages now include a standalone executive HTML report, findings workbook,
+  machine-readable findings, evidence manifest, review pack, and Workbench workspace descriptor.
+- The regression corpus exercises ten irregular Excel structures, including shifted/merged
+  headers, hidden sheets, formulas, repeated tables, multilingual and inconsistent columns,
+  colour-only statuses, large files, and split source/target sheets.
 
 ### 0.7.1 — 2026-07-25
 
