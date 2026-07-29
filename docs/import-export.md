@@ -8,7 +8,7 @@ The core rule is simple: imports should create evidence, profiles, or PatchPropo
 
 The current core includes commands and services for:
 
-- profiling CSV and XLSX datasets
+- profiling CSV, XLSX, XML, and JSON datasets
 - detecting dataset-to-model gaps
 - importing Google Drive files for profiling
 - importing Google Sheets as PatchProposals

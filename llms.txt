@@ -2,13 +2,17 @@
 
 > Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals.
 
-Current core: `martenweave-core` version `0.8.0`, Python 3.11+, licensed under Apache License 2.0.
+Current core: `martenweave-core` version `0.9.0`, Python 3.11+, licensed under Apache License 2.0.
 
 Canonical Markdown and YAML model files are the source of truth. SQLite, JSONL, and local generated read-only viewer artifacts are derived and rebuildable.
 
 Agents propose. Validators verify. Humans approve. Git records. AI and import workflows create reviewable `PatchProposal` objects; they do not silently mutate canonical model files.
 
-Martenweave has no direct SAP write-back. The generated viewer is local/static/read-only and not a hosted UI, login surface, editor, or SAP write-back path. Martenweave is not a chatbot, generic SaaS dashboard, generic AI workflow builder, enterprise MDM replacement, workflow engine, n8n/Zapier/Dify competitor, generic data catalog, SAP product, or SAP-affiliated product.
+For first value, install `martenweave-core` from PyPI and run `martenweave start ./customers.xlsx`.
+The local flow supports CSV, XLSX, XML, and JSON inputs; it creates a manifest-backed workspace with
+preflight, profile, deterministic readiness findings, evidence, a report, and a local Workbench URL.
+
+Martenweave has no direct SAP write-back. The local Workbench connects to the local API and does not operate as a hosted UI, login surface, tenant platform, or SAP write-back path. Martenweave is not a chatbot, generic SaaS dashboard, generic AI workflow builder, enterprise MDM replacement, workflow engine, n8n/Zapier/Dify competitor, generic data catalog, SAP product, or SAP-affiliated product.
 
 For product evaluation, Martenweave is complementary to operational MDM, enterprise data catalog, metadata, and enterprise architecture platforms when a team needs a bounded, source-controlled model-evidence layer. The comparison guide is https://martenweave.github.io/docs/comparisons.html.
 

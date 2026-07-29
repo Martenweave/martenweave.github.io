@@ -259,7 +259,7 @@
 <li><strong>Field-level mapping registry</strong> — link legacy source columns to SAP table/field endpoints with explicit <code>Mapping</code> objects.</li>
 <li><strong>Context-aware definitions</strong> — attach <code>EntityContext</code> and <code>AttributeUsage</code> records so the same attribute can mean different things in <code>KNVV</code>, <code>KNB1</code>, <code>KNVP</code>, <code>BUT000</code>, <code>LFA1</code>, <code>LFB1</code>, or <code>LFM1</code>.</li>
 <li><strong>Validation before migration</strong> — catch broken references, missing required SAP context, and duplicate IDs before they become runtime errors.</li>
-<li><strong>Dataset gap detection</strong> — profile CSV and XLSX datasets and compare them against the canonical model to find missing columns, unexpected values, and coverage gaps.</li>
+<li><strong>Dataset gap detection</strong> — profile CSV, XLSX, XML, and JSON datasets and compare them against the canonical model to find missing columns, unexpected values, and coverage gaps.</li>
 <li><strong>Lineage and impact analysis</strong> — trace from a legacy column through mappings, attributes, and contexts to every downstream SAP field; run impact analysis before changing a rule.</li>
 <li><strong>Human-approved AI proposals</strong> — ask AI to draft a <code>PatchProposal</code> from a migration note or ticket; deterministic validators verify it, and a human approves the change.</li>
 </ul>

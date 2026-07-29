@@ -1,9 +1,9 @@
 # Release Proof
 
-Martenweave Core `v0.8.0` is the current supported public source and PyPI release.
+Martenweave Core `v0.9.0` is the current supported public source and PyPI release.
 
-- GitHub Release: `v0.8.0`
-- PyPI package: `martenweave-core 0.8.0`
+- GitHub Release: [`v0.9.0`](https://github.com/metalhatscats/martenweave-core/releases/tag/v0.9.0)
+- PyPI package: [`martenweave-core 0.9.0`](https://pypi.org/project/martenweave-core/)
 - Core repository: https://github.com/metalhatscats/martenweave-core
 - PyPI project: https://pypi.org/project/martenweave-core/
 
@@ -17,6 +17,20 @@ the license terms. Optional commercial services include implementation, private 
 packs, enterprise validation packs, integrations, training, hosted Workbench work, and support.
 
 ## Change log
+
+### 0.9.0 — 2026-07-29
+
+- `martenweave start` creates a local, manifest-backed readiness workspace from one CSV, XLSX, XML,
+  or JSON file. It performs format preflight and profiling, records deterministic readiness findings
+  with evidence, writes a readable report, and exposes the connected local Workbench flow.
+- The installed PyPI artifact was verified in a clean Python 3.11 environment for CSV, XLSX, XML,
+  JSON, unsupported-format rejection, packaged templates, no-AI operation, and Workbench assets
+  served from the installed package.
+- The release suite passed full Python tests, lint and formatting checks, frontend unit and browser
+  checks, package build, release preflight, and the installed-artifact smoke flow.
+- Provider configuration remains optional and provider-neutral: local diagnostics redact secrets,
+  optional AI creates reviewable PatchProposal objects only, deterministic validators verify, and a
+  human remains required for approval.
 
 ### 0.8.0 — 2026-07-25
 

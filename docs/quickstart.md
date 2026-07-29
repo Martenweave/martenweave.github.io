@@ -1,25 +1,67 @@
 # Martenweave Quickstart
 
-This quickstart proves the core workflow from a fresh clone. It uses the bundled Customer / Business Partner example and does not require an AI provider key.
+Start with one local CSV, XLSX, XML, or JSON file. The installed CLI creates a local workspace,
+profiles the file, records deterministic readiness findings and evidence, writes a readable report,
+and gives you a local Workbench URL. No Git checkout, Node.js, or AI provider key is required.
 
 ## Prerequisites
 
 - Python 3.11+
-- Git
-- `jq` for the release smoke script
+- `pip`
 
-## Install Locally
+## First value from PyPI
+
+```bash
+python -m pip install martenweave-core
+martenweave start ./customers.xlsx
+```
+
+On PowerShell:
+
+```powershell
+py -3.11 -m pip install martenweave-core
+martenweave start .\customers.xlsx
+```
+
+`start` supports local `.csv`, `.xlsx`, `.xml`, and `.json` files. It creates
+`./customers-martenweave-workspace` by default and reports the local Workbench URL. Use
+`--no-open --json` for automation or `--out ./my-workspace` to choose the workspace location.
+
+## What the first command does
+
+The workspace contains a format preflight, dataset profile, deterministic readiness findings,
+finding evidence, a readable report, and a manifest of generated outputs and decisions. The default
+flow is fully useful without AI. It does not silently change canonical model files: any inferred
+model or AI-assisted next step remains a reviewable proposal.
+
+Findings can include unmapped columns, ownership gaps, and transformation risks. Invalid values are
+reported when a governed value list is available; otherwise the manifest records that the rule was
+not assessed. Unsupported file formats fail before creating a workspace and list the supported
+formats.
+
+## Inspect the local Workbench
+
+The command prints a local URL after it completes. To reopen the workspace later:
+
+```bash
+martenweave workbench --repo ./customers-martenweave-workspace
+```
+
+Use the connected path: select file → preflight → profile → readiness findings → finding evidence
+→ report → optional proposal. The Workbench uses the local API and does not store canonical truth
+independently of the workspace files.
+
+## Explore source examples (optional)
+
+The checked-in Customer / Business Partner example is useful for contributors and deeper CLI
+exploration. Clone the source only when you need those source examples or development dependencies.
 
 ```bash
 git clone https://github.com/metalhatscats/martenweave-core.git
 cd martenweave-core
 python -m venv .venv
-.venv/bin/python -m pip install martenweave-core
-.venv/bin/martenweave --version
+.venv/bin/python -m pip install -e ".[dev]"
 ```
-
-The clone provides the bundled example repositories used below. Contributors can install from source
-with `.venv/bin/python -m pip install -e ".[dev]"`.
 
 ## Validate and Index an Example
 

@@ -20,7 +20,7 @@ For SAP migration work this means:
 - **Field-level mapping registry** — link legacy source columns to SAP table/field endpoints with explicit `Mapping` objects.
 - **Context-aware definitions** — attach `EntityContext` and `AttributeUsage` records so the same attribute can mean different things in `KNVV`, `KNB1`, `KNVP`, `BUT000`, `LFA1`, `LFB1`, or `LFM1`.
 - **Validation before migration** — catch broken references, missing required SAP context, and duplicate IDs before they become runtime errors.
-- **Dataset gap detection** — profile CSV and XLSX datasets and compare them against the canonical model to find missing columns, unexpected values, and coverage gaps.
+- **Dataset gap detection** — profile CSV, XLSX, XML, and JSON datasets and compare them against the canonical model to find missing columns, unexpected values, and coverage gaps.
 - **Lineage and impact analysis** — trace from a legacy column through mappings, attributes, and contexts to every downstream SAP field; run impact analysis before changing a rule.
 - **Human-approved AI proposals** — ask AI to draft a `PatchProposal` from a migration note or ticket; deterministic validators verify it, and a human approves the change.
 

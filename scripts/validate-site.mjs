@@ -351,18 +351,19 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Make every model decision explainable before it becomes expensive.",
+  "Turn one local data file into a governed next step.",
+  "Transformation knowledge is scattered across files, tickets, reports, and people.",
   "Apache 2.0 open source",
   "Canonical files",
   "Derived indexes",
-  "A visible path from signal to approval.",
+  "A visible path from file to approval.",
   "Agents propose.",
   "Validators verify.",
   "Humans approve.",
   "Git records.",
-  "A synthetic model can expose a specific next review.",
-  "ATTR-BP-CENTRAL-LEGAL-FORM",
-  "Run the example",
+  "One file produces findings you can inspect before you change anything.",
+  "martenweave start ./customers.xlsx",
+  "Run the PyPI flow",
 ];
 
 for (const text of requiredText) {
@@ -491,8 +492,8 @@ for (const [file, text] of [
   ["llms-full.txt", aiFullContext],
   ["ai.txt", aiText],
 ]) {
-  if (!text.includes("0.8.0")) {
-    errors.push(`${file} must include version 0.8.0.`);
+  if (!text.includes("0.9.0")) {
+    errors.push(`${file} must include version 0.9.0.`);
   }
   if (text.includes(staleVersion)) {
     errors.push(`${file} must not include stale version ${staleVersion}.`);
@@ -629,8 +630,8 @@ for (const [file, text] of [
   }
 }
 
-if (aiJson.packageVersion !== "0.8.0" || aiJson.corePackage?.version !== "0.8.0") {
-  errors.push("ai.json package version fields must be 0.8.0.");
+if (aiJson.packageVersion !== "0.9.0" || aiJson.corePackage?.version !== "0.9.0") {
+  errors.push("ai.json package version fields must be 0.9.0.");
 }
 
 const currentCoreVersion = aiJson.packageVersion;
@@ -754,8 +755,8 @@ const sourceCode = homepageGraph.find((entity) => entity["@type"] === "SoftwareS
 if (
   sourceCode?.name !== "Martenweave Core" ||
   sourceCode?.alternateName !== "martenweave-core" ||
-  sourceCode?.softwareVersion !== "0.8.0" ||
-  sourceCode?.version !== "0.8.0" ||
+  sourceCode?.softwareVersion !== "0.9.0" ||
+  sourceCode?.version !== "0.9.0" ||
   sourceCode?.programmingLanguage !== "Python" ||
   sourceCode?.runtimePlatform !== "Python 3.11+" ||
   sourceCode?.codeRepository !== "https://github.com/metalhatscats/martenweave-core"
@@ -765,11 +766,11 @@ if (
 
 const software = homepageGraph.find((entity) => entity["@type"] === "SoftwareApplication");
 if (
-  software?.softwareVersion !== "0.8.0" ||
-  software?.downloadUrl !== "https://github.com/metalhatscats/martenweave-core/archive/refs/heads/main.zip" ||
+  software?.softwareVersion !== "0.9.0" ||
+  software?.downloadUrl !== "https://pypi.org/project/martenweave-core/" ||
   software?.installUrl !== "https://martenweave.github.io/docs/quickstart.html"
 ) {
-  errors.push("Homepage SoftwareApplication JSON-LD must describe the current source release, not PyPI.");
+  errors.push("Homepage SoftwareApplication JSON-LD must describe the current PyPI install path.");
 }
 
 for (const route of publicBlogRoutes.filter((route) => route !== "/blog/")) {

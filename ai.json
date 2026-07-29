@@ -1,11 +1,11 @@
 {
   "schemaVersion": "1.0",
   "name": "Martenweave",
-  "alternateName": "Martenweave model governance pipeline",
-  "type": "open-source model governance pipeline (backend-first)",
+  "alternateName": "Martenweave local-first readiness and model governance workspace",
+  "type": "open-source local-first readiness and model governance workspace (backend-first)",
   "url": "https://martenweave.github.io/",
-  "description": "Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS.",
-  "shortDescription": "Model truth for migration, MDM, and governance teams.",
+  "description": "Martenweave turns one local CSV, XLSX, XML, or JSON file into deterministic readiness findings, evidence, a report, and a governed next step for SAP migration, MDM, data governance, and AMS.",
+  "shortDescription": "One local data file to readiness findings and governed change.",
   "inLanguage": "en",
   "organization": {
     "name": "Martenweave",
@@ -32,12 +32,12 @@
   "docs": "https://martenweave.github.io/docs.html",
   "pypiUrl": "https://pypi.org/project/martenweave-core/",
   "packageName": "martenweave-core",
-  "packageVersion": "0.8.0",
+  "packageVersion": "0.9.0",
   "license": "Apache-2.0",
   "licenseUrl": "https://github.com/metalhatscats/martenweave-core/blob/main/LICENSE",
   "corePackage": {
     "name": "martenweave-core",
-    "version": "0.8.0",
+    "version": "0.9.0",
     "pythonModule": "modelops_core",
     "primaryCli": "martenweave",
     "compatibilityCli": "modelops",
@@ -68,6 +68,10 @@
     ]
   },
   "capabilities": [
+    "one-command local file-to-workspace start flow",
+    "CSV, XLSX, XML, and JSON dataset preflight and profiling",
+    "deterministic readiness findings, evidence, reports, and workspace manifests",
+    "connected local Workbench path for findings and proposals",
     "canonical model files",
     "deterministic data model validation",
     "generated SQLite and JSONL indexes",

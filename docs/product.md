@@ -52,7 +52,7 @@ Martenweave is for:
 
 ## What Exists Now
 
-The current open-source core is `martenweave-core` version `0.8.0`, licensed under Apache License 2.0.
+The current open-source core is `martenweave-core` version `0.9.0`, licensed under Apache License 2.0.
 
 Available now:
 
@@ -65,6 +65,7 @@ Available now:
 - search and structured query
 - trace and impact analysis
 - dataset profiling and gap detection
+- one-command local CSV, XLSX, XML, and JSON readiness workspaces
 - health, analysis, scorecard, ownership, audit, and usage reports
 - CSV and XLSX model review import/export flows
 - PatchProposal to ChangeRequest lifecycle

@@ -4,7 +4,7 @@
 
 Martenweave is an open-source, backend-first model governance and evidence layer for SAP migration, MDM, data governance, and AMS. It turns spreadsheets, datasets, tickets, validation reports, decisions, and SAP context into canonical model files, deterministic validation, generated indexes, gap detection, lineage, impact analysis, and human-approved AI patch proposals. The registry is the source-of-truth layer inside the pipeline.
 
-Martenweave is maintained by Dzmitryi Kharlanau. Author profile: https://martenweave.github.io/docs/author.html. The current open-source Core is `martenweave-core` version `0.8.0`, requires Python 3.11 or newer, and is licensed under Apache License 2.0. Internal and commercial use, modification, embedding, and redistribution are permitted subject to the license terms.
+Martenweave is maintained by Dzmitryi Kharlanau. Author profile: https://martenweave.github.io/docs/author.html. The current open-source Core is `martenweave-core` version `0.9.0`, requires Python 3.11 or newer, and is licensed under Apache License 2.0. Internal and commercial use, modification, embedding, and redistribution are permitted subject to the license terms.
 
 ## Who it is for
 
@@ -25,6 +25,16 @@ Generated SQLite indexes, search JSONL, lineage JSONL, reports, exports, and loc
 
 Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They are not automatically treated as canonical model truth.
 
+## First-value local flow
+
+From a clean Python 3.11 environment, install `martenweave-core` from PyPI and run
+`martenweave start ./customers.xlsx`. The command accepts local CSV, XLSX, XML, and JSON files and
+creates a manifest-backed workspace with format preflight, dataset profiling, deterministic
+readiness findings, finding evidence, a readable report, and a local Workbench URL. Unsupported
+formats fail clearly before a workspace is created. The no-provider path remains fully functional.
+Any inferred model or optional AI output stays a reviewable PatchProposal; it does not silently
+modify canonical files.
+
 ## What exists today
 
 - Python package and `martenweave` CLI, with `modelops` as a compatibility command
@@ -33,7 +43,7 @@ Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They ar
 - generated SQLite and JSONL indexes
 - local generated read-only viewer from the SQLite index
 - search, structured query, trace, and impact analysis
-- CSV and XLSX dataset profiling
+- CSV, XLSX, XML, and JSON dataset profiling
 - dataset-to-model gap detection
 - health, gap, governance, ownership, audit, and usage reports
 - CSV and XLSX model review import and export flows
@@ -44,7 +54,7 @@ Raw datasets, spreadsheets, tickets, and reports are evidence or inputs. They ar
 - local API and MCP integration surfaces
 - example registries for Customer / Business Partner, Supplier / Vendor, simple product, and generic product models
 
-The current core is local-first and backend-first. There is no hosted or editable user-facing UI in the core package. The local generated viewer is static, read-only, and disposable.
+The current core is local-first and backend-first. There is no hosted user-facing UI in the core package. The local Workbench connects to the local API for assessment, investigation, reports, and controlled changes; canonical files remain authoritative.
 
 ## Controlled AI workflow
 

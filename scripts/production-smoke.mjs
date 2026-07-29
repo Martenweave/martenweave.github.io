@@ -46,7 +46,7 @@ if (deployedCommit !== localCommit) {
 const homepage = responses.get("/");
 const article = responses.get("/blog/sap-mdg-implementation-knowledge.html");
 const ai = JSON.parse(responses.get("/ai.json"));
-if (!homepage.includes("Make every model decision explainable") || !homepage.includes("Apache 2.0 open source")) {
+if (!homepage.includes("Turn one local data file into a governed next step.") || !homepage.includes("Apache 2.0 open source")) {
   throw new Error("Homepage is missing the current H1 or Apache-2.0 source status.");
 }
 if (!homepage.includes('name="martenweave-deployment-ref" content="main"')) {
@@ -55,8 +55,8 @@ if (!homepage.includes('name="martenweave-deployment-ref" content="main"')) {
 if (!article.includes('<link rel="canonical" href="https://martenweave.github.io/blog/sap-mdg-implementation-knowledge.html"')) {
   throw new Error("Article canonical URL is not current.");
 }
-if (ai.packageVersion !== "0.8.0" || ai.corePackage?.version !== "0.8.0") {
-  throw new Error("ai.json does not identify Core source version 0.8.0.");
+if (ai.packageVersion !== "0.9.0" || ai.corePackage?.version !== "0.9.0") {
+  throw new Error("ai.json does not identify Core source version 0.9.0.");
 }
 console.log(
   `Production parity passed for ${origin}; deployed homepage, article, ai.json, sitemap, and RSS ` +
