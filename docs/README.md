@@ -5,6 +5,7 @@ These are the public-facing Martenweave docs for decision makers, technical eval
 Start here:
 
 - [Product](product.md) - what Martenweave is, who it is for, what exists now, and what it is not.
+- [Website strategy](website-strategy.md) - the local-first first-value message, proof, conversion, SEO, and claims rules.
 - [How it works](how-it-works.md) - the input to registry to output workflow.
 - [Import/export](import-export.md) - available import/export paths, supported manual workflows, and planned integrations.
 - [Governance](governance.md) - practical governance mapping for definitions, ownership, lineage, quality, stewardship, and change control.

@@ -58,6 +58,14 @@ const docRoutes = [
       "Learn how Martenweave creates canonical, validated model truth for SAP migration, MDM, data governance, data quality, and AMS teams.",
   },
   {
+    source: "website-strategy.md",
+    output: "website-strategy.html",
+    label: "Website strategy",
+    seoTitle: "Martenweave Website Strategy | Local-First Evidence Workspace",
+    description:
+      "Read the source-of-truth website strategy for Martenweave: local-first first value, reproducible proof, design-partner conversion, SEO clusters, and claims rules.",
+  },
+  {
     source: "how-it-works.md",
     output: "how-it-works.html",
     label: "How it works",
