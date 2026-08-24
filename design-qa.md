@@ -1,40 +1,53 @@
-# Homepage design QA — Model atlas
+# Homepage design QA — Work Canvas
 
-**Source visual truth:** locally generated candidate image from the design exploration (selected direction 2, Model atlas).
+**Reference:** the verified Work Canvas implementation from Martenweave Core, not an invented
+marketing dashboard.
 
-**Implementation:** `http://127.0.0.1:4267/`, captured in the Codex in-app browser after the homepage implementation.
+**Implementation:** `http://127.0.0.1:4173/`, checked in the Codex in-app browser.
 
-**State and coverage:** Default desktop hero and 390 × 844 mobile hero, plus the desktop capacity scenario and the new desktop system-fit and AI-workflow sections. Primary navigation and both hero CTAs are present. Browser console: no errors. Mobile horizontal overflow: false. The scenario was changed to 10 people × 4 hours × €100; the live result updated to €192,000.
+**State and coverage:** 1440 × 900 desktop and 390 × 844 mobile first view. The real synthetic
+`customer_messy.csv` evidence case is the hero product image. Both hero actions, reduced mobile
+navigation, and product proof copy are present.
 
 ## Findings
 
-- No actionable P0, P1, or P2 findings.
-- The hero headline had become visually dominant in the first implementation. Its desktop size was reduced from 4.25rem to 3.85rem and its measure widened from 10.5ch to 14ch; the rendered result is a calmer four-line statement that leaves the atlas as an equal visual partner.
-- Intentional adaptation: the source mock uses a full-width atlas; the implementation uses a dedicated generated atlas asset with readable HTML copy and real navigation/CTAs. This preserves the source hierarchy while retaining accessibility and the existing product routes.
+- No actionable P0, P1, or P2 findings remain.
+- [P3] The footer retains the existing comprehensive documentation links. This is below the primary
+  journey and preserves route discovery without adding complexity to the hero.
 
-## Fidelity surfaces
+## Verified visual contract
 
-- **Fonts and typography:** Large, tightly tracked editorial headline with a calmer four-line desktop measure; monospaced provenance labels; mobile headline remains within the site's enforced readable scale.
-- **Spacing and layout rhythm:** Asymmetric desktop hero with a generous evidence-map field; mobile resolves into a clear copy-first sequence.
-- **Colors and visual tokens:** Warm paper, aubergine ink, soft lilac lines, and amber signals now form reusable site-wide tokens.
-- **Image quality and asset fidelity:** The atlas is a generated raster asset, not CSS or inline-SVG artwork; it retains the selected map/lineage art direction.
-- **Copy and content:** Existing factual product copy and links are preserved. The capacity calculator is explicitly an editable planning scenario, not a claimed or guaranteed saving.
+- White canvas, black outcome-led type, thin neutral rules, restrained dark green actions.
+- The real Workbench screen is the visual proof; abstract decorative atlas art is removed.
+- One problem statement, one source-local promise, one primary action, and one short workflow.
+- No gradients, fake KPIs, marketplace counts, fictional savings, or generic chatbot claims.
+- Mobile preserves full-width actions, readable copy, and the complete product screenshot.
 
-## Systems and AI-workflow extension
+## Product truth
 
-- **Full-view comparison evidence:** focused in-app browser captures at `http://127.0.0.1:4267/#fit` and `http://127.0.0.1:4267/#ai-workflow` retain the homepage's warm-paper, editorial-heading, ruled-grid visual language.
-- **Focused region comparison evidence:** the four system cards and four AI steps were checked at desktop size. Their labelled number, headline, supporting copy, link destinations, borders, and final governance note are readable; browser console contained no errors.
-- **Findings:** no actionable P0, P1, or P2 findings. The system-fit block states a supporting role rather than replacement claims. The AI block makes the human approval boundary explicit and does not suggest autonomous changes.
+- The command uses the shipped `sap_bp_customer_migration` starter.
+- The displayed result matches the verified synthetic run: blocked verdict, 13 unique reviewable
+  findings, four decision groups, zero canonical changes, and one gated candidate proposal.
+- Copy distinguishes deterministic findings, human dispositions, the evidence gate, proposal
+  acceptance, and explicit apply.
 
-## Comparison history
+## Evidence
 
-1. Initial implementation exceeded the project's heading-size guardrail at desktop and mobile. The hero scale was reduced while preserving the selected composition.
-2. Post-fix: `npm run test:render` passed; in-app browser checks confirmed no console errors and no mobile horizontal overflow.
-3. Headline and capacity-scenario refinement: browser review confirmed the new hero hierarchy and an interactive €192,000 result for the altered inputs; no console errors. The render smoke check now asserts that the calculator controls and currency result exist.
-4. Systems and AI-workflow extension: the system cards and AI steps were added to the existing atlas layout. Browser review confirmed four readable system cards and four readable workflow steps; render smoke now asserts both structures. No visual fixes were required after the first review.
+- Desktop: `assets/screenshots/homepage-desktop.png` (1440 × 900).
+- Mobile: `assets/screenshots/homepage-mobile.png` (390 × 844).
+- Product proof: `assets/screenshots/customer-readiness-work-canvas.png` (1265 × 712).
+- `npm run build`: 176 generated documentation routes current; 177 HTML files, links, sitemap,
+  and AI-discovery files validated.
 
-## Follow-up polish
+## Iteration history
 
-- Consider a future editorial illustration variation for campaign-specific pages; the homepage atlas asset is intentionally neutral and reusable.
+1. Removed the previous model-atlas hero and broad platform-first visual hierarchy.
+2. Reframed the site around a single migration evidence case and one governed next move.
+3. Replaced abstract hero art with the browser-verified Work Canvas.
+4. Render smoke exposed an oversized heading (75.6 px desktop / 46.8 px mobile); the caps were
+   corrected to 68 px / 42 px.
+5. Rechecked desktop and real 390 px mobile layouts, then updated the repository QA captures.
+6. Replaced the decorative decision CTA with real persisted dispositions and updated the proof image
+   after verifying proposal approval is blocked at 1/13 classified findings.
 
 final result: passed

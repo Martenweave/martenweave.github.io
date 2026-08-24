@@ -351,19 +351,22 @@ for (const match of staleRootMarkdownLinks) {
 }
 
 const requiredText = [
-  "Turn one local data file into a governed next step.",
-  "Transformation knowledge is scattered across files, tickets, reports, and people.",
-  "Apache 2.0 open source",
-  "Canonical files",
-  "Derived indexes",
-  "A visible path from file to approval.",
+  "Know what needs a decision before the next mock load.",
+  "Drop in one migration file.",
+  "Your source stays local.",
+  "Rules expose the gaps.",
+  "Humans decide first.",
+  "File → evidence → disposition → gated change.",
+  "reviewable findings: 13",
+  "classified: 0 / 13",
   "Agents propose.",
   "Validators verify.",
   "Humans approve.",
   "Git records.",
-  "One file produces findings you can inspect before you change anything.",
-  "martenweave start ./customers.xlsx",
-  "Run the PyPI flow",
+  "Start from the artefact the team already has.",
+  "martenweave start ./customer_messy.csv",
+  "Run it locally",
+  "customer-readiness-work-canvas.png",
 ];
 
 for (const text of requiredText) {

@@ -2,7 +2,8 @@
 
 Start with one local CSV, XLSX, XML, or JSON file. The installed CLI creates a local workspace,
 profiles the file, records deterministic readiness findings and evidence, writes a readable report,
-and gives you a local Workbench URL. No Git checkout, Node.js, or AI provider key is required.
+and gives you a local Workbench URL where a person can classify each finding before change review.
+No Git checkout, Node.js, or AI provider key is required.
 
 ## Prerequisites
 
@@ -13,7 +14,8 @@ and gives you a local Workbench URL. No Git checkout, Node.js, or AI provider ke
 
 ```bash
 python -m pip install martenweave-core
-martenweave start ./customers.xlsx
+martenweave start ./customer_messy.csv \
+  --template sap_bp_customer_migration
 ```
 
 On PowerShell:
@@ -24,15 +26,20 @@ martenweave start .\customers.xlsx
 ```
 
 `start` supports local `.csv`, `.xlsx`, `.xml`, and `.json` files. It creates
-`./customers-martenweave-workspace` by default and reports the local Workbench URL. Use
+`./<input-stem>-martenweave-workspace` by default and reports the local Workbench URL. Use
 `--no-open --json` for automation or `--out ./my-workspace` to choose the workspace location.
 
 ## What the first command does
 
-The workspace contains a format preflight, dataset profile, deterministic readiness findings,
-finding evidence, a readable report, and a manifest of generated outputs and decisions. The default
-flow is fully useful without AI. It does not silently change canonical model files: any inferred
-model or AI-assisted next step remains a reviewable proposal.
+The workspace contains a format preflight, dataset profile, deterministic readiness findings, a
+reviewable `findings.json` package, a readable report, and a manifest of generated outputs and
+decisions. The default flow is fully useful without AI. It does not silently change canonical model
+files: any inferred model or AI-assisted next step remains a candidate proposal.
+
+The Workbench asks a human to confirm, exclude, accept risk, or defer each finding. Accepted risk
+and deferral require a rationale. Core rejects acceptance of the start-run candidate proposal while
+any finding is unreviewed or deferred. `confirmed` means the gap is real; it does not mean the gap is
+already fixed or that the migration is ready.
 
 Findings can include unmapped columns, ownership gaps, and transformation risks. Invalid values are
 reported when a governed value list is available; otherwise the manifest records that the rule was
@@ -47,9 +54,10 @@ The command prints a local URL after it completes. To reopen the workspace later
 martenweave workbench --repo ./customers-martenweave-workspace
 ```
 
-Use the connected path: select file → preflight → profile → readiness findings → finding evidence
-→ report → optional proposal. The Workbench uses the local API and does not store canonical truth
-independently of the workspace files.
+Use the connected path: select file → preflight → profile → readiness findings → human disposition
+→ evidence gate → candidate proposal. The Workbench uses the local API and does not store canonical
+truth independently of the workspace files. Proposal acceptance and explicit apply remain separate
+actions.
 
 ## Explore source examples (optional)
 

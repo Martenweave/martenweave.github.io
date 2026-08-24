@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Open-Source Model Governance for SAP Migration &amp; MDM | Martenweave</title>
+    <title>From Migration File to Governed Decision | Martenweave</title>
     <meta
       name="description"
-      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
+      content="Turn one local SAP migration file into deterministic findings, recorded human decisions, and an evidence-gated model change—without uploading source data."
     />
     <meta
       name="keywords"
@@ -23,11 +23,11 @@
     <meta property="og:site_name" content="Martenweave" />
     <meta
       property="og:title"
-      content="Open-Source Model Governance for SAP Migration &amp; MDM | Martenweave"
+      content="From Migration File to Governed Decision | Martenweave"
     />
     <meta
       property="og:description"
-      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
+      content="Turn one local SAP migration file into deterministic findings, recorded human decisions, and an evidence-gated model change."
     />
     <meta property="og:image" content="https://martenweave.github.io/assets/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -36,11 +36,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Open-Source Model Governance for SAP Migration &amp; MDM | Martenweave"
+      content="From Migration File to Governed Decision | Martenweave"
     />
     <meta
       name="twitter:description"
-      content="Open-source model governance for SAP migration, MDM, data governance, and AMS—canonical files, validation, lineage, impact, and reviewable AI changes."
+      content="A local Work Canvas for migration evidence, recorded dispositions, and evidence-gated model changes."
     />
     <meta name="twitter:image" content="https://martenweave.github.io/assets/twitter-card.png" />
     <meta name="twitter:image:alt" content="Martenweave open-source data model registry" />
@@ -179,7 +179,7 @@
             "@id": "https://martenweave.github.io/#source",
             "name": "Martenweave Core",
             "alternateName": "martenweave-core",
-            "description": "Martenweave Core turns one local data file into deterministic readiness findings, evidence, a report, and a governed next step for SAP migration, MDM, data governance, and AMS.",
+            "description": "Martenweave Core turns one local data file into deterministic readiness findings, recorded human dispositions, and an evidence-gated candidate change for SAP migration, MDM, data governance, and AMS.",
             "url": "https://martenweave.github.io/",
             "codeRepository": "https://github.com/metalhatscats/martenweave-core",
             "programmingLanguage": "Python",
@@ -207,7 +207,7 @@
             "@id": "https://martenweave.github.io/#software",
             "name": "Martenweave Core",
             "alternateName": "martenweave-core",
-            "description": "Open-source, local-first readiness analysis and model governance: start with one data file, inspect deterministic findings locally, then route a governed change for review.",
+            "description": "Open-source, local-first readiness analysis and model governance: inspect deterministic findings, record human dispositions, then review a candidate change only after the evidence gate is complete.",
             "url": "https://martenweave.github.io/",
             "applicationCategory": "DeveloperApplication",
             "applicationSubCategory": "Model governance pipeline",
@@ -351,28 +351,29 @@
     <main id="main" class="home-main">
       <section class="atlas-hero" aria-labelledby="hero-title">
         <div class="atlas-hero__copy">
-          <p class="eyebrow">Martenweave Core · local-first model governance</p>
-          <h1 id="hero-title">Turn one local data file into a governed next step.</h1>
-          <p class="hero-subhead">Transformation knowledge is scattered across files, tickets, reports, and people. Martenweave profiles one local file, makes readiness findings and evidence inspectable, then routes a reviewable change for human approval.</p>
-          <div class="hero-actions"><a class="button primary" href="/docs/quickstart.html">Install from PyPI <span aria-hidden="true">→</span></a><a class="button secondary" href="#workflow">See the workflow</a></div>
-          <p class="trust-line">Apache 2.0 open source <span aria-hidden="true">/</span> Core 0.9.0 on PyPI <span aria-hidden="true">/</span> local-first workspace <span aria-hidden="true">/</span> canonical files stay local</p>
+          <p class="eyebrow">Martenweave · local migration evidence</p>
+          <h1 id="hero-title">Know what needs a decision before the next mock load.</h1>
+          <p class="hero-subhead">Drop in one migration file. Martenweave keeps it local, tests it against governed model context, and turns scattered exceptions into recorded decisions before change approval.</p>
+          <div class="hero-actions"><a class="button primary" href="/docs/quickstart.html">Run the evidence case <span aria-hidden="true">→</span></a><a class="button secondary" href="#workflow">See the four steps</a></div>
+          <p class="trust-line">Apache 2.0 <span aria-hidden="true">·</span> local-first <span aria-hidden="true">·</span> deterministic checks <span aria-hidden="true">·</span> human approval</p>
         </div>
-        <figure class="atlas-hero__map" aria-labelledby="atlas-caption"><img src="/assets/model-atlas-hero.png" width="1600" height="1200" alt="Abstract map of model relationships, lineage routes, and validation signals" /><figcaption id="atlas-caption">A governed model makes relationships inspectable before change reaches delivery.</figcaption><span class="atlas-marker atlas-marker--source">Source evidence</span><span class="atlas-marker atlas-marker--model">Canonical model</span><span class="atlas-marker atlas-marker--review">Reviewed change</span></figure>
+        <figure class="atlas-hero__map" aria-labelledby="atlas-caption"><img src="/assets/screenshots/customer-readiness-work-canvas.png" width="1265" height="712" alt="Martenweave Work Canvas showing 13 reviewable findings, four decision groups, and a human disposition panel for a local customer migration file" /><figcaption id="atlas-caption">Verified with the checked-in synthetic customer migration sample. No customer data is shown.</figcaption></figure>
       </section>
-      <section class="proof-strip" aria-label="Product boundaries"><p><strong>Canonical files</strong><span>are the source of truth.</span></p><p><strong>Derived indexes</strong><span>are rebuildable.</span></p><p><strong>AI proposes.</strong><span>It does not silently mutate.</span></p></section>
-      <section class="home-section proof-output" aria-labelledby="proof-output-title"><div class="section-intro"><p class="eyebrow">First value · local only</p><h2 id="proof-output-title">One file produces findings you can inspect before you change anything.</h2><p>Use a local CSV, XLSX, XML, or JSON file. The generated workspace records its preflight, profile, readiness report, evidence, and any optional proposal without silently changing canonical model files.</p></div><pre aria-label="One-command local readiness flow"><code>$ python -m pip install martenweave-core
-$ martenweave start ./customers.xlsx
-format: xlsx
-readiness: blocked
-findings: unmapped columns, ownership gaps,
-          transformation risks
-report: generated/readiness-report.html
-workbench: http://127.0.0.1:8000</code></pre><p class="proof-links"><a href="/docs/quickstart.html">Run the PyPI flow →</a><a href="/docs/release-proof.html">Inspect release evidence →</a></p></section>
-      <section class="home-section synthetic-screen" aria-labelledby="synthetic-screen-title"><div class="synthetic-screen__copy"><p class="eyebrow">Synthetic example · local static viewer</p><h2 id="synthetic-screen-title">Start with a model you can inspect, not a dashboard you have to trust.</h2><p>The checked-in Customer Business Partner example is indexed locally into a disposable, read-only viewer. The screen shows 89 indexed canonical objects from the checked-in synthetic example; the model files remain the source of truth.</p><p><a class="button secondary" href="/docs/examples.html">Explore the example <span aria-hidden="true">→</span></a></p></div><figure class="synthetic-screen__figure"><img src="/assets/screenshots/synthetic-customer-model-overview.png" width="1440" height="1000" alt="Synthetic Customer Business Partner model overview showing 89 indexed canonical objects and a fresh local index" /><figcaption>Generated from a synthetic Customer Business Partner model. No customer data is shown.</figcaption></figure></section>
-      <section id="product" class="home-section product-section"><div class="section-intro"><p class="eyebrow">Product</p><h2>One connected layer between delivery artefacts and controlled change.</h2></div><div class="capability-list"><article><span>01</span><h3>Model the meaning</h3><p>Represent business attributes, SAP contexts, field endpoints, mappings, value lists, issues, decisions, and ownership as traceable objects.</p></article><article><span>02</span><h3>Verify before publishing</h3><p>Validate object shape, references, and domain context deterministically before the index and reports are rebuilt.</p></article><article><span>03</span><h3>Investigate relationships</h3><p>Trace lineage, identify dataset gaps, and assess downstream impact from the same canonical model.</p></article><article><span>04</span><h3>Control the change</h3><p>Convert analysis into a reviewable proposal and an approved change request with an explicit audit trail.</p></article></div></section>
-      <section id="workflow" class="home-section workflow-section"><div class="section-intro"><p class="eyebrow">Workflow</p><h2>A visible path from file to approval.</h2><p>Each stage answers a delivery question without pretending the workspace is a hosted platform or a chatbot.</p></div><ol class="workflow-rail"><li><b>Select</b><span>Start with one local CSV, XLSX, XML, or JSON file.</span></li><li><b>Preflight</b><span>Detect the format and record a safe workspace manifest before analysis.</span></li><li><b>Profile</b><span>Expose the shape and evidence of the source without treating it as canonical truth.</span></li><li><b>Validate</b><span>Readiness findings make gaps, ownership, and transformation risks explicit.</span></li><li><b>Review</b><span>Inspect evidence and the report locally; optional AI proposals still require human approval.</span></li></ol></section>
+      <section class="proof-strip" aria-label="Product boundaries"><p><strong>Your source stays local.</strong><span>The run records its file hash and evidence boundary.</span></p><p><strong>Rules expose the gaps.</strong><span>Findings remain separate from assumptions and review state.</span></p><p><strong>Humans decide first.</strong><span>Approval stays blocked while evidence is unreviewed or deferred.</span></p></section>
+      <section class="home-section proof-output" aria-labelledby="proof-output-title"><div class="section-intro"><p class="eyebrow">One command · one evidence case</p><h2 id="proof-output-title">Start from the artefact the team already has.</h2><p>Use CSV, XLSX, XML, or JSON. The SAP BP Customer starter gives the run enough governed context to separate structural evidence from decisions that still need a person.</p></div><pre aria-label="One-command local readiness flow"><code>$ python -m pip install martenweave-core
+$ martenweave start ./customer_messy.csv \
+    --template sap_bp_customer_migration
+
+verdict: blocked
+reviewable findings: 13
+decision groups: 4
+classified: 0 / 13
+canonical changes: 0
+next: classify one finding</code></pre><p class="proof-links"><a href="/docs/quickstart.html">Run it locally →</a><a href="https://github.com/metalhatscats/martenweave-core">Inspect the source →</a></p></section>
+      <section id="product" class="home-section product-section"><div class="section-intro"><p class="eyebrow">The product</p><h2>An evidence workspace, not another migration dashboard.</h2><p>Core preserves canonical truth. The Local API exposes governed capabilities. Workbench keeps evidence, context, and the next human decision in one minimal canvas.</p></div><div class="capability-list"><article><span>01</span><h3>Evidence case</h3><p>One source artefact, its hash, deterministic findings, assumptions, and review state stay connected.</p></article><article><span>02</span><h3>Human disposition</h3><p>Confirm, exclude, accept risk, or defer each finding. Accepted risk and deferral require a durable rationale.</p></article><article><span>03</span><h3>Evidence-gated change</h3><p>The candidate proposal cannot be accepted while findings are unreviewed or deferred; apply remains a separate explicit action.</p></article></div></section>
+      <section id="workflow" class="home-section workflow-section"><div class="section-intro"><p class="eyebrow">The loop</p><h2>File → evidence → disposition → gated change.</h2><p>The fastest path to value stays understandable enough to defend in a migration review.</p></div><ol class="workflow-rail"><li><b>01 · Start</b><span>Create a local evidence workspace from one representative file.</span></li><li><b>02 · Inspect</b><span>Group deterministic findings into the decisions that block readiness.</span></li><li><b>03 · Decide</b><span>Record a human disposition and rationale without changing canonical model files.</span></li><li><b>04 · Review</b><span>Only after the evidence gate clears, accept, reject, or return the candidate proposal before apply.</span></li></ol></section>
       <section id="use-cases" class="home-section use-case-section"><div class="section-intro"><p class="eyebrow">Use cases</p><h2>Built for the moments when model knowledge becomes operational risk.</h2></div><div class="use-case-list"><a href="/docs/use-cases/sap-migration.html"><strong>SAP migration</strong><span>Connect source datasets, mappings, target fields, and readiness evidence before testing exposes the mismatch.</span></a><a href="/docs/use-cases/mdg.html"><strong>MDM and MDG</strong><span>Preserve the implementation knowledge around governed operational master data.</span></a><a href="/docs/use-cases/ams.html"><strong>AMS and change</strong><span>Give support teams a defensible starting point for investigating and reviewing a model change.</span></a></div></section>
-      <section id="pilots" class="home-section conversion-section marketing-atlas-band"><div><p class="eyebrow">Pilot projects</p><h2>Start with one representative model slice.</h2></div><p>A focused pilot establishes the evidence, canonical structure, validation, and review path around a real migration, MDM, governance, or AMS question.</p><a class="button primary" href="/docs/pilot-projects.html">Explore pilot projects</a></section>
+      <section id="pilots" class="home-section conversion-section marketing-atlas-band"><div><p class="eyebrow">Start narrow</p><h2>Bring one difficult migration file.</h2></div><p>Use a representative Customer or Business Partner slice to prove the evidence and review loop before expanding the model.</p><a class="button primary" href="/docs/quickstart.html">Run locally</a></section>
       <section id="consulting" class="home-section conversion-section"><div><p class="eyebrow">Consulting</p><h2>Use Core with an accountable delivery method.</h2></div><p>Engagements focus on the model and evidence that need to survive a handover—not on inventing a parallel operating platform.</p><a class="button secondary" href="/docs/consulting.html">How consulting works</a></section>
       <section id="fit" class="home-section fit-section" aria-labelledby="fit-title"><div class="section-intro"><p class="eyebrow">Where it fits</p><h2 id="fit-title">A supporting layer for the systems you already run.</h2><p>Martenweave keeps model evidence inspectable around delivery systems. It does not replace their transactions, configuration, workflow, or source of record.</p></div><div class="system-rail"><a href="/docs/use-cases/sap-migration.html"><span>01</span><strong>SAP ECC &amp; S/4HANA</strong><p>Connect legacy columns, SAP field endpoints, contexts, mappings, and migration evidence before testing.</p></a><a href="/docs/use-cases/mdg.html"><span>02</span><strong>SAP MDG &amp; MDM</strong><p>Keep field meaning, ownership, value rules, and implementation decisions reviewable alongside governed data.</p></a><a href="/docs/use-cases/data-governance.html"><span>03</span><strong>ERP, CRM &amp; warehouse</strong><p>Use shared business attributes and lineage to make cross-system definitions and downstream impact explicit.</p></a><a href="/docs/use-cases/ams.html"><span>04</span><strong>Jira, Confluence &amp; delivery files</strong><p>Turn tickets, documents, workbooks, and incident findings into durable evidence without replacing the tools.</p></a></div></section>
       <section id="ai-workflow" class="home-section ai-workflow-section" aria-labelledby="ai-workflow-title"><div class="section-intro"><p class="eyebrow">AI workflow</p><h2 id="ai-workflow-title">Give AI structured context—then keep the decision under control.</h2><p>Instead of asking an agent to reconstruct meaning from a chat or a spreadsheet, give it the canonical model, evidence, and boundaries it needs to prepare a focused next step.</p></div><ol class="ai-workflow-list"><li><span>01</span><div><strong>Ground the request</strong><p>Use canonical objects, references, source evidence, and known context as the working frame.</p></div></li><li><span>02</span><div><strong>Draft a proposal</strong><p>AI can prepare a reviewable PatchProposal from a note, finding, or design question.</p></div></li><li><span>03</span><div><strong>Validate deterministically</strong><p>Rules check object shape, references, and supported SAP context before anything is indexed.</p></div></li><li><span>04</span><div><strong>Approve with a human</strong><p>Reviewers decide whether a proposal becomes canonical truth and an auditable change.</p></div></li></ol><aside class="ai-workflow-note"><p>Productivity comes from less rediscovery and clearer review—not from silent automation.</p><a href="/docs/ai-governance.html">Read the AI governance boundary →</a></aside></section>
