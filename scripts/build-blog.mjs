@@ -16,6 +16,10 @@ const productionOrigin = "https://martenweave.github.io";
 const authorName = "Dzmitryi Kharlanau";
 const defaultDate = "2026-07-15";
 
+const googleTagManagerHead = `    <!-- Consent-aware portfolio analytics -->
+    <script src="/assets/analytics-consent.js" defer></script>`;
+const googleTagManagerBody = "";
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -395,6 +399,7 @@ function renderArticlePage(article) {
   return `<!doctype html>
 <html lang="en">
   <head>
+${googleTagManagerHead}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(article.title)} | Martenweave Blog</title>
@@ -434,6 +439,7 @@ ${jsonLd.split("\n").map((line) => `      ${line}`).join("\n")}
     </script>
   </head>
   <body class="docs-page blog-page">
+${googleTagManagerBody}
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
@@ -575,6 +581,7 @@ function renderIndexPage(articles) {
   return `<!doctype html>
 <html lang="en">
   <head>
+${googleTagManagerHead}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Martenweave Blog | SAP Migration, MDM, and Data Governance</title>
@@ -607,6 +614,7 @@ ${jsonLd.split("\n").map((line) => `      ${line}`).join("\n")}
     </script>
   </head>
   <body class="docs-page blog-page">
+${googleTagManagerBody}
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">

@@ -38,6 +38,10 @@ const authorSocialProfiles = [
 const siteLastModified = new Date().toISOString().slice(0, 10);
 const deploymentRevision = "main";
 
+const googleTagManagerHead = `    <!-- Consent-aware portfolio analytics -->
+    <script src="/assets/analytics-consent.js" defer></script>`;
+const googleTagManagerBody = "";
+
 const docRoutes = [
   {
     source: "README.md",
@@ -999,6 +1003,7 @@ function renderPage(route) {
   return `<!doctype html>
 <html lang="en">
   <head>
+${googleTagManagerHead}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(pageRoute.seoTitle)}</title>
@@ -1047,6 +1052,7 @@ ${pageRoute.blog && published ? `    <meta property="article:published_time" con
     <script src="/script.js" defer></script>
 ${jsonLd}  </head>
   <body class="${isBlogSurface ? "blog-page" : "docs-page"}">
+${googleTagManagerBody}
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-header>
       <nav class="nav" aria-label="Primary navigation">
