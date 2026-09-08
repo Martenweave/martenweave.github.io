@@ -35,7 +35,6 @@ const authorSocialProfiles = [
   "https://substack.com/@dkharlanau",
   "https://www.reddit.com/user/dkharlanau",
 ];
-const siteLastModified = new Date().toISOString().slice(0, 10);
 const deploymentRevision = "main";
 
 const googleTagManagerHead = `    <!-- Consent-aware portfolio analytics -->
@@ -937,10 +936,11 @@ ${entries
 }
 
 function buildSitemap() {
+  // Build time is not evidence of a content revision. Omit unknown dates.
   const blogLastModified = new Map(
     blogArticles.map((article) => [
       `/blog/${article.slug}.html`,
-      publicationDate(readFileSync(join(docsDir, article.source), "utf8")) ?? siteLastModified,
+      publicationDate(readFileSync(join(docsDir, article.source), "utf8")),
     ]),
   );
   const routes = [
@@ -960,8 +960,7 @@ function buildSitemap() {
 ${[...new Set(routes)]
   .map(
     (route) => `  <url>
-    <loc>${productionOrigin}${route}</loc>
-    <lastmod>${blogLastModified.get(route) ?? siteLastModified}</lastmod>
+    <loc>${productionOrigin}${route}</loc>${blogLastModified.get(route) ? `\n    <lastmod>${blogLastModified.get(route)}</lastmod>` : ""}
   </url>`,
   )
   .join("\n")}
