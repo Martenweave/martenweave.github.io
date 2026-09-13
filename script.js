@@ -63,3 +63,13 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
     item.classList.add("in-view");
   }
 }
+
+// Goose ARWP Proof Mark dogfood. This is an evidence-linking surface, not a certification or score.
+if (!document.querySelector('[data-goose-arwp-proof-mark="0.1"]')) {
+  const footer = document.querySelector("footer") || document.body;
+  const slot = document.createElement("div");
+  slot.dataset.gooseArwpProofMarkSlot = "footer";
+  slot.style.marginTop = "12px";
+  slot.innerHTML = `<span data-goose-arwp-proof-mark="0.1" data-arwp-coverage="partial" role="group" aria-label="Goose ARWP Proof Mark: partial audit scope" title="ARWP evidence is present; whole-site audit scope remains incomplete." style="display:inline-flex;max-width:100%;min-height:38px;border:1px solid #080c0b;border-radius:4px;overflow:hidden;background:#fafaf7;color:#080c0b;font:10px/1.15 Arial,sans-serif;vertical-align:middle"><a href="https://dkharlanau.github.io/agent-ready-web-profile/product/" aria-label="Open Goose ARWP" style="padding:8px 9px;background:#080c0b;color:#fafaf7;text-decoration:none;border-right:4px solid #173bea;font-weight:700;letter-spacing:.06em">GOOSE ARWP</a><a href="https://github.com/dkharlanau/agent-ready-web-profile/blob/main/docs/PROOF-MARK.md" aria-label="Read Proof Mark contract: partial scope" style="padding:8px 9px;color:#080c0b;text-decoration:none"><strong>PARTIAL</strong> · <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace">scope incomplete</span></a></span>`;
+  footer.append(slot);
+}
